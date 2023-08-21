@@ -20,11 +20,11 @@ var _ MappedNullable = &ScopeGroupEntry{}
 // ScopeGroupEntry A scope group name and its description.
 type ScopeGroupEntry struct {
 	// The name of the scope group.
-	Name string `json:"name"`
+	Name string `json:"name" tfsdk:"name"`
 	// The description of the scope group.
-	Description string `json:"description"`
+	Description string `json:"description" tfsdk:"description"`
 	// The set of scopes for this scope group.
-	Scopes []string `json:"scopes"`
+	Scopes []string `json:"scopes" tfsdk:"scopes"`
 }
 
 // NewScopeGroupEntry instantiates a new ScopeGroupEntry object

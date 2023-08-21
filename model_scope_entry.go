@@ -20,11 +20,11 @@ var _ MappedNullable = &ScopeEntry{}
 // ScopeEntry A scope name and its description.
 type ScopeEntry struct {
 	// The name of the scope.
-	Name string `json:"name"`
+	Name string `json:"name" tfsdk:"name"`
 	// The description of the scope that appears when the user is prompted for authorization.
-	Description string `json:"description"`
+	Description string `json:"description" tfsdk:"description"`
 	// True if the scope is dynamic. (Defaults to false)
-	Dynamic *bool `json:"dynamic,omitempty"`
+	Dynamic *bool `json:"dynamic,omitempty" tfsdk:"dynamic"`
 }
 
 // NewScopeEntry instantiates a new ScopeEntry object
