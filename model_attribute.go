@@ -20,7 +20,7 @@ var _ MappedNullable = &Attribute{}
 // Attribute The definition of an attribute in an attribute contract.
 type Attribute struct {
 	// The name of this attribute.
-	Name string `json:"name"`
+	Name string `json:"name" tfsdk:"name"`
 }
 
 // NewAttribute instantiates a new Attribute object
