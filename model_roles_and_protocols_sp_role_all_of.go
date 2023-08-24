@@ -20,12 +20,12 @@ var _ MappedNullable = &RolesAndProtocolsSpRoleAllOf{}
 // RolesAndProtocolsSpRoleAllOf This property has been deprecated and is no longer used. All Roles and protocols are always enabled.
 type RolesAndProtocolsSpRoleAllOf struct {
 	// Enable Service Provider Role.
-	Enable        interface{}      `json:"enable,omitempty"`
-	Saml20Profile *SpSAML20Profile `json:"saml20Profile,omitempty"`
+	Enable        interface{}      `json:"enable,omitempty" tfsdk:"enable"`
+	Saml20Profile *SpSAML20Profile `json:"saml20Profile,omitempty" tfsdk:"saml20_profile"`
 	// Enable OpenID Connect.
-	EnableOpenIDConnect interface{} `json:"enableOpenIDConnect,omitempty"`
+	EnableOpenIDConnect interface{} `json:"enableOpenIDConnect,omitempty" tfsdk:"enable_open_idc_onnect"`
 	// Enable Inbound Provisioning.
-	EnableInboundProvisioning interface{} `json:"enableInboundProvisioning,omitempty"`
+	EnableInboundProvisioning interface{} `json:"enableInboundProvisioning,omitempty" tfsdk:"enable_inbound_provisioning"`
 }
 
 // NewRolesAndProtocolsSpRoleAllOf instantiates a new RolesAndProtocolsSpRoleAllOf object
