@@ -13,7 +13,8 @@ for modelFile in modelFiles:
         for line in model:
             # Search for json tags
             match = re.search(jsonRegex, line)
-            if match != None:
+            # Ensure we don't add tfsdk tags to a line that already has one
+            if match != None and "tfsdk:" not in line:
                 # Get the attribute name from the json tag
                 attribute = match.group(1)
                 # Create a tfsdk tag for the attribute
