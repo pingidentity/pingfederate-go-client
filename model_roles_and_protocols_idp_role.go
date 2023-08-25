@@ -20,18 +20,18 @@ var _ MappedNullable = &RolesAndProtocolsIdpRole{}
 // RolesAndProtocolsIdpRole struct for RolesAndProtocolsIdpRole
 type RolesAndProtocolsIdpRole struct {
 	// Enable Identity Provider Role.
-	Enable interface{} `json:"enable,omitempty"`
+	Enable interface{} `json:"enable,omitempty" tfsdk:"enable"`
 	// Enable SAML 1.1.
-	EnableSaml11 interface{} `json:"enableSaml11,omitempty"`
+	EnableSaml11 interface{} `json:"enableSaml11,omitempty" tfsdk:"enable_saml11"`
 	// Enable SAML 1.0.
-	EnableSaml10 interface{} `json:"enableSaml10,omitempty"`
+	EnableSaml10 interface{} `json:"enableSaml10,omitempty" tfsdk:"enable_saml10"`
 	// Enable WS Federation.
-	EnableWsFed interface{} `json:"enableWsFed,omitempty"`
+	EnableWsFed interface{} `json:"enableWsFed,omitempty" tfsdk:"enable_ws_fed"`
 	// Enable WS Trust.
-	EnableWsTrust interface{}    `json:"enableWsTrust,omitempty"`
-	Saml20Profile *SAML20Profile `json:"saml20Profile,omitempty"`
+	EnableWsTrust interface{}    `json:"enableWsTrust,omitempty" tfsdk:"enable_ws_trust"`
+	Saml20Profile *SAML20Profile `json:"saml20Profile,omitempty" tfsdk:"saml20_profile"`
 	// Enable Outbound Provisioning.
-	EnableOutboundProvisioning interface{} `json:"enableOutboundProvisioning,omitempty"`
+	EnableOutboundProvisioning interface{} `json:"enableOutboundProvisioning,omitempty" tfsdk:"enable_outbound_provisioning"`
 }
 
 // NewRolesAndProtocolsIdpRole instantiates a new RolesAndProtocolsIdpRole object

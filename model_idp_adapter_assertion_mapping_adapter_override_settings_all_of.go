@@ -20,9 +20,9 @@ var _ MappedNullable = &IdpAdapterAssertionMappingAdapterOverrideSettingsAllOf{}
 // IdpAdapterAssertionMappingAdapterOverrideSettingsAllOf An IdP adapter instance.
 type IdpAdapterAssertionMappingAdapterOverrideSettingsAllOf struct {
 	// The fixed value that indicates how the user was authenticated.
-	AuthnCtxClassRef  interface{}                  `json:"authnCtxClassRef,omitempty"`
-	AttributeMapping  *IdpAdapterContractMapping   `json:"attributeMapping,omitempty"`
-	AttributeContract *IdpAdapterAttributeContract `json:"attributeContract,omitempty"`
+	AuthnCtxClassRef  interface{}                  `json:"authnCtxClassRef,omitempty" tfsdk:"authn_ctx_class_ref"`
+	AttributeMapping  *IdpAdapterContractMapping   `json:"attributeMapping,omitempty" tfsdk:"attribute_mapping"`
+	AttributeContract *IdpAdapterAttributeContract `json:"attributeContract,omitempty" tfsdk:"attribute_contract"`
 }
 
 // NewIdpAdapterAssertionMappingAdapterOverrideSettingsAllOf instantiates a new IdpAdapterAssertionMappingAdapterOverrideSettingsAllOf object

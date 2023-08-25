@@ -377,7 +377,6 @@ docs/LdapDataStore.md
 docs/LdapDataStoreAllOf.md
 docs/LdapDataStoreAttribute.md
 docs/LdapDataStoreConfig.md
-docs/LdapDataStoreConfigAllOf.md
 docs/LdapDataStoreRepository.md
 docs/LdapDataStoreRepositoryAllOf.md
 docs/LdapInboundProvisioningUserRepository.md
@@ -907,7 +906,6 @@ model_ldap_data_store.go
 model_ldap_data_store_all_of.go
 model_ldap_data_store_attribute.go
 model_ldap_data_store_config.go
-model_ldap_data_store_config_all_of.go
 model_ldap_data_store_repository.go
 model_ldap_data_store_repository_all_of.go
 model_ldap_inbound_provisioning_user_repository.go

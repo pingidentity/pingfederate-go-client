@@ -19,8 +19,8 @@ var _ MappedNullable = &SpAdapterMappingAdapterOverrideSettingsAllOf{}
 
 // SpAdapterMappingAdapterOverrideSettingsAllOf An SP adapter instance.
 type SpAdapterMappingAdapterOverrideSettingsAllOf struct {
-	AttributeContract     *SpAdapterAttributeContract     `json:"attributeContract,omitempty"`
-	TargetApplicationInfo *SpAdapterTargetApplicationInfo `json:"targetApplicationInfo,omitempty"`
+	AttributeContract     *SpAdapterAttributeContract     `json:"attributeContract,omitempty" tfsdk:"attribute_contract"`
+	TargetApplicationInfo *SpAdapterTargetApplicationInfo `json:"targetApplicationInfo,omitempty" tfsdk:"target_application_info"`
 }
 
 // NewSpAdapterMappingAdapterOverrideSettingsAllOf instantiates a new SpAdapterMappingAdapterOverrideSettingsAllOf object

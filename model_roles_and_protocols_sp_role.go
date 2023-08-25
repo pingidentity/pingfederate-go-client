@@ -20,20 +20,20 @@ var _ MappedNullable = &RolesAndProtocolsSpRole{}
 // RolesAndProtocolsSpRole struct for RolesAndProtocolsSpRole
 type RolesAndProtocolsSpRole struct {
 	// Enable Service Provider Role.
-	Enable interface{} `json:"enable,omitempty"`
+	Enable interface{} `json:"enable,omitempty" tfsdk:"enable"`
 	// Enable SAML 1.1.
-	EnableSaml11 interface{} `json:"enableSaml11,omitempty"`
+	EnableSaml11 interface{} `json:"enableSaml11,omitempty" tfsdk:"enable_saml11"`
 	// Enable SAML 1.0.
-	EnableSaml10 interface{} `json:"enableSaml10,omitempty"`
+	EnableSaml10 interface{} `json:"enableSaml10,omitempty" tfsdk:"enable_saml10"`
 	// Enable WS Federation.
-	EnableWsFed interface{} `json:"enableWsFed,omitempty"`
+	EnableWsFed interface{} `json:"enableWsFed,omitempty" tfsdk:"enable_ws_fed"`
 	// Enable WS Trust.
-	EnableWsTrust interface{}      `json:"enableWsTrust,omitempty"`
-	Saml20Profile *SpSAML20Profile `json:"saml20Profile,omitempty"`
+	EnableWsTrust interface{}      `json:"enableWsTrust,omitempty" tfsdk:"enable_ws_trust"`
+	Saml20Profile *SpSAML20Profile `json:"saml20Profile,omitempty" tfsdk:"saml20_profile"`
 	// Enable OpenID Connect.
-	EnableOpenIDConnect interface{} `json:"enableOpenIDConnect,omitempty"`
+	EnableOpenIDConnect interface{} `json:"enableOpenIDConnect,omitempty" tfsdk:"enable_open_idc_onnect"`
 	// Enable Inbound Provisioning.
-	EnableInboundProvisioning interface{} `json:"enableInboundProvisioning,omitempty"`
+	EnableInboundProvisioning interface{} `json:"enableInboundProvisioning,omitempty" tfsdk:"enable_inbound_provisioning"`
 }
 
 // NewRolesAndProtocolsSpRole instantiates a new RolesAndProtocolsSpRole object

@@ -19,9 +19,9 @@ var _ MappedNullable = &ConnectionCredentialsOutboundBackChannelAuthAllOf{}
 
 // ConnectionCredentialsOutboundBackChannelAuthAllOf struct for ConnectionCredentialsOutboundBackChannelAuthAllOf
 type ConnectionCredentialsOutboundBackChannelAuthAllOf struct {
-	SslAuthKeyPairRef *ResourceLink `json:"sslAuthKeyPairRef,omitempty"`
+	SslAuthKeyPairRef *ResourceLink `json:"sslAuthKeyPairRef,omitempty" tfsdk:"ssl_auth_key_pair_ref"`
 	// Validate the partner server certificate. Default is true.
-	ValidatePartnerCert interface{} `json:"validatePartnerCert,omitempty"`
+	ValidatePartnerCert interface{} `json:"validatePartnerCert,omitempty" tfsdk:"validate_partner_cert"`
 }
 
 // NewConnectionCredentialsOutboundBackChannelAuthAllOf instantiates a new ConnectionCredentialsOutboundBackChannelAuthAllOf object

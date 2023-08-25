@@ -20,14 +20,14 @@ var _ MappedNullable = &SpAdapterMappingAdapterOverrideSettings{}
 // SpAdapterMappingAdapterOverrideSettings struct for SpAdapterMappingAdapterOverrideSettings
 type SpAdapterMappingAdapterOverrideSettings struct {
 	// The ID of the plugin instance. The ID cannot be modified once the instance is created.<br>Note: Ignored when specifying a connection's adapter override.
-	Id interface{} `json:"id"`
+	Id interface{} `json:"id" tfsdk:"id"`
 	// The plugin instance name. The name can be modified once the instance is created.<br>Note: Ignored when specifying a connection's adapter override.
-	Name                  interface{}                     `json:"name"`
-	PluginDescriptorRef   ResourceLink                    `json:"pluginDescriptorRef"`
-	ParentRef             *ResourceLink                   `json:"parentRef,omitempty"`
-	Configuration         PluginConfiguration             `json:"configuration"`
-	AttributeContract     *SpAdapterAttributeContract     `json:"attributeContract,omitempty"`
-	TargetApplicationInfo *SpAdapterTargetApplicationInfo `json:"targetApplicationInfo,omitempty"`
+	Name                  interface{}                     `json:"name" tfsdk:"name"`
+	PluginDescriptorRef   ResourceLink                    `json:"pluginDescriptorRef" tfsdk:"plugin_descriptor_ref"`
+	ParentRef             *ResourceLink                   `json:"parentRef,omitempty" tfsdk:"parent_ref"`
+	Configuration         PluginConfiguration             `json:"configuration" tfsdk:"configuration"`
+	AttributeContract     *SpAdapterAttributeContract     `json:"attributeContract,omitempty" tfsdk:"attribute_contract"`
+	TargetApplicationInfo *SpAdapterTargetApplicationInfo `json:"targetApplicationInfo,omitempty" tfsdk:"target_application_info"`
 }
 
 // NewSpAdapterMappingAdapterOverrideSettings instantiates a new SpAdapterMappingAdapterOverrideSettings object

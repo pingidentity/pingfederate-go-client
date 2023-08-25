@@ -21,13 +21,13 @@ var _ MappedNullable = &ConnectionCredentialsInboundBackChannelAuth{}
 type ConnectionCredentialsInboundBackChannelAuth struct {
 	BackChannelAuth
 	// If this property is set, the verification trust model is Anchored. The verification certificate must be signed by a trusted CA and included in the incoming message, and the subject DN of the expected certificate is specified in this property. If this property is not set, then a primary verification certificate must be specified in the certs array.
-	VerificationSubjectDN interface{} `json:"verificationSubjectDN,omitempty"`
+	VerificationSubjectDN interface{} `json:"verificationSubjectDN,omitempty" tfsdk:"verification_subject_dn"`
 	// If a verification Subject DN is provided, you can optionally restrict the issuer to a specific trusted CA by specifying its DN in this field.
-	VerificationIssuerDN interface{} `json:"verificationIssuerDN,omitempty"`
+	VerificationIssuerDN interface{} `json:"verificationIssuerDN,omitempty" tfsdk:"verification_issuer_dn"`
 	// The certificate used for signature verification and XML encryption.
-	Certs []ConnectionCert `json:"certs,omitempty"`
+	Certs []ConnectionCert `json:"certs,omitempty" tfsdk:"certs"`
 	// Incoming HTTP transmissions must use a secure channel.
-	RequireSsl interface{} `json:"requireSsl,omitempty"`
+	RequireSsl interface{} `json:"requireSsl,omitempty" tfsdk:"require_ssl"`
 }
 
 // NewConnectionCredentialsInboundBackChannelAuth instantiates a new ConnectionCredentialsInboundBackChannelAuth object

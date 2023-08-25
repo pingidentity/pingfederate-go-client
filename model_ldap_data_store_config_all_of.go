@@ -20,15 +20,15 @@ var _ MappedNullable = &LdapDataStoreConfigAllOf{}
 // LdapDataStoreConfigAllOf LDAP data store configuration.
 type LdapDataStoreConfigAllOf struct {
 	// The base DN to search from. If not specified, the search will start at the LDAP's root.
-	BaseDn string `json:"baseDn"`
+	BaseDn string `json:"baseDn" tfsdk:"base_dn"`
 	// The Relative DN Pattern that will be used to create objects in the directory.
-	CreatePattern string `json:"createPattern"`
+	CreatePattern string `json:"createPattern" tfsdk:"create_pattern"`
 	// The Object Class used by the new objects stored in the LDAP data store.
-	ObjectClass string `json:"objectClass"`
+	ObjectClass string `json:"objectClass" tfsdk:"object_class"`
 	// The Auxiliary Object Classes used by the new objects stored in the LDAP data store.
-	AuxiliaryObjectClasses []string `json:"auxiliaryObjectClasses,omitempty"`
+	AuxiliaryObjectClasses []string `json:"auxiliaryObjectClasses,omitempty" tfsdk:"auxiliary_object_classes"`
 	// The data store mapping.
-	DataStoreMapping map[string]DataStoreAttribute `json:"dataStoreMapping"`
+	DataStoreMapping map[string]DataStoreAttribute `json:"dataStoreMapping" tfsdk:"data_store_mapping"`
 }
 
 // NewLdapDataStoreConfigAllOf instantiates a new LdapDataStoreConfigAllOf object

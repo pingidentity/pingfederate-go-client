@@ -20,16 +20,16 @@ var _ MappedNullable = &IdpAdapterAssertionMappingAdapterOverrideSettings{}
 // IdpAdapterAssertionMappingAdapterOverrideSettings struct for IdpAdapterAssertionMappingAdapterOverrideSettings
 type IdpAdapterAssertionMappingAdapterOverrideSettings struct {
 	// The ID of the plugin instance. The ID cannot be modified once the instance is created.<br>Note: Ignored when specifying a connection's adapter override.
-	Id interface{} `json:"id"`
+	Id interface{} `json:"id" tfsdk:"id"`
 	// The plugin instance name. The name can be modified once the instance is created.<br>Note: Ignored when specifying a connection's adapter override.
-	Name                interface{}         `json:"name"`
-	PluginDescriptorRef ResourceLink        `json:"pluginDescriptorRef"`
-	ParentRef           *ResourceLink       `json:"parentRef,omitempty"`
-	Configuration       PluginConfiguration `json:"configuration"`
+	Name                interface{}         `json:"name" tfsdk:"name"`
+	PluginDescriptorRef ResourceLink        `json:"pluginDescriptorRef" tfsdk:"plugin_descriptor_ref"`
+	ParentRef           *ResourceLink       `json:"parentRef,omitempty" tfsdk:"parent_ref"`
+	Configuration       PluginConfiguration `json:"configuration" tfsdk:"configuration"`
 	// The fixed value that indicates how the user was authenticated.
-	AuthnCtxClassRef  interface{}                  `json:"authnCtxClassRef,omitempty"`
-	AttributeMapping  *IdpAdapterContractMapping   `json:"attributeMapping,omitempty"`
-	AttributeContract *IdpAdapterAttributeContract `json:"attributeContract,omitempty"`
+	AuthnCtxClassRef  interface{}                  `json:"authnCtxClassRef,omitempty" tfsdk:"authn_ctx_class_ref"`
+	AttributeMapping  *IdpAdapterContractMapping   `json:"attributeMapping,omitempty" tfsdk:"attribute_mapping"`
+	AttributeContract *IdpAdapterAttributeContract `json:"attributeContract,omitempty" tfsdk:"attribute_contract"`
 }
 
 // NewIdpAdapterAssertionMappingAdapterOverrideSettings instantiates a new IdpAdapterAssertionMappingAdapterOverrideSettings object
