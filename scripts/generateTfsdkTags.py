@@ -5,7 +5,6 @@ import re
 
 # Find all files in the repo starting with "model_"
 modelFiles = glob.glob('model_*.go')
-print(modelFiles)
 jsonRegex = re.compile('`json:\"([0-9A-Za-z]*)[\",]')
 
 for modelFile in modelFiles:
