@@ -298,6 +298,7 @@ docs/IdpAdapterAssertionMapping.md
 docs/IdpAdapterAttribute.md
 docs/IdpAdapterAttributeContract.md
 docs/IdpAdapterContractMapping.md
+docs/IdpAdapterContractMappingAttributeSourcesInner.md
 docs/IdpAdapterDescriptor.md
 docs/IdpAdapterDescriptors.md
 docs/IdpAdapterMapping.md
@@ -838,6 +839,7 @@ model_idp_adapter_assertion_mapping.go
 model_idp_adapter_attribute.go
 model_idp_adapter_attribute_contract.go
 model_idp_adapter_contract_mapping.go
+model_idp_adapter_contract_mapping_attribute_sources_inner.go
 model_idp_adapter_descriptor.go
 model_idp_adapter_descriptors.go
 model_idp_adapter_mapping.go

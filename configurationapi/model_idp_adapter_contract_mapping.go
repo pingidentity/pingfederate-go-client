@@ -20,7 +20,7 @@ var _ MappedNullable = &IdpAdapterContractMapping{}
 // IdpAdapterContractMapping An IdP Adapter Contract Mapping.
 type IdpAdapterContractMapping struct {
 	// A list of configured data stores to look up attributes from.
-	AttributeSources []AttributeSource `json:"attributeSources,omitempty" tfsdk:"attribute_sources"`
+	AttributeSources []IdpAdapterContractMappingAttributeSourcesInner `json:"attributeSources,omitempty" tfsdk:"attribute_sources"`
 	// A list of mappings from attribute names to their fulfillment values.
 	AttributeContractFulfillment map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment" tfsdk:"attribute_contract_fulfillment"`
 	IssuanceCriteria             *IssuanceCriteria                    `json:"issuanceCriteria,omitempty" tfsdk:"issuance_criteria"`
@@ -47,9 +47,9 @@ func NewIdpAdapterContractMappingWithDefaults() *IdpAdapterContractMapping {
 }
 
 // GetAttributeSources returns the AttributeSources field value if set, zero value otherwise.
-func (o *IdpAdapterContractMapping) GetAttributeSources() []AttributeSource {
+func (o *IdpAdapterContractMapping) GetAttributeSources() []IdpAdapterContractMappingAttributeSourcesInner {
 	if o == nil || IsNil(o.AttributeSources) {
-		var ret []AttributeSource
+		var ret []IdpAdapterContractMappingAttributeSourcesInner
 		return ret
 	}
 	return o.AttributeSources
@@ -57,7 +57,7 @@ func (o *IdpAdapterContractMapping) GetAttributeSources() []AttributeSource {
 
 // GetAttributeSourcesOk returns a tuple with the AttributeSources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IdpAdapterContractMapping) GetAttributeSourcesOk() ([]AttributeSource, bool) {
+func (o *IdpAdapterContractMapping) GetAttributeSourcesOk() ([]IdpAdapterContractMappingAttributeSourcesInner, bool) {
 	if o == nil || IsNil(o.AttributeSources) {
 		return nil, false
 	}
@@ -73,8 +73,8 @@ func (o *IdpAdapterContractMapping) HasAttributeSources() bool {
 	return false
 }
 
-// SetAttributeSources gets a reference to the given []AttributeSource and assigns it to the AttributeSources field.
-func (o *IdpAdapterContractMapping) SetAttributeSources(v []AttributeSource) {
+// SetAttributeSources gets a reference to the given []IdpAdapterContractMappingAttributeSourcesInner and assigns it to the AttributeSources field.
+func (o *IdpAdapterContractMapping) SetAttributeSources(v []IdpAdapterContractMappingAttributeSourcesInner) {
 	o.AttributeSources = v
 }
 

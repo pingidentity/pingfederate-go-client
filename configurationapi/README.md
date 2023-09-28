@@ -749,6 +749,7 @@ Class | Method | HTTP request | Description
  - [IdpAdapterAttribute](docs/IdpAdapterAttribute.md)
  - [IdpAdapterAttributeContract](docs/IdpAdapterAttributeContract.md)
  - [IdpAdapterContractMapping](docs/IdpAdapterContractMapping.md)
+ - [IdpAdapterContractMappingAttributeSourcesInner](docs/IdpAdapterContractMappingAttributeSourcesInner.md)
  - [IdpAdapterDescriptor](docs/IdpAdapterDescriptor.md)
  - [IdpAdapterDescriptors](docs/IdpAdapterDescriptors.md)
  - [IdpAdapterMapping](docs/IdpAdapterMapping.md)
