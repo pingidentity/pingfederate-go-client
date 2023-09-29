@@ -73,8 +73,6 @@ api_sp_token_generators.go
 api_token_processor_to_token_generator_mappings.go
 api_version.go
 api_virtual_host_names.go
-client.go
-configuration.go
 docs/ACAPTCHAProviderPluginDescriptor.md
 docs/ACollectionOfCAPTCHAProviderPluginDescriptors.md
 docs/AccessTokenAttribute.md
@@ -123,6 +121,7 @@ docs/AttributeQueryNameMapping.md
 docs/AttributeRule.md
 docs/AttributeRules.md
 docs/AttributeSource.md
+docs/AttributeSourceAggregation.md
 docs/AuthenticationApiAPI.md
 docs/AuthenticationPoliciesAPI.md
 docs/AuthenticationPoliciesSettings.md
@@ -298,7 +297,6 @@ docs/IdpAdapterAssertionMapping.md
 docs/IdpAdapterAttribute.md
 docs/IdpAdapterAttributeContract.md
 docs/IdpAdapterContractMapping.md
-docs/IdpAdapterContractMappingAttributeSourcesInner.md
 docs/IdpAdapterDescriptor.md
 docs/IdpAdapterDescriptors.md
 docs/IdpAdapterMapping.md
@@ -681,6 +679,7 @@ model_attribute_query_name_mapping.go
 model_attribute_rule.go
 model_attribute_rules.go
 model_attribute_source.go
+model_attribute_source_aggregation.go
 model_authentication_policies_settings.go
 model_authentication_policy.go
 model_authentication_policy_contract.go
@@ -839,7 +838,6 @@ model_idp_adapter_assertion_mapping.go
 model_idp_adapter_attribute.go
 model_idp_adapter_attribute_contract.go
 model_idp_adapter_contract_mapping.go
-model_idp_adapter_contract_mapping_attribute_sources_inner.go
 model_idp_adapter_descriptor.go
 model_idp_adapter_descriptors.go
 model_idp_adapter_mapping.go

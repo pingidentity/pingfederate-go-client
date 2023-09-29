@@ -15,36 +15,36 @@ import (
 	"fmt"
 )
 
-// IdpAdapterContractMappingAttributeSourcesInner - struct for IdpAdapterContractMappingAttributeSourcesInner
-type IdpAdapterContractMappingAttributeSourcesInner struct {
+// AttributeSourceAggregation - struct for AttributeSourceAggregation
+type AttributeSourceAggregation struct {
 	CustomAttributeSource *CustomAttributeSource
 	JdbcAttributeSource   *JdbcAttributeSource
 	LdapAttributeSource   *LdapAttributeSource
 }
 
-// CustomAttributeSourceAsIdpAdapterContractMappingAttributeSourcesInner is a convenience function that returns CustomAttributeSource wrapped in IdpAdapterContractMappingAttributeSourcesInner
-func CustomAttributeSourceAsIdpAdapterContractMappingAttributeSourcesInner(v *CustomAttributeSource) IdpAdapterContractMappingAttributeSourcesInner {
-	return IdpAdapterContractMappingAttributeSourcesInner{
+// CustomAttributeSourceAsAttributeSourceAggregation is a convenience function that returns CustomAttributeSource wrapped in AttributeSourceAggregation
+func CustomAttributeSourceAsAttributeSourceAggregation(v *CustomAttributeSource) AttributeSourceAggregation {
+	return AttributeSourceAggregation{
 		CustomAttributeSource: v,
 	}
 }
 
-// JdbcAttributeSourceAsIdpAdapterContractMappingAttributeSourcesInner is a convenience function that returns JdbcAttributeSource wrapped in IdpAdapterContractMappingAttributeSourcesInner
-func JdbcAttributeSourceAsIdpAdapterContractMappingAttributeSourcesInner(v *JdbcAttributeSource) IdpAdapterContractMappingAttributeSourcesInner {
-	return IdpAdapterContractMappingAttributeSourcesInner{
+// JdbcAttributeSourceAsAttributeSourceAggregation is a convenience function that returns JdbcAttributeSource wrapped in AttributeSourceAggregation
+func JdbcAttributeSourceAsAttributeSourceAggregation(v *JdbcAttributeSource) AttributeSourceAggregation {
+	return AttributeSourceAggregation{
 		JdbcAttributeSource: v,
 	}
 }
 
-// LdapAttributeSourceAsIdpAdapterContractMappingAttributeSourcesInner is a convenience function that returns LdapAttributeSource wrapped in IdpAdapterContractMappingAttributeSourcesInner
-func LdapAttributeSourceAsIdpAdapterContractMappingAttributeSourcesInner(v *LdapAttributeSource) IdpAdapterContractMappingAttributeSourcesInner {
-	return IdpAdapterContractMappingAttributeSourcesInner{
+// LdapAttributeSourceAsAttributeSourceAggregation is a convenience function that returns LdapAttributeSource wrapped in AttributeSourceAggregation
+func LdapAttributeSourceAsAttributeSourceAggregation(v *LdapAttributeSource) AttributeSourceAggregation {
+	return AttributeSourceAggregation{
 		LdapAttributeSource: v,
 	}
 }
 
 // Unmarshal JSON data into one of the pointers in the struct
-func (dst *IdpAdapterContractMappingAttributeSourcesInner) UnmarshalJSON(data []byte) error {
+func (dst *AttributeSourceAggregation) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
 	// try to unmarshal data into CustomAttributeSource
@@ -92,16 +92,16 @@ func (dst *IdpAdapterContractMappingAttributeSourcesInner) UnmarshalJSON(data []
 		dst.JdbcAttributeSource = nil
 		dst.LdapAttributeSource = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(IdpAdapterContractMappingAttributeSourcesInner)")
+		return fmt.Errorf("data matches more than one schema in oneOf(AttributeSourceAggregation)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(IdpAdapterContractMappingAttributeSourcesInner)")
+		return fmt.Errorf("data failed to match schemas in oneOf(AttributeSourceAggregation)")
 	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
-func (src IdpAdapterContractMappingAttributeSourcesInner) MarshalJSON() ([]byte, error) {
+func (src AttributeSourceAggregation) MarshalJSON() ([]byte, error) {
 	if src.CustomAttributeSource != nil {
 		return json.Marshal(&src.CustomAttributeSource)
 	}
@@ -118,7 +118,7 @@ func (src IdpAdapterContractMappingAttributeSourcesInner) MarshalJSON() ([]byte,
 }
 
 // Get the actual instance
-func (obj *IdpAdapterContractMappingAttributeSourcesInner) GetActualInstance() interface{} {
+func (obj *AttributeSourceAggregation) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -138,38 +138,38 @@ func (obj *IdpAdapterContractMappingAttributeSourcesInner) GetActualInstance() i
 	return nil
 }
 
-type NullableIdpAdapterContractMappingAttributeSourcesInner struct {
-	value *IdpAdapterContractMappingAttributeSourcesInner
+type NullableAttributeSourceAggregation struct {
+	value *AttributeSourceAggregation
 	isSet bool
 }
 
-func (v NullableIdpAdapterContractMappingAttributeSourcesInner) Get() *IdpAdapterContractMappingAttributeSourcesInner {
+func (v NullableAttributeSourceAggregation) Get() *AttributeSourceAggregation {
 	return v.value
 }
 
-func (v *NullableIdpAdapterContractMappingAttributeSourcesInner) Set(val *IdpAdapterContractMappingAttributeSourcesInner) {
+func (v *NullableAttributeSourceAggregation) Set(val *AttributeSourceAggregation) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableIdpAdapterContractMappingAttributeSourcesInner) IsSet() bool {
+func (v NullableAttributeSourceAggregation) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableIdpAdapterContractMappingAttributeSourcesInner) Unset() {
+func (v *NullableAttributeSourceAggregation) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableIdpAdapterContractMappingAttributeSourcesInner(val *IdpAdapterContractMappingAttributeSourcesInner) *NullableIdpAdapterContractMappingAttributeSourcesInner {
-	return &NullableIdpAdapterContractMappingAttributeSourcesInner{value: val, isSet: true}
+func NewNullableAttributeSourceAggregation(val *AttributeSourceAggregation) *NullableAttributeSourceAggregation {
+	return &NullableAttributeSourceAggregation{value: val, isSet: true}
 }
 
-func (v NullableIdpAdapterContractMappingAttributeSourcesInner) MarshalJSON() ([]byte, error) {
+func (v NullableAttributeSourceAggregation) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableIdpAdapterContractMappingAttributeSourcesInner) UnmarshalJSON(src []byte) error {
+func (v *NullableAttributeSourceAggregation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -14363,10 +14363,7 @@ components:
         attributeSources:
           description: A list of configured data stores to look up attributes from.
           items:
-            oneOf:
-            - $ref: '#/components/schemas/CustomAttributeSource'
-            - $ref: '#/components/schemas/JdbcAttributeSource'
-            - $ref: '#/components/schemas/LdapAttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
           type: array
         attributeContractFulfillment:
           additionalProperties:
@@ -29676,6 +29673,11 @@ components:
             $ref: '#/components/schemas/TokenProcessor'
           type: array
       type: object
+    AttributeSourceAggregation:
+      oneOf:
+      - $ref: '#/components/schemas/CustomAttributeSource'
+      - $ref: '#/components/schemas/JdbcAttributeSource'
+      - $ref: '#/components/schemas/LdapAttributeSource'
     TokenToTokenMapping:
       description: A Token Processor to Token Generator Mapping.
       example:
@@ -29740,7 +29742,7 @@ components:
         attributeSources:
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
           type: array
         attributeContractFulfillment:
           additionalProperties:
