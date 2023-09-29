@@ -20,11 +20,11 @@ var _ MappedNullable = &AlternativeLoginHintTokenIssuer{}
 // AlternativeLoginHintTokenIssuer JSON Web Key Set Settings.
 type AlternativeLoginHintTokenIssuer struct {
 	// The issuer. Issuer is unique.
-	Issuer string `json:"issuer" tfsdk:"issuer" tfsdk:"issuer"`
+	Issuer string `json:"issuer" tfsdk:"issuer"`
 	// The JWKS URL.
-	JwksURL *string `json:"jwksURL,omitempty" tfsdk:"jwks_url" tfsdk:"jwks_url"`
+	JwksURL *string `json:"jwksURL,omitempty" tfsdk:"jwks_url"`
 	// The JWKS.
-	Jwks *string `json:"jwks,omitempty" tfsdk:"jwks" tfsdk:"jwks"`
+	Jwks *string `json:"jwks,omitempty" tfsdk:"jwks"`
 }
 
 // NewAlternativeLoginHintTokenIssuer instantiates a new AlternativeLoginHintTokenIssuer object

@@ -8,8 +8,10 @@ set -e
 # rm ./model_*.go
 # rm -r docs/
 
+cd configurationapi
+
 openapi-generator generate \
-    -i ./api/pf-swagger.json \
+    -i ../api/pf-swagger.json \
     -g go \
     --git-host github.com \
     --git-repo-id pingfederate-go-client \
