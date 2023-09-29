@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// OauthTokenExchangeProcessorApiService OauthTokenExchangeProcessorApi service
-type OauthTokenExchangeProcessorApiService service
+// OauthTokenExchangeProcessorAPIService OauthTokenExchangeProcessorAPI service
+type OauthTokenExchangeProcessorAPIService service
 
 type ApiCreateOauthTokenExchangeProcessorPolicyRequest struct {
 	ctx                      context.Context
-	ApiService               *OauthTokenExchangeProcessorApiService
+	ApiService               *OauthTokenExchangeProcessorAPIService
 	body                     *TokenExchangeProcessorPolicy
 	bypassExternalValidation *bool
 }
@@ -53,7 +53,7 @@ Create a new OAuth 2.0 Token Exchange Processor policy. If the OAuth 2.0 Token E
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateOauthTokenExchangeProcessorPolicyRequest
 */
-func (a *OauthTokenExchangeProcessorApiService) CreateOauthTokenExchangeProcessorPolicy(ctx context.Context) ApiCreateOauthTokenExchangeProcessorPolicyRequest {
+func (a *OauthTokenExchangeProcessorAPIService) CreateOauthTokenExchangeProcessorPolicy(ctx context.Context) ApiCreateOauthTokenExchangeProcessorPolicyRequest {
 	return ApiCreateOauthTokenExchangeProcessorPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -63,7 +63,7 @@ func (a *OauthTokenExchangeProcessorApiService) CreateOauthTokenExchangeProcesso
 // Execute executes the request
 //
 //	@return TokenExchangeProcessorPolicy
-func (a *OauthTokenExchangeProcessorApiService) CreateOauthTokenExchangeProcessorPolicyExecute(r ApiCreateOauthTokenExchangeProcessorPolicyRequest) (*TokenExchangeProcessorPolicy, *http.Response, error) {
+func (a *OauthTokenExchangeProcessorAPIService) CreateOauthTokenExchangeProcessorPolicyExecute(r ApiCreateOauthTokenExchangeProcessorPolicyRequest) (*TokenExchangeProcessorPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -71,7 +71,7 @@ func (a *OauthTokenExchangeProcessorApiService) CreateOauthTokenExchangeProcesso
 		localVarReturnValue *TokenExchangeProcessorPolicy
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenExchangeProcessorApiService.CreateOauthTokenExchangeProcessorPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenExchangeProcessorAPIService.CreateOauthTokenExchangeProcessorPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -156,7 +156,7 @@ func (a *OauthTokenExchangeProcessorApiService) CreateOauthTokenExchangeProcesso
 
 type ApiDeleteOauthTokenExchangeProcessorPolicyyRequest struct {
 	ctx        context.Context
-	ApiService *OauthTokenExchangeProcessorApiService
+	ApiService *OauthTokenExchangeProcessorAPIService
 	id         string
 }
 
@@ -173,7 +173,7 @@ Delete an OAuth 2.0 Token Exchange Processor policy with the specified ID. A 404
 	@param id ID of OAuth 2.0 Token Exchange Processor policy to delete.
 	@return ApiDeleteOauthTokenExchangeProcessorPolicyyRequest
 */
-func (a *OauthTokenExchangeProcessorApiService) DeleteOauthTokenExchangeProcessorPolicyy(ctx context.Context, id string) ApiDeleteOauthTokenExchangeProcessorPolicyyRequest {
+func (a *OauthTokenExchangeProcessorAPIService) DeleteOauthTokenExchangeProcessorPolicyy(ctx context.Context, id string) ApiDeleteOauthTokenExchangeProcessorPolicyyRequest {
 	return ApiDeleteOauthTokenExchangeProcessorPolicyyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -182,14 +182,14 @@ func (a *OauthTokenExchangeProcessorApiService) DeleteOauthTokenExchangeProcesso
 }
 
 // Execute executes the request
-func (a *OauthTokenExchangeProcessorApiService) DeleteOauthTokenExchangeProcessorPolicyyExecute(r ApiDeleteOauthTokenExchangeProcessorPolicyyRequest) (*http.Response, error) {
+func (a *OauthTokenExchangeProcessorAPIService) DeleteOauthTokenExchangeProcessorPolicyyExecute(r ApiDeleteOauthTokenExchangeProcessorPolicyyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenExchangeProcessorApiService.DeleteOauthTokenExchangeProcessorPolicyy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenExchangeProcessorAPIService.DeleteOauthTokenExchangeProcessorPolicyy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -269,7 +269,7 @@ func (a *OauthTokenExchangeProcessorApiService) DeleteOauthTokenExchangeProcesso
 
 type ApiGetOauthTokenExchangeProcessorPolicyByIdRequest struct {
 	ctx        context.Context
-	ApiService *OauthTokenExchangeProcessorApiService
+	ApiService *OauthTokenExchangeProcessorAPIService
 	id         string
 }
 
@@ -286,7 +286,7 @@ Get an OAuth 2.0 Token Exchange Processor policy with the specified ID. A 404 st
 	@param id ID of the OAuth 2.0 Token Exchange Processor policy to fetch.
 	@return ApiGetOauthTokenExchangeProcessorPolicyByIdRequest
 */
-func (a *OauthTokenExchangeProcessorApiService) GetOauthTokenExchangeProcessorPolicyById(ctx context.Context, id string) ApiGetOauthTokenExchangeProcessorPolicyByIdRequest {
+func (a *OauthTokenExchangeProcessorAPIService) GetOauthTokenExchangeProcessorPolicyById(ctx context.Context, id string) ApiGetOauthTokenExchangeProcessorPolicyByIdRequest {
 	return ApiGetOauthTokenExchangeProcessorPolicyByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -297,7 +297,7 @@ func (a *OauthTokenExchangeProcessorApiService) GetOauthTokenExchangeProcessorPo
 // Execute executes the request
 //
 //	@return TokenExchangeProcessorPolicy
-func (a *OauthTokenExchangeProcessorApiService) GetOauthTokenExchangeProcessorPolicyByIdExecute(r ApiGetOauthTokenExchangeProcessorPolicyByIdRequest) (*TokenExchangeProcessorPolicy, *http.Response, error) {
+func (a *OauthTokenExchangeProcessorAPIService) GetOauthTokenExchangeProcessorPolicyByIdExecute(r ApiGetOauthTokenExchangeProcessorPolicyByIdRequest) (*TokenExchangeProcessorPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -305,7 +305,7 @@ func (a *OauthTokenExchangeProcessorApiService) GetOauthTokenExchangeProcessorPo
 		localVarReturnValue *TokenExchangeProcessorPolicy
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenExchangeProcessorApiService.GetOauthTokenExchangeProcessorPolicyById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenExchangeProcessorAPIService.GetOauthTokenExchangeProcessorPolicyById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -383,7 +383,7 @@ func (a *OauthTokenExchangeProcessorApiService) GetOauthTokenExchangeProcessorPo
 
 type ApiGetOauthTokenExchangeProcessorPolicyPoliciesRequest struct {
 	ctx        context.Context
-	ApiService *OauthTokenExchangeProcessorApiService
+	ApiService *OauthTokenExchangeProcessorAPIService
 }
 
 func (r ApiGetOauthTokenExchangeProcessorPolicyPoliciesRequest) Execute() (*TokenExchangeProcessorPolicies, *http.Response, error) {
@@ -396,7 +396,7 @@ GetOauthTokenExchangeProcessorPolicyPolicies Get list of OAuth 2.0 Token Exchang
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetOauthTokenExchangeProcessorPolicyPoliciesRequest
 */
-func (a *OauthTokenExchangeProcessorApiService) GetOauthTokenExchangeProcessorPolicyPolicies(ctx context.Context) ApiGetOauthTokenExchangeProcessorPolicyPoliciesRequest {
+func (a *OauthTokenExchangeProcessorAPIService) GetOauthTokenExchangeProcessorPolicyPolicies(ctx context.Context) ApiGetOauthTokenExchangeProcessorPolicyPoliciesRequest {
 	return ApiGetOauthTokenExchangeProcessorPolicyPoliciesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -406,7 +406,7 @@ func (a *OauthTokenExchangeProcessorApiService) GetOauthTokenExchangeProcessorPo
 // Execute executes the request
 //
 //	@return TokenExchangeProcessorPolicies
-func (a *OauthTokenExchangeProcessorApiService) GetOauthTokenExchangeProcessorPolicyPoliciesExecute(r ApiGetOauthTokenExchangeProcessorPolicyPoliciesRequest) (*TokenExchangeProcessorPolicies, *http.Response, error) {
+func (a *OauthTokenExchangeProcessorAPIService) GetOauthTokenExchangeProcessorPolicyPoliciesExecute(r ApiGetOauthTokenExchangeProcessorPolicyPoliciesRequest) (*TokenExchangeProcessorPolicies, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -414,7 +414,7 @@ func (a *OauthTokenExchangeProcessorApiService) GetOauthTokenExchangeProcessorPo
 		localVarReturnValue *TokenExchangeProcessorPolicies
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenExchangeProcessorApiService.GetOauthTokenExchangeProcessorPolicyPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenExchangeProcessorAPIService.GetOauthTokenExchangeProcessorPolicyPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -481,7 +481,7 @@ func (a *OauthTokenExchangeProcessorApiService) GetOauthTokenExchangeProcessorPo
 
 type ApiGetOauthTokenExchangeProcessorPolicySettingsRequest struct {
 	ctx        context.Context
-	ApiService *OauthTokenExchangeProcessorApiService
+	ApiService *OauthTokenExchangeProcessorAPIService
 }
 
 func (r ApiGetOauthTokenExchangeProcessorPolicySettingsRequest) Execute() (*TokenExchangeProcessorSettings, *http.Response, error) {
@@ -494,7 +494,7 @@ GetOauthTokenExchangeProcessorPolicySettings Get general OAuth 2.0 Token Exchang
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetOauthTokenExchangeProcessorPolicySettingsRequest
 */
-func (a *OauthTokenExchangeProcessorApiService) GetOauthTokenExchangeProcessorPolicySettings(ctx context.Context) ApiGetOauthTokenExchangeProcessorPolicySettingsRequest {
+func (a *OauthTokenExchangeProcessorAPIService) GetOauthTokenExchangeProcessorPolicySettings(ctx context.Context) ApiGetOauthTokenExchangeProcessorPolicySettingsRequest {
 	return ApiGetOauthTokenExchangeProcessorPolicySettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -504,7 +504,7 @@ func (a *OauthTokenExchangeProcessorApiService) GetOauthTokenExchangeProcessorPo
 // Execute executes the request
 //
 //	@return TokenExchangeProcessorSettings
-func (a *OauthTokenExchangeProcessorApiService) GetOauthTokenExchangeProcessorPolicySettingsExecute(r ApiGetOauthTokenExchangeProcessorPolicySettingsRequest) (*TokenExchangeProcessorSettings, *http.Response, error) {
+func (a *OauthTokenExchangeProcessorAPIService) GetOauthTokenExchangeProcessorPolicySettingsExecute(r ApiGetOauthTokenExchangeProcessorPolicySettingsRequest) (*TokenExchangeProcessorSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -512,7 +512,7 @@ func (a *OauthTokenExchangeProcessorApiService) GetOauthTokenExchangeProcessorPo
 		localVarReturnValue *TokenExchangeProcessorSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenExchangeProcessorApiService.GetOauthTokenExchangeProcessorPolicySettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenExchangeProcessorAPIService.GetOauthTokenExchangeProcessorPolicySettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -579,7 +579,7 @@ func (a *OauthTokenExchangeProcessorApiService) GetOauthTokenExchangeProcessorPo
 
 type ApiUpdateOauthTokenExchangeProcessorPolicyRequest struct {
 	ctx                      context.Context
-	ApiService               *OauthTokenExchangeProcessorApiService
+	ApiService               *OauthTokenExchangeProcessorAPIService
 	id                       string
 	body                     *TokenExchangeProcessorPolicy
 	bypassExternalValidation *bool
@@ -610,7 +610,7 @@ Update an OAuth 2.0 Token Exchange Processor policy with the matching ID. If the
 	@param id ID of the OAuth 2.0 Token Exchange Processor policy to update.
 	@return ApiUpdateOauthTokenExchangeProcessorPolicyRequest
 */
-func (a *OauthTokenExchangeProcessorApiService) UpdateOauthTokenExchangeProcessorPolicy(ctx context.Context, id string) ApiUpdateOauthTokenExchangeProcessorPolicyRequest {
+func (a *OauthTokenExchangeProcessorAPIService) UpdateOauthTokenExchangeProcessorPolicy(ctx context.Context, id string) ApiUpdateOauthTokenExchangeProcessorPolicyRequest {
 	return ApiUpdateOauthTokenExchangeProcessorPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -621,7 +621,7 @@ func (a *OauthTokenExchangeProcessorApiService) UpdateOauthTokenExchangeProcesso
 // Execute executes the request
 //
 //	@return TokenExchangeProcessorPolicy
-func (a *OauthTokenExchangeProcessorApiService) UpdateOauthTokenExchangeProcessorPolicyExecute(r ApiUpdateOauthTokenExchangeProcessorPolicyRequest) (*TokenExchangeProcessorPolicy, *http.Response, error) {
+func (a *OauthTokenExchangeProcessorAPIService) UpdateOauthTokenExchangeProcessorPolicyExecute(r ApiUpdateOauthTokenExchangeProcessorPolicyRequest) (*TokenExchangeProcessorPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -629,7 +629,7 @@ func (a *OauthTokenExchangeProcessorApiService) UpdateOauthTokenExchangeProcesso
 		localVarReturnValue *TokenExchangeProcessorPolicy
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenExchangeProcessorApiService.UpdateOauthTokenExchangeProcessorPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenExchangeProcessorAPIService.UpdateOauthTokenExchangeProcessorPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -726,7 +726,7 @@ func (a *OauthTokenExchangeProcessorApiService) UpdateOauthTokenExchangeProcesso
 
 type ApiUpdateOauthTokenExchangeProcessorPolicySettingsRequest struct {
 	ctx                      context.Context
-	ApiService               *OauthTokenExchangeProcessorApiService
+	ApiService               *OauthTokenExchangeProcessorAPIService
 	body                     *TokenExchangeProcessorSettings
 	bypassExternalValidation *bool
 }
@@ -753,7 +753,7 @@ UpdateOauthTokenExchangeProcessorPolicySettings Update general OAuth 2.0 Token E
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateOauthTokenExchangeProcessorPolicySettingsRequest
 */
-func (a *OauthTokenExchangeProcessorApiService) UpdateOauthTokenExchangeProcessorPolicySettings(ctx context.Context) ApiUpdateOauthTokenExchangeProcessorPolicySettingsRequest {
+func (a *OauthTokenExchangeProcessorAPIService) UpdateOauthTokenExchangeProcessorPolicySettings(ctx context.Context) ApiUpdateOauthTokenExchangeProcessorPolicySettingsRequest {
 	return ApiUpdateOauthTokenExchangeProcessorPolicySettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -763,7 +763,7 @@ func (a *OauthTokenExchangeProcessorApiService) UpdateOauthTokenExchangeProcesso
 // Execute executes the request
 //
 //	@return TokenExchangeProcessorSettings
-func (a *OauthTokenExchangeProcessorApiService) UpdateOauthTokenExchangeProcessorPolicySettingsExecute(r ApiUpdateOauthTokenExchangeProcessorPolicySettingsRequest) (*TokenExchangeProcessorSettings, *http.Response, error) {
+func (a *OauthTokenExchangeProcessorAPIService) UpdateOauthTokenExchangeProcessorPolicySettingsExecute(r ApiUpdateOauthTokenExchangeProcessorPolicySettingsRequest) (*TokenExchangeProcessorSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -771,7 +771,7 @@ func (a *OauthTokenExchangeProcessorApiService) UpdateOauthTokenExchangeProcesso
 		localVarReturnValue *TokenExchangeProcessorSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenExchangeProcessorApiService.UpdateOauthTokenExchangeProcessorPolicySettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenExchangeProcessorAPIService.UpdateOauthTokenExchangeProcessorPolicySettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

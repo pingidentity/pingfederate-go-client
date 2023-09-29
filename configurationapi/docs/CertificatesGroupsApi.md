@@ -1,13 +1,13 @@
-# \CertificatesGroupsApi
+# \CertificatesGroupsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteCertificateFromGroup**](CertificatesGroupsApi.md#DeleteCertificateFromGroup) | **Delete** /certificates/groups/{groupName}/{id} | Delete a certificate from a group.
-[**GetCertificateFromGroup**](CertificatesGroupsApi.md#GetCertificateFromGroup) | **Get** /certificates/groups/{groupName}/{id} | Retrieve details of a certificate.
-[**GetCertificatesForGroup**](CertificatesGroupsApi.md#GetCertificatesForGroup) | **Get** /certificates/groups/{groupName} | Get list of all certificates for a group.
-[**ImportFeatureCert**](CertificatesGroupsApi.md#ImportFeatureCert) | **Post** /certificates/groups/{groupName}/import | Import a new certificate to a group.
+[**DeleteCertificateFromGroup**](CertificatesGroupsAPI.md#DeleteCertificateFromGroup) | **Delete** /certificates/groups/{groupName}/{id} | Delete a certificate from a group.
+[**GetCertificateFromGroup**](CertificatesGroupsAPI.md#GetCertificateFromGroup) | **Get** /certificates/groups/{groupName}/{id} | Retrieve details of a certificate.
+[**GetCertificatesForGroup**](CertificatesGroupsAPI.md#GetCertificatesForGroup) | **Get** /certificates/groups/{groupName} | Get list of all certificates for a group.
+[**ImportFeatureCert**](CertificatesGroupsAPI.md#ImportFeatureCert) | **Post** /certificates/groups/{groupName}/import | Import a new certificate to a group.
 
 
 
@@ -37,9 +37,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CertificatesGroupsApi.DeleteCertificateFromGroup(context.Background(), groupName, id).Execute()
+    r, err := apiClient.CertificatesGroupsAPI.DeleteCertificateFromGroup(context.Background(), groupName, id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesGroupsApi.DeleteCertificateFromGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesGroupsAPI.DeleteCertificateFromGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -106,13 +106,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificatesGroupsApi.GetCertificateFromGroup(context.Background(), groupName, id).Execute()
+    resp, r, err := apiClient.CertificatesGroupsAPI.GetCertificateFromGroup(context.Background(), groupName, id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesGroupsApi.GetCertificateFromGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesGroupsAPI.GetCertificateFromGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetCertificateFromGroup`: CertView
-    fmt.Fprintf(os.Stdout, "Response from `CertificatesGroupsApi.GetCertificateFromGroup`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CertificatesGroupsAPI.GetCertificateFromGroup`: %v\n", resp)
 }
 ```
 
@@ -176,13 +176,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificatesGroupsApi.GetCertificatesForGroup(context.Background(), groupName).Execute()
+    resp, r, err := apiClient.CertificatesGroupsAPI.GetCertificatesForGroup(context.Background(), groupName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesGroupsApi.GetCertificatesForGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesGroupsAPI.GetCertificatesForGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetCertificatesForGroup`: CertViews
-    fmt.Fprintf(os.Stdout, "Response from `CertificatesGroupsApi.GetCertificatesForGroup`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CertificatesGroupsAPI.GetCertificatesForGroup`: %v\n", resp)
 }
 ```
 
@@ -245,13 +245,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificatesGroupsApi.ImportFeatureCert(context.Background(), groupName).Body(body).Execute()
+    resp, r, err := apiClient.CertificatesGroupsAPI.ImportFeatureCert(context.Background(), groupName).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesGroupsApi.ImportFeatureCert``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesGroupsAPI.ImportFeatureCert``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ImportFeatureCert`: CertView
-    fmt.Fprintf(os.Stdout, "Response from `CertificatesGroupsApi.ImportFeatureCert`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CertificatesGroupsAPI.ImportFeatureCert`: %v\n", resp)
 }
 ```
 

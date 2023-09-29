@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// OauthAccessTokenManagersApiService OauthAccessTokenManagersApi service
-type OauthAccessTokenManagersApiService service
+// OauthAccessTokenManagersAPIService OauthAccessTokenManagersAPI service
+type OauthAccessTokenManagersAPIService service
 
 type ApiCreateTokenManagerRequest struct {
 	ctx        context.Context
-	ApiService *OauthAccessTokenManagersApiService
+	ApiService *OauthAccessTokenManagersAPIService
 	body       *AccessTokenManager
 }
 
@@ -44,7 +44,7 @@ CreateTokenManager Create a token management plugin instance.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateTokenManagerRequest
 */
-func (a *OauthAccessTokenManagersApiService) CreateTokenManager(ctx context.Context) ApiCreateTokenManagerRequest {
+func (a *OauthAccessTokenManagersAPIService) CreateTokenManager(ctx context.Context) ApiCreateTokenManagerRequest {
 	return ApiCreateTokenManagerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *OauthAccessTokenManagersApiService) CreateTokenManager(ctx context.Cont
 // Execute executes the request
 //
 //	@return AccessTokenManager
-func (a *OauthAccessTokenManagersApiService) CreateTokenManagerExecute(r ApiCreateTokenManagerRequest) (*AccessTokenManager, *http.Response, error) {
+func (a *OauthAccessTokenManagersAPIService) CreateTokenManagerExecute(r ApiCreateTokenManagerRequest) (*AccessTokenManager, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *OauthAccessTokenManagersApiService) CreateTokenManagerExecute(r ApiCrea
 		localVarReturnValue *AccessTokenManager
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenManagersApiService.CreateTokenManager")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenManagersAPIService.CreateTokenManager")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,7 +144,7 @@ func (a *OauthAccessTokenManagersApiService) CreateTokenManagerExecute(r ApiCrea
 
 type ApiDeleteTokenManagerRequest struct {
 	ctx        context.Context
-	ApiService *OauthAccessTokenManagersApiService
+	ApiService *OauthAccessTokenManagersAPIService
 	id         string
 }
 
@@ -159,7 +159,7 @@ DeleteTokenManager Delete a token management plugin instance.
 	@param id ID of token management plugin instance.
 	@return ApiDeleteTokenManagerRequest
 */
-func (a *OauthAccessTokenManagersApiService) DeleteTokenManager(ctx context.Context, id string) ApiDeleteTokenManagerRequest {
+func (a *OauthAccessTokenManagersAPIService) DeleteTokenManager(ctx context.Context, id string) ApiDeleteTokenManagerRequest {
 	return ApiDeleteTokenManagerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -168,14 +168,14 @@ func (a *OauthAccessTokenManagersApiService) DeleteTokenManager(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *OauthAccessTokenManagersApiService) DeleteTokenManagerExecute(r ApiDeleteTokenManagerRequest) (*http.Response, error) {
+func (a *OauthAccessTokenManagersAPIService) DeleteTokenManagerExecute(r ApiDeleteTokenManagerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenManagersApiService.DeleteTokenManager")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenManagersAPIService.DeleteTokenManager")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -244,7 +244,7 @@ func (a *OauthAccessTokenManagersApiService) DeleteTokenManagerExecute(r ApiDele
 
 type ApiGetOauthAccessTokenManagersSettingsRequest struct {
 	ctx        context.Context
-	ApiService *OauthAccessTokenManagersApiService
+	ApiService *OauthAccessTokenManagersAPIService
 }
 
 func (r ApiGetOauthAccessTokenManagersSettingsRequest) Execute() (*AccessTokenManagementSettings, *http.Response, error) {
@@ -257,7 +257,7 @@ GetOauthAccessTokenManagersSettings Get general access token management settings
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetOauthAccessTokenManagersSettingsRequest
 */
-func (a *OauthAccessTokenManagersApiService) GetOauthAccessTokenManagersSettings(ctx context.Context) ApiGetOauthAccessTokenManagersSettingsRequest {
+func (a *OauthAccessTokenManagersAPIService) GetOauthAccessTokenManagersSettings(ctx context.Context) ApiGetOauthAccessTokenManagersSettingsRequest {
 	return ApiGetOauthAccessTokenManagersSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -267,7 +267,7 @@ func (a *OauthAccessTokenManagersApiService) GetOauthAccessTokenManagersSettings
 // Execute executes the request
 //
 //	@return AccessTokenManagementSettings
-func (a *OauthAccessTokenManagersApiService) GetOauthAccessTokenManagersSettingsExecute(r ApiGetOauthAccessTokenManagersSettingsRequest) (*AccessTokenManagementSettings, *http.Response, error) {
+func (a *OauthAccessTokenManagersAPIService) GetOauthAccessTokenManagersSettingsExecute(r ApiGetOauthAccessTokenManagersSettingsRequest) (*AccessTokenManagementSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -275,7 +275,7 @@ func (a *OauthAccessTokenManagersApiService) GetOauthAccessTokenManagersSettings
 		localVarReturnValue *AccessTokenManagementSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenManagersApiService.GetOauthAccessTokenManagersSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenManagersAPIService.GetOauthAccessTokenManagersSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -342,7 +342,7 @@ func (a *OauthAccessTokenManagersApiService) GetOauthAccessTokenManagersSettings
 
 type ApiGetTokenManagerRequest struct {
 	ctx        context.Context
-	ApiService *OauthAccessTokenManagersApiService
+	ApiService *OauthAccessTokenManagersAPIService
 	id         string
 }
 
@@ -357,7 +357,7 @@ GetTokenManager Get a specific token management plugin instance.
 	@param id ID of token management plugin instance.
 	@return ApiGetTokenManagerRequest
 */
-func (a *OauthAccessTokenManagersApiService) GetTokenManager(ctx context.Context, id string) ApiGetTokenManagerRequest {
+func (a *OauthAccessTokenManagersAPIService) GetTokenManager(ctx context.Context, id string) ApiGetTokenManagerRequest {
 	return ApiGetTokenManagerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -368,7 +368,7 @@ func (a *OauthAccessTokenManagersApiService) GetTokenManager(ctx context.Context
 // Execute executes the request
 //
 //	@return AccessTokenManager
-func (a *OauthAccessTokenManagersApiService) GetTokenManagerExecute(r ApiGetTokenManagerRequest) (*AccessTokenManager, *http.Response, error) {
+func (a *OauthAccessTokenManagersAPIService) GetTokenManagerExecute(r ApiGetTokenManagerRequest) (*AccessTokenManager, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -376,7 +376,7 @@ func (a *OauthAccessTokenManagersApiService) GetTokenManagerExecute(r ApiGetToke
 		localVarReturnValue *AccessTokenManager
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenManagersApiService.GetTokenManager")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenManagersAPIService.GetTokenManager")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -454,7 +454,7 @@ func (a *OauthAccessTokenManagersApiService) GetTokenManagerExecute(r ApiGetToke
 
 type ApiGetTokenManagerDescriptorRequest struct {
 	ctx        context.Context
-	ApiService *OauthAccessTokenManagersApiService
+	ApiService *OauthAccessTokenManagersAPIService
 	id         string
 }
 
@@ -469,7 +469,7 @@ GetTokenManagerDescriptor Get the description of a token management plugin descr
 	@param id ID of token management plugin descriptor.
 	@return ApiGetTokenManagerDescriptorRequest
 */
-func (a *OauthAccessTokenManagersApiService) GetTokenManagerDescriptor(ctx context.Context, id string) ApiGetTokenManagerDescriptorRequest {
+func (a *OauthAccessTokenManagersAPIService) GetTokenManagerDescriptor(ctx context.Context, id string) ApiGetTokenManagerDescriptorRequest {
 	return ApiGetTokenManagerDescriptorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -480,7 +480,7 @@ func (a *OauthAccessTokenManagersApiService) GetTokenManagerDescriptor(ctx conte
 // Execute executes the request
 //
 //	@return AccessTokenManagerDescriptor
-func (a *OauthAccessTokenManagersApiService) GetTokenManagerDescriptorExecute(r ApiGetTokenManagerDescriptorRequest) (*AccessTokenManagerDescriptor, *http.Response, error) {
+func (a *OauthAccessTokenManagersAPIService) GetTokenManagerDescriptorExecute(r ApiGetTokenManagerDescriptorRequest) (*AccessTokenManagerDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -488,7 +488,7 @@ func (a *OauthAccessTokenManagersApiService) GetTokenManagerDescriptorExecute(r 
 		localVarReturnValue *AccessTokenManagerDescriptor
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenManagersApiService.GetTokenManagerDescriptor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenManagersAPIService.GetTokenManagerDescriptor")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -566,7 +566,7 @@ func (a *OauthAccessTokenManagersApiService) GetTokenManagerDescriptorExecute(r 
 
 type ApiGetTokenManagerDescriptorsRequest struct {
 	ctx        context.Context
-	ApiService *OauthAccessTokenManagersApiService
+	ApiService *OauthAccessTokenManagersAPIService
 }
 
 func (r ApiGetTokenManagerDescriptorsRequest) Execute() (*AccessTokenManagerDescriptors, *http.Response, error) {
@@ -579,7 +579,7 @@ GetTokenManagerDescriptors Get the list of available token management plugin des
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetTokenManagerDescriptorsRequest
 */
-func (a *OauthAccessTokenManagersApiService) GetTokenManagerDescriptors(ctx context.Context) ApiGetTokenManagerDescriptorsRequest {
+func (a *OauthAccessTokenManagersAPIService) GetTokenManagerDescriptors(ctx context.Context) ApiGetTokenManagerDescriptorsRequest {
 	return ApiGetTokenManagerDescriptorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -589,7 +589,7 @@ func (a *OauthAccessTokenManagersApiService) GetTokenManagerDescriptors(ctx cont
 // Execute executes the request
 //
 //	@return AccessTokenManagerDescriptors
-func (a *OauthAccessTokenManagersApiService) GetTokenManagerDescriptorsExecute(r ApiGetTokenManagerDescriptorsRequest) (*AccessTokenManagerDescriptors, *http.Response, error) {
+func (a *OauthAccessTokenManagersAPIService) GetTokenManagerDescriptorsExecute(r ApiGetTokenManagerDescriptorsRequest) (*AccessTokenManagerDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -597,7 +597,7 @@ func (a *OauthAccessTokenManagersApiService) GetTokenManagerDescriptorsExecute(r
 		localVarReturnValue *AccessTokenManagerDescriptors
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenManagersApiService.GetTokenManagerDescriptors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenManagersAPIService.GetTokenManagerDescriptors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -664,7 +664,7 @@ func (a *OauthAccessTokenManagersApiService) GetTokenManagerDescriptorsExecute(r
 
 type ApiGetTokenManagersRequest struct {
 	ctx        context.Context
-	ApiService *OauthAccessTokenManagersApiService
+	ApiService *OauthAccessTokenManagersAPIService
 }
 
 func (r ApiGetTokenManagersRequest) Execute() (*AccessTokenManagers, *http.Response, error) {
@@ -677,7 +677,7 @@ GetTokenManagers Get a list of all token management plugin instances.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetTokenManagersRequest
 */
-func (a *OauthAccessTokenManagersApiService) GetTokenManagers(ctx context.Context) ApiGetTokenManagersRequest {
+func (a *OauthAccessTokenManagersAPIService) GetTokenManagers(ctx context.Context) ApiGetTokenManagersRequest {
 	return ApiGetTokenManagersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -687,7 +687,7 @@ func (a *OauthAccessTokenManagersApiService) GetTokenManagers(ctx context.Contex
 // Execute executes the request
 //
 //	@return AccessTokenManagers
-func (a *OauthAccessTokenManagersApiService) GetTokenManagersExecute(r ApiGetTokenManagersRequest) (*AccessTokenManagers, *http.Response, error) {
+func (a *OauthAccessTokenManagersAPIService) GetTokenManagersExecute(r ApiGetTokenManagersRequest) (*AccessTokenManagers, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -695,7 +695,7 @@ func (a *OauthAccessTokenManagersApiService) GetTokenManagersExecute(r ApiGetTok
 		localVarReturnValue *AccessTokenManagers
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenManagersApiService.GetTokenManagers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenManagersAPIService.GetTokenManagers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -762,7 +762,7 @@ func (a *OauthAccessTokenManagersApiService) GetTokenManagersExecute(r ApiGetTok
 
 type ApiUpdateOauthAccessTokenManagersSettingsRequest struct {
 	ctx        context.Context
-	ApiService *OauthAccessTokenManagersApiService
+	ApiService *OauthAccessTokenManagersAPIService
 	body       *AccessTokenManagementSettings
 }
 
@@ -782,7 +782,7 @@ UpdateOauthAccessTokenManagersSettings Update general access token management se
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateOauthAccessTokenManagersSettingsRequest
 */
-func (a *OauthAccessTokenManagersApiService) UpdateOauthAccessTokenManagersSettings(ctx context.Context) ApiUpdateOauthAccessTokenManagersSettingsRequest {
+func (a *OauthAccessTokenManagersAPIService) UpdateOauthAccessTokenManagersSettings(ctx context.Context) ApiUpdateOauthAccessTokenManagersSettingsRequest {
 	return ApiUpdateOauthAccessTokenManagersSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -792,7 +792,7 @@ func (a *OauthAccessTokenManagersApiService) UpdateOauthAccessTokenManagersSetti
 // Execute executes the request
 //
 //	@return AccessTokenManagementSettings
-func (a *OauthAccessTokenManagersApiService) UpdateOauthAccessTokenManagersSettingsExecute(r ApiUpdateOauthAccessTokenManagersSettingsRequest) (*AccessTokenManagementSettings, *http.Response, error) {
+func (a *OauthAccessTokenManagersAPIService) UpdateOauthAccessTokenManagersSettingsExecute(r ApiUpdateOauthAccessTokenManagersSettingsRequest) (*AccessTokenManagementSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -800,7 +800,7 @@ func (a *OauthAccessTokenManagersApiService) UpdateOauthAccessTokenManagersSetti
 		localVarReturnValue *AccessTokenManagementSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenManagersApiService.UpdateOauthAccessTokenManagersSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenManagersAPIService.UpdateOauthAccessTokenManagersSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -882,7 +882,7 @@ func (a *OauthAccessTokenManagersApiService) UpdateOauthAccessTokenManagersSetti
 
 type ApiUpdateTokenManagerRequest struct {
 	ctx        context.Context
-	ApiService *OauthAccessTokenManagersApiService
+	ApiService *OauthAccessTokenManagersAPIService
 	id         string
 	body       *AccessTokenManager
 }
@@ -904,7 +904,7 @@ UpdateTokenManager Update a token management plugin instance.
 	@param id ID of token management plugin instance.
 	@return ApiUpdateTokenManagerRequest
 */
-func (a *OauthAccessTokenManagersApiService) UpdateTokenManager(ctx context.Context, id string) ApiUpdateTokenManagerRequest {
+func (a *OauthAccessTokenManagersAPIService) UpdateTokenManager(ctx context.Context, id string) ApiUpdateTokenManagerRequest {
 	return ApiUpdateTokenManagerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -915,7 +915,7 @@ func (a *OauthAccessTokenManagersApiService) UpdateTokenManager(ctx context.Cont
 // Execute executes the request
 //
 //	@return AccessTokenManager
-func (a *OauthAccessTokenManagersApiService) UpdateTokenManagerExecute(r ApiUpdateTokenManagerRequest) (*AccessTokenManager, *http.Response, error) {
+func (a *OauthAccessTokenManagersAPIService) UpdateTokenManagerExecute(r ApiUpdateTokenManagerRequest) (*AccessTokenManager, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -923,7 +923,7 @@ func (a *OauthAccessTokenManagersApiService) UpdateTokenManagerExecute(r ApiUpda
 		localVarReturnValue *AccessTokenManager
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenManagersApiService.UpdateTokenManager")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenManagersAPIService.UpdateTokenManager")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

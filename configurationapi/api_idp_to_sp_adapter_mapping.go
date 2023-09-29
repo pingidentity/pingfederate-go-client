@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// IdpToSpAdapterMappingApiService IdpToSpAdapterMappingApi service
-type IdpToSpAdapterMappingApiService service
+// IdpToSpAdapterMappingAPIService IdpToSpAdapterMappingAPI service
+type IdpToSpAdapterMappingAPIService service
 
 type ApiCreateIdpToSpAdapterMappingRequest struct {
 	ctx                       context.Context
-	ApiService                *IdpToSpAdapterMappingApiService
+	ApiService                *IdpToSpAdapterMappingAPIService
 	body                      *IdpToSpAdapterMapping
 	xBypassExternalValidation *bool
 }
@@ -51,7 +51,7 @@ CreateIdpToSpAdapterMapping Create a new IdP-to-SP Adapter mapping.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateIdpToSpAdapterMappingRequest
 */
-func (a *IdpToSpAdapterMappingApiService) CreateIdpToSpAdapterMapping(ctx context.Context) ApiCreateIdpToSpAdapterMappingRequest {
+func (a *IdpToSpAdapterMappingAPIService) CreateIdpToSpAdapterMapping(ctx context.Context) ApiCreateIdpToSpAdapterMappingRequest {
 	return ApiCreateIdpToSpAdapterMappingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -61,7 +61,7 @@ func (a *IdpToSpAdapterMappingApiService) CreateIdpToSpAdapterMapping(ctx contex
 // Execute executes the request
 //
 //	@return IdpToSpAdapterMapping
-func (a *IdpToSpAdapterMappingApiService) CreateIdpToSpAdapterMappingExecute(r ApiCreateIdpToSpAdapterMappingRequest) (*IdpToSpAdapterMapping, *http.Response, error) {
+func (a *IdpToSpAdapterMappingAPIService) CreateIdpToSpAdapterMappingExecute(r ApiCreateIdpToSpAdapterMappingRequest) (*IdpToSpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -69,7 +69,7 @@ func (a *IdpToSpAdapterMappingApiService) CreateIdpToSpAdapterMappingExecute(r A
 		localVarReturnValue *IdpToSpAdapterMapping
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpToSpAdapterMappingApiService.CreateIdpToSpAdapterMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpToSpAdapterMappingAPIService.CreateIdpToSpAdapterMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -154,7 +154,7 @@ func (a *IdpToSpAdapterMappingApiService) CreateIdpToSpAdapterMappingExecute(r A
 
 type ApiDeleteIdpToSpAdapterMappingsByIdRequest struct {
 	ctx        context.Context
-	ApiService *IdpToSpAdapterMappingApiService
+	ApiService *IdpToSpAdapterMappingAPIService
 	id         string
 }
 
@@ -169,7 +169,7 @@ DeleteIdpToSpAdapterMappingsById Delete an Adapter to Adapter Mapping.
 	@param id ID of the IdP-to-SP Adapter Mapping to delete.
 	@return ApiDeleteIdpToSpAdapterMappingsByIdRequest
 */
-func (a *IdpToSpAdapterMappingApiService) DeleteIdpToSpAdapterMappingsById(ctx context.Context, id string) ApiDeleteIdpToSpAdapterMappingsByIdRequest {
+func (a *IdpToSpAdapterMappingAPIService) DeleteIdpToSpAdapterMappingsById(ctx context.Context, id string) ApiDeleteIdpToSpAdapterMappingsByIdRequest {
 	return ApiDeleteIdpToSpAdapterMappingsByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -178,14 +178,14 @@ func (a *IdpToSpAdapterMappingApiService) DeleteIdpToSpAdapterMappingsById(ctx c
 }
 
 // Execute executes the request
-func (a *IdpToSpAdapterMappingApiService) DeleteIdpToSpAdapterMappingsByIdExecute(r ApiDeleteIdpToSpAdapterMappingsByIdRequest) (*http.Response, error) {
+func (a *IdpToSpAdapterMappingAPIService) DeleteIdpToSpAdapterMappingsByIdExecute(r ApiDeleteIdpToSpAdapterMappingsByIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpToSpAdapterMappingApiService.DeleteIdpToSpAdapterMappingsById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpToSpAdapterMappingAPIService.DeleteIdpToSpAdapterMappingsById")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -254,7 +254,7 @@ func (a *IdpToSpAdapterMappingApiService) DeleteIdpToSpAdapterMappingsByIdExecut
 
 type ApiGetIdpToSpAdapterMappingsRequest struct {
 	ctx        context.Context
-	ApiService *IdpToSpAdapterMappingApiService
+	ApiService *IdpToSpAdapterMappingAPIService
 }
 
 func (r ApiGetIdpToSpAdapterMappingsRequest) Execute() (*IdpToSpAdapterMappings, *http.Response, error) {
@@ -267,7 +267,7 @@ GetIdpToSpAdapterMappings Get list of IdP-to-SP Adapter Mappings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetIdpToSpAdapterMappingsRequest
 */
-func (a *IdpToSpAdapterMappingApiService) GetIdpToSpAdapterMappings(ctx context.Context) ApiGetIdpToSpAdapterMappingsRequest {
+func (a *IdpToSpAdapterMappingAPIService) GetIdpToSpAdapterMappings(ctx context.Context) ApiGetIdpToSpAdapterMappingsRequest {
 	return ApiGetIdpToSpAdapterMappingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -277,7 +277,7 @@ func (a *IdpToSpAdapterMappingApiService) GetIdpToSpAdapterMappings(ctx context.
 // Execute executes the request
 //
 //	@return IdpToSpAdapterMappings
-func (a *IdpToSpAdapterMappingApiService) GetIdpToSpAdapterMappingsExecute(r ApiGetIdpToSpAdapterMappingsRequest) (*IdpToSpAdapterMappings, *http.Response, error) {
+func (a *IdpToSpAdapterMappingAPIService) GetIdpToSpAdapterMappingsExecute(r ApiGetIdpToSpAdapterMappingsRequest) (*IdpToSpAdapterMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -285,7 +285,7 @@ func (a *IdpToSpAdapterMappingApiService) GetIdpToSpAdapterMappingsExecute(r Api
 		localVarReturnValue *IdpToSpAdapterMappings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpToSpAdapterMappingApiService.GetIdpToSpAdapterMappings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpToSpAdapterMappingAPIService.GetIdpToSpAdapterMappings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -352,7 +352,7 @@ func (a *IdpToSpAdapterMappingApiService) GetIdpToSpAdapterMappingsExecute(r Api
 
 type ApiGetIdpToSpAdapterMappingsByIdRequest struct {
 	ctx        context.Context
-	ApiService *IdpToSpAdapterMappingApiService
+	ApiService *IdpToSpAdapterMappingAPIService
 	id         string
 }
 
@@ -367,7 +367,7 @@ GetIdpToSpAdapterMappingsById Get an IdP-to-SP Adapter Mapping.
 	@param id ID of IdP-to-SP Adapter Mapping to fetch.
 	@return ApiGetIdpToSpAdapterMappingsByIdRequest
 */
-func (a *IdpToSpAdapterMappingApiService) GetIdpToSpAdapterMappingsById(ctx context.Context, id string) ApiGetIdpToSpAdapterMappingsByIdRequest {
+func (a *IdpToSpAdapterMappingAPIService) GetIdpToSpAdapterMappingsById(ctx context.Context, id string) ApiGetIdpToSpAdapterMappingsByIdRequest {
 	return ApiGetIdpToSpAdapterMappingsByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -378,7 +378,7 @@ func (a *IdpToSpAdapterMappingApiService) GetIdpToSpAdapterMappingsById(ctx cont
 // Execute executes the request
 //
 //	@return IdpToSpAdapterMapping
-func (a *IdpToSpAdapterMappingApiService) GetIdpToSpAdapterMappingsByIdExecute(r ApiGetIdpToSpAdapterMappingsByIdRequest) (*IdpToSpAdapterMapping, *http.Response, error) {
+func (a *IdpToSpAdapterMappingAPIService) GetIdpToSpAdapterMappingsByIdExecute(r ApiGetIdpToSpAdapterMappingsByIdRequest) (*IdpToSpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -386,7 +386,7 @@ func (a *IdpToSpAdapterMappingApiService) GetIdpToSpAdapterMappingsByIdExecute(r
 		localVarReturnValue *IdpToSpAdapterMapping
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpToSpAdapterMappingApiService.GetIdpToSpAdapterMappingsById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpToSpAdapterMappingAPIService.GetIdpToSpAdapterMappingsById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -464,7 +464,7 @@ func (a *IdpToSpAdapterMappingApiService) GetIdpToSpAdapterMappingsByIdExecute(r
 
 type ApiUpdateIdpToSpAdapterMappingRequest struct {
 	ctx                       context.Context
-	ApiService                *IdpToSpAdapterMappingApiService
+	ApiService                *IdpToSpAdapterMappingAPIService
 	id                        string
 	body                      *IdpToSpAdapterMapping
 	xBypassExternalValidation *bool
@@ -493,7 +493,7 @@ UpdateIdpToSpAdapterMapping Update the specified IdP-to-SP Adapter mapping.
 	@param id ID of source adapter in the IdP-to-SP Adapter Mapping to fetch.
 	@return ApiUpdateIdpToSpAdapterMappingRequest
 */
-func (a *IdpToSpAdapterMappingApiService) UpdateIdpToSpAdapterMapping(ctx context.Context, id string) ApiUpdateIdpToSpAdapterMappingRequest {
+func (a *IdpToSpAdapterMappingAPIService) UpdateIdpToSpAdapterMapping(ctx context.Context, id string) ApiUpdateIdpToSpAdapterMappingRequest {
 	return ApiUpdateIdpToSpAdapterMappingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -504,7 +504,7 @@ func (a *IdpToSpAdapterMappingApiService) UpdateIdpToSpAdapterMapping(ctx contex
 // Execute executes the request
 //
 //	@return IdpToSpAdapterMapping
-func (a *IdpToSpAdapterMappingApiService) UpdateIdpToSpAdapterMappingExecute(r ApiUpdateIdpToSpAdapterMappingRequest) (*IdpToSpAdapterMapping, *http.Response, error) {
+func (a *IdpToSpAdapterMappingAPIService) UpdateIdpToSpAdapterMappingExecute(r ApiUpdateIdpToSpAdapterMappingRequest) (*IdpToSpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -512,7 +512,7 @@ func (a *IdpToSpAdapterMappingApiService) UpdateIdpToSpAdapterMappingExecute(r A
 		localVarReturnValue *IdpToSpAdapterMapping
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpToSpAdapterMappingApiService.UpdateIdpToSpAdapterMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpToSpAdapterMappingAPIService.UpdateIdpToSpAdapterMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

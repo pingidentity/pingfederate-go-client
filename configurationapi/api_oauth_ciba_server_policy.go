@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// OauthCibaServerPolicyApiService OauthCibaServerPolicyApi service
-type OauthCibaServerPolicyApiService service
+// OauthCibaServerPolicyAPIService OauthCibaServerPolicyAPI service
+type OauthCibaServerPolicyAPIService service
 
 type ApiCreateCibaServerPolicyRequest struct {
 	ctx                       context.Context
-	ApiService                *OauthCibaServerPolicyApiService
+	ApiService                *OauthCibaServerPolicyAPIService
 	body                      *RequestPolicy
 	xBypassExternalValidation *bool
 }
@@ -53,7 +53,7 @@ Create a new request policy. If the request policy is not properly configured, a
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCibaServerPolicyRequest
 */
-func (a *OauthCibaServerPolicyApiService) CreateCibaServerPolicy(ctx context.Context) ApiCreateCibaServerPolicyRequest {
+func (a *OauthCibaServerPolicyAPIService) CreateCibaServerPolicy(ctx context.Context) ApiCreateCibaServerPolicyRequest {
 	return ApiCreateCibaServerPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -63,7 +63,7 @@ func (a *OauthCibaServerPolicyApiService) CreateCibaServerPolicy(ctx context.Con
 // Execute executes the request
 //
 //	@return RequestPolicy
-func (a *OauthCibaServerPolicyApiService) CreateCibaServerPolicyExecute(r ApiCreateCibaServerPolicyRequest) (*RequestPolicy, *http.Response, error) {
+func (a *OauthCibaServerPolicyAPIService) CreateCibaServerPolicyExecute(r ApiCreateCibaServerPolicyRequest) (*RequestPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -71,7 +71,7 @@ func (a *OauthCibaServerPolicyApiService) CreateCibaServerPolicyExecute(r ApiCre
 		localVarReturnValue *RequestPolicy
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthCibaServerPolicyApiService.CreateCibaServerPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthCibaServerPolicyAPIService.CreateCibaServerPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -156,7 +156,7 @@ func (a *OauthCibaServerPolicyApiService) CreateCibaServerPolicyExecute(r ApiCre
 
 type ApiDeleteCibaServerPolicyRequest struct {
 	ctx        context.Context
-	ApiService *OauthCibaServerPolicyApiService
+	ApiService *OauthCibaServerPolicyAPIService
 	id         string
 }
 
@@ -173,7 +173,7 @@ Delete a request policy with the specified ID. A 404 status code is returned for
 	@param id ID of request policy to delete.
 	@return ApiDeleteCibaServerPolicyRequest
 */
-func (a *OauthCibaServerPolicyApiService) DeleteCibaServerPolicy(ctx context.Context, id string) ApiDeleteCibaServerPolicyRequest {
+func (a *OauthCibaServerPolicyAPIService) DeleteCibaServerPolicy(ctx context.Context, id string) ApiDeleteCibaServerPolicyRequest {
 	return ApiDeleteCibaServerPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -182,14 +182,14 @@ func (a *OauthCibaServerPolicyApiService) DeleteCibaServerPolicy(ctx context.Con
 }
 
 // Execute executes the request
-func (a *OauthCibaServerPolicyApiService) DeleteCibaServerPolicyExecute(r ApiDeleteCibaServerPolicyRequest) (*http.Response, error) {
+func (a *OauthCibaServerPolicyAPIService) DeleteCibaServerPolicyExecute(r ApiDeleteCibaServerPolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthCibaServerPolicyApiService.DeleteCibaServerPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthCibaServerPolicyAPIService.DeleteCibaServerPolicy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -269,7 +269,7 @@ func (a *OauthCibaServerPolicyApiService) DeleteCibaServerPolicyExecute(r ApiDel
 
 type ApiGetCibaServerPoliciesRequest struct {
 	ctx        context.Context
-	ApiService *OauthCibaServerPolicyApiService
+	ApiService *OauthCibaServerPolicyAPIService
 }
 
 func (r ApiGetCibaServerPoliciesRequest) Execute() (*RequestPolicies, *http.Response, error) {
@@ -282,7 +282,7 @@ GetCibaServerPolicies Get list of request policies.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCibaServerPoliciesRequest
 */
-func (a *OauthCibaServerPolicyApiService) GetCibaServerPolicies(ctx context.Context) ApiGetCibaServerPoliciesRequest {
+func (a *OauthCibaServerPolicyAPIService) GetCibaServerPolicies(ctx context.Context) ApiGetCibaServerPoliciesRequest {
 	return ApiGetCibaServerPoliciesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -292,7 +292,7 @@ func (a *OauthCibaServerPolicyApiService) GetCibaServerPolicies(ctx context.Cont
 // Execute executes the request
 //
 //	@return RequestPolicies
-func (a *OauthCibaServerPolicyApiService) GetCibaServerPoliciesExecute(r ApiGetCibaServerPoliciesRequest) (*RequestPolicies, *http.Response, error) {
+func (a *OauthCibaServerPolicyAPIService) GetCibaServerPoliciesExecute(r ApiGetCibaServerPoliciesRequest) (*RequestPolicies, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -300,7 +300,7 @@ func (a *OauthCibaServerPolicyApiService) GetCibaServerPoliciesExecute(r ApiGetC
 		localVarReturnValue *RequestPolicies
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthCibaServerPolicyApiService.GetCibaServerPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthCibaServerPolicyAPIService.GetCibaServerPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -367,7 +367,7 @@ func (a *OauthCibaServerPolicyApiService) GetCibaServerPoliciesExecute(r ApiGetC
 
 type ApiGetCibaServerPolicyByIdRequest struct {
 	ctx        context.Context
-	ApiService *OauthCibaServerPolicyApiService
+	ApiService *OauthCibaServerPolicyAPIService
 	id         string
 }
 
@@ -384,7 +384,7 @@ Get a request policy with the specified ID. A 404 status code is returned for no
 	@param id ID of the request policy to fetch.
 	@return ApiGetCibaServerPolicyByIdRequest
 */
-func (a *OauthCibaServerPolicyApiService) GetCibaServerPolicyById(ctx context.Context, id string) ApiGetCibaServerPolicyByIdRequest {
+func (a *OauthCibaServerPolicyAPIService) GetCibaServerPolicyById(ctx context.Context, id string) ApiGetCibaServerPolicyByIdRequest {
 	return ApiGetCibaServerPolicyByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -395,7 +395,7 @@ func (a *OauthCibaServerPolicyApiService) GetCibaServerPolicyById(ctx context.Co
 // Execute executes the request
 //
 //	@return RequestPolicy
-func (a *OauthCibaServerPolicyApiService) GetCibaServerPolicyByIdExecute(r ApiGetCibaServerPolicyByIdRequest) (*RequestPolicy, *http.Response, error) {
+func (a *OauthCibaServerPolicyAPIService) GetCibaServerPolicyByIdExecute(r ApiGetCibaServerPolicyByIdRequest) (*RequestPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -403,7 +403,7 @@ func (a *OauthCibaServerPolicyApiService) GetCibaServerPolicyByIdExecute(r ApiGe
 		localVarReturnValue *RequestPolicy
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthCibaServerPolicyApiService.GetCibaServerPolicyById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthCibaServerPolicyAPIService.GetCibaServerPolicyById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -481,7 +481,7 @@ func (a *OauthCibaServerPolicyApiService) GetCibaServerPolicyByIdExecute(r ApiGe
 
 type ApiGetCibaServerPolicySettingsRequest struct {
 	ctx        context.Context
-	ApiService *OauthCibaServerPolicyApiService
+	ApiService *OauthCibaServerPolicyAPIService
 }
 
 func (r ApiGetCibaServerPolicySettingsRequest) Execute() (*CibaServerPolicySettings, *http.Response, error) {
@@ -494,7 +494,7 @@ GetCibaServerPolicySettings Get general ciba server request policy settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCibaServerPolicySettingsRequest
 */
-func (a *OauthCibaServerPolicyApiService) GetCibaServerPolicySettings(ctx context.Context) ApiGetCibaServerPolicySettingsRequest {
+func (a *OauthCibaServerPolicyAPIService) GetCibaServerPolicySettings(ctx context.Context) ApiGetCibaServerPolicySettingsRequest {
 	return ApiGetCibaServerPolicySettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -504,7 +504,7 @@ func (a *OauthCibaServerPolicyApiService) GetCibaServerPolicySettings(ctx contex
 // Execute executes the request
 //
 //	@return CibaServerPolicySettings
-func (a *OauthCibaServerPolicyApiService) GetCibaServerPolicySettingsExecute(r ApiGetCibaServerPolicySettingsRequest) (*CibaServerPolicySettings, *http.Response, error) {
+func (a *OauthCibaServerPolicyAPIService) GetCibaServerPolicySettingsExecute(r ApiGetCibaServerPolicySettingsRequest) (*CibaServerPolicySettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -512,7 +512,7 @@ func (a *OauthCibaServerPolicyApiService) GetCibaServerPolicySettingsExecute(r A
 		localVarReturnValue *CibaServerPolicySettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthCibaServerPolicyApiService.GetCibaServerPolicySettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthCibaServerPolicyAPIService.GetCibaServerPolicySettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -579,7 +579,7 @@ func (a *OauthCibaServerPolicyApiService) GetCibaServerPolicySettingsExecute(r A
 
 type ApiUpdateCibaServerPolicyRequest struct {
 	ctx                       context.Context
-	ApiService                *OauthCibaServerPolicyApiService
+	ApiService                *OauthCibaServerPolicyAPIService
 	id                        string
 	body                      *RequestPolicy
 	xBypassExternalValidation *bool
@@ -610,7 +610,7 @@ Update a request policy with the matching ID. If the policy is not properly conf
 	@param id ID of the request policy to update.
 	@return ApiUpdateCibaServerPolicyRequest
 */
-func (a *OauthCibaServerPolicyApiService) UpdateCibaServerPolicy(ctx context.Context, id string) ApiUpdateCibaServerPolicyRequest {
+func (a *OauthCibaServerPolicyAPIService) UpdateCibaServerPolicy(ctx context.Context, id string) ApiUpdateCibaServerPolicyRequest {
 	return ApiUpdateCibaServerPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -621,7 +621,7 @@ func (a *OauthCibaServerPolicyApiService) UpdateCibaServerPolicy(ctx context.Con
 // Execute executes the request
 //
 //	@return RequestPolicy
-func (a *OauthCibaServerPolicyApiService) UpdateCibaServerPolicyExecute(r ApiUpdateCibaServerPolicyRequest) (*RequestPolicy, *http.Response, error) {
+func (a *OauthCibaServerPolicyAPIService) UpdateCibaServerPolicyExecute(r ApiUpdateCibaServerPolicyRequest) (*RequestPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -629,7 +629,7 @@ func (a *OauthCibaServerPolicyApiService) UpdateCibaServerPolicyExecute(r ApiUpd
 		localVarReturnValue *RequestPolicy
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthCibaServerPolicyApiService.UpdateCibaServerPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthCibaServerPolicyAPIService.UpdateCibaServerPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -726,7 +726,7 @@ func (a *OauthCibaServerPolicyApiService) UpdateCibaServerPolicyExecute(r ApiUpd
 
 type ApiUpdateCibaServerPolicySettingsRequest struct {
 	ctx                       context.Context
-	ApiService                *OauthCibaServerPolicyApiService
+	ApiService                *OauthCibaServerPolicyAPIService
 	body                      *CibaServerPolicySettings
 	xBypassExternalValidation *bool
 }
@@ -753,7 +753,7 @@ UpdateCibaServerPolicySettings Update general ciba server request policy setting
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateCibaServerPolicySettingsRequest
 */
-func (a *OauthCibaServerPolicyApiService) UpdateCibaServerPolicySettings(ctx context.Context) ApiUpdateCibaServerPolicySettingsRequest {
+func (a *OauthCibaServerPolicyAPIService) UpdateCibaServerPolicySettings(ctx context.Context) ApiUpdateCibaServerPolicySettingsRequest {
 	return ApiUpdateCibaServerPolicySettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -763,7 +763,7 @@ func (a *OauthCibaServerPolicyApiService) UpdateCibaServerPolicySettings(ctx con
 // Execute executes the request
 //
 //	@return CibaServerPolicySettings
-func (a *OauthCibaServerPolicyApiService) UpdateCibaServerPolicySettingsExecute(r ApiUpdateCibaServerPolicySettingsRequest) (*CibaServerPolicySettings, *http.Response, error) {
+func (a *OauthCibaServerPolicyAPIService) UpdateCibaServerPolicySettingsExecute(r ApiUpdateCibaServerPolicySettingsRequest) (*CibaServerPolicySettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -771,7 +771,7 @@ func (a *OauthCibaServerPolicyApiService) UpdateCibaServerPolicySettingsExecute(
 		localVarReturnValue *CibaServerPolicySettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthCibaServerPolicyApiService.UpdateCibaServerPolicySettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthCibaServerPolicyAPIService.UpdateCibaServerPolicySettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

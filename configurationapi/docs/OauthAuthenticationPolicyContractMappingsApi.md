@@ -1,14 +1,14 @@
-# \OauthAuthenticationPolicyContractMappingsApi
+# \OauthAuthenticationPolicyContractMappingsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApcMapping**](OauthAuthenticationPolicyContractMappingsApi.md#CreateApcMapping) | **Post** /oauth/authenticationPolicyContractMappings | Create a new authentication policy contract to persistent grant mapping.
-[**DeleteApcMapping**](OauthAuthenticationPolicyContractMappingsApi.md#DeleteApcMapping) | **Delete** /oauth/authenticationPolicyContractMappings/{id} | Delete an authentication policy contract to persistent grant mapping.
-[**GetApcMapping**](OauthAuthenticationPolicyContractMappingsApi.md#GetApcMapping) | **Get** /oauth/authenticationPolicyContractMappings/{id} | Find the authentication policy contract to persistent grant mapping by ID.
-[**GetApcMappings**](OauthAuthenticationPolicyContractMappingsApi.md#GetApcMappings) | **Get** /oauth/authenticationPolicyContractMappings | Get the list of authentication policy contract to persistent grant mappings.
-[**UpdateApcMapping**](OauthAuthenticationPolicyContractMappingsApi.md#UpdateApcMapping) | **Put** /oauth/authenticationPolicyContractMappings/{id} | Update an authentication policy contract to persistent grant mapping.
+[**CreateApcMapping**](OauthAuthenticationPolicyContractMappingsAPI.md#CreateApcMapping) | **Post** /oauth/authenticationPolicyContractMappings | Create a new authentication policy contract to persistent grant mapping.
+[**DeleteApcMapping**](OauthAuthenticationPolicyContractMappingsAPI.md#DeleteApcMapping) | **Delete** /oauth/authenticationPolicyContractMappings/{id} | Delete an authentication policy contract to persistent grant mapping.
+[**GetApcMapping**](OauthAuthenticationPolicyContractMappingsAPI.md#GetApcMapping) | **Get** /oauth/authenticationPolicyContractMappings/{id} | Find the authentication policy contract to persistent grant mapping by ID.
+[**GetApcMappings**](OauthAuthenticationPolicyContractMappingsAPI.md#GetApcMappings) | **Get** /oauth/authenticationPolicyContractMappings | Get the list of authentication policy contract to persistent grant mappings.
+[**UpdateApcMapping**](OauthAuthenticationPolicyContractMappingsAPI.md#UpdateApcMapping) | **Put** /oauth/authenticationPolicyContractMappings/{id} | Update an authentication policy contract to persistent grant mapping.
 
 
 
@@ -38,13 +38,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthenticationPolicyContractMappingsApi.CreateApcMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthAuthenticationPolicyContractMappingsAPI.CreateApcMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthenticationPolicyContractMappingsApi.CreateApcMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthenticationPolicyContractMappingsAPI.CreateApcMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateApcMapping`: ApcToPersistentGrantMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthenticationPolicyContractMappingsApi.CreateApcMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthenticationPolicyContractMappingsAPI.CreateApcMapping`: %v\n", resp)
 }
 ```
 
@@ -103,9 +103,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthAuthenticationPolicyContractMappingsApi.DeleteApcMapping(context.Background(), id).Execute()
+    r, err := apiClient.OauthAuthenticationPolicyContractMappingsAPI.DeleteApcMapping(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthenticationPolicyContractMappingsApi.DeleteApcMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthenticationPolicyContractMappingsAPI.DeleteApcMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -169,13 +169,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthenticationPolicyContractMappingsApi.GetApcMapping(context.Background(), id).Execute()
+    resp, r, err := apiClient.OauthAuthenticationPolicyContractMappingsAPI.GetApcMapping(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthenticationPolicyContractMappingsApi.GetApcMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthenticationPolicyContractMappingsAPI.GetApcMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetApcMapping`: ApcToPersistentGrantMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthenticationPolicyContractMappingsApi.GetApcMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthenticationPolicyContractMappingsAPI.GetApcMapping`: %v\n", resp)
 }
 ```
 
@@ -236,13 +236,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthenticationPolicyContractMappingsApi.GetApcMappings(context.Background()).Execute()
+    resp, r, err := apiClient.OauthAuthenticationPolicyContractMappingsAPI.GetApcMappings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthenticationPolicyContractMappingsApi.GetApcMappings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthenticationPolicyContractMappingsAPI.GetApcMappings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetApcMappings`: ApcToPersistentGrantMappings
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthenticationPolicyContractMappingsApi.GetApcMappings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthenticationPolicyContractMappingsAPI.GetApcMappings`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthenticationPolicyContractMappingsApi.UpdateApcMapping(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthAuthenticationPolicyContractMappingsAPI.UpdateApcMapping(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthenticationPolicyContractMappingsApi.UpdateApcMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthenticationPolicyContractMappingsAPI.UpdateApcMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateApcMapping`: ApcToPersistentGrantMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthenticationPolicyContractMappingsApi.UpdateApcMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthenticationPolicyContractMappingsAPI.UpdateApcMapping`: %v\n", resp)
 }
 ```
 

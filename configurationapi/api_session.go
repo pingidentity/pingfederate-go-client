@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// SessionApiService SessionApi service
-type SessionApiService service
+// SessionAPIService SessionAPI service
+type SessionAPIService service
 
 type ApiCreateSourcePolicyRequest struct {
 	ctx        context.Context
-	ApiService *SessionApiService
+	ApiService *SessionAPIService
 	body       *AuthenticationSessionPolicy
 }
 
@@ -46,7 +46,7 @@ Create a new session policy for a specified authentication source. If the sessio
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSourcePolicyRequest
 */
-func (a *SessionApiService) CreateSourcePolicy(ctx context.Context) ApiCreateSourcePolicyRequest {
+func (a *SessionAPIService) CreateSourcePolicy(ctx context.Context) ApiCreateSourcePolicyRequest {
 	return ApiCreateSourcePolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -56,7 +56,7 @@ func (a *SessionApiService) CreateSourcePolicy(ctx context.Context) ApiCreateSou
 // Execute executes the request
 //
 //	@return AuthenticationSessionPolicy
-func (a *SessionApiService) CreateSourcePolicyExecute(r ApiCreateSourcePolicyRequest) (*AuthenticationSessionPolicy, *http.Response, error) {
+func (a *SessionAPIService) CreateSourcePolicyExecute(r ApiCreateSourcePolicyRequest) (*AuthenticationSessionPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -64,7 +64,7 @@ func (a *SessionApiService) CreateSourcePolicyExecute(r ApiCreateSourcePolicyReq
 		localVarReturnValue *AuthenticationSessionPolicy
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionApiService.CreateSourcePolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionAPIService.CreateSourcePolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -146,7 +146,7 @@ func (a *SessionApiService) CreateSourcePolicyExecute(r ApiCreateSourcePolicyReq
 
 type ApiDeleteSourcePolicyRequest struct {
 	ctx        context.Context
-	ApiService *SessionApiService
+	ApiService *SessionAPIService
 	id         string
 }
 
@@ -163,7 +163,7 @@ Delete the session policy with the specified ID. A 404 status code is returned f
 	@param id ID of session policy to delete.
 	@return ApiDeleteSourcePolicyRequest
 */
-func (a *SessionApiService) DeleteSourcePolicy(ctx context.Context, id string) ApiDeleteSourcePolicyRequest {
+func (a *SessionAPIService) DeleteSourcePolicy(ctx context.Context, id string) ApiDeleteSourcePolicyRequest {
 	return ApiDeleteSourcePolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -172,14 +172,14 @@ func (a *SessionApiService) DeleteSourcePolicy(ctx context.Context, id string) A
 }
 
 // Execute executes the request
-func (a *SessionApiService) DeleteSourcePolicyExecute(r ApiDeleteSourcePolicyRequest) (*http.Response, error) {
+func (a *SessionAPIService) DeleteSourcePolicyExecute(r ApiDeleteSourcePolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionApiService.DeleteSourcePolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionAPIService.DeleteSourcePolicy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -248,7 +248,7 @@ func (a *SessionApiService) DeleteSourcePolicyExecute(r ApiDeleteSourcePolicyReq
 
 type ApiGetApplicationPolicyRequest struct {
 	ctx        context.Context
-	ApiService *SessionApiService
+	ApiService *SessionAPIService
 }
 
 func (r ApiGetApplicationPolicyRequest) Execute() (*ApplicationSessionPolicy, *http.Response, error) {
@@ -261,7 +261,7 @@ GetApplicationPolicy Get the application session policy.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetApplicationPolicyRequest
 */
-func (a *SessionApiService) GetApplicationPolicy(ctx context.Context) ApiGetApplicationPolicyRequest {
+func (a *SessionAPIService) GetApplicationPolicy(ctx context.Context) ApiGetApplicationPolicyRequest {
 	return ApiGetApplicationPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -271,7 +271,7 @@ func (a *SessionApiService) GetApplicationPolicy(ctx context.Context) ApiGetAppl
 // Execute executes the request
 //
 //	@return ApplicationSessionPolicy
-func (a *SessionApiService) GetApplicationPolicyExecute(r ApiGetApplicationPolicyRequest) (*ApplicationSessionPolicy, *http.Response, error) {
+func (a *SessionAPIService) GetApplicationPolicyExecute(r ApiGetApplicationPolicyRequest) (*ApplicationSessionPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -279,7 +279,7 @@ func (a *SessionApiService) GetApplicationPolicyExecute(r ApiGetApplicationPolic
 		localVarReturnValue *ApplicationSessionPolicy
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionApiService.GetApplicationPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionAPIService.GetApplicationPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -346,7 +346,7 @@ func (a *SessionApiService) GetApplicationPolicyExecute(r ApiGetApplicationPolic
 
 type ApiGetGlobalPolicyRequest struct {
 	ctx        context.Context
-	ApiService *SessionApiService
+	ApiService *SessionAPIService
 }
 
 func (r ApiGetGlobalPolicyRequest) Execute() (*GlobalAuthenticationSessionPolicy, *http.Response, error) {
@@ -359,7 +359,7 @@ GetGlobalPolicy Get the global authentication session policy.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetGlobalPolicyRequest
 */
-func (a *SessionApiService) GetGlobalPolicy(ctx context.Context) ApiGetGlobalPolicyRequest {
+func (a *SessionAPIService) GetGlobalPolicy(ctx context.Context) ApiGetGlobalPolicyRequest {
 	return ApiGetGlobalPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -369,7 +369,7 @@ func (a *SessionApiService) GetGlobalPolicy(ctx context.Context) ApiGetGlobalPol
 // Execute executes the request
 //
 //	@return GlobalAuthenticationSessionPolicy
-func (a *SessionApiService) GetGlobalPolicyExecute(r ApiGetGlobalPolicyRequest) (*GlobalAuthenticationSessionPolicy, *http.Response, error) {
+func (a *SessionAPIService) GetGlobalPolicyExecute(r ApiGetGlobalPolicyRequest) (*GlobalAuthenticationSessionPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -377,7 +377,7 @@ func (a *SessionApiService) GetGlobalPolicyExecute(r ApiGetGlobalPolicyRequest) 
 		localVarReturnValue *GlobalAuthenticationSessionPolicy
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionApiService.GetGlobalPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionAPIService.GetGlobalPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -444,7 +444,7 @@ func (a *SessionApiService) GetGlobalPolicyExecute(r ApiGetGlobalPolicyRequest) 
 
 type ApiGetSessionSettingsRequest struct {
 	ctx        context.Context
-	ApiService *SessionApiService
+	ApiService *SessionAPIService
 }
 
 func (r ApiGetSessionSettingsRequest) Execute() (*SessionSettings, *http.Response, error) {
@@ -457,7 +457,7 @@ GetSessionSettings Get general session management settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSessionSettingsRequest
 */
-func (a *SessionApiService) GetSessionSettings(ctx context.Context) ApiGetSessionSettingsRequest {
+func (a *SessionAPIService) GetSessionSettings(ctx context.Context) ApiGetSessionSettingsRequest {
 	return ApiGetSessionSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -467,7 +467,7 @@ func (a *SessionApiService) GetSessionSettings(ctx context.Context) ApiGetSessio
 // Execute executes the request
 //
 //	@return SessionSettings
-func (a *SessionApiService) GetSessionSettingsExecute(r ApiGetSessionSettingsRequest) (*SessionSettings, *http.Response, error) {
+func (a *SessionAPIService) GetSessionSettingsExecute(r ApiGetSessionSettingsRequest) (*SessionSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *SessionApiService) GetSessionSettingsExecute(r ApiGetSessionSettingsReq
 		localVarReturnValue *SessionSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionApiService.GetSessionSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionAPIService.GetSessionSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -542,7 +542,7 @@ func (a *SessionApiService) GetSessionSettingsExecute(r ApiGetSessionSettingsReq
 
 type ApiGetSourcePoliciesRequest struct {
 	ctx        context.Context
-	ApiService *SessionApiService
+	ApiService *SessionAPIService
 }
 
 func (r ApiGetSourcePoliciesRequest) Execute() (*AuthenticationSessionPolicies, *http.Response, error) {
@@ -557,7 +557,7 @@ Get a list of all session policies that are associated with specific authenticat
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSourcePoliciesRequest
 */
-func (a *SessionApiService) GetSourcePolicies(ctx context.Context) ApiGetSourcePoliciesRequest {
+func (a *SessionAPIService) GetSourcePolicies(ctx context.Context) ApiGetSourcePoliciesRequest {
 	return ApiGetSourcePoliciesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -567,7 +567,7 @@ func (a *SessionApiService) GetSourcePolicies(ctx context.Context) ApiGetSourceP
 // Execute executes the request
 //
 //	@return AuthenticationSessionPolicies
-func (a *SessionApiService) GetSourcePoliciesExecute(r ApiGetSourcePoliciesRequest) (*AuthenticationSessionPolicies, *http.Response, error) {
+func (a *SessionAPIService) GetSourcePoliciesExecute(r ApiGetSourcePoliciesRequest) (*AuthenticationSessionPolicies, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -575,7 +575,7 @@ func (a *SessionApiService) GetSourcePoliciesExecute(r ApiGetSourcePoliciesReque
 		localVarReturnValue *AuthenticationSessionPolicies
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionApiService.GetSourcePolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionAPIService.GetSourcePolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -642,7 +642,7 @@ func (a *SessionApiService) GetSourcePoliciesExecute(r ApiGetSourcePoliciesReque
 
 type ApiGetSourcePolicyRequest struct {
 	ctx        context.Context
-	ApiService *SessionApiService
+	ApiService *SessionAPIService
 	id         string
 }
 
@@ -659,7 +659,7 @@ Get the session policy with the specified ID. A 404 status code is returned for 
 	@param id ID of the session policy to fetch.
 	@return ApiGetSourcePolicyRequest
 */
-func (a *SessionApiService) GetSourcePolicy(ctx context.Context, id string) ApiGetSourcePolicyRequest {
+func (a *SessionAPIService) GetSourcePolicy(ctx context.Context, id string) ApiGetSourcePolicyRequest {
 	return ApiGetSourcePolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -670,7 +670,7 @@ func (a *SessionApiService) GetSourcePolicy(ctx context.Context, id string) ApiG
 // Execute executes the request
 //
 //	@return AuthenticationSessionPolicy
-func (a *SessionApiService) GetSourcePolicyExecute(r ApiGetSourcePolicyRequest) (*AuthenticationSessionPolicy, *http.Response, error) {
+func (a *SessionAPIService) GetSourcePolicyExecute(r ApiGetSourcePolicyRequest) (*AuthenticationSessionPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -678,7 +678,7 @@ func (a *SessionApiService) GetSourcePolicyExecute(r ApiGetSourcePolicyRequest) 
 		localVarReturnValue *AuthenticationSessionPolicy
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionApiService.GetSourcePolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionAPIService.GetSourcePolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -756,7 +756,7 @@ func (a *SessionApiService) GetSourcePolicyExecute(r ApiGetSourcePolicyRequest) 
 
 type ApiUpdateApplicationPolicyRequest struct {
 	ctx        context.Context
-	ApiService *SessionApiService
+	ApiService *SessionAPIService
 	body       *ApplicationSessionPolicy
 }
 
@@ -776,7 +776,7 @@ UpdateApplicationPolicy Update the application session policy.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateApplicationPolicyRequest
 */
-func (a *SessionApiService) UpdateApplicationPolicy(ctx context.Context) ApiUpdateApplicationPolicyRequest {
+func (a *SessionAPIService) UpdateApplicationPolicy(ctx context.Context) ApiUpdateApplicationPolicyRequest {
 	return ApiUpdateApplicationPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -786,7 +786,7 @@ func (a *SessionApiService) UpdateApplicationPolicy(ctx context.Context) ApiUpda
 // Execute executes the request
 //
 //	@return ApplicationSessionPolicy
-func (a *SessionApiService) UpdateApplicationPolicyExecute(r ApiUpdateApplicationPolicyRequest) (*ApplicationSessionPolicy, *http.Response, error) {
+func (a *SessionAPIService) UpdateApplicationPolicyExecute(r ApiUpdateApplicationPolicyRequest) (*ApplicationSessionPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -794,7 +794,7 @@ func (a *SessionApiService) UpdateApplicationPolicyExecute(r ApiUpdateApplicatio
 		localVarReturnValue *ApplicationSessionPolicy
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionApiService.UpdateApplicationPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionAPIService.UpdateApplicationPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -876,7 +876,7 @@ func (a *SessionApiService) UpdateApplicationPolicyExecute(r ApiUpdateApplicatio
 
 type ApiUpdateGlobalPolicyRequest struct {
 	ctx        context.Context
-	ApiService *SessionApiService
+	ApiService *SessionAPIService
 	body       *GlobalAuthenticationSessionPolicy
 }
 
@@ -896,7 +896,7 @@ UpdateGlobalPolicy Update the global authentication session policy.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateGlobalPolicyRequest
 */
-func (a *SessionApiService) UpdateGlobalPolicy(ctx context.Context) ApiUpdateGlobalPolicyRequest {
+func (a *SessionAPIService) UpdateGlobalPolicy(ctx context.Context) ApiUpdateGlobalPolicyRequest {
 	return ApiUpdateGlobalPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -906,7 +906,7 @@ func (a *SessionApiService) UpdateGlobalPolicy(ctx context.Context) ApiUpdateGlo
 // Execute executes the request
 //
 //	@return GlobalAuthenticationSessionPolicy
-func (a *SessionApiService) UpdateGlobalPolicyExecute(r ApiUpdateGlobalPolicyRequest) (*GlobalAuthenticationSessionPolicy, *http.Response, error) {
+func (a *SessionAPIService) UpdateGlobalPolicyExecute(r ApiUpdateGlobalPolicyRequest) (*GlobalAuthenticationSessionPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -914,7 +914,7 @@ func (a *SessionApiService) UpdateGlobalPolicyExecute(r ApiUpdateGlobalPolicyReq
 		localVarReturnValue *GlobalAuthenticationSessionPolicy
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionApiService.UpdateGlobalPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionAPIService.UpdateGlobalPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -996,7 +996,7 @@ func (a *SessionApiService) UpdateGlobalPolicyExecute(r ApiUpdateGlobalPolicyReq
 
 type ApiUpdateSessionSettingsRequest struct {
 	ctx        context.Context
-	ApiService *SessionApiService
+	ApiService *SessionAPIService
 	body       *SessionSettings
 }
 
@@ -1016,7 +1016,7 @@ UpdateSessionSettings Update general session management settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateSessionSettingsRequest
 */
-func (a *SessionApiService) UpdateSessionSettings(ctx context.Context) ApiUpdateSessionSettingsRequest {
+func (a *SessionAPIService) UpdateSessionSettings(ctx context.Context) ApiUpdateSessionSettingsRequest {
 	return ApiUpdateSessionSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1026,7 +1026,7 @@ func (a *SessionApiService) UpdateSessionSettings(ctx context.Context) ApiUpdate
 // Execute executes the request
 //
 //	@return SessionSettings
-func (a *SessionApiService) UpdateSessionSettingsExecute(r ApiUpdateSessionSettingsRequest) (*SessionSettings, *http.Response, error) {
+func (a *SessionAPIService) UpdateSessionSettingsExecute(r ApiUpdateSessionSettingsRequest) (*SessionSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1034,7 +1034,7 @@ func (a *SessionApiService) UpdateSessionSettingsExecute(r ApiUpdateSessionSetti
 		localVarReturnValue *SessionSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionApiService.UpdateSessionSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionAPIService.UpdateSessionSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1116,7 +1116,7 @@ func (a *SessionApiService) UpdateSessionSettingsExecute(r ApiUpdateSessionSetti
 
 type ApiUpdateSourcePolicyRequest struct {
 	ctx        context.Context
-	ApiService *SessionApiService
+	ApiService *SessionAPIService
 	id         string
 	body       *AuthenticationSessionPolicy
 }
@@ -1140,7 +1140,7 @@ Update the session policy with the matching ID. If the policy is not properly co
 	@param id ID of the session policy to update.
 	@return ApiUpdateSourcePolicyRequest
 */
-func (a *SessionApiService) UpdateSourcePolicy(ctx context.Context, id string) ApiUpdateSourcePolicyRequest {
+func (a *SessionAPIService) UpdateSourcePolicy(ctx context.Context, id string) ApiUpdateSourcePolicyRequest {
 	return ApiUpdateSourcePolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1151,7 +1151,7 @@ func (a *SessionApiService) UpdateSourcePolicy(ctx context.Context, id string) A
 // Execute executes the request
 //
 //	@return AuthenticationSessionPolicy
-func (a *SessionApiService) UpdateSourcePolicyExecute(r ApiUpdateSourcePolicyRequest) (*AuthenticationSessionPolicy, *http.Response, error) {
+func (a *SessionAPIService) UpdateSourcePolicyExecute(r ApiUpdateSourcePolicyRequest) (*AuthenticationSessionPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1159,7 +1159,7 @@ func (a *SessionApiService) UpdateSourcePolicyExecute(r ApiUpdateSourcePolicyReq
 		localVarReturnValue *AuthenticationSessionPolicy
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionApiService.UpdateSourcePolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionAPIService.UpdateSourcePolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -1,14 +1,14 @@
-# \CertificatesCaApi
+# \CertificatesCaAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteTrustedCA**](CertificatesCaApi.md#DeleteTrustedCA) | **Delete** /certificates/ca/{id} | Delete a trusted certificate authority.
-[**ExportCaCertificateFile**](CertificatesCaApi.md#ExportCaCertificateFile) | **Get** /certificates/ca/{id}/file | Download the certificate from a given trusted certificate authority.
-[**GetTrustedCAs**](CertificatesCaApi.md#GetTrustedCAs) | **Get** /certificates/ca | Get list of trusted certificate authorities.
-[**GetTrustedCert**](CertificatesCaApi.md#GetTrustedCert) | **Get** /certificates/ca/{id} | Retrieve details of a trusted certificate authority.
-[**ImportTrustedCA**](CertificatesCaApi.md#ImportTrustedCA) | **Post** /certificates/ca/import | Import a new trusted certificate authority.
+[**DeleteTrustedCA**](CertificatesCaAPI.md#DeleteTrustedCA) | **Delete** /certificates/ca/{id} | Delete a trusted certificate authority.
+[**ExportCaCertificateFile**](CertificatesCaAPI.md#ExportCaCertificateFile) | **Get** /certificates/ca/{id}/file | Download the certificate from a given trusted certificate authority.
+[**GetTrustedCAs**](CertificatesCaAPI.md#GetTrustedCAs) | **Get** /certificates/ca | Get list of trusted certificate authorities.
+[**GetTrustedCert**](CertificatesCaAPI.md#GetTrustedCert) | **Get** /certificates/ca/{id} | Retrieve details of a trusted certificate authority.
+[**ImportTrustedCA**](CertificatesCaAPI.md#ImportTrustedCA) | **Post** /certificates/ca/import | Import a new trusted certificate authority.
 
 
 
@@ -37,9 +37,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CertificatesCaApi.DeleteTrustedCA(context.Background(), id).Execute()
+    r, err := apiClient.CertificatesCaAPI.DeleteTrustedCA(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesCaApi.DeleteTrustedCA``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesCaAPI.DeleteTrustedCA``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -105,13 +105,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificatesCaApi.ExportCaCertificateFile(context.Background(), id).Execute()
+    resp, r, err := apiClient.CertificatesCaAPI.ExportCaCertificateFile(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesCaApi.ExportCaCertificateFile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesCaAPI.ExportCaCertificateFile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ExportCaCertificateFile`: string
-    fmt.Fprintf(os.Stdout, "Response from `CertificatesCaApi.ExportCaCertificateFile`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CertificatesCaAPI.ExportCaCertificateFile`: %v\n", resp)
 }
 ```
 
@@ -172,13 +172,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificatesCaApi.GetTrustedCAs(context.Background()).Execute()
+    resp, r, err := apiClient.CertificatesCaAPI.GetTrustedCAs(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesCaApi.GetTrustedCAs``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesCaAPI.GetTrustedCAs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTrustedCAs`: CertViews
-    fmt.Fprintf(os.Stdout, "Response from `CertificatesCaApi.GetTrustedCAs`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CertificatesCaAPI.GetTrustedCAs`: %v\n", resp)
 }
 ```
 
@@ -232,13 +232,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificatesCaApi.GetTrustedCert(context.Background(), id).Execute()
+    resp, r, err := apiClient.CertificatesCaAPI.GetTrustedCert(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesCaApi.GetTrustedCert``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesCaAPI.GetTrustedCert``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTrustedCert`: CertView
-    fmt.Fprintf(os.Stdout, "Response from `CertificatesCaApi.GetTrustedCert`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CertificatesCaAPI.GetTrustedCert`: %v\n", resp)
 }
 ```
 
@@ -300,13 +300,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificatesCaApi.ImportTrustedCA(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.CertificatesCaAPI.ImportTrustedCA(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesCaApi.ImportTrustedCA``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesCaAPI.ImportTrustedCA``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ImportTrustedCA`: CertView
-    fmt.Fprintf(os.Stdout, "Response from `CertificatesCaApi.ImportTrustedCA`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CertificatesCaAPI.ImportTrustedCA`: %v\n", resp)
 }
 ```
 

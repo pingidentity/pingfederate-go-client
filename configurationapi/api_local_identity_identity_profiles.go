@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// LocalIdentityIdentityProfilesApiService LocalIdentityIdentityProfilesApi service
-type LocalIdentityIdentityProfilesApiService service
+// LocalIdentityIdentityProfilesAPIService LocalIdentityIdentityProfilesAPI service
+type LocalIdentityIdentityProfilesAPIService service
 
 type ApiCreateIdentityProfileRequest struct {
 	ctx                       context.Context
-	ApiService                *LocalIdentityIdentityProfilesApiService
+	ApiService                *LocalIdentityIdentityProfilesAPIService
 	body                      *LocalIdentityProfile
 	xBypassExternalValidation *bool
 }
@@ -53,7 +53,7 @@ Create a new local identity profile. If the local identity profile is not proper
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateIdentityProfileRequest
 */
-func (a *LocalIdentityIdentityProfilesApiService) CreateIdentityProfile(ctx context.Context) ApiCreateIdentityProfileRequest {
+func (a *LocalIdentityIdentityProfilesAPIService) CreateIdentityProfile(ctx context.Context) ApiCreateIdentityProfileRequest {
 	return ApiCreateIdentityProfileRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -63,7 +63,7 @@ func (a *LocalIdentityIdentityProfilesApiService) CreateIdentityProfile(ctx cont
 // Execute executes the request
 //
 //	@return LocalIdentityProfile
-func (a *LocalIdentityIdentityProfilesApiService) CreateIdentityProfileExecute(r ApiCreateIdentityProfileRequest) (*LocalIdentityProfile, *http.Response, error) {
+func (a *LocalIdentityIdentityProfilesAPIService) CreateIdentityProfileExecute(r ApiCreateIdentityProfileRequest) (*LocalIdentityProfile, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -71,7 +71,7 @@ func (a *LocalIdentityIdentityProfilesApiService) CreateIdentityProfileExecute(r
 		localVarReturnValue *LocalIdentityProfile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalIdentityIdentityProfilesApiService.CreateIdentityProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalIdentityIdentityProfilesAPIService.CreateIdentityProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -156,7 +156,7 @@ func (a *LocalIdentityIdentityProfilesApiService) CreateIdentityProfileExecute(r
 
 type ApiDeleteIdentityProfileRequest struct {
 	ctx        context.Context
-	ApiService *LocalIdentityIdentityProfilesApiService
+	ApiService *LocalIdentityIdentityProfilesAPIService
 	id         string
 }
 
@@ -173,7 +173,7 @@ Delete a local identity profile with the specified ID. A 404 status code is retu
 	@param id ID of the profile to delete
 	@return ApiDeleteIdentityProfileRequest
 */
-func (a *LocalIdentityIdentityProfilesApiService) DeleteIdentityProfile(ctx context.Context, id string) ApiDeleteIdentityProfileRequest {
+func (a *LocalIdentityIdentityProfilesAPIService) DeleteIdentityProfile(ctx context.Context, id string) ApiDeleteIdentityProfileRequest {
 	return ApiDeleteIdentityProfileRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -182,14 +182,14 @@ func (a *LocalIdentityIdentityProfilesApiService) DeleteIdentityProfile(ctx cont
 }
 
 // Execute executes the request
-func (a *LocalIdentityIdentityProfilesApiService) DeleteIdentityProfileExecute(r ApiDeleteIdentityProfileRequest) (*http.Response, error) {
+func (a *LocalIdentityIdentityProfilesAPIService) DeleteIdentityProfileExecute(r ApiDeleteIdentityProfileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalIdentityIdentityProfilesApiService.DeleteIdentityProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalIdentityIdentityProfilesAPIService.DeleteIdentityProfile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -269,7 +269,7 @@ func (a *LocalIdentityIdentityProfilesApiService) DeleteIdentityProfileExecute(r
 
 type ApiGetIdentityProfileRequest struct {
 	ctx        context.Context
-	ApiService *LocalIdentityIdentityProfilesApiService
+	ApiService *LocalIdentityIdentityProfilesAPIService
 	id         string
 }
 
@@ -286,7 +286,7 @@ Get a local identity profile with the specified ID. A 404 status code is returne
 	@param id ID of profile to fetch
 	@return ApiGetIdentityProfileRequest
 */
-func (a *LocalIdentityIdentityProfilesApiService) GetIdentityProfile(ctx context.Context, id string) ApiGetIdentityProfileRequest {
+func (a *LocalIdentityIdentityProfilesAPIService) GetIdentityProfile(ctx context.Context, id string) ApiGetIdentityProfileRequest {
 	return ApiGetIdentityProfileRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -297,7 +297,7 @@ func (a *LocalIdentityIdentityProfilesApiService) GetIdentityProfile(ctx context
 // Execute executes the request
 //
 //	@return LocalIdentityProfile
-func (a *LocalIdentityIdentityProfilesApiService) GetIdentityProfileExecute(r ApiGetIdentityProfileRequest) (*LocalIdentityProfile, *http.Response, error) {
+func (a *LocalIdentityIdentityProfilesAPIService) GetIdentityProfileExecute(r ApiGetIdentityProfileRequest) (*LocalIdentityProfile, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -305,7 +305,7 @@ func (a *LocalIdentityIdentityProfilesApiService) GetIdentityProfileExecute(r Ap
 		localVarReturnValue *LocalIdentityProfile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalIdentityIdentityProfilesApiService.GetIdentityProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalIdentityIdentityProfilesAPIService.GetIdentityProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -383,7 +383,7 @@ func (a *LocalIdentityIdentityProfilesApiService) GetIdentityProfileExecute(r Ap
 
 type ApiGetIdentityProfilesRequest struct {
 	ctx           context.Context
-	ApiService    *LocalIdentityIdentityProfilesApiService
+	ApiService    *LocalIdentityIdentityProfilesAPIService
 	page          *int64
 	numberPerPage *int64
 	filter        *string
@@ -424,7 +424,7 @@ GetIdentityProfiles Get the list of configured local identity profiles.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetIdentityProfilesRequest
 */
-func (a *LocalIdentityIdentityProfilesApiService) GetIdentityProfiles(ctx context.Context) ApiGetIdentityProfilesRequest {
+func (a *LocalIdentityIdentityProfilesAPIService) GetIdentityProfiles(ctx context.Context) ApiGetIdentityProfilesRequest {
 	return ApiGetIdentityProfilesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -434,7 +434,7 @@ func (a *LocalIdentityIdentityProfilesApiService) GetIdentityProfiles(ctx contex
 // Execute executes the request
 //
 //	@return LocalIdentityProfiles
-func (a *LocalIdentityIdentityProfilesApiService) GetIdentityProfilesExecute(r ApiGetIdentityProfilesRequest) (*LocalIdentityProfiles, *http.Response, error) {
+func (a *LocalIdentityIdentityProfilesAPIService) GetIdentityProfilesExecute(r ApiGetIdentityProfilesRequest) (*LocalIdentityProfiles, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -442,7 +442,7 @@ func (a *LocalIdentityIdentityProfilesApiService) GetIdentityProfilesExecute(r A
 		localVarReturnValue *LocalIdentityProfiles
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalIdentityIdentityProfilesApiService.GetIdentityProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalIdentityIdentityProfilesAPIService.GetIdentityProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -531,7 +531,7 @@ func (a *LocalIdentityIdentityProfilesApiService) GetIdentityProfilesExecute(r A
 
 type ApiUpdateIdentityProfileRequest struct {
 	ctx                       context.Context
-	ApiService                *LocalIdentityIdentityProfilesApiService
+	ApiService                *LocalIdentityIdentityProfilesAPIService
 	id                        string
 	body                      *LocalIdentityProfile
 	xBypassExternalValidation *bool
@@ -562,7 +562,7 @@ Update a local identity profile with the specified ID. A 404 status code is retu
 	@param id ID of the profile to update
 	@return ApiUpdateIdentityProfileRequest
 */
-func (a *LocalIdentityIdentityProfilesApiService) UpdateIdentityProfile(ctx context.Context, id string) ApiUpdateIdentityProfileRequest {
+func (a *LocalIdentityIdentityProfilesAPIService) UpdateIdentityProfile(ctx context.Context, id string) ApiUpdateIdentityProfileRequest {
 	return ApiUpdateIdentityProfileRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -573,7 +573,7 @@ func (a *LocalIdentityIdentityProfilesApiService) UpdateIdentityProfile(ctx cont
 // Execute executes the request
 //
 //	@return LocalIdentityProfile
-func (a *LocalIdentityIdentityProfilesApiService) UpdateIdentityProfileExecute(r ApiUpdateIdentityProfileRequest) (*LocalIdentityProfile, *http.Response, error) {
+func (a *LocalIdentityIdentityProfilesAPIService) UpdateIdentityProfileExecute(r ApiUpdateIdentityProfileRequest) (*LocalIdentityProfile, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -581,7 +581,7 @@ func (a *LocalIdentityIdentityProfilesApiService) UpdateIdentityProfileExecute(r
 		localVarReturnValue *LocalIdentityProfile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalIdentityIdentityProfilesApiService.UpdateIdentityProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalIdentityIdentityProfilesAPIService.UpdateIdentityProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

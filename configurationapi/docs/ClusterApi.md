@@ -1,11 +1,11 @@
-# \ClusterApi
+# \ClusterAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetClusterStatus**](ClusterApi.md#GetClusterStatus) | **Get** /cluster/status | Get information on the current status of the cluster.
-[**StartReplication**](ClusterApi.md#StartReplication) | **Post** /cluster/replicate | Replicate configuration updates to all nodes in the cluster.
+[**GetClusterStatus**](ClusterAPI.md#GetClusterStatus) | **Get** /cluster/status | Get information on the current status of the cluster.
+[**StartReplication**](ClusterAPI.md#StartReplication) | **Post** /cluster/replicate | Replicate configuration updates to all nodes in the cluster.
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ClusterApi.GetClusterStatus(context.Background()).Execute()
+    resp, r, err := apiClient.ClusterAPI.GetClusterStatus(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ClusterApi.GetClusterStatus``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ClusterAPI.GetClusterStatus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetClusterStatus`: ClusterStatus
-    fmt.Fprintf(os.Stdout, "Response from `ClusterApi.GetClusterStatus`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ClusterAPI.GetClusterStatus`: %v\n", resp)
 }
 ```
 
@@ -90,13 +90,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ClusterApi.StartReplication(context.Background()).Execute()
+    resp, r, err := apiClient.ClusterAPI.StartReplication(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ClusterApi.StartReplication``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ClusterAPI.StartReplication``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `StartReplication`: ApiResult
-    fmt.Fprintf(os.Stdout, "Response from `ClusterApi.StartReplication`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ClusterAPI.StartReplication`: %v\n", resp)
 }
 ```
 

@@ -1,16 +1,16 @@
-# \OauthAuthorizationDetailProcessorsApi
+# \OauthAuthorizationDetailProcessorsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateAuthorizationDetailProcessor**](OauthAuthorizationDetailProcessorsApi.md#CreateAuthorizationDetailProcessor) | **Post** /oauth/authorizationDetailProcessors | Create an authorization detail processor plugin instance.
-[**DeleteAuthorizationDetailProcessor**](OauthAuthorizationDetailProcessorsApi.md#DeleteAuthorizationDetailProcessor) | **Delete** /oauth/authorizationDetailProcessors/{id} | Delete an authorization detail processor plugin instance.
-[**GetAuthorizationDetailProcessor**](OauthAuthorizationDetailProcessorsApi.md#GetAuthorizationDetailProcessor) | **Get** /oauth/authorizationDetailProcessors/{id} | Get a specific authorization detail processor plugin instance.
-[**GetAuthorizationDetailProcessorPluginDescriptor**](OauthAuthorizationDetailProcessorsApi.md#GetAuthorizationDetailProcessorPluginDescriptor) | **Get** /oauth/authorizationDetailProcessors/descriptors/{id} | Get an authorization detail processor plugin descriptor.
-[**GetAuthorizationDetailProcessorPluginDescriptors**](OauthAuthorizationDetailProcessorsApi.md#GetAuthorizationDetailProcessorPluginDescriptors) | **Get** /oauth/authorizationDetailProcessors/descriptors | Get a list of available authorization detail processor plugin descriptors.
-[**GetAuthorizationDetailProcessors**](OauthAuthorizationDetailProcessorsApi.md#GetAuthorizationDetailProcessors) | **Get** /oauth/authorizationDetailProcessors | Get a list of authorization detail processor plugin instances.
-[**UpdateAuthorizationDetailProcessor**](OauthAuthorizationDetailProcessorsApi.md#UpdateAuthorizationDetailProcessor) | **Put** /oauth/authorizationDetailProcessors/{id} | Update an authorization detail processor plugin instance.
+[**CreateAuthorizationDetailProcessor**](OauthAuthorizationDetailProcessorsAPI.md#CreateAuthorizationDetailProcessor) | **Post** /oauth/authorizationDetailProcessors | Create an authorization detail processor plugin instance.
+[**DeleteAuthorizationDetailProcessor**](OauthAuthorizationDetailProcessorsAPI.md#DeleteAuthorizationDetailProcessor) | **Delete** /oauth/authorizationDetailProcessors/{id} | Delete an authorization detail processor plugin instance.
+[**GetAuthorizationDetailProcessor**](OauthAuthorizationDetailProcessorsAPI.md#GetAuthorizationDetailProcessor) | **Get** /oauth/authorizationDetailProcessors/{id} | Get a specific authorization detail processor plugin instance.
+[**GetAuthorizationDetailProcessorPluginDescriptor**](OauthAuthorizationDetailProcessorsAPI.md#GetAuthorizationDetailProcessorPluginDescriptor) | **Get** /oauth/authorizationDetailProcessors/descriptors/{id} | Get an authorization detail processor plugin descriptor.
+[**GetAuthorizationDetailProcessorPluginDescriptors**](OauthAuthorizationDetailProcessorsAPI.md#GetAuthorizationDetailProcessorPluginDescriptors) | **Get** /oauth/authorizationDetailProcessors/descriptors | Get a list of available authorization detail processor plugin descriptors.
+[**GetAuthorizationDetailProcessors**](OauthAuthorizationDetailProcessorsAPI.md#GetAuthorizationDetailProcessors) | **Get** /oauth/authorizationDetailProcessors | Get a list of authorization detail processor plugin instances.
+[**UpdateAuthorizationDetailProcessor**](OauthAuthorizationDetailProcessorsAPI.md#UpdateAuthorizationDetailProcessor) | **Put** /oauth/authorizationDetailProcessors/{id} | Update an authorization detail processor plugin instance.
 
 
 
@@ -37,13 +37,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthorizationDetailProcessorsApi.CreateAuthorizationDetailProcessor(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.OauthAuthorizationDetailProcessorsAPI.CreateAuthorizationDetailProcessor(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsApi.CreateAuthorizationDetailProcessor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsAPI.CreateAuthorizationDetailProcessor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateAuthorizationDetailProcessor`: AuthorizationDetailProcessor
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsApi.CreateAuthorizationDetailProcessor`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsAPI.CreateAuthorizationDetailProcessor`: %v\n", resp)
 }
 ```
 
@@ -101,9 +101,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthAuthorizationDetailProcessorsApi.DeleteAuthorizationDetailProcessor(context.Background(), id).Execute()
+    r, err := apiClient.OauthAuthorizationDetailProcessorsAPI.DeleteAuthorizationDetailProcessor(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsApi.DeleteAuthorizationDetailProcessor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsAPI.DeleteAuthorizationDetailProcessor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -167,13 +167,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthorizationDetailProcessorsApi.GetAuthorizationDetailProcessor(context.Background(), id).Execute()
+    resp, r, err := apiClient.OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessor(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsApi.GetAuthorizationDetailProcessor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAuthorizationDetailProcessor`: AuthorizationDetailProcessor
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsApi.GetAuthorizationDetailProcessor`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessor`: %v\n", resp)
 }
 ```
 
@@ -235,13 +235,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthorizationDetailProcessorsApi.GetAuthorizationDetailProcessorPluginDescriptor(context.Background(), id).Execute()
+    resp, r, err := apiClient.OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessorPluginDescriptor(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsApi.GetAuthorizationDetailProcessorPluginDescriptor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessorPluginDescriptor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAuthorizationDetailProcessorPluginDescriptor`: AuthorizationDetailProcessorDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsApi.GetAuthorizationDetailProcessorPluginDescriptor`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessorPluginDescriptor`: %v\n", resp)
 }
 ```
 
@@ -302,13 +302,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthorizationDetailProcessorsApi.GetAuthorizationDetailProcessorPluginDescriptors(context.Background()).Execute()
+    resp, r, err := apiClient.OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessorPluginDescriptors(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsApi.GetAuthorizationDetailProcessorPluginDescriptors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessorPluginDescriptors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAuthorizationDetailProcessorPluginDescriptors`: AuthorizationDetailProcessorDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsApi.GetAuthorizationDetailProcessorPluginDescriptors`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessorPluginDescriptors`: %v\n", resp)
 }
 ```
 
@@ -361,13 +361,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthorizationDetailProcessorsApi.GetAuthorizationDetailProcessors(context.Background()).Execute()
+    resp, r, err := apiClient.OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessors(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsApi.GetAuthorizationDetailProcessors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAuthorizationDetailProcessors`: AuthorizationDetailProcessors
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsApi.GetAuthorizationDetailProcessors`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessors`: %v\n", resp)
 }
 ```
 
@@ -422,13 +422,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthorizationDetailProcessorsApi.UpdateAuthorizationDetailProcessor(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.OauthAuthorizationDetailProcessorsAPI.UpdateAuthorizationDetailProcessor(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsApi.UpdateAuthorizationDetailProcessor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsAPI.UpdateAuthorizationDetailProcessor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateAuthorizationDetailProcessor`: AuthorizationDetailProcessor
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsApi.UpdateAuthorizationDetailProcessor`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsAPI.UpdateAuthorizationDetailProcessor`: %v\n", resp)
 }
 ```
 

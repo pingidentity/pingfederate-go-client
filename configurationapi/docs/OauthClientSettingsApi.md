@@ -1,11 +1,11 @@
-# \OauthClientSettingsApi
+# \OauthClientSettingsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetOauthClientSettings**](OauthClientSettingsApi.md#GetOauthClientSettings) | **Get** /oauth/clientSettings | Configure the client settings.
-[**UpdateOauthClientSettings**](OauthClientSettingsApi.md#UpdateOauthClientSettings) | **Put** /oauth/clientSettings | Update the client settings.
+[**GetOauthClientSettings**](OauthClientSettingsAPI.md#GetOauthClientSettings) | **Get** /oauth/clientSettings | Configure the client settings.
+[**UpdateOauthClientSettings**](OauthClientSettingsAPI.md#UpdateOauthClientSettings) | **Put** /oauth/clientSettings | Update the client settings.
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientSettingsApi.GetOauthClientSettings(context.Background()).Execute()
+    resp, r, err := apiClient.OauthClientSettingsAPI.GetOauthClientSettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientSettingsApi.GetOauthClientSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientSettingsAPI.GetOauthClientSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOauthClientSettings`: ClientSettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientSettingsApi.GetOauthClientSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthClientSettingsAPI.GetOauthClientSettings`: %v\n", resp)
 }
 ```
 
@@ -91,13 +91,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientSettingsApi.UpdateOauthClientSettings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.OauthClientSettingsAPI.UpdateOauthClientSettings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientSettingsApi.UpdateOauthClientSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientSettingsAPI.UpdateOauthClientSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateOauthClientSettings`: ClientSettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientSettingsApi.UpdateOauthClientSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthClientSettingsAPI.UpdateOauthClientSettings`: %v\n", resp)
 }
 ```
 

@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// AdministrativeAccountsApiService AdministrativeAccountsApi service
-type AdministrativeAccountsApiService service
+// AdministrativeAccountsAPIService AdministrativeAccountsAPI service
+type AdministrativeAccountsAPIService service
 
 type ApiAddAccountRequest struct {
 	ctx        context.Context
-	ApiService *AdministrativeAccountsApiService
+	ApiService *AdministrativeAccountsAPIService
 	body       *AdministrativeAccount
 }
 
@@ -44,7 +44,7 @@ AddAccount Add a new PingFederate native Administrative Account.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddAccountRequest
 */
-func (a *AdministrativeAccountsApiService) AddAccount(ctx context.Context) ApiAddAccountRequest {
+func (a *AdministrativeAccountsAPIService) AddAccount(ctx context.Context) ApiAddAccountRequest {
 	return ApiAddAccountRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *AdministrativeAccountsApiService) AddAccount(ctx context.Context) ApiAd
 // Execute executes the request
 //
 //	@return AdministrativeAccount
-func (a *AdministrativeAccountsApiService) AddAccountExecute(r ApiAddAccountRequest) (*AdministrativeAccount, *http.Response, error) {
+func (a *AdministrativeAccountsAPIService) AddAccountExecute(r ApiAddAccountRequest) (*AdministrativeAccount, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *AdministrativeAccountsApiService) AddAccountExecute(r ApiAddAccountRequ
 		localVarReturnValue *AdministrativeAccount
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdministrativeAccountsApiService.AddAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdministrativeAccountsAPIService.AddAccount")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -155,7 +155,7 @@ func (a *AdministrativeAccountsApiService) AddAccountExecute(r ApiAddAccountRequ
 
 type ApiChangePasswordRequest struct {
 	ctx        context.Context
-	ApiService *AdministrativeAccountsApiService
+	ApiService *AdministrativeAccountsAPIService
 	body       *UserCredentials
 }
 
@@ -175,7 +175,7 @@ ChangePassword Change the Password of current PingFederate native Account.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiChangePasswordRequest
 */
-func (a *AdministrativeAccountsApiService) ChangePassword(ctx context.Context) ApiChangePasswordRequest {
+func (a *AdministrativeAccountsAPIService) ChangePassword(ctx context.Context) ApiChangePasswordRequest {
 	return ApiChangePasswordRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -185,7 +185,7 @@ func (a *AdministrativeAccountsApiService) ChangePassword(ctx context.Context) A
 // Execute executes the request
 //
 //	@return UserCredentials
-func (a *AdministrativeAccountsApiService) ChangePasswordExecute(r ApiChangePasswordRequest) (*UserCredentials, *http.Response, error) {
+func (a *AdministrativeAccountsAPIService) ChangePasswordExecute(r ApiChangePasswordRequest) (*UserCredentials, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -193,7 +193,7 @@ func (a *AdministrativeAccountsApiService) ChangePasswordExecute(r ApiChangePass
 		localVarReturnValue *UserCredentials
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdministrativeAccountsApiService.ChangePassword")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdministrativeAccountsAPIService.ChangePassword")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -275,7 +275,7 @@ func (a *AdministrativeAccountsApiService) ChangePasswordExecute(r ApiChangePass
 
 type ApiDeleteAccountRequest struct {
 	ctx        context.Context
-	ApiService *AdministrativeAccountsApiService
+	ApiService *AdministrativeAccountsAPIService
 	username   string
 }
 
@@ -290,7 +290,7 @@ DeleteAccount Delete a PingFederate native Administrative Account information.
 	@param username Username of the account to be deleted.
 	@return ApiDeleteAccountRequest
 */
-func (a *AdministrativeAccountsApiService) DeleteAccount(ctx context.Context, username string) ApiDeleteAccountRequest {
+func (a *AdministrativeAccountsAPIService) DeleteAccount(ctx context.Context, username string) ApiDeleteAccountRequest {
 	return ApiDeleteAccountRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -299,14 +299,14 @@ func (a *AdministrativeAccountsApiService) DeleteAccount(ctx context.Context, us
 }
 
 // Execute executes the request
-func (a *AdministrativeAccountsApiService) DeleteAccountExecute(r ApiDeleteAccountRequest) (*http.Response, error) {
+func (a *AdministrativeAccountsAPIService) DeleteAccountExecute(r ApiDeleteAccountRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdministrativeAccountsApiService.DeleteAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdministrativeAccountsAPIService.DeleteAccount")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -386,7 +386,7 @@ func (a *AdministrativeAccountsApiService) DeleteAccountExecute(r ApiDeleteAccou
 
 type ApiGetAccountRequest struct {
 	ctx        context.Context
-	ApiService *AdministrativeAccountsApiService
+	ApiService *AdministrativeAccountsAPIService
 	username   string
 }
 
@@ -401,7 +401,7 @@ GetAccount Get a PingFederate native Administrative Account.
 	@param username Username of the administrative account.
 	@return ApiGetAccountRequest
 */
-func (a *AdministrativeAccountsApiService) GetAccount(ctx context.Context, username string) ApiGetAccountRequest {
+func (a *AdministrativeAccountsAPIService) GetAccount(ctx context.Context, username string) ApiGetAccountRequest {
 	return ApiGetAccountRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -412,7 +412,7 @@ func (a *AdministrativeAccountsApiService) GetAccount(ctx context.Context, usern
 // Execute executes the request
 //
 //	@return AdministrativeAccount
-func (a *AdministrativeAccountsApiService) GetAccountExecute(r ApiGetAccountRequest) (*AdministrativeAccount, *http.Response, error) {
+func (a *AdministrativeAccountsAPIService) GetAccountExecute(r ApiGetAccountRequest) (*AdministrativeAccount, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -420,7 +420,7 @@ func (a *AdministrativeAccountsApiService) GetAccountExecute(r ApiGetAccountRequ
 		localVarReturnValue *AdministrativeAccount
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdministrativeAccountsApiService.GetAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdministrativeAccountsAPIService.GetAccount")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -498,7 +498,7 @@ func (a *AdministrativeAccountsApiService) GetAccountExecute(r ApiGetAccountRequ
 
 type ApiGetAccountsRequest struct {
 	ctx        context.Context
-	ApiService *AdministrativeAccountsApiService
+	ApiService *AdministrativeAccountsAPIService
 }
 
 func (r ApiGetAccountsRequest) Execute() (*AdministrativeAccounts, *http.Response, error) {
@@ -511,7 +511,7 @@ GetAccounts Get all the PingFederate native Administrative Accounts.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAccountsRequest
 */
-func (a *AdministrativeAccountsApiService) GetAccounts(ctx context.Context) ApiGetAccountsRequest {
+func (a *AdministrativeAccountsAPIService) GetAccounts(ctx context.Context) ApiGetAccountsRequest {
 	return ApiGetAccountsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -521,7 +521,7 @@ func (a *AdministrativeAccountsApiService) GetAccounts(ctx context.Context) ApiG
 // Execute executes the request
 //
 //	@return AdministrativeAccounts
-func (a *AdministrativeAccountsApiService) GetAccountsExecute(r ApiGetAccountsRequest) (*AdministrativeAccounts, *http.Response, error) {
+func (a *AdministrativeAccountsAPIService) GetAccountsExecute(r ApiGetAccountsRequest) (*AdministrativeAccounts, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -529,7 +529,7 @@ func (a *AdministrativeAccountsApiService) GetAccountsExecute(r ApiGetAccountsRe
 		localVarReturnValue *AdministrativeAccounts
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdministrativeAccountsApiService.GetAccounts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdministrativeAccountsAPIService.GetAccounts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -606,7 +606,7 @@ func (a *AdministrativeAccountsApiService) GetAccountsExecute(r ApiGetAccountsRe
 
 type ApiResetPasswordRequest struct {
 	ctx        context.Context
-	ApiService *AdministrativeAccountsApiService
+	ApiService *AdministrativeAccountsAPIService
 	username   string
 	body       *UserCredentials
 }
@@ -628,7 +628,7 @@ ResetPassword Reset the Password of an existing PingFederate native Administrati
 	@param username Username of the administrative account.
 	@return ApiResetPasswordRequest
 */
-func (a *AdministrativeAccountsApiService) ResetPassword(ctx context.Context, username string) ApiResetPasswordRequest {
+func (a *AdministrativeAccountsAPIService) ResetPassword(ctx context.Context, username string) ApiResetPasswordRequest {
 	return ApiResetPasswordRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -639,7 +639,7 @@ func (a *AdministrativeAccountsApiService) ResetPassword(ctx context.Context, us
 // Execute executes the request
 //
 //	@return UserCredentials
-func (a *AdministrativeAccountsApiService) ResetPasswordExecute(r ApiResetPasswordRequest) (*UserCredentials, *http.Response, error) {
+func (a *AdministrativeAccountsAPIService) ResetPasswordExecute(r ApiResetPasswordRequest) (*UserCredentials, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -647,7 +647,7 @@ func (a *AdministrativeAccountsApiService) ResetPasswordExecute(r ApiResetPasswo
 		localVarReturnValue *UserCredentials
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdministrativeAccountsApiService.ResetPassword")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdministrativeAccountsAPIService.ResetPassword")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -741,7 +741,7 @@ func (a *AdministrativeAccountsApiService) ResetPasswordExecute(r ApiResetPasswo
 
 type ApiUpdateAccountRequest struct {
 	ctx        context.Context
-	ApiService *AdministrativeAccountsApiService
+	ApiService *AdministrativeAccountsAPIService
 	username   string
 	body       *AdministrativeAccount
 }
@@ -763,7 +763,7 @@ UpdateAccount Update the information for a native Administrative Account.
 	@param username Username of the account to be updated.
 	@return ApiUpdateAccountRequest
 */
-func (a *AdministrativeAccountsApiService) UpdateAccount(ctx context.Context, username string) ApiUpdateAccountRequest {
+func (a *AdministrativeAccountsAPIService) UpdateAccount(ctx context.Context, username string) ApiUpdateAccountRequest {
 	return ApiUpdateAccountRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -774,7 +774,7 @@ func (a *AdministrativeAccountsApiService) UpdateAccount(ctx context.Context, us
 // Execute executes the request
 //
 //	@return AdministrativeAccount
-func (a *AdministrativeAccountsApiService) UpdateAccountExecute(r ApiUpdateAccountRequest) (*AdministrativeAccount, *http.Response, error) {
+func (a *AdministrativeAccountsAPIService) UpdateAccountExecute(r ApiUpdateAccountRequest) (*AdministrativeAccount, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -782,7 +782,7 @@ func (a *AdministrativeAccountsApiService) UpdateAccountExecute(r ApiUpdateAccou
 		localVarReturnValue *AdministrativeAccount
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdministrativeAccountsApiService.UpdateAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdministrativeAccountsAPIService.UpdateAccount")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

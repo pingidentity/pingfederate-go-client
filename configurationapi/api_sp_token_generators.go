@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// SpTokenGeneratorsApiService SpTokenGeneratorsApi service
-type SpTokenGeneratorsApiService service
+// SpTokenGeneratorsAPIService SpTokenGeneratorsAPI service
+type SpTokenGeneratorsAPIService service
 
 type ApiCreateTokenGeneratorRequest struct {
 	ctx        context.Context
-	ApiService *SpTokenGeneratorsApiService
+	ApiService *SpTokenGeneratorsAPIService
 	body       *TokenGenerator
 }
 
@@ -46,7 +46,7 @@ Create a new token generator instance. If the token generator is not properly co
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateTokenGeneratorRequest
 */
-func (a *SpTokenGeneratorsApiService) CreateTokenGenerator(ctx context.Context) ApiCreateTokenGeneratorRequest {
+func (a *SpTokenGeneratorsAPIService) CreateTokenGenerator(ctx context.Context) ApiCreateTokenGeneratorRequest {
 	return ApiCreateTokenGeneratorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -56,7 +56,7 @@ func (a *SpTokenGeneratorsApiService) CreateTokenGenerator(ctx context.Context) 
 // Execute executes the request
 //
 //	@return TokenGenerator
-func (a *SpTokenGeneratorsApiService) CreateTokenGeneratorExecute(r ApiCreateTokenGeneratorRequest) (*TokenGenerator, *http.Response, error) {
+func (a *SpTokenGeneratorsAPIService) CreateTokenGeneratorExecute(r ApiCreateTokenGeneratorRequest) (*TokenGenerator, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -64,7 +64,7 @@ func (a *SpTokenGeneratorsApiService) CreateTokenGeneratorExecute(r ApiCreateTok
 		localVarReturnValue *TokenGenerator
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpTokenGeneratorsApiService.CreateTokenGenerator")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpTokenGeneratorsAPIService.CreateTokenGenerator")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -146,7 +146,7 @@ func (a *SpTokenGeneratorsApiService) CreateTokenGeneratorExecute(r ApiCreateTok
 
 type ApiDeleteTokenGeneratorRequest struct {
 	ctx        context.Context
-	ApiService *SpTokenGeneratorsApiService
+	ApiService *SpTokenGeneratorsAPIService
 	id         string
 }
 
@@ -163,7 +163,7 @@ Delete a token generator instance with the specified ID. A 404 status code is re
 	@param id ID of the token generator instance to delete.
 	@return ApiDeleteTokenGeneratorRequest
 */
-func (a *SpTokenGeneratorsApiService) DeleteTokenGenerator(ctx context.Context, id string) ApiDeleteTokenGeneratorRequest {
+func (a *SpTokenGeneratorsAPIService) DeleteTokenGenerator(ctx context.Context, id string) ApiDeleteTokenGeneratorRequest {
 	return ApiDeleteTokenGeneratorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -172,14 +172,14 @@ func (a *SpTokenGeneratorsApiService) DeleteTokenGenerator(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *SpTokenGeneratorsApiService) DeleteTokenGeneratorExecute(r ApiDeleteTokenGeneratorRequest) (*http.Response, error) {
+func (a *SpTokenGeneratorsAPIService) DeleteTokenGeneratorExecute(r ApiDeleteTokenGeneratorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpTokenGeneratorsApiService.DeleteTokenGenerator")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpTokenGeneratorsAPIService.DeleteTokenGenerator")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -259,7 +259,7 @@ func (a *SpTokenGeneratorsApiService) DeleteTokenGeneratorExecute(r ApiDeleteTok
 
 type ApiGetTokenGeneratorRequest struct {
 	ctx        context.Context
-	ApiService *SpTokenGeneratorsApiService
+	ApiService *SpTokenGeneratorsAPIService
 	id         string
 }
 
@@ -276,7 +276,7 @@ Get the configured token generator instance with the specified ID. A 404 status 
 	@param id ID of the token generator instance to fetch.
 	@return ApiGetTokenGeneratorRequest
 */
-func (a *SpTokenGeneratorsApiService) GetTokenGenerator(ctx context.Context, id string) ApiGetTokenGeneratorRequest {
+func (a *SpTokenGeneratorsAPIService) GetTokenGenerator(ctx context.Context, id string) ApiGetTokenGeneratorRequest {
 	return ApiGetTokenGeneratorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -287,7 +287,7 @@ func (a *SpTokenGeneratorsApiService) GetTokenGenerator(ctx context.Context, id 
 // Execute executes the request
 //
 //	@return TokenGenerator
-func (a *SpTokenGeneratorsApiService) GetTokenGeneratorExecute(r ApiGetTokenGeneratorRequest) (*TokenGenerator, *http.Response, error) {
+func (a *SpTokenGeneratorsAPIService) GetTokenGeneratorExecute(r ApiGetTokenGeneratorRequest) (*TokenGenerator, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -295,7 +295,7 @@ func (a *SpTokenGeneratorsApiService) GetTokenGeneratorExecute(r ApiGetTokenGene
 		localVarReturnValue *TokenGenerator
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpTokenGeneratorsApiService.GetTokenGenerator")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpTokenGeneratorsAPIService.GetTokenGenerator")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -373,7 +373,7 @@ func (a *SpTokenGeneratorsApiService) GetTokenGeneratorExecute(r ApiGetTokenGene
 
 type ApiGetTokenGeneratorDescriptorsRequest struct {
 	ctx        context.Context
-	ApiService *SpTokenGeneratorsApiService
+	ApiService *SpTokenGeneratorsAPIService
 }
 
 func (r ApiGetTokenGeneratorDescriptorsRequest) Execute() (*TokenGeneratorDescriptors, *http.Response, error) {
@@ -386,7 +386,7 @@ GetTokenGeneratorDescriptors Get the list of available token generators.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetTokenGeneratorDescriptorsRequest
 */
-func (a *SpTokenGeneratorsApiService) GetTokenGeneratorDescriptors(ctx context.Context) ApiGetTokenGeneratorDescriptorsRequest {
+func (a *SpTokenGeneratorsAPIService) GetTokenGeneratorDescriptors(ctx context.Context) ApiGetTokenGeneratorDescriptorsRequest {
 	return ApiGetTokenGeneratorDescriptorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -396,7 +396,7 @@ func (a *SpTokenGeneratorsApiService) GetTokenGeneratorDescriptors(ctx context.C
 // Execute executes the request
 //
 //	@return TokenGeneratorDescriptors
-func (a *SpTokenGeneratorsApiService) GetTokenGeneratorDescriptorsExecute(r ApiGetTokenGeneratorDescriptorsRequest) (*TokenGeneratorDescriptors, *http.Response, error) {
+func (a *SpTokenGeneratorsAPIService) GetTokenGeneratorDescriptorsExecute(r ApiGetTokenGeneratorDescriptorsRequest) (*TokenGeneratorDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -404,7 +404,7 @@ func (a *SpTokenGeneratorsApiService) GetTokenGeneratorDescriptorsExecute(r ApiG
 		localVarReturnValue *TokenGeneratorDescriptors
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpTokenGeneratorsApiService.GetTokenGeneratorDescriptors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpTokenGeneratorsAPIService.GetTokenGeneratorDescriptors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -471,7 +471,7 @@ func (a *SpTokenGeneratorsApiService) GetTokenGeneratorDescriptorsExecute(r ApiG
 
 type ApiGetTokenGeneratorDescriptorsByIdRequest struct {
 	ctx        context.Context
-	ApiService *SpTokenGeneratorsApiService
+	ApiService *SpTokenGeneratorsAPIService
 	id         string
 }
 
@@ -488,7 +488,7 @@ Get the description of a token generator plugin by ID. A 404 status code is retu
 	@param id ID of a token generator descriptor to fetch.
 	@return ApiGetTokenGeneratorDescriptorsByIdRequest
 */
-func (a *SpTokenGeneratorsApiService) GetTokenGeneratorDescriptorsById(ctx context.Context, id string) ApiGetTokenGeneratorDescriptorsByIdRequest {
+func (a *SpTokenGeneratorsAPIService) GetTokenGeneratorDescriptorsById(ctx context.Context, id string) ApiGetTokenGeneratorDescriptorsByIdRequest {
 	return ApiGetTokenGeneratorDescriptorsByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -499,7 +499,7 @@ func (a *SpTokenGeneratorsApiService) GetTokenGeneratorDescriptorsById(ctx conte
 // Execute executes the request
 //
 //	@return TokenGeneratorDescriptor
-func (a *SpTokenGeneratorsApiService) GetTokenGeneratorDescriptorsByIdExecute(r ApiGetTokenGeneratorDescriptorsByIdRequest) (*TokenGeneratorDescriptor, *http.Response, error) {
+func (a *SpTokenGeneratorsAPIService) GetTokenGeneratorDescriptorsByIdExecute(r ApiGetTokenGeneratorDescriptorsByIdRequest) (*TokenGeneratorDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -507,7 +507,7 @@ func (a *SpTokenGeneratorsApiService) GetTokenGeneratorDescriptorsByIdExecute(r 
 		localVarReturnValue *TokenGeneratorDescriptor
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpTokenGeneratorsApiService.GetTokenGeneratorDescriptorsById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpTokenGeneratorsAPIService.GetTokenGeneratorDescriptorsById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -585,7 +585,7 @@ func (a *SpTokenGeneratorsApiService) GetTokenGeneratorDescriptorsByIdExecute(r 
 
 type ApiGetTokenGeneratorsRequest struct {
 	ctx        context.Context
-	ApiService *SpTokenGeneratorsApiService
+	ApiService *SpTokenGeneratorsAPIService
 }
 
 func (r ApiGetTokenGeneratorsRequest) Execute() (*TokenGenerators, *http.Response, error) {
@@ -598,7 +598,7 @@ GetTokenGenerators Get the list of token generator instances.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetTokenGeneratorsRequest
 */
-func (a *SpTokenGeneratorsApiService) GetTokenGenerators(ctx context.Context) ApiGetTokenGeneratorsRequest {
+func (a *SpTokenGeneratorsAPIService) GetTokenGenerators(ctx context.Context) ApiGetTokenGeneratorsRequest {
 	return ApiGetTokenGeneratorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -608,7 +608,7 @@ func (a *SpTokenGeneratorsApiService) GetTokenGenerators(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return TokenGenerators
-func (a *SpTokenGeneratorsApiService) GetTokenGeneratorsExecute(r ApiGetTokenGeneratorsRequest) (*TokenGenerators, *http.Response, error) {
+func (a *SpTokenGeneratorsAPIService) GetTokenGeneratorsExecute(r ApiGetTokenGeneratorsRequest) (*TokenGenerators, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -616,7 +616,7 @@ func (a *SpTokenGeneratorsApiService) GetTokenGeneratorsExecute(r ApiGetTokenGen
 		localVarReturnValue *TokenGenerators
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpTokenGeneratorsApiService.GetTokenGenerators")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpTokenGeneratorsAPIService.GetTokenGenerators")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -683,7 +683,7 @@ func (a *SpTokenGeneratorsApiService) GetTokenGeneratorsExecute(r ApiGetTokenGen
 
 type ApiUpdateTokenGeneratorRequest struct {
 	ctx        context.Context
-	ApiService *SpTokenGeneratorsApiService
+	ApiService *SpTokenGeneratorsAPIService
 	id         string
 	body       *TokenGenerator
 }
@@ -707,7 +707,7 @@ Update a token generator instance. If the token generator is not properly config
 	@param id ID of the token generator instance.
 	@return ApiUpdateTokenGeneratorRequest
 */
-func (a *SpTokenGeneratorsApiService) UpdateTokenGenerator(ctx context.Context, id string) ApiUpdateTokenGeneratorRequest {
+func (a *SpTokenGeneratorsAPIService) UpdateTokenGenerator(ctx context.Context, id string) ApiUpdateTokenGeneratorRequest {
 	return ApiUpdateTokenGeneratorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -718,7 +718,7 @@ func (a *SpTokenGeneratorsApiService) UpdateTokenGenerator(ctx context.Context, 
 // Execute executes the request
 //
 //	@return TokenGenerator
-func (a *SpTokenGeneratorsApiService) UpdateTokenGeneratorExecute(r ApiUpdateTokenGeneratorRequest) (*TokenGenerator, *http.Response, error) {
+func (a *SpTokenGeneratorsAPIService) UpdateTokenGeneratorExecute(r ApiUpdateTokenGeneratorRequest) (*TokenGenerator, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -726,7 +726,7 @@ func (a *SpTokenGeneratorsApiService) UpdateTokenGeneratorExecute(r ApiUpdateTok
 		localVarReturnValue *TokenGenerator
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpTokenGeneratorsApiService.UpdateTokenGenerator")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpTokenGeneratorsAPIService.UpdateTokenGenerator")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

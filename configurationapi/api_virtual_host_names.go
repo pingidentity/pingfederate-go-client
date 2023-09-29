@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// VirtualHostNamesApiService VirtualHostNamesApi service
-type VirtualHostNamesApiService service
+// VirtualHostNamesAPIService VirtualHostNamesAPI service
+type VirtualHostNamesAPIService service
 
 type ApiGetVirtualHostNamesSettingsRequest struct {
 	ctx        context.Context
-	ApiService *VirtualHostNamesApiService
+	ApiService *VirtualHostNamesAPIService
 }
 
 func (r ApiGetVirtualHostNamesSettingsRequest) Execute() (*VirtualHostNameSettings, *http.Response, error) {
@@ -36,7 +36,7 @@ GetVirtualHostNamesSettings Retrieve virtual host names settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetVirtualHostNamesSettingsRequest
 */
-func (a *VirtualHostNamesApiService) GetVirtualHostNamesSettings(ctx context.Context) ApiGetVirtualHostNamesSettingsRequest {
+func (a *VirtualHostNamesAPIService) GetVirtualHostNamesSettings(ctx context.Context) ApiGetVirtualHostNamesSettingsRequest {
 	return ApiGetVirtualHostNamesSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -46,7 +46,7 @@ func (a *VirtualHostNamesApiService) GetVirtualHostNamesSettings(ctx context.Con
 // Execute executes the request
 //
 //	@return VirtualHostNameSettings
-func (a *VirtualHostNamesApiService) GetVirtualHostNamesSettingsExecute(r ApiGetVirtualHostNamesSettingsRequest) (*VirtualHostNameSettings, *http.Response, error) {
+func (a *VirtualHostNamesAPIService) GetVirtualHostNamesSettingsExecute(r ApiGetVirtualHostNamesSettingsRequest) (*VirtualHostNameSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *VirtualHostNamesApiService) GetVirtualHostNamesSettingsExecute(r ApiGet
 		localVarReturnValue *VirtualHostNameSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualHostNamesApiService.GetVirtualHostNamesSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualHostNamesAPIService.GetVirtualHostNamesSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -121,7 +121,7 @@ func (a *VirtualHostNamesApiService) GetVirtualHostNamesSettingsExecute(r ApiGet
 
 type ApiUpdateVirtualHostNamesSettingsRequest struct {
 	ctx        context.Context
-	ApiService *VirtualHostNamesApiService
+	ApiService *VirtualHostNamesAPIService
 	body       *VirtualHostNameSettings
 }
 
@@ -141,7 +141,7 @@ UpdateVirtualHostNamesSettings Update virtual host names settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateVirtualHostNamesSettingsRequest
 */
-func (a *VirtualHostNamesApiService) UpdateVirtualHostNamesSettings(ctx context.Context) ApiUpdateVirtualHostNamesSettingsRequest {
+func (a *VirtualHostNamesAPIService) UpdateVirtualHostNamesSettings(ctx context.Context) ApiUpdateVirtualHostNamesSettingsRequest {
 	return ApiUpdateVirtualHostNamesSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -151,7 +151,7 @@ func (a *VirtualHostNamesApiService) UpdateVirtualHostNamesSettings(ctx context.
 // Execute executes the request
 //
 //	@return VirtualHostNameSettings
-func (a *VirtualHostNamesApiService) UpdateVirtualHostNamesSettingsExecute(r ApiUpdateVirtualHostNamesSettingsRequest) (*VirtualHostNameSettings, *http.Response, error) {
+func (a *VirtualHostNamesAPIService) UpdateVirtualHostNamesSettingsExecute(r ApiUpdateVirtualHostNamesSettingsRequest) (*VirtualHostNameSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -159,7 +159,7 @@ func (a *VirtualHostNamesApiService) UpdateVirtualHostNamesSettingsExecute(r Api
 		localVarReturnValue *VirtualHostNameSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualHostNamesApiService.UpdateVirtualHostNamesSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualHostNamesAPIService.UpdateVirtualHostNamesSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

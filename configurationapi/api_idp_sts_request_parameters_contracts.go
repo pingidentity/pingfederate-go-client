@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// IdpStsRequestParametersContractsApiService IdpStsRequestParametersContractsApi service
-type IdpStsRequestParametersContractsApiService service
+// IdpStsRequestParametersContractsAPIService IdpStsRequestParametersContractsAPI service
+type IdpStsRequestParametersContractsAPIService service
 
 type ApiCreateStsRequestParamContractRequest struct {
 	ctx        context.Context
-	ApiService *IdpStsRequestParametersContractsApiService
+	ApiService *IdpStsRequestParametersContractsAPIService
 	body       *StsRequestParametersContract
 }
 
@@ -44,7 +44,7 @@ CreateStsRequestParamContract Create a new STS Request Parameters Contract.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateStsRequestParamContractRequest
 */
-func (a *IdpStsRequestParametersContractsApiService) CreateStsRequestParamContract(ctx context.Context) ApiCreateStsRequestParamContractRequest {
+func (a *IdpStsRequestParametersContractsAPIService) CreateStsRequestParamContract(ctx context.Context) ApiCreateStsRequestParamContractRequest {
 	return ApiCreateStsRequestParamContractRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *IdpStsRequestParametersContractsApiService) CreateStsRequestParamContra
 // Execute executes the request
 //
 //	@return StsRequestParametersContract
-func (a *IdpStsRequestParametersContractsApiService) CreateStsRequestParamContractExecute(r ApiCreateStsRequestParamContractRequest) (*StsRequestParametersContract, *http.Response, error) {
+func (a *IdpStsRequestParametersContractsAPIService) CreateStsRequestParamContractExecute(r ApiCreateStsRequestParamContractRequest) (*StsRequestParametersContract, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *IdpStsRequestParametersContractsApiService) CreateStsRequestParamContra
 		localVarReturnValue *StsRequestParametersContract
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpStsRequestParametersContractsApiService.CreateStsRequestParamContract")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpStsRequestParametersContractsAPIService.CreateStsRequestParamContract")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,7 +144,7 @@ func (a *IdpStsRequestParametersContractsApiService) CreateStsRequestParamContra
 
 type ApiDeleteStsRequestParamContractByIdRequest struct {
 	ctx        context.Context
-	ApiService *IdpStsRequestParametersContractsApiService
+	ApiService *IdpStsRequestParametersContractsAPIService
 	id         string
 }
 
@@ -159,7 +159,7 @@ DeleteStsRequestParamContractById Delete a STS Request Parameters Contract.
 	@param id ID of STS Request Parameters Contract to delete.
 	@return ApiDeleteStsRequestParamContractByIdRequest
 */
-func (a *IdpStsRequestParametersContractsApiService) DeleteStsRequestParamContractById(ctx context.Context, id string) ApiDeleteStsRequestParamContractByIdRequest {
+func (a *IdpStsRequestParametersContractsAPIService) DeleteStsRequestParamContractById(ctx context.Context, id string) ApiDeleteStsRequestParamContractByIdRequest {
 	return ApiDeleteStsRequestParamContractByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -168,14 +168,14 @@ func (a *IdpStsRequestParametersContractsApiService) DeleteStsRequestParamContra
 }
 
 // Execute executes the request
-func (a *IdpStsRequestParametersContractsApiService) DeleteStsRequestParamContractByIdExecute(r ApiDeleteStsRequestParamContractByIdRequest) (*http.Response, error) {
+func (a *IdpStsRequestParametersContractsAPIService) DeleteStsRequestParamContractByIdExecute(r ApiDeleteStsRequestParamContractByIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpStsRequestParametersContractsApiService.DeleteStsRequestParamContractById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpStsRequestParametersContractsAPIService.DeleteStsRequestParamContractById")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -244,7 +244,7 @@ func (a *IdpStsRequestParametersContractsApiService) DeleteStsRequestParamContra
 
 type ApiGetStsRequestParamContractByIdRequest struct {
 	ctx        context.Context
-	ApiService *IdpStsRequestParametersContractsApiService
+	ApiService *IdpStsRequestParametersContractsAPIService
 	id         string
 }
 
@@ -259,7 +259,7 @@ GetStsRequestParamContractById Get a STS Request Parameters Contract.
 	@param id ID of STS Request Parameters Contract to fetch.
 	@return ApiGetStsRequestParamContractByIdRequest
 */
-func (a *IdpStsRequestParametersContractsApiService) GetStsRequestParamContractById(ctx context.Context, id string) ApiGetStsRequestParamContractByIdRequest {
+func (a *IdpStsRequestParametersContractsAPIService) GetStsRequestParamContractById(ctx context.Context, id string) ApiGetStsRequestParamContractByIdRequest {
 	return ApiGetStsRequestParamContractByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -270,7 +270,7 @@ func (a *IdpStsRequestParametersContractsApiService) GetStsRequestParamContractB
 // Execute executes the request
 //
 //	@return StsRequestParametersContract
-func (a *IdpStsRequestParametersContractsApiService) GetStsRequestParamContractByIdExecute(r ApiGetStsRequestParamContractByIdRequest) (*StsRequestParametersContract, *http.Response, error) {
+func (a *IdpStsRequestParametersContractsAPIService) GetStsRequestParamContractByIdExecute(r ApiGetStsRequestParamContractByIdRequest) (*StsRequestParametersContract, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -278,7 +278,7 @@ func (a *IdpStsRequestParametersContractsApiService) GetStsRequestParamContractB
 		localVarReturnValue *StsRequestParametersContract
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpStsRequestParametersContractsApiService.GetStsRequestParamContractById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpStsRequestParametersContractsAPIService.GetStsRequestParamContractById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -356,7 +356,7 @@ func (a *IdpStsRequestParametersContractsApiService) GetStsRequestParamContractB
 
 type ApiGetStsRequestParamContractsRequest struct {
 	ctx        context.Context
-	ApiService *IdpStsRequestParametersContractsApiService
+	ApiService *IdpStsRequestParametersContractsAPIService
 }
 
 func (r ApiGetStsRequestParamContractsRequest) Execute() (*StsRequestParametersContracts, *http.Response, error) {
@@ -369,7 +369,7 @@ GetStsRequestParamContracts Get the list of STS Request Parameters Contracts.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetStsRequestParamContractsRequest
 */
-func (a *IdpStsRequestParametersContractsApiService) GetStsRequestParamContracts(ctx context.Context) ApiGetStsRequestParamContractsRequest {
+func (a *IdpStsRequestParametersContractsAPIService) GetStsRequestParamContracts(ctx context.Context) ApiGetStsRequestParamContractsRequest {
 	return ApiGetStsRequestParamContractsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -379,7 +379,7 @@ func (a *IdpStsRequestParametersContractsApiService) GetStsRequestParamContracts
 // Execute executes the request
 //
 //	@return StsRequestParametersContracts
-func (a *IdpStsRequestParametersContractsApiService) GetStsRequestParamContractsExecute(r ApiGetStsRequestParamContractsRequest) (*StsRequestParametersContracts, *http.Response, error) {
+func (a *IdpStsRequestParametersContractsAPIService) GetStsRequestParamContractsExecute(r ApiGetStsRequestParamContractsRequest) (*StsRequestParametersContracts, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -387,7 +387,7 @@ func (a *IdpStsRequestParametersContractsApiService) GetStsRequestParamContracts
 		localVarReturnValue *StsRequestParametersContracts
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpStsRequestParametersContractsApiService.GetStsRequestParamContracts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpStsRequestParametersContractsAPIService.GetStsRequestParamContracts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -454,7 +454,7 @@ func (a *IdpStsRequestParametersContractsApiService) GetStsRequestParamContracts
 
 type ApiUpdateStsRequestParamContractByIdRequest struct {
 	ctx        context.Context
-	ApiService *IdpStsRequestParametersContractsApiService
+	ApiService *IdpStsRequestParametersContractsAPIService
 	id         string
 	body       *StsRequestParametersContract
 }
@@ -476,7 +476,7 @@ UpdateStsRequestParamContractById Update a STS Request Parameters Contract.
 	@param id ID of STS Request Parameters Contract to update.
 	@return ApiUpdateStsRequestParamContractByIdRequest
 */
-func (a *IdpStsRequestParametersContractsApiService) UpdateStsRequestParamContractById(ctx context.Context, id string) ApiUpdateStsRequestParamContractByIdRequest {
+func (a *IdpStsRequestParametersContractsAPIService) UpdateStsRequestParamContractById(ctx context.Context, id string) ApiUpdateStsRequestParamContractByIdRequest {
 	return ApiUpdateStsRequestParamContractByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -487,7 +487,7 @@ func (a *IdpStsRequestParametersContractsApiService) UpdateStsRequestParamContra
 // Execute executes the request
 //
 //	@return StsRequestParametersContract
-func (a *IdpStsRequestParametersContractsApiService) UpdateStsRequestParamContractByIdExecute(r ApiUpdateStsRequestParamContractByIdRequest) (*StsRequestParametersContract, *http.Response, error) {
+func (a *IdpStsRequestParametersContractsAPIService) UpdateStsRequestParamContractByIdExecute(r ApiUpdateStsRequestParamContractByIdRequest) (*StsRequestParametersContract, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -495,7 +495,7 @@ func (a *IdpStsRequestParametersContractsApiService) UpdateStsRequestParamContra
 		localVarReturnValue *StsRequestParametersContract
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpStsRequestParametersContractsApiService.UpdateStsRequestParamContractById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpStsRequestParametersContractsAPIService.UpdateStsRequestParamContractById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

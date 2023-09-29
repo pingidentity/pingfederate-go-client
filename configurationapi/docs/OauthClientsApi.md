@@ -1,16 +1,16 @@
-# \OauthClientsApi
+# \OauthClientsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateOauthClient**](OauthClientsApi.md#CreateOauthClient) | **Post** /oauth/clients | Create a new OAuth client.
-[**DeleteOauthClient**](OauthClientsApi.md#DeleteOauthClient) | **Delete** /oauth/clients/{id} | Delete an OAuth client.
-[**GetOauthClientById**](OauthClientsApi.md#GetOauthClientById) | **Get** /oauth/clients/{id} | Find the OAuth client by ID.
-[**GetOauthClientSecret**](OauthClientsApi.md#GetOauthClientSecret) | **Get** /oauth/clients/{id}/clientAuth/clientSecret | Get the client secret of an existing OAuth client.
-[**GetOauthClients**](OauthClientsApi.md#GetOauthClients) | **Get** /oauth/clients | Get the list of OAuth clients.
-[**UpdateOauthClient**](OauthClientsApi.md#UpdateOauthClient) | **Put** /oauth/clients/{id} | Updates the OAuth client.
-[**UpdateOauthClientSecret**](OauthClientsApi.md#UpdateOauthClientSecret) | **Put** /oauth/clients/{id}/clientAuth/clientSecret | Update the client secret of an existing OAuth client.
+[**CreateOauthClient**](OauthClientsAPI.md#CreateOauthClient) | **Post** /oauth/clients | Create a new OAuth client.
+[**DeleteOauthClient**](OauthClientsAPI.md#DeleteOauthClient) | **Delete** /oauth/clients/{id} | Delete an OAuth client.
+[**GetOauthClientById**](OauthClientsAPI.md#GetOauthClientById) | **Get** /oauth/clients/{id} | Find the OAuth client by ID.
+[**GetOauthClientSecret**](OauthClientsAPI.md#GetOauthClientSecret) | **Get** /oauth/clients/{id}/clientAuth/clientSecret | Get the client secret of an existing OAuth client.
+[**GetOauthClients**](OauthClientsAPI.md#GetOauthClients) | **Get** /oauth/clients | Get the list of OAuth clients.
+[**UpdateOauthClient**](OauthClientsAPI.md#UpdateOauthClient) | **Put** /oauth/clients/{id} | Updates the OAuth client.
+[**UpdateOauthClientSecret**](OauthClientsAPI.md#UpdateOauthClientSecret) | **Put** /oauth/clients/{id}/clientAuth/clientSecret | Update the client secret of an existing OAuth client.
 
 
 
@@ -39,13 +39,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientsApi.CreateOauthClient(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.OauthClientsAPI.CreateOauthClient(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsApi.CreateOauthClient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsAPI.CreateOauthClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateOauthClient`: Client
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientsApi.CreateOauthClient`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthClientsAPI.CreateOauthClient`: %v\n", resp)
 }
 ```
 
@@ -103,9 +103,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthClientsApi.DeleteOauthClient(context.Background(), id).Execute()
+    r, err := apiClient.OauthClientsAPI.DeleteOauthClient(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsApi.DeleteOauthClient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsAPI.DeleteOauthClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -169,13 +169,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientsApi.GetOauthClientById(context.Background(), id).Execute()
+    resp, r, err := apiClient.OauthClientsAPI.GetOauthClientById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsApi.GetOauthClientById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsAPI.GetOauthClientById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOauthClientById`: Client
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientsApi.GetOauthClientById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthClientsAPI.GetOauthClientById`: %v\n", resp)
 }
 ```
 
@@ -237,13 +237,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientsApi.GetOauthClientSecret(context.Background(), id).Execute()
+    resp, r, err := apiClient.OauthClientsAPI.GetOauthClientSecret(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsApi.GetOauthClientSecret``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsAPI.GetOauthClientSecret``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOauthClientSecret`: ClientSecret
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientsApi.GetOauthClientSecret`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthClientsAPI.GetOauthClientSecret`: %v\n", resp)
 }
 ```
 
@@ -307,13 +307,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientsApi.GetOauthClients(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
+    resp, r, err := apiClient.OauthClientsAPI.GetOauthClients(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsApi.GetOauthClients``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsAPI.GetOauthClients``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOauthClients`: Clients
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientsApi.GetOauthClients`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthClientsAPI.GetOauthClients`: %v\n", resp)
 }
 ```
 
@@ -374,13 +374,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientsApi.UpdateOauthClient(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.OauthClientsAPI.UpdateOauthClient(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsApi.UpdateOauthClient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsAPI.UpdateOauthClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateOauthClient`: Client
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientsApi.UpdateOauthClient`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthClientsAPI.UpdateOauthClient`: %v\n", resp)
 }
 ```
 
@@ -444,13 +444,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientsApi.UpdateOauthClientSecret(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.OauthClientsAPI.UpdateOauthClientSecret(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsApi.UpdateOauthClientSecret``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsAPI.UpdateOauthClientSecret``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateOauthClientSecret`: ClientSecret
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientsApi.UpdateOauthClientSecret`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthClientsAPI.UpdateOauthClientSecret`: %v\n", resp)
 }
 ```
 

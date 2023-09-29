@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// CaptchaProvidersApiService CaptchaProvidersApi service
-type CaptchaProvidersApiService service
+// CaptchaProvidersAPIService CaptchaProvidersAPI service
+type CaptchaProvidersAPIService service
 
 type ApiCreateCaptchaProviderRequest struct {
 	ctx        context.Context
-	ApiService *CaptchaProvidersApiService
+	ApiService *CaptchaProvidersAPIService
 	body       *CaptchaProvider
 }
 
@@ -44,7 +44,7 @@ CreateCaptchaProvider Create a CAPTCHA provider plugin instance.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCaptchaProviderRequest
 */
-func (a *CaptchaProvidersApiService) CreateCaptchaProvider(ctx context.Context) ApiCreateCaptchaProviderRequest {
+func (a *CaptchaProvidersAPIService) CreateCaptchaProvider(ctx context.Context) ApiCreateCaptchaProviderRequest {
 	return ApiCreateCaptchaProviderRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *CaptchaProvidersApiService) CreateCaptchaProvider(ctx context.Context) 
 // Execute executes the request
 //
 //	@return CaptchaProvider
-func (a *CaptchaProvidersApiService) CreateCaptchaProviderExecute(r ApiCreateCaptchaProviderRequest) (*CaptchaProvider, *http.Response, error) {
+func (a *CaptchaProvidersAPIService) CreateCaptchaProviderExecute(r ApiCreateCaptchaProviderRequest) (*CaptchaProvider, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *CaptchaProvidersApiService) CreateCaptchaProviderExecute(r ApiCreateCap
 		localVarReturnValue *CaptchaProvider
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CaptchaProvidersApiService.CreateCaptchaProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CaptchaProvidersAPIService.CreateCaptchaProvider")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,7 +144,7 @@ func (a *CaptchaProvidersApiService) CreateCaptchaProviderExecute(r ApiCreateCap
 
 type ApiDeleteCaptchaProviderRequest struct {
 	ctx        context.Context
-	ApiService *CaptchaProvidersApiService
+	ApiService *CaptchaProvidersAPIService
 	id         string
 }
 
@@ -159,7 +159,7 @@ DeleteCaptchaProvider Delete a CAPTCHA provider plugin instance.
 	@param id ID of a CAPTCHA provider plugin instance.
 	@return ApiDeleteCaptchaProviderRequest
 */
-func (a *CaptchaProvidersApiService) DeleteCaptchaProvider(ctx context.Context, id string) ApiDeleteCaptchaProviderRequest {
+func (a *CaptchaProvidersAPIService) DeleteCaptchaProvider(ctx context.Context, id string) ApiDeleteCaptchaProviderRequest {
 	return ApiDeleteCaptchaProviderRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -168,14 +168,14 @@ func (a *CaptchaProvidersApiService) DeleteCaptchaProvider(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *CaptchaProvidersApiService) DeleteCaptchaProviderExecute(r ApiDeleteCaptchaProviderRequest) (*http.Response, error) {
+func (a *CaptchaProvidersAPIService) DeleteCaptchaProviderExecute(r ApiDeleteCaptchaProviderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CaptchaProvidersApiService.DeleteCaptchaProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CaptchaProvidersAPIService.DeleteCaptchaProvider")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -244,7 +244,7 @@ func (a *CaptchaProvidersApiService) DeleteCaptchaProviderExecute(r ApiDeleteCap
 
 type ApiGetCaptchaProviderRequest struct {
 	ctx        context.Context
-	ApiService *CaptchaProvidersApiService
+	ApiService *CaptchaProvidersAPIService
 	id         string
 }
 
@@ -259,7 +259,7 @@ GetCaptchaProvider Get a specific CAPTCHA provider plugin instance.
 	@param id ID of a CAPTCHA provider plugin instance.
 	@return ApiGetCaptchaProviderRequest
 */
-func (a *CaptchaProvidersApiService) GetCaptchaProvider(ctx context.Context, id string) ApiGetCaptchaProviderRequest {
+func (a *CaptchaProvidersAPIService) GetCaptchaProvider(ctx context.Context, id string) ApiGetCaptchaProviderRequest {
 	return ApiGetCaptchaProviderRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -270,7 +270,7 @@ func (a *CaptchaProvidersApiService) GetCaptchaProvider(ctx context.Context, id 
 // Execute executes the request
 //
 //	@return CaptchaProvider
-func (a *CaptchaProvidersApiService) GetCaptchaProviderExecute(r ApiGetCaptchaProviderRequest) (*CaptchaProvider, *http.Response, error) {
+func (a *CaptchaProvidersAPIService) GetCaptchaProviderExecute(r ApiGetCaptchaProviderRequest) (*CaptchaProvider, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -278,7 +278,7 @@ func (a *CaptchaProvidersApiService) GetCaptchaProviderExecute(r ApiGetCaptchaPr
 		localVarReturnValue *CaptchaProvider
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CaptchaProvidersApiService.GetCaptchaProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CaptchaProvidersAPIService.GetCaptchaProvider")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -356,7 +356,7 @@ func (a *CaptchaProvidersApiService) GetCaptchaProviderExecute(r ApiGetCaptchaPr
 
 type ApiGetCaptchaProviderPluginDescriptorRequest struct {
 	ctx        context.Context
-	ApiService *CaptchaProvidersApiService
+	ApiService *CaptchaProvidersAPIService
 	id         string
 }
 
@@ -371,7 +371,7 @@ GetCaptchaProviderPluginDescriptor Get a CAPTCHA provider plugin descriptor.
 	@param id ID of CAPTCHA provider plugin descriptor.
 	@return ApiGetCaptchaProviderPluginDescriptorRequest
 */
-func (a *CaptchaProvidersApiService) GetCaptchaProviderPluginDescriptor(ctx context.Context, id string) ApiGetCaptchaProviderPluginDescriptorRequest {
+func (a *CaptchaProvidersAPIService) GetCaptchaProviderPluginDescriptor(ctx context.Context, id string) ApiGetCaptchaProviderPluginDescriptorRequest {
 	return ApiGetCaptchaProviderPluginDescriptorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -382,7 +382,7 @@ func (a *CaptchaProvidersApiService) GetCaptchaProviderPluginDescriptor(ctx cont
 // Execute executes the request
 //
 //	@return ACAPTCHAProviderPluginDescriptor
-func (a *CaptchaProvidersApiService) GetCaptchaProviderPluginDescriptorExecute(r ApiGetCaptchaProviderPluginDescriptorRequest) (*ACAPTCHAProviderPluginDescriptor, *http.Response, error) {
+func (a *CaptchaProvidersAPIService) GetCaptchaProviderPluginDescriptorExecute(r ApiGetCaptchaProviderPluginDescriptorRequest) (*ACAPTCHAProviderPluginDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -390,7 +390,7 @@ func (a *CaptchaProvidersApiService) GetCaptchaProviderPluginDescriptorExecute(r
 		localVarReturnValue *ACAPTCHAProviderPluginDescriptor
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CaptchaProvidersApiService.GetCaptchaProviderPluginDescriptor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CaptchaProvidersAPIService.GetCaptchaProviderPluginDescriptor")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -468,7 +468,7 @@ func (a *CaptchaProvidersApiService) GetCaptchaProviderPluginDescriptorExecute(r
 
 type ApiGetCaptchaProviderPluginDescriptorsRequest struct {
 	ctx        context.Context
-	ApiService *CaptchaProvidersApiService
+	ApiService *CaptchaProvidersAPIService
 }
 
 func (r ApiGetCaptchaProviderPluginDescriptorsRequest) Execute() (*ACollectionOfCAPTCHAProviderPluginDescriptors, *http.Response, error) {
@@ -481,7 +481,7 @@ GetCaptchaProviderPluginDescriptors Get a list of available CAPTCHA provider plu
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCaptchaProviderPluginDescriptorsRequest
 */
-func (a *CaptchaProvidersApiService) GetCaptchaProviderPluginDescriptors(ctx context.Context) ApiGetCaptchaProviderPluginDescriptorsRequest {
+func (a *CaptchaProvidersAPIService) GetCaptchaProviderPluginDescriptors(ctx context.Context) ApiGetCaptchaProviderPluginDescriptorsRequest {
 	return ApiGetCaptchaProviderPluginDescriptorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -491,7 +491,7 @@ func (a *CaptchaProvidersApiService) GetCaptchaProviderPluginDescriptors(ctx con
 // Execute executes the request
 //
 //	@return ACollectionOfCAPTCHAProviderPluginDescriptors
-func (a *CaptchaProvidersApiService) GetCaptchaProviderPluginDescriptorsExecute(r ApiGetCaptchaProviderPluginDescriptorsRequest) (*ACollectionOfCAPTCHAProviderPluginDescriptors, *http.Response, error) {
+func (a *CaptchaProvidersAPIService) GetCaptchaProviderPluginDescriptorsExecute(r ApiGetCaptchaProviderPluginDescriptorsRequest) (*ACollectionOfCAPTCHAProviderPluginDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -499,7 +499,7 @@ func (a *CaptchaProvidersApiService) GetCaptchaProviderPluginDescriptorsExecute(
 		localVarReturnValue *ACollectionOfCAPTCHAProviderPluginDescriptors
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CaptchaProvidersApiService.GetCaptchaProviderPluginDescriptors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CaptchaProvidersAPIService.GetCaptchaProviderPluginDescriptors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -566,7 +566,7 @@ func (a *CaptchaProvidersApiService) GetCaptchaProviderPluginDescriptorsExecute(
 
 type ApiGetCaptchaProvidersRequest struct {
 	ctx        context.Context
-	ApiService *CaptchaProvidersApiService
+	ApiService *CaptchaProvidersAPIService
 }
 
 func (r ApiGetCaptchaProvidersRequest) Execute() (*CaptchaProviders, *http.Response, error) {
@@ -579,7 +579,7 @@ GetCaptchaProviders Get a list of CAPTCHA provider plugin instances.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCaptchaProvidersRequest
 */
-func (a *CaptchaProvidersApiService) GetCaptchaProviders(ctx context.Context) ApiGetCaptchaProvidersRequest {
+func (a *CaptchaProvidersAPIService) GetCaptchaProviders(ctx context.Context) ApiGetCaptchaProvidersRequest {
 	return ApiGetCaptchaProvidersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -589,7 +589,7 @@ func (a *CaptchaProvidersApiService) GetCaptchaProviders(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return CaptchaProviders
-func (a *CaptchaProvidersApiService) GetCaptchaProvidersExecute(r ApiGetCaptchaProvidersRequest) (*CaptchaProviders, *http.Response, error) {
+func (a *CaptchaProvidersAPIService) GetCaptchaProvidersExecute(r ApiGetCaptchaProvidersRequest) (*CaptchaProviders, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -597,7 +597,7 @@ func (a *CaptchaProvidersApiService) GetCaptchaProvidersExecute(r ApiGetCaptchaP
 		localVarReturnValue *CaptchaProviders
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CaptchaProvidersApiService.GetCaptchaProviders")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CaptchaProvidersAPIService.GetCaptchaProviders")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -664,7 +664,7 @@ func (a *CaptchaProvidersApiService) GetCaptchaProvidersExecute(r ApiGetCaptchaP
 
 type ApiGetCaptchaProvidersSettingsRequest struct {
 	ctx        context.Context
-	ApiService *CaptchaProvidersApiService
+	ApiService *CaptchaProvidersAPIService
 }
 
 func (r ApiGetCaptchaProvidersSettingsRequest) Execute() (*CaptchaProvidersSettings, *http.Response, error) {
@@ -677,7 +677,7 @@ GetCaptchaProvidersSettings Get general CAPTCHA providers settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCaptchaProvidersSettingsRequest
 */
-func (a *CaptchaProvidersApiService) GetCaptchaProvidersSettings(ctx context.Context) ApiGetCaptchaProvidersSettingsRequest {
+func (a *CaptchaProvidersAPIService) GetCaptchaProvidersSettings(ctx context.Context) ApiGetCaptchaProvidersSettingsRequest {
 	return ApiGetCaptchaProvidersSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -687,7 +687,7 @@ func (a *CaptchaProvidersApiService) GetCaptchaProvidersSettings(ctx context.Con
 // Execute executes the request
 //
 //	@return CaptchaProvidersSettings
-func (a *CaptchaProvidersApiService) GetCaptchaProvidersSettingsExecute(r ApiGetCaptchaProvidersSettingsRequest) (*CaptchaProvidersSettings, *http.Response, error) {
+func (a *CaptchaProvidersAPIService) GetCaptchaProvidersSettingsExecute(r ApiGetCaptchaProvidersSettingsRequest) (*CaptchaProvidersSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -695,7 +695,7 @@ func (a *CaptchaProvidersApiService) GetCaptchaProvidersSettingsExecute(r ApiGet
 		localVarReturnValue *CaptchaProvidersSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CaptchaProvidersApiService.GetCaptchaProvidersSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CaptchaProvidersAPIService.GetCaptchaProvidersSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -762,7 +762,7 @@ func (a *CaptchaProvidersApiService) GetCaptchaProvidersSettingsExecute(r ApiGet
 
 type ApiUpdateCaptchaProviderRequest struct {
 	ctx        context.Context
-	ApiService *CaptchaProvidersApiService
+	ApiService *CaptchaProvidersAPIService
 	id         string
 	body       *CaptchaProvider
 }
@@ -784,7 +784,7 @@ UpdateCaptchaProvider Update a CAPTCHA provider plugin instance.
 	@param id ID of a CAPTCHA provider plugin instance.
 	@return ApiUpdateCaptchaProviderRequest
 */
-func (a *CaptchaProvidersApiService) UpdateCaptchaProvider(ctx context.Context, id string) ApiUpdateCaptchaProviderRequest {
+func (a *CaptchaProvidersAPIService) UpdateCaptchaProvider(ctx context.Context, id string) ApiUpdateCaptchaProviderRequest {
 	return ApiUpdateCaptchaProviderRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -795,7 +795,7 @@ func (a *CaptchaProvidersApiService) UpdateCaptchaProvider(ctx context.Context, 
 // Execute executes the request
 //
 //	@return CaptchaProvider
-func (a *CaptchaProvidersApiService) UpdateCaptchaProviderExecute(r ApiUpdateCaptchaProviderRequest) (*CaptchaProvider, *http.Response, error) {
+func (a *CaptchaProvidersAPIService) UpdateCaptchaProviderExecute(r ApiUpdateCaptchaProviderRequest) (*CaptchaProvider, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -803,7 +803,7 @@ func (a *CaptchaProvidersApiService) UpdateCaptchaProviderExecute(r ApiUpdateCap
 		localVarReturnValue *CaptchaProvider
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CaptchaProvidersApiService.UpdateCaptchaProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CaptchaProvidersAPIService.UpdateCaptchaProvider")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -897,7 +897,7 @@ func (a *CaptchaProvidersApiService) UpdateCaptchaProviderExecute(r ApiUpdateCap
 
 type ApiUpdateCaptchaProvidersSettingsRequest struct {
 	ctx        context.Context
-	ApiService *CaptchaProvidersApiService
+	ApiService *CaptchaProvidersAPIService
 	body       *CaptchaProvidersSettings
 }
 
@@ -917,7 +917,7 @@ UpdateCaptchaProvidersSettings Update general CAPTCHA providers settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateCaptchaProvidersSettingsRequest
 */
-func (a *CaptchaProvidersApiService) UpdateCaptchaProvidersSettings(ctx context.Context) ApiUpdateCaptchaProvidersSettingsRequest {
+func (a *CaptchaProvidersAPIService) UpdateCaptchaProvidersSettings(ctx context.Context) ApiUpdateCaptchaProvidersSettingsRequest {
 	return ApiUpdateCaptchaProvidersSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -927,7 +927,7 @@ func (a *CaptchaProvidersApiService) UpdateCaptchaProvidersSettings(ctx context.
 // Execute executes the request
 //
 //	@return CaptchaProvidersSettings
-func (a *CaptchaProvidersApiService) UpdateCaptchaProvidersSettingsExecute(r ApiUpdateCaptchaProvidersSettingsRequest) (*CaptchaProvidersSettings, *http.Response, error) {
+func (a *CaptchaProvidersAPIService) UpdateCaptchaProvidersSettingsExecute(r ApiUpdateCaptchaProvidersSettingsRequest) (*CaptchaProvidersSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -935,7 +935,7 @@ func (a *CaptchaProvidersApiService) UpdateCaptchaProvidersSettingsExecute(r Api
 		localVarReturnValue *CaptchaProvidersSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CaptchaProvidersApiService.UpdateCaptchaProvidersSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CaptchaProvidersAPIService.UpdateCaptchaProvidersSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

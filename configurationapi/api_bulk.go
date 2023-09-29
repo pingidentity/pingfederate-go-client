@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// BulkApiService BulkApi service
-type BulkApiService service
+// BulkAPIService BulkAPI service
+type BulkAPIService service
 
 type ApiExportConfigurationRequest struct {
 	ctx                      context.Context
-	ApiService               *BulkApiService
+	ApiService               *BulkAPIService
 	includeExternalResources *bool
 }
 
@@ -45,7 +45,7 @@ For the /configStore resource type, only the settings that are different from th
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiExportConfigurationRequest
 */
-func (a *BulkApiService) ExportConfiguration(ctx context.Context) ApiExportConfigurationRequest {
+func (a *BulkAPIService) ExportConfiguration(ctx context.Context) ApiExportConfigurationRequest {
 	return ApiExportConfigurationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -55,7 +55,7 @@ func (a *BulkApiService) ExportConfiguration(ctx context.Context) ApiExportConfi
 // Execute executes the request
 //
 //	@return BulkConfig
-func (a *BulkApiService) ExportConfigurationExecute(r ApiExportConfigurationRequest) (*BulkConfig, *http.Response, error) {
+func (a *BulkAPIService) ExportConfigurationExecute(r ApiExportConfigurationRequest) (*BulkConfig, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -63,7 +63,7 @@ func (a *BulkApiService) ExportConfigurationExecute(r ApiExportConfigurationRequ
 		localVarReturnValue *BulkConfig
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BulkApiService.ExportConfiguration")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BulkAPIService.ExportConfiguration")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -76,6 +76,9 @@ func (a *BulkApiService) ExportConfigurationExecute(r ApiExportConfigurationRequ
 
 	if r.includeExternalResources != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeExternalResources", r.includeExternalResources, "")
+	} else {
+		var defaultValue bool = false
+		r.includeExternalResources = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -133,7 +136,7 @@ func (a *BulkApiService) ExportConfigurationExecute(r ApiExportConfigurationRequ
 
 type ApiImportConfigurationRequest struct {
 	ctx                       context.Context
-	ApiService                *BulkApiService
+	ApiService                *BulkAPIService
 	body                      *BulkConfig
 	failFast                  *bool
 	xBypassExternalValidation *bool
@@ -169,7 +172,7 @@ All existing configuration will be wiped before the import begins. If any valida
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiImportConfigurationRequest
 */
-func (a *BulkApiService) ImportConfiguration(ctx context.Context) ApiImportConfigurationRequest {
+func (a *BulkAPIService) ImportConfiguration(ctx context.Context) ApiImportConfigurationRequest {
 	return ApiImportConfigurationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -177,14 +180,14 @@ func (a *BulkApiService) ImportConfiguration(ctx context.Context) ApiImportConfi
 }
 
 // Execute executes the request
-func (a *BulkApiService) ImportConfigurationExecute(r ApiImportConfigurationRequest) (*http.Response, error) {
+func (a *BulkAPIService) ImportConfigurationExecute(r ApiImportConfigurationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BulkApiService.ImportConfiguration")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BulkAPIService.ImportConfiguration")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -200,6 +203,9 @@ func (a *BulkApiService) ImportConfigurationExecute(r ApiImportConfigurationRequ
 
 	if r.failFast != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "failFast", r.failFast, "")
+	} else {
+		var defaultValue bool = true
+		r.failFast = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}

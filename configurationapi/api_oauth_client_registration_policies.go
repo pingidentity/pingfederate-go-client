@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// OauthClientRegistrationPoliciesApiService OauthClientRegistrationPoliciesApi service
-type OauthClientRegistrationPoliciesApiService service
+// OauthClientRegistrationPoliciesAPIService OauthClientRegistrationPoliciesAPI service
+type OauthClientRegistrationPoliciesAPIService service
 
 type ApiCreateDynamicClientRegistrationPolicyRequest struct {
 	ctx        context.Context
-	ApiService *OauthClientRegistrationPoliciesApiService
+	ApiService *OauthClientRegistrationPoliciesAPIService
 	body       *ClientRegistrationPolicy
 }
 
@@ -44,7 +44,7 @@ CreateDynamicClientRegistrationPolicy Create a client registration policy plugin
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateDynamicClientRegistrationPolicyRequest
 */
-func (a *OauthClientRegistrationPoliciesApiService) CreateDynamicClientRegistrationPolicy(ctx context.Context) ApiCreateDynamicClientRegistrationPolicyRequest {
+func (a *OauthClientRegistrationPoliciesAPIService) CreateDynamicClientRegistrationPolicy(ctx context.Context) ApiCreateDynamicClientRegistrationPolicyRequest {
 	return ApiCreateDynamicClientRegistrationPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *OauthClientRegistrationPoliciesApiService) CreateDynamicClientRegistrat
 // Execute executes the request
 //
 //	@return ClientRegistrationPolicy
-func (a *OauthClientRegistrationPoliciesApiService) CreateDynamicClientRegistrationPolicyExecute(r ApiCreateDynamicClientRegistrationPolicyRequest) (*ClientRegistrationPolicy, *http.Response, error) {
+func (a *OauthClientRegistrationPoliciesAPIService) CreateDynamicClientRegistrationPolicyExecute(r ApiCreateDynamicClientRegistrationPolicyRequest) (*ClientRegistrationPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *OauthClientRegistrationPoliciesApiService) CreateDynamicClientRegistrat
 		localVarReturnValue *ClientRegistrationPolicy
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthClientRegistrationPoliciesApiService.CreateDynamicClientRegistrationPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthClientRegistrationPoliciesAPIService.CreateDynamicClientRegistrationPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,7 +144,7 @@ func (a *OauthClientRegistrationPoliciesApiService) CreateDynamicClientRegistrat
 
 type ApiDeleteDynamicClientRegistrationPolicyRequest struct {
 	ctx        context.Context
-	ApiService *OauthClientRegistrationPoliciesApiService
+	ApiService *OauthClientRegistrationPoliciesAPIService
 	id         string
 }
 
@@ -159,7 +159,7 @@ DeleteDynamicClientRegistrationPolicy Delete a client registration policy plugin
 	@param id ID of a client registration policy plugin instance.
 	@return ApiDeleteDynamicClientRegistrationPolicyRequest
 */
-func (a *OauthClientRegistrationPoliciesApiService) DeleteDynamicClientRegistrationPolicy(ctx context.Context, id string) ApiDeleteDynamicClientRegistrationPolicyRequest {
+func (a *OauthClientRegistrationPoliciesAPIService) DeleteDynamicClientRegistrationPolicy(ctx context.Context, id string) ApiDeleteDynamicClientRegistrationPolicyRequest {
 	return ApiDeleteDynamicClientRegistrationPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -168,14 +168,14 @@ func (a *OauthClientRegistrationPoliciesApiService) DeleteDynamicClientRegistrat
 }
 
 // Execute executes the request
-func (a *OauthClientRegistrationPoliciesApiService) DeleteDynamicClientRegistrationPolicyExecute(r ApiDeleteDynamicClientRegistrationPolicyRequest) (*http.Response, error) {
+func (a *OauthClientRegistrationPoliciesAPIService) DeleteDynamicClientRegistrationPolicyExecute(r ApiDeleteDynamicClientRegistrationPolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthClientRegistrationPoliciesApiService.DeleteDynamicClientRegistrationPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthClientRegistrationPoliciesAPIService.DeleteDynamicClientRegistrationPolicy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -244,7 +244,7 @@ func (a *OauthClientRegistrationPoliciesApiService) DeleteDynamicClientRegistrat
 
 type ApiGetDynamicClientRegistrationDescriptorRequest struct {
 	ctx        context.Context
-	ApiService *OauthClientRegistrationPoliciesApiService
+	ApiService *OauthClientRegistrationPoliciesAPIService
 	id         string
 }
 
@@ -259,7 +259,7 @@ GetDynamicClientRegistrationDescriptor Get the description of a client registrat
 	@param id ID of client registration policy plugin descriptor.
 	@return ApiGetDynamicClientRegistrationDescriptorRequest
 */
-func (a *OauthClientRegistrationPoliciesApiService) GetDynamicClientRegistrationDescriptor(ctx context.Context, id string) ApiGetDynamicClientRegistrationDescriptorRequest {
+func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistrationDescriptor(ctx context.Context, id string) ApiGetDynamicClientRegistrationDescriptorRequest {
 	return ApiGetDynamicClientRegistrationDescriptorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -270,7 +270,7 @@ func (a *OauthClientRegistrationPoliciesApiService) GetDynamicClientRegistration
 // Execute executes the request
 //
 //	@return ClientRegistrationPolicyDescriptor
-func (a *OauthClientRegistrationPoliciesApiService) GetDynamicClientRegistrationDescriptorExecute(r ApiGetDynamicClientRegistrationDescriptorRequest) (*ClientRegistrationPolicyDescriptor, *http.Response, error) {
+func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistrationDescriptorExecute(r ApiGetDynamicClientRegistrationDescriptorRequest) (*ClientRegistrationPolicyDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -278,7 +278,7 @@ func (a *OauthClientRegistrationPoliciesApiService) GetDynamicClientRegistration
 		localVarReturnValue *ClientRegistrationPolicyDescriptor
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthClientRegistrationPoliciesApiService.GetDynamicClientRegistrationDescriptor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthClientRegistrationPoliciesAPIService.GetDynamicClientRegistrationDescriptor")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -356,7 +356,7 @@ func (a *OauthClientRegistrationPoliciesApiService) GetDynamicClientRegistration
 
 type ApiGetDynamicClientRegistrationDescriptorsRequest struct {
 	ctx        context.Context
-	ApiService *OauthClientRegistrationPoliciesApiService
+	ApiService *OauthClientRegistrationPoliciesAPIService
 }
 
 func (r ApiGetDynamicClientRegistrationDescriptorsRequest) Execute() (*ClientRegistrationPolicyDescriptors, *http.Response, error) {
@@ -369,7 +369,7 @@ GetDynamicClientRegistrationDescriptors Get the list of available client registr
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetDynamicClientRegistrationDescriptorsRequest
 */
-func (a *OauthClientRegistrationPoliciesApiService) GetDynamicClientRegistrationDescriptors(ctx context.Context) ApiGetDynamicClientRegistrationDescriptorsRequest {
+func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistrationDescriptors(ctx context.Context) ApiGetDynamicClientRegistrationDescriptorsRequest {
 	return ApiGetDynamicClientRegistrationDescriptorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -379,7 +379,7 @@ func (a *OauthClientRegistrationPoliciesApiService) GetDynamicClientRegistration
 // Execute executes the request
 //
 //	@return ClientRegistrationPolicyDescriptors
-func (a *OauthClientRegistrationPoliciesApiService) GetDynamicClientRegistrationDescriptorsExecute(r ApiGetDynamicClientRegistrationDescriptorsRequest) (*ClientRegistrationPolicyDescriptors, *http.Response, error) {
+func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistrationDescriptorsExecute(r ApiGetDynamicClientRegistrationDescriptorsRequest) (*ClientRegistrationPolicyDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -387,7 +387,7 @@ func (a *OauthClientRegistrationPoliciesApiService) GetDynamicClientRegistration
 		localVarReturnValue *ClientRegistrationPolicyDescriptors
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthClientRegistrationPoliciesApiService.GetDynamicClientRegistrationDescriptors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthClientRegistrationPoliciesAPIService.GetDynamicClientRegistrationDescriptors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -454,7 +454,7 @@ func (a *OauthClientRegistrationPoliciesApiService) GetDynamicClientRegistration
 
 type ApiGetDynamicClientRegistrationPoliciesRequest struct {
 	ctx        context.Context
-	ApiService *OauthClientRegistrationPoliciesApiService
+	ApiService *OauthClientRegistrationPoliciesAPIService
 }
 
 func (r ApiGetDynamicClientRegistrationPoliciesRequest) Execute() (*ClientRegistrationPolicies, *http.Response, error) {
@@ -467,7 +467,7 @@ GetDynamicClientRegistrationPolicies Get a list of client registration policy pl
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetDynamicClientRegistrationPoliciesRequest
 */
-func (a *OauthClientRegistrationPoliciesApiService) GetDynamicClientRegistrationPolicies(ctx context.Context) ApiGetDynamicClientRegistrationPoliciesRequest {
+func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistrationPolicies(ctx context.Context) ApiGetDynamicClientRegistrationPoliciesRequest {
 	return ApiGetDynamicClientRegistrationPoliciesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -477,7 +477,7 @@ func (a *OauthClientRegistrationPoliciesApiService) GetDynamicClientRegistration
 // Execute executes the request
 //
 //	@return ClientRegistrationPolicies
-func (a *OauthClientRegistrationPoliciesApiService) GetDynamicClientRegistrationPoliciesExecute(r ApiGetDynamicClientRegistrationPoliciesRequest) (*ClientRegistrationPolicies, *http.Response, error) {
+func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistrationPoliciesExecute(r ApiGetDynamicClientRegistrationPoliciesRequest) (*ClientRegistrationPolicies, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -485,7 +485,7 @@ func (a *OauthClientRegistrationPoliciesApiService) GetDynamicClientRegistration
 		localVarReturnValue *ClientRegistrationPolicies
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthClientRegistrationPoliciesApiService.GetDynamicClientRegistrationPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthClientRegistrationPoliciesAPIService.GetDynamicClientRegistrationPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -552,7 +552,7 @@ func (a *OauthClientRegistrationPoliciesApiService) GetDynamicClientRegistration
 
 type ApiGetDynamicClientRegistrationPolicyRequest struct {
 	ctx        context.Context
-	ApiService *OauthClientRegistrationPoliciesApiService
+	ApiService *OauthClientRegistrationPoliciesAPIService
 	id         string
 }
 
@@ -567,7 +567,7 @@ GetDynamicClientRegistrationPolicy Get a specific client registration policy plu
 	@param id ID of client registration policy plugin instance.
 	@return ApiGetDynamicClientRegistrationPolicyRequest
 */
-func (a *OauthClientRegistrationPoliciesApiService) GetDynamicClientRegistrationPolicy(ctx context.Context, id string) ApiGetDynamicClientRegistrationPolicyRequest {
+func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistrationPolicy(ctx context.Context, id string) ApiGetDynamicClientRegistrationPolicyRequest {
 	return ApiGetDynamicClientRegistrationPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -578,7 +578,7 @@ func (a *OauthClientRegistrationPoliciesApiService) GetDynamicClientRegistration
 // Execute executes the request
 //
 //	@return ClientRegistrationPolicy
-func (a *OauthClientRegistrationPoliciesApiService) GetDynamicClientRegistrationPolicyExecute(r ApiGetDynamicClientRegistrationPolicyRequest) (*ClientRegistrationPolicy, *http.Response, error) {
+func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistrationPolicyExecute(r ApiGetDynamicClientRegistrationPolicyRequest) (*ClientRegistrationPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -586,7 +586,7 @@ func (a *OauthClientRegistrationPoliciesApiService) GetDynamicClientRegistration
 		localVarReturnValue *ClientRegistrationPolicy
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthClientRegistrationPoliciesApiService.GetDynamicClientRegistrationPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthClientRegistrationPoliciesAPIService.GetDynamicClientRegistrationPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -664,7 +664,7 @@ func (a *OauthClientRegistrationPoliciesApiService) GetDynamicClientRegistration
 
 type ApiUpdateDynamicClientRegistrationPolicyRequest struct {
 	ctx        context.Context
-	ApiService *OauthClientRegistrationPoliciesApiService
+	ApiService *OauthClientRegistrationPoliciesAPIService
 	id         string
 	body       *ClientRegistrationPolicy
 }
@@ -686,7 +686,7 @@ UpdateDynamicClientRegistrationPolicy Update a client registration policy plugin
 	@param id ID of a client registration policy plugin instance.
 	@return ApiUpdateDynamicClientRegistrationPolicyRequest
 */
-func (a *OauthClientRegistrationPoliciesApiService) UpdateDynamicClientRegistrationPolicy(ctx context.Context, id string) ApiUpdateDynamicClientRegistrationPolicyRequest {
+func (a *OauthClientRegistrationPoliciesAPIService) UpdateDynamicClientRegistrationPolicy(ctx context.Context, id string) ApiUpdateDynamicClientRegistrationPolicyRequest {
 	return ApiUpdateDynamicClientRegistrationPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -697,7 +697,7 @@ func (a *OauthClientRegistrationPoliciesApiService) UpdateDynamicClientRegistrat
 // Execute executes the request
 //
 //	@return ClientRegistrationPolicy
-func (a *OauthClientRegistrationPoliciesApiService) UpdateDynamicClientRegistrationPolicyExecute(r ApiUpdateDynamicClientRegistrationPolicyRequest) (*ClientRegistrationPolicy, *http.Response, error) {
+func (a *OauthClientRegistrationPoliciesAPIService) UpdateDynamicClientRegistrationPolicyExecute(r ApiUpdateDynamicClientRegistrationPolicyRequest) (*ClientRegistrationPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -705,7 +705,7 @@ func (a *OauthClientRegistrationPoliciesApiService) UpdateDynamicClientRegistrat
 		localVarReturnValue *ClientRegistrationPolicy
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthClientRegistrationPoliciesApiService.UpdateDynamicClientRegistrationPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthClientRegistrationPoliciesAPIService.UpdateDynamicClientRegistrationPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

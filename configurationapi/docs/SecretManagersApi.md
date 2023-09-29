@@ -1,19 +1,19 @@
-# \SecretManagersApi
+# \SecretManagersAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateSecretManager**](SecretManagersApi.md#CreateSecretManager) | **Post** /secretManagers | Create a secret manager plugin instance.
-[**DeleteSecretManager**](SecretManagersApi.md#DeleteSecretManager) | **Delete** /secretManagers/{id} | Delete a secret manager plugin instance.
-[**GetSecretManager**](SecretManagersApi.md#GetSecretManager) | **Get** /secretManagers/{id} | Get a specific secret manager plugin instance.
-[**GetSecretManagerPluginDescriptor**](SecretManagersApi.md#GetSecretManagerPluginDescriptor) | **Get** /secretManagers/descriptors/{id} | Get a secret manager plugin descriptor.
-[**GetSecretManagerPluginDescriptors**](SecretManagersApi.md#GetSecretManagerPluginDescriptors) | **Get** /secretManagers/descriptors | Get a list of available secret manager plugin descriptors.
-[**GetSecretManagers**](SecretManagersApi.md#GetSecretManagers) | **Get** /secretManagers | Get a list of secret manager plugin instances.
-[**GetSecretManagersAction**](SecretManagersApi.md#GetSecretManagersAction) | **Get** /secretManagers/{id}/actions/{actionId} | Get a secret manager plugin instance&#39;s action by ID.
-[**GetSecretManagersActions**](SecretManagersApi.md#GetSecretManagersActions) | **Get** /secretManagers/{id}/actions | Get a list of actions for a secret manager plugin instance.
-[**InvokeSecretManagersActionWithOptions**](SecretManagersApi.md#InvokeSecretManagersActionWithOptions) | **Post** /secretManagers/{id}/actions/{actionId}/invokeAction | Invokes an action for secret manager plugin instance.
-[**UpdateSecretManager**](SecretManagersApi.md#UpdateSecretManager) | **Put** /secretManagers/{id} | Update a secret manager plugin instance.
+[**CreateSecretManager**](SecretManagersAPI.md#CreateSecretManager) | **Post** /secretManagers | Create a secret manager plugin instance.
+[**DeleteSecretManager**](SecretManagersAPI.md#DeleteSecretManager) | **Delete** /secretManagers/{id} | Delete a secret manager plugin instance.
+[**GetSecretManager**](SecretManagersAPI.md#GetSecretManager) | **Get** /secretManagers/{id} | Get a specific secret manager plugin instance.
+[**GetSecretManagerPluginDescriptor**](SecretManagersAPI.md#GetSecretManagerPluginDescriptor) | **Get** /secretManagers/descriptors/{id} | Get a secret manager plugin descriptor.
+[**GetSecretManagerPluginDescriptors**](SecretManagersAPI.md#GetSecretManagerPluginDescriptors) | **Get** /secretManagers/descriptors | Get a list of available secret manager plugin descriptors.
+[**GetSecretManagers**](SecretManagersAPI.md#GetSecretManagers) | **Get** /secretManagers | Get a list of secret manager plugin instances.
+[**GetSecretManagersAction**](SecretManagersAPI.md#GetSecretManagersAction) | **Get** /secretManagers/{id}/actions/{actionId} | Get a secret manager plugin instance&#39;s action by ID.
+[**GetSecretManagersActions**](SecretManagersAPI.md#GetSecretManagersActions) | **Get** /secretManagers/{id}/actions | Get a list of actions for a secret manager plugin instance.
+[**InvokeSecretManagersActionWithOptions**](SecretManagersAPI.md#InvokeSecretManagersActionWithOptions) | **Post** /secretManagers/{id}/actions/{actionId}/invokeAction | Invokes an action for secret manager plugin instance.
+[**UpdateSecretManager**](SecretManagersAPI.md#UpdateSecretManager) | **Put** /secretManagers/{id} | Update a secret manager plugin instance.
 
 
 
@@ -40,13 +40,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecretManagersApi.CreateSecretManager(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.SecretManagersAPI.CreateSecretManager(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersApi.CreateSecretManager``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.CreateSecretManager``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateSecretManager`: SecretManager
-    fmt.Fprintf(os.Stdout, "Response from `SecretManagersApi.CreateSecretManager`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.CreateSecretManager`: %v\n", resp)
 }
 ```
 
@@ -104,9 +104,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SecretManagersApi.DeleteSecretManager(context.Background(), id).Execute()
+    r, err := apiClient.SecretManagersAPI.DeleteSecretManager(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersApi.DeleteSecretManager``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.DeleteSecretManager``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -170,13 +170,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecretManagersApi.GetSecretManager(context.Background(), id).Execute()
+    resp, r, err := apiClient.SecretManagersAPI.GetSecretManager(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersApi.GetSecretManager``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.GetSecretManager``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSecretManager`: SecretManager
-    fmt.Fprintf(os.Stdout, "Response from `SecretManagersApi.GetSecretManager`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.GetSecretManager`: %v\n", resp)
 }
 ```
 
@@ -238,13 +238,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecretManagersApi.GetSecretManagerPluginDescriptor(context.Background(), id).Execute()
+    resp, r, err := apiClient.SecretManagersAPI.GetSecretManagerPluginDescriptor(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersApi.GetSecretManagerPluginDescriptor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.GetSecretManagerPluginDescriptor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSecretManagerPluginDescriptor`: SecretManagerDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `SecretManagersApi.GetSecretManagerPluginDescriptor`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.GetSecretManagerPluginDescriptor`: %v\n", resp)
 }
 ```
 
@@ -305,13 +305,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecretManagersApi.GetSecretManagerPluginDescriptors(context.Background()).Execute()
+    resp, r, err := apiClient.SecretManagersAPI.GetSecretManagerPluginDescriptors(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersApi.GetSecretManagerPluginDescriptors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.GetSecretManagerPluginDescriptors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSecretManagerPluginDescriptors`: SecretManagerDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `SecretManagersApi.GetSecretManagerPluginDescriptors`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.GetSecretManagerPluginDescriptors`: %v\n", resp)
 }
 ```
 
@@ -364,13 +364,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecretManagersApi.GetSecretManagers(context.Background()).Execute()
+    resp, r, err := apiClient.SecretManagersAPI.GetSecretManagers(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersApi.GetSecretManagers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.GetSecretManagers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSecretManagers`: SecretManagers
-    fmt.Fprintf(os.Stdout, "Response from `SecretManagersApi.GetSecretManagers`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.GetSecretManagers`: %v\n", resp)
 }
 ```
 
@@ -425,13 +425,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecretManagersApi.GetSecretManagersAction(context.Background(), id, actionId).Execute()
+    resp, r, err := apiClient.SecretManagersAPI.GetSecretManagersAction(context.Background(), id, actionId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersApi.GetSecretManagersAction``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.GetSecretManagersAction``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSecretManagersAction`: Action
-    fmt.Fprintf(os.Stdout, "Response from `SecretManagersApi.GetSecretManagersAction`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.GetSecretManagersAction`: %v\n", resp)
 }
 ```
 
@@ -495,13 +495,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecretManagersApi.GetSecretManagersActions(context.Background(), id).Execute()
+    resp, r, err := apiClient.SecretManagersAPI.GetSecretManagersActions(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersApi.GetSecretManagersActions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.GetSecretManagersActions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSecretManagersActions`: Actions
-    fmt.Fprintf(os.Stdout, "Response from `SecretManagersApi.GetSecretManagersActions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.GetSecretManagersActions`: %v\n", resp)
 }
 ```
 
@@ -567,13 +567,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecretManagersApi.InvokeSecretManagersActionWithOptions(context.Background(), id, actionId).Body(body).Execute()
+    resp, r, err := apiClient.SecretManagersAPI.InvokeSecretManagersActionWithOptions(context.Background(), id, actionId).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersApi.InvokeSecretManagersActionWithOptions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.InvokeSecretManagersActionWithOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `InvokeSecretManagersActionWithOptions`: ActionResult
-    fmt.Fprintf(os.Stdout, "Response from `SecretManagersApi.InvokeSecretManagersActionWithOptions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.InvokeSecretManagersActionWithOptions`: %v\n", resp)
 }
 ```
 
@@ -639,13 +639,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecretManagersApi.UpdateSecretManager(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.SecretManagersAPI.UpdateSecretManager(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersApi.UpdateSecretManager``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.UpdateSecretManager``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateSecretManager`: SecretManager
-    fmt.Fprintf(os.Stdout, "Response from `SecretManagersApi.UpdateSecretManager`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.UpdateSecretManager`: %v\n", resp)
 }
 ```
 

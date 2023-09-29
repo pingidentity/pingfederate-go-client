@@ -1,11 +1,11 @@
-# \ConnectionMetadataApi
+# \ConnectionMetadataAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Convert**](ConnectionMetadataApi.md#Convert) | **Post** /connectionMetadata/convert | Convert a partner&#39;s SAML metadata into a JSON representation.
-[**Export**](ConnectionMetadataApi.md#Export) | **Post** /connectionMetadata/export | Export a connection&#39;s SAML metadata that can be given to a partner.
+[**Convert**](ConnectionMetadataAPI.md#Convert) | **Post** /connectionMetadata/convert | Convert a partner&#39;s SAML metadata into a JSON representation.
+[**Export**](ConnectionMetadataAPI.md#Export) | **Post** /connectionMetadata/export | Export a connection&#39;s SAML metadata that can be given to a partner.
 
 
 
@@ -34,13 +34,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConnectionMetadataApi.Convert(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ConnectionMetadataAPI.Convert(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionMetadataApi.Convert``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionMetadataAPI.Convert``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `Convert`: ConvertMetadataResponse
-    fmt.Fprintf(os.Stdout, "Response from `ConnectionMetadataApi.Convert`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConnectionMetadataAPI.Convert`: %v\n", resp)
 }
 ```
 
@@ -98,13 +98,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConnectionMetadataApi.Export(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ConnectionMetadataAPI.Export(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionMetadataApi.Export``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionMetadataAPI.Export``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `Export`: string
-    fmt.Fprintf(os.Stdout, "Response from `ConnectionMetadataApi.Export`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConnectionMetadataAPI.Export`: %v\n", resp)
 }
 ```
 

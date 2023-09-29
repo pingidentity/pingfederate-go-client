@@ -1,11 +1,11 @@
-# \RedirectValidationApi
+# \RedirectValidationAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetRedirectValidationSettings**](RedirectValidationApi.md#GetRedirectValidationSettings) | **Get** /redirectValidation | Retrieve redirect validation settings.
-[**UpdateRedirectValidationSettings**](RedirectValidationApi.md#UpdateRedirectValidationSettings) | **Put** /redirectValidation | Update redirect validation settings.
+[**GetRedirectValidationSettings**](RedirectValidationAPI.md#GetRedirectValidationSettings) | **Get** /redirectValidation | Retrieve redirect validation settings.
+[**UpdateRedirectValidationSettings**](RedirectValidationAPI.md#UpdateRedirectValidationSettings) | **Put** /redirectValidation | Update redirect validation settings.
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RedirectValidationApi.GetRedirectValidationSettings(context.Background()).Execute()
+    resp, r, err := apiClient.RedirectValidationAPI.GetRedirectValidationSettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RedirectValidationApi.GetRedirectValidationSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RedirectValidationAPI.GetRedirectValidationSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetRedirectValidationSettings`: RedirectValidationSettings
-    fmt.Fprintf(os.Stdout, "Response from `RedirectValidationApi.GetRedirectValidationSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RedirectValidationAPI.GetRedirectValidationSettings`: %v\n", resp)
 }
 ```
 
@@ -93,13 +93,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RedirectValidationApi.UpdateRedirectValidationSettings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.RedirectValidationAPI.UpdateRedirectValidationSettings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RedirectValidationApi.UpdateRedirectValidationSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RedirectValidationAPI.UpdateRedirectValidationSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateRedirectValidationSettings`: RedirectValidationSettings
-    fmt.Fprintf(os.Stdout, "Response from `RedirectValidationApi.UpdateRedirectValidationSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RedirectValidationAPI.UpdateRedirectValidationSettings`: %v\n", resp)
 }
 ```
 

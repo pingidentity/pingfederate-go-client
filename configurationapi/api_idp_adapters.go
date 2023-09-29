@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// IdpAdaptersApiService IdpAdaptersApi service
-type IdpAdaptersApiService service
+// IdpAdaptersAPIService IdpAdaptersAPI service
+type IdpAdaptersAPIService service
 
 type ApiCreateIdpAdapterRequest struct {
 	ctx                       context.Context
-	ApiService                *IdpAdaptersApiService
+	ApiService                *IdpAdaptersAPIService
 	body                      *IdpAdapter
 	xBypassExternalValidation *bool
 }
@@ -53,7 +53,7 @@ Create a new IdP adapter instance. If the IdP adapter is not properly configured
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateIdpAdapterRequest
 */
-func (a *IdpAdaptersApiService) CreateIdpAdapter(ctx context.Context) ApiCreateIdpAdapterRequest {
+func (a *IdpAdaptersAPIService) CreateIdpAdapter(ctx context.Context) ApiCreateIdpAdapterRequest {
 	return ApiCreateIdpAdapterRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -63,7 +63,7 @@ func (a *IdpAdaptersApiService) CreateIdpAdapter(ctx context.Context) ApiCreateI
 // Execute executes the request
 //
 //	@return IdpAdapter
-func (a *IdpAdaptersApiService) CreateIdpAdapterExecute(r ApiCreateIdpAdapterRequest) (*IdpAdapter, *http.Response, error) {
+func (a *IdpAdaptersAPIService) CreateIdpAdapterExecute(r ApiCreateIdpAdapterRequest) (*IdpAdapter, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -71,7 +71,7 @@ func (a *IdpAdaptersApiService) CreateIdpAdapterExecute(r ApiCreateIdpAdapterReq
 		localVarReturnValue *IdpAdapter
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpAdaptersApiService.CreateIdpAdapter")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpAdaptersAPIService.CreateIdpAdapter")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -156,7 +156,7 @@ func (a *IdpAdaptersApiService) CreateIdpAdapterExecute(r ApiCreateIdpAdapterReq
 
 type ApiDeleteIdpAdapterRequest struct {
 	ctx        context.Context
-	ApiService *IdpAdaptersApiService
+	ApiService *IdpAdaptersAPIService
 	id         string
 }
 
@@ -173,7 +173,7 @@ Delete an IdP adapter instance with the specified ID. A 404 status code is retur
 	@param id ID of IdP adapter instance.
 	@return ApiDeleteIdpAdapterRequest
 */
-func (a *IdpAdaptersApiService) DeleteIdpAdapter(ctx context.Context, id string) ApiDeleteIdpAdapterRequest {
+func (a *IdpAdaptersAPIService) DeleteIdpAdapter(ctx context.Context, id string) ApiDeleteIdpAdapterRequest {
 	return ApiDeleteIdpAdapterRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -182,14 +182,14 @@ func (a *IdpAdaptersApiService) DeleteIdpAdapter(ctx context.Context, id string)
 }
 
 // Execute executes the request
-func (a *IdpAdaptersApiService) DeleteIdpAdapterExecute(r ApiDeleteIdpAdapterRequest) (*http.Response, error) {
+func (a *IdpAdaptersAPIService) DeleteIdpAdapterExecute(r ApiDeleteIdpAdapterRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpAdaptersApiService.DeleteIdpAdapter")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpAdaptersAPIService.DeleteIdpAdapter")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -269,7 +269,7 @@ func (a *IdpAdaptersApiService) DeleteIdpAdapterExecute(r ApiDeleteIdpAdapterReq
 
 type ApiGetIdpAdapterRequest struct {
 	ctx        context.Context
-	ApiService *IdpAdaptersApiService
+	ApiService *IdpAdaptersAPIService
 	id         string
 }
 
@@ -286,7 +286,7 @@ Get the configured IdP adapter instance with the specified ID. A 404 status code
 	@param id ID of IdP adapter instance.
 	@return ApiGetIdpAdapterRequest
 */
-func (a *IdpAdaptersApiService) GetIdpAdapter(ctx context.Context, id string) ApiGetIdpAdapterRequest {
+func (a *IdpAdaptersAPIService) GetIdpAdapter(ctx context.Context, id string) ApiGetIdpAdapterRequest {
 	return ApiGetIdpAdapterRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -297,7 +297,7 @@ func (a *IdpAdaptersApiService) GetIdpAdapter(ctx context.Context, id string) Ap
 // Execute executes the request
 //
 //	@return IdpAdapter
-func (a *IdpAdaptersApiService) GetIdpAdapterExecute(r ApiGetIdpAdapterRequest) (*IdpAdapter, *http.Response, error) {
+func (a *IdpAdaptersAPIService) GetIdpAdapterExecute(r ApiGetIdpAdapterRequest) (*IdpAdapter, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -305,7 +305,7 @@ func (a *IdpAdaptersApiService) GetIdpAdapterExecute(r ApiGetIdpAdapterRequest) 
 		localVarReturnValue *IdpAdapter
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpAdaptersApiService.GetIdpAdapter")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpAdaptersAPIService.GetIdpAdapter")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -383,7 +383,7 @@ func (a *IdpAdaptersApiService) GetIdpAdapterExecute(r ApiGetIdpAdapterRequest) 
 
 type ApiGetIdpAdapterDescriptorsRequest struct {
 	ctx        context.Context
-	ApiService *IdpAdaptersApiService
+	ApiService *IdpAdaptersAPIService
 }
 
 func (r ApiGetIdpAdapterDescriptorsRequest) Execute() (*IdpAdapterDescriptors, *http.Response, error) {
@@ -396,7 +396,7 @@ GetIdpAdapterDescriptors Get the list of available IdP adapter descriptors.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetIdpAdapterDescriptorsRequest
 */
-func (a *IdpAdaptersApiService) GetIdpAdapterDescriptors(ctx context.Context) ApiGetIdpAdapterDescriptorsRequest {
+func (a *IdpAdaptersAPIService) GetIdpAdapterDescriptors(ctx context.Context) ApiGetIdpAdapterDescriptorsRequest {
 	return ApiGetIdpAdapterDescriptorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -406,7 +406,7 @@ func (a *IdpAdaptersApiService) GetIdpAdapterDescriptors(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return IdpAdapterDescriptors
-func (a *IdpAdaptersApiService) GetIdpAdapterDescriptorsExecute(r ApiGetIdpAdapterDescriptorsRequest) (*IdpAdapterDescriptors, *http.Response, error) {
+func (a *IdpAdaptersAPIService) GetIdpAdapterDescriptorsExecute(r ApiGetIdpAdapterDescriptorsRequest) (*IdpAdapterDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -414,7 +414,7 @@ func (a *IdpAdaptersApiService) GetIdpAdapterDescriptorsExecute(r ApiGetIdpAdapt
 		localVarReturnValue *IdpAdapterDescriptors
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpAdaptersApiService.GetIdpAdapterDescriptors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpAdaptersAPIService.GetIdpAdapterDescriptors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -481,7 +481,7 @@ func (a *IdpAdaptersApiService) GetIdpAdapterDescriptorsExecute(r ApiGetIdpAdapt
 
 type ApiGetIdpAdapterDescriptorsByIdRequest struct {
 	ctx        context.Context
-	ApiService *IdpAdaptersApiService
+	ApiService *IdpAdaptersAPIService
 	id         string
 }
 
@@ -498,7 +498,7 @@ Get the description of an IdP adapter plugin by ID. A 404 status code is returne
 	@param id ID of IdP adapter descriptor to fetch.
 	@return ApiGetIdpAdapterDescriptorsByIdRequest
 */
-func (a *IdpAdaptersApiService) GetIdpAdapterDescriptorsById(ctx context.Context, id string) ApiGetIdpAdapterDescriptorsByIdRequest {
+func (a *IdpAdaptersAPIService) GetIdpAdapterDescriptorsById(ctx context.Context, id string) ApiGetIdpAdapterDescriptorsByIdRequest {
 	return ApiGetIdpAdapterDescriptorsByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -509,7 +509,7 @@ func (a *IdpAdaptersApiService) GetIdpAdapterDescriptorsById(ctx context.Context
 // Execute executes the request
 //
 //	@return IdpAdapterDescriptor
-func (a *IdpAdaptersApiService) GetIdpAdapterDescriptorsByIdExecute(r ApiGetIdpAdapterDescriptorsByIdRequest) (*IdpAdapterDescriptor, *http.Response, error) {
+func (a *IdpAdaptersAPIService) GetIdpAdapterDescriptorsByIdExecute(r ApiGetIdpAdapterDescriptorsByIdRequest) (*IdpAdapterDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -517,7 +517,7 @@ func (a *IdpAdaptersApiService) GetIdpAdapterDescriptorsByIdExecute(r ApiGetIdpA
 		localVarReturnValue *IdpAdapterDescriptor
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpAdaptersApiService.GetIdpAdapterDescriptorsById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpAdaptersAPIService.GetIdpAdapterDescriptorsById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -595,7 +595,7 @@ func (a *IdpAdaptersApiService) GetIdpAdapterDescriptorsByIdExecute(r ApiGetIdpA
 
 type ApiGetIdpAdaptersRequest struct {
 	ctx           context.Context
-	ApiService    *IdpAdaptersApiService
+	ApiService    *IdpAdaptersAPIService
 	page          *int64
 	numberPerPage *int64
 	filter        *string
@@ -629,7 +629,7 @@ GetIdpAdapters Get the list of configured IdP adapter instances.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetIdpAdaptersRequest
 */
-func (a *IdpAdaptersApiService) GetIdpAdapters(ctx context.Context) ApiGetIdpAdaptersRequest {
+func (a *IdpAdaptersAPIService) GetIdpAdapters(ctx context.Context) ApiGetIdpAdaptersRequest {
 	return ApiGetIdpAdaptersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -639,7 +639,7 @@ func (a *IdpAdaptersApiService) GetIdpAdapters(ctx context.Context) ApiGetIdpAda
 // Execute executes the request
 //
 //	@return IdpAdapters
-func (a *IdpAdaptersApiService) GetIdpAdaptersExecute(r ApiGetIdpAdaptersRequest) (*IdpAdapters, *http.Response, error) {
+func (a *IdpAdaptersAPIService) GetIdpAdaptersExecute(r ApiGetIdpAdaptersRequest) (*IdpAdapters, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -647,7 +647,7 @@ func (a *IdpAdaptersApiService) GetIdpAdaptersExecute(r ApiGetIdpAdaptersRequest
 		localVarReturnValue *IdpAdapters
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpAdaptersApiService.GetIdpAdapters")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpAdaptersAPIService.GetIdpAdapters")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -733,7 +733,7 @@ func (a *IdpAdaptersApiService) GetIdpAdaptersExecute(r ApiGetIdpAdaptersRequest
 
 type ApiGetIdpAdaptersActionByIdRequest struct {
 	ctx        context.Context
-	ApiService *IdpAdaptersApiService
+	ApiService *IdpAdaptersAPIService
 	id         string
 	actionId   string
 }
@@ -752,7 +752,7 @@ Find an IdP adapter instance's action by ID. A 404 status code is returned for n
 	@param actionId ID of the action.
 	@return ApiGetIdpAdaptersActionByIdRequest
 */
-func (a *IdpAdaptersApiService) GetIdpAdaptersActionById(ctx context.Context, id string, actionId string) ApiGetIdpAdaptersActionByIdRequest {
+func (a *IdpAdaptersAPIService) GetIdpAdaptersActionById(ctx context.Context, id string, actionId string) ApiGetIdpAdaptersActionByIdRequest {
 	return ApiGetIdpAdaptersActionByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -764,7 +764,7 @@ func (a *IdpAdaptersApiService) GetIdpAdaptersActionById(ctx context.Context, id
 // Execute executes the request
 //
 //	@return Action
-func (a *IdpAdaptersApiService) GetIdpAdaptersActionByIdExecute(r ApiGetIdpAdaptersActionByIdRequest) (*Action, *http.Response, error) {
+func (a *IdpAdaptersAPIService) GetIdpAdaptersActionByIdExecute(r ApiGetIdpAdaptersActionByIdRequest) (*Action, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -772,7 +772,7 @@ func (a *IdpAdaptersApiService) GetIdpAdaptersActionByIdExecute(r ApiGetIdpAdapt
 		localVarReturnValue *Action
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpAdaptersApiService.GetIdpAdaptersActionById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpAdaptersAPIService.GetIdpAdaptersActionById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -851,7 +851,7 @@ func (a *IdpAdaptersApiService) GetIdpAdaptersActionByIdExecute(r ApiGetIdpAdapt
 
 type ApiGetIdpAdaptersActionsRequest struct {
 	ctx        context.Context
-	ApiService *IdpAdaptersApiService
+	ApiService *IdpAdaptersAPIService
 	id         string
 }
 
@@ -868,7 +868,7 @@ List the actions for an IdP adapter instance. A 404 status code is returned for 
 	@param id ID of the IdP adapter instance to which these actions belongs to.
 	@return ApiGetIdpAdaptersActionsRequest
 */
-func (a *IdpAdaptersApiService) GetIdpAdaptersActions(ctx context.Context, id string) ApiGetIdpAdaptersActionsRequest {
+func (a *IdpAdaptersAPIService) GetIdpAdaptersActions(ctx context.Context, id string) ApiGetIdpAdaptersActionsRequest {
 	return ApiGetIdpAdaptersActionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -879,7 +879,7 @@ func (a *IdpAdaptersApiService) GetIdpAdaptersActions(ctx context.Context, id st
 // Execute executes the request
 //
 //	@return Actions
-func (a *IdpAdaptersApiService) GetIdpAdaptersActionsExecute(r ApiGetIdpAdaptersActionsRequest) (*Actions, *http.Response, error) {
+func (a *IdpAdaptersAPIService) GetIdpAdaptersActionsExecute(r ApiGetIdpAdaptersActionsRequest) (*Actions, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -887,7 +887,7 @@ func (a *IdpAdaptersApiService) GetIdpAdaptersActionsExecute(r ApiGetIdpAdapters
 		localVarReturnValue *Actions
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpAdaptersApiService.GetIdpAdaptersActions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpAdaptersAPIService.GetIdpAdaptersActions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -965,7 +965,7 @@ func (a *IdpAdaptersApiService) GetIdpAdaptersActionsExecute(r ApiGetIdpAdapters
 
 type ApiInvokeIdpAdaptersActionWithOptionsRequest struct {
 	ctx        context.Context
-	ApiService *IdpAdaptersApiService
+	ApiService *IdpAdaptersAPIService
 	id         string
 	actionId   string
 	body       *ActionOptions
@@ -991,7 +991,7 @@ Invokes an action for an IdP adapter instance. A 404 status code is returned for
 	@param actionId ID of the action.
 	@return ApiInvokeIdpAdaptersActionWithOptionsRequest
 */
-func (a *IdpAdaptersApiService) InvokeIdpAdaptersActionWithOptions(ctx context.Context, id string, actionId string) ApiInvokeIdpAdaptersActionWithOptionsRequest {
+func (a *IdpAdaptersAPIService) InvokeIdpAdaptersActionWithOptions(ctx context.Context, id string, actionId string) ApiInvokeIdpAdaptersActionWithOptionsRequest {
 	return ApiInvokeIdpAdaptersActionWithOptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1003,7 +1003,7 @@ func (a *IdpAdaptersApiService) InvokeIdpAdaptersActionWithOptions(ctx context.C
 // Execute executes the request
 //
 //	@return ActionResult
-func (a *IdpAdaptersApiService) InvokeIdpAdaptersActionWithOptionsExecute(r ApiInvokeIdpAdaptersActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
+func (a *IdpAdaptersAPIService) InvokeIdpAdaptersActionWithOptionsExecute(r ApiInvokeIdpAdaptersActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -1011,7 +1011,7 @@ func (a *IdpAdaptersApiService) InvokeIdpAdaptersActionWithOptionsExecute(r ApiI
 		localVarReturnValue *ActionResult
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpAdaptersApiService.InvokeIdpAdaptersActionWithOptions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpAdaptersAPIService.InvokeIdpAdaptersActionWithOptions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1092,7 +1092,7 @@ func (a *IdpAdaptersApiService) InvokeIdpAdaptersActionWithOptionsExecute(r ApiI
 
 type ApiUpdateIdpAdapterRequest struct {
 	ctx                       context.Context
-	ApiService                *IdpAdaptersApiService
+	ApiService                *IdpAdaptersAPIService
 	id                        string
 	body                      *IdpAdapter
 	xBypassExternalValidation *bool
@@ -1123,7 +1123,7 @@ Update an IdP adapter instance.If the IdP adapter is not properly configured, a 
 	@param id ID of IdP adapter instance.
 	@return ApiUpdateIdpAdapterRequest
 */
-func (a *IdpAdaptersApiService) UpdateIdpAdapter(ctx context.Context, id string) ApiUpdateIdpAdapterRequest {
+func (a *IdpAdaptersAPIService) UpdateIdpAdapter(ctx context.Context, id string) ApiUpdateIdpAdapterRequest {
 	return ApiUpdateIdpAdapterRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1134,7 +1134,7 @@ func (a *IdpAdaptersApiService) UpdateIdpAdapter(ctx context.Context, id string)
 // Execute executes the request
 //
 //	@return IdpAdapter
-func (a *IdpAdaptersApiService) UpdateIdpAdapterExecute(r ApiUpdateIdpAdapterRequest) (*IdpAdapter, *http.Response, error) {
+func (a *IdpAdaptersAPIService) UpdateIdpAdapterExecute(r ApiUpdateIdpAdapterRequest) (*IdpAdapter, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1142,7 +1142,7 @@ func (a *IdpAdaptersApiService) UpdateIdpAdapterExecute(r ApiUpdateIdpAdapterReq
 		localVarReturnValue *IdpAdapter
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpAdaptersApiService.UpdateIdpAdapter")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpAdaptersAPIService.UpdateIdpAdapter")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

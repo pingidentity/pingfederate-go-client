@@ -1,14 +1,14 @@
-# \SpAuthenticationPolicyContractMappingsApi
+# \SpAuthenticationPolicyContractMappingsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApcToSpAdapterMapping**](SpAuthenticationPolicyContractMappingsApi.md#CreateApcToSpAdapterMapping) | **Post** /sp/authenticationPolicyContractMappings | Create a new APC-to-SP Adapter Mapping.
-[**DeleteApcToSpAdapterMappingById**](SpAuthenticationPolicyContractMappingsApi.md#DeleteApcToSpAdapterMappingById) | **Delete** /sp/authenticationPolicyContractMappings/{id} | Delete an APC-to-SP Adapter Mapping.
-[**GetApcToSpAdapterMappingById**](SpAuthenticationPolicyContractMappingsApi.md#GetApcToSpAdapterMappingById) | **Get** /sp/authenticationPolicyContractMappings/{id} | Get an APC-to-SP Adapter Mapping.
-[**GetApcToSpAdapterMappings**](SpAuthenticationPolicyContractMappingsApi.md#GetApcToSpAdapterMappings) | **Get** /sp/authenticationPolicyContractMappings | Get the list of APC-to-SP Adapter Mappings.
-[**UpdateApcToSpAdapterMappingById**](SpAuthenticationPolicyContractMappingsApi.md#UpdateApcToSpAdapterMappingById) | **Put** /sp/authenticationPolicyContractMappings/{id} | Update an APC-to-SP Adapter Mapping.
+[**CreateApcToSpAdapterMapping**](SpAuthenticationPolicyContractMappingsAPI.md#CreateApcToSpAdapterMapping) | **Post** /sp/authenticationPolicyContractMappings | Create a new APC-to-SP Adapter Mapping.
+[**DeleteApcToSpAdapterMappingById**](SpAuthenticationPolicyContractMappingsAPI.md#DeleteApcToSpAdapterMappingById) | **Delete** /sp/authenticationPolicyContractMappings/{id} | Delete an APC-to-SP Adapter Mapping.
+[**GetApcToSpAdapterMappingById**](SpAuthenticationPolicyContractMappingsAPI.md#GetApcToSpAdapterMappingById) | **Get** /sp/authenticationPolicyContractMappings/{id} | Get an APC-to-SP Adapter Mapping.
+[**GetApcToSpAdapterMappings**](SpAuthenticationPolicyContractMappingsAPI.md#GetApcToSpAdapterMappings) | **Get** /sp/authenticationPolicyContractMappings | Get the list of APC-to-SP Adapter Mappings.
+[**UpdateApcToSpAdapterMappingById**](SpAuthenticationPolicyContractMappingsAPI.md#UpdateApcToSpAdapterMappingById) | **Put** /sp/authenticationPolicyContractMappings/{id} | Update an APC-to-SP Adapter Mapping.
 
 
 
@@ -36,13 +36,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAuthenticationPolicyContractMappingsApi.CreateApcToSpAdapterMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.SpAuthenticationPolicyContractMappingsAPI.CreateApcToSpAdapterMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAuthenticationPolicyContractMappingsApi.CreateApcToSpAdapterMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpAuthenticationPolicyContractMappingsAPI.CreateApcToSpAdapterMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateApcToSpAdapterMapping`: ApcToSpAdapterMapping
-    fmt.Fprintf(os.Stdout, "Response from `SpAuthenticationPolicyContractMappingsApi.CreateApcToSpAdapterMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpAuthenticationPolicyContractMappingsAPI.CreateApcToSpAdapterMapping`: %v\n", resp)
 }
 ```
 
@@ -101,9 +101,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SpAuthenticationPolicyContractMappingsApi.DeleteApcToSpAdapterMappingById(context.Background(), id).Execute()
+    r, err := apiClient.SpAuthenticationPolicyContractMappingsAPI.DeleteApcToSpAdapterMappingById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAuthenticationPolicyContractMappingsApi.DeleteApcToSpAdapterMappingById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpAuthenticationPolicyContractMappingsAPI.DeleteApcToSpAdapterMappingById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -167,13 +167,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAuthenticationPolicyContractMappingsApi.GetApcToSpAdapterMappingById(context.Background(), id).Execute()
+    resp, r, err := apiClient.SpAuthenticationPolicyContractMappingsAPI.GetApcToSpAdapterMappingById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAuthenticationPolicyContractMappingsApi.GetApcToSpAdapterMappingById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpAuthenticationPolicyContractMappingsAPI.GetApcToSpAdapterMappingById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetApcToSpAdapterMappingById`: ApcToSpAdapterMapping
-    fmt.Fprintf(os.Stdout, "Response from `SpAuthenticationPolicyContractMappingsApi.GetApcToSpAdapterMappingById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpAuthenticationPolicyContractMappingsAPI.GetApcToSpAdapterMappingById`: %v\n", resp)
 }
 ```
 
@@ -234,13 +234,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAuthenticationPolicyContractMappingsApi.GetApcToSpAdapterMappings(context.Background()).Execute()
+    resp, r, err := apiClient.SpAuthenticationPolicyContractMappingsAPI.GetApcToSpAdapterMappings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAuthenticationPolicyContractMappingsApi.GetApcToSpAdapterMappings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpAuthenticationPolicyContractMappingsAPI.GetApcToSpAdapterMappings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetApcToSpAdapterMappings`: ApcToSpAdapterMappings
-    fmt.Fprintf(os.Stdout, "Response from `SpAuthenticationPolicyContractMappingsApi.GetApcToSpAdapterMappings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpAuthenticationPolicyContractMappingsAPI.GetApcToSpAdapterMappings`: %v\n", resp)
 }
 ```
 
@@ -296,13 +296,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAuthenticationPolicyContractMappingsApi.UpdateApcToSpAdapterMappingById(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.SpAuthenticationPolicyContractMappingsAPI.UpdateApcToSpAdapterMappingById(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAuthenticationPolicyContractMappingsApi.UpdateApcToSpAdapterMappingById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpAuthenticationPolicyContractMappingsAPI.UpdateApcToSpAdapterMappingById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateApcToSpAdapterMappingById`: ApcToSpAdapterMapping
-    fmt.Fprintf(os.Stdout, "Response from `SpAuthenticationPolicyContractMappingsApi.UpdateApcToSpAdapterMappingById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpAuthenticationPolicyContractMappingsAPI.UpdateApcToSpAdapterMappingById`: %v\n", resp)
 }
 ```
 

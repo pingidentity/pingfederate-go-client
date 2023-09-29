@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// IdpDefaultUrlsApiService IdpDefaultUrlsApi service
-type IdpDefaultUrlsApiService service
+// IdpDefaultUrlsAPIService IdpDefaultUrlsAPI service
+type IdpDefaultUrlsAPIService service
 
 type ApiGetDefaultUrlRequest struct {
 	ctx        context.Context
-	ApiService *IdpDefaultUrlsApiService
+	ApiService *IdpDefaultUrlsAPIService
 }
 
 func (r ApiGetDefaultUrlRequest) Execute() (*IdpDefaultUrl, *http.Response, error) {
@@ -36,7 +36,7 @@ GetDefaultUrl Gets the IDP Default URL settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetDefaultUrlRequest
 */
-func (a *IdpDefaultUrlsApiService) GetDefaultUrl(ctx context.Context) ApiGetDefaultUrlRequest {
+func (a *IdpDefaultUrlsAPIService) GetDefaultUrl(ctx context.Context) ApiGetDefaultUrlRequest {
 	return ApiGetDefaultUrlRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -46,7 +46,7 @@ func (a *IdpDefaultUrlsApiService) GetDefaultUrl(ctx context.Context) ApiGetDefa
 // Execute executes the request
 //
 //	@return IdpDefaultUrl
-func (a *IdpDefaultUrlsApiService) GetDefaultUrlExecute(r ApiGetDefaultUrlRequest) (*IdpDefaultUrl, *http.Response, error) {
+func (a *IdpDefaultUrlsAPIService) GetDefaultUrlExecute(r ApiGetDefaultUrlRequest) (*IdpDefaultUrl, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *IdpDefaultUrlsApiService) GetDefaultUrlExecute(r ApiGetDefaultUrlReques
 		localVarReturnValue *IdpDefaultUrl
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpDefaultUrlsApiService.GetDefaultUrl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpDefaultUrlsAPIService.GetDefaultUrl")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -121,7 +121,7 @@ func (a *IdpDefaultUrlsApiService) GetDefaultUrlExecute(r ApiGetDefaultUrlReques
 
 type ApiUpdateDefaultUrlSettingsRequest struct {
 	ctx        context.Context
-	ApiService *IdpDefaultUrlsApiService
+	ApiService *IdpDefaultUrlsAPIService
 	body       *IdpDefaultUrl
 }
 
@@ -141,7 +141,7 @@ UpdateDefaultUrlSettings Update the IDP Default URL settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateDefaultUrlSettingsRequest
 */
-func (a *IdpDefaultUrlsApiService) UpdateDefaultUrlSettings(ctx context.Context) ApiUpdateDefaultUrlSettingsRequest {
+func (a *IdpDefaultUrlsAPIService) UpdateDefaultUrlSettings(ctx context.Context) ApiUpdateDefaultUrlSettingsRequest {
 	return ApiUpdateDefaultUrlSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -151,7 +151,7 @@ func (a *IdpDefaultUrlsApiService) UpdateDefaultUrlSettings(ctx context.Context)
 // Execute executes the request
 //
 //	@return IdpDefaultUrl
-func (a *IdpDefaultUrlsApiService) UpdateDefaultUrlSettingsExecute(r ApiUpdateDefaultUrlSettingsRequest) (*IdpDefaultUrl, *http.Response, error) {
+func (a *IdpDefaultUrlsAPIService) UpdateDefaultUrlSettingsExecute(r ApiUpdateDefaultUrlSettingsRequest) (*IdpDefaultUrl, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -159,7 +159,7 @@ func (a *IdpDefaultUrlsApiService) UpdateDefaultUrlSettingsExecute(r ApiUpdateDe
 		localVarReturnValue *IdpDefaultUrl
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpDefaultUrlsApiService.UpdateDefaultUrlSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpDefaultUrlsAPIService.UpdateDefaultUrlSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

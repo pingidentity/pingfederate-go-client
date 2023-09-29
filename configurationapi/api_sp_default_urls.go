@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// SpDefaultUrlsApiService SpDefaultUrlsApi service
-type SpDefaultUrlsApiService service
+// SpDefaultUrlsAPIService SpDefaultUrlsAPI service
+type SpDefaultUrlsAPIService service
 
 type ApiGetSpDefaultUrlsRequest struct {
 	ctx        context.Context
-	ApiService *SpDefaultUrlsApiService
+	ApiService *SpDefaultUrlsAPIService
 }
 
 func (r ApiGetSpDefaultUrlsRequest) Execute() (*SpDefaultUrls, *http.Response, error) {
@@ -36,7 +36,7 @@ GetSpDefaultUrls Gets the SP Default URLs. These are Values that affect the user
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSpDefaultUrlsRequest
 */
-func (a *SpDefaultUrlsApiService) GetSpDefaultUrls(ctx context.Context) ApiGetSpDefaultUrlsRequest {
+func (a *SpDefaultUrlsAPIService) GetSpDefaultUrls(ctx context.Context) ApiGetSpDefaultUrlsRequest {
 	return ApiGetSpDefaultUrlsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -46,7 +46,7 @@ func (a *SpDefaultUrlsApiService) GetSpDefaultUrls(ctx context.Context) ApiGetSp
 // Execute executes the request
 //
 //	@return SpDefaultUrls
-func (a *SpDefaultUrlsApiService) GetSpDefaultUrlsExecute(r ApiGetSpDefaultUrlsRequest) (*SpDefaultUrls, *http.Response, error) {
+func (a *SpDefaultUrlsAPIService) GetSpDefaultUrlsExecute(r ApiGetSpDefaultUrlsRequest) (*SpDefaultUrls, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *SpDefaultUrlsApiService) GetSpDefaultUrlsExecute(r ApiGetSpDefaultUrlsR
 		localVarReturnValue *SpDefaultUrls
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpDefaultUrlsApiService.GetSpDefaultUrls")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpDefaultUrlsAPIService.GetSpDefaultUrls")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -121,7 +121,7 @@ func (a *SpDefaultUrlsApiService) GetSpDefaultUrlsExecute(r ApiGetSpDefaultUrlsR
 
 type ApiUpdateSpDefaultUrlsRequest struct {
 	ctx        context.Context
-	ApiService *SpDefaultUrlsApiService
+	ApiService *SpDefaultUrlsAPIService
 	body       *SpDefaultUrls
 }
 
@@ -141,7 +141,7 @@ UpdateSpDefaultUrls Update the SP Default URLs. Enter values that affect the use
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateSpDefaultUrlsRequest
 */
-func (a *SpDefaultUrlsApiService) UpdateSpDefaultUrls(ctx context.Context) ApiUpdateSpDefaultUrlsRequest {
+func (a *SpDefaultUrlsAPIService) UpdateSpDefaultUrls(ctx context.Context) ApiUpdateSpDefaultUrlsRequest {
 	return ApiUpdateSpDefaultUrlsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -151,7 +151,7 @@ func (a *SpDefaultUrlsApiService) UpdateSpDefaultUrls(ctx context.Context) ApiUp
 // Execute executes the request
 //
 //	@return SpDefaultUrls
-func (a *SpDefaultUrlsApiService) UpdateSpDefaultUrlsExecute(r ApiUpdateSpDefaultUrlsRequest) (*SpDefaultUrls, *http.Response, error) {
+func (a *SpDefaultUrlsAPIService) UpdateSpDefaultUrlsExecute(r ApiUpdateSpDefaultUrlsRequest) (*SpDefaultUrls, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -159,7 +159,7 @@ func (a *SpDefaultUrlsApiService) UpdateSpDefaultUrlsExecute(r ApiUpdateSpDefaul
 		localVarReturnValue *SpDefaultUrls
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpDefaultUrlsApiService.UpdateSpDefaultUrls")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpDefaultUrlsAPIService.UpdateSpDefaultUrls")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

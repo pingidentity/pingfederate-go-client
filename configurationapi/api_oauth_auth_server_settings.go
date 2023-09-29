@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// OauthAuthServerSettingsApiService OauthAuthServerSettingsApi service
-type OauthAuthServerSettingsApiService service
+// OauthAuthServerSettingsAPIService OauthAuthServerSettingsAPI service
+type OauthAuthServerSettingsAPIService service
 
 type ApiAddCommonScopeRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthServerSettingsApiService
+	ApiService *OauthAuthServerSettingsAPIService
 	body       *ScopeEntry
 }
 
@@ -44,7 +44,7 @@ AddCommonScope Add a new common scope.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddCommonScopeRequest
 */
-func (a *OauthAuthServerSettingsApiService) AddCommonScope(ctx context.Context) ApiAddCommonScopeRequest {
+func (a *OauthAuthServerSettingsAPIService) AddCommonScope(ctx context.Context) ApiAddCommonScopeRequest {
 	return ApiAddCommonScopeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *OauthAuthServerSettingsApiService) AddCommonScope(ctx context.Context) 
 // Execute executes the request
 //
 //	@return ScopeEntry
-func (a *OauthAuthServerSettingsApiService) AddCommonScopeExecute(r ApiAddCommonScopeRequest) (*ScopeEntry, *http.Response, error) {
+func (a *OauthAuthServerSettingsAPIService) AddCommonScopeExecute(r ApiAddCommonScopeRequest) (*ScopeEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *OauthAuthServerSettingsApiService) AddCommonScopeExecute(r ApiAddCommon
 		localVarReturnValue *ScopeEntry
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsApiService.AddCommonScope")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsAPIService.AddCommonScope")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,7 +144,7 @@ func (a *OauthAuthServerSettingsApiService) AddCommonScopeExecute(r ApiAddCommon
 
 type ApiAddCommonScopeGroupRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthServerSettingsApiService
+	ApiService *OauthAuthServerSettingsAPIService
 	body       *ScopeGroupEntry
 }
 
@@ -164,7 +164,7 @@ AddCommonScopeGroup Create a new common scope group.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddCommonScopeGroupRequest
 */
-func (a *OauthAuthServerSettingsApiService) AddCommonScopeGroup(ctx context.Context) ApiAddCommonScopeGroupRequest {
+func (a *OauthAuthServerSettingsAPIService) AddCommonScopeGroup(ctx context.Context) ApiAddCommonScopeGroupRequest {
 	return ApiAddCommonScopeGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -174,7 +174,7 @@ func (a *OauthAuthServerSettingsApiService) AddCommonScopeGroup(ctx context.Cont
 // Execute executes the request
 //
 //	@return ScopeGroupEntry
-func (a *OauthAuthServerSettingsApiService) AddCommonScopeGroupExecute(r ApiAddCommonScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
+func (a *OauthAuthServerSettingsAPIService) AddCommonScopeGroupExecute(r ApiAddCommonScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -182,7 +182,7 @@ func (a *OauthAuthServerSettingsApiService) AddCommonScopeGroupExecute(r ApiAddC
 		localVarReturnValue *ScopeGroupEntry
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsApiService.AddCommonScopeGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsAPIService.AddCommonScopeGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -264,7 +264,7 @@ func (a *OauthAuthServerSettingsApiService) AddCommonScopeGroupExecute(r ApiAddC
 
 type ApiAddExclusiveScopeRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthServerSettingsApiService
+	ApiService *OauthAuthServerSettingsAPIService
 	body       *ScopeEntry
 }
 
@@ -284,7 +284,7 @@ AddExclusiveScope Add a new exclusive scope.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddExclusiveScopeRequest
 */
-func (a *OauthAuthServerSettingsApiService) AddExclusiveScope(ctx context.Context) ApiAddExclusiveScopeRequest {
+func (a *OauthAuthServerSettingsAPIService) AddExclusiveScope(ctx context.Context) ApiAddExclusiveScopeRequest {
 	return ApiAddExclusiveScopeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -294,7 +294,7 @@ func (a *OauthAuthServerSettingsApiService) AddExclusiveScope(ctx context.Contex
 // Execute executes the request
 //
 //	@return ScopeEntry
-func (a *OauthAuthServerSettingsApiService) AddExclusiveScopeExecute(r ApiAddExclusiveScopeRequest) (*ScopeEntry, *http.Response, error) {
+func (a *OauthAuthServerSettingsAPIService) AddExclusiveScopeExecute(r ApiAddExclusiveScopeRequest) (*ScopeEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -302,7 +302,7 @@ func (a *OauthAuthServerSettingsApiService) AddExclusiveScopeExecute(r ApiAddExc
 		localVarReturnValue *ScopeEntry
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsApiService.AddExclusiveScope")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsAPIService.AddExclusiveScope")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -395,7 +395,7 @@ func (a *OauthAuthServerSettingsApiService) AddExclusiveScopeExecute(r ApiAddExc
 
 type ApiAddExclusiveScopeGroupRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthServerSettingsApiService
+	ApiService *OauthAuthServerSettingsAPIService
 	body       *ScopeGroupEntry
 }
 
@@ -415,7 +415,7 @@ AddExclusiveScopeGroup Create a new exclusive scope group.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddExclusiveScopeGroupRequest
 */
-func (a *OauthAuthServerSettingsApiService) AddExclusiveScopeGroup(ctx context.Context) ApiAddExclusiveScopeGroupRequest {
+func (a *OauthAuthServerSettingsAPIService) AddExclusiveScopeGroup(ctx context.Context) ApiAddExclusiveScopeGroupRequest {
 	return ApiAddExclusiveScopeGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -425,7 +425,7 @@ func (a *OauthAuthServerSettingsApiService) AddExclusiveScopeGroup(ctx context.C
 // Execute executes the request
 //
 //	@return ScopeGroupEntry
-func (a *OauthAuthServerSettingsApiService) AddExclusiveScopeGroupExecute(r ApiAddExclusiveScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
+func (a *OauthAuthServerSettingsAPIService) AddExclusiveScopeGroupExecute(r ApiAddExclusiveScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -433,7 +433,7 @@ func (a *OauthAuthServerSettingsApiService) AddExclusiveScopeGroupExecute(r ApiA
 		localVarReturnValue *ScopeGroupEntry
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsApiService.AddExclusiveScopeGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsAPIService.AddExclusiveScopeGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -515,7 +515,7 @@ func (a *OauthAuthServerSettingsApiService) AddExclusiveScopeGroupExecute(r ApiA
 
 type ApiGetAuthorizationServerSettingsRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthServerSettingsApiService
+	ApiService *OauthAuthServerSettingsAPIService
 }
 
 func (r ApiGetAuthorizationServerSettingsRequest) Execute() (*AuthorizationServerSettings, *http.Response, error) {
@@ -528,7 +528,7 @@ GetAuthorizationServerSettings Get the Authorization Server Settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAuthorizationServerSettingsRequest
 */
-func (a *OauthAuthServerSettingsApiService) GetAuthorizationServerSettings(ctx context.Context) ApiGetAuthorizationServerSettingsRequest {
+func (a *OauthAuthServerSettingsAPIService) GetAuthorizationServerSettings(ctx context.Context) ApiGetAuthorizationServerSettingsRequest {
 	return ApiGetAuthorizationServerSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -538,7 +538,7 @@ func (a *OauthAuthServerSettingsApiService) GetAuthorizationServerSettings(ctx c
 // Execute executes the request
 //
 //	@return AuthorizationServerSettings
-func (a *OauthAuthServerSettingsApiService) GetAuthorizationServerSettingsExecute(r ApiGetAuthorizationServerSettingsRequest) (*AuthorizationServerSettings, *http.Response, error) {
+func (a *OauthAuthServerSettingsAPIService) GetAuthorizationServerSettingsExecute(r ApiGetAuthorizationServerSettingsRequest) (*AuthorizationServerSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -546,7 +546,7 @@ func (a *OauthAuthServerSettingsApiService) GetAuthorizationServerSettingsExecut
 		localVarReturnValue *AuthorizationServerSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsApiService.GetAuthorizationServerSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsAPIService.GetAuthorizationServerSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -613,7 +613,7 @@ func (a *OauthAuthServerSettingsApiService) GetAuthorizationServerSettingsExecut
 
 type ApiGetCommonScopeRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthServerSettingsApiService
+	ApiService *OauthAuthServerSettingsAPIService
 	name       string
 }
 
@@ -628,7 +628,7 @@ GetCommonScope Get an existing common scope.
 	@param name Name of the common scope.
 	@return ApiGetCommonScopeRequest
 */
-func (a *OauthAuthServerSettingsApiService) GetCommonScope(ctx context.Context, name string) ApiGetCommonScopeRequest {
+func (a *OauthAuthServerSettingsAPIService) GetCommonScope(ctx context.Context, name string) ApiGetCommonScopeRequest {
 	return ApiGetCommonScopeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -639,7 +639,7 @@ func (a *OauthAuthServerSettingsApiService) GetCommonScope(ctx context.Context, 
 // Execute executes the request
 //
 //	@return ScopeEntry
-func (a *OauthAuthServerSettingsApiService) GetCommonScopeExecute(r ApiGetCommonScopeRequest) (*ScopeEntry, *http.Response, error) {
+func (a *OauthAuthServerSettingsAPIService) GetCommonScopeExecute(r ApiGetCommonScopeRequest) (*ScopeEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -647,7 +647,7 @@ func (a *OauthAuthServerSettingsApiService) GetCommonScopeExecute(r ApiGetCommon
 		localVarReturnValue *ScopeEntry
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsApiService.GetCommonScope")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsAPIService.GetCommonScope")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -725,7 +725,7 @@ func (a *OauthAuthServerSettingsApiService) GetCommonScopeExecute(r ApiGetCommon
 
 type ApiGetCommonScopeGroupRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthServerSettingsApiService
+	ApiService *OauthAuthServerSettingsAPIService
 	name       string
 }
 
@@ -740,7 +740,7 @@ GetCommonScopeGroup Get an existing common scope group.
 	@param name Name of the common scope group.
 	@return ApiGetCommonScopeGroupRequest
 */
-func (a *OauthAuthServerSettingsApiService) GetCommonScopeGroup(ctx context.Context, name string) ApiGetCommonScopeGroupRequest {
+func (a *OauthAuthServerSettingsAPIService) GetCommonScopeGroup(ctx context.Context, name string) ApiGetCommonScopeGroupRequest {
 	return ApiGetCommonScopeGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -751,7 +751,7 @@ func (a *OauthAuthServerSettingsApiService) GetCommonScopeGroup(ctx context.Cont
 // Execute executes the request
 //
 //	@return ScopeGroupEntry
-func (a *OauthAuthServerSettingsApiService) GetCommonScopeGroupExecute(r ApiGetCommonScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
+func (a *OauthAuthServerSettingsAPIService) GetCommonScopeGroupExecute(r ApiGetCommonScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -759,7 +759,7 @@ func (a *OauthAuthServerSettingsApiService) GetCommonScopeGroupExecute(r ApiGetC
 		localVarReturnValue *ScopeGroupEntry
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsApiService.GetCommonScopeGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsAPIService.GetCommonScopeGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -837,7 +837,7 @@ func (a *OauthAuthServerSettingsApiService) GetCommonScopeGroupExecute(r ApiGetC
 
 type ApiGetExclusiveScopeRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthServerSettingsApiService
+	ApiService *OauthAuthServerSettingsAPIService
 	name       string
 }
 
@@ -852,7 +852,7 @@ GetExclusiveScope Get an existing exclusive scope.
 	@param name Name of the exclusive scope.
 	@return ApiGetExclusiveScopeRequest
 */
-func (a *OauthAuthServerSettingsApiService) GetExclusiveScope(ctx context.Context, name string) ApiGetExclusiveScopeRequest {
+func (a *OauthAuthServerSettingsAPIService) GetExclusiveScope(ctx context.Context, name string) ApiGetExclusiveScopeRequest {
 	return ApiGetExclusiveScopeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -863,7 +863,7 @@ func (a *OauthAuthServerSettingsApiService) GetExclusiveScope(ctx context.Contex
 // Execute executes the request
 //
 //	@return ScopeEntry
-func (a *OauthAuthServerSettingsApiService) GetExclusiveScopeExecute(r ApiGetExclusiveScopeRequest) (*ScopeEntry, *http.Response, error) {
+func (a *OauthAuthServerSettingsAPIService) GetExclusiveScopeExecute(r ApiGetExclusiveScopeRequest) (*ScopeEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -871,7 +871,7 @@ func (a *OauthAuthServerSettingsApiService) GetExclusiveScopeExecute(r ApiGetExc
 		localVarReturnValue *ScopeEntry
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsApiService.GetExclusiveScope")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsAPIService.GetExclusiveScope")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -949,7 +949,7 @@ func (a *OauthAuthServerSettingsApiService) GetExclusiveScopeExecute(r ApiGetExc
 
 type ApiGetExclusiveScopeGroupRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthServerSettingsApiService
+	ApiService *OauthAuthServerSettingsAPIService
 	name       string
 }
 
@@ -964,7 +964,7 @@ GetExclusiveScopeGroup Get an existing exclusive scope group.
 	@param name Name of the exclusive scope group.
 	@return ApiGetExclusiveScopeGroupRequest
 */
-func (a *OauthAuthServerSettingsApiService) GetExclusiveScopeGroup(ctx context.Context, name string) ApiGetExclusiveScopeGroupRequest {
+func (a *OauthAuthServerSettingsAPIService) GetExclusiveScopeGroup(ctx context.Context, name string) ApiGetExclusiveScopeGroupRequest {
 	return ApiGetExclusiveScopeGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -975,7 +975,7 @@ func (a *OauthAuthServerSettingsApiService) GetExclusiveScopeGroup(ctx context.C
 // Execute executes the request
 //
 //	@return ScopeGroupEntry
-func (a *OauthAuthServerSettingsApiService) GetExclusiveScopeGroupExecute(r ApiGetExclusiveScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
+func (a *OauthAuthServerSettingsAPIService) GetExclusiveScopeGroupExecute(r ApiGetExclusiveScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -983,7 +983,7 @@ func (a *OauthAuthServerSettingsApiService) GetExclusiveScopeGroupExecute(r ApiG
 		localVarReturnValue *ScopeGroupEntry
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsApiService.GetExclusiveScopeGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsAPIService.GetExclusiveScopeGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1061,7 +1061,7 @@ func (a *OauthAuthServerSettingsApiService) GetExclusiveScopeGroupExecute(r ApiG
 
 type ApiRemoveCommonScopeRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthServerSettingsApiService
+	ApiService *OauthAuthServerSettingsAPIService
 	name       string
 }
 
@@ -1076,7 +1076,7 @@ RemoveCommonScope Remove an existing common scope.
 	@param name Name of the common scope.
 	@return ApiRemoveCommonScopeRequest
 */
-func (a *OauthAuthServerSettingsApiService) RemoveCommonScope(ctx context.Context, name string) ApiRemoveCommonScopeRequest {
+func (a *OauthAuthServerSettingsAPIService) RemoveCommonScope(ctx context.Context, name string) ApiRemoveCommonScopeRequest {
 	return ApiRemoveCommonScopeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1085,14 +1085,14 @@ func (a *OauthAuthServerSettingsApiService) RemoveCommonScope(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *OauthAuthServerSettingsApiService) RemoveCommonScopeExecute(r ApiRemoveCommonScopeRequest) (*http.Response, error) {
+func (a *OauthAuthServerSettingsAPIService) RemoveCommonScopeExecute(r ApiRemoveCommonScopeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsApiService.RemoveCommonScope")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsAPIService.RemoveCommonScope")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1172,7 +1172,7 @@ func (a *OauthAuthServerSettingsApiService) RemoveCommonScopeExecute(r ApiRemove
 
 type ApiRemoveCommonScopeGroupRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthServerSettingsApiService
+	ApiService *OauthAuthServerSettingsAPIService
 	name       string
 }
 
@@ -1187,7 +1187,7 @@ RemoveCommonScopeGroup Remove an existing common scope group.
 	@param name Name of the common scope group.
 	@return ApiRemoveCommonScopeGroupRequest
 */
-func (a *OauthAuthServerSettingsApiService) RemoveCommonScopeGroup(ctx context.Context, name string) ApiRemoveCommonScopeGroupRequest {
+func (a *OauthAuthServerSettingsAPIService) RemoveCommonScopeGroup(ctx context.Context, name string) ApiRemoveCommonScopeGroupRequest {
 	return ApiRemoveCommonScopeGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1196,14 +1196,14 @@ func (a *OauthAuthServerSettingsApiService) RemoveCommonScopeGroup(ctx context.C
 }
 
 // Execute executes the request
-func (a *OauthAuthServerSettingsApiService) RemoveCommonScopeGroupExecute(r ApiRemoveCommonScopeGroupRequest) (*http.Response, error) {
+func (a *OauthAuthServerSettingsAPIService) RemoveCommonScopeGroupExecute(r ApiRemoveCommonScopeGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsApiService.RemoveCommonScopeGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsAPIService.RemoveCommonScopeGroup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1283,7 +1283,7 @@ func (a *OauthAuthServerSettingsApiService) RemoveCommonScopeGroupExecute(r ApiR
 
 type ApiRemoveExclusiveScopeRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthServerSettingsApiService
+	ApiService *OauthAuthServerSettingsAPIService
 	name       string
 }
 
@@ -1298,7 +1298,7 @@ RemoveExclusiveScope Remove an existing exclusive scope.
 	@param name Name of the exclusive scope.
 	@return ApiRemoveExclusiveScopeRequest
 */
-func (a *OauthAuthServerSettingsApiService) RemoveExclusiveScope(ctx context.Context, name string) ApiRemoveExclusiveScopeRequest {
+func (a *OauthAuthServerSettingsAPIService) RemoveExclusiveScope(ctx context.Context, name string) ApiRemoveExclusiveScopeRequest {
 	return ApiRemoveExclusiveScopeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1307,14 +1307,14 @@ func (a *OauthAuthServerSettingsApiService) RemoveExclusiveScope(ctx context.Con
 }
 
 // Execute executes the request
-func (a *OauthAuthServerSettingsApiService) RemoveExclusiveScopeExecute(r ApiRemoveExclusiveScopeRequest) (*http.Response, error) {
+func (a *OauthAuthServerSettingsAPIService) RemoveExclusiveScopeExecute(r ApiRemoveExclusiveScopeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsApiService.RemoveExclusiveScope")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsAPIService.RemoveExclusiveScope")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1383,7 +1383,7 @@ func (a *OauthAuthServerSettingsApiService) RemoveExclusiveScopeExecute(r ApiRem
 
 type ApiRemoveExclusiveScopeGroupRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthServerSettingsApiService
+	ApiService *OauthAuthServerSettingsAPIService
 	name       string
 }
 
@@ -1398,7 +1398,7 @@ RemoveExclusiveScopeGroup Remove an existing exclusive scope group.
 	@param name Name of the exclusive scope group.
 	@return ApiRemoveExclusiveScopeGroupRequest
 */
-func (a *OauthAuthServerSettingsApiService) RemoveExclusiveScopeGroup(ctx context.Context, name string) ApiRemoveExclusiveScopeGroupRequest {
+func (a *OauthAuthServerSettingsAPIService) RemoveExclusiveScopeGroup(ctx context.Context, name string) ApiRemoveExclusiveScopeGroupRequest {
 	return ApiRemoveExclusiveScopeGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1407,14 +1407,14 @@ func (a *OauthAuthServerSettingsApiService) RemoveExclusiveScopeGroup(ctx contex
 }
 
 // Execute executes the request
-func (a *OauthAuthServerSettingsApiService) RemoveExclusiveScopeGroupExecute(r ApiRemoveExclusiveScopeGroupRequest) (*http.Response, error) {
+func (a *OauthAuthServerSettingsAPIService) RemoveExclusiveScopeGroupExecute(r ApiRemoveExclusiveScopeGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsApiService.RemoveExclusiveScopeGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsAPIService.RemoveExclusiveScopeGroup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1494,7 +1494,7 @@ func (a *OauthAuthServerSettingsApiService) RemoveExclusiveScopeGroupExecute(r A
 
 type ApiUpdateAuthorizationServerSettingsRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthServerSettingsApiService
+	ApiService *OauthAuthServerSettingsAPIService
 	body       *AuthorizationServerSettings
 }
 
@@ -1514,7 +1514,7 @@ UpdateAuthorizationServerSettings Update the Authorization Server Settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateAuthorizationServerSettingsRequest
 */
-func (a *OauthAuthServerSettingsApiService) UpdateAuthorizationServerSettings(ctx context.Context) ApiUpdateAuthorizationServerSettingsRequest {
+func (a *OauthAuthServerSettingsAPIService) UpdateAuthorizationServerSettings(ctx context.Context) ApiUpdateAuthorizationServerSettingsRequest {
 	return ApiUpdateAuthorizationServerSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1524,7 +1524,7 @@ func (a *OauthAuthServerSettingsApiService) UpdateAuthorizationServerSettings(ct
 // Execute executes the request
 //
 //	@return AuthorizationServerSettings
-func (a *OauthAuthServerSettingsApiService) UpdateAuthorizationServerSettingsExecute(r ApiUpdateAuthorizationServerSettingsRequest) (*AuthorizationServerSettings, *http.Response, error) {
+func (a *OauthAuthServerSettingsAPIService) UpdateAuthorizationServerSettingsExecute(r ApiUpdateAuthorizationServerSettingsRequest) (*AuthorizationServerSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1532,7 +1532,7 @@ func (a *OauthAuthServerSettingsApiService) UpdateAuthorizationServerSettingsExe
 		localVarReturnValue *AuthorizationServerSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsApiService.UpdateAuthorizationServerSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsAPIService.UpdateAuthorizationServerSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1614,7 +1614,7 @@ func (a *OauthAuthServerSettingsApiService) UpdateAuthorizationServerSettingsExe
 
 type ApiUpdateCommonScopeRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthServerSettingsApiService
+	ApiService *OauthAuthServerSettingsAPIService
 	name       string
 	body       *ScopeEntry
 }
@@ -1636,7 +1636,7 @@ UpdateCommonScope Update an existing common scope.
 	@param name Name of the common scope.
 	@return ApiUpdateCommonScopeRequest
 */
-func (a *OauthAuthServerSettingsApiService) UpdateCommonScope(ctx context.Context, name string) ApiUpdateCommonScopeRequest {
+func (a *OauthAuthServerSettingsAPIService) UpdateCommonScope(ctx context.Context, name string) ApiUpdateCommonScopeRequest {
 	return ApiUpdateCommonScopeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1647,7 +1647,7 @@ func (a *OauthAuthServerSettingsApiService) UpdateCommonScope(ctx context.Contex
 // Execute executes the request
 //
 //	@return ScopeEntry
-func (a *OauthAuthServerSettingsApiService) UpdateCommonScopeExecute(r ApiUpdateCommonScopeRequest) (*ScopeEntry, *http.Response, error) {
+func (a *OauthAuthServerSettingsAPIService) UpdateCommonScopeExecute(r ApiUpdateCommonScopeRequest) (*ScopeEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1655,7 +1655,7 @@ func (a *OauthAuthServerSettingsApiService) UpdateCommonScopeExecute(r ApiUpdate
 		localVarReturnValue *ScopeEntry
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsApiService.UpdateCommonScope")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsAPIService.UpdateCommonScope")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1749,7 +1749,7 @@ func (a *OauthAuthServerSettingsApiService) UpdateCommonScopeExecute(r ApiUpdate
 
 type ApiUpdateCommonScopeGroupRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthServerSettingsApiService
+	ApiService *OauthAuthServerSettingsAPIService
 	name       string
 	body       *ScopeGroupEntry
 }
@@ -1771,7 +1771,7 @@ UpdateCommonScopeGroup Update an existing common scope group.
 	@param name Name of the common scope group.
 	@return ApiUpdateCommonScopeGroupRequest
 */
-func (a *OauthAuthServerSettingsApiService) UpdateCommonScopeGroup(ctx context.Context, name string) ApiUpdateCommonScopeGroupRequest {
+func (a *OauthAuthServerSettingsAPIService) UpdateCommonScopeGroup(ctx context.Context, name string) ApiUpdateCommonScopeGroupRequest {
 	return ApiUpdateCommonScopeGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1782,7 +1782,7 @@ func (a *OauthAuthServerSettingsApiService) UpdateCommonScopeGroup(ctx context.C
 // Execute executes the request
 //
 //	@return ScopeGroupEntry
-func (a *OauthAuthServerSettingsApiService) UpdateCommonScopeGroupExecute(r ApiUpdateCommonScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
+func (a *OauthAuthServerSettingsAPIService) UpdateCommonScopeGroupExecute(r ApiUpdateCommonScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1790,7 +1790,7 @@ func (a *OauthAuthServerSettingsApiService) UpdateCommonScopeGroupExecute(r ApiU
 		localVarReturnValue *ScopeGroupEntry
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsApiService.UpdateCommonScopeGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsAPIService.UpdateCommonScopeGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1884,7 +1884,7 @@ func (a *OauthAuthServerSettingsApiService) UpdateCommonScopeGroupExecute(r ApiU
 
 type ApiUpdateExclusiveScopeRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthServerSettingsApiService
+	ApiService *OauthAuthServerSettingsAPIService
 	name       string
 	body       *ScopeEntry
 }
@@ -1906,7 +1906,7 @@ UpdateExclusiveScope Update an existing exclusive scope.
 	@param name Name of the exclusive scope.
 	@return ApiUpdateExclusiveScopeRequest
 */
-func (a *OauthAuthServerSettingsApiService) UpdateExclusiveScope(ctx context.Context, name string) ApiUpdateExclusiveScopeRequest {
+func (a *OauthAuthServerSettingsAPIService) UpdateExclusiveScope(ctx context.Context, name string) ApiUpdateExclusiveScopeRequest {
 	return ApiUpdateExclusiveScopeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1917,7 +1917,7 @@ func (a *OauthAuthServerSettingsApiService) UpdateExclusiveScope(ctx context.Con
 // Execute executes the request
 //
 //	@return ScopeEntry
-func (a *OauthAuthServerSettingsApiService) UpdateExclusiveScopeExecute(r ApiUpdateExclusiveScopeRequest) (*ScopeEntry, *http.Response, error) {
+func (a *OauthAuthServerSettingsAPIService) UpdateExclusiveScopeExecute(r ApiUpdateExclusiveScopeRequest) (*ScopeEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1925,7 +1925,7 @@ func (a *OauthAuthServerSettingsApiService) UpdateExclusiveScopeExecute(r ApiUpd
 		localVarReturnValue *ScopeEntry
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsApiService.UpdateExclusiveScope")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsAPIService.UpdateExclusiveScope")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2019,7 +2019,7 @@ func (a *OauthAuthServerSettingsApiService) UpdateExclusiveScopeExecute(r ApiUpd
 
 type ApiUpdateExclusiveScopeGroupsRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthServerSettingsApiService
+	ApiService *OauthAuthServerSettingsAPIService
 	name       string
 	body       *ScopeGroupEntry
 }
@@ -2041,7 +2041,7 @@ UpdateExclusiveScopeGroups Update an existing exclusive scope group.
 	@param name Name of the exclusive scope group.
 	@return ApiUpdateExclusiveScopeGroupsRequest
 */
-func (a *OauthAuthServerSettingsApiService) UpdateExclusiveScopeGroups(ctx context.Context, name string) ApiUpdateExclusiveScopeGroupsRequest {
+func (a *OauthAuthServerSettingsAPIService) UpdateExclusiveScopeGroups(ctx context.Context, name string) ApiUpdateExclusiveScopeGroupsRequest {
 	return ApiUpdateExclusiveScopeGroupsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2052,7 +2052,7 @@ func (a *OauthAuthServerSettingsApiService) UpdateExclusiveScopeGroups(ctx conte
 // Execute executes the request
 //
 //	@return ScopeGroupEntry
-func (a *OauthAuthServerSettingsApiService) UpdateExclusiveScopeGroupsExecute(r ApiUpdateExclusiveScopeGroupsRequest) (*ScopeGroupEntry, *http.Response, error) {
+func (a *OauthAuthServerSettingsAPIService) UpdateExclusiveScopeGroupsExecute(r ApiUpdateExclusiveScopeGroupsRequest) (*ScopeGroupEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -2060,7 +2060,7 @@ func (a *OauthAuthServerSettingsApiService) UpdateExclusiveScopeGroupsExecute(r 
 		localVarReturnValue *ScopeGroupEntry
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsApiService.UpdateExclusiveScopeGroups")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthServerSettingsAPIService.UpdateExclusiveScopeGroups")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

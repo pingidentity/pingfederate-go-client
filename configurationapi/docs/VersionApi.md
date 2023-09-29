@@ -1,10 +1,10 @@
-# \VersionApi
+# \VersionAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetVersion**](VersionApi.md#GetVersion) | **Get** /version | Gets the server version.
+[**GetVersion**](VersionAPI.md#GetVersion) | **Get** /version | Gets the server version.
 
 
 
@@ -30,13 +30,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VersionApi.GetVersion(context.Background()).Execute()
+    resp, r, err := apiClient.VersionAPI.GetVersion(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VersionApi.GetVersion``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VersionAPI.GetVersion``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetVersion`: Version
-    fmt.Fprintf(os.Stdout, "Response from `VersionApi.GetVersion`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VersionAPI.GetVersion`: %v\n", resp)
 }
 ```
 

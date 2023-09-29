@@ -1,14 +1,14 @@
-# \OauthIdpAdapterMappingsApi
+# \OauthIdpAdapterMappingsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateIdpAdapterMapping**](OauthIdpAdapterMappingsApi.md#CreateIdpAdapterMapping) | **Post** /oauth/idpAdapterMappings | Create a new IdP adapter mapping.
-[**DeleteIdpAdapterMapping**](OauthIdpAdapterMappingsApi.md#DeleteIdpAdapterMapping) | **Delete** /oauth/idpAdapterMappings/{id} | Delete an IdP adapter mapping.
-[**GetIdpAdapterMapping**](OauthIdpAdapterMappingsApi.md#GetIdpAdapterMapping) | **Get** /oauth/idpAdapterMappings/{id} | Find the IdP adapter mapping by the ID.
-[**GetIdpAdapterMappings**](OauthIdpAdapterMappingsApi.md#GetIdpAdapterMappings) | **Get** /oauth/idpAdapterMappings | Get the list of IdP adapter mappings.
-[**UpdateIdpAdapterMapping**](OauthIdpAdapterMappingsApi.md#UpdateIdpAdapterMapping) | **Put** /oauth/idpAdapterMappings/{id} | Update an IdP adapter mapping.
+[**CreateIdpAdapterMapping**](OauthIdpAdapterMappingsAPI.md#CreateIdpAdapterMapping) | **Post** /oauth/idpAdapterMappings | Create a new IdP adapter mapping.
+[**DeleteIdpAdapterMapping**](OauthIdpAdapterMappingsAPI.md#DeleteIdpAdapterMapping) | **Delete** /oauth/idpAdapterMappings/{id} | Delete an IdP adapter mapping.
+[**GetIdpAdapterMapping**](OauthIdpAdapterMappingsAPI.md#GetIdpAdapterMapping) | **Get** /oauth/idpAdapterMappings/{id} | Find the IdP adapter mapping by the ID.
+[**GetIdpAdapterMappings**](OauthIdpAdapterMappingsAPI.md#GetIdpAdapterMappings) | **Get** /oauth/idpAdapterMappings | Get the list of IdP adapter mappings.
+[**UpdateIdpAdapterMapping**](OauthIdpAdapterMappingsAPI.md#UpdateIdpAdapterMapping) | **Put** /oauth/idpAdapterMappings/{id} | Update an IdP adapter mapping.
 
 
 
@@ -38,13 +38,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthIdpAdapterMappingsApi.CreateIdpAdapterMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthIdpAdapterMappingsAPI.CreateIdpAdapterMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthIdpAdapterMappingsApi.CreateIdpAdapterMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthIdpAdapterMappingsAPI.CreateIdpAdapterMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateIdpAdapterMapping`: IdpAdapterMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthIdpAdapterMappingsApi.CreateIdpAdapterMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthIdpAdapterMappingsAPI.CreateIdpAdapterMapping`: %v\n", resp)
 }
 ```
 
@@ -103,9 +103,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthIdpAdapterMappingsApi.DeleteIdpAdapterMapping(context.Background(), id).Execute()
+    r, err := apiClient.OauthIdpAdapterMappingsAPI.DeleteIdpAdapterMapping(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthIdpAdapterMappingsApi.DeleteIdpAdapterMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthIdpAdapterMappingsAPI.DeleteIdpAdapterMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -169,13 +169,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthIdpAdapterMappingsApi.GetIdpAdapterMapping(context.Background(), id).Execute()
+    resp, r, err := apiClient.OauthIdpAdapterMappingsAPI.GetIdpAdapterMapping(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthIdpAdapterMappingsApi.GetIdpAdapterMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthIdpAdapterMappingsAPI.GetIdpAdapterMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetIdpAdapterMapping`: IdpAdapterMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthIdpAdapterMappingsApi.GetIdpAdapterMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthIdpAdapterMappingsAPI.GetIdpAdapterMapping`: %v\n", resp)
 }
 ```
 
@@ -236,13 +236,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthIdpAdapterMappingsApi.GetIdpAdapterMappings(context.Background()).Execute()
+    resp, r, err := apiClient.OauthIdpAdapterMappingsAPI.GetIdpAdapterMappings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthIdpAdapterMappingsApi.GetIdpAdapterMappings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthIdpAdapterMappingsAPI.GetIdpAdapterMappings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetIdpAdapterMappings`: IdpAdapterMappings
-    fmt.Fprintf(os.Stdout, "Response from `OauthIdpAdapterMappingsApi.GetIdpAdapterMappings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthIdpAdapterMappingsAPI.GetIdpAdapterMappings`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthIdpAdapterMappingsApi.UpdateIdpAdapterMapping(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthIdpAdapterMappingsAPI.UpdateIdpAdapterMapping(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthIdpAdapterMappingsApi.UpdateIdpAdapterMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthIdpAdapterMappingsAPI.UpdateIdpAdapterMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateIdpAdapterMapping`: IdpAdapterMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthIdpAdapterMappingsApi.UpdateIdpAdapterMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthIdpAdapterMappingsAPI.UpdateIdpAdapterMapping`: %v\n", resp)
 }
 ```
 

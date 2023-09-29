@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// CertificatesRevocationApiService CertificatesRevocationApi service
-type CertificatesRevocationApiService service
+// CertificatesRevocationAPIService CertificatesRevocationAPI service
+type CertificatesRevocationAPIService service
 
 type ApiDeleteOcspCertificateByIdRequest struct {
 	ctx        context.Context
-	ApiService *CertificatesRevocationApiService
+	ApiService *CertificatesRevocationAPIService
 	id         string
 }
 
@@ -39,7 +39,7 @@ DeleteOcspCertificateById Delete an OCSP responder signature verification certif
 	@param id Certificate ID.
 	@return ApiDeleteOcspCertificateByIdRequest
 */
-func (a *CertificatesRevocationApiService) DeleteOcspCertificateById(ctx context.Context, id string) ApiDeleteOcspCertificateByIdRequest {
+func (a *CertificatesRevocationAPIService) DeleteOcspCertificateById(ctx context.Context, id string) ApiDeleteOcspCertificateByIdRequest {
 	return ApiDeleteOcspCertificateByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -48,14 +48,14 @@ func (a *CertificatesRevocationApiService) DeleteOcspCertificateById(ctx context
 }
 
 // Execute executes the request
-func (a *CertificatesRevocationApiService) DeleteOcspCertificateByIdExecute(r ApiDeleteOcspCertificateByIdRequest) (*http.Response, error) {
+func (a *CertificatesRevocationAPIService) DeleteOcspCertificateByIdExecute(r ApiDeleteOcspCertificateByIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesRevocationApiService.DeleteOcspCertificateById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesRevocationAPIService.DeleteOcspCertificateById")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -125,7 +125,7 @@ func (a *CertificatesRevocationApiService) DeleteOcspCertificateByIdExecute(r Ap
 
 type ApiGetOcspCertificateByIdRequest struct {
 	ctx        context.Context
-	ApiService *CertificatesRevocationApiService
+	ApiService *CertificatesRevocationAPIService
 	id         string
 }
 
@@ -140,7 +140,7 @@ GetOcspCertificateById Get an OCSP responder signature verification certificate 
 	@param id Certificate ID.
 	@return ApiGetOcspCertificateByIdRequest
 */
-func (a *CertificatesRevocationApiService) GetOcspCertificateById(ctx context.Context, id string) ApiGetOcspCertificateByIdRequest {
+func (a *CertificatesRevocationAPIService) GetOcspCertificateById(ctx context.Context, id string) ApiGetOcspCertificateByIdRequest {
 	return ApiGetOcspCertificateByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -151,7 +151,7 @@ func (a *CertificatesRevocationApiService) GetOcspCertificateById(ctx context.Co
 // Execute executes the request
 //
 //	@return CertView
-func (a *CertificatesRevocationApiService) GetOcspCertificateByIdExecute(r ApiGetOcspCertificateByIdRequest) (*CertView, *http.Response, error) {
+func (a *CertificatesRevocationAPIService) GetOcspCertificateByIdExecute(r ApiGetOcspCertificateByIdRequest) (*CertView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -159,7 +159,7 @@ func (a *CertificatesRevocationApiService) GetOcspCertificateByIdExecute(r ApiGe
 		localVarReturnValue *CertView
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesRevocationApiService.GetOcspCertificateById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesRevocationAPIService.GetOcspCertificateById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -237,7 +237,7 @@ func (a *CertificatesRevocationApiService) GetOcspCertificateByIdExecute(r ApiGe
 
 type ApiGetOcspCertificatesRequest struct {
 	ctx        context.Context
-	ApiService *CertificatesRevocationApiService
+	ApiService *CertificatesRevocationAPIService
 }
 
 func (r ApiGetOcspCertificatesRequest) Execute() (*CertViews, *http.Response, error) {
@@ -250,7 +250,7 @@ GetOcspCertificates Get the list of available OCSP responder signature verificat
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetOcspCertificatesRequest
 */
-func (a *CertificatesRevocationApiService) GetOcspCertificates(ctx context.Context) ApiGetOcspCertificatesRequest {
+func (a *CertificatesRevocationAPIService) GetOcspCertificates(ctx context.Context) ApiGetOcspCertificatesRequest {
 	return ApiGetOcspCertificatesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -260,7 +260,7 @@ func (a *CertificatesRevocationApiService) GetOcspCertificates(ctx context.Conte
 // Execute executes the request
 //
 //	@return CertViews
-func (a *CertificatesRevocationApiService) GetOcspCertificatesExecute(r ApiGetOcspCertificatesRequest) (*CertViews, *http.Response, error) {
+func (a *CertificatesRevocationAPIService) GetOcspCertificatesExecute(r ApiGetOcspCertificatesRequest) (*CertViews, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -268,7 +268,7 @@ func (a *CertificatesRevocationApiService) GetOcspCertificatesExecute(r ApiGetOc
 		localVarReturnValue *CertViews
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesRevocationApiService.GetOcspCertificates")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesRevocationAPIService.GetOcspCertificates")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -335,7 +335,7 @@ func (a *CertificatesRevocationApiService) GetOcspCertificatesExecute(r ApiGetOc
 
 type ApiGetRevocationSettingsRequest struct {
 	ctx        context.Context
-	ApiService *CertificatesRevocationApiService
+	ApiService *CertificatesRevocationAPIService
 }
 
 func (r ApiGetRevocationSettingsRequest) Execute() (*CertificateRevocationSettings, *http.Response, error) {
@@ -348,7 +348,7 @@ GetRevocationSettings Get certificate revocation settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetRevocationSettingsRequest
 */
-func (a *CertificatesRevocationApiService) GetRevocationSettings(ctx context.Context) ApiGetRevocationSettingsRequest {
+func (a *CertificatesRevocationAPIService) GetRevocationSettings(ctx context.Context) ApiGetRevocationSettingsRequest {
 	return ApiGetRevocationSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -358,7 +358,7 @@ func (a *CertificatesRevocationApiService) GetRevocationSettings(ctx context.Con
 // Execute executes the request
 //
 //	@return CertificateRevocationSettings
-func (a *CertificatesRevocationApiService) GetRevocationSettingsExecute(r ApiGetRevocationSettingsRequest) (*CertificateRevocationSettings, *http.Response, error) {
+func (a *CertificatesRevocationAPIService) GetRevocationSettingsExecute(r ApiGetRevocationSettingsRequest) (*CertificateRevocationSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -366,7 +366,7 @@ func (a *CertificatesRevocationApiService) GetRevocationSettingsExecute(r ApiGet
 		localVarReturnValue *CertificateRevocationSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesRevocationApiService.GetRevocationSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesRevocationAPIService.GetRevocationSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -433,7 +433,7 @@ func (a *CertificatesRevocationApiService) GetRevocationSettingsExecute(r ApiGet
 
 type ApiImportOcspCertificateRequest struct {
 	ctx        context.Context
-	ApiService *CertificatesRevocationApiService
+	ApiService *CertificatesRevocationAPIService
 	body       *X509File
 }
 
@@ -453,7 +453,7 @@ ImportOcspCertificate Import an OCSP responder signature verification certificat
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiImportOcspCertificateRequest
 */
-func (a *CertificatesRevocationApiService) ImportOcspCertificate(ctx context.Context) ApiImportOcspCertificateRequest {
+func (a *CertificatesRevocationAPIService) ImportOcspCertificate(ctx context.Context) ApiImportOcspCertificateRequest {
 	return ApiImportOcspCertificateRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -463,7 +463,7 @@ func (a *CertificatesRevocationApiService) ImportOcspCertificate(ctx context.Con
 // Execute executes the request
 //
 //	@return CertView
-func (a *CertificatesRevocationApiService) ImportOcspCertificateExecute(r ApiImportOcspCertificateRequest) (*CertView, *http.Response, error) {
+func (a *CertificatesRevocationAPIService) ImportOcspCertificateExecute(r ApiImportOcspCertificateRequest) (*CertView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -471,7 +471,7 @@ func (a *CertificatesRevocationApiService) ImportOcspCertificateExecute(r ApiImp
 		localVarReturnValue *CertView
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesRevocationApiService.ImportOcspCertificate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesRevocationAPIService.ImportOcspCertificate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -553,7 +553,7 @@ func (a *CertificatesRevocationApiService) ImportOcspCertificateExecute(r ApiImp
 
 type ApiUpdateRevocationSettingsRequest struct {
 	ctx        context.Context
-	ApiService *CertificatesRevocationApiService
+	ApiService *CertificatesRevocationAPIService
 	body       *CertificateRevocationSettings
 }
 
@@ -573,7 +573,7 @@ UpdateRevocationSettings Update certificate revocation settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateRevocationSettingsRequest
 */
-func (a *CertificatesRevocationApiService) UpdateRevocationSettings(ctx context.Context) ApiUpdateRevocationSettingsRequest {
+func (a *CertificatesRevocationAPIService) UpdateRevocationSettings(ctx context.Context) ApiUpdateRevocationSettingsRequest {
 	return ApiUpdateRevocationSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -583,7 +583,7 @@ func (a *CertificatesRevocationApiService) UpdateRevocationSettings(ctx context.
 // Execute executes the request
 //
 //	@return CertificateRevocationSettings
-func (a *CertificatesRevocationApiService) UpdateRevocationSettingsExecute(r ApiUpdateRevocationSettingsRequest) (*CertificateRevocationSettings, *http.Response, error) {
+func (a *CertificatesRevocationAPIService) UpdateRevocationSettingsExecute(r ApiUpdateRevocationSettingsRequest) (*CertificateRevocationSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -591,7 +591,7 @@ func (a *CertificatesRevocationApiService) UpdateRevocationSettingsExecute(r Api
 		localVarReturnValue *CertificateRevocationSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesRevocationApiService.UpdateRevocationSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesRevocationAPIService.UpdateRevocationSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

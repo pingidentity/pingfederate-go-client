@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// AuthenticationPoliciesApiService AuthenticationPoliciesApi service
-type AuthenticationPoliciesApiService service
+// AuthenticationPoliciesAPIService AuthenticationPoliciesAPI service
+type AuthenticationPoliciesAPIService service
 
 type ApiCreateFragmentRequest struct {
 	ctx                       context.Context
-	ApiService                *AuthenticationPoliciesApiService
+	ApiService                *AuthenticationPoliciesAPIService
 	body                      *AuthenticationPolicyFragment
 	xBypassExternalValidation *bool
 }
@@ -51,7 +51,7 @@ CreateFragment Create an authentication policy fragment.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateFragmentRequest
 */
-func (a *AuthenticationPoliciesApiService) CreateFragment(ctx context.Context) ApiCreateFragmentRequest {
+func (a *AuthenticationPoliciesAPIService) CreateFragment(ctx context.Context) ApiCreateFragmentRequest {
 	return ApiCreateFragmentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -61,7 +61,7 @@ func (a *AuthenticationPoliciesApiService) CreateFragment(ctx context.Context) A
 // Execute executes the request
 //
 //	@return AuthenticationPolicyFragment
-func (a *AuthenticationPoliciesApiService) CreateFragmentExecute(r ApiCreateFragmentRequest) (*AuthenticationPolicyFragment, *http.Response, error) {
+func (a *AuthenticationPoliciesAPIService) CreateFragmentExecute(r ApiCreateFragmentRequest) (*AuthenticationPolicyFragment, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -69,7 +69,7 @@ func (a *AuthenticationPoliciesApiService) CreateFragmentExecute(r ApiCreateFrag
 		localVarReturnValue *AuthenticationPolicyFragment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesApiService.CreateFragment")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesAPIService.CreateFragment")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -154,7 +154,7 @@ func (a *AuthenticationPoliciesApiService) CreateFragmentExecute(r ApiCreateFrag
 
 type ApiCreatePolicyRequest struct {
 	ctx                       context.Context
-	ApiService                *AuthenticationPoliciesApiService
+	ApiService                *AuthenticationPoliciesAPIService
 	body                      *AuthenticationPolicyTree
 	xBypassExternalValidation *bool
 }
@@ -181,7 +181,7 @@ CreatePolicy Create a new authentication policy.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreatePolicyRequest
 */
-func (a *AuthenticationPoliciesApiService) CreatePolicy(ctx context.Context) ApiCreatePolicyRequest {
+func (a *AuthenticationPoliciesAPIService) CreatePolicy(ctx context.Context) ApiCreatePolicyRequest {
 	return ApiCreatePolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -191,7 +191,7 @@ func (a *AuthenticationPoliciesApiService) CreatePolicy(ctx context.Context) Api
 // Execute executes the request
 //
 //	@return AuthenticationPolicyTree
-func (a *AuthenticationPoliciesApiService) CreatePolicyExecute(r ApiCreatePolicyRequest) (*AuthenticationPolicyTree, *http.Response, error) {
+func (a *AuthenticationPoliciesAPIService) CreatePolicyExecute(r ApiCreatePolicyRequest) (*AuthenticationPolicyTree, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -199,7 +199,7 @@ func (a *AuthenticationPoliciesApiService) CreatePolicyExecute(r ApiCreatePolicy
 		localVarReturnValue *AuthenticationPolicyTree
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesApiService.CreatePolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesAPIService.CreatePolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -284,7 +284,7 @@ func (a *AuthenticationPoliciesApiService) CreatePolicyExecute(r ApiCreatePolicy
 
 type ApiDeleteFragmentRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationPoliciesApiService
+	ApiService *AuthenticationPoliciesAPIService
 	id         string
 }
 
@@ -299,7 +299,7 @@ DeleteFragment Delete an authentication policy fragment.
 	@param id ID of the policy fragment to delete.
 	@return ApiDeleteFragmentRequest
 */
-func (a *AuthenticationPoliciesApiService) DeleteFragment(ctx context.Context, id string) ApiDeleteFragmentRequest {
+func (a *AuthenticationPoliciesAPIService) DeleteFragment(ctx context.Context, id string) ApiDeleteFragmentRequest {
 	return ApiDeleteFragmentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -308,14 +308,14 @@ func (a *AuthenticationPoliciesApiService) DeleteFragment(ctx context.Context, i
 }
 
 // Execute executes the request
-func (a *AuthenticationPoliciesApiService) DeleteFragmentExecute(r ApiDeleteFragmentRequest) (*http.Response, error) {
+func (a *AuthenticationPoliciesAPIService) DeleteFragmentExecute(r ApiDeleteFragmentRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesApiService.DeleteFragment")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesAPIService.DeleteFragment")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -395,7 +395,7 @@ func (a *AuthenticationPoliciesApiService) DeleteFragmentExecute(r ApiDeleteFrag
 
 type ApiDeletePolicyRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationPoliciesApiService
+	ApiService *AuthenticationPoliciesAPIService
 	id         string
 }
 
@@ -410,7 +410,7 @@ DeletePolicy Delete an authentication policy.
 	@param id Authentication policy Id.
 	@return ApiDeletePolicyRequest
 */
-func (a *AuthenticationPoliciesApiService) DeletePolicy(ctx context.Context, id string) ApiDeletePolicyRequest {
+func (a *AuthenticationPoliciesAPIService) DeletePolicy(ctx context.Context, id string) ApiDeletePolicyRequest {
 	return ApiDeletePolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -419,14 +419,14 @@ func (a *AuthenticationPoliciesApiService) DeletePolicy(ctx context.Context, id 
 }
 
 // Execute executes the request
-func (a *AuthenticationPoliciesApiService) DeletePolicyExecute(r ApiDeletePolicyRequest) (*http.Response, error) {
+func (a *AuthenticationPoliciesAPIService) DeletePolicyExecute(r ApiDeletePolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesApiService.DeletePolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesAPIService.DeletePolicy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -495,7 +495,7 @@ func (a *AuthenticationPoliciesApiService) DeletePolicyExecute(r ApiDeletePolicy
 
 type ApiGetAuthenticationPolicySettingsRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationPoliciesApiService
+	ApiService *AuthenticationPoliciesAPIService
 }
 
 func (r ApiGetAuthenticationPolicySettingsRequest) Execute() (*AuthenticationPoliciesSettings, *http.Response, error) {
@@ -508,7 +508,7 @@ GetAuthenticationPolicySettings Get the authentication policies settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAuthenticationPolicySettingsRequest
 */
-func (a *AuthenticationPoliciesApiService) GetAuthenticationPolicySettings(ctx context.Context) ApiGetAuthenticationPolicySettingsRequest {
+func (a *AuthenticationPoliciesAPIService) GetAuthenticationPolicySettings(ctx context.Context) ApiGetAuthenticationPolicySettingsRequest {
 	return ApiGetAuthenticationPolicySettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -518,7 +518,7 @@ func (a *AuthenticationPoliciesApiService) GetAuthenticationPolicySettings(ctx c
 // Execute executes the request
 //
 //	@return AuthenticationPoliciesSettings
-func (a *AuthenticationPoliciesApiService) GetAuthenticationPolicySettingsExecute(r ApiGetAuthenticationPolicySettingsRequest) (*AuthenticationPoliciesSettings, *http.Response, error) {
+func (a *AuthenticationPoliciesAPIService) GetAuthenticationPolicySettingsExecute(r ApiGetAuthenticationPolicySettingsRequest) (*AuthenticationPoliciesSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -526,7 +526,7 @@ func (a *AuthenticationPoliciesApiService) GetAuthenticationPolicySettingsExecut
 		localVarReturnValue *AuthenticationPoliciesSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesApiService.GetAuthenticationPolicySettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesAPIService.GetAuthenticationPolicySettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -593,7 +593,7 @@ func (a *AuthenticationPoliciesApiService) GetAuthenticationPolicySettingsExecut
 
 type ApiGetDefaultAuthenticationPolicyRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationPoliciesApiService
+	ApiService *AuthenticationPoliciesAPIService
 }
 
 func (r ApiGetDefaultAuthenticationPolicyRequest) Execute() (*AuthenticationPolicy, *http.Response, error) {
@@ -606,7 +606,7 @@ GetDefaultAuthenticationPolicy Get the default configured authentication policy.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetDefaultAuthenticationPolicyRequest
 */
-func (a *AuthenticationPoliciesApiService) GetDefaultAuthenticationPolicy(ctx context.Context) ApiGetDefaultAuthenticationPolicyRequest {
+func (a *AuthenticationPoliciesAPIService) GetDefaultAuthenticationPolicy(ctx context.Context) ApiGetDefaultAuthenticationPolicyRequest {
 	return ApiGetDefaultAuthenticationPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -616,7 +616,7 @@ func (a *AuthenticationPoliciesApiService) GetDefaultAuthenticationPolicy(ctx co
 // Execute executes the request
 //
 //	@return AuthenticationPolicy
-func (a *AuthenticationPoliciesApiService) GetDefaultAuthenticationPolicyExecute(r ApiGetDefaultAuthenticationPolicyRequest) (*AuthenticationPolicy, *http.Response, error) {
+func (a *AuthenticationPoliciesAPIService) GetDefaultAuthenticationPolicyExecute(r ApiGetDefaultAuthenticationPolicyRequest) (*AuthenticationPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -624,7 +624,7 @@ func (a *AuthenticationPoliciesApiService) GetDefaultAuthenticationPolicyExecute
 		localVarReturnValue *AuthenticationPolicy
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesApiService.GetDefaultAuthenticationPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesAPIService.GetDefaultAuthenticationPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -691,7 +691,7 @@ func (a *AuthenticationPoliciesApiService) GetDefaultAuthenticationPolicyExecute
 
 type ApiGetFragmentRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationPoliciesApiService
+	ApiService *AuthenticationPoliciesAPIService
 	id         string
 }
 
@@ -706,7 +706,7 @@ GetFragment Get an authentication policy fragment by ID.
 	@param id ID of the policy fragment to fetch.
 	@return ApiGetFragmentRequest
 */
-func (a *AuthenticationPoliciesApiService) GetFragment(ctx context.Context, id string) ApiGetFragmentRequest {
+func (a *AuthenticationPoliciesAPIService) GetFragment(ctx context.Context, id string) ApiGetFragmentRequest {
 	return ApiGetFragmentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -717,7 +717,7 @@ func (a *AuthenticationPoliciesApiService) GetFragment(ctx context.Context, id s
 // Execute executes the request
 //
 //	@return AuthenticationPolicyFragment
-func (a *AuthenticationPoliciesApiService) GetFragmentExecute(r ApiGetFragmentRequest) (*AuthenticationPolicyFragment, *http.Response, error) {
+func (a *AuthenticationPoliciesAPIService) GetFragmentExecute(r ApiGetFragmentRequest) (*AuthenticationPolicyFragment, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -725,7 +725,7 @@ func (a *AuthenticationPoliciesApiService) GetFragmentExecute(r ApiGetFragmentRe
 		localVarReturnValue *AuthenticationPolicyFragment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesApiService.GetFragment")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesAPIService.GetFragment")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -803,7 +803,7 @@ func (a *AuthenticationPoliciesApiService) GetFragmentExecute(r ApiGetFragmentRe
 
 type ApiGetFragmentsRequest struct {
 	ctx           context.Context
-	ApiService    *AuthenticationPoliciesApiService
+	ApiService    *AuthenticationPoliciesAPIService
 	page          *int64
 	numberPerPage *int64
 	filter        *string
@@ -837,7 +837,7 @@ GetFragments Get all of the authentication policies fragments.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetFragmentsRequest
 */
-func (a *AuthenticationPoliciesApiService) GetFragments(ctx context.Context) ApiGetFragmentsRequest {
+func (a *AuthenticationPoliciesAPIService) GetFragments(ctx context.Context) ApiGetFragmentsRequest {
 	return ApiGetFragmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -847,7 +847,7 @@ func (a *AuthenticationPoliciesApiService) GetFragments(ctx context.Context) Api
 // Execute executes the request
 //
 //	@return AuthenticationPolicyFragments
-func (a *AuthenticationPoliciesApiService) GetFragmentsExecute(r ApiGetFragmentsRequest) (*AuthenticationPolicyFragments, *http.Response, error) {
+func (a *AuthenticationPoliciesAPIService) GetFragmentsExecute(r ApiGetFragmentsRequest) (*AuthenticationPolicyFragments, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -855,7 +855,7 @@ func (a *AuthenticationPoliciesApiService) GetFragmentsExecute(r ApiGetFragments
 		localVarReturnValue *AuthenticationPolicyFragments
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesApiService.GetFragments")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesAPIService.GetFragments")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -931,7 +931,7 @@ func (a *AuthenticationPoliciesApiService) GetFragmentsExecute(r ApiGetFragments
 
 type ApiGetPolicyRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationPoliciesApiService
+	ApiService *AuthenticationPoliciesAPIService
 	id         string
 }
 
@@ -946,7 +946,7 @@ GetPolicy Get an authentication policy by ID.
 	@param id Authentication policy Id.
 	@return ApiGetPolicyRequest
 */
-func (a *AuthenticationPoliciesApiService) GetPolicy(ctx context.Context, id string) ApiGetPolicyRequest {
+func (a *AuthenticationPoliciesAPIService) GetPolicy(ctx context.Context, id string) ApiGetPolicyRequest {
 	return ApiGetPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -957,7 +957,7 @@ func (a *AuthenticationPoliciesApiService) GetPolicy(ctx context.Context, id str
 // Execute executes the request
 //
 //	@return AuthenticationPolicyTree
-func (a *AuthenticationPoliciesApiService) GetPolicyExecute(r ApiGetPolicyRequest) (*AuthenticationPolicyTree, *http.Response, error) {
+func (a *AuthenticationPoliciesAPIService) GetPolicyExecute(r ApiGetPolicyRequest) (*AuthenticationPolicyTree, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -965,7 +965,7 @@ func (a *AuthenticationPoliciesApiService) GetPolicyExecute(r ApiGetPolicyReques
 		localVarReturnValue *AuthenticationPolicyTree
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesApiService.GetPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesAPIService.GetPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1043,7 +1043,7 @@ func (a *AuthenticationPoliciesApiService) GetPolicyExecute(r ApiGetPolicyReques
 
 type ApiMovePolicyRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationPoliciesApiService
+	ApiService *AuthenticationPoliciesAPIService
 	id         string
 	body       *MoveItemRequest
 }
@@ -1065,7 +1065,7 @@ MovePolicy Move an authentication policy to a location within the policy tree.
 	@param id Authentication policy Id.
 	@return ApiMovePolicyRequest
 */
-func (a *AuthenticationPoliciesApiService) MovePolicy(ctx context.Context, id string) ApiMovePolicyRequest {
+func (a *AuthenticationPoliciesAPIService) MovePolicy(ctx context.Context, id string) ApiMovePolicyRequest {
 	return ApiMovePolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1074,14 +1074,14 @@ func (a *AuthenticationPoliciesApiService) MovePolicy(ctx context.Context, id st
 }
 
 // Execute executes the request
-func (a *AuthenticationPoliciesApiService) MovePolicyExecute(r ApiMovePolicyRequest) (*http.Response, error) {
+func (a *AuthenticationPoliciesAPIService) MovePolicyExecute(r ApiMovePolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesApiService.MovePolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesAPIService.MovePolicy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1166,7 +1166,7 @@ func (a *AuthenticationPoliciesApiService) MovePolicyExecute(r ApiMovePolicyRequ
 
 type ApiUpdateAuthenticationPolicySettingsRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationPoliciesApiService
+	ApiService *AuthenticationPoliciesAPIService
 	body       *AuthenticationPoliciesSettings
 }
 
@@ -1186,7 +1186,7 @@ UpdateAuthenticationPolicySettings Set the authentication policies settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateAuthenticationPolicySettingsRequest
 */
-func (a *AuthenticationPoliciesApiService) UpdateAuthenticationPolicySettings(ctx context.Context) ApiUpdateAuthenticationPolicySettingsRequest {
+func (a *AuthenticationPoliciesAPIService) UpdateAuthenticationPolicySettings(ctx context.Context) ApiUpdateAuthenticationPolicySettingsRequest {
 	return ApiUpdateAuthenticationPolicySettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1196,7 +1196,7 @@ func (a *AuthenticationPoliciesApiService) UpdateAuthenticationPolicySettings(ct
 // Execute executes the request
 //
 //	@return AuthenticationPoliciesSettings
-func (a *AuthenticationPoliciesApiService) UpdateAuthenticationPolicySettingsExecute(r ApiUpdateAuthenticationPolicySettingsRequest) (*AuthenticationPoliciesSettings, *http.Response, error) {
+func (a *AuthenticationPoliciesAPIService) UpdateAuthenticationPolicySettingsExecute(r ApiUpdateAuthenticationPolicySettingsRequest) (*AuthenticationPoliciesSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1204,7 +1204,7 @@ func (a *AuthenticationPoliciesApiService) UpdateAuthenticationPolicySettingsExe
 		localVarReturnValue *AuthenticationPoliciesSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesApiService.UpdateAuthenticationPolicySettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesAPIService.UpdateAuthenticationPolicySettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1276,7 +1276,7 @@ func (a *AuthenticationPoliciesApiService) UpdateAuthenticationPolicySettingsExe
 
 type ApiUpdateDefaultAuthenticationPolicyRequest struct {
 	ctx                       context.Context
-	ApiService                *AuthenticationPoliciesApiService
+	ApiService                *AuthenticationPoliciesAPIService
 	body                      *AuthenticationPolicy
 	xBypassExternalValidation *bool
 }
@@ -1303,7 +1303,7 @@ UpdateDefaultAuthenticationPolicy Set the default authentication policy.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateDefaultAuthenticationPolicyRequest
 */
-func (a *AuthenticationPoliciesApiService) UpdateDefaultAuthenticationPolicy(ctx context.Context) ApiUpdateDefaultAuthenticationPolicyRequest {
+func (a *AuthenticationPoliciesAPIService) UpdateDefaultAuthenticationPolicy(ctx context.Context) ApiUpdateDefaultAuthenticationPolicyRequest {
 	return ApiUpdateDefaultAuthenticationPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1313,7 +1313,7 @@ func (a *AuthenticationPoliciesApiService) UpdateDefaultAuthenticationPolicy(ctx
 // Execute executes the request
 //
 //	@return AuthenticationPolicy
-func (a *AuthenticationPoliciesApiService) UpdateDefaultAuthenticationPolicyExecute(r ApiUpdateDefaultAuthenticationPolicyRequest) (*AuthenticationPolicy, *http.Response, error) {
+func (a *AuthenticationPoliciesAPIService) UpdateDefaultAuthenticationPolicyExecute(r ApiUpdateDefaultAuthenticationPolicyRequest) (*AuthenticationPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1321,7 +1321,7 @@ func (a *AuthenticationPoliciesApiService) UpdateDefaultAuthenticationPolicyExec
 		localVarReturnValue *AuthenticationPolicy
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesApiService.UpdateDefaultAuthenticationPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesAPIService.UpdateDefaultAuthenticationPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1406,7 +1406,7 @@ func (a *AuthenticationPoliciesApiService) UpdateDefaultAuthenticationPolicyExec
 
 type ApiUpdateFragmentRequest struct {
 	ctx                       context.Context
-	ApiService                *AuthenticationPoliciesApiService
+	ApiService                *AuthenticationPoliciesAPIService
 	id                        string
 	body                      *AuthenticationPolicyFragment
 	xBypassExternalValidation *bool
@@ -1435,7 +1435,7 @@ UpdateFragment Update an authentication policy fragment.
 	@param id ID of the policy fragment to  update.
 	@return ApiUpdateFragmentRequest
 */
-func (a *AuthenticationPoliciesApiService) UpdateFragment(ctx context.Context, id string) ApiUpdateFragmentRequest {
+func (a *AuthenticationPoliciesAPIService) UpdateFragment(ctx context.Context, id string) ApiUpdateFragmentRequest {
 	return ApiUpdateFragmentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1446,7 +1446,7 @@ func (a *AuthenticationPoliciesApiService) UpdateFragment(ctx context.Context, i
 // Execute executes the request
 //
 //	@return AuthenticationPolicyFragment
-func (a *AuthenticationPoliciesApiService) UpdateFragmentExecute(r ApiUpdateFragmentRequest) (*AuthenticationPolicyFragment, *http.Response, error) {
+func (a *AuthenticationPoliciesAPIService) UpdateFragmentExecute(r ApiUpdateFragmentRequest) (*AuthenticationPolicyFragment, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1454,7 +1454,7 @@ func (a *AuthenticationPoliciesApiService) UpdateFragmentExecute(r ApiUpdateFrag
 		localVarReturnValue *AuthenticationPolicyFragment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesApiService.UpdateFragment")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesAPIService.UpdateFragment")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1551,7 +1551,7 @@ func (a *AuthenticationPoliciesApiService) UpdateFragmentExecute(r ApiUpdateFrag
 
 type ApiUpdatePolicyRequest struct {
 	ctx                       context.Context
-	ApiService                *AuthenticationPoliciesApiService
+	ApiService                *AuthenticationPoliciesAPIService
 	id                        string
 	body                      *AuthenticationPolicyTree
 	xBypassExternalValidation *bool
@@ -1580,7 +1580,7 @@ UpdatePolicy Update an authentication policy.
 	@param id Authentication policy Id.
 	@return ApiUpdatePolicyRequest
 */
-func (a *AuthenticationPoliciesApiService) UpdatePolicy(ctx context.Context, id string) ApiUpdatePolicyRequest {
+func (a *AuthenticationPoliciesAPIService) UpdatePolicy(ctx context.Context, id string) ApiUpdatePolicyRequest {
 	return ApiUpdatePolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1591,7 +1591,7 @@ func (a *AuthenticationPoliciesApiService) UpdatePolicy(ctx context.Context, id 
 // Execute executes the request
 //
 //	@return AuthenticationPolicyTree
-func (a *AuthenticationPoliciesApiService) UpdatePolicyExecute(r ApiUpdatePolicyRequest) (*AuthenticationPolicyTree, *http.Response, error) {
+func (a *AuthenticationPoliciesAPIService) UpdatePolicyExecute(r ApiUpdatePolicyRequest) (*AuthenticationPolicyTree, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1599,7 +1599,7 @@ func (a *AuthenticationPoliciesApiService) UpdatePolicyExecute(r ApiUpdatePolicy
 		localVarReturnValue *AuthenticationPolicyTree
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesApiService.UpdatePolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPoliciesAPIService.UpdatePolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

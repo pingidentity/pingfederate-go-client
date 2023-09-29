@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// OauthClientSettingsApiService OauthClientSettingsApi service
-type OauthClientSettingsApiService service
+// OauthClientSettingsAPIService OauthClientSettingsAPI service
+type OauthClientSettingsAPIService service
 
 type ApiGetOauthClientSettingsRequest struct {
 	ctx        context.Context
-	ApiService *OauthClientSettingsApiService
+	ApiService *OauthClientSettingsAPIService
 }
 
 func (r ApiGetOauthClientSettingsRequest) Execute() (*ClientSettings, *http.Response, error) {
@@ -36,7 +36,7 @@ GetOauthClientSettings Configure the client settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetOauthClientSettingsRequest
 */
-func (a *OauthClientSettingsApiService) GetOauthClientSettings(ctx context.Context) ApiGetOauthClientSettingsRequest {
+func (a *OauthClientSettingsAPIService) GetOauthClientSettings(ctx context.Context) ApiGetOauthClientSettingsRequest {
 	return ApiGetOauthClientSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -46,7 +46,7 @@ func (a *OauthClientSettingsApiService) GetOauthClientSettings(ctx context.Conte
 // Execute executes the request
 //
 //	@return ClientSettings
-func (a *OauthClientSettingsApiService) GetOauthClientSettingsExecute(r ApiGetOauthClientSettingsRequest) (*ClientSettings, *http.Response, error) {
+func (a *OauthClientSettingsAPIService) GetOauthClientSettingsExecute(r ApiGetOauthClientSettingsRequest) (*ClientSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *OauthClientSettingsApiService) GetOauthClientSettingsExecute(r ApiGetOa
 		localVarReturnValue *ClientSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthClientSettingsApiService.GetOauthClientSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthClientSettingsAPIService.GetOauthClientSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -121,7 +121,7 @@ func (a *OauthClientSettingsApiService) GetOauthClientSettingsExecute(r ApiGetOa
 
 type ApiUpdateOauthClientSettingsRequest struct {
 	ctx        context.Context
-	ApiService *OauthClientSettingsApiService
+	ApiService *OauthClientSettingsAPIService
 	body       *ClientSettings
 }
 
@@ -141,7 +141,7 @@ UpdateOauthClientSettings Update the client settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateOauthClientSettingsRequest
 */
-func (a *OauthClientSettingsApiService) UpdateOauthClientSettings(ctx context.Context) ApiUpdateOauthClientSettingsRequest {
+func (a *OauthClientSettingsAPIService) UpdateOauthClientSettings(ctx context.Context) ApiUpdateOauthClientSettingsRequest {
 	return ApiUpdateOauthClientSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -151,7 +151,7 @@ func (a *OauthClientSettingsApiService) UpdateOauthClientSettings(ctx context.Co
 // Execute executes the request
 //
 //	@return ClientSettings
-func (a *OauthClientSettingsApiService) UpdateOauthClientSettingsExecute(r ApiUpdateOauthClientSettingsRequest) (*ClientSettings, *http.Response, error) {
+func (a *OauthClientSettingsAPIService) UpdateOauthClientSettingsExecute(r ApiUpdateOauthClientSettingsRequest) (*ClientSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -159,7 +159,7 @@ func (a *OauthClientSettingsApiService) UpdateOauthClientSettingsExecute(r ApiUp
 		localVarReturnValue *ClientSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthClientSettingsApiService.UpdateOauthClientSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthClientSettingsAPIService.UpdateOauthClientSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

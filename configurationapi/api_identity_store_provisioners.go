@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// IdentityStoreProvisionersApiService IdentityStoreProvisionersApi service
-type IdentityStoreProvisionersApiService service
+// IdentityStoreProvisionersAPIService IdentityStoreProvisionersAPI service
+type IdentityStoreProvisionersAPIService service
 
 type ApiCreateIdentityStoreProvisionerRequest struct {
 	ctx        context.Context
-	ApiService *IdentityStoreProvisionersApiService
+	ApiService *IdentityStoreProvisionersAPIService
 	body       *IdentityStoreProvisioner
 }
 
@@ -44,7 +44,7 @@ CreateIdentityStoreProvisioner Create a new identity store provisioner instance.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateIdentityStoreProvisionerRequest
 */
-func (a *IdentityStoreProvisionersApiService) CreateIdentityStoreProvisioner(ctx context.Context) ApiCreateIdentityStoreProvisionerRequest {
+func (a *IdentityStoreProvisionersAPIService) CreateIdentityStoreProvisioner(ctx context.Context) ApiCreateIdentityStoreProvisionerRequest {
 	return ApiCreateIdentityStoreProvisionerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *IdentityStoreProvisionersApiService) CreateIdentityStoreProvisioner(ctx
 // Execute executes the request
 //
 //	@return IdentityStoreProvisioner
-func (a *IdentityStoreProvisionersApiService) CreateIdentityStoreProvisionerExecute(r ApiCreateIdentityStoreProvisionerRequest) (*IdentityStoreProvisioner, *http.Response, error) {
+func (a *IdentityStoreProvisionersAPIService) CreateIdentityStoreProvisionerExecute(r ApiCreateIdentityStoreProvisionerRequest) (*IdentityStoreProvisioner, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *IdentityStoreProvisionersApiService) CreateIdentityStoreProvisionerExec
 		localVarReturnValue *IdentityStoreProvisioner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityStoreProvisionersApiService.CreateIdentityStoreProvisioner")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityStoreProvisionersAPIService.CreateIdentityStoreProvisioner")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,7 +144,7 @@ func (a *IdentityStoreProvisionersApiService) CreateIdentityStoreProvisionerExec
 
 type ApiDeleteIdentityStoreProvisionerRequest struct {
 	ctx        context.Context
-	ApiService *IdentityStoreProvisionersApiService
+	ApiService *IdentityStoreProvisionersAPIService
 	id         string
 }
 
@@ -159,7 +159,7 @@ DeleteIdentityStoreProvisioner Delete an identity store provisioner instance
 	@param id ID of identity store provisioner instance
 	@return ApiDeleteIdentityStoreProvisionerRequest
 */
-func (a *IdentityStoreProvisionersApiService) DeleteIdentityStoreProvisioner(ctx context.Context, id string) ApiDeleteIdentityStoreProvisionerRequest {
+func (a *IdentityStoreProvisionersAPIService) DeleteIdentityStoreProvisioner(ctx context.Context, id string) ApiDeleteIdentityStoreProvisionerRequest {
 	return ApiDeleteIdentityStoreProvisionerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -168,14 +168,14 @@ func (a *IdentityStoreProvisionersApiService) DeleteIdentityStoreProvisioner(ctx
 }
 
 // Execute executes the request
-func (a *IdentityStoreProvisionersApiService) DeleteIdentityStoreProvisionerExecute(r ApiDeleteIdentityStoreProvisionerRequest) (*http.Response, error) {
+func (a *IdentityStoreProvisionersAPIService) DeleteIdentityStoreProvisionerExecute(r ApiDeleteIdentityStoreProvisionerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityStoreProvisionersApiService.DeleteIdentityStoreProvisioner")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityStoreProvisionersAPIService.DeleteIdentityStoreProvisioner")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -255,7 +255,7 @@ func (a *IdentityStoreProvisionersApiService) DeleteIdentityStoreProvisionerExec
 
 type ApiGetIdentityStoreProvisionerRequest struct {
 	ctx        context.Context
-	ApiService *IdentityStoreProvisionersApiService
+	ApiService *IdentityStoreProvisionersAPIService
 	id         string
 }
 
@@ -270,7 +270,7 @@ GetIdentityStoreProvisioner Get an identity store provisioner by ID.
 	@param id ID of identity store provisioner instance
 	@return ApiGetIdentityStoreProvisionerRequest
 */
-func (a *IdentityStoreProvisionersApiService) GetIdentityStoreProvisioner(ctx context.Context, id string) ApiGetIdentityStoreProvisionerRequest {
+func (a *IdentityStoreProvisionersAPIService) GetIdentityStoreProvisioner(ctx context.Context, id string) ApiGetIdentityStoreProvisionerRequest {
 	return ApiGetIdentityStoreProvisionerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -281,7 +281,7 @@ func (a *IdentityStoreProvisionersApiService) GetIdentityStoreProvisioner(ctx co
 // Execute executes the request
 //
 //	@return IdentityStoreProvisioner
-func (a *IdentityStoreProvisionersApiService) GetIdentityStoreProvisionerExecute(r ApiGetIdentityStoreProvisionerRequest) (*IdentityStoreProvisioner, *http.Response, error) {
+func (a *IdentityStoreProvisionersAPIService) GetIdentityStoreProvisionerExecute(r ApiGetIdentityStoreProvisionerRequest) (*IdentityStoreProvisioner, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -289,7 +289,7 @@ func (a *IdentityStoreProvisionersApiService) GetIdentityStoreProvisionerExecute
 		localVarReturnValue *IdentityStoreProvisioner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityStoreProvisionersApiService.GetIdentityStoreProvisioner")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityStoreProvisionersAPIService.GetIdentityStoreProvisioner")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -367,7 +367,7 @@ func (a *IdentityStoreProvisionersApiService) GetIdentityStoreProvisionerExecute
 
 type ApiGetIdentityStoreProvisionerDescriptorByIdRequest struct {
 	ctx        context.Context
-	ApiService *IdentityStoreProvisionersApiService
+	ApiService *IdentityStoreProvisionersAPIService
 	id         string
 }
 
@@ -382,7 +382,7 @@ GetIdentityStoreProvisionerDescriptorById Get the descriptor of an identity stor
 	@param id ID of identity store provisioner descriptor
 	@return ApiGetIdentityStoreProvisionerDescriptorByIdRequest
 */
-func (a *IdentityStoreProvisionersApiService) GetIdentityStoreProvisionerDescriptorById(ctx context.Context, id string) ApiGetIdentityStoreProvisionerDescriptorByIdRequest {
+func (a *IdentityStoreProvisionersAPIService) GetIdentityStoreProvisionerDescriptorById(ctx context.Context, id string) ApiGetIdentityStoreProvisionerDescriptorByIdRequest {
 	return ApiGetIdentityStoreProvisionerDescriptorByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -393,7 +393,7 @@ func (a *IdentityStoreProvisionersApiService) GetIdentityStoreProvisionerDescrip
 // Execute executes the request
 //
 //	@return IdentityStoreProvisionerDescriptor
-func (a *IdentityStoreProvisionersApiService) GetIdentityStoreProvisionerDescriptorByIdExecute(r ApiGetIdentityStoreProvisionerDescriptorByIdRequest) (*IdentityStoreProvisionerDescriptor, *http.Response, error) {
+func (a *IdentityStoreProvisionersAPIService) GetIdentityStoreProvisionerDescriptorByIdExecute(r ApiGetIdentityStoreProvisionerDescriptorByIdRequest) (*IdentityStoreProvisionerDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -401,7 +401,7 @@ func (a *IdentityStoreProvisionersApiService) GetIdentityStoreProvisionerDescrip
 		localVarReturnValue *IdentityStoreProvisionerDescriptor
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityStoreProvisionersApiService.GetIdentityStoreProvisionerDescriptorById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityStoreProvisionersAPIService.GetIdentityStoreProvisionerDescriptorById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -479,7 +479,7 @@ func (a *IdentityStoreProvisionersApiService) GetIdentityStoreProvisionerDescrip
 
 type ApiGetIdentityStoreProvisionerDescriptorsRequest struct {
 	ctx        context.Context
-	ApiService *IdentityStoreProvisionersApiService
+	ApiService *IdentityStoreProvisionersAPIService
 }
 
 func (r ApiGetIdentityStoreProvisionerDescriptorsRequest) Execute() (*IdentityStoreProvisionerDescriptors, *http.Response, error) {
@@ -492,7 +492,7 @@ GetIdentityStoreProvisionerDescriptors Get the list of available identity store 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetIdentityStoreProvisionerDescriptorsRequest
 */
-func (a *IdentityStoreProvisionersApiService) GetIdentityStoreProvisionerDescriptors(ctx context.Context) ApiGetIdentityStoreProvisionerDescriptorsRequest {
+func (a *IdentityStoreProvisionersAPIService) GetIdentityStoreProvisionerDescriptors(ctx context.Context) ApiGetIdentityStoreProvisionerDescriptorsRequest {
 	return ApiGetIdentityStoreProvisionerDescriptorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -502,7 +502,7 @@ func (a *IdentityStoreProvisionersApiService) GetIdentityStoreProvisionerDescrip
 // Execute executes the request
 //
 //	@return IdentityStoreProvisionerDescriptors
-func (a *IdentityStoreProvisionersApiService) GetIdentityStoreProvisionerDescriptorsExecute(r ApiGetIdentityStoreProvisionerDescriptorsRequest) (*IdentityStoreProvisionerDescriptors, *http.Response, error) {
+func (a *IdentityStoreProvisionersAPIService) GetIdentityStoreProvisionerDescriptorsExecute(r ApiGetIdentityStoreProvisionerDescriptorsRequest) (*IdentityStoreProvisionerDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -510,7 +510,7 @@ func (a *IdentityStoreProvisionersApiService) GetIdentityStoreProvisionerDescrip
 		localVarReturnValue *IdentityStoreProvisionerDescriptors
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityStoreProvisionersApiService.GetIdentityStoreProvisionerDescriptors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityStoreProvisionersAPIService.GetIdentityStoreProvisionerDescriptors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -577,7 +577,7 @@ func (a *IdentityStoreProvisionersApiService) GetIdentityStoreProvisionerDescrip
 
 type ApiGetIdentityStoreProvisionersRequest struct {
 	ctx        context.Context
-	ApiService *IdentityStoreProvisionersApiService
+	ApiService *IdentityStoreProvisionersAPIService
 }
 
 func (r ApiGetIdentityStoreProvisionersRequest) Execute() (*IdentityStoreProvisioners, *http.Response, error) {
@@ -590,7 +590,7 @@ GetIdentityStoreProvisioners Get the list of configured identity store provision
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetIdentityStoreProvisionersRequest
 */
-func (a *IdentityStoreProvisionersApiService) GetIdentityStoreProvisioners(ctx context.Context) ApiGetIdentityStoreProvisionersRequest {
+func (a *IdentityStoreProvisionersAPIService) GetIdentityStoreProvisioners(ctx context.Context) ApiGetIdentityStoreProvisionersRequest {
 	return ApiGetIdentityStoreProvisionersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -600,7 +600,7 @@ func (a *IdentityStoreProvisionersApiService) GetIdentityStoreProvisioners(ctx c
 // Execute executes the request
 //
 //	@return IdentityStoreProvisioners
-func (a *IdentityStoreProvisionersApiService) GetIdentityStoreProvisionersExecute(r ApiGetIdentityStoreProvisionersRequest) (*IdentityStoreProvisioners, *http.Response, error) {
+func (a *IdentityStoreProvisionersAPIService) GetIdentityStoreProvisionersExecute(r ApiGetIdentityStoreProvisionersRequest) (*IdentityStoreProvisioners, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -608,7 +608,7 @@ func (a *IdentityStoreProvisionersApiService) GetIdentityStoreProvisionersExecut
 		localVarReturnValue *IdentityStoreProvisioners
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityStoreProvisionersApiService.GetIdentityStoreProvisioners")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityStoreProvisionersAPIService.GetIdentityStoreProvisioners")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -675,7 +675,7 @@ func (a *IdentityStoreProvisionersApiService) GetIdentityStoreProvisionersExecut
 
 type ApiUpdateIdentityStoreProvisionerRequest struct {
 	ctx        context.Context
-	ApiService *IdentityStoreProvisionersApiService
+	ApiService *IdentityStoreProvisionersAPIService
 	id         string
 	body       *IdentityStoreProvisioner
 }
@@ -697,7 +697,7 @@ UpdateIdentityStoreProvisioner Update an identity store provisioner instance
 	@param id ID of identity store provisioner instance
 	@return ApiUpdateIdentityStoreProvisionerRequest
 */
-func (a *IdentityStoreProvisionersApiService) UpdateIdentityStoreProvisioner(ctx context.Context, id string) ApiUpdateIdentityStoreProvisionerRequest {
+func (a *IdentityStoreProvisionersAPIService) UpdateIdentityStoreProvisioner(ctx context.Context, id string) ApiUpdateIdentityStoreProvisionerRequest {
 	return ApiUpdateIdentityStoreProvisionerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -708,7 +708,7 @@ func (a *IdentityStoreProvisionersApiService) UpdateIdentityStoreProvisioner(ctx
 // Execute executes the request
 //
 //	@return IdentityStoreProvisioner
-func (a *IdentityStoreProvisionersApiService) UpdateIdentityStoreProvisionerExecute(r ApiUpdateIdentityStoreProvisionerRequest) (*IdentityStoreProvisioner, *http.Response, error) {
+func (a *IdentityStoreProvisionersAPIService) UpdateIdentityStoreProvisionerExecute(r ApiUpdateIdentityStoreProvisionerRequest) (*IdentityStoreProvisioner, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -716,7 +716,7 @@ func (a *IdentityStoreProvisionersApiService) UpdateIdentityStoreProvisionerExec
 		localVarReturnValue *IdentityStoreProvisioner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityStoreProvisionersApiService.UpdateIdentityStoreProvisioner")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityStoreProvisionersAPIService.UpdateIdentityStoreProvisioner")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

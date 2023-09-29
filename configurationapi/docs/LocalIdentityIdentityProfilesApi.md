@@ -1,14 +1,14 @@
-# \LocalIdentityIdentityProfilesApi
+# \LocalIdentityIdentityProfilesAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateIdentityProfile**](LocalIdentityIdentityProfilesApi.md#CreateIdentityProfile) | **Post** /localIdentity/identityProfiles | Create a new local identity profile.
-[**DeleteIdentityProfile**](LocalIdentityIdentityProfilesApi.md#DeleteIdentityProfile) | **Delete** /localIdentity/identityProfiles/{id} | Delete the local identity profile by ID.
-[**GetIdentityProfile**](LocalIdentityIdentityProfilesApi.md#GetIdentityProfile) | **Get** /localIdentity/identityProfiles/{id} | Get the local identity profile by ID.
-[**GetIdentityProfiles**](LocalIdentityIdentityProfilesApi.md#GetIdentityProfiles) | **Get** /localIdentity/identityProfiles | Get the list of configured local identity profiles.
-[**UpdateIdentityProfile**](LocalIdentityIdentityProfilesApi.md#UpdateIdentityProfile) | **Put** /localIdentity/identityProfiles/{id} | Update the local identity profile by ID.
+[**CreateIdentityProfile**](LocalIdentityIdentityProfilesAPI.md#CreateIdentityProfile) | **Post** /localIdentity/identityProfiles | Create a new local identity profile.
+[**DeleteIdentityProfile**](LocalIdentityIdentityProfilesAPI.md#DeleteIdentityProfile) | **Delete** /localIdentity/identityProfiles/{id} | Delete the local identity profile by ID.
+[**GetIdentityProfile**](LocalIdentityIdentityProfilesAPI.md#GetIdentityProfile) | **Get** /localIdentity/identityProfiles/{id} | Get the local identity profile by ID.
+[**GetIdentityProfiles**](LocalIdentityIdentityProfilesAPI.md#GetIdentityProfiles) | **Get** /localIdentity/identityProfiles | Get the list of configured local identity profiles.
+[**UpdateIdentityProfile**](LocalIdentityIdentityProfilesAPI.md#UpdateIdentityProfile) | **Put** /localIdentity/identityProfiles/{id} | Update the local identity profile by ID.
 
 
 
@@ -38,13 +38,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalIdentityIdentityProfilesApi.CreateIdentityProfile(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.LocalIdentityIdentityProfilesAPI.CreateIdentityProfile(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalIdentityIdentityProfilesApi.CreateIdentityProfile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalIdentityIdentityProfilesAPI.CreateIdentityProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateIdentityProfile`: LocalIdentityProfile
-    fmt.Fprintf(os.Stdout, "Response from `LocalIdentityIdentityProfilesApi.CreateIdentityProfile`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LocalIdentityIdentityProfilesAPI.CreateIdentityProfile`: %v\n", resp)
 }
 ```
 
@@ -105,9 +105,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.LocalIdentityIdentityProfilesApi.DeleteIdentityProfile(context.Background(), id).Execute()
+    r, err := apiClient.LocalIdentityIdentityProfilesAPI.DeleteIdentityProfile(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalIdentityIdentityProfilesApi.DeleteIdentityProfile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalIdentityIdentityProfilesAPI.DeleteIdentityProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -173,13 +173,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalIdentityIdentityProfilesApi.GetIdentityProfile(context.Background(), id).Execute()
+    resp, r, err := apiClient.LocalIdentityIdentityProfilesAPI.GetIdentityProfile(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalIdentityIdentityProfilesApi.GetIdentityProfile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalIdentityIdentityProfilesAPI.GetIdentityProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetIdentityProfile`: LocalIdentityProfile
-    fmt.Fprintf(os.Stdout, "Response from `LocalIdentityIdentityProfilesApi.GetIdentityProfile`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LocalIdentityIdentityProfilesAPI.GetIdentityProfile`: %v\n", resp)
 }
 ```
 
@@ -244,13 +244,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalIdentityIdentityProfilesApi.GetIdentityProfiles(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).ApcId(apcId).Execute()
+    resp, r, err := apiClient.LocalIdentityIdentityProfilesAPI.GetIdentityProfiles(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).ApcId(apcId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalIdentityIdentityProfilesApi.GetIdentityProfiles``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalIdentityIdentityProfilesAPI.GetIdentityProfiles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetIdentityProfiles`: LocalIdentityProfiles
-    fmt.Fprintf(os.Stdout, "Response from `LocalIdentityIdentityProfilesApi.GetIdentityProfiles`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LocalIdentityIdentityProfilesAPI.GetIdentityProfiles`: %v\n", resp)
 }
 ```
 
@@ -315,13 +315,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalIdentityIdentityProfilesApi.UpdateIdentityProfile(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.LocalIdentityIdentityProfilesAPI.UpdateIdentityProfile(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalIdentityIdentityProfilesApi.UpdateIdentityProfile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalIdentityIdentityProfilesAPI.UpdateIdentityProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateIdentityProfile`: LocalIdentityProfile
-    fmt.Fprintf(os.Stdout, "Response from `LocalIdentityIdentityProfilesApi.UpdateIdentityProfile`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LocalIdentityIdentityProfilesAPI.UpdateIdentityProfile`: %v\n", resp)
 }
 ```
 

@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// PingOneForEnterpriseApiService PingOneForEnterpriseApi service
-type PingOneForEnterpriseApiService service
+// PingOneForEnterpriseAPIService PingOneForEnterpriseAPI service
+type PingOneForEnterpriseAPIService service
 
 type ApiDisconnectRequest struct {
 	ctx        context.Context
-	ApiService *PingOneForEnterpriseApiService
+	ApiService *PingOneForEnterpriseAPIService
 }
 
 func (r ApiDisconnectRequest) Execute() (*PingOneForEnterpriseSettings, *http.Response, error) {
@@ -36,7 +36,7 @@ Disconnect Disconnect from PingOne for Enterprise
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiDisconnectRequest
 */
-func (a *PingOneForEnterpriseApiService) Disconnect(ctx context.Context) ApiDisconnectRequest {
+func (a *PingOneForEnterpriseAPIService) Disconnect(ctx context.Context) ApiDisconnectRequest {
 	return ApiDisconnectRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -46,7 +46,7 @@ func (a *PingOneForEnterpriseApiService) Disconnect(ctx context.Context) ApiDisc
 // Execute executes the request
 //
 //	@return PingOneForEnterpriseSettings
-func (a *PingOneForEnterpriseApiService) DisconnectExecute(r ApiDisconnectRequest) (*PingOneForEnterpriseSettings, *http.Response, error) {
+func (a *PingOneForEnterpriseAPIService) DisconnectExecute(r ApiDisconnectRequest) (*PingOneForEnterpriseSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *PingOneForEnterpriseApiService) DisconnectExecute(r ApiDisconnectReques
 		localVarReturnValue *PingOneForEnterpriseSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneForEnterpriseApiService.Disconnect")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneForEnterpriseAPIService.Disconnect")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -121,7 +121,7 @@ func (a *PingOneForEnterpriseApiService) DisconnectExecute(r ApiDisconnectReques
 
 type ApiGetKeyPairsRequest struct {
 	ctx        context.Context
-	ApiService *PingOneForEnterpriseApiService
+	ApiService *PingOneForEnterpriseAPIService
 }
 
 func (r ApiGetKeyPairsRequest) Execute() (*P14EKeysView, *http.Response, error) {
@@ -134,7 +134,7 @@ GetKeyPairs Get the PingOne for Enterprise key pair settings
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetKeyPairsRequest
 */
-func (a *PingOneForEnterpriseApiService) GetKeyPairs(ctx context.Context) ApiGetKeyPairsRequest {
+func (a *PingOneForEnterpriseAPIService) GetKeyPairs(ctx context.Context) ApiGetKeyPairsRequest {
 	return ApiGetKeyPairsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -144,7 +144,7 @@ func (a *PingOneForEnterpriseApiService) GetKeyPairs(ctx context.Context) ApiGet
 // Execute executes the request
 //
 //	@return P14EKeysView
-func (a *PingOneForEnterpriseApiService) GetKeyPairsExecute(r ApiGetKeyPairsRequest) (*P14EKeysView, *http.Response, error) {
+func (a *PingOneForEnterpriseAPIService) GetKeyPairsExecute(r ApiGetKeyPairsRequest) (*P14EKeysView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -152,7 +152,7 @@ func (a *PingOneForEnterpriseApiService) GetKeyPairsExecute(r ApiGetKeyPairsRequ
 		localVarReturnValue *P14EKeysView
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneForEnterpriseApiService.GetKeyPairs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneForEnterpriseAPIService.GetKeyPairs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -219,7 +219,7 @@ func (a *PingOneForEnterpriseApiService) GetKeyPairsExecute(r ApiGetKeyPairsRequ
 
 type ApiGetPingOneForEnterpriseSettingsRequest struct {
 	ctx        context.Context
-	ApiService *PingOneForEnterpriseApiService
+	ApiService *PingOneForEnterpriseAPIService
 }
 
 func (r ApiGetPingOneForEnterpriseSettingsRequest) Execute() (*PingOneForEnterpriseSettings, *http.Response, error) {
@@ -232,7 +232,7 @@ GetPingOneForEnterpriseSettings Get the PingOne for Enterprise settings
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetPingOneForEnterpriseSettingsRequest
 */
-func (a *PingOneForEnterpriseApiService) GetPingOneForEnterpriseSettings(ctx context.Context) ApiGetPingOneForEnterpriseSettingsRequest {
+func (a *PingOneForEnterpriseAPIService) GetPingOneForEnterpriseSettings(ctx context.Context) ApiGetPingOneForEnterpriseSettingsRequest {
 	return ApiGetPingOneForEnterpriseSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -242,7 +242,7 @@ func (a *PingOneForEnterpriseApiService) GetPingOneForEnterpriseSettings(ctx con
 // Execute executes the request
 //
 //	@return PingOneForEnterpriseSettings
-func (a *PingOneForEnterpriseApiService) GetPingOneForEnterpriseSettingsExecute(r ApiGetPingOneForEnterpriseSettingsRequest) (*PingOneForEnterpriseSettings, *http.Response, error) {
+func (a *PingOneForEnterpriseAPIService) GetPingOneForEnterpriseSettingsExecute(r ApiGetPingOneForEnterpriseSettingsRequest) (*PingOneForEnterpriseSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -250,7 +250,7 @@ func (a *PingOneForEnterpriseApiService) GetPingOneForEnterpriseSettingsExecute(
 		localVarReturnValue *PingOneForEnterpriseSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneForEnterpriseApiService.GetPingOneForEnterpriseSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneForEnterpriseAPIService.GetPingOneForEnterpriseSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -317,7 +317,7 @@ func (a *PingOneForEnterpriseApiService) GetPingOneForEnterpriseSettingsExecute(
 
 type ApiRotateKeysRequest struct {
 	ctx        context.Context
-	ApiService *PingOneForEnterpriseApiService
+	ApiService *PingOneForEnterpriseAPIService
 }
 
 func (r ApiRotateKeysRequest) Execute() (*P14EKeysView, *http.Response, error) {
@@ -330,7 +330,7 @@ RotateKeys Rotate the authentication key
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiRotateKeysRequest
 */
-func (a *PingOneForEnterpriseApiService) RotateKeys(ctx context.Context) ApiRotateKeysRequest {
+func (a *PingOneForEnterpriseAPIService) RotateKeys(ctx context.Context) ApiRotateKeysRequest {
 	return ApiRotateKeysRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -340,7 +340,7 @@ func (a *PingOneForEnterpriseApiService) RotateKeys(ctx context.Context) ApiRota
 // Execute executes the request
 //
 //	@return P14EKeysView
-func (a *PingOneForEnterpriseApiService) RotateKeysExecute(r ApiRotateKeysRequest) (*P14EKeysView, *http.Response, error) {
+func (a *PingOneForEnterpriseAPIService) RotateKeysExecute(r ApiRotateKeysRequest) (*P14EKeysView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -348,7 +348,7 @@ func (a *PingOneForEnterpriseApiService) RotateKeysExecute(r ApiRotateKeysReques
 		localVarReturnValue *P14EKeysView
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneForEnterpriseApiService.RotateKeys")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneForEnterpriseAPIService.RotateKeys")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -415,7 +415,7 @@ func (a *PingOneForEnterpriseApiService) RotateKeysExecute(r ApiRotateKeysReques
 
 type ApiUpdatePingOneForEnterpriseIdentityRepositoryRequest struct {
 	ctx        context.Context
-	ApiService *PingOneForEnterpriseApiService
+	ApiService *PingOneForEnterpriseAPIService
 }
 
 func (r ApiUpdatePingOneForEnterpriseIdentityRepositoryRequest) Execute() (*PingOneForEnterpriseSettings, *http.Response, error) {
@@ -430,7 +430,7 @@ Update the identity repository to keep your PingFederate and PingOne for Enterpr
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdatePingOneForEnterpriseIdentityRepositoryRequest
 */
-func (a *PingOneForEnterpriseApiService) UpdatePingOneForEnterpriseIdentityRepository(ctx context.Context) ApiUpdatePingOneForEnterpriseIdentityRepositoryRequest {
+func (a *PingOneForEnterpriseAPIService) UpdatePingOneForEnterpriseIdentityRepository(ctx context.Context) ApiUpdatePingOneForEnterpriseIdentityRepositoryRequest {
 	return ApiUpdatePingOneForEnterpriseIdentityRepositoryRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -440,7 +440,7 @@ func (a *PingOneForEnterpriseApiService) UpdatePingOneForEnterpriseIdentityRepos
 // Execute executes the request
 //
 //	@return PingOneForEnterpriseSettings
-func (a *PingOneForEnterpriseApiService) UpdatePingOneForEnterpriseIdentityRepositoryExecute(r ApiUpdatePingOneForEnterpriseIdentityRepositoryRequest) (*PingOneForEnterpriseSettings, *http.Response, error) {
+func (a *PingOneForEnterpriseAPIService) UpdatePingOneForEnterpriseIdentityRepositoryExecute(r ApiUpdatePingOneForEnterpriseIdentityRepositoryRequest) (*PingOneForEnterpriseSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -448,7 +448,7 @@ func (a *PingOneForEnterpriseApiService) UpdatePingOneForEnterpriseIdentityRepos
 		localVarReturnValue *PingOneForEnterpriseSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneForEnterpriseApiService.UpdatePingOneForEnterpriseIdentityRepository")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneForEnterpriseAPIService.UpdatePingOneForEnterpriseIdentityRepository")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -525,7 +525,7 @@ func (a *PingOneForEnterpriseApiService) UpdatePingOneForEnterpriseIdentityRepos
 
 type ApiUpdatePingOneSettingsRequest struct {
 	ctx        context.Context
-	ApiService *PingOneForEnterpriseApiService
+	ApiService *PingOneForEnterpriseAPIService
 	body       *PingOneForEnterpriseSettings
 }
 
@@ -545,7 +545,7 @@ UpdatePingOneSettings Update the PingOne for Enterprise settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdatePingOneSettingsRequest
 */
-func (a *PingOneForEnterpriseApiService) UpdatePingOneSettings(ctx context.Context) ApiUpdatePingOneSettingsRequest {
+func (a *PingOneForEnterpriseAPIService) UpdatePingOneSettings(ctx context.Context) ApiUpdatePingOneSettingsRequest {
 	return ApiUpdatePingOneSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -555,7 +555,7 @@ func (a *PingOneForEnterpriseApiService) UpdatePingOneSettings(ctx context.Conte
 // Execute executes the request
 //
 //	@return PingOneForEnterpriseSettings
-func (a *PingOneForEnterpriseApiService) UpdatePingOneSettingsExecute(r ApiUpdatePingOneSettingsRequest) (*PingOneForEnterpriseSettings, *http.Response, error) {
+func (a *PingOneForEnterpriseAPIService) UpdatePingOneSettingsExecute(r ApiUpdatePingOneSettingsRequest) (*PingOneForEnterpriseSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -563,7 +563,7 @@ func (a *PingOneForEnterpriseApiService) UpdatePingOneSettingsExecute(r ApiUpdat
 		localVarReturnValue *PingOneForEnterpriseSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneForEnterpriseApiService.UpdatePingOneSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneForEnterpriseAPIService.UpdatePingOneSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

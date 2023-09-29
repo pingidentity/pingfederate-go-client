@@ -1,16 +1,16 @@
-# \OauthCibaServerPolicyApi
+# \OauthCibaServerPolicyAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateCibaServerPolicy**](OauthCibaServerPolicyApi.md#CreateCibaServerPolicy) | **Post** /oauth/cibaServerPolicy/requestPolicies | Create a new request policy.
-[**DeleteCibaServerPolicy**](OauthCibaServerPolicyApi.md#DeleteCibaServerPolicy) | **Delete** /oauth/cibaServerPolicy/requestPolicies/{id} | Delete a request policy.
-[**GetCibaServerPolicies**](OauthCibaServerPolicyApi.md#GetCibaServerPolicies) | **Get** /oauth/cibaServerPolicy/requestPolicies | Get list of request policies.
-[**GetCibaServerPolicyById**](OauthCibaServerPolicyApi.md#GetCibaServerPolicyById) | **Get** /oauth/cibaServerPolicy/requestPolicies/{id} | Find request policy by ID.
-[**GetCibaServerPolicySettings**](OauthCibaServerPolicyApi.md#GetCibaServerPolicySettings) | **Get** /oauth/cibaServerPolicy/settings | Get general ciba server request policy settings.
-[**UpdateCibaServerPolicy**](OauthCibaServerPolicyApi.md#UpdateCibaServerPolicy) | **Put** /oauth/cibaServerPolicy/requestPolicies/{id} | Update a request policy.
-[**UpdateCibaServerPolicySettings**](OauthCibaServerPolicyApi.md#UpdateCibaServerPolicySettings) | **Put** /oauth/cibaServerPolicy/settings | Update general ciba server request policy settings.
+[**CreateCibaServerPolicy**](OauthCibaServerPolicyAPI.md#CreateCibaServerPolicy) | **Post** /oauth/cibaServerPolicy/requestPolicies | Create a new request policy.
+[**DeleteCibaServerPolicy**](OauthCibaServerPolicyAPI.md#DeleteCibaServerPolicy) | **Delete** /oauth/cibaServerPolicy/requestPolicies/{id} | Delete a request policy.
+[**GetCibaServerPolicies**](OauthCibaServerPolicyAPI.md#GetCibaServerPolicies) | **Get** /oauth/cibaServerPolicy/requestPolicies | Get list of request policies.
+[**GetCibaServerPolicyById**](OauthCibaServerPolicyAPI.md#GetCibaServerPolicyById) | **Get** /oauth/cibaServerPolicy/requestPolicies/{id} | Find request policy by ID.
+[**GetCibaServerPolicySettings**](OauthCibaServerPolicyAPI.md#GetCibaServerPolicySettings) | **Get** /oauth/cibaServerPolicy/settings | Get general ciba server request policy settings.
+[**UpdateCibaServerPolicy**](OauthCibaServerPolicyAPI.md#UpdateCibaServerPolicy) | **Put** /oauth/cibaServerPolicy/requestPolicies/{id} | Update a request policy.
+[**UpdateCibaServerPolicySettings**](OauthCibaServerPolicyAPI.md#UpdateCibaServerPolicySettings) | **Put** /oauth/cibaServerPolicy/settings | Update general ciba server request policy settings.
 
 
 
@@ -40,13 +40,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthCibaServerPolicyApi.CreateCibaServerPolicy(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthCibaServerPolicyAPI.CreateCibaServerPolicy(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyApi.CreateCibaServerPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyAPI.CreateCibaServerPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateCibaServerPolicy`: RequestPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyApi.CreateCibaServerPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyAPI.CreateCibaServerPolicy`: %v\n", resp)
 }
 ```
 
@@ -107,9 +107,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthCibaServerPolicyApi.DeleteCibaServerPolicy(context.Background(), id).Execute()
+    r, err := apiClient.OauthCibaServerPolicyAPI.DeleteCibaServerPolicy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyApi.DeleteCibaServerPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyAPI.DeleteCibaServerPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -172,13 +172,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthCibaServerPolicyApi.GetCibaServerPolicies(context.Background()).Execute()
+    resp, r, err := apiClient.OauthCibaServerPolicyAPI.GetCibaServerPolicies(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyApi.GetCibaServerPolicies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyAPI.GetCibaServerPolicies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetCibaServerPolicies`: RequestPolicies
-    fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyApi.GetCibaServerPolicies`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyAPI.GetCibaServerPolicies`: %v\n", resp)
 }
 ```
 
@@ -234,13 +234,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthCibaServerPolicyApi.GetCibaServerPolicyById(context.Background(), id).Execute()
+    resp, r, err := apiClient.OauthCibaServerPolicyAPI.GetCibaServerPolicyById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyApi.GetCibaServerPolicyById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyAPI.GetCibaServerPolicyById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetCibaServerPolicyById`: RequestPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyApi.GetCibaServerPolicyById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyAPI.GetCibaServerPolicyById`: %v\n", resp)
 }
 ```
 
@@ -301,13 +301,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthCibaServerPolicyApi.GetCibaServerPolicySettings(context.Background()).Execute()
+    resp, r, err := apiClient.OauthCibaServerPolicyAPI.GetCibaServerPolicySettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyApi.GetCibaServerPolicySettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyAPI.GetCibaServerPolicySettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetCibaServerPolicySettings`: CibaServerPolicySettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyApi.GetCibaServerPolicySettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyAPI.GetCibaServerPolicySettings`: %v\n", resp)
 }
 ```
 
@@ -365,13 +365,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthCibaServerPolicyApi.UpdateCibaServerPolicy(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthCibaServerPolicyAPI.UpdateCibaServerPolicy(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyApi.UpdateCibaServerPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyAPI.UpdateCibaServerPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateCibaServerPolicy`: RequestPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyApi.UpdateCibaServerPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyAPI.UpdateCibaServerPolicy`: %v\n", resp)
 }
 ```
 
@@ -436,13 +436,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthCibaServerPolicyApi.UpdateCibaServerPolicySettings(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthCibaServerPolicyAPI.UpdateCibaServerPolicySettings(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyApi.UpdateCibaServerPolicySettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyAPI.UpdateCibaServerPolicySettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateCibaServerPolicySettings`: CibaServerPolicySettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyApi.UpdateCibaServerPolicySettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyAPI.UpdateCibaServerPolicySettings`: %v\n", resp)
 }
 ```
 

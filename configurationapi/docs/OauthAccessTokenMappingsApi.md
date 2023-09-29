@@ -1,14 +1,14 @@
-# \OauthAccessTokenMappingsApi
+# \OauthAccessTokenMappingsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateMapping**](OauthAccessTokenMappingsApi.md#CreateMapping) | **Post** /oauth/accessTokenMappings | Create a new Access Token Mapping.
-[**DeleteMapping**](OauthAccessTokenMappingsApi.md#DeleteMapping) | **Delete** /oauth/accessTokenMappings/{id} | Delete an Access Token Mapping.
-[**GetMapping**](OauthAccessTokenMappingsApi.md#GetMapping) | **Get** /oauth/accessTokenMappings/{id} | Find the Access Token Mapping by its ID.
-[**GetMappings**](OauthAccessTokenMappingsApi.md#GetMappings) | **Get** /oauth/accessTokenMappings | Get the list of Access Token Mappings.
-[**UpdateMapping**](OauthAccessTokenMappingsApi.md#UpdateMapping) | **Put** /oauth/accessTokenMappings/{id} | Update an Access Token Mapping.
+[**CreateMapping**](OauthAccessTokenMappingsAPI.md#CreateMapping) | **Post** /oauth/accessTokenMappings | Create a new Access Token Mapping.
+[**DeleteMapping**](OauthAccessTokenMappingsAPI.md#DeleteMapping) | **Delete** /oauth/accessTokenMappings/{id} | Delete an Access Token Mapping.
+[**GetMapping**](OauthAccessTokenMappingsAPI.md#GetMapping) | **Get** /oauth/accessTokenMappings/{id} | Find the Access Token Mapping by its ID.
+[**GetMappings**](OauthAccessTokenMappingsAPI.md#GetMappings) | **Get** /oauth/accessTokenMappings | Get the list of Access Token Mappings.
+[**UpdateMapping**](OauthAccessTokenMappingsAPI.md#UpdateMapping) | **Put** /oauth/accessTokenMappings/{id} | Update an Access Token Mapping.
 
 
 
@@ -38,13 +38,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenMappingsApi.CreateMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthAccessTokenMappingsAPI.CreateMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenMappingsApi.CreateMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenMappingsAPI.CreateMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateMapping`: AccessTokenMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenMappingsApi.CreateMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenMappingsAPI.CreateMapping`: %v\n", resp)
 }
 ```
 
@@ -103,9 +103,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthAccessTokenMappingsApi.DeleteMapping(context.Background(), id).Execute()
+    r, err := apiClient.OauthAccessTokenMappingsAPI.DeleteMapping(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenMappingsApi.DeleteMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenMappingsAPI.DeleteMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -169,13 +169,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenMappingsApi.GetMapping(context.Background(), id).Execute()
+    resp, r, err := apiClient.OauthAccessTokenMappingsAPI.GetMapping(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenMappingsApi.GetMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenMappingsAPI.GetMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetMapping`: AccessTokenMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenMappingsApi.GetMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenMappingsAPI.GetMapping`: %v\n", resp)
 }
 ```
 
@@ -236,13 +236,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenMappingsApi.GetMappings(context.Background()).Execute()
+    resp, r, err := apiClient.OauthAccessTokenMappingsAPI.GetMappings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenMappingsApi.GetMappings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenMappingsAPI.GetMappings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetMappings`: AccessTokenMappings
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenMappingsApi.GetMappings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenMappingsAPI.GetMappings`: %v\n", resp)
 }
 ```
 
@@ -300,13 +300,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenMappingsApi.UpdateMapping(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthAccessTokenMappingsAPI.UpdateMapping(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenMappingsApi.UpdateMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenMappingsAPI.UpdateMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateMapping`: AccessTokenMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenMappingsApi.UpdateMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenMappingsAPI.UpdateMapping`: %v\n", resp)
 }
 ```
 

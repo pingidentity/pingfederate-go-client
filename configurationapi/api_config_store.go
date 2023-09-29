@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// ConfigStoreApiService ConfigStoreApi service
-type ConfigStoreApiService service
+// ConfigStoreAPIService ConfigStoreAPI service
+type ConfigStoreAPIService service
 
 type ApiDeleteConfigStoreSettingRequest struct {
 	ctx        context.Context
-	ApiService *ConfigStoreApiService
+	ApiService *ConfigStoreAPIService
 	bundle     string
 	id         string
 }
@@ -43,7 +43,7 @@ Delete a setting. This is an advanced operation with minimal validation. Incorre
 	@param id ID of setting to delete.
 	@return ApiDeleteConfigStoreSettingRequest
 */
-func (a *ConfigStoreApiService) DeleteConfigStoreSetting(ctx context.Context, bundle string, id string) ApiDeleteConfigStoreSettingRequest {
+func (a *ConfigStoreAPIService) DeleteConfigStoreSetting(ctx context.Context, bundle string, id string) ApiDeleteConfigStoreSettingRequest {
 	return ApiDeleteConfigStoreSettingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -53,14 +53,14 @@ func (a *ConfigStoreApiService) DeleteConfigStoreSetting(ctx context.Context, bu
 }
 
 // Execute executes the request
-func (a *ConfigStoreApiService) DeleteConfigStoreSettingExecute(r ApiDeleteConfigStoreSettingRequest) (*http.Response, error) {
+func (a *ConfigStoreAPIService) DeleteConfigStoreSettingExecute(r ApiDeleteConfigStoreSettingRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigStoreApiService.DeleteConfigStoreSetting")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigStoreAPIService.DeleteConfigStoreSetting")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -130,7 +130,7 @@ func (a *ConfigStoreApiService) DeleteConfigStoreSettingExecute(r ApiDeleteConfi
 
 type ApiGetConfigStoreSettingRequest struct {
 	ctx        context.Context
-	ApiService *ConfigStoreApiService
+	ApiService *ConfigStoreAPIService
 	bundle     string
 	id         string
 }
@@ -147,7 +147,7 @@ GetConfigStoreSetting Get a single setting from a bundle.
 	@param id ID of setting to retrieve.
 	@return ApiGetConfigStoreSettingRequest
 */
-func (a *ConfigStoreApiService) GetConfigStoreSetting(ctx context.Context, bundle string, id string) ApiGetConfigStoreSettingRequest {
+func (a *ConfigStoreAPIService) GetConfigStoreSetting(ctx context.Context, bundle string, id string) ApiGetConfigStoreSettingRequest {
 	return ApiGetConfigStoreSettingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -159,7 +159,7 @@ func (a *ConfigStoreApiService) GetConfigStoreSetting(ctx context.Context, bundl
 // Execute executes the request
 //
 //	@return ConfigStoreSetting
-func (a *ConfigStoreApiService) GetConfigStoreSettingExecute(r ApiGetConfigStoreSettingRequest) (*ConfigStoreSetting, *http.Response, error) {
+func (a *ConfigStoreAPIService) GetConfigStoreSettingExecute(r ApiGetConfigStoreSettingRequest) (*ConfigStoreSetting, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -167,7 +167,7 @@ func (a *ConfigStoreApiService) GetConfigStoreSettingExecute(r ApiGetConfigStore
 		localVarReturnValue *ConfigStoreSetting
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigStoreApiService.GetConfigStoreSetting")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigStoreAPIService.GetConfigStoreSetting")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -246,7 +246,7 @@ func (a *ConfigStoreApiService) GetConfigStoreSettingExecute(r ApiGetConfigStore
 
 type ApiGetConfigStoreSettingsRequest struct {
 	ctx        context.Context
-	ApiService *ConfigStoreApiService
+	ApiService *ConfigStoreAPIService
 	bundle     string
 }
 
@@ -261,7 +261,7 @@ GetConfigStoreSettings Get all settings from a bundle.
 	@param bundle This field represents a configuration file that contains a bundle of settings.
 	@return ApiGetConfigStoreSettingsRequest
 */
-func (a *ConfigStoreApiService) GetConfigStoreSettings(ctx context.Context, bundle string) ApiGetConfigStoreSettingsRequest {
+func (a *ConfigStoreAPIService) GetConfigStoreSettings(ctx context.Context, bundle string) ApiGetConfigStoreSettingsRequest {
 	return ApiGetConfigStoreSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -272,7 +272,7 @@ func (a *ConfigStoreApiService) GetConfigStoreSettings(ctx context.Context, bund
 // Execute executes the request
 //
 //	@return ConfigStoreBundle
-func (a *ConfigStoreApiService) GetConfigStoreSettingsExecute(r ApiGetConfigStoreSettingsRequest) (*ConfigStoreBundle, *http.Response, error) {
+func (a *ConfigStoreAPIService) GetConfigStoreSettingsExecute(r ApiGetConfigStoreSettingsRequest) (*ConfigStoreBundle, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -280,7 +280,7 @@ func (a *ConfigStoreApiService) GetConfigStoreSettingsExecute(r ApiGetConfigStor
 		localVarReturnValue *ConfigStoreBundle
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigStoreApiService.GetConfigStoreSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigStoreAPIService.GetConfigStoreSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -358,7 +358,7 @@ func (a *ConfigStoreApiService) GetConfigStoreSettingsExecute(r ApiGetConfigStor
 
 type ApiUpdateConfigStoreSettingRequest struct {
 	ctx        context.Context
-	ApiService *ConfigStoreApiService
+	ApiService *ConfigStoreAPIService
 	bundle     string
 	id         string
 	body       *ConfigStoreSetting
@@ -384,7 +384,7 @@ Create or update a setting/bundle. This is an advanced operation with minimal va
 	@param id ID of setting to create/update.
 	@return ApiUpdateConfigStoreSettingRequest
 */
-func (a *ConfigStoreApiService) UpdateConfigStoreSetting(ctx context.Context, bundle string, id string) ApiUpdateConfigStoreSettingRequest {
+func (a *ConfigStoreAPIService) UpdateConfigStoreSetting(ctx context.Context, bundle string, id string) ApiUpdateConfigStoreSettingRequest {
 	return ApiUpdateConfigStoreSettingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -396,7 +396,7 @@ func (a *ConfigStoreApiService) UpdateConfigStoreSetting(ctx context.Context, bu
 // Execute executes the request
 //
 //	@return ConfigStoreSetting
-func (a *ConfigStoreApiService) UpdateConfigStoreSettingExecute(r ApiUpdateConfigStoreSettingRequest) (*ConfigStoreSetting, *http.Response, error) {
+func (a *ConfigStoreAPIService) UpdateConfigStoreSettingExecute(r ApiUpdateConfigStoreSettingRequest) (*ConfigStoreSetting, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -404,7 +404,7 @@ func (a *ConfigStoreApiService) UpdateConfigStoreSettingExecute(r ApiUpdateConfi
 		localVarReturnValue *ConfigStoreSetting
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigStoreApiService.UpdateConfigStoreSetting")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigStoreAPIService.UpdateConfigStoreSetting")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

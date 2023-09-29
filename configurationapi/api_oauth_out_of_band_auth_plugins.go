@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// OauthOutOfBandAuthPluginsApiService OauthOutOfBandAuthPluginsApi service
-type OauthOutOfBandAuthPluginsApiService service
+// OauthOutOfBandAuthPluginsAPIService OauthOutOfBandAuthPluginsAPI service
+type OauthOutOfBandAuthPluginsAPIService service
 
 type ApiCreateOOBAuthenticatorRequest struct {
 	ctx        context.Context
-	ApiService *OauthOutOfBandAuthPluginsApiService
+	ApiService *OauthOutOfBandAuthPluginsAPIService
 	body       *OutOfBandAuthenticator
 }
 
@@ -44,7 +44,7 @@ CreateOOBAuthenticator Create an Out of Band authenticator plugin instance.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateOOBAuthenticatorRequest
 */
-func (a *OauthOutOfBandAuthPluginsApiService) CreateOOBAuthenticator(ctx context.Context) ApiCreateOOBAuthenticatorRequest {
+func (a *OauthOutOfBandAuthPluginsAPIService) CreateOOBAuthenticator(ctx context.Context) ApiCreateOOBAuthenticatorRequest {
 	return ApiCreateOOBAuthenticatorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) CreateOOBAuthenticator(ctx context
 // Execute executes the request
 //
 //	@return OutOfBandAuthenticator
-func (a *OauthOutOfBandAuthPluginsApiService) CreateOOBAuthenticatorExecute(r ApiCreateOOBAuthenticatorRequest) (*OutOfBandAuthenticator, *http.Response, error) {
+func (a *OauthOutOfBandAuthPluginsAPIService) CreateOOBAuthenticatorExecute(r ApiCreateOOBAuthenticatorRequest) (*OutOfBandAuthenticator, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) CreateOOBAuthenticatorExecute(r Ap
 		localVarReturnValue *OutOfBandAuthenticator
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOutOfBandAuthPluginsApiService.CreateOOBAuthenticator")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOutOfBandAuthPluginsAPIService.CreateOOBAuthenticator")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,7 +144,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) CreateOOBAuthenticatorExecute(r Ap
 
 type ApiDeleteOOBAuthenticatorRequest struct {
 	ctx        context.Context
-	ApiService *OauthOutOfBandAuthPluginsApiService
+	ApiService *OauthOutOfBandAuthPluginsAPIService
 	id         string
 }
 
@@ -159,7 +159,7 @@ DeleteOOBAuthenticator Delete an Out of Band authenticator plugin instance.
 	@param id ID of Out of Band authenticator plugin instance.
 	@return ApiDeleteOOBAuthenticatorRequest
 */
-func (a *OauthOutOfBandAuthPluginsApiService) DeleteOOBAuthenticator(ctx context.Context, id string) ApiDeleteOOBAuthenticatorRequest {
+func (a *OauthOutOfBandAuthPluginsAPIService) DeleteOOBAuthenticator(ctx context.Context, id string) ApiDeleteOOBAuthenticatorRequest {
 	return ApiDeleteOOBAuthenticatorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -168,14 +168,14 @@ func (a *OauthOutOfBandAuthPluginsApiService) DeleteOOBAuthenticator(ctx context
 }
 
 // Execute executes the request
-func (a *OauthOutOfBandAuthPluginsApiService) DeleteOOBAuthenticatorExecute(r ApiDeleteOOBAuthenticatorRequest) (*http.Response, error) {
+func (a *OauthOutOfBandAuthPluginsAPIService) DeleteOOBAuthenticatorExecute(r ApiDeleteOOBAuthenticatorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOutOfBandAuthPluginsApiService.DeleteOOBAuthenticator")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOutOfBandAuthPluginsAPIService.DeleteOOBAuthenticator")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -244,7 +244,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) DeleteOOBAuthenticatorExecute(r Ap
 
 type ApiGetOOBActionRequest struct {
 	ctx        context.Context
-	ApiService *OauthOutOfBandAuthPluginsApiService
+	ApiService *OauthOutOfBandAuthPluginsAPIService
 	id         string
 	actionId   string
 }
@@ -261,7 +261,7 @@ GetOOBAction Find an Out of Band authenticator plugin instance's action by ID.
 	@param actionId ID of the action.
 	@return ApiGetOOBActionRequest
 */
-func (a *OauthOutOfBandAuthPluginsApiService) GetOOBAction(ctx context.Context, id string, actionId string) ApiGetOOBActionRequest {
+func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAction(ctx context.Context, id string, actionId string) ApiGetOOBActionRequest {
 	return ApiGetOOBActionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -273,7 +273,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) GetOOBAction(ctx context.Context, 
 // Execute executes the request
 //
 //	@return Action
-func (a *OauthOutOfBandAuthPluginsApiService) GetOOBActionExecute(r ApiGetOOBActionRequest) (*Action, *http.Response, error) {
+func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBActionExecute(r ApiGetOOBActionRequest) (*Action, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -281,7 +281,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) GetOOBActionExecute(r ApiGetOOBAct
 		localVarReturnValue *Action
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOutOfBandAuthPluginsApiService.GetOOBAction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOutOfBandAuthPluginsAPIService.GetOOBAction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -360,7 +360,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) GetOOBActionExecute(r ApiGetOOBAct
 
 type ApiGetOOBActionsRequest struct {
 	ctx        context.Context
-	ApiService *OauthOutOfBandAuthPluginsApiService
+	ApiService *OauthOutOfBandAuthPluginsAPIService
 	id         string
 }
 
@@ -375,7 +375,7 @@ GetOOBActions List of actions for an Out of Band authenticator plugin instance.
 	@param id ID of the Out of Band authenticator plugin instance to which these actions belongs to.
 	@return ApiGetOOBActionsRequest
 */
-func (a *OauthOutOfBandAuthPluginsApiService) GetOOBActions(ctx context.Context, id string) ApiGetOOBActionsRequest {
+func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBActions(ctx context.Context, id string) ApiGetOOBActionsRequest {
 	return ApiGetOOBActionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -386,7 +386,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) GetOOBActions(ctx context.Context,
 // Execute executes the request
 //
 //	@return Actions
-func (a *OauthOutOfBandAuthPluginsApiService) GetOOBActionsExecute(r ApiGetOOBActionsRequest) (*Actions, *http.Response, error) {
+func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBActionsExecute(r ApiGetOOBActionsRequest) (*Actions, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -394,7 +394,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) GetOOBActionsExecute(r ApiGetOOBAc
 		localVarReturnValue *Actions
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOutOfBandAuthPluginsApiService.GetOOBActions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOutOfBandAuthPluginsAPIService.GetOOBActions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -472,7 +472,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) GetOOBActionsExecute(r ApiGetOOBAc
 
 type ApiGetOOBAuthPluginDescriptorRequest struct {
 	ctx        context.Context
-	ApiService *OauthOutOfBandAuthPluginsApiService
+	ApiService *OauthOutOfBandAuthPluginsAPIService
 	id         string
 }
 
@@ -487,7 +487,7 @@ GetOOBAuthPluginDescriptor Get the descriptor of an Out of Band authenticator pl
 	@param id ID of an Out of Band authenticator plugin descriptor.
 	@return ApiGetOOBAuthPluginDescriptorRequest
 */
-func (a *OauthOutOfBandAuthPluginsApiService) GetOOBAuthPluginDescriptor(ctx context.Context, id string) ApiGetOOBAuthPluginDescriptorRequest {
+func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthPluginDescriptor(ctx context.Context, id string) ApiGetOOBAuthPluginDescriptorRequest {
 	return ApiGetOOBAuthPluginDescriptorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -498,7 +498,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) GetOOBAuthPluginDescriptor(ctx con
 // Execute executes the request
 //
 //	@return OutOfBandAuthPluginDescriptor
-func (a *OauthOutOfBandAuthPluginsApiService) GetOOBAuthPluginDescriptorExecute(r ApiGetOOBAuthPluginDescriptorRequest) (*OutOfBandAuthPluginDescriptor, *http.Response, error) {
+func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthPluginDescriptorExecute(r ApiGetOOBAuthPluginDescriptorRequest) (*OutOfBandAuthPluginDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -506,7 +506,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) GetOOBAuthPluginDescriptorExecute(
 		localVarReturnValue *OutOfBandAuthPluginDescriptor
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOutOfBandAuthPluginsApiService.GetOOBAuthPluginDescriptor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOutOfBandAuthPluginsAPIService.GetOOBAuthPluginDescriptor")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -584,7 +584,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) GetOOBAuthPluginDescriptorExecute(
 
 type ApiGetOOBAuthPluginDescriptorsRequest struct {
 	ctx        context.Context
-	ApiService *OauthOutOfBandAuthPluginsApiService
+	ApiService *OauthOutOfBandAuthPluginsAPIService
 }
 
 func (r ApiGetOOBAuthPluginDescriptorsRequest) Execute() (*OutOfBandAuthPluginDescriptors, *http.Response, error) {
@@ -597,7 +597,7 @@ GetOOBAuthPluginDescriptors Get the list of available Out of Band authenticator 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetOOBAuthPluginDescriptorsRequest
 */
-func (a *OauthOutOfBandAuthPluginsApiService) GetOOBAuthPluginDescriptors(ctx context.Context) ApiGetOOBAuthPluginDescriptorsRequest {
+func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthPluginDescriptors(ctx context.Context) ApiGetOOBAuthPluginDescriptorsRequest {
 	return ApiGetOOBAuthPluginDescriptorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -607,7 +607,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) GetOOBAuthPluginDescriptors(ctx co
 // Execute executes the request
 //
 //	@return OutOfBandAuthPluginDescriptors
-func (a *OauthOutOfBandAuthPluginsApiService) GetOOBAuthPluginDescriptorsExecute(r ApiGetOOBAuthPluginDescriptorsRequest) (*OutOfBandAuthPluginDescriptors, *http.Response, error) {
+func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthPluginDescriptorsExecute(r ApiGetOOBAuthPluginDescriptorsRequest) (*OutOfBandAuthPluginDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -615,7 +615,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) GetOOBAuthPluginDescriptorsExecute
 		localVarReturnValue *OutOfBandAuthPluginDescriptors
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOutOfBandAuthPluginsApiService.GetOOBAuthPluginDescriptors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOutOfBandAuthPluginsAPIService.GetOOBAuthPluginDescriptors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -682,7 +682,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) GetOOBAuthPluginDescriptorsExecute
 
 type ApiGetOOBAuthenticatorRequest struct {
 	ctx        context.Context
-	ApiService *OauthOutOfBandAuthPluginsApiService
+	ApiService *OauthOutOfBandAuthPluginsAPIService
 	id         string
 }
 
@@ -697,7 +697,7 @@ GetOOBAuthenticator Get a specific Out of Band authenticator plugin instance.
 	@param id ID of Out of Band authenticator plugin instance.
 	@return ApiGetOOBAuthenticatorRequest
 */
-func (a *OauthOutOfBandAuthPluginsApiService) GetOOBAuthenticator(ctx context.Context, id string) ApiGetOOBAuthenticatorRequest {
+func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthenticator(ctx context.Context, id string) ApiGetOOBAuthenticatorRequest {
 	return ApiGetOOBAuthenticatorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -708,7 +708,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) GetOOBAuthenticator(ctx context.Co
 // Execute executes the request
 //
 //	@return OutOfBandAuthenticator
-func (a *OauthOutOfBandAuthPluginsApiService) GetOOBAuthenticatorExecute(r ApiGetOOBAuthenticatorRequest) (*OutOfBandAuthenticator, *http.Response, error) {
+func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthenticatorExecute(r ApiGetOOBAuthenticatorRequest) (*OutOfBandAuthenticator, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -716,7 +716,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) GetOOBAuthenticatorExecute(r ApiGe
 		localVarReturnValue *OutOfBandAuthenticator
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOutOfBandAuthPluginsApiService.GetOOBAuthenticator")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOutOfBandAuthPluginsAPIService.GetOOBAuthenticator")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -794,7 +794,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) GetOOBAuthenticatorExecute(r ApiGe
 
 type ApiGetOOBAuthenticatorsRequest struct {
 	ctx        context.Context
-	ApiService *OauthOutOfBandAuthPluginsApiService
+	ApiService *OauthOutOfBandAuthPluginsAPIService
 }
 
 func (r ApiGetOOBAuthenticatorsRequest) Execute() (*OutOfBandAuthenticators, *http.Response, error) {
@@ -807,7 +807,7 @@ GetOOBAuthenticators Get a list of Out of Band authenticator plugin instances.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetOOBAuthenticatorsRequest
 */
-func (a *OauthOutOfBandAuthPluginsApiService) GetOOBAuthenticators(ctx context.Context) ApiGetOOBAuthenticatorsRequest {
+func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthenticators(ctx context.Context) ApiGetOOBAuthenticatorsRequest {
 	return ApiGetOOBAuthenticatorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -817,7 +817,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) GetOOBAuthenticators(ctx context.C
 // Execute executes the request
 //
 //	@return OutOfBandAuthenticators
-func (a *OauthOutOfBandAuthPluginsApiService) GetOOBAuthenticatorsExecute(r ApiGetOOBAuthenticatorsRequest) (*OutOfBandAuthenticators, *http.Response, error) {
+func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthenticatorsExecute(r ApiGetOOBAuthenticatorsRequest) (*OutOfBandAuthenticators, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -825,7 +825,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) GetOOBAuthenticatorsExecute(r ApiG
 		localVarReturnValue *OutOfBandAuthenticators
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOutOfBandAuthPluginsApiService.GetOOBAuthenticators")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOutOfBandAuthPluginsAPIService.GetOOBAuthenticators")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -892,7 +892,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) GetOOBAuthenticatorsExecute(r ApiG
 
 type ApiInvokeOOBActionWithOptionsRequest struct {
 	ctx        context.Context
-	ApiService *OauthOutOfBandAuthPluginsApiService
+	ApiService *OauthOutOfBandAuthPluginsAPIService
 	id         string
 	actionId   string
 	body       *ActionOptions
@@ -916,7 +916,7 @@ InvokeOOBActionWithOptions Invokes an action for Out of Band authenticator plugi
 	@param actionId ID of the action.
 	@return ApiInvokeOOBActionWithOptionsRequest
 */
-func (a *OauthOutOfBandAuthPluginsApiService) InvokeOOBActionWithOptions(ctx context.Context, id string, actionId string) ApiInvokeOOBActionWithOptionsRequest {
+func (a *OauthOutOfBandAuthPluginsAPIService) InvokeOOBActionWithOptions(ctx context.Context, id string, actionId string) ApiInvokeOOBActionWithOptionsRequest {
 	return ApiInvokeOOBActionWithOptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -928,7 +928,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) InvokeOOBActionWithOptions(ctx con
 // Execute executes the request
 //
 //	@return ActionResult
-func (a *OauthOutOfBandAuthPluginsApiService) InvokeOOBActionWithOptionsExecute(r ApiInvokeOOBActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
+func (a *OauthOutOfBandAuthPluginsAPIService) InvokeOOBActionWithOptionsExecute(r ApiInvokeOOBActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -936,7 +936,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) InvokeOOBActionWithOptionsExecute(
 		localVarReturnValue *ActionResult
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOutOfBandAuthPluginsApiService.InvokeOOBActionWithOptions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOutOfBandAuthPluginsAPIService.InvokeOOBActionWithOptions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1017,7 +1017,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) InvokeOOBActionWithOptionsExecute(
 
 type ApiUpdateOOBAuthenticatorRequest struct {
 	ctx        context.Context
-	ApiService *OauthOutOfBandAuthPluginsApiService
+	ApiService *OauthOutOfBandAuthPluginsAPIService
 	id         string
 	body       *OutOfBandAuthenticator
 }
@@ -1039,7 +1039,7 @@ UpdateOOBAuthenticator Update an Out of Band authenticator plugin instance.
 	@param id ID of Out of Band authenticator plugin instance.
 	@return ApiUpdateOOBAuthenticatorRequest
 */
-func (a *OauthOutOfBandAuthPluginsApiService) UpdateOOBAuthenticator(ctx context.Context, id string) ApiUpdateOOBAuthenticatorRequest {
+func (a *OauthOutOfBandAuthPluginsAPIService) UpdateOOBAuthenticator(ctx context.Context, id string) ApiUpdateOOBAuthenticatorRequest {
 	return ApiUpdateOOBAuthenticatorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1050,7 +1050,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) UpdateOOBAuthenticator(ctx context
 // Execute executes the request
 //
 //	@return OutOfBandAuthenticator
-func (a *OauthOutOfBandAuthPluginsApiService) UpdateOOBAuthenticatorExecute(r ApiUpdateOOBAuthenticatorRequest) (*OutOfBandAuthenticator, *http.Response, error) {
+func (a *OauthOutOfBandAuthPluginsAPIService) UpdateOOBAuthenticatorExecute(r ApiUpdateOOBAuthenticatorRequest) (*OutOfBandAuthenticator, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1058,7 +1058,7 @@ func (a *OauthOutOfBandAuthPluginsApiService) UpdateOOBAuthenticatorExecute(r Ap
 		localVarReturnValue *OutOfBandAuthenticator
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOutOfBandAuthPluginsApiService.UpdateOOBAuthenticator")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOutOfBandAuthPluginsAPIService.UpdateOOBAuthenticator")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

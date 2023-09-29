@@ -1,16 +1,16 @@
-# \AdministrativeAccountsApi
+# \AdministrativeAccountsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddAccount**](AdministrativeAccountsApi.md#AddAccount) | **Post** /administrativeAccounts | Add a new PingFederate native Administrative Account.
-[**ChangePassword**](AdministrativeAccountsApi.md#ChangePassword) | **Post** /administrativeAccounts/changePassword | Change the Password of current PingFederate native Account.
-[**DeleteAccount**](AdministrativeAccountsApi.md#DeleteAccount) | **Delete** /administrativeAccounts/{username} | Delete a PingFederate native Administrative Account information.
-[**GetAccount**](AdministrativeAccountsApi.md#GetAccount) | **Get** /administrativeAccounts/{username} | Get a PingFederate native Administrative Account.
-[**GetAccounts**](AdministrativeAccountsApi.md#GetAccounts) | **Get** /administrativeAccounts | Get all the PingFederate native Administrative Accounts.
-[**ResetPassword**](AdministrativeAccountsApi.md#ResetPassword) | **Post** /administrativeAccounts/{username}/resetPassword | Reset the Password of an existing PingFederate native Administrative Account.
-[**UpdateAccount**](AdministrativeAccountsApi.md#UpdateAccount) | **Put** /administrativeAccounts/{username} | Update the information for a native Administrative Account.
+[**AddAccount**](AdministrativeAccountsAPI.md#AddAccount) | **Post** /administrativeAccounts | Add a new PingFederate native Administrative Account.
+[**ChangePassword**](AdministrativeAccountsAPI.md#ChangePassword) | **Post** /administrativeAccounts/changePassword | Change the Password of current PingFederate native Account.
+[**DeleteAccount**](AdministrativeAccountsAPI.md#DeleteAccount) | **Delete** /administrativeAccounts/{username} | Delete a PingFederate native Administrative Account information.
+[**GetAccount**](AdministrativeAccountsAPI.md#GetAccount) | **Get** /administrativeAccounts/{username} | Get a PingFederate native Administrative Account.
+[**GetAccounts**](AdministrativeAccountsAPI.md#GetAccounts) | **Get** /administrativeAccounts | Get all the PingFederate native Administrative Accounts.
+[**ResetPassword**](AdministrativeAccountsAPI.md#ResetPassword) | **Post** /administrativeAccounts/{username}/resetPassword | Reset the Password of an existing PingFederate native Administrative Account.
+[**UpdateAccount**](AdministrativeAccountsAPI.md#UpdateAccount) | **Put** /administrativeAccounts/{username} | Update the information for a native Administrative Account.
 
 
 
@@ -37,13 +37,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AdministrativeAccountsApi.AddAccount(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.AdministrativeAccountsAPI.AddAccount(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsApi.AddAccount``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsAPI.AddAccount``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddAccount`: AdministrativeAccount
-    fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsApi.AddAccount`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsAPI.AddAccount`: %v\n", resp)
 }
 ```
 
@@ -101,13 +101,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AdministrativeAccountsApi.ChangePassword(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.AdministrativeAccountsAPI.ChangePassword(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsApi.ChangePassword``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsAPI.ChangePassword``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ChangePassword`: UserCredentials
-    fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsApi.ChangePassword`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsAPI.ChangePassword`: %v\n", resp)
 }
 ```
 
@@ -165,9 +165,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AdministrativeAccountsApi.DeleteAccount(context.Background(), username).Execute()
+    r, err := apiClient.AdministrativeAccountsAPI.DeleteAccount(context.Background(), username).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsApi.DeleteAccount``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsAPI.DeleteAccount``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -231,13 +231,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AdministrativeAccountsApi.GetAccount(context.Background(), username).Execute()
+    resp, r, err := apiClient.AdministrativeAccountsAPI.GetAccount(context.Background(), username).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsApi.GetAccount``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsAPI.GetAccount``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAccount`: AdministrativeAccount
-    fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsApi.GetAccount`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsAPI.GetAccount`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AdministrativeAccountsApi.GetAccounts(context.Background()).Execute()
+    resp, r, err := apiClient.AdministrativeAccountsAPI.GetAccounts(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsApi.GetAccounts``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsAPI.GetAccounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAccounts`: AdministrativeAccounts
-    fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsApi.GetAccounts`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsAPI.GetAccounts`: %v\n", resp)
 }
 ```
 
@@ -359,13 +359,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AdministrativeAccountsApi.ResetPassword(context.Background(), username).Body(body).Execute()
+    resp, r, err := apiClient.AdministrativeAccountsAPI.ResetPassword(context.Background(), username).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsApi.ResetPassword``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsAPI.ResetPassword``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ResetPassword`: UserCredentials
-    fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsApi.ResetPassword`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsAPI.ResetPassword`: %v\n", resp)
 }
 ```
 
@@ -429,13 +429,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AdministrativeAccountsApi.UpdateAccount(context.Background(), username).Body(body).Execute()
+    resp, r, err := apiClient.AdministrativeAccountsAPI.UpdateAccount(context.Background(), username).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsApi.UpdateAccount``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsAPI.UpdateAccount``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateAccount`: AdministrativeAccount
-    fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsApi.UpdateAccount`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsAPI.UpdateAccount`: %v\n", resp)
 }
 ```
 

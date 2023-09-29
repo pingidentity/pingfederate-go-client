@@ -1,16 +1,16 @@
-# \OauthOpenIdConnectApi
+# \OauthOpenIdConnectAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateOIDCPolicy**](OauthOpenIdConnectApi.md#CreateOIDCPolicy) | **Post** /oauth/openIdConnect/policies | Create a new OpenID Connect Policy.
-[**DeleteOIDCPolicy**](OauthOpenIdConnectApi.md#DeleteOIDCPolicy) | **Delete** /oauth/openIdConnect/policies/{id} | Delete an OpenID Connect Policy.
-[**GetOIDCPolicies**](OauthOpenIdConnectApi.md#GetOIDCPolicies) | **Get** /oauth/openIdConnect/policies | Get list of OpenID Connect Policies.
-[**GetOIDCPolicy**](OauthOpenIdConnectApi.md#GetOIDCPolicy) | **Get** /oauth/openIdConnect/policies/{id} | Find OpenID Connect Policy by ID.
-[**GetOIDCSettings**](OauthOpenIdConnectApi.md#GetOIDCSettings) | **Get** /oauth/openIdConnect/settings | Get the OpenID Connect Settings.
-[**UpdateOIDCPolicy**](OauthOpenIdConnectApi.md#UpdateOIDCPolicy) | **Put** /oauth/openIdConnect/policies/{id} | Update an OpenID Connect Policy.
-[**UpdateOIDCSettings**](OauthOpenIdConnectApi.md#UpdateOIDCSettings) | **Put** /oauth/openIdConnect/settings | Set the OpenID Connect Settings.
+[**CreateOIDCPolicy**](OauthOpenIdConnectAPI.md#CreateOIDCPolicy) | **Post** /oauth/openIdConnect/policies | Create a new OpenID Connect Policy.
+[**DeleteOIDCPolicy**](OauthOpenIdConnectAPI.md#DeleteOIDCPolicy) | **Delete** /oauth/openIdConnect/policies/{id} | Delete an OpenID Connect Policy.
+[**GetOIDCPolicies**](OauthOpenIdConnectAPI.md#GetOIDCPolicies) | **Get** /oauth/openIdConnect/policies | Get list of OpenID Connect Policies.
+[**GetOIDCPolicy**](OauthOpenIdConnectAPI.md#GetOIDCPolicy) | **Get** /oauth/openIdConnect/policies/{id} | Find OpenID Connect Policy by ID.
+[**GetOIDCSettings**](OauthOpenIdConnectAPI.md#GetOIDCSettings) | **Get** /oauth/openIdConnect/settings | Get the OpenID Connect Settings.
+[**UpdateOIDCPolicy**](OauthOpenIdConnectAPI.md#UpdateOIDCPolicy) | **Put** /oauth/openIdConnect/policies/{id} | Update an OpenID Connect Policy.
+[**UpdateOIDCSettings**](OauthOpenIdConnectAPI.md#UpdateOIDCSettings) | **Put** /oauth/openIdConnect/settings | Set the OpenID Connect Settings.
 
 
 
@@ -40,13 +40,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOpenIdConnectApi.CreateOIDCPolicy(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthOpenIdConnectAPI.CreateOIDCPolicy(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectApi.CreateOIDCPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectAPI.CreateOIDCPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateOIDCPolicy`: OpenIdConnectPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectApi.CreateOIDCPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectAPI.CreateOIDCPolicy`: %v\n", resp)
 }
 ```
 
@@ -107,9 +107,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthOpenIdConnectApi.DeleteOIDCPolicy(context.Background(), id).Execute()
+    r, err := apiClient.OauthOpenIdConnectAPI.DeleteOIDCPolicy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectApi.DeleteOIDCPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectAPI.DeleteOIDCPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -172,13 +172,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOpenIdConnectApi.GetOIDCPolicies(context.Background()).Execute()
+    resp, r, err := apiClient.OauthOpenIdConnectAPI.GetOIDCPolicies(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectApi.GetOIDCPolicies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectAPI.GetOIDCPolicies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOIDCPolicies`: OpenIdConnectPolicies
-    fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectApi.GetOIDCPolicies`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectAPI.GetOIDCPolicies`: %v\n", resp)
 }
 ```
 
@@ -234,13 +234,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOpenIdConnectApi.GetOIDCPolicy(context.Background(), id).Execute()
+    resp, r, err := apiClient.OauthOpenIdConnectAPI.GetOIDCPolicy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectApi.GetOIDCPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectAPI.GetOIDCPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOIDCPolicy`: OpenIdConnectPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectApi.GetOIDCPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectAPI.GetOIDCPolicy`: %v\n", resp)
 }
 ```
 
@@ -301,13 +301,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOpenIdConnectApi.GetOIDCSettings(context.Background()).Execute()
+    resp, r, err := apiClient.OauthOpenIdConnectAPI.GetOIDCSettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectApi.GetOIDCSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectAPI.GetOIDCSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOIDCSettings`: OpenIdConnectSettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectApi.GetOIDCSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectAPI.GetOIDCSettings`: %v\n", resp)
 }
 ```
 
@@ -365,13 +365,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOpenIdConnectApi.UpdateOIDCPolicy(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthOpenIdConnectAPI.UpdateOIDCPolicy(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectApi.UpdateOIDCPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectAPI.UpdateOIDCPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateOIDCPolicy`: OpenIdConnectPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectApi.UpdateOIDCPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectAPI.UpdateOIDCPolicy`: %v\n", resp)
 }
 ```
 
@@ -435,13 +435,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOpenIdConnectApi.UpdateOIDCSettings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.OauthOpenIdConnectAPI.UpdateOIDCSettings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectApi.UpdateOIDCSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectAPI.UpdateOIDCSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateOIDCSettings`: OpenIdConnectSettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectApi.UpdateOIDCSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectAPI.UpdateOIDCSettings`: %v\n", resp)
 }
 ```
 

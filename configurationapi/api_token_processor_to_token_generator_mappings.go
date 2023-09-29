@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// TokenProcessorToTokenGeneratorMappingsApiService TokenProcessorToTokenGeneratorMappingsApi service
-type TokenProcessorToTokenGeneratorMappingsApiService service
+// TokenProcessorToTokenGeneratorMappingsAPIService TokenProcessorToTokenGeneratorMappingsAPI service
+type TokenProcessorToTokenGeneratorMappingsAPIService service
 
 type ApiCreateTokenToTokenMappingRequest struct {
 	ctx                       context.Context
-	ApiService                *TokenProcessorToTokenGeneratorMappingsApiService
+	ApiService                *TokenProcessorToTokenGeneratorMappingsAPIService
 	body                      *TokenToTokenMapping
 	xBypassExternalValidation *bool
 }
@@ -51,7 +51,7 @@ CreateTokenToTokenMapping Create a new Token Processor to Token Generator Mappin
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateTokenToTokenMappingRequest
 */
-func (a *TokenProcessorToTokenGeneratorMappingsApiService) CreateTokenToTokenMapping(ctx context.Context) ApiCreateTokenToTokenMappingRequest {
+func (a *TokenProcessorToTokenGeneratorMappingsAPIService) CreateTokenToTokenMapping(ctx context.Context) ApiCreateTokenToTokenMappingRequest {
 	return ApiCreateTokenToTokenMappingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -61,7 +61,7 @@ func (a *TokenProcessorToTokenGeneratorMappingsApiService) CreateTokenToTokenMap
 // Execute executes the request
 //
 //	@return TokenToTokenMapping
-func (a *TokenProcessorToTokenGeneratorMappingsApiService) CreateTokenToTokenMappingExecute(r ApiCreateTokenToTokenMappingRequest) (*TokenToTokenMapping, *http.Response, error) {
+func (a *TokenProcessorToTokenGeneratorMappingsAPIService) CreateTokenToTokenMappingExecute(r ApiCreateTokenToTokenMappingRequest) (*TokenToTokenMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -69,7 +69,7 @@ func (a *TokenProcessorToTokenGeneratorMappingsApiService) CreateTokenToTokenMap
 		localVarReturnValue *TokenToTokenMapping
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokenProcessorToTokenGeneratorMappingsApiService.CreateTokenToTokenMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokenProcessorToTokenGeneratorMappingsAPIService.CreateTokenToTokenMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -154,7 +154,7 @@ func (a *TokenProcessorToTokenGeneratorMappingsApiService) CreateTokenToTokenMap
 
 type ApiDeleteTokenToTokenMappingByIdRequest struct {
 	ctx        context.Context
-	ApiService *TokenProcessorToTokenGeneratorMappingsApiService
+	ApiService *TokenProcessorToTokenGeneratorMappingsAPIService
 	id         string
 }
 
@@ -169,7 +169,7 @@ DeleteTokenToTokenMappingById Delete a Token Processor to Token Generator Mappin
 	@param id ID of Token Processor to Token Generator Mapping to delete.
 	@return ApiDeleteTokenToTokenMappingByIdRequest
 */
-func (a *TokenProcessorToTokenGeneratorMappingsApiService) DeleteTokenToTokenMappingById(ctx context.Context, id string) ApiDeleteTokenToTokenMappingByIdRequest {
+func (a *TokenProcessorToTokenGeneratorMappingsAPIService) DeleteTokenToTokenMappingById(ctx context.Context, id string) ApiDeleteTokenToTokenMappingByIdRequest {
 	return ApiDeleteTokenToTokenMappingByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -178,14 +178,14 @@ func (a *TokenProcessorToTokenGeneratorMappingsApiService) DeleteTokenToTokenMap
 }
 
 // Execute executes the request
-func (a *TokenProcessorToTokenGeneratorMappingsApiService) DeleteTokenToTokenMappingByIdExecute(r ApiDeleteTokenToTokenMappingByIdRequest) (*http.Response, error) {
+func (a *TokenProcessorToTokenGeneratorMappingsAPIService) DeleteTokenToTokenMappingByIdExecute(r ApiDeleteTokenToTokenMappingByIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokenProcessorToTokenGeneratorMappingsApiService.DeleteTokenToTokenMappingById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokenProcessorToTokenGeneratorMappingsAPIService.DeleteTokenToTokenMappingById")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -254,7 +254,7 @@ func (a *TokenProcessorToTokenGeneratorMappingsApiService) DeleteTokenToTokenMap
 
 type ApiGetTokenToTokenMappingByIdRequest struct {
 	ctx        context.Context
-	ApiService *TokenProcessorToTokenGeneratorMappingsApiService
+	ApiService *TokenProcessorToTokenGeneratorMappingsAPIService
 	id         string
 }
 
@@ -269,7 +269,7 @@ GetTokenToTokenMappingById Get a Token Processor to Token Generator Mapping.
 	@param id ID of Token Processor to Token Generator Mapping to fetch.
 	@return ApiGetTokenToTokenMappingByIdRequest
 */
-func (a *TokenProcessorToTokenGeneratorMappingsApiService) GetTokenToTokenMappingById(ctx context.Context, id string) ApiGetTokenToTokenMappingByIdRequest {
+func (a *TokenProcessorToTokenGeneratorMappingsAPIService) GetTokenToTokenMappingById(ctx context.Context, id string) ApiGetTokenToTokenMappingByIdRequest {
 	return ApiGetTokenToTokenMappingByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -280,7 +280,7 @@ func (a *TokenProcessorToTokenGeneratorMappingsApiService) GetTokenToTokenMappin
 // Execute executes the request
 //
 //	@return TokenToTokenMapping
-func (a *TokenProcessorToTokenGeneratorMappingsApiService) GetTokenToTokenMappingByIdExecute(r ApiGetTokenToTokenMappingByIdRequest) (*TokenToTokenMapping, *http.Response, error) {
+func (a *TokenProcessorToTokenGeneratorMappingsAPIService) GetTokenToTokenMappingByIdExecute(r ApiGetTokenToTokenMappingByIdRequest) (*TokenToTokenMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -288,7 +288,7 @@ func (a *TokenProcessorToTokenGeneratorMappingsApiService) GetTokenToTokenMappin
 		localVarReturnValue *TokenToTokenMapping
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokenProcessorToTokenGeneratorMappingsApiService.GetTokenToTokenMappingById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokenProcessorToTokenGeneratorMappingsAPIService.GetTokenToTokenMappingById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -366,7 +366,7 @@ func (a *TokenProcessorToTokenGeneratorMappingsApiService) GetTokenToTokenMappin
 
 type ApiGetTokenToTokenMappingsRequest struct {
 	ctx        context.Context
-	ApiService *TokenProcessorToTokenGeneratorMappingsApiService
+	ApiService *TokenProcessorToTokenGeneratorMappingsAPIService
 }
 
 func (r ApiGetTokenToTokenMappingsRequest) Execute() (*TokenToTokenMappings, *http.Response, error) {
@@ -379,7 +379,7 @@ GetTokenToTokenMappings Get the list of Token Processor to Token Generator Mappi
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetTokenToTokenMappingsRequest
 */
-func (a *TokenProcessorToTokenGeneratorMappingsApiService) GetTokenToTokenMappings(ctx context.Context) ApiGetTokenToTokenMappingsRequest {
+func (a *TokenProcessorToTokenGeneratorMappingsAPIService) GetTokenToTokenMappings(ctx context.Context) ApiGetTokenToTokenMappingsRequest {
 	return ApiGetTokenToTokenMappingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -389,7 +389,7 @@ func (a *TokenProcessorToTokenGeneratorMappingsApiService) GetTokenToTokenMappin
 // Execute executes the request
 //
 //	@return TokenToTokenMappings
-func (a *TokenProcessorToTokenGeneratorMappingsApiService) GetTokenToTokenMappingsExecute(r ApiGetTokenToTokenMappingsRequest) (*TokenToTokenMappings, *http.Response, error) {
+func (a *TokenProcessorToTokenGeneratorMappingsAPIService) GetTokenToTokenMappingsExecute(r ApiGetTokenToTokenMappingsRequest) (*TokenToTokenMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -397,7 +397,7 @@ func (a *TokenProcessorToTokenGeneratorMappingsApiService) GetTokenToTokenMappin
 		localVarReturnValue *TokenToTokenMappings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokenProcessorToTokenGeneratorMappingsApiService.GetTokenToTokenMappings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokenProcessorToTokenGeneratorMappingsAPIService.GetTokenToTokenMappings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -464,7 +464,7 @@ func (a *TokenProcessorToTokenGeneratorMappingsApiService) GetTokenToTokenMappin
 
 type ApiUpdateTokenToTokenMappingByIdRequest struct {
 	ctx                       context.Context
-	ApiService                *TokenProcessorToTokenGeneratorMappingsApiService
+	ApiService                *TokenProcessorToTokenGeneratorMappingsAPIService
 	id                        string
 	body                      *TokenToTokenMapping
 	xBypassExternalValidation *bool
@@ -493,7 +493,7 @@ UpdateTokenToTokenMappingById Update a Token Processor to Token Generator Mappin
 	@param id ID of Token Processor to Token Generator Mapping to update.
 	@return ApiUpdateTokenToTokenMappingByIdRequest
 */
-func (a *TokenProcessorToTokenGeneratorMappingsApiService) UpdateTokenToTokenMappingById(ctx context.Context, id string) ApiUpdateTokenToTokenMappingByIdRequest {
+func (a *TokenProcessorToTokenGeneratorMappingsAPIService) UpdateTokenToTokenMappingById(ctx context.Context, id string) ApiUpdateTokenToTokenMappingByIdRequest {
 	return ApiUpdateTokenToTokenMappingByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -504,7 +504,7 @@ func (a *TokenProcessorToTokenGeneratorMappingsApiService) UpdateTokenToTokenMap
 // Execute executes the request
 //
 //	@return TokenToTokenMapping
-func (a *TokenProcessorToTokenGeneratorMappingsApiService) UpdateTokenToTokenMappingByIdExecute(r ApiUpdateTokenToTokenMappingByIdRequest) (*TokenToTokenMapping, *http.Response, error) {
+func (a *TokenProcessorToTokenGeneratorMappingsAPIService) UpdateTokenToTokenMappingByIdExecute(r ApiUpdateTokenToTokenMappingByIdRequest) (*TokenToTokenMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -512,7 +512,7 @@ func (a *TokenProcessorToTokenGeneratorMappingsApiService) UpdateTokenToTokenMap
 		localVarReturnValue *TokenToTokenMapping
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokenProcessorToTokenGeneratorMappingsApiService.UpdateTokenToTokenMappingById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokenProcessorToTokenGeneratorMappingsAPIService.UpdateTokenToTokenMappingById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

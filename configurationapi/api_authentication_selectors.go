@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// AuthenticationSelectorsApiService AuthenticationSelectorsApi service
-type AuthenticationSelectorsApiService service
+// AuthenticationSelectorsAPIService AuthenticationSelectorsAPI service
+type AuthenticationSelectorsAPIService service
 
 type ApiCreateAuthenticationSelectorRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationSelectorsApiService
+	ApiService *AuthenticationSelectorsAPIService
 	body       *AuthenticationSelector
 }
 
@@ -46,7 +46,7 @@ Create a new authentication selector instance. If the authentication selector is
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateAuthenticationSelectorRequest
 */
-func (a *AuthenticationSelectorsApiService) CreateAuthenticationSelector(ctx context.Context) ApiCreateAuthenticationSelectorRequest {
+func (a *AuthenticationSelectorsAPIService) CreateAuthenticationSelector(ctx context.Context) ApiCreateAuthenticationSelectorRequest {
 	return ApiCreateAuthenticationSelectorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -56,7 +56,7 @@ func (a *AuthenticationSelectorsApiService) CreateAuthenticationSelector(ctx con
 // Execute executes the request
 //
 //	@return AuthenticationSelector
-func (a *AuthenticationSelectorsApiService) CreateAuthenticationSelectorExecute(r ApiCreateAuthenticationSelectorRequest) (*AuthenticationSelector, *http.Response, error) {
+func (a *AuthenticationSelectorsAPIService) CreateAuthenticationSelectorExecute(r ApiCreateAuthenticationSelectorRequest) (*AuthenticationSelector, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -64,7 +64,7 @@ func (a *AuthenticationSelectorsApiService) CreateAuthenticationSelectorExecute(
 		localVarReturnValue *AuthenticationSelector
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationSelectorsApiService.CreateAuthenticationSelector")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationSelectorsAPIService.CreateAuthenticationSelector")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -146,7 +146,7 @@ func (a *AuthenticationSelectorsApiService) CreateAuthenticationSelectorExecute(
 
 type ApiDeleteAuthenticationSelectorRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationSelectorsApiService
+	ApiService *AuthenticationSelectorsAPIService
 	id         string
 }
 
@@ -163,7 +163,7 @@ Delete an Authentication Selector instance with the specified ID. A 404 status c
 	@param id ID of Authentication Selector to delete.
 	@return ApiDeleteAuthenticationSelectorRequest
 */
-func (a *AuthenticationSelectorsApiService) DeleteAuthenticationSelector(ctx context.Context, id string) ApiDeleteAuthenticationSelectorRequest {
+func (a *AuthenticationSelectorsAPIService) DeleteAuthenticationSelector(ctx context.Context, id string) ApiDeleteAuthenticationSelectorRequest {
 	return ApiDeleteAuthenticationSelectorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -172,14 +172,14 @@ func (a *AuthenticationSelectorsApiService) DeleteAuthenticationSelector(ctx con
 }
 
 // Execute executes the request
-func (a *AuthenticationSelectorsApiService) DeleteAuthenticationSelectorExecute(r ApiDeleteAuthenticationSelectorRequest) (*http.Response, error) {
+func (a *AuthenticationSelectorsAPIService) DeleteAuthenticationSelectorExecute(r ApiDeleteAuthenticationSelectorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationSelectorsApiService.DeleteAuthenticationSelector")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationSelectorsAPIService.DeleteAuthenticationSelector")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -259,7 +259,7 @@ func (a *AuthenticationSelectorsApiService) DeleteAuthenticationSelectorExecute(
 
 type ApiGetAuthenticationSelectorRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationSelectorsApiService
+	ApiService *AuthenticationSelectorsAPIService
 	id         string
 }
 
@@ -276,7 +276,7 @@ Get the configured Authentication Selector instance with the specified ID. A 404
 	@param id ID of Authentication Selector instance to fetch.
 	@return ApiGetAuthenticationSelectorRequest
 */
-func (a *AuthenticationSelectorsApiService) GetAuthenticationSelector(ctx context.Context, id string) ApiGetAuthenticationSelectorRequest {
+func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelector(ctx context.Context, id string) ApiGetAuthenticationSelectorRequest {
 	return ApiGetAuthenticationSelectorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -287,7 +287,7 @@ func (a *AuthenticationSelectorsApiService) GetAuthenticationSelector(ctx contex
 // Execute executes the request
 //
 //	@return AuthenticationSelector
-func (a *AuthenticationSelectorsApiService) GetAuthenticationSelectorExecute(r ApiGetAuthenticationSelectorRequest) (*AuthenticationSelector, *http.Response, error) {
+func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelectorExecute(r ApiGetAuthenticationSelectorRequest) (*AuthenticationSelector, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -295,7 +295,7 @@ func (a *AuthenticationSelectorsApiService) GetAuthenticationSelectorExecute(r A
 		localVarReturnValue *AuthenticationSelector
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationSelectorsApiService.GetAuthenticationSelector")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationSelectorsAPIService.GetAuthenticationSelector")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -373,7 +373,7 @@ func (a *AuthenticationSelectorsApiService) GetAuthenticationSelectorExecute(r A
 
 type ApiGetAuthenticationSelectorDescriptorsRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationSelectorsApiService
+	ApiService *AuthenticationSelectorsAPIService
 }
 
 func (r ApiGetAuthenticationSelectorDescriptorsRequest) Execute() (*AuthenticationSelectorDescriptors, *http.Response, error) {
@@ -386,7 +386,7 @@ GetAuthenticationSelectorDescriptors Get the list of available Authentication Se
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAuthenticationSelectorDescriptorsRequest
 */
-func (a *AuthenticationSelectorsApiService) GetAuthenticationSelectorDescriptors(ctx context.Context) ApiGetAuthenticationSelectorDescriptorsRequest {
+func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelectorDescriptors(ctx context.Context) ApiGetAuthenticationSelectorDescriptorsRequest {
 	return ApiGetAuthenticationSelectorDescriptorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -396,7 +396,7 @@ func (a *AuthenticationSelectorsApiService) GetAuthenticationSelectorDescriptors
 // Execute executes the request
 //
 //	@return AuthenticationSelectorDescriptors
-func (a *AuthenticationSelectorsApiService) GetAuthenticationSelectorDescriptorsExecute(r ApiGetAuthenticationSelectorDescriptorsRequest) (*AuthenticationSelectorDescriptors, *http.Response, error) {
+func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelectorDescriptorsExecute(r ApiGetAuthenticationSelectorDescriptorsRequest) (*AuthenticationSelectorDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -404,7 +404,7 @@ func (a *AuthenticationSelectorsApiService) GetAuthenticationSelectorDescriptors
 		localVarReturnValue *AuthenticationSelectorDescriptors
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationSelectorsApiService.GetAuthenticationSelectorDescriptors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationSelectorsAPIService.GetAuthenticationSelectorDescriptors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -471,7 +471,7 @@ func (a *AuthenticationSelectorsApiService) GetAuthenticationSelectorDescriptors
 
 type ApiGetAuthenticationSelectorDescriptorsByIdRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationSelectorsApiService
+	ApiService *AuthenticationSelectorsAPIService
 	id         string
 }
 
@@ -488,7 +488,7 @@ Get the description of an Authentication Selector plugin by ID. A 404 status cod
 	@param id ID of Authentication Selector descriptor to fetch.
 	@return ApiGetAuthenticationSelectorDescriptorsByIdRequest
 */
-func (a *AuthenticationSelectorsApiService) GetAuthenticationSelectorDescriptorsById(ctx context.Context, id string) ApiGetAuthenticationSelectorDescriptorsByIdRequest {
+func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelectorDescriptorsById(ctx context.Context, id string) ApiGetAuthenticationSelectorDescriptorsByIdRequest {
 	return ApiGetAuthenticationSelectorDescriptorsByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -499,7 +499,7 @@ func (a *AuthenticationSelectorsApiService) GetAuthenticationSelectorDescriptors
 // Execute executes the request
 //
 //	@return AuthenticationSelectorDescriptor
-func (a *AuthenticationSelectorsApiService) GetAuthenticationSelectorDescriptorsByIdExecute(r ApiGetAuthenticationSelectorDescriptorsByIdRequest) (*AuthenticationSelectorDescriptor, *http.Response, error) {
+func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelectorDescriptorsByIdExecute(r ApiGetAuthenticationSelectorDescriptorsByIdRequest) (*AuthenticationSelectorDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -507,7 +507,7 @@ func (a *AuthenticationSelectorsApiService) GetAuthenticationSelectorDescriptors
 		localVarReturnValue *AuthenticationSelectorDescriptor
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationSelectorsApiService.GetAuthenticationSelectorDescriptorsById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationSelectorsAPIService.GetAuthenticationSelectorDescriptorsById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -585,7 +585,7 @@ func (a *AuthenticationSelectorsApiService) GetAuthenticationSelectorDescriptors
 
 type ApiGetAuthenticationSelectorsRequest struct {
 	ctx           context.Context
-	ApiService    *AuthenticationSelectorsApiService
+	ApiService    *AuthenticationSelectorsAPIService
 	page          *int64
 	numberPerPage *int64
 	filter        *string
@@ -619,7 +619,7 @@ GetAuthenticationSelectors Get the list of configured Authentication Selector in
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAuthenticationSelectorsRequest
 */
-func (a *AuthenticationSelectorsApiService) GetAuthenticationSelectors(ctx context.Context) ApiGetAuthenticationSelectorsRequest {
+func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelectors(ctx context.Context) ApiGetAuthenticationSelectorsRequest {
 	return ApiGetAuthenticationSelectorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -629,7 +629,7 @@ func (a *AuthenticationSelectorsApiService) GetAuthenticationSelectors(ctx conte
 // Execute executes the request
 //
 //	@return AuthenticationSelectors
-func (a *AuthenticationSelectorsApiService) GetAuthenticationSelectorsExecute(r ApiGetAuthenticationSelectorsRequest) (*AuthenticationSelectors, *http.Response, error) {
+func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelectorsExecute(r ApiGetAuthenticationSelectorsRequest) (*AuthenticationSelectors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -637,7 +637,7 @@ func (a *AuthenticationSelectorsApiService) GetAuthenticationSelectorsExecute(r 
 		localVarReturnValue *AuthenticationSelectors
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationSelectorsApiService.GetAuthenticationSelectors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationSelectorsAPIService.GetAuthenticationSelectors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -723,7 +723,7 @@ func (a *AuthenticationSelectorsApiService) GetAuthenticationSelectorsExecute(r 
 
 type ApiUpdateAuthenticationSelectorRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationSelectorsApiService
+	ApiService *AuthenticationSelectorsAPIService
 	id         string
 	body       *AuthenticationSelector
 }
@@ -747,7 +747,7 @@ Update an authentication selector instance. If the authentication selector is no
 	@param id ID of the authentication selector instance.
 	@return ApiUpdateAuthenticationSelectorRequest
 */
-func (a *AuthenticationSelectorsApiService) UpdateAuthenticationSelector(ctx context.Context, id string) ApiUpdateAuthenticationSelectorRequest {
+func (a *AuthenticationSelectorsAPIService) UpdateAuthenticationSelector(ctx context.Context, id string) ApiUpdateAuthenticationSelectorRequest {
 	return ApiUpdateAuthenticationSelectorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -758,7 +758,7 @@ func (a *AuthenticationSelectorsApiService) UpdateAuthenticationSelector(ctx con
 // Execute executes the request
 //
 //	@return AuthenticationSelector
-func (a *AuthenticationSelectorsApiService) UpdateAuthenticationSelectorExecute(r ApiUpdateAuthenticationSelectorRequest) (*AuthenticationSelector, *http.Response, error) {
+func (a *AuthenticationSelectorsAPIService) UpdateAuthenticationSelectorExecute(r ApiUpdateAuthenticationSelectorRequest) (*AuthenticationSelector, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -766,7 +766,7 @@ func (a *AuthenticationSelectorsApiService) UpdateAuthenticationSelectorExecute(
 		localVarReturnValue *AuthenticationSelector
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationSelectorsApiService.UpdateAuthenticationSelector")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationSelectorsAPIService.UpdateAuthenticationSelector")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

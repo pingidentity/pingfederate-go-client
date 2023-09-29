@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// PingOneConnectionsApiService PingOneConnectionsApi service
-type PingOneConnectionsApiService service
+// PingOneConnectionsAPIService PingOneConnectionsAPI service
+type PingOneConnectionsAPIService service
 
 type ApiCreatePingOneConnectionRequest struct {
 	ctx                       context.Context
-	ApiService                *PingOneConnectionsApiService
+	ApiService                *PingOneConnectionsAPIService
 	body                      *PingOneConnection
 	xBypassExternalValidation *bool
 }
@@ -51,7 +51,7 @@ CreatePingOneConnection Create a new PingOne connection.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreatePingOneConnectionRequest
 */
-func (a *PingOneConnectionsApiService) CreatePingOneConnection(ctx context.Context) ApiCreatePingOneConnectionRequest {
+func (a *PingOneConnectionsAPIService) CreatePingOneConnection(ctx context.Context) ApiCreatePingOneConnectionRequest {
 	return ApiCreatePingOneConnectionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -61,7 +61,7 @@ func (a *PingOneConnectionsApiService) CreatePingOneConnection(ctx context.Conte
 // Execute executes the request
 //
 //	@return PingOneConnection
-func (a *PingOneConnectionsApiService) CreatePingOneConnectionExecute(r ApiCreatePingOneConnectionRequest) (*PingOneConnection, *http.Response, error) {
+func (a *PingOneConnectionsAPIService) CreatePingOneConnectionExecute(r ApiCreatePingOneConnectionRequest) (*PingOneConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -69,7 +69,7 @@ func (a *PingOneConnectionsApiService) CreatePingOneConnectionExecute(r ApiCreat
 		localVarReturnValue *PingOneConnection
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneConnectionsApiService.CreatePingOneConnection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneConnectionsAPIService.CreatePingOneConnection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -154,7 +154,7 @@ func (a *PingOneConnectionsApiService) CreatePingOneConnectionExecute(r ApiCreat
 
 type ApiDeletePingOneConnectionRequest struct {
 	ctx        context.Context
-	ApiService *PingOneConnectionsApiService
+	ApiService *PingOneConnectionsAPIService
 	id         string
 }
 
@@ -169,7 +169,7 @@ DeletePingOneConnection Delete a PingOne connection.
 	@param id ID of the PingOne connection to delete.
 	@return ApiDeletePingOneConnectionRequest
 */
-func (a *PingOneConnectionsApiService) DeletePingOneConnection(ctx context.Context, id string) ApiDeletePingOneConnectionRequest {
+func (a *PingOneConnectionsAPIService) DeletePingOneConnection(ctx context.Context, id string) ApiDeletePingOneConnectionRequest {
 	return ApiDeletePingOneConnectionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -178,14 +178,14 @@ func (a *PingOneConnectionsApiService) DeletePingOneConnection(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *PingOneConnectionsApiService) DeletePingOneConnectionExecute(r ApiDeletePingOneConnectionRequest) (*http.Response, error) {
+func (a *PingOneConnectionsAPIService) DeletePingOneConnectionExecute(r ApiDeletePingOneConnectionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneConnectionsApiService.DeletePingOneConnection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneConnectionsAPIService.DeletePingOneConnection")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -265,7 +265,7 @@ func (a *PingOneConnectionsApiService) DeletePingOneConnectionExecute(r ApiDelet
 
 type ApiGetCredentialStatusRequest struct {
 	ctx        context.Context
-	ApiService *PingOneConnectionsApiService
+	ApiService *PingOneConnectionsAPIService
 	id         string
 }
 
@@ -280,7 +280,7 @@ GetCredentialStatus Get the status of the credential associated with the PingOne
 	@param id ID of the PingOne connection.
 	@return ApiGetCredentialStatusRequest
 */
-func (a *PingOneConnectionsApiService) GetCredentialStatus(ctx context.Context, id string) ApiGetCredentialStatusRequest {
+func (a *PingOneConnectionsAPIService) GetCredentialStatus(ctx context.Context, id string) ApiGetCredentialStatusRequest {
 	return ApiGetCredentialStatusRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -291,7 +291,7 @@ func (a *PingOneConnectionsApiService) GetCredentialStatus(ctx context.Context, 
 // Execute executes the request
 //
 //	@return PingOneCredentialStatus
-func (a *PingOneConnectionsApiService) GetCredentialStatusExecute(r ApiGetCredentialStatusRequest) (*PingOneCredentialStatus, *http.Response, error) {
+func (a *PingOneConnectionsAPIService) GetCredentialStatusExecute(r ApiGetCredentialStatusRequest) (*PingOneCredentialStatus, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -299,7 +299,7 @@ func (a *PingOneConnectionsApiService) GetCredentialStatusExecute(r ApiGetCreden
 		localVarReturnValue *PingOneCredentialStatus
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneConnectionsApiService.GetCredentialStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneConnectionsAPIService.GetCredentialStatus")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -377,7 +377,7 @@ func (a *PingOneConnectionsApiService) GetCredentialStatusExecute(r ApiGetCreden
 
 type ApiGetPingOneConnectionRequest struct {
 	ctx        context.Context
-	ApiService *PingOneConnectionsApiService
+	ApiService *PingOneConnectionsAPIService
 	id         string
 }
 
@@ -392,7 +392,7 @@ GetPingOneConnection Get a PingOne connection with the specified ID.
 	@param id ID of the connection to fetch.
 	@return ApiGetPingOneConnectionRequest
 */
-func (a *PingOneConnectionsApiService) GetPingOneConnection(ctx context.Context, id string) ApiGetPingOneConnectionRequest {
+func (a *PingOneConnectionsAPIService) GetPingOneConnection(ctx context.Context, id string) ApiGetPingOneConnectionRequest {
 	return ApiGetPingOneConnectionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -403,7 +403,7 @@ func (a *PingOneConnectionsApiService) GetPingOneConnection(ctx context.Context,
 // Execute executes the request
 //
 //	@return PingOneConnection
-func (a *PingOneConnectionsApiService) GetPingOneConnectionExecute(r ApiGetPingOneConnectionRequest) (*PingOneConnection, *http.Response, error) {
+func (a *PingOneConnectionsAPIService) GetPingOneConnectionExecute(r ApiGetPingOneConnectionRequest) (*PingOneConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -411,7 +411,7 @@ func (a *PingOneConnectionsApiService) GetPingOneConnectionExecute(r ApiGetPingO
 		localVarReturnValue *PingOneConnection
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneConnectionsApiService.GetPingOneConnection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneConnectionsAPIService.GetPingOneConnection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -489,7 +489,7 @@ func (a *PingOneConnectionsApiService) GetPingOneConnectionExecute(r ApiGetPingO
 
 type ApiGetPingOneConnectionAssociationsRequest struct {
 	ctx        context.Context
-	ApiService *PingOneConnectionsApiService
+	ApiService *PingOneConnectionsAPIService
 	id         string
 }
 
@@ -504,7 +504,7 @@ GetPingOneConnectionAssociations Get information about components using this con
 	@param id ID of the PingOne connection.
 	@return ApiGetPingOneConnectionAssociationsRequest
 */
-func (a *PingOneConnectionsApiService) GetPingOneConnectionAssociations(ctx context.Context, id string) ApiGetPingOneConnectionAssociationsRequest {
+func (a *PingOneConnectionsAPIService) GetPingOneConnectionAssociations(ctx context.Context, id string) ApiGetPingOneConnectionAssociationsRequest {
 	return ApiGetPingOneConnectionAssociationsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -515,7 +515,7 @@ func (a *PingOneConnectionsApiService) GetPingOneConnectionAssociations(ctx cont
 // Execute executes the request
 //
 //	@return ServiceAssociations
-func (a *PingOneConnectionsApiService) GetPingOneConnectionAssociationsExecute(r ApiGetPingOneConnectionAssociationsRequest) (*ServiceAssociations, *http.Response, error) {
+func (a *PingOneConnectionsAPIService) GetPingOneConnectionAssociationsExecute(r ApiGetPingOneConnectionAssociationsRequest) (*ServiceAssociations, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -523,7 +523,7 @@ func (a *PingOneConnectionsApiService) GetPingOneConnectionAssociationsExecute(r
 		localVarReturnValue *ServiceAssociations
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneConnectionsApiService.GetPingOneConnectionAssociations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneConnectionsAPIService.GetPingOneConnectionAssociations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -601,7 +601,7 @@ func (a *PingOneConnectionsApiService) GetPingOneConnectionAssociationsExecute(r
 
 type ApiGetPingOneConnectionEnvironmentsRequest struct {
 	ctx           context.Context
-	ApiService    *PingOneConnectionsApiService
+	ApiService    *PingOneConnectionsAPIService
 	id            string
 	page          *int64
 	numberPerPage *int64
@@ -637,7 +637,7 @@ GetPingOneConnectionEnvironments Get the list of environments that the PingOne c
 	@param id ID of the PingOne connection.
 	@return ApiGetPingOneConnectionEnvironmentsRequest
 */
-func (a *PingOneConnectionsApiService) GetPingOneConnectionEnvironments(ctx context.Context, id string) ApiGetPingOneConnectionEnvironmentsRequest {
+func (a *PingOneConnectionsAPIService) GetPingOneConnectionEnvironments(ctx context.Context, id string) ApiGetPingOneConnectionEnvironmentsRequest {
 	return ApiGetPingOneConnectionEnvironmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -648,7 +648,7 @@ func (a *PingOneConnectionsApiService) GetPingOneConnectionEnvironments(ctx cont
 // Execute executes the request
 //
 //	@return PingOneEnvironments
-func (a *PingOneConnectionsApiService) GetPingOneConnectionEnvironmentsExecute(r ApiGetPingOneConnectionEnvironmentsRequest) (*PingOneEnvironments, *http.Response, error) {
+func (a *PingOneConnectionsAPIService) GetPingOneConnectionEnvironmentsExecute(r ApiGetPingOneConnectionEnvironmentsRequest) (*PingOneEnvironments, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -656,7 +656,7 @@ func (a *PingOneConnectionsApiService) GetPingOneConnectionEnvironmentsExecute(r
 		localVarReturnValue *PingOneEnvironments
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneConnectionsApiService.GetPingOneConnectionEnvironments")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneConnectionsAPIService.GetPingOneConnectionEnvironments")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -744,7 +744,7 @@ func (a *PingOneConnectionsApiService) GetPingOneConnectionEnvironmentsExecute(r
 
 type ApiGetPingOneConnectionUsagesRequest struct {
 	ctx        context.Context
-	ApiService *PingOneConnectionsApiService
+	ApiService *PingOneConnectionsAPIService
 	id         string
 }
 
@@ -759,7 +759,7 @@ GetPingOneConnectionUsages Get the list of resources that reference this PingOne
 	@param id ID of the PingOne connection.
 	@return ApiGetPingOneConnectionUsagesRequest
 */
-func (a *PingOneConnectionsApiService) GetPingOneConnectionUsages(ctx context.Context, id string) ApiGetPingOneConnectionUsagesRequest {
+func (a *PingOneConnectionsAPIService) GetPingOneConnectionUsages(ctx context.Context, id string) ApiGetPingOneConnectionUsagesRequest {
 	return ApiGetPingOneConnectionUsagesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -770,7 +770,7 @@ func (a *PingOneConnectionsApiService) GetPingOneConnectionUsages(ctx context.Co
 // Execute executes the request
 //
 //	@return ResourceUsages
-func (a *PingOneConnectionsApiService) GetPingOneConnectionUsagesExecute(r ApiGetPingOneConnectionUsagesRequest) (*ResourceUsages, *http.Response, error) {
+func (a *PingOneConnectionsAPIService) GetPingOneConnectionUsagesExecute(r ApiGetPingOneConnectionUsagesRequest) (*ResourceUsages, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -778,7 +778,7 @@ func (a *PingOneConnectionsApiService) GetPingOneConnectionUsagesExecute(r ApiGe
 		localVarReturnValue *ResourceUsages
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneConnectionsApiService.GetPingOneConnectionUsages")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneConnectionsAPIService.GetPingOneConnectionUsages")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -856,7 +856,7 @@ func (a *PingOneConnectionsApiService) GetPingOneConnectionUsagesExecute(r ApiGe
 
 type ApiGetPingOneConnectionsRequest struct {
 	ctx        context.Context
-	ApiService *PingOneConnectionsApiService
+	ApiService *PingOneConnectionsAPIService
 }
 
 func (r ApiGetPingOneConnectionsRequest) Execute() (*PingOneConnections, *http.Response, error) {
@@ -869,7 +869,7 @@ GetPingOneConnections Get the list of all PingOne connections.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetPingOneConnectionsRequest
 */
-func (a *PingOneConnectionsApiService) GetPingOneConnections(ctx context.Context) ApiGetPingOneConnectionsRequest {
+func (a *PingOneConnectionsAPIService) GetPingOneConnections(ctx context.Context) ApiGetPingOneConnectionsRequest {
 	return ApiGetPingOneConnectionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -879,7 +879,7 @@ func (a *PingOneConnectionsApiService) GetPingOneConnections(ctx context.Context
 // Execute executes the request
 //
 //	@return PingOneConnections
-func (a *PingOneConnectionsApiService) GetPingOneConnectionsExecute(r ApiGetPingOneConnectionsRequest) (*PingOneConnections, *http.Response, error) {
+func (a *PingOneConnectionsAPIService) GetPingOneConnectionsExecute(r ApiGetPingOneConnectionsRequest) (*PingOneConnections, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -887,7 +887,7 @@ func (a *PingOneConnectionsApiService) GetPingOneConnectionsExecute(r ApiGetPing
 		localVarReturnValue *PingOneConnections
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneConnectionsApiService.GetPingOneConnections")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneConnectionsAPIService.GetPingOneConnections")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -954,7 +954,7 @@ func (a *PingOneConnectionsApiService) GetPingOneConnectionsExecute(r ApiGetPing
 
 type ApiUpdatePingOneConnectionRequest struct {
 	ctx                       context.Context
-	ApiService                *PingOneConnectionsApiService
+	ApiService                *PingOneConnectionsAPIService
 	id                        string
 	body                      *PingOneConnection
 	xBypassExternalValidation *bool
@@ -983,7 +983,7 @@ UpdatePingOneConnection Update a PingOne connection.
 	@param id ID of the PingOne connection to update.
 	@return ApiUpdatePingOneConnectionRequest
 */
-func (a *PingOneConnectionsApiService) UpdatePingOneConnection(ctx context.Context, id string) ApiUpdatePingOneConnectionRequest {
+func (a *PingOneConnectionsAPIService) UpdatePingOneConnection(ctx context.Context, id string) ApiUpdatePingOneConnectionRequest {
 	return ApiUpdatePingOneConnectionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -994,7 +994,7 @@ func (a *PingOneConnectionsApiService) UpdatePingOneConnection(ctx context.Conte
 // Execute executes the request
 //
 //	@return PingOneConnection
-func (a *PingOneConnectionsApiService) UpdatePingOneConnectionExecute(r ApiUpdatePingOneConnectionRequest) (*PingOneConnection, *http.Response, error) {
+func (a *PingOneConnectionsAPIService) UpdatePingOneConnectionExecute(r ApiUpdatePingOneConnectionRequest) (*PingOneConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1002,7 +1002,7 @@ func (a *PingOneConnectionsApiService) UpdatePingOneConnectionExecute(r ApiUpdat
 		localVarReturnValue *PingOneConnection
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneConnectionsApiService.UpdatePingOneConnection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingOneConnectionsAPIService.UpdatePingOneConnection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

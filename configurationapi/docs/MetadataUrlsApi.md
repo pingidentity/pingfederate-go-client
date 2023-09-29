@@ -1,14 +1,14 @@
-# \MetadataUrlsApi
+# \MetadataUrlsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddMetadataUrl**](MetadataUrlsApi.md#AddMetadataUrl) | **Post** /metadataUrls | Add a new Metadata URL.
-[**DeleteMetadataUrl**](MetadataUrlsApi.md#DeleteMetadataUrl) | **Delete** /metadataUrls/{id} | Delete a Metadata URL by ID.
-[**GetMetadataUrl**](MetadataUrlsApi.md#GetMetadataUrl) | **Get** /metadataUrls/{id} | Get a Metadata URL by ID.
-[**GetMetadataUrls**](MetadataUrlsApi.md#GetMetadataUrls) | **Get** /metadataUrls | Get a list of Metadata URLs
-[**UpdateMetadataUrl**](MetadataUrlsApi.md#UpdateMetadataUrl) | **Put** /metadataUrls/{id} | Update a Metadata URL by ID.
+[**AddMetadataUrl**](MetadataUrlsAPI.md#AddMetadataUrl) | **Post** /metadataUrls | Add a new Metadata URL.
+[**DeleteMetadataUrl**](MetadataUrlsAPI.md#DeleteMetadataUrl) | **Delete** /metadataUrls/{id} | Delete a Metadata URL by ID.
+[**GetMetadataUrl**](MetadataUrlsAPI.md#GetMetadataUrl) | **Get** /metadataUrls/{id} | Get a Metadata URL by ID.
+[**GetMetadataUrls**](MetadataUrlsAPI.md#GetMetadataUrls) | **Get** /metadataUrls | Get a list of Metadata URLs
+[**UpdateMetadataUrl**](MetadataUrlsAPI.md#UpdateMetadataUrl) | **Put** /metadataUrls/{id} | Update a Metadata URL by ID.
 
 
 
@@ -37,13 +37,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataUrlsApi.AddMetadataUrl(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.MetadataUrlsAPI.AddMetadataUrl(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataUrlsApi.AddMetadataUrl``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataUrlsAPI.AddMetadataUrl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddMetadataUrl`: MetadataUrl
-    fmt.Fprintf(os.Stdout, "Response from `MetadataUrlsApi.AddMetadataUrl`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MetadataUrlsAPI.AddMetadataUrl`: %v\n", resp)
 }
 ```
 
@@ -103,9 +103,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.MetadataUrlsApi.DeleteMetadataUrl(context.Background(), id).Execute()
+    r, err := apiClient.MetadataUrlsAPI.DeleteMetadataUrl(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataUrlsApi.DeleteMetadataUrl``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataUrlsAPI.DeleteMetadataUrl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -171,13 +171,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataUrlsApi.GetMetadataUrl(context.Background(), id).Execute()
+    resp, r, err := apiClient.MetadataUrlsAPI.GetMetadataUrl(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataUrlsApi.GetMetadataUrl``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataUrlsAPI.GetMetadataUrl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetMetadataUrl`: MetadataUrl
-    fmt.Fprintf(os.Stdout, "Response from `MetadataUrlsApi.GetMetadataUrl`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MetadataUrlsAPI.GetMetadataUrl`: %v\n", resp)
 }
 ```
 
@@ -238,13 +238,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataUrlsApi.GetMetadataUrls(context.Background()).Execute()
+    resp, r, err := apiClient.MetadataUrlsAPI.GetMetadataUrls(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataUrlsApi.GetMetadataUrls``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataUrlsAPI.GetMetadataUrls``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetMetadataUrls`: MetadataUrls
-    fmt.Fprintf(os.Stdout, "Response from `MetadataUrlsApi.GetMetadataUrls`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MetadataUrlsAPI.GetMetadataUrls`: %v\n", resp)
 }
 ```
 
@@ -301,13 +301,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataUrlsApi.UpdateMetadataUrl(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.MetadataUrlsAPI.UpdateMetadataUrl(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataUrlsApi.UpdateMetadataUrl``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataUrlsAPI.UpdateMetadataUrl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateMetadataUrl`: MetadataUrl
-    fmt.Fprintf(os.Stdout, "Response from `MetadataUrlsApi.UpdateMetadataUrl`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MetadataUrlsAPI.UpdateMetadataUrl`: %v\n", resp)
 }
 ```
 

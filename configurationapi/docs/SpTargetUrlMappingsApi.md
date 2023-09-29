@@ -1,11 +1,11 @@
-# \SpTargetUrlMappingsApi
+# \SpTargetUrlMappingsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetSpUrlMappings**](SpTargetUrlMappingsApi.md#GetSpUrlMappings) | **Get** /sp/targetUrlMappings | List the mappings between URLs and adapter or connection instances.
-[**UpdateSpUrlMappings**](SpTargetUrlMappingsApi.md#UpdateSpUrlMappings) | **Put** /sp/targetUrlMappings | Update the mappings between URLs and adapters or connections instances.
+[**GetSpUrlMappings**](SpTargetUrlMappingsAPI.md#GetSpUrlMappings) | **Get** /sp/targetUrlMappings | List the mappings between URLs and adapter or connection instances.
+[**UpdateSpUrlMappings**](SpTargetUrlMappingsAPI.md#UpdateSpUrlMappings) | **Put** /sp/targetUrlMappings | Update the mappings between URLs and adapters or connections instances.
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpTargetUrlMappingsApi.GetSpUrlMappings(context.Background()).Execute()
+    resp, r, err := apiClient.SpTargetUrlMappingsAPI.GetSpUrlMappings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpTargetUrlMappingsApi.GetSpUrlMappings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpTargetUrlMappingsAPI.GetSpUrlMappings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSpUrlMappings`: SpUrlMappings
-    fmt.Fprintf(os.Stdout, "Response from `SpTargetUrlMappingsApi.GetSpUrlMappings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpTargetUrlMappingsAPI.GetSpUrlMappings`: %v\n", resp)
 }
 ```
 
@@ -91,13 +91,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpTargetUrlMappingsApi.UpdateSpUrlMappings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.SpTargetUrlMappingsAPI.UpdateSpUrlMappings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpTargetUrlMappingsApi.UpdateSpUrlMappings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpTargetUrlMappingsAPI.UpdateSpUrlMappings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateSpUrlMappings`: SpUrlMappings
-    fmt.Fprintf(os.Stdout, "Response from `SpTargetUrlMappingsApi.UpdateSpUrlMappings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpTargetUrlMappingsAPI.UpdateSpUrlMappings`: %v\n", resp)
 }
 ```
 
