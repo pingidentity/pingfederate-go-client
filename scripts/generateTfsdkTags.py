@@ -4,8 +4,7 @@ import glob
 import re
 
 # Find all files in the repo starting with "model_"
-modelFiles = glob.glob('./configurationapi/model_*.go')
-print(modelFiles)
+modelFiles = glob.glob('model_*.go')
 jsonRegex = re.compile('`json:\"([0-9A-Za-z]*)[\",]')
 
 for modelFile in modelFiles:
