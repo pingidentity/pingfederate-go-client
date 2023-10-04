@@ -1,20 +1,20 @@
-# \SessionApi
+# \SessionAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateSourcePolicy**](SessionApi.md#CreateSourcePolicy) | **Post** /session/authenticationSessionPolicies | Create a new session policy.
-[**DeleteSourcePolicy**](SessionApi.md#DeleteSourcePolicy) | **Delete** /session/authenticationSessionPolicies/{id} | Delete a session policy.
-[**GetApplicationPolicy**](SessionApi.md#GetApplicationPolicy) | **Get** /session/applicationSessionPolicy | Get the application session policy.
-[**GetGlobalPolicy**](SessionApi.md#GetGlobalPolicy) | **Get** /session/authenticationSessionPolicies/global | Get the global authentication session policy.
-[**GetSessionSettings**](SessionApi.md#GetSessionSettings) | **Get** /session/settings | Get general session management settings.
-[**GetSourcePolicies**](SessionApi.md#GetSourcePolicies) | **Get** /session/authenticationSessionPolicies | Get list of session policies.
-[**GetSourcePolicy**](SessionApi.md#GetSourcePolicy) | **Get** /session/authenticationSessionPolicies/{id} | Find session policy by ID.
-[**UpdateApplicationPolicy**](SessionApi.md#UpdateApplicationPolicy) | **Put** /session/applicationSessionPolicy | Update the application session policy.
-[**UpdateGlobalPolicy**](SessionApi.md#UpdateGlobalPolicy) | **Put** /session/authenticationSessionPolicies/global | Update the global authentication session policy.
-[**UpdateSessionSettings**](SessionApi.md#UpdateSessionSettings) | **Put** /session/settings | Update general session management settings.
-[**UpdateSourcePolicy**](SessionApi.md#UpdateSourcePolicy) | **Put** /session/authenticationSessionPolicies/{id} | Update a session policy.
+[**CreateSourcePolicy**](SessionAPI.md#CreateSourcePolicy) | **Post** /session/authenticationSessionPolicies | Create a new session policy.
+[**DeleteSourcePolicy**](SessionAPI.md#DeleteSourcePolicy) | **Delete** /session/authenticationSessionPolicies/{id} | Delete a session policy.
+[**GetApplicationPolicy**](SessionAPI.md#GetApplicationPolicy) | **Get** /session/applicationSessionPolicy | Get the application session policy.
+[**GetGlobalPolicy**](SessionAPI.md#GetGlobalPolicy) | **Get** /session/authenticationSessionPolicies/global | Get the global authentication session policy.
+[**GetSessionSettings**](SessionAPI.md#GetSessionSettings) | **Get** /session/settings | Get general session management settings.
+[**GetSourcePolicies**](SessionAPI.md#GetSourcePolicies) | **Get** /session/authenticationSessionPolicies | Get list of session policies.
+[**GetSourcePolicy**](SessionAPI.md#GetSourcePolicy) | **Get** /session/authenticationSessionPolicies/{id} | Find session policy by ID.
+[**UpdateApplicationPolicy**](SessionAPI.md#UpdateApplicationPolicy) | **Put** /session/applicationSessionPolicy | Update the application session policy.
+[**UpdateGlobalPolicy**](SessionAPI.md#UpdateGlobalPolicy) | **Put** /session/authenticationSessionPolicies/global | Update the global authentication session policy.
+[**UpdateSessionSettings**](SessionAPI.md#UpdateSessionSettings) | **Put** /session/settings | Update general session management settings.
+[**UpdateSourcePolicy**](SessionAPI.md#UpdateSourcePolicy) | **Put** /session/authenticationSessionPolicies/{id} | Update a session policy.
 
 
 
@@ -43,13 +43,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionApi.CreateSourcePolicy(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.SessionAPI.CreateSourcePolicy(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionApi.CreateSourcePolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.CreateSourcePolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateSourcePolicy`: AuthenticationSessionPolicy
-    fmt.Fprintf(os.Stdout, "Response from `SessionApi.CreateSourcePolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SessionAPI.CreateSourcePolicy`: %v\n", resp)
 }
 ```
 
@@ -109,9 +109,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SessionApi.DeleteSourcePolicy(context.Background(), id).Execute()
+    r, err := apiClient.SessionAPI.DeleteSourcePolicy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionApi.DeleteSourcePolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.DeleteSourcePolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -174,13 +174,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionApi.GetApplicationPolicy(context.Background()).Execute()
+    resp, r, err := apiClient.SessionAPI.GetApplicationPolicy(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionApi.GetApplicationPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.GetApplicationPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetApplicationPolicy`: ApplicationSessionPolicy
-    fmt.Fprintf(os.Stdout, "Response from `SessionApi.GetApplicationPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SessionAPI.GetApplicationPolicy`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionApi.GetGlobalPolicy(context.Background()).Execute()
+    resp, r, err := apiClient.SessionAPI.GetGlobalPolicy(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionApi.GetGlobalPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.GetGlobalPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetGlobalPolicy`: GlobalAuthenticationSessionPolicy
-    fmt.Fprintf(os.Stdout, "Response from `SessionApi.GetGlobalPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SessionAPI.GetGlobalPolicy`: %v\n", resp)
 }
 ```
 
@@ -292,13 +292,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionApi.GetSessionSettings(context.Background()).Execute()
+    resp, r, err := apiClient.SessionAPI.GetSessionSettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionApi.GetSessionSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.GetSessionSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSessionSettings`: SessionSettings
-    fmt.Fprintf(os.Stdout, "Response from `SessionApi.GetSessionSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SessionAPI.GetSessionSettings`: %v\n", resp)
 }
 ```
 
@@ -353,13 +353,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionApi.GetSourcePolicies(context.Background()).Execute()
+    resp, r, err := apiClient.SessionAPI.GetSourcePolicies(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionApi.GetSourcePolicies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.GetSourcePolicies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSourcePolicies`: AuthenticationSessionPolicies
-    fmt.Fprintf(os.Stdout, "Response from `SessionApi.GetSourcePolicies`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SessionAPI.GetSourcePolicies`: %v\n", resp)
 }
 ```
 
@@ -415,13 +415,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionApi.GetSourcePolicy(context.Background(), id).Execute()
+    resp, r, err := apiClient.SessionAPI.GetSourcePolicy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionApi.GetSourcePolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.GetSourcePolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSourcePolicy`: AuthenticationSessionPolicy
-    fmt.Fprintf(os.Stdout, "Response from `SessionApi.GetSourcePolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SessionAPI.GetSourcePolicy`: %v\n", resp)
 }
 ```
 
@@ -483,13 +483,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionApi.UpdateApplicationPolicy(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.SessionAPI.UpdateApplicationPolicy(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionApi.UpdateApplicationPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.UpdateApplicationPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateApplicationPolicy`: ApplicationSessionPolicy
-    fmt.Fprintf(os.Stdout, "Response from `SessionApi.UpdateApplicationPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SessionAPI.UpdateApplicationPolicy`: %v\n", resp)
 }
 ```
 
@@ -547,13 +547,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionApi.UpdateGlobalPolicy(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.SessionAPI.UpdateGlobalPolicy(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionApi.UpdateGlobalPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.UpdateGlobalPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateGlobalPolicy`: GlobalAuthenticationSessionPolicy
-    fmt.Fprintf(os.Stdout, "Response from `SessionApi.UpdateGlobalPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SessionAPI.UpdateGlobalPolicy`: %v\n", resp)
 }
 ```
 
@@ -611,13 +611,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionApi.UpdateSessionSettings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.SessionAPI.UpdateSessionSettings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionApi.UpdateSessionSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.UpdateSessionSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateSessionSettings`: SessionSettings
-    fmt.Fprintf(os.Stdout, "Response from `SessionApi.UpdateSessionSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SessionAPI.UpdateSessionSettings`: %v\n", resp)
 }
 ```
 
@@ -678,13 +678,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionApi.UpdateSourcePolicy(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.SessionAPI.UpdateSourcePolicy(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionApi.UpdateSourcePolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.UpdateSourcePolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateSourcePolicy`: AuthenticationSessionPolicy
-    fmt.Fprintf(os.Stdout, "Response from `SessionApi.UpdateSourcePolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SessionAPI.UpdateSourcePolicy`: %v\n", resp)
 }
 ```
 

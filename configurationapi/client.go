@@ -46,149 +46,149 @@ type APIClient struct {
 
 	// API Services
 
-	AdministrativeAccountsApi *AdministrativeAccountsApiService
+	AdministrativeAccountsAPI *AdministrativeAccountsAPIService
 
-	AuthenticationApiApi *AuthenticationApiApiService
+	AuthenticationApiAPI *AuthenticationApiAPIService
 
-	AuthenticationPoliciesApi *AuthenticationPoliciesApiService
+	AuthenticationPoliciesAPI *AuthenticationPoliciesAPIService
 
-	AuthenticationPolicyContractsApi *AuthenticationPolicyContractsApiService
+	AuthenticationPolicyContractsAPI *AuthenticationPolicyContractsAPIService
 
-	AuthenticationSelectorsApi *AuthenticationSelectorsApiService
+	AuthenticationSelectorsAPI *AuthenticationSelectorsAPIService
 
-	BulkApi *BulkApiService
+	BulkAPI *BulkAPIService
 
-	CaptchaProvidersApi *CaptchaProvidersApiService
+	CaptchaProvidersAPI *CaptchaProvidersAPIService
 
-	CertificatesCaApi *CertificatesCaApiService
+	CertificatesCaAPI *CertificatesCaAPIService
 
-	CertificatesGroupsApi *CertificatesGroupsApiService
+	CertificatesGroupsAPI *CertificatesGroupsAPIService
 
-	CertificatesRevocationApi *CertificatesRevocationApiService
+	CertificatesRevocationAPI *CertificatesRevocationAPIService
 
-	ClusterApi *ClusterApiService
+	ClusterAPI *ClusterAPIService
 
-	ConfigArchiveApi *ConfigArchiveApiService
+	ConfigArchiveAPI *ConfigArchiveAPIService
 
-	ConfigStoreApi *ConfigStoreApiService
+	ConfigStoreAPI *ConfigStoreAPIService
 
-	ConfigurationEncryptionKeysApi *ConfigurationEncryptionKeysApiService
+	ConfigurationEncryptionKeysAPI *ConfigurationEncryptionKeysAPIService
 
-	ConnectionMetadataApi *ConnectionMetadataApiService
+	ConnectionMetadataAPI *ConnectionMetadataAPIService
 
-	DataStoresApi *DataStoresApiService
+	DataStoresAPI *DataStoresAPIService
 
-	ExtendedPropertiesApi *ExtendedPropertiesApiService
+	ExtendedPropertiesAPI *ExtendedPropertiesAPIService
 
-	IdentityStoreProvisionersApi *IdentityStoreProvisionersApiService
+	IdentityStoreProvisionersAPI *IdentityStoreProvisionersAPIService
 
-	IdpAdaptersApi *IdpAdaptersApiService
+	IdpAdaptersAPI *IdpAdaptersAPIService
 
-	IdpConnectorsApi *IdpConnectorsApiService
+	IdpConnectorsAPI *IdpConnectorsAPIService
 
-	IdpDefaultUrlsApi *IdpDefaultUrlsApiService
+	IdpDefaultUrlsAPI *IdpDefaultUrlsAPIService
 
-	IdpSpConnectionsApi *IdpSpConnectionsApiService
+	IdpSpConnectionsAPI *IdpSpConnectionsAPIService
 
-	IdpStsRequestParametersContractsApi *IdpStsRequestParametersContractsApiService
+	IdpStsRequestParametersContractsAPI *IdpStsRequestParametersContractsAPIService
 
-	IdpToSpAdapterMappingApi *IdpToSpAdapterMappingApiService
+	IdpToSpAdapterMappingAPI *IdpToSpAdapterMappingAPIService
 
-	IdpTokenProcessorsApi *IdpTokenProcessorsApiService
+	IdpTokenProcessorsAPI *IdpTokenProcessorsAPIService
 
-	IncomingProxySettingsApi *IncomingProxySettingsApiService
+	IncomingProxySettingsAPI *IncomingProxySettingsAPIService
 
-	KerberosRealmsApi *KerberosRealmsApiService
+	KerberosRealmsAPI *KerberosRealmsAPIService
 
-	KeyPairsApi *KeyPairsApiService
+	KeyPairsAPI *KeyPairsAPIService
 
-	KeyPairsOauthOpenIdConnectApi *KeyPairsOauthOpenIdConnectApiService
+	KeyPairsOauthOpenIdConnectAPI *KeyPairsOauthOpenIdConnectAPIService
 
-	KeyPairsSigningApi *KeyPairsSigningApiService
+	KeyPairsSigningAPI *KeyPairsSigningAPIService
 
-	KeyPairsSslClientApi *KeyPairsSslClientApiService
+	KeyPairsSslClientAPI *KeyPairsSslClientAPIService
 
-	KeyPairsSslServerApi *KeyPairsSslServerApiService
+	KeyPairsSslServerAPI *KeyPairsSslServerAPIService
 
-	LicenseApi *LicenseApiService
+	LicenseAPI *LicenseAPIService
 
-	LocalIdentityIdentityProfilesApi *LocalIdentityIdentityProfilesApiService
+	LocalIdentityIdentityProfilesAPI *LocalIdentityIdentityProfilesAPIService
 
-	MetadataUrlsApi *MetadataUrlsApiService
+	MetadataUrlsAPI *MetadataUrlsAPIService
 
-	NotificationPublishersApi *NotificationPublishersApiService
+	NotificationPublishersAPI *NotificationPublishersAPIService
 
-	OauthAccessTokenManagersApi *OauthAccessTokenManagersApiService
+	OauthAccessTokenManagersAPI *OauthAccessTokenManagersAPIService
 
-	OauthAccessTokenMappingsApi *OauthAccessTokenMappingsApiService
+	OauthAccessTokenMappingsAPI *OauthAccessTokenMappingsAPIService
 
-	OauthAuthServerSettingsApi *OauthAuthServerSettingsApiService
+	OauthAuthServerSettingsAPI *OauthAuthServerSettingsAPIService
 
-	OauthAuthenticationPolicyContractMappingsApi *OauthAuthenticationPolicyContractMappingsApiService
+	OauthAuthenticationPolicyContractMappingsAPI *OauthAuthenticationPolicyContractMappingsAPIService
 
-	OauthAuthorizationDetailProcessorsApi *OauthAuthorizationDetailProcessorsApiService
+	OauthAuthorizationDetailProcessorsAPI *OauthAuthorizationDetailProcessorsAPIService
 
-	OauthAuthorizationDetailTypesApi *OauthAuthorizationDetailTypesApiService
+	OauthAuthorizationDetailTypesAPI *OauthAuthorizationDetailTypesAPIService
 
-	OauthCibaServerPolicyApi *OauthCibaServerPolicyApiService
+	OauthCibaServerPolicyAPI *OauthCibaServerPolicyAPIService
 
-	OauthClientRegistrationPoliciesApi *OauthClientRegistrationPoliciesApiService
+	OauthClientRegistrationPoliciesAPI *OauthClientRegistrationPoliciesAPIService
 
-	OauthClientSettingsApi *OauthClientSettingsApiService
+	OauthClientSettingsAPI *OauthClientSettingsAPIService
 
-	OauthClientsApi *OauthClientsApiService
+	OauthClientsAPI *OauthClientsAPIService
 
-	OauthIdpAdapterMappingsApi *OauthIdpAdapterMappingsApiService
+	OauthIdpAdapterMappingsAPI *OauthIdpAdapterMappingsAPIService
 
-	OauthIssuersApi *OauthIssuersApiService
+	OauthIssuersAPI *OauthIssuersAPIService
 
-	OauthOpenIdConnectApi *OauthOpenIdConnectApiService
+	OauthOpenIdConnectAPI *OauthOpenIdConnectAPIService
 
-	OauthOutOfBandAuthPluginsApi *OauthOutOfBandAuthPluginsApiService
+	OauthOutOfBandAuthPluginsAPI *OauthOutOfBandAuthPluginsAPIService
 
-	OauthResourceOwnerCredentialsMappingsApi *OauthResourceOwnerCredentialsMappingsApiService
+	OauthResourceOwnerCredentialsMappingsAPI *OauthResourceOwnerCredentialsMappingsAPIService
 
-	OauthTokenExchangeGeneratorApi *OauthTokenExchangeGeneratorApiService
+	OauthTokenExchangeGeneratorAPI *OauthTokenExchangeGeneratorAPIService
 
-	OauthTokenExchangeProcessorApi *OauthTokenExchangeProcessorApiService
+	OauthTokenExchangeProcessorAPI *OauthTokenExchangeProcessorAPIService
 
-	OauthTokenExchangeTokenGeneratorMappingsApi *OauthTokenExchangeTokenGeneratorMappingsApiService
+	OauthTokenExchangeTokenGeneratorMappingsAPI *OauthTokenExchangeTokenGeneratorMappingsAPIService
 
-	PasswordCredentialValidatorsApi *PasswordCredentialValidatorsApiService
+	PasswordCredentialValidatorsAPI *PasswordCredentialValidatorsAPIService
 
-	PingOneConnectionsApi *PingOneConnectionsApiService
+	PingOneConnectionsAPI *PingOneConnectionsAPIService
 
-	PingOneForEnterpriseApi *PingOneForEnterpriseApiService
+	PingOneForEnterpriseAPI *PingOneForEnterpriseAPIService
 
-	ProtocolMetadataApi *ProtocolMetadataApiService
+	ProtocolMetadataAPI *ProtocolMetadataAPIService
 
-	RedirectValidationApi *RedirectValidationApiService
+	RedirectValidationAPI *RedirectValidationAPIService
 
-	SecretManagersApi *SecretManagersApiService
+	SecretManagersAPI *SecretManagersAPIService
 
-	ServerSettingsApi *ServerSettingsApiService
+	ServerSettingsAPI *ServerSettingsAPIService
 
-	ServiceAuthenticationApi *ServiceAuthenticationApiService
+	ServiceAuthenticationAPI *ServiceAuthenticationAPIService
 
-	SessionApi *SessionApiService
+	SessionAPI *SessionAPIService
 
-	SpAdaptersApi *SpAdaptersApiService
+	SpAdaptersAPI *SpAdaptersAPIService
 
-	SpAuthenticationPolicyContractMappingsApi *SpAuthenticationPolicyContractMappingsApiService
+	SpAuthenticationPolicyContractMappingsAPI *SpAuthenticationPolicyContractMappingsAPIService
 
-	SpDefaultUrlsApi *SpDefaultUrlsApiService
+	SpDefaultUrlsAPI *SpDefaultUrlsAPIService
 
-	SpIdpConnectionsApi *SpIdpConnectionsApiService
+	SpIdpConnectionsAPI *SpIdpConnectionsAPIService
 
-	SpTargetUrlMappingsApi *SpTargetUrlMappingsApiService
+	SpTargetUrlMappingsAPI *SpTargetUrlMappingsAPIService
 
-	SpTokenGeneratorsApi *SpTokenGeneratorsApiService
+	SpTokenGeneratorsAPI *SpTokenGeneratorsAPIService
 
-	TokenProcessorToTokenGeneratorMappingsApi *TokenProcessorToTokenGeneratorMappingsApiService
+	TokenProcessorToTokenGeneratorMappingsAPI *TokenProcessorToTokenGeneratorMappingsAPIService
 
-	VersionApi *VersionApiService
+	VersionAPI *VersionAPIService
 
-	VirtualHostNamesApi *VirtualHostNamesApiService
+	VirtualHostNamesAPI *VirtualHostNamesAPIService
 }
 
 type service struct {
@@ -207,78 +207,78 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
-	c.AdministrativeAccountsApi = (*AdministrativeAccountsApiService)(&c.common)
-	c.AuthenticationApiApi = (*AuthenticationApiApiService)(&c.common)
-	c.AuthenticationPoliciesApi = (*AuthenticationPoliciesApiService)(&c.common)
-	c.AuthenticationPolicyContractsApi = (*AuthenticationPolicyContractsApiService)(&c.common)
-	c.AuthenticationSelectorsApi = (*AuthenticationSelectorsApiService)(&c.common)
-	c.BulkApi = (*BulkApiService)(&c.common)
-	c.CaptchaProvidersApi = (*CaptchaProvidersApiService)(&c.common)
-	c.CertificatesCaApi = (*CertificatesCaApiService)(&c.common)
-	c.CertificatesGroupsApi = (*CertificatesGroupsApiService)(&c.common)
-	c.CertificatesRevocationApi = (*CertificatesRevocationApiService)(&c.common)
-	c.ClusterApi = (*ClusterApiService)(&c.common)
-	c.ConfigArchiveApi = (*ConfigArchiveApiService)(&c.common)
-	c.ConfigStoreApi = (*ConfigStoreApiService)(&c.common)
-	c.ConfigurationEncryptionKeysApi = (*ConfigurationEncryptionKeysApiService)(&c.common)
-	c.ConnectionMetadataApi = (*ConnectionMetadataApiService)(&c.common)
-	c.DataStoresApi = (*DataStoresApiService)(&c.common)
-	c.ExtendedPropertiesApi = (*ExtendedPropertiesApiService)(&c.common)
-	c.IdentityStoreProvisionersApi = (*IdentityStoreProvisionersApiService)(&c.common)
-	c.IdpAdaptersApi = (*IdpAdaptersApiService)(&c.common)
-	c.IdpConnectorsApi = (*IdpConnectorsApiService)(&c.common)
-	c.IdpDefaultUrlsApi = (*IdpDefaultUrlsApiService)(&c.common)
-	c.IdpSpConnectionsApi = (*IdpSpConnectionsApiService)(&c.common)
-	c.IdpStsRequestParametersContractsApi = (*IdpStsRequestParametersContractsApiService)(&c.common)
-	c.IdpToSpAdapterMappingApi = (*IdpToSpAdapterMappingApiService)(&c.common)
-	c.IdpTokenProcessorsApi = (*IdpTokenProcessorsApiService)(&c.common)
-	c.IncomingProxySettingsApi = (*IncomingProxySettingsApiService)(&c.common)
-	c.KerberosRealmsApi = (*KerberosRealmsApiService)(&c.common)
-	c.KeyPairsApi = (*KeyPairsApiService)(&c.common)
-	c.KeyPairsOauthOpenIdConnectApi = (*KeyPairsOauthOpenIdConnectApiService)(&c.common)
-	c.KeyPairsSigningApi = (*KeyPairsSigningApiService)(&c.common)
-	c.KeyPairsSslClientApi = (*KeyPairsSslClientApiService)(&c.common)
-	c.KeyPairsSslServerApi = (*KeyPairsSslServerApiService)(&c.common)
-	c.LicenseApi = (*LicenseApiService)(&c.common)
-	c.LocalIdentityIdentityProfilesApi = (*LocalIdentityIdentityProfilesApiService)(&c.common)
-	c.MetadataUrlsApi = (*MetadataUrlsApiService)(&c.common)
-	c.NotificationPublishersApi = (*NotificationPublishersApiService)(&c.common)
-	c.OauthAccessTokenManagersApi = (*OauthAccessTokenManagersApiService)(&c.common)
-	c.OauthAccessTokenMappingsApi = (*OauthAccessTokenMappingsApiService)(&c.common)
-	c.OauthAuthServerSettingsApi = (*OauthAuthServerSettingsApiService)(&c.common)
-	c.OauthAuthenticationPolicyContractMappingsApi = (*OauthAuthenticationPolicyContractMappingsApiService)(&c.common)
-	c.OauthAuthorizationDetailProcessorsApi = (*OauthAuthorizationDetailProcessorsApiService)(&c.common)
-	c.OauthAuthorizationDetailTypesApi = (*OauthAuthorizationDetailTypesApiService)(&c.common)
-	c.OauthCibaServerPolicyApi = (*OauthCibaServerPolicyApiService)(&c.common)
-	c.OauthClientRegistrationPoliciesApi = (*OauthClientRegistrationPoliciesApiService)(&c.common)
-	c.OauthClientSettingsApi = (*OauthClientSettingsApiService)(&c.common)
-	c.OauthClientsApi = (*OauthClientsApiService)(&c.common)
-	c.OauthIdpAdapterMappingsApi = (*OauthIdpAdapterMappingsApiService)(&c.common)
-	c.OauthIssuersApi = (*OauthIssuersApiService)(&c.common)
-	c.OauthOpenIdConnectApi = (*OauthOpenIdConnectApiService)(&c.common)
-	c.OauthOutOfBandAuthPluginsApi = (*OauthOutOfBandAuthPluginsApiService)(&c.common)
-	c.OauthResourceOwnerCredentialsMappingsApi = (*OauthResourceOwnerCredentialsMappingsApiService)(&c.common)
-	c.OauthTokenExchangeGeneratorApi = (*OauthTokenExchangeGeneratorApiService)(&c.common)
-	c.OauthTokenExchangeProcessorApi = (*OauthTokenExchangeProcessorApiService)(&c.common)
-	c.OauthTokenExchangeTokenGeneratorMappingsApi = (*OauthTokenExchangeTokenGeneratorMappingsApiService)(&c.common)
-	c.PasswordCredentialValidatorsApi = (*PasswordCredentialValidatorsApiService)(&c.common)
-	c.PingOneConnectionsApi = (*PingOneConnectionsApiService)(&c.common)
-	c.PingOneForEnterpriseApi = (*PingOneForEnterpriseApiService)(&c.common)
-	c.ProtocolMetadataApi = (*ProtocolMetadataApiService)(&c.common)
-	c.RedirectValidationApi = (*RedirectValidationApiService)(&c.common)
-	c.SecretManagersApi = (*SecretManagersApiService)(&c.common)
-	c.ServerSettingsApi = (*ServerSettingsApiService)(&c.common)
-	c.ServiceAuthenticationApi = (*ServiceAuthenticationApiService)(&c.common)
-	c.SessionApi = (*SessionApiService)(&c.common)
-	c.SpAdaptersApi = (*SpAdaptersApiService)(&c.common)
-	c.SpAuthenticationPolicyContractMappingsApi = (*SpAuthenticationPolicyContractMappingsApiService)(&c.common)
-	c.SpDefaultUrlsApi = (*SpDefaultUrlsApiService)(&c.common)
-	c.SpIdpConnectionsApi = (*SpIdpConnectionsApiService)(&c.common)
-	c.SpTargetUrlMappingsApi = (*SpTargetUrlMappingsApiService)(&c.common)
-	c.SpTokenGeneratorsApi = (*SpTokenGeneratorsApiService)(&c.common)
-	c.TokenProcessorToTokenGeneratorMappingsApi = (*TokenProcessorToTokenGeneratorMappingsApiService)(&c.common)
-	c.VersionApi = (*VersionApiService)(&c.common)
-	c.VirtualHostNamesApi = (*VirtualHostNamesApiService)(&c.common)
+	c.AdministrativeAccountsAPI = (*AdministrativeAccountsAPIService)(&c.common)
+	c.AuthenticationApiAPI = (*AuthenticationApiAPIService)(&c.common)
+	c.AuthenticationPoliciesAPI = (*AuthenticationPoliciesAPIService)(&c.common)
+	c.AuthenticationPolicyContractsAPI = (*AuthenticationPolicyContractsAPIService)(&c.common)
+	c.AuthenticationSelectorsAPI = (*AuthenticationSelectorsAPIService)(&c.common)
+	c.BulkAPI = (*BulkAPIService)(&c.common)
+	c.CaptchaProvidersAPI = (*CaptchaProvidersAPIService)(&c.common)
+	c.CertificatesCaAPI = (*CertificatesCaAPIService)(&c.common)
+	c.CertificatesGroupsAPI = (*CertificatesGroupsAPIService)(&c.common)
+	c.CertificatesRevocationAPI = (*CertificatesRevocationAPIService)(&c.common)
+	c.ClusterAPI = (*ClusterAPIService)(&c.common)
+	c.ConfigArchiveAPI = (*ConfigArchiveAPIService)(&c.common)
+	c.ConfigStoreAPI = (*ConfigStoreAPIService)(&c.common)
+	c.ConfigurationEncryptionKeysAPI = (*ConfigurationEncryptionKeysAPIService)(&c.common)
+	c.ConnectionMetadataAPI = (*ConnectionMetadataAPIService)(&c.common)
+	c.DataStoresAPI = (*DataStoresAPIService)(&c.common)
+	c.ExtendedPropertiesAPI = (*ExtendedPropertiesAPIService)(&c.common)
+	c.IdentityStoreProvisionersAPI = (*IdentityStoreProvisionersAPIService)(&c.common)
+	c.IdpAdaptersAPI = (*IdpAdaptersAPIService)(&c.common)
+	c.IdpConnectorsAPI = (*IdpConnectorsAPIService)(&c.common)
+	c.IdpDefaultUrlsAPI = (*IdpDefaultUrlsAPIService)(&c.common)
+	c.IdpSpConnectionsAPI = (*IdpSpConnectionsAPIService)(&c.common)
+	c.IdpStsRequestParametersContractsAPI = (*IdpStsRequestParametersContractsAPIService)(&c.common)
+	c.IdpToSpAdapterMappingAPI = (*IdpToSpAdapterMappingAPIService)(&c.common)
+	c.IdpTokenProcessorsAPI = (*IdpTokenProcessorsAPIService)(&c.common)
+	c.IncomingProxySettingsAPI = (*IncomingProxySettingsAPIService)(&c.common)
+	c.KerberosRealmsAPI = (*KerberosRealmsAPIService)(&c.common)
+	c.KeyPairsAPI = (*KeyPairsAPIService)(&c.common)
+	c.KeyPairsOauthOpenIdConnectAPI = (*KeyPairsOauthOpenIdConnectAPIService)(&c.common)
+	c.KeyPairsSigningAPI = (*KeyPairsSigningAPIService)(&c.common)
+	c.KeyPairsSslClientAPI = (*KeyPairsSslClientAPIService)(&c.common)
+	c.KeyPairsSslServerAPI = (*KeyPairsSslServerAPIService)(&c.common)
+	c.LicenseAPI = (*LicenseAPIService)(&c.common)
+	c.LocalIdentityIdentityProfilesAPI = (*LocalIdentityIdentityProfilesAPIService)(&c.common)
+	c.MetadataUrlsAPI = (*MetadataUrlsAPIService)(&c.common)
+	c.NotificationPublishersAPI = (*NotificationPublishersAPIService)(&c.common)
+	c.OauthAccessTokenManagersAPI = (*OauthAccessTokenManagersAPIService)(&c.common)
+	c.OauthAccessTokenMappingsAPI = (*OauthAccessTokenMappingsAPIService)(&c.common)
+	c.OauthAuthServerSettingsAPI = (*OauthAuthServerSettingsAPIService)(&c.common)
+	c.OauthAuthenticationPolicyContractMappingsAPI = (*OauthAuthenticationPolicyContractMappingsAPIService)(&c.common)
+	c.OauthAuthorizationDetailProcessorsAPI = (*OauthAuthorizationDetailProcessorsAPIService)(&c.common)
+	c.OauthAuthorizationDetailTypesAPI = (*OauthAuthorizationDetailTypesAPIService)(&c.common)
+	c.OauthCibaServerPolicyAPI = (*OauthCibaServerPolicyAPIService)(&c.common)
+	c.OauthClientRegistrationPoliciesAPI = (*OauthClientRegistrationPoliciesAPIService)(&c.common)
+	c.OauthClientSettingsAPI = (*OauthClientSettingsAPIService)(&c.common)
+	c.OauthClientsAPI = (*OauthClientsAPIService)(&c.common)
+	c.OauthIdpAdapterMappingsAPI = (*OauthIdpAdapterMappingsAPIService)(&c.common)
+	c.OauthIssuersAPI = (*OauthIssuersAPIService)(&c.common)
+	c.OauthOpenIdConnectAPI = (*OauthOpenIdConnectAPIService)(&c.common)
+	c.OauthOutOfBandAuthPluginsAPI = (*OauthOutOfBandAuthPluginsAPIService)(&c.common)
+	c.OauthResourceOwnerCredentialsMappingsAPI = (*OauthResourceOwnerCredentialsMappingsAPIService)(&c.common)
+	c.OauthTokenExchangeGeneratorAPI = (*OauthTokenExchangeGeneratorAPIService)(&c.common)
+	c.OauthTokenExchangeProcessorAPI = (*OauthTokenExchangeProcessorAPIService)(&c.common)
+	c.OauthTokenExchangeTokenGeneratorMappingsAPI = (*OauthTokenExchangeTokenGeneratorMappingsAPIService)(&c.common)
+	c.PasswordCredentialValidatorsAPI = (*PasswordCredentialValidatorsAPIService)(&c.common)
+	c.PingOneConnectionsAPI = (*PingOneConnectionsAPIService)(&c.common)
+	c.PingOneForEnterpriseAPI = (*PingOneForEnterpriseAPIService)(&c.common)
+	c.ProtocolMetadataAPI = (*ProtocolMetadataAPIService)(&c.common)
+	c.RedirectValidationAPI = (*RedirectValidationAPIService)(&c.common)
+	c.SecretManagersAPI = (*SecretManagersAPIService)(&c.common)
+	c.ServerSettingsAPI = (*ServerSettingsAPIService)(&c.common)
+	c.ServiceAuthenticationAPI = (*ServiceAuthenticationAPIService)(&c.common)
+	c.SessionAPI = (*SessionAPIService)(&c.common)
+	c.SpAdaptersAPI = (*SpAdaptersAPIService)(&c.common)
+	c.SpAuthenticationPolicyContractMappingsAPI = (*SpAuthenticationPolicyContractMappingsAPIService)(&c.common)
+	c.SpDefaultUrlsAPI = (*SpDefaultUrlsAPIService)(&c.common)
+	c.SpIdpConnectionsAPI = (*SpIdpConnectionsAPIService)(&c.common)
+	c.SpTargetUrlMappingsAPI = (*SpTargetUrlMappingsAPIService)(&c.common)
+	c.SpTokenGeneratorsAPI = (*SpTokenGeneratorsAPIService)(&c.common)
+	c.TokenProcessorToTokenGeneratorMappingsAPI = (*TokenProcessorToTokenGeneratorMappingsAPIService)(&c.common)
+	c.VersionAPI = (*VersionAPIService)(&c.common)
+	c.VirtualHostNamesAPI = (*VirtualHostNamesAPIService)(&c.common)
 
 	return c
 }
@@ -634,6 +634,7 @@ func (c *APIClient) decode(v interface{}, b []byte, contentType string) (err err
 			return
 		}
 		_, err = f.Seek(0, io.SeekStart)
+		err = os.Remove(f.Name())
 		return
 	}
 	if f, ok := v.(**os.File); ok {
@@ -646,6 +647,7 @@ func (c *APIClient) decode(v interface{}, b []byte, contentType string) (err err
 			return
 		}
 		_, err = (*f).Seek(0, io.SeekStart)
+		err = os.Remove((*f).Name())
 		return
 	}
 	if xmlCheck.MatchString(contentType) {
@@ -722,7 +724,11 @@ func setBody(body interface{}, contentType string) (bodyBuf *bytes.Buffer, err e
 	} else if jsonCheck.MatchString(contentType) {
 		err = json.NewEncoder(bodyBuf).Encode(body)
 	} else if xmlCheck.MatchString(contentType) {
-		err = xml.NewEncoder(bodyBuf).Encode(body)
+		var bs []byte
+		bs, err = xml.Marshal(body)
+		if err == nil {
+			bodyBuf.Write(bs)
+		}
 	}
 
 	if err != nil {

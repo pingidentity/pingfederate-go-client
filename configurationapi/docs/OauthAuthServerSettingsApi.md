@@ -1,27 +1,27 @@
-# \OauthAuthServerSettingsApi
+# \OauthAuthServerSettingsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddCommonScope**](OauthAuthServerSettingsApi.md#AddCommonScope) | **Post** /oauth/authServerSettings/scopes/commonScopes | Add a new common scope.
-[**AddCommonScopeGroup**](OauthAuthServerSettingsApi.md#AddCommonScopeGroup) | **Post** /oauth/authServerSettings/scopes/commonScopeGroups | Create a new common scope group.
-[**AddExclusiveScope**](OauthAuthServerSettingsApi.md#AddExclusiveScope) | **Post** /oauth/authServerSettings/scopes/exclusiveScopes | Add a new exclusive scope.
-[**AddExclusiveScopeGroup**](OauthAuthServerSettingsApi.md#AddExclusiveScopeGroup) | **Post** /oauth/authServerSettings/scopes/exclusiveScopeGroups | Create a new exclusive scope group.
-[**GetAuthorizationServerSettings**](OauthAuthServerSettingsApi.md#GetAuthorizationServerSettings) | **Get** /oauth/authServerSettings | Get the Authorization Server Settings.
-[**GetCommonScope**](OauthAuthServerSettingsApi.md#GetCommonScope) | **Get** /oauth/authServerSettings/scopes/commonScopes/{name} | Get an existing common scope.
-[**GetCommonScopeGroup**](OauthAuthServerSettingsApi.md#GetCommonScopeGroup) | **Get** /oauth/authServerSettings/scopes/commonScopeGroups/{name} | Get an existing common scope group.
-[**GetExclusiveScope**](OauthAuthServerSettingsApi.md#GetExclusiveScope) | **Get** /oauth/authServerSettings/scopes/exclusiveScopes/{name} | Get an existing exclusive scope.
-[**GetExclusiveScopeGroup**](OauthAuthServerSettingsApi.md#GetExclusiveScopeGroup) | **Get** /oauth/authServerSettings/scopes/exclusiveScopeGroups/{name} | Get an existing exclusive scope group.
-[**RemoveCommonScope**](OauthAuthServerSettingsApi.md#RemoveCommonScope) | **Delete** /oauth/authServerSettings/scopes/commonScopes/{name} | Remove an existing common scope.
-[**RemoveCommonScopeGroup**](OauthAuthServerSettingsApi.md#RemoveCommonScopeGroup) | **Delete** /oauth/authServerSettings/scopes/commonScopeGroups/{name} | Remove an existing common scope group.
-[**RemoveExclusiveScope**](OauthAuthServerSettingsApi.md#RemoveExclusiveScope) | **Delete** /oauth/authServerSettings/scopes/exclusiveScopes/{name} | Remove an existing exclusive scope.
-[**RemoveExclusiveScopeGroup**](OauthAuthServerSettingsApi.md#RemoveExclusiveScopeGroup) | **Delete** /oauth/authServerSettings/scopes/exclusiveScopeGroups/{name} | Remove an existing exclusive scope group.
-[**UpdateAuthorizationServerSettings**](OauthAuthServerSettingsApi.md#UpdateAuthorizationServerSettings) | **Put** /oauth/authServerSettings | Update the Authorization Server Settings.
-[**UpdateCommonScope**](OauthAuthServerSettingsApi.md#UpdateCommonScope) | **Put** /oauth/authServerSettings/scopes/commonScopes/{name} | Update an existing common scope.
-[**UpdateCommonScopeGroup**](OauthAuthServerSettingsApi.md#UpdateCommonScopeGroup) | **Put** /oauth/authServerSettings/scopes/commonScopeGroups/{name} | Update an existing common scope group.
-[**UpdateExclusiveScope**](OauthAuthServerSettingsApi.md#UpdateExclusiveScope) | **Put** /oauth/authServerSettings/scopes/exclusiveScopes/{name} | Update an existing exclusive scope.
-[**UpdateExclusiveScopeGroups**](OauthAuthServerSettingsApi.md#UpdateExclusiveScopeGroups) | **Put** /oauth/authServerSettings/scopes/exclusiveScopeGroups/{name} | Update an existing exclusive scope group.
+[**AddCommonScope**](OauthAuthServerSettingsAPI.md#AddCommonScope) | **Post** /oauth/authServerSettings/scopes/commonScopes | Add a new common scope.
+[**AddCommonScopeGroup**](OauthAuthServerSettingsAPI.md#AddCommonScopeGroup) | **Post** /oauth/authServerSettings/scopes/commonScopeGroups | Create a new common scope group.
+[**AddExclusiveScope**](OauthAuthServerSettingsAPI.md#AddExclusiveScope) | **Post** /oauth/authServerSettings/scopes/exclusiveScopes | Add a new exclusive scope.
+[**AddExclusiveScopeGroup**](OauthAuthServerSettingsAPI.md#AddExclusiveScopeGroup) | **Post** /oauth/authServerSettings/scopes/exclusiveScopeGroups | Create a new exclusive scope group.
+[**GetAuthorizationServerSettings**](OauthAuthServerSettingsAPI.md#GetAuthorizationServerSettings) | **Get** /oauth/authServerSettings | Get the Authorization Server Settings.
+[**GetCommonScope**](OauthAuthServerSettingsAPI.md#GetCommonScope) | **Get** /oauth/authServerSettings/scopes/commonScopes/{name} | Get an existing common scope.
+[**GetCommonScopeGroup**](OauthAuthServerSettingsAPI.md#GetCommonScopeGroup) | **Get** /oauth/authServerSettings/scopes/commonScopeGroups/{name} | Get an existing common scope group.
+[**GetExclusiveScope**](OauthAuthServerSettingsAPI.md#GetExclusiveScope) | **Get** /oauth/authServerSettings/scopes/exclusiveScopes/{name} | Get an existing exclusive scope.
+[**GetExclusiveScopeGroup**](OauthAuthServerSettingsAPI.md#GetExclusiveScopeGroup) | **Get** /oauth/authServerSettings/scopes/exclusiveScopeGroups/{name} | Get an existing exclusive scope group.
+[**RemoveCommonScope**](OauthAuthServerSettingsAPI.md#RemoveCommonScope) | **Delete** /oauth/authServerSettings/scopes/commonScopes/{name} | Remove an existing common scope.
+[**RemoveCommonScopeGroup**](OauthAuthServerSettingsAPI.md#RemoveCommonScopeGroup) | **Delete** /oauth/authServerSettings/scopes/commonScopeGroups/{name} | Remove an existing common scope group.
+[**RemoveExclusiveScope**](OauthAuthServerSettingsAPI.md#RemoveExclusiveScope) | **Delete** /oauth/authServerSettings/scopes/exclusiveScopes/{name} | Remove an existing exclusive scope.
+[**RemoveExclusiveScopeGroup**](OauthAuthServerSettingsAPI.md#RemoveExclusiveScopeGroup) | **Delete** /oauth/authServerSettings/scopes/exclusiveScopeGroups/{name} | Remove an existing exclusive scope group.
+[**UpdateAuthorizationServerSettings**](OauthAuthServerSettingsAPI.md#UpdateAuthorizationServerSettings) | **Put** /oauth/authServerSettings | Update the Authorization Server Settings.
+[**UpdateCommonScope**](OauthAuthServerSettingsAPI.md#UpdateCommonScope) | **Put** /oauth/authServerSettings/scopes/commonScopes/{name} | Update an existing common scope.
+[**UpdateCommonScopeGroup**](OauthAuthServerSettingsAPI.md#UpdateCommonScopeGroup) | **Put** /oauth/authServerSettings/scopes/commonScopeGroups/{name} | Update an existing common scope group.
+[**UpdateExclusiveScope**](OauthAuthServerSettingsAPI.md#UpdateExclusiveScope) | **Put** /oauth/authServerSettings/scopes/exclusiveScopes/{name} | Update an existing exclusive scope.
+[**UpdateExclusiveScopeGroups**](OauthAuthServerSettingsAPI.md#UpdateExclusiveScopeGroups) | **Put** /oauth/authServerSettings/scopes/exclusiveScopeGroups/{name} | Update an existing exclusive scope group.
 
 
 
@@ -48,13 +48,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsApi.AddCommonScope(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.OauthAuthServerSettingsAPI.AddCommonScope(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsApi.AddCommonScope``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.AddCommonScope``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddCommonScope`: ScopeEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsApi.AddCommonScope`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.AddCommonScope`: %v\n", resp)
 }
 ```
 
@@ -112,13 +112,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsApi.AddCommonScopeGroup(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.OauthAuthServerSettingsAPI.AddCommonScopeGroup(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsApi.AddCommonScopeGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.AddCommonScopeGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddCommonScopeGroup`: ScopeGroupEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsApi.AddCommonScopeGroup`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.AddCommonScopeGroup`: %v\n", resp)
 }
 ```
 
@@ -176,13 +176,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsApi.AddExclusiveScope(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.OauthAuthServerSettingsAPI.AddExclusiveScope(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsApi.AddExclusiveScope``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.AddExclusiveScope``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddExclusiveScope`: ScopeEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsApi.AddExclusiveScope`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.AddExclusiveScope`: %v\n", resp)
 }
 ```
 
@@ -240,13 +240,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsApi.AddExclusiveScopeGroup(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.OauthAuthServerSettingsAPI.AddExclusiveScopeGroup(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsApi.AddExclusiveScopeGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.AddExclusiveScopeGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddExclusiveScopeGroup`: ScopeGroupEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsApi.AddExclusiveScopeGroup`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.AddExclusiveScopeGroup`: %v\n", resp)
 }
 ```
 
@@ -303,13 +303,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsApi.GetAuthorizationServerSettings(context.Background()).Execute()
+    resp, r, err := apiClient.OauthAuthServerSettingsAPI.GetAuthorizationServerSettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsApi.GetAuthorizationServerSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.GetAuthorizationServerSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAuthorizationServerSettings`: AuthorizationServerSettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsApi.GetAuthorizationServerSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.GetAuthorizationServerSettings`: %v\n", resp)
 }
 ```
 
@@ -363,13 +363,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsApi.GetCommonScope(context.Background(), name).Execute()
+    resp, r, err := apiClient.OauthAuthServerSettingsAPI.GetCommonScope(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsApi.GetCommonScope``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.GetCommonScope``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetCommonScope`: ScopeEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsApi.GetCommonScope`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.GetCommonScope`: %v\n", resp)
 }
 ```
 
@@ -431,13 +431,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsApi.GetCommonScopeGroup(context.Background(), name).Execute()
+    resp, r, err := apiClient.OauthAuthServerSettingsAPI.GetCommonScopeGroup(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsApi.GetCommonScopeGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.GetCommonScopeGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetCommonScopeGroup`: ScopeGroupEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsApi.GetCommonScopeGroup`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.GetCommonScopeGroup`: %v\n", resp)
 }
 ```
 
@@ -499,13 +499,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsApi.GetExclusiveScope(context.Background(), name).Execute()
+    resp, r, err := apiClient.OauthAuthServerSettingsAPI.GetExclusiveScope(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsApi.GetExclusiveScope``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.GetExclusiveScope``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetExclusiveScope`: ScopeEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsApi.GetExclusiveScope`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.GetExclusiveScope`: %v\n", resp)
 }
 ```
 
@@ -567,13 +567,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsApi.GetExclusiveScopeGroup(context.Background(), name).Execute()
+    resp, r, err := apiClient.OauthAuthServerSettingsAPI.GetExclusiveScopeGroup(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsApi.GetExclusiveScopeGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.GetExclusiveScopeGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetExclusiveScopeGroup`: ScopeGroupEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsApi.GetExclusiveScopeGroup`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.GetExclusiveScopeGroup`: %v\n", resp)
 }
 ```
 
@@ -635,9 +635,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthAuthServerSettingsApi.RemoveCommonScope(context.Background(), name).Execute()
+    r, err := apiClient.OauthAuthServerSettingsAPI.RemoveCommonScope(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsApi.RemoveCommonScope``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.RemoveCommonScope``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -701,9 +701,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthAuthServerSettingsApi.RemoveCommonScopeGroup(context.Background(), name).Execute()
+    r, err := apiClient.OauthAuthServerSettingsAPI.RemoveCommonScopeGroup(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsApi.RemoveCommonScopeGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.RemoveCommonScopeGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -767,9 +767,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthAuthServerSettingsApi.RemoveExclusiveScope(context.Background(), name).Execute()
+    r, err := apiClient.OauthAuthServerSettingsAPI.RemoveExclusiveScope(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsApi.RemoveExclusiveScope``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.RemoveExclusiveScope``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -833,9 +833,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthAuthServerSettingsApi.RemoveExclusiveScopeGroup(context.Background(), name).Execute()
+    r, err := apiClient.OauthAuthServerSettingsAPI.RemoveExclusiveScopeGroup(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsApi.RemoveExclusiveScopeGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.RemoveExclusiveScopeGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -899,13 +899,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsApi.UpdateAuthorizationServerSettings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.OauthAuthServerSettingsAPI.UpdateAuthorizationServerSettings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsApi.UpdateAuthorizationServerSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.UpdateAuthorizationServerSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateAuthorizationServerSettings`: AuthorizationServerSettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsApi.UpdateAuthorizationServerSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.UpdateAuthorizationServerSettings`: %v\n", resp)
 }
 ```
 
@@ -964,13 +964,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsApi.UpdateCommonScope(context.Background(), name).Body(body).Execute()
+    resp, r, err := apiClient.OauthAuthServerSettingsAPI.UpdateCommonScope(context.Background(), name).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsApi.UpdateCommonScope``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.UpdateCommonScope``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateCommonScope`: ScopeEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsApi.UpdateCommonScope`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.UpdateCommonScope`: %v\n", resp)
 }
 ```
 
@@ -1034,13 +1034,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsApi.UpdateCommonScopeGroup(context.Background(), name).Body(body).Execute()
+    resp, r, err := apiClient.OauthAuthServerSettingsAPI.UpdateCommonScopeGroup(context.Background(), name).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsApi.UpdateCommonScopeGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.UpdateCommonScopeGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateCommonScopeGroup`: ScopeGroupEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsApi.UpdateCommonScopeGroup`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.UpdateCommonScopeGroup`: %v\n", resp)
 }
 ```
 
@@ -1104,13 +1104,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsApi.UpdateExclusiveScope(context.Background(), name).Body(body).Execute()
+    resp, r, err := apiClient.OauthAuthServerSettingsAPI.UpdateExclusiveScope(context.Background(), name).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsApi.UpdateExclusiveScope``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.UpdateExclusiveScope``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateExclusiveScope`: ScopeEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsApi.UpdateExclusiveScope`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.UpdateExclusiveScope`: %v\n", resp)
 }
 ```
 
@@ -1174,13 +1174,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsApi.UpdateExclusiveScopeGroups(context.Background(), name).Body(body).Execute()
+    resp, r, err := apiClient.OauthAuthServerSettingsAPI.UpdateExclusiveScopeGroups(context.Background(), name).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsApi.UpdateExclusiveScopeGroups``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.UpdateExclusiveScopeGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateExclusiveScopeGroups`: ScopeGroupEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsApi.UpdateExclusiveScopeGroups`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.UpdateExclusiveScopeGroups`: %v\n", resp)
 }
 ```
 

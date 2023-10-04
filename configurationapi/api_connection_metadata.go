@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// ConnectionMetadataApiService ConnectionMetadataApi service
-type ConnectionMetadataApiService service
+// ConnectionMetadataAPIService ConnectionMetadataAPI service
+type ConnectionMetadataAPIService service
 
 type ApiConvertRequest struct {
 	ctx        context.Context
-	ApiService *ConnectionMetadataApiService
+	ApiService *ConnectionMetadataAPIService
 	body       *ConvertMetadataRequest
 }
 
@@ -45,7 +45,7 @@ Convert a partner's SAML metadata into an API JSON representation that can be la
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiConvertRequest
 */
-func (a *ConnectionMetadataApiService) Convert(ctx context.Context) ApiConvertRequest {
+func (a *ConnectionMetadataAPIService) Convert(ctx context.Context) ApiConvertRequest {
 	return ApiConvertRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -55,7 +55,7 @@ func (a *ConnectionMetadataApiService) Convert(ctx context.Context) ApiConvertRe
 // Execute executes the request
 //
 //	@return ConvertMetadataResponse
-func (a *ConnectionMetadataApiService) ConvertExecute(r ApiConvertRequest) (*ConvertMetadataResponse, *http.Response, error) {
+func (a *ConnectionMetadataAPIService) ConvertExecute(r ApiConvertRequest) (*ConvertMetadataResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -63,7 +63,7 @@ func (a *ConnectionMetadataApiService) ConvertExecute(r ApiConvertRequest) (*Con
 		localVarReturnValue *ConvertMetadataResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionMetadataApiService.Convert")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionMetadataAPIService.Convert")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -145,7 +145,7 @@ func (a *ConnectionMetadataApiService) ConvertExecute(r ApiConvertRequest) (*Con
 
 type ApiExportRequest struct {
 	ctx        context.Context
-	ApiService *ConnectionMetadataApiService
+	ApiService *ConnectionMetadataAPIService
 	body       *ExportMetadataRequest
 }
 
@@ -165,7 +165,7 @@ Export Export a connection's SAML metadata that can be given to a partner.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiExportRequest
 */
-func (a *ConnectionMetadataApiService) Export(ctx context.Context) ApiExportRequest {
+func (a *ConnectionMetadataAPIService) Export(ctx context.Context) ApiExportRequest {
 	return ApiExportRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -175,7 +175,7 @@ func (a *ConnectionMetadataApiService) Export(ctx context.Context) ApiExportRequ
 // Execute executes the request
 //
 //	@return string
-func (a *ConnectionMetadataApiService) ExportExecute(r ApiExportRequest) (string, *http.Response, error) {
+func (a *ConnectionMetadataAPIService) ExportExecute(r ApiExportRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -183,7 +183,7 @@ func (a *ConnectionMetadataApiService) ExportExecute(r ApiExportRequest) (string
 		localVarReturnValue string
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionMetadataApiService.Export")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionMetadataAPIService.Export")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

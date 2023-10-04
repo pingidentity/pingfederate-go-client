@@ -1,16 +1,16 @@
-# \AuthenticationApiApi
+# \AuthenticationApiAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApplication**](AuthenticationApiApi.md#CreateApplication) | **Post** /authenticationApi/applications | Create a new Authentication API Application.
-[**DeleteApplication**](AuthenticationApiApi.md#DeleteApplication) | **Delete** /authenticationApi/applications/{id} | Delete an Authentication API Application.
-[**GetApplication**](AuthenticationApiApi.md#GetApplication) | **Get** /authenticationApi/applications/{id} | Find Authentication API Application by ID.
-[**GetAuthenticationApiApplications**](AuthenticationApiApi.md#GetAuthenticationApiApplications) | **Get** /authenticationApi/applications | Get the collection of Authentication API Applications.
-[**GetAuthenticationApiSettings**](AuthenticationApiApi.md#GetAuthenticationApiSettings) | **Get** /authenticationApi/settings | Get the Authentication API settings.
-[**UpdateApplication**](AuthenticationApiApi.md#UpdateApplication) | **Put** /authenticationApi/applications/{id} | Update an Authentication API Application.
-[**UpdateAuthenticationApiSettings**](AuthenticationApiApi.md#UpdateAuthenticationApiSettings) | **Put** /authenticationApi/settings | Set the Authentication API settings.
+[**CreateApplication**](AuthenticationApiAPI.md#CreateApplication) | **Post** /authenticationApi/applications | Create a new Authentication API Application.
+[**DeleteApplication**](AuthenticationApiAPI.md#DeleteApplication) | **Delete** /authenticationApi/applications/{id} | Delete an Authentication API Application.
+[**GetApplication**](AuthenticationApiAPI.md#GetApplication) | **Get** /authenticationApi/applications/{id} | Find Authentication API Application by ID.
+[**GetAuthenticationApiApplications**](AuthenticationApiAPI.md#GetAuthenticationApiApplications) | **Get** /authenticationApi/applications | Get the collection of Authentication API Applications.
+[**GetAuthenticationApiSettings**](AuthenticationApiAPI.md#GetAuthenticationApiSettings) | **Get** /authenticationApi/settings | Get the Authentication API settings.
+[**UpdateApplication**](AuthenticationApiAPI.md#UpdateApplication) | **Put** /authenticationApi/applications/{id} | Update an Authentication API Application.
+[**UpdateAuthenticationApiSettings**](AuthenticationApiAPI.md#UpdateAuthenticationApiSettings) | **Put** /authenticationApi/settings | Set the Authentication API settings.
 
 
 
@@ -37,13 +37,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationApiApi.CreateApplication(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.AuthenticationApiAPI.CreateApplication(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiApi.CreateApplication``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiAPI.CreateApplication``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateApplication`: AuthnApiApplication
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiApi.CreateApplication`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiAPI.CreateApplication`: %v\n", resp)
 }
 ```
 
@@ -103,9 +103,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AuthenticationApiApi.DeleteApplication(context.Background(), id).Execute()
+    r, err := apiClient.AuthenticationApiAPI.DeleteApplication(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiApi.DeleteApplication``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiAPI.DeleteApplication``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -171,13 +171,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationApiApi.GetApplication(context.Background(), id).Execute()
+    resp, r, err := apiClient.AuthenticationApiAPI.GetApplication(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiApi.GetApplication``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiAPI.GetApplication``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetApplication`: AuthnApiApplication
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiApi.GetApplication`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiAPI.GetApplication`: %v\n", resp)
 }
 ```
 
@@ -238,13 +238,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationApiApi.GetAuthenticationApiApplications(context.Background()).Execute()
+    resp, r, err := apiClient.AuthenticationApiAPI.GetAuthenticationApiApplications(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiApi.GetAuthenticationApiApplications``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiAPI.GetAuthenticationApiApplications``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAuthenticationApiApplications`: AuthnApiApplications
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiApi.GetAuthenticationApiApplications`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiAPI.GetAuthenticationApiApplications`: %v\n", resp)
 }
 ```
 
@@ -297,13 +297,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationApiApi.GetAuthenticationApiSettings(context.Background()).Execute()
+    resp, r, err := apiClient.AuthenticationApiAPI.GetAuthenticationApiSettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiApi.GetAuthenticationApiSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiAPI.GetAuthenticationApiSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAuthenticationApiSettings`: AuthnApiSettings
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiApi.GetAuthenticationApiSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiAPI.GetAuthenticationApiSettings`: %v\n", resp)
 }
 ```
 
@@ -360,13 +360,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationApiApi.UpdateApplication(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.AuthenticationApiAPI.UpdateApplication(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiApi.UpdateApplication``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiAPI.UpdateApplication``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateApplication`: AuthnApiApplication
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiApi.UpdateApplication`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiAPI.UpdateApplication`: %v\n", resp)
 }
 ```
 
@@ -429,13 +429,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationApiApi.UpdateAuthenticationApiSettings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.AuthenticationApiAPI.UpdateAuthenticationApiSettings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiApi.UpdateAuthenticationApiSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiAPI.UpdateAuthenticationApiSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateAuthenticationApiSettings`: AuthnApiSettings
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiApi.UpdateAuthenticationApiSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiAPI.UpdateAuthenticationApiSettings`: %v\n", resp)
 }
 ```
 

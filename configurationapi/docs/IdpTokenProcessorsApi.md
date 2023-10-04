@@ -1,16 +1,16 @@
-# \IdpTokenProcessorsApi
+# \IdpTokenProcessorsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateTokenProcessor**](IdpTokenProcessorsApi.md#CreateTokenProcessor) | **Post** /idp/tokenProcessors | Create a new token processor instance.
-[**DeleteTokenProcessor**](IdpTokenProcessorsApi.md#DeleteTokenProcessor) | **Delete** /idp/tokenProcessors/{id} | Delete a token processor instance.
-[**GetTokenProcessor**](IdpTokenProcessorsApi.md#GetTokenProcessor) | **Get** /idp/tokenProcessors/{id} | Find a token processor instance by ID.
-[**GetTokenProcessorDescriptors**](IdpTokenProcessorsApi.md#GetTokenProcessorDescriptors) | **Get** /idp/tokenProcessors/descriptors | Get the list of available token processors.
-[**GetTokenProcessorDescriptorsById**](IdpTokenProcessorsApi.md#GetTokenProcessorDescriptorsById) | **Get** /idp/tokenProcessors/descriptors/{id} | Get the description of a token processor plugin by ID.
-[**GetTokenProcessors**](IdpTokenProcessorsApi.md#GetTokenProcessors) | **Get** /idp/tokenProcessors | Get the list of token processor instances.
-[**UpdateTokenProcessor**](IdpTokenProcessorsApi.md#UpdateTokenProcessor) | **Put** /idp/tokenProcessors/{id} | Update a token processor instance.
+[**CreateTokenProcessor**](IdpTokenProcessorsAPI.md#CreateTokenProcessor) | **Post** /idp/tokenProcessors | Create a new token processor instance.
+[**DeleteTokenProcessor**](IdpTokenProcessorsAPI.md#DeleteTokenProcessor) | **Delete** /idp/tokenProcessors/{id} | Delete a token processor instance.
+[**GetTokenProcessor**](IdpTokenProcessorsAPI.md#GetTokenProcessor) | **Get** /idp/tokenProcessors/{id} | Find a token processor instance by ID.
+[**GetTokenProcessorDescriptors**](IdpTokenProcessorsAPI.md#GetTokenProcessorDescriptors) | **Get** /idp/tokenProcessors/descriptors | Get the list of available token processors.
+[**GetTokenProcessorDescriptorsById**](IdpTokenProcessorsAPI.md#GetTokenProcessorDescriptorsById) | **Get** /idp/tokenProcessors/descriptors/{id} | Get the description of a token processor plugin by ID.
+[**GetTokenProcessors**](IdpTokenProcessorsAPI.md#GetTokenProcessors) | **Get** /idp/tokenProcessors | Get the list of token processor instances.
+[**UpdateTokenProcessor**](IdpTokenProcessorsAPI.md#UpdateTokenProcessor) | **Put** /idp/tokenProcessors/{id} | Update a token processor instance.
 
 
 
@@ -39,13 +39,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpTokenProcessorsApi.CreateTokenProcessor(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.IdpTokenProcessorsAPI.CreateTokenProcessor(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsApi.CreateTokenProcessor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsAPI.CreateTokenProcessor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateTokenProcessor`: TokenProcessor
-    fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsApi.CreateTokenProcessor`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsAPI.CreateTokenProcessor`: %v\n", resp)
 }
 ```
 
@@ -105,9 +105,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IdpTokenProcessorsApi.DeleteTokenProcessor(context.Background(), id).Execute()
+    r, err := apiClient.IdpTokenProcessorsAPI.DeleteTokenProcessor(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsApi.DeleteTokenProcessor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsAPI.DeleteTokenProcessor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -173,13 +173,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpTokenProcessorsApi.GetTokenProcessor(context.Background(), id).Execute()
+    resp, r, err := apiClient.IdpTokenProcessorsAPI.GetTokenProcessor(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsApi.GetTokenProcessor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsAPI.GetTokenProcessor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTokenProcessor`: TokenProcessor
-    fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsApi.GetTokenProcessor`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsAPI.GetTokenProcessor`: %v\n", resp)
 }
 ```
 
@@ -240,13 +240,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpTokenProcessorsApi.GetTokenProcessorDescriptors(context.Background()).Execute()
+    resp, r, err := apiClient.IdpTokenProcessorsAPI.GetTokenProcessorDescriptors(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsApi.GetTokenProcessorDescriptors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsAPI.GetTokenProcessorDescriptors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTokenProcessorDescriptors`: TokenProcessorDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsApi.GetTokenProcessorDescriptors`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsAPI.GetTokenProcessorDescriptors`: %v\n", resp)
 }
 ```
 
@@ -302,13 +302,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpTokenProcessorsApi.GetTokenProcessorDescriptorsById(context.Background(), id).Execute()
+    resp, r, err := apiClient.IdpTokenProcessorsAPI.GetTokenProcessorDescriptorsById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsApi.GetTokenProcessorDescriptorsById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsAPI.GetTokenProcessorDescriptorsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTokenProcessorDescriptorsById`: TokenProcessorDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsApi.GetTokenProcessorDescriptorsById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsAPI.GetTokenProcessorDescriptorsById`: %v\n", resp)
 }
 ```
 
@@ -369,13 +369,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpTokenProcessorsApi.GetTokenProcessors(context.Background()).Execute()
+    resp, r, err := apiClient.IdpTokenProcessorsAPI.GetTokenProcessors(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsApi.GetTokenProcessors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsAPI.GetTokenProcessors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTokenProcessors`: TokenProcessors
-    fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsApi.GetTokenProcessors`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsAPI.GetTokenProcessors`: %v\n", resp)
 }
 ```
 
@@ -432,13 +432,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpTokenProcessorsApi.UpdateTokenProcessor(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.IdpTokenProcessorsAPI.UpdateTokenProcessor(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsApi.UpdateTokenProcessor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsAPI.UpdateTokenProcessor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateTokenProcessor`: TokenProcessor
-    fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsApi.UpdateTokenProcessor`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsAPI.UpdateTokenProcessor`: %v\n", resp)
 }
 ```
 

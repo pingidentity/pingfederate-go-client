@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// SecretManagersApiService SecretManagersApi service
-type SecretManagersApiService service
+// SecretManagersAPIService SecretManagersAPI service
+type SecretManagersAPIService service
 
 type ApiCreateSecretManagerRequest struct {
 	ctx        context.Context
-	ApiService *SecretManagersApiService
+	ApiService *SecretManagersAPIService
 	body       *SecretManager
 }
 
@@ -44,7 +44,7 @@ CreateSecretManager Create a secret manager plugin instance.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSecretManagerRequest
 */
-func (a *SecretManagersApiService) CreateSecretManager(ctx context.Context) ApiCreateSecretManagerRequest {
+func (a *SecretManagersAPIService) CreateSecretManager(ctx context.Context) ApiCreateSecretManagerRequest {
 	return ApiCreateSecretManagerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *SecretManagersApiService) CreateSecretManager(ctx context.Context) ApiC
 // Execute executes the request
 //
 //	@return SecretManager
-func (a *SecretManagersApiService) CreateSecretManagerExecute(r ApiCreateSecretManagerRequest) (*SecretManager, *http.Response, error) {
+func (a *SecretManagersAPIService) CreateSecretManagerExecute(r ApiCreateSecretManagerRequest) (*SecretManager, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *SecretManagersApiService) CreateSecretManagerExecute(r ApiCreateSecretM
 		localVarReturnValue *SecretManager
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretManagersApiService.CreateSecretManager")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretManagersAPIService.CreateSecretManager")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,7 +144,7 @@ func (a *SecretManagersApiService) CreateSecretManagerExecute(r ApiCreateSecretM
 
 type ApiDeleteSecretManagerRequest struct {
 	ctx        context.Context
-	ApiService *SecretManagersApiService
+	ApiService *SecretManagersAPIService
 	id         string
 }
 
@@ -159,7 +159,7 @@ DeleteSecretManager Delete a secret manager plugin instance.
 	@param id ID of a secret manager plugin instance.
 	@return ApiDeleteSecretManagerRequest
 */
-func (a *SecretManagersApiService) DeleteSecretManager(ctx context.Context, id string) ApiDeleteSecretManagerRequest {
+func (a *SecretManagersAPIService) DeleteSecretManager(ctx context.Context, id string) ApiDeleteSecretManagerRequest {
 	return ApiDeleteSecretManagerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -168,14 +168,14 @@ func (a *SecretManagersApiService) DeleteSecretManager(ctx context.Context, id s
 }
 
 // Execute executes the request
-func (a *SecretManagersApiService) DeleteSecretManagerExecute(r ApiDeleteSecretManagerRequest) (*http.Response, error) {
+func (a *SecretManagersAPIService) DeleteSecretManagerExecute(r ApiDeleteSecretManagerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretManagersApiService.DeleteSecretManager")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretManagersAPIService.DeleteSecretManager")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -244,7 +244,7 @@ func (a *SecretManagersApiService) DeleteSecretManagerExecute(r ApiDeleteSecretM
 
 type ApiGetSecretManagerRequest struct {
 	ctx        context.Context
-	ApiService *SecretManagersApiService
+	ApiService *SecretManagersAPIService
 	id         string
 }
 
@@ -259,7 +259,7 @@ GetSecretManager Get a specific secret manager plugin instance.
 	@param id ID of a secret manager plugin instance.
 	@return ApiGetSecretManagerRequest
 */
-func (a *SecretManagersApiService) GetSecretManager(ctx context.Context, id string) ApiGetSecretManagerRequest {
+func (a *SecretManagersAPIService) GetSecretManager(ctx context.Context, id string) ApiGetSecretManagerRequest {
 	return ApiGetSecretManagerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -270,7 +270,7 @@ func (a *SecretManagersApiService) GetSecretManager(ctx context.Context, id stri
 // Execute executes the request
 //
 //	@return SecretManager
-func (a *SecretManagersApiService) GetSecretManagerExecute(r ApiGetSecretManagerRequest) (*SecretManager, *http.Response, error) {
+func (a *SecretManagersAPIService) GetSecretManagerExecute(r ApiGetSecretManagerRequest) (*SecretManager, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -278,7 +278,7 @@ func (a *SecretManagersApiService) GetSecretManagerExecute(r ApiGetSecretManager
 		localVarReturnValue *SecretManager
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretManagersApiService.GetSecretManager")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretManagersAPIService.GetSecretManager")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -356,7 +356,7 @@ func (a *SecretManagersApiService) GetSecretManagerExecute(r ApiGetSecretManager
 
 type ApiGetSecretManagerPluginDescriptorRequest struct {
 	ctx        context.Context
-	ApiService *SecretManagersApiService
+	ApiService *SecretManagersAPIService
 	id         string
 }
 
@@ -371,7 +371,7 @@ GetSecretManagerPluginDescriptor Get a secret manager plugin descriptor.
 	@param id ID of secret manager plugin descriptor.
 	@return ApiGetSecretManagerPluginDescriptorRequest
 */
-func (a *SecretManagersApiService) GetSecretManagerPluginDescriptor(ctx context.Context, id string) ApiGetSecretManagerPluginDescriptorRequest {
+func (a *SecretManagersAPIService) GetSecretManagerPluginDescriptor(ctx context.Context, id string) ApiGetSecretManagerPluginDescriptorRequest {
 	return ApiGetSecretManagerPluginDescriptorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -382,7 +382,7 @@ func (a *SecretManagersApiService) GetSecretManagerPluginDescriptor(ctx context.
 // Execute executes the request
 //
 //	@return SecretManagerDescriptor
-func (a *SecretManagersApiService) GetSecretManagerPluginDescriptorExecute(r ApiGetSecretManagerPluginDescriptorRequest) (*SecretManagerDescriptor, *http.Response, error) {
+func (a *SecretManagersAPIService) GetSecretManagerPluginDescriptorExecute(r ApiGetSecretManagerPluginDescriptorRequest) (*SecretManagerDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -390,7 +390,7 @@ func (a *SecretManagersApiService) GetSecretManagerPluginDescriptorExecute(r Api
 		localVarReturnValue *SecretManagerDescriptor
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretManagersApiService.GetSecretManagerPluginDescriptor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretManagersAPIService.GetSecretManagerPluginDescriptor")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -468,7 +468,7 @@ func (a *SecretManagersApiService) GetSecretManagerPluginDescriptorExecute(r Api
 
 type ApiGetSecretManagerPluginDescriptorsRequest struct {
 	ctx        context.Context
-	ApiService *SecretManagersApiService
+	ApiService *SecretManagersAPIService
 }
 
 func (r ApiGetSecretManagerPluginDescriptorsRequest) Execute() (*SecretManagerDescriptors, *http.Response, error) {
@@ -481,7 +481,7 @@ GetSecretManagerPluginDescriptors Get a list of available secret manager plugin 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSecretManagerPluginDescriptorsRequest
 */
-func (a *SecretManagersApiService) GetSecretManagerPluginDescriptors(ctx context.Context) ApiGetSecretManagerPluginDescriptorsRequest {
+func (a *SecretManagersAPIService) GetSecretManagerPluginDescriptors(ctx context.Context) ApiGetSecretManagerPluginDescriptorsRequest {
 	return ApiGetSecretManagerPluginDescriptorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -491,7 +491,7 @@ func (a *SecretManagersApiService) GetSecretManagerPluginDescriptors(ctx context
 // Execute executes the request
 //
 //	@return SecretManagerDescriptors
-func (a *SecretManagersApiService) GetSecretManagerPluginDescriptorsExecute(r ApiGetSecretManagerPluginDescriptorsRequest) (*SecretManagerDescriptors, *http.Response, error) {
+func (a *SecretManagersAPIService) GetSecretManagerPluginDescriptorsExecute(r ApiGetSecretManagerPluginDescriptorsRequest) (*SecretManagerDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -499,7 +499,7 @@ func (a *SecretManagersApiService) GetSecretManagerPluginDescriptorsExecute(r Ap
 		localVarReturnValue *SecretManagerDescriptors
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretManagersApiService.GetSecretManagerPluginDescriptors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretManagersAPIService.GetSecretManagerPluginDescriptors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -566,7 +566,7 @@ func (a *SecretManagersApiService) GetSecretManagerPluginDescriptorsExecute(r Ap
 
 type ApiGetSecretManagersRequest struct {
 	ctx        context.Context
-	ApiService *SecretManagersApiService
+	ApiService *SecretManagersAPIService
 }
 
 func (r ApiGetSecretManagersRequest) Execute() (*SecretManagers, *http.Response, error) {
@@ -579,7 +579,7 @@ GetSecretManagers Get a list of secret manager plugin instances.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSecretManagersRequest
 */
-func (a *SecretManagersApiService) GetSecretManagers(ctx context.Context) ApiGetSecretManagersRequest {
+func (a *SecretManagersAPIService) GetSecretManagers(ctx context.Context) ApiGetSecretManagersRequest {
 	return ApiGetSecretManagersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -589,7 +589,7 @@ func (a *SecretManagersApiService) GetSecretManagers(ctx context.Context) ApiGet
 // Execute executes the request
 //
 //	@return SecretManagers
-func (a *SecretManagersApiService) GetSecretManagersExecute(r ApiGetSecretManagersRequest) (*SecretManagers, *http.Response, error) {
+func (a *SecretManagersAPIService) GetSecretManagersExecute(r ApiGetSecretManagersRequest) (*SecretManagers, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -597,7 +597,7 @@ func (a *SecretManagersApiService) GetSecretManagersExecute(r ApiGetSecretManage
 		localVarReturnValue *SecretManagers
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretManagersApiService.GetSecretManagers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretManagersAPIService.GetSecretManagers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -664,7 +664,7 @@ func (a *SecretManagersApiService) GetSecretManagersExecute(r ApiGetSecretManage
 
 type ApiGetSecretManagersActionRequest struct {
 	ctx        context.Context
-	ApiService *SecretManagersApiService
+	ApiService *SecretManagersAPIService
 	id         string
 	actionId   string
 }
@@ -681,7 +681,7 @@ GetSecretManagersAction Get a secret manager plugin instance's action by ID.
 	@param actionId ID of the action.
 	@return ApiGetSecretManagersActionRequest
 */
-func (a *SecretManagersApiService) GetSecretManagersAction(ctx context.Context, id string, actionId string) ApiGetSecretManagersActionRequest {
+func (a *SecretManagersAPIService) GetSecretManagersAction(ctx context.Context, id string, actionId string) ApiGetSecretManagersActionRequest {
 	return ApiGetSecretManagersActionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -693,7 +693,7 @@ func (a *SecretManagersApiService) GetSecretManagersAction(ctx context.Context, 
 // Execute executes the request
 //
 //	@return Action
-func (a *SecretManagersApiService) GetSecretManagersActionExecute(r ApiGetSecretManagersActionRequest) (*Action, *http.Response, error) {
+func (a *SecretManagersAPIService) GetSecretManagersActionExecute(r ApiGetSecretManagersActionRequest) (*Action, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -701,7 +701,7 @@ func (a *SecretManagersApiService) GetSecretManagersActionExecute(r ApiGetSecret
 		localVarReturnValue *Action
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretManagersApiService.GetSecretManagersAction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretManagersAPIService.GetSecretManagersAction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -780,7 +780,7 @@ func (a *SecretManagersApiService) GetSecretManagersActionExecute(r ApiGetSecret
 
 type ApiGetSecretManagersActionsRequest struct {
 	ctx        context.Context
-	ApiService *SecretManagersApiService
+	ApiService *SecretManagersAPIService
 	id         string
 }
 
@@ -795,7 +795,7 @@ GetSecretManagersActions Get a list of actions for a secret manager plugin insta
 	@param id ID of a secret manager plugin instance.
 	@return ApiGetSecretManagersActionsRequest
 */
-func (a *SecretManagersApiService) GetSecretManagersActions(ctx context.Context, id string) ApiGetSecretManagersActionsRequest {
+func (a *SecretManagersAPIService) GetSecretManagersActions(ctx context.Context, id string) ApiGetSecretManagersActionsRequest {
 	return ApiGetSecretManagersActionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -806,7 +806,7 @@ func (a *SecretManagersApiService) GetSecretManagersActions(ctx context.Context,
 // Execute executes the request
 //
 //	@return Actions
-func (a *SecretManagersApiService) GetSecretManagersActionsExecute(r ApiGetSecretManagersActionsRequest) (*Actions, *http.Response, error) {
+func (a *SecretManagersAPIService) GetSecretManagersActionsExecute(r ApiGetSecretManagersActionsRequest) (*Actions, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -814,7 +814,7 @@ func (a *SecretManagersApiService) GetSecretManagersActionsExecute(r ApiGetSecre
 		localVarReturnValue *Actions
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretManagersApiService.GetSecretManagersActions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretManagersAPIService.GetSecretManagersActions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -892,7 +892,7 @@ func (a *SecretManagersApiService) GetSecretManagersActionsExecute(r ApiGetSecre
 
 type ApiInvokeSecretManagersActionWithOptionsRequest struct {
 	ctx        context.Context
-	ApiService *SecretManagersApiService
+	ApiService *SecretManagersAPIService
 	id         string
 	actionId   string
 	body       *ActionOptions
@@ -918,7 +918,7 @@ Invokes an action for secret manager plugin instance. A 404 status code is retur
 	@param actionId ID of the action.
 	@return ApiInvokeSecretManagersActionWithOptionsRequest
 */
-func (a *SecretManagersApiService) InvokeSecretManagersActionWithOptions(ctx context.Context, id string, actionId string) ApiInvokeSecretManagersActionWithOptionsRequest {
+func (a *SecretManagersAPIService) InvokeSecretManagersActionWithOptions(ctx context.Context, id string, actionId string) ApiInvokeSecretManagersActionWithOptionsRequest {
 	return ApiInvokeSecretManagersActionWithOptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -930,7 +930,7 @@ func (a *SecretManagersApiService) InvokeSecretManagersActionWithOptions(ctx con
 // Execute executes the request
 //
 //	@return ActionResult
-func (a *SecretManagersApiService) InvokeSecretManagersActionWithOptionsExecute(r ApiInvokeSecretManagersActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
+func (a *SecretManagersAPIService) InvokeSecretManagersActionWithOptionsExecute(r ApiInvokeSecretManagersActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -938,7 +938,7 @@ func (a *SecretManagersApiService) InvokeSecretManagersActionWithOptionsExecute(
 		localVarReturnValue *ActionResult
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretManagersApiService.InvokeSecretManagersActionWithOptions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretManagersAPIService.InvokeSecretManagersActionWithOptions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1019,7 +1019,7 @@ func (a *SecretManagersApiService) InvokeSecretManagersActionWithOptionsExecute(
 
 type ApiUpdateSecretManagerRequest struct {
 	ctx        context.Context
-	ApiService *SecretManagersApiService
+	ApiService *SecretManagersAPIService
 	id         string
 	body       *SecretManager
 }
@@ -1041,7 +1041,7 @@ UpdateSecretManager Update a secret manager plugin instance.
 	@param id ID of a secret manager plugin instance.
 	@return ApiUpdateSecretManagerRequest
 */
-func (a *SecretManagersApiService) UpdateSecretManager(ctx context.Context, id string) ApiUpdateSecretManagerRequest {
+func (a *SecretManagersAPIService) UpdateSecretManager(ctx context.Context, id string) ApiUpdateSecretManagerRequest {
 	return ApiUpdateSecretManagerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1052,7 +1052,7 @@ func (a *SecretManagersApiService) UpdateSecretManager(ctx context.Context, id s
 // Execute executes the request
 //
 //	@return SecretManager
-func (a *SecretManagersApiService) UpdateSecretManagerExecute(r ApiUpdateSecretManagerRequest) (*SecretManager, *http.Response, error) {
+func (a *SecretManagersAPIService) UpdateSecretManagerExecute(r ApiUpdateSecretManagerRequest) (*SecretManager, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1060,7 +1060,7 @@ func (a *SecretManagersApiService) UpdateSecretManagerExecute(r ApiUpdateSecretM
 		localVarReturnValue *SecretManager
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretManagersApiService.UpdateSecretManager")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretManagersAPIService.UpdateSecretManager")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

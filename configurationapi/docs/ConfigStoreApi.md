@@ -1,13 +1,13 @@
-# \ConfigStoreApi
+# \ConfigStoreAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteConfigStoreSetting**](ConfigStoreApi.md#DeleteConfigStoreSetting) | **Delete** /configStore/{bundle}/{id} | Delete a setting.
-[**GetConfigStoreSetting**](ConfigStoreApi.md#GetConfigStoreSetting) | **Get** /configStore/{bundle}/{id} | Get a single setting from a bundle.
-[**GetConfigStoreSettings**](ConfigStoreApi.md#GetConfigStoreSettings) | **Get** /configStore/{bundle} | Get all settings from a bundle.
-[**UpdateConfigStoreSetting**](ConfigStoreApi.md#UpdateConfigStoreSetting) | **Put** /configStore/{bundle}/{id} | Create or update a setting/bundle.
+[**DeleteConfigStoreSetting**](ConfigStoreAPI.md#DeleteConfigStoreSetting) | **Delete** /configStore/{bundle}/{id} | Delete a setting.
+[**GetConfigStoreSetting**](ConfigStoreAPI.md#GetConfigStoreSetting) | **Get** /configStore/{bundle}/{id} | Get a single setting from a bundle.
+[**GetConfigStoreSettings**](ConfigStoreAPI.md#GetConfigStoreSettings) | **Get** /configStore/{bundle} | Get all settings from a bundle.
+[**UpdateConfigStoreSetting**](ConfigStoreAPI.md#UpdateConfigStoreSetting) | **Put** /configStore/{bundle}/{id} | Create or update a setting/bundle.
 
 
 
@@ -37,9 +37,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ConfigStoreApi.DeleteConfigStoreSetting(context.Background(), bundle, id).Execute()
+    r, err := apiClient.ConfigStoreAPI.DeleteConfigStoreSetting(context.Background(), bundle, id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreApi.DeleteConfigStoreSetting``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreAPI.DeleteConfigStoreSetting``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -106,13 +106,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConfigStoreApi.GetConfigStoreSetting(context.Background(), bundle, id).Execute()
+    resp, r, err := apiClient.ConfigStoreAPI.GetConfigStoreSetting(context.Background(), bundle, id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreApi.GetConfigStoreSetting``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreAPI.GetConfigStoreSetting``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetConfigStoreSetting`: ConfigStoreSetting
-    fmt.Fprintf(os.Stdout, "Response from `ConfigStoreApi.GetConfigStoreSetting`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConfigStoreAPI.GetConfigStoreSetting`: %v\n", resp)
 }
 ```
 
@@ -176,13 +176,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConfigStoreApi.GetConfigStoreSettings(context.Background(), bundle).Execute()
+    resp, r, err := apiClient.ConfigStoreAPI.GetConfigStoreSettings(context.Background(), bundle).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreApi.GetConfigStoreSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreAPI.GetConfigStoreSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetConfigStoreSettings`: ConfigStoreBundle
-    fmt.Fprintf(os.Stdout, "Response from `ConfigStoreApi.GetConfigStoreSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConfigStoreAPI.GetConfigStoreSettings`: %v\n", resp)
 }
 ```
 
@@ -248,13 +248,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConfigStoreApi.UpdateConfigStoreSetting(context.Background(), bundle, id).Body(body).Execute()
+    resp, r, err := apiClient.ConfigStoreAPI.UpdateConfigStoreSetting(context.Background(), bundle, id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreApi.UpdateConfigStoreSetting``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreAPI.UpdateConfigStoreSetting``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateConfigStoreSetting`: ConfigStoreSetting
-    fmt.Fprintf(os.Stdout, "Response from `ConfigStoreApi.UpdateConfigStoreSetting`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConfigStoreAPI.UpdateConfigStoreSetting`: %v\n", resp)
 }
 ```
 

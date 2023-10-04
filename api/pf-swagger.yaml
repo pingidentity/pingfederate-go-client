@@ -103,13 +103,11 @@ paths:
       operationId: getTokenManagerDescriptor
       parameters:
       - description: ID of token management plugin descriptor.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -131,13 +129,11 @@ paths:
       operationId: deleteTokenManager
       parameters:
       - description: ID of token management plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -159,13 +155,11 @@ paths:
       operationId: getTokenManager
       parameters:
       - description: ID of token management plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -186,13 +180,11 @@ paths:
       operationId: updateTokenManager
       parameters:
       - description: ID of token management plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -331,14 +323,11 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -371,13 +360,11 @@ paths:
       operationId: deleteMapping
       parameters:
       - description: ID of the Access Token Mapping.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -395,13 +382,11 @@ paths:
       operationId: getMapping
       parameters:
       - description: ID of the Access Token Mapping.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -426,23 +411,18 @@ paths:
       operationId: updateMapping
       parameters:
       - description: ID of the Access Token Mapping to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -481,13 +461,11 @@ paths:
       operationId: deleteAccount
       parameters:
       - description: Username of the account to be deleted.
-        explode: false
         in: path
         name: username
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -511,13 +489,11 @@ paths:
       operationId: getAccount
       parameters:
       - description: Username of the administrative account.
-        explode: false
         in: path
         name: username
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -538,13 +514,11 @@ paths:
       operationId: updateAccount
       parameters:
       - description: Username of the account to be updated.
-        explode: false
         in: path
         name: username
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -658,13 +632,11 @@ paths:
       operationId: resetPassword
       parameters:
       - description: Username of the administrative account.
-        explode: false
         in: path
         name: username
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -714,14 +686,11 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -754,13 +723,11 @@ paths:
       operationId: deleteApcToSpAdapterMappingById
       parameters:
       - description: ID of APC-to-SP Adapter Mapping to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -778,13 +745,11 @@ paths:
       operationId: getApcToSpAdapterMappingById
       parameters:
       - description: ID of APC-to-SP Adapter Mapping to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -805,23 +770,18 @@ paths:
       operationId: updateApcToSpAdapterMappingById
       parameters:
       - description: ID of APC-to-SP Adapter Mapping to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -960,13 +920,11 @@ paths:
       operationId: deleteApplication
       parameters:
       - description: ID of Authentication API Application to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -992,13 +950,11 @@ paths:
       operationId: getApplication
       parameters:
       - description: ID of the Authentication API Application to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -1023,13 +979,11 @@ paths:
       operationId: updateApplication
       parameters:
       - description: ID of the Authentication API Application to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -1081,14 +1035,11 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -1121,34 +1072,25 @@ paths:
       operationId: getFragments
       parameters:
       - description: Page number to retrieve.
-        explode: true
         in: query
         name: page
-        required: false
         schema:
           format: int32
           type: integer
-        style: form
       - description: Number of fragments per page.
-        explode: true
         in: query
         name: numberPerPage
-        required: false
         schema:
           format: int32
           type: integer
-        style: form
       - description: Filter criteria limits the fragments that are returned to only
           those that match it. The filter criteria is compared to the fragment instance
           name and ID fields. The comparison is a case-insensitive partial match.
           No additional pattern based matching is supported.
-        explode: true
         in: query
         name: filter
-        required: false
         schema:
           type: string
-        style: form
       responses:
         "200":
           content:
@@ -1164,14 +1106,11 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -1204,13 +1143,11 @@ paths:
       operationId: deletePolicy
       parameters:
       - description: Authentication policy Id.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -1228,13 +1165,11 @@ paths:
       operationId: getPolicy
       parameters:
       - description: Authentication policy Id.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -1255,23 +1190,18 @@ paths:
       operationId: updatePolicy
       parameters:
       - description: Authentication policy Id.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -1346,13 +1276,11 @@ paths:
       operationId: movePolicy
       parameters:
       - description: Authentication policy Id.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -1385,13 +1313,11 @@ paths:
       operationId: deleteFragment
       parameters:
       - description: ID of the policy fragment to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -1415,13 +1341,11 @@ paths:
       operationId: getFragment
       parameters:
       - description: ID of the policy fragment to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -1442,23 +1366,18 @@ paths:
       operationId: updateFragment
       parameters:
       - description: ID of the policy fragment to  update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -1498,14 +1417,11 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -1538,35 +1454,26 @@ paths:
       operationId: getAuthenticationPolicyContracts
       parameters:
       - description: Page number to retrieve.
-        explode: true
         in: query
         name: page
-        required: false
         schema:
           format: int32
           type: integer
-        style: form
       - description: Number of contracts per page.
-        explode: true
         in: query
         name: numberPerPage
-        required: false
         schema:
           format: int32
           type: integer
-        style: form
       - description: Filter criteria limits the authentication policy contracts that
           are returned to only those that match it. The filter criteria is compared
           to the authentication policy contract name and ID fields. The comparison
           is a case-insensitive partial match. No additional pattern based matching
           is supported.
-        explode: true
         in: query
         name: filter
-        required: false
         schema:
           type: string
-        style: form
       responses:
         "200":
           content:
@@ -1624,13 +1531,11 @@ paths:
       operationId: deleteAuthenticationPolicyContract
       parameters:
       - description: ID of Authentication Policy Contract to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -1656,13 +1561,11 @@ paths:
       operationId: getAuthenticationPolicyContract
       parameters:
       - description: ID of contract to fetch
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -1685,13 +1588,11 @@ paths:
       operationId: updateAuthenticationPolicyContract
       parameters:
       - description: ID of the Authentication Policy Contract to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -1735,13 +1636,11 @@ paths:
       operationId: deleteAuthenticationSelector
       parameters:
       - description: ID of Authentication Selector to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -1767,13 +1666,11 @@ paths:
       operationId: getAuthenticationSelector
       parameters:
       - description: ID of Authentication Selector instance to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -1797,13 +1694,11 @@ paths:
       operationId: updateAuthenticationSelector
       parameters:
       - description: ID of the authentication selector instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -1857,13 +1752,11 @@ paths:
       operationId: getAuthenticationSelectorDescriptorsById
       parameters:
       - description: ID of Authentication Selector descriptor to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -1885,35 +1778,26 @@ paths:
       operationId: getAuthenticationSelectors
       parameters:
       - description: Page number to retrieve.
-        explode: true
         in: query
         name: page
-        required: false
         schema:
           format: int32
           type: integer
-        style: form
       - description: Number of selectors per page.
-        explode: true
         in: query
         name: numberPerPage
-        required: false
         schema:
           format: int32
           type: integer
-        style: form
       - description: Filter criteria limits the authentication selector instances
           that are returned to only those that match it. The filter criteria is compared
           to the authentication selector instance name and ID fields. The comparison
           is a case-insensitive partial match. No additional pattern based matching
           is supported.
-        explode: true
         in: query
         name: filter
-        required: false
         schema:
           type: string
-        style: form
       responses:
         "200":
           content:
@@ -2144,13 +2028,11 @@ paths:
       operationId: deleteSourcePolicy
       parameters:
       - description: ID of session policy to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -2170,13 +2052,11 @@ paths:
       operationId: getSourcePolicy
       parameters:
       - description: ID of the session policy to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -2200,13 +2080,11 @@ paths:
       operationId: updateSourcePolicy
       parameters:
       - description: ID of the session policy to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -2258,13 +2136,11 @@ paths:
       operationId: getAuthorizationDetailProcessorPluginDescriptor
       parameters:
       - description: ID of authorization detail processor plugin descriptor.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -2328,13 +2204,11 @@ paths:
       operationId: deleteAuthorizationDetailProcessor
       parameters:
       - description: ID of an authorization detail processor plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -2356,13 +2230,11 @@ paths:
       operationId: getAuthorizationDetailProcessor
       parameters:
       - description: ID of an authorization detail processor plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -2383,13 +2255,11 @@ paths:
       operationId: updateAuthorizationDetailProcessor
       parameters:
       - description: ID of an authorization detail processor plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -2428,13 +2298,11 @@ paths:
       operationId: removeExclusiveScopeGroup
       parameters:
       - description: Name of the exclusive scope group.
-        explode: false
         in: path
         name: name
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -2458,13 +2326,11 @@ paths:
       operationId: getExclusiveScopeGroup
       parameters:
       - description: Name of the exclusive scope group.
-        explode: false
         in: path
         name: name
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -2485,13 +2351,11 @@ paths:
       operationId: updateExclusiveScopeGroups
       parameters:
       - description: Name of the exclusive scope group.
-        explode: false
         in: path
         name: name
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -2566,13 +2430,11 @@ paths:
       operationId: removeCommonScope
       parameters:
       - description: Name of the common scope.
-        explode: false
         in: path
         name: name
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -2596,13 +2458,11 @@ paths:
       operationId: getCommonScope
       parameters:
       - description: Name of the common scope.
-        explode: false
         in: path
         name: name
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -2623,13 +2483,11 @@ paths:
       operationId: updateCommonScope
       parameters:
       - description: Name of the common scope.
-        explode: false
         in: path
         name: name
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -2665,13 +2523,11 @@ paths:
       operationId: removeExclusiveScope
       parameters:
       - description: Name of the exclusive scope.
-        explode: false
         in: path
         name: name
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -2689,13 +2545,11 @@ paths:
       operationId: getExclusiveScope
       parameters:
       - description: Name of the exclusive scope.
-        explode: false
         in: path
         name: name
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -2716,13 +2570,11 @@ paths:
       operationId: updateExclusiveScope
       parameters:
       - description: Name of the exclusive scope.
-        explode: false
         in: path
         name: name
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -2758,13 +2610,11 @@ paths:
       operationId: removeCommonScopeGroup
       parameters:
       - description: Name of the common scope group.
-        explode: false
         in: path
         name: name
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -2788,13 +2638,11 @@ paths:
       operationId: getCommonScopeGroup
       parameters:
       - description: Name of the common scope group.
-        explode: false
         in: path
         name: name
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -2815,13 +2663,11 @@ paths:
       operationId: updateCommonScopeGroup
       parameters:
       - description: Name of the common scope group.
-        explode: false
         in: path
         name: name
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -2994,24 +2840,18 @@ paths:
           \ after the first failure to identify all validation errors. If any validation\
           \ errors are present PingFederate will roll back to the state prior to the\
           \ import attempt."
-        explode: true
         in: query
         name: failFast
-        required: false
         schema:
           default: true
           type: boolean
-        style: form
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -3047,14 +2887,11 @@ paths:
       parameters:
       - description: Include external resources like OAuth clients stored outside
           of PingFederate.
-        explode: true
         in: query
         name: includeExternalResources
-        required: false
         schema:
           default: false
           type: boolean
-        style: form
       responses:
         "200":
           content:
@@ -3087,13 +2924,11 @@ paths:
       operationId: getCaptchaProviderPluginDescriptor
       parameters:
       - description: ID of CAPTCHA provider plugin descriptor.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -3199,13 +3034,11 @@ paths:
       operationId: deleteCaptchaProvider
       parameters:
       - description: ID of a CAPTCHA provider plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -3227,13 +3060,11 @@ paths:
       operationId: getCaptchaProvider
       parameters:
       - description: ID of a CAPTCHA provider plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -3254,13 +3085,11 @@ paths:
       operationId: updateCaptchaProvider
       parameters:
       - description: ID of a CAPTCHA provider plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -3301,21 +3130,17 @@ paths:
       operationId: deleteCertificateFromGroup
       parameters:
       - description: Name of the group to retrieve certificates for.
-        explode: false
         in: path
         name: groupName
         required: true
         schema:
           type: string
-        style: simple
       - description: ID of the certificate to retrieve.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -3333,21 +3158,17 @@ paths:
       operationId: getCertificateFromGroup
       parameters:
       - description: Name of the group to retrieve certificates for.
-        explode: false
         in: path
         name: groupName
         required: true
         schema:
           type: string
-        style: simple
       - description: ID of the certificate to retrieve.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -3369,13 +3190,11 @@ paths:
       operationId: getCertificatesForGroup
       parameters:
       - description: Name of the group to retrieve certificates for.
-        explode: false
         in: path
         name: groupName
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -3397,13 +3216,11 @@ paths:
       operationId: importFeatureCert
       parameters:
       - description: Name of the group to retrieve certificates for.
-        explode: false
         in: path
         name: groupName
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -3436,13 +3253,11 @@ paths:
       operationId: deleteOcspCertificateById
       parameters:
       - description: Certificate ID.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -3463,13 +3278,11 @@ paths:
       operationId: getOcspCertificateById
       parameters:
       - description: Certificate ID.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -3610,32 +3423,23 @@ paths:
         \ to true and then install the necessary files later."
       operationId: importConfigArchive
       parameters:
-      - explode: true
-        in: query
+      - in: query
         name: forceImport
-        required: false
         schema:
           type: boolean
-        style: form
       - description: Force import of unsupported versions.
-        explode: true
         in: query
         name: forceUnsupportedImport
-        required: false
         schema:
           default: false
           type: boolean
-        style: form
       - description: Reencrypt configuration archive data with the current deployment's
           encryption key.
-        explode: true
         in: query
         name: reencryptData
-        required: false
         schema:
           default: false
           type: boolean
-        style: form
       requestBody:
         content:
           multipart/form-data:
@@ -3677,21 +3481,17 @@ paths:
       parameters:
       - description: This field represents a configuration file that contains a bundle
           of settings.
-        explode: false
         in: path
         name: bundle
         required: true
         schema:
           type: string
-        style: simple
       - description: ID of setting to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -3713,21 +3513,17 @@ paths:
       parameters:
       - description: This field represents a configuration file that contains a bundle
           of settings.
-        explode: false
         in: path
         name: bundle
         required: true
         schema:
           type: string
-        style: simple
       - description: ID of setting to retrieve.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -3757,21 +3553,17 @@ paths:
       parameters:
       - description: This field represents a configuration file that contains a bundle
           of settings.
-        explode: false
         in: path
         name: bundle
         required: true
         schema:
           type: string
-        style: simple
       - description: ID of setting to create/update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -3808,13 +3600,11 @@ paths:
       parameters:
       - description: This field represents a configuration file that contains a bundle
           of settings.
-        explode: false
         in: path
         name: bundle
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -3951,13 +3741,11 @@ paths:
       operationId: getIdpConnectorDescriptorById
       parameters:
       - description: the type of connector descriptor to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -3988,13 +3776,11 @@ paths:
       operationId: getCustomDataStoreDescriptor
       parameters:
       - description: ID of custom data store descriptor to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -4020,21 +3806,17 @@ paths:
       operationId: invokeActionWithOptions
       parameters:
       - description: ID of data store to which these actions belong to.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: ID of the action.
-        explode: false
         in: path
         name: actionId
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -4080,14 +3862,11 @@ paths:
       parameters:
       - description: Connection test will be bypassed when set to true. Default to
           false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -4124,13 +3903,11 @@ paths:
       operationId: deleteDataStore
       parameters:
       - description: ID of data store instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -4156,13 +3933,11 @@ paths:
       operationId: getDataStore
       parameters:
       - description: ID of data store instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -4187,23 +3962,18 @@ paths:
       operationId: updateDataStore
       parameters:
       - description: ID of data store instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: Connection test will be bypassed when set to true. Default to
           false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -4244,21 +4014,17 @@ paths:
       operationId: getDataStoresActionById
       parameters:
       - description: ID of data store to which these actions belong to.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: ID of the action.
-        explode: false
         in: path
         name: actionId
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -4282,13 +4048,11 @@ paths:
       operationId: getDataStoresActions
       parameters:
       - description: ID of data store to which these actions belong to.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -4349,13 +4113,11 @@ paths:
       operationId: getIdentityStoreProvisionerDescriptorById
       parameters:
       - description: ID of identity store provisioner descriptor
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -4377,13 +4139,11 @@ paths:
       operationId: deleteIdentityStoreProvisioner
       parameters:
       - description: ID of identity store provisioner instance
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -4407,13 +4167,11 @@ paths:
       operationId: getIdentityStoreProvisioner
       parameters:
       - description: ID of identity store provisioner instance
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -4434,13 +4192,11 @@ paths:
       operationId: updateIdentityStoreProvisioner
       parameters:
       - description: ID of identity store provisioner instance
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -4542,13 +4298,11 @@ paths:
       operationId: getIdpAdapterDescriptorsById
       parameters:
       - description: ID of IdP adapter descriptor to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -4570,34 +4324,25 @@ paths:
       operationId: getIdpAdapters
       parameters:
       - description: Page number to retrieve.
-        explode: true
         in: query
         name: page
-        required: false
         schema:
           format: int32
           type: integer
-        style: form
       - description: Number of adapters per page.
-        explode: true
         in: query
         name: numberPerPage
-        required: false
         schema:
           format: int32
           type: integer
-        style: form
       - description: Filter criteria limits the IdP adapters that are returned to
           only those that match it. The filter criteria is compared to the IdP adapter
           instance name and ID fields. The comparison is a case-insensitive partial
           match. No additional pattern based matching is supported.
-        explode: true
         in: query
         name: filter
-        required: false
         schema:
           type: string
-        style: form
       responses:
         "200":
           content:
@@ -4622,14 +4367,11 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -4667,21 +4409,17 @@ paths:
       parameters:
       - description: ID of the IdP adapter instance to which these actions belongs
           to.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: ID of the action.
-        explode: false
         in: path
         name: actionId
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -4728,13 +4466,11 @@ paths:
       operationId: deleteIdpAdapter
       parameters:
       - description: ID of IdP adapter instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -4760,13 +4496,11 @@ paths:
       operationId: getIdpAdapter
       parameters:
       - description: ID of IdP adapter instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -4790,23 +4524,18 @@ paths:
       operationId: updateIdpAdapter
       parameters:
       - description: ID of IdP adapter instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -4848,21 +4577,17 @@ paths:
       parameters:
       - description: ID of the IdP adapter instance to which these actions belongs
           to.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: ID of the action.
-        explode: false
         in: path
         name: actionId
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -4887,13 +4612,11 @@ paths:
       parameters:
       - description: ID of the IdP adapter instance to which these actions belongs
           to.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -4917,42 +4640,30 @@ paths:
       operationId: getConnections
       parameters:
       - description: Entity ID of the connection to fetch. (case-sensitive)
-        explode: true
         in: query
         name: entityId
-        required: false
         schema:
           type: string
-        style: form
       - description: Page number to retrieve.
-        explode: true
         in: query
         name: page
-        required: false
         schema:
           format: int32
           type: integer
-        style: form
       - description: Number of connections per page.
-        explode: true
         in: query
         name: numberPerPage
-        required: false
         schema:
           format: int32
           type: integer
-        style: form
       - description: Filter criteria limits the IdP connections that are returned
           to only those that match it. The filter criteria is compared to the IdP
           connection name and partner entity ID fields. The comparison is a case-insensitive
           partial match. No additional pattern based matching is supported.
-        explode: true
         in: query
         name: filter
-        required: false
         schema:
           type: string
-        style: form
       responses:
         "200":
           content:
@@ -4977,14 +4688,11 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -5021,13 +4729,11 @@ paths:
       operationId: deleteConnection
       parameters:
       - description: ID of IdP Connection to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -5053,13 +4759,11 @@ paths:
       operationId: getConnection
       parameters:
       - description: ID of IdP Connection to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -5084,23 +4788,18 @@ paths:
       operationId: updateConnection
       parameters:
       - description: ID of IdP Connection to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -5139,13 +4838,11 @@ paths:
       operationId: getConnectionCerts
       parameters:
       - description: ID of the IdP Connection.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -5168,13 +4865,11 @@ paths:
       operationId: addConnectionCert
       parameters:
       - description: ID of the IdP Connection to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -5212,13 +4907,11 @@ paths:
       operationId: updateConnectionCerts
       parameters:
       - description: ID of the IdP Connection to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -5257,13 +4950,11 @@ paths:
       operationId: getIdpConnectionsDecryptionKeys
       parameters:
       - description: ID of the IdP Connection to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -5284,13 +4975,11 @@ paths:
       operationId: updateIdpConnectionsDecryptionKeys
       parameters:
       - description: ID of the IdP Connection to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -5329,13 +5018,11 @@ paths:
       operationId: getIdpConnectionSigningSettings
       parameters:
       - description: ID of the IdP Connection.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -5356,13 +5043,11 @@ paths:
       operationId: updateIdpConnectionSigningSettings
       parameters:
       - description: ID of the IdP Connection to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -5456,14 +5141,11 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -5496,13 +5178,11 @@ paths:
       operationId: deleteIdpToSpAdapterMappingsById
       parameters:
       - description: ID of the IdP-to-SP Adapter Mapping to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -5520,13 +5200,11 @@ paths:
       operationId: getIdpToSpAdapterMappingsById
       parameters:
       - description: ID of IdP-to-SP Adapter Mapping to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -5547,23 +5225,18 @@ paths:
       operationId: updateIdpToSpAdapterMapping
       parameters:
       - description: ID of source adapter in the IdP-to-SP Adapter Mapping to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -5696,13 +5369,11 @@ paths:
       operationId: deleteKerberosRealm
       parameters:
       - description: ID of Kerberos Realm to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -5728,13 +5399,11 @@ paths:
       operationId: getKerberosRealm
       parameters:
       - description: ID of the Kerberos Realm to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -5757,23 +5426,18 @@ paths:
       operationId: updateKerberosRealm
       parameters:
       - description: ID of the Kerberos Realm to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: External validation will be bypassed when set to true. Defaults
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -5828,14 +5492,11 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Defaults
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -5968,43 +5629,31 @@ paths:
       operationId: getIdentityProfiles
       parameters:
       - description: Page number to retrieve.
-        explode: true
         in: query
         name: page
-        required: false
         schema:
           format: int32
           type: integer
-        style: form
       - description: Number of local identity profiles per page.
-        explode: true
         in: query
         name: numberPerPage
-        required: false
         schema:
           format: int32
           type: integer
-        style: form
       - description: Filter criteria limits the local identity profiles that are returned
           to only those that match it. The filter criteria is compared to the local
           identity profile name and ID fields. The comparison is a case-insensitive
           partial match. No additional pattern based matching is supported.
-        explode: true
         in: query
         name: filter
-        required: false
         schema:
           type: string
-        style: form
       - description: Filter the local identity profiles by matching policy contract
           ID.
-        explode: true
         in: query
         name: apcId
-        required: false
         schema:
           type: string
-        style: form
       responses:
         "200":
           content:
@@ -6029,14 +5678,11 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -6073,13 +5719,11 @@ paths:
       operationId: deleteIdentityProfile
       parameters:
       - description: ID of the profile to delete
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -6105,13 +5749,11 @@ paths:
       operationId: getIdentityProfile
       parameters:
       - description: ID of profile to fetch
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -6134,23 +5776,18 @@ paths:
       operationId: updateIdentityProfile
       parameters:
       - description: ID of the profile to update
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -6238,13 +5875,11 @@ paths:
       operationId: deleteMetadataUrl
       parameters:
       - description: ID of Metadata URL to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -6270,13 +5905,11 @@ paths:
       operationId: getMetadataUrl
       parameters:
       - description: ID of Metadata URL to fetch
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -6300,13 +5933,11 @@ paths:
       operationId: updateMetadataUrl
       parameters:
       - description: ID of the Metadata URL to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -6358,13 +5989,11 @@ paths:
       operationId: getNotificationPublisherPluginDescriptor
       parameters:
       - description: ID of notification publisher plugin descriptor.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -6428,13 +6057,11 @@ paths:
       operationId: deleteNotificationPublisher
       parameters:
       - description: ID of a notification publisher plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -6456,13 +6083,11 @@ paths:
       operationId: getNotificationPublisher
       parameters:
       - description: ID of a notification publisher plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -6483,13 +6108,11 @@ paths:
       operationId: updateNotificationPublisher
       parameters:
       - description: ID of a notification publisher plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -6570,21 +6193,17 @@ paths:
       parameters:
       - description: ID of the notification publisher plugin instance to which these
           actions belongs to.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: ID of the action to get.
-        explode: false
         in: path
         name: actionId
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -6615,21 +6234,17 @@ paths:
       parameters:
       - description: ID of the notification publisher plugin instance to which these
           actions belongs to.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: ID of the action to get.
-        explode: false
         in: path
         name: actionId
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -6652,13 +6267,11 @@ paths:
       parameters:
       - description: ID of the notification publisher plugin instance to which these
           actions belongs to.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -6697,14 +6310,11 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -6740,13 +6350,11 @@ paths:
       parameters:
       - description: ID of the authentication policy contract to persistent grant
           mapping.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -6766,13 +6374,11 @@ paths:
       parameters:
       - description: ID of the authentication policy contract to persistent grant
           mapping.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -6795,23 +6401,18 @@ paths:
       parameters:
       - description: ID of the authentication policy contract to persistent grant
           mapping to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -6856,13 +6457,11 @@ paths:
       operationId: deleteCibaServerPolicy
       parameters:
       - description: ID of request policy to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -6888,13 +6487,11 @@ paths:
       operationId: getCibaServerPolicyById
       parameters:
       - description: ID of the request policy to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -6919,23 +6516,18 @@ paths:
       operationId: updateCibaServerPolicy
       parameters:
       - description: ID of the request policy to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -6987,14 +6579,11 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -7043,14 +6632,11 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -7083,34 +6669,25 @@ paths:
       operationId: getOauthClients
       parameters:
       - description: Page number to retrieve.
-        explode: true
         in: query
         name: page
-        required: false
         schema:
           format: int32
           type: integer
-        style: form
       - description: Number of OAuth clients per page. (uncapped if unspecified)
-        explode: true
         in: query
         name: numberPerPage
-        required: false
         schema:
           format: int32
           type: integer
-        style: form
       - description: Filter criteria limits the OAuth clients that are returned to
           only those that match it. The filter criteria is compared to the OAuth client
           name and ID fields. The comparison is a case-insensitive partial match.
           No additional pattern based matching is supported.
-        explode: true
         in: query
         name: filter
-        required: false
         schema:
           type: string
-        style: form
       responses:
         "200":
           content:
@@ -7164,13 +6741,11 @@ paths:
       operationId: deleteOauthClient
       parameters:
       - description: ID of the client.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -7194,13 +6769,11 @@ paths:
       operationId: getOauthClientById
       parameters:
       - description: ID of the client.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -7221,13 +6794,11 @@ paths:
       operationId: updateOauthClient
       parameters:
       - description: ID of the client to be updated.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -7266,13 +6837,11 @@ paths:
       operationId: getOauthClientSecret
       parameters:
       - description: ID of the client.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -7302,13 +6871,11 @@ paths:
       operationId: updateOauthClientSecret
       parameters:
       - description: ID of the client to be updated.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -7402,13 +6969,11 @@ paths:
       operationId: getDynamicClientRegistrationDescriptor
       parameters:
       - description: ID of client registration policy plugin descriptor.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -7472,13 +7037,11 @@ paths:
       operationId: deleteDynamicClientRegistrationPolicy
       parameters:
       - description: ID of a client registration policy plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -7500,13 +7063,11 @@ paths:
       operationId: getDynamicClientRegistrationPolicy
       parameters:
       - description: ID of client registration policy plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -7527,13 +7088,11 @@ paths:
       operationId: updateDynamicClientRegistrationPolicy
       parameters:
       - description: ID of a client registration policy plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -7588,14 +7147,11 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -7628,13 +7184,11 @@ paths:
       operationId: deleteIdpAdapterMapping
       parameters:
       - description: ID of the IdP adapter mapping.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -7652,13 +7206,11 @@ paths:
       operationId: getIdpAdapterMapping
       parameters:
       - description: ID of the adapter mapping.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -7679,23 +7231,18 @@ paths:
       operationId: updateIdpAdapterMapping
       parameters:
       - description: ID of the IdP adapter mapping to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -7747,13 +7294,11 @@ paths:
       operationId: getOOBAuthPluginDescriptor
       parameters:
       - description: ID of an Out of Band authenticator plugin descriptor.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -7776,21 +7321,17 @@ paths:
       parameters:
       - description: ID of the Out of Band authenticator plugin instance to which
           these actions belongs to.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: ID of the action.
-        explode: false
         in: path
         name: actionId
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -7862,13 +7403,11 @@ paths:
       operationId: deleteOOBAuthenticator
       parameters:
       - description: ID of Out of Band authenticator plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -7890,13 +7429,11 @@ paths:
       operationId: getOOBAuthenticator
       parameters:
       - description: ID of Out of Band authenticator plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -7917,13 +7454,11 @@ paths:
       operationId: updateOOBAuthenticator
       parameters:
       - description: ID of Out of Band authenticator plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -7963,21 +7498,17 @@ paths:
       parameters:
       - description: ID of the Out of Band authenticator plugin instance to which
           these actions belongs to.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: ID of the action.
-        explode: false
         in: path
         name: actionId
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -8000,13 +7531,11 @@ paths:
       parameters:
       - description: ID of the Out of Band authenticator plugin instance to which
           these actions belongs to.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -8115,13 +7644,11 @@ paths:
       operationId: deleteKeySet
       parameters:
       - description: ID of an additional key set to be deleted.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -8139,13 +7666,11 @@ paths:
       operationId: getKeySet
       parameters:
       - description: ID of an OAuth/OpenID Connect additional signing key set to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -8169,13 +7694,11 @@ paths:
       operationId: updateKeySet
       parameters:
       - description: ID of an OAuth/OpenID Connect additional signing key set to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -8231,14 +7754,11 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -8271,13 +7791,11 @@ paths:
       operationId: deleteResourceOwnerCredentialsMapping
       parameters:
       - description: ID of the Resource Owner Credentials mapping.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -8295,13 +7813,11 @@ paths:
       operationId: getResourceOwnerCredentialsMapping
       parameters:
       - description: ID of the Resource Owner Credentials mapping.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -8322,23 +7838,18 @@ paths:
       operationId: updateResourceOwnerCredentialsMapping
       parameters:
       - description: ID of the Resource Owner Credentials mapping to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -8381,13 +7892,11 @@ paths:
       operationId: deleteOIDCPolicy
       parameters:
       - description: ID of OpenID Connect Policy to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -8413,13 +7922,11 @@ paths:
       operationId: getOIDCPolicy
       parameters:
       - description: ID of the OpenID Connect Policy to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -8444,23 +7951,18 @@ paths:
       operationId: updateOIDCPolicy
       parameters:
       - description: ID of the OpenID Connect Policy to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -8557,14 +8059,11 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -8615,13 +8114,11 @@ paths:
       operationId: deletePasswordCredentialValidator
       parameters:
       - description: ID of the password credential validator to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -8647,13 +8144,11 @@ paths:
       operationId: getPasswordCredentialValidator
       parameters:
       - description: ID of password credential validator instance to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -8677,13 +8172,11 @@ paths:
       operationId: updatePasswordCredentialValidator
       parameters:
       - description: ID of the password credential validator instance
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -8769,13 +8262,11 @@ paths:
       operationId: getPasswordCredentialValidatorDescriptor
       parameters:
       - description: ID of the password credential validator descriptor to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -8797,42 +8288,31 @@ paths:
       operationId: getPingOneConnectionEnvironments
       parameters:
       - description: ID of the PingOne connection.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: Page number to retrieve.
-        explode: true
         in: query
         name: page
-        required: false
         schema:
           format: int32
           type: integer
-        style: form
       - description: Number of environments per page.
-        explode: true
         in: query
         name: numberPerPage
-        required: false
         schema:
           format: int32
           type: integer
-        style: form
       - description: Filter criteria limits the environments that are returned to
           only those that match it. The filter criteria is compared to the environment
           name and ID fields. The comparison is a case-insensitive partial match.
           No additional pattern based matching is supported.
-        explode: true
         in: query
         name: filter
-        required: false
         schema:
           type: string
-        style: form
       responses:
         "200":
           content:
@@ -8858,13 +8338,11 @@ paths:
       operationId: getPingOneConnectionUsages
       parameters:
       - description: ID of the PingOne connection.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -8886,13 +8364,11 @@ paths:
       operationId: getPingOneConnectionAssociations
       parameters:
       - description: ID of the PingOne connection.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -8928,14 +8404,11 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -8968,13 +8441,11 @@ paths:
       operationId: deletePingOneConnection
       parameters:
       - description: ID of the PingOne connection to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -8998,13 +8469,11 @@ paths:
       operationId: getPingOneConnection
       parameters:
       - description: ID of the connection to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -9025,23 +8494,18 @@ paths:
       operationId: updatePingOneConnection
       parameters:
       - description: ID of the PingOne connection to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -9080,13 +8544,11 @@ paths:
       operationId: getCredentialStatus
       parameters:
       - description: ID of the PingOne connection.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -9390,13 +8852,11 @@ paths:
       operationId: getSecretManagerPluginDescriptor
       parameters:
       - description: ID of secret manager plugin descriptor.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -9460,13 +8920,11 @@ paths:
       operationId: deleteSecretManager
       parameters:
       - description: ID of a secret manager plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -9488,13 +8946,11 @@ paths:
       operationId: getSecretManager
       parameters:
       - description: ID of a secret manager plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -9515,13 +8971,11 @@ paths:
       operationId: updateSecretManager
       parameters:
       - description: ID of a secret manager plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -9564,21 +9018,17 @@ paths:
       operationId: invokeSecretManagersActionWithOptions
       parameters:
       - description: ID of a secret manager plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: ID of the action.
-        explode: false
         in: path
         name: actionId
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -9608,21 +9058,17 @@ paths:
       operationId: getSecretManagersAction
       parameters:
       - description: ID of a secret manager plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: ID of the action.
-        explode: false
         in: path
         name: actionId
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -9644,13 +9090,11 @@ paths:
       operationId: getSecretManagersActions
       parameters:
       - description: ID of a secret manager plugin instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -9737,22 +9181,16 @@ paths:
       operationId: updateEmailServerSettings
       parameters:
       - description: The email address used to validate the email server settings.
-        explode: true
         in: query
         name: validationEmail
-        required: false
         schema:
           type: string
-        style: form
       - description: Only validation will be performed.  Email server settings will
           not be saved.
-        explode: true
         in: query
         name: validateOnly
-        required: false
         schema:
           type: boolean
-        style: form
       requestBody:
         content:
           application/json:
@@ -10038,13 +9476,11 @@ paths:
       operationId: deleteCertificate
       parameters:
       - description: ID of the certificate to delete
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -10068,13 +9504,11 @@ paths:
       operationId: getCert
       parameters:
       - description: ID of the certificate to retrieve.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -10276,13 +9710,11 @@ paths:
       operationId: deleteKeyPairRotationSettings
       parameters:
       - description: ID of the key pair's rotation settings to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -10300,13 +9732,11 @@ paths:
       operationId: getRotationSettings
       parameters:
       - description: ID of the key pair to retrieve its rotation settings.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -10327,13 +9757,11 @@ paths:
       operationId: updateRotationSettings
       parameters:
       - description: ID of the key pair.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -10417,13 +9845,11 @@ paths:
       operationId: deleteSigningKeyPair
       parameters:
       - description: ID of the key pair to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -10444,13 +9870,11 @@ paths:
       operationId: getSigningKeyPair
       parameters:
       - description: ID of the key pair to retrieve.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -10476,13 +9900,11 @@ paths:
       operationId: exportCsr
       parameters:
       - description: ID of the key pair.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -10497,13 +9919,11 @@ paths:
       operationId: importCsrResponse
       parameters:
       - description: ID of the key pair.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -10547,13 +9967,11 @@ paths:
       operationId: exportPKCS12File
       parameters:
       - description: ID of the key pair.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -10602,13 +10020,11 @@ paths:
       operationId: exportPEMFile
       parameters:
       - description: ID of the key pair.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -10655,13 +10071,11 @@ paths:
       operationId: exportCertificateFile
       parameters:
       - description: ID of the key pair.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -10719,13 +10133,11 @@ paths:
       operationId: getSpAdapterDescriptorsById
       parameters:
       - description: ID of SP adapter descriptor to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -10751,21 +10163,17 @@ paths:
       operationId: invokeSpAdapterActionWithOptions
       parameters:
       - description: ID of the SP adapter instance to which this action belongs to.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: ID of the action.
-        explode: false
         in: path
         name: actionId
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -10808,34 +10216,25 @@ paths:
       operationId: getSpAdapters
       parameters:
       - description: Page number to retrieve.
-        explode: true
         in: query
         name: page
-        required: false
         schema:
           format: int32
           type: integer
-        style: form
       - description: Number of adapters per page.
-        explode: true
         in: query
         name: numberPerPage
-        required: false
         schema:
           format: int32
           type: integer
-        style: form
       - description: Filter criteria limits the SP adapters that are returned to only
           those that match it. The filter criteria is compared to the SP adapter instance
           name and ID fields. The comparison is a case-insensitive partial match.
           No additional pattern based matching is supported.
-        explode: true
         in: query
         name: filter
-        required: false
         schema:
           type: string
-        style: form
       responses:
         "200":
           content:
@@ -10893,13 +10292,11 @@ paths:
       operationId: deleteSpAdapter
       parameters:
       - description: ID of SP adapter instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -10925,13 +10322,11 @@ paths:
       operationId: getSpAdapter
       parameters:
       - description: ID of SP adapter instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -10955,13 +10350,11 @@ paths:
       operationId: updateSpAdapter
       parameters:
       - description: ID of SP adapter instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -11043,21 +10436,17 @@ paths:
       operationId: getSpAdaptersActionById
       parameters:
       - description: ID of the SP adapter instance to which this action belongs to.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: ID of the action.
-        explode: false
         in: path
         name: actionId
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -11081,13 +10470,11 @@ paths:
       operationId: getSpAdaptersActions
       parameters:
       - description: ID of the SP adapter instance to which this action belongs to.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -11111,42 +10498,30 @@ paths:
       operationId: getSpConnections
       parameters:
       - description: Entity ID of the connection to fetch. (case-sensitive)
-        explode: true
         in: query
         name: entityId
-        required: false
         schema:
           type: string
-        style: form
       - description: Page number to retrieve.
-        explode: true
         in: query
         name: page
-        required: false
         schema:
           format: int32
           type: integer
-        style: form
       - description: Number of connections per page.
-        explode: true
         in: query
         name: numberPerPage
-        required: false
         schema:
           format: int32
           type: integer
-        style: form
       - description: Filter criteria limits the SP connections that are returned to
           only those that match it. The filter criteria is compared to the SP connection
           name and partner entity ID fields. The comparison is a case-insensitive
           partial match. No additional pattern based matching is supported.
-        explode: true
         in: query
         name: filter
-        required: false
         schema:
           type: string
-        style: form
       responses:
         "200":
           content:
@@ -11171,14 +10546,11 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -11215,13 +10587,11 @@ paths:
       operationId: deleteSpConnection
       parameters:
       - description: ID of SP Connection to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -11247,13 +10617,11 @@ paths:
       operationId: getSpConnection
       parameters:
       - description: ID of the SP Connection to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -11278,23 +10646,18 @@ paths:
       operationId: updateSpConnection
       parameters:
       - description: ID of SP Connection to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -11333,13 +10696,11 @@ paths:
       operationId: getSpConnectionCerts
       parameters:
       - description: ID of the SP Connection.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -11362,13 +10723,11 @@ paths:
       operationId: addSpConnectionCert
       parameters:
       - description: ID of the SP Connection to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -11406,13 +10765,11 @@ paths:
       operationId: updateSpConnectionCerts
       parameters:
       - description: ID of the SP Connection to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -11451,13 +10808,11 @@ paths:
       operationId: getDecryptionKeys
       parameters:
       - description: ID of the SP Connection to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -11478,13 +10833,11 @@ paths:
       operationId: updateDecryptionKeys
       parameters:
       - description: ID of the SP Connection to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -11523,13 +10876,11 @@ paths:
       operationId: getSpSigningSettings
       parameters:
       - description: ID of the SP Connection.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -11550,13 +10901,11 @@ paths:
       operationId: updateSpSigningSettings
       parameters:
       - description: ID of the SP Connection to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -11726,13 +11075,11 @@ paths:
       operationId: deleteSslClientKeyPair
       parameters:
       - description: ID of the key pair to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -11753,13 +11100,11 @@ paths:
       operationId: getSslClientKeyPair
       parameters:
       - description: ID of the key pair to retrieve.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -11785,13 +11130,11 @@ paths:
       operationId: exportSslClientCsr
       parameters:
       - description: ID of the key pair.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -11806,13 +11149,11 @@ paths:
       operationId: importSslClientCsrResponse
       parameters:
       - description: ID of the key pair.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -11856,13 +11197,11 @@ paths:
       operationId: exportSslClientPKCS12File
       parameters:
       - description: ID of the key pair.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -11911,13 +11250,11 @@ paths:
       operationId: exportSslClientPEMFile
       parameters:
       - description: ID of the key pair.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -11964,13 +11301,11 @@ paths:
       operationId: exportSslClientCertificateFile
       parameters:
       - description: ID of the key pair.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -12113,13 +11448,11 @@ paths:
       operationId: deleteSslServerKeyPair
       parameters:
       - description: ID of the key pair to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -12140,13 +11473,11 @@ paths:
       operationId: getSslServerKeyPair
       parameters:
       - description: ID of the key pair to retrieve.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -12172,13 +11503,11 @@ paths:
       operationId: exportSslServerCsr
       parameters:
       - description: ID of the key pair.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -12193,13 +11522,11 @@ paths:
       operationId: importSslServerCsrResponse
       parameters:
       - description: ID of the key pair.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -12243,13 +11570,11 @@ paths:
       operationId: exportSslServerPKCS12File
       parameters:
       - description: ID of the key pair.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -12298,13 +11623,11 @@ paths:
       operationId: exportSslServerPEMFile
       parameters:
       - description: ID of the key pair.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -12351,13 +11674,11 @@ paths:
       operationId: exportSslServerCertificateFile
       parameters:
       - description: ID of the key pair.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -12455,13 +11776,11 @@ paths:
       operationId: deleteStsRequestParamContractById
       parameters:
       - description: ID of STS Request Parameters Contract to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -12479,13 +11798,11 @@ paths:
       operationId: getStsRequestParamContractById
       parameters:
       - description: ID of STS Request Parameters Contract to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -12506,13 +11823,11 @@ paths:
       operationId: updateStsRequestParamContractById
       parameters:
       - description: ID of STS Request Parameters Contract to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -12566,13 +11881,11 @@ paths:
       operationId: getTokenGeneratorDescriptorsById
       parameters:
       - description: ID of a token generator descriptor to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -12599,13 +11912,11 @@ paths:
       operationId: deleteTokenGenerator
       parameters:
       - description: ID of the token generator instance to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -12631,13 +11942,11 @@ paths:
       operationId: getTokenGenerator
       parameters:
       - description: ID of the token generator instance to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -12661,13 +11970,11 @@ paths:
       operationId: updateTokenGenerator
       parameters:
       - description: ID of the token generator instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -12766,13 +12073,11 @@ paths:
       operationId: getTokenProcessorDescriptorsById
       parameters:
       - description: ID of a token processor descriptor to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -12799,13 +12104,11 @@ paths:
       operationId: deleteTokenProcessor
       parameters:
       - description: ID of the token processor instance to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -12831,13 +12134,11 @@ paths:
       operationId: getTokenProcessor
       parameters:
       - description: ID of the token processor instance to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -12861,13 +12162,11 @@ paths:
       operationId: updateTokenProcessor
       parameters:
       - description: ID of token processor instance.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -12951,13 +12250,11 @@ paths:
       operationId: deleteTokenToTokenMappingById
       parameters:
       - description: ID of Token Processor to Token Generator Mapping to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -12975,13 +12272,11 @@ paths:
       operationId: getTokenToTokenMappingById
       parameters:
       - description: ID of Token Processor to Token Generator Mapping to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -13002,23 +12297,18 @@ paths:
       operationId: updateTokenToTokenMappingById
       parameters:
       - description: ID of Token Processor to Token Generator Mapping to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -13071,14 +12361,11 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -13115,13 +12402,11 @@ paths:
       operationId: exportCaCertificateFile
       parameters:
       - description: ID of the trusted certificate authority.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -13188,13 +12473,11 @@ paths:
       operationId: deleteTrustedCA
       parameters:
       - description: ID of the trusted certificate authority to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -13212,13 +12495,11 @@ paths:
       operationId: getTrustedCert
       parameters:
       - description: ID of the trusted certificate authority to retrieve.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -13340,13 +12621,11 @@ paths:
       operationId: deleteAuthorizationDetailType
       parameters:
       - description: ID of the authorization detail type.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -13366,13 +12645,11 @@ paths:
       operationId: getAuthorizationDetailTypeById
       parameters:
       - description: ID of the authorization detail type.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -13391,13 +12668,11 @@ paths:
       operationId: updateAuthorizationDetailType
       parameters:
       - description: ID of the authorization detail type.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -13485,13 +12760,11 @@ paths:
       operationId: deleteOauthIssuer
       parameters:
       - description: ID of the virtual issuer to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -13517,13 +12790,11 @@ paths:
       operationId: getOauthIssuerById
       parameters:
       - description: ID of the virtual issuer to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -13548,13 +12819,11 @@ paths:
       operationId: updateOauthIssuer
       parameters:
       - description: ID of the virtual issuer to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -13607,14 +12876,11 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -13650,13 +12916,11 @@ paths:
       parameters:
       - description: ID of Token Exchange Processor policy to Token Generator Mapping
           to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -13676,13 +12940,11 @@ paths:
       parameters:
       - description: ID of Token Exchange Processor policy to Token Generator Mapping
           to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -13704,23 +12966,18 @@ paths:
       parameters:
       - description: ID of Token Exchange Processor policy to Token Generator Mapping
           to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: X-BypassExternalValidation
-        required: false
         schema:
           default: false
           type: boolean
-        style: simple
       requestBody:
         content:
           '*/*':
@@ -13774,13 +13031,10 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: bypassExternalValidation
-        required: false
         schema:
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -13817,13 +13071,11 @@ paths:
       operationId: deleteOauthTokenExchangeGroup
       parameters:
       - description: ID of OAuth 2.0 Token Exchange Generator group to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -13849,13 +13101,11 @@ paths:
       operationId: getOauthTokenExchangeGroupById
       parameters:
       - description: ID of the OAuth 2.0 Token Exchange Generator group to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -13880,22 +13130,17 @@ paths:
       operationId: updateOauthTokenExchangeGroup
       parameters:
       - description: ID of the OAuth 2.0 Token Exchange Generator group to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: bypassExternalValidation
-        required: false
         schema:
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -13952,13 +13197,10 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: bypassExternalValidation
-        required: false
         schema:
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -13995,13 +13237,11 @@ paths:
       operationId: deleteOauthTokenExchangeProcessorPolicyy
       parameters:
       - description: ID of OAuth 2.0 Token Exchange Processor policy to delete.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -14027,13 +13267,11 @@ paths:
       operationId: getOauthTokenExchangeProcessorPolicyById
       parameters:
       - description: ID of the OAuth 2.0 Token Exchange Processor policy to fetch.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -14058,22 +13296,17 @@ paths:
       operationId: updateOauthTokenExchangeProcessorPolicy
       parameters:
       - description: ID of the OAuth 2.0 Token Exchange Processor policy to update.
-        explode: false
         in: path
         name: id
         required: true
         schema:
           type: string
-        style: simple
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: bypassExternalValidation
-        required: false
         schema:
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -14126,13 +13359,10 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: bypassExternalValidation
-        required: false
         schema:
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:
@@ -14182,13 +13412,10 @@ paths:
       parameters:
       - description: External validation will be bypassed when set to true. Default
           to false.
-        explode: false
         in: header
         name: bypassExternalValidation
-        required: false
         schema:
           type: boolean
-        style: simple
       requestBody:
         content:
           application/json:

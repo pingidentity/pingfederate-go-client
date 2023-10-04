@@ -1,19 +1,19 @@
-# \OauthOutOfBandAuthPluginsApi
+# \OauthOutOfBandAuthPluginsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateOOBAuthenticator**](OauthOutOfBandAuthPluginsApi.md#CreateOOBAuthenticator) | **Post** /oauth/outOfBandAuthPlugins | Create an Out of Band authenticator plugin instance.
-[**DeleteOOBAuthenticator**](OauthOutOfBandAuthPluginsApi.md#DeleteOOBAuthenticator) | **Delete** /oauth/outOfBandAuthPlugins/{id} | Delete an Out of Band authenticator plugin instance.
-[**GetOOBAction**](OauthOutOfBandAuthPluginsApi.md#GetOOBAction) | **Get** /oauth/outOfBandAuthPlugins/{id}/actions/{actionId} | Find an Out of Band authenticator plugin instance&#39;s action by ID.
-[**GetOOBActions**](OauthOutOfBandAuthPluginsApi.md#GetOOBActions) | **Get** /oauth/outOfBandAuthPlugins/{id}/actions | List of actions for an Out of Band authenticator plugin instance.
-[**GetOOBAuthPluginDescriptor**](OauthOutOfBandAuthPluginsApi.md#GetOOBAuthPluginDescriptor) | **Get** /oauth/outOfBandAuthPlugins/descriptors/{id} | Get the descriptor of an Out of Band authenticator plugin.
-[**GetOOBAuthPluginDescriptors**](OauthOutOfBandAuthPluginsApi.md#GetOOBAuthPluginDescriptors) | **Get** /oauth/outOfBandAuthPlugins/descriptors | Get the list of available Out of Band authenticator plugin descriptors.
-[**GetOOBAuthenticator**](OauthOutOfBandAuthPluginsApi.md#GetOOBAuthenticator) | **Get** /oauth/outOfBandAuthPlugins/{id} | Get a specific Out of Band authenticator plugin instance.
-[**GetOOBAuthenticators**](OauthOutOfBandAuthPluginsApi.md#GetOOBAuthenticators) | **Get** /oauth/outOfBandAuthPlugins | Get a list of Out of Band authenticator plugin instances.
-[**InvokeOOBActionWithOptions**](OauthOutOfBandAuthPluginsApi.md#InvokeOOBActionWithOptions) | **Post** /oauth/outOfBandAuthPlugins/{id}/actions/{actionId}/invokeAction | Invokes an action for Out of Band authenticator plugin instance.
-[**UpdateOOBAuthenticator**](OauthOutOfBandAuthPluginsApi.md#UpdateOOBAuthenticator) | **Put** /oauth/outOfBandAuthPlugins/{id} | Update an Out of Band authenticator plugin instance.
+[**CreateOOBAuthenticator**](OauthOutOfBandAuthPluginsAPI.md#CreateOOBAuthenticator) | **Post** /oauth/outOfBandAuthPlugins | Create an Out of Band authenticator plugin instance.
+[**DeleteOOBAuthenticator**](OauthOutOfBandAuthPluginsAPI.md#DeleteOOBAuthenticator) | **Delete** /oauth/outOfBandAuthPlugins/{id} | Delete an Out of Band authenticator plugin instance.
+[**GetOOBAction**](OauthOutOfBandAuthPluginsAPI.md#GetOOBAction) | **Get** /oauth/outOfBandAuthPlugins/{id}/actions/{actionId} | Find an Out of Band authenticator plugin instance&#39;s action by ID.
+[**GetOOBActions**](OauthOutOfBandAuthPluginsAPI.md#GetOOBActions) | **Get** /oauth/outOfBandAuthPlugins/{id}/actions | List of actions for an Out of Band authenticator plugin instance.
+[**GetOOBAuthPluginDescriptor**](OauthOutOfBandAuthPluginsAPI.md#GetOOBAuthPluginDescriptor) | **Get** /oauth/outOfBandAuthPlugins/descriptors/{id} | Get the descriptor of an Out of Band authenticator plugin.
+[**GetOOBAuthPluginDescriptors**](OauthOutOfBandAuthPluginsAPI.md#GetOOBAuthPluginDescriptors) | **Get** /oauth/outOfBandAuthPlugins/descriptors | Get the list of available Out of Band authenticator plugin descriptors.
+[**GetOOBAuthenticator**](OauthOutOfBandAuthPluginsAPI.md#GetOOBAuthenticator) | **Get** /oauth/outOfBandAuthPlugins/{id} | Get a specific Out of Band authenticator plugin instance.
+[**GetOOBAuthenticators**](OauthOutOfBandAuthPluginsAPI.md#GetOOBAuthenticators) | **Get** /oauth/outOfBandAuthPlugins | Get a list of Out of Band authenticator plugin instances.
+[**InvokeOOBActionWithOptions**](OauthOutOfBandAuthPluginsAPI.md#InvokeOOBActionWithOptions) | **Post** /oauth/outOfBandAuthPlugins/{id}/actions/{actionId}/invokeAction | Invokes an action for Out of Band authenticator plugin instance.
+[**UpdateOOBAuthenticator**](OauthOutOfBandAuthPluginsAPI.md#UpdateOOBAuthenticator) | **Put** /oauth/outOfBandAuthPlugins/{id} | Update an Out of Band authenticator plugin instance.
 
 
 
@@ -40,13 +40,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOutOfBandAuthPluginsApi.CreateOOBAuthenticator(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.CreateOOBAuthenticator(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsApi.CreateOOBAuthenticator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.CreateOOBAuthenticator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateOOBAuthenticator`: OutOfBandAuthenticator
-    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsApi.CreateOOBAuthenticator`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.CreateOOBAuthenticator`: %v\n", resp)
 }
 ```
 
@@ -104,9 +104,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthOutOfBandAuthPluginsApi.DeleteOOBAuthenticator(context.Background(), id).Execute()
+    r, err := apiClient.OauthOutOfBandAuthPluginsAPI.DeleteOOBAuthenticator(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsApi.DeleteOOBAuthenticator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.DeleteOOBAuthenticator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -171,13 +171,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOutOfBandAuthPluginsApi.GetOOBAction(context.Background(), id, actionId).Execute()
+    resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.GetOOBAction(context.Background(), id, actionId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsApi.GetOOBAction``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.GetOOBAction``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOOBAction`: Action
-    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsApi.GetOOBAction`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.GetOOBAction`: %v\n", resp)
 }
 ```
 
@@ -241,13 +241,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOutOfBandAuthPluginsApi.GetOOBActions(context.Background(), id).Execute()
+    resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.GetOOBActions(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsApi.GetOOBActions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.GetOOBActions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOOBActions`: Actions
-    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsApi.GetOOBActions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.GetOOBActions`: %v\n", resp)
 }
 ```
 
@@ -309,13 +309,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOutOfBandAuthPluginsApi.GetOOBAuthPluginDescriptor(context.Background(), id).Execute()
+    resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.GetOOBAuthPluginDescriptor(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsApi.GetOOBAuthPluginDescriptor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.GetOOBAuthPluginDescriptor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOOBAuthPluginDescriptor`: OutOfBandAuthPluginDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsApi.GetOOBAuthPluginDescriptor`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.GetOOBAuthPluginDescriptor`: %v\n", resp)
 }
 ```
 
@@ -376,13 +376,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOutOfBandAuthPluginsApi.GetOOBAuthPluginDescriptors(context.Background()).Execute()
+    resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.GetOOBAuthPluginDescriptors(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsApi.GetOOBAuthPluginDescriptors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.GetOOBAuthPluginDescriptors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOOBAuthPluginDescriptors`: OutOfBandAuthPluginDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsApi.GetOOBAuthPluginDescriptors`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.GetOOBAuthPluginDescriptors`: %v\n", resp)
 }
 ```
 
@@ -436,13 +436,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOutOfBandAuthPluginsApi.GetOOBAuthenticator(context.Background(), id).Execute()
+    resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.GetOOBAuthenticator(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsApi.GetOOBAuthenticator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.GetOOBAuthenticator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOOBAuthenticator`: OutOfBandAuthenticator
-    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsApi.GetOOBAuthenticator`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.GetOOBAuthenticator`: %v\n", resp)
 }
 ```
 
@@ -503,13 +503,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOutOfBandAuthPluginsApi.GetOOBAuthenticators(context.Background()).Execute()
+    resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.GetOOBAuthenticators(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsApi.GetOOBAuthenticators``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.GetOOBAuthenticators``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOOBAuthenticators`: OutOfBandAuthenticators
-    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsApi.GetOOBAuthenticators`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.GetOOBAuthenticators`: %v\n", resp)
 }
 ```
 
@@ -565,13 +565,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOutOfBandAuthPluginsApi.InvokeOOBActionWithOptions(context.Background(), id, actionId).Body(body).Execute()
+    resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.InvokeOOBActionWithOptions(context.Background(), id, actionId).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsApi.InvokeOOBActionWithOptions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.InvokeOOBActionWithOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `InvokeOOBActionWithOptions`: ActionResult
-    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsApi.InvokeOOBActionWithOptions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.InvokeOOBActionWithOptions`: %v\n", resp)
 }
 ```
 
@@ -637,13 +637,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOutOfBandAuthPluginsApi.UpdateOOBAuthenticator(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.UpdateOOBAuthenticator(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsApi.UpdateOOBAuthenticator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.UpdateOOBAuthenticator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateOOBAuthenticator`: OutOfBandAuthenticator
-    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsApi.UpdateOOBAuthenticator`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.UpdateOOBAuthenticator`: %v\n", resp)
 }
 ```
 

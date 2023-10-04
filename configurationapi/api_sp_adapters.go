@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// SpAdaptersApiService SpAdaptersApi service
-type SpAdaptersApiService service
+// SpAdaptersAPIService SpAdaptersAPI service
+type SpAdaptersAPIService service
 
 type ApiCreateSpAdapterRequest struct {
 	ctx        context.Context
-	ApiService *SpAdaptersApiService
+	ApiService *SpAdaptersAPIService
 	body       *SpAdapter
 }
 
@@ -46,7 +46,7 @@ Create a new SP adapter instance. If the SP adapter is not properly configured, 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSpAdapterRequest
 */
-func (a *SpAdaptersApiService) CreateSpAdapter(ctx context.Context) ApiCreateSpAdapterRequest {
+func (a *SpAdaptersAPIService) CreateSpAdapter(ctx context.Context) ApiCreateSpAdapterRequest {
 	return ApiCreateSpAdapterRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -56,7 +56,7 @@ func (a *SpAdaptersApiService) CreateSpAdapter(ctx context.Context) ApiCreateSpA
 // Execute executes the request
 //
 //	@return SpAdapter
-func (a *SpAdaptersApiService) CreateSpAdapterExecute(r ApiCreateSpAdapterRequest) (*SpAdapter, *http.Response, error) {
+func (a *SpAdaptersAPIService) CreateSpAdapterExecute(r ApiCreateSpAdapterRequest) (*SpAdapter, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -64,7 +64,7 @@ func (a *SpAdaptersApiService) CreateSpAdapterExecute(r ApiCreateSpAdapterReques
 		localVarReturnValue *SpAdapter
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersApiService.CreateSpAdapter")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersAPIService.CreateSpAdapter")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -146,7 +146,7 @@ func (a *SpAdaptersApiService) CreateSpAdapterExecute(r ApiCreateSpAdapterReques
 
 type ApiDeleteSpAdapterRequest struct {
 	ctx        context.Context
-	ApiService *SpAdaptersApiService
+	ApiService *SpAdaptersAPIService
 	id         string
 }
 
@@ -163,7 +163,7 @@ Delete an SP adapter instance with the specified ID. A 404 status code is return
 	@param id ID of SP adapter instance.
 	@return ApiDeleteSpAdapterRequest
 */
-func (a *SpAdaptersApiService) DeleteSpAdapter(ctx context.Context, id string) ApiDeleteSpAdapterRequest {
+func (a *SpAdaptersAPIService) DeleteSpAdapter(ctx context.Context, id string) ApiDeleteSpAdapterRequest {
 	return ApiDeleteSpAdapterRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -172,14 +172,14 @@ func (a *SpAdaptersApiService) DeleteSpAdapter(ctx context.Context, id string) A
 }
 
 // Execute executes the request
-func (a *SpAdaptersApiService) DeleteSpAdapterExecute(r ApiDeleteSpAdapterRequest) (*http.Response, error) {
+func (a *SpAdaptersAPIService) DeleteSpAdapterExecute(r ApiDeleteSpAdapterRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersApiService.DeleteSpAdapter")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersAPIService.DeleteSpAdapter")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -259,7 +259,7 @@ func (a *SpAdaptersApiService) DeleteSpAdapterExecute(r ApiDeleteSpAdapterReques
 
 type ApiGetSpAdapterRequest struct {
 	ctx        context.Context
-	ApiService *SpAdaptersApiService
+	ApiService *SpAdaptersAPIService
 	id         string
 }
 
@@ -276,7 +276,7 @@ Get the configured SP adapter instance with the specified ID. A 404 status code 
 	@param id ID of SP adapter instance.
 	@return ApiGetSpAdapterRequest
 */
-func (a *SpAdaptersApiService) GetSpAdapter(ctx context.Context, id string) ApiGetSpAdapterRequest {
+func (a *SpAdaptersAPIService) GetSpAdapter(ctx context.Context, id string) ApiGetSpAdapterRequest {
 	return ApiGetSpAdapterRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -287,7 +287,7 @@ func (a *SpAdaptersApiService) GetSpAdapter(ctx context.Context, id string) ApiG
 // Execute executes the request
 //
 //	@return SpAdapter
-func (a *SpAdaptersApiService) GetSpAdapterExecute(r ApiGetSpAdapterRequest) (*SpAdapter, *http.Response, error) {
+func (a *SpAdaptersAPIService) GetSpAdapterExecute(r ApiGetSpAdapterRequest) (*SpAdapter, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -295,7 +295,7 @@ func (a *SpAdaptersApiService) GetSpAdapterExecute(r ApiGetSpAdapterRequest) (*S
 		localVarReturnValue *SpAdapter
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersApiService.GetSpAdapter")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersAPIService.GetSpAdapter")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -373,7 +373,7 @@ func (a *SpAdaptersApiService) GetSpAdapterExecute(r ApiGetSpAdapterRequest) (*S
 
 type ApiGetSpAdapterDescriptorsRequest struct {
 	ctx        context.Context
-	ApiService *SpAdaptersApiService
+	ApiService *SpAdaptersAPIService
 }
 
 func (r ApiGetSpAdapterDescriptorsRequest) Execute() (*SpAdapterDescriptors, *http.Response, error) {
@@ -386,7 +386,7 @@ GetSpAdapterDescriptors Get the list of available SP adapter descriptors.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSpAdapterDescriptorsRequest
 */
-func (a *SpAdaptersApiService) GetSpAdapterDescriptors(ctx context.Context) ApiGetSpAdapterDescriptorsRequest {
+func (a *SpAdaptersAPIService) GetSpAdapterDescriptors(ctx context.Context) ApiGetSpAdapterDescriptorsRequest {
 	return ApiGetSpAdapterDescriptorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -396,7 +396,7 @@ func (a *SpAdaptersApiService) GetSpAdapterDescriptors(ctx context.Context) ApiG
 // Execute executes the request
 //
 //	@return SpAdapterDescriptors
-func (a *SpAdaptersApiService) GetSpAdapterDescriptorsExecute(r ApiGetSpAdapterDescriptorsRequest) (*SpAdapterDescriptors, *http.Response, error) {
+func (a *SpAdaptersAPIService) GetSpAdapterDescriptorsExecute(r ApiGetSpAdapterDescriptorsRequest) (*SpAdapterDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -404,7 +404,7 @@ func (a *SpAdaptersApiService) GetSpAdapterDescriptorsExecute(r ApiGetSpAdapterD
 		localVarReturnValue *SpAdapterDescriptors
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersApiService.GetSpAdapterDescriptors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersAPIService.GetSpAdapterDescriptors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -471,7 +471,7 @@ func (a *SpAdaptersApiService) GetSpAdapterDescriptorsExecute(r ApiGetSpAdapterD
 
 type ApiGetSpAdapterDescriptorsByIdRequest struct {
 	ctx        context.Context
-	ApiService *SpAdaptersApiService
+	ApiService *SpAdaptersAPIService
 	id         string
 }
 
@@ -488,7 +488,7 @@ Get the description of an SP adapter plugin by ID. A 404 status code is returned
 	@param id ID of SP adapter descriptor to fetch.
 	@return ApiGetSpAdapterDescriptorsByIdRequest
 */
-func (a *SpAdaptersApiService) GetSpAdapterDescriptorsById(ctx context.Context, id string) ApiGetSpAdapterDescriptorsByIdRequest {
+func (a *SpAdaptersAPIService) GetSpAdapterDescriptorsById(ctx context.Context, id string) ApiGetSpAdapterDescriptorsByIdRequest {
 	return ApiGetSpAdapterDescriptorsByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -499,7 +499,7 @@ func (a *SpAdaptersApiService) GetSpAdapterDescriptorsById(ctx context.Context, 
 // Execute executes the request
 //
 //	@return SpAdapterDescriptor
-func (a *SpAdaptersApiService) GetSpAdapterDescriptorsByIdExecute(r ApiGetSpAdapterDescriptorsByIdRequest) (*SpAdapterDescriptor, *http.Response, error) {
+func (a *SpAdaptersAPIService) GetSpAdapterDescriptorsByIdExecute(r ApiGetSpAdapterDescriptorsByIdRequest) (*SpAdapterDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -507,7 +507,7 @@ func (a *SpAdaptersApiService) GetSpAdapterDescriptorsByIdExecute(r ApiGetSpAdap
 		localVarReturnValue *SpAdapterDescriptor
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersApiService.GetSpAdapterDescriptorsById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersAPIService.GetSpAdapterDescriptorsById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -585,7 +585,7 @@ func (a *SpAdaptersApiService) GetSpAdapterDescriptorsByIdExecute(r ApiGetSpAdap
 
 type ApiGetSpAdapterUrlMappingsRequest struct {
 	ctx        context.Context
-	ApiService *SpAdaptersApiService
+	ApiService *SpAdaptersAPIService
 }
 
 func (r ApiGetSpAdapterUrlMappingsRequest) Execute() (*SpAdapterUrlMappings, *http.Response, error) {
@@ -600,7 +600,7 @@ GetSpAdapterUrlMappings (Deprecated) List the mappings between URLs and adapter 
 
 Deprecated
 */
-func (a *SpAdaptersApiService) GetSpAdapterUrlMappings(ctx context.Context) ApiGetSpAdapterUrlMappingsRequest {
+func (a *SpAdaptersAPIService) GetSpAdapterUrlMappings(ctx context.Context) ApiGetSpAdapterUrlMappingsRequest {
 	return ApiGetSpAdapterUrlMappingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -612,7 +612,7 @@ func (a *SpAdaptersApiService) GetSpAdapterUrlMappings(ctx context.Context) ApiG
 //	@return SpAdapterUrlMappings
 //
 // Deprecated
-func (a *SpAdaptersApiService) GetSpAdapterUrlMappingsExecute(r ApiGetSpAdapterUrlMappingsRequest) (*SpAdapterUrlMappings, *http.Response, error) {
+func (a *SpAdaptersAPIService) GetSpAdapterUrlMappingsExecute(r ApiGetSpAdapterUrlMappingsRequest) (*SpAdapterUrlMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -620,7 +620,7 @@ func (a *SpAdaptersApiService) GetSpAdapterUrlMappingsExecute(r ApiGetSpAdapterU
 		localVarReturnValue *SpAdapterUrlMappings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersApiService.GetSpAdapterUrlMappings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersAPIService.GetSpAdapterUrlMappings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -687,7 +687,7 @@ func (a *SpAdaptersApiService) GetSpAdapterUrlMappingsExecute(r ApiGetSpAdapterU
 
 type ApiGetSpAdaptersRequest struct {
 	ctx           context.Context
-	ApiService    *SpAdaptersApiService
+	ApiService    *SpAdaptersAPIService
 	page          *int64
 	numberPerPage *int64
 	filter        *string
@@ -721,7 +721,7 @@ GetSpAdapters Get the list of configured SP adapter instances.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSpAdaptersRequest
 */
-func (a *SpAdaptersApiService) GetSpAdapters(ctx context.Context) ApiGetSpAdaptersRequest {
+func (a *SpAdaptersAPIService) GetSpAdapters(ctx context.Context) ApiGetSpAdaptersRequest {
 	return ApiGetSpAdaptersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -731,7 +731,7 @@ func (a *SpAdaptersApiService) GetSpAdapters(ctx context.Context) ApiGetSpAdapte
 // Execute executes the request
 //
 //	@return SpAdapters
-func (a *SpAdaptersApiService) GetSpAdaptersExecute(r ApiGetSpAdaptersRequest) (*SpAdapters, *http.Response, error) {
+func (a *SpAdaptersAPIService) GetSpAdaptersExecute(r ApiGetSpAdaptersRequest) (*SpAdapters, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -739,7 +739,7 @@ func (a *SpAdaptersApiService) GetSpAdaptersExecute(r ApiGetSpAdaptersRequest) (
 		localVarReturnValue *SpAdapters
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersApiService.GetSpAdapters")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersAPIService.GetSpAdapters")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -825,7 +825,7 @@ func (a *SpAdaptersApiService) GetSpAdaptersExecute(r ApiGetSpAdaptersRequest) (
 
 type ApiGetSpAdaptersActionByIdRequest struct {
 	ctx        context.Context
-	ApiService *SpAdaptersApiService
+	ApiService *SpAdaptersAPIService
 	id         string
 	actionId   string
 }
@@ -844,7 +844,7 @@ Find an SP adapter instance's action by ID. A 404 status code is returned for no
 	@param actionId ID of the action.
 	@return ApiGetSpAdaptersActionByIdRequest
 */
-func (a *SpAdaptersApiService) GetSpAdaptersActionById(ctx context.Context, id string, actionId string) ApiGetSpAdaptersActionByIdRequest {
+func (a *SpAdaptersAPIService) GetSpAdaptersActionById(ctx context.Context, id string, actionId string) ApiGetSpAdaptersActionByIdRequest {
 	return ApiGetSpAdaptersActionByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -856,7 +856,7 @@ func (a *SpAdaptersApiService) GetSpAdaptersActionById(ctx context.Context, id s
 // Execute executes the request
 //
 //	@return Action
-func (a *SpAdaptersApiService) GetSpAdaptersActionByIdExecute(r ApiGetSpAdaptersActionByIdRequest) (*Action, *http.Response, error) {
+func (a *SpAdaptersAPIService) GetSpAdaptersActionByIdExecute(r ApiGetSpAdaptersActionByIdRequest) (*Action, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -864,7 +864,7 @@ func (a *SpAdaptersApiService) GetSpAdaptersActionByIdExecute(r ApiGetSpAdapters
 		localVarReturnValue *Action
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersApiService.GetSpAdaptersActionById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersAPIService.GetSpAdaptersActionById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -943,7 +943,7 @@ func (a *SpAdaptersApiService) GetSpAdaptersActionByIdExecute(r ApiGetSpAdapters
 
 type ApiGetSpAdaptersActionsRequest struct {
 	ctx        context.Context
-	ApiService *SpAdaptersApiService
+	ApiService *SpAdaptersAPIService
 	id         string
 }
 
@@ -960,7 +960,7 @@ List the actions for an SP adapter instance. A 404 status code is returned for n
 	@param id ID of the SP adapter instance to which this action belongs to.
 	@return ApiGetSpAdaptersActionsRequest
 */
-func (a *SpAdaptersApiService) GetSpAdaptersActions(ctx context.Context, id string) ApiGetSpAdaptersActionsRequest {
+func (a *SpAdaptersAPIService) GetSpAdaptersActions(ctx context.Context, id string) ApiGetSpAdaptersActionsRequest {
 	return ApiGetSpAdaptersActionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -971,7 +971,7 @@ func (a *SpAdaptersApiService) GetSpAdaptersActions(ctx context.Context, id stri
 // Execute executes the request
 //
 //	@return Actions
-func (a *SpAdaptersApiService) GetSpAdaptersActionsExecute(r ApiGetSpAdaptersActionsRequest) (*Actions, *http.Response, error) {
+func (a *SpAdaptersAPIService) GetSpAdaptersActionsExecute(r ApiGetSpAdaptersActionsRequest) (*Actions, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -979,7 +979,7 @@ func (a *SpAdaptersApiService) GetSpAdaptersActionsExecute(r ApiGetSpAdaptersAct
 		localVarReturnValue *Actions
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersApiService.GetSpAdaptersActions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersAPIService.GetSpAdaptersActions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1057,7 +1057,7 @@ func (a *SpAdaptersApiService) GetSpAdaptersActionsExecute(r ApiGetSpAdaptersAct
 
 type ApiInvokeSpAdapterActionWithOptionsRequest struct {
 	ctx        context.Context
-	ApiService *SpAdaptersApiService
+	ApiService *SpAdaptersAPIService
 	id         string
 	actionId   string
 	body       *ActionOptions
@@ -1083,7 +1083,7 @@ Invokes an action for an SP adapter instance. A 404 status code is returned for 
 	@param actionId ID of the action.
 	@return ApiInvokeSpAdapterActionWithOptionsRequest
 */
-func (a *SpAdaptersApiService) InvokeSpAdapterActionWithOptions(ctx context.Context, id string, actionId string) ApiInvokeSpAdapterActionWithOptionsRequest {
+func (a *SpAdaptersAPIService) InvokeSpAdapterActionWithOptions(ctx context.Context, id string, actionId string) ApiInvokeSpAdapterActionWithOptionsRequest {
 	return ApiInvokeSpAdapterActionWithOptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1095,7 +1095,7 @@ func (a *SpAdaptersApiService) InvokeSpAdapterActionWithOptions(ctx context.Cont
 // Execute executes the request
 //
 //	@return ActionResult
-func (a *SpAdaptersApiService) InvokeSpAdapterActionWithOptionsExecute(r ApiInvokeSpAdapterActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
+func (a *SpAdaptersAPIService) InvokeSpAdapterActionWithOptionsExecute(r ApiInvokeSpAdapterActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -1103,7 +1103,7 @@ func (a *SpAdaptersApiService) InvokeSpAdapterActionWithOptionsExecute(r ApiInvo
 		localVarReturnValue *ActionResult
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersApiService.InvokeSpAdapterActionWithOptions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersAPIService.InvokeSpAdapterActionWithOptions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1184,7 +1184,7 @@ func (a *SpAdaptersApiService) InvokeSpAdapterActionWithOptionsExecute(r ApiInvo
 
 type ApiUpdateSpAdapterRequest struct {
 	ctx        context.Context
-	ApiService *SpAdaptersApiService
+	ApiService *SpAdaptersAPIService
 	id         string
 	body       *SpAdapter
 }
@@ -1208,7 +1208,7 @@ Update an SP adapter instance.If the SP adapter is not properly configured, a 42
 	@param id ID of SP adapter instance.
 	@return ApiUpdateSpAdapterRequest
 */
-func (a *SpAdaptersApiService) UpdateSpAdapter(ctx context.Context, id string) ApiUpdateSpAdapterRequest {
+func (a *SpAdaptersAPIService) UpdateSpAdapter(ctx context.Context, id string) ApiUpdateSpAdapterRequest {
 	return ApiUpdateSpAdapterRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1219,7 +1219,7 @@ func (a *SpAdaptersApiService) UpdateSpAdapter(ctx context.Context, id string) A
 // Execute executes the request
 //
 //	@return SpAdapter
-func (a *SpAdaptersApiService) UpdateSpAdapterExecute(r ApiUpdateSpAdapterRequest) (*SpAdapter, *http.Response, error) {
+func (a *SpAdaptersAPIService) UpdateSpAdapterExecute(r ApiUpdateSpAdapterRequest) (*SpAdapter, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1227,7 +1227,7 @@ func (a *SpAdaptersApiService) UpdateSpAdapterExecute(r ApiUpdateSpAdapterReques
 		localVarReturnValue *SpAdapter
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersApiService.UpdateSpAdapter")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersAPIService.UpdateSpAdapter")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1321,7 +1321,7 @@ func (a *SpAdaptersApiService) UpdateSpAdapterExecute(r ApiUpdateSpAdapterReques
 
 type ApiUpdateSpAdapterUrlMappingsRequest struct {
 	ctx        context.Context
-	ApiService *SpAdaptersApiService
+	ApiService *SpAdaptersAPIService
 	body       *SpAdapterUrlMappings
 }
 
@@ -1343,7 +1343,7 @@ UpdateSpAdapterUrlMappings (Deprecated) Update the mappings between URLs and ada
 
 Deprecated
 */
-func (a *SpAdaptersApiService) UpdateSpAdapterUrlMappings(ctx context.Context) ApiUpdateSpAdapterUrlMappingsRequest {
+func (a *SpAdaptersAPIService) UpdateSpAdapterUrlMappings(ctx context.Context) ApiUpdateSpAdapterUrlMappingsRequest {
 	return ApiUpdateSpAdapterUrlMappingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1355,7 +1355,7 @@ func (a *SpAdaptersApiService) UpdateSpAdapterUrlMappings(ctx context.Context) A
 //	@return SpAdapterUrlMappings
 //
 // Deprecated
-func (a *SpAdaptersApiService) UpdateSpAdapterUrlMappingsExecute(r ApiUpdateSpAdapterUrlMappingsRequest) (*SpAdapterUrlMappings, *http.Response, error) {
+func (a *SpAdaptersAPIService) UpdateSpAdapterUrlMappingsExecute(r ApiUpdateSpAdapterUrlMappingsRequest) (*SpAdapterUrlMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1363,7 +1363,7 @@ func (a *SpAdaptersApiService) UpdateSpAdapterUrlMappingsExecute(r ApiUpdateSpAd
 		localVarReturnValue *SpAdapterUrlMappings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersApiService.UpdateSpAdapterUrlMappings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAdaptersAPIService.UpdateSpAdapterUrlMappings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

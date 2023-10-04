@@ -1,11 +1,11 @@
-# \IdpConnectorsApi
+# \IdpConnectorsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetIdpConnectorDescriptorById**](IdpConnectorsApi.md#GetIdpConnectorDescriptorById) | **Get** /idp/connectors/descriptors/{id} | Get the list of available connector descriptors.
-[**GetIdpConnectorDescriptors**](IdpConnectorsApi.md#GetIdpConnectorDescriptors) | **Get** /idp/connectors/descriptors | Get the list of available IdP connector descriptors.
+[**GetIdpConnectorDescriptorById**](IdpConnectorsAPI.md#GetIdpConnectorDescriptorById) | **Get** /idp/connectors/descriptors/{id} | Get the list of available connector descriptors.
+[**GetIdpConnectorDescriptors**](IdpConnectorsAPI.md#GetIdpConnectorDescriptors) | **Get** /idp/connectors/descriptors | Get the list of available IdP connector descriptors.
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpConnectorsApi.GetIdpConnectorDescriptorById(context.Background(), id).Execute()
+    resp, r, err := apiClient.IdpConnectorsAPI.GetIdpConnectorDescriptorById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpConnectorsApi.GetIdpConnectorDescriptorById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpConnectorsAPI.GetIdpConnectorDescriptorById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetIdpConnectorDescriptorById`: SaasPluginDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `IdpConnectorsApi.GetIdpConnectorDescriptorById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpConnectorsAPI.GetIdpConnectorDescriptorById`: %v\n", resp)
 }
 ```
 
@@ -99,13 +99,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpConnectorsApi.GetIdpConnectorDescriptors(context.Background()).Execute()
+    resp, r, err := apiClient.IdpConnectorsAPI.GetIdpConnectorDescriptors(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpConnectorsApi.GetIdpConnectorDescriptors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpConnectorsAPI.GetIdpConnectorDescriptors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetIdpConnectorDescriptors`: SaasPluginDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `IdpConnectorsApi.GetIdpConnectorDescriptors`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpConnectorsAPI.GetIdpConnectorDescriptors`: %v\n", resp)
 }
 ```
 

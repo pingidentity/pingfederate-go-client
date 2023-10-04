@@ -1,16 +1,16 @@
-# \KeyPairsOauthOpenIdConnectApi
+# \KeyPairsOauthOpenIdConnectAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateKeySet**](KeyPairsOauthOpenIdConnectApi.md#CreateKeySet) | **Post** /keyPairs/oauthOpenIdConnect/additionalKeySets | Create a new OAuth/OpenID Connect additional signing key set.
-[**DeleteKeySet**](KeyPairsOauthOpenIdConnectApi.md#DeleteKeySet) | **Delete** /keyPairs/oauthOpenIdConnect/additionalKeySets/{id} | Delete an existing OAuth/OpenID Connect additional signing key set.
-[**GetKeySet**](KeyPairsOauthOpenIdConnectApi.md#GetKeySet) | **Get** /keyPairs/oauthOpenIdConnect/additionalKeySets/{id} | Retrieve an OAuth/OpenID Connect additional signing key set.
-[**GetKeySets**](KeyPairsOauthOpenIdConnectApi.md#GetKeySets) | **Get** /keyPairs/oauthOpenIdConnect/additionalKeySets | Retrieve OAuth/OpenID Connect additional signing key sets.
-[**GetOauthOidcKeysSettings**](KeyPairsOauthOpenIdConnectApi.md#GetOauthOidcKeysSettings) | **Get** /keyPairs/oauthOpenIdConnect | Retrieve OAuth/OpenID Connect key settings.
-[**UpdateKeySet**](KeyPairsOauthOpenIdConnectApi.md#UpdateKeySet) | **Put** /keyPairs/oauthOpenIdConnect/additionalKeySets/{id} | Update an existing OAuth/OpenID Connect additional signing key set.
-[**UpdateOAuthOidcKeysSettings**](KeyPairsOauthOpenIdConnectApi.md#UpdateOAuthOidcKeysSettings) | **Put** /keyPairs/oauthOpenIdConnect | Update OAuth/OpenID Connect key settings.
+[**CreateKeySet**](KeyPairsOauthOpenIdConnectAPI.md#CreateKeySet) | **Post** /keyPairs/oauthOpenIdConnect/additionalKeySets | Create a new OAuth/OpenID Connect additional signing key set.
+[**DeleteKeySet**](KeyPairsOauthOpenIdConnectAPI.md#DeleteKeySet) | **Delete** /keyPairs/oauthOpenIdConnect/additionalKeySets/{id} | Delete an existing OAuth/OpenID Connect additional signing key set.
+[**GetKeySet**](KeyPairsOauthOpenIdConnectAPI.md#GetKeySet) | **Get** /keyPairs/oauthOpenIdConnect/additionalKeySets/{id} | Retrieve an OAuth/OpenID Connect additional signing key set.
+[**GetKeySets**](KeyPairsOauthOpenIdConnectAPI.md#GetKeySets) | **Get** /keyPairs/oauthOpenIdConnect/additionalKeySets | Retrieve OAuth/OpenID Connect additional signing key sets.
+[**GetOauthOidcKeysSettings**](KeyPairsOauthOpenIdConnectAPI.md#GetOauthOidcKeysSettings) | **Get** /keyPairs/oauthOpenIdConnect | Retrieve OAuth/OpenID Connect key settings.
+[**UpdateKeySet**](KeyPairsOauthOpenIdConnectAPI.md#UpdateKeySet) | **Put** /keyPairs/oauthOpenIdConnect/additionalKeySets/{id} | Update an existing OAuth/OpenID Connect additional signing key set.
+[**UpdateOAuthOidcKeysSettings**](KeyPairsOauthOpenIdConnectAPI.md#UpdateOAuthOidcKeysSettings) | **Put** /keyPairs/oauthOpenIdConnect | Update OAuth/OpenID Connect key settings.
 
 
 
@@ -39,13 +39,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsOauthOpenIdConnectApi.CreateKeySet(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.KeyPairsOauthOpenIdConnectAPI.CreateKeySet(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsOauthOpenIdConnectApi.CreateKeySet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsOauthOpenIdConnectAPI.CreateKeySet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateKeySet`: AdditionalKeySet
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsOauthOpenIdConnectApi.CreateKeySet`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsOauthOpenIdConnectAPI.CreateKeySet`: %v\n", resp)
 }
 ```
 
@@ -103,9 +103,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.KeyPairsOauthOpenIdConnectApi.DeleteKeySet(context.Background(), id).Execute()
+    r, err := apiClient.KeyPairsOauthOpenIdConnectAPI.DeleteKeySet(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsOauthOpenIdConnectApi.DeleteKeySet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsOauthOpenIdConnectAPI.DeleteKeySet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -169,13 +169,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsOauthOpenIdConnectApi.GetKeySet(context.Background(), id).Execute()
+    resp, r, err := apiClient.KeyPairsOauthOpenIdConnectAPI.GetKeySet(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsOauthOpenIdConnectApi.GetKeySet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsOauthOpenIdConnectAPI.GetKeySet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetKeySet`: AdditionalKeySet
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsOauthOpenIdConnectApi.GetKeySet`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsOauthOpenIdConnectAPI.GetKeySet`: %v\n", resp)
 }
 ```
 
@@ -236,13 +236,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsOauthOpenIdConnectApi.GetKeySets(context.Background()).Execute()
+    resp, r, err := apiClient.KeyPairsOauthOpenIdConnectAPI.GetKeySets(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsOauthOpenIdConnectApi.GetKeySets``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsOauthOpenIdConnectAPI.GetKeySets``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetKeySets`: AdditionalKeySets
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsOauthOpenIdConnectApi.GetKeySets`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsOauthOpenIdConnectAPI.GetKeySets`: %v\n", resp)
 }
 ```
 
@@ -295,13 +295,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsOauthOpenIdConnectApi.GetOauthOidcKeysSettings(context.Background()).Execute()
+    resp, r, err := apiClient.KeyPairsOauthOpenIdConnectAPI.GetOauthOidcKeysSettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsOauthOpenIdConnectApi.GetOauthOidcKeysSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsOauthOpenIdConnectAPI.GetOauthOidcKeysSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOauthOidcKeysSettings`: OAuthOidcKeysSettings
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsOauthOpenIdConnectApi.GetOauthOidcKeysSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsOauthOpenIdConnectAPI.GetOauthOidcKeysSettings`: %v\n", resp)
 }
 ```
 
@@ -358,13 +358,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsOauthOpenIdConnectApi.UpdateKeySet(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.KeyPairsOauthOpenIdConnectAPI.UpdateKeySet(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsOauthOpenIdConnectApi.UpdateKeySet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsOauthOpenIdConnectAPI.UpdateKeySet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateKeySet`: AdditionalKeySet
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsOauthOpenIdConnectApi.UpdateKeySet`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsOauthOpenIdConnectAPI.UpdateKeySet`: %v\n", resp)
 }
 ```
 
@@ -427,13 +427,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsOauthOpenIdConnectApi.UpdateOAuthOidcKeysSettings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.KeyPairsOauthOpenIdConnectAPI.UpdateOAuthOidcKeysSettings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsOauthOpenIdConnectApi.UpdateOAuthOidcKeysSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsOauthOpenIdConnectAPI.UpdateOAuthOidcKeysSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateOAuthOidcKeysSettings`: OAuthOidcKeysSettings
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsOauthOpenIdConnectApi.UpdateOAuthOidcKeysSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsOauthOpenIdConnectAPI.UpdateOAuthOidcKeysSettings`: %v\n", resp)
 }
 ```
 

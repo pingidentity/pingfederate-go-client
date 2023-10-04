@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// AuthenticationApiApiService AuthenticationApiApi service
-type AuthenticationApiApiService service
+// AuthenticationApiAPIService AuthenticationApiAPI service
+type AuthenticationApiAPIService service
 
 type ApiCreateApplicationRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationApiApiService
+	ApiService *AuthenticationApiAPIService
 	body       *AuthnApiApplication
 }
 
@@ -44,7 +44,7 @@ CreateApplication Create a new Authentication API Application.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateApplicationRequest
 */
-func (a *AuthenticationApiApiService) CreateApplication(ctx context.Context) ApiCreateApplicationRequest {
+func (a *AuthenticationApiAPIService) CreateApplication(ctx context.Context) ApiCreateApplicationRequest {
 	return ApiCreateApplicationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *AuthenticationApiApiService) CreateApplication(ctx context.Context) Api
 // Execute executes the request
 //
 //	@return AuthnApiApplication
-func (a *AuthenticationApiApiService) CreateApplicationExecute(r ApiCreateApplicationRequest) (*AuthnApiApplication, *http.Response, error) {
+func (a *AuthenticationApiAPIService) CreateApplicationExecute(r ApiCreateApplicationRequest) (*AuthnApiApplication, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *AuthenticationApiApiService) CreateApplicationExecute(r ApiCreateApplic
 		localVarReturnValue *AuthnApiApplication
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationApiApiService.CreateApplication")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationApiAPIService.CreateApplication")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,7 +144,7 @@ func (a *AuthenticationApiApiService) CreateApplicationExecute(r ApiCreateApplic
 
 type ApiDeleteApplicationRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationApiApiService
+	ApiService *AuthenticationApiAPIService
 	id         string
 }
 
@@ -161,7 +161,7 @@ Delete an Authentication API Application with the specified ID. A 404 status cod
 	@param id ID of Authentication API Application to delete.
 	@return ApiDeleteApplicationRequest
 */
-func (a *AuthenticationApiApiService) DeleteApplication(ctx context.Context, id string) ApiDeleteApplicationRequest {
+func (a *AuthenticationApiAPIService) DeleteApplication(ctx context.Context, id string) ApiDeleteApplicationRequest {
 	return ApiDeleteApplicationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -170,14 +170,14 @@ func (a *AuthenticationApiApiService) DeleteApplication(ctx context.Context, id 
 }
 
 // Execute executes the request
-func (a *AuthenticationApiApiService) DeleteApplicationExecute(r ApiDeleteApplicationRequest) (*http.Response, error) {
+func (a *AuthenticationApiAPIService) DeleteApplicationExecute(r ApiDeleteApplicationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationApiApiService.DeleteApplication")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationApiAPIService.DeleteApplication")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -257,7 +257,7 @@ func (a *AuthenticationApiApiService) DeleteApplicationExecute(r ApiDeleteApplic
 
 type ApiGetApplicationRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationApiApiService
+	ApiService *AuthenticationApiAPIService
 	id         string
 }
 
@@ -274,7 +274,7 @@ Get an Authentication API Application with the specified ID. A 404 status code i
 	@param id ID of the Authentication API Application to fetch.
 	@return ApiGetApplicationRequest
 */
-func (a *AuthenticationApiApiService) GetApplication(ctx context.Context, id string) ApiGetApplicationRequest {
+func (a *AuthenticationApiAPIService) GetApplication(ctx context.Context, id string) ApiGetApplicationRequest {
 	return ApiGetApplicationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -285,7 +285,7 @@ func (a *AuthenticationApiApiService) GetApplication(ctx context.Context, id str
 // Execute executes the request
 //
 //	@return AuthnApiApplication
-func (a *AuthenticationApiApiService) GetApplicationExecute(r ApiGetApplicationRequest) (*AuthnApiApplication, *http.Response, error) {
+func (a *AuthenticationApiAPIService) GetApplicationExecute(r ApiGetApplicationRequest) (*AuthnApiApplication, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -293,7 +293,7 @@ func (a *AuthenticationApiApiService) GetApplicationExecute(r ApiGetApplicationR
 		localVarReturnValue *AuthnApiApplication
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationApiApiService.GetApplication")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationApiAPIService.GetApplication")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -371,7 +371,7 @@ func (a *AuthenticationApiApiService) GetApplicationExecute(r ApiGetApplicationR
 
 type ApiGetAuthenticationApiApplicationsRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationApiApiService
+	ApiService *AuthenticationApiAPIService
 }
 
 func (r ApiGetAuthenticationApiApplicationsRequest) Execute() (*AuthnApiApplications, *http.Response, error) {
@@ -384,7 +384,7 @@ GetAuthenticationApiApplications Get the collection of Authentication API Applic
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAuthenticationApiApplicationsRequest
 */
-func (a *AuthenticationApiApiService) GetAuthenticationApiApplications(ctx context.Context) ApiGetAuthenticationApiApplicationsRequest {
+func (a *AuthenticationApiAPIService) GetAuthenticationApiApplications(ctx context.Context) ApiGetAuthenticationApiApplicationsRequest {
 	return ApiGetAuthenticationApiApplicationsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -394,7 +394,7 @@ func (a *AuthenticationApiApiService) GetAuthenticationApiApplications(ctx conte
 // Execute executes the request
 //
 //	@return AuthnApiApplications
-func (a *AuthenticationApiApiService) GetAuthenticationApiApplicationsExecute(r ApiGetAuthenticationApiApplicationsRequest) (*AuthnApiApplications, *http.Response, error) {
+func (a *AuthenticationApiAPIService) GetAuthenticationApiApplicationsExecute(r ApiGetAuthenticationApiApplicationsRequest) (*AuthnApiApplications, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -402,7 +402,7 @@ func (a *AuthenticationApiApiService) GetAuthenticationApiApplicationsExecute(r 
 		localVarReturnValue *AuthnApiApplications
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationApiApiService.GetAuthenticationApiApplications")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationApiAPIService.GetAuthenticationApiApplications")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -479,7 +479,7 @@ func (a *AuthenticationApiApiService) GetAuthenticationApiApplicationsExecute(r 
 
 type ApiGetAuthenticationApiSettingsRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationApiApiService
+	ApiService *AuthenticationApiAPIService
 }
 
 func (r ApiGetAuthenticationApiSettingsRequest) Execute() (*AuthnApiSettings, *http.Response, error) {
@@ -492,7 +492,7 @@ GetAuthenticationApiSettings Get the Authentication API settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAuthenticationApiSettingsRequest
 */
-func (a *AuthenticationApiApiService) GetAuthenticationApiSettings(ctx context.Context) ApiGetAuthenticationApiSettingsRequest {
+func (a *AuthenticationApiAPIService) GetAuthenticationApiSettings(ctx context.Context) ApiGetAuthenticationApiSettingsRequest {
 	return ApiGetAuthenticationApiSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -502,7 +502,7 @@ func (a *AuthenticationApiApiService) GetAuthenticationApiSettings(ctx context.C
 // Execute executes the request
 //
 //	@return AuthnApiSettings
-func (a *AuthenticationApiApiService) GetAuthenticationApiSettingsExecute(r ApiGetAuthenticationApiSettingsRequest) (*AuthnApiSettings, *http.Response, error) {
+func (a *AuthenticationApiAPIService) GetAuthenticationApiSettingsExecute(r ApiGetAuthenticationApiSettingsRequest) (*AuthnApiSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -510,7 +510,7 @@ func (a *AuthenticationApiApiService) GetAuthenticationApiSettingsExecute(r ApiG
 		localVarReturnValue *AuthnApiSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationApiApiService.GetAuthenticationApiSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationApiAPIService.GetAuthenticationApiSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -587,7 +587,7 @@ func (a *AuthenticationApiApiService) GetAuthenticationApiSettingsExecute(r ApiG
 
 type ApiUpdateApplicationRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationApiApiService
+	ApiService *AuthenticationApiAPIService
 	id         string
 	body       *AuthnApiApplication
 }
@@ -611,7 +611,7 @@ Update an Authentication API Application with the matching ID. If the applicatio
 	@param id ID of the Authentication API Application to update.
 	@return ApiUpdateApplicationRequest
 */
-func (a *AuthenticationApiApiService) UpdateApplication(ctx context.Context, id string) ApiUpdateApplicationRequest {
+func (a *AuthenticationApiAPIService) UpdateApplication(ctx context.Context, id string) ApiUpdateApplicationRequest {
 	return ApiUpdateApplicationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -622,7 +622,7 @@ func (a *AuthenticationApiApiService) UpdateApplication(ctx context.Context, id 
 // Execute executes the request
 //
 //	@return AuthnApiApplication
-func (a *AuthenticationApiApiService) UpdateApplicationExecute(r ApiUpdateApplicationRequest) (*AuthnApiApplication, *http.Response, error) {
+func (a *AuthenticationApiAPIService) UpdateApplicationExecute(r ApiUpdateApplicationRequest) (*AuthnApiApplication, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -630,7 +630,7 @@ func (a *AuthenticationApiApiService) UpdateApplicationExecute(r ApiUpdateApplic
 		localVarReturnValue *AuthnApiApplication
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationApiApiService.UpdateApplication")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationApiAPIService.UpdateApplication")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -724,7 +724,7 @@ func (a *AuthenticationApiApiService) UpdateApplicationExecute(r ApiUpdateApplic
 
 type ApiUpdateAuthenticationApiSettingsRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationApiApiService
+	ApiService *AuthenticationApiAPIService
 	body       *AuthnApiSettings
 }
 
@@ -744,7 +744,7 @@ UpdateAuthenticationApiSettings Set the Authentication API settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateAuthenticationApiSettingsRequest
 */
-func (a *AuthenticationApiApiService) UpdateAuthenticationApiSettings(ctx context.Context) ApiUpdateAuthenticationApiSettingsRequest {
+func (a *AuthenticationApiAPIService) UpdateAuthenticationApiSettings(ctx context.Context) ApiUpdateAuthenticationApiSettingsRequest {
 	return ApiUpdateAuthenticationApiSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -754,7 +754,7 @@ func (a *AuthenticationApiApiService) UpdateAuthenticationApiSettings(ctx contex
 // Execute executes the request
 //
 //	@return AuthnApiSettings
-func (a *AuthenticationApiApiService) UpdateAuthenticationApiSettingsExecute(r ApiUpdateAuthenticationApiSettingsRequest) (*AuthnApiSettings, *http.Response, error) {
+func (a *AuthenticationApiAPIService) UpdateAuthenticationApiSettingsExecute(r ApiUpdateAuthenticationApiSettingsRequest) (*AuthnApiSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -762,7 +762,7 @@ func (a *AuthenticationApiApiService) UpdateAuthenticationApiSettingsExecute(r A
 		localVarReturnValue *AuthnApiSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationApiApiService.UpdateAuthenticationApiSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationApiAPIService.UpdateAuthenticationApiSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

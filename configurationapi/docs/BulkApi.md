@@ -1,11 +1,11 @@
-# \BulkApi
+# \BulkAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ExportConfiguration**](BulkApi.md#ExportConfiguration) | **Get** /bulk/export | Export all API resources to a JSON file.
-[**ImportConfiguration**](BulkApi.md#ImportConfiguration) | **Post** /bulk/import | Import configuration for a PingFederate deployment from a JSON file.
+[**ExportConfiguration**](BulkAPI.md#ExportConfiguration) | **Get** /bulk/export | Export all API resources to a JSON file.
+[**ImportConfiguration**](BulkAPI.md#ImportConfiguration) | **Post** /bulk/import | Import configuration for a PingFederate deployment from a JSON file.
 
 
 
@@ -34,13 +34,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BulkApi.ExportConfiguration(context.Background()).IncludeExternalResources(includeExternalResources).Execute()
+    resp, r, err := apiClient.BulkAPI.ExportConfiguration(context.Background()).IncludeExternalResources(includeExternalResources).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BulkApi.ExportConfiguration``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BulkAPI.ExportConfiguration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ExportConfiguration`: BulkConfig
-    fmt.Fprintf(os.Stdout, "Response from `BulkApi.ExportConfiguration`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `BulkAPI.ExportConfiguration`: %v\n", resp)
 }
 ```
 
@@ -102,9 +102,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.BulkApi.ImportConfiguration(context.Background()).Body(body).FailFast(failFast).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    r, err := apiClient.BulkAPI.ImportConfiguration(context.Background()).Body(body).FailFast(failFast).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BulkApi.ImportConfiguration``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BulkAPI.ImportConfiguration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }

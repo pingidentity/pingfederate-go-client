@@ -1,11 +1,11 @@
-# \SpDefaultUrlsApi
+# \SpDefaultUrlsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetSpDefaultUrls**](SpDefaultUrlsApi.md#GetSpDefaultUrls) | **Get** /sp/defaultUrls | Gets the SP Default URLs. These are Values that affect the user&#39;s experience when executing SP-initiated SSO operations.
-[**UpdateSpDefaultUrls**](SpDefaultUrlsApi.md#UpdateSpDefaultUrls) | **Put** /sp/defaultUrls | Update the SP Default URLs. Enter values that affect the user&#39;s experience when executing SP-initiated SSO operations.
+[**GetSpDefaultUrls**](SpDefaultUrlsAPI.md#GetSpDefaultUrls) | **Get** /sp/defaultUrls | Gets the SP Default URLs. These are Values that affect the user&#39;s experience when executing SP-initiated SSO operations.
+[**UpdateSpDefaultUrls**](SpDefaultUrlsAPI.md#UpdateSpDefaultUrls) | **Put** /sp/defaultUrls | Update the SP Default URLs. Enter values that affect the user&#39;s experience when executing SP-initiated SSO operations.
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpDefaultUrlsApi.GetSpDefaultUrls(context.Background()).Execute()
+    resp, r, err := apiClient.SpDefaultUrlsAPI.GetSpDefaultUrls(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpDefaultUrlsApi.GetSpDefaultUrls``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpDefaultUrlsAPI.GetSpDefaultUrls``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSpDefaultUrls`: SpDefaultUrls
-    fmt.Fprintf(os.Stdout, "Response from `SpDefaultUrlsApi.GetSpDefaultUrls`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpDefaultUrlsAPI.GetSpDefaultUrls`: %v\n", resp)
 }
 ```
 
@@ -91,13 +91,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpDefaultUrlsApi.UpdateSpDefaultUrls(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.SpDefaultUrlsAPI.UpdateSpDefaultUrls(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpDefaultUrlsApi.UpdateSpDefaultUrls``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpDefaultUrlsAPI.UpdateSpDefaultUrls``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateSpDefaultUrls`: SpDefaultUrls
-    fmt.Fprintf(os.Stdout, "Response from `SpDefaultUrlsApi.UpdateSpDefaultUrls`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpDefaultUrlsAPI.UpdateSpDefaultUrls`: %v\n", resp)
 }
 ```
 

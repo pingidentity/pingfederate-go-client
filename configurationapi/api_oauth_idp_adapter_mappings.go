@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// OauthIdpAdapterMappingsApiService OauthIdpAdapterMappingsApi service
-type OauthIdpAdapterMappingsApiService service
+// OauthIdpAdapterMappingsAPIService OauthIdpAdapterMappingsAPI service
+type OauthIdpAdapterMappingsAPIService service
 
 type ApiCreateIdpAdapterMappingRequest struct {
 	ctx                       context.Context
-	ApiService                *OauthIdpAdapterMappingsApiService
+	ApiService                *OauthIdpAdapterMappingsAPIService
 	body                      *IdpAdapterMapping
 	xBypassExternalValidation *bool
 }
@@ -53,7 +53,7 @@ Create a new IdP adapter mapping. If an IdP adapter mapping can't be created, a 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateIdpAdapterMappingRequest
 */
-func (a *OauthIdpAdapterMappingsApiService) CreateIdpAdapterMapping(ctx context.Context) ApiCreateIdpAdapterMappingRequest {
+func (a *OauthIdpAdapterMappingsAPIService) CreateIdpAdapterMapping(ctx context.Context) ApiCreateIdpAdapterMappingRequest {
 	return ApiCreateIdpAdapterMappingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -63,7 +63,7 @@ func (a *OauthIdpAdapterMappingsApiService) CreateIdpAdapterMapping(ctx context.
 // Execute executes the request
 //
 //	@return IdpAdapterMapping
-func (a *OauthIdpAdapterMappingsApiService) CreateIdpAdapterMappingExecute(r ApiCreateIdpAdapterMappingRequest) (*IdpAdapterMapping, *http.Response, error) {
+func (a *OauthIdpAdapterMappingsAPIService) CreateIdpAdapterMappingExecute(r ApiCreateIdpAdapterMappingRequest) (*IdpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -71,7 +71,7 @@ func (a *OauthIdpAdapterMappingsApiService) CreateIdpAdapterMappingExecute(r Api
 		localVarReturnValue *IdpAdapterMapping
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthIdpAdapterMappingsApiService.CreateIdpAdapterMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthIdpAdapterMappingsAPIService.CreateIdpAdapterMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -156,7 +156,7 @@ func (a *OauthIdpAdapterMappingsApiService) CreateIdpAdapterMappingExecute(r Api
 
 type ApiDeleteIdpAdapterMappingRequest struct {
 	ctx        context.Context
-	ApiService *OauthIdpAdapterMappingsApiService
+	ApiService *OauthIdpAdapterMappingsAPIService
 	id         string
 }
 
@@ -171,7 +171,7 @@ DeleteIdpAdapterMapping Delete an IdP adapter mapping.
 	@param id ID of the IdP adapter mapping.
 	@return ApiDeleteIdpAdapterMappingRequest
 */
-func (a *OauthIdpAdapterMappingsApiService) DeleteIdpAdapterMapping(ctx context.Context, id string) ApiDeleteIdpAdapterMappingRequest {
+func (a *OauthIdpAdapterMappingsAPIService) DeleteIdpAdapterMapping(ctx context.Context, id string) ApiDeleteIdpAdapterMappingRequest {
 	return ApiDeleteIdpAdapterMappingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -180,14 +180,14 @@ func (a *OauthIdpAdapterMappingsApiService) DeleteIdpAdapterMapping(ctx context.
 }
 
 // Execute executes the request
-func (a *OauthIdpAdapterMappingsApiService) DeleteIdpAdapterMappingExecute(r ApiDeleteIdpAdapterMappingRequest) (*http.Response, error) {
+func (a *OauthIdpAdapterMappingsAPIService) DeleteIdpAdapterMappingExecute(r ApiDeleteIdpAdapterMappingRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthIdpAdapterMappingsApiService.DeleteIdpAdapterMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthIdpAdapterMappingsAPIService.DeleteIdpAdapterMapping")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -256,7 +256,7 @@ func (a *OauthIdpAdapterMappingsApiService) DeleteIdpAdapterMappingExecute(r Api
 
 type ApiGetIdpAdapterMappingRequest struct {
 	ctx        context.Context
-	ApiService *OauthIdpAdapterMappingsApiService
+	ApiService *OauthIdpAdapterMappingsAPIService
 	id         string
 }
 
@@ -271,7 +271,7 @@ GetIdpAdapterMapping Find the IdP adapter mapping by the ID.
 	@param id ID of the adapter mapping.
 	@return ApiGetIdpAdapterMappingRequest
 */
-func (a *OauthIdpAdapterMappingsApiService) GetIdpAdapterMapping(ctx context.Context, id string) ApiGetIdpAdapterMappingRequest {
+func (a *OauthIdpAdapterMappingsAPIService) GetIdpAdapterMapping(ctx context.Context, id string) ApiGetIdpAdapterMappingRequest {
 	return ApiGetIdpAdapterMappingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -282,7 +282,7 @@ func (a *OauthIdpAdapterMappingsApiService) GetIdpAdapterMapping(ctx context.Con
 // Execute executes the request
 //
 //	@return IdpAdapterMapping
-func (a *OauthIdpAdapterMappingsApiService) GetIdpAdapterMappingExecute(r ApiGetIdpAdapterMappingRequest) (*IdpAdapterMapping, *http.Response, error) {
+func (a *OauthIdpAdapterMappingsAPIService) GetIdpAdapterMappingExecute(r ApiGetIdpAdapterMappingRequest) (*IdpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -290,7 +290,7 @@ func (a *OauthIdpAdapterMappingsApiService) GetIdpAdapterMappingExecute(r ApiGet
 		localVarReturnValue *IdpAdapterMapping
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthIdpAdapterMappingsApiService.GetIdpAdapterMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthIdpAdapterMappingsAPIService.GetIdpAdapterMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -368,7 +368,7 @@ func (a *OauthIdpAdapterMappingsApiService) GetIdpAdapterMappingExecute(r ApiGet
 
 type ApiGetIdpAdapterMappingsRequest struct {
 	ctx        context.Context
-	ApiService *OauthIdpAdapterMappingsApiService
+	ApiService *OauthIdpAdapterMappingsAPIService
 }
 
 func (r ApiGetIdpAdapterMappingsRequest) Execute() (*IdpAdapterMappings, *http.Response, error) {
@@ -381,7 +381,7 @@ GetIdpAdapterMappings Get the list of IdP adapter mappings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetIdpAdapterMappingsRequest
 */
-func (a *OauthIdpAdapterMappingsApiService) GetIdpAdapterMappings(ctx context.Context) ApiGetIdpAdapterMappingsRequest {
+func (a *OauthIdpAdapterMappingsAPIService) GetIdpAdapterMappings(ctx context.Context) ApiGetIdpAdapterMappingsRequest {
 	return ApiGetIdpAdapterMappingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -391,7 +391,7 @@ func (a *OauthIdpAdapterMappingsApiService) GetIdpAdapterMappings(ctx context.Co
 // Execute executes the request
 //
 //	@return IdpAdapterMappings
-func (a *OauthIdpAdapterMappingsApiService) GetIdpAdapterMappingsExecute(r ApiGetIdpAdapterMappingsRequest) (*IdpAdapterMappings, *http.Response, error) {
+func (a *OauthIdpAdapterMappingsAPIService) GetIdpAdapterMappingsExecute(r ApiGetIdpAdapterMappingsRequest) (*IdpAdapterMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -399,7 +399,7 @@ func (a *OauthIdpAdapterMappingsApiService) GetIdpAdapterMappingsExecute(r ApiGe
 		localVarReturnValue *IdpAdapterMappings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthIdpAdapterMappingsApiService.GetIdpAdapterMappings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthIdpAdapterMappingsAPIService.GetIdpAdapterMappings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -466,7 +466,7 @@ func (a *OauthIdpAdapterMappingsApiService) GetIdpAdapterMappingsExecute(r ApiGe
 
 type ApiUpdateIdpAdapterMappingRequest struct {
 	ctx                       context.Context
-	ApiService                *OauthIdpAdapterMappingsApiService
+	ApiService                *OauthIdpAdapterMappingsAPIService
 	id                        string
 	body                      *IdpAdapterMapping
 	xBypassExternalValidation *bool
@@ -495,7 +495,7 @@ UpdateIdpAdapterMapping Update an IdP adapter mapping.
 	@param id ID of the IdP adapter mapping to update.
 	@return ApiUpdateIdpAdapterMappingRequest
 */
-func (a *OauthIdpAdapterMappingsApiService) UpdateIdpAdapterMapping(ctx context.Context, id string) ApiUpdateIdpAdapterMappingRequest {
+func (a *OauthIdpAdapterMappingsAPIService) UpdateIdpAdapterMapping(ctx context.Context, id string) ApiUpdateIdpAdapterMappingRequest {
 	return ApiUpdateIdpAdapterMappingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -506,7 +506,7 @@ func (a *OauthIdpAdapterMappingsApiService) UpdateIdpAdapterMapping(ctx context.
 // Execute executes the request
 //
 //	@return IdpAdapterMapping
-func (a *OauthIdpAdapterMappingsApiService) UpdateIdpAdapterMappingExecute(r ApiUpdateIdpAdapterMappingRequest) (*IdpAdapterMapping, *http.Response, error) {
+func (a *OauthIdpAdapterMappingsAPIService) UpdateIdpAdapterMappingExecute(r ApiUpdateIdpAdapterMappingRequest) (*IdpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -514,7 +514,7 @@ func (a *OauthIdpAdapterMappingsApiService) UpdateIdpAdapterMappingExecute(r Api
 		localVarReturnValue *IdpAdapterMapping
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthIdpAdapterMappingsApiService.UpdateIdpAdapterMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthIdpAdapterMappingsAPIService.UpdateIdpAdapterMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

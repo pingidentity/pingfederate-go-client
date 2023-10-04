@@ -1,13 +1,13 @@
-# \LicenseApi
+# \LicenseAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetLicense**](LicenseApi.md#GetLicense) | **Get** /license | Get a license summary.
-[**GetLicenseAgreement**](LicenseApi.md#GetLicenseAgreement) | **Get** /license/agreement | Get license agreement link.
-[**UpdateLicense**](LicenseApi.md#UpdateLicense) | **Put** /license | Import a license.
-[**UpdateLicenseAgreement**](LicenseApi.md#UpdateLicenseAgreement) | **Put** /license/agreement | Accept license agreement.
+[**GetLicense**](LicenseAPI.md#GetLicense) | **Get** /license | Get a license summary.
+[**GetLicenseAgreement**](LicenseAPI.md#GetLicenseAgreement) | **Get** /license/agreement | Get license agreement link.
+[**UpdateLicense**](LicenseAPI.md#UpdateLicense) | **Put** /license | Import a license.
+[**UpdateLicenseAgreement**](LicenseAPI.md#UpdateLicenseAgreement) | **Put** /license/agreement | Accept license agreement.
 
 
 
@@ -33,13 +33,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LicenseApi.GetLicense(context.Background()).Execute()
+    resp, r, err := apiClient.LicenseAPI.GetLicense(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LicenseApi.GetLicense``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LicenseAPI.GetLicense``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetLicense`: LicenseView
-    fmt.Fprintf(os.Stdout, "Response from `LicenseApi.GetLicense`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LicenseAPI.GetLicense`: %v\n", resp)
 }
 ```
 
@@ -94,13 +94,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LicenseApi.GetLicenseAgreement(context.Background()).Execute()
+    resp, r, err := apiClient.LicenseAPI.GetLicenseAgreement(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LicenseApi.GetLicenseAgreement``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LicenseAPI.GetLicenseAgreement``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetLicenseAgreement`: LicenseAgreementInfo
-    fmt.Fprintf(os.Stdout, "Response from `LicenseApi.GetLicenseAgreement`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LicenseAPI.GetLicenseAgreement`: %v\n", resp)
 }
 ```
 
@@ -154,13 +154,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LicenseApi.UpdateLicense(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.LicenseAPI.UpdateLicense(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LicenseApi.UpdateLicense``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LicenseAPI.UpdateLicense``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateLicense`: LicenseView
-    fmt.Fprintf(os.Stdout, "Response from `LicenseApi.UpdateLicense`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LicenseAPI.UpdateLicense`: %v\n", resp)
 }
 ```
 
@@ -220,13 +220,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LicenseApi.UpdateLicenseAgreement(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.LicenseAPI.UpdateLicenseAgreement(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LicenseApi.UpdateLicenseAgreement``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LicenseAPI.UpdateLicenseAgreement``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateLicenseAgreement`: LicenseAgreementInfo
-    fmt.Fprintf(os.Stdout, "Response from `LicenseApi.UpdateLicenseAgreement`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LicenseAPI.UpdateLicenseAgreement`: %v\n", resp)
 }
 ```
 

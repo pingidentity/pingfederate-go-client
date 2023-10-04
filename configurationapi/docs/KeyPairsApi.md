@@ -1,10 +1,10 @@
-# \KeyPairsApi
+# \KeyPairsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetKeyAlgorithms**](KeyPairsApi.md#GetKeyAlgorithms) | **Get** /keyPairs/keyAlgorithms | Get list of the key algorithms supported for key pair generation.
+[**GetKeyAlgorithms**](KeyPairsAPI.md#GetKeyAlgorithms) | **Get** /keyPairs/keyAlgorithms | Get list of the key algorithms supported for key pair generation.
 
 
 
@@ -30,13 +30,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsApi.GetKeyAlgorithms(context.Background()).Execute()
+    resp, r, err := apiClient.KeyPairsAPI.GetKeyAlgorithms(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsApi.GetKeyAlgorithms``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsAPI.GetKeyAlgorithms``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetKeyAlgorithms`: KeyAlgorithms
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsApi.GetKeyAlgorithms`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsAPI.GetKeyAlgorithms`: %v\n", resp)
 }
 ```
 

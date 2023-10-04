@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// LicenseApiService LicenseApi service
-type LicenseApiService service
+// LicenseAPIService LicenseAPI service
+type LicenseAPIService service
 
 type ApiGetLicenseRequest struct {
 	ctx        context.Context
-	ApiService *LicenseApiService
+	ApiService *LicenseAPIService
 }
 
 func (r ApiGetLicenseRequest) Execute() (*LicenseView, *http.Response, error) {
@@ -36,7 +36,7 @@ GetLicense Get a license summary.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetLicenseRequest
 */
-func (a *LicenseApiService) GetLicense(ctx context.Context) ApiGetLicenseRequest {
+func (a *LicenseAPIService) GetLicense(ctx context.Context) ApiGetLicenseRequest {
 	return ApiGetLicenseRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -46,7 +46,7 @@ func (a *LicenseApiService) GetLicense(ctx context.Context) ApiGetLicenseRequest
 // Execute executes the request
 //
 //	@return LicenseView
-func (a *LicenseApiService) GetLicenseExecute(r ApiGetLicenseRequest) (*LicenseView, *http.Response, error) {
+func (a *LicenseAPIService) GetLicenseExecute(r ApiGetLicenseRequest) (*LicenseView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *LicenseApiService) GetLicenseExecute(r ApiGetLicenseRequest) (*LicenseV
 		localVarReturnValue *LicenseView
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LicenseApiService.GetLicense")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LicenseAPIService.GetLicense")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -142,7 +142,7 @@ func (a *LicenseApiService) GetLicenseExecute(r ApiGetLicenseRequest) (*LicenseV
 
 type ApiGetLicenseAgreementRequest struct {
 	ctx        context.Context
-	ApiService *LicenseApiService
+	ApiService *LicenseAPIService
 }
 
 func (r ApiGetLicenseAgreementRequest) Execute() (*LicenseAgreementInfo, *http.Response, error) {
@@ -157,7 +157,7 @@ The license agreement has to be accepted before performing any other API calls.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetLicenseAgreementRequest
 */
-func (a *LicenseApiService) GetLicenseAgreement(ctx context.Context) ApiGetLicenseAgreementRequest {
+func (a *LicenseAPIService) GetLicenseAgreement(ctx context.Context) ApiGetLicenseAgreementRequest {
 	return ApiGetLicenseAgreementRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -167,7 +167,7 @@ func (a *LicenseApiService) GetLicenseAgreement(ctx context.Context) ApiGetLicen
 // Execute executes the request
 //
 //	@return LicenseAgreementInfo
-func (a *LicenseApiService) GetLicenseAgreementExecute(r ApiGetLicenseAgreementRequest) (*LicenseAgreementInfo, *http.Response, error) {
+func (a *LicenseAPIService) GetLicenseAgreementExecute(r ApiGetLicenseAgreementRequest) (*LicenseAgreementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -175,7 +175,7 @@ func (a *LicenseApiService) GetLicenseAgreementExecute(r ApiGetLicenseAgreementR
 		localVarReturnValue *LicenseAgreementInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LicenseApiService.GetLicenseAgreement")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LicenseAPIService.GetLicenseAgreement")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -252,7 +252,7 @@ func (a *LicenseApiService) GetLicenseAgreementExecute(r ApiGetLicenseAgreementR
 
 type ApiUpdateLicenseRequest struct {
 	ctx        context.Context
-	ApiService *LicenseApiService
+	ApiService *LicenseAPIService
 	body       *LicenseFile
 }
 
@@ -272,7 +272,7 @@ UpdateLicense Import a license.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateLicenseRequest
 */
-func (a *LicenseApiService) UpdateLicense(ctx context.Context) ApiUpdateLicenseRequest {
+func (a *LicenseAPIService) UpdateLicense(ctx context.Context) ApiUpdateLicenseRequest {
 	return ApiUpdateLicenseRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -282,7 +282,7 @@ func (a *LicenseApiService) UpdateLicense(ctx context.Context) ApiUpdateLicenseR
 // Execute executes the request
 //
 //	@return LicenseView
-func (a *LicenseApiService) UpdateLicenseExecute(r ApiUpdateLicenseRequest) (*LicenseView, *http.Response, error) {
+func (a *LicenseAPIService) UpdateLicenseExecute(r ApiUpdateLicenseRequest) (*LicenseView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -290,7 +290,7 @@ func (a *LicenseApiService) UpdateLicenseExecute(r ApiUpdateLicenseRequest) (*Li
 		localVarReturnValue *LicenseView
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LicenseApiService.UpdateLicense")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LicenseAPIService.UpdateLicense")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -372,7 +372,7 @@ func (a *LicenseApiService) UpdateLicenseExecute(r ApiUpdateLicenseRequest) (*Li
 
 type ApiUpdateLicenseAgreementRequest struct {
 	ctx        context.Context
-	ApiService *LicenseApiService
+	ApiService *LicenseAPIService
 	body       *LicenseAgreementInfo
 }
 
@@ -394,7 +394,7 @@ The license agreement has to be accepted before performing any other API calls.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateLicenseAgreementRequest
 */
-func (a *LicenseApiService) UpdateLicenseAgreement(ctx context.Context) ApiUpdateLicenseAgreementRequest {
+func (a *LicenseAPIService) UpdateLicenseAgreement(ctx context.Context) ApiUpdateLicenseAgreementRequest {
 	return ApiUpdateLicenseAgreementRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -404,7 +404,7 @@ func (a *LicenseApiService) UpdateLicenseAgreement(ctx context.Context) ApiUpdat
 // Execute executes the request
 //
 //	@return LicenseAgreementInfo
-func (a *LicenseApiService) UpdateLicenseAgreementExecute(r ApiUpdateLicenseAgreementRequest) (*LicenseAgreementInfo, *http.Response, error) {
+func (a *LicenseAPIService) UpdateLicenseAgreementExecute(r ApiUpdateLicenseAgreementRequest) (*LicenseAgreementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -412,7 +412,7 @@ func (a *LicenseApiService) UpdateLicenseAgreementExecute(r ApiUpdateLicenseAgre
 		localVarReturnValue *LicenseAgreementInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LicenseApiService.UpdateLicenseAgreement")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LicenseAPIService.UpdateLicenseAgreement")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

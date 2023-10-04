@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// IdpConnectorsApiService IdpConnectorsApi service
-type IdpConnectorsApiService service
+// IdpConnectorsAPIService IdpConnectorsAPI service
+type IdpConnectorsAPIService service
 
 type ApiGetIdpConnectorDescriptorByIdRequest struct {
 	ctx        context.Context
-	ApiService *IdpConnectorsApiService
+	ApiService *IdpConnectorsAPIService
 	id         string
 }
 
@@ -39,7 +39,7 @@ GetIdpConnectorDescriptorById Get the list of available connector descriptors.
 	@param id the type of connector descriptor to fetch.
 	@return ApiGetIdpConnectorDescriptorByIdRequest
 */
-func (a *IdpConnectorsApiService) GetIdpConnectorDescriptorById(ctx context.Context, id string) ApiGetIdpConnectorDescriptorByIdRequest {
+func (a *IdpConnectorsAPIService) GetIdpConnectorDescriptorById(ctx context.Context, id string) ApiGetIdpConnectorDescriptorByIdRequest {
 	return ApiGetIdpConnectorDescriptorByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -50,7 +50,7 @@ func (a *IdpConnectorsApiService) GetIdpConnectorDescriptorById(ctx context.Cont
 // Execute executes the request
 //
 //	@return SaasPluginDescriptor
-func (a *IdpConnectorsApiService) GetIdpConnectorDescriptorByIdExecute(r ApiGetIdpConnectorDescriptorByIdRequest) (*SaasPluginDescriptor, *http.Response, error) {
+func (a *IdpConnectorsAPIService) GetIdpConnectorDescriptorByIdExecute(r ApiGetIdpConnectorDescriptorByIdRequest) (*SaasPluginDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -58,7 +58,7 @@ func (a *IdpConnectorsApiService) GetIdpConnectorDescriptorByIdExecute(r ApiGetI
 		localVarReturnValue *SaasPluginDescriptor
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpConnectorsApiService.GetIdpConnectorDescriptorById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpConnectorsAPIService.GetIdpConnectorDescriptorById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -126,7 +126,7 @@ func (a *IdpConnectorsApiService) GetIdpConnectorDescriptorByIdExecute(r ApiGetI
 
 type ApiGetIdpConnectorDescriptorsRequest struct {
 	ctx        context.Context
-	ApiService *IdpConnectorsApiService
+	ApiService *IdpConnectorsAPIService
 }
 
 func (r ApiGetIdpConnectorDescriptorsRequest) Execute() (*SaasPluginDescriptors, *http.Response, error) {
@@ -139,7 +139,7 @@ GetIdpConnectorDescriptors Get the list of available IdP connector descriptors.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetIdpConnectorDescriptorsRequest
 */
-func (a *IdpConnectorsApiService) GetIdpConnectorDescriptors(ctx context.Context) ApiGetIdpConnectorDescriptorsRequest {
+func (a *IdpConnectorsAPIService) GetIdpConnectorDescriptors(ctx context.Context) ApiGetIdpConnectorDescriptorsRequest {
 	return ApiGetIdpConnectorDescriptorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -149,7 +149,7 @@ func (a *IdpConnectorsApiService) GetIdpConnectorDescriptors(ctx context.Context
 // Execute executes the request
 //
 //	@return SaasPluginDescriptors
-func (a *IdpConnectorsApiService) GetIdpConnectorDescriptorsExecute(r ApiGetIdpConnectorDescriptorsRequest) (*SaasPluginDescriptors, *http.Response, error) {
+func (a *IdpConnectorsAPIService) GetIdpConnectorDescriptorsExecute(r ApiGetIdpConnectorDescriptorsRequest) (*SaasPluginDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -157,7 +157,7 @@ func (a *IdpConnectorsApiService) GetIdpConnectorDescriptorsExecute(r ApiGetIdpC
 		localVarReturnValue *SaasPluginDescriptors
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpConnectorsApiService.GetIdpConnectorDescriptors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpConnectorsAPIService.GetIdpConnectorDescriptors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

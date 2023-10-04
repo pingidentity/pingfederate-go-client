@@ -1,18 +1,18 @@
-# \OauthAccessTokenManagersApi
+# \OauthAccessTokenManagersAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateTokenManager**](OauthAccessTokenManagersApi.md#CreateTokenManager) | **Post** /oauth/accessTokenManagers | Create a token management plugin instance.
-[**DeleteTokenManager**](OauthAccessTokenManagersApi.md#DeleteTokenManager) | **Delete** /oauth/accessTokenManagers/{id} | Delete a token management plugin instance.
-[**GetOauthAccessTokenManagersSettings**](OauthAccessTokenManagersApi.md#GetOauthAccessTokenManagersSettings) | **Get** /oauth/accessTokenManagers/settings | Get general access token management settings.
-[**GetTokenManager**](OauthAccessTokenManagersApi.md#GetTokenManager) | **Get** /oauth/accessTokenManagers/{id} | Get a specific token management plugin instance.
-[**GetTokenManagerDescriptor**](OauthAccessTokenManagersApi.md#GetTokenManagerDescriptor) | **Get** /oauth/accessTokenManagers/descriptors/{id} | Get the description of a token management plugin descriptor.
-[**GetTokenManagerDescriptors**](OauthAccessTokenManagersApi.md#GetTokenManagerDescriptors) | **Get** /oauth/accessTokenManagers/descriptors | Get the list of available token management plugin descriptors.
-[**GetTokenManagers**](OauthAccessTokenManagersApi.md#GetTokenManagers) | **Get** /oauth/accessTokenManagers | Get a list of all token management plugin instances.
-[**UpdateOauthAccessTokenManagersSettings**](OauthAccessTokenManagersApi.md#UpdateOauthAccessTokenManagersSettings) | **Put** /oauth/accessTokenManagers/settings | Update general access token management settings.
-[**UpdateTokenManager**](OauthAccessTokenManagersApi.md#UpdateTokenManager) | **Put** /oauth/accessTokenManagers/{id} | Update a token management plugin instance.
+[**CreateTokenManager**](OauthAccessTokenManagersAPI.md#CreateTokenManager) | **Post** /oauth/accessTokenManagers | Create a token management plugin instance.
+[**DeleteTokenManager**](OauthAccessTokenManagersAPI.md#DeleteTokenManager) | **Delete** /oauth/accessTokenManagers/{id} | Delete a token management plugin instance.
+[**GetOauthAccessTokenManagersSettings**](OauthAccessTokenManagersAPI.md#GetOauthAccessTokenManagersSettings) | **Get** /oauth/accessTokenManagers/settings | Get general access token management settings.
+[**GetTokenManager**](OauthAccessTokenManagersAPI.md#GetTokenManager) | **Get** /oauth/accessTokenManagers/{id} | Get a specific token management plugin instance.
+[**GetTokenManagerDescriptor**](OauthAccessTokenManagersAPI.md#GetTokenManagerDescriptor) | **Get** /oauth/accessTokenManagers/descriptors/{id} | Get the description of a token management plugin descriptor.
+[**GetTokenManagerDescriptors**](OauthAccessTokenManagersAPI.md#GetTokenManagerDescriptors) | **Get** /oauth/accessTokenManagers/descriptors | Get the list of available token management plugin descriptors.
+[**GetTokenManagers**](OauthAccessTokenManagersAPI.md#GetTokenManagers) | **Get** /oauth/accessTokenManagers | Get a list of all token management plugin instances.
+[**UpdateOauthAccessTokenManagersSettings**](OauthAccessTokenManagersAPI.md#UpdateOauthAccessTokenManagersSettings) | **Put** /oauth/accessTokenManagers/settings | Update general access token management settings.
+[**UpdateTokenManager**](OauthAccessTokenManagersAPI.md#UpdateTokenManager) | **Put** /oauth/accessTokenManagers/{id} | Update a token management plugin instance.
 
 
 
@@ -39,13 +39,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenManagersApi.CreateTokenManager(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.OauthAccessTokenManagersAPI.CreateTokenManager(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersApi.CreateTokenManager``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.CreateTokenManager``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateTokenManager`: AccessTokenManager
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersApi.CreateTokenManager`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.CreateTokenManager`: %v\n", resp)
 }
 ```
 
@@ -103,9 +103,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthAccessTokenManagersApi.DeleteTokenManager(context.Background(), id).Execute()
+    r, err := apiClient.OauthAccessTokenManagersAPI.DeleteTokenManager(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersApi.DeleteTokenManager``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.DeleteTokenManager``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -168,13 +168,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenManagersApi.GetOauthAccessTokenManagersSettings(context.Background()).Execute()
+    resp, r, err := apiClient.OauthAccessTokenManagersAPI.GetOauthAccessTokenManagersSettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersApi.GetOauthAccessTokenManagersSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.GetOauthAccessTokenManagersSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOauthAccessTokenManagersSettings`: AccessTokenManagementSettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersApi.GetOauthAccessTokenManagersSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.GetOauthAccessTokenManagersSettings`: %v\n", resp)
 }
 ```
 
@@ -228,13 +228,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenManagersApi.GetTokenManager(context.Background(), id).Execute()
+    resp, r, err := apiClient.OauthAccessTokenManagersAPI.GetTokenManager(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersApi.GetTokenManager``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.GetTokenManager``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTokenManager`: AccessTokenManager
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersApi.GetTokenManager`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.GetTokenManager`: %v\n", resp)
 }
 ```
 
@@ -296,13 +296,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenManagersApi.GetTokenManagerDescriptor(context.Background(), id).Execute()
+    resp, r, err := apiClient.OauthAccessTokenManagersAPI.GetTokenManagerDescriptor(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersApi.GetTokenManagerDescriptor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.GetTokenManagerDescriptor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTokenManagerDescriptor`: AccessTokenManagerDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersApi.GetTokenManagerDescriptor`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.GetTokenManagerDescriptor`: %v\n", resp)
 }
 ```
 
@@ -363,13 +363,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenManagersApi.GetTokenManagerDescriptors(context.Background()).Execute()
+    resp, r, err := apiClient.OauthAccessTokenManagersAPI.GetTokenManagerDescriptors(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersApi.GetTokenManagerDescriptors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.GetTokenManagerDescriptors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTokenManagerDescriptors`: AccessTokenManagerDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersApi.GetTokenManagerDescriptors`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.GetTokenManagerDescriptors`: %v\n", resp)
 }
 ```
 
@@ -422,13 +422,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenManagersApi.GetTokenManagers(context.Background()).Execute()
+    resp, r, err := apiClient.OauthAccessTokenManagersAPI.GetTokenManagers(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersApi.GetTokenManagers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.GetTokenManagers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTokenManagers`: AccessTokenManagers
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersApi.GetTokenManagers`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.GetTokenManagers`: %v\n", resp)
 }
 ```
 
@@ -482,13 +482,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenManagersApi.UpdateOauthAccessTokenManagersSettings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.OauthAccessTokenManagersAPI.UpdateOauthAccessTokenManagersSettings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersApi.UpdateOauthAccessTokenManagersSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.UpdateOauthAccessTokenManagersSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateOauthAccessTokenManagersSettings`: AccessTokenManagementSettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersApi.UpdateOauthAccessTokenManagersSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.UpdateOauthAccessTokenManagersSettings`: %v\n", resp)
 }
 ```
 
@@ -547,13 +547,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenManagersApi.UpdateTokenManager(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.OauthAccessTokenManagersAPI.UpdateTokenManager(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersApi.UpdateTokenManager``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.UpdateTokenManager``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateTokenManager`: AccessTokenManager
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersApi.UpdateTokenManager`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.UpdateTokenManager`: %v\n", resp)
 }
 ```
 

@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// OauthAuthenticationPolicyContractMappingsApiService OauthAuthenticationPolicyContractMappingsApi service
-type OauthAuthenticationPolicyContractMappingsApiService service
+// OauthAuthenticationPolicyContractMappingsAPIService OauthAuthenticationPolicyContractMappingsAPI service
+type OauthAuthenticationPolicyContractMappingsAPIService service
 
 type ApiCreateApcMappingRequest struct {
 	ctx                       context.Context
-	ApiService                *OauthAuthenticationPolicyContractMappingsApiService
+	ApiService                *OauthAuthenticationPolicyContractMappingsAPIService
 	body                      *ApcToPersistentGrantMapping
 	xBypassExternalValidation *bool
 }
@@ -53,7 +53,7 @@ Create a new authentication policy contract to persistent grant mapping. If a ma
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateApcMappingRequest
 */
-func (a *OauthAuthenticationPolicyContractMappingsApiService) CreateApcMapping(ctx context.Context) ApiCreateApcMappingRequest {
+func (a *OauthAuthenticationPolicyContractMappingsAPIService) CreateApcMapping(ctx context.Context) ApiCreateApcMappingRequest {
 	return ApiCreateApcMappingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -63,7 +63,7 @@ func (a *OauthAuthenticationPolicyContractMappingsApiService) CreateApcMapping(c
 // Execute executes the request
 //
 //	@return ApcToPersistentGrantMapping
-func (a *OauthAuthenticationPolicyContractMappingsApiService) CreateApcMappingExecute(r ApiCreateApcMappingRequest) (*ApcToPersistentGrantMapping, *http.Response, error) {
+func (a *OauthAuthenticationPolicyContractMappingsAPIService) CreateApcMappingExecute(r ApiCreateApcMappingRequest) (*ApcToPersistentGrantMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -71,7 +71,7 @@ func (a *OauthAuthenticationPolicyContractMappingsApiService) CreateApcMappingEx
 		localVarReturnValue *ApcToPersistentGrantMapping
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthenticationPolicyContractMappingsApiService.CreateApcMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthenticationPolicyContractMappingsAPIService.CreateApcMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -156,7 +156,7 @@ func (a *OauthAuthenticationPolicyContractMappingsApiService) CreateApcMappingEx
 
 type ApiDeleteApcMappingRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthenticationPolicyContractMappingsApiService
+	ApiService *OauthAuthenticationPolicyContractMappingsAPIService
 	id         string
 }
 
@@ -171,7 +171,7 @@ DeleteApcMapping Delete an authentication policy contract to persistent grant ma
 	@param id ID of the authentication policy contract to persistent grant mapping.
 	@return ApiDeleteApcMappingRequest
 */
-func (a *OauthAuthenticationPolicyContractMappingsApiService) DeleteApcMapping(ctx context.Context, id string) ApiDeleteApcMappingRequest {
+func (a *OauthAuthenticationPolicyContractMappingsAPIService) DeleteApcMapping(ctx context.Context, id string) ApiDeleteApcMappingRequest {
 	return ApiDeleteApcMappingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -180,14 +180,14 @@ func (a *OauthAuthenticationPolicyContractMappingsApiService) DeleteApcMapping(c
 }
 
 // Execute executes the request
-func (a *OauthAuthenticationPolicyContractMappingsApiService) DeleteApcMappingExecute(r ApiDeleteApcMappingRequest) (*http.Response, error) {
+func (a *OauthAuthenticationPolicyContractMappingsAPIService) DeleteApcMappingExecute(r ApiDeleteApcMappingRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthenticationPolicyContractMappingsApiService.DeleteApcMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthenticationPolicyContractMappingsAPIService.DeleteApcMapping")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -256,7 +256,7 @@ func (a *OauthAuthenticationPolicyContractMappingsApiService) DeleteApcMappingEx
 
 type ApiGetApcMappingRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthenticationPolicyContractMappingsApiService
+	ApiService *OauthAuthenticationPolicyContractMappingsAPIService
 	id         string
 }
 
@@ -271,7 +271,7 @@ GetApcMapping Find the authentication policy contract to persistent grant mappin
 	@param id ID of the authentication policy contract to persistent grant mapping.
 	@return ApiGetApcMappingRequest
 */
-func (a *OauthAuthenticationPolicyContractMappingsApiService) GetApcMapping(ctx context.Context, id string) ApiGetApcMappingRequest {
+func (a *OauthAuthenticationPolicyContractMappingsAPIService) GetApcMapping(ctx context.Context, id string) ApiGetApcMappingRequest {
 	return ApiGetApcMappingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -282,7 +282,7 @@ func (a *OauthAuthenticationPolicyContractMappingsApiService) GetApcMapping(ctx 
 // Execute executes the request
 //
 //	@return ApcToPersistentGrantMapping
-func (a *OauthAuthenticationPolicyContractMappingsApiService) GetApcMappingExecute(r ApiGetApcMappingRequest) (*ApcToPersistentGrantMapping, *http.Response, error) {
+func (a *OauthAuthenticationPolicyContractMappingsAPIService) GetApcMappingExecute(r ApiGetApcMappingRequest) (*ApcToPersistentGrantMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -290,7 +290,7 @@ func (a *OauthAuthenticationPolicyContractMappingsApiService) GetApcMappingExecu
 		localVarReturnValue *ApcToPersistentGrantMapping
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthenticationPolicyContractMappingsApiService.GetApcMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthenticationPolicyContractMappingsAPIService.GetApcMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -368,7 +368,7 @@ func (a *OauthAuthenticationPolicyContractMappingsApiService) GetApcMappingExecu
 
 type ApiGetApcMappingsRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthenticationPolicyContractMappingsApiService
+	ApiService *OauthAuthenticationPolicyContractMappingsAPIService
 }
 
 func (r ApiGetApcMappingsRequest) Execute() (*ApcToPersistentGrantMappings, *http.Response, error) {
@@ -381,7 +381,7 @@ GetApcMappings Get the list of authentication policy contract to persistent gran
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetApcMappingsRequest
 */
-func (a *OauthAuthenticationPolicyContractMappingsApiService) GetApcMappings(ctx context.Context) ApiGetApcMappingsRequest {
+func (a *OauthAuthenticationPolicyContractMappingsAPIService) GetApcMappings(ctx context.Context) ApiGetApcMappingsRequest {
 	return ApiGetApcMappingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -391,7 +391,7 @@ func (a *OauthAuthenticationPolicyContractMappingsApiService) GetApcMappings(ctx
 // Execute executes the request
 //
 //	@return ApcToPersistentGrantMappings
-func (a *OauthAuthenticationPolicyContractMappingsApiService) GetApcMappingsExecute(r ApiGetApcMappingsRequest) (*ApcToPersistentGrantMappings, *http.Response, error) {
+func (a *OauthAuthenticationPolicyContractMappingsAPIService) GetApcMappingsExecute(r ApiGetApcMappingsRequest) (*ApcToPersistentGrantMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -399,7 +399,7 @@ func (a *OauthAuthenticationPolicyContractMappingsApiService) GetApcMappingsExec
 		localVarReturnValue *ApcToPersistentGrantMappings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthenticationPolicyContractMappingsApiService.GetApcMappings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthenticationPolicyContractMappingsAPIService.GetApcMappings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -466,7 +466,7 @@ func (a *OauthAuthenticationPolicyContractMappingsApiService) GetApcMappingsExec
 
 type ApiUpdateApcMappingRequest struct {
 	ctx                       context.Context
-	ApiService                *OauthAuthenticationPolicyContractMappingsApiService
+	ApiService                *OauthAuthenticationPolicyContractMappingsAPIService
 	id                        string
 	body                      *ApcToPersistentGrantMapping
 	xBypassExternalValidation *bool
@@ -495,7 +495,7 @@ UpdateApcMapping Update an authentication policy contract to persistent grant ma
 	@param id ID of the authentication policy contract to persistent grant mapping to update.
 	@return ApiUpdateApcMappingRequest
 */
-func (a *OauthAuthenticationPolicyContractMappingsApiService) UpdateApcMapping(ctx context.Context, id string) ApiUpdateApcMappingRequest {
+func (a *OauthAuthenticationPolicyContractMappingsAPIService) UpdateApcMapping(ctx context.Context, id string) ApiUpdateApcMappingRequest {
 	return ApiUpdateApcMappingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -506,7 +506,7 @@ func (a *OauthAuthenticationPolicyContractMappingsApiService) UpdateApcMapping(c
 // Execute executes the request
 //
 //	@return ApcToPersistentGrantMapping
-func (a *OauthAuthenticationPolicyContractMappingsApiService) UpdateApcMappingExecute(r ApiUpdateApcMappingRequest) (*ApcToPersistentGrantMapping, *http.Response, error) {
+func (a *OauthAuthenticationPolicyContractMappingsAPIService) UpdateApcMappingExecute(r ApiUpdateApcMappingRequest) (*ApcToPersistentGrantMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -514,7 +514,7 @@ func (a *OauthAuthenticationPolicyContractMappingsApiService) UpdateApcMappingEx
 		localVarReturnValue *ApcToPersistentGrantMapping
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthenticationPolicyContractMappingsApiService.UpdateApcMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthenticationPolicyContractMappingsAPIService.UpdateApcMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

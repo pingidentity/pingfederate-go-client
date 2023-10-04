@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// KerberosRealmsApiService KerberosRealmsApi service
-type KerberosRealmsApiService service
+// KerberosRealmsAPIService KerberosRealmsAPI service
+type KerberosRealmsAPIService service
 
 type ApiCreateKerberosRealmRequest struct {
 	ctx                       context.Context
-	ApiService                *KerberosRealmsApiService
+	ApiService                *KerberosRealmsAPIService
 	body                      *KerberosRealm
 	xBypassExternalValidation *bool
 }
@@ -53,7 +53,7 @@ Create a new Kerberos Realm. If the Kerberos Realm is not properly configured, a
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateKerberosRealmRequest
 */
-func (a *KerberosRealmsApiService) CreateKerberosRealm(ctx context.Context) ApiCreateKerberosRealmRequest {
+func (a *KerberosRealmsAPIService) CreateKerberosRealm(ctx context.Context) ApiCreateKerberosRealmRequest {
 	return ApiCreateKerberosRealmRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -63,7 +63,7 @@ func (a *KerberosRealmsApiService) CreateKerberosRealm(ctx context.Context) ApiC
 // Execute executes the request
 //
 //	@return KerberosRealm
-func (a *KerberosRealmsApiService) CreateKerberosRealmExecute(r ApiCreateKerberosRealmRequest) (*KerberosRealm, *http.Response, error) {
+func (a *KerberosRealmsAPIService) CreateKerberosRealmExecute(r ApiCreateKerberosRealmRequest) (*KerberosRealm, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -71,7 +71,7 @@ func (a *KerberosRealmsApiService) CreateKerberosRealmExecute(r ApiCreateKerbero
 		localVarReturnValue *KerberosRealm
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KerberosRealmsApiService.CreateKerberosRealm")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KerberosRealmsAPIService.CreateKerberosRealm")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -156,7 +156,7 @@ func (a *KerberosRealmsApiService) CreateKerberosRealmExecute(r ApiCreateKerbero
 
 type ApiDeleteKerberosRealmRequest struct {
 	ctx        context.Context
-	ApiService *KerberosRealmsApiService
+	ApiService *KerberosRealmsAPIService
 	id         string
 }
 
@@ -173,7 +173,7 @@ Delete a Kerberos Realm with the specified ID. A 404 status code is returned for
 	@param id ID of Kerberos Realm to delete.
 	@return ApiDeleteKerberosRealmRequest
 */
-func (a *KerberosRealmsApiService) DeleteKerberosRealm(ctx context.Context, id string) ApiDeleteKerberosRealmRequest {
+func (a *KerberosRealmsAPIService) DeleteKerberosRealm(ctx context.Context, id string) ApiDeleteKerberosRealmRequest {
 	return ApiDeleteKerberosRealmRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -182,14 +182,14 @@ func (a *KerberosRealmsApiService) DeleteKerberosRealm(ctx context.Context, id s
 }
 
 // Execute executes the request
-func (a *KerberosRealmsApiService) DeleteKerberosRealmExecute(r ApiDeleteKerberosRealmRequest) (*http.Response, error) {
+func (a *KerberosRealmsAPIService) DeleteKerberosRealmExecute(r ApiDeleteKerberosRealmRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KerberosRealmsApiService.DeleteKerberosRealm")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KerberosRealmsAPIService.DeleteKerberosRealm")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -269,7 +269,7 @@ func (a *KerberosRealmsApiService) DeleteKerberosRealmExecute(r ApiDeleteKerbero
 
 type ApiGetKerberosRealmRequest struct {
 	ctx        context.Context
-	ApiService *KerberosRealmsApiService
+	ApiService *KerberosRealmsAPIService
 	id         string
 }
 
@@ -286,7 +286,7 @@ Get a Kerberos Realm with the specified ID. A 404 status code is returned for no
 	@param id ID of the Kerberos Realm to fetch.
 	@return ApiGetKerberosRealmRequest
 */
-func (a *KerberosRealmsApiService) GetKerberosRealm(ctx context.Context, id string) ApiGetKerberosRealmRequest {
+func (a *KerberosRealmsAPIService) GetKerberosRealm(ctx context.Context, id string) ApiGetKerberosRealmRequest {
 	return ApiGetKerberosRealmRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -297,7 +297,7 @@ func (a *KerberosRealmsApiService) GetKerberosRealm(ctx context.Context, id stri
 // Execute executes the request
 //
 //	@return KerberosRealm
-func (a *KerberosRealmsApiService) GetKerberosRealmExecute(r ApiGetKerberosRealmRequest) (*KerberosRealm, *http.Response, error) {
+func (a *KerberosRealmsAPIService) GetKerberosRealmExecute(r ApiGetKerberosRealmRequest) (*KerberosRealm, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -305,7 +305,7 @@ func (a *KerberosRealmsApiService) GetKerberosRealmExecute(r ApiGetKerberosRealm
 		localVarReturnValue *KerberosRealm
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KerberosRealmsApiService.GetKerberosRealm")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KerberosRealmsAPIService.GetKerberosRealm")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -383,7 +383,7 @@ func (a *KerberosRealmsApiService) GetKerberosRealmExecute(r ApiGetKerberosRealm
 
 type ApiGetKerberosRealmSettingsRequest struct {
 	ctx        context.Context
-	ApiService *KerberosRealmsApiService
+	ApiService *KerberosRealmsAPIService
 }
 
 func (r ApiGetKerberosRealmSettingsRequest) Execute() (*KerberosRealmsSettings, *http.Response, error) {
@@ -396,7 +396,7 @@ GetKerberosRealmSettings Gets the Kerberos Realms Settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetKerberosRealmSettingsRequest
 */
-func (a *KerberosRealmsApiService) GetKerberosRealmSettings(ctx context.Context) ApiGetKerberosRealmSettingsRequest {
+func (a *KerberosRealmsAPIService) GetKerberosRealmSettings(ctx context.Context) ApiGetKerberosRealmSettingsRequest {
 	return ApiGetKerberosRealmSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -406,7 +406,7 @@ func (a *KerberosRealmsApiService) GetKerberosRealmSettings(ctx context.Context)
 // Execute executes the request
 //
 //	@return KerberosRealmsSettings
-func (a *KerberosRealmsApiService) GetKerberosRealmSettingsExecute(r ApiGetKerberosRealmSettingsRequest) (*KerberosRealmsSettings, *http.Response, error) {
+func (a *KerberosRealmsAPIService) GetKerberosRealmSettingsExecute(r ApiGetKerberosRealmSettingsRequest) (*KerberosRealmsSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -414,7 +414,7 @@ func (a *KerberosRealmsApiService) GetKerberosRealmSettingsExecute(r ApiGetKerbe
 		localVarReturnValue *KerberosRealmsSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KerberosRealmsApiService.GetKerberosRealmSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KerberosRealmsAPIService.GetKerberosRealmSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -481,7 +481,7 @@ func (a *KerberosRealmsApiService) GetKerberosRealmSettingsExecute(r ApiGetKerbe
 
 type ApiGetKerberosRealmsRequest struct {
 	ctx        context.Context
-	ApiService *KerberosRealmsApiService
+	ApiService *KerberosRealmsAPIService
 }
 
 func (r ApiGetKerberosRealmsRequest) Execute() (*KerberosRealms, *http.Response, error) {
@@ -494,7 +494,7 @@ GetKerberosRealms Gets the Kerberos Realms.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetKerberosRealmsRequest
 */
-func (a *KerberosRealmsApiService) GetKerberosRealms(ctx context.Context) ApiGetKerberosRealmsRequest {
+func (a *KerberosRealmsAPIService) GetKerberosRealms(ctx context.Context) ApiGetKerberosRealmsRequest {
 	return ApiGetKerberosRealmsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -504,7 +504,7 @@ func (a *KerberosRealmsApiService) GetKerberosRealms(ctx context.Context) ApiGet
 // Execute executes the request
 //
 //	@return KerberosRealms
-func (a *KerberosRealmsApiService) GetKerberosRealmsExecute(r ApiGetKerberosRealmsRequest) (*KerberosRealms, *http.Response, error) {
+func (a *KerberosRealmsAPIService) GetKerberosRealmsExecute(r ApiGetKerberosRealmsRequest) (*KerberosRealms, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -512,7 +512,7 @@ func (a *KerberosRealmsApiService) GetKerberosRealmsExecute(r ApiGetKerberosReal
 		localVarReturnValue *KerberosRealms
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KerberosRealmsApiService.GetKerberosRealms")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KerberosRealmsAPIService.GetKerberosRealms")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -579,7 +579,7 @@ func (a *KerberosRealmsApiService) GetKerberosRealmsExecute(r ApiGetKerberosReal
 
 type ApiUpdateKerberosRealmRequest struct {
 	ctx                       context.Context
-	ApiService                *KerberosRealmsApiService
+	ApiService                *KerberosRealmsAPIService
 	id                        string
 	body                      *KerberosRealm
 	xBypassExternalValidation *bool
@@ -610,7 +610,7 @@ Update a Kerberos Realm with the specified ID. A 404 status code is returned for
 	@param id ID of the Kerberos Realm to update.
 	@return ApiUpdateKerberosRealmRequest
 */
-func (a *KerberosRealmsApiService) UpdateKerberosRealm(ctx context.Context, id string) ApiUpdateKerberosRealmRequest {
+func (a *KerberosRealmsAPIService) UpdateKerberosRealm(ctx context.Context, id string) ApiUpdateKerberosRealmRequest {
 	return ApiUpdateKerberosRealmRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -621,7 +621,7 @@ func (a *KerberosRealmsApiService) UpdateKerberosRealm(ctx context.Context, id s
 // Execute executes the request
 //
 //	@return KerberosRealm
-func (a *KerberosRealmsApiService) UpdateKerberosRealmExecute(r ApiUpdateKerberosRealmRequest) (*KerberosRealm, *http.Response, error) {
+func (a *KerberosRealmsAPIService) UpdateKerberosRealmExecute(r ApiUpdateKerberosRealmRequest) (*KerberosRealm, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -629,7 +629,7 @@ func (a *KerberosRealmsApiService) UpdateKerberosRealmExecute(r ApiUpdateKerbero
 		localVarReturnValue *KerberosRealm
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KerberosRealmsApiService.UpdateKerberosRealm")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KerberosRealmsAPIService.UpdateKerberosRealm")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -726,7 +726,7 @@ func (a *KerberosRealmsApiService) UpdateKerberosRealmExecute(r ApiUpdateKerbero
 
 type ApiUpdateKerberosRealmSettingsRequest struct {
 	ctx        context.Context
-	ApiService *KerberosRealmsApiService
+	ApiService *KerberosRealmsAPIService
 	body       *KerberosRealmsSettings
 }
 
@@ -746,7 +746,7 @@ UpdateKerberosRealmSettings Set/Update the Kerberos Realms Settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateKerberosRealmSettingsRequest
 */
-func (a *KerberosRealmsApiService) UpdateKerberosRealmSettings(ctx context.Context) ApiUpdateKerberosRealmSettingsRequest {
+func (a *KerberosRealmsAPIService) UpdateKerberosRealmSettings(ctx context.Context) ApiUpdateKerberosRealmSettingsRequest {
 	return ApiUpdateKerberosRealmSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -756,7 +756,7 @@ func (a *KerberosRealmsApiService) UpdateKerberosRealmSettings(ctx context.Conte
 // Execute executes the request
 //
 //	@return KerberosRealmsSettings
-func (a *KerberosRealmsApiService) UpdateKerberosRealmSettingsExecute(r ApiUpdateKerberosRealmSettingsRequest) (*KerberosRealmsSettings, *http.Response, error) {
+func (a *KerberosRealmsAPIService) UpdateKerberosRealmSettingsExecute(r ApiUpdateKerberosRealmSettingsRequest) (*KerberosRealmsSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -764,7 +764,7 @@ func (a *KerberosRealmsApiService) UpdateKerberosRealmSettingsExecute(r ApiUpdat
 		localVarReturnValue *KerberosRealmsSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KerberosRealmsApiService.UpdateKerberosRealmSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KerberosRealmsAPIService.UpdateKerberosRealmSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

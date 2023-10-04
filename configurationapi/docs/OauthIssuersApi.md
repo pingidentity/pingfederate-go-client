@@ -1,14 +1,14 @@
-# \OauthIssuersApi
+# \OauthIssuersAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddOauthIssuer**](OauthIssuersApi.md#AddOauthIssuer) | **Post** /oauth/issuers | Create a new virtual issuer.
-[**DeleteOauthIssuer**](OauthIssuersApi.md#DeleteOauthIssuer) | **Delete** /oauth/issuers/{id} | Delete a virtual issuer.
-[**GetOauthIssuerById**](OauthIssuersApi.md#GetOauthIssuerById) | **Get** /oauth/issuers/{id} | Find a virtual issuer by ID.
-[**GetOauthIssuers**](OauthIssuersApi.md#GetOauthIssuers) | **Get** /oauth/issuers | Get the list of virtual issuers.
-[**UpdateOauthIssuer**](OauthIssuersApi.md#UpdateOauthIssuer) | **Put** /oauth/issuers/{id} | Update a virtual issuer.
+[**AddOauthIssuer**](OauthIssuersAPI.md#AddOauthIssuer) | **Post** /oauth/issuers | Create a new virtual issuer.
+[**DeleteOauthIssuer**](OauthIssuersAPI.md#DeleteOauthIssuer) | **Delete** /oauth/issuers/{id} | Delete a virtual issuer.
+[**GetOauthIssuerById**](OauthIssuersAPI.md#GetOauthIssuerById) | **Get** /oauth/issuers/{id} | Find a virtual issuer by ID.
+[**GetOauthIssuers**](OauthIssuersAPI.md#GetOauthIssuers) | **Get** /oauth/issuers | Get the list of virtual issuers.
+[**UpdateOauthIssuer**](OauthIssuersAPI.md#UpdateOauthIssuer) | **Put** /oauth/issuers/{id} | Update a virtual issuer.
 
 
 
@@ -37,13 +37,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthIssuersApi.AddOauthIssuer(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.OauthIssuersAPI.AddOauthIssuer(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthIssuersApi.AddOauthIssuer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthIssuersAPI.AddOauthIssuer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddOauthIssuer`: Issuer
-    fmt.Fprintf(os.Stdout, "Response from `OauthIssuersApi.AddOauthIssuer`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthIssuersAPI.AddOauthIssuer`: %v\n", resp)
 }
 ```
 
@@ -103,9 +103,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthIssuersApi.DeleteOauthIssuer(context.Background(), id).Execute()
+    r, err := apiClient.OauthIssuersAPI.DeleteOauthIssuer(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthIssuersApi.DeleteOauthIssuer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthIssuersAPI.DeleteOauthIssuer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -171,13 +171,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthIssuersApi.GetOauthIssuerById(context.Background(), id).Execute()
+    resp, r, err := apiClient.OauthIssuersAPI.GetOauthIssuerById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthIssuersApi.GetOauthIssuerById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthIssuersAPI.GetOauthIssuerById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOauthIssuerById`: Issuer
-    fmt.Fprintf(os.Stdout, "Response from `OauthIssuersApi.GetOauthIssuerById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthIssuersAPI.GetOauthIssuerById`: %v\n", resp)
 }
 ```
 
@@ -238,13 +238,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthIssuersApi.GetOauthIssuers(context.Background()).Execute()
+    resp, r, err := apiClient.OauthIssuersAPI.GetOauthIssuers(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthIssuersApi.GetOauthIssuers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthIssuersAPI.GetOauthIssuers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOauthIssuers`: Issuers
-    fmt.Fprintf(os.Stdout, "Response from `OauthIssuersApi.GetOauthIssuers`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthIssuersAPI.GetOauthIssuers`: %v\n", resp)
 }
 ```
 
@@ -301,13 +301,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthIssuersApi.UpdateOauthIssuer(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.OauthIssuersAPI.UpdateOauthIssuer(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthIssuersApi.UpdateOauthIssuer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthIssuersAPI.UpdateOauthIssuer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateOauthIssuer`: Issuer
-    fmt.Fprintf(os.Stdout, "Response from `OauthIssuersApi.UpdateOauthIssuer`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthIssuersAPI.UpdateOauthIssuer`: %v\n", resp)
 }
 ```
 

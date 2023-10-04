@@ -1,16 +1,16 @@
-# \IdentityStoreProvisionersApi
+# \IdentityStoreProvisionersAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateIdentityStoreProvisioner**](IdentityStoreProvisionersApi.md#CreateIdentityStoreProvisioner) | **Post** /identityStoreProvisioners | Create a new identity store provisioner instance.
-[**DeleteIdentityStoreProvisioner**](IdentityStoreProvisionersApi.md#DeleteIdentityStoreProvisioner) | **Delete** /identityStoreProvisioners/{id} | Delete an identity store provisioner instance
-[**GetIdentityStoreProvisioner**](IdentityStoreProvisionersApi.md#GetIdentityStoreProvisioner) | **Get** /identityStoreProvisioners/{id} | Get an identity store provisioner by ID.
-[**GetIdentityStoreProvisionerDescriptorById**](IdentityStoreProvisionersApi.md#GetIdentityStoreProvisionerDescriptorById) | **Get** /identityStoreProvisioners/descriptors/{id} | Get the descriptor of an identity store provisioner by ID.
-[**GetIdentityStoreProvisionerDescriptors**](IdentityStoreProvisionersApi.md#GetIdentityStoreProvisionerDescriptors) | **Get** /identityStoreProvisioners/descriptors | Get the list of available identity store provisioner descriptors.
-[**GetIdentityStoreProvisioners**](IdentityStoreProvisionersApi.md#GetIdentityStoreProvisioners) | **Get** /identityStoreProvisioners | Get the list of configured identity store provisioner instances.
-[**UpdateIdentityStoreProvisioner**](IdentityStoreProvisionersApi.md#UpdateIdentityStoreProvisioner) | **Put** /identityStoreProvisioners/{id} | Update an identity store provisioner instance
+[**CreateIdentityStoreProvisioner**](IdentityStoreProvisionersAPI.md#CreateIdentityStoreProvisioner) | **Post** /identityStoreProvisioners | Create a new identity store provisioner instance.
+[**DeleteIdentityStoreProvisioner**](IdentityStoreProvisionersAPI.md#DeleteIdentityStoreProvisioner) | **Delete** /identityStoreProvisioners/{id} | Delete an identity store provisioner instance
+[**GetIdentityStoreProvisioner**](IdentityStoreProvisionersAPI.md#GetIdentityStoreProvisioner) | **Get** /identityStoreProvisioners/{id} | Get an identity store provisioner by ID.
+[**GetIdentityStoreProvisionerDescriptorById**](IdentityStoreProvisionersAPI.md#GetIdentityStoreProvisionerDescriptorById) | **Get** /identityStoreProvisioners/descriptors/{id} | Get the descriptor of an identity store provisioner by ID.
+[**GetIdentityStoreProvisionerDescriptors**](IdentityStoreProvisionersAPI.md#GetIdentityStoreProvisionerDescriptors) | **Get** /identityStoreProvisioners/descriptors | Get the list of available identity store provisioner descriptors.
+[**GetIdentityStoreProvisioners**](IdentityStoreProvisionersAPI.md#GetIdentityStoreProvisioners) | **Get** /identityStoreProvisioners | Get the list of configured identity store provisioner instances.
+[**UpdateIdentityStoreProvisioner**](IdentityStoreProvisionersAPI.md#UpdateIdentityStoreProvisioner) | **Put** /identityStoreProvisioners/{id} | Update an identity store provisioner instance
 
 
 
@@ -37,13 +37,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityStoreProvisionersApi.CreateIdentityStoreProvisioner(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.IdentityStoreProvisionersAPI.CreateIdentityStoreProvisioner(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersApi.CreateIdentityStoreProvisioner``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersAPI.CreateIdentityStoreProvisioner``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateIdentityStoreProvisioner`: IdentityStoreProvisioner
-    fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersApi.CreateIdentityStoreProvisioner`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersAPI.CreateIdentityStoreProvisioner`: %v\n", resp)
 }
 ```
 
@@ -101,9 +101,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IdentityStoreProvisionersApi.DeleteIdentityStoreProvisioner(context.Background(), id).Execute()
+    r, err := apiClient.IdentityStoreProvisionersAPI.DeleteIdentityStoreProvisioner(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersApi.DeleteIdentityStoreProvisioner``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersAPI.DeleteIdentityStoreProvisioner``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -167,13 +167,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityStoreProvisionersApi.GetIdentityStoreProvisioner(context.Background(), id).Execute()
+    resp, r, err := apiClient.IdentityStoreProvisionersAPI.GetIdentityStoreProvisioner(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersApi.GetIdentityStoreProvisioner``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersAPI.GetIdentityStoreProvisioner``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetIdentityStoreProvisioner`: IdentityStoreProvisioner
-    fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersApi.GetIdentityStoreProvisioner`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersAPI.GetIdentityStoreProvisioner`: %v\n", resp)
 }
 ```
 
@@ -235,13 +235,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityStoreProvisionersApi.GetIdentityStoreProvisionerDescriptorById(context.Background(), id).Execute()
+    resp, r, err := apiClient.IdentityStoreProvisionersAPI.GetIdentityStoreProvisionerDescriptorById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersApi.GetIdentityStoreProvisionerDescriptorById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersAPI.GetIdentityStoreProvisionerDescriptorById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetIdentityStoreProvisionerDescriptorById`: IdentityStoreProvisionerDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersApi.GetIdentityStoreProvisionerDescriptorById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersAPI.GetIdentityStoreProvisionerDescriptorById`: %v\n", resp)
 }
 ```
 
@@ -302,13 +302,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityStoreProvisionersApi.GetIdentityStoreProvisionerDescriptors(context.Background()).Execute()
+    resp, r, err := apiClient.IdentityStoreProvisionersAPI.GetIdentityStoreProvisionerDescriptors(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersApi.GetIdentityStoreProvisionerDescriptors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersAPI.GetIdentityStoreProvisionerDescriptors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetIdentityStoreProvisionerDescriptors`: IdentityStoreProvisionerDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersApi.GetIdentityStoreProvisionerDescriptors`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersAPI.GetIdentityStoreProvisionerDescriptors`: %v\n", resp)
 }
 ```
 
@@ -361,13 +361,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityStoreProvisionersApi.GetIdentityStoreProvisioners(context.Background()).Execute()
+    resp, r, err := apiClient.IdentityStoreProvisionersAPI.GetIdentityStoreProvisioners(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersApi.GetIdentityStoreProvisioners``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersAPI.GetIdentityStoreProvisioners``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetIdentityStoreProvisioners`: IdentityStoreProvisioners
-    fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersApi.GetIdentityStoreProvisioners`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersAPI.GetIdentityStoreProvisioners`: %v\n", resp)
 }
 ```
 
@@ -422,13 +422,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityStoreProvisionersApi.UpdateIdentityStoreProvisioner(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.IdentityStoreProvisionersAPI.UpdateIdentityStoreProvisioner(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersApi.UpdateIdentityStoreProvisioner``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersAPI.UpdateIdentityStoreProvisioner``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateIdentityStoreProvisioner`: IdentityStoreProvisioner
-    fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersApi.UpdateIdentityStoreProvisioner`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersAPI.UpdateIdentityStoreProvisioner`: %v\n", resp)
 }
 ```
 

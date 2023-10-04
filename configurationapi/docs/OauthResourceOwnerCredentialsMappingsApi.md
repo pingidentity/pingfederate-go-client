@@ -1,14 +1,14 @@
-# \OauthResourceOwnerCredentialsMappingsApi
+# \OauthResourceOwnerCredentialsMappingsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateResourceOwnerCredentialsMapping**](OauthResourceOwnerCredentialsMappingsApi.md#CreateResourceOwnerCredentialsMapping) | **Post** /oauth/resourceOwnerCredentialsMappings | Create a new Resource Owner Credentials mapping.
-[**DeleteResourceOwnerCredentialsMapping**](OauthResourceOwnerCredentialsMappingsApi.md#DeleteResourceOwnerCredentialsMapping) | **Delete** /oauth/resourceOwnerCredentialsMappings/{id} | Delete a Resource Owner Credentials mapping.
-[**GetResourceOwnerCredentialsMapping**](OauthResourceOwnerCredentialsMappingsApi.md#GetResourceOwnerCredentialsMapping) | **Get** /oauth/resourceOwnerCredentialsMappings/{id} | Find the Resource Owner Credentials mapping by the ID.
-[**GetResourceOwnerCredentialsMappings**](OauthResourceOwnerCredentialsMappingsApi.md#GetResourceOwnerCredentialsMappings) | **Get** /oauth/resourceOwnerCredentialsMappings | Get the list of Resource Owner Credentials Grant Mapping.
-[**UpdateResourceOwnerCredentialsMapping**](OauthResourceOwnerCredentialsMappingsApi.md#UpdateResourceOwnerCredentialsMapping) | **Put** /oauth/resourceOwnerCredentialsMappings/{id} | Update a Resource Owner Credentials mapping.
+[**CreateResourceOwnerCredentialsMapping**](OauthResourceOwnerCredentialsMappingsAPI.md#CreateResourceOwnerCredentialsMapping) | **Post** /oauth/resourceOwnerCredentialsMappings | Create a new Resource Owner Credentials mapping.
+[**DeleteResourceOwnerCredentialsMapping**](OauthResourceOwnerCredentialsMappingsAPI.md#DeleteResourceOwnerCredentialsMapping) | **Delete** /oauth/resourceOwnerCredentialsMappings/{id} | Delete a Resource Owner Credentials mapping.
+[**GetResourceOwnerCredentialsMapping**](OauthResourceOwnerCredentialsMappingsAPI.md#GetResourceOwnerCredentialsMapping) | **Get** /oauth/resourceOwnerCredentialsMappings/{id} | Find the Resource Owner Credentials mapping by the ID.
+[**GetResourceOwnerCredentialsMappings**](OauthResourceOwnerCredentialsMappingsAPI.md#GetResourceOwnerCredentialsMappings) | **Get** /oauth/resourceOwnerCredentialsMappings | Get the list of Resource Owner Credentials Grant Mapping.
+[**UpdateResourceOwnerCredentialsMapping**](OauthResourceOwnerCredentialsMappingsAPI.md#UpdateResourceOwnerCredentialsMapping) | **Put** /oauth/resourceOwnerCredentialsMappings/{id} | Update a Resource Owner Credentials mapping.
 
 
 
@@ -38,13 +38,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthResourceOwnerCredentialsMappingsApi.CreateResourceOwnerCredentialsMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthResourceOwnerCredentialsMappingsAPI.CreateResourceOwnerCredentialsMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthResourceOwnerCredentialsMappingsApi.CreateResourceOwnerCredentialsMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthResourceOwnerCredentialsMappingsAPI.CreateResourceOwnerCredentialsMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateResourceOwnerCredentialsMapping`: ResourceOwnerCredentialsMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthResourceOwnerCredentialsMappingsApi.CreateResourceOwnerCredentialsMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthResourceOwnerCredentialsMappingsAPI.CreateResourceOwnerCredentialsMapping`: %v\n", resp)
 }
 ```
 
@@ -103,9 +103,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthResourceOwnerCredentialsMappingsApi.DeleteResourceOwnerCredentialsMapping(context.Background(), id).Execute()
+    r, err := apiClient.OauthResourceOwnerCredentialsMappingsAPI.DeleteResourceOwnerCredentialsMapping(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthResourceOwnerCredentialsMappingsApi.DeleteResourceOwnerCredentialsMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthResourceOwnerCredentialsMappingsAPI.DeleteResourceOwnerCredentialsMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -169,13 +169,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthResourceOwnerCredentialsMappingsApi.GetResourceOwnerCredentialsMapping(context.Background(), id).Execute()
+    resp, r, err := apiClient.OauthResourceOwnerCredentialsMappingsAPI.GetResourceOwnerCredentialsMapping(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthResourceOwnerCredentialsMappingsApi.GetResourceOwnerCredentialsMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthResourceOwnerCredentialsMappingsAPI.GetResourceOwnerCredentialsMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetResourceOwnerCredentialsMapping`: ResourceOwnerCredentialsMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthResourceOwnerCredentialsMappingsApi.GetResourceOwnerCredentialsMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthResourceOwnerCredentialsMappingsAPI.GetResourceOwnerCredentialsMapping`: %v\n", resp)
 }
 ```
 
@@ -236,13 +236,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthResourceOwnerCredentialsMappingsApi.GetResourceOwnerCredentialsMappings(context.Background()).Execute()
+    resp, r, err := apiClient.OauthResourceOwnerCredentialsMappingsAPI.GetResourceOwnerCredentialsMappings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthResourceOwnerCredentialsMappingsApi.GetResourceOwnerCredentialsMappings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthResourceOwnerCredentialsMappingsAPI.GetResourceOwnerCredentialsMappings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetResourceOwnerCredentialsMappings`: ResourceOwnerCredentialsMappings
-    fmt.Fprintf(os.Stdout, "Response from `OauthResourceOwnerCredentialsMappingsApi.GetResourceOwnerCredentialsMappings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthResourceOwnerCredentialsMappingsAPI.GetResourceOwnerCredentialsMappings`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthResourceOwnerCredentialsMappingsApi.UpdateResourceOwnerCredentialsMapping(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthResourceOwnerCredentialsMappingsAPI.UpdateResourceOwnerCredentialsMapping(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthResourceOwnerCredentialsMappingsApi.UpdateResourceOwnerCredentialsMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthResourceOwnerCredentialsMappingsAPI.UpdateResourceOwnerCredentialsMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateResourceOwnerCredentialsMapping`: ResourceOwnerCredentialsMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthResourceOwnerCredentialsMappingsApi.UpdateResourceOwnerCredentialsMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthResourceOwnerCredentialsMappingsAPI.UpdateResourceOwnerCredentialsMapping`: %v\n", resp)
 }
 ```
 

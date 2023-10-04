@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// IdpTokenProcessorsApiService IdpTokenProcessorsApi service
-type IdpTokenProcessorsApiService service
+// IdpTokenProcessorsAPIService IdpTokenProcessorsAPI service
+type IdpTokenProcessorsAPIService service
 
 type ApiCreateTokenProcessorRequest struct {
 	ctx        context.Context
-	ApiService *IdpTokenProcessorsApiService
+	ApiService *IdpTokenProcessorsAPIService
 	body       *TokenProcessor
 }
 
@@ -46,7 +46,7 @@ Create a new token processor instance. If the token processor is not properly co
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateTokenProcessorRequest
 */
-func (a *IdpTokenProcessorsApiService) CreateTokenProcessor(ctx context.Context) ApiCreateTokenProcessorRequest {
+func (a *IdpTokenProcessorsAPIService) CreateTokenProcessor(ctx context.Context) ApiCreateTokenProcessorRequest {
 	return ApiCreateTokenProcessorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -56,7 +56,7 @@ func (a *IdpTokenProcessorsApiService) CreateTokenProcessor(ctx context.Context)
 // Execute executes the request
 //
 //	@return TokenProcessor
-func (a *IdpTokenProcessorsApiService) CreateTokenProcessorExecute(r ApiCreateTokenProcessorRequest) (*TokenProcessor, *http.Response, error) {
+func (a *IdpTokenProcessorsAPIService) CreateTokenProcessorExecute(r ApiCreateTokenProcessorRequest) (*TokenProcessor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -64,7 +64,7 @@ func (a *IdpTokenProcessorsApiService) CreateTokenProcessorExecute(r ApiCreateTo
 		localVarReturnValue *TokenProcessor
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpTokenProcessorsApiService.CreateTokenProcessor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpTokenProcessorsAPIService.CreateTokenProcessor")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -146,7 +146,7 @@ func (a *IdpTokenProcessorsApiService) CreateTokenProcessorExecute(r ApiCreateTo
 
 type ApiDeleteTokenProcessorRequest struct {
 	ctx        context.Context
-	ApiService *IdpTokenProcessorsApiService
+	ApiService *IdpTokenProcessorsAPIService
 	id         string
 }
 
@@ -163,7 +163,7 @@ Delete a token processor instance with the specified ID. A 404 status code is re
 	@param id ID of the token processor instance to delete.
 	@return ApiDeleteTokenProcessorRequest
 */
-func (a *IdpTokenProcessorsApiService) DeleteTokenProcessor(ctx context.Context, id string) ApiDeleteTokenProcessorRequest {
+func (a *IdpTokenProcessorsAPIService) DeleteTokenProcessor(ctx context.Context, id string) ApiDeleteTokenProcessorRequest {
 	return ApiDeleteTokenProcessorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -172,14 +172,14 @@ func (a *IdpTokenProcessorsApiService) DeleteTokenProcessor(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *IdpTokenProcessorsApiService) DeleteTokenProcessorExecute(r ApiDeleteTokenProcessorRequest) (*http.Response, error) {
+func (a *IdpTokenProcessorsAPIService) DeleteTokenProcessorExecute(r ApiDeleteTokenProcessorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpTokenProcessorsApiService.DeleteTokenProcessor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpTokenProcessorsAPIService.DeleteTokenProcessor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -259,7 +259,7 @@ func (a *IdpTokenProcessorsApiService) DeleteTokenProcessorExecute(r ApiDeleteTo
 
 type ApiGetTokenProcessorRequest struct {
 	ctx        context.Context
-	ApiService *IdpTokenProcessorsApiService
+	ApiService *IdpTokenProcessorsAPIService
 	id         string
 }
 
@@ -276,7 +276,7 @@ Get the configured token processor instance with the specified ID. A 404 status 
 	@param id ID of the token processor instance to fetch.
 	@return ApiGetTokenProcessorRequest
 */
-func (a *IdpTokenProcessorsApiService) GetTokenProcessor(ctx context.Context, id string) ApiGetTokenProcessorRequest {
+func (a *IdpTokenProcessorsAPIService) GetTokenProcessor(ctx context.Context, id string) ApiGetTokenProcessorRequest {
 	return ApiGetTokenProcessorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -287,7 +287,7 @@ func (a *IdpTokenProcessorsApiService) GetTokenProcessor(ctx context.Context, id
 // Execute executes the request
 //
 //	@return TokenProcessor
-func (a *IdpTokenProcessorsApiService) GetTokenProcessorExecute(r ApiGetTokenProcessorRequest) (*TokenProcessor, *http.Response, error) {
+func (a *IdpTokenProcessorsAPIService) GetTokenProcessorExecute(r ApiGetTokenProcessorRequest) (*TokenProcessor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -295,7 +295,7 @@ func (a *IdpTokenProcessorsApiService) GetTokenProcessorExecute(r ApiGetTokenPro
 		localVarReturnValue *TokenProcessor
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpTokenProcessorsApiService.GetTokenProcessor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpTokenProcessorsAPIService.GetTokenProcessor")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -373,7 +373,7 @@ func (a *IdpTokenProcessorsApiService) GetTokenProcessorExecute(r ApiGetTokenPro
 
 type ApiGetTokenProcessorDescriptorsRequest struct {
 	ctx        context.Context
-	ApiService *IdpTokenProcessorsApiService
+	ApiService *IdpTokenProcessorsAPIService
 }
 
 func (r ApiGetTokenProcessorDescriptorsRequest) Execute() (*TokenProcessorDescriptors, *http.Response, error) {
@@ -386,7 +386,7 @@ GetTokenProcessorDescriptors Get the list of available token processors.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetTokenProcessorDescriptorsRequest
 */
-func (a *IdpTokenProcessorsApiService) GetTokenProcessorDescriptors(ctx context.Context) ApiGetTokenProcessorDescriptorsRequest {
+func (a *IdpTokenProcessorsAPIService) GetTokenProcessorDescriptors(ctx context.Context) ApiGetTokenProcessorDescriptorsRequest {
 	return ApiGetTokenProcessorDescriptorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -396,7 +396,7 @@ func (a *IdpTokenProcessorsApiService) GetTokenProcessorDescriptors(ctx context.
 // Execute executes the request
 //
 //	@return TokenProcessorDescriptors
-func (a *IdpTokenProcessorsApiService) GetTokenProcessorDescriptorsExecute(r ApiGetTokenProcessorDescriptorsRequest) (*TokenProcessorDescriptors, *http.Response, error) {
+func (a *IdpTokenProcessorsAPIService) GetTokenProcessorDescriptorsExecute(r ApiGetTokenProcessorDescriptorsRequest) (*TokenProcessorDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -404,7 +404,7 @@ func (a *IdpTokenProcessorsApiService) GetTokenProcessorDescriptorsExecute(r Api
 		localVarReturnValue *TokenProcessorDescriptors
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpTokenProcessorsApiService.GetTokenProcessorDescriptors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpTokenProcessorsAPIService.GetTokenProcessorDescriptors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -471,7 +471,7 @@ func (a *IdpTokenProcessorsApiService) GetTokenProcessorDescriptorsExecute(r Api
 
 type ApiGetTokenProcessorDescriptorsByIdRequest struct {
 	ctx        context.Context
-	ApiService *IdpTokenProcessorsApiService
+	ApiService *IdpTokenProcessorsAPIService
 	id         string
 }
 
@@ -488,7 +488,7 @@ Get the description of a token processor plugin by ID. A 404 status code is retu
 	@param id ID of a token processor descriptor to fetch.
 	@return ApiGetTokenProcessorDescriptorsByIdRequest
 */
-func (a *IdpTokenProcessorsApiService) GetTokenProcessorDescriptorsById(ctx context.Context, id string) ApiGetTokenProcessorDescriptorsByIdRequest {
+func (a *IdpTokenProcessorsAPIService) GetTokenProcessorDescriptorsById(ctx context.Context, id string) ApiGetTokenProcessorDescriptorsByIdRequest {
 	return ApiGetTokenProcessorDescriptorsByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -499,7 +499,7 @@ func (a *IdpTokenProcessorsApiService) GetTokenProcessorDescriptorsById(ctx cont
 // Execute executes the request
 //
 //	@return TokenProcessorDescriptor
-func (a *IdpTokenProcessorsApiService) GetTokenProcessorDescriptorsByIdExecute(r ApiGetTokenProcessorDescriptorsByIdRequest) (*TokenProcessorDescriptor, *http.Response, error) {
+func (a *IdpTokenProcessorsAPIService) GetTokenProcessorDescriptorsByIdExecute(r ApiGetTokenProcessorDescriptorsByIdRequest) (*TokenProcessorDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -507,7 +507,7 @@ func (a *IdpTokenProcessorsApiService) GetTokenProcessorDescriptorsByIdExecute(r
 		localVarReturnValue *TokenProcessorDescriptor
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpTokenProcessorsApiService.GetTokenProcessorDescriptorsById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpTokenProcessorsAPIService.GetTokenProcessorDescriptorsById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -585,7 +585,7 @@ func (a *IdpTokenProcessorsApiService) GetTokenProcessorDescriptorsByIdExecute(r
 
 type ApiGetTokenProcessorsRequest struct {
 	ctx        context.Context
-	ApiService *IdpTokenProcessorsApiService
+	ApiService *IdpTokenProcessorsAPIService
 }
 
 func (r ApiGetTokenProcessorsRequest) Execute() (*TokenProcessors, *http.Response, error) {
@@ -598,7 +598,7 @@ GetTokenProcessors Get the list of token processor instances.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetTokenProcessorsRequest
 */
-func (a *IdpTokenProcessorsApiService) GetTokenProcessors(ctx context.Context) ApiGetTokenProcessorsRequest {
+func (a *IdpTokenProcessorsAPIService) GetTokenProcessors(ctx context.Context) ApiGetTokenProcessorsRequest {
 	return ApiGetTokenProcessorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -608,7 +608,7 @@ func (a *IdpTokenProcessorsApiService) GetTokenProcessors(ctx context.Context) A
 // Execute executes the request
 //
 //	@return TokenProcessors
-func (a *IdpTokenProcessorsApiService) GetTokenProcessorsExecute(r ApiGetTokenProcessorsRequest) (*TokenProcessors, *http.Response, error) {
+func (a *IdpTokenProcessorsAPIService) GetTokenProcessorsExecute(r ApiGetTokenProcessorsRequest) (*TokenProcessors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -616,7 +616,7 @@ func (a *IdpTokenProcessorsApiService) GetTokenProcessorsExecute(r ApiGetTokenPr
 		localVarReturnValue *TokenProcessors
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpTokenProcessorsApiService.GetTokenProcessors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpTokenProcessorsAPIService.GetTokenProcessors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -683,7 +683,7 @@ func (a *IdpTokenProcessorsApiService) GetTokenProcessorsExecute(r ApiGetTokenPr
 
 type ApiUpdateTokenProcessorRequest struct {
 	ctx        context.Context
-	ApiService *IdpTokenProcessorsApiService
+	ApiService *IdpTokenProcessorsAPIService
 	id         string
 	body       *TokenProcessor
 }
@@ -707,7 +707,7 @@ Update a token processor instance. If the token processor is not properly config
 	@param id ID of token processor instance.
 	@return ApiUpdateTokenProcessorRequest
 */
-func (a *IdpTokenProcessorsApiService) UpdateTokenProcessor(ctx context.Context, id string) ApiUpdateTokenProcessorRequest {
+func (a *IdpTokenProcessorsAPIService) UpdateTokenProcessor(ctx context.Context, id string) ApiUpdateTokenProcessorRequest {
 	return ApiUpdateTokenProcessorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -718,7 +718,7 @@ func (a *IdpTokenProcessorsApiService) UpdateTokenProcessor(ctx context.Context,
 // Execute executes the request
 //
 //	@return TokenProcessor
-func (a *IdpTokenProcessorsApiService) UpdateTokenProcessorExecute(r ApiUpdateTokenProcessorRequest) (*TokenProcessor, *http.Response, error) {
+func (a *IdpTokenProcessorsAPIService) UpdateTokenProcessorExecute(r ApiUpdateTokenProcessorRequest) (*TokenProcessor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -726,7 +726,7 @@ func (a *IdpTokenProcessorsApiService) UpdateTokenProcessorExecute(r ApiUpdateTo
 		localVarReturnValue *TokenProcessor
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpTokenProcessorsApiService.UpdateTokenProcessor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpTokenProcessorsAPIService.UpdateTokenProcessor")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

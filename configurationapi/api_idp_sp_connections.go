@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// IdpSpConnectionsApiService IdpSpConnectionsApi service
-type IdpSpConnectionsApiService service
+// IdpSpConnectionsAPIService IdpSpConnectionsAPI service
+type IdpSpConnectionsAPIService service
 
 type ApiAddSpConnectionCertRequest struct {
 	ctx        context.Context
-	ApiService *IdpSpConnectionsApiService
+	ApiService *IdpSpConnectionsAPIService
 	id         string
 	body       *ConnectionCert
 }
@@ -48,7 +48,7 @@ If the certificate's activeVerificationCert flag is set to true, it will become 
 	@param id ID of the SP Connection to update.
 	@return ApiAddSpConnectionCertRequest
 */
-func (a *IdpSpConnectionsApiService) AddSpConnectionCert(ctx context.Context, id string) ApiAddSpConnectionCertRequest {
+func (a *IdpSpConnectionsAPIService) AddSpConnectionCert(ctx context.Context, id string) ApiAddSpConnectionCertRequest {
 	return ApiAddSpConnectionCertRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -59,7 +59,7 @@ func (a *IdpSpConnectionsApiService) AddSpConnectionCert(ctx context.Context, id
 // Execute executes the request
 //
 //	@return ConnectionCert
-func (a *IdpSpConnectionsApiService) AddSpConnectionCertExecute(r ApiAddSpConnectionCertRequest) (*ConnectionCert, *http.Response, error) {
+func (a *IdpSpConnectionsAPIService) AddSpConnectionCertExecute(r ApiAddSpConnectionCertRequest) (*ConnectionCert, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -67,7 +67,7 @@ func (a *IdpSpConnectionsApiService) AddSpConnectionCertExecute(r ApiAddSpConnec
 		localVarReturnValue *ConnectionCert
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsApiService.AddSpConnectionCert")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsAPIService.AddSpConnectionCert")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -161,7 +161,7 @@ func (a *IdpSpConnectionsApiService) AddSpConnectionCertExecute(r ApiAddSpConnec
 
 type ApiCreateSpConnectionRequest struct {
 	ctx                       context.Context
-	ApiService                *IdpSpConnectionsApiService
+	ApiService                *IdpSpConnectionsAPIService
 	body                      *SpConnection
 	xBypassExternalValidation *bool
 }
@@ -190,7 +190,7 @@ Create a new SP connection. If the SP connection is not properly configured, a 4
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSpConnectionRequest
 */
-func (a *IdpSpConnectionsApiService) CreateSpConnection(ctx context.Context) ApiCreateSpConnectionRequest {
+func (a *IdpSpConnectionsAPIService) CreateSpConnection(ctx context.Context) ApiCreateSpConnectionRequest {
 	return ApiCreateSpConnectionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -200,7 +200,7 @@ func (a *IdpSpConnectionsApiService) CreateSpConnection(ctx context.Context) Api
 // Execute executes the request
 //
 //	@return SpConnection
-func (a *IdpSpConnectionsApiService) CreateSpConnectionExecute(r ApiCreateSpConnectionRequest) (*SpConnection, *http.Response, error) {
+func (a *IdpSpConnectionsAPIService) CreateSpConnectionExecute(r ApiCreateSpConnectionRequest) (*SpConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -208,7 +208,7 @@ func (a *IdpSpConnectionsApiService) CreateSpConnectionExecute(r ApiCreateSpConn
 		localVarReturnValue *SpConnection
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsApiService.CreateSpConnection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsAPIService.CreateSpConnection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -293,7 +293,7 @@ func (a *IdpSpConnectionsApiService) CreateSpConnectionExecute(r ApiCreateSpConn
 
 type ApiDeleteSpConnectionRequest struct {
 	ctx        context.Context
-	ApiService *IdpSpConnectionsApiService
+	ApiService *IdpSpConnectionsAPIService
 	id         string
 }
 
@@ -310,7 +310,7 @@ Delete an SP connection with the specified ID. A 404 status code is returned for
 	@param id ID of SP Connection to delete.
 	@return ApiDeleteSpConnectionRequest
 */
-func (a *IdpSpConnectionsApiService) DeleteSpConnection(ctx context.Context, id string) ApiDeleteSpConnectionRequest {
+func (a *IdpSpConnectionsAPIService) DeleteSpConnection(ctx context.Context, id string) ApiDeleteSpConnectionRequest {
 	return ApiDeleteSpConnectionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -319,14 +319,14 @@ func (a *IdpSpConnectionsApiService) DeleteSpConnection(ctx context.Context, id 
 }
 
 // Execute executes the request
-func (a *IdpSpConnectionsApiService) DeleteSpConnectionExecute(r ApiDeleteSpConnectionRequest) (*http.Response, error) {
+func (a *IdpSpConnectionsAPIService) DeleteSpConnectionExecute(r ApiDeleteSpConnectionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsApiService.DeleteSpConnection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsAPIService.DeleteSpConnection")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -406,7 +406,7 @@ func (a *IdpSpConnectionsApiService) DeleteSpConnectionExecute(r ApiDeleteSpConn
 
 type ApiGetDecryptionKeysRequest struct {
 	ctx        context.Context
-	ApiService *IdpSpConnectionsApiService
+	ApiService *IdpSpConnectionsAPIService
 	id         string
 }
 
@@ -421,7 +421,7 @@ GetDecryptionKeys Get the decryption keys of an SP connection.
 	@param id ID of the SP Connection to update.
 	@return ApiGetDecryptionKeysRequest
 */
-func (a *IdpSpConnectionsApiService) GetDecryptionKeys(ctx context.Context, id string) ApiGetDecryptionKeysRequest {
+func (a *IdpSpConnectionsAPIService) GetDecryptionKeys(ctx context.Context, id string) ApiGetDecryptionKeysRequest {
 	return ApiGetDecryptionKeysRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -432,7 +432,7 @@ func (a *IdpSpConnectionsApiService) GetDecryptionKeys(ctx context.Context, id s
 // Execute executes the request
 //
 //	@return DecryptionKeys
-func (a *IdpSpConnectionsApiService) GetDecryptionKeysExecute(r ApiGetDecryptionKeysRequest) (*DecryptionKeys, *http.Response, error) {
+func (a *IdpSpConnectionsAPIService) GetDecryptionKeysExecute(r ApiGetDecryptionKeysRequest) (*DecryptionKeys, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -440,7 +440,7 @@ func (a *IdpSpConnectionsApiService) GetDecryptionKeysExecute(r ApiGetDecryption
 		localVarReturnValue *DecryptionKeys
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsApiService.GetDecryptionKeys")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsAPIService.GetDecryptionKeys")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -518,7 +518,7 @@ func (a *IdpSpConnectionsApiService) GetDecryptionKeysExecute(r ApiGetDecryption
 
 type ApiGetSpConnectionRequest struct {
 	ctx        context.Context
-	ApiService *IdpSpConnectionsApiService
+	ApiService *IdpSpConnectionsAPIService
 	id         string
 }
 
@@ -535,7 +535,7 @@ Get an SP connection with the specified ID. A 404 status code is returned for no
 	@param id ID of the SP Connection to fetch.
 	@return ApiGetSpConnectionRequest
 */
-func (a *IdpSpConnectionsApiService) GetSpConnection(ctx context.Context, id string) ApiGetSpConnectionRequest {
+func (a *IdpSpConnectionsAPIService) GetSpConnection(ctx context.Context, id string) ApiGetSpConnectionRequest {
 	return ApiGetSpConnectionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -546,7 +546,7 @@ func (a *IdpSpConnectionsApiService) GetSpConnection(ctx context.Context, id str
 // Execute executes the request
 //
 //	@return SpConnection
-func (a *IdpSpConnectionsApiService) GetSpConnectionExecute(r ApiGetSpConnectionRequest) (*SpConnection, *http.Response, error) {
+func (a *IdpSpConnectionsAPIService) GetSpConnectionExecute(r ApiGetSpConnectionRequest) (*SpConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -554,7 +554,7 @@ func (a *IdpSpConnectionsApiService) GetSpConnectionExecute(r ApiGetSpConnection
 		localVarReturnValue *SpConnection
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsApiService.GetSpConnection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsAPIService.GetSpConnection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -632,7 +632,7 @@ func (a *IdpSpConnectionsApiService) GetSpConnectionExecute(r ApiGetSpConnection
 
 type ApiGetSpConnectionCertsRequest struct {
 	ctx        context.Context
-	ApiService *IdpSpConnectionsApiService
+	ApiService *IdpSpConnectionsAPIService
 	id         string
 }
 
@@ -647,7 +647,7 @@ GetSpConnectionCerts Get the SP connection's certificates.
 	@param id ID of the SP Connection.
 	@return ApiGetSpConnectionCertsRequest
 */
-func (a *IdpSpConnectionsApiService) GetSpConnectionCerts(ctx context.Context, id string) ApiGetSpConnectionCertsRequest {
+func (a *IdpSpConnectionsAPIService) GetSpConnectionCerts(ctx context.Context, id string) ApiGetSpConnectionCertsRequest {
 	return ApiGetSpConnectionCertsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -658,7 +658,7 @@ func (a *IdpSpConnectionsApiService) GetSpConnectionCerts(ctx context.Context, i
 // Execute executes the request
 //
 //	@return ConnectionCerts
-func (a *IdpSpConnectionsApiService) GetSpConnectionCertsExecute(r ApiGetSpConnectionCertsRequest) (*ConnectionCerts, *http.Response, error) {
+func (a *IdpSpConnectionsAPIService) GetSpConnectionCertsExecute(r ApiGetSpConnectionCertsRequest) (*ConnectionCerts, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -666,7 +666,7 @@ func (a *IdpSpConnectionsApiService) GetSpConnectionCertsExecute(r ApiGetSpConne
 		localVarReturnValue *ConnectionCerts
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsApiService.GetSpConnectionCerts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsAPIService.GetSpConnectionCerts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -744,7 +744,7 @@ func (a *IdpSpConnectionsApiService) GetSpConnectionCertsExecute(r ApiGetSpConne
 
 type ApiGetSpConnectionsRequest struct {
 	ctx           context.Context
-	ApiService    *IdpSpConnectionsApiService
+	ApiService    *IdpSpConnectionsAPIService
 	entityId      *string
 	page          *int64
 	numberPerPage *int64
@@ -787,7 +787,7 @@ Get a list of all the WS-Fed, WS-Trust, SAML1.0, SAML1.1 and SAML 2.0 SP connect
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSpConnectionsRequest
 */
-func (a *IdpSpConnectionsApiService) GetSpConnections(ctx context.Context) ApiGetSpConnectionsRequest {
+func (a *IdpSpConnectionsAPIService) GetSpConnections(ctx context.Context) ApiGetSpConnectionsRequest {
 	return ApiGetSpConnectionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -797,7 +797,7 @@ func (a *IdpSpConnectionsApiService) GetSpConnections(ctx context.Context) ApiGe
 // Execute executes the request
 //
 //	@return SpConnections
-func (a *IdpSpConnectionsApiService) GetSpConnectionsExecute(r ApiGetSpConnectionsRequest) (*SpConnections, *http.Response, error) {
+func (a *IdpSpConnectionsAPIService) GetSpConnectionsExecute(r ApiGetSpConnectionsRequest) (*SpConnections, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -805,7 +805,7 @@ func (a *IdpSpConnectionsApiService) GetSpConnectionsExecute(r ApiGetSpConnectio
 		localVarReturnValue *SpConnections
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsApiService.GetSpConnections")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsAPIService.GetSpConnections")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -894,7 +894,7 @@ func (a *IdpSpConnectionsApiService) GetSpConnectionsExecute(r ApiGetSpConnectio
 
 type ApiGetSpSigningSettingsRequest struct {
 	ctx        context.Context
-	ApiService *IdpSpConnectionsApiService
+	ApiService *IdpSpConnectionsAPIService
 	id         string
 }
 
@@ -909,7 +909,7 @@ GetSpSigningSettings Get the SP connection's signature settings.
 	@param id ID of the SP Connection.
 	@return ApiGetSpSigningSettingsRequest
 */
-func (a *IdpSpConnectionsApiService) GetSpSigningSettings(ctx context.Context, id string) ApiGetSpSigningSettingsRequest {
+func (a *IdpSpConnectionsAPIService) GetSpSigningSettings(ctx context.Context, id string) ApiGetSpSigningSettingsRequest {
 	return ApiGetSpSigningSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -920,7 +920,7 @@ func (a *IdpSpConnectionsApiService) GetSpSigningSettings(ctx context.Context, i
 // Execute executes the request
 //
 //	@return SigningSettings
-func (a *IdpSpConnectionsApiService) GetSpSigningSettingsExecute(r ApiGetSpSigningSettingsRequest) (*SigningSettings, *http.Response, error) {
+func (a *IdpSpConnectionsAPIService) GetSpSigningSettingsExecute(r ApiGetSpSigningSettingsRequest) (*SigningSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -928,7 +928,7 @@ func (a *IdpSpConnectionsApiService) GetSpSigningSettingsExecute(r ApiGetSpSigni
 		localVarReturnValue *SigningSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsApiService.GetSpSigningSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsAPIService.GetSpSigningSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1006,7 +1006,7 @@ func (a *IdpSpConnectionsApiService) GetSpSigningSettingsExecute(r ApiGetSpSigni
 
 type ApiUpdateDecryptionKeysRequest struct {
 	ctx        context.Context
-	ApiService *IdpSpConnectionsApiService
+	ApiService *IdpSpConnectionsAPIService
 	id         string
 	body       *DecryptionKeys
 }
@@ -1028,7 +1028,7 @@ UpdateDecryptionKeys Updating the SP connection's decryption keys.
 	@param id ID of the SP Connection to update.
 	@return ApiUpdateDecryptionKeysRequest
 */
-func (a *IdpSpConnectionsApiService) UpdateDecryptionKeys(ctx context.Context, id string) ApiUpdateDecryptionKeysRequest {
+func (a *IdpSpConnectionsAPIService) UpdateDecryptionKeys(ctx context.Context, id string) ApiUpdateDecryptionKeysRequest {
 	return ApiUpdateDecryptionKeysRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1039,7 +1039,7 @@ func (a *IdpSpConnectionsApiService) UpdateDecryptionKeys(ctx context.Context, i
 // Execute executes the request
 //
 //	@return DecryptionKeys
-func (a *IdpSpConnectionsApiService) UpdateDecryptionKeysExecute(r ApiUpdateDecryptionKeysRequest) (*DecryptionKeys, *http.Response, error) {
+func (a *IdpSpConnectionsAPIService) UpdateDecryptionKeysExecute(r ApiUpdateDecryptionKeysRequest) (*DecryptionKeys, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1047,7 +1047,7 @@ func (a *IdpSpConnectionsApiService) UpdateDecryptionKeysExecute(r ApiUpdateDecr
 		localVarReturnValue *DecryptionKeys
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsApiService.UpdateDecryptionKeys")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsAPIService.UpdateDecryptionKeys")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1141,7 +1141,7 @@ func (a *IdpSpConnectionsApiService) UpdateDecryptionKeysExecute(r ApiUpdateDecr
 
 type ApiUpdateSpConnectionRequest struct {
 	ctx                       context.Context
-	ApiService                *IdpSpConnectionsApiService
+	ApiService                *IdpSpConnectionsAPIService
 	id                        string
 	body                      *SpConnection
 	xBypassExternalValidation *bool
@@ -1172,7 +1172,7 @@ Update an SP connection with the matching ID. If the SP connection is not proper
 	@param id ID of SP Connection to update.
 	@return ApiUpdateSpConnectionRequest
 */
-func (a *IdpSpConnectionsApiService) UpdateSpConnection(ctx context.Context, id string) ApiUpdateSpConnectionRequest {
+func (a *IdpSpConnectionsAPIService) UpdateSpConnection(ctx context.Context, id string) ApiUpdateSpConnectionRequest {
 	return ApiUpdateSpConnectionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1183,7 +1183,7 @@ func (a *IdpSpConnectionsApiService) UpdateSpConnection(ctx context.Context, id 
 // Execute executes the request
 //
 //	@return SpConnection
-func (a *IdpSpConnectionsApiService) UpdateSpConnectionExecute(r ApiUpdateSpConnectionRequest) (*SpConnection, *http.Response, error) {
+func (a *IdpSpConnectionsAPIService) UpdateSpConnectionExecute(r ApiUpdateSpConnectionRequest) (*SpConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1191,7 +1191,7 @@ func (a *IdpSpConnectionsApiService) UpdateSpConnectionExecute(r ApiUpdateSpConn
 		localVarReturnValue *SpConnection
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsApiService.UpdateSpConnection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsAPIService.UpdateSpConnection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1288,7 +1288,7 @@ func (a *IdpSpConnectionsApiService) UpdateSpConnectionExecute(r ApiUpdateSpConn
 
 type ApiUpdateSpConnectionCertsRequest struct {
 	ctx        context.Context
-	ApiService *IdpSpConnectionsApiService
+	ApiService *IdpSpConnectionsAPIService
 	id         string
 	body       *ConnectionCerts
 }
@@ -1310,7 +1310,7 @@ UpdateSpConnectionCerts Update the SP connection's certificates.
 	@param id ID of the SP Connection to update.
 	@return ApiUpdateSpConnectionCertsRequest
 */
-func (a *IdpSpConnectionsApiService) UpdateSpConnectionCerts(ctx context.Context, id string) ApiUpdateSpConnectionCertsRequest {
+func (a *IdpSpConnectionsAPIService) UpdateSpConnectionCerts(ctx context.Context, id string) ApiUpdateSpConnectionCertsRequest {
 	return ApiUpdateSpConnectionCertsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1321,7 +1321,7 @@ func (a *IdpSpConnectionsApiService) UpdateSpConnectionCerts(ctx context.Context
 // Execute executes the request
 //
 //	@return ConnectionCerts
-func (a *IdpSpConnectionsApiService) UpdateSpConnectionCertsExecute(r ApiUpdateSpConnectionCertsRequest) (*ConnectionCerts, *http.Response, error) {
+func (a *IdpSpConnectionsAPIService) UpdateSpConnectionCertsExecute(r ApiUpdateSpConnectionCertsRequest) (*ConnectionCerts, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1329,7 +1329,7 @@ func (a *IdpSpConnectionsApiService) UpdateSpConnectionCertsExecute(r ApiUpdateS
 		localVarReturnValue *ConnectionCerts
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsApiService.UpdateSpConnectionCerts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsAPIService.UpdateSpConnectionCerts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1423,7 +1423,7 @@ func (a *IdpSpConnectionsApiService) UpdateSpConnectionCertsExecute(r ApiUpdateS
 
 type ApiUpdateSpSigningSettingsRequest struct {
 	ctx        context.Context
-	ApiService *IdpSpConnectionsApiService
+	ApiService *IdpSpConnectionsAPIService
 	id         string
 	body       *SigningSettings
 }
@@ -1445,7 +1445,7 @@ UpdateSpSigningSettings Update the SP connection's signature settings.
 	@param id ID of the SP Connection to update.
 	@return ApiUpdateSpSigningSettingsRequest
 */
-func (a *IdpSpConnectionsApiService) UpdateSpSigningSettings(ctx context.Context, id string) ApiUpdateSpSigningSettingsRequest {
+func (a *IdpSpConnectionsAPIService) UpdateSpSigningSettings(ctx context.Context, id string) ApiUpdateSpSigningSettingsRequest {
 	return ApiUpdateSpSigningSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1456,7 +1456,7 @@ func (a *IdpSpConnectionsApiService) UpdateSpSigningSettings(ctx context.Context
 // Execute executes the request
 //
 //	@return SigningSettings
-func (a *IdpSpConnectionsApiService) UpdateSpSigningSettingsExecute(r ApiUpdateSpSigningSettingsRequest) (*SigningSettings, *http.Response, error) {
+func (a *IdpSpConnectionsAPIService) UpdateSpSigningSettingsExecute(r ApiUpdateSpSigningSettingsRequest) (*SigningSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1464,7 +1464,7 @@ func (a *IdpSpConnectionsApiService) UpdateSpSigningSettingsExecute(r ApiUpdateS
 		localVarReturnValue *SigningSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsApiService.UpdateSpSigningSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdpSpConnectionsAPIService.UpdateSpSigningSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

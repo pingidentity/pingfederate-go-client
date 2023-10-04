@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// ServiceAuthenticationApiService ServiceAuthenticationApi service
-type ServiceAuthenticationApiService service
+// ServiceAuthenticationAPIService ServiceAuthenticationAPI service
+type ServiceAuthenticationAPIService service
 
 type ApiGetServiceAuthenticationRequest struct {
 	ctx        context.Context
-	ApiService *ServiceAuthenticationApiService
+	ApiService *ServiceAuthenticationAPIService
 }
 
 func (r ApiGetServiceAuthenticationRequest) Execute() (*ServiceAuthentication, *http.Response, error) {
@@ -36,7 +36,7 @@ GetServiceAuthentication Get the service authentication settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetServiceAuthenticationRequest
 */
-func (a *ServiceAuthenticationApiService) GetServiceAuthentication(ctx context.Context) ApiGetServiceAuthenticationRequest {
+func (a *ServiceAuthenticationAPIService) GetServiceAuthentication(ctx context.Context) ApiGetServiceAuthenticationRequest {
 	return ApiGetServiceAuthenticationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -46,7 +46,7 @@ func (a *ServiceAuthenticationApiService) GetServiceAuthentication(ctx context.C
 // Execute executes the request
 //
 //	@return ServiceAuthentication
-func (a *ServiceAuthenticationApiService) GetServiceAuthenticationExecute(r ApiGetServiceAuthenticationRequest) (*ServiceAuthentication, *http.Response, error) {
+func (a *ServiceAuthenticationAPIService) GetServiceAuthenticationExecute(r ApiGetServiceAuthenticationRequest) (*ServiceAuthentication, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *ServiceAuthenticationApiService) GetServiceAuthenticationExecute(r ApiG
 		localVarReturnValue *ServiceAuthentication
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAuthenticationApiService.GetServiceAuthentication")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAuthenticationAPIService.GetServiceAuthentication")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -121,7 +121,7 @@ func (a *ServiceAuthenticationApiService) GetServiceAuthenticationExecute(r ApiG
 
 type ApiUpdateServiceAuthenticationRequest struct {
 	ctx        context.Context
-	ApiService *ServiceAuthenticationApiService
+	ApiService *ServiceAuthenticationAPIService
 	body       *ServiceAuthentication
 }
 
@@ -143,7 +143,7 @@ Manage availability and credentials to services responsible for federation proto
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateServiceAuthenticationRequest
 */
-func (a *ServiceAuthenticationApiService) UpdateServiceAuthentication(ctx context.Context) ApiUpdateServiceAuthenticationRequest {
+func (a *ServiceAuthenticationAPIService) UpdateServiceAuthentication(ctx context.Context) ApiUpdateServiceAuthenticationRequest {
 	return ApiUpdateServiceAuthenticationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -153,7 +153,7 @@ func (a *ServiceAuthenticationApiService) UpdateServiceAuthentication(ctx contex
 // Execute executes the request
 //
 //	@return ServiceAuthentication
-func (a *ServiceAuthenticationApiService) UpdateServiceAuthenticationExecute(r ApiUpdateServiceAuthenticationRequest) (*ServiceAuthentication, *http.Response, error) {
+func (a *ServiceAuthenticationAPIService) UpdateServiceAuthenticationExecute(r ApiUpdateServiceAuthenticationRequest) (*ServiceAuthentication, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -161,7 +161,7 @@ func (a *ServiceAuthenticationApiService) UpdateServiceAuthenticationExecute(r A
 		localVarReturnValue *ServiceAuthentication
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAuthenticationApiService.UpdateServiceAuthentication")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAuthenticationAPIService.UpdateServiceAuthentication")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

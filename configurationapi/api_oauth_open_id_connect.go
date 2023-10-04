@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// OauthOpenIdConnectApiService OauthOpenIdConnectApi service
-type OauthOpenIdConnectApiService service
+// OauthOpenIdConnectAPIService OauthOpenIdConnectAPI service
+type OauthOpenIdConnectAPIService service
 
 type ApiCreateOIDCPolicyRequest struct {
 	ctx                       context.Context
-	ApiService                *OauthOpenIdConnectApiService
+	ApiService                *OauthOpenIdConnectAPIService
 	body                      *OpenIdConnectPolicy
 	xBypassExternalValidation *bool
 }
@@ -53,7 +53,7 @@ Create a new OpenID Connect Policy. If the OpenID Connect policy is not properly
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateOIDCPolicyRequest
 */
-func (a *OauthOpenIdConnectApiService) CreateOIDCPolicy(ctx context.Context) ApiCreateOIDCPolicyRequest {
+func (a *OauthOpenIdConnectAPIService) CreateOIDCPolicy(ctx context.Context) ApiCreateOIDCPolicyRequest {
 	return ApiCreateOIDCPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -63,7 +63,7 @@ func (a *OauthOpenIdConnectApiService) CreateOIDCPolicy(ctx context.Context) Api
 // Execute executes the request
 //
 //	@return OpenIdConnectPolicy
-func (a *OauthOpenIdConnectApiService) CreateOIDCPolicyExecute(r ApiCreateOIDCPolicyRequest) (*OpenIdConnectPolicy, *http.Response, error) {
+func (a *OauthOpenIdConnectAPIService) CreateOIDCPolicyExecute(r ApiCreateOIDCPolicyRequest) (*OpenIdConnectPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -71,7 +71,7 @@ func (a *OauthOpenIdConnectApiService) CreateOIDCPolicyExecute(r ApiCreateOIDCPo
 		localVarReturnValue *OpenIdConnectPolicy
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOpenIdConnectApiService.CreateOIDCPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOpenIdConnectAPIService.CreateOIDCPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -156,7 +156,7 @@ func (a *OauthOpenIdConnectApiService) CreateOIDCPolicyExecute(r ApiCreateOIDCPo
 
 type ApiDeleteOIDCPolicyRequest struct {
 	ctx        context.Context
-	ApiService *OauthOpenIdConnectApiService
+	ApiService *OauthOpenIdConnectAPIService
 	id         string
 }
 
@@ -173,7 +173,7 @@ Delete an OpenID Connect Policy with the specified ID. A 404 status code is retu
 	@param id ID of OpenID Connect Policy to delete.
 	@return ApiDeleteOIDCPolicyRequest
 */
-func (a *OauthOpenIdConnectApiService) DeleteOIDCPolicy(ctx context.Context, id string) ApiDeleteOIDCPolicyRequest {
+func (a *OauthOpenIdConnectAPIService) DeleteOIDCPolicy(ctx context.Context, id string) ApiDeleteOIDCPolicyRequest {
 	return ApiDeleteOIDCPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -182,14 +182,14 @@ func (a *OauthOpenIdConnectApiService) DeleteOIDCPolicy(ctx context.Context, id 
 }
 
 // Execute executes the request
-func (a *OauthOpenIdConnectApiService) DeleteOIDCPolicyExecute(r ApiDeleteOIDCPolicyRequest) (*http.Response, error) {
+func (a *OauthOpenIdConnectAPIService) DeleteOIDCPolicyExecute(r ApiDeleteOIDCPolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOpenIdConnectApiService.DeleteOIDCPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOpenIdConnectAPIService.DeleteOIDCPolicy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -269,7 +269,7 @@ func (a *OauthOpenIdConnectApiService) DeleteOIDCPolicyExecute(r ApiDeleteOIDCPo
 
 type ApiGetOIDCPoliciesRequest struct {
 	ctx        context.Context
-	ApiService *OauthOpenIdConnectApiService
+	ApiService *OauthOpenIdConnectAPIService
 }
 
 func (r ApiGetOIDCPoliciesRequest) Execute() (*OpenIdConnectPolicies, *http.Response, error) {
@@ -282,7 +282,7 @@ GetOIDCPolicies Get list of OpenID Connect Policies.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetOIDCPoliciesRequest
 */
-func (a *OauthOpenIdConnectApiService) GetOIDCPolicies(ctx context.Context) ApiGetOIDCPoliciesRequest {
+func (a *OauthOpenIdConnectAPIService) GetOIDCPolicies(ctx context.Context) ApiGetOIDCPoliciesRequest {
 	return ApiGetOIDCPoliciesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -292,7 +292,7 @@ func (a *OauthOpenIdConnectApiService) GetOIDCPolicies(ctx context.Context) ApiG
 // Execute executes the request
 //
 //	@return OpenIdConnectPolicies
-func (a *OauthOpenIdConnectApiService) GetOIDCPoliciesExecute(r ApiGetOIDCPoliciesRequest) (*OpenIdConnectPolicies, *http.Response, error) {
+func (a *OauthOpenIdConnectAPIService) GetOIDCPoliciesExecute(r ApiGetOIDCPoliciesRequest) (*OpenIdConnectPolicies, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -300,7 +300,7 @@ func (a *OauthOpenIdConnectApiService) GetOIDCPoliciesExecute(r ApiGetOIDCPolici
 		localVarReturnValue *OpenIdConnectPolicies
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOpenIdConnectApiService.GetOIDCPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOpenIdConnectAPIService.GetOIDCPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -367,7 +367,7 @@ func (a *OauthOpenIdConnectApiService) GetOIDCPoliciesExecute(r ApiGetOIDCPolici
 
 type ApiGetOIDCPolicyRequest struct {
 	ctx        context.Context
-	ApiService *OauthOpenIdConnectApiService
+	ApiService *OauthOpenIdConnectAPIService
 	id         string
 }
 
@@ -384,7 +384,7 @@ Get an OpenID Connect Policy with the specified ID. A 404 status code is returne
 	@param id ID of the OpenID Connect Policy to fetch.
 	@return ApiGetOIDCPolicyRequest
 */
-func (a *OauthOpenIdConnectApiService) GetOIDCPolicy(ctx context.Context, id string) ApiGetOIDCPolicyRequest {
+func (a *OauthOpenIdConnectAPIService) GetOIDCPolicy(ctx context.Context, id string) ApiGetOIDCPolicyRequest {
 	return ApiGetOIDCPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -395,7 +395,7 @@ func (a *OauthOpenIdConnectApiService) GetOIDCPolicy(ctx context.Context, id str
 // Execute executes the request
 //
 //	@return OpenIdConnectPolicy
-func (a *OauthOpenIdConnectApiService) GetOIDCPolicyExecute(r ApiGetOIDCPolicyRequest) (*OpenIdConnectPolicy, *http.Response, error) {
+func (a *OauthOpenIdConnectAPIService) GetOIDCPolicyExecute(r ApiGetOIDCPolicyRequest) (*OpenIdConnectPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -403,7 +403,7 @@ func (a *OauthOpenIdConnectApiService) GetOIDCPolicyExecute(r ApiGetOIDCPolicyRe
 		localVarReturnValue *OpenIdConnectPolicy
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOpenIdConnectApiService.GetOIDCPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOpenIdConnectAPIService.GetOIDCPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -481,7 +481,7 @@ func (a *OauthOpenIdConnectApiService) GetOIDCPolicyExecute(r ApiGetOIDCPolicyRe
 
 type ApiGetOIDCSettingsRequest struct {
 	ctx        context.Context
-	ApiService *OauthOpenIdConnectApiService
+	ApiService *OauthOpenIdConnectAPIService
 }
 
 func (r ApiGetOIDCSettingsRequest) Execute() (*OpenIdConnectSettings, *http.Response, error) {
@@ -494,7 +494,7 @@ GetOIDCSettings Get the OpenID Connect Settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetOIDCSettingsRequest
 */
-func (a *OauthOpenIdConnectApiService) GetOIDCSettings(ctx context.Context) ApiGetOIDCSettingsRequest {
+func (a *OauthOpenIdConnectAPIService) GetOIDCSettings(ctx context.Context) ApiGetOIDCSettingsRequest {
 	return ApiGetOIDCSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -504,7 +504,7 @@ func (a *OauthOpenIdConnectApiService) GetOIDCSettings(ctx context.Context) ApiG
 // Execute executes the request
 //
 //	@return OpenIdConnectSettings
-func (a *OauthOpenIdConnectApiService) GetOIDCSettingsExecute(r ApiGetOIDCSettingsRequest) (*OpenIdConnectSettings, *http.Response, error) {
+func (a *OauthOpenIdConnectAPIService) GetOIDCSettingsExecute(r ApiGetOIDCSettingsRequest) (*OpenIdConnectSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -512,7 +512,7 @@ func (a *OauthOpenIdConnectApiService) GetOIDCSettingsExecute(r ApiGetOIDCSettin
 		localVarReturnValue *OpenIdConnectSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOpenIdConnectApiService.GetOIDCSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOpenIdConnectAPIService.GetOIDCSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -579,7 +579,7 @@ func (a *OauthOpenIdConnectApiService) GetOIDCSettingsExecute(r ApiGetOIDCSettin
 
 type ApiUpdateOIDCPolicyRequest struct {
 	ctx                       context.Context
-	ApiService                *OauthOpenIdConnectApiService
+	ApiService                *OauthOpenIdConnectAPIService
 	id                        string
 	body                      *OpenIdConnectPolicy
 	xBypassExternalValidation *bool
@@ -610,7 +610,7 @@ Update an OpenID Connect Policy with the matching ID. If the policy is not prope
 	@param id ID of the OpenID Connect Policy to update.
 	@return ApiUpdateOIDCPolicyRequest
 */
-func (a *OauthOpenIdConnectApiService) UpdateOIDCPolicy(ctx context.Context, id string) ApiUpdateOIDCPolicyRequest {
+func (a *OauthOpenIdConnectAPIService) UpdateOIDCPolicy(ctx context.Context, id string) ApiUpdateOIDCPolicyRequest {
 	return ApiUpdateOIDCPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -621,7 +621,7 @@ func (a *OauthOpenIdConnectApiService) UpdateOIDCPolicy(ctx context.Context, id 
 // Execute executes the request
 //
 //	@return OpenIdConnectPolicy
-func (a *OauthOpenIdConnectApiService) UpdateOIDCPolicyExecute(r ApiUpdateOIDCPolicyRequest) (*OpenIdConnectPolicy, *http.Response, error) {
+func (a *OauthOpenIdConnectAPIService) UpdateOIDCPolicyExecute(r ApiUpdateOIDCPolicyRequest) (*OpenIdConnectPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -629,7 +629,7 @@ func (a *OauthOpenIdConnectApiService) UpdateOIDCPolicyExecute(r ApiUpdateOIDCPo
 		localVarReturnValue *OpenIdConnectPolicy
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOpenIdConnectApiService.UpdateOIDCPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOpenIdConnectAPIService.UpdateOIDCPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -726,7 +726,7 @@ func (a *OauthOpenIdConnectApiService) UpdateOIDCPolicyExecute(r ApiUpdateOIDCPo
 
 type ApiUpdateOIDCSettingsRequest struct {
 	ctx        context.Context
-	ApiService *OauthOpenIdConnectApiService
+	ApiService *OauthOpenIdConnectAPIService
 	body       *OpenIdConnectSettings
 }
 
@@ -746,7 +746,7 @@ UpdateOIDCSettings Set the OpenID Connect Settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateOIDCSettingsRequest
 */
-func (a *OauthOpenIdConnectApiService) UpdateOIDCSettings(ctx context.Context) ApiUpdateOIDCSettingsRequest {
+func (a *OauthOpenIdConnectAPIService) UpdateOIDCSettings(ctx context.Context) ApiUpdateOIDCSettingsRequest {
 	return ApiUpdateOIDCSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -756,7 +756,7 @@ func (a *OauthOpenIdConnectApiService) UpdateOIDCSettings(ctx context.Context) A
 // Execute executes the request
 //
 //	@return OpenIdConnectSettings
-func (a *OauthOpenIdConnectApiService) UpdateOIDCSettingsExecute(r ApiUpdateOIDCSettingsRequest) (*OpenIdConnectSettings, *http.Response, error) {
+func (a *OauthOpenIdConnectAPIService) UpdateOIDCSettingsExecute(r ApiUpdateOIDCSettingsRequest) (*OpenIdConnectSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -764,7 +764,7 @@ func (a *OauthOpenIdConnectApiService) UpdateOIDCSettingsExecute(r ApiUpdateOIDC
 		localVarReturnValue *OpenIdConnectSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOpenIdConnectApiService.UpdateOIDCSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthOpenIdConnectAPIService.UpdateOIDCSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

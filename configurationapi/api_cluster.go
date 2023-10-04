@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// ClusterApiService ClusterApi service
-type ClusterApiService service
+// ClusterAPIService ClusterAPI service
+type ClusterAPIService service
 
 type ApiGetClusterStatusRequest struct {
 	ctx        context.Context
-	ApiService *ClusterApiService
+	ApiService *ClusterAPIService
 }
 
 func (r ApiGetClusterStatusRequest) Execute() (*ClusterStatus, *http.Response, error) {
@@ -36,7 +36,7 @@ GetClusterStatus Get information on the current status of the cluster.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetClusterStatusRequest
 */
-func (a *ClusterApiService) GetClusterStatus(ctx context.Context) ApiGetClusterStatusRequest {
+func (a *ClusterAPIService) GetClusterStatus(ctx context.Context) ApiGetClusterStatusRequest {
 	return ApiGetClusterStatusRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -46,7 +46,7 @@ func (a *ClusterApiService) GetClusterStatus(ctx context.Context) ApiGetClusterS
 // Execute executes the request
 //
 //	@return ClusterStatus
-func (a *ClusterApiService) GetClusterStatusExecute(r ApiGetClusterStatusRequest) (*ClusterStatus, *http.Response, error) {
+func (a *ClusterAPIService) GetClusterStatusExecute(r ApiGetClusterStatusRequest) (*ClusterStatus, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *ClusterApiService) GetClusterStatusExecute(r ApiGetClusterStatusRequest
 		localVarReturnValue *ClusterStatus
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClusterApiService.GetClusterStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClusterAPIService.GetClusterStatus")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -121,7 +121,7 @@ func (a *ClusterApiService) GetClusterStatusExecute(r ApiGetClusterStatusRequest
 
 type ApiStartReplicationRequest struct {
 	ctx        context.Context
-	ApiService *ClusterApiService
+	ApiService *ClusterAPIService
 }
 
 func (r ApiStartReplicationRequest) Execute() (*ApiResult, *http.Response, error) {
@@ -134,7 +134,7 @@ StartReplication Replicate configuration updates to all nodes in the cluster.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiStartReplicationRequest
 */
-func (a *ClusterApiService) StartReplication(ctx context.Context) ApiStartReplicationRequest {
+func (a *ClusterAPIService) StartReplication(ctx context.Context) ApiStartReplicationRequest {
 	return ApiStartReplicationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -144,7 +144,7 @@ func (a *ClusterApiService) StartReplication(ctx context.Context) ApiStartReplic
 // Execute executes the request
 //
 //	@return ApiResult
-func (a *ClusterApiService) StartReplicationExecute(r ApiStartReplicationRequest) (*ApiResult, *http.Response, error) {
+func (a *ClusterAPIService) StartReplicationExecute(r ApiStartReplicationRequest) (*ApiResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -152,7 +152,7 @@ func (a *ClusterApiService) StartReplicationExecute(r ApiStartReplicationRequest
 		localVarReturnValue *ApiResult
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClusterApiService.StartReplication")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClusterAPIService.StartReplication")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

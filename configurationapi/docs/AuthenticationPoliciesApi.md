@@ -1,23 +1,23 @@
-# \AuthenticationPoliciesApi
+# \AuthenticationPoliciesAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateFragment**](AuthenticationPoliciesApi.md#CreateFragment) | **Post** /authenticationPolicies/fragments | Create an authentication policy fragment.
-[**CreatePolicy**](AuthenticationPoliciesApi.md#CreatePolicy) | **Post** /authenticationPolicies/policy | Create a new authentication policy.
-[**DeleteFragment**](AuthenticationPoliciesApi.md#DeleteFragment) | **Delete** /authenticationPolicies/fragments/{id} | Delete an authentication policy fragment.
-[**DeletePolicy**](AuthenticationPoliciesApi.md#DeletePolicy) | **Delete** /authenticationPolicies/policy/{id} | Delete an authentication policy.
-[**GetAuthenticationPolicySettings**](AuthenticationPoliciesApi.md#GetAuthenticationPolicySettings) | **Get** /authenticationPolicies/settings | Get the authentication policies settings.
-[**GetDefaultAuthenticationPolicy**](AuthenticationPoliciesApi.md#GetDefaultAuthenticationPolicy) | **Get** /authenticationPolicies/default | Get the default configured authentication policy.
-[**GetFragment**](AuthenticationPoliciesApi.md#GetFragment) | **Get** /authenticationPolicies/fragments/{id} | Get an authentication policy fragment by ID.
-[**GetFragments**](AuthenticationPoliciesApi.md#GetFragments) | **Get** /authenticationPolicies/fragments | Get all of the authentication policies fragments.
-[**GetPolicy**](AuthenticationPoliciesApi.md#GetPolicy) | **Get** /authenticationPolicies/policy/{id} | Get an authentication policy by ID.
-[**MovePolicy**](AuthenticationPoliciesApi.md#MovePolicy) | **Post** /authenticationPolicies/policy/{id}/move | Move an authentication policy to a location within the policy tree.
-[**UpdateAuthenticationPolicySettings**](AuthenticationPoliciesApi.md#UpdateAuthenticationPolicySettings) | **Put** /authenticationPolicies/settings | Set the authentication policies settings.
-[**UpdateDefaultAuthenticationPolicy**](AuthenticationPoliciesApi.md#UpdateDefaultAuthenticationPolicy) | **Put** /authenticationPolicies/default | Set the default authentication policy.
-[**UpdateFragment**](AuthenticationPoliciesApi.md#UpdateFragment) | **Put** /authenticationPolicies/fragments/{id} | Update an authentication policy fragment.
-[**UpdatePolicy**](AuthenticationPoliciesApi.md#UpdatePolicy) | **Put** /authenticationPolicies/policy/{id} | Update an authentication policy.
+[**CreateFragment**](AuthenticationPoliciesAPI.md#CreateFragment) | **Post** /authenticationPolicies/fragments | Create an authentication policy fragment.
+[**CreatePolicy**](AuthenticationPoliciesAPI.md#CreatePolicy) | **Post** /authenticationPolicies/policy | Create a new authentication policy.
+[**DeleteFragment**](AuthenticationPoliciesAPI.md#DeleteFragment) | **Delete** /authenticationPolicies/fragments/{id} | Delete an authentication policy fragment.
+[**DeletePolicy**](AuthenticationPoliciesAPI.md#DeletePolicy) | **Delete** /authenticationPolicies/policy/{id} | Delete an authentication policy.
+[**GetAuthenticationPolicySettings**](AuthenticationPoliciesAPI.md#GetAuthenticationPolicySettings) | **Get** /authenticationPolicies/settings | Get the authentication policies settings.
+[**GetDefaultAuthenticationPolicy**](AuthenticationPoliciesAPI.md#GetDefaultAuthenticationPolicy) | **Get** /authenticationPolicies/default | Get the default configured authentication policy.
+[**GetFragment**](AuthenticationPoliciesAPI.md#GetFragment) | **Get** /authenticationPolicies/fragments/{id} | Get an authentication policy fragment by ID.
+[**GetFragments**](AuthenticationPoliciesAPI.md#GetFragments) | **Get** /authenticationPolicies/fragments | Get all of the authentication policies fragments.
+[**GetPolicy**](AuthenticationPoliciesAPI.md#GetPolicy) | **Get** /authenticationPolicies/policy/{id} | Get an authentication policy by ID.
+[**MovePolicy**](AuthenticationPoliciesAPI.md#MovePolicy) | **Post** /authenticationPolicies/policy/{id}/move | Move an authentication policy to a location within the policy tree.
+[**UpdateAuthenticationPolicySettings**](AuthenticationPoliciesAPI.md#UpdateAuthenticationPolicySettings) | **Put** /authenticationPolicies/settings | Set the authentication policies settings.
+[**UpdateDefaultAuthenticationPolicy**](AuthenticationPoliciesAPI.md#UpdateDefaultAuthenticationPolicy) | **Put** /authenticationPolicies/default | Set the default authentication policy.
+[**UpdateFragment**](AuthenticationPoliciesAPI.md#UpdateFragment) | **Put** /authenticationPolicies/fragments/{id} | Update an authentication policy fragment.
+[**UpdatePolicy**](AuthenticationPoliciesAPI.md#UpdatePolicy) | **Put** /authenticationPolicies/policy/{id} | Update an authentication policy.
 
 
 
@@ -45,13 +45,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPoliciesApi.CreateFragment(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.AuthenticationPoliciesAPI.CreateFragment(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesApi.CreateFragment``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.CreateFragment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateFragment`: AuthenticationPolicyFragment
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesApi.CreateFragment`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.CreateFragment`: %v\n", resp)
 }
 ```
 
@@ -111,13 +111,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPoliciesApi.CreatePolicy(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.AuthenticationPoliciesAPI.CreatePolicy(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesApi.CreatePolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.CreatePolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreatePolicy`: AuthenticationPolicyTree
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesApi.CreatePolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.CreatePolicy`: %v\n", resp)
 }
 ```
 
@@ -176,9 +176,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AuthenticationPoliciesApi.DeleteFragment(context.Background(), id).Execute()
+    r, err := apiClient.AuthenticationPoliciesAPI.DeleteFragment(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesApi.DeleteFragment``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.DeleteFragment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -242,9 +242,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AuthenticationPoliciesApi.DeletePolicy(context.Background(), id).Execute()
+    r, err := apiClient.AuthenticationPoliciesAPI.DeletePolicy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesApi.DeletePolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.DeletePolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -307,13 +307,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPoliciesApi.GetAuthenticationPolicySettings(context.Background()).Execute()
+    resp, r, err := apiClient.AuthenticationPoliciesAPI.GetAuthenticationPolicySettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesApi.GetAuthenticationPolicySettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.GetAuthenticationPolicySettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAuthenticationPolicySettings`: AuthenticationPoliciesSettings
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesApi.GetAuthenticationPolicySettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.GetAuthenticationPolicySettings`: %v\n", resp)
 }
 ```
 
@@ -366,13 +366,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPoliciesApi.GetDefaultAuthenticationPolicy(context.Background()).Execute()
+    resp, r, err := apiClient.AuthenticationPoliciesAPI.GetDefaultAuthenticationPolicy(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesApi.GetDefaultAuthenticationPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.GetDefaultAuthenticationPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetDefaultAuthenticationPolicy`: AuthenticationPolicy
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesApi.GetDefaultAuthenticationPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.GetDefaultAuthenticationPolicy`: %v\n", resp)
 }
 ```
 
@@ -426,13 +426,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPoliciesApi.GetFragment(context.Background(), id).Execute()
+    resp, r, err := apiClient.AuthenticationPoliciesAPI.GetFragment(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesApi.GetFragment``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.GetFragment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetFragment`: AuthenticationPolicyFragment
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesApi.GetFragment`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.GetFragment`: %v\n", resp)
 }
 ```
 
@@ -496,13 +496,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPoliciesApi.GetFragments(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
+    resp, r, err := apiClient.AuthenticationPoliciesAPI.GetFragments(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesApi.GetFragments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.GetFragments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetFragments`: AuthenticationPolicyFragments
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesApi.GetFragments`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.GetFragments`: %v\n", resp)
 }
 ```
 
@@ -562,13 +562,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPoliciesApi.GetPolicy(context.Background(), id).Execute()
+    resp, r, err := apiClient.AuthenticationPoliciesAPI.GetPolicy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesApi.GetPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.GetPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPolicy`: AuthenticationPolicyTree
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesApi.GetPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.GetPolicy`: %v\n", resp)
 }
 ```
 
@@ -631,9 +631,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AuthenticationPoliciesApi.MovePolicy(context.Background(), id).Body(body).Execute()
+    r, err := apiClient.AuthenticationPoliciesAPI.MovePolicy(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesApi.MovePolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.MovePolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -698,13 +698,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPoliciesApi.UpdateAuthenticationPolicySettings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.AuthenticationPoliciesAPI.UpdateAuthenticationPolicySettings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesApi.UpdateAuthenticationPolicySettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.UpdateAuthenticationPolicySettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateAuthenticationPolicySettings`: AuthenticationPoliciesSettings
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesApi.UpdateAuthenticationPolicySettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.UpdateAuthenticationPolicySettings`: %v\n", resp)
 }
 ```
 
@@ -763,13 +763,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPoliciesApi.UpdateDefaultAuthenticationPolicy(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.AuthenticationPoliciesAPI.UpdateDefaultAuthenticationPolicy(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesApi.UpdateDefaultAuthenticationPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.UpdateDefaultAuthenticationPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateDefaultAuthenticationPolicy`: AuthenticationPolicy
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesApi.UpdateDefaultAuthenticationPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.UpdateDefaultAuthenticationPolicy`: %v\n", resp)
 }
 ```
 
@@ -830,13 +830,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPoliciesApi.UpdateFragment(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.AuthenticationPoliciesAPI.UpdateFragment(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesApi.UpdateFragment``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.UpdateFragment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateFragment`: AuthenticationPolicyFragment
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesApi.UpdateFragment`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.UpdateFragment`: %v\n", resp)
 }
 ```
 
@@ -902,13 +902,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPoliciesApi.UpdatePolicy(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.AuthenticationPoliciesAPI.UpdatePolicy(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesApi.UpdatePolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.UpdatePolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdatePolicy`: AuthenticationPolicyTree
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesApi.UpdatePolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.UpdatePolicy`: %v\n", resp)
 }
 ```
 
