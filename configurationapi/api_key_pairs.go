@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// KeyPairsApiService KeyPairsApi service
-type KeyPairsApiService service
+// KeyPairsAPIService KeyPairsAPI service
+type KeyPairsAPIService service
 
 type ApiGetKeyAlgorithmsRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsApiService
+	ApiService *KeyPairsAPIService
 }
 
 func (r ApiGetKeyAlgorithmsRequest) Execute() (*KeyAlgorithms, *http.Response, error) {
@@ -36,7 +36,7 @@ GetKeyAlgorithms Get list of the key algorithms supported for key pair generatio
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetKeyAlgorithmsRequest
 */
-func (a *KeyPairsApiService) GetKeyAlgorithms(ctx context.Context) ApiGetKeyAlgorithmsRequest {
+func (a *KeyPairsAPIService) GetKeyAlgorithms(ctx context.Context) ApiGetKeyAlgorithmsRequest {
 	return ApiGetKeyAlgorithmsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -46,7 +46,7 @@ func (a *KeyPairsApiService) GetKeyAlgorithms(ctx context.Context) ApiGetKeyAlgo
 // Execute executes the request
 //
 //	@return KeyAlgorithms
-func (a *KeyPairsApiService) GetKeyAlgorithmsExecute(r ApiGetKeyAlgorithmsRequest) (*KeyAlgorithms, *http.Response, error) {
+func (a *KeyPairsAPIService) GetKeyAlgorithmsExecute(r ApiGetKeyAlgorithmsRequest) (*KeyAlgorithms, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *KeyPairsApiService) GetKeyAlgorithmsExecute(r ApiGetKeyAlgorithmsReques
 		localVarReturnValue *KeyAlgorithms
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsApiService.GetKeyAlgorithms")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsAPIService.GetKeyAlgorithms")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

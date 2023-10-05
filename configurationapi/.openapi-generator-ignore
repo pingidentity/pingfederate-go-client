@@ -23,11 +23,9 @@
 #!docs/README.md
 
 # Don't generate files for ...Shared and ...AllOf enums. The generator creates these but they are not used.
-model_*_request_all_of.go
-model_*_response_all_of.go
+model_*_all_of.go
 model_*_shared.go
-docs/Add*RequestAllOf.md
-docs/*ResponseAllOf.md
+docs/*AllOf.md
 docs/*Shared.md
 
 # Unused files
@@ -38,3 +36,5 @@ git_push.sh
 # And so that we use the top-level go.mod and go.sum files in the repository root
 go.mod
 go.sum
+
+client.go

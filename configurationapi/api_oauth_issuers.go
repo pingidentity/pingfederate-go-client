@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// OauthIssuersApiService OauthIssuersApi service
-type OauthIssuersApiService service
+// OauthIssuersAPIService OauthIssuersAPI service
+type OauthIssuersAPIService service
 
 type ApiAddOauthIssuerRequest struct {
 	ctx        context.Context
-	ApiService *OauthIssuersApiService
+	ApiService *OauthIssuersAPIService
 	body       *Issuer
 }
 
@@ -46,7 +46,7 @@ Create a new virtual issuer. If the virtual issuer is not properly configured, a
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddOauthIssuerRequest
 */
-func (a *OauthIssuersApiService) AddOauthIssuer(ctx context.Context) ApiAddOauthIssuerRequest {
+func (a *OauthIssuersAPIService) AddOauthIssuer(ctx context.Context) ApiAddOauthIssuerRequest {
 	return ApiAddOauthIssuerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -56,7 +56,7 @@ func (a *OauthIssuersApiService) AddOauthIssuer(ctx context.Context) ApiAddOauth
 // Execute executes the request
 //
 //	@return Issuer
-func (a *OauthIssuersApiService) AddOauthIssuerExecute(r ApiAddOauthIssuerRequest) (*Issuer, *http.Response, error) {
+func (a *OauthIssuersAPIService) AddOauthIssuerExecute(r ApiAddOauthIssuerRequest) (*Issuer, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -64,7 +64,7 @@ func (a *OauthIssuersApiService) AddOauthIssuerExecute(r ApiAddOauthIssuerReques
 		localVarReturnValue *Issuer
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthIssuersApiService.AddOauthIssuer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthIssuersAPIService.AddOauthIssuer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -146,7 +146,7 @@ func (a *OauthIssuersApiService) AddOauthIssuerExecute(r ApiAddOauthIssuerReques
 
 type ApiDeleteOauthIssuerRequest struct {
 	ctx        context.Context
-	ApiService *OauthIssuersApiService
+	ApiService *OauthIssuersAPIService
 	id         string
 }
 
@@ -163,7 +163,7 @@ Delete a virtual issuer with the specified ID. A 404 status code is returned for
 	@param id ID of the virtual issuer to delete.
 	@return ApiDeleteOauthIssuerRequest
 */
-func (a *OauthIssuersApiService) DeleteOauthIssuer(ctx context.Context, id string) ApiDeleteOauthIssuerRequest {
+func (a *OauthIssuersAPIService) DeleteOauthIssuer(ctx context.Context, id string) ApiDeleteOauthIssuerRequest {
 	return ApiDeleteOauthIssuerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -172,14 +172,14 @@ func (a *OauthIssuersApiService) DeleteOauthIssuer(ctx context.Context, id strin
 }
 
 // Execute executes the request
-func (a *OauthIssuersApiService) DeleteOauthIssuerExecute(r ApiDeleteOauthIssuerRequest) (*http.Response, error) {
+func (a *OauthIssuersAPIService) DeleteOauthIssuerExecute(r ApiDeleteOauthIssuerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthIssuersApiService.DeleteOauthIssuer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthIssuersAPIService.DeleteOauthIssuer")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -259,7 +259,7 @@ func (a *OauthIssuersApiService) DeleteOauthIssuerExecute(r ApiDeleteOauthIssuer
 
 type ApiGetOauthIssuerByIdRequest struct {
 	ctx        context.Context
-	ApiService *OauthIssuersApiService
+	ApiService *OauthIssuersAPIService
 	id         string
 }
 
@@ -276,7 +276,7 @@ Get a virtual issuer with the specified ID. A 404 status code is returned for no
 	@param id ID of the virtual issuer to fetch.
 	@return ApiGetOauthIssuerByIdRequest
 */
-func (a *OauthIssuersApiService) GetOauthIssuerById(ctx context.Context, id string) ApiGetOauthIssuerByIdRequest {
+func (a *OauthIssuersAPIService) GetOauthIssuerById(ctx context.Context, id string) ApiGetOauthIssuerByIdRequest {
 	return ApiGetOauthIssuerByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -287,7 +287,7 @@ func (a *OauthIssuersApiService) GetOauthIssuerById(ctx context.Context, id stri
 // Execute executes the request
 //
 //	@return Issuer
-func (a *OauthIssuersApiService) GetOauthIssuerByIdExecute(r ApiGetOauthIssuerByIdRequest) (*Issuer, *http.Response, error) {
+func (a *OauthIssuersAPIService) GetOauthIssuerByIdExecute(r ApiGetOauthIssuerByIdRequest) (*Issuer, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -295,7 +295,7 @@ func (a *OauthIssuersApiService) GetOauthIssuerByIdExecute(r ApiGetOauthIssuerBy
 		localVarReturnValue *Issuer
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthIssuersApiService.GetOauthIssuerById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthIssuersAPIService.GetOauthIssuerById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -373,7 +373,7 @@ func (a *OauthIssuersApiService) GetOauthIssuerByIdExecute(r ApiGetOauthIssuerBy
 
 type ApiGetOauthIssuersRequest struct {
 	ctx        context.Context
-	ApiService *OauthIssuersApiService
+	ApiService *OauthIssuersAPIService
 }
 
 func (r ApiGetOauthIssuersRequest) Execute() (*Issuers, *http.Response, error) {
@@ -386,7 +386,7 @@ GetOauthIssuers Get the list of virtual issuers.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetOauthIssuersRequest
 */
-func (a *OauthIssuersApiService) GetOauthIssuers(ctx context.Context) ApiGetOauthIssuersRequest {
+func (a *OauthIssuersAPIService) GetOauthIssuers(ctx context.Context) ApiGetOauthIssuersRequest {
 	return ApiGetOauthIssuersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -396,7 +396,7 @@ func (a *OauthIssuersApiService) GetOauthIssuers(ctx context.Context) ApiGetOaut
 // Execute executes the request
 //
 //	@return Issuers
-func (a *OauthIssuersApiService) GetOauthIssuersExecute(r ApiGetOauthIssuersRequest) (*Issuers, *http.Response, error) {
+func (a *OauthIssuersAPIService) GetOauthIssuersExecute(r ApiGetOauthIssuersRequest) (*Issuers, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -404,7 +404,7 @@ func (a *OauthIssuersApiService) GetOauthIssuersExecute(r ApiGetOauthIssuersRequ
 		localVarReturnValue *Issuers
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthIssuersApiService.GetOauthIssuers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthIssuersAPIService.GetOauthIssuers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -471,7 +471,7 @@ func (a *OauthIssuersApiService) GetOauthIssuersExecute(r ApiGetOauthIssuersRequ
 
 type ApiUpdateOauthIssuerRequest struct {
 	ctx        context.Context
-	ApiService *OauthIssuersApiService
+	ApiService *OauthIssuersAPIService
 	id         string
 	body       *Issuer
 }
@@ -495,7 +495,7 @@ Update a virtual issuer with the matching ID. If the policy is not properly conf
 	@param id ID of the virtual issuer to update.
 	@return ApiUpdateOauthIssuerRequest
 */
-func (a *OauthIssuersApiService) UpdateOauthIssuer(ctx context.Context, id string) ApiUpdateOauthIssuerRequest {
+func (a *OauthIssuersAPIService) UpdateOauthIssuer(ctx context.Context, id string) ApiUpdateOauthIssuerRequest {
 	return ApiUpdateOauthIssuerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -506,7 +506,7 @@ func (a *OauthIssuersApiService) UpdateOauthIssuer(ctx context.Context, id strin
 // Execute executes the request
 //
 //	@return Issuer
-func (a *OauthIssuersApiService) UpdateOauthIssuerExecute(r ApiUpdateOauthIssuerRequest) (*Issuer, *http.Response, error) {
+func (a *OauthIssuersAPIService) UpdateOauthIssuerExecute(r ApiUpdateOauthIssuerRequest) (*Issuer, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -514,7 +514,7 @@ func (a *OauthIssuersApiService) UpdateOauthIssuerExecute(r ApiUpdateOauthIssuer
 		localVarReturnValue *Issuer
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthIssuersApiService.UpdateOauthIssuer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthIssuersAPIService.UpdateOauthIssuer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

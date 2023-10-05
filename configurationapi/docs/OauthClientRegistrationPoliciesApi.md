@@ -1,16 +1,16 @@
-# \OauthClientRegistrationPoliciesApi
+# \OauthClientRegistrationPoliciesAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateDynamicClientRegistrationPolicy**](OauthClientRegistrationPoliciesApi.md#CreateDynamicClientRegistrationPolicy) | **Post** /oauth/clientRegistrationPolicies | Create a client registration policy plugin instance.
-[**DeleteDynamicClientRegistrationPolicy**](OauthClientRegistrationPoliciesApi.md#DeleteDynamicClientRegistrationPolicy) | **Delete** /oauth/clientRegistrationPolicies/{id} | Delete a client registration policy plugin instance.
-[**GetDynamicClientRegistrationDescriptor**](OauthClientRegistrationPoliciesApi.md#GetDynamicClientRegistrationDescriptor) | **Get** /oauth/clientRegistrationPolicies/descriptors/{id} | Get the description of a client registration policy plugin descriptor.
-[**GetDynamicClientRegistrationDescriptors**](OauthClientRegistrationPoliciesApi.md#GetDynamicClientRegistrationDescriptors) | **Get** /oauth/clientRegistrationPolicies/descriptors | Get the list of available client registration policy plugin descriptors.
-[**GetDynamicClientRegistrationPolicies**](OauthClientRegistrationPoliciesApi.md#GetDynamicClientRegistrationPolicies) | **Get** /oauth/clientRegistrationPolicies | Get a list of client registration policy plugin instances.
-[**GetDynamicClientRegistrationPolicy**](OauthClientRegistrationPoliciesApi.md#GetDynamicClientRegistrationPolicy) | **Get** /oauth/clientRegistrationPolicies/{id} | Get a specific client registration policy plugin instance.
-[**UpdateDynamicClientRegistrationPolicy**](OauthClientRegistrationPoliciesApi.md#UpdateDynamicClientRegistrationPolicy) | **Put** /oauth/clientRegistrationPolicies/{id} | Update a client registration policy plugin instance.
+[**CreateDynamicClientRegistrationPolicy**](OauthClientRegistrationPoliciesAPI.md#CreateDynamicClientRegistrationPolicy) | **Post** /oauth/clientRegistrationPolicies | Create a client registration policy plugin instance.
+[**DeleteDynamicClientRegistrationPolicy**](OauthClientRegistrationPoliciesAPI.md#DeleteDynamicClientRegistrationPolicy) | **Delete** /oauth/clientRegistrationPolicies/{id} | Delete a client registration policy plugin instance.
+[**GetDynamicClientRegistrationDescriptor**](OauthClientRegistrationPoliciesAPI.md#GetDynamicClientRegistrationDescriptor) | **Get** /oauth/clientRegistrationPolicies/descriptors/{id} | Get the description of a client registration policy plugin descriptor.
+[**GetDynamicClientRegistrationDescriptors**](OauthClientRegistrationPoliciesAPI.md#GetDynamicClientRegistrationDescriptors) | **Get** /oauth/clientRegistrationPolicies/descriptors | Get the list of available client registration policy plugin descriptors.
+[**GetDynamicClientRegistrationPolicies**](OauthClientRegistrationPoliciesAPI.md#GetDynamicClientRegistrationPolicies) | **Get** /oauth/clientRegistrationPolicies | Get a list of client registration policy plugin instances.
+[**GetDynamicClientRegistrationPolicy**](OauthClientRegistrationPoliciesAPI.md#GetDynamicClientRegistrationPolicy) | **Get** /oauth/clientRegistrationPolicies/{id} | Get a specific client registration policy plugin instance.
+[**UpdateDynamicClientRegistrationPolicy**](OauthClientRegistrationPoliciesAPI.md#UpdateDynamicClientRegistrationPolicy) | **Put** /oauth/clientRegistrationPolicies/{id} | Update a client registration policy plugin instance.
 
 
 
@@ -37,13 +37,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientRegistrationPoliciesApi.CreateDynamicClientRegistrationPolicy(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.OauthClientRegistrationPoliciesAPI.CreateDynamicClientRegistrationPolicy(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesApi.CreateDynamicClientRegistrationPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesAPI.CreateDynamicClientRegistrationPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateDynamicClientRegistrationPolicy`: ClientRegistrationPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesApi.CreateDynamicClientRegistrationPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesAPI.CreateDynamicClientRegistrationPolicy`: %v\n", resp)
 }
 ```
 
@@ -101,9 +101,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthClientRegistrationPoliciesApi.DeleteDynamicClientRegistrationPolicy(context.Background(), id).Execute()
+    r, err := apiClient.OauthClientRegistrationPoliciesAPI.DeleteDynamicClientRegistrationPolicy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesApi.DeleteDynamicClientRegistrationPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesAPI.DeleteDynamicClientRegistrationPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -167,13 +167,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientRegistrationPoliciesApi.GetDynamicClientRegistrationDescriptor(context.Background(), id).Execute()
+    resp, r, err := apiClient.OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationDescriptor(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesApi.GetDynamicClientRegistrationDescriptor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationDescriptor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetDynamicClientRegistrationDescriptor`: ClientRegistrationPolicyDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesApi.GetDynamicClientRegistrationDescriptor`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationDescriptor`: %v\n", resp)
 }
 ```
 
@@ -234,13 +234,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientRegistrationPoliciesApi.GetDynamicClientRegistrationDescriptors(context.Background()).Execute()
+    resp, r, err := apiClient.OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationDescriptors(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesApi.GetDynamicClientRegistrationDescriptors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationDescriptors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetDynamicClientRegistrationDescriptors`: ClientRegistrationPolicyDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesApi.GetDynamicClientRegistrationDescriptors`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationDescriptors`: %v\n", resp)
 }
 ```
 
@@ -293,13 +293,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientRegistrationPoliciesApi.GetDynamicClientRegistrationPolicies(context.Background()).Execute()
+    resp, r, err := apiClient.OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationPolicies(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesApi.GetDynamicClientRegistrationPolicies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationPolicies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetDynamicClientRegistrationPolicies`: ClientRegistrationPolicies
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesApi.GetDynamicClientRegistrationPolicies`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationPolicies`: %v\n", resp)
 }
 ```
 
@@ -353,13 +353,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientRegistrationPoliciesApi.GetDynamicClientRegistrationPolicy(context.Background(), id).Execute()
+    resp, r, err := apiClient.OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationPolicy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesApi.GetDynamicClientRegistrationPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetDynamicClientRegistrationPolicy`: ClientRegistrationPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesApi.GetDynamicClientRegistrationPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationPolicy`: %v\n", resp)
 }
 ```
 
@@ -422,13 +422,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientRegistrationPoliciesApi.UpdateDynamicClientRegistrationPolicy(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.OauthClientRegistrationPoliciesAPI.UpdateDynamicClientRegistrationPolicy(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesApi.UpdateDynamicClientRegistrationPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesAPI.UpdateDynamicClientRegistrationPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateDynamicClientRegistrationPolicy`: ClientRegistrationPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesApi.UpdateDynamicClientRegistrationPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesAPI.UpdateDynamicClientRegistrationPolicy`: %v\n", resp)
 }
 ```
 

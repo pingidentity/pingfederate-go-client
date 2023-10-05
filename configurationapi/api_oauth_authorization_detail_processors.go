@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// OauthAuthorizationDetailProcessorsApiService OauthAuthorizationDetailProcessorsApi service
-type OauthAuthorizationDetailProcessorsApiService service
+// OauthAuthorizationDetailProcessorsAPIService OauthAuthorizationDetailProcessorsAPI service
+type OauthAuthorizationDetailProcessorsAPIService service
 
 type ApiCreateAuthorizationDetailProcessorRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthorizationDetailProcessorsApiService
+	ApiService *OauthAuthorizationDetailProcessorsAPIService
 	body       *AuthorizationDetailProcessor
 }
 
@@ -44,7 +44,7 @@ CreateAuthorizationDetailProcessor Create an authorization detail processor plug
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateAuthorizationDetailProcessorRequest
 */
-func (a *OauthAuthorizationDetailProcessorsApiService) CreateAuthorizationDetailProcessor(ctx context.Context) ApiCreateAuthorizationDetailProcessorRequest {
+func (a *OauthAuthorizationDetailProcessorsAPIService) CreateAuthorizationDetailProcessor(ctx context.Context) ApiCreateAuthorizationDetailProcessorRequest {
 	return ApiCreateAuthorizationDetailProcessorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *OauthAuthorizationDetailProcessorsApiService) CreateAuthorizationDetail
 // Execute executes the request
 //
 //	@return AuthorizationDetailProcessor
-func (a *OauthAuthorizationDetailProcessorsApiService) CreateAuthorizationDetailProcessorExecute(r ApiCreateAuthorizationDetailProcessorRequest) (*AuthorizationDetailProcessor, *http.Response, error) {
+func (a *OauthAuthorizationDetailProcessorsAPIService) CreateAuthorizationDetailProcessorExecute(r ApiCreateAuthorizationDetailProcessorRequest) (*AuthorizationDetailProcessor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *OauthAuthorizationDetailProcessorsApiService) CreateAuthorizationDetail
 		localVarReturnValue *AuthorizationDetailProcessor
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailProcessorsApiService.CreateAuthorizationDetailProcessor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailProcessorsAPIService.CreateAuthorizationDetailProcessor")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,7 +144,7 @@ func (a *OauthAuthorizationDetailProcessorsApiService) CreateAuthorizationDetail
 
 type ApiDeleteAuthorizationDetailProcessorRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthorizationDetailProcessorsApiService
+	ApiService *OauthAuthorizationDetailProcessorsAPIService
 	id         string
 }
 
@@ -159,7 +159,7 @@ DeleteAuthorizationDetailProcessor Delete an authorization detail processor plug
 	@param id ID of an authorization detail processor plugin instance.
 	@return ApiDeleteAuthorizationDetailProcessorRequest
 */
-func (a *OauthAuthorizationDetailProcessorsApiService) DeleteAuthorizationDetailProcessor(ctx context.Context, id string) ApiDeleteAuthorizationDetailProcessorRequest {
+func (a *OauthAuthorizationDetailProcessorsAPIService) DeleteAuthorizationDetailProcessor(ctx context.Context, id string) ApiDeleteAuthorizationDetailProcessorRequest {
 	return ApiDeleteAuthorizationDetailProcessorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -168,14 +168,14 @@ func (a *OauthAuthorizationDetailProcessorsApiService) DeleteAuthorizationDetail
 }
 
 // Execute executes the request
-func (a *OauthAuthorizationDetailProcessorsApiService) DeleteAuthorizationDetailProcessorExecute(r ApiDeleteAuthorizationDetailProcessorRequest) (*http.Response, error) {
+func (a *OauthAuthorizationDetailProcessorsAPIService) DeleteAuthorizationDetailProcessorExecute(r ApiDeleteAuthorizationDetailProcessorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailProcessorsApiService.DeleteAuthorizationDetailProcessor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailProcessorsAPIService.DeleteAuthorizationDetailProcessor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -244,7 +244,7 @@ func (a *OauthAuthorizationDetailProcessorsApiService) DeleteAuthorizationDetail
 
 type ApiGetAuthorizationDetailProcessorRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthorizationDetailProcessorsApiService
+	ApiService *OauthAuthorizationDetailProcessorsAPIService
 	id         string
 }
 
@@ -259,7 +259,7 @@ GetAuthorizationDetailProcessor Get a specific authorization detail processor pl
 	@param id ID of an authorization detail processor plugin instance.
 	@return ApiGetAuthorizationDetailProcessorRequest
 */
-func (a *OauthAuthorizationDetailProcessorsApiService) GetAuthorizationDetailProcessor(ctx context.Context, id string) ApiGetAuthorizationDetailProcessorRequest {
+func (a *OauthAuthorizationDetailProcessorsAPIService) GetAuthorizationDetailProcessor(ctx context.Context, id string) ApiGetAuthorizationDetailProcessorRequest {
 	return ApiGetAuthorizationDetailProcessorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -270,7 +270,7 @@ func (a *OauthAuthorizationDetailProcessorsApiService) GetAuthorizationDetailPro
 // Execute executes the request
 //
 //	@return AuthorizationDetailProcessor
-func (a *OauthAuthorizationDetailProcessorsApiService) GetAuthorizationDetailProcessorExecute(r ApiGetAuthorizationDetailProcessorRequest) (*AuthorizationDetailProcessor, *http.Response, error) {
+func (a *OauthAuthorizationDetailProcessorsAPIService) GetAuthorizationDetailProcessorExecute(r ApiGetAuthorizationDetailProcessorRequest) (*AuthorizationDetailProcessor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -278,7 +278,7 @@ func (a *OauthAuthorizationDetailProcessorsApiService) GetAuthorizationDetailPro
 		localVarReturnValue *AuthorizationDetailProcessor
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailProcessorsApiService.GetAuthorizationDetailProcessor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailProcessorsAPIService.GetAuthorizationDetailProcessor")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -356,7 +356,7 @@ func (a *OauthAuthorizationDetailProcessorsApiService) GetAuthorizationDetailPro
 
 type ApiGetAuthorizationDetailProcessorPluginDescriptorRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthorizationDetailProcessorsApiService
+	ApiService *OauthAuthorizationDetailProcessorsAPIService
 	id         string
 }
 
@@ -371,7 +371,7 @@ GetAuthorizationDetailProcessorPluginDescriptor Get an authorization detail proc
 	@param id ID of authorization detail processor plugin descriptor.
 	@return ApiGetAuthorizationDetailProcessorPluginDescriptorRequest
 */
-func (a *OauthAuthorizationDetailProcessorsApiService) GetAuthorizationDetailProcessorPluginDescriptor(ctx context.Context, id string) ApiGetAuthorizationDetailProcessorPluginDescriptorRequest {
+func (a *OauthAuthorizationDetailProcessorsAPIService) GetAuthorizationDetailProcessorPluginDescriptor(ctx context.Context, id string) ApiGetAuthorizationDetailProcessorPluginDescriptorRequest {
 	return ApiGetAuthorizationDetailProcessorPluginDescriptorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -382,7 +382,7 @@ func (a *OauthAuthorizationDetailProcessorsApiService) GetAuthorizationDetailPro
 // Execute executes the request
 //
 //	@return AuthorizationDetailProcessorDescriptor
-func (a *OauthAuthorizationDetailProcessorsApiService) GetAuthorizationDetailProcessorPluginDescriptorExecute(r ApiGetAuthorizationDetailProcessorPluginDescriptorRequest) (*AuthorizationDetailProcessorDescriptor, *http.Response, error) {
+func (a *OauthAuthorizationDetailProcessorsAPIService) GetAuthorizationDetailProcessorPluginDescriptorExecute(r ApiGetAuthorizationDetailProcessorPluginDescriptorRequest) (*AuthorizationDetailProcessorDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -390,7 +390,7 @@ func (a *OauthAuthorizationDetailProcessorsApiService) GetAuthorizationDetailPro
 		localVarReturnValue *AuthorizationDetailProcessorDescriptor
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailProcessorsApiService.GetAuthorizationDetailProcessorPluginDescriptor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailProcessorsAPIService.GetAuthorizationDetailProcessorPluginDescriptor")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -468,7 +468,7 @@ func (a *OauthAuthorizationDetailProcessorsApiService) GetAuthorizationDetailPro
 
 type ApiGetAuthorizationDetailProcessorPluginDescriptorsRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthorizationDetailProcessorsApiService
+	ApiService *OauthAuthorizationDetailProcessorsAPIService
 }
 
 func (r ApiGetAuthorizationDetailProcessorPluginDescriptorsRequest) Execute() (*AuthorizationDetailProcessorDescriptors, *http.Response, error) {
@@ -481,7 +481,7 @@ GetAuthorizationDetailProcessorPluginDescriptors Get a list of available authori
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAuthorizationDetailProcessorPluginDescriptorsRequest
 */
-func (a *OauthAuthorizationDetailProcessorsApiService) GetAuthorizationDetailProcessorPluginDescriptors(ctx context.Context) ApiGetAuthorizationDetailProcessorPluginDescriptorsRequest {
+func (a *OauthAuthorizationDetailProcessorsAPIService) GetAuthorizationDetailProcessorPluginDescriptors(ctx context.Context) ApiGetAuthorizationDetailProcessorPluginDescriptorsRequest {
 	return ApiGetAuthorizationDetailProcessorPluginDescriptorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -491,7 +491,7 @@ func (a *OauthAuthorizationDetailProcessorsApiService) GetAuthorizationDetailPro
 // Execute executes the request
 //
 //	@return AuthorizationDetailProcessorDescriptors
-func (a *OauthAuthorizationDetailProcessorsApiService) GetAuthorizationDetailProcessorPluginDescriptorsExecute(r ApiGetAuthorizationDetailProcessorPluginDescriptorsRequest) (*AuthorizationDetailProcessorDescriptors, *http.Response, error) {
+func (a *OauthAuthorizationDetailProcessorsAPIService) GetAuthorizationDetailProcessorPluginDescriptorsExecute(r ApiGetAuthorizationDetailProcessorPluginDescriptorsRequest) (*AuthorizationDetailProcessorDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -499,7 +499,7 @@ func (a *OauthAuthorizationDetailProcessorsApiService) GetAuthorizationDetailPro
 		localVarReturnValue *AuthorizationDetailProcessorDescriptors
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailProcessorsApiService.GetAuthorizationDetailProcessorPluginDescriptors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailProcessorsAPIService.GetAuthorizationDetailProcessorPluginDescriptors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -566,7 +566,7 @@ func (a *OauthAuthorizationDetailProcessorsApiService) GetAuthorizationDetailPro
 
 type ApiGetAuthorizationDetailProcessorsRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthorizationDetailProcessorsApiService
+	ApiService *OauthAuthorizationDetailProcessorsAPIService
 }
 
 func (r ApiGetAuthorizationDetailProcessorsRequest) Execute() (*AuthorizationDetailProcessors, *http.Response, error) {
@@ -579,7 +579,7 @@ GetAuthorizationDetailProcessors Get a list of authorization detail processor pl
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAuthorizationDetailProcessorsRequest
 */
-func (a *OauthAuthorizationDetailProcessorsApiService) GetAuthorizationDetailProcessors(ctx context.Context) ApiGetAuthorizationDetailProcessorsRequest {
+func (a *OauthAuthorizationDetailProcessorsAPIService) GetAuthorizationDetailProcessors(ctx context.Context) ApiGetAuthorizationDetailProcessorsRequest {
 	return ApiGetAuthorizationDetailProcessorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -589,7 +589,7 @@ func (a *OauthAuthorizationDetailProcessorsApiService) GetAuthorizationDetailPro
 // Execute executes the request
 //
 //	@return AuthorizationDetailProcessors
-func (a *OauthAuthorizationDetailProcessorsApiService) GetAuthorizationDetailProcessorsExecute(r ApiGetAuthorizationDetailProcessorsRequest) (*AuthorizationDetailProcessors, *http.Response, error) {
+func (a *OauthAuthorizationDetailProcessorsAPIService) GetAuthorizationDetailProcessorsExecute(r ApiGetAuthorizationDetailProcessorsRequest) (*AuthorizationDetailProcessors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -597,7 +597,7 @@ func (a *OauthAuthorizationDetailProcessorsApiService) GetAuthorizationDetailPro
 		localVarReturnValue *AuthorizationDetailProcessors
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailProcessorsApiService.GetAuthorizationDetailProcessors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailProcessorsAPIService.GetAuthorizationDetailProcessors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -664,7 +664,7 @@ func (a *OauthAuthorizationDetailProcessorsApiService) GetAuthorizationDetailPro
 
 type ApiUpdateAuthorizationDetailProcessorRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthorizationDetailProcessorsApiService
+	ApiService *OauthAuthorizationDetailProcessorsAPIService
 	id         string
 	body       *AuthorizationDetailProcessor
 }
@@ -686,7 +686,7 @@ UpdateAuthorizationDetailProcessor Update an authorization detail processor plug
 	@param id ID of an authorization detail processor plugin instance.
 	@return ApiUpdateAuthorizationDetailProcessorRequest
 */
-func (a *OauthAuthorizationDetailProcessorsApiService) UpdateAuthorizationDetailProcessor(ctx context.Context, id string) ApiUpdateAuthorizationDetailProcessorRequest {
+func (a *OauthAuthorizationDetailProcessorsAPIService) UpdateAuthorizationDetailProcessor(ctx context.Context, id string) ApiUpdateAuthorizationDetailProcessorRequest {
 	return ApiUpdateAuthorizationDetailProcessorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -697,7 +697,7 @@ func (a *OauthAuthorizationDetailProcessorsApiService) UpdateAuthorizationDetail
 // Execute executes the request
 //
 //	@return AuthorizationDetailProcessor
-func (a *OauthAuthorizationDetailProcessorsApiService) UpdateAuthorizationDetailProcessorExecute(r ApiUpdateAuthorizationDetailProcessorRequest) (*AuthorizationDetailProcessor, *http.Response, error) {
+func (a *OauthAuthorizationDetailProcessorsAPIService) UpdateAuthorizationDetailProcessorExecute(r ApiUpdateAuthorizationDetailProcessorRequest) (*AuthorizationDetailProcessor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -705,7 +705,7 @@ func (a *OauthAuthorizationDetailProcessorsApiService) UpdateAuthorizationDetail
 		localVarReturnValue *AuthorizationDetailProcessor
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailProcessorsApiService.UpdateAuthorizationDetailProcessor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailProcessorsAPIService.UpdateAuthorizationDetailProcessor")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -1,22 +1,22 @@
-# \KeyPairsSigningApi
+# \KeyPairsSigningAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateSigningKeyPair**](KeyPairsSigningApi.md#CreateSigningKeyPair) | **Post** /keyPairs/signing/generate | Generate a new key pair.
-[**DeleteKeyPairRotationSettings**](KeyPairsSigningApi.md#DeleteKeyPairRotationSettings) | **Delete** /keyPairs/signing/{id}/rotationSettings | Delete rotation settings for a signing key pair.
-[**DeleteSigningKeyPair**](KeyPairsSigningApi.md#DeleteSigningKeyPair) | **Delete** /keyPairs/signing/{id} | Delete a key pair.
-[**ExportCertificateFile**](KeyPairsSigningApi.md#ExportCertificateFile) | **Get** /keyPairs/signing/{id}/certificate | Download the certificate from a given key pair.
-[**ExportCsr**](KeyPairsSigningApi.md#ExportCsr) | **Get** /keyPairs/signing/{id}/csr | Generate a new certificate signing request (CSR) for this key pair.
-[**ExportPEMFile**](KeyPairsSigningApi.md#ExportPEMFile) | **Post** /keyPairs/signing/{id}/pem | Download the key pair in PEM format.
-[**ExportPKCS12File**](KeyPairsSigningApi.md#ExportPKCS12File) | **Post** /keyPairs/signing/{id}/pkcs12 | Download the key pair in PKCS12 format.
-[**GetRotationSettings**](KeyPairsSigningApi.md#GetRotationSettings) | **Get** /keyPairs/signing/{id}/rotationSettings | Retrieve details of rotation settings for a key pair.
-[**GetSigningKeyPair**](KeyPairsSigningApi.md#GetSigningKeyPair) | **Get** /keyPairs/signing/{id} | Retrieve details of a key pair.
-[**GetSigningKeyPairs**](KeyPairsSigningApi.md#GetSigningKeyPairs) | **Get** /keyPairs/signing | Get list of key pairs.
-[**ImportCsrResponse**](KeyPairsSigningApi.md#ImportCsrResponse) | **Post** /keyPairs/signing/{id}/csr | Import a CSR response for this key pair.
-[**ImportSigningKeyPair**](KeyPairsSigningApi.md#ImportSigningKeyPair) | **Post** /keyPairs/signing/import | Import a new key pair.
-[**UpdateRotationSettings**](KeyPairsSigningApi.md#UpdateRotationSettings) | **Put** /keyPairs/signing/{id}/rotationSettings | Add rotation settings to a key pair
+[**CreateSigningKeyPair**](KeyPairsSigningAPI.md#CreateSigningKeyPair) | **Post** /keyPairs/signing/generate | Generate a new key pair.
+[**DeleteKeyPairRotationSettings**](KeyPairsSigningAPI.md#DeleteKeyPairRotationSettings) | **Delete** /keyPairs/signing/{id}/rotationSettings | Delete rotation settings for a signing key pair.
+[**DeleteSigningKeyPair**](KeyPairsSigningAPI.md#DeleteSigningKeyPair) | **Delete** /keyPairs/signing/{id} | Delete a key pair.
+[**ExportCertificateFile**](KeyPairsSigningAPI.md#ExportCertificateFile) | **Get** /keyPairs/signing/{id}/certificate | Download the certificate from a given key pair.
+[**ExportCsr**](KeyPairsSigningAPI.md#ExportCsr) | **Get** /keyPairs/signing/{id}/csr | Generate a new certificate signing request (CSR) for this key pair.
+[**ExportPEMFile**](KeyPairsSigningAPI.md#ExportPEMFile) | **Post** /keyPairs/signing/{id}/pem | Download the key pair in PEM format.
+[**ExportPKCS12File**](KeyPairsSigningAPI.md#ExportPKCS12File) | **Post** /keyPairs/signing/{id}/pkcs12 | Download the key pair in PKCS12 format.
+[**GetRotationSettings**](KeyPairsSigningAPI.md#GetRotationSettings) | **Get** /keyPairs/signing/{id}/rotationSettings | Retrieve details of rotation settings for a key pair.
+[**GetSigningKeyPair**](KeyPairsSigningAPI.md#GetSigningKeyPair) | **Get** /keyPairs/signing/{id} | Retrieve details of a key pair.
+[**GetSigningKeyPairs**](KeyPairsSigningAPI.md#GetSigningKeyPairs) | **Get** /keyPairs/signing | Get list of key pairs.
+[**ImportCsrResponse**](KeyPairsSigningAPI.md#ImportCsrResponse) | **Post** /keyPairs/signing/{id}/csr | Import a CSR response for this key pair.
+[**ImportSigningKeyPair**](KeyPairsSigningAPI.md#ImportSigningKeyPair) | **Post** /keyPairs/signing/import | Import a new key pair.
+[**UpdateRotationSettings**](KeyPairsSigningAPI.md#UpdateRotationSettings) | **Put** /keyPairs/signing/{id}/rotationSettings | Add rotation settings to a key pair
 
 
 
@@ -43,13 +43,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSigningApi.CreateSigningKeyPair(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.KeyPairsSigningAPI.CreateSigningKeyPair(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningApi.CreateSigningKeyPair``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.CreateSigningKeyPair``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateSigningKeyPair`: KeyPairView
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningApi.CreateSigningKeyPair`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.CreateSigningKeyPair`: %v\n", resp)
 }
 ```
 
@@ -109,9 +109,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.KeyPairsSigningApi.DeleteKeyPairRotationSettings(context.Background(), id).Execute()
+    r, err := apiClient.KeyPairsSigningAPI.DeleteKeyPairRotationSettings(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningApi.DeleteKeyPairRotationSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.DeleteKeyPairRotationSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -177,9 +177,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.KeyPairsSigningApi.DeleteSigningKeyPair(context.Background(), id).Execute()
+    r, err := apiClient.KeyPairsSigningAPI.DeleteSigningKeyPair(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningApi.DeleteSigningKeyPair``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.DeleteSigningKeyPair``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -245,13 +245,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSigningApi.ExportCertificateFile(context.Background(), id).Execute()
+    resp, r, err := apiClient.KeyPairsSigningAPI.ExportCertificateFile(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningApi.ExportCertificateFile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.ExportCertificateFile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ExportCertificateFile`: string
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningApi.ExportCertificateFile`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.ExportCertificateFile`: %v\n", resp)
 }
 ```
 
@@ -315,13 +315,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSigningApi.ExportCsr(context.Background(), id).Execute()
+    resp, r, err := apiClient.KeyPairsSigningAPI.ExportCsr(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningApi.ExportCsr``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.ExportCsr``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ExportCsr`: string
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningApi.ExportCsr`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.ExportCsr`: %v\n", resp)
 }
 ```
 
@@ -386,13 +386,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSigningApi.ExportPEMFile(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.KeyPairsSigningAPI.ExportPEMFile(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningApi.ExportPEMFile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.ExportPEMFile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ExportPEMFile`: string
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningApi.ExportPEMFile`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.ExportPEMFile`: %v\n", resp)
 }
 ```
 
@@ -458,13 +458,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSigningApi.ExportPKCS12File(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.KeyPairsSigningAPI.ExportPKCS12File(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningApi.ExportPKCS12File``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.ExportPKCS12File``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ExportPKCS12File`: string
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningApi.ExportPKCS12File`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.ExportPKCS12File`: %v\n", resp)
 }
 ```
 
@@ -527,13 +527,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSigningApi.GetRotationSettings(context.Background(), id).Execute()
+    resp, r, err := apiClient.KeyPairsSigningAPI.GetRotationSettings(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningApi.GetRotationSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.GetRotationSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetRotationSettings`: KeyPairRotationSettings
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningApi.GetRotationSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.GetRotationSettings`: %v\n", resp)
 }
 ```
 
@@ -595,13 +595,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSigningApi.GetSigningKeyPair(context.Background(), id).Execute()
+    resp, r, err := apiClient.KeyPairsSigningAPI.GetSigningKeyPair(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningApi.GetSigningKeyPair``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.GetSigningKeyPair``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSigningKeyPair`: KeyPairView
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningApi.GetSigningKeyPair`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.GetSigningKeyPair`: %v\n", resp)
 }
 ```
 
@@ -662,13 +662,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSigningApi.GetSigningKeyPairs(context.Background()).Execute()
+    resp, r, err := apiClient.KeyPairsSigningAPI.GetSigningKeyPairs(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningApi.GetSigningKeyPairs``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.GetSigningKeyPairs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSigningKeyPairs`: KeyPairViews
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningApi.GetSigningKeyPairs`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.GetSigningKeyPairs`: %v\n", resp)
 }
 ```
 
@@ -723,13 +723,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSigningApi.ImportCsrResponse(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.KeyPairsSigningAPI.ImportCsrResponse(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningApi.ImportCsrResponse``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.ImportCsrResponse``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ImportCsrResponse`: KeyPairView
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningApi.ImportCsrResponse`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.ImportCsrResponse`: %v\n", resp)
 }
 ```
 
@@ -792,13 +792,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSigningApi.ImportSigningKeyPair(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.KeyPairsSigningAPI.ImportSigningKeyPair(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningApi.ImportSigningKeyPair``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.ImportSigningKeyPair``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ImportSigningKeyPair`: KeyPairView
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningApi.ImportSigningKeyPair`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.ImportSigningKeyPair`: %v\n", resp)
 }
 ```
 
@@ -857,13 +857,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSigningApi.UpdateRotationSettings(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.KeyPairsSigningAPI.UpdateRotationSettings(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningApi.UpdateRotationSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.UpdateRotationSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateRotationSettings`: KeyPairRotationSettings
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningApi.UpdateRotationSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.UpdateRotationSettings`: %v\n", resp)
 }
 ```
 

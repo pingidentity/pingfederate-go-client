@@ -1,19 +1,19 @@
-# \KeyPairsSslClientApi
+# \KeyPairsSslClientAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateSslClientKeyPair**](KeyPairsSslClientApi.md#CreateSslClientKeyPair) | **Post** /keyPairs/sslClient/generate | Generate a new key pair.
-[**DeleteSslClientKeyPair**](KeyPairsSslClientApi.md#DeleteSslClientKeyPair) | **Delete** /keyPairs/sslClient/{id} | Delete a key pair.
-[**ExportSslClientCertificateFile**](KeyPairsSslClientApi.md#ExportSslClientCertificateFile) | **Get** /keyPairs/sslClient/{id}/certificate | Download the certificate from a given key pair.
-[**ExportSslClientCsr**](KeyPairsSslClientApi.md#ExportSslClientCsr) | **Get** /keyPairs/sslClient/{id}/csr | Generate a new certificate signing request (CSR) for this key pair.
-[**ExportSslClientPEMFile**](KeyPairsSslClientApi.md#ExportSslClientPEMFile) | **Post** /keyPairs/sslClient/{id}/pem | Download the key pair in PEM format.
-[**ExportSslClientPKCS12File**](KeyPairsSslClientApi.md#ExportSslClientPKCS12File) | **Post** /keyPairs/sslClient/{id}/pkcs12 | Download the key pair in PKCS12 format.
-[**GetSslClientKeyPair**](KeyPairsSslClientApi.md#GetSslClientKeyPair) | **Get** /keyPairs/sslClient/{id} | Retrieve details of a key pair.
-[**GetSslClientKeyPairs**](KeyPairsSslClientApi.md#GetSslClientKeyPairs) | **Get** /keyPairs/sslClient | Get list of key pairs.
-[**ImportSslClientCsrResponse**](KeyPairsSslClientApi.md#ImportSslClientCsrResponse) | **Post** /keyPairs/sslClient/{id}/csr | Import a CSR response for this key pair.
-[**ImportSslClientKeyPair**](KeyPairsSslClientApi.md#ImportSslClientKeyPair) | **Post** /keyPairs/sslClient/import | Import a new key pair.
+[**CreateSslClientKeyPair**](KeyPairsSslClientAPI.md#CreateSslClientKeyPair) | **Post** /keyPairs/sslClient/generate | Generate a new key pair.
+[**DeleteSslClientKeyPair**](KeyPairsSslClientAPI.md#DeleteSslClientKeyPair) | **Delete** /keyPairs/sslClient/{id} | Delete a key pair.
+[**ExportSslClientCertificateFile**](KeyPairsSslClientAPI.md#ExportSslClientCertificateFile) | **Get** /keyPairs/sslClient/{id}/certificate | Download the certificate from a given key pair.
+[**ExportSslClientCsr**](KeyPairsSslClientAPI.md#ExportSslClientCsr) | **Get** /keyPairs/sslClient/{id}/csr | Generate a new certificate signing request (CSR) for this key pair.
+[**ExportSslClientPEMFile**](KeyPairsSslClientAPI.md#ExportSslClientPEMFile) | **Post** /keyPairs/sslClient/{id}/pem | Download the key pair in PEM format.
+[**ExportSslClientPKCS12File**](KeyPairsSslClientAPI.md#ExportSslClientPKCS12File) | **Post** /keyPairs/sslClient/{id}/pkcs12 | Download the key pair in PKCS12 format.
+[**GetSslClientKeyPair**](KeyPairsSslClientAPI.md#GetSslClientKeyPair) | **Get** /keyPairs/sslClient/{id} | Retrieve details of a key pair.
+[**GetSslClientKeyPairs**](KeyPairsSslClientAPI.md#GetSslClientKeyPairs) | **Get** /keyPairs/sslClient | Get list of key pairs.
+[**ImportSslClientCsrResponse**](KeyPairsSslClientAPI.md#ImportSslClientCsrResponse) | **Post** /keyPairs/sslClient/{id}/csr | Import a CSR response for this key pair.
+[**ImportSslClientKeyPair**](KeyPairsSslClientAPI.md#ImportSslClientKeyPair) | **Post** /keyPairs/sslClient/import | Import a new key pair.
 
 
 
@@ -40,13 +40,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSslClientApi.CreateSslClientKeyPair(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.KeyPairsSslClientAPI.CreateSslClientKeyPair(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslClientApi.CreateSslClientKeyPair``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslClientAPI.CreateSslClientKeyPair``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateSslClientKeyPair`: KeyPairView
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslClientApi.CreateSslClientKeyPair`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslClientAPI.CreateSslClientKeyPair`: %v\n", resp)
 }
 ```
 
@@ -106,9 +106,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.KeyPairsSslClientApi.DeleteSslClientKeyPair(context.Background(), id).Execute()
+    r, err := apiClient.KeyPairsSslClientAPI.DeleteSslClientKeyPair(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslClientApi.DeleteSslClientKeyPair``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslClientAPI.DeleteSslClientKeyPair``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -174,13 +174,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSslClientApi.ExportSslClientCertificateFile(context.Background(), id).Execute()
+    resp, r, err := apiClient.KeyPairsSslClientAPI.ExportSslClientCertificateFile(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslClientApi.ExportSslClientCertificateFile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslClientAPI.ExportSslClientCertificateFile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ExportSslClientCertificateFile`: string
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslClientApi.ExportSslClientCertificateFile`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslClientAPI.ExportSslClientCertificateFile`: %v\n", resp)
 }
 ```
 
@@ -244,13 +244,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSslClientApi.ExportSslClientCsr(context.Background(), id).Execute()
+    resp, r, err := apiClient.KeyPairsSslClientAPI.ExportSslClientCsr(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslClientApi.ExportSslClientCsr``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslClientAPI.ExportSslClientCsr``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ExportSslClientCsr`: string
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslClientApi.ExportSslClientCsr`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslClientAPI.ExportSslClientCsr`: %v\n", resp)
 }
 ```
 
@@ -315,13 +315,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSslClientApi.ExportSslClientPEMFile(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.KeyPairsSslClientAPI.ExportSslClientPEMFile(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslClientApi.ExportSslClientPEMFile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslClientAPI.ExportSslClientPEMFile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ExportSslClientPEMFile`: string
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslClientApi.ExportSslClientPEMFile`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslClientAPI.ExportSslClientPEMFile`: %v\n", resp)
 }
 ```
 
@@ -387,13 +387,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSslClientApi.ExportSslClientPKCS12File(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.KeyPairsSslClientAPI.ExportSslClientPKCS12File(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslClientApi.ExportSslClientPKCS12File``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslClientAPI.ExportSslClientPKCS12File``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ExportSslClientPKCS12File`: string
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslClientApi.ExportSslClientPKCS12File`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslClientAPI.ExportSslClientPKCS12File`: %v\n", resp)
 }
 ```
 
@@ -456,13 +456,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSslClientApi.GetSslClientKeyPair(context.Background(), id).Execute()
+    resp, r, err := apiClient.KeyPairsSslClientAPI.GetSslClientKeyPair(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslClientApi.GetSslClientKeyPair``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslClientAPI.GetSslClientKeyPair``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSslClientKeyPair`: KeyPairView
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslClientApi.GetSslClientKeyPair`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslClientAPI.GetSslClientKeyPair`: %v\n", resp)
 }
 ```
 
@@ -523,13 +523,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSslClientApi.GetSslClientKeyPairs(context.Background()).Execute()
+    resp, r, err := apiClient.KeyPairsSslClientAPI.GetSslClientKeyPairs(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslClientApi.GetSslClientKeyPairs``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslClientAPI.GetSslClientKeyPairs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSslClientKeyPairs`: KeyPairViews
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslClientApi.GetSslClientKeyPairs`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslClientAPI.GetSslClientKeyPairs`: %v\n", resp)
 }
 ```
 
@@ -584,13 +584,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSslClientApi.ImportSslClientCsrResponse(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.KeyPairsSslClientAPI.ImportSslClientCsrResponse(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslClientApi.ImportSslClientCsrResponse``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslClientAPI.ImportSslClientCsrResponse``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ImportSslClientCsrResponse`: KeyPairView
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslClientApi.ImportSslClientCsrResponse`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslClientAPI.ImportSslClientCsrResponse`: %v\n", resp)
 }
 ```
 
@@ -653,13 +653,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSslClientApi.ImportSslClientKeyPair(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.KeyPairsSslClientAPI.ImportSslClientKeyPair(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslClientApi.ImportSslClientKeyPair``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslClientAPI.ImportSslClientKeyPair``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ImportSslClientKeyPair`: KeyPairView
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslClientApi.ImportSslClientKeyPair`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslClientAPI.ImportSslClientKeyPair`: %v\n", resp)
 }
 ```
 

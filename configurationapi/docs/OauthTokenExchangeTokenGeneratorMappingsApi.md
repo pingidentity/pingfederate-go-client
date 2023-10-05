@@ -1,14 +1,14 @@
-# \OauthTokenExchangeTokenGeneratorMappingsApi
+# \OauthTokenExchangeTokenGeneratorMappingsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateTokenGeneratorMapping**](OauthTokenExchangeTokenGeneratorMappingsApi.md#CreateTokenGeneratorMapping) | **Post** /oauth/tokenExchange/tokenGeneratorMappings | Create a new Token Exchange Processor policy to Token Generator Mapping.
-[**DeleteTokenGeneratorMappingById**](OauthTokenExchangeTokenGeneratorMappingsApi.md#DeleteTokenGeneratorMappingById) | **Delete** /oauth/tokenExchange/tokenGeneratorMappings/{id} | Delete a Token Exchange Processor policy to Token Generator Mapping.
-[**GetTokenGeneratorMappingById**](OauthTokenExchangeTokenGeneratorMappingsApi.md#GetTokenGeneratorMappingById) | **Get** /oauth/tokenExchange/tokenGeneratorMappings/{id} | Get a Token Exchange Processor policy to Token Generator Mapping.
-[**GetTokenGeneratorMappings**](OauthTokenExchangeTokenGeneratorMappingsApi.md#GetTokenGeneratorMappings) | **Get** /oauth/tokenExchange/tokenGeneratorMappings | Get the list of Token Exchange Processor policy to Token Generator Mappings.
-[**UpdateTokenGeneratorMappingById**](OauthTokenExchangeTokenGeneratorMappingsApi.md#UpdateTokenGeneratorMappingById) | **Put** /oauth/tokenExchange/tokenGeneratorMappings/{id} | Update a Token Exchange Processor policy to Token Generator Mapping.
+[**CreateTokenGeneratorMapping**](OauthTokenExchangeTokenGeneratorMappingsAPI.md#CreateTokenGeneratorMapping) | **Post** /oauth/tokenExchange/tokenGeneratorMappings | Create a new Token Exchange Processor policy to Token Generator Mapping.
+[**DeleteTokenGeneratorMappingById**](OauthTokenExchangeTokenGeneratorMappingsAPI.md#DeleteTokenGeneratorMappingById) | **Delete** /oauth/tokenExchange/tokenGeneratorMappings/{id} | Delete a Token Exchange Processor policy to Token Generator Mapping.
+[**GetTokenGeneratorMappingById**](OauthTokenExchangeTokenGeneratorMappingsAPI.md#GetTokenGeneratorMappingById) | **Get** /oauth/tokenExchange/tokenGeneratorMappings/{id} | Get a Token Exchange Processor policy to Token Generator Mapping.
+[**GetTokenGeneratorMappings**](OauthTokenExchangeTokenGeneratorMappingsAPI.md#GetTokenGeneratorMappings) | **Get** /oauth/tokenExchange/tokenGeneratorMappings | Get the list of Token Exchange Processor policy to Token Generator Mappings.
+[**UpdateTokenGeneratorMappingById**](OauthTokenExchangeTokenGeneratorMappingsAPI.md#UpdateTokenGeneratorMappingById) | **Put** /oauth/tokenExchange/tokenGeneratorMappings/{id} | Update a Token Exchange Processor policy to Token Generator Mapping.
 
 
 
@@ -36,13 +36,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeTokenGeneratorMappingsApi.CreateTokenGeneratorMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthTokenExchangeTokenGeneratorMappingsAPI.CreateTokenGeneratorMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeTokenGeneratorMappingsApi.CreateTokenGeneratorMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeTokenGeneratorMappingsAPI.CreateTokenGeneratorMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateTokenGeneratorMapping`: ProcessorPolicyToGeneratorMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeTokenGeneratorMappingsApi.CreateTokenGeneratorMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeTokenGeneratorMappingsAPI.CreateTokenGeneratorMapping`: %v\n", resp)
 }
 ```
 
@@ -101,9 +101,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthTokenExchangeTokenGeneratorMappingsApi.DeleteTokenGeneratorMappingById(context.Background(), id).Execute()
+    r, err := apiClient.OauthTokenExchangeTokenGeneratorMappingsAPI.DeleteTokenGeneratorMappingById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeTokenGeneratorMappingsApi.DeleteTokenGeneratorMappingById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeTokenGeneratorMappingsAPI.DeleteTokenGeneratorMappingById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -167,13 +167,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeTokenGeneratorMappingsApi.GetTokenGeneratorMappingById(context.Background(), id).Execute()
+    resp, r, err := apiClient.OauthTokenExchangeTokenGeneratorMappingsAPI.GetTokenGeneratorMappingById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeTokenGeneratorMappingsApi.GetTokenGeneratorMappingById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeTokenGeneratorMappingsAPI.GetTokenGeneratorMappingById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTokenGeneratorMappingById`: ProcessorPolicyToGeneratorMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeTokenGeneratorMappingsApi.GetTokenGeneratorMappingById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeTokenGeneratorMappingsAPI.GetTokenGeneratorMappingById`: %v\n", resp)
 }
 ```
 
@@ -234,13 +234,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeTokenGeneratorMappingsApi.GetTokenGeneratorMappings(context.Background()).Execute()
+    resp, r, err := apiClient.OauthTokenExchangeTokenGeneratorMappingsAPI.GetTokenGeneratorMappings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeTokenGeneratorMappingsApi.GetTokenGeneratorMappings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeTokenGeneratorMappingsAPI.GetTokenGeneratorMappings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTokenGeneratorMappings`: ProcessorPolicyToGeneratorMappings
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeTokenGeneratorMappingsApi.GetTokenGeneratorMappings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeTokenGeneratorMappingsAPI.GetTokenGeneratorMappings`: %v\n", resp)
 }
 ```
 
@@ -296,13 +296,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeTokenGeneratorMappingsApi.UpdateTokenGeneratorMappingById(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthTokenExchangeTokenGeneratorMappingsAPI.UpdateTokenGeneratorMappingById(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeTokenGeneratorMappingsApi.UpdateTokenGeneratorMappingById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeTokenGeneratorMappingsAPI.UpdateTokenGeneratorMappingById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateTokenGeneratorMappingById`: ProcessorPolicyToGeneratorMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeTokenGeneratorMappingsApi.UpdateTokenGeneratorMappingById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeTokenGeneratorMappingsAPI.UpdateTokenGeneratorMappingById`: %v\n", resp)
 }
 ```
 

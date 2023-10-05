@@ -1,16 +1,16 @@
-# \PasswordCredentialValidatorsApi
+# \PasswordCredentialValidatorsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreatePasswordCredentialValidator**](PasswordCredentialValidatorsApi.md#CreatePasswordCredentialValidator) | **Post** /passwordCredentialValidators | Create a new password credential validator instance
-[**DeletePasswordCredentialValidator**](PasswordCredentialValidatorsApi.md#DeletePasswordCredentialValidator) | **Delete** /passwordCredentialValidators/{id} | Delete a password credential validator instance.
-[**GetPasswordCredentialValidator**](PasswordCredentialValidatorsApi.md#GetPasswordCredentialValidator) | **Get** /passwordCredentialValidators/{id} | Find a password credential validator by ID.
-[**GetPasswordCredentialValidatorDescriptor**](PasswordCredentialValidatorsApi.md#GetPasswordCredentialValidatorDescriptor) | **Get** /passwordCredentialValidators/descriptors/{id} | Get the description of a password credential validator by ID.
-[**GetPasswordCredentialValidatorDescriptors**](PasswordCredentialValidatorsApi.md#GetPasswordCredentialValidatorDescriptors) | **Get** /passwordCredentialValidators/descriptors | Get a list of available password credential validator descriptors.
-[**GetPasswordCredentialValidators**](PasswordCredentialValidatorsApi.md#GetPasswordCredentialValidators) | **Get** /passwordCredentialValidators | Get the list of available password credential validators
-[**UpdatePasswordCredentialValidator**](PasswordCredentialValidatorsApi.md#UpdatePasswordCredentialValidator) | **Put** /passwordCredentialValidators/{id} | Update a password credential validator instance.
+[**CreatePasswordCredentialValidator**](PasswordCredentialValidatorsAPI.md#CreatePasswordCredentialValidator) | **Post** /passwordCredentialValidators | Create a new password credential validator instance
+[**DeletePasswordCredentialValidator**](PasswordCredentialValidatorsAPI.md#DeletePasswordCredentialValidator) | **Delete** /passwordCredentialValidators/{id} | Delete a password credential validator instance.
+[**GetPasswordCredentialValidator**](PasswordCredentialValidatorsAPI.md#GetPasswordCredentialValidator) | **Get** /passwordCredentialValidators/{id} | Find a password credential validator by ID.
+[**GetPasswordCredentialValidatorDescriptor**](PasswordCredentialValidatorsAPI.md#GetPasswordCredentialValidatorDescriptor) | **Get** /passwordCredentialValidators/descriptors/{id} | Get the description of a password credential validator by ID.
+[**GetPasswordCredentialValidatorDescriptors**](PasswordCredentialValidatorsAPI.md#GetPasswordCredentialValidatorDescriptors) | **Get** /passwordCredentialValidators/descriptors | Get a list of available password credential validator descriptors.
+[**GetPasswordCredentialValidators**](PasswordCredentialValidatorsAPI.md#GetPasswordCredentialValidators) | **Get** /passwordCredentialValidators | Get the list of available password credential validators
+[**UpdatePasswordCredentialValidator**](PasswordCredentialValidatorsAPI.md#UpdatePasswordCredentialValidator) | **Put** /passwordCredentialValidators/{id} | Update a password credential validator instance.
 
 
 
@@ -39,13 +39,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PasswordCredentialValidatorsApi.CreatePasswordCredentialValidator(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.PasswordCredentialValidatorsAPI.CreatePasswordCredentialValidator(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordCredentialValidatorsApi.CreatePasswordCredentialValidator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordCredentialValidatorsAPI.CreatePasswordCredentialValidator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreatePasswordCredentialValidator`: PasswordCredentialValidator
-    fmt.Fprintf(os.Stdout, "Response from `PasswordCredentialValidatorsApi.CreatePasswordCredentialValidator`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PasswordCredentialValidatorsAPI.CreatePasswordCredentialValidator`: %v\n", resp)
 }
 ```
 
@@ -105,9 +105,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.PasswordCredentialValidatorsApi.DeletePasswordCredentialValidator(context.Background(), id).Execute()
+    r, err := apiClient.PasswordCredentialValidatorsAPI.DeletePasswordCredentialValidator(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordCredentialValidatorsApi.DeletePasswordCredentialValidator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordCredentialValidatorsAPI.DeletePasswordCredentialValidator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -173,13 +173,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PasswordCredentialValidatorsApi.GetPasswordCredentialValidator(context.Background(), id).Execute()
+    resp, r, err := apiClient.PasswordCredentialValidatorsAPI.GetPasswordCredentialValidator(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordCredentialValidatorsApi.GetPasswordCredentialValidator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordCredentialValidatorsAPI.GetPasswordCredentialValidator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPasswordCredentialValidator`: PasswordCredentialValidator
-    fmt.Fprintf(os.Stdout, "Response from `PasswordCredentialValidatorsApi.GetPasswordCredentialValidator`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PasswordCredentialValidatorsAPI.GetPasswordCredentialValidator`: %v\n", resp)
 }
 ```
 
@@ -243,13 +243,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PasswordCredentialValidatorsApi.GetPasswordCredentialValidatorDescriptor(context.Background(), id).Execute()
+    resp, r, err := apiClient.PasswordCredentialValidatorsAPI.GetPasswordCredentialValidatorDescriptor(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordCredentialValidatorsApi.GetPasswordCredentialValidatorDescriptor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordCredentialValidatorsAPI.GetPasswordCredentialValidatorDescriptor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPasswordCredentialValidatorDescriptor`: PasswordCredentialValidatorDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `PasswordCredentialValidatorsApi.GetPasswordCredentialValidatorDescriptor`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PasswordCredentialValidatorsAPI.GetPasswordCredentialValidatorDescriptor`: %v\n", resp)
 }
 ```
 
@@ -310,13 +310,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PasswordCredentialValidatorsApi.GetPasswordCredentialValidatorDescriptors(context.Background()).Execute()
+    resp, r, err := apiClient.PasswordCredentialValidatorsAPI.GetPasswordCredentialValidatorDescriptors(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordCredentialValidatorsApi.GetPasswordCredentialValidatorDescriptors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordCredentialValidatorsAPI.GetPasswordCredentialValidatorDescriptors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPasswordCredentialValidatorDescriptors`: PasswordCredentialValidatorDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `PasswordCredentialValidatorsApi.GetPasswordCredentialValidatorDescriptors`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PasswordCredentialValidatorsAPI.GetPasswordCredentialValidatorDescriptors`: %v\n", resp)
 }
 ```
 
@@ -369,13 +369,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PasswordCredentialValidatorsApi.GetPasswordCredentialValidators(context.Background()).Execute()
+    resp, r, err := apiClient.PasswordCredentialValidatorsAPI.GetPasswordCredentialValidators(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordCredentialValidatorsApi.GetPasswordCredentialValidators``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordCredentialValidatorsAPI.GetPasswordCredentialValidators``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPasswordCredentialValidators`: PasswordCredentialValidators
-    fmt.Fprintf(os.Stdout, "Response from `PasswordCredentialValidatorsApi.GetPasswordCredentialValidators`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PasswordCredentialValidatorsAPI.GetPasswordCredentialValidators`: %v\n", resp)
 }
 ```
 
@@ -432,13 +432,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PasswordCredentialValidatorsApi.UpdatePasswordCredentialValidator(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.PasswordCredentialValidatorsAPI.UpdatePasswordCredentialValidator(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordCredentialValidatorsApi.UpdatePasswordCredentialValidator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordCredentialValidatorsAPI.UpdatePasswordCredentialValidator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdatePasswordCredentialValidator`: PasswordCredentialValidator
-    fmt.Fprintf(os.Stdout, "Response from `PasswordCredentialValidatorsApi.UpdatePasswordCredentialValidator`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PasswordCredentialValidatorsAPI.UpdatePasswordCredentialValidator`: %v\n", resp)
 }
 ```
 

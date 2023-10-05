@@ -1,15 +1,15 @@
-# \CertificatesRevocationApi
+# \CertificatesRevocationAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteOcspCertificateById**](CertificatesRevocationApi.md#DeleteOcspCertificateById) | **Delete** /certificates/revocation/ocspCertificates/{id} | Delete an OCSP responder signature verification certificate by ID.
-[**GetOcspCertificateById**](CertificatesRevocationApi.md#GetOcspCertificateById) | **Get** /certificates/revocation/ocspCertificates/{id} | Get an OCSP responder signature verification certificate by ID.
-[**GetOcspCertificates**](CertificatesRevocationApi.md#GetOcspCertificates) | **Get** /certificates/revocation/ocspCertificates | Get the list of available OCSP responder signature verification certificates.
-[**GetRevocationSettings**](CertificatesRevocationApi.md#GetRevocationSettings) | **Get** /certificates/revocation/settings | Get certificate revocation settings.
-[**ImportOcspCertificate**](CertificatesRevocationApi.md#ImportOcspCertificate) | **Post** /certificates/revocation/ocspCertificates | Import an OCSP responder signature verification certificate.
-[**UpdateRevocationSettings**](CertificatesRevocationApi.md#UpdateRevocationSettings) | **Put** /certificates/revocation/settings | Update certificate revocation settings.
+[**DeleteOcspCertificateById**](CertificatesRevocationAPI.md#DeleteOcspCertificateById) | **Delete** /certificates/revocation/ocspCertificates/{id} | Delete an OCSP responder signature verification certificate by ID.
+[**GetOcspCertificateById**](CertificatesRevocationAPI.md#GetOcspCertificateById) | **Get** /certificates/revocation/ocspCertificates/{id} | Get an OCSP responder signature verification certificate by ID.
+[**GetOcspCertificates**](CertificatesRevocationAPI.md#GetOcspCertificates) | **Get** /certificates/revocation/ocspCertificates | Get the list of available OCSP responder signature verification certificates.
+[**GetRevocationSettings**](CertificatesRevocationAPI.md#GetRevocationSettings) | **Get** /certificates/revocation/settings | Get certificate revocation settings.
+[**ImportOcspCertificate**](CertificatesRevocationAPI.md#ImportOcspCertificate) | **Post** /certificates/revocation/ocspCertificates | Import an OCSP responder signature verification certificate.
+[**UpdateRevocationSettings**](CertificatesRevocationAPI.md#UpdateRevocationSettings) | **Put** /certificates/revocation/settings | Update certificate revocation settings.
 
 
 
@@ -36,9 +36,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CertificatesRevocationApi.DeleteOcspCertificateById(context.Background(), id).Execute()
+    r, err := apiClient.CertificatesRevocationAPI.DeleteOcspCertificateById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationApi.DeleteOcspCertificateById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationAPI.DeleteOcspCertificateById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -102,13 +102,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificatesRevocationApi.GetOcspCertificateById(context.Background(), id).Execute()
+    resp, r, err := apiClient.CertificatesRevocationAPI.GetOcspCertificateById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationApi.GetOcspCertificateById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationAPI.GetOcspCertificateById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOcspCertificateById`: CertView
-    fmt.Fprintf(os.Stdout, "Response from `CertificatesRevocationApi.GetOcspCertificateById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CertificatesRevocationAPI.GetOcspCertificateById`: %v\n", resp)
 }
 ```
 
@@ -169,13 +169,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificatesRevocationApi.GetOcspCertificates(context.Background()).Execute()
+    resp, r, err := apiClient.CertificatesRevocationAPI.GetOcspCertificates(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationApi.GetOcspCertificates``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationAPI.GetOcspCertificates``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOcspCertificates`: CertViews
-    fmt.Fprintf(os.Stdout, "Response from `CertificatesRevocationApi.GetOcspCertificates`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CertificatesRevocationAPI.GetOcspCertificates`: %v\n", resp)
 }
 ```
 
@@ -228,13 +228,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificatesRevocationApi.GetRevocationSettings(context.Background()).Execute()
+    resp, r, err := apiClient.CertificatesRevocationAPI.GetRevocationSettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationApi.GetRevocationSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationAPI.GetRevocationSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetRevocationSettings`: CertificateRevocationSettings
-    fmt.Fprintf(os.Stdout, "Response from `CertificatesRevocationApi.GetRevocationSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CertificatesRevocationAPI.GetRevocationSettings`: %v\n", resp)
 }
 ```
 
@@ -288,13 +288,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificatesRevocationApi.ImportOcspCertificate(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.CertificatesRevocationAPI.ImportOcspCertificate(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationApi.ImportOcspCertificate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationAPI.ImportOcspCertificate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ImportOcspCertificate`: CertView
-    fmt.Fprintf(os.Stdout, "Response from `CertificatesRevocationApi.ImportOcspCertificate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CertificatesRevocationAPI.ImportOcspCertificate`: %v\n", resp)
 }
 ```
 
@@ -352,13 +352,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificatesRevocationApi.UpdateRevocationSettings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.CertificatesRevocationAPI.UpdateRevocationSettings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationApi.UpdateRevocationSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationAPI.UpdateRevocationSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateRevocationSettings`: CertificateRevocationSettings
-    fmt.Fprintf(os.Stdout, "Response from `CertificatesRevocationApi.UpdateRevocationSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CertificatesRevocationAPI.UpdateRevocationSettings`: %v\n", resp)
 }
 ```
 

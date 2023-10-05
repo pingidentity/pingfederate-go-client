@@ -1,16 +1,16 @@
-# \SpTokenGeneratorsApi
+# \SpTokenGeneratorsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateTokenGenerator**](SpTokenGeneratorsApi.md#CreateTokenGenerator) | **Post** /sp/tokenGenerators | Create a new token generator instance.
-[**DeleteTokenGenerator**](SpTokenGeneratorsApi.md#DeleteTokenGenerator) | **Delete** /sp/tokenGenerators/{id} | Delete a token generator instance.
-[**GetTokenGenerator**](SpTokenGeneratorsApi.md#GetTokenGenerator) | **Get** /sp/tokenGenerators/{id} | Find a token generator instance by ID.
-[**GetTokenGeneratorDescriptors**](SpTokenGeneratorsApi.md#GetTokenGeneratorDescriptors) | **Get** /sp/tokenGenerators/descriptors | Get the list of available token generators.
-[**GetTokenGeneratorDescriptorsById**](SpTokenGeneratorsApi.md#GetTokenGeneratorDescriptorsById) | **Get** /sp/tokenGenerators/descriptors/{id} | Get the description of a token generator plugin by ID.
-[**GetTokenGenerators**](SpTokenGeneratorsApi.md#GetTokenGenerators) | **Get** /sp/tokenGenerators | Get the list of token generator instances.
-[**UpdateTokenGenerator**](SpTokenGeneratorsApi.md#UpdateTokenGenerator) | **Put** /sp/tokenGenerators/{id} | Update a token generator instance.
+[**CreateTokenGenerator**](SpTokenGeneratorsAPI.md#CreateTokenGenerator) | **Post** /sp/tokenGenerators | Create a new token generator instance.
+[**DeleteTokenGenerator**](SpTokenGeneratorsAPI.md#DeleteTokenGenerator) | **Delete** /sp/tokenGenerators/{id} | Delete a token generator instance.
+[**GetTokenGenerator**](SpTokenGeneratorsAPI.md#GetTokenGenerator) | **Get** /sp/tokenGenerators/{id} | Find a token generator instance by ID.
+[**GetTokenGeneratorDescriptors**](SpTokenGeneratorsAPI.md#GetTokenGeneratorDescriptors) | **Get** /sp/tokenGenerators/descriptors | Get the list of available token generators.
+[**GetTokenGeneratorDescriptorsById**](SpTokenGeneratorsAPI.md#GetTokenGeneratorDescriptorsById) | **Get** /sp/tokenGenerators/descriptors/{id} | Get the description of a token generator plugin by ID.
+[**GetTokenGenerators**](SpTokenGeneratorsAPI.md#GetTokenGenerators) | **Get** /sp/tokenGenerators | Get the list of token generator instances.
+[**UpdateTokenGenerator**](SpTokenGeneratorsAPI.md#UpdateTokenGenerator) | **Put** /sp/tokenGenerators/{id} | Update a token generator instance.
 
 
 
@@ -39,13 +39,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpTokenGeneratorsApi.CreateTokenGenerator(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.SpTokenGeneratorsAPI.CreateTokenGenerator(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsApi.CreateTokenGenerator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsAPI.CreateTokenGenerator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateTokenGenerator`: TokenGenerator
-    fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsApi.CreateTokenGenerator`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsAPI.CreateTokenGenerator`: %v\n", resp)
 }
 ```
 
@@ -105,9 +105,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SpTokenGeneratorsApi.DeleteTokenGenerator(context.Background(), id).Execute()
+    r, err := apiClient.SpTokenGeneratorsAPI.DeleteTokenGenerator(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsApi.DeleteTokenGenerator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsAPI.DeleteTokenGenerator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -173,13 +173,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpTokenGeneratorsApi.GetTokenGenerator(context.Background(), id).Execute()
+    resp, r, err := apiClient.SpTokenGeneratorsAPI.GetTokenGenerator(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsApi.GetTokenGenerator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsAPI.GetTokenGenerator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTokenGenerator`: TokenGenerator
-    fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsApi.GetTokenGenerator`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsAPI.GetTokenGenerator`: %v\n", resp)
 }
 ```
 
@@ -240,13 +240,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpTokenGeneratorsApi.GetTokenGeneratorDescriptors(context.Background()).Execute()
+    resp, r, err := apiClient.SpTokenGeneratorsAPI.GetTokenGeneratorDescriptors(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsApi.GetTokenGeneratorDescriptors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsAPI.GetTokenGeneratorDescriptors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTokenGeneratorDescriptors`: TokenGeneratorDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsApi.GetTokenGeneratorDescriptors`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsAPI.GetTokenGeneratorDescriptors`: %v\n", resp)
 }
 ```
 
@@ -302,13 +302,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpTokenGeneratorsApi.GetTokenGeneratorDescriptorsById(context.Background(), id).Execute()
+    resp, r, err := apiClient.SpTokenGeneratorsAPI.GetTokenGeneratorDescriptorsById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsApi.GetTokenGeneratorDescriptorsById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsAPI.GetTokenGeneratorDescriptorsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTokenGeneratorDescriptorsById`: TokenGeneratorDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsApi.GetTokenGeneratorDescriptorsById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsAPI.GetTokenGeneratorDescriptorsById`: %v\n", resp)
 }
 ```
 
@@ -369,13 +369,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpTokenGeneratorsApi.GetTokenGenerators(context.Background()).Execute()
+    resp, r, err := apiClient.SpTokenGeneratorsAPI.GetTokenGenerators(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsApi.GetTokenGenerators``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsAPI.GetTokenGenerators``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTokenGenerators`: TokenGenerators
-    fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsApi.GetTokenGenerators`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsAPI.GetTokenGenerators`: %v\n", resp)
 }
 ```
 
@@ -432,13 +432,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpTokenGeneratorsApi.UpdateTokenGenerator(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.SpTokenGeneratorsAPI.UpdateTokenGenerator(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsApi.UpdateTokenGenerator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsAPI.UpdateTokenGenerator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateTokenGenerator`: TokenGenerator
-    fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsApi.UpdateTokenGenerator`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsAPI.UpdateTokenGenerator`: %v\n", resp)
 }
 ```
 

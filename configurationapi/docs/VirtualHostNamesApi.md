@@ -1,11 +1,11 @@
-# \VirtualHostNamesApi
+# \VirtualHostNamesAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetVirtualHostNamesSettings**](VirtualHostNamesApi.md#GetVirtualHostNamesSettings) | **Get** /virtualHostNames | Retrieve virtual host names settings.
-[**UpdateVirtualHostNamesSettings**](VirtualHostNamesApi.md#UpdateVirtualHostNamesSettings) | **Put** /virtualHostNames | Update virtual host names settings.
+[**GetVirtualHostNamesSettings**](VirtualHostNamesAPI.md#GetVirtualHostNamesSettings) | **Get** /virtualHostNames | Retrieve virtual host names settings.
+[**UpdateVirtualHostNamesSettings**](VirtualHostNamesAPI.md#UpdateVirtualHostNamesSettings) | **Put** /virtualHostNames | Update virtual host names settings.
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualHostNamesApi.GetVirtualHostNamesSettings(context.Background()).Execute()
+    resp, r, err := apiClient.VirtualHostNamesAPI.GetVirtualHostNamesSettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualHostNamesApi.GetVirtualHostNamesSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualHostNamesAPI.GetVirtualHostNamesSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetVirtualHostNamesSettings`: VirtualHostNameSettings
-    fmt.Fprintf(os.Stdout, "Response from `VirtualHostNamesApi.GetVirtualHostNamesSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualHostNamesAPI.GetVirtualHostNamesSettings`: %v\n", resp)
 }
 ```
 
@@ -91,13 +91,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualHostNamesApi.UpdateVirtualHostNamesSettings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.VirtualHostNamesAPI.UpdateVirtualHostNamesSettings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualHostNamesApi.UpdateVirtualHostNamesSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualHostNamesAPI.UpdateVirtualHostNamesSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateVirtualHostNamesSettings`: VirtualHostNameSettings
-    fmt.Fprintf(os.Stdout, "Response from `VirtualHostNamesApi.UpdateVirtualHostNamesSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualHostNamesAPI.UpdateVirtualHostNamesSettings`: %v\n", resp)
 }
 ```
 

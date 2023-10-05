@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// ServerSettingsApiService ServerSettingsApi service
-type ServerSettingsApiService service
+// ServerSettingsAPIService ServerSettingsAPI service
+type ServerSettingsAPIService service
 
 type ApiDeleteCertificateRequest struct {
 	ctx        context.Context
-	ApiService *ServerSettingsApiService
+	ApiService *ServerSettingsAPIService
 	id         string
 }
 
@@ -41,7 +41,7 @@ If the request is successful, the response body is empty. If the request fails, 
 	@param id ID of the certificate to delete
 	@return ApiDeleteCertificateRequest
 */
-func (a *ServerSettingsApiService) DeleteCertificate(ctx context.Context, id string) ApiDeleteCertificateRequest {
+func (a *ServerSettingsAPIService) DeleteCertificate(ctx context.Context, id string) ApiDeleteCertificateRequest {
 	return ApiDeleteCertificateRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -50,14 +50,14 @@ func (a *ServerSettingsApiService) DeleteCertificate(ctx context.Context, id str
 }
 
 // Execute executes the request
-func (a *ServerSettingsApiService) DeleteCertificateExecute(r ApiDeleteCertificateRequest) (*http.Response, error) {
+func (a *ServerSettingsAPIService) DeleteCertificateExecute(r ApiDeleteCertificateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.DeleteCertificate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.DeleteCertificate")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -137,7 +137,7 @@ func (a *ServerSettingsApiService) DeleteCertificateExecute(r ApiDeleteCertifica
 
 type ApiGetCaptchaSettingsRequest struct {
 	ctx        context.Context
-	ApiService *ServerSettingsApiService
+	ApiService *ServerSettingsAPIService
 }
 
 func (r ApiGetCaptchaSettingsRequest) Execute() (*CaptchaSettings, *http.Response, error) {
@@ -152,7 +152,7 @@ GetCaptchaSettings (Deprecated) Gets the CAPTCHA settings.
 
 Deprecated
 */
-func (a *ServerSettingsApiService) GetCaptchaSettings(ctx context.Context) ApiGetCaptchaSettingsRequest {
+func (a *ServerSettingsAPIService) GetCaptchaSettings(ctx context.Context) ApiGetCaptchaSettingsRequest {
 	return ApiGetCaptchaSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -164,7 +164,7 @@ func (a *ServerSettingsApiService) GetCaptchaSettings(ctx context.Context) ApiGe
 //	@return CaptchaSettings
 //
 // Deprecated
-func (a *ServerSettingsApiService) GetCaptchaSettingsExecute(r ApiGetCaptchaSettingsRequest) (*CaptchaSettings, *http.Response, error) {
+func (a *ServerSettingsAPIService) GetCaptchaSettingsExecute(r ApiGetCaptchaSettingsRequest) (*CaptchaSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -172,7 +172,7 @@ func (a *ServerSettingsApiService) GetCaptchaSettingsExecute(r ApiGetCaptchaSett
 		localVarReturnValue *CaptchaSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.GetCaptchaSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.GetCaptchaSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -239,7 +239,7 @@ func (a *ServerSettingsApiService) GetCaptchaSettingsExecute(r ApiGetCaptchaSett
 
 type ApiGetCertRequest struct {
 	ctx        context.Context
-	ApiService *ServerSettingsApiService
+	ApiService *ServerSettingsAPIService
 	id         string
 }
 
@@ -254,7 +254,7 @@ GetCert Retrieve details of a certificate.
 	@param id ID of the certificate to retrieve.
 	@return ApiGetCertRequest
 */
-func (a *ServerSettingsApiService) GetCert(ctx context.Context, id string) ApiGetCertRequest {
+func (a *ServerSettingsAPIService) GetCert(ctx context.Context, id string) ApiGetCertRequest {
 	return ApiGetCertRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -265,7 +265,7 @@ func (a *ServerSettingsApiService) GetCert(ctx context.Context, id string) ApiGe
 // Execute executes the request
 //
 //	@return IssuerCert
-func (a *ServerSettingsApiService) GetCertExecute(r ApiGetCertRequest) (*IssuerCert, *http.Response, error) {
+func (a *ServerSettingsAPIService) GetCertExecute(r ApiGetCertRequest) (*IssuerCert, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -273,7 +273,7 @@ func (a *ServerSettingsApiService) GetCertExecute(r ApiGetCertRequest) (*IssuerC
 		localVarReturnValue *IssuerCert
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.GetCert")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.GetCert")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -351,7 +351,7 @@ func (a *ServerSettingsApiService) GetCertExecute(r ApiGetCertRequest) (*IssuerC
 
 type ApiGetCertsRequest struct {
 	ctx        context.Context
-	ApiService *ServerSettingsApiService
+	ApiService *ServerSettingsAPIService
 }
 
 func (r ApiGetCertsRequest) Execute() (*IssuerCerts, *http.Response, error) {
@@ -364,7 +364,7 @@ GetCerts Get the list of certificates for WS-Trust STS Settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCertsRequest
 */
-func (a *ServerSettingsApiService) GetCerts(ctx context.Context) ApiGetCertsRequest {
+func (a *ServerSettingsAPIService) GetCerts(ctx context.Context) ApiGetCertsRequest {
 	return ApiGetCertsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -374,7 +374,7 @@ func (a *ServerSettingsApiService) GetCerts(ctx context.Context) ApiGetCertsRequ
 // Execute executes the request
 //
 //	@return IssuerCerts
-func (a *ServerSettingsApiService) GetCertsExecute(r ApiGetCertsRequest) (*IssuerCerts, *http.Response, error) {
+func (a *ServerSettingsAPIService) GetCertsExecute(r ApiGetCertsRequest) (*IssuerCerts, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -382,7 +382,7 @@ func (a *ServerSettingsApiService) GetCertsExecute(r ApiGetCertsRequest) (*Issue
 		localVarReturnValue *IssuerCerts
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.GetCerts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.GetCerts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -449,7 +449,7 @@ func (a *ServerSettingsApiService) GetCertsExecute(r ApiGetCertsRequest) (*Issue
 
 type ApiGetEmailServerSettingsRequest struct {
 	ctx        context.Context
-	ApiService *ServerSettingsApiService
+	ApiService *ServerSettingsAPIService
 }
 
 func (r ApiGetEmailServerSettingsRequest) Execute() (*EmailServerSettings, *http.Response, error) {
@@ -464,7 +464,7 @@ GetEmailServerSettings (Deprecated) Gets the email server settings
 
 Deprecated
 */
-func (a *ServerSettingsApiService) GetEmailServerSettings(ctx context.Context) ApiGetEmailServerSettingsRequest {
+func (a *ServerSettingsAPIService) GetEmailServerSettings(ctx context.Context) ApiGetEmailServerSettingsRequest {
 	return ApiGetEmailServerSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -476,7 +476,7 @@ func (a *ServerSettingsApiService) GetEmailServerSettings(ctx context.Context) A
 //	@return EmailServerSettings
 //
 // Deprecated
-func (a *ServerSettingsApiService) GetEmailServerSettingsExecute(r ApiGetEmailServerSettingsRequest) (*EmailServerSettings, *http.Response, error) {
+func (a *ServerSettingsAPIService) GetEmailServerSettingsExecute(r ApiGetEmailServerSettingsRequest) (*EmailServerSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -484,7 +484,7 @@ func (a *ServerSettingsApiService) GetEmailServerSettingsExecute(r ApiGetEmailSe
 		localVarReturnValue *EmailServerSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.GetEmailServerSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.GetEmailServerSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -561,7 +561,7 @@ func (a *ServerSettingsApiService) GetEmailServerSettingsExecute(r ApiGetEmailSe
 
 type ApiGetGeneralSettingsRequest struct {
 	ctx        context.Context
-	ApiService *ServerSettingsApiService
+	ApiService *ServerSettingsAPIService
 }
 
 func (r ApiGetGeneralSettingsRequest) Execute() (*GeneralSettings, *http.Response, error) {
@@ -574,7 +574,7 @@ GetGeneralSettings Gets the general settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetGeneralSettingsRequest
 */
-func (a *ServerSettingsApiService) GetGeneralSettings(ctx context.Context) ApiGetGeneralSettingsRequest {
+func (a *ServerSettingsAPIService) GetGeneralSettings(ctx context.Context) ApiGetGeneralSettingsRequest {
 	return ApiGetGeneralSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -584,7 +584,7 @@ func (a *ServerSettingsApiService) GetGeneralSettings(ctx context.Context) ApiGe
 // Execute executes the request
 //
 //	@return GeneralSettings
-func (a *ServerSettingsApiService) GetGeneralSettingsExecute(r ApiGetGeneralSettingsRequest) (*GeneralSettings, *http.Response, error) {
+func (a *ServerSettingsAPIService) GetGeneralSettingsExecute(r ApiGetGeneralSettingsRequest) (*GeneralSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -592,7 +592,7 @@ func (a *ServerSettingsApiService) GetGeneralSettingsExecute(r ApiGetGeneralSett
 		localVarReturnValue *GeneralSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.GetGeneralSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.GetGeneralSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -659,7 +659,7 @@ func (a *ServerSettingsApiService) GetGeneralSettingsExecute(r ApiGetGeneralSett
 
 type ApiGetLogSettingsRequest struct {
 	ctx        context.Context
-	ApiService *ServerSettingsApiService
+	ApiService *ServerSettingsAPIService
 }
 
 func (r ApiGetLogSettingsRequest) Execute() (*LogSettings, *http.Response, error) {
@@ -672,7 +672,7 @@ GetLogSettings Gets the log settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetLogSettingsRequest
 */
-func (a *ServerSettingsApiService) GetLogSettings(ctx context.Context) ApiGetLogSettingsRequest {
+func (a *ServerSettingsAPIService) GetLogSettings(ctx context.Context) ApiGetLogSettingsRequest {
 	return ApiGetLogSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -682,7 +682,7 @@ func (a *ServerSettingsApiService) GetLogSettings(ctx context.Context) ApiGetLog
 // Execute executes the request
 //
 //	@return LogSettings
-func (a *ServerSettingsApiService) GetLogSettingsExecute(r ApiGetLogSettingsRequest) (*LogSettings, *http.Response, error) {
+func (a *ServerSettingsAPIService) GetLogSettingsExecute(r ApiGetLogSettingsRequest) (*LogSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -690,7 +690,7 @@ func (a *ServerSettingsApiService) GetLogSettingsExecute(r ApiGetLogSettingsRequ
 		localVarReturnValue *LogSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.GetLogSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.GetLogSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -757,7 +757,7 @@ func (a *ServerSettingsApiService) GetLogSettingsExecute(r ApiGetLogSettingsRequ
 
 type ApiGetNotificationSettingsRequest struct {
 	ctx        context.Context
-	ApiService *ServerSettingsApiService
+	ApiService *ServerSettingsAPIService
 }
 
 func (r ApiGetNotificationSettingsRequest) Execute() (*NotificationSettings, *http.Response, error) {
@@ -770,7 +770,7 @@ GetNotificationSettings Gets the notification settings
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetNotificationSettingsRequest
 */
-func (a *ServerSettingsApiService) GetNotificationSettings(ctx context.Context) ApiGetNotificationSettingsRequest {
+func (a *ServerSettingsAPIService) GetNotificationSettings(ctx context.Context) ApiGetNotificationSettingsRequest {
 	return ApiGetNotificationSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -780,7 +780,7 @@ func (a *ServerSettingsApiService) GetNotificationSettings(ctx context.Context) 
 // Execute executes the request
 //
 //	@return NotificationSettings
-func (a *ServerSettingsApiService) GetNotificationSettingsExecute(r ApiGetNotificationSettingsRequest) (*NotificationSettings, *http.Response, error) {
+func (a *ServerSettingsAPIService) GetNotificationSettingsExecute(r ApiGetNotificationSettingsRequest) (*NotificationSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -788,7 +788,7 @@ func (a *ServerSettingsApiService) GetNotificationSettingsExecute(r ApiGetNotifi
 		localVarReturnValue *NotificationSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.GetNotificationSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.GetNotificationSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -855,7 +855,7 @@ func (a *ServerSettingsApiService) GetNotificationSettingsExecute(r ApiGetNotifi
 
 type ApiGetOutBoundProvisioningSettingsRequest struct {
 	ctx        context.Context
-	ApiService *ServerSettingsApiService
+	ApiService *ServerSettingsAPIService
 }
 
 func (r ApiGetOutBoundProvisioningSettingsRequest) Execute() (*OutboundProvisionDatabase, *http.Response, error) {
@@ -870,7 +870,7 @@ Get the settings for database used internally to facilitate outbound provisionin
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetOutBoundProvisioningSettingsRequest
 */
-func (a *ServerSettingsApiService) GetOutBoundProvisioningSettings(ctx context.Context) ApiGetOutBoundProvisioningSettingsRequest {
+func (a *ServerSettingsAPIService) GetOutBoundProvisioningSettings(ctx context.Context) ApiGetOutBoundProvisioningSettingsRequest {
 	return ApiGetOutBoundProvisioningSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -880,7 +880,7 @@ func (a *ServerSettingsApiService) GetOutBoundProvisioningSettings(ctx context.C
 // Execute executes the request
 //
 //	@return OutboundProvisionDatabase
-func (a *ServerSettingsApiService) GetOutBoundProvisioningSettingsExecute(r ApiGetOutBoundProvisioningSettingsRequest) (*OutboundProvisionDatabase, *http.Response, error) {
+func (a *ServerSettingsAPIService) GetOutBoundProvisioningSettingsExecute(r ApiGetOutBoundProvisioningSettingsRequest) (*OutboundProvisionDatabase, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -888,7 +888,7 @@ func (a *ServerSettingsApiService) GetOutBoundProvisioningSettingsExecute(r ApiG
 		localVarReturnValue *OutboundProvisionDatabase
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.GetOutBoundProvisioningSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.GetOutBoundProvisioningSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -955,7 +955,7 @@ func (a *ServerSettingsApiService) GetOutBoundProvisioningSettingsExecute(r ApiG
 
 type ApiGetServerSettingsRequest struct {
 	ctx        context.Context
-	ApiService *ServerSettingsApiService
+	ApiService *ServerSettingsAPIService
 }
 
 func (r ApiGetServerSettingsRequest) Execute() (*ServerSettings, *http.Response, error) {
@@ -968,7 +968,7 @@ GetServerSettings Gets the server settings
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetServerSettingsRequest
 */
-func (a *ServerSettingsApiService) GetServerSettings(ctx context.Context) ApiGetServerSettingsRequest {
+func (a *ServerSettingsAPIService) GetServerSettings(ctx context.Context) ApiGetServerSettingsRequest {
 	return ApiGetServerSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -978,7 +978,7 @@ func (a *ServerSettingsApiService) GetServerSettings(ctx context.Context) ApiGet
 // Execute executes the request
 //
 //	@return ServerSettings
-func (a *ServerSettingsApiService) GetServerSettingsExecute(r ApiGetServerSettingsRequest) (*ServerSettings, *http.Response, error) {
+func (a *ServerSettingsAPIService) GetServerSettingsExecute(r ApiGetServerSettingsRequest) (*ServerSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -986,7 +986,7 @@ func (a *ServerSettingsApiService) GetServerSettingsExecute(r ApiGetServerSettin
 		localVarReturnValue *ServerSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.GetServerSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.GetServerSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1053,7 +1053,7 @@ func (a *ServerSettingsApiService) GetServerSettingsExecute(r ApiGetServerSettin
 
 type ApiGetSystemKeysRequest struct {
 	ctx        context.Context
-	ApiService *ServerSettingsApiService
+	ApiService *ServerSettingsAPIService
 }
 
 func (r ApiGetSystemKeysRequest) Execute() (*SystemKeys, *http.Response, error) {
@@ -1068,7 +1068,7 @@ For each key, only encryptedKeyData and not keyData will be returned
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSystemKeysRequest
 */
-func (a *ServerSettingsApiService) GetSystemKeys(ctx context.Context) ApiGetSystemKeysRequest {
+func (a *ServerSettingsAPIService) GetSystemKeys(ctx context.Context) ApiGetSystemKeysRequest {
 	return ApiGetSystemKeysRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1078,7 +1078,7 @@ func (a *ServerSettingsApiService) GetSystemKeys(ctx context.Context) ApiGetSyst
 // Execute executes the request
 //
 //	@return SystemKeys
-func (a *ServerSettingsApiService) GetSystemKeysExecute(r ApiGetSystemKeysRequest) (*SystemKeys, *http.Response, error) {
+func (a *ServerSettingsAPIService) GetSystemKeysExecute(r ApiGetSystemKeysRequest) (*SystemKeys, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1086,7 +1086,7 @@ func (a *ServerSettingsApiService) GetSystemKeysExecute(r ApiGetSystemKeysReques
 		localVarReturnValue *SystemKeys
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.GetSystemKeys")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.GetSystemKeys")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1153,7 +1153,7 @@ func (a *ServerSettingsApiService) GetSystemKeysExecute(r ApiGetSystemKeysReques
 
 type ApiGetWsTrustStsSettingsRequest struct {
 	ctx        context.Context
-	ApiService *ServerSettingsApiService
+	ApiService *ServerSettingsAPIService
 }
 
 func (r ApiGetWsTrustStsSettingsRequest) Execute() (*WsTrustStsSettings, *http.Response, error) {
@@ -1166,7 +1166,7 @@ GetWsTrustStsSettings Get the current WS-Trust STS Settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetWsTrustStsSettingsRequest
 */
-func (a *ServerSettingsApiService) GetWsTrustStsSettings(ctx context.Context) ApiGetWsTrustStsSettingsRequest {
+func (a *ServerSettingsAPIService) GetWsTrustStsSettings(ctx context.Context) ApiGetWsTrustStsSettingsRequest {
 	return ApiGetWsTrustStsSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1176,7 +1176,7 @@ func (a *ServerSettingsApiService) GetWsTrustStsSettings(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return WsTrustStsSettings
-func (a *ServerSettingsApiService) GetWsTrustStsSettingsExecute(r ApiGetWsTrustStsSettingsRequest) (*WsTrustStsSettings, *http.Response, error) {
+func (a *ServerSettingsAPIService) GetWsTrustStsSettingsExecute(r ApiGetWsTrustStsSettingsRequest) (*WsTrustStsSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1184,7 +1184,7 @@ func (a *ServerSettingsApiService) GetWsTrustStsSettingsExecute(r ApiGetWsTrustS
 		localVarReturnValue *WsTrustStsSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.GetWsTrustStsSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.GetWsTrustStsSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1251,7 +1251,7 @@ func (a *ServerSettingsApiService) GetWsTrustStsSettingsExecute(r ApiGetWsTrustS
 
 type ApiImportCertificateRequest struct {
 	ctx        context.Context
-	ApiService *ServerSettingsApiService
+	ApiService *ServerSettingsAPIService
 	body       *X509File
 }
 
@@ -1271,7 +1271,7 @@ ImportCertificate Import a new certificate.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiImportCertificateRequest
 */
-func (a *ServerSettingsApiService) ImportCertificate(ctx context.Context) ApiImportCertificateRequest {
+func (a *ServerSettingsAPIService) ImportCertificate(ctx context.Context) ApiImportCertificateRequest {
 	return ApiImportCertificateRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1281,7 +1281,7 @@ func (a *ServerSettingsApiService) ImportCertificate(ctx context.Context) ApiImp
 // Execute executes the request
 //
 //	@return IssuerCert
-func (a *ServerSettingsApiService) ImportCertificateExecute(r ApiImportCertificateRequest) (*IssuerCert, *http.Response, error) {
+func (a *ServerSettingsAPIService) ImportCertificateExecute(r ApiImportCertificateRequest) (*IssuerCert, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -1289,7 +1289,7 @@ func (a *ServerSettingsApiService) ImportCertificateExecute(r ApiImportCertifica
 		localVarReturnValue *IssuerCert
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.ImportCertificate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.ImportCertificate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1371,7 +1371,7 @@ func (a *ServerSettingsApiService) ImportCertificateExecute(r ApiImportCertifica
 
 type ApiRotateSystemKeysRequest struct {
 	ctx        context.Context
-	ApiService *ServerSettingsApiService
+	ApiService *ServerSettingsAPIService
 }
 
 func (r ApiRotateSystemKeysRequest) Execute() (*SystemKeys, *http.Response, error) {
@@ -1386,7 +1386,7 @@ Upon rotation, previous key will be replaced by the current key, the current key
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiRotateSystemKeysRequest
 */
-func (a *ServerSettingsApiService) RotateSystemKeys(ctx context.Context) ApiRotateSystemKeysRequest {
+func (a *ServerSettingsAPIService) RotateSystemKeys(ctx context.Context) ApiRotateSystemKeysRequest {
 	return ApiRotateSystemKeysRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1396,7 +1396,7 @@ func (a *ServerSettingsApiService) RotateSystemKeys(ctx context.Context) ApiRota
 // Execute executes the request
 //
 //	@return SystemKeys
-func (a *ServerSettingsApiService) RotateSystemKeysExecute(r ApiRotateSystemKeysRequest) (*SystemKeys, *http.Response, error) {
+func (a *ServerSettingsAPIService) RotateSystemKeysExecute(r ApiRotateSystemKeysRequest) (*SystemKeys, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -1404,7 +1404,7 @@ func (a *ServerSettingsApiService) RotateSystemKeysExecute(r ApiRotateSystemKeys
 		localVarReturnValue *SystemKeys
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.RotateSystemKeys")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.RotateSystemKeys")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1481,7 +1481,7 @@ func (a *ServerSettingsApiService) RotateSystemKeysExecute(r ApiRotateSystemKeys
 
 type ApiUpdateCaptchaSettingsRequest struct {
 	ctx        context.Context
-	ApiService *ServerSettingsApiService
+	ApiService *ServerSettingsAPIService
 	body       *CaptchaSettings
 }
 
@@ -1503,7 +1503,7 @@ UpdateCaptchaSettings (Deprecated) Update the CAPTCHA settings.
 
 Deprecated
 */
-func (a *ServerSettingsApiService) UpdateCaptchaSettings(ctx context.Context) ApiUpdateCaptchaSettingsRequest {
+func (a *ServerSettingsAPIService) UpdateCaptchaSettings(ctx context.Context) ApiUpdateCaptchaSettingsRequest {
 	return ApiUpdateCaptchaSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1515,7 +1515,7 @@ func (a *ServerSettingsApiService) UpdateCaptchaSettings(ctx context.Context) Ap
 //	@return CaptchaSettings
 //
 // Deprecated
-func (a *ServerSettingsApiService) UpdateCaptchaSettingsExecute(r ApiUpdateCaptchaSettingsRequest) (*CaptchaSettings, *http.Response, error) {
+func (a *ServerSettingsAPIService) UpdateCaptchaSettingsExecute(r ApiUpdateCaptchaSettingsRequest) (*CaptchaSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1523,7 +1523,7 @@ func (a *ServerSettingsApiService) UpdateCaptchaSettingsExecute(r ApiUpdateCaptc
 		localVarReturnValue *CaptchaSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.UpdateCaptchaSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.UpdateCaptchaSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1605,7 +1605,7 @@ func (a *ServerSettingsApiService) UpdateCaptchaSettingsExecute(r ApiUpdateCaptc
 
 type ApiUpdateEmailServerSettingsRequest struct {
 	ctx             context.Context
-	ApiService      *ServerSettingsApiService
+	ApiService      *ServerSettingsAPIService
 	body            *EmailServerSettings
 	validationEmail *string
 	validateOnly    *bool
@@ -1643,7 +1643,7 @@ UpdateEmailServerSettings (Deprecated) Update the email server settings
 
 Deprecated
 */
-func (a *ServerSettingsApiService) UpdateEmailServerSettings(ctx context.Context) ApiUpdateEmailServerSettingsRequest {
+func (a *ServerSettingsAPIService) UpdateEmailServerSettings(ctx context.Context) ApiUpdateEmailServerSettingsRequest {
 	return ApiUpdateEmailServerSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1655,7 +1655,7 @@ func (a *ServerSettingsApiService) UpdateEmailServerSettings(ctx context.Context
 //	@return EmailServerSettings
 //
 // Deprecated
-func (a *ServerSettingsApiService) UpdateEmailServerSettingsExecute(r ApiUpdateEmailServerSettingsRequest) (*EmailServerSettings, *http.Response, error) {
+func (a *ServerSettingsAPIService) UpdateEmailServerSettingsExecute(r ApiUpdateEmailServerSettingsRequest) (*EmailServerSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1663,7 +1663,7 @@ func (a *ServerSettingsApiService) UpdateEmailServerSettingsExecute(r ApiUpdateE
 		localVarReturnValue *EmailServerSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.UpdateEmailServerSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.UpdateEmailServerSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1762,7 +1762,7 @@ func (a *ServerSettingsApiService) UpdateEmailServerSettingsExecute(r ApiUpdateE
 
 type ApiUpdateGeneralSettingsRequest struct {
 	ctx        context.Context
-	ApiService *ServerSettingsApiService
+	ApiService *ServerSettingsAPIService
 	body       *GeneralSettings
 }
 
@@ -1782,7 +1782,7 @@ UpdateGeneralSettings Update general settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateGeneralSettingsRequest
 */
-func (a *ServerSettingsApiService) UpdateGeneralSettings(ctx context.Context) ApiUpdateGeneralSettingsRequest {
+func (a *ServerSettingsAPIService) UpdateGeneralSettings(ctx context.Context) ApiUpdateGeneralSettingsRequest {
 	return ApiUpdateGeneralSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1792,7 +1792,7 @@ func (a *ServerSettingsApiService) UpdateGeneralSettings(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return GeneralSettings
-func (a *ServerSettingsApiService) UpdateGeneralSettingsExecute(r ApiUpdateGeneralSettingsRequest) (*GeneralSettings, *http.Response, error) {
+func (a *ServerSettingsAPIService) UpdateGeneralSettingsExecute(r ApiUpdateGeneralSettingsRequest) (*GeneralSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1800,7 +1800,7 @@ func (a *ServerSettingsApiService) UpdateGeneralSettingsExecute(r ApiUpdateGener
 		localVarReturnValue *GeneralSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.UpdateGeneralSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.UpdateGeneralSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1882,7 +1882,7 @@ func (a *ServerSettingsApiService) UpdateGeneralSettingsExecute(r ApiUpdateGener
 
 type ApiUpdateLogSettingsRequest struct {
 	ctx        context.Context
-	ApiService *ServerSettingsApiService
+	ApiService *ServerSettingsAPIService
 	body       *LogSettings
 }
 
@@ -1902,7 +1902,7 @@ UpdateLogSettings Update log settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateLogSettingsRequest
 */
-func (a *ServerSettingsApiService) UpdateLogSettings(ctx context.Context) ApiUpdateLogSettingsRequest {
+func (a *ServerSettingsAPIService) UpdateLogSettings(ctx context.Context) ApiUpdateLogSettingsRequest {
 	return ApiUpdateLogSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1912,7 +1912,7 @@ func (a *ServerSettingsApiService) UpdateLogSettings(ctx context.Context) ApiUpd
 // Execute executes the request
 //
 //	@return LogSettings
-func (a *ServerSettingsApiService) UpdateLogSettingsExecute(r ApiUpdateLogSettingsRequest) (*LogSettings, *http.Response, error) {
+func (a *ServerSettingsAPIService) UpdateLogSettingsExecute(r ApiUpdateLogSettingsRequest) (*LogSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1920,7 +1920,7 @@ func (a *ServerSettingsApiService) UpdateLogSettingsExecute(r ApiUpdateLogSettin
 		localVarReturnValue *LogSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.UpdateLogSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.UpdateLogSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2002,7 +2002,7 @@ func (a *ServerSettingsApiService) UpdateLogSettingsExecute(r ApiUpdateLogSettin
 
 type ApiUpdateNotificationSettingsRequest struct {
 	ctx        context.Context
-	ApiService *ServerSettingsApiService
+	ApiService *ServerSettingsAPIService
 	body       *NotificationSettings
 }
 
@@ -2022,7 +2022,7 @@ UpdateNotificationSettings Update the notification settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateNotificationSettingsRequest
 */
-func (a *ServerSettingsApiService) UpdateNotificationSettings(ctx context.Context) ApiUpdateNotificationSettingsRequest {
+func (a *ServerSettingsAPIService) UpdateNotificationSettings(ctx context.Context) ApiUpdateNotificationSettingsRequest {
 	return ApiUpdateNotificationSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2032,7 +2032,7 @@ func (a *ServerSettingsApiService) UpdateNotificationSettings(ctx context.Contex
 // Execute executes the request
 //
 //	@return NotificationSettings
-func (a *ServerSettingsApiService) UpdateNotificationSettingsExecute(r ApiUpdateNotificationSettingsRequest) (*NotificationSettings, *http.Response, error) {
+func (a *ServerSettingsAPIService) UpdateNotificationSettingsExecute(r ApiUpdateNotificationSettingsRequest) (*NotificationSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -2040,7 +2040,7 @@ func (a *ServerSettingsApiService) UpdateNotificationSettingsExecute(r ApiUpdate
 		localVarReturnValue *NotificationSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.UpdateNotificationSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.UpdateNotificationSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2122,7 +2122,7 @@ func (a *ServerSettingsApiService) UpdateNotificationSettingsExecute(r ApiUpdate
 
 type ApiUpdateOutBoundProvisioningSettingsRequest struct {
 	ctx        context.Context
-	ApiService *ServerSettingsApiService
+	ApiService *ServerSettingsAPIService
 	body       *OutboundProvisionDatabase
 }
 
@@ -2144,7 +2144,7 @@ Update the settings for database used internally to facilitate outbound provisio
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateOutBoundProvisioningSettingsRequest
 */
-func (a *ServerSettingsApiService) UpdateOutBoundProvisioningSettings(ctx context.Context) ApiUpdateOutBoundProvisioningSettingsRequest {
+func (a *ServerSettingsAPIService) UpdateOutBoundProvisioningSettings(ctx context.Context) ApiUpdateOutBoundProvisioningSettingsRequest {
 	return ApiUpdateOutBoundProvisioningSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2154,7 +2154,7 @@ func (a *ServerSettingsApiService) UpdateOutBoundProvisioningSettings(ctx contex
 // Execute executes the request
 //
 //	@return OutboundProvisionDatabase
-func (a *ServerSettingsApiService) UpdateOutBoundProvisioningSettingsExecute(r ApiUpdateOutBoundProvisioningSettingsRequest) (*OutboundProvisionDatabase, *http.Response, error) {
+func (a *ServerSettingsAPIService) UpdateOutBoundProvisioningSettingsExecute(r ApiUpdateOutBoundProvisioningSettingsRequest) (*OutboundProvisionDatabase, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -2162,7 +2162,7 @@ func (a *ServerSettingsApiService) UpdateOutBoundProvisioningSettingsExecute(r A
 		localVarReturnValue *OutboundProvisionDatabase
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.UpdateOutBoundProvisioningSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.UpdateOutBoundProvisioningSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2244,7 +2244,7 @@ func (a *ServerSettingsApiService) UpdateOutBoundProvisioningSettingsExecute(r A
 
 type ApiUpdateServerSettingsRequest struct {
 	ctx        context.Context
-	ApiService *ServerSettingsApiService
+	ApiService *ServerSettingsAPIService
 	body       *ServerSettings
 }
 
@@ -2264,7 +2264,7 @@ UpdateServerSettings Update the server settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateServerSettingsRequest
 */
-func (a *ServerSettingsApiService) UpdateServerSettings(ctx context.Context) ApiUpdateServerSettingsRequest {
+func (a *ServerSettingsAPIService) UpdateServerSettings(ctx context.Context) ApiUpdateServerSettingsRequest {
 	return ApiUpdateServerSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2274,7 +2274,7 @@ func (a *ServerSettingsApiService) UpdateServerSettings(ctx context.Context) Api
 // Execute executes the request
 //
 //	@return ServerSettings
-func (a *ServerSettingsApiService) UpdateServerSettingsExecute(r ApiUpdateServerSettingsRequest) (*ServerSettings, *http.Response, error) {
+func (a *ServerSettingsAPIService) UpdateServerSettingsExecute(r ApiUpdateServerSettingsRequest) (*ServerSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -2282,7 +2282,7 @@ func (a *ServerSettingsApiService) UpdateServerSettingsExecute(r ApiUpdateServer
 		localVarReturnValue *ServerSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.UpdateServerSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.UpdateServerSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2375,7 +2375,7 @@ func (a *ServerSettingsApiService) UpdateServerSettingsExecute(r ApiUpdateServer
 
 type ApiUpdateSystemKeysRequest struct {
 	ctx        context.Context
-	ApiService *ServerSettingsApiService
+	ApiService *ServerSettingsAPIService
 	body       *SystemKeys
 }
 
@@ -2397,7 +2397,7 @@ For each key, either encryptedKeyData or keyData must be provided.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateSystemKeysRequest
 */
-func (a *ServerSettingsApiService) UpdateSystemKeys(ctx context.Context) ApiUpdateSystemKeysRequest {
+func (a *ServerSettingsAPIService) UpdateSystemKeys(ctx context.Context) ApiUpdateSystemKeysRequest {
 	return ApiUpdateSystemKeysRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2407,7 +2407,7 @@ func (a *ServerSettingsApiService) UpdateSystemKeys(ctx context.Context) ApiUpda
 // Execute executes the request
 //
 //	@return SystemKeys
-func (a *ServerSettingsApiService) UpdateSystemKeysExecute(r ApiUpdateSystemKeysRequest) (*SystemKeys, *http.Response, error) {
+func (a *ServerSettingsAPIService) UpdateSystemKeysExecute(r ApiUpdateSystemKeysRequest) (*SystemKeys, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -2415,7 +2415,7 @@ func (a *ServerSettingsApiService) UpdateSystemKeysExecute(r ApiUpdateSystemKeys
 		localVarReturnValue *SystemKeys
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.UpdateSystemKeys")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.UpdateSystemKeys")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2497,7 +2497,7 @@ func (a *ServerSettingsApiService) UpdateSystemKeysExecute(r ApiUpdateSystemKeys
 
 type ApiUpdateWsTrustStsSettingsRequest struct {
 	ctx        context.Context
-	ApiService *ServerSettingsApiService
+	ApiService *ServerSettingsAPIService
 	body       *WsTrustStsSettings
 }
 
@@ -2517,7 +2517,7 @@ UpdateWsTrustStsSettings Update WS-Trust STS Settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateWsTrustStsSettingsRequest
 */
-func (a *ServerSettingsApiService) UpdateWsTrustStsSettings(ctx context.Context) ApiUpdateWsTrustStsSettingsRequest {
+func (a *ServerSettingsAPIService) UpdateWsTrustStsSettings(ctx context.Context) ApiUpdateWsTrustStsSettingsRequest {
 	return ApiUpdateWsTrustStsSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2527,7 +2527,7 @@ func (a *ServerSettingsApiService) UpdateWsTrustStsSettings(ctx context.Context)
 // Execute executes the request
 //
 //	@return WsTrustStsSettings
-func (a *ServerSettingsApiService) UpdateWsTrustStsSettingsExecute(r ApiUpdateWsTrustStsSettingsRequest) (*WsTrustStsSettings, *http.Response, error) {
+func (a *ServerSettingsAPIService) UpdateWsTrustStsSettingsExecute(r ApiUpdateWsTrustStsSettingsRequest) (*WsTrustStsSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -2535,7 +2535,7 @@ func (a *ServerSettingsApiService) UpdateWsTrustStsSettingsExecute(r ApiUpdateWs
 		localVarReturnValue *WsTrustStsSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsApiService.UpdateWsTrustStsSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerSettingsAPIService.UpdateWsTrustStsSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

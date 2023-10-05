@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// SpTargetUrlMappingsApiService SpTargetUrlMappingsApi service
-type SpTargetUrlMappingsApiService service
+// SpTargetUrlMappingsAPIService SpTargetUrlMappingsAPI service
+type SpTargetUrlMappingsAPIService service
 
 type ApiGetSpUrlMappingsRequest struct {
 	ctx        context.Context
-	ApiService *SpTargetUrlMappingsApiService
+	ApiService *SpTargetUrlMappingsAPIService
 }
 
 func (r ApiGetSpUrlMappingsRequest) Execute() (*SpUrlMappings, *http.Response, error) {
@@ -36,7 +36,7 @@ GetSpUrlMappings List the mappings between URLs and adapter or connection instan
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSpUrlMappingsRequest
 */
-func (a *SpTargetUrlMappingsApiService) GetSpUrlMappings(ctx context.Context) ApiGetSpUrlMappingsRequest {
+func (a *SpTargetUrlMappingsAPIService) GetSpUrlMappings(ctx context.Context) ApiGetSpUrlMappingsRequest {
 	return ApiGetSpUrlMappingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -46,7 +46,7 @@ func (a *SpTargetUrlMappingsApiService) GetSpUrlMappings(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return SpUrlMappings
-func (a *SpTargetUrlMappingsApiService) GetSpUrlMappingsExecute(r ApiGetSpUrlMappingsRequest) (*SpUrlMappings, *http.Response, error) {
+func (a *SpTargetUrlMappingsAPIService) GetSpUrlMappingsExecute(r ApiGetSpUrlMappingsRequest) (*SpUrlMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *SpTargetUrlMappingsApiService) GetSpUrlMappingsExecute(r ApiGetSpUrlMap
 		localVarReturnValue *SpUrlMappings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpTargetUrlMappingsApiService.GetSpUrlMappings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpTargetUrlMappingsAPIService.GetSpUrlMappings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -121,7 +121,7 @@ func (a *SpTargetUrlMappingsApiService) GetSpUrlMappingsExecute(r ApiGetSpUrlMap
 
 type ApiUpdateSpUrlMappingsRequest struct {
 	ctx        context.Context
-	ApiService *SpTargetUrlMappingsApiService
+	ApiService *SpTargetUrlMappingsAPIService
 	body       *SpUrlMappings
 }
 
@@ -141,7 +141,7 @@ UpdateSpUrlMappings Update the mappings between URLs and adapters or connections
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateSpUrlMappingsRequest
 */
-func (a *SpTargetUrlMappingsApiService) UpdateSpUrlMappings(ctx context.Context) ApiUpdateSpUrlMappingsRequest {
+func (a *SpTargetUrlMappingsAPIService) UpdateSpUrlMappings(ctx context.Context) ApiUpdateSpUrlMappingsRequest {
 	return ApiUpdateSpUrlMappingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -151,7 +151,7 @@ func (a *SpTargetUrlMappingsApiService) UpdateSpUrlMappings(ctx context.Context)
 // Execute executes the request
 //
 //	@return SpUrlMappings
-func (a *SpTargetUrlMappingsApiService) UpdateSpUrlMappingsExecute(r ApiUpdateSpUrlMappingsRequest) (*SpUrlMappings, *http.Response, error) {
+func (a *SpTargetUrlMappingsAPIService) UpdateSpUrlMappingsExecute(r ApiUpdateSpUrlMappingsRequest) (*SpUrlMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -159,7 +159,7 @@ func (a *SpTargetUrlMappingsApiService) UpdateSpUrlMappingsExecute(r ApiUpdateSp
 		localVarReturnValue *SpUrlMappings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpTargetUrlMappingsApiService.UpdateSpUrlMappings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpTargetUrlMappingsAPIService.UpdateSpUrlMappings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

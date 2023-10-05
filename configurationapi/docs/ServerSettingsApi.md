@@ -1,32 +1,32 @@
-# \ServerSettingsApi
+# \ServerSettingsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteCertificate**](ServerSettingsApi.md#DeleteCertificate) | **Delete** /serverSettings/wsTrustStsSettings/issuerCertificates/{id} | Delete a certificate from WS-Trust STS Settings.
-[**GetCaptchaSettings**](ServerSettingsApi.md#GetCaptchaSettings) | **Get** /serverSettings/captchaSettings | (Deprecated) Gets the CAPTCHA settings.
-[**GetCert**](ServerSettingsApi.md#GetCert) | **Get** /serverSettings/wsTrustStsSettings/issuerCertificates/{id} | Retrieve details of a certificate.
-[**GetCerts**](ServerSettingsApi.md#GetCerts) | **Get** /serverSettings/wsTrustStsSettings/issuerCertificates | Get the list of certificates for WS-Trust STS Settings.
-[**GetEmailServerSettings**](ServerSettingsApi.md#GetEmailServerSettings) | **Get** /serverSettings/emailServer | (Deprecated) Gets the email server settings
-[**GetGeneralSettings**](ServerSettingsApi.md#GetGeneralSettings) | **Get** /serverSettings/generalSettings | Gets the general settings.
-[**GetLogSettings**](ServerSettingsApi.md#GetLogSettings) | **Get** /serverSettings/logSettings | Gets the log settings.
-[**GetNotificationSettings**](ServerSettingsApi.md#GetNotificationSettings) | **Get** /serverSettings/notifications | Gets the notification settings
-[**GetOutBoundProvisioningSettings**](ServerSettingsApi.md#GetOutBoundProvisioningSettings) | **Get** /serverSettings/outboundProvisioning | Get database used for outbound provisioning
-[**GetServerSettings**](ServerSettingsApi.md#GetServerSettings) | **Get** /serverSettings | Gets the server settings
-[**GetSystemKeys**](ServerSettingsApi.md#GetSystemKeys) | **Get** /serverSettings/systemKeys | Get the system keys.
-[**GetWsTrustStsSettings**](ServerSettingsApi.md#GetWsTrustStsSettings) | **Get** /serverSettings/wsTrustStsSettings | Get the current WS-Trust STS Settings.
-[**ImportCertificate**](ServerSettingsApi.md#ImportCertificate) | **Post** /serverSettings/wsTrustStsSettings/issuerCertificates | Import a new certificate.
-[**RotateSystemKeys**](ServerSettingsApi.md#RotateSystemKeys) | **Post** /serverSettings/systemKeys/rotate | Rotate the system keys.
-[**UpdateCaptchaSettings**](ServerSettingsApi.md#UpdateCaptchaSettings) | **Put** /serverSettings/captchaSettings | (Deprecated) Update the CAPTCHA settings.
-[**UpdateEmailServerSettings**](ServerSettingsApi.md#UpdateEmailServerSettings) | **Put** /serverSettings/emailServer | (Deprecated) Update the email server settings
-[**UpdateGeneralSettings**](ServerSettingsApi.md#UpdateGeneralSettings) | **Put** /serverSettings/generalSettings | Update general settings.
-[**UpdateLogSettings**](ServerSettingsApi.md#UpdateLogSettings) | **Put** /serverSettings/logSettings | Update log settings.
-[**UpdateNotificationSettings**](ServerSettingsApi.md#UpdateNotificationSettings) | **Put** /serverSettings/notifications | Update the notification settings.
-[**UpdateOutBoundProvisioningSettings**](ServerSettingsApi.md#UpdateOutBoundProvisioningSettings) | **Put** /serverSettings/outboundProvisioning | Update database used for outbound provisioning
-[**UpdateServerSettings**](ServerSettingsApi.md#UpdateServerSettings) | **Put** /serverSettings | Update the server settings.
-[**UpdateSystemKeys**](ServerSettingsApi.md#UpdateSystemKeys) | **Put** /serverSettings/systemKeys | Update the system keys.
-[**UpdateWsTrustStsSettings**](ServerSettingsApi.md#UpdateWsTrustStsSettings) | **Put** /serverSettings/wsTrustStsSettings | Update WS-Trust STS Settings.
+[**DeleteCertificate**](ServerSettingsAPI.md#DeleteCertificate) | **Delete** /serverSettings/wsTrustStsSettings/issuerCertificates/{id} | Delete a certificate from WS-Trust STS Settings.
+[**GetCaptchaSettings**](ServerSettingsAPI.md#GetCaptchaSettings) | **Get** /serverSettings/captchaSettings | (Deprecated) Gets the CAPTCHA settings.
+[**GetCert**](ServerSettingsAPI.md#GetCert) | **Get** /serverSettings/wsTrustStsSettings/issuerCertificates/{id} | Retrieve details of a certificate.
+[**GetCerts**](ServerSettingsAPI.md#GetCerts) | **Get** /serverSettings/wsTrustStsSettings/issuerCertificates | Get the list of certificates for WS-Trust STS Settings.
+[**GetEmailServerSettings**](ServerSettingsAPI.md#GetEmailServerSettings) | **Get** /serverSettings/emailServer | (Deprecated) Gets the email server settings
+[**GetGeneralSettings**](ServerSettingsAPI.md#GetGeneralSettings) | **Get** /serverSettings/generalSettings | Gets the general settings.
+[**GetLogSettings**](ServerSettingsAPI.md#GetLogSettings) | **Get** /serverSettings/logSettings | Gets the log settings.
+[**GetNotificationSettings**](ServerSettingsAPI.md#GetNotificationSettings) | **Get** /serverSettings/notifications | Gets the notification settings
+[**GetOutBoundProvisioningSettings**](ServerSettingsAPI.md#GetOutBoundProvisioningSettings) | **Get** /serverSettings/outboundProvisioning | Get database used for outbound provisioning
+[**GetServerSettings**](ServerSettingsAPI.md#GetServerSettings) | **Get** /serverSettings | Gets the server settings
+[**GetSystemKeys**](ServerSettingsAPI.md#GetSystemKeys) | **Get** /serverSettings/systemKeys | Get the system keys.
+[**GetWsTrustStsSettings**](ServerSettingsAPI.md#GetWsTrustStsSettings) | **Get** /serverSettings/wsTrustStsSettings | Get the current WS-Trust STS Settings.
+[**ImportCertificate**](ServerSettingsAPI.md#ImportCertificate) | **Post** /serverSettings/wsTrustStsSettings/issuerCertificates | Import a new certificate.
+[**RotateSystemKeys**](ServerSettingsAPI.md#RotateSystemKeys) | **Post** /serverSettings/systemKeys/rotate | Rotate the system keys.
+[**UpdateCaptchaSettings**](ServerSettingsAPI.md#UpdateCaptchaSettings) | **Put** /serverSettings/captchaSettings | (Deprecated) Update the CAPTCHA settings.
+[**UpdateEmailServerSettings**](ServerSettingsAPI.md#UpdateEmailServerSettings) | **Put** /serverSettings/emailServer | (Deprecated) Update the email server settings
+[**UpdateGeneralSettings**](ServerSettingsAPI.md#UpdateGeneralSettings) | **Put** /serverSettings/generalSettings | Update general settings.
+[**UpdateLogSettings**](ServerSettingsAPI.md#UpdateLogSettings) | **Put** /serverSettings/logSettings | Update log settings.
+[**UpdateNotificationSettings**](ServerSettingsAPI.md#UpdateNotificationSettings) | **Put** /serverSettings/notifications | Update the notification settings.
+[**UpdateOutBoundProvisioningSettings**](ServerSettingsAPI.md#UpdateOutBoundProvisioningSettings) | **Put** /serverSettings/outboundProvisioning | Update database used for outbound provisioning
+[**UpdateServerSettings**](ServerSettingsAPI.md#UpdateServerSettings) | **Put** /serverSettings | Update the server settings.
+[**UpdateSystemKeys**](ServerSettingsAPI.md#UpdateSystemKeys) | **Put** /serverSettings/systemKeys | Update the system keys.
+[**UpdateWsTrustStsSettings**](ServerSettingsAPI.md#UpdateWsTrustStsSettings) | **Put** /serverSettings/wsTrustStsSettings | Update WS-Trust STS Settings.
 
 
 
@@ -55,9 +55,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ServerSettingsApi.DeleteCertificate(context.Background(), id).Execute()
+    r, err := apiClient.ServerSettingsAPI.DeleteCertificate(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.DeleteCertificate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.DeleteCertificate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -120,13 +120,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsApi.GetCaptchaSettings(context.Background()).Execute()
+    resp, r, err := apiClient.ServerSettingsAPI.GetCaptchaSettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.GetCaptchaSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetCaptchaSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetCaptchaSettings`: CaptchaSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsApi.GetCaptchaSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetCaptchaSettings`: %v\n", resp)
 }
 ```
 
@@ -180,13 +180,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsApi.GetCert(context.Background(), id).Execute()
+    resp, r, err := apiClient.ServerSettingsAPI.GetCert(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.GetCert``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetCert``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetCert`: IssuerCert
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsApi.GetCert`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetCert`: %v\n", resp)
 }
 ```
 
@@ -247,13 +247,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsApi.GetCerts(context.Background()).Execute()
+    resp, r, err := apiClient.ServerSettingsAPI.GetCerts(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.GetCerts``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetCerts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetCerts`: IssuerCerts
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsApi.GetCerts`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetCerts`: %v\n", resp)
 }
 ```
 
@@ -306,13 +306,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsApi.GetEmailServerSettings(context.Background()).Execute()
+    resp, r, err := apiClient.ServerSettingsAPI.GetEmailServerSettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.GetEmailServerSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetEmailServerSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetEmailServerSettings`: EmailServerSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsApi.GetEmailServerSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetEmailServerSettings`: %v\n", resp)
 }
 ```
 
@@ -365,13 +365,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsApi.GetGeneralSettings(context.Background()).Execute()
+    resp, r, err := apiClient.ServerSettingsAPI.GetGeneralSettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.GetGeneralSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetGeneralSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetGeneralSettings`: GeneralSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsApi.GetGeneralSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetGeneralSettings`: %v\n", resp)
 }
 ```
 
@@ -424,13 +424,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsApi.GetLogSettings(context.Background()).Execute()
+    resp, r, err := apiClient.ServerSettingsAPI.GetLogSettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.GetLogSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetLogSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetLogSettings`: LogSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsApi.GetLogSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetLogSettings`: %v\n", resp)
 }
 ```
 
@@ -483,13 +483,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsApi.GetNotificationSettings(context.Background()).Execute()
+    resp, r, err := apiClient.ServerSettingsAPI.GetNotificationSettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.GetNotificationSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetNotificationSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetNotificationSettings`: NotificationSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsApi.GetNotificationSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetNotificationSettings`: %v\n", resp)
 }
 ```
 
@@ -544,13 +544,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsApi.GetOutBoundProvisioningSettings(context.Background()).Execute()
+    resp, r, err := apiClient.ServerSettingsAPI.GetOutBoundProvisioningSettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.GetOutBoundProvisioningSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetOutBoundProvisioningSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOutBoundProvisioningSettings`: OutboundProvisionDatabase
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsApi.GetOutBoundProvisioningSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetOutBoundProvisioningSettings`: %v\n", resp)
 }
 ```
 
@@ -603,13 +603,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsApi.GetServerSettings(context.Background()).Execute()
+    resp, r, err := apiClient.ServerSettingsAPI.GetServerSettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.GetServerSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetServerSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetServerSettings`: ServerSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsApi.GetServerSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetServerSettings`: %v\n", resp)
 }
 ```
 
@@ -664,13 +664,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsApi.GetSystemKeys(context.Background()).Execute()
+    resp, r, err := apiClient.ServerSettingsAPI.GetSystemKeys(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.GetSystemKeys``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetSystemKeys``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSystemKeys`: SystemKeys
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsApi.GetSystemKeys`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetSystemKeys`: %v\n", resp)
 }
 ```
 
@@ -723,13 +723,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsApi.GetWsTrustStsSettings(context.Background()).Execute()
+    resp, r, err := apiClient.ServerSettingsAPI.GetWsTrustStsSettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.GetWsTrustStsSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetWsTrustStsSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetWsTrustStsSettings`: WsTrustStsSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsApi.GetWsTrustStsSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetWsTrustStsSettings`: %v\n", resp)
 }
 ```
 
@@ -783,13 +783,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsApi.ImportCertificate(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ServerSettingsAPI.ImportCertificate(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.ImportCertificate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.ImportCertificate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ImportCertificate`: IssuerCert
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsApi.ImportCertificate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.ImportCertificate`: %v\n", resp)
 }
 ```
 
@@ -848,13 +848,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsApi.RotateSystemKeys(context.Background()).Execute()
+    resp, r, err := apiClient.ServerSettingsAPI.RotateSystemKeys(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.RotateSystemKeys``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.RotateSystemKeys``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `RotateSystemKeys`: SystemKeys
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsApi.RotateSystemKeys`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.RotateSystemKeys`: %v\n", resp)
 }
 ```
 
@@ -908,13 +908,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsApi.UpdateCaptchaSettings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ServerSettingsAPI.UpdateCaptchaSettings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.UpdateCaptchaSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateCaptchaSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateCaptchaSettings`: CaptchaSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsApi.UpdateCaptchaSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateCaptchaSettings`: %v\n", resp)
 }
 ```
 
@@ -976,13 +976,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsApi.UpdateEmailServerSettings(context.Background()).Body(body).ValidationEmail(validationEmail).ValidateOnly(validateOnly).Execute()
+    resp, r, err := apiClient.ServerSettingsAPI.UpdateEmailServerSettings(context.Background()).Body(body).ValidationEmail(validationEmail).ValidateOnly(validateOnly).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.UpdateEmailServerSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateEmailServerSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateEmailServerSettings`: EmailServerSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsApi.UpdateEmailServerSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateEmailServerSettings`: %v\n", resp)
 }
 ```
 
@@ -1042,13 +1042,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsApi.UpdateGeneralSettings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ServerSettingsAPI.UpdateGeneralSettings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.UpdateGeneralSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateGeneralSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateGeneralSettings`: GeneralSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsApi.UpdateGeneralSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateGeneralSettings`: %v\n", resp)
 }
 ```
 
@@ -1106,13 +1106,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsApi.UpdateLogSettings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ServerSettingsAPI.UpdateLogSettings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.UpdateLogSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateLogSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateLogSettings`: LogSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsApi.UpdateLogSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateLogSettings`: %v\n", resp)
 }
 ```
 
@@ -1170,13 +1170,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsApi.UpdateNotificationSettings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ServerSettingsAPI.UpdateNotificationSettings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.UpdateNotificationSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateNotificationSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateNotificationSettings`: NotificationSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsApi.UpdateNotificationSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateNotificationSettings`: %v\n", resp)
 }
 ```
 
@@ -1236,13 +1236,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsApi.UpdateOutBoundProvisioningSettings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ServerSettingsAPI.UpdateOutBoundProvisioningSettings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.UpdateOutBoundProvisioningSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateOutBoundProvisioningSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateOutBoundProvisioningSettings`: OutboundProvisionDatabase
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsApi.UpdateOutBoundProvisioningSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateOutBoundProvisioningSettings`: %v\n", resp)
 }
 ```
 
@@ -1300,13 +1300,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsApi.UpdateServerSettings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ServerSettingsAPI.UpdateServerSettings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.UpdateServerSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateServerSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateServerSettings`: ServerSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsApi.UpdateServerSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateServerSettings`: %v\n", resp)
 }
 ```
 
@@ -1366,13 +1366,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsApi.UpdateSystemKeys(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ServerSettingsAPI.UpdateSystemKeys(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.UpdateSystemKeys``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateSystemKeys``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateSystemKeys`: SystemKeys
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsApi.UpdateSystemKeys`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateSystemKeys`: %v\n", resp)
 }
 ```
 
@@ -1430,13 +1430,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsApi.UpdateWsTrustStsSettings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ServerSettingsAPI.UpdateWsTrustStsSettings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsApi.UpdateWsTrustStsSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateWsTrustStsSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateWsTrustStsSettings`: WsTrustStsSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsApi.UpdateWsTrustStsSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateWsTrustStsSettings`: %v\n", resp)
 }
 ```
 

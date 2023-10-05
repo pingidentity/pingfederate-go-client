@@ -1,11 +1,11 @@
-# \ConfigArchiveApi
+# \ConfigArchiveAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ExportConfigArchive**](ConfigArchiveApi.md#ExportConfigArchive) | **Get** /configArchive/export | Export a configuration archive.
-[**ImportConfigArchive**](ConfigArchiveApi.md#ImportConfigArchive) | **Post** /configArchive/import | Import a configuration archive.
+[**ExportConfigArchive**](ConfigArchiveAPI.md#ExportConfigArchive) | **Get** /configArchive/export | Export a configuration archive.
+[**ImportConfigArchive**](ConfigArchiveAPI.md#ImportConfigArchive) | **Post** /configArchive/import | Import a configuration archive.
 
 
 
@@ -31,9 +31,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ConfigArchiveApi.ExportConfigArchive(context.Background()).Execute()
+    r, err := apiClient.ConfigArchiveAPI.ExportConfigArchive(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConfigArchiveApi.ExportConfigArchive``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConfigArchiveAPI.ExportConfigArchive``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -94,13 +94,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConfigArchiveApi.ImportConfigArchive(context.Background()).ForceImport(forceImport).ForceUnsupportedImport(forceUnsupportedImport).ReencryptData(reencryptData).File(file).Execute()
+    resp, r, err := apiClient.ConfigArchiveAPI.ImportConfigArchive(context.Background()).ForceImport(forceImport).ForceUnsupportedImport(forceUnsupportedImport).ReencryptData(reencryptData).File(file).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConfigArchiveApi.ImportConfigArchive``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConfigArchiveAPI.ImportConfigArchive``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ImportConfigArchive`: ApiResult
-    fmt.Fprintf(os.Stdout, "Response from `ConfigArchiveApi.ImportConfigArchive`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConfigArchiveAPI.ImportConfigArchive`: %v\n", resp)
 }
 ```
 

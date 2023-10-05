@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// OauthAccessTokenMappingsApiService OauthAccessTokenMappingsApi service
-type OauthAccessTokenMappingsApiService service
+// OauthAccessTokenMappingsAPIService OauthAccessTokenMappingsAPI service
+type OauthAccessTokenMappingsAPIService service
 
 type ApiCreateMappingRequest struct {
 	ctx                       context.Context
-	ApiService                *OauthAccessTokenMappingsApiService
+	ApiService                *OauthAccessTokenMappingsAPIService
 	body                      *AccessTokenMapping
 	xBypassExternalValidation *bool
 }
@@ -53,7 +53,7 @@ Create a new Access Token Mapping. If the mapping is not properly configured, a 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateMappingRequest
 */
-func (a *OauthAccessTokenMappingsApiService) CreateMapping(ctx context.Context) ApiCreateMappingRequest {
+func (a *OauthAccessTokenMappingsAPIService) CreateMapping(ctx context.Context) ApiCreateMappingRequest {
 	return ApiCreateMappingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -63,7 +63,7 @@ func (a *OauthAccessTokenMappingsApiService) CreateMapping(ctx context.Context) 
 // Execute executes the request
 //
 //	@return AccessTokenMapping
-func (a *OauthAccessTokenMappingsApiService) CreateMappingExecute(r ApiCreateMappingRequest) (*AccessTokenMapping, *http.Response, error) {
+func (a *OauthAccessTokenMappingsAPIService) CreateMappingExecute(r ApiCreateMappingRequest) (*AccessTokenMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -71,7 +71,7 @@ func (a *OauthAccessTokenMappingsApiService) CreateMappingExecute(r ApiCreateMap
 		localVarReturnValue *AccessTokenMapping
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenMappingsApiService.CreateMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenMappingsAPIService.CreateMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -156,7 +156,7 @@ func (a *OauthAccessTokenMappingsApiService) CreateMappingExecute(r ApiCreateMap
 
 type ApiDeleteMappingRequest struct {
 	ctx        context.Context
-	ApiService *OauthAccessTokenMappingsApiService
+	ApiService *OauthAccessTokenMappingsAPIService
 	id         string
 }
 
@@ -171,7 +171,7 @@ DeleteMapping Delete an Access Token Mapping.
 	@param id ID of the Access Token Mapping.
 	@return ApiDeleteMappingRequest
 */
-func (a *OauthAccessTokenMappingsApiService) DeleteMapping(ctx context.Context, id string) ApiDeleteMappingRequest {
+func (a *OauthAccessTokenMappingsAPIService) DeleteMapping(ctx context.Context, id string) ApiDeleteMappingRequest {
 	return ApiDeleteMappingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -180,14 +180,14 @@ func (a *OauthAccessTokenMappingsApiService) DeleteMapping(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *OauthAccessTokenMappingsApiService) DeleteMappingExecute(r ApiDeleteMappingRequest) (*http.Response, error) {
+func (a *OauthAccessTokenMappingsAPIService) DeleteMappingExecute(r ApiDeleteMappingRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenMappingsApiService.DeleteMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenMappingsAPIService.DeleteMapping")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -256,7 +256,7 @@ func (a *OauthAccessTokenMappingsApiService) DeleteMappingExecute(r ApiDeleteMap
 
 type ApiGetMappingRequest struct {
 	ctx        context.Context
-	ApiService *OauthAccessTokenMappingsApiService
+	ApiService *OauthAccessTokenMappingsAPIService
 	id         string
 }
 
@@ -271,7 +271,7 @@ GetMapping Find the Access Token Mapping by its ID.
 	@param id ID of the Access Token Mapping.
 	@return ApiGetMappingRequest
 */
-func (a *OauthAccessTokenMappingsApiService) GetMapping(ctx context.Context, id string) ApiGetMappingRequest {
+func (a *OauthAccessTokenMappingsAPIService) GetMapping(ctx context.Context, id string) ApiGetMappingRequest {
 	return ApiGetMappingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -282,7 +282,7 @@ func (a *OauthAccessTokenMappingsApiService) GetMapping(ctx context.Context, id 
 // Execute executes the request
 //
 //	@return AccessTokenMapping
-func (a *OauthAccessTokenMappingsApiService) GetMappingExecute(r ApiGetMappingRequest) (*AccessTokenMapping, *http.Response, error) {
+func (a *OauthAccessTokenMappingsAPIService) GetMappingExecute(r ApiGetMappingRequest) (*AccessTokenMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -290,7 +290,7 @@ func (a *OauthAccessTokenMappingsApiService) GetMappingExecute(r ApiGetMappingRe
 		localVarReturnValue *AccessTokenMapping
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenMappingsApiService.GetMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenMappingsAPIService.GetMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -368,7 +368,7 @@ func (a *OauthAccessTokenMappingsApiService) GetMappingExecute(r ApiGetMappingRe
 
 type ApiGetMappingsRequest struct {
 	ctx        context.Context
-	ApiService *OauthAccessTokenMappingsApiService
+	ApiService *OauthAccessTokenMappingsAPIService
 }
 
 func (r ApiGetMappingsRequest) Execute() (*AccessTokenMappings, *http.Response, error) {
@@ -381,7 +381,7 @@ GetMappings Get the list of Access Token Mappings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetMappingsRequest
 */
-func (a *OauthAccessTokenMappingsApiService) GetMappings(ctx context.Context) ApiGetMappingsRequest {
+func (a *OauthAccessTokenMappingsAPIService) GetMappings(ctx context.Context) ApiGetMappingsRequest {
 	return ApiGetMappingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -391,7 +391,7 @@ func (a *OauthAccessTokenMappingsApiService) GetMappings(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return AccessTokenMappings
-func (a *OauthAccessTokenMappingsApiService) GetMappingsExecute(r ApiGetMappingsRequest) (*AccessTokenMappings, *http.Response, error) {
+func (a *OauthAccessTokenMappingsAPIService) GetMappingsExecute(r ApiGetMappingsRequest) (*AccessTokenMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -399,7 +399,7 @@ func (a *OauthAccessTokenMappingsApiService) GetMappingsExecute(r ApiGetMappings
 		localVarReturnValue *AccessTokenMappings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenMappingsApiService.GetMappings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenMappingsAPIService.GetMappings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -466,7 +466,7 @@ func (a *OauthAccessTokenMappingsApiService) GetMappingsExecute(r ApiGetMappings
 
 type ApiUpdateMappingRequest struct {
 	ctx                       context.Context
-	ApiService                *OauthAccessTokenMappingsApiService
+	ApiService                *OauthAccessTokenMappingsAPIService
 	id                        string
 	body                      *AccessTokenMapping
 	xBypassExternalValidation *bool
@@ -497,7 +497,7 @@ Update an Access Token Mapping with the matching ID. If the mapping is not prope
 	@param id ID of the Access Token Mapping to update.
 	@return ApiUpdateMappingRequest
 */
-func (a *OauthAccessTokenMappingsApiService) UpdateMapping(ctx context.Context, id string) ApiUpdateMappingRequest {
+func (a *OauthAccessTokenMappingsAPIService) UpdateMapping(ctx context.Context, id string) ApiUpdateMappingRequest {
 	return ApiUpdateMappingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -508,7 +508,7 @@ func (a *OauthAccessTokenMappingsApiService) UpdateMapping(ctx context.Context, 
 // Execute executes the request
 //
 //	@return AccessTokenMapping
-func (a *OauthAccessTokenMappingsApiService) UpdateMappingExecute(r ApiUpdateMappingRequest) (*AccessTokenMapping, *http.Response, error) {
+func (a *OauthAccessTokenMappingsAPIService) UpdateMappingExecute(r ApiUpdateMappingRequest) (*AccessTokenMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -516,7 +516,7 @@ func (a *OauthAccessTokenMappingsApiService) UpdateMappingExecute(r ApiUpdateMap
 		localVarReturnValue *AccessTokenMapping
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenMappingsApiService.UpdateMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAccessTokenMappingsAPIService.UpdateMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

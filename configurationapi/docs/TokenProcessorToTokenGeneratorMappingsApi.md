@@ -1,14 +1,14 @@
-# \TokenProcessorToTokenGeneratorMappingsApi
+# \TokenProcessorToTokenGeneratorMappingsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateTokenToTokenMapping**](TokenProcessorToTokenGeneratorMappingsApi.md#CreateTokenToTokenMapping) | **Post** /tokenProcessorToTokenGeneratorMappings | Create a new Token Processor to Token Generator Mapping.
-[**DeleteTokenToTokenMappingById**](TokenProcessorToTokenGeneratorMappingsApi.md#DeleteTokenToTokenMappingById) | **Delete** /tokenProcessorToTokenGeneratorMappings/{id} | Delete a Token Processor to Token Generator Mapping.
-[**GetTokenToTokenMappingById**](TokenProcessorToTokenGeneratorMappingsApi.md#GetTokenToTokenMappingById) | **Get** /tokenProcessorToTokenGeneratorMappings/{id} | Get a Token Processor to Token Generator Mapping.
-[**GetTokenToTokenMappings**](TokenProcessorToTokenGeneratorMappingsApi.md#GetTokenToTokenMappings) | **Get** /tokenProcessorToTokenGeneratorMappings | Get the list of Token Processor to Token Generator Mappings.
-[**UpdateTokenToTokenMappingById**](TokenProcessorToTokenGeneratorMappingsApi.md#UpdateTokenToTokenMappingById) | **Put** /tokenProcessorToTokenGeneratorMappings/{id} | Update a Token Processor to Token Generator Mapping.
+[**CreateTokenToTokenMapping**](TokenProcessorToTokenGeneratorMappingsAPI.md#CreateTokenToTokenMapping) | **Post** /tokenProcessorToTokenGeneratorMappings | Create a new Token Processor to Token Generator Mapping.
+[**DeleteTokenToTokenMappingById**](TokenProcessorToTokenGeneratorMappingsAPI.md#DeleteTokenToTokenMappingById) | **Delete** /tokenProcessorToTokenGeneratorMappings/{id} | Delete a Token Processor to Token Generator Mapping.
+[**GetTokenToTokenMappingById**](TokenProcessorToTokenGeneratorMappingsAPI.md#GetTokenToTokenMappingById) | **Get** /tokenProcessorToTokenGeneratorMappings/{id} | Get a Token Processor to Token Generator Mapping.
+[**GetTokenToTokenMappings**](TokenProcessorToTokenGeneratorMappingsAPI.md#GetTokenToTokenMappings) | **Get** /tokenProcessorToTokenGeneratorMappings | Get the list of Token Processor to Token Generator Mappings.
+[**UpdateTokenToTokenMappingById**](TokenProcessorToTokenGeneratorMappingsAPI.md#UpdateTokenToTokenMappingById) | **Put** /tokenProcessorToTokenGeneratorMappings/{id} | Update a Token Processor to Token Generator Mapping.
 
 
 
@@ -36,13 +36,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TokenProcessorToTokenGeneratorMappingsApi.CreateTokenToTokenMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.TokenProcessorToTokenGeneratorMappingsAPI.CreateTokenToTokenMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TokenProcessorToTokenGeneratorMappingsApi.CreateTokenToTokenMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TokenProcessorToTokenGeneratorMappingsAPI.CreateTokenToTokenMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateTokenToTokenMapping`: TokenToTokenMapping
-    fmt.Fprintf(os.Stdout, "Response from `TokenProcessorToTokenGeneratorMappingsApi.CreateTokenToTokenMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TokenProcessorToTokenGeneratorMappingsAPI.CreateTokenToTokenMapping`: %v\n", resp)
 }
 ```
 
@@ -101,9 +101,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TokenProcessorToTokenGeneratorMappingsApi.DeleteTokenToTokenMappingById(context.Background(), id).Execute()
+    r, err := apiClient.TokenProcessorToTokenGeneratorMappingsAPI.DeleteTokenToTokenMappingById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TokenProcessorToTokenGeneratorMappingsApi.DeleteTokenToTokenMappingById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TokenProcessorToTokenGeneratorMappingsAPI.DeleteTokenToTokenMappingById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -167,13 +167,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TokenProcessorToTokenGeneratorMappingsApi.GetTokenToTokenMappingById(context.Background(), id).Execute()
+    resp, r, err := apiClient.TokenProcessorToTokenGeneratorMappingsAPI.GetTokenToTokenMappingById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TokenProcessorToTokenGeneratorMappingsApi.GetTokenToTokenMappingById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TokenProcessorToTokenGeneratorMappingsAPI.GetTokenToTokenMappingById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTokenToTokenMappingById`: TokenToTokenMapping
-    fmt.Fprintf(os.Stdout, "Response from `TokenProcessorToTokenGeneratorMappingsApi.GetTokenToTokenMappingById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TokenProcessorToTokenGeneratorMappingsAPI.GetTokenToTokenMappingById`: %v\n", resp)
 }
 ```
 
@@ -234,13 +234,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TokenProcessorToTokenGeneratorMappingsApi.GetTokenToTokenMappings(context.Background()).Execute()
+    resp, r, err := apiClient.TokenProcessorToTokenGeneratorMappingsAPI.GetTokenToTokenMappings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TokenProcessorToTokenGeneratorMappingsApi.GetTokenToTokenMappings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TokenProcessorToTokenGeneratorMappingsAPI.GetTokenToTokenMappings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTokenToTokenMappings`: TokenToTokenMappings
-    fmt.Fprintf(os.Stdout, "Response from `TokenProcessorToTokenGeneratorMappingsApi.GetTokenToTokenMappings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TokenProcessorToTokenGeneratorMappingsAPI.GetTokenToTokenMappings`: %v\n", resp)
 }
 ```
 
@@ -296,13 +296,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TokenProcessorToTokenGeneratorMappingsApi.UpdateTokenToTokenMappingById(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.TokenProcessorToTokenGeneratorMappingsAPI.UpdateTokenToTokenMappingById(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TokenProcessorToTokenGeneratorMappingsApi.UpdateTokenToTokenMappingById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TokenProcessorToTokenGeneratorMappingsAPI.UpdateTokenToTokenMappingById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateTokenToTokenMappingById`: TokenToTokenMapping
-    fmt.Fprintf(os.Stdout, "Response from `TokenProcessorToTokenGeneratorMappingsApi.UpdateTokenToTokenMappingById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TokenProcessorToTokenGeneratorMappingsAPI.UpdateTokenToTokenMappingById`: %v\n", resp)
 }
 ```
 

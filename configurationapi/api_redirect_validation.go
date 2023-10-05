@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// RedirectValidationApiService RedirectValidationApi service
-type RedirectValidationApiService service
+// RedirectValidationAPIService RedirectValidationAPI service
+type RedirectValidationAPIService service
 
 type ApiGetRedirectValidationSettingsRequest struct {
 	ctx        context.Context
-	ApiService *RedirectValidationApiService
+	ApiService *RedirectValidationAPIService
 }
 
 func (r ApiGetRedirectValidationSettingsRequest) Execute() (*RedirectValidationSettings, *http.Response, error) {
@@ -36,7 +36,7 @@ GetRedirectValidationSettings Retrieve redirect validation settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetRedirectValidationSettingsRequest
 */
-func (a *RedirectValidationApiService) GetRedirectValidationSettings(ctx context.Context) ApiGetRedirectValidationSettingsRequest {
+func (a *RedirectValidationAPIService) GetRedirectValidationSettings(ctx context.Context) ApiGetRedirectValidationSettingsRequest {
 	return ApiGetRedirectValidationSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -46,7 +46,7 @@ func (a *RedirectValidationApiService) GetRedirectValidationSettings(ctx context
 // Execute executes the request
 //
 //	@return RedirectValidationSettings
-func (a *RedirectValidationApiService) GetRedirectValidationSettingsExecute(r ApiGetRedirectValidationSettingsRequest) (*RedirectValidationSettings, *http.Response, error) {
+func (a *RedirectValidationAPIService) GetRedirectValidationSettingsExecute(r ApiGetRedirectValidationSettingsRequest) (*RedirectValidationSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *RedirectValidationApiService) GetRedirectValidationSettingsExecute(r Ap
 		localVarReturnValue *RedirectValidationSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RedirectValidationApiService.GetRedirectValidationSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RedirectValidationAPIService.GetRedirectValidationSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -121,7 +121,7 @@ func (a *RedirectValidationApiService) GetRedirectValidationSettingsExecute(r Ap
 
 type ApiUpdateRedirectValidationSettingsRequest struct {
 	ctx        context.Context
-	ApiService *RedirectValidationApiService
+	ApiService *RedirectValidationAPIService
 	body       *RedirectValidationSettings
 }
 
@@ -143,7 +143,7 @@ UpdateRedirectValidationSettings Update redirect validation settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateRedirectValidationSettingsRequest
 */
-func (a *RedirectValidationApiService) UpdateRedirectValidationSettings(ctx context.Context) ApiUpdateRedirectValidationSettingsRequest {
+func (a *RedirectValidationAPIService) UpdateRedirectValidationSettings(ctx context.Context) ApiUpdateRedirectValidationSettingsRequest {
 	return ApiUpdateRedirectValidationSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -153,7 +153,7 @@ func (a *RedirectValidationApiService) UpdateRedirectValidationSettings(ctx cont
 // Execute executes the request
 //
 //	@return RedirectValidationSettings
-func (a *RedirectValidationApiService) UpdateRedirectValidationSettingsExecute(r ApiUpdateRedirectValidationSettingsRequest) (*RedirectValidationSettings, *http.Response, error) {
+func (a *RedirectValidationAPIService) UpdateRedirectValidationSettingsExecute(r ApiUpdateRedirectValidationSettingsRequest) (*RedirectValidationSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -161,7 +161,7 @@ func (a *RedirectValidationApiService) UpdateRedirectValidationSettingsExecute(r
 		localVarReturnValue *RedirectValidationSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RedirectValidationApiService.UpdateRedirectValidationSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RedirectValidationAPIService.UpdateRedirectValidationSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

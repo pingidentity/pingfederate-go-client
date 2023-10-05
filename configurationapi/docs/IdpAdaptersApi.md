@@ -1,19 +1,19 @@
-# \IdpAdaptersApi
+# \IdpAdaptersAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateIdpAdapter**](IdpAdaptersApi.md#CreateIdpAdapter) | **Post** /idp/adapters | Create a new IdP adapter instance.
-[**DeleteIdpAdapter**](IdpAdaptersApi.md#DeleteIdpAdapter) | **Delete** /idp/adapters/{id} | Delete an IdP adapter instance.
-[**GetIdpAdapter**](IdpAdaptersApi.md#GetIdpAdapter) | **Get** /idp/adapters/{id} | Find an IdP adapter instance by ID.
-[**GetIdpAdapterDescriptors**](IdpAdaptersApi.md#GetIdpAdapterDescriptors) | **Get** /idp/adapters/descriptors | Get the list of available IdP adapter descriptors.
-[**GetIdpAdapterDescriptorsById**](IdpAdaptersApi.md#GetIdpAdapterDescriptorsById) | **Get** /idp/adapters/descriptors/{id} | Get the description of an IdP adapter plugin by ID.
-[**GetIdpAdapters**](IdpAdaptersApi.md#GetIdpAdapters) | **Get** /idp/adapters | Get the list of configured IdP adapter instances.
-[**GetIdpAdaptersActionById**](IdpAdaptersApi.md#GetIdpAdaptersActionById) | **Get** /idp/adapters/{id}/actions/{actionId} | Find an IdP adapter instance&#39;s action by ID.
-[**GetIdpAdaptersActions**](IdpAdaptersApi.md#GetIdpAdaptersActions) | **Get** /idp/adapters/{id}/actions | List the actions for an IdP adapter instance.
-[**InvokeIdpAdaptersActionWithOptions**](IdpAdaptersApi.md#InvokeIdpAdaptersActionWithOptions) | **Post** /idp/adapters/{id}/actions/{actionId}/invokeAction | Invokes an action for an IdP adapter instance.
-[**UpdateIdpAdapter**](IdpAdaptersApi.md#UpdateIdpAdapter) | **Put** /idp/adapters/{id} | Update an IdP adapter instance.
+[**CreateIdpAdapter**](IdpAdaptersAPI.md#CreateIdpAdapter) | **Post** /idp/adapters | Create a new IdP adapter instance.
+[**DeleteIdpAdapter**](IdpAdaptersAPI.md#DeleteIdpAdapter) | **Delete** /idp/adapters/{id} | Delete an IdP adapter instance.
+[**GetIdpAdapter**](IdpAdaptersAPI.md#GetIdpAdapter) | **Get** /idp/adapters/{id} | Find an IdP adapter instance by ID.
+[**GetIdpAdapterDescriptors**](IdpAdaptersAPI.md#GetIdpAdapterDescriptors) | **Get** /idp/adapters/descriptors | Get the list of available IdP adapter descriptors.
+[**GetIdpAdapterDescriptorsById**](IdpAdaptersAPI.md#GetIdpAdapterDescriptorsById) | **Get** /idp/adapters/descriptors/{id} | Get the description of an IdP adapter plugin by ID.
+[**GetIdpAdapters**](IdpAdaptersAPI.md#GetIdpAdapters) | **Get** /idp/adapters | Get the list of configured IdP adapter instances.
+[**GetIdpAdaptersActionById**](IdpAdaptersAPI.md#GetIdpAdaptersActionById) | **Get** /idp/adapters/{id}/actions/{actionId} | Find an IdP adapter instance&#39;s action by ID.
+[**GetIdpAdaptersActions**](IdpAdaptersAPI.md#GetIdpAdaptersActions) | **Get** /idp/adapters/{id}/actions | List the actions for an IdP adapter instance.
+[**InvokeIdpAdaptersActionWithOptions**](IdpAdaptersAPI.md#InvokeIdpAdaptersActionWithOptions) | **Post** /idp/adapters/{id}/actions/{actionId}/invokeAction | Invokes an action for an IdP adapter instance.
+[**UpdateIdpAdapter**](IdpAdaptersAPI.md#UpdateIdpAdapter) | **Put** /idp/adapters/{id} | Update an IdP adapter instance.
 
 
 
@@ -43,13 +43,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpAdaptersApi.CreateIdpAdapter(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.IdpAdaptersAPI.CreateIdpAdapter(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersApi.CreateIdpAdapter``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.CreateIdpAdapter``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateIdpAdapter`: IdpAdapter
-    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersApi.CreateIdpAdapter`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.CreateIdpAdapter`: %v\n", resp)
 }
 ```
 
@@ -110,9 +110,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IdpAdaptersApi.DeleteIdpAdapter(context.Background(), id).Execute()
+    r, err := apiClient.IdpAdaptersAPI.DeleteIdpAdapter(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersApi.DeleteIdpAdapter``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.DeleteIdpAdapter``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -178,13 +178,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpAdaptersApi.GetIdpAdapter(context.Background(), id).Execute()
+    resp, r, err := apiClient.IdpAdaptersAPI.GetIdpAdapter(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersApi.GetIdpAdapter``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.GetIdpAdapter``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetIdpAdapter`: IdpAdapter
-    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersApi.GetIdpAdapter`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.GetIdpAdapter`: %v\n", resp)
 }
 ```
 
@@ -245,13 +245,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpAdaptersApi.GetIdpAdapterDescriptors(context.Background()).Execute()
+    resp, r, err := apiClient.IdpAdaptersAPI.GetIdpAdapterDescriptors(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersApi.GetIdpAdapterDescriptors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.GetIdpAdapterDescriptors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetIdpAdapterDescriptors`: IdpAdapterDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersApi.GetIdpAdapterDescriptors`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.GetIdpAdapterDescriptors`: %v\n", resp)
 }
 ```
 
@@ -307,13 +307,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpAdaptersApi.GetIdpAdapterDescriptorsById(context.Background(), id).Execute()
+    resp, r, err := apiClient.IdpAdaptersAPI.GetIdpAdapterDescriptorsById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersApi.GetIdpAdapterDescriptorsById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.GetIdpAdapterDescriptorsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetIdpAdapterDescriptorsById`: IdpAdapterDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersApi.GetIdpAdapterDescriptorsById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.GetIdpAdapterDescriptorsById`: %v\n", resp)
 }
 ```
 
@@ -377,13 +377,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpAdaptersApi.GetIdpAdapters(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
+    resp, r, err := apiClient.IdpAdaptersAPI.GetIdpAdapters(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersApi.GetIdpAdapters``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.GetIdpAdapters``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetIdpAdapters`: IdpAdapters
-    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersApi.GetIdpAdapters`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.GetIdpAdapters`: %v\n", resp)
 }
 ```
 
@@ -446,13 +446,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpAdaptersApi.GetIdpAdaptersActionById(context.Background(), id, actionId).Execute()
+    resp, r, err := apiClient.IdpAdaptersAPI.GetIdpAdaptersActionById(context.Background(), id, actionId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersApi.GetIdpAdaptersActionById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.GetIdpAdaptersActionById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetIdpAdaptersActionById`: Action
-    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersApi.GetIdpAdaptersActionById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.GetIdpAdaptersActionById`: %v\n", resp)
 }
 ```
 
@@ -518,13 +518,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpAdaptersApi.GetIdpAdaptersActions(context.Background(), id).Execute()
+    resp, r, err := apiClient.IdpAdaptersAPI.GetIdpAdaptersActions(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersApi.GetIdpAdaptersActions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.GetIdpAdaptersActions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetIdpAdaptersActions`: Actions
-    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersApi.GetIdpAdaptersActions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.GetIdpAdaptersActions`: %v\n", resp)
 }
 ```
 
@@ -590,13 +590,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpAdaptersApi.InvokeIdpAdaptersActionWithOptions(context.Background(), id, actionId).Body(body).Execute()
+    resp, r, err := apiClient.IdpAdaptersAPI.InvokeIdpAdaptersActionWithOptions(context.Background(), id, actionId).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersApi.InvokeIdpAdaptersActionWithOptions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.InvokeIdpAdaptersActionWithOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `InvokeIdpAdaptersActionWithOptions`: ActionResult
-    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersApi.InvokeIdpAdaptersActionWithOptions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.InvokeIdpAdaptersActionWithOptions`: %v\n", resp)
 }
 ```
 
@@ -665,13 +665,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpAdaptersApi.UpdateIdpAdapter(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.IdpAdaptersAPI.UpdateIdpAdapter(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersApi.UpdateIdpAdapter``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.UpdateIdpAdapter``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateIdpAdapter`: IdpAdapter
-    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersApi.UpdateIdpAdapter`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.UpdateIdpAdapter`: %v\n", resp)
 }
 ```
 

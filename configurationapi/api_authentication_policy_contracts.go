@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// AuthenticationPolicyContractsApiService AuthenticationPolicyContractsApi service
-type AuthenticationPolicyContractsApiService service
+// AuthenticationPolicyContractsAPIService AuthenticationPolicyContractsAPI service
+type AuthenticationPolicyContractsAPIService service
 
 type ApiCreateAuthenticationPolicyContractRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationPolicyContractsApiService
+	ApiService *AuthenticationPolicyContractsAPIService
 	body       *AuthenticationPolicyContract
 }
 
@@ -46,7 +46,7 @@ Create a new Authentication Policy Contract. If the Authentication Policy Contra
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateAuthenticationPolicyContractRequest
 */
-func (a *AuthenticationPolicyContractsApiService) CreateAuthenticationPolicyContract(ctx context.Context) ApiCreateAuthenticationPolicyContractRequest {
+func (a *AuthenticationPolicyContractsAPIService) CreateAuthenticationPolicyContract(ctx context.Context) ApiCreateAuthenticationPolicyContractRequest {
 	return ApiCreateAuthenticationPolicyContractRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -56,7 +56,7 @@ func (a *AuthenticationPolicyContractsApiService) CreateAuthenticationPolicyCont
 // Execute executes the request
 //
 //	@return AuthenticationPolicyContract
-func (a *AuthenticationPolicyContractsApiService) CreateAuthenticationPolicyContractExecute(r ApiCreateAuthenticationPolicyContractRequest) (*AuthenticationPolicyContract, *http.Response, error) {
+func (a *AuthenticationPolicyContractsAPIService) CreateAuthenticationPolicyContractExecute(r ApiCreateAuthenticationPolicyContractRequest) (*AuthenticationPolicyContract, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -64,7 +64,7 @@ func (a *AuthenticationPolicyContractsApiService) CreateAuthenticationPolicyCont
 		localVarReturnValue *AuthenticationPolicyContract
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPolicyContractsApiService.CreateAuthenticationPolicyContract")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPolicyContractsAPIService.CreateAuthenticationPolicyContract")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -146,7 +146,7 @@ func (a *AuthenticationPolicyContractsApiService) CreateAuthenticationPolicyCont
 
 type ApiDeleteAuthenticationPolicyContractRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationPolicyContractsApiService
+	ApiService *AuthenticationPolicyContractsAPIService
 	id         string
 }
 
@@ -163,7 +163,7 @@ Delete an Authentication Policy Contract with the specified ID. A 404 status cod
 	@param id ID of Authentication Policy Contract to delete.
 	@return ApiDeleteAuthenticationPolicyContractRequest
 */
-func (a *AuthenticationPolicyContractsApiService) DeleteAuthenticationPolicyContract(ctx context.Context, id string) ApiDeleteAuthenticationPolicyContractRequest {
+func (a *AuthenticationPolicyContractsAPIService) DeleteAuthenticationPolicyContract(ctx context.Context, id string) ApiDeleteAuthenticationPolicyContractRequest {
 	return ApiDeleteAuthenticationPolicyContractRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -172,14 +172,14 @@ func (a *AuthenticationPolicyContractsApiService) DeleteAuthenticationPolicyCont
 }
 
 // Execute executes the request
-func (a *AuthenticationPolicyContractsApiService) DeleteAuthenticationPolicyContractExecute(r ApiDeleteAuthenticationPolicyContractRequest) (*http.Response, error) {
+func (a *AuthenticationPolicyContractsAPIService) DeleteAuthenticationPolicyContractExecute(r ApiDeleteAuthenticationPolicyContractRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPolicyContractsApiService.DeleteAuthenticationPolicyContract")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPolicyContractsAPIService.DeleteAuthenticationPolicyContract")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -259,7 +259,7 @@ func (a *AuthenticationPolicyContractsApiService) DeleteAuthenticationPolicyCont
 
 type ApiGetAuthenticationPolicyContractRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationPolicyContractsApiService
+	ApiService *AuthenticationPolicyContractsAPIService
 	id         string
 }
 
@@ -276,7 +276,7 @@ Get an Authentication Policy Contract with the specified ID. A 404 status code i
 	@param id ID of contract to fetch
 	@return ApiGetAuthenticationPolicyContractRequest
 */
-func (a *AuthenticationPolicyContractsApiService) GetAuthenticationPolicyContract(ctx context.Context, id string) ApiGetAuthenticationPolicyContractRequest {
+func (a *AuthenticationPolicyContractsAPIService) GetAuthenticationPolicyContract(ctx context.Context, id string) ApiGetAuthenticationPolicyContractRequest {
 	return ApiGetAuthenticationPolicyContractRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -287,7 +287,7 @@ func (a *AuthenticationPolicyContractsApiService) GetAuthenticationPolicyContrac
 // Execute executes the request
 //
 //	@return AuthenticationPolicyContract
-func (a *AuthenticationPolicyContractsApiService) GetAuthenticationPolicyContractExecute(r ApiGetAuthenticationPolicyContractRequest) (*AuthenticationPolicyContract, *http.Response, error) {
+func (a *AuthenticationPolicyContractsAPIService) GetAuthenticationPolicyContractExecute(r ApiGetAuthenticationPolicyContractRequest) (*AuthenticationPolicyContract, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -295,7 +295,7 @@ func (a *AuthenticationPolicyContractsApiService) GetAuthenticationPolicyContrac
 		localVarReturnValue *AuthenticationPolicyContract
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPolicyContractsApiService.GetAuthenticationPolicyContract")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPolicyContractsAPIService.GetAuthenticationPolicyContract")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -373,7 +373,7 @@ func (a *AuthenticationPolicyContractsApiService) GetAuthenticationPolicyContrac
 
 type ApiGetAuthenticationPolicyContractsRequest struct {
 	ctx           context.Context
-	ApiService    *AuthenticationPolicyContractsApiService
+	ApiService    *AuthenticationPolicyContractsAPIService
 	page          *int64
 	numberPerPage *int64
 	filter        *string
@@ -407,7 +407,7 @@ GetAuthenticationPolicyContracts Gets the Authentication Policy Contracts.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAuthenticationPolicyContractsRequest
 */
-func (a *AuthenticationPolicyContractsApiService) GetAuthenticationPolicyContracts(ctx context.Context) ApiGetAuthenticationPolicyContractsRequest {
+func (a *AuthenticationPolicyContractsAPIService) GetAuthenticationPolicyContracts(ctx context.Context) ApiGetAuthenticationPolicyContractsRequest {
 	return ApiGetAuthenticationPolicyContractsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -417,7 +417,7 @@ func (a *AuthenticationPolicyContractsApiService) GetAuthenticationPolicyContrac
 // Execute executes the request
 //
 //	@return AuthenticationPolicyContracts
-func (a *AuthenticationPolicyContractsApiService) GetAuthenticationPolicyContractsExecute(r ApiGetAuthenticationPolicyContractsRequest) (*AuthenticationPolicyContracts, *http.Response, error) {
+func (a *AuthenticationPolicyContractsAPIService) GetAuthenticationPolicyContractsExecute(r ApiGetAuthenticationPolicyContractsRequest) (*AuthenticationPolicyContracts, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -425,7 +425,7 @@ func (a *AuthenticationPolicyContractsApiService) GetAuthenticationPolicyContrac
 		localVarReturnValue *AuthenticationPolicyContracts
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPolicyContractsApiService.GetAuthenticationPolicyContracts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPolicyContractsAPIService.GetAuthenticationPolicyContracts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -511,7 +511,7 @@ func (a *AuthenticationPolicyContractsApiService) GetAuthenticationPolicyContrac
 
 type ApiUpdateAuthenticationPolicyContractRequest struct {
 	ctx        context.Context
-	ApiService *AuthenticationPolicyContractsApiService
+	ApiService *AuthenticationPolicyContractsAPIService
 	id         string
 	body       *AuthenticationPolicyContract
 }
@@ -535,7 +535,7 @@ Update an Authentication Policy Contract with the specified ID. A 404 status cod
 	@param id ID of the Authentication Policy Contract to update.
 	@return ApiUpdateAuthenticationPolicyContractRequest
 */
-func (a *AuthenticationPolicyContractsApiService) UpdateAuthenticationPolicyContract(ctx context.Context, id string) ApiUpdateAuthenticationPolicyContractRequest {
+func (a *AuthenticationPolicyContractsAPIService) UpdateAuthenticationPolicyContract(ctx context.Context, id string) ApiUpdateAuthenticationPolicyContractRequest {
 	return ApiUpdateAuthenticationPolicyContractRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -546,7 +546,7 @@ func (a *AuthenticationPolicyContractsApiService) UpdateAuthenticationPolicyCont
 // Execute executes the request
 //
 //	@return AuthenticationPolicyContract
-func (a *AuthenticationPolicyContractsApiService) UpdateAuthenticationPolicyContractExecute(r ApiUpdateAuthenticationPolicyContractRequest) (*AuthenticationPolicyContract, *http.Response, error) {
+func (a *AuthenticationPolicyContractsAPIService) UpdateAuthenticationPolicyContractExecute(r ApiUpdateAuthenticationPolicyContractRequest) (*AuthenticationPolicyContract, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -554,7 +554,7 @@ func (a *AuthenticationPolicyContractsApiService) UpdateAuthenticationPolicyCont
 		localVarReturnValue *AuthenticationPolicyContract
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPolicyContractsApiService.UpdateAuthenticationPolicyContract")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationPolicyContractsAPIService.UpdateAuthenticationPolicyContract")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

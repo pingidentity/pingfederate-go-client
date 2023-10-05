@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// CertificatesGroupsApiService CertificatesGroupsApi service
-type CertificatesGroupsApiService service
+// CertificatesGroupsAPIService CertificatesGroupsAPI service
+type CertificatesGroupsAPIService service
 
 type ApiDeleteCertificateFromGroupRequest struct {
 	ctx        context.Context
-	ApiService *CertificatesGroupsApiService
+	ApiService *CertificatesGroupsAPIService
 	groupName  string
 	id         string
 }
@@ -43,7 +43,7 @@ If the request is successful, the response body is empty. If the request fails, 
 	@param id ID of the certificate to retrieve.
 	@return ApiDeleteCertificateFromGroupRequest
 */
-func (a *CertificatesGroupsApiService) DeleteCertificateFromGroup(ctx context.Context, groupName string, id string) ApiDeleteCertificateFromGroupRequest {
+func (a *CertificatesGroupsAPIService) DeleteCertificateFromGroup(ctx context.Context, groupName string, id string) ApiDeleteCertificateFromGroupRequest {
 	return ApiDeleteCertificateFromGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -53,14 +53,14 @@ func (a *CertificatesGroupsApiService) DeleteCertificateFromGroup(ctx context.Co
 }
 
 // Execute executes the request
-func (a *CertificatesGroupsApiService) DeleteCertificateFromGroupExecute(r ApiDeleteCertificateFromGroupRequest) (*http.Response, error) {
+func (a *CertificatesGroupsAPIService) DeleteCertificateFromGroupExecute(r ApiDeleteCertificateFromGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesGroupsApiService.DeleteCertificateFromGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesGroupsAPIService.DeleteCertificateFromGroup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -130,7 +130,7 @@ func (a *CertificatesGroupsApiService) DeleteCertificateFromGroupExecute(r ApiDe
 
 type ApiGetCertificateFromGroupRequest struct {
 	ctx        context.Context
-	ApiService *CertificatesGroupsApiService
+	ApiService *CertificatesGroupsAPIService
 	groupName  string
 	id         string
 }
@@ -147,7 +147,7 @@ GetCertificateFromGroup Retrieve details of a certificate.
 	@param id ID of the certificate to retrieve.
 	@return ApiGetCertificateFromGroupRequest
 */
-func (a *CertificatesGroupsApiService) GetCertificateFromGroup(ctx context.Context, groupName string, id string) ApiGetCertificateFromGroupRequest {
+func (a *CertificatesGroupsAPIService) GetCertificateFromGroup(ctx context.Context, groupName string, id string) ApiGetCertificateFromGroupRequest {
 	return ApiGetCertificateFromGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -159,7 +159,7 @@ func (a *CertificatesGroupsApiService) GetCertificateFromGroup(ctx context.Conte
 // Execute executes the request
 //
 //	@return CertView
-func (a *CertificatesGroupsApiService) GetCertificateFromGroupExecute(r ApiGetCertificateFromGroupRequest) (*CertView, *http.Response, error) {
+func (a *CertificatesGroupsAPIService) GetCertificateFromGroupExecute(r ApiGetCertificateFromGroupRequest) (*CertView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -167,7 +167,7 @@ func (a *CertificatesGroupsApiService) GetCertificateFromGroupExecute(r ApiGetCe
 		localVarReturnValue *CertView
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesGroupsApiService.GetCertificateFromGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesGroupsAPIService.GetCertificateFromGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -246,7 +246,7 @@ func (a *CertificatesGroupsApiService) GetCertificateFromGroupExecute(r ApiGetCe
 
 type ApiGetCertificatesForGroupRequest struct {
 	ctx        context.Context
-	ApiService *CertificatesGroupsApiService
+	ApiService *CertificatesGroupsAPIService
 	groupName  string
 }
 
@@ -261,7 +261,7 @@ GetCertificatesForGroup Get list of all certificates for a group.
 	@param groupName Name of the group to retrieve certificates for.
 	@return ApiGetCertificatesForGroupRequest
 */
-func (a *CertificatesGroupsApiService) GetCertificatesForGroup(ctx context.Context, groupName string) ApiGetCertificatesForGroupRequest {
+func (a *CertificatesGroupsAPIService) GetCertificatesForGroup(ctx context.Context, groupName string) ApiGetCertificatesForGroupRequest {
 	return ApiGetCertificatesForGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -272,7 +272,7 @@ func (a *CertificatesGroupsApiService) GetCertificatesForGroup(ctx context.Conte
 // Execute executes the request
 //
 //	@return CertViews
-func (a *CertificatesGroupsApiService) GetCertificatesForGroupExecute(r ApiGetCertificatesForGroupRequest) (*CertViews, *http.Response, error) {
+func (a *CertificatesGroupsAPIService) GetCertificatesForGroupExecute(r ApiGetCertificatesForGroupRequest) (*CertViews, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -280,7 +280,7 @@ func (a *CertificatesGroupsApiService) GetCertificatesForGroupExecute(r ApiGetCe
 		localVarReturnValue *CertViews
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesGroupsApiService.GetCertificatesForGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesGroupsAPIService.GetCertificatesForGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -358,7 +358,7 @@ func (a *CertificatesGroupsApiService) GetCertificatesForGroupExecute(r ApiGetCe
 
 type ApiImportFeatureCertRequest struct {
 	ctx        context.Context
-	ApiService *CertificatesGroupsApiService
+	ApiService *CertificatesGroupsAPIService
 	groupName  string
 	body       *X509File
 }
@@ -380,7 +380,7 @@ ImportFeatureCert Import a new certificate to a group.
 	@param groupName Name of the group to retrieve certificates for.
 	@return ApiImportFeatureCertRequest
 */
-func (a *CertificatesGroupsApiService) ImportFeatureCert(ctx context.Context, groupName string) ApiImportFeatureCertRequest {
+func (a *CertificatesGroupsAPIService) ImportFeatureCert(ctx context.Context, groupName string) ApiImportFeatureCertRequest {
 	return ApiImportFeatureCertRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -391,7 +391,7 @@ func (a *CertificatesGroupsApiService) ImportFeatureCert(ctx context.Context, gr
 // Execute executes the request
 //
 //	@return CertView
-func (a *CertificatesGroupsApiService) ImportFeatureCertExecute(r ApiImportFeatureCertRequest) (*CertView, *http.Response, error) {
+func (a *CertificatesGroupsAPIService) ImportFeatureCertExecute(r ApiImportFeatureCertRequest) (*CertView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -399,7 +399,7 @@ func (a *CertificatesGroupsApiService) ImportFeatureCertExecute(r ApiImportFeatu
 		localVarReturnValue *CertView
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesGroupsApiService.ImportFeatureCert")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesGroupsAPIService.ImportFeatureCert")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -1,14 +1,14 @@
-# \AuthenticationPolicyContractsApi
+# \AuthenticationPolicyContractsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateAuthenticationPolicyContract**](AuthenticationPolicyContractsApi.md#CreateAuthenticationPolicyContract) | **Post** /authenticationPolicyContracts | Create a new Authentication Policy Contract.
-[**DeleteAuthenticationPolicyContract**](AuthenticationPolicyContractsApi.md#DeleteAuthenticationPolicyContract) | **Delete** /authenticationPolicyContracts/{id} | Delete an Authentication Policy Contract.
-[**GetAuthenticationPolicyContract**](AuthenticationPolicyContractsApi.md#GetAuthenticationPolicyContract) | **Get** /authenticationPolicyContracts/{id} | Gets the Authentication Policy Contract by ID.
-[**GetAuthenticationPolicyContracts**](AuthenticationPolicyContractsApi.md#GetAuthenticationPolicyContracts) | **Get** /authenticationPolicyContracts | Gets the Authentication Policy Contracts.
-[**UpdateAuthenticationPolicyContract**](AuthenticationPolicyContractsApi.md#UpdateAuthenticationPolicyContract) | **Put** /authenticationPolicyContracts/{id} | Update an Authentication Policy Contract by ID.
+[**CreateAuthenticationPolicyContract**](AuthenticationPolicyContractsAPI.md#CreateAuthenticationPolicyContract) | **Post** /authenticationPolicyContracts | Create a new Authentication Policy Contract.
+[**DeleteAuthenticationPolicyContract**](AuthenticationPolicyContractsAPI.md#DeleteAuthenticationPolicyContract) | **Delete** /authenticationPolicyContracts/{id} | Delete an Authentication Policy Contract.
+[**GetAuthenticationPolicyContract**](AuthenticationPolicyContractsAPI.md#GetAuthenticationPolicyContract) | **Get** /authenticationPolicyContracts/{id} | Gets the Authentication Policy Contract by ID.
+[**GetAuthenticationPolicyContracts**](AuthenticationPolicyContractsAPI.md#GetAuthenticationPolicyContracts) | **Get** /authenticationPolicyContracts | Gets the Authentication Policy Contracts.
+[**UpdateAuthenticationPolicyContract**](AuthenticationPolicyContractsAPI.md#UpdateAuthenticationPolicyContract) | **Put** /authenticationPolicyContracts/{id} | Update an Authentication Policy Contract by ID.
 
 
 
@@ -37,13 +37,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPolicyContractsApi.CreateAuthenticationPolicyContract(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.AuthenticationPolicyContractsAPI.CreateAuthenticationPolicyContract(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPolicyContractsApi.CreateAuthenticationPolicyContract``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPolicyContractsAPI.CreateAuthenticationPolicyContract``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateAuthenticationPolicyContract`: AuthenticationPolicyContract
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPolicyContractsApi.CreateAuthenticationPolicyContract`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPolicyContractsAPI.CreateAuthenticationPolicyContract`: %v\n", resp)
 }
 ```
 
@@ -103,9 +103,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AuthenticationPolicyContractsApi.DeleteAuthenticationPolicyContract(context.Background(), id).Execute()
+    r, err := apiClient.AuthenticationPolicyContractsAPI.DeleteAuthenticationPolicyContract(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPolicyContractsApi.DeleteAuthenticationPolicyContract``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPolicyContractsAPI.DeleteAuthenticationPolicyContract``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -171,13 +171,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPolicyContractsApi.GetAuthenticationPolicyContract(context.Background(), id).Execute()
+    resp, r, err := apiClient.AuthenticationPolicyContractsAPI.GetAuthenticationPolicyContract(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPolicyContractsApi.GetAuthenticationPolicyContract``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPolicyContractsAPI.GetAuthenticationPolicyContract``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAuthenticationPolicyContract`: AuthenticationPolicyContract
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPolicyContractsApi.GetAuthenticationPolicyContract`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPolicyContractsAPI.GetAuthenticationPolicyContract`: %v\n", resp)
 }
 ```
 
@@ -241,13 +241,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPolicyContractsApi.GetAuthenticationPolicyContracts(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
+    resp, r, err := apiClient.AuthenticationPolicyContractsAPI.GetAuthenticationPolicyContracts(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPolicyContractsApi.GetAuthenticationPolicyContracts``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPolicyContractsAPI.GetAuthenticationPolicyContracts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAuthenticationPolicyContracts`: AuthenticationPolicyContracts
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPolicyContractsApi.GetAuthenticationPolicyContracts`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPolicyContractsAPI.GetAuthenticationPolicyContracts`: %v\n", resp)
 }
 ```
 
@@ -310,13 +310,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPolicyContractsApi.UpdateAuthenticationPolicyContract(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.AuthenticationPolicyContractsAPI.UpdateAuthenticationPolicyContract(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPolicyContractsApi.UpdateAuthenticationPolicyContract``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPolicyContractsAPI.UpdateAuthenticationPolicyContract``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateAuthenticationPolicyContract`: AuthenticationPolicyContract
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPolicyContractsApi.UpdateAuthenticationPolicyContract`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPolicyContractsAPI.UpdateAuthenticationPolicyContract`: %v\n", resp)
 }
 ```
 

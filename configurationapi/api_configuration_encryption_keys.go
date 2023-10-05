@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// ConfigurationEncryptionKeysApiService ConfigurationEncryptionKeysApi service
-type ConfigurationEncryptionKeysApiService service
+// ConfigurationEncryptionKeysAPIService ConfigurationEncryptionKeysAPI service
+type ConfigurationEncryptionKeysAPIService service
 
 type ApiGetConfigurationEncryptionKeysRequest struct {
 	ctx        context.Context
-	ApiService *ConfigurationEncryptionKeysApiService
+	ApiService *ConfigurationEncryptionKeysAPIService
 }
 
 func (r ApiGetConfigurationEncryptionKeysRequest) Execute() (*ConfigurationEncryptionKeys, *http.Response, error) {
@@ -38,7 +38,7 @@ The first key in the list is the current key used for encryption and decryption.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetConfigurationEncryptionKeysRequest
 */
-func (a *ConfigurationEncryptionKeysApiService) GetConfigurationEncryptionKeys(ctx context.Context) ApiGetConfigurationEncryptionKeysRequest {
+func (a *ConfigurationEncryptionKeysAPIService) GetConfigurationEncryptionKeys(ctx context.Context) ApiGetConfigurationEncryptionKeysRequest {
 	return ApiGetConfigurationEncryptionKeysRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -48,7 +48,7 @@ func (a *ConfigurationEncryptionKeysApiService) GetConfigurationEncryptionKeys(c
 // Execute executes the request
 //
 //	@return ConfigurationEncryptionKeys
-func (a *ConfigurationEncryptionKeysApiService) GetConfigurationEncryptionKeysExecute(r ApiGetConfigurationEncryptionKeysRequest) (*ConfigurationEncryptionKeys, *http.Response, error) {
+func (a *ConfigurationEncryptionKeysAPIService) GetConfigurationEncryptionKeysExecute(r ApiGetConfigurationEncryptionKeysRequest) (*ConfigurationEncryptionKeys, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -56,7 +56,7 @@ func (a *ConfigurationEncryptionKeysApiService) GetConfigurationEncryptionKeysEx
 		localVarReturnValue *ConfigurationEncryptionKeys
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigurationEncryptionKeysApiService.GetConfigurationEncryptionKeys")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigurationEncryptionKeysAPIService.GetConfigurationEncryptionKeys")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -123,7 +123,7 @@ func (a *ConfigurationEncryptionKeysApiService) GetConfigurationEncryptionKeysEx
 
 type ApiRotateConfigurationEncryptionKeyRequest struct {
 	ctx        context.Context
-	ApiService *ConfigurationEncryptionKeysApiService
+	ApiService *ConfigurationEncryptionKeysAPIService
 }
 
 func (r ApiRotateConfigurationEncryptionKeyRequest) Execute() (*ConfigurationEncryptionKeys, *http.Response, error) {
@@ -138,7 +138,7 @@ A new key will be generated and will be used for encryption and decryption. The 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiRotateConfigurationEncryptionKeyRequest
 */
-func (a *ConfigurationEncryptionKeysApiService) RotateConfigurationEncryptionKey(ctx context.Context) ApiRotateConfigurationEncryptionKeyRequest {
+func (a *ConfigurationEncryptionKeysAPIService) RotateConfigurationEncryptionKey(ctx context.Context) ApiRotateConfigurationEncryptionKeyRequest {
 	return ApiRotateConfigurationEncryptionKeyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -148,7 +148,7 @@ func (a *ConfigurationEncryptionKeysApiService) RotateConfigurationEncryptionKey
 // Execute executes the request
 //
 //	@return ConfigurationEncryptionKeys
-func (a *ConfigurationEncryptionKeysApiService) RotateConfigurationEncryptionKeyExecute(r ApiRotateConfigurationEncryptionKeyRequest) (*ConfigurationEncryptionKeys, *http.Response, error) {
+func (a *ConfigurationEncryptionKeysAPIService) RotateConfigurationEncryptionKeyExecute(r ApiRotateConfigurationEncryptionKeyRequest) (*ConfigurationEncryptionKeys, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -156,7 +156,7 @@ func (a *ConfigurationEncryptionKeysApiService) RotateConfigurationEncryptionKey
 		localVarReturnValue *ConfigurationEncryptionKeys
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigurationEncryptionKeysApiService.RotateConfigurationEncryptionKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigurationEncryptionKeysAPIService.RotateConfigurationEncryptionKey")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
