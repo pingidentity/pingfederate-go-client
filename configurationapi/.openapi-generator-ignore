@@ -40,4 +40,3 @@ go.mod
 go.sum
 
 client.go
-configuration.go

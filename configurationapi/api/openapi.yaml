@@ -11,6 +11,8 @@ info:
   title: Administrative API Documentation
 servers:
 - url: https://localhost/pf-admin-api/v1
+security:
+- basicAuth: []
 tags:
 - name: /oauth/accessTokenManagers
 - name: /oauth/accessTokenMappings
@@ -32525,4 +32527,8 @@ components:
           type: boolean
       type: object
       example: null
+  securitySchemes:
+    BasicAuth:
+      scheme: basic
+      type: http
 x-original-swagger-version: "2.0"

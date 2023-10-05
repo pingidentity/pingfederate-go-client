@@ -84,6 +84,8 @@ tags:
 - name: /oauth/tokenExchange/tokenGeneratorMappings
 - name: /oauth/tokenExchange/generator
 - name: /oauth/tokenExchange/processor
+security:
+- basicAuth: []
 paths:
   /oauth/accessTokenManagers/descriptors:
     get:
@@ -13444,6 +13446,10 @@ paths:
       - /oauth/tokenExchange/processor
       x-codegen-request-body-name: body
 components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
   schemas:
     AccessTokenManagerDescriptor:
       allOf:
