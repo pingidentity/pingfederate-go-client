@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// MetadataUrlsApiService MetadataUrlsApi service
-type MetadataUrlsApiService service
+// MetadataUrlsAPIService MetadataUrlsAPI service
+type MetadataUrlsAPIService service
 
 type ApiAddMetadataUrlRequest struct {
 	ctx        context.Context
-	ApiService *MetadataUrlsApiService
+	ApiService *MetadataUrlsAPIService
 	body       *MetadataUrl
 }
 
@@ -46,7 +46,7 @@ Add a new Metadata URL. If the Metadata URL is not properly configured, a 422 st
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddMetadataUrlRequest
 */
-func (a *MetadataUrlsApiService) AddMetadataUrl(ctx context.Context) ApiAddMetadataUrlRequest {
+func (a *MetadataUrlsAPIService) AddMetadataUrl(ctx context.Context) ApiAddMetadataUrlRequest {
 	return ApiAddMetadataUrlRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -56,7 +56,7 @@ func (a *MetadataUrlsApiService) AddMetadataUrl(ctx context.Context) ApiAddMetad
 // Execute executes the request
 //
 //	@return MetadataUrl
-func (a *MetadataUrlsApiService) AddMetadataUrlExecute(r ApiAddMetadataUrlRequest) (*MetadataUrl, *http.Response, error) {
+func (a *MetadataUrlsAPIService) AddMetadataUrlExecute(r ApiAddMetadataUrlRequest) (*MetadataUrl, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -64,7 +64,7 @@ func (a *MetadataUrlsApiService) AddMetadataUrlExecute(r ApiAddMetadataUrlReques
 		localVarReturnValue *MetadataUrl
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataUrlsApiService.AddMetadataUrl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataUrlsAPIService.AddMetadataUrl")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -146,7 +146,7 @@ func (a *MetadataUrlsApiService) AddMetadataUrlExecute(r ApiAddMetadataUrlReques
 
 type ApiDeleteMetadataUrlRequest struct {
 	ctx        context.Context
-	ApiService *MetadataUrlsApiService
+	ApiService *MetadataUrlsAPIService
 	id         string
 }
 
@@ -163,7 +163,7 @@ Delete Metadata URL with the specified ID. A 404 status code is returned for non
 	@param id ID of Metadata URL to delete.
 	@return ApiDeleteMetadataUrlRequest
 */
-func (a *MetadataUrlsApiService) DeleteMetadataUrl(ctx context.Context, id string) ApiDeleteMetadataUrlRequest {
+func (a *MetadataUrlsAPIService) DeleteMetadataUrl(ctx context.Context, id string) ApiDeleteMetadataUrlRequest {
 	return ApiDeleteMetadataUrlRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -172,14 +172,14 @@ func (a *MetadataUrlsApiService) DeleteMetadataUrl(ctx context.Context, id strin
 }
 
 // Execute executes the request
-func (a *MetadataUrlsApiService) DeleteMetadataUrlExecute(r ApiDeleteMetadataUrlRequest) (*http.Response, error) {
+func (a *MetadataUrlsAPIService) DeleteMetadataUrlExecute(r ApiDeleteMetadataUrlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataUrlsApiService.DeleteMetadataUrl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataUrlsAPIService.DeleteMetadataUrl")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -259,7 +259,7 @@ func (a *MetadataUrlsApiService) DeleteMetadataUrlExecute(r ApiDeleteMetadataUrl
 
 type ApiGetMetadataUrlRequest struct {
 	ctx        context.Context
-	ApiService *MetadataUrlsApiService
+	ApiService *MetadataUrlsAPIService
 	id         string
 }
 
@@ -276,7 +276,7 @@ Get a Metadata URL with the specified ID. A 404 status code is returned for none
 	@param id ID of Metadata URL to fetch
 	@return ApiGetMetadataUrlRequest
 */
-func (a *MetadataUrlsApiService) GetMetadataUrl(ctx context.Context, id string) ApiGetMetadataUrlRequest {
+func (a *MetadataUrlsAPIService) GetMetadataUrl(ctx context.Context, id string) ApiGetMetadataUrlRequest {
 	return ApiGetMetadataUrlRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -287,7 +287,7 @@ func (a *MetadataUrlsApiService) GetMetadataUrl(ctx context.Context, id string) 
 // Execute executes the request
 //
 //	@return MetadataUrl
-func (a *MetadataUrlsApiService) GetMetadataUrlExecute(r ApiGetMetadataUrlRequest) (*MetadataUrl, *http.Response, error) {
+func (a *MetadataUrlsAPIService) GetMetadataUrlExecute(r ApiGetMetadataUrlRequest) (*MetadataUrl, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -295,7 +295,7 @@ func (a *MetadataUrlsApiService) GetMetadataUrlExecute(r ApiGetMetadataUrlReques
 		localVarReturnValue *MetadataUrl
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataUrlsApiService.GetMetadataUrl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataUrlsAPIService.GetMetadataUrl")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -373,7 +373,7 @@ func (a *MetadataUrlsApiService) GetMetadataUrlExecute(r ApiGetMetadataUrlReques
 
 type ApiGetMetadataUrlsRequest struct {
 	ctx        context.Context
-	ApiService *MetadataUrlsApiService
+	ApiService *MetadataUrlsAPIService
 }
 
 func (r ApiGetMetadataUrlsRequest) Execute() (*MetadataUrls, *http.Response, error) {
@@ -386,7 +386,7 @@ GetMetadataUrls Get a list of Metadata URLs
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetMetadataUrlsRequest
 */
-func (a *MetadataUrlsApiService) GetMetadataUrls(ctx context.Context) ApiGetMetadataUrlsRequest {
+func (a *MetadataUrlsAPIService) GetMetadataUrls(ctx context.Context) ApiGetMetadataUrlsRequest {
 	return ApiGetMetadataUrlsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -396,7 +396,7 @@ func (a *MetadataUrlsApiService) GetMetadataUrls(ctx context.Context) ApiGetMeta
 // Execute executes the request
 //
 //	@return MetadataUrls
-func (a *MetadataUrlsApiService) GetMetadataUrlsExecute(r ApiGetMetadataUrlsRequest) (*MetadataUrls, *http.Response, error) {
+func (a *MetadataUrlsAPIService) GetMetadataUrlsExecute(r ApiGetMetadataUrlsRequest) (*MetadataUrls, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -404,7 +404,7 @@ func (a *MetadataUrlsApiService) GetMetadataUrlsExecute(r ApiGetMetadataUrlsRequ
 		localVarReturnValue *MetadataUrls
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataUrlsApiService.GetMetadataUrls")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataUrlsAPIService.GetMetadataUrls")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -471,7 +471,7 @@ func (a *MetadataUrlsApiService) GetMetadataUrlsExecute(r ApiGetMetadataUrlsRequ
 
 type ApiUpdateMetadataUrlRequest struct {
 	ctx        context.Context
-	ApiService *MetadataUrlsApiService
+	ApiService *MetadataUrlsAPIService
 	id         string
 	body       *MetadataUrl
 }
@@ -495,7 +495,7 @@ Update a Metadata URL by ID. If the Metadata URL is not properly configured, a 4
 	@param id ID of the Metadata URL to update.
 	@return ApiUpdateMetadataUrlRequest
 */
-func (a *MetadataUrlsApiService) UpdateMetadataUrl(ctx context.Context, id string) ApiUpdateMetadataUrlRequest {
+func (a *MetadataUrlsAPIService) UpdateMetadataUrl(ctx context.Context, id string) ApiUpdateMetadataUrlRequest {
 	return ApiUpdateMetadataUrlRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -506,7 +506,7 @@ func (a *MetadataUrlsApiService) UpdateMetadataUrl(ctx context.Context, id strin
 // Execute executes the request
 //
 //	@return MetadataUrl
-func (a *MetadataUrlsApiService) UpdateMetadataUrlExecute(r ApiUpdateMetadataUrlRequest) (*MetadataUrl, *http.Response, error) {
+func (a *MetadataUrlsAPIService) UpdateMetadataUrlExecute(r ApiUpdateMetadataUrlRequest) (*MetadataUrl, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -514,7 +514,7 @@ func (a *MetadataUrlsApiService) UpdateMetadataUrlExecute(r ApiUpdateMetadataUrl
 		localVarReturnValue *MetadataUrl
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataUrlsApiService.UpdateMetadataUrl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataUrlsAPIService.UpdateMetadataUrl")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

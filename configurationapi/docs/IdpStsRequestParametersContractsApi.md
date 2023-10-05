@@ -1,14 +1,14 @@
-# \IdpStsRequestParametersContractsApi
+# \IdpStsRequestParametersContractsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateStsRequestParamContract**](IdpStsRequestParametersContractsApi.md#CreateStsRequestParamContract) | **Post** /idp/stsRequestParametersContracts | Create a new STS Request Parameters Contract.
-[**DeleteStsRequestParamContractById**](IdpStsRequestParametersContractsApi.md#DeleteStsRequestParamContractById) | **Delete** /idp/stsRequestParametersContracts/{id} | Delete a STS Request Parameters Contract.
-[**GetStsRequestParamContractById**](IdpStsRequestParametersContractsApi.md#GetStsRequestParamContractById) | **Get** /idp/stsRequestParametersContracts/{id} | Get a STS Request Parameters Contract.
-[**GetStsRequestParamContracts**](IdpStsRequestParametersContractsApi.md#GetStsRequestParamContracts) | **Get** /idp/stsRequestParametersContracts | Get the list of STS Request Parameters Contracts.
-[**UpdateStsRequestParamContractById**](IdpStsRequestParametersContractsApi.md#UpdateStsRequestParamContractById) | **Put** /idp/stsRequestParametersContracts/{id} | Update a STS Request Parameters Contract.
+[**CreateStsRequestParamContract**](IdpStsRequestParametersContractsAPI.md#CreateStsRequestParamContract) | **Post** /idp/stsRequestParametersContracts | Create a new STS Request Parameters Contract.
+[**DeleteStsRequestParamContractById**](IdpStsRequestParametersContractsAPI.md#DeleteStsRequestParamContractById) | **Delete** /idp/stsRequestParametersContracts/{id} | Delete a STS Request Parameters Contract.
+[**GetStsRequestParamContractById**](IdpStsRequestParametersContractsAPI.md#GetStsRequestParamContractById) | **Get** /idp/stsRequestParametersContracts/{id} | Get a STS Request Parameters Contract.
+[**GetStsRequestParamContracts**](IdpStsRequestParametersContractsAPI.md#GetStsRequestParamContracts) | **Get** /idp/stsRequestParametersContracts | Get the list of STS Request Parameters Contracts.
+[**UpdateStsRequestParamContractById**](IdpStsRequestParametersContractsAPI.md#UpdateStsRequestParamContractById) | **Put** /idp/stsRequestParametersContracts/{id} | Update a STS Request Parameters Contract.
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpStsRequestParametersContractsApi.CreateStsRequestParamContract(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.IdpStsRequestParametersContractsAPI.CreateStsRequestParamContract(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpStsRequestParametersContractsApi.CreateStsRequestParamContract``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpStsRequestParametersContractsAPI.CreateStsRequestParamContract``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateStsRequestParamContract`: StsRequestParametersContract
-    fmt.Fprintf(os.Stdout, "Response from `IdpStsRequestParametersContractsApi.CreateStsRequestParamContract`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpStsRequestParametersContractsAPI.CreateStsRequestParamContract`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IdpStsRequestParametersContractsApi.DeleteStsRequestParamContractById(context.Background(), id).Execute()
+    r, err := apiClient.IdpStsRequestParametersContractsAPI.DeleteStsRequestParamContractById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpStsRequestParametersContractsApi.DeleteStsRequestParamContractById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpStsRequestParametersContractsAPI.DeleteStsRequestParamContractById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpStsRequestParametersContractsApi.GetStsRequestParamContractById(context.Background(), id).Execute()
+    resp, r, err := apiClient.IdpStsRequestParametersContractsAPI.GetStsRequestParamContractById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpStsRequestParametersContractsApi.GetStsRequestParamContractById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpStsRequestParametersContractsAPI.GetStsRequestParamContractById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetStsRequestParamContractById`: StsRequestParametersContract
-    fmt.Fprintf(os.Stdout, "Response from `IdpStsRequestParametersContractsApi.GetStsRequestParamContractById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpStsRequestParametersContractsAPI.GetStsRequestParamContractById`: %v\n", resp)
 }
 ```
 
@@ -232,13 +232,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpStsRequestParametersContractsApi.GetStsRequestParamContracts(context.Background()).Execute()
+    resp, r, err := apiClient.IdpStsRequestParametersContractsAPI.GetStsRequestParamContracts(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpStsRequestParametersContractsApi.GetStsRequestParamContracts``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpStsRequestParametersContractsAPI.GetStsRequestParamContracts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetStsRequestParamContracts`: StsRequestParametersContracts
-    fmt.Fprintf(os.Stdout, "Response from `IdpStsRequestParametersContractsApi.GetStsRequestParamContracts`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpStsRequestParametersContractsAPI.GetStsRequestParamContracts`: %v\n", resp)
 }
 ```
 
@@ -293,13 +293,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpStsRequestParametersContractsApi.UpdateStsRequestParamContractById(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.IdpStsRequestParametersContractsAPI.UpdateStsRequestParamContractById(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpStsRequestParametersContractsApi.UpdateStsRequestParamContractById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpStsRequestParametersContractsAPI.UpdateStsRequestParamContractById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateStsRequestParamContractById`: StsRequestParametersContract
-    fmt.Fprintf(os.Stdout, "Response from `IdpStsRequestParametersContractsApi.UpdateStsRequestParamContractById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpStsRequestParametersContractsAPI.UpdateStsRequestParamContractById`: %v\n", resp)
 }
 ```
 

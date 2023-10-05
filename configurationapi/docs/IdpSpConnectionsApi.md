@@ -1,21 +1,21 @@
-# \IdpSpConnectionsApi
+# \IdpSpConnectionsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddSpConnectionCert**](IdpSpConnectionsApi.md#AddSpConnectionCert) | **Post** /idp/spConnections/{id}/credentials/certs | Add a new SP connection certificate.
-[**CreateSpConnection**](IdpSpConnectionsApi.md#CreateSpConnection) | **Post** /idp/spConnections | Create a new SP connection.
-[**DeleteSpConnection**](IdpSpConnectionsApi.md#DeleteSpConnection) | **Delete** /idp/spConnections/{id} | Delete an SP connection.
-[**GetDecryptionKeys**](IdpSpConnectionsApi.md#GetDecryptionKeys) | **Get** /idp/spConnections/{id}/credentials/decryptionKeys | Get the decryption keys of an SP connection.
-[**GetSpConnection**](IdpSpConnectionsApi.md#GetSpConnection) | **Get** /idp/spConnections/{id} | Find SP connection by ID.
-[**GetSpConnectionCerts**](IdpSpConnectionsApi.md#GetSpConnectionCerts) | **Get** /idp/spConnections/{id}/credentials/certs | Get the SP connection&#39;s certificates.
-[**GetSpConnections**](IdpSpConnectionsApi.md#GetSpConnections) | **Get** /idp/spConnections | Get list of SP connections.
-[**GetSpSigningSettings**](IdpSpConnectionsApi.md#GetSpSigningSettings) | **Get** /idp/spConnections/{id}/credentials/signingSettings | Get the SP connection&#39;s signature settings.
-[**UpdateDecryptionKeys**](IdpSpConnectionsApi.md#UpdateDecryptionKeys) | **Put** /idp/spConnections/{id}/credentials/decryptionKeys | Updating the SP connection&#39;s decryption keys.
-[**UpdateSpConnection**](IdpSpConnectionsApi.md#UpdateSpConnection) | **Put** /idp/spConnections/{id} | Update an SP connection.
-[**UpdateSpConnectionCerts**](IdpSpConnectionsApi.md#UpdateSpConnectionCerts) | **Put** /idp/spConnections/{id}/credentials/certs | Update the SP connection&#39;s certificates.
-[**UpdateSpSigningSettings**](IdpSpConnectionsApi.md#UpdateSpSigningSettings) | **Put** /idp/spConnections/{id}/credentials/signingSettings | Update the SP connection&#39;s signature settings.
+[**AddSpConnectionCert**](IdpSpConnectionsAPI.md#AddSpConnectionCert) | **Post** /idp/spConnections/{id}/credentials/certs | Add a new SP connection certificate.
+[**CreateSpConnection**](IdpSpConnectionsAPI.md#CreateSpConnection) | **Post** /idp/spConnections | Create a new SP connection.
+[**DeleteSpConnection**](IdpSpConnectionsAPI.md#DeleteSpConnection) | **Delete** /idp/spConnections/{id} | Delete an SP connection.
+[**GetDecryptionKeys**](IdpSpConnectionsAPI.md#GetDecryptionKeys) | **Get** /idp/spConnections/{id}/credentials/decryptionKeys | Get the decryption keys of an SP connection.
+[**GetSpConnection**](IdpSpConnectionsAPI.md#GetSpConnection) | **Get** /idp/spConnections/{id} | Find SP connection by ID.
+[**GetSpConnectionCerts**](IdpSpConnectionsAPI.md#GetSpConnectionCerts) | **Get** /idp/spConnections/{id}/credentials/certs | Get the SP connection&#39;s certificates.
+[**GetSpConnections**](IdpSpConnectionsAPI.md#GetSpConnections) | **Get** /idp/spConnections | Get list of SP connections.
+[**GetSpSigningSettings**](IdpSpConnectionsAPI.md#GetSpSigningSettings) | **Get** /idp/spConnections/{id}/credentials/signingSettings | Get the SP connection&#39;s signature settings.
+[**UpdateDecryptionKeys**](IdpSpConnectionsAPI.md#UpdateDecryptionKeys) | **Put** /idp/spConnections/{id}/credentials/decryptionKeys | Updating the SP connection&#39;s decryption keys.
+[**UpdateSpConnection**](IdpSpConnectionsAPI.md#UpdateSpConnection) | **Put** /idp/spConnections/{id} | Update an SP connection.
+[**UpdateSpConnectionCerts**](IdpSpConnectionsAPI.md#UpdateSpConnectionCerts) | **Put** /idp/spConnections/{id}/credentials/certs | Update the SP connection&#39;s certificates.
+[**UpdateSpSigningSettings**](IdpSpConnectionsAPI.md#UpdateSpSigningSettings) | **Put** /idp/spConnections/{id}/credentials/signingSettings | Update the SP connection&#39;s signature settings.
 
 
 
@@ -45,13 +45,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpSpConnectionsApi.AddSpConnectionCert(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.IdpSpConnectionsAPI.AddSpConnectionCert(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsApi.AddSpConnectionCert``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.AddSpConnectionCert``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddSpConnectionCert`: ConnectionCert
-    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsApi.AddSpConnectionCert`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.AddSpConnectionCert`: %v\n", resp)
 }
 ```
 
@@ -117,13 +117,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpSpConnectionsApi.CreateSpConnection(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.IdpSpConnectionsAPI.CreateSpConnection(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsApi.CreateSpConnection``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.CreateSpConnection``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateSpConnection`: SpConnection
-    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsApi.CreateSpConnection`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.CreateSpConnection`: %v\n", resp)
 }
 ```
 
@@ -184,9 +184,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IdpSpConnectionsApi.DeleteSpConnection(context.Background(), id).Execute()
+    r, err := apiClient.IdpSpConnectionsAPI.DeleteSpConnection(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsApi.DeleteSpConnection``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.DeleteSpConnection``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -250,13 +250,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpSpConnectionsApi.GetDecryptionKeys(context.Background(), id).Execute()
+    resp, r, err := apiClient.IdpSpConnectionsAPI.GetDecryptionKeys(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsApi.GetDecryptionKeys``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.GetDecryptionKeys``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetDecryptionKeys`: DecryptionKeys
-    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsApi.GetDecryptionKeys`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.GetDecryptionKeys`: %v\n", resp)
 }
 ```
 
@@ -320,13 +320,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpSpConnectionsApi.GetSpConnection(context.Background(), id).Execute()
+    resp, r, err := apiClient.IdpSpConnectionsAPI.GetSpConnection(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsApi.GetSpConnection``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.GetSpConnection``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSpConnection`: SpConnection
-    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsApi.GetSpConnection`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.GetSpConnection`: %v\n", resp)
 }
 ```
 
@@ -388,13 +388,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpSpConnectionsApi.GetSpConnectionCerts(context.Background(), id).Execute()
+    resp, r, err := apiClient.IdpSpConnectionsAPI.GetSpConnectionCerts(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsApi.GetSpConnectionCerts``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.GetSpConnectionCerts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSpConnectionCerts`: ConnectionCerts
-    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsApi.GetSpConnectionCerts`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.GetSpConnectionCerts`: %v\n", resp)
 }
 ```
 
@@ -461,13 +461,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpSpConnectionsApi.GetSpConnections(context.Background()).EntityId(entityId).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
+    resp, r, err := apiClient.IdpSpConnectionsAPI.GetSpConnections(context.Background()).EntityId(entityId).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsApi.GetSpConnections``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.GetSpConnections``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSpConnections`: SpConnections
-    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsApi.GetSpConnections`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.GetSpConnections`: %v\n", resp)
 }
 ```
 
@@ -528,13 +528,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpSpConnectionsApi.GetSpSigningSettings(context.Background(), id).Execute()
+    resp, r, err := apiClient.IdpSpConnectionsAPI.GetSpSigningSettings(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsApi.GetSpSigningSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.GetSpSigningSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSpSigningSettings`: SigningSettings
-    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsApi.GetSpSigningSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.GetSpSigningSettings`: %v\n", resp)
 }
 ```
 
@@ -597,13 +597,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpSpConnectionsApi.UpdateDecryptionKeys(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.IdpSpConnectionsAPI.UpdateDecryptionKeys(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsApi.UpdateDecryptionKeys``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.UpdateDecryptionKeys``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateDecryptionKeys`: DecryptionKeys
-    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsApi.UpdateDecryptionKeys`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.UpdateDecryptionKeys`: %v\n", resp)
 }
 ```
 
@@ -670,13 +670,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpSpConnectionsApi.UpdateSpConnection(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.IdpSpConnectionsAPI.UpdateSpConnection(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsApi.UpdateSpConnection``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.UpdateSpConnection``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateSpConnection`: SpConnection
-    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsApi.UpdateSpConnection`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.UpdateSpConnection`: %v\n", resp)
 }
 ```
 
@@ -741,13 +741,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpSpConnectionsApi.UpdateSpConnectionCerts(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.IdpSpConnectionsAPI.UpdateSpConnectionCerts(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsApi.UpdateSpConnectionCerts``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.UpdateSpConnectionCerts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateSpConnectionCerts`: ConnectionCerts
-    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsApi.UpdateSpConnectionCerts`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.UpdateSpConnectionCerts`: %v\n", resp)
 }
 ```
 
@@ -811,13 +811,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpSpConnectionsApi.UpdateSpSigningSettings(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.IdpSpConnectionsAPI.UpdateSpSigningSettings(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsApi.UpdateSpSigningSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.UpdateSpSigningSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateSpSigningSettings`: SigningSettings
-    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsApi.UpdateSpSigningSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.UpdateSpSigningSettings`: %v\n", resp)
 }
 ```
 

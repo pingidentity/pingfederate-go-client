@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// OauthAuthorizationDetailTypesApiService OauthAuthorizationDetailTypesApi service
-type OauthAuthorizationDetailTypesApiService service
+// OauthAuthorizationDetailTypesAPIService OauthAuthorizationDetailTypesAPI service
+type OauthAuthorizationDetailTypesAPIService service
 
 type ApiAddAuthorizationDetailTypeRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthorizationDetailTypesApiService
+	ApiService *OauthAuthorizationDetailTypesAPIService
 	body       *AuthorizationDetailType
 }
 
@@ -46,7 +46,7 @@ Create an authorization detail type. If the authorization detail type is not pro
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddAuthorizationDetailTypeRequest
 */
-func (a *OauthAuthorizationDetailTypesApiService) AddAuthorizationDetailType(ctx context.Context) ApiAddAuthorizationDetailTypeRequest {
+func (a *OauthAuthorizationDetailTypesAPIService) AddAuthorizationDetailType(ctx context.Context) ApiAddAuthorizationDetailTypeRequest {
 	return ApiAddAuthorizationDetailTypeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -56,7 +56,7 @@ func (a *OauthAuthorizationDetailTypesApiService) AddAuthorizationDetailType(ctx
 // Execute executes the request
 //
 //	@return AuthorizationDetailType
-func (a *OauthAuthorizationDetailTypesApiService) AddAuthorizationDetailTypeExecute(r ApiAddAuthorizationDetailTypeRequest) (*AuthorizationDetailType, *http.Response, error) {
+func (a *OauthAuthorizationDetailTypesAPIService) AddAuthorizationDetailTypeExecute(r ApiAddAuthorizationDetailTypeRequest) (*AuthorizationDetailType, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -64,7 +64,7 @@ func (a *OauthAuthorizationDetailTypesApiService) AddAuthorizationDetailTypeExec
 		localVarReturnValue *AuthorizationDetailType
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailTypesApiService.AddAuthorizationDetailType")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailTypesAPIService.AddAuthorizationDetailType")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -146,7 +146,7 @@ func (a *OauthAuthorizationDetailTypesApiService) AddAuthorizationDetailTypeExec
 
 type ApiDeleteAuthorizationDetailTypeRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthorizationDetailTypesApiService
+	ApiService *OauthAuthorizationDetailTypesAPIService
 	id         string
 }
 
@@ -163,7 +163,7 @@ Delete an authorization detail type with the specified ID. A 404 status code is 
 	@param id ID of the authorization detail type.
 	@return ApiDeleteAuthorizationDetailTypeRequest
 */
-func (a *OauthAuthorizationDetailTypesApiService) DeleteAuthorizationDetailType(ctx context.Context, id string) ApiDeleteAuthorizationDetailTypeRequest {
+func (a *OauthAuthorizationDetailTypesAPIService) DeleteAuthorizationDetailType(ctx context.Context, id string) ApiDeleteAuthorizationDetailTypeRequest {
 	return ApiDeleteAuthorizationDetailTypeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -172,14 +172,14 @@ func (a *OauthAuthorizationDetailTypesApiService) DeleteAuthorizationDetailType(
 }
 
 // Execute executes the request
-func (a *OauthAuthorizationDetailTypesApiService) DeleteAuthorizationDetailTypeExecute(r ApiDeleteAuthorizationDetailTypeRequest) (*http.Response, error) {
+func (a *OauthAuthorizationDetailTypesAPIService) DeleteAuthorizationDetailTypeExecute(r ApiDeleteAuthorizationDetailTypeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailTypesApiService.DeleteAuthorizationDetailType")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailTypesAPIService.DeleteAuthorizationDetailType")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -248,7 +248,7 @@ func (a *OauthAuthorizationDetailTypesApiService) DeleteAuthorizationDetailTypeE
 
 type ApiGetAuthorizationDetailTypeByIdRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthorizationDetailTypesApiService
+	ApiService *OauthAuthorizationDetailTypesAPIService
 	id         string
 }
 
@@ -265,7 +265,7 @@ Get the configured authorization detail type with the specified ID. A 404 status
 	@param id ID of the authorization detail type.
 	@return ApiGetAuthorizationDetailTypeByIdRequest
 */
-func (a *OauthAuthorizationDetailTypesApiService) GetAuthorizationDetailTypeById(ctx context.Context, id string) ApiGetAuthorizationDetailTypeByIdRequest {
+func (a *OauthAuthorizationDetailTypesAPIService) GetAuthorizationDetailTypeById(ctx context.Context, id string) ApiGetAuthorizationDetailTypeByIdRequest {
 	return ApiGetAuthorizationDetailTypeByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -276,7 +276,7 @@ func (a *OauthAuthorizationDetailTypesApiService) GetAuthorizationDetailTypeById
 // Execute executes the request
 //
 //	@return AuthorizationDetailType
-func (a *OauthAuthorizationDetailTypesApiService) GetAuthorizationDetailTypeByIdExecute(r ApiGetAuthorizationDetailTypeByIdRequest) (*AuthorizationDetailType, *http.Response, error) {
+func (a *OauthAuthorizationDetailTypesAPIService) GetAuthorizationDetailTypeByIdExecute(r ApiGetAuthorizationDetailTypeByIdRequest) (*AuthorizationDetailType, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -284,7 +284,7 @@ func (a *OauthAuthorizationDetailTypesApiService) GetAuthorizationDetailTypeById
 		localVarReturnValue *AuthorizationDetailType
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailTypesApiService.GetAuthorizationDetailTypeById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailTypesAPIService.GetAuthorizationDetailTypeById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -352,7 +352,7 @@ func (a *OauthAuthorizationDetailTypesApiService) GetAuthorizationDetailTypeById
 
 type ApiGetAuthorizationDetailTypesRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthorizationDetailTypesApiService
+	ApiService *OauthAuthorizationDetailTypesAPIService
 }
 
 func (r ApiGetAuthorizationDetailTypesRequest) Execute() (*AuthorizationDetailTypes, *http.Response, error) {
@@ -365,7 +365,7 @@ GetAuthorizationDetailTypes Get the list of authorization detail types.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAuthorizationDetailTypesRequest
 */
-func (a *OauthAuthorizationDetailTypesApiService) GetAuthorizationDetailTypes(ctx context.Context) ApiGetAuthorizationDetailTypesRequest {
+func (a *OauthAuthorizationDetailTypesAPIService) GetAuthorizationDetailTypes(ctx context.Context) ApiGetAuthorizationDetailTypesRequest {
 	return ApiGetAuthorizationDetailTypesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -375,7 +375,7 @@ func (a *OauthAuthorizationDetailTypesApiService) GetAuthorizationDetailTypes(ct
 // Execute executes the request
 //
 //	@return AuthorizationDetailTypes
-func (a *OauthAuthorizationDetailTypesApiService) GetAuthorizationDetailTypesExecute(r ApiGetAuthorizationDetailTypesRequest) (*AuthorizationDetailTypes, *http.Response, error) {
+func (a *OauthAuthorizationDetailTypesAPIService) GetAuthorizationDetailTypesExecute(r ApiGetAuthorizationDetailTypesRequest) (*AuthorizationDetailTypes, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -383,7 +383,7 @@ func (a *OauthAuthorizationDetailTypesApiService) GetAuthorizationDetailTypesExe
 		localVarReturnValue *AuthorizationDetailTypes
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailTypesApiService.GetAuthorizationDetailTypes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailTypesAPIService.GetAuthorizationDetailTypes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -450,7 +450,7 @@ func (a *OauthAuthorizationDetailTypesApiService) GetAuthorizationDetailTypesExe
 
 type ApiUpdateAuthorizationDetailTypeRequest struct {
 	ctx        context.Context
-	ApiService *OauthAuthorizationDetailTypesApiService
+	ApiService *OauthAuthorizationDetailTypesAPIService
 	id         string
 	body       *AuthorizationDetailType
 }
@@ -474,7 +474,7 @@ Update an authorization detail type with matching ID. If the type is not properl
 	@param id ID of the authorization detail type.
 	@return ApiUpdateAuthorizationDetailTypeRequest
 */
-func (a *OauthAuthorizationDetailTypesApiService) UpdateAuthorizationDetailType(ctx context.Context, id string) ApiUpdateAuthorizationDetailTypeRequest {
+func (a *OauthAuthorizationDetailTypesAPIService) UpdateAuthorizationDetailType(ctx context.Context, id string) ApiUpdateAuthorizationDetailTypeRequest {
 	return ApiUpdateAuthorizationDetailTypeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -485,7 +485,7 @@ func (a *OauthAuthorizationDetailTypesApiService) UpdateAuthorizationDetailType(
 // Execute executes the request
 //
 //	@return AuthorizationDetailType
-func (a *OauthAuthorizationDetailTypesApiService) UpdateAuthorizationDetailTypeExecute(r ApiUpdateAuthorizationDetailTypeRequest) (*AuthorizationDetailType, *http.Response, error) {
+func (a *OauthAuthorizationDetailTypesAPIService) UpdateAuthorizationDetailTypeExecute(r ApiUpdateAuthorizationDetailTypeRequest) (*AuthorizationDetailType, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -493,7 +493,7 @@ func (a *OauthAuthorizationDetailTypesApiService) UpdateAuthorizationDetailTypeE
 		localVarReturnValue *AuthorizationDetailType
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailTypesApiService.UpdateAuthorizationDetailType")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthAuthorizationDetailTypesAPIService.UpdateAuthorizationDetailType")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

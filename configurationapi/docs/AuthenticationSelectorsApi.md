@@ -1,16 +1,16 @@
-# \AuthenticationSelectorsApi
+# \AuthenticationSelectorsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateAuthenticationSelector**](AuthenticationSelectorsApi.md#CreateAuthenticationSelector) | **Post** /authenticationSelectors | Create a new authentication selector instance.
-[**DeleteAuthenticationSelector**](AuthenticationSelectorsApi.md#DeleteAuthenticationSelector) | **Delete** /authenticationSelectors/{id} | Delete an Authentication Selector instance.
-[**GetAuthenticationSelector**](AuthenticationSelectorsApi.md#GetAuthenticationSelector) | **Get** /authenticationSelectors/{id} | Get an Authentication Selector instance by ID.
-[**GetAuthenticationSelectorDescriptors**](AuthenticationSelectorsApi.md#GetAuthenticationSelectorDescriptors) | **Get** /authenticationSelectors/descriptors | Get the list of available Authentication Selector descriptors.
-[**GetAuthenticationSelectorDescriptorsById**](AuthenticationSelectorsApi.md#GetAuthenticationSelectorDescriptorsById) | **Get** /authenticationSelectors/descriptors/{id} | Get the description of an Authentication Selector plugin by ID.
-[**GetAuthenticationSelectors**](AuthenticationSelectorsApi.md#GetAuthenticationSelectors) | **Get** /authenticationSelectors | Get the list of configured Authentication Selector instances.
-[**UpdateAuthenticationSelector**](AuthenticationSelectorsApi.md#UpdateAuthenticationSelector) | **Put** /authenticationSelectors/{id} | Update an authentication selector instance.
+[**CreateAuthenticationSelector**](AuthenticationSelectorsAPI.md#CreateAuthenticationSelector) | **Post** /authenticationSelectors | Create a new authentication selector instance.
+[**DeleteAuthenticationSelector**](AuthenticationSelectorsAPI.md#DeleteAuthenticationSelector) | **Delete** /authenticationSelectors/{id} | Delete an Authentication Selector instance.
+[**GetAuthenticationSelector**](AuthenticationSelectorsAPI.md#GetAuthenticationSelector) | **Get** /authenticationSelectors/{id} | Get an Authentication Selector instance by ID.
+[**GetAuthenticationSelectorDescriptors**](AuthenticationSelectorsAPI.md#GetAuthenticationSelectorDescriptors) | **Get** /authenticationSelectors/descriptors | Get the list of available Authentication Selector descriptors.
+[**GetAuthenticationSelectorDescriptorsById**](AuthenticationSelectorsAPI.md#GetAuthenticationSelectorDescriptorsById) | **Get** /authenticationSelectors/descriptors/{id} | Get the description of an Authentication Selector plugin by ID.
+[**GetAuthenticationSelectors**](AuthenticationSelectorsAPI.md#GetAuthenticationSelectors) | **Get** /authenticationSelectors | Get the list of configured Authentication Selector instances.
+[**UpdateAuthenticationSelector**](AuthenticationSelectorsAPI.md#UpdateAuthenticationSelector) | **Put** /authenticationSelectors/{id} | Update an authentication selector instance.
 
 
 
@@ -39,13 +39,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationSelectorsApi.CreateAuthenticationSelector(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.AuthenticationSelectorsAPI.CreateAuthenticationSelector(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsApi.CreateAuthenticationSelector``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsAPI.CreateAuthenticationSelector``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateAuthenticationSelector`: AuthenticationSelector
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsApi.CreateAuthenticationSelector`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsAPI.CreateAuthenticationSelector`: %v\n", resp)
 }
 ```
 
@@ -105,9 +105,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AuthenticationSelectorsApi.DeleteAuthenticationSelector(context.Background(), id).Execute()
+    r, err := apiClient.AuthenticationSelectorsAPI.DeleteAuthenticationSelector(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsApi.DeleteAuthenticationSelector``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsAPI.DeleteAuthenticationSelector``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -173,13 +173,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationSelectorsApi.GetAuthenticationSelector(context.Background(), id).Execute()
+    resp, r, err := apiClient.AuthenticationSelectorsAPI.GetAuthenticationSelector(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsApi.GetAuthenticationSelector``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsAPI.GetAuthenticationSelector``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAuthenticationSelector`: AuthenticationSelector
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsApi.GetAuthenticationSelector`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsAPI.GetAuthenticationSelector`: %v\n", resp)
 }
 ```
 
@@ -240,13 +240,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationSelectorsApi.GetAuthenticationSelectorDescriptors(context.Background()).Execute()
+    resp, r, err := apiClient.AuthenticationSelectorsAPI.GetAuthenticationSelectorDescriptors(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsApi.GetAuthenticationSelectorDescriptors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsAPI.GetAuthenticationSelectorDescriptors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAuthenticationSelectorDescriptors`: AuthenticationSelectorDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsApi.GetAuthenticationSelectorDescriptors`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsAPI.GetAuthenticationSelectorDescriptors`: %v\n", resp)
 }
 ```
 
@@ -302,13 +302,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationSelectorsApi.GetAuthenticationSelectorDescriptorsById(context.Background(), id).Execute()
+    resp, r, err := apiClient.AuthenticationSelectorsAPI.GetAuthenticationSelectorDescriptorsById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsApi.GetAuthenticationSelectorDescriptorsById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsAPI.GetAuthenticationSelectorDescriptorsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAuthenticationSelectorDescriptorsById`: AuthenticationSelectorDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsApi.GetAuthenticationSelectorDescriptorsById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsAPI.GetAuthenticationSelectorDescriptorsById`: %v\n", resp)
 }
 ```
 
@@ -372,13 +372,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationSelectorsApi.GetAuthenticationSelectors(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
+    resp, r, err := apiClient.AuthenticationSelectorsAPI.GetAuthenticationSelectors(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsApi.GetAuthenticationSelectors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsAPI.GetAuthenticationSelectors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAuthenticationSelectors`: AuthenticationSelectors
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsApi.GetAuthenticationSelectors`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsAPI.GetAuthenticationSelectors`: %v\n", resp)
 }
 ```
 
@@ -441,13 +441,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationSelectorsApi.UpdateAuthenticationSelector(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.AuthenticationSelectorsAPI.UpdateAuthenticationSelector(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsApi.UpdateAuthenticationSelector``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsAPI.UpdateAuthenticationSelector``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateAuthenticationSelector`: AuthenticationSelector
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsApi.UpdateAuthenticationSelector`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsAPI.UpdateAuthenticationSelector`: %v\n", resp)
 }
 ```
 

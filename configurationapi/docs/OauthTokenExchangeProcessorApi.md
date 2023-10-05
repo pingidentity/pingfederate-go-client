@@ -1,16 +1,16 @@
-# \OauthTokenExchangeProcessorApi
+# \OauthTokenExchangeProcessorAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateOauthTokenExchangeProcessorPolicy**](OauthTokenExchangeProcessorApi.md#CreateOauthTokenExchangeProcessorPolicy) | **Post** /oauth/tokenExchange/processor/policies | Create a new OAuth 2.0 Token Exchange Processor policy.
-[**DeleteOauthTokenExchangeProcessorPolicyy**](OauthTokenExchangeProcessorApi.md#DeleteOauthTokenExchangeProcessorPolicyy) | **Delete** /oauth/tokenExchange/processor/policies/{id} | Delete an OAuth 2.0 Token Exchange Processor policy.
-[**GetOauthTokenExchangeProcessorPolicyById**](OauthTokenExchangeProcessorApi.md#GetOauthTokenExchangeProcessorPolicyById) | **Get** /oauth/tokenExchange/processor/policies/{id} | Find an OAuth 2.0 Token Exchange Processor policy by ID.
-[**GetOauthTokenExchangeProcessorPolicyPolicies**](OauthTokenExchangeProcessorApi.md#GetOauthTokenExchangeProcessorPolicyPolicies) | **Get** /oauth/tokenExchange/processor/policies | Get list of OAuth 2.0 Token Exchange Processor policies.
-[**GetOauthTokenExchangeProcessorPolicySettings**](OauthTokenExchangeProcessorApi.md#GetOauthTokenExchangeProcessorPolicySettings) | **Get** /oauth/tokenExchange/processor/settings | Get general OAuth 2.0 Token Exchange Processor settings.
-[**UpdateOauthTokenExchangeProcessorPolicy**](OauthTokenExchangeProcessorApi.md#UpdateOauthTokenExchangeProcessorPolicy) | **Put** /oauth/tokenExchange/processor/policies/{id} | Update an OAuth 2.0 Token Exchange Processor policy.
-[**UpdateOauthTokenExchangeProcessorPolicySettings**](OauthTokenExchangeProcessorApi.md#UpdateOauthTokenExchangeProcessorPolicySettings) | **Put** /oauth/tokenExchange/processor/settings | Update general OAuth 2.0 Token Exchange Processor settings.
+[**CreateOauthTokenExchangeProcessorPolicy**](OauthTokenExchangeProcessorAPI.md#CreateOauthTokenExchangeProcessorPolicy) | **Post** /oauth/tokenExchange/processor/policies | Create a new OAuth 2.0 Token Exchange Processor policy.
+[**DeleteOauthTokenExchangeProcessorPolicyy**](OauthTokenExchangeProcessorAPI.md#DeleteOauthTokenExchangeProcessorPolicyy) | **Delete** /oauth/tokenExchange/processor/policies/{id} | Delete an OAuth 2.0 Token Exchange Processor policy.
+[**GetOauthTokenExchangeProcessorPolicyById**](OauthTokenExchangeProcessorAPI.md#GetOauthTokenExchangeProcessorPolicyById) | **Get** /oauth/tokenExchange/processor/policies/{id} | Find an OAuth 2.0 Token Exchange Processor policy by ID.
+[**GetOauthTokenExchangeProcessorPolicyPolicies**](OauthTokenExchangeProcessorAPI.md#GetOauthTokenExchangeProcessorPolicyPolicies) | **Get** /oauth/tokenExchange/processor/policies | Get list of OAuth 2.0 Token Exchange Processor policies.
+[**GetOauthTokenExchangeProcessorPolicySettings**](OauthTokenExchangeProcessorAPI.md#GetOauthTokenExchangeProcessorPolicySettings) | **Get** /oauth/tokenExchange/processor/settings | Get general OAuth 2.0 Token Exchange Processor settings.
+[**UpdateOauthTokenExchangeProcessorPolicy**](OauthTokenExchangeProcessorAPI.md#UpdateOauthTokenExchangeProcessorPolicy) | **Put** /oauth/tokenExchange/processor/policies/{id} | Update an OAuth 2.0 Token Exchange Processor policy.
+[**UpdateOauthTokenExchangeProcessorPolicySettings**](OauthTokenExchangeProcessorAPI.md#UpdateOauthTokenExchangeProcessorPolicySettings) | **Put** /oauth/tokenExchange/processor/settings | Update general OAuth 2.0 Token Exchange Processor settings.
 
 
 
@@ -40,13 +40,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeProcessorApi.CreateOauthTokenExchangeProcessorPolicy(context.Background()).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.CreateOauthTokenExchangeProcessorPolicy(context.Background()).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorApi.CreateOauthTokenExchangeProcessorPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.CreateOauthTokenExchangeProcessorPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateOauthTokenExchangeProcessorPolicy`: TokenExchangeProcessorPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorApi.CreateOauthTokenExchangeProcessorPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorAPI.CreateOauthTokenExchangeProcessorPolicy`: %v\n", resp)
 }
 ```
 
@@ -107,9 +107,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthTokenExchangeProcessorApi.DeleteOauthTokenExchangeProcessorPolicyy(context.Background(), id).Execute()
+    r, err := apiClient.OauthTokenExchangeProcessorAPI.DeleteOauthTokenExchangeProcessorPolicyy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorApi.DeleteOauthTokenExchangeProcessorPolicyy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.DeleteOauthTokenExchangeProcessorPolicyy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,13 +175,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeProcessorApi.GetOauthTokenExchangeProcessorPolicyById(context.Background(), id).Execute()
+    resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicyById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorApi.GetOauthTokenExchangeProcessorPolicyById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicyById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOauthTokenExchangeProcessorPolicyById`: TokenExchangeProcessorPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorApi.GetOauthTokenExchangeProcessorPolicyById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicyById`: %v\n", resp)
 }
 ```
 
@@ -242,13 +242,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeProcessorApi.GetOauthTokenExchangeProcessorPolicyPolicies(context.Background()).Execute()
+    resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicyPolicies(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorApi.GetOauthTokenExchangeProcessorPolicyPolicies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicyPolicies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOauthTokenExchangeProcessorPolicyPolicies`: TokenExchangeProcessorPolicies
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorApi.GetOauthTokenExchangeProcessorPolicyPolicies`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicyPolicies`: %v\n", resp)
 }
 ```
 
@@ -301,13 +301,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeProcessorApi.GetOauthTokenExchangeProcessorPolicySettings(context.Background()).Execute()
+    resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicySettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorApi.GetOauthTokenExchangeProcessorPolicySettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicySettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOauthTokenExchangeProcessorPolicySettings`: TokenExchangeProcessorSettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorApi.GetOauthTokenExchangeProcessorPolicySettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicySettings`: %v\n", resp)
 }
 ```
 
@@ -365,13 +365,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeProcessorApi.UpdateOauthTokenExchangeProcessorPolicy(context.Background(), id).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicy(context.Background(), id).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorApi.UpdateOauthTokenExchangeProcessorPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateOauthTokenExchangeProcessorPolicy`: TokenExchangeProcessorPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorApi.UpdateOauthTokenExchangeProcessorPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicy`: %v\n", resp)
 }
 ```
 
@@ -436,13 +436,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeProcessorApi.UpdateOauthTokenExchangeProcessorPolicySettings(context.Background()).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicySettings(context.Background()).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorApi.UpdateOauthTokenExchangeProcessorPolicySettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicySettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateOauthTokenExchangeProcessorPolicySettings`: TokenExchangeProcessorSettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorApi.UpdateOauthTokenExchangeProcessorPolicySettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicySettings`: %v\n", resp)
 }
 ```
 

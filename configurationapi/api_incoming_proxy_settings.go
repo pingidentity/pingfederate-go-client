@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// IncomingProxySettingsApiService IncomingProxySettingsApi service
-type IncomingProxySettingsApiService service
+// IncomingProxySettingsAPIService IncomingProxySettingsAPI service
+type IncomingProxySettingsAPIService service
 
 type ApiGetIncomingProxySettingsRequest struct {
 	ctx        context.Context
-	ApiService *IncomingProxySettingsApiService
+	ApiService *IncomingProxySettingsAPIService
 }
 
 func (r ApiGetIncomingProxySettingsRequest) Execute() (*IncomingProxySettings, *http.Response, error) {
@@ -38,7 +38,7 @@ When PingFederate is deployed behind a proxy server or load balancer, use inform
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetIncomingProxySettingsRequest
 */
-func (a *IncomingProxySettingsApiService) GetIncomingProxySettings(ctx context.Context) ApiGetIncomingProxySettingsRequest {
+func (a *IncomingProxySettingsAPIService) GetIncomingProxySettings(ctx context.Context) ApiGetIncomingProxySettingsRequest {
 	return ApiGetIncomingProxySettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -48,7 +48,7 @@ func (a *IncomingProxySettingsApiService) GetIncomingProxySettings(ctx context.C
 // Execute executes the request
 //
 //	@return IncomingProxySettings
-func (a *IncomingProxySettingsApiService) GetIncomingProxySettingsExecute(r ApiGetIncomingProxySettingsRequest) (*IncomingProxySettings, *http.Response, error) {
+func (a *IncomingProxySettingsAPIService) GetIncomingProxySettingsExecute(r ApiGetIncomingProxySettingsRequest) (*IncomingProxySettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -56,7 +56,7 @@ func (a *IncomingProxySettingsApiService) GetIncomingProxySettingsExecute(r ApiG
 		localVarReturnValue *IncomingProxySettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IncomingProxySettingsApiService.GetIncomingProxySettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IncomingProxySettingsAPIService.GetIncomingProxySettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -123,7 +123,7 @@ func (a *IncomingProxySettingsApiService) GetIncomingProxySettingsExecute(r ApiG
 
 type ApiUpdateIncomingProxySettingsRequest struct {
 	ctx        context.Context
-	ApiService *IncomingProxySettingsApiService
+	ApiService *IncomingProxySettingsAPIService
 	body       *IncomingProxySettings
 }
 
@@ -145,7 +145,7 @@ When PingFederate is deployed behind a proxy server or load balancer, use inform
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateIncomingProxySettingsRequest
 */
-func (a *IncomingProxySettingsApiService) UpdateIncomingProxySettings(ctx context.Context) ApiUpdateIncomingProxySettingsRequest {
+func (a *IncomingProxySettingsAPIService) UpdateIncomingProxySettings(ctx context.Context) ApiUpdateIncomingProxySettingsRequest {
 	return ApiUpdateIncomingProxySettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -155,7 +155,7 @@ func (a *IncomingProxySettingsApiService) UpdateIncomingProxySettings(ctx contex
 // Execute executes the request
 //
 //	@return IncomingProxySettings
-func (a *IncomingProxySettingsApiService) UpdateIncomingProxySettingsExecute(r ApiUpdateIncomingProxySettingsRequest) (*IncomingProxySettings, *http.Response, error) {
+func (a *IncomingProxySettingsAPIService) UpdateIncomingProxySettingsExecute(r ApiUpdateIncomingProxySettingsRequest) (*IncomingProxySettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -163,7 +163,7 @@ func (a *IncomingProxySettingsApiService) UpdateIncomingProxySettingsExecute(r A
 		localVarReturnValue *IncomingProxySettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IncomingProxySettingsApiService.UpdateIncomingProxySettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IncomingProxySettingsAPIService.UpdateIncomingProxySettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

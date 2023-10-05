@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// OauthResourceOwnerCredentialsMappingsApiService OauthResourceOwnerCredentialsMappingsApi service
-type OauthResourceOwnerCredentialsMappingsApiService service
+// OauthResourceOwnerCredentialsMappingsAPIService OauthResourceOwnerCredentialsMappingsAPI service
+type OauthResourceOwnerCredentialsMappingsAPIService service
 
 type ApiCreateResourceOwnerCredentialsMappingRequest struct {
 	ctx                       context.Context
-	ApiService                *OauthResourceOwnerCredentialsMappingsApiService
+	ApiService                *OauthResourceOwnerCredentialsMappingsAPIService
 	body                      *ResourceOwnerCredentialsMapping
 	xBypassExternalValidation *bool
 }
@@ -53,7 +53,7 @@ Create a new Resource Owner Credentials mapping. If a Resource Owner Credentials
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateResourceOwnerCredentialsMappingRequest
 */
-func (a *OauthResourceOwnerCredentialsMappingsApiService) CreateResourceOwnerCredentialsMapping(ctx context.Context) ApiCreateResourceOwnerCredentialsMappingRequest {
+func (a *OauthResourceOwnerCredentialsMappingsAPIService) CreateResourceOwnerCredentialsMapping(ctx context.Context) ApiCreateResourceOwnerCredentialsMappingRequest {
 	return ApiCreateResourceOwnerCredentialsMappingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -63,7 +63,7 @@ func (a *OauthResourceOwnerCredentialsMappingsApiService) CreateResourceOwnerCre
 // Execute executes the request
 //
 //	@return ResourceOwnerCredentialsMapping
-func (a *OauthResourceOwnerCredentialsMappingsApiService) CreateResourceOwnerCredentialsMappingExecute(r ApiCreateResourceOwnerCredentialsMappingRequest) (*ResourceOwnerCredentialsMapping, *http.Response, error) {
+func (a *OauthResourceOwnerCredentialsMappingsAPIService) CreateResourceOwnerCredentialsMappingExecute(r ApiCreateResourceOwnerCredentialsMappingRequest) (*ResourceOwnerCredentialsMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -71,7 +71,7 @@ func (a *OauthResourceOwnerCredentialsMappingsApiService) CreateResourceOwnerCre
 		localVarReturnValue *ResourceOwnerCredentialsMapping
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthResourceOwnerCredentialsMappingsApiService.CreateResourceOwnerCredentialsMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthResourceOwnerCredentialsMappingsAPIService.CreateResourceOwnerCredentialsMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -156,7 +156,7 @@ func (a *OauthResourceOwnerCredentialsMappingsApiService) CreateResourceOwnerCre
 
 type ApiDeleteResourceOwnerCredentialsMappingRequest struct {
 	ctx        context.Context
-	ApiService *OauthResourceOwnerCredentialsMappingsApiService
+	ApiService *OauthResourceOwnerCredentialsMappingsAPIService
 	id         string
 }
 
@@ -171,7 +171,7 @@ DeleteResourceOwnerCredentialsMapping Delete a Resource Owner Credentials mappin
 	@param id ID of the Resource Owner Credentials mapping.
 	@return ApiDeleteResourceOwnerCredentialsMappingRequest
 */
-func (a *OauthResourceOwnerCredentialsMappingsApiService) DeleteResourceOwnerCredentialsMapping(ctx context.Context, id string) ApiDeleteResourceOwnerCredentialsMappingRequest {
+func (a *OauthResourceOwnerCredentialsMappingsAPIService) DeleteResourceOwnerCredentialsMapping(ctx context.Context, id string) ApiDeleteResourceOwnerCredentialsMappingRequest {
 	return ApiDeleteResourceOwnerCredentialsMappingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -180,14 +180,14 @@ func (a *OauthResourceOwnerCredentialsMappingsApiService) DeleteResourceOwnerCre
 }
 
 // Execute executes the request
-func (a *OauthResourceOwnerCredentialsMappingsApiService) DeleteResourceOwnerCredentialsMappingExecute(r ApiDeleteResourceOwnerCredentialsMappingRequest) (*http.Response, error) {
+func (a *OauthResourceOwnerCredentialsMappingsAPIService) DeleteResourceOwnerCredentialsMappingExecute(r ApiDeleteResourceOwnerCredentialsMappingRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthResourceOwnerCredentialsMappingsApiService.DeleteResourceOwnerCredentialsMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthResourceOwnerCredentialsMappingsAPIService.DeleteResourceOwnerCredentialsMapping")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -256,7 +256,7 @@ func (a *OauthResourceOwnerCredentialsMappingsApiService) DeleteResourceOwnerCre
 
 type ApiGetResourceOwnerCredentialsMappingRequest struct {
 	ctx        context.Context
-	ApiService *OauthResourceOwnerCredentialsMappingsApiService
+	ApiService *OauthResourceOwnerCredentialsMappingsAPIService
 	id         string
 }
 
@@ -271,7 +271,7 @@ GetResourceOwnerCredentialsMapping Find the Resource Owner Credentials mapping b
 	@param id ID of the Resource Owner Credentials mapping.
 	@return ApiGetResourceOwnerCredentialsMappingRequest
 */
-func (a *OauthResourceOwnerCredentialsMappingsApiService) GetResourceOwnerCredentialsMapping(ctx context.Context, id string) ApiGetResourceOwnerCredentialsMappingRequest {
+func (a *OauthResourceOwnerCredentialsMappingsAPIService) GetResourceOwnerCredentialsMapping(ctx context.Context, id string) ApiGetResourceOwnerCredentialsMappingRequest {
 	return ApiGetResourceOwnerCredentialsMappingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -282,7 +282,7 @@ func (a *OauthResourceOwnerCredentialsMappingsApiService) GetResourceOwnerCreden
 // Execute executes the request
 //
 //	@return ResourceOwnerCredentialsMapping
-func (a *OauthResourceOwnerCredentialsMappingsApiService) GetResourceOwnerCredentialsMappingExecute(r ApiGetResourceOwnerCredentialsMappingRequest) (*ResourceOwnerCredentialsMapping, *http.Response, error) {
+func (a *OauthResourceOwnerCredentialsMappingsAPIService) GetResourceOwnerCredentialsMappingExecute(r ApiGetResourceOwnerCredentialsMappingRequest) (*ResourceOwnerCredentialsMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -290,7 +290,7 @@ func (a *OauthResourceOwnerCredentialsMappingsApiService) GetResourceOwnerCreden
 		localVarReturnValue *ResourceOwnerCredentialsMapping
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthResourceOwnerCredentialsMappingsApiService.GetResourceOwnerCredentialsMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthResourceOwnerCredentialsMappingsAPIService.GetResourceOwnerCredentialsMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -368,7 +368,7 @@ func (a *OauthResourceOwnerCredentialsMappingsApiService) GetResourceOwnerCreden
 
 type ApiGetResourceOwnerCredentialsMappingsRequest struct {
 	ctx        context.Context
-	ApiService *OauthResourceOwnerCredentialsMappingsApiService
+	ApiService *OauthResourceOwnerCredentialsMappingsAPIService
 }
 
 func (r ApiGetResourceOwnerCredentialsMappingsRequest) Execute() (*ResourceOwnerCredentialsMappings, *http.Response, error) {
@@ -381,7 +381,7 @@ GetResourceOwnerCredentialsMappings Get the list of Resource Owner Credentials G
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetResourceOwnerCredentialsMappingsRequest
 */
-func (a *OauthResourceOwnerCredentialsMappingsApiService) GetResourceOwnerCredentialsMappings(ctx context.Context) ApiGetResourceOwnerCredentialsMappingsRequest {
+func (a *OauthResourceOwnerCredentialsMappingsAPIService) GetResourceOwnerCredentialsMappings(ctx context.Context) ApiGetResourceOwnerCredentialsMappingsRequest {
 	return ApiGetResourceOwnerCredentialsMappingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -391,7 +391,7 @@ func (a *OauthResourceOwnerCredentialsMappingsApiService) GetResourceOwnerCreden
 // Execute executes the request
 //
 //	@return ResourceOwnerCredentialsMappings
-func (a *OauthResourceOwnerCredentialsMappingsApiService) GetResourceOwnerCredentialsMappingsExecute(r ApiGetResourceOwnerCredentialsMappingsRequest) (*ResourceOwnerCredentialsMappings, *http.Response, error) {
+func (a *OauthResourceOwnerCredentialsMappingsAPIService) GetResourceOwnerCredentialsMappingsExecute(r ApiGetResourceOwnerCredentialsMappingsRequest) (*ResourceOwnerCredentialsMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -399,7 +399,7 @@ func (a *OauthResourceOwnerCredentialsMappingsApiService) GetResourceOwnerCreden
 		localVarReturnValue *ResourceOwnerCredentialsMappings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthResourceOwnerCredentialsMappingsApiService.GetResourceOwnerCredentialsMappings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthResourceOwnerCredentialsMappingsAPIService.GetResourceOwnerCredentialsMappings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -466,7 +466,7 @@ func (a *OauthResourceOwnerCredentialsMappingsApiService) GetResourceOwnerCreden
 
 type ApiUpdateResourceOwnerCredentialsMappingRequest struct {
 	ctx                       context.Context
-	ApiService                *OauthResourceOwnerCredentialsMappingsApiService
+	ApiService                *OauthResourceOwnerCredentialsMappingsAPIService
 	id                        string
 	body                      *ResourceOwnerCredentialsMapping
 	xBypassExternalValidation *bool
@@ -495,7 +495,7 @@ UpdateResourceOwnerCredentialsMapping Update a Resource Owner Credentials mappin
 	@param id ID of the Resource Owner Credentials mapping to update.
 	@return ApiUpdateResourceOwnerCredentialsMappingRequest
 */
-func (a *OauthResourceOwnerCredentialsMappingsApiService) UpdateResourceOwnerCredentialsMapping(ctx context.Context, id string) ApiUpdateResourceOwnerCredentialsMappingRequest {
+func (a *OauthResourceOwnerCredentialsMappingsAPIService) UpdateResourceOwnerCredentialsMapping(ctx context.Context, id string) ApiUpdateResourceOwnerCredentialsMappingRequest {
 	return ApiUpdateResourceOwnerCredentialsMappingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -506,7 +506,7 @@ func (a *OauthResourceOwnerCredentialsMappingsApiService) UpdateResourceOwnerCre
 // Execute executes the request
 //
 //	@return ResourceOwnerCredentialsMapping
-func (a *OauthResourceOwnerCredentialsMappingsApiService) UpdateResourceOwnerCredentialsMappingExecute(r ApiUpdateResourceOwnerCredentialsMappingRequest) (*ResourceOwnerCredentialsMapping, *http.Response, error) {
+func (a *OauthResourceOwnerCredentialsMappingsAPIService) UpdateResourceOwnerCredentialsMappingExecute(r ApiUpdateResourceOwnerCredentialsMappingRequest) (*ResourceOwnerCredentialsMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -514,7 +514,7 @@ func (a *OauthResourceOwnerCredentialsMappingsApiService) UpdateResourceOwnerCre
 		localVarReturnValue *ResourceOwnerCredentialsMapping
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthResourceOwnerCredentialsMappingsApiService.UpdateResourceOwnerCredentialsMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthResourceOwnerCredentialsMappingsAPIService.UpdateResourceOwnerCredentialsMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

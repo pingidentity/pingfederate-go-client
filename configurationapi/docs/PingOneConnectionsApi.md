@@ -1,18 +1,18 @@
-# \PingOneConnectionsApi
+# \PingOneConnectionsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreatePingOneConnection**](PingOneConnectionsApi.md#CreatePingOneConnection) | **Post** /pingOneConnections | Create a new PingOne connection.
-[**DeletePingOneConnection**](PingOneConnectionsApi.md#DeletePingOneConnection) | **Delete** /pingOneConnections/{id} | Delete a PingOne connection.
-[**GetCredentialStatus**](PingOneConnectionsApi.md#GetCredentialStatus) | **Get** /pingOneConnections/{id}/credentialStatus | Get the status of the credential associated with the PingOne connection
-[**GetPingOneConnection**](PingOneConnectionsApi.md#GetPingOneConnection) | **Get** /pingOneConnections/{id} | Get a PingOne connection with the specified ID.
-[**GetPingOneConnectionAssociations**](PingOneConnectionsApi.md#GetPingOneConnectionAssociations) | **Get** /pingOneConnections/{id}/serviceAssociations | Get information about components using this connection to access PingOne services.
-[**GetPingOneConnectionEnvironments**](PingOneConnectionsApi.md#GetPingOneConnectionEnvironments) | **Get** /pingOneConnections/{id}/environments | Get the list of environments that the PingOne connection has access to.
-[**GetPingOneConnectionUsages**](PingOneConnectionsApi.md#GetPingOneConnectionUsages) | **Get** /pingOneConnections/{id}/usage | Get the list of resources that reference this PingOne connection.
-[**GetPingOneConnections**](PingOneConnectionsApi.md#GetPingOneConnections) | **Get** /pingOneConnections | Get the list of all PingOne connections.
-[**UpdatePingOneConnection**](PingOneConnectionsApi.md#UpdatePingOneConnection) | **Put** /pingOneConnections/{id} | Update a PingOne connection.
+[**CreatePingOneConnection**](PingOneConnectionsAPI.md#CreatePingOneConnection) | **Post** /pingOneConnections | Create a new PingOne connection.
+[**DeletePingOneConnection**](PingOneConnectionsAPI.md#DeletePingOneConnection) | **Delete** /pingOneConnections/{id} | Delete a PingOne connection.
+[**GetCredentialStatus**](PingOneConnectionsAPI.md#GetCredentialStatus) | **Get** /pingOneConnections/{id}/credentialStatus | Get the status of the credential associated with the PingOne connection
+[**GetPingOneConnection**](PingOneConnectionsAPI.md#GetPingOneConnection) | **Get** /pingOneConnections/{id} | Get a PingOne connection with the specified ID.
+[**GetPingOneConnectionAssociations**](PingOneConnectionsAPI.md#GetPingOneConnectionAssociations) | **Get** /pingOneConnections/{id}/serviceAssociations | Get information about components using this connection to access PingOne services.
+[**GetPingOneConnectionEnvironments**](PingOneConnectionsAPI.md#GetPingOneConnectionEnvironments) | **Get** /pingOneConnections/{id}/environments | Get the list of environments that the PingOne connection has access to.
+[**GetPingOneConnectionUsages**](PingOneConnectionsAPI.md#GetPingOneConnectionUsages) | **Get** /pingOneConnections/{id}/usage | Get the list of resources that reference this PingOne connection.
+[**GetPingOneConnections**](PingOneConnectionsAPI.md#GetPingOneConnections) | **Get** /pingOneConnections | Get the list of all PingOne connections.
+[**UpdatePingOneConnection**](PingOneConnectionsAPI.md#UpdatePingOneConnection) | **Put** /pingOneConnections/{id} | Update a PingOne connection.
 
 
 
@@ -40,13 +40,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PingOneConnectionsApi.CreatePingOneConnection(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.PingOneConnectionsAPI.CreatePingOneConnection(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PingOneConnectionsApi.CreatePingOneConnection``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PingOneConnectionsAPI.CreatePingOneConnection``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreatePingOneConnection`: PingOneConnection
-    fmt.Fprintf(os.Stdout, "Response from `PingOneConnectionsApi.CreatePingOneConnection`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PingOneConnectionsAPI.CreatePingOneConnection`: %v\n", resp)
 }
 ```
 
@@ -105,9 +105,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.PingOneConnectionsApi.DeletePingOneConnection(context.Background(), id).Execute()
+    r, err := apiClient.PingOneConnectionsAPI.DeletePingOneConnection(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PingOneConnectionsApi.DeletePingOneConnection``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PingOneConnectionsAPI.DeletePingOneConnection``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -171,13 +171,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PingOneConnectionsApi.GetCredentialStatus(context.Background(), id).Execute()
+    resp, r, err := apiClient.PingOneConnectionsAPI.GetCredentialStatus(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PingOneConnectionsApi.GetCredentialStatus``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PingOneConnectionsAPI.GetCredentialStatus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetCredentialStatus`: PingOneCredentialStatus
-    fmt.Fprintf(os.Stdout, "Response from `PingOneConnectionsApi.GetCredentialStatus`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PingOneConnectionsAPI.GetCredentialStatus`: %v\n", resp)
 }
 ```
 
@@ -239,13 +239,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PingOneConnectionsApi.GetPingOneConnection(context.Background(), id).Execute()
+    resp, r, err := apiClient.PingOneConnectionsAPI.GetPingOneConnection(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PingOneConnectionsApi.GetPingOneConnection``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PingOneConnectionsAPI.GetPingOneConnection``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPingOneConnection`: PingOneConnection
-    fmt.Fprintf(os.Stdout, "Response from `PingOneConnectionsApi.GetPingOneConnection`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PingOneConnectionsAPI.GetPingOneConnection`: %v\n", resp)
 }
 ```
 
@@ -307,13 +307,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PingOneConnectionsApi.GetPingOneConnectionAssociations(context.Background(), id).Execute()
+    resp, r, err := apiClient.PingOneConnectionsAPI.GetPingOneConnectionAssociations(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PingOneConnectionsApi.GetPingOneConnectionAssociations``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PingOneConnectionsAPI.GetPingOneConnectionAssociations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPingOneConnectionAssociations`: ServiceAssociations
-    fmt.Fprintf(os.Stdout, "Response from `PingOneConnectionsApi.GetPingOneConnectionAssociations`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PingOneConnectionsAPI.GetPingOneConnectionAssociations`: %v\n", resp)
 }
 ```
 
@@ -378,13 +378,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PingOneConnectionsApi.GetPingOneConnectionEnvironments(context.Background(), id).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
+    resp, r, err := apiClient.PingOneConnectionsAPI.GetPingOneConnectionEnvironments(context.Background(), id).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PingOneConnectionsApi.GetPingOneConnectionEnvironments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PingOneConnectionsAPI.GetPingOneConnectionEnvironments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPingOneConnectionEnvironments`: PingOneEnvironments
-    fmt.Fprintf(os.Stdout, "Response from `PingOneConnectionsApi.GetPingOneConnectionEnvironments`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PingOneConnectionsAPI.GetPingOneConnectionEnvironments`: %v\n", resp)
 }
 ```
 
@@ -449,13 +449,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PingOneConnectionsApi.GetPingOneConnectionUsages(context.Background(), id).Execute()
+    resp, r, err := apiClient.PingOneConnectionsAPI.GetPingOneConnectionUsages(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PingOneConnectionsApi.GetPingOneConnectionUsages``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PingOneConnectionsAPI.GetPingOneConnectionUsages``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPingOneConnectionUsages`: ResourceUsages
-    fmt.Fprintf(os.Stdout, "Response from `PingOneConnectionsApi.GetPingOneConnectionUsages`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PingOneConnectionsAPI.GetPingOneConnectionUsages`: %v\n", resp)
 }
 ```
 
@@ -516,13 +516,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PingOneConnectionsApi.GetPingOneConnections(context.Background()).Execute()
+    resp, r, err := apiClient.PingOneConnectionsAPI.GetPingOneConnections(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PingOneConnectionsApi.GetPingOneConnections``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PingOneConnectionsAPI.GetPingOneConnections``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPingOneConnections`: PingOneConnections
-    fmt.Fprintf(os.Stdout, "Response from `PingOneConnectionsApi.GetPingOneConnections`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PingOneConnectionsAPI.GetPingOneConnections`: %v\n", resp)
 }
 ```
 
@@ -578,13 +578,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PingOneConnectionsApi.UpdatePingOneConnection(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.PingOneConnectionsAPI.UpdatePingOneConnection(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PingOneConnectionsApi.UpdatePingOneConnection``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PingOneConnectionsAPI.UpdatePingOneConnection``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdatePingOneConnection`: PingOneConnection
-    fmt.Fprintf(os.Stdout, "Response from `PingOneConnectionsApi.UpdatePingOneConnection`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PingOneConnectionsAPI.UpdatePingOneConnection`: %v\n", resp)
 }
 ```
 

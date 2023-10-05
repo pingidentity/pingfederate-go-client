@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// KeyPairsOauthOpenIdConnectApiService KeyPairsOauthOpenIdConnectApi service
-type KeyPairsOauthOpenIdConnectApiService service
+// KeyPairsOauthOpenIdConnectAPIService KeyPairsOauthOpenIdConnectAPI service
+type KeyPairsOauthOpenIdConnectAPIService service
 
 type ApiCreateKeySetRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsOauthOpenIdConnectApiService
+	ApiService *KeyPairsOauthOpenIdConnectAPIService
 	body       *AdditionalKeySet
 }
 
@@ -46,7 +46,7 @@ Create a new OAuth/OpenID Connect additional signing key set.  If not properly c
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateKeySetRequest
 */
-func (a *KeyPairsOauthOpenIdConnectApiService) CreateKeySet(ctx context.Context) ApiCreateKeySetRequest {
+func (a *KeyPairsOauthOpenIdConnectAPIService) CreateKeySet(ctx context.Context) ApiCreateKeySetRequest {
 	return ApiCreateKeySetRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -56,7 +56,7 @@ func (a *KeyPairsOauthOpenIdConnectApiService) CreateKeySet(ctx context.Context)
 // Execute executes the request
 //
 //	@return AdditionalKeySet
-func (a *KeyPairsOauthOpenIdConnectApiService) CreateKeySetExecute(r ApiCreateKeySetRequest) (*AdditionalKeySet, *http.Response, error) {
+func (a *KeyPairsOauthOpenIdConnectAPIService) CreateKeySetExecute(r ApiCreateKeySetRequest) (*AdditionalKeySet, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -64,7 +64,7 @@ func (a *KeyPairsOauthOpenIdConnectApiService) CreateKeySetExecute(r ApiCreateKe
 		localVarReturnValue *AdditionalKeySet
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsOauthOpenIdConnectApiService.CreateKeySet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsOauthOpenIdConnectAPIService.CreateKeySet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -146,7 +146,7 @@ func (a *KeyPairsOauthOpenIdConnectApiService) CreateKeySetExecute(r ApiCreateKe
 
 type ApiDeleteKeySetRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsOauthOpenIdConnectApiService
+	ApiService *KeyPairsOauthOpenIdConnectAPIService
 	id         string
 }
 
@@ -161,7 +161,7 @@ DeleteKeySet Delete an existing OAuth/OpenID Connect additional signing key set.
 	@param id ID of an additional key set to be deleted.
 	@return ApiDeleteKeySetRequest
 */
-func (a *KeyPairsOauthOpenIdConnectApiService) DeleteKeySet(ctx context.Context, id string) ApiDeleteKeySetRequest {
+func (a *KeyPairsOauthOpenIdConnectAPIService) DeleteKeySet(ctx context.Context, id string) ApiDeleteKeySetRequest {
 	return ApiDeleteKeySetRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -170,14 +170,14 @@ func (a *KeyPairsOauthOpenIdConnectApiService) DeleteKeySet(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *KeyPairsOauthOpenIdConnectApiService) DeleteKeySetExecute(r ApiDeleteKeySetRequest) (*http.Response, error) {
+func (a *KeyPairsOauthOpenIdConnectAPIService) DeleteKeySetExecute(r ApiDeleteKeySetRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsOauthOpenIdConnectApiService.DeleteKeySet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsOauthOpenIdConnectAPIService.DeleteKeySet")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -246,7 +246,7 @@ func (a *KeyPairsOauthOpenIdConnectApiService) DeleteKeySetExecute(r ApiDeleteKe
 
 type ApiGetKeySetRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsOauthOpenIdConnectApiService
+	ApiService *KeyPairsOauthOpenIdConnectAPIService
 	id         string
 }
 
@@ -261,7 +261,7 @@ GetKeySet Retrieve an OAuth/OpenID Connect additional signing key set.
 	@param id ID of an OAuth/OpenID Connect additional signing key set to update.
 	@return ApiGetKeySetRequest
 */
-func (a *KeyPairsOauthOpenIdConnectApiService) GetKeySet(ctx context.Context, id string) ApiGetKeySetRequest {
+func (a *KeyPairsOauthOpenIdConnectAPIService) GetKeySet(ctx context.Context, id string) ApiGetKeySetRequest {
 	return ApiGetKeySetRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -272,7 +272,7 @@ func (a *KeyPairsOauthOpenIdConnectApiService) GetKeySet(ctx context.Context, id
 // Execute executes the request
 //
 //	@return AdditionalKeySet
-func (a *KeyPairsOauthOpenIdConnectApiService) GetKeySetExecute(r ApiGetKeySetRequest) (*AdditionalKeySet, *http.Response, error) {
+func (a *KeyPairsOauthOpenIdConnectAPIService) GetKeySetExecute(r ApiGetKeySetRequest) (*AdditionalKeySet, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -280,7 +280,7 @@ func (a *KeyPairsOauthOpenIdConnectApiService) GetKeySetExecute(r ApiGetKeySetRe
 		localVarReturnValue *AdditionalKeySet
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsOauthOpenIdConnectApiService.GetKeySet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsOauthOpenIdConnectAPIService.GetKeySet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -358,7 +358,7 @@ func (a *KeyPairsOauthOpenIdConnectApiService) GetKeySetExecute(r ApiGetKeySetRe
 
 type ApiGetKeySetsRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsOauthOpenIdConnectApiService
+	ApiService *KeyPairsOauthOpenIdConnectAPIService
 }
 
 func (r ApiGetKeySetsRequest) Execute() (*AdditionalKeySets, *http.Response, error) {
@@ -371,7 +371,7 @@ GetKeySets Retrieve OAuth/OpenID Connect additional signing key sets.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetKeySetsRequest
 */
-func (a *KeyPairsOauthOpenIdConnectApiService) GetKeySets(ctx context.Context) ApiGetKeySetsRequest {
+func (a *KeyPairsOauthOpenIdConnectAPIService) GetKeySets(ctx context.Context) ApiGetKeySetsRequest {
 	return ApiGetKeySetsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -381,7 +381,7 @@ func (a *KeyPairsOauthOpenIdConnectApiService) GetKeySets(ctx context.Context) A
 // Execute executes the request
 //
 //	@return AdditionalKeySets
-func (a *KeyPairsOauthOpenIdConnectApiService) GetKeySetsExecute(r ApiGetKeySetsRequest) (*AdditionalKeySets, *http.Response, error) {
+func (a *KeyPairsOauthOpenIdConnectAPIService) GetKeySetsExecute(r ApiGetKeySetsRequest) (*AdditionalKeySets, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -389,7 +389,7 @@ func (a *KeyPairsOauthOpenIdConnectApiService) GetKeySetsExecute(r ApiGetKeySets
 		localVarReturnValue *AdditionalKeySets
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsOauthOpenIdConnectApiService.GetKeySets")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsOauthOpenIdConnectAPIService.GetKeySets")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -456,7 +456,7 @@ func (a *KeyPairsOauthOpenIdConnectApiService) GetKeySetsExecute(r ApiGetKeySets
 
 type ApiGetOauthOidcKeysSettingsRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsOauthOpenIdConnectApiService
+	ApiService *KeyPairsOauthOpenIdConnectAPIService
 }
 
 func (r ApiGetOauthOidcKeysSettingsRequest) Execute() (*OAuthOidcKeysSettings, *http.Response, error) {
@@ -469,7 +469,7 @@ GetOauthOidcKeysSettings Retrieve OAuth/OpenID Connect key settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetOauthOidcKeysSettingsRequest
 */
-func (a *KeyPairsOauthOpenIdConnectApiService) GetOauthOidcKeysSettings(ctx context.Context) ApiGetOauthOidcKeysSettingsRequest {
+func (a *KeyPairsOauthOpenIdConnectAPIService) GetOauthOidcKeysSettings(ctx context.Context) ApiGetOauthOidcKeysSettingsRequest {
 	return ApiGetOauthOidcKeysSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -479,7 +479,7 @@ func (a *KeyPairsOauthOpenIdConnectApiService) GetOauthOidcKeysSettings(ctx cont
 // Execute executes the request
 //
 //	@return OAuthOidcKeysSettings
-func (a *KeyPairsOauthOpenIdConnectApiService) GetOauthOidcKeysSettingsExecute(r ApiGetOauthOidcKeysSettingsRequest) (*OAuthOidcKeysSettings, *http.Response, error) {
+func (a *KeyPairsOauthOpenIdConnectAPIService) GetOauthOidcKeysSettingsExecute(r ApiGetOauthOidcKeysSettingsRequest) (*OAuthOidcKeysSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -487,7 +487,7 @@ func (a *KeyPairsOauthOpenIdConnectApiService) GetOauthOidcKeysSettingsExecute(r
 		localVarReturnValue *OAuthOidcKeysSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsOauthOpenIdConnectApiService.GetOauthOidcKeysSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsOauthOpenIdConnectAPIService.GetOauthOidcKeysSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -554,7 +554,7 @@ func (a *KeyPairsOauthOpenIdConnectApiService) GetOauthOidcKeysSettingsExecute(r
 
 type ApiUpdateKeySetRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsOauthOpenIdConnectApiService
+	ApiService *KeyPairsOauthOpenIdConnectAPIService
 	id         string
 	body       *AdditionalKeySet
 }
@@ -578,7 +578,7 @@ Update an existing OAuth/OpenID Connect additional signing key set.  If not prop
 	@param id ID of an OAuth/OpenID Connect additional signing key set to update.
 	@return ApiUpdateKeySetRequest
 */
-func (a *KeyPairsOauthOpenIdConnectApiService) UpdateKeySet(ctx context.Context, id string) ApiUpdateKeySetRequest {
+func (a *KeyPairsOauthOpenIdConnectAPIService) UpdateKeySet(ctx context.Context, id string) ApiUpdateKeySetRequest {
 	return ApiUpdateKeySetRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -589,7 +589,7 @@ func (a *KeyPairsOauthOpenIdConnectApiService) UpdateKeySet(ctx context.Context,
 // Execute executes the request
 //
 //	@return AdditionalKeySet
-func (a *KeyPairsOauthOpenIdConnectApiService) UpdateKeySetExecute(r ApiUpdateKeySetRequest) (*AdditionalKeySet, *http.Response, error) {
+func (a *KeyPairsOauthOpenIdConnectAPIService) UpdateKeySetExecute(r ApiUpdateKeySetRequest) (*AdditionalKeySet, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -597,7 +597,7 @@ func (a *KeyPairsOauthOpenIdConnectApiService) UpdateKeySetExecute(r ApiUpdateKe
 		localVarReturnValue *AdditionalKeySet
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsOauthOpenIdConnectApiService.UpdateKeySet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsOauthOpenIdConnectAPIService.UpdateKeySet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -691,7 +691,7 @@ func (a *KeyPairsOauthOpenIdConnectApiService) UpdateKeySetExecute(r ApiUpdateKe
 
 type ApiUpdateOAuthOidcKeysSettingsRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsOauthOpenIdConnectApiService
+	ApiService *KeyPairsOauthOpenIdConnectAPIService
 	body       *OAuthOidcKeysSettings
 }
 
@@ -711,7 +711,7 @@ UpdateOAuthOidcKeysSettings Update OAuth/OpenID Connect key settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateOAuthOidcKeysSettingsRequest
 */
-func (a *KeyPairsOauthOpenIdConnectApiService) UpdateOAuthOidcKeysSettings(ctx context.Context) ApiUpdateOAuthOidcKeysSettingsRequest {
+func (a *KeyPairsOauthOpenIdConnectAPIService) UpdateOAuthOidcKeysSettings(ctx context.Context) ApiUpdateOAuthOidcKeysSettingsRequest {
 	return ApiUpdateOAuthOidcKeysSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -721,7 +721,7 @@ func (a *KeyPairsOauthOpenIdConnectApiService) UpdateOAuthOidcKeysSettings(ctx c
 // Execute executes the request
 //
 //	@return OAuthOidcKeysSettings
-func (a *KeyPairsOauthOpenIdConnectApiService) UpdateOAuthOidcKeysSettingsExecute(r ApiUpdateOAuthOidcKeysSettingsRequest) (*OAuthOidcKeysSettings, *http.Response, error) {
+func (a *KeyPairsOauthOpenIdConnectAPIService) UpdateOAuthOidcKeysSettingsExecute(r ApiUpdateOAuthOidcKeysSettingsRequest) (*OAuthOidcKeysSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -729,7 +729,7 @@ func (a *KeyPairsOauthOpenIdConnectApiService) UpdateOAuthOidcKeysSettingsExecut
 		localVarReturnValue *OAuthOidcKeysSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsOauthOpenIdConnectApiService.UpdateOAuthOidcKeysSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsOauthOpenIdConnectAPIService.UpdateOAuthOidcKeysSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// KeyPairsSslServerApiService KeyPairsSslServerApi service
-type KeyPairsSslServerApiService service
+// KeyPairsSslServerAPIService KeyPairsSslServerAPI service
+type KeyPairsSslServerAPIService service
 
 type ApiCreateSslServerKeyPairRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSslServerApiService
+	ApiService *KeyPairsSslServerAPIService
 	body       *NewKeyPairSettings
 }
 
@@ -44,7 +44,7 @@ CreateSslServerKeyPair Generate a new key pair.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSslServerKeyPairRequest
 */
-func (a *KeyPairsSslServerApiService) CreateSslServerKeyPair(ctx context.Context) ApiCreateSslServerKeyPairRequest {
+func (a *KeyPairsSslServerAPIService) CreateSslServerKeyPair(ctx context.Context) ApiCreateSslServerKeyPairRequest {
 	return ApiCreateSslServerKeyPairRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *KeyPairsSslServerApiService) CreateSslServerKeyPair(ctx context.Context
 // Execute executes the request
 //
 //	@return KeyPairView
-func (a *KeyPairsSslServerApiService) CreateSslServerKeyPairExecute(r ApiCreateSslServerKeyPairRequest) (*KeyPairView, *http.Response, error) {
+func (a *KeyPairsSslServerAPIService) CreateSslServerKeyPairExecute(r ApiCreateSslServerKeyPairRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *KeyPairsSslServerApiService) CreateSslServerKeyPairExecute(r ApiCreateS
 		localVarReturnValue *KeyPairView
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerApiService.CreateSslServerKeyPair")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerAPIService.CreateSslServerKeyPair")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,7 +144,7 @@ func (a *KeyPairsSslServerApiService) CreateSslServerKeyPairExecute(r ApiCreateS
 
 type ApiDeleteSslServerKeyPairRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSslServerApiService
+	ApiService *KeyPairsSslServerAPIService
 	id         string
 }
 
@@ -161,7 +161,7 @@ If the request is successful, the response body is empty. If the request fails, 
 	@param id ID of the key pair to delete.
 	@return ApiDeleteSslServerKeyPairRequest
 */
-func (a *KeyPairsSslServerApiService) DeleteSslServerKeyPair(ctx context.Context, id string) ApiDeleteSslServerKeyPairRequest {
+func (a *KeyPairsSslServerAPIService) DeleteSslServerKeyPair(ctx context.Context, id string) ApiDeleteSslServerKeyPairRequest {
 	return ApiDeleteSslServerKeyPairRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -170,14 +170,14 @@ func (a *KeyPairsSslServerApiService) DeleteSslServerKeyPair(ctx context.Context
 }
 
 // Execute executes the request
-func (a *KeyPairsSslServerApiService) DeleteSslServerKeyPairExecute(r ApiDeleteSslServerKeyPairRequest) (*http.Response, error) {
+func (a *KeyPairsSslServerAPIService) DeleteSslServerKeyPairExecute(r ApiDeleteSslServerKeyPairRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerApiService.DeleteSslServerKeyPair")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerAPIService.DeleteSslServerKeyPair")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -247,7 +247,7 @@ func (a *KeyPairsSslServerApiService) DeleteSslServerKeyPairExecute(r ApiDeleteS
 
 type ApiExportSslServerCertificateFileRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSslServerApiService
+	ApiService *KeyPairsSslServerAPIService
 	id         string
 }
 
@@ -264,7 +264,7 @@ For a successful request, the PEM-encoded certificate file is directly returned 
 	@param id ID of the key pair.
 	@return ApiExportSslServerCertificateFileRequest
 */
-func (a *KeyPairsSslServerApiService) ExportSslServerCertificateFile(ctx context.Context, id string) ApiExportSslServerCertificateFileRequest {
+func (a *KeyPairsSslServerAPIService) ExportSslServerCertificateFile(ctx context.Context, id string) ApiExportSslServerCertificateFileRequest {
 	return ApiExportSslServerCertificateFileRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -275,7 +275,7 @@ func (a *KeyPairsSslServerApiService) ExportSslServerCertificateFile(ctx context
 // Execute executes the request
 //
 //	@return string
-func (a *KeyPairsSslServerApiService) ExportSslServerCertificateFileExecute(r ApiExportSslServerCertificateFileRequest) (string, *http.Response, error) {
+func (a *KeyPairsSslServerAPIService) ExportSslServerCertificateFileExecute(r ApiExportSslServerCertificateFileRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -283,7 +283,7 @@ func (a *KeyPairsSslServerApiService) ExportSslServerCertificateFileExecute(r Ap
 		localVarReturnValue string
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerApiService.ExportSslServerCertificateFile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerAPIService.ExportSslServerCertificateFile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -361,7 +361,7 @@ func (a *KeyPairsSslServerApiService) ExportSslServerCertificateFileExecute(r Ap
 
 type ApiExportSslServerCsrRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSslServerApiService
+	ApiService *KeyPairsSslServerAPIService
 	id         string
 }
 
@@ -378,7 +378,7 @@ For a successful request, the PEM-encoded CSR file is directly returned as text 
 	@param id ID of the key pair.
 	@return ApiExportSslServerCsrRequest
 */
-func (a *KeyPairsSslServerApiService) ExportSslServerCsr(ctx context.Context, id string) ApiExportSslServerCsrRequest {
+func (a *KeyPairsSslServerAPIService) ExportSslServerCsr(ctx context.Context, id string) ApiExportSslServerCsrRequest {
 	return ApiExportSslServerCsrRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -389,7 +389,7 @@ func (a *KeyPairsSslServerApiService) ExportSslServerCsr(ctx context.Context, id
 // Execute executes the request
 //
 //	@return string
-func (a *KeyPairsSslServerApiService) ExportSslServerCsrExecute(r ApiExportSslServerCsrRequest) (string, *http.Response, error) {
+func (a *KeyPairsSslServerAPIService) ExportSslServerCsrExecute(r ApiExportSslServerCsrRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -397,7 +397,7 @@ func (a *KeyPairsSslServerApiService) ExportSslServerCsrExecute(r ApiExportSslSe
 		localVarReturnValue string
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerApiService.ExportSslServerCsr")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerAPIService.ExportSslServerCsr")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -465,7 +465,7 @@ func (a *KeyPairsSslServerApiService) ExportSslServerCsrExecute(r ApiExportSslSe
 
 type ApiExportSslServerPEMFileRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSslServerApiService
+	ApiService *KeyPairsSslServerAPIService
 	id         string
 	body       *KeyPairExportSettings
 }
@@ -489,7 +489,7 @@ For a successful request, the PEM file is directly returned in PEM format and th
 	@param id ID of the key pair.
 	@return ApiExportSslServerPEMFileRequest
 */
-func (a *KeyPairsSslServerApiService) ExportSslServerPEMFile(ctx context.Context, id string) ApiExportSslServerPEMFileRequest {
+func (a *KeyPairsSslServerAPIService) ExportSslServerPEMFile(ctx context.Context, id string) ApiExportSslServerPEMFileRequest {
 	return ApiExportSslServerPEMFileRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -500,7 +500,7 @@ func (a *KeyPairsSslServerApiService) ExportSslServerPEMFile(ctx context.Context
 // Execute executes the request
 //
 //	@return string
-func (a *KeyPairsSslServerApiService) ExportSslServerPEMFileExecute(r ApiExportSslServerPEMFileRequest) (string, *http.Response, error) {
+func (a *KeyPairsSslServerAPIService) ExportSslServerPEMFileExecute(r ApiExportSslServerPEMFileRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -508,7 +508,7 @@ func (a *KeyPairsSslServerApiService) ExportSslServerPEMFileExecute(r ApiExportS
 		localVarReturnValue string
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerApiService.ExportSslServerPEMFile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerAPIService.ExportSslServerPEMFile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -602,7 +602,7 @@ func (a *KeyPairsSslServerApiService) ExportSslServerPEMFileExecute(r ApiExportS
 
 type ApiExportSslServerPKCS12FileRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSslServerApiService
+	ApiService *KeyPairsSslServerAPIService
 	id         string
 	body       *KeyPairExportSettings
 }
@@ -626,7 +626,7 @@ For a successful request, the PKCS12 file is directly returned in binary format 
 	@param id ID of the key pair.
 	@return ApiExportSslServerPKCS12FileRequest
 */
-func (a *KeyPairsSslServerApiService) ExportSslServerPKCS12File(ctx context.Context, id string) ApiExportSslServerPKCS12FileRequest {
+func (a *KeyPairsSslServerAPIService) ExportSslServerPKCS12File(ctx context.Context, id string) ApiExportSslServerPKCS12FileRequest {
 	return ApiExportSslServerPKCS12FileRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -637,7 +637,7 @@ func (a *KeyPairsSslServerApiService) ExportSslServerPKCS12File(ctx context.Cont
 // Execute executes the request
 //
 //	@return string
-func (a *KeyPairsSslServerApiService) ExportSslServerPKCS12FileExecute(r ApiExportSslServerPKCS12FileRequest) (string, *http.Response, error) {
+func (a *KeyPairsSslServerAPIService) ExportSslServerPKCS12FileExecute(r ApiExportSslServerPKCS12FileRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -645,7 +645,7 @@ func (a *KeyPairsSslServerApiService) ExportSslServerPKCS12FileExecute(r ApiExpo
 		localVarReturnValue string
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerApiService.ExportSslServerPKCS12File")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerAPIService.ExportSslServerPKCS12File")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -739,7 +739,7 @@ func (a *KeyPairsSslServerApiService) ExportSslServerPKCS12FileExecute(r ApiExpo
 
 type ApiGetSslServerKeyPairRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSslServerApiService
+	ApiService *KeyPairsSslServerAPIService
 	id         string
 }
 
@@ -754,7 +754,7 @@ GetSslServerKeyPair Retrieve details of a key pair.
 	@param id ID of the key pair to retrieve.
 	@return ApiGetSslServerKeyPairRequest
 */
-func (a *KeyPairsSslServerApiService) GetSslServerKeyPair(ctx context.Context, id string) ApiGetSslServerKeyPairRequest {
+func (a *KeyPairsSslServerAPIService) GetSslServerKeyPair(ctx context.Context, id string) ApiGetSslServerKeyPairRequest {
 	return ApiGetSslServerKeyPairRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -765,7 +765,7 @@ func (a *KeyPairsSslServerApiService) GetSslServerKeyPair(ctx context.Context, i
 // Execute executes the request
 //
 //	@return KeyPairView
-func (a *KeyPairsSslServerApiService) GetSslServerKeyPairExecute(r ApiGetSslServerKeyPairRequest) (*KeyPairView, *http.Response, error) {
+func (a *KeyPairsSslServerAPIService) GetSslServerKeyPairExecute(r ApiGetSslServerKeyPairRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -773,7 +773,7 @@ func (a *KeyPairsSslServerApiService) GetSslServerKeyPairExecute(r ApiGetSslServ
 		localVarReturnValue *KeyPairView
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerApiService.GetSslServerKeyPair")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerAPIService.GetSslServerKeyPair")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -851,7 +851,7 @@ func (a *KeyPairsSslServerApiService) GetSslServerKeyPairExecute(r ApiGetSslServ
 
 type ApiGetSslServerKeyPairsRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSslServerApiService
+	ApiService *KeyPairsSslServerAPIService
 }
 
 func (r ApiGetSslServerKeyPairsRequest) Execute() (*KeyPairViews, *http.Response, error) {
@@ -864,7 +864,7 @@ GetSslServerKeyPairs Get list of key pairs.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSslServerKeyPairsRequest
 */
-func (a *KeyPairsSslServerApiService) GetSslServerKeyPairs(ctx context.Context) ApiGetSslServerKeyPairsRequest {
+func (a *KeyPairsSslServerAPIService) GetSslServerKeyPairs(ctx context.Context) ApiGetSslServerKeyPairsRequest {
 	return ApiGetSslServerKeyPairsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -874,7 +874,7 @@ func (a *KeyPairsSslServerApiService) GetSslServerKeyPairs(ctx context.Context) 
 // Execute executes the request
 //
 //	@return KeyPairViews
-func (a *KeyPairsSslServerApiService) GetSslServerKeyPairsExecute(r ApiGetSslServerKeyPairsRequest) (*KeyPairViews, *http.Response, error) {
+func (a *KeyPairsSslServerAPIService) GetSslServerKeyPairsExecute(r ApiGetSslServerKeyPairsRequest) (*KeyPairViews, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -882,7 +882,7 @@ func (a *KeyPairsSslServerApiService) GetSslServerKeyPairsExecute(r ApiGetSslSer
 		localVarReturnValue *KeyPairViews
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerApiService.GetSslServerKeyPairs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerAPIService.GetSslServerKeyPairs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -949,7 +949,7 @@ func (a *KeyPairsSslServerApiService) GetSslServerKeyPairsExecute(r ApiGetSslSer
 
 type ApiGetSslServerSettingsRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSslServerApiService
+	ApiService *KeyPairsSslServerAPIService
 }
 
 func (r ApiGetSslServerSettingsRequest) Execute() (*SslServerSettings, *http.Response, error) {
@@ -962,7 +962,7 @@ GetSslServerSettings Get the SSL Server Certificate Settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSslServerSettingsRequest
 */
-func (a *KeyPairsSslServerApiService) GetSslServerSettings(ctx context.Context) ApiGetSslServerSettingsRequest {
+func (a *KeyPairsSslServerAPIService) GetSslServerSettings(ctx context.Context) ApiGetSslServerSettingsRequest {
 	return ApiGetSslServerSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -972,7 +972,7 @@ func (a *KeyPairsSslServerApiService) GetSslServerSettings(ctx context.Context) 
 // Execute executes the request
 //
 //	@return SslServerSettings
-func (a *KeyPairsSslServerApiService) GetSslServerSettingsExecute(r ApiGetSslServerSettingsRequest) (*SslServerSettings, *http.Response, error) {
+func (a *KeyPairsSslServerAPIService) GetSslServerSettingsExecute(r ApiGetSslServerSettingsRequest) (*SslServerSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -980,7 +980,7 @@ func (a *KeyPairsSslServerApiService) GetSslServerSettingsExecute(r ApiGetSslSer
 		localVarReturnValue *SslServerSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerApiService.GetSslServerSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerAPIService.GetSslServerSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1047,7 +1047,7 @@ func (a *KeyPairsSslServerApiService) GetSslServerSettingsExecute(r ApiGetSslSer
 
 type ApiImportSslServerCsrResponseRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSslServerApiService
+	ApiService *KeyPairsSslServerAPIService
 	id         string
 	body       *CSRResponse
 }
@@ -1069,7 +1069,7 @@ ImportSslServerCsrResponse Import a CSR response for this key pair.
 	@param id ID of the key pair.
 	@return ApiImportSslServerCsrResponseRequest
 */
-func (a *KeyPairsSslServerApiService) ImportSslServerCsrResponse(ctx context.Context, id string) ApiImportSslServerCsrResponseRequest {
+func (a *KeyPairsSslServerAPIService) ImportSslServerCsrResponse(ctx context.Context, id string) ApiImportSslServerCsrResponseRequest {
 	return ApiImportSslServerCsrResponseRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1080,7 +1080,7 @@ func (a *KeyPairsSslServerApiService) ImportSslServerCsrResponse(ctx context.Con
 // Execute executes the request
 //
 //	@return KeyPairView
-func (a *KeyPairsSslServerApiService) ImportSslServerCsrResponseExecute(r ApiImportSslServerCsrResponseRequest) (*KeyPairView, *http.Response, error) {
+func (a *KeyPairsSslServerAPIService) ImportSslServerCsrResponseExecute(r ApiImportSslServerCsrResponseRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -1088,7 +1088,7 @@ func (a *KeyPairsSslServerApiService) ImportSslServerCsrResponseExecute(r ApiImp
 		localVarReturnValue *KeyPairView
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerApiService.ImportSslServerCsrResponse")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerAPIService.ImportSslServerCsrResponse")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1182,7 +1182,7 @@ func (a *KeyPairsSslServerApiService) ImportSslServerCsrResponseExecute(r ApiImp
 
 type ApiImportSslServerKeyPairRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSslServerApiService
+	ApiService *KeyPairsSslServerAPIService
 	body       *KeyPairFile
 }
 
@@ -1202,7 +1202,7 @@ ImportSslServerKeyPair Import a new key pair.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiImportSslServerKeyPairRequest
 */
-func (a *KeyPairsSslServerApiService) ImportSslServerKeyPair(ctx context.Context) ApiImportSslServerKeyPairRequest {
+func (a *KeyPairsSslServerAPIService) ImportSslServerKeyPair(ctx context.Context) ApiImportSslServerKeyPairRequest {
 	return ApiImportSslServerKeyPairRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1212,7 +1212,7 @@ func (a *KeyPairsSslServerApiService) ImportSslServerKeyPair(ctx context.Context
 // Execute executes the request
 //
 //	@return KeyPairView
-func (a *KeyPairsSslServerApiService) ImportSslServerKeyPairExecute(r ApiImportSslServerKeyPairRequest) (*KeyPairView, *http.Response, error) {
+func (a *KeyPairsSslServerAPIService) ImportSslServerKeyPairExecute(r ApiImportSslServerKeyPairRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -1220,7 +1220,7 @@ func (a *KeyPairsSslServerApiService) ImportSslServerKeyPairExecute(r ApiImportS
 		localVarReturnValue *KeyPairView
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerApiService.ImportSslServerKeyPair")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerAPIService.ImportSslServerKeyPair")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1302,7 +1302,7 @@ func (a *KeyPairsSslServerApiService) ImportSslServerKeyPairExecute(r ApiImportS
 
 type ApiUpdateSslServerSettingsRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSslServerApiService
+	ApiService *KeyPairsSslServerAPIService
 	body       *SslServerSettings
 }
 
@@ -1322,7 +1322,7 @@ UpdateSslServerSettings Update the SSL Server Certificate Settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateSslServerSettingsRequest
 */
-func (a *KeyPairsSslServerApiService) UpdateSslServerSettings(ctx context.Context) ApiUpdateSslServerSettingsRequest {
+func (a *KeyPairsSslServerAPIService) UpdateSslServerSettings(ctx context.Context) ApiUpdateSslServerSettingsRequest {
 	return ApiUpdateSslServerSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1332,7 +1332,7 @@ func (a *KeyPairsSslServerApiService) UpdateSslServerSettings(ctx context.Contex
 // Execute executes the request
 //
 //	@return SslServerSettings
-func (a *KeyPairsSslServerApiService) UpdateSslServerSettingsExecute(r ApiUpdateSslServerSettingsRequest) (*SslServerSettings, *http.Response, error) {
+func (a *KeyPairsSslServerAPIService) UpdateSslServerSettingsExecute(r ApiUpdateSslServerSettingsRequest) (*SslServerSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1340,7 +1340,7 @@ func (a *KeyPairsSslServerApiService) UpdateSslServerSettingsExecute(r ApiUpdate
 		localVarReturnValue *SslServerSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerApiService.UpdateSslServerSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSslServerAPIService.UpdateSslServerSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

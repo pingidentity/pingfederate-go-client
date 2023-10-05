@@ -1,16 +1,16 @@
-# \KerberosRealmsApi
+# \KerberosRealmsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateKerberosRealm**](KerberosRealmsApi.md#CreateKerberosRealm) | **Post** /kerberos/realms | Create a new Kerberos Realm.
-[**DeleteKerberosRealm**](KerberosRealmsApi.md#DeleteKerberosRealm) | **Delete** /kerberos/realms/{id} | Delete a Kerberos Realm.
-[**GetKerberosRealm**](KerberosRealmsApi.md#GetKerberosRealm) | **Get** /kerberos/realms/{id} | Find a Kerberos Realm by ID.
-[**GetKerberosRealmSettings**](KerberosRealmsApi.md#GetKerberosRealmSettings) | **Get** /kerberos/realms/settings | Gets the Kerberos Realms Settings.
-[**GetKerberosRealms**](KerberosRealmsApi.md#GetKerberosRealms) | **Get** /kerberos/realms | Gets the Kerberos Realms.
-[**UpdateKerberosRealm**](KerberosRealmsApi.md#UpdateKerberosRealm) | **Put** /kerberos/realms/{id} | Update a Kerberos Realm by ID.
-[**UpdateKerberosRealmSettings**](KerberosRealmsApi.md#UpdateKerberosRealmSettings) | **Put** /kerberos/realms/settings | Set/Update the Kerberos Realms Settings.
+[**CreateKerberosRealm**](KerberosRealmsAPI.md#CreateKerberosRealm) | **Post** /kerberos/realms | Create a new Kerberos Realm.
+[**DeleteKerberosRealm**](KerberosRealmsAPI.md#DeleteKerberosRealm) | **Delete** /kerberos/realms/{id} | Delete a Kerberos Realm.
+[**GetKerberosRealm**](KerberosRealmsAPI.md#GetKerberosRealm) | **Get** /kerberos/realms/{id} | Find a Kerberos Realm by ID.
+[**GetKerberosRealmSettings**](KerberosRealmsAPI.md#GetKerberosRealmSettings) | **Get** /kerberos/realms/settings | Gets the Kerberos Realms Settings.
+[**GetKerberosRealms**](KerberosRealmsAPI.md#GetKerberosRealms) | **Get** /kerberos/realms | Gets the Kerberos Realms.
+[**UpdateKerberosRealm**](KerberosRealmsAPI.md#UpdateKerberosRealm) | **Put** /kerberos/realms/{id} | Update a Kerberos Realm by ID.
+[**UpdateKerberosRealmSettings**](KerberosRealmsAPI.md#UpdateKerberosRealmSettings) | **Put** /kerberos/realms/settings | Set/Update the Kerberos Realms Settings.
 
 
 
@@ -40,13 +40,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KerberosRealmsApi.CreateKerberosRealm(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.KerberosRealmsAPI.CreateKerberosRealm(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsApi.CreateKerberosRealm``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsAPI.CreateKerberosRealm``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateKerberosRealm`: KerberosRealm
-    fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsApi.CreateKerberosRealm`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsAPI.CreateKerberosRealm`: %v\n", resp)
 }
 ```
 
@@ -107,9 +107,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.KerberosRealmsApi.DeleteKerberosRealm(context.Background(), id).Execute()
+    r, err := apiClient.KerberosRealmsAPI.DeleteKerberosRealm(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsApi.DeleteKerberosRealm``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsAPI.DeleteKerberosRealm``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,13 +175,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KerberosRealmsApi.GetKerberosRealm(context.Background(), id).Execute()
+    resp, r, err := apiClient.KerberosRealmsAPI.GetKerberosRealm(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsApi.GetKerberosRealm``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsAPI.GetKerberosRealm``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetKerberosRealm`: KerberosRealm
-    fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsApi.GetKerberosRealm`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsAPI.GetKerberosRealm`: %v\n", resp)
 }
 ```
 
@@ -242,13 +242,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KerberosRealmsApi.GetKerberosRealmSettings(context.Background()).Execute()
+    resp, r, err := apiClient.KerberosRealmsAPI.GetKerberosRealmSettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsApi.GetKerberosRealmSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsAPI.GetKerberosRealmSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetKerberosRealmSettings`: KerberosRealmsSettings
-    fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsApi.GetKerberosRealmSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsAPI.GetKerberosRealmSettings`: %v\n", resp)
 }
 ```
 
@@ -301,13 +301,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KerberosRealmsApi.GetKerberosRealms(context.Background()).Execute()
+    resp, r, err := apiClient.KerberosRealmsAPI.GetKerberosRealms(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsApi.GetKerberosRealms``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsAPI.GetKerberosRealms``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetKerberosRealms`: KerberosRealms
-    fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsApi.GetKerberosRealms`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsAPI.GetKerberosRealms`: %v\n", resp)
 }
 ```
 
@@ -365,13 +365,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KerberosRealmsApi.UpdateKerberosRealm(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.KerberosRealmsAPI.UpdateKerberosRealm(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsApi.UpdateKerberosRealm``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsAPI.UpdateKerberosRealm``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateKerberosRealm`: KerberosRealm
-    fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsApi.UpdateKerberosRealm`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsAPI.UpdateKerberosRealm`: %v\n", resp)
 }
 ```
 
@@ -435,13 +435,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KerberosRealmsApi.UpdateKerberosRealmSettings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.KerberosRealmsAPI.UpdateKerberosRealmSettings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsApi.UpdateKerberosRealmSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsAPI.UpdateKerberosRealmSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateKerberosRealmSettings`: KerberosRealmsSettings
-    fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsApi.UpdateKerberosRealmSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsAPI.UpdateKerberosRealmSettings`: %v\n", resp)
 }
 ```
 

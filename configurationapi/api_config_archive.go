@@ -19,12 +19,12 @@ import (
 	"os"
 )
 
-// ConfigArchiveApiService ConfigArchiveApi service
-type ConfigArchiveApiService service
+// ConfigArchiveAPIService ConfigArchiveAPI service
+type ConfigArchiveAPIService service
 
 type ApiExportConfigArchiveRequest struct {
 	ctx        context.Context
-	ApiService *ConfigArchiveApiService
+	ApiService *ConfigArchiveAPIService
 }
 
 func (r ApiExportConfigArchiveRequest) Execute() (*http.Response, error) {
@@ -37,7 +37,7 @@ ExportConfigArchive Export a configuration archive.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiExportConfigArchiveRequest
 */
-func (a *ConfigArchiveApiService) ExportConfigArchive(ctx context.Context) ApiExportConfigArchiveRequest {
+func (a *ConfigArchiveAPIService) ExportConfigArchive(ctx context.Context) ApiExportConfigArchiveRequest {
 	return ApiExportConfigArchiveRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -45,14 +45,14 @@ func (a *ConfigArchiveApiService) ExportConfigArchive(ctx context.Context) ApiEx
 }
 
 // Execute executes the request
-func (a *ConfigArchiveApiService) ExportConfigArchiveExecute(r ApiExportConfigArchiveRequest) (*http.Response, error) {
+func (a *ConfigArchiveAPIService) ExportConfigArchiveExecute(r ApiExportConfigArchiveRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigArchiveApiService.ExportConfigArchive")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigArchiveAPIService.ExportConfigArchive")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -110,7 +110,7 @@ func (a *ConfigArchiveApiService) ExportConfigArchiveExecute(r ApiExportConfigAr
 
 type ApiImportConfigArchiveRequest struct {
 	ctx                    context.Context
-	ApiService             *ConfigArchiveApiService
+	ApiService             *ConfigArchiveAPIService
 	forceImport            *bool
 	forceUnsupportedImport *bool
 	reencryptData          *bool
@@ -151,7 +151,7 @@ If there are missing components or license inconsistencies, the import is halted
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiImportConfigArchiveRequest
 */
-func (a *ConfigArchiveApiService) ImportConfigArchive(ctx context.Context) ApiImportConfigArchiveRequest {
+func (a *ConfigArchiveAPIService) ImportConfigArchive(ctx context.Context) ApiImportConfigArchiveRequest {
 	return ApiImportConfigArchiveRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -161,7 +161,7 @@ func (a *ConfigArchiveApiService) ImportConfigArchive(ctx context.Context) ApiIm
 // Execute executes the request
 //
 //	@return ApiResult
-func (a *ConfigArchiveApiService) ImportConfigArchiveExecute(r ApiImportConfigArchiveRequest) (*ApiResult, *http.Response, error) {
+func (a *ConfigArchiveAPIService) ImportConfigArchiveExecute(r ApiImportConfigArchiveRequest) (*ApiResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -169,7 +169,7 @@ func (a *ConfigArchiveApiService) ImportConfigArchiveExecute(r ApiImportConfigAr
 		localVarReturnValue *ApiResult
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigArchiveApiService.ImportConfigArchive")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigArchiveAPIService.ImportConfigArchive")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -185,9 +185,15 @@ func (a *ConfigArchiveApiService) ImportConfigArchiveExecute(r ApiImportConfigAr
 	}
 	if r.forceUnsupportedImport != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "forceUnsupportedImport", r.forceUnsupportedImport, "")
+	} else {
+		var defaultValue bool = false
+		r.forceUnsupportedImport = &defaultValue
 	}
 	if r.reencryptData != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "reencryptData", r.reencryptData, "")
+	} else {
+		var defaultValue bool = false
+		r.reencryptData = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"multipart/form-data"}

@@ -1,14 +1,14 @@
-# \IdpToSpAdapterMappingApi
+# \IdpToSpAdapterMappingAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateIdpToSpAdapterMapping**](IdpToSpAdapterMappingApi.md#CreateIdpToSpAdapterMapping) | **Post** /idpToSpAdapterMapping | Create a new IdP-to-SP Adapter mapping.
-[**DeleteIdpToSpAdapterMappingsById**](IdpToSpAdapterMappingApi.md#DeleteIdpToSpAdapterMappingsById) | **Delete** /idpToSpAdapterMapping/{id} | Delete an Adapter to Adapter Mapping.
-[**GetIdpToSpAdapterMappings**](IdpToSpAdapterMappingApi.md#GetIdpToSpAdapterMappings) | **Get** /idpToSpAdapterMapping | Get list of IdP-to-SP Adapter Mappings.
-[**GetIdpToSpAdapterMappingsById**](IdpToSpAdapterMappingApi.md#GetIdpToSpAdapterMappingsById) | **Get** /idpToSpAdapterMapping/{id} | Get an IdP-to-SP Adapter Mapping.
-[**UpdateIdpToSpAdapterMapping**](IdpToSpAdapterMappingApi.md#UpdateIdpToSpAdapterMapping) | **Put** /idpToSpAdapterMapping/{id} | Update the specified IdP-to-SP Adapter mapping.
+[**CreateIdpToSpAdapterMapping**](IdpToSpAdapterMappingAPI.md#CreateIdpToSpAdapterMapping) | **Post** /idpToSpAdapterMapping | Create a new IdP-to-SP Adapter mapping.
+[**DeleteIdpToSpAdapterMappingsById**](IdpToSpAdapterMappingAPI.md#DeleteIdpToSpAdapterMappingsById) | **Delete** /idpToSpAdapterMapping/{id} | Delete an Adapter to Adapter Mapping.
+[**GetIdpToSpAdapterMappings**](IdpToSpAdapterMappingAPI.md#GetIdpToSpAdapterMappings) | **Get** /idpToSpAdapterMapping | Get list of IdP-to-SP Adapter Mappings.
+[**GetIdpToSpAdapterMappingsById**](IdpToSpAdapterMappingAPI.md#GetIdpToSpAdapterMappingsById) | **Get** /idpToSpAdapterMapping/{id} | Get an IdP-to-SP Adapter Mapping.
+[**UpdateIdpToSpAdapterMapping**](IdpToSpAdapterMappingAPI.md#UpdateIdpToSpAdapterMapping) | **Put** /idpToSpAdapterMapping/{id} | Update the specified IdP-to-SP Adapter mapping.
 
 
 
@@ -36,13 +36,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpToSpAdapterMappingApi.CreateIdpToSpAdapterMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.IdpToSpAdapterMappingAPI.CreateIdpToSpAdapterMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpToSpAdapterMappingApi.CreateIdpToSpAdapterMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpToSpAdapterMappingAPI.CreateIdpToSpAdapterMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateIdpToSpAdapterMapping`: IdpToSpAdapterMapping
-    fmt.Fprintf(os.Stdout, "Response from `IdpToSpAdapterMappingApi.CreateIdpToSpAdapterMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpToSpAdapterMappingAPI.CreateIdpToSpAdapterMapping`: %v\n", resp)
 }
 ```
 
@@ -101,9 +101,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IdpToSpAdapterMappingApi.DeleteIdpToSpAdapterMappingsById(context.Background(), id).Execute()
+    r, err := apiClient.IdpToSpAdapterMappingAPI.DeleteIdpToSpAdapterMappingsById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpToSpAdapterMappingApi.DeleteIdpToSpAdapterMappingsById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpToSpAdapterMappingAPI.DeleteIdpToSpAdapterMappingsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -166,13 +166,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpToSpAdapterMappingApi.GetIdpToSpAdapterMappings(context.Background()).Execute()
+    resp, r, err := apiClient.IdpToSpAdapterMappingAPI.GetIdpToSpAdapterMappings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpToSpAdapterMappingApi.GetIdpToSpAdapterMappings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpToSpAdapterMappingAPI.GetIdpToSpAdapterMappings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetIdpToSpAdapterMappings`: IdpToSpAdapterMappings
-    fmt.Fprintf(os.Stdout, "Response from `IdpToSpAdapterMappingApi.GetIdpToSpAdapterMappings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpToSpAdapterMappingAPI.GetIdpToSpAdapterMappings`: %v\n", resp)
 }
 ```
 
@@ -226,13 +226,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpToSpAdapterMappingApi.GetIdpToSpAdapterMappingsById(context.Background(), id).Execute()
+    resp, r, err := apiClient.IdpToSpAdapterMappingAPI.GetIdpToSpAdapterMappingsById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpToSpAdapterMappingApi.GetIdpToSpAdapterMappingsById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpToSpAdapterMappingAPI.GetIdpToSpAdapterMappingsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetIdpToSpAdapterMappingsById`: IdpToSpAdapterMapping
-    fmt.Fprintf(os.Stdout, "Response from `IdpToSpAdapterMappingApi.GetIdpToSpAdapterMappingsById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpToSpAdapterMappingAPI.GetIdpToSpAdapterMappingsById`: %v\n", resp)
 }
 ```
 
@@ -296,13 +296,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpToSpAdapterMappingApi.UpdateIdpToSpAdapterMapping(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.IdpToSpAdapterMappingAPI.UpdateIdpToSpAdapterMapping(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpToSpAdapterMappingApi.UpdateIdpToSpAdapterMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpToSpAdapterMappingAPI.UpdateIdpToSpAdapterMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateIdpToSpAdapterMapping`: IdpToSpAdapterMapping
-    fmt.Fprintf(os.Stdout, "Response from `IdpToSpAdapterMappingApi.UpdateIdpToSpAdapterMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpToSpAdapterMappingAPI.UpdateIdpToSpAdapterMapping`: %v\n", resp)
 }
 ```
 

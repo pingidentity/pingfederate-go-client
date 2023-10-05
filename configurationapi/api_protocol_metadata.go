@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// ProtocolMetadataApiService ProtocolMetadataApi service
-type ProtocolMetadataApiService service
+// ProtocolMetadataAPIService ProtocolMetadataAPI service
+type ProtocolMetadataAPIService service
 
 type ApiGetLifetimeSettingsRequest struct {
 	ctx        context.Context
-	ApiService *ProtocolMetadataApiService
+	ApiService *ProtocolMetadataAPIService
 }
 
 func (r ApiGetLifetimeSettingsRequest) Execute() (*MetadataLifetimeSettings, *http.Response, error) {
@@ -36,7 +36,7 @@ GetLifetimeSettings Get metadata cache duration and reload delay for automated r
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetLifetimeSettingsRequest
 */
-func (a *ProtocolMetadataApiService) GetLifetimeSettings(ctx context.Context) ApiGetLifetimeSettingsRequest {
+func (a *ProtocolMetadataAPIService) GetLifetimeSettings(ctx context.Context) ApiGetLifetimeSettingsRequest {
 	return ApiGetLifetimeSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -46,7 +46,7 @@ func (a *ProtocolMetadataApiService) GetLifetimeSettings(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return MetadataLifetimeSettings
-func (a *ProtocolMetadataApiService) GetLifetimeSettingsExecute(r ApiGetLifetimeSettingsRequest) (*MetadataLifetimeSettings, *http.Response, error) {
+func (a *ProtocolMetadataAPIService) GetLifetimeSettingsExecute(r ApiGetLifetimeSettingsRequest) (*MetadataLifetimeSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *ProtocolMetadataApiService) GetLifetimeSettingsExecute(r ApiGetLifetime
 		localVarReturnValue *MetadataLifetimeSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMetadataApiService.GetLifetimeSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMetadataAPIService.GetLifetimeSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -121,7 +121,7 @@ func (a *ProtocolMetadataApiService) GetLifetimeSettingsExecute(r ApiGetLifetime
 
 type ApiGetSigningSettingsRequest struct {
 	ctx        context.Context
-	ApiService *ProtocolMetadataApiService
+	ApiService *ProtocolMetadataAPIService
 }
 
 func (r ApiGetSigningSettingsRequest) Execute() (*MetadataSigningSettings, *http.Response, error) {
@@ -134,7 +134,7 @@ GetSigningSettings Get the certificate ID and algorithm used for metadata signin
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSigningSettingsRequest
 */
-func (a *ProtocolMetadataApiService) GetSigningSettings(ctx context.Context) ApiGetSigningSettingsRequest {
+func (a *ProtocolMetadataAPIService) GetSigningSettings(ctx context.Context) ApiGetSigningSettingsRequest {
 	return ApiGetSigningSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -144,7 +144,7 @@ func (a *ProtocolMetadataApiService) GetSigningSettings(ctx context.Context) Api
 // Execute executes the request
 //
 //	@return MetadataSigningSettings
-func (a *ProtocolMetadataApiService) GetSigningSettingsExecute(r ApiGetSigningSettingsRequest) (*MetadataSigningSettings, *http.Response, error) {
+func (a *ProtocolMetadataAPIService) GetSigningSettingsExecute(r ApiGetSigningSettingsRequest) (*MetadataSigningSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -152,7 +152,7 @@ func (a *ProtocolMetadataApiService) GetSigningSettingsExecute(r ApiGetSigningSe
 		localVarReturnValue *MetadataSigningSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMetadataApiService.GetSigningSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMetadataAPIService.GetSigningSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -219,7 +219,7 @@ func (a *ProtocolMetadataApiService) GetSigningSettingsExecute(r ApiGetSigningSe
 
 type ApiUpdateLifetimeSettingsRequest struct {
 	ctx        context.Context
-	ApiService *ProtocolMetadataApiService
+	ApiService *ProtocolMetadataAPIService
 	body       *MetadataLifetimeSettings
 }
 
@@ -239,7 +239,7 @@ UpdateLifetimeSettings Update metadata cache duration and reload delay for autom
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateLifetimeSettingsRequest
 */
-func (a *ProtocolMetadataApiService) UpdateLifetimeSettings(ctx context.Context) ApiUpdateLifetimeSettingsRequest {
+func (a *ProtocolMetadataAPIService) UpdateLifetimeSettings(ctx context.Context) ApiUpdateLifetimeSettingsRequest {
 	return ApiUpdateLifetimeSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -249,7 +249,7 @@ func (a *ProtocolMetadataApiService) UpdateLifetimeSettings(ctx context.Context)
 // Execute executes the request
 //
 //	@return MetadataLifetimeSettings
-func (a *ProtocolMetadataApiService) UpdateLifetimeSettingsExecute(r ApiUpdateLifetimeSettingsRequest) (*MetadataLifetimeSettings, *http.Response, error) {
+func (a *ProtocolMetadataAPIService) UpdateLifetimeSettingsExecute(r ApiUpdateLifetimeSettingsRequest) (*MetadataLifetimeSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -257,7 +257,7 @@ func (a *ProtocolMetadataApiService) UpdateLifetimeSettingsExecute(r ApiUpdateLi
 		localVarReturnValue *MetadataLifetimeSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMetadataApiService.UpdateLifetimeSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMetadataAPIService.UpdateLifetimeSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -339,7 +339,7 @@ func (a *ProtocolMetadataApiService) UpdateLifetimeSettingsExecute(r ApiUpdateLi
 
 type ApiUpdateSigningSettingsRequest struct {
 	ctx        context.Context
-	ApiService *ProtocolMetadataApiService
+	ApiService *ProtocolMetadataAPIService
 	body       *MetadataSigningSettings
 }
 
@@ -358,7 +358,7 @@ UpdateSigningSettings Update the certificate and algorithm for metadata signing.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateSigningSettingsRequest
 */
-func (a *ProtocolMetadataApiService) UpdateSigningSettings(ctx context.Context) ApiUpdateSigningSettingsRequest {
+func (a *ProtocolMetadataAPIService) UpdateSigningSettings(ctx context.Context) ApiUpdateSigningSettingsRequest {
 	return ApiUpdateSigningSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -368,7 +368,7 @@ func (a *ProtocolMetadataApiService) UpdateSigningSettings(ctx context.Context) 
 // Execute executes the request
 //
 //	@return MetadataSigningSettings
-func (a *ProtocolMetadataApiService) UpdateSigningSettingsExecute(r ApiUpdateSigningSettingsRequest) (*MetadataSigningSettings, *http.Response, error) {
+func (a *ProtocolMetadataAPIService) UpdateSigningSettingsExecute(r ApiUpdateSigningSettingsRequest) (*MetadataSigningSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -376,7 +376,7 @@ func (a *ProtocolMetadataApiService) UpdateSigningSettingsExecute(r ApiUpdateSig
 		localVarReturnValue *MetadataSigningSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMetadataApiService.UpdateSigningSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMetadataAPIService.UpdateSigningSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

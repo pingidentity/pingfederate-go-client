@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// KeyPairsSigningApiService KeyPairsSigningApi service
-type KeyPairsSigningApiService service
+// KeyPairsSigningAPIService KeyPairsSigningAPI service
+type KeyPairsSigningAPIService service
 
 type ApiCreateSigningKeyPairRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSigningApiService
+	ApiService *KeyPairsSigningAPIService
 	body       *NewKeyPairSettings
 }
 
@@ -44,7 +44,7 @@ CreateSigningKeyPair Generate a new key pair.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSigningKeyPairRequest
 */
-func (a *KeyPairsSigningApiService) CreateSigningKeyPair(ctx context.Context) ApiCreateSigningKeyPairRequest {
+func (a *KeyPairsSigningAPIService) CreateSigningKeyPair(ctx context.Context) ApiCreateSigningKeyPairRequest {
 	return ApiCreateSigningKeyPairRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *KeyPairsSigningApiService) CreateSigningKeyPair(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return KeyPairView
-func (a *KeyPairsSigningApiService) CreateSigningKeyPairExecute(r ApiCreateSigningKeyPairRequest) (*KeyPairView, *http.Response, error) {
+func (a *KeyPairsSigningAPIService) CreateSigningKeyPairExecute(r ApiCreateSigningKeyPairRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *KeyPairsSigningApiService) CreateSigningKeyPairExecute(r ApiCreateSigni
 		localVarReturnValue *KeyPairView
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningApiService.CreateSigningKeyPair")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningAPIService.CreateSigningKeyPair")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,7 +144,7 @@ func (a *KeyPairsSigningApiService) CreateSigningKeyPairExecute(r ApiCreateSigni
 
 type ApiDeleteKeyPairRotationSettingsRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSigningApiService
+	ApiService *KeyPairsSigningAPIService
 	id         string
 }
 
@@ -161,7 +161,7 @@ If the request is successful, the response body is empty. If the request fails, 
 	@param id ID of the key pair's rotation settings to delete.
 	@return ApiDeleteKeyPairRotationSettingsRequest
 */
-func (a *KeyPairsSigningApiService) DeleteKeyPairRotationSettings(ctx context.Context, id string) ApiDeleteKeyPairRotationSettingsRequest {
+func (a *KeyPairsSigningAPIService) DeleteKeyPairRotationSettings(ctx context.Context, id string) ApiDeleteKeyPairRotationSettingsRequest {
 	return ApiDeleteKeyPairRotationSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -170,14 +170,14 @@ func (a *KeyPairsSigningApiService) DeleteKeyPairRotationSettings(ctx context.Co
 }
 
 // Execute executes the request
-func (a *KeyPairsSigningApiService) DeleteKeyPairRotationSettingsExecute(r ApiDeleteKeyPairRotationSettingsRequest) (*http.Response, error) {
+func (a *KeyPairsSigningAPIService) DeleteKeyPairRotationSettingsExecute(r ApiDeleteKeyPairRotationSettingsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningApiService.DeleteKeyPairRotationSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningAPIService.DeleteKeyPairRotationSettings")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -246,7 +246,7 @@ func (a *KeyPairsSigningApiService) DeleteKeyPairRotationSettingsExecute(r ApiDe
 
 type ApiDeleteSigningKeyPairRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSigningApiService
+	ApiService *KeyPairsSigningAPIService
 	id         string
 }
 
@@ -263,7 +263,7 @@ If the request is successful, the response body is empty. If the request fails, 
 	@param id ID of the key pair to delete.
 	@return ApiDeleteSigningKeyPairRequest
 */
-func (a *KeyPairsSigningApiService) DeleteSigningKeyPair(ctx context.Context, id string) ApiDeleteSigningKeyPairRequest {
+func (a *KeyPairsSigningAPIService) DeleteSigningKeyPair(ctx context.Context, id string) ApiDeleteSigningKeyPairRequest {
 	return ApiDeleteSigningKeyPairRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -272,14 +272,14 @@ func (a *KeyPairsSigningApiService) DeleteSigningKeyPair(ctx context.Context, id
 }
 
 // Execute executes the request
-func (a *KeyPairsSigningApiService) DeleteSigningKeyPairExecute(r ApiDeleteSigningKeyPairRequest) (*http.Response, error) {
+func (a *KeyPairsSigningAPIService) DeleteSigningKeyPairExecute(r ApiDeleteSigningKeyPairRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningApiService.DeleteSigningKeyPair")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningAPIService.DeleteSigningKeyPair")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -349,7 +349,7 @@ func (a *KeyPairsSigningApiService) DeleteSigningKeyPairExecute(r ApiDeleteSigni
 
 type ApiExportCertificateFileRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSigningApiService
+	ApiService *KeyPairsSigningAPIService
 	id         string
 }
 
@@ -366,7 +366,7 @@ For a successful request, the PEM-encoded certificate file is directly returned 
 	@param id ID of the key pair.
 	@return ApiExportCertificateFileRequest
 */
-func (a *KeyPairsSigningApiService) ExportCertificateFile(ctx context.Context, id string) ApiExportCertificateFileRequest {
+func (a *KeyPairsSigningAPIService) ExportCertificateFile(ctx context.Context, id string) ApiExportCertificateFileRequest {
 	return ApiExportCertificateFileRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -377,7 +377,7 @@ func (a *KeyPairsSigningApiService) ExportCertificateFile(ctx context.Context, i
 // Execute executes the request
 //
 //	@return string
-func (a *KeyPairsSigningApiService) ExportCertificateFileExecute(r ApiExportCertificateFileRequest) (string, *http.Response, error) {
+func (a *KeyPairsSigningAPIService) ExportCertificateFileExecute(r ApiExportCertificateFileRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -385,7 +385,7 @@ func (a *KeyPairsSigningApiService) ExportCertificateFileExecute(r ApiExportCert
 		localVarReturnValue string
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningApiService.ExportCertificateFile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningAPIService.ExportCertificateFile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -463,7 +463,7 @@ func (a *KeyPairsSigningApiService) ExportCertificateFileExecute(r ApiExportCert
 
 type ApiExportCsrRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSigningApiService
+	ApiService *KeyPairsSigningAPIService
 	id         string
 }
 
@@ -480,7 +480,7 @@ For a successful request, the PEM-encoded CSR file is directly returned as text 
 	@param id ID of the key pair.
 	@return ApiExportCsrRequest
 */
-func (a *KeyPairsSigningApiService) ExportCsr(ctx context.Context, id string) ApiExportCsrRequest {
+func (a *KeyPairsSigningAPIService) ExportCsr(ctx context.Context, id string) ApiExportCsrRequest {
 	return ApiExportCsrRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -491,7 +491,7 @@ func (a *KeyPairsSigningApiService) ExportCsr(ctx context.Context, id string) Ap
 // Execute executes the request
 //
 //	@return string
-func (a *KeyPairsSigningApiService) ExportCsrExecute(r ApiExportCsrRequest) (string, *http.Response, error) {
+func (a *KeyPairsSigningAPIService) ExportCsrExecute(r ApiExportCsrRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -499,7 +499,7 @@ func (a *KeyPairsSigningApiService) ExportCsrExecute(r ApiExportCsrRequest) (str
 		localVarReturnValue string
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningApiService.ExportCsr")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningAPIService.ExportCsr")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -567,7 +567,7 @@ func (a *KeyPairsSigningApiService) ExportCsrExecute(r ApiExportCsrRequest) (str
 
 type ApiExportPEMFileRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSigningApiService
+	ApiService *KeyPairsSigningAPIService
 	id         string
 	body       *KeyPairExportSettings
 }
@@ -591,7 +591,7 @@ For a successful request, the PEM file is directly returned in PEM format and th
 	@param id ID of the key pair.
 	@return ApiExportPEMFileRequest
 */
-func (a *KeyPairsSigningApiService) ExportPEMFile(ctx context.Context, id string) ApiExportPEMFileRequest {
+func (a *KeyPairsSigningAPIService) ExportPEMFile(ctx context.Context, id string) ApiExportPEMFileRequest {
 	return ApiExportPEMFileRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -602,7 +602,7 @@ func (a *KeyPairsSigningApiService) ExportPEMFile(ctx context.Context, id string
 // Execute executes the request
 //
 //	@return string
-func (a *KeyPairsSigningApiService) ExportPEMFileExecute(r ApiExportPEMFileRequest) (string, *http.Response, error) {
+func (a *KeyPairsSigningAPIService) ExportPEMFileExecute(r ApiExportPEMFileRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -610,7 +610,7 @@ func (a *KeyPairsSigningApiService) ExportPEMFileExecute(r ApiExportPEMFileReque
 		localVarReturnValue string
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningApiService.ExportPEMFile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningAPIService.ExportPEMFile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -704,7 +704,7 @@ func (a *KeyPairsSigningApiService) ExportPEMFileExecute(r ApiExportPEMFileReque
 
 type ApiExportPKCS12FileRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSigningApiService
+	ApiService *KeyPairsSigningAPIService
 	id         string
 	body       *KeyPairExportSettings
 }
@@ -728,7 +728,7 @@ For a successful request, the PKCS12 file is directly returned in binary format 
 	@param id ID of the key pair.
 	@return ApiExportPKCS12FileRequest
 */
-func (a *KeyPairsSigningApiService) ExportPKCS12File(ctx context.Context, id string) ApiExportPKCS12FileRequest {
+func (a *KeyPairsSigningAPIService) ExportPKCS12File(ctx context.Context, id string) ApiExportPKCS12FileRequest {
 	return ApiExportPKCS12FileRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -739,7 +739,7 @@ func (a *KeyPairsSigningApiService) ExportPKCS12File(ctx context.Context, id str
 // Execute executes the request
 //
 //	@return string
-func (a *KeyPairsSigningApiService) ExportPKCS12FileExecute(r ApiExportPKCS12FileRequest) (string, *http.Response, error) {
+func (a *KeyPairsSigningAPIService) ExportPKCS12FileExecute(r ApiExportPKCS12FileRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -747,7 +747,7 @@ func (a *KeyPairsSigningApiService) ExportPKCS12FileExecute(r ApiExportPKCS12Fil
 		localVarReturnValue string
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningApiService.ExportPKCS12File")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningAPIService.ExportPKCS12File")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -841,7 +841,7 @@ func (a *KeyPairsSigningApiService) ExportPKCS12FileExecute(r ApiExportPKCS12Fil
 
 type ApiGetRotationSettingsRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSigningApiService
+	ApiService *KeyPairsSigningAPIService
 	id         string
 }
 
@@ -856,7 +856,7 @@ GetRotationSettings Retrieve details of rotation settings for a key pair.
 	@param id ID of the key pair to retrieve its rotation settings.
 	@return ApiGetRotationSettingsRequest
 */
-func (a *KeyPairsSigningApiService) GetRotationSettings(ctx context.Context, id string) ApiGetRotationSettingsRequest {
+func (a *KeyPairsSigningAPIService) GetRotationSettings(ctx context.Context, id string) ApiGetRotationSettingsRequest {
 	return ApiGetRotationSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -867,7 +867,7 @@ func (a *KeyPairsSigningApiService) GetRotationSettings(ctx context.Context, id 
 // Execute executes the request
 //
 //	@return KeyPairRotationSettings
-func (a *KeyPairsSigningApiService) GetRotationSettingsExecute(r ApiGetRotationSettingsRequest) (*KeyPairRotationSettings, *http.Response, error) {
+func (a *KeyPairsSigningAPIService) GetRotationSettingsExecute(r ApiGetRotationSettingsRequest) (*KeyPairRotationSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -875,7 +875,7 @@ func (a *KeyPairsSigningApiService) GetRotationSettingsExecute(r ApiGetRotationS
 		localVarReturnValue *KeyPairRotationSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningApiService.GetRotationSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningAPIService.GetRotationSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -953,7 +953,7 @@ func (a *KeyPairsSigningApiService) GetRotationSettingsExecute(r ApiGetRotationS
 
 type ApiGetSigningKeyPairRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSigningApiService
+	ApiService *KeyPairsSigningAPIService
 	id         string
 }
 
@@ -968,7 +968,7 @@ GetSigningKeyPair Retrieve details of a key pair.
 	@param id ID of the key pair to retrieve.
 	@return ApiGetSigningKeyPairRequest
 */
-func (a *KeyPairsSigningApiService) GetSigningKeyPair(ctx context.Context, id string) ApiGetSigningKeyPairRequest {
+func (a *KeyPairsSigningAPIService) GetSigningKeyPair(ctx context.Context, id string) ApiGetSigningKeyPairRequest {
 	return ApiGetSigningKeyPairRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -979,7 +979,7 @@ func (a *KeyPairsSigningApiService) GetSigningKeyPair(ctx context.Context, id st
 // Execute executes the request
 //
 //	@return KeyPairView
-func (a *KeyPairsSigningApiService) GetSigningKeyPairExecute(r ApiGetSigningKeyPairRequest) (*KeyPairView, *http.Response, error) {
+func (a *KeyPairsSigningAPIService) GetSigningKeyPairExecute(r ApiGetSigningKeyPairRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -987,7 +987,7 @@ func (a *KeyPairsSigningApiService) GetSigningKeyPairExecute(r ApiGetSigningKeyP
 		localVarReturnValue *KeyPairView
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningApiService.GetSigningKeyPair")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningAPIService.GetSigningKeyPair")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1065,7 +1065,7 @@ func (a *KeyPairsSigningApiService) GetSigningKeyPairExecute(r ApiGetSigningKeyP
 
 type ApiGetSigningKeyPairsRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSigningApiService
+	ApiService *KeyPairsSigningAPIService
 }
 
 func (r ApiGetSigningKeyPairsRequest) Execute() (*KeyPairViews, *http.Response, error) {
@@ -1078,7 +1078,7 @@ GetSigningKeyPairs Get list of key pairs.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSigningKeyPairsRequest
 */
-func (a *KeyPairsSigningApiService) GetSigningKeyPairs(ctx context.Context) ApiGetSigningKeyPairsRequest {
+func (a *KeyPairsSigningAPIService) GetSigningKeyPairs(ctx context.Context) ApiGetSigningKeyPairsRequest {
 	return ApiGetSigningKeyPairsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1088,7 +1088,7 @@ func (a *KeyPairsSigningApiService) GetSigningKeyPairs(ctx context.Context) ApiG
 // Execute executes the request
 //
 //	@return KeyPairViews
-func (a *KeyPairsSigningApiService) GetSigningKeyPairsExecute(r ApiGetSigningKeyPairsRequest) (*KeyPairViews, *http.Response, error) {
+func (a *KeyPairsSigningAPIService) GetSigningKeyPairsExecute(r ApiGetSigningKeyPairsRequest) (*KeyPairViews, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1096,7 +1096,7 @@ func (a *KeyPairsSigningApiService) GetSigningKeyPairsExecute(r ApiGetSigningKey
 		localVarReturnValue *KeyPairViews
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningApiService.GetSigningKeyPairs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningAPIService.GetSigningKeyPairs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1163,7 +1163,7 @@ func (a *KeyPairsSigningApiService) GetSigningKeyPairsExecute(r ApiGetSigningKey
 
 type ApiImportCsrResponseRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSigningApiService
+	ApiService *KeyPairsSigningAPIService
 	id         string
 	body       *CSRResponse
 }
@@ -1185,7 +1185,7 @@ ImportCsrResponse Import a CSR response for this key pair.
 	@param id ID of the key pair.
 	@return ApiImportCsrResponseRequest
 */
-func (a *KeyPairsSigningApiService) ImportCsrResponse(ctx context.Context, id string) ApiImportCsrResponseRequest {
+func (a *KeyPairsSigningAPIService) ImportCsrResponse(ctx context.Context, id string) ApiImportCsrResponseRequest {
 	return ApiImportCsrResponseRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1196,7 +1196,7 @@ func (a *KeyPairsSigningApiService) ImportCsrResponse(ctx context.Context, id st
 // Execute executes the request
 //
 //	@return KeyPairView
-func (a *KeyPairsSigningApiService) ImportCsrResponseExecute(r ApiImportCsrResponseRequest) (*KeyPairView, *http.Response, error) {
+func (a *KeyPairsSigningAPIService) ImportCsrResponseExecute(r ApiImportCsrResponseRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -1204,7 +1204,7 @@ func (a *KeyPairsSigningApiService) ImportCsrResponseExecute(r ApiImportCsrRespo
 		localVarReturnValue *KeyPairView
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningApiService.ImportCsrResponse")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningAPIService.ImportCsrResponse")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1298,7 +1298,7 @@ func (a *KeyPairsSigningApiService) ImportCsrResponseExecute(r ApiImportCsrRespo
 
 type ApiImportSigningKeyPairRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSigningApiService
+	ApiService *KeyPairsSigningAPIService
 	body       *KeyPairFile
 }
 
@@ -1318,7 +1318,7 @@ ImportSigningKeyPair Import a new key pair.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiImportSigningKeyPairRequest
 */
-func (a *KeyPairsSigningApiService) ImportSigningKeyPair(ctx context.Context) ApiImportSigningKeyPairRequest {
+func (a *KeyPairsSigningAPIService) ImportSigningKeyPair(ctx context.Context) ApiImportSigningKeyPairRequest {
 	return ApiImportSigningKeyPairRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1328,7 +1328,7 @@ func (a *KeyPairsSigningApiService) ImportSigningKeyPair(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return KeyPairView
-func (a *KeyPairsSigningApiService) ImportSigningKeyPairExecute(r ApiImportSigningKeyPairRequest) (*KeyPairView, *http.Response, error) {
+func (a *KeyPairsSigningAPIService) ImportSigningKeyPairExecute(r ApiImportSigningKeyPairRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -1336,7 +1336,7 @@ func (a *KeyPairsSigningApiService) ImportSigningKeyPairExecute(r ApiImportSigni
 		localVarReturnValue *KeyPairView
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningApiService.ImportSigningKeyPair")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningAPIService.ImportSigningKeyPair")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1418,7 +1418,7 @@ func (a *KeyPairsSigningApiService) ImportSigningKeyPairExecute(r ApiImportSigni
 
 type ApiUpdateRotationSettingsRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairsSigningApiService
+	ApiService *KeyPairsSigningAPIService
 	id         string
 	body       *KeyPairRotationSettings
 }
@@ -1440,7 +1440,7 @@ UpdateRotationSettings Add rotation settings to a key pair
 	@param id ID of the key pair.
 	@return ApiUpdateRotationSettingsRequest
 */
-func (a *KeyPairsSigningApiService) UpdateRotationSettings(ctx context.Context, id string) ApiUpdateRotationSettingsRequest {
+func (a *KeyPairsSigningAPIService) UpdateRotationSettings(ctx context.Context, id string) ApiUpdateRotationSettingsRequest {
 	return ApiUpdateRotationSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1451,7 +1451,7 @@ func (a *KeyPairsSigningApiService) UpdateRotationSettings(ctx context.Context, 
 // Execute executes the request
 //
 //	@return KeyPairRotationSettings
-func (a *KeyPairsSigningApiService) UpdateRotationSettingsExecute(r ApiUpdateRotationSettingsRequest) (*KeyPairRotationSettings, *http.Response, error) {
+func (a *KeyPairsSigningAPIService) UpdateRotationSettingsExecute(r ApiUpdateRotationSettingsRequest) (*KeyPairRotationSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1459,7 +1459,7 @@ func (a *KeyPairsSigningApiService) UpdateRotationSettingsExecute(r ApiUpdateRot
 		localVarReturnValue *KeyPairRotationSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningApiService.UpdateRotationSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsSigningAPIService.UpdateRotationSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

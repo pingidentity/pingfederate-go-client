@@ -1,14 +1,14 @@
-# \OauthAuthorizationDetailTypesApi
+# \OauthAuthorizationDetailTypesAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddAuthorizationDetailType**](OauthAuthorizationDetailTypesApi.md#AddAuthorizationDetailType) | **Post** /oauth/authorizationDetailTypes | Create a new authorization detail type.
-[**DeleteAuthorizationDetailType**](OauthAuthorizationDetailTypesApi.md#DeleteAuthorizationDetailType) | **Delete** /oauth/authorizationDetailTypes/{id} | Delete an authorization detail type.
-[**GetAuthorizationDetailTypeById**](OauthAuthorizationDetailTypesApi.md#GetAuthorizationDetailTypeById) | **Get** /oauth/authorizationDetailTypes/{id} | Get an authorization detail type.
-[**GetAuthorizationDetailTypes**](OauthAuthorizationDetailTypesApi.md#GetAuthorizationDetailTypes) | **Get** /oauth/authorizationDetailTypes | Get the list of authorization detail types.
-[**UpdateAuthorizationDetailType**](OauthAuthorizationDetailTypesApi.md#UpdateAuthorizationDetailType) | **Put** /oauth/authorizationDetailTypes/{id} | Update an authorization detail type.
+[**AddAuthorizationDetailType**](OauthAuthorizationDetailTypesAPI.md#AddAuthorizationDetailType) | **Post** /oauth/authorizationDetailTypes | Create a new authorization detail type.
+[**DeleteAuthorizationDetailType**](OauthAuthorizationDetailTypesAPI.md#DeleteAuthorizationDetailType) | **Delete** /oauth/authorizationDetailTypes/{id} | Delete an authorization detail type.
+[**GetAuthorizationDetailTypeById**](OauthAuthorizationDetailTypesAPI.md#GetAuthorizationDetailTypeById) | **Get** /oauth/authorizationDetailTypes/{id} | Get an authorization detail type.
+[**GetAuthorizationDetailTypes**](OauthAuthorizationDetailTypesAPI.md#GetAuthorizationDetailTypes) | **Get** /oauth/authorizationDetailTypes | Get the list of authorization detail types.
+[**UpdateAuthorizationDetailType**](OauthAuthorizationDetailTypesAPI.md#UpdateAuthorizationDetailType) | **Put** /oauth/authorizationDetailTypes/{id} | Update an authorization detail type.
 
 
 
@@ -37,13 +37,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthorizationDetailTypesApi.AddAuthorizationDetailType(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.OauthAuthorizationDetailTypesAPI.AddAuthorizationDetailType(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailTypesApi.AddAuthorizationDetailType``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailTypesAPI.AddAuthorizationDetailType``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddAuthorizationDetailType`: AuthorizationDetailType
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailTypesApi.AddAuthorizationDetailType`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailTypesAPI.AddAuthorizationDetailType`: %v\n", resp)
 }
 ```
 
@@ -103,9 +103,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthAuthorizationDetailTypesApi.DeleteAuthorizationDetailType(context.Background(), id).Execute()
+    r, err := apiClient.OauthAuthorizationDetailTypesAPI.DeleteAuthorizationDetailType(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailTypesApi.DeleteAuthorizationDetailType``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailTypesAPI.DeleteAuthorizationDetailType``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -171,13 +171,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthorizationDetailTypesApi.GetAuthorizationDetailTypeById(context.Background(), id).Execute()
+    resp, r, err := apiClient.OauthAuthorizationDetailTypesAPI.GetAuthorizationDetailTypeById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailTypesApi.GetAuthorizationDetailTypeById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailTypesAPI.GetAuthorizationDetailTypeById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAuthorizationDetailTypeById`: AuthorizationDetailType
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailTypesApi.GetAuthorizationDetailTypeById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailTypesAPI.GetAuthorizationDetailTypeById`: %v\n", resp)
 }
 ```
 
@@ -238,13 +238,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthorizationDetailTypesApi.GetAuthorizationDetailTypes(context.Background()).Execute()
+    resp, r, err := apiClient.OauthAuthorizationDetailTypesAPI.GetAuthorizationDetailTypes(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailTypesApi.GetAuthorizationDetailTypes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailTypesAPI.GetAuthorizationDetailTypes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAuthorizationDetailTypes`: AuthorizationDetailTypes
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailTypesApi.GetAuthorizationDetailTypes`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailTypesAPI.GetAuthorizationDetailTypes`: %v\n", resp)
 }
 ```
 
@@ -301,13 +301,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthorizationDetailTypesApi.UpdateAuthorizationDetailType(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.OauthAuthorizationDetailTypesAPI.UpdateAuthorizationDetailType(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailTypesApi.UpdateAuthorizationDetailType``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailTypesAPI.UpdateAuthorizationDetailType``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateAuthorizationDetailType`: AuthorizationDetailType
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailTypesApi.UpdateAuthorizationDetailType`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailTypesAPI.UpdateAuthorizationDetailType`: %v\n", resp)
 }
 ```
 

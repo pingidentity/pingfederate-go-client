@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// SpAuthenticationPolicyContractMappingsApiService SpAuthenticationPolicyContractMappingsApi service
-type SpAuthenticationPolicyContractMappingsApiService service
+// SpAuthenticationPolicyContractMappingsAPIService SpAuthenticationPolicyContractMappingsAPI service
+type SpAuthenticationPolicyContractMappingsAPIService service
 
 type ApiCreateApcToSpAdapterMappingRequest struct {
 	ctx                       context.Context
-	ApiService                *SpAuthenticationPolicyContractMappingsApiService
+	ApiService                *SpAuthenticationPolicyContractMappingsAPIService
 	body                      *ApcToSpAdapterMapping
 	xBypassExternalValidation *bool
 }
@@ -51,7 +51,7 @@ CreateApcToSpAdapterMapping Create a new APC-to-SP Adapter Mapping.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateApcToSpAdapterMappingRequest
 */
-func (a *SpAuthenticationPolicyContractMappingsApiService) CreateApcToSpAdapterMapping(ctx context.Context) ApiCreateApcToSpAdapterMappingRequest {
+func (a *SpAuthenticationPolicyContractMappingsAPIService) CreateApcToSpAdapterMapping(ctx context.Context) ApiCreateApcToSpAdapterMappingRequest {
 	return ApiCreateApcToSpAdapterMappingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -61,7 +61,7 @@ func (a *SpAuthenticationPolicyContractMappingsApiService) CreateApcToSpAdapterM
 // Execute executes the request
 //
 //	@return ApcToSpAdapterMapping
-func (a *SpAuthenticationPolicyContractMappingsApiService) CreateApcToSpAdapterMappingExecute(r ApiCreateApcToSpAdapterMappingRequest) (*ApcToSpAdapterMapping, *http.Response, error) {
+func (a *SpAuthenticationPolicyContractMappingsAPIService) CreateApcToSpAdapterMappingExecute(r ApiCreateApcToSpAdapterMappingRequest) (*ApcToSpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -69,7 +69,7 @@ func (a *SpAuthenticationPolicyContractMappingsApiService) CreateApcToSpAdapterM
 		localVarReturnValue *ApcToSpAdapterMapping
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAuthenticationPolicyContractMappingsApiService.CreateApcToSpAdapterMapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAuthenticationPolicyContractMappingsAPIService.CreateApcToSpAdapterMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -154,7 +154,7 @@ func (a *SpAuthenticationPolicyContractMappingsApiService) CreateApcToSpAdapterM
 
 type ApiDeleteApcToSpAdapterMappingByIdRequest struct {
 	ctx        context.Context
-	ApiService *SpAuthenticationPolicyContractMappingsApiService
+	ApiService *SpAuthenticationPolicyContractMappingsAPIService
 	id         string
 }
 
@@ -169,7 +169,7 @@ DeleteApcToSpAdapterMappingById Delete an APC-to-SP Adapter Mapping.
 	@param id ID of APC-to-SP Adapter Mapping to delete.
 	@return ApiDeleteApcToSpAdapterMappingByIdRequest
 */
-func (a *SpAuthenticationPolicyContractMappingsApiService) DeleteApcToSpAdapterMappingById(ctx context.Context, id string) ApiDeleteApcToSpAdapterMappingByIdRequest {
+func (a *SpAuthenticationPolicyContractMappingsAPIService) DeleteApcToSpAdapterMappingById(ctx context.Context, id string) ApiDeleteApcToSpAdapterMappingByIdRequest {
 	return ApiDeleteApcToSpAdapterMappingByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -178,14 +178,14 @@ func (a *SpAuthenticationPolicyContractMappingsApiService) DeleteApcToSpAdapterM
 }
 
 // Execute executes the request
-func (a *SpAuthenticationPolicyContractMappingsApiService) DeleteApcToSpAdapterMappingByIdExecute(r ApiDeleteApcToSpAdapterMappingByIdRequest) (*http.Response, error) {
+func (a *SpAuthenticationPolicyContractMappingsAPIService) DeleteApcToSpAdapterMappingByIdExecute(r ApiDeleteApcToSpAdapterMappingByIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAuthenticationPolicyContractMappingsApiService.DeleteApcToSpAdapterMappingById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAuthenticationPolicyContractMappingsAPIService.DeleteApcToSpAdapterMappingById")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -254,7 +254,7 @@ func (a *SpAuthenticationPolicyContractMappingsApiService) DeleteApcToSpAdapterM
 
 type ApiGetApcToSpAdapterMappingByIdRequest struct {
 	ctx        context.Context
-	ApiService *SpAuthenticationPolicyContractMappingsApiService
+	ApiService *SpAuthenticationPolicyContractMappingsAPIService
 	id         string
 }
 
@@ -269,7 +269,7 @@ GetApcToSpAdapterMappingById Get an APC-to-SP Adapter Mapping.
 	@param id ID of APC-to-SP Adapter Mapping to fetch.
 	@return ApiGetApcToSpAdapterMappingByIdRequest
 */
-func (a *SpAuthenticationPolicyContractMappingsApiService) GetApcToSpAdapterMappingById(ctx context.Context, id string) ApiGetApcToSpAdapterMappingByIdRequest {
+func (a *SpAuthenticationPolicyContractMappingsAPIService) GetApcToSpAdapterMappingById(ctx context.Context, id string) ApiGetApcToSpAdapterMappingByIdRequest {
 	return ApiGetApcToSpAdapterMappingByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -280,7 +280,7 @@ func (a *SpAuthenticationPolicyContractMappingsApiService) GetApcToSpAdapterMapp
 // Execute executes the request
 //
 //	@return ApcToSpAdapterMapping
-func (a *SpAuthenticationPolicyContractMappingsApiService) GetApcToSpAdapterMappingByIdExecute(r ApiGetApcToSpAdapterMappingByIdRequest) (*ApcToSpAdapterMapping, *http.Response, error) {
+func (a *SpAuthenticationPolicyContractMappingsAPIService) GetApcToSpAdapterMappingByIdExecute(r ApiGetApcToSpAdapterMappingByIdRequest) (*ApcToSpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -288,7 +288,7 @@ func (a *SpAuthenticationPolicyContractMappingsApiService) GetApcToSpAdapterMapp
 		localVarReturnValue *ApcToSpAdapterMapping
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAuthenticationPolicyContractMappingsApiService.GetApcToSpAdapterMappingById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAuthenticationPolicyContractMappingsAPIService.GetApcToSpAdapterMappingById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -366,7 +366,7 @@ func (a *SpAuthenticationPolicyContractMappingsApiService) GetApcToSpAdapterMapp
 
 type ApiGetApcToSpAdapterMappingsRequest struct {
 	ctx        context.Context
-	ApiService *SpAuthenticationPolicyContractMappingsApiService
+	ApiService *SpAuthenticationPolicyContractMappingsAPIService
 }
 
 func (r ApiGetApcToSpAdapterMappingsRequest) Execute() (*ApcToSpAdapterMappings, *http.Response, error) {
@@ -379,7 +379,7 @@ GetApcToSpAdapterMappings Get the list of APC-to-SP Adapter Mappings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetApcToSpAdapterMappingsRequest
 */
-func (a *SpAuthenticationPolicyContractMappingsApiService) GetApcToSpAdapterMappings(ctx context.Context) ApiGetApcToSpAdapterMappingsRequest {
+func (a *SpAuthenticationPolicyContractMappingsAPIService) GetApcToSpAdapterMappings(ctx context.Context) ApiGetApcToSpAdapterMappingsRequest {
 	return ApiGetApcToSpAdapterMappingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -389,7 +389,7 @@ func (a *SpAuthenticationPolicyContractMappingsApiService) GetApcToSpAdapterMapp
 // Execute executes the request
 //
 //	@return ApcToSpAdapterMappings
-func (a *SpAuthenticationPolicyContractMappingsApiService) GetApcToSpAdapterMappingsExecute(r ApiGetApcToSpAdapterMappingsRequest) (*ApcToSpAdapterMappings, *http.Response, error) {
+func (a *SpAuthenticationPolicyContractMappingsAPIService) GetApcToSpAdapterMappingsExecute(r ApiGetApcToSpAdapterMappingsRequest) (*ApcToSpAdapterMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -397,7 +397,7 @@ func (a *SpAuthenticationPolicyContractMappingsApiService) GetApcToSpAdapterMapp
 		localVarReturnValue *ApcToSpAdapterMappings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAuthenticationPolicyContractMappingsApiService.GetApcToSpAdapterMappings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAuthenticationPolicyContractMappingsAPIService.GetApcToSpAdapterMappings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -464,7 +464,7 @@ func (a *SpAuthenticationPolicyContractMappingsApiService) GetApcToSpAdapterMapp
 
 type ApiUpdateApcToSpAdapterMappingByIdRequest struct {
 	ctx                       context.Context
-	ApiService                *SpAuthenticationPolicyContractMappingsApiService
+	ApiService                *SpAuthenticationPolicyContractMappingsAPIService
 	id                        string
 	body                      *ApcToSpAdapterMapping
 	xBypassExternalValidation *bool
@@ -493,7 +493,7 @@ UpdateApcToSpAdapterMappingById Update an APC-to-SP Adapter Mapping.
 	@param id ID of APC-to-SP Adapter Mapping to update.
 	@return ApiUpdateApcToSpAdapterMappingByIdRequest
 */
-func (a *SpAuthenticationPolicyContractMappingsApiService) UpdateApcToSpAdapterMappingById(ctx context.Context, id string) ApiUpdateApcToSpAdapterMappingByIdRequest {
+func (a *SpAuthenticationPolicyContractMappingsAPIService) UpdateApcToSpAdapterMappingById(ctx context.Context, id string) ApiUpdateApcToSpAdapterMappingByIdRequest {
 	return ApiUpdateApcToSpAdapterMappingByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -504,7 +504,7 @@ func (a *SpAuthenticationPolicyContractMappingsApiService) UpdateApcToSpAdapterM
 // Execute executes the request
 //
 //	@return ApcToSpAdapterMapping
-func (a *SpAuthenticationPolicyContractMappingsApiService) UpdateApcToSpAdapterMappingByIdExecute(r ApiUpdateApcToSpAdapterMappingByIdRequest) (*ApcToSpAdapterMapping, *http.Response, error) {
+func (a *SpAuthenticationPolicyContractMappingsAPIService) UpdateApcToSpAdapterMappingByIdExecute(r ApiUpdateApcToSpAdapterMappingByIdRequest) (*ApcToSpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -512,7 +512,7 @@ func (a *SpAuthenticationPolicyContractMappingsApiService) UpdateApcToSpAdapterM
 		localVarReturnValue *ApcToSpAdapterMapping
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAuthenticationPolicyContractMappingsApiService.UpdateApcToSpAdapterMappingById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SpAuthenticationPolicyContractMappingsAPIService.UpdateApcToSpAdapterMappingById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

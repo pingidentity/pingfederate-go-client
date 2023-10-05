@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// CertificatesCaApiService CertificatesCaApi service
-type CertificatesCaApiService service
+// CertificatesCaAPIService CertificatesCaAPI service
+type CertificatesCaAPIService service
 
 type ApiDeleteTrustedCARequest struct {
 	ctx        context.Context
-	ApiService *CertificatesCaApiService
+	ApiService *CertificatesCaAPIService
 	id         string
 }
 
@@ -41,7 +41,7 @@ If the request is successful, the response body is empty. If the request fails, 
 	@param id ID of the trusted certificate authority to delete.
 	@return ApiDeleteTrustedCARequest
 */
-func (a *CertificatesCaApiService) DeleteTrustedCA(ctx context.Context, id string) ApiDeleteTrustedCARequest {
+func (a *CertificatesCaAPIService) DeleteTrustedCA(ctx context.Context, id string) ApiDeleteTrustedCARequest {
 	return ApiDeleteTrustedCARequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -50,14 +50,14 @@ func (a *CertificatesCaApiService) DeleteTrustedCA(ctx context.Context, id strin
 }
 
 // Execute executes the request
-func (a *CertificatesCaApiService) DeleteTrustedCAExecute(r ApiDeleteTrustedCARequest) (*http.Response, error) {
+func (a *CertificatesCaAPIService) DeleteTrustedCAExecute(r ApiDeleteTrustedCARequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesCaApiService.DeleteTrustedCA")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesCaAPIService.DeleteTrustedCA")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -126,7 +126,7 @@ func (a *CertificatesCaApiService) DeleteTrustedCAExecute(r ApiDeleteTrustedCARe
 
 type ApiExportCaCertificateFileRequest struct {
 	ctx        context.Context
-	ApiService *CertificatesCaApiService
+	ApiService *CertificatesCaAPIService
 	id         string
 }
 
@@ -143,7 +143,7 @@ For a successful request, the PEM-encoded certificate file is directly returned 
 	@param id ID of the trusted certificate authority.
 	@return ApiExportCaCertificateFileRequest
 */
-func (a *CertificatesCaApiService) ExportCaCertificateFile(ctx context.Context, id string) ApiExportCaCertificateFileRequest {
+func (a *CertificatesCaAPIService) ExportCaCertificateFile(ctx context.Context, id string) ApiExportCaCertificateFileRequest {
 	return ApiExportCaCertificateFileRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -154,7 +154,7 @@ func (a *CertificatesCaApiService) ExportCaCertificateFile(ctx context.Context, 
 // Execute executes the request
 //
 //	@return string
-func (a *CertificatesCaApiService) ExportCaCertificateFileExecute(r ApiExportCaCertificateFileRequest) (string, *http.Response, error) {
+func (a *CertificatesCaAPIService) ExportCaCertificateFileExecute(r ApiExportCaCertificateFileRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -162,7 +162,7 @@ func (a *CertificatesCaApiService) ExportCaCertificateFileExecute(r ApiExportCaC
 		localVarReturnValue string
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesCaApiService.ExportCaCertificateFile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesCaAPIService.ExportCaCertificateFile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -240,7 +240,7 @@ func (a *CertificatesCaApiService) ExportCaCertificateFileExecute(r ApiExportCaC
 
 type ApiGetTrustedCAsRequest struct {
 	ctx        context.Context
-	ApiService *CertificatesCaApiService
+	ApiService *CertificatesCaAPIService
 }
 
 func (r ApiGetTrustedCAsRequest) Execute() (*CertViews, *http.Response, error) {
@@ -253,7 +253,7 @@ GetTrustedCAs Get list of trusted certificate authorities.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetTrustedCAsRequest
 */
-func (a *CertificatesCaApiService) GetTrustedCAs(ctx context.Context) ApiGetTrustedCAsRequest {
+func (a *CertificatesCaAPIService) GetTrustedCAs(ctx context.Context) ApiGetTrustedCAsRequest {
 	return ApiGetTrustedCAsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -263,7 +263,7 @@ func (a *CertificatesCaApiService) GetTrustedCAs(ctx context.Context) ApiGetTrus
 // Execute executes the request
 //
 //	@return CertViews
-func (a *CertificatesCaApiService) GetTrustedCAsExecute(r ApiGetTrustedCAsRequest) (*CertViews, *http.Response, error) {
+func (a *CertificatesCaAPIService) GetTrustedCAsExecute(r ApiGetTrustedCAsRequest) (*CertViews, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -271,7 +271,7 @@ func (a *CertificatesCaApiService) GetTrustedCAsExecute(r ApiGetTrustedCAsReques
 		localVarReturnValue *CertViews
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesCaApiService.GetTrustedCAs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesCaAPIService.GetTrustedCAs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -338,7 +338,7 @@ func (a *CertificatesCaApiService) GetTrustedCAsExecute(r ApiGetTrustedCAsReques
 
 type ApiGetTrustedCertRequest struct {
 	ctx        context.Context
-	ApiService *CertificatesCaApiService
+	ApiService *CertificatesCaAPIService
 	id         string
 }
 
@@ -353,7 +353,7 @@ GetTrustedCert Retrieve details of a trusted certificate authority.
 	@param id ID of the trusted certificate authority to retrieve.
 	@return ApiGetTrustedCertRequest
 */
-func (a *CertificatesCaApiService) GetTrustedCert(ctx context.Context, id string) ApiGetTrustedCertRequest {
+func (a *CertificatesCaAPIService) GetTrustedCert(ctx context.Context, id string) ApiGetTrustedCertRequest {
 	return ApiGetTrustedCertRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -364,7 +364,7 @@ func (a *CertificatesCaApiService) GetTrustedCert(ctx context.Context, id string
 // Execute executes the request
 //
 //	@return CertView
-func (a *CertificatesCaApiService) GetTrustedCertExecute(r ApiGetTrustedCertRequest) (*CertView, *http.Response, error) {
+func (a *CertificatesCaAPIService) GetTrustedCertExecute(r ApiGetTrustedCertRequest) (*CertView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -372,7 +372,7 @@ func (a *CertificatesCaApiService) GetTrustedCertExecute(r ApiGetTrustedCertRequ
 		localVarReturnValue *CertView
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesCaApiService.GetTrustedCert")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesCaAPIService.GetTrustedCert")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -450,7 +450,7 @@ func (a *CertificatesCaApiService) GetTrustedCertExecute(r ApiGetTrustedCertRequ
 
 type ApiImportTrustedCARequest struct {
 	ctx        context.Context
-	ApiService *CertificatesCaApiService
+	ApiService *CertificatesCaAPIService
 	body       *X509File
 }
 
@@ -470,7 +470,7 @@ ImportTrustedCA Import a new trusted certificate authority.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiImportTrustedCARequest
 */
-func (a *CertificatesCaApiService) ImportTrustedCA(ctx context.Context) ApiImportTrustedCARequest {
+func (a *CertificatesCaAPIService) ImportTrustedCA(ctx context.Context) ApiImportTrustedCARequest {
 	return ApiImportTrustedCARequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -480,7 +480,7 @@ func (a *CertificatesCaApiService) ImportTrustedCA(ctx context.Context) ApiImpor
 // Execute executes the request
 //
 //	@return CertView
-func (a *CertificatesCaApiService) ImportTrustedCAExecute(r ApiImportTrustedCARequest) (*CertView, *http.Response, error) {
+func (a *CertificatesCaAPIService) ImportTrustedCAExecute(r ApiImportTrustedCARequest) (*CertView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -488,7 +488,7 @@ func (a *CertificatesCaApiService) ImportTrustedCAExecute(r ApiImportTrustedCARe
 		localVarReturnValue *CertView
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesCaApiService.ImportTrustedCA")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificatesCaAPIService.ImportTrustedCA")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

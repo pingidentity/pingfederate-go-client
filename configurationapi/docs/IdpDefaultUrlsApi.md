@@ -1,11 +1,11 @@
-# \IdpDefaultUrlsApi
+# \IdpDefaultUrlsAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetDefaultUrl**](IdpDefaultUrlsApi.md#GetDefaultUrl) | **Get** /idp/defaultUrls | Gets the IDP Default URL settings.
-[**UpdateDefaultUrlSettings**](IdpDefaultUrlsApi.md#UpdateDefaultUrlSettings) | **Put** /idp/defaultUrls | Update the IDP Default URL settings.
+[**GetDefaultUrl**](IdpDefaultUrlsAPI.md#GetDefaultUrl) | **Get** /idp/defaultUrls | Gets the IDP Default URL settings.
+[**UpdateDefaultUrlSettings**](IdpDefaultUrlsAPI.md#UpdateDefaultUrlSettings) | **Put** /idp/defaultUrls | Update the IDP Default URL settings.
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpDefaultUrlsApi.GetDefaultUrl(context.Background()).Execute()
+    resp, r, err := apiClient.IdpDefaultUrlsAPI.GetDefaultUrl(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpDefaultUrlsApi.GetDefaultUrl``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpDefaultUrlsAPI.GetDefaultUrl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetDefaultUrl`: IdpDefaultUrl
-    fmt.Fprintf(os.Stdout, "Response from `IdpDefaultUrlsApi.GetDefaultUrl`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpDefaultUrlsAPI.GetDefaultUrl`: %v\n", resp)
 }
 ```
 
@@ -91,13 +91,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpDefaultUrlsApi.UpdateDefaultUrlSettings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.IdpDefaultUrlsAPI.UpdateDefaultUrlSettings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpDefaultUrlsApi.UpdateDefaultUrlSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdpDefaultUrlsAPI.UpdateDefaultUrlSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateDefaultUrlSettings`: IdpDefaultUrl
-    fmt.Fprintf(os.Stdout, "Response from `IdpDefaultUrlsApi.UpdateDefaultUrlSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdpDefaultUrlsAPI.UpdateDefaultUrlSettings`: %v\n", resp)
 }
 ```
 

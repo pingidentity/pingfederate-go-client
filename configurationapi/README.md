@@ -77,469 +77,469 @@ All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AdministrativeAccountsApi* | [**AddAccount**](docs/AdministrativeAccountsApi.md#addaccount) | **Post** /administrativeAccounts | Add a new PingFederate native Administrative Account.
-*AdministrativeAccountsApi* | [**ChangePassword**](docs/AdministrativeAccountsApi.md#changepassword) | **Post** /administrativeAccounts/changePassword | Change the Password of current PingFederate native Account.
-*AdministrativeAccountsApi* | [**DeleteAccount**](docs/AdministrativeAccountsApi.md#deleteaccount) | **Delete** /administrativeAccounts/{username} | Delete a PingFederate native Administrative Account information.
-*AdministrativeAccountsApi* | [**GetAccount**](docs/AdministrativeAccountsApi.md#getaccount) | **Get** /administrativeAccounts/{username} | Get a PingFederate native Administrative Account.
-*AdministrativeAccountsApi* | [**GetAccounts**](docs/AdministrativeAccountsApi.md#getaccounts) | **Get** /administrativeAccounts | Get all the PingFederate native Administrative Accounts.
-*AdministrativeAccountsApi* | [**ResetPassword**](docs/AdministrativeAccountsApi.md#resetpassword) | **Post** /administrativeAccounts/{username}/resetPassword | Reset the Password of an existing PingFederate native Administrative Account.
-*AdministrativeAccountsApi* | [**UpdateAccount**](docs/AdministrativeAccountsApi.md#updateaccount) | **Put** /administrativeAccounts/{username} | Update the information for a native Administrative Account.
-*AuthenticationApiApi* | [**CreateApplication**](docs/AuthenticationApiApi.md#createapplication) | **Post** /authenticationApi/applications | Create a new Authentication API Application.
-*AuthenticationApiApi* | [**DeleteApplication**](docs/AuthenticationApiApi.md#deleteapplication) | **Delete** /authenticationApi/applications/{id} | Delete an Authentication API Application.
-*AuthenticationApiApi* | [**GetApplication**](docs/AuthenticationApiApi.md#getapplication) | **Get** /authenticationApi/applications/{id} | Find Authentication API Application by ID.
-*AuthenticationApiApi* | [**GetAuthenticationApiApplications**](docs/AuthenticationApiApi.md#getauthenticationapiapplications) | **Get** /authenticationApi/applications | Get the collection of Authentication API Applications.
-*AuthenticationApiApi* | [**GetAuthenticationApiSettings**](docs/AuthenticationApiApi.md#getauthenticationapisettings) | **Get** /authenticationApi/settings | Get the Authentication API settings.
-*AuthenticationApiApi* | [**UpdateApplication**](docs/AuthenticationApiApi.md#updateapplication) | **Put** /authenticationApi/applications/{id} | Update an Authentication API Application.
-*AuthenticationApiApi* | [**UpdateAuthenticationApiSettings**](docs/AuthenticationApiApi.md#updateauthenticationapisettings) | **Put** /authenticationApi/settings | Set the Authentication API settings.
-*AuthenticationPoliciesApi* | [**CreateFragment**](docs/AuthenticationPoliciesApi.md#createfragment) | **Post** /authenticationPolicies/fragments | Create an authentication policy fragment.
-*AuthenticationPoliciesApi* | [**CreatePolicy**](docs/AuthenticationPoliciesApi.md#createpolicy) | **Post** /authenticationPolicies/policy | Create a new authentication policy.
-*AuthenticationPoliciesApi* | [**DeleteFragment**](docs/AuthenticationPoliciesApi.md#deletefragment) | **Delete** /authenticationPolicies/fragments/{id} | Delete an authentication policy fragment.
-*AuthenticationPoliciesApi* | [**DeletePolicy**](docs/AuthenticationPoliciesApi.md#deletepolicy) | **Delete** /authenticationPolicies/policy/{id} | Delete an authentication policy.
-*AuthenticationPoliciesApi* | [**GetAuthenticationPolicySettings**](docs/AuthenticationPoliciesApi.md#getauthenticationpolicysettings) | **Get** /authenticationPolicies/settings | Get the authentication policies settings.
-*AuthenticationPoliciesApi* | [**GetDefaultAuthenticationPolicy**](docs/AuthenticationPoliciesApi.md#getdefaultauthenticationpolicy) | **Get** /authenticationPolicies/default | Get the default configured authentication policy.
-*AuthenticationPoliciesApi* | [**GetFragment**](docs/AuthenticationPoliciesApi.md#getfragment) | **Get** /authenticationPolicies/fragments/{id} | Get an authentication policy fragment by ID.
-*AuthenticationPoliciesApi* | [**GetFragments**](docs/AuthenticationPoliciesApi.md#getfragments) | **Get** /authenticationPolicies/fragments | Get all of the authentication policies fragments.
-*AuthenticationPoliciesApi* | [**GetPolicy**](docs/AuthenticationPoliciesApi.md#getpolicy) | **Get** /authenticationPolicies/policy/{id} | Get an authentication policy by ID.
-*AuthenticationPoliciesApi* | [**MovePolicy**](docs/AuthenticationPoliciesApi.md#movepolicy) | **Post** /authenticationPolicies/policy/{id}/move | Move an authentication policy to a location within the policy tree.
-*AuthenticationPoliciesApi* | [**UpdateAuthenticationPolicySettings**](docs/AuthenticationPoliciesApi.md#updateauthenticationpolicysettings) | **Put** /authenticationPolicies/settings | Set the authentication policies settings.
-*AuthenticationPoliciesApi* | [**UpdateDefaultAuthenticationPolicy**](docs/AuthenticationPoliciesApi.md#updatedefaultauthenticationpolicy) | **Put** /authenticationPolicies/default | Set the default authentication policy.
-*AuthenticationPoliciesApi* | [**UpdateFragment**](docs/AuthenticationPoliciesApi.md#updatefragment) | **Put** /authenticationPolicies/fragments/{id} | Update an authentication policy fragment.
-*AuthenticationPoliciesApi* | [**UpdatePolicy**](docs/AuthenticationPoliciesApi.md#updatepolicy) | **Put** /authenticationPolicies/policy/{id} | Update an authentication policy.
-*AuthenticationPolicyContractsApi* | [**CreateAuthenticationPolicyContract**](docs/AuthenticationPolicyContractsApi.md#createauthenticationpolicycontract) | **Post** /authenticationPolicyContracts | Create a new Authentication Policy Contract.
-*AuthenticationPolicyContractsApi* | [**DeleteAuthenticationPolicyContract**](docs/AuthenticationPolicyContractsApi.md#deleteauthenticationpolicycontract) | **Delete** /authenticationPolicyContracts/{id} | Delete an Authentication Policy Contract.
-*AuthenticationPolicyContractsApi* | [**GetAuthenticationPolicyContract**](docs/AuthenticationPolicyContractsApi.md#getauthenticationpolicycontract) | **Get** /authenticationPolicyContracts/{id} | Gets the Authentication Policy Contract by ID.
-*AuthenticationPolicyContractsApi* | [**GetAuthenticationPolicyContracts**](docs/AuthenticationPolicyContractsApi.md#getauthenticationpolicycontracts) | **Get** /authenticationPolicyContracts | Gets the Authentication Policy Contracts.
-*AuthenticationPolicyContractsApi* | [**UpdateAuthenticationPolicyContract**](docs/AuthenticationPolicyContractsApi.md#updateauthenticationpolicycontract) | **Put** /authenticationPolicyContracts/{id} | Update an Authentication Policy Contract by ID.
-*AuthenticationSelectorsApi* | [**CreateAuthenticationSelector**](docs/AuthenticationSelectorsApi.md#createauthenticationselector) | **Post** /authenticationSelectors | Create a new authentication selector instance.
-*AuthenticationSelectorsApi* | [**DeleteAuthenticationSelector**](docs/AuthenticationSelectorsApi.md#deleteauthenticationselector) | **Delete** /authenticationSelectors/{id} | Delete an Authentication Selector instance.
-*AuthenticationSelectorsApi* | [**GetAuthenticationSelector**](docs/AuthenticationSelectorsApi.md#getauthenticationselector) | **Get** /authenticationSelectors/{id} | Get an Authentication Selector instance by ID.
-*AuthenticationSelectorsApi* | [**GetAuthenticationSelectorDescriptors**](docs/AuthenticationSelectorsApi.md#getauthenticationselectordescriptors) | **Get** /authenticationSelectors/descriptors | Get the list of available Authentication Selector descriptors.
-*AuthenticationSelectorsApi* | [**GetAuthenticationSelectorDescriptorsById**](docs/AuthenticationSelectorsApi.md#getauthenticationselectordescriptorsbyid) | **Get** /authenticationSelectors/descriptors/{id} | Get the description of an Authentication Selector plugin by ID.
-*AuthenticationSelectorsApi* | [**GetAuthenticationSelectors**](docs/AuthenticationSelectorsApi.md#getauthenticationselectors) | **Get** /authenticationSelectors | Get the list of configured Authentication Selector instances.
-*AuthenticationSelectorsApi* | [**UpdateAuthenticationSelector**](docs/AuthenticationSelectorsApi.md#updateauthenticationselector) | **Put** /authenticationSelectors/{id} | Update an authentication selector instance.
-*BulkApi* | [**ExportConfiguration**](docs/BulkApi.md#exportconfiguration) | **Get** /bulk/export | Export all API resources to a JSON file.
-*BulkApi* | [**ImportConfiguration**](docs/BulkApi.md#importconfiguration) | **Post** /bulk/import | Import configuration for a PingFederate deployment from a JSON file.
-*CaptchaProvidersApi* | [**CreateCaptchaProvider**](docs/CaptchaProvidersApi.md#createcaptchaprovider) | **Post** /captchaProviders | Create a CAPTCHA provider plugin instance.
-*CaptchaProvidersApi* | [**DeleteCaptchaProvider**](docs/CaptchaProvidersApi.md#deletecaptchaprovider) | **Delete** /captchaProviders/{id} | Delete a CAPTCHA provider plugin instance.
-*CaptchaProvidersApi* | [**GetCaptchaProvider**](docs/CaptchaProvidersApi.md#getcaptchaprovider) | **Get** /captchaProviders/{id} | Get a specific CAPTCHA provider plugin instance.
-*CaptchaProvidersApi* | [**GetCaptchaProviderPluginDescriptor**](docs/CaptchaProvidersApi.md#getcaptchaproviderplugindescriptor) | **Get** /captchaProviders/descriptors/{id} | Get a CAPTCHA provider plugin descriptor.
-*CaptchaProvidersApi* | [**GetCaptchaProviderPluginDescriptors**](docs/CaptchaProvidersApi.md#getcaptchaproviderplugindescriptors) | **Get** /captchaProviders/descriptors | Get a list of available CAPTCHA provider plugin descriptors.
-*CaptchaProvidersApi* | [**GetCaptchaProviders**](docs/CaptchaProvidersApi.md#getcaptchaproviders) | **Get** /captchaProviders | Get a list of CAPTCHA provider plugin instances.
-*CaptchaProvidersApi* | [**GetCaptchaProvidersSettings**](docs/CaptchaProvidersApi.md#getcaptchaproviderssettings) | **Get** /captchaProviders/settings | Get general CAPTCHA providers settings.
-*CaptchaProvidersApi* | [**UpdateCaptchaProvider**](docs/CaptchaProvidersApi.md#updatecaptchaprovider) | **Put** /captchaProviders/{id} | Update a CAPTCHA provider plugin instance.
-*CaptchaProvidersApi* | [**UpdateCaptchaProvidersSettings**](docs/CaptchaProvidersApi.md#updatecaptchaproviderssettings) | **Put** /captchaProviders/settings | Update general CAPTCHA providers settings.
-*CertificatesCaApi* | [**DeleteTrustedCA**](docs/CertificatesCaApi.md#deletetrustedca) | **Delete** /certificates/ca/{id} | Delete a trusted certificate authority.
-*CertificatesCaApi* | [**ExportCaCertificateFile**](docs/CertificatesCaApi.md#exportcacertificatefile) | **Get** /certificates/ca/{id}/file | Download the certificate from a given trusted certificate authority.
-*CertificatesCaApi* | [**GetTrustedCAs**](docs/CertificatesCaApi.md#gettrustedcas) | **Get** /certificates/ca | Get list of trusted certificate authorities.
-*CertificatesCaApi* | [**GetTrustedCert**](docs/CertificatesCaApi.md#gettrustedcert) | **Get** /certificates/ca/{id} | Retrieve details of a trusted certificate authority.
-*CertificatesCaApi* | [**ImportTrustedCA**](docs/CertificatesCaApi.md#importtrustedca) | **Post** /certificates/ca/import | Import a new trusted certificate authority.
-*CertificatesGroupsApi* | [**DeleteCertificateFromGroup**](docs/CertificatesGroupsApi.md#deletecertificatefromgroup) | **Delete** /certificates/groups/{groupName}/{id} | Delete a certificate from a group.
-*CertificatesGroupsApi* | [**GetCertificateFromGroup**](docs/CertificatesGroupsApi.md#getcertificatefromgroup) | **Get** /certificates/groups/{groupName}/{id} | Retrieve details of a certificate.
-*CertificatesGroupsApi* | [**GetCertificatesForGroup**](docs/CertificatesGroupsApi.md#getcertificatesforgroup) | **Get** /certificates/groups/{groupName} | Get list of all certificates for a group.
-*CertificatesGroupsApi* | [**ImportFeatureCert**](docs/CertificatesGroupsApi.md#importfeaturecert) | **Post** /certificates/groups/{groupName}/import | Import a new certificate to a group.
-*CertificatesRevocationApi* | [**DeleteOcspCertificateById**](docs/CertificatesRevocationApi.md#deleteocspcertificatebyid) | **Delete** /certificates/revocation/ocspCertificates/{id} | Delete an OCSP responder signature verification certificate by ID.
-*CertificatesRevocationApi* | [**GetOcspCertificateById**](docs/CertificatesRevocationApi.md#getocspcertificatebyid) | **Get** /certificates/revocation/ocspCertificates/{id} | Get an OCSP responder signature verification certificate by ID.
-*CertificatesRevocationApi* | [**GetOcspCertificates**](docs/CertificatesRevocationApi.md#getocspcertificates) | **Get** /certificates/revocation/ocspCertificates | Get the list of available OCSP responder signature verification certificates.
-*CertificatesRevocationApi* | [**GetRevocationSettings**](docs/CertificatesRevocationApi.md#getrevocationsettings) | **Get** /certificates/revocation/settings | Get certificate revocation settings.
-*CertificatesRevocationApi* | [**ImportOcspCertificate**](docs/CertificatesRevocationApi.md#importocspcertificate) | **Post** /certificates/revocation/ocspCertificates | Import an OCSP responder signature verification certificate.
-*CertificatesRevocationApi* | [**UpdateRevocationSettings**](docs/CertificatesRevocationApi.md#updaterevocationsettings) | **Put** /certificates/revocation/settings | Update certificate revocation settings.
-*ClusterApi* | [**GetClusterStatus**](docs/ClusterApi.md#getclusterstatus) | **Get** /cluster/status | Get information on the current status of the cluster.
-*ClusterApi* | [**StartReplication**](docs/ClusterApi.md#startreplication) | **Post** /cluster/replicate | Replicate configuration updates to all nodes in the cluster.
-*ConfigArchiveApi* | [**ExportConfigArchive**](docs/ConfigArchiveApi.md#exportconfigarchive) | **Get** /configArchive/export | Export a configuration archive.
-*ConfigArchiveApi* | [**ImportConfigArchive**](docs/ConfigArchiveApi.md#importconfigarchive) | **Post** /configArchive/import | Import a configuration archive.
-*ConfigStoreApi* | [**DeleteConfigStoreSetting**](docs/ConfigStoreApi.md#deleteconfigstoresetting) | **Delete** /configStore/{bundle}/{id} | Delete a setting.
-*ConfigStoreApi* | [**GetConfigStoreSetting**](docs/ConfigStoreApi.md#getconfigstoresetting) | **Get** /configStore/{bundle}/{id} | Get a single setting from a bundle.
-*ConfigStoreApi* | [**GetConfigStoreSettings**](docs/ConfigStoreApi.md#getconfigstoresettings) | **Get** /configStore/{bundle} | Get all settings from a bundle.
-*ConfigStoreApi* | [**UpdateConfigStoreSetting**](docs/ConfigStoreApi.md#updateconfigstoresetting) | **Put** /configStore/{bundle}/{id} | Create or update a setting/bundle.
-*ConfigurationEncryptionKeysApi* | [**GetConfigurationEncryptionKeys**](docs/ConfigurationEncryptionKeysApi.md#getconfigurationencryptionkeys) | **Get** /configurationEncryptionKeys | Get the list of Configuration Encryption Keys.
-*ConfigurationEncryptionKeysApi* | [**RotateConfigurationEncryptionKey**](docs/ConfigurationEncryptionKeysApi.md#rotateconfigurationencryptionkey) | **Post** /configurationEncryptionKeys/rotate | Rotate the current Configuration Encryption Key.
-*ConnectionMetadataApi* | [**Convert**](docs/ConnectionMetadataApi.md#convert) | **Post** /connectionMetadata/convert | Convert a partner&#39;s SAML metadata into a JSON representation.
-*ConnectionMetadataApi* | [**Export**](docs/ConnectionMetadataApi.md#export) | **Post** /connectionMetadata/export | Export a connection&#39;s SAML metadata that can be given to a partner.
-*DataStoresApi* | [**CreateDataStore**](docs/DataStoresApi.md#createdatastore) | **Post** /dataStores | Create a new data store.
-*DataStoresApi* | [**DeleteDataStore**](docs/DataStoresApi.md#deletedatastore) | **Delete** /dataStores/{id} | Delete a data store.
-*DataStoresApi* | [**GetCustomDataStoreDescriptor**](docs/DataStoresApi.md#getcustomdatastoredescriptor) | **Get** /dataStores/descriptors/{id} | Get the description of a custom data store plugin by ID.
-*DataStoresApi* | [**GetCustomDataStoreDescriptors**](docs/DataStoresApi.md#getcustomdatastoredescriptors) | **Get** /dataStores/descriptors | Get the list of available custom data store descriptors.
-*DataStoresApi* | [**GetDataStore**](docs/DataStoresApi.md#getdatastore) | **Get** /dataStores/{id} | Find data store by ID.
-*DataStoresApi* | [**GetDataStores**](docs/DataStoresApi.md#getdatastores) | **Get** /dataStores | Get list of all data stores.
-*DataStoresApi* | [**GetDataStoresActionById**](docs/DataStoresApi.md#getdatastoresactionbyid) | **Get** /dataStores/{id}/actions/{actionId} | Find a data store instance&#39;s action by ID.
-*DataStoresApi* | [**GetDataStoresActions**](docs/DataStoresApi.md#getdatastoresactions) | **Get** /dataStores/{id}/actions | List the actions for a data store instance.
-*DataStoresApi* | [**InvokeActionWithOptions**](docs/DataStoresApi.md#invokeactionwithoptions) | **Post** /dataStores/{id}/actions/{actionId}/invokeAction | Invokes an action for a data source instance.
-*DataStoresApi* | [**UpdateDataStore**](docs/DataStoresApi.md#updatedatastore) | **Put** /dataStores/{id} | Update a data store.
-*ExtendedPropertiesApi* | [**GetExtendedProperties**](docs/ExtendedPropertiesApi.md#getextendedproperties) | **Get** /extendedProperties | Get the defined Extended Properties.
-*ExtendedPropertiesApi* | [**UpdateExtendedProperties**](docs/ExtendedPropertiesApi.md#updateextendedproperties) | **Put** /extendedProperties | Update the Extended Properties.
-*IdentityStoreProvisionersApi* | [**CreateIdentityStoreProvisioner**](docs/IdentityStoreProvisionersApi.md#createidentitystoreprovisioner) | **Post** /identityStoreProvisioners | Create a new identity store provisioner instance.
-*IdentityStoreProvisionersApi* | [**DeleteIdentityStoreProvisioner**](docs/IdentityStoreProvisionersApi.md#deleteidentitystoreprovisioner) | **Delete** /identityStoreProvisioners/{id} | Delete an identity store provisioner instance
-*IdentityStoreProvisionersApi* | [**GetIdentityStoreProvisioner**](docs/IdentityStoreProvisionersApi.md#getidentitystoreprovisioner) | **Get** /identityStoreProvisioners/{id} | Get an identity store provisioner by ID.
-*IdentityStoreProvisionersApi* | [**GetIdentityStoreProvisionerDescriptorById**](docs/IdentityStoreProvisionersApi.md#getidentitystoreprovisionerdescriptorbyid) | **Get** /identityStoreProvisioners/descriptors/{id} | Get the descriptor of an identity store provisioner by ID.
-*IdentityStoreProvisionersApi* | [**GetIdentityStoreProvisionerDescriptors**](docs/IdentityStoreProvisionersApi.md#getidentitystoreprovisionerdescriptors) | **Get** /identityStoreProvisioners/descriptors | Get the list of available identity store provisioner descriptors.
-*IdentityStoreProvisionersApi* | [**GetIdentityStoreProvisioners**](docs/IdentityStoreProvisionersApi.md#getidentitystoreprovisioners) | **Get** /identityStoreProvisioners | Get the list of configured identity store provisioner instances.
-*IdentityStoreProvisionersApi* | [**UpdateIdentityStoreProvisioner**](docs/IdentityStoreProvisionersApi.md#updateidentitystoreprovisioner) | **Put** /identityStoreProvisioners/{id} | Update an identity store provisioner instance
-*IdpAdaptersApi* | [**CreateIdpAdapter**](docs/IdpAdaptersApi.md#createidpadapter) | **Post** /idp/adapters | Create a new IdP adapter instance.
-*IdpAdaptersApi* | [**DeleteIdpAdapter**](docs/IdpAdaptersApi.md#deleteidpadapter) | **Delete** /idp/adapters/{id} | Delete an IdP adapter instance.
-*IdpAdaptersApi* | [**GetIdpAdapter**](docs/IdpAdaptersApi.md#getidpadapter) | **Get** /idp/adapters/{id} | Find an IdP adapter instance by ID.
-*IdpAdaptersApi* | [**GetIdpAdapterDescriptors**](docs/IdpAdaptersApi.md#getidpadapterdescriptors) | **Get** /idp/adapters/descriptors | Get the list of available IdP adapter descriptors.
-*IdpAdaptersApi* | [**GetIdpAdapterDescriptorsById**](docs/IdpAdaptersApi.md#getidpadapterdescriptorsbyid) | **Get** /idp/adapters/descriptors/{id} | Get the description of an IdP adapter plugin by ID.
-*IdpAdaptersApi* | [**GetIdpAdapters**](docs/IdpAdaptersApi.md#getidpadapters) | **Get** /idp/adapters | Get the list of configured IdP adapter instances.
-*IdpAdaptersApi* | [**GetIdpAdaptersActionById**](docs/IdpAdaptersApi.md#getidpadaptersactionbyid) | **Get** /idp/adapters/{id}/actions/{actionId} | Find an IdP adapter instance&#39;s action by ID.
-*IdpAdaptersApi* | [**GetIdpAdaptersActions**](docs/IdpAdaptersApi.md#getidpadaptersactions) | **Get** /idp/adapters/{id}/actions | List the actions for an IdP adapter instance.
-*IdpAdaptersApi* | [**InvokeIdpAdaptersActionWithOptions**](docs/IdpAdaptersApi.md#invokeidpadaptersactionwithoptions) | **Post** /idp/adapters/{id}/actions/{actionId}/invokeAction | Invokes an action for an IdP adapter instance.
-*IdpAdaptersApi* | [**UpdateIdpAdapter**](docs/IdpAdaptersApi.md#updateidpadapter) | **Put** /idp/adapters/{id} | Update an IdP adapter instance.
-*IdpConnectorsApi* | [**GetIdpConnectorDescriptorById**](docs/IdpConnectorsApi.md#getidpconnectordescriptorbyid) | **Get** /idp/connectors/descriptors/{id} | Get the list of available connector descriptors.
-*IdpConnectorsApi* | [**GetIdpConnectorDescriptors**](docs/IdpConnectorsApi.md#getidpconnectordescriptors) | **Get** /idp/connectors/descriptors | Get the list of available IdP connector descriptors.
-*IdpDefaultUrlsApi* | [**GetDefaultUrl**](docs/IdpDefaultUrlsApi.md#getdefaulturl) | **Get** /idp/defaultUrls | Gets the IDP Default URL settings.
-*IdpDefaultUrlsApi* | [**UpdateDefaultUrlSettings**](docs/IdpDefaultUrlsApi.md#updatedefaulturlsettings) | **Put** /idp/defaultUrls | Update the IDP Default URL settings.
-*IdpSpConnectionsApi* | [**AddSpConnectionCert**](docs/IdpSpConnectionsApi.md#addspconnectioncert) | **Post** /idp/spConnections/{id}/credentials/certs | Add a new SP connection certificate.
-*IdpSpConnectionsApi* | [**CreateSpConnection**](docs/IdpSpConnectionsApi.md#createspconnection) | **Post** /idp/spConnections | Create a new SP connection.
-*IdpSpConnectionsApi* | [**DeleteSpConnection**](docs/IdpSpConnectionsApi.md#deletespconnection) | **Delete** /idp/spConnections/{id} | Delete an SP connection.
-*IdpSpConnectionsApi* | [**GetDecryptionKeys**](docs/IdpSpConnectionsApi.md#getdecryptionkeys) | **Get** /idp/spConnections/{id}/credentials/decryptionKeys | Get the decryption keys of an SP connection.
-*IdpSpConnectionsApi* | [**GetSpConnection**](docs/IdpSpConnectionsApi.md#getspconnection) | **Get** /idp/spConnections/{id} | Find SP connection by ID.
-*IdpSpConnectionsApi* | [**GetSpConnectionCerts**](docs/IdpSpConnectionsApi.md#getspconnectioncerts) | **Get** /idp/spConnections/{id}/credentials/certs | Get the SP connection&#39;s certificates.
-*IdpSpConnectionsApi* | [**GetSpConnections**](docs/IdpSpConnectionsApi.md#getspconnections) | **Get** /idp/spConnections | Get list of SP connections.
-*IdpSpConnectionsApi* | [**GetSpSigningSettings**](docs/IdpSpConnectionsApi.md#getspsigningsettings) | **Get** /idp/spConnections/{id}/credentials/signingSettings | Get the SP connection&#39;s signature settings.
-*IdpSpConnectionsApi* | [**UpdateDecryptionKeys**](docs/IdpSpConnectionsApi.md#updatedecryptionkeys) | **Put** /idp/spConnections/{id}/credentials/decryptionKeys | Updating the SP connection&#39;s decryption keys.
-*IdpSpConnectionsApi* | [**UpdateSpConnection**](docs/IdpSpConnectionsApi.md#updatespconnection) | **Put** /idp/spConnections/{id} | Update an SP connection.
-*IdpSpConnectionsApi* | [**UpdateSpConnectionCerts**](docs/IdpSpConnectionsApi.md#updatespconnectioncerts) | **Put** /idp/spConnections/{id}/credentials/certs | Update the SP connection&#39;s certificates.
-*IdpSpConnectionsApi* | [**UpdateSpSigningSettings**](docs/IdpSpConnectionsApi.md#updatespsigningsettings) | **Put** /idp/spConnections/{id}/credentials/signingSettings | Update the SP connection&#39;s signature settings.
-*IdpStsRequestParametersContractsApi* | [**CreateStsRequestParamContract**](docs/IdpStsRequestParametersContractsApi.md#createstsrequestparamcontract) | **Post** /idp/stsRequestParametersContracts | Create a new STS Request Parameters Contract.
-*IdpStsRequestParametersContractsApi* | [**DeleteStsRequestParamContractById**](docs/IdpStsRequestParametersContractsApi.md#deletestsrequestparamcontractbyid) | **Delete** /idp/stsRequestParametersContracts/{id} | Delete a STS Request Parameters Contract.
-*IdpStsRequestParametersContractsApi* | [**GetStsRequestParamContractById**](docs/IdpStsRequestParametersContractsApi.md#getstsrequestparamcontractbyid) | **Get** /idp/stsRequestParametersContracts/{id} | Get a STS Request Parameters Contract.
-*IdpStsRequestParametersContractsApi* | [**GetStsRequestParamContracts**](docs/IdpStsRequestParametersContractsApi.md#getstsrequestparamcontracts) | **Get** /idp/stsRequestParametersContracts | Get the list of STS Request Parameters Contracts.
-*IdpStsRequestParametersContractsApi* | [**UpdateStsRequestParamContractById**](docs/IdpStsRequestParametersContractsApi.md#updatestsrequestparamcontractbyid) | **Put** /idp/stsRequestParametersContracts/{id} | Update a STS Request Parameters Contract.
-*IdpToSpAdapterMappingApi* | [**CreateIdpToSpAdapterMapping**](docs/IdpToSpAdapterMappingApi.md#createidptospadaptermapping) | **Post** /idpToSpAdapterMapping | Create a new IdP-to-SP Adapter mapping.
-*IdpToSpAdapterMappingApi* | [**DeleteIdpToSpAdapterMappingsById**](docs/IdpToSpAdapterMappingApi.md#deleteidptospadaptermappingsbyid) | **Delete** /idpToSpAdapterMapping/{id} | Delete an Adapter to Adapter Mapping.
-*IdpToSpAdapterMappingApi* | [**GetIdpToSpAdapterMappings**](docs/IdpToSpAdapterMappingApi.md#getidptospadaptermappings) | **Get** /idpToSpAdapterMapping | Get list of IdP-to-SP Adapter Mappings.
-*IdpToSpAdapterMappingApi* | [**GetIdpToSpAdapterMappingsById**](docs/IdpToSpAdapterMappingApi.md#getidptospadaptermappingsbyid) | **Get** /idpToSpAdapterMapping/{id} | Get an IdP-to-SP Adapter Mapping.
-*IdpToSpAdapterMappingApi* | [**UpdateIdpToSpAdapterMapping**](docs/IdpToSpAdapterMappingApi.md#updateidptospadaptermapping) | **Put** /idpToSpAdapterMapping/{id} | Update the specified IdP-to-SP Adapter mapping.
-*IdpTokenProcessorsApi* | [**CreateTokenProcessor**](docs/IdpTokenProcessorsApi.md#createtokenprocessor) | **Post** /idp/tokenProcessors | Create a new token processor instance.
-*IdpTokenProcessorsApi* | [**DeleteTokenProcessor**](docs/IdpTokenProcessorsApi.md#deletetokenprocessor) | **Delete** /idp/tokenProcessors/{id} | Delete a token processor instance.
-*IdpTokenProcessorsApi* | [**GetTokenProcessor**](docs/IdpTokenProcessorsApi.md#gettokenprocessor) | **Get** /idp/tokenProcessors/{id} | Find a token processor instance by ID.
-*IdpTokenProcessorsApi* | [**GetTokenProcessorDescriptors**](docs/IdpTokenProcessorsApi.md#gettokenprocessordescriptors) | **Get** /idp/tokenProcessors/descriptors | Get the list of available token processors.
-*IdpTokenProcessorsApi* | [**GetTokenProcessorDescriptorsById**](docs/IdpTokenProcessorsApi.md#gettokenprocessordescriptorsbyid) | **Get** /idp/tokenProcessors/descriptors/{id} | Get the description of a token processor plugin by ID.
-*IdpTokenProcessorsApi* | [**GetTokenProcessors**](docs/IdpTokenProcessorsApi.md#gettokenprocessors) | **Get** /idp/tokenProcessors | Get the list of token processor instances.
-*IdpTokenProcessorsApi* | [**UpdateTokenProcessor**](docs/IdpTokenProcessorsApi.md#updatetokenprocessor) | **Put** /idp/tokenProcessors/{id} | Update a token processor instance.
-*IncomingProxySettingsApi* | [**GetIncomingProxySettings**](docs/IncomingProxySettingsApi.md#getincomingproxysettings) | **Get** /incomingProxySettings | Get incoming proxy settings.
-*IncomingProxySettingsApi* | [**UpdateIncomingProxySettings**](docs/IncomingProxySettingsApi.md#updateincomingproxysettings) | **Put** /incomingProxySettings | Update incoming proxy settings.
-*KerberosRealmsApi* | [**CreateKerberosRealm**](docs/KerberosRealmsApi.md#createkerberosrealm) | **Post** /kerberos/realms | Create a new Kerberos Realm.
-*KerberosRealmsApi* | [**DeleteKerberosRealm**](docs/KerberosRealmsApi.md#deletekerberosrealm) | **Delete** /kerberos/realms/{id} | Delete a Kerberos Realm.
-*KerberosRealmsApi* | [**GetKerberosRealm**](docs/KerberosRealmsApi.md#getkerberosrealm) | **Get** /kerberos/realms/{id} | Find a Kerberos Realm by ID.
-*KerberosRealmsApi* | [**GetKerberosRealmSettings**](docs/KerberosRealmsApi.md#getkerberosrealmsettings) | **Get** /kerberos/realms/settings | Gets the Kerberos Realms Settings.
-*KerberosRealmsApi* | [**GetKerberosRealms**](docs/KerberosRealmsApi.md#getkerberosrealms) | **Get** /kerberos/realms | Gets the Kerberos Realms.
-*KerberosRealmsApi* | [**UpdateKerberosRealm**](docs/KerberosRealmsApi.md#updatekerberosrealm) | **Put** /kerberos/realms/{id} | Update a Kerberos Realm by ID.
-*KerberosRealmsApi* | [**UpdateKerberosRealmSettings**](docs/KerberosRealmsApi.md#updatekerberosrealmsettings) | **Put** /kerberos/realms/settings | Set/Update the Kerberos Realms Settings.
-*KeyPairsApi* | [**GetKeyAlgorithms**](docs/KeyPairsApi.md#getkeyalgorithms) | **Get** /keyPairs/keyAlgorithms | Get list of the key algorithms supported for key pair generation.
-*KeyPairsOauthOpenIdConnectApi* | [**CreateKeySet**](docs/KeyPairsOauthOpenIdConnectApi.md#createkeyset) | **Post** /keyPairs/oauthOpenIdConnect/additionalKeySets | Create a new OAuth/OpenID Connect additional signing key set.
-*KeyPairsOauthOpenIdConnectApi* | [**DeleteKeySet**](docs/KeyPairsOauthOpenIdConnectApi.md#deletekeyset) | **Delete** /keyPairs/oauthOpenIdConnect/additionalKeySets/{id} | Delete an existing OAuth/OpenID Connect additional signing key set.
-*KeyPairsOauthOpenIdConnectApi* | [**GetKeySet**](docs/KeyPairsOauthOpenIdConnectApi.md#getkeyset) | **Get** /keyPairs/oauthOpenIdConnect/additionalKeySets/{id} | Retrieve an OAuth/OpenID Connect additional signing key set.
-*KeyPairsOauthOpenIdConnectApi* | [**GetKeySets**](docs/KeyPairsOauthOpenIdConnectApi.md#getkeysets) | **Get** /keyPairs/oauthOpenIdConnect/additionalKeySets | Retrieve OAuth/OpenID Connect additional signing key sets.
-*KeyPairsOauthOpenIdConnectApi* | [**GetOauthOidcKeysSettings**](docs/KeyPairsOauthOpenIdConnectApi.md#getoauthoidckeyssettings) | **Get** /keyPairs/oauthOpenIdConnect | Retrieve OAuth/OpenID Connect key settings.
-*KeyPairsOauthOpenIdConnectApi* | [**UpdateKeySet**](docs/KeyPairsOauthOpenIdConnectApi.md#updatekeyset) | **Put** /keyPairs/oauthOpenIdConnect/additionalKeySets/{id} | Update an existing OAuth/OpenID Connect additional signing key set.
-*KeyPairsOauthOpenIdConnectApi* | [**UpdateOAuthOidcKeysSettings**](docs/KeyPairsOauthOpenIdConnectApi.md#updateoauthoidckeyssettings) | **Put** /keyPairs/oauthOpenIdConnect | Update OAuth/OpenID Connect key settings.
-*KeyPairsSigningApi* | [**CreateSigningKeyPair**](docs/KeyPairsSigningApi.md#createsigningkeypair) | **Post** /keyPairs/signing/generate | Generate a new key pair.
-*KeyPairsSigningApi* | [**DeleteKeyPairRotationSettings**](docs/KeyPairsSigningApi.md#deletekeypairrotationsettings) | **Delete** /keyPairs/signing/{id}/rotationSettings | Delete rotation settings for a signing key pair.
-*KeyPairsSigningApi* | [**DeleteSigningKeyPair**](docs/KeyPairsSigningApi.md#deletesigningkeypair) | **Delete** /keyPairs/signing/{id} | Delete a key pair.
-*KeyPairsSigningApi* | [**ExportCertificateFile**](docs/KeyPairsSigningApi.md#exportcertificatefile) | **Get** /keyPairs/signing/{id}/certificate | Download the certificate from a given key pair.
-*KeyPairsSigningApi* | [**ExportCsr**](docs/KeyPairsSigningApi.md#exportcsr) | **Get** /keyPairs/signing/{id}/csr | Generate a new certificate signing request (CSR) for this key pair.
-*KeyPairsSigningApi* | [**ExportPEMFile**](docs/KeyPairsSigningApi.md#exportpemfile) | **Post** /keyPairs/signing/{id}/pem | Download the key pair in PEM format.
-*KeyPairsSigningApi* | [**ExportPKCS12File**](docs/KeyPairsSigningApi.md#exportpkcs12file) | **Post** /keyPairs/signing/{id}/pkcs12 | Download the key pair in PKCS12 format.
-*KeyPairsSigningApi* | [**GetRotationSettings**](docs/KeyPairsSigningApi.md#getrotationsettings) | **Get** /keyPairs/signing/{id}/rotationSettings | Retrieve details of rotation settings for a key pair.
-*KeyPairsSigningApi* | [**GetSigningKeyPair**](docs/KeyPairsSigningApi.md#getsigningkeypair) | **Get** /keyPairs/signing/{id} | Retrieve details of a key pair.
-*KeyPairsSigningApi* | [**GetSigningKeyPairs**](docs/KeyPairsSigningApi.md#getsigningkeypairs) | **Get** /keyPairs/signing | Get list of key pairs.
-*KeyPairsSigningApi* | [**ImportCsrResponse**](docs/KeyPairsSigningApi.md#importcsrresponse) | **Post** /keyPairs/signing/{id}/csr | Import a CSR response for this key pair.
-*KeyPairsSigningApi* | [**ImportSigningKeyPair**](docs/KeyPairsSigningApi.md#importsigningkeypair) | **Post** /keyPairs/signing/import | Import a new key pair.
-*KeyPairsSigningApi* | [**UpdateRotationSettings**](docs/KeyPairsSigningApi.md#updaterotationsettings) | **Put** /keyPairs/signing/{id}/rotationSettings | Add rotation settings to a key pair
-*KeyPairsSslClientApi* | [**CreateSslClientKeyPair**](docs/KeyPairsSslClientApi.md#createsslclientkeypair) | **Post** /keyPairs/sslClient/generate | Generate a new key pair.
-*KeyPairsSslClientApi* | [**DeleteSslClientKeyPair**](docs/KeyPairsSslClientApi.md#deletesslclientkeypair) | **Delete** /keyPairs/sslClient/{id} | Delete a key pair.
-*KeyPairsSslClientApi* | [**ExportSslClientCertificateFile**](docs/KeyPairsSslClientApi.md#exportsslclientcertificatefile) | **Get** /keyPairs/sslClient/{id}/certificate | Download the certificate from a given key pair.
-*KeyPairsSslClientApi* | [**ExportSslClientCsr**](docs/KeyPairsSslClientApi.md#exportsslclientcsr) | **Get** /keyPairs/sslClient/{id}/csr | Generate a new certificate signing request (CSR) for this key pair.
-*KeyPairsSslClientApi* | [**ExportSslClientPEMFile**](docs/KeyPairsSslClientApi.md#exportsslclientpemfile) | **Post** /keyPairs/sslClient/{id}/pem | Download the key pair in PEM format.
-*KeyPairsSslClientApi* | [**ExportSslClientPKCS12File**](docs/KeyPairsSslClientApi.md#exportsslclientpkcs12file) | **Post** /keyPairs/sslClient/{id}/pkcs12 | Download the key pair in PKCS12 format.
-*KeyPairsSslClientApi* | [**GetSslClientKeyPair**](docs/KeyPairsSslClientApi.md#getsslclientkeypair) | **Get** /keyPairs/sslClient/{id} | Retrieve details of a key pair.
-*KeyPairsSslClientApi* | [**GetSslClientKeyPairs**](docs/KeyPairsSslClientApi.md#getsslclientkeypairs) | **Get** /keyPairs/sslClient | Get list of key pairs.
-*KeyPairsSslClientApi* | [**ImportSslClientCsrResponse**](docs/KeyPairsSslClientApi.md#importsslclientcsrresponse) | **Post** /keyPairs/sslClient/{id}/csr | Import a CSR response for this key pair.
-*KeyPairsSslClientApi* | [**ImportSslClientKeyPair**](docs/KeyPairsSslClientApi.md#importsslclientkeypair) | **Post** /keyPairs/sslClient/import | Import a new key pair.
-*KeyPairsSslServerApi* | [**CreateSslServerKeyPair**](docs/KeyPairsSslServerApi.md#createsslserverkeypair) | **Post** /keyPairs/sslServer/generate | Generate a new key pair.
-*KeyPairsSslServerApi* | [**DeleteSslServerKeyPair**](docs/KeyPairsSslServerApi.md#deletesslserverkeypair) | **Delete** /keyPairs/sslServer/{id} | Delete a key pair.
-*KeyPairsSslServerApi* | [**ExportSslServerCertificateFile**](docs/KeyPairsSslServerApi.md#exportsslservercertificatefile) | **Get** /keyPairs/sslServer/{id}/certificate | Download the certificate from a given key pair.
-*KeyPairsSslServerApi* | [**ExportSslServerCsr**](docs/KeyPairsSslServerApi.md#exportsslservercsr) | **Get** /keyPairs/sslServer/{id}/csr | Generate a new certificate signing request (CSR) for this key pair.
-*KeyPairsSslServerApi* | [**ExportSslServerPEMFile**](docs/KeyPairsSslServerApi.md#exportsslserverpemfile) | **Post** /keyPairs/sslServer/{id}/pem | Download the key pair in PEM format.
-*KeyPairsSslServerApi* | [**ExportSslServerPKCS12File**](docs/KeyPairsSslServerApi.md#exportsslserverpkcs12file) | **Post** /keyPairs/sslServer/{id}/pkcs12 | Download the key pair in PKCS12 format.
-*KeyPairsSslServerApi* | [**GetSslServerKeyPair**](docs/KeyPairsSslServerApi.md#getsslserverkeypair) | **Get** /keyPairs/sslServer/{id} | Retrieve details of a key pair.
-*KeyPairsSslServerApi* | [**GetSslServerKeyPairs**](docs/KeyPairsSslServerApi.md#getsslserverkeypairs) | **Get** /keyPairs/sslServer | Get list of key pairs.
-*KeyPairsSslServerApi* | [**GetSslServerSettings**](docs/KeyPairsSslServerApi.md#getsslserversettings) | **Get** /keyPairs/sslServer/settings | Get the SSL Server Certificate Settings.
-*KeyPairsSslServerApi* | [**ImportSslServerCsrResponse**](docs/KeyPairsSslServerApi.md#importsslservercsrresponse) | **Post** /keyPairs/sslServer/{id}/csr | Import a CSR response for this key pair.
-*KeyPairsSslServerApi* | [**ImportSslServerKeyPair**](docs/KeyPairsSslServerApi.md#importsslserverkeypair) | **Post** /keyPairs/sslServer/import | Import a new key pair.
-*KeyPairsSslServerApi* | [**UpdateSslServerSettings**](docs/KeyPairsSslServerApi.md#updatesslserversettings) | **Put** /keyPairs/sslServer/settings | Update the SSL Server Certificate Settings.
-*LicenseApi* | [**GetLicense**](docs/LicenseApi.md#getlicense) | **Get** /license | Get a license summary.
-*LicenseApi* | [**GetLicenseAgreement**](docs/LicenseApi.md#getlicenseagreement) | **Get** /license/agreement | Get license agreement link.
-*LicenseApi* | [**UpdateLicense**](docs/LicenseApi.md#updatelicense) | **Put** /license | Import a license.
-*LicenseApi* | [**UpdateLicenseAgreement**](docs/LicenseApi.md#updatelicenseagreement) | **Put** /license/agreement | Accept license agreement.
-*LocalIdentityIdentityProfilesApi* | [**CreateIdentityProfile**](docs/LocalIdentityIdentityProfilesApi.md#createidentityprofile) | **Post** /localIdentity/identityProfiles | Create a new local identity profile.
-*LocalIdentityIdentityProfilesApi* | [**DeleteIdentityProfile**](docs/LocalIdentityIdentityProfilesApi.md#deleteidentityprofile) | **Delete** /localIdentity/identityProfiles/{id} | Delete the local identity profile by ID.
-*LocalIdentityIdentityProfilesApi* | [**GetIdentityProfile**](docs/LocalIdentityIdentityProfilesApi.md#getidentityprofile) | **Get** /localIdentity/identityProfiles/{id} | Get the local identity profile by ID.
-*LocalIdentityIdentityProfilesApi* | [**GetIdentityProfiles**](docs/LocalIdentityIdentityProfilesApi.md#getidentityprofiles) | **Get** /localIdentity/identityProfiles | Get the list of configured local identity profiles.
-*LocalIdentityIdentityProfilesApi* | [**UpdateIdentityProfile**](docs/LocalIdentityIdentityProfilesApi.md#updateidentityprofile) | **Put** /localIdentity/identityProfiles/{id} | Update the local identity profile by ID.
-*MetadataUrlsApi* | [**AddMetadataUrl**](docs/MetadataUrlsApi.md#addmetadataurl) | **Post** /metadataUrls | Add a new Metadata URL.
-*MetadataUrlsApi* | [**DeleteMetadataUrl**](docs/MetadataUrlsApi.md#deletemetadataurl) | **Delete** /metadataUrls/{id} | Delete a Metadata URL by ID.
-*MetadataUrlsApi* | [**GetMetadataUrl**](docs/MetadataUrlsApi.md#getmetadataurl) | **Get** /metadataUrls/{id} | Get a Metadata URL by ID.
-*MetadataUrlsApi* | [**GetMetadataUrls**](docs/MetadataUrlsApi.md#getmetadataurls) | **Get** /metadataUrls | Get a list of Metadata URLs
-*MetadataUrlsApi* | [**UpdateMetadataUrl**](docs/MetadataUrlsApi.md#updatemetadataurl) | **Put** /metadataUrls/{id} | Update a Metadata URL by ID.
-*NotificationPublishersApi* | [**CreateNotificationPublisher**](docs/NotificationPublishersApi.md#createnotificationpublisher) | **Post** /notificationPublishers | Create a notification publisher plugin instance.
-*NotificationPublishersApi* | [**DeleteNotificationPublisher**](docs/NotificationPublishersApi.md#deletenotificationpublisher) | **Delete** /notificationPublishers/{id} | Delete a notification publisher plugin instance.
-*NotificationPublishersApi* | [**GetNotificationPublisher**](docs/NotificationPublishersApi.md#getnotificationpublisher) | **Get** /notificationPublishers/{id} | Get a specific notification publisher plugin instance.
-*NotificationPublishersApi* | [**GetNotificationPublisherActions**](docs/NotificationPublishersApi.md#getnotificationpublisheractions) | **Get** /notificationPublishers/{id}/actions | List the actions for a notification publisher plugin instance.
-*NotificationPublishersApi* | [**GetNotificationPublisherPluginDescriptor**](docs/NotificationPublishersApi.md#getnotificationpublisherplugindescriptor) | **Get** /notificationPublishers/descriptors/{id} | Get the description of a notification publisher plugin descriptor.
-*NotificationPublishersApi* | [**GetNotificationPublisherPluginDescriptors**](docs/NotificationPublishersApi.md#getnotificationpublisherplugindescriptors) | **Get** /notificationPublishers/descriptors | Get the list of available Notification Publisher Plugin descriptors.
-*NotificationPublishersApi* | [**GetNotificationPublishers**](docs/NotificationPublishersApi.md#getnotificationpublishers) | **Get** /notificationPublishers | Get a list of notification publisher plugin instances.
-*NotificationPublishersApi* | [**GetNotificationPublishersAction**](docs/NotificationPublishersApi.md#getnotificationpublishersaction) | **Get** /notificationPublishers/{id}/actions/{actionId} | Find an notification publisher plugin instance&#39;s action by ID.
-*NotificationPublishersApi* | [**GetNotificationPublishersSettings**](docs/NotificationPublishersApi.md#getnotificationpublisherssettings) | **Get** /notificationPublishers/settings | Get general notification publisher settings.
-*NotificationPublishersApi* | [**InvokeNotificationPublishersActionWithOptions**](docs/NotificationPublishersApi.md#invokenotificationpublishersactionwithoptions) | **Post** /notificationPublishers/{id}/actions/{actionId}/invokeAction | Invokes an action for notification publisher plugin instance.
-*NotificationPublishersApi* | [**UpdateNotificationPublisher**](docs/NotificationPublishersApi.md#updatenotificationpublisher) | **Put** /notificationPublishers/{id} | Update a notification publisher plugin instance.
-*NotificationPublishersApi* | [**UpdateNotificationPublishersSettings**](docs/NotificationPublishersApi.md#updatenotificationpublisherssettings) | **Put** /notificationPublishers/settings | Update general notification publisher settings.
-*OauthAccessTokenManagersApi* | [**CreateTokenManager**](docs/OauthAccessTokenManagersApi.md#createtokenmanager) | **Post** /oauth/accessTokenManagers | Create a token management plugin instance.
-*OauthAccessTokenManagersApi* | [**DeleteTokenManager**](docs/OauthAccessTokenManagersApi.md#deletetokenmanager) | **Delete** /oauth/accessTokenManagers/{id} | Delete a token management plugin instance.
-*OauthAccessTokenManagersApi* | [**GetOauthAccessTokenManagersSettings**](docs/OauthAccessTokenManagersApi.md#getoauthaccesstokenmanagerssettings) | **Get** /oauth/accessTokenManagers/settings | Get general access token management settings.
-*OauthAccessTokenManagersApi* | [**GetTokenManager**](docs/OauthAccessTokenManagersApi.md#gettokenmanager) | **Get** /oauth/accessTokenManagers/{id} | Get a specific token management plugin instance.
-*OauthAccessTokenManagersApi* | [**GetTokenManagerDescriptor**](docs/OauthAccessTokenManagersApi.md#gettokenmanagerdescriptor) | **Get** /oauth/accessTokenManagers/descriptors/{id} | Get the description of a token management plugin descriptor.
-*OauthAccessTokenManagersApi* | [**GetTokenManagerDescriptors**](docs/OauthAccessTokenManagersApi.md#gettokenmanagerdescriptors) | **Get** /oauth/accessTokenManagers/descriptors | Get the list of available token management plugin descriptors.
-*OauthAccessTokenManagersApi* | [**GetTokenManagers**](docs/OauthAccessTokenManagersApi.md#gettokenmanagers) | **Get** /oauth/accessTokenManagers | Get a list of all token management plugin instances.
-*OauthAccessTokenManagersApi* | [**UpdateOauthAccessTokenManagersSettings**](docs/OauthAccessTokenManagersApi.md#updateoauthaccesstokenmanagerssettings) | **Put** /oauth/accessTokenManagers/settings | Update general access token management settings.
-*OauthAccessTokenManagersApi* | [**UpdateTokenManager**](docs/OauthAccessTokenManagersApi.md#updatetokenmanager) | **Put** /oauth/accessTokenManagers/{id} | Update a token management plugin instance.
-*OauthAccessTokenMappingsApi* | [**CreateMapping**](docs/OauthAccessTokenMappingsApi.md#createmapping) | **Post** /oauth/accessTokenMappings | Create a new Access Token Mapping.
-*OauthAccessTokenMappingsApi* | [**DeleteMapping**](docs/OauthAccessTokenMappingsApi.md#deletemapping) | **Delete** /oauth/accessTokenMappings/{id} | Delete an Access Token Mapping.
-*OauthAccessTokenMappingsApi* | [**GetMapping**](docs/OauthAccessTokenMappingsApi.md#getmapping) | **Get** /oauth/accessTokenMappings/{id} | Find the Access Token Mapping by its ID.
-*OauthAccessTokenMappingsApi* | [**GetMappings**](docs/OauthAccessTokenMappingsApi.md#getmappings) | **Get** /oauth/accessTokenMappings | Get the list of Access Token Mappings.
-*OauthAccessTokenMappingsApi* | [**UpdateMapping**](docs/OauthAccessTokenMappingsApi.md#updatemapping) | **Put** /oauth/accessTokenMappings/{id} | Update an Access Token Mapping.
-*OauthAuthServerSettingsApi* | [**AddCommonScope**](docs/OauthAuthServerSettingsApi.md#addcommonscope) | **Post** /oauth/authServerSettings/scopes/commonScopes | Add a new common scope.
-*OauthAuthServerSettingsApi* | [**AddCommonScopeGroup**](docs/OauthAuthServerSettingsApi.md#addcommonscopegroup) | **Post** /oauth/authServerSettings/scopes/commonScopeGroups | Create a new common scope group.
-*OauthAuthServerSettingsApi* | [**AddExclusiveScope**](docs/OauthAuthServerSettingsApi.md#addexclusivescope) | **Post** /oauth/authServerSettings/scopes/exclusiveScopes | Add a new exclusive scope.
-*OauthAuthServerSettingsApi* | [**AddExclusiveScopeGroup**](docs/OauthAuthServerSettingsApi.md#addexclusivescopegroup) | **Post** /oauth/authServerSettings/scopes/exclusiveScopeGroups | Create a new exclusive scope group.
-*OauthAuthServerSettingsApi* | [**GetAuthorizationServerSettings**](docs/OauthAuthServerSettingsApi.md#getauthorizationserversettings) | **Get** /oauth/authServerSettings | Get the Authorization Server Settings.
-*OauthAuthServerSettingsApi* | [**GetCommonScope**](docs/OauthAuthServerSettingsApi.md#getcommonscope) | **Get** /oauth/authServerSettings/scopes/commonScopes/{name} | Get an existing common scope.
-*OauthAuthServerSettingsApi* | [**GetCommonScopeGroup**](docs/OauthAuthServerSettingsApi.md#getcommonscopegroup) | **Get** /oauth/authServerSettings/scopes/commonScopeGroups/{name} | Get an existing common scope group.
-*OauthAuthServerSettingsApi* | [**GetExclusiveScope**](docs/OauthAuthServerSettingsApi.md#getexclusivescope) | **Get** /oauth/authServerSettings/scopes/exclusiveScopes/{name} | Get an existing exclusive scope.
-*OauthAuthServerSettingsApi* | [**GetExclusiveScopeGroup**](docs/OauthAuthServerSettingsApi.md#getexclusivescopegroup) | **Get** /oauth/authServerSettings/scopes/exclusiveScopeGroups/{name} | Get an existing exclusive scope group.
-*OauthAuthServerSettingsApi* | [**RemoveCommonScope**](docs/OauthAuthServerSettingsApi.md#removecommonscope) | **Delete** /oauth/authServerSettings/scopes/commonScopes/{name} | Remove an existing common scope.
-*OauthAuthServerSettingsApi* | [**RemoveCommonScopeGroup**](docs/OauthAuthServerSettingsApi.md#removecommonscopegroup) | **Delete** /oauth/authServerSettings/scopes/commonScopeGroups/{name} | Remove an existing common scope group.
-*OauthAuthServerSettingsApi* | [**RemoveExclusiveScope**](docs/OauthAuthServerSettingsApi.md#removeexclusivescope) | **Delete** /oauth/authServerSettings/scopes/exclusiveScopes/{name} | Remove an existing exclusive scope.
-*OauthAuthServerSettingsApi* | [**RemoveExclusiveScopeGroup**](docs/OauthAuthServerSettingsApi.md#removeexclusivescopegroup) | **Delete** /oauth/authServerSettings/scopes/exclusiveScopeGroups/{name} | Remove an existing exclusive scope group.
-*OauthAuthServerSettingsApi* | [**UpdateAuthorizationServerSettings**](docs/OauthAuthServerSettingsApi.md#updateauthorizationserversettings) | **Put** /oauth/authServerSettings | Update the Authorization Server Settings.
-*OauthAuthServerSettingsApi* | [**UpdateCommonScope**](docs/OauthAuthServerSettingsApi.md#updatecommonscope) | **Put** /oauth/authServerSettings/scopes/commonScopes/{name} | Update an existing common scope.
-*OauthAuthServerSettingsApi* | [**UpdateCommonScopeGroup**](docs/OauthAuthServerSettingsApi.md#updatecommonscopegroup) | **Put** /oauth/authServerSettings/scopes/commonScopeGroups/{name} | Update an existing common scope group.
-*OauthAuthServerSettingsApi* | [**UpdateExclusiveScope**](docs/OauthAuthServerSettingsApi.md#updateexclusivescope) | **Put** /oauth/authServerSettings/scopes/exclusiveScopes/{name} | Update an existing exclusive scope.
-*OauthAuthServerSettingsApi* | [**UpdateExclusiveScopeGroups**](docs/OauthAuthServerSettingsApi.md#updateexclusivescopegroups) | **Put** /oauth/authServerSettings/scopes/exclusiveScopeGroups/{name} | Update an existing exclusive scope group.
-*OauthAuthenticationPolicyContractMappingsApi* | [**CreateApcMapping**](docs/OauthAuthenticationPolicyContractMappingsApi.md#createapcmapping) | **Post** /oauth/authenticationPolicyContractMappings | Create a new authentication policy contract to persistent grant mapping.
-*OauthAuthenticationPolicyContractMappingsApi* | [**DeleteApcMapping**](docs/OauthAuthenticationPolicyContractMappingsApi.md#deleteapcmapping) | **Delete** /oauth/authenticationPolicyContractMappings/{id} | Delete an authentication policy contract to persistent grant mapping.
-*OauthAuthenticationPolicyContractMappingsApi* | [**GetApcMapping**](docs/OauthAuthenticationPolicyContractMappingsApi.md#getapcmapping) | **Get** /oauth/authenticationPolicyContractMappings/{id} | Find the authentication policy contract to persistent grant mapping by ID.
-*OauthAuthenticationPolicyContractMappingsApi* | [**GetApcMappings**](docs/OauthAuthenticationPolicyContractMappingsApi.md#getapcmappings) | **Get** /oauth/authenticationPolicyContractMappings | Get the list of authentication policy contract to persistent grant mappings.
-*OauthAuthenticationPolicyContractMappingsApi* | [**UpdateApcMapping**](docs/OauthAuthenticationPolicyContractMappingsApi.md#updateapcmapping) | **Put** /oauth/authenticationPolicyContractMappings/{id} | Update an authentication policy contract to persistent grant mapping.
-*OauthAuthorizationDetailProcessorsApi* | [**CreateAuthorizationDetailProcessor**](docs/OauthAuthorizationDetailProcessorsApi.md#createauthorizationdetailprocessor) | **Post** /oauth/authorizationDetailProcessors | Create an authorization detail processor plugin instance.
-*OauthAuthorizationDetailProcessorsApi* | [**DeleteAuthorizationDetailProcessor**](docs/OauthAuthorizationDetailProcessorsApi.md#deleteauthorizationdetailprocessor) | **Delete** /oauth/authorizationDetailProcessors/{id} | Delete an authorization detail processor plugin instance.
-*OauthAuthorizationDetailProcessorsApi* | [**GetAuthorizationDetailProcessor**](docs/OauthAuthorizationDetailProcessorsApi.md#getauthorizationdetailprocessor) | **Get** /oauth/authorizationDetailProcessors/{id} | Get a specific authorization detail processor plugin instance.
-*OauthAuthorizationDetailProcessorsApi* | [**GetAuthorizationDetailProcessorPluginDescriptor**](docs/OauthAuthorizationDetailProcessorsApi.md#getauthorizationdetailprocessorplugindescriptor) | **Get** /oauth/authorizationDetailProcessors/descriptors/{id} | Get an authorization detail processor plugin descriptor.
-*OauthAuthorizationDetailProcessorsApi* | [**GetAuthorizationDetailProcessorPluginDescriptors**](docs/OauthAuthorizationDetailProcessorsApi.md#getauthorizationdetailprocessorplugindescriptors) | **Get** /oauth/authorizationDetailProcessors/descriptors | Get a list of available authorization detail processor plugin descriptors.
-*OauthAuthorizationDetailProcessorsApi* | [**GetAuthorizationDetailProcessors**](docs/OauthAuthorizationDetailProcessorsApi.md#getauthorizationdetailprocessors) | **Get** /oauth/authorizationDetailProcessors | Get a list of authorization detail processor plugin instances.
-*OauthAuthorizationDetailProcessorsApi* | [**UpdateAuthorizationDetailProcessor**](docs/OauthAuthorizationDetailProcessorsApi.md#updateauthorizationdetailprocessor) | **Put** /oauth/authorizationDetailProcessors/{id} | Update an authorization detail processor plugin instance.
-*OauthAuthorizationDetailTypesApi* | [**AddAuthorizationDetailType**](docs/OauthAuthorizationDetailTypesApi.md#addauthorizationdetailtype) | **Post** /oauth/authorizationDetailTypes | Create a new authorization detail type.
-*OauthAuthorizationDetailTypesApi* | [**DeleteAuthorizationDetailType**](docs/OauthAuthorizationDetailTypesApi.md#deleteauthorizationdetailtype) | **Delete** /oauth/authorizationDetailTypes/{id} | Delete an authorization detail type.
-*OauthAuthorizationDetailTypesApi* | [**GetAuthorizationDetailTypeById**](docs/OauthAuthorizationDetailTypesApi.md#getauthorizationdetailtypebyid) | **Get** /oauth/authorizationDetailTypes/{id} | Get an authorization detail type.
-*OauthAuthorizationDetailTypesApi* | [**GetAuthorizationDetailTypes**](docs/OauthAuthorizationDetailTypesApi.md#getauthorizationdetailtypes) | **Get** /oauth/authorizationDetailTypes | Get the list of authorization detail types.
-*OauthAuthorizationDetailTypesApi* | [**UpdateAuthorizationDetailType**](docs/OauthAuthorizationDetailTypesApi.md#updateauthorizationdetailtype) | **Put** /oauth/authorizationDetailTypes/{id} | Update an authorization detail type.
-*OauthCibaServerPolicyApi* | [**CreateCibaServerPolicy**](docs/OauthCibaServerPolicyApi.md#createcibaserverpolicy) | **Post** /oauth/cibaServerPolicy/requestPolicies | Create a new request policy.
-*OauthCibaServerPolicyApi* | [**DeleteCibaServerPolicy**](docs/OauthCibaServerPolicyApi.md#deletecibaserverpolicy) | **Delete** /oauth/cibaServerPolicy/requestPolicies/{id} | Delete a request policy.
-*OauthCibaServerPolicyApi* | [**GetCibaServerPolicies**](docs/OauthCibaServerPolicyApi.md#getcibaserverpolicies) | **Get** /oauth/cibaServerPolicy/requestPolicies | Get list of request policies.
-*OauthCibaServerPolicyApi* | [**GetCibaServerPolicyById**](docs/OauthCibaServerPolicyApi.md#getcibaserverpolicybyid) | **Get** /oauth/cibaServerPolicy/requestPolicies/{id} | Find request policy by ID.
-*OauthCibaServerPolicyApi* | [**GetCibaServerPolicySettings**](docs/OauthCibaServerPolicyApi.md#getcibaserverpolicysettings) | **Get** /oauth/cibaServerPolicy/settings | Get general ciba server request policy settings.
-*OauthCibaServerPolicyApi* | [**UpdateCibaServerPolicy**](docs/OauthCibaServerPolicyApi.md#updatecibaserverpolicy) | **Put** /oauth/cibaServerPolicy/requestPolicies/{id} | Update a request policy.
-*OauthCibaServerPolicyApi* | [**UpdateCibaServerPolicySettings**](docs/OauthCibaServerPolicyApi.md#updatecibaserverpolicysettings) | **Put** /oauth/cibaServerPolicy/settings | Update general ciba server request policy settings.
-*OauthClientRegistrationPoliciesApi* | [**CreateDynamicClientRegistrationPolicy**](docs/OauthClientRegistrationPoliciesApi.md#createdynamicclientregistrationpolicy) | **Post** /oauth/clientRegistrationPolicies | Create a client registration policy plugin instance.
-*OauthClientRegistrationPoliciesApi* | [**DeleteDynamicClientRegistrationPolicy**](docs/OauthClientRegistrationPoliciesApi.md#deletedynamicclientregistrationpolicy) | **Delete** /oauth/clientRegistrationPolicies/{id} | Delete a client registration policy plugin instance.
-*OauthClientRegistrationPoliciesApi* | [**GetDynamicClientRegistrationDescriptor**](docs/OauthClientRegistrationPoliciesApi.md#getdynamicclientregistrationdescriptor) | **Get** /oauth/clientRegistrationPolicies/descriptors/{id} | Get the description of a client registration policy plugin descriptor.
-*OauthClientRegistrationPoliciesApi* | [**GetDynamicClientRegistrationDescriptors**](docs/OauthClientRegistrationPoliciesApi.md#getdynamicclientregistrationdescriptors) | **Get** /oauth/clientRegistrationPolicies/descriptors | Get the list of available client registration policy plugin descriptors.
-*OauthClientRegistrationPoliciesApi* | [**GetDynamicClientRegistrationPolicies**](docs/OauthClientRegistrationPoliciesApi.md#getdynamicclientregistrationpolicies) | **Get** /oauth/clientRegistrationPolicies | Get a list of client registration policy plugin instances.
-*OauthClientRegistrationPoliciesApi* | [**GetDynamicClientRegistrationPolicy**](docs/OauthClientRegistrationPoliciesApi.md#getdynamicclientregistrationpolicy) | **Get** /oauth/clientRegistrationPolicies/{id} | Get a specific client registration policy plugin instance.
-*OauthClientRegistrationPoliciesApi* | [**UpdateDynamicClientRegistrationPolicy**](docs/OauthClientRegistrationPoliciesApi.md#updatedynamicclientregistrationpolicy) | **Put** /oauth/clientRegistrationPolicies/{id} | Update a client registration policy plugin instance.
-*OauthClientSettingsApi* | [**GetOauthClientSettings**](docs/OauthClientSettingsApi.md#getoauthclientsettings) | **Get** /oauth/clientSettings | Configure the client settings.
-*OauthClientSettingsApi* | [**UpdateOauthClientSettings**](docs/OauthClientSettingsApi.md#updateoauthclientsettings) | **Put** /oauth/clientSettings | Update the client settings.
-*OauthClientsApi* | [**CreateOauthClient**](docs/OauthClientsApi.md#createoauthclient) | **Post** /oauth/clients | Create a new OAuth client.
-*OauthClientsApi* | [**DeleteOauthClient**](docs/OauthClientsApi.md#deleteoauthclient) | **Delete** /oauth/clients/{id} | Delete an OAuth client.
-*OauthClientsApi* | [**GetOauthClientById**](docs/OauthClientsApi.md#getoauthclientbyid) | **Get** /oauth/clients/{id} | Find the OAuth client by ID.
-*OauthClientsApi* | [**GetOauthClientSecret**](docs/OauthClientsApi.md#getoauthclientsecret) | **Get** /oauth/clients/{id}/clientAuth/clientSecret | Get the client secret of an existing OAuth client.
-*OauthClientsApi* | [**GetOauthClients**](docs/OauthClientsApi.md#getoauthclients) | **Get** /oauth/clients | Get the list of OAuth clients.
-*OauthClientsApi* | [**UpdateOauthClient**](docs/OauthClientsApi.md#updateoauthclient) | **Put** /oauth/clients/{id} | Updates the OAuth client.
-*OauthClientsApi* | [**UpdateOauthClientSecret**](docs/OauthClientsApi.md#updateoauthclientsecret) | **Put** /oauth/clients/{id}/clientAuth/clientSecret | Update the client secret of an existing OAuth client.
-*OauthIdpAdapterMappingsApi* | [**CreateIdpAdapterMapping**](docs/OauthIdpAdapterMappingsApi.md#createidpadaptermapping) | **Post** /oauth/idpAdapterMappings | Create a new IdP adapter mapping.
-*OauthIdpAdapterMappingsApi* | [**DeleteIdpAdapterMapping**](docs/OauthIdpAdapterMappingsApi.md#deleteidpadaptermapping) | **Delete** /oauth/idpAdapterMappings/{id} | Delete an IdP adapter mapping.
-*OauthIdpAdapterMappingsApi* | [**GetIdpAdapterMapping**](docs/OauthIdpAdapterMappingsApi.md#getidpadaptermapping) | **Get** /oauth/idpAdapterMappings/{id} | Find the IdP adapter mapping by the ID.
-*OauthIdpAdapterMappingsApi* | [**GetIdpAdapterMappings**](docs/OauthIdpAdapterMappingsApi.md#getidpadaptermappings) | **Get** /oauth/idpAdapterMappings | Get the list of IdP adapter mappings.
-*OauthIdpAdapterMappingsApi* | [**UpdateIdpAdapterMapping**](docs/OauthIdpAdapterMappingsApi.md#updateidpadaptermapping) | **Put** /oauth/idpAdapterMappings/{id} | Update an IdP adapter mapping.
-*OauthIssuersApi* | [**AddOauthIssuer**](docs/OauthIssuersApi.md#addoauthissuer) | **Post** /oauth/issuers | Create a new virtual issuer.
-*OauthIssuersApi* | [**DeleteOauthIssuer**](docs/OauthIssuersApi.md#deleteoauthissuer) | **Delete** /oauth/issuers/{id} | Delete a virtual issuer.
-*OauthIssuersApi* | [**GetOauthIssuerById**](docs/OauthIssuersApi.md#getoauthissuerbyid) | **Get** /oauth/issuers/{id} | Find a virtual issuer by ID.
-*OauthIssuersApi* | [**GetOauthIssuers**](docs/OauthIssuersApi.md#getoauthissuers) | **Get** /oauth/issuers | Get the list of virtual issuers.
-*OauthIssuersApi* | [**UpdateOauthIssuer**](docs/OauthIssuersApi.md#updateoauthissuer) | **Put** /oauth/issuers/{id} | Update a virtual issuer.
-*OauthOpenIdConnectApi* | [**CreateOIDCPolicy**](docs/OauthOpenIdConnectApi.md#createoidcpolicy) | **Post** /oauth/openIdConnect/policies | Create a new OpenID Connect Policy.
-*OauthOpenIdConnectApi* | [**DeleteOIDCPolicy**](docs/OauthOpenIdConnectApi.md#deleteoidcpolicy) | **Delete** /oauth/openIdConnect/policies/{id} | Delete an OpenID Connect Policy.
-*OauthOpenIdConnectApi* | [**GetOIDCPolicies**](docs/OauthOpenIdConnectApi.md#getoidcpolicies) | **Get** /oauth/openIdConnect/policies | Get list of OpenID Connect Policies.
-*OauthOpenIdConnectApi* | [**GetOIDCPolicy**](docs/OauthOpenIdConnectApi.md#getoidcpolicy) | **Get** /oauth/openIdConnect/policies/{id} | Find OpenID Connect Policy by ID.
-*OauthOpenIdConnectApi* | [**GetOIDCSettings**](docs/OauthOpenIdConnectApi.md#getoidcsettings) | **Get** /oauth/openIdConnect/settings | Get the OpenID Connect Settings.
-*OauthOpenIdConnectApi* | [**UpdateOIDCPolicy**](docs/OauthOpenIdConnectApi.md#updateoidcpolicy) | **Put** /oauth/openIdConnect/policies/{id} | Update an OpenID Connect Policy.
-*OauthOpenIdConnectApi* | [**UpdateOIDCSettings**](docs/OauthOpenIdConnectApi.md#updateoidcsettings) | **Put** /oauth/openIdConnect/settings | Set the OpenID Connect Settings.
-*OauthOutOfBandAuthPluginsApi* | [**CreateOOBAuthenticator**](docs/OauthOutOfBandAuthPluginsApi.md#createoobauthenticator) | **Post** /oauth/outOfBandAuthPlugins | Create an Out of Band authenticator plugin instance.
-*OauthOutOfBandAuthPluginsApi* | [**DeleteOOBAuthenticator**](docs/OauthOutOfBandAuthPluginsApi.md#deleteoobauthenticator) | **Delete** /oauth/outOfBandAuthPlugins/{id} | Delete an Out of Band authenticator plugin instance.
-*OauthOutOfBandAuthPluginsApi* | [**GetOOBAction**](docs/OauthOutOfBandAuthPluginsApi.md#getoobaction) | **Get** /oauth/outOfBandAuthPlugins/{id}/actions/{actionId} | Find an Out of Band authenticator plugin instance&#39;s action by ID.
-*OauthOutOfBandAuthPluginsApi* | [**GetOOBActions**](docs/OauthOutOfBandAuthPluginsApi.md#getoobactions) | **Get** /oauth/outOfBandAuthPlugins/{id}/actions | List of actions for an Out of Band authenticator plugin instance.
-*OauthOutOfBandAuthPluginsApi* | [**GetOOBAuthPluginDescriptor**](docs/OauthOutOfBandAuthPluginsApi.md#getoobauthplugindescriptor) | **Get** /oauth/outOfBandAuthPlugins/descriptors/{id} | Get the descriptor of an Out of Band authenticator plugin.
-*OauthOutOfBandAuthPluginsApi* | [**GetOOBAuthPluginDescriptors**](docs/OauthOutOfBandAuthPluginsApi.md#getoobauthplugindescriptors) | **Get** /oauth/outOfBandAuthPlugins/descriptors | Get the list of available Out of Band authenticator plugin descriptors.
-*OauthOutOfBandAuthPluginsApi* | [**GetOOBAuthenticator**](docs/OauthOutOfBandAuthPluginsApi.md#getoobauthenticator) | **Get** /oauth/outOfBandAuthPlugins/{id} | Get a specific Out of Band authenticator plugin instance.
-*OauthOutOfBandAuthPluginsApi* | [**GetOOBAuthenticators**](docs/OauthOutOfBandAuthPluginsApi.md#getoobauthenticators) | **Get** /oauth/outOfBandAuthPlugins | Get a list of Out of Band authenticator plugin instances.
-*OauthOutOfBandAuthPluginsApi* | [**InvokeOOBActionWithOptions**](docs/OauthOutOfBandAuthPluginsApi.md#invokeoobactionwithoptions) | **Post** /oauth/outOfBandAuthPlugins/{id}/actions/{actionId}/invokeAction | Invokes an action for Out of Band authenticator plugin instance.
-*OauthOutOfBandAuthPluginsApi* | [**UpdateOOBAuthenticator**](docs/OauthOutOfBandAuthPluginsApi.md#updateoobauthenticator) | **Put** /oauth/outOfBandAuthPlugins/{id} | Update an Out of Band authenticator plugin instance.
-*OauthResourceOwnerCredentialsMappingsApi* | [**CreateResourceOwnerCredentialsMapping**](docs/OauthResourceOwnerCredentialsMappingsApi.md#createresourceownercredentialsmapping) | **Post** /oauth/resourceOwnerCredentialsMappings | Create a new Resource Owner Credentials mapping.
-*OauthResourceOwnerCredentialsMappingsApi* | [**DeleteResourceOwnerCredentialsMapping**](docs/OauthResourceOwnerCredentialsMappingsApi.md#deleteresourceownercredentialsmapping) | **Delete** /oauth/resourceOwnerCredentialsMappings/{id} | Delete a Resource Owner Credentials mapping.
-*OauthResourceOwnerCredentialsMappingsApi* | [**GetResourceOwnerCredentialsMapping**](docs/OauthResourceOwnerCredentialsMappingsApi.md#getresourceownercredentialsmapping) | **Get** /oauth/resourceOwnerCredentialsMappings/{id} | Find the Resource Owner Credentials mapping by the ID.
-*OauthResourceOwnerCredentialsMappingsApi* | [**GetResourceOwnerCredentialsMappings**](docs/OauthResourceOwnerCredentialsMappingsApi.md#getresourceownercredentialsmappings) | **Get** /oauth/resourceOwnerCredentialsMappings | Get the list of Resource Owner Credentials Grant Mapping.
-*OauthResourceOwnerCredentialsMappingsApi* | [**UpdateResourceOwnerCredentialsMapping**](docs/OauthResourceOwnerCredentialsMappingsApi.md#updateresourceownercredentialsmapping) | **Put** /oauth/resourceOwnerCredentialsMappings/{id} | Update a Resource Owner Credentials mapping.
-*OauthTokenExchangeGeneratorApi* | [**CreateGroup**](docs/OauthTokenExchangeGeneratorApi.md#creategroup) | **Post** /oauth/tokenExchange/generator/groups | Create a new OAuth 2.0 Token Exchange Generator group.
-*OauthTokenExchangeGeneratorApi* | [**DeleteOauthTokenExchangeGroup**](docs/OauthTokenExchangeGeneratorApi.md#deleteoauthtokenexchangegroup) | **Delete** /oauth/tokenExchange/generator/groups/{id} | Delete an OAuth 2.0 Token Exchange Generator group.
-*OauthTokenExchangeGeneratorApi* | [**GetOauthTokenExchangeGroupById**](docs/OauthTokenExchangeGeneratorApi.md#getoauthtokenexchangegroupbyid) | **Get** /oauth/tokenExchange/generator/groups/{id} | Find an OAuth 2.0 Token Exchange Generator group by ID.
-*OauthTokenExchangeGeneratorApi* | [**GetOauthTokenExchangeGroups**](docs/OauthTokenExchangeGeneratorApi.md#getoauthtokenexchangegroups) | **Get** /oauth/tokenExchange/generator/groups | Get list of OAuth 2.0 Token Exchange Generator groups.
-*OauthTokenExchangeGeneratorApi* | [**GetOauthTokenExchangeSettings**](docs/OauthTokenExchangeGeneratorApi.md#getoauthtokenexchangesettings) | **Get** /oauth/tokenExchange/generator/settings | Get general OAuth 2.0 Token Exchange Generator settings.
-*OauthTokenExchangeGeneratorApi* | [**UpdateOauthTokenExchangeGroup**](docs/OauthTokenExchangeGeneratorApi.md#updateoauthtokenexchangegroup) | **Put** /oauth/tokenExchange/generator/groups/{id} | Update an OAuth 2.0 Token Exchange Generator group.
-*OauthTokenExchangeGeneratorApi* | [**UpdateOauthTokenExchangeSettings**](docs/OauthTokenExchangeGeneratorApi.md#updateoauthtokenexchangesettings) | **Put** /oauth/tokenExchange/generator/settings | Update general OAuth 2.0 Token Exchange Generator settings.
-*OauthTokenExchangeProcessorApi* | [**CreateOauthTokenExchangeProcessorPolicy**](docs/OauthTokenExchangeProcessorApi.md#createoauthtokenexchangeprocessorpolicy) | **Post** /oauth/tokenExchange/processor/policies | Create a new OAuth 2.0 Token Exchange Processor policy.
-*OauthTokenExchangeProcessorApi* | [**DeleteOauthTokenExchangeProcessorPolicyy**](docs/OauthTokenExchangeProcessorApi.md#deleteoauthtokenexchangeprocessorpolicyy) | **Delete** /oauth/tokenExchange/processor/policies/{id} | Delete an OAuth 2.0 Token Exchange Processor policy.
-*OauthTokenExchangeProcessorApi* | [**GetOauthTokenExchangeProcessorPolicyById**](docs/OauthTokenExchangeProcessorApi.md#getoauthtokenexchangeprocessorpolicybyid) | **Get** /oauth/tokenExchange/processor/policies/{id} | Find an OAuth 2.0 Token Exchange Processor policy by ID.
-*OauthTokenExchangeProcessorApi* | [**GetOauthTokenExchangeProcessorPolicyPolicies**](docs/OauthTokenExchangeProcessorApi.md#getoauthtokenexchangeprocessorpolicypolicies) | **Get** /oauth/tokenExchange/processor/policies | Get list of OAuth 2.0 Token Exchange Processor policies.
-*OauthTokenExchangeProcessorApi* | [**GetOauthTokenExchangeProcessorPolicySettings**](docs/OauthTokenExchangeProcessorApi.md#getoauthtokenexchangeprocessorpolicysettings) | **Get** /oauth/tokenExchange/processor/settings | Get general OAuth 2.0 Token Exchange Processor settings.
-*OauthTokenExchangeProcessorApi* | [**UpdateOauthTokenExchangeProcessorPolicy**](docs/OauthTokenExchangeProcessorApi.md#updateoauthtokenexchangeprocessorpolicy) | **Put** /oauth/tokenExchange/processor/policies/{id} | Update an OAuth 2.0 Token Exchange Processor policy.
-*OauthTokenExchangeProcessorApi* | [**UpdateOauthTokenExchangeProcessorPolicySettings**](docs/OauthTokenExchangeProcessorApi.md#updateoauthtokenexchangeprocessorpolicysettings) | **Put** /oauth/tokenExchange/processor/settings | Update general OAuth 2.0 Token Exchange Processor settings.
-*OauthTokenExchangeTokenGeneratorMappingsApi* | [**CreateTokenGeneratorMapping**](docs/OauthTokenExchangeTokenGeneratorMappingsApi.md#createtokengeneratormapping) | **Post** /oauth/tokenExchange/tokenGeneratorMappings | Create a new Token Exchange Processor policy to Token Generator Mapping.
-*OauthTokenExchangeTokenGeneratorMappingsApi* | [**DeleteTokenGeneratorMappingById**](docs/OauthTokenExchangeTokenGeneratorMappingsApi.md#deletetokengeneratormappingbyid) | **Delete** /oauth/tokenExchange/tokenGeneratorMappings/{id} | Delete a Token Exchange Processor policy to Token Generator Mapping.
-*OauthTokenExchangeTokenGeneratorMappingsApi* | [**GetTokenGeneratorMappingById**](docs/OauthTokenExchangeTokenGeneratorMappingsApi.md#gettokengeneratormappingbyid) | **Get** /oauth/tokenExchange/tokenGeneratorMappings/{id} | Get a Token Exchange Processor policy to Token Generator Mapping.
-*OauthTokenExchangeTokenGeneratorMappingsApi* | [**GetTokenGeneratorMappings**](docs/OauthTokenExchangeTokenGeneratorMappingsApi.md#gettokengeneratormappings) | **Get** /oauth/tokenExchange/tokenGeneratorMappings | Get the list of Token Exchange Processor policy to Token Generator Mappings.
-*OauthTokenExchangeTokenGeneratorMappingsApi* | [**UpdateTokenGeneratorMappingById**](docs/OauthTokenExchangeTokenGeneratorMappingsApi.md#updatetokengeneratormappingbyid) | **Put** /oauth/tokenExchange/tokenGeneratorMappings/{id} | Update a Token Exchange Processor policy to Token Generator Mapping.
-*PasswordCredentialValidatorsApi* | [**CreatePasswordCredentialValidator**](docs/PasswordCredentialValidatorsApi.md#createpasswordcredentialvalidator) | **Post** /passwordCredentialValidators | Create a new password credential validator instance
-*PasswordCredentialValidatorsApi* | [**DeletePasswordCredentialValidator**](docs/PasswordCredentialValidatorsApi.md#deletepasswordcredentialvalidator) | **Delete** /passwordCredentialValidators/{id} | Delete a password credential validator instance.
-*PasswordCredentialValidatorsApi* | [**GetPasswordCredentialValidator**](docs/PasswordCredentialValidatorsApi.md#getpasswordcredentialvalidator) | **Get** /passwordCredentialValidators/{id} | Find a password credential validator by ID.
-*PasswordCredentialValidatorsApi* | [**GetPasswordCredentialValidatorDescriptor**](docs/PasswordCredentialValidatorsApi.md#getpasswordcredentialvalidatordescriptor) | **Get** /passwordCredentialValidators/descriptors/{id} | Get the description of a password credential validator by ID.
-*PasswordCredentialValidatorsApi* | [**GetPasswordCredentialValidatorDescriptors**](docs/PasswordCredentialValidatorsApi.md#getpasswordcredentialvalidatordescriptors) | **Get** /passwordCredentialValidators/descriptors | Get a list of available password credential validator descriptors.
-*PasswordCredentialValidatorsApi* | [**GetPasswordCredentialValidators**](docs/PasswordCredentialValidatorsApi.md#getpasswordcredentialvalidators) | **Get** /passwordCredentialValidators | Get the list of available password credential validators
-*PasswordCredentialValidatorsApi* | [**UpdatePasswordCredentialValidator**](docs/PasswordCredentialValidatorsApi.md#updatepasswordcredentialvalidator) | **Put** /passwordCredentialValidators/{id} | Update a password credential validator instance.
-*PingOneConnectionsApi* | [**CreatePingOneConnection**](docs/PingOneConnectionsApi.md#createpingoneconnection) | **Post** /pingOneConnections | Create a new PingOne connection.
-*PingOneConnectionsApi* | [**DeletePingOneConnection**](docs/PingOneConnectionsApi.md#deletepingoneconnection) | **Delete** /pingOneConnections/{id} | Delete a PingOne connection.
-*PingOneConnectionsApi* | [**GetCredentialStatus**](docs/PingOneConnectionsApi.md#getcredentialstatus) | **Get** /pingOneConnections/{id}/credentialStatus | Get the status of the credential associated with the PingOne connection
-*PingOneConnectionsApi* | [**GetPingOneConnection**](docs/PingOneConnectionsApi.md#getpingoneconnection) | **Get** /pingOneConnections/{id} | Get a PingOne connection with the specified ID.
-*PingOneConnectionsApi* | [**GetPingOneConnectionAssociations**](docs/PingOneConnectionsApi.md#getpingoneconnectionassociations) | **Get** /pingOneConnections/{id}/serviceAssociations | Get information about components using this connection to access PingOne services.
-*PingOneConnectionsApi* | [**GetPingOneConnectionEnvironments**](docs/PingOneConnectionsApi.md#getpingoneconnectionenvironments) | **Get** /pingOneConnections/{id}/environments | Get the list of environments that the PingOne connection has access to.
-*PingOneConnectionsApi* | [**GetPingOneConnectionUsages**](docs/PingOneConnectionsApi.md#getpingoneconnectionusages) | **Get** /pingOneConnections/{id}/usage | Get the list of resources that reference this PingOne connection.
-*PingOneConnectionsApi* | [**GetPingOneConnections**](docs/PingOneConnectionsApi.md#getpingoneconnections) | **Get** /pingOneConnections | Get the list of all PingOne connections.
-*PingOneConnectionsApi* | [**UpdatePingOneConnection**](docs/PingOneConnectionsApi.md#updatepingoneconnection) | **Put** /pingOneConnections/{id} | Update a PingOne connection.
-*PingOneForEnterpriseApi* | [**Disconnect**](docs/PingOneForEnterpriseApi.md#disconnect) | **Post** /pingOneForEnterprise/disconnect | Disconnect from PingOne for Enterprise
-*PingOneForEnterpriseApi* | [**GetKeyPairs**](docs/PingOneForEnterpriseApi.md#getkeypairs) | **Get** /pingOneForEnterprise/keyPairs | Get the PingOne for Enterprise key pair settings
-*PingOneForEnterpriseApi* | [**GetPingOneForEnterpriseSettings**](docs/PingOneForEnterpriseApi.md#getpingoneforenterprisesettings) | **Get** /pingOneForEnterprise | Get the PingOne for Enterprise settings
-*PingOneForEnterpriseApi* | [**RotateKeys**](docs/PingOneForEnterpriseApi.md#rotatekeys) | **Post** /pingOneForEnterprise/keyPairs/rotate | Rotate the authentication key
-*PingOneForEnterpriseApi* | [**UpdatePingOneForEnterpriseIdentityRepository**](docs/PingOneForEnterpriseApi.md#updatepingoneforenterpriseidentityrepository) | **Post** /pingOneForEnterprise/updateIdentityRepository | Update the PingOne Identity Repository
-*PingOneForEnterpriseApi* | [**UpdatePingOneSettings**](docs/PingOneForEnterpriseApi.md#updatepingonesettings) | **Put** /pingOneForEnterprise | Update the PingOne for Enterprise settings.
-*ProtocolMetadataApi* | [**GetLifetimeSettings**](docs/ProtocolMetadataApi.md#getlifetimesettings) | **Get** /protocolMetadata/lifetimeSettings | Get metadata cache duration and reload delay for automated reloading.
-*ProtocolMetadataApi* | [**GetSigningSettings**](docs/ProtocolMetadataApi.md#getsigningsettings) | **Get** /protocolMetadata/signingSettings | Get the certificate ID and algorithm used for metadata signing.
-*ProtocolMetadataApi* | [**UpdateLifetimeSettings**](docs/ProtocolMetadataApi.md#updatelifetimesettings) | **Put** /protocolMetadata/lifetimeSettings | Update metadata cache duration and reload delay for automated reloading.
-*ProtocolMetadataApi* | [**UpdateSigningSettings**](docs/ProtocolMetadataApi.md#updatesigningsettings) | **Put** /protocolMetadata/signingSettings | Update the certificate and algorithm for metadata signing.
-*RedirectValidationApi* | [**GetRedirectValidationSettings**](docs/RedirectValidationApi.md#getredirectvalidationsettings) | **Get** /redirectValidation | Retrieve redirect validation settings.
-*RedirectValidationApi* | [**UpdateRedirectValidationSettings**](docs/RedirectValidationApi.md#updateredirectvalidationsettings) | **Put** /redirectValidation | Update redirect validation settings.
-*SecretManagersApi* | [**CreateSecretManager**](docs/SecretManagersApi.md#createsecretmanager) | **Post** /secretManagers | Create a secret manager plugin instance.
-*SecretManagersApi* | [**DeleteSecretManager**](docs/SecretManagersApi.md#deletesecretmanager) | **Delete** /secretManagers/{id} | Delete a secret manager plugin instance.
-*SecretManagersApi* | [**GetSecretManager**](docs/SecretManagersApi.md#getsecretmanager) | **Get** /secretManagers/{id} | Get a specific secret manager plugin instance.
-*SecretManagersApi* | [**GetSecretManagerPluginDescriptor**](docs/SecretManagersApi.md#getsecretmanagerplugindescriptor) | **Get** /secretManagers/descriptors/{id} | Get a secret manager plugin descriptor.
-*SecretManagersApi* | [**GetSecretManagerPluginDescriptors**](docs/SecretManagersApi.md#getsecretmanagerplugindescriptors) | **Get** /secretManagers/descriptors | Get a list of available secret manager plugin descriptors.
-*SecretManagersApi* | [**GetSecretManagers**](docs/SecretManagersApi.md#getsecretmanagers) | **Get** /secretManagers | Get a list of secret manager plugin instances.
-*SecretManagersApi* | [**GetSecretManagersAction**](docs/SecretManagersApi.md#getsecretmanagersaction) | **Get** /secretManagers/{id}/actions/{actionId} | Get a secret manager plugin instance&#39;s action by ID.
-*SecretManagersApi* | [**GetSecretManagersActions**](docs/SecretManagersApi.md#getsecretmanagersactions) | **Get** /secretManagers/{id}/actions | Get a list of actions for a secret manager plugin instance.
-*SecretManagersApi* | [**InvokeSecretManagersActionWithOptions**](docs/SecretManagersApi.md#invokesecretmanagersactionwithoptions) | **Post** /secretManagers/{id}/actions/{actionId}/invokeAction | Invokes an action for secret manager plugin instance.
-*SecretManagersApi* | [**UpdateSecretManager**](docs/SecretManagersApi.md#updatesecretmanager) | **Put** /secretManagers/{id} | Update a secret manager plugin instance.
-*ServerSettingsApi* | [**DeleteCertificate**](docs/ServerSettingsApi.md#deletecertificate) | **Delete** /serverSettings/wsTrustStsSettings/issuerCertificates/{id} | Delete a certificate from WS-Trust STS Settings.
-*ServerSettingsApi* | [**GetCaptchaSettings**](docs/ServerSettingsApi.md#getcaptchasettings) | **Get** /serverSettings/captchaSettings | (Deprecated) Gets the CAPTCHA settings.
-*ServerSettingsApi* | [**GetCert**](docs/ServerSettingsApi.md#getcert) | **Get** /serverSettings/wsTrustStsSettings/issuerCertificates/{id} | Retrieve details of a certificate.
-*ServerSettingsApi* | [**GetCerts**](docs/ServerSettingsApi.md#getcerts) | **Get** /serverSettings/wsTrustStsSettings/issuerCertificates | Get the list of certificates for WS-Trust STS Settings.
-*ServerSettingsApi* | [**GetEmailServerSettings**](docs/ServerSettingsApi.md#getemailserversettings) | **Get** /serverSettings/emailServer | (Deprecated) Gets the email server settings
-*ServerSettingsApi* | [**GetGeneralSettings**](docs/ServerSettingsApi.md#getgeneralsettings) | **Get** /serverSettings/generalSettings | Gets the general settings.
-*ServerSettingsApi* | [**GetLogSettings**](docs/ServerSettingsApi.md#getlogsettings) | **Get** /serverSettings/logSettings | Gets the log settings.
-*ServerSettingsApi* | [**GetNotificationSettings**](docs/ServerSettingsApi.md#getnotificationsettings) | **Get** /serverSettings/notifications | Gets the notification settings
-*ServerSettingsApi* | [**GetOutBoundProvisioningSettings**](docs/ServerSettingsApi.md#getoutboundprovisioningsettings) | **Get** /serverSettings/outboundProvisioning | Get database used for outbound provisioning
-*ServerSettingsApi* | [**GetServerSettings**](docs/ServerSettingsApi.md#getserversettings) | **Get** /serverSettings | Gets the server settings
-*ServerSettingsApi* | [**GetSystemKeys**](docs/ServerSettingsApi.md#getsystemkeys) | **Get** /serverSettings/systemKeys | Get the system keys.
-*ServerSettingsApi* | [**GetWsTrustStsSettings**](docs/ServerSettingsApi.md#getwstruststssettings) | **Get** /serverSettings/wsTrustStsSettings | Get the current WS-Trust STS Settings.
-*ServerSettingsApi* | [**ImportCertificate**](docs/ServerSettingsApi.md#importcertificate) | **Post** /serverSettings/wsTrustStsSettings/issuerCertificates | Import a new certificate.
-*ServerSettingsApi* | [**RotateSystemKeys**](docs/ServerSettingsApi.md#rotatesystemkeys) | **Post** /serverSettings/systemKeys/rotate | Rotate the system keys.
-*ServerSettingsApi* | [**UpdateCaptchaSettings**](docs/ServerSettingsApi.md#updatecaptchasettings) | **Put** /serverSettings/captchaSettings | (Deprecated) Update the CAPTCHA settings.
-*ServerSettingsApi* | [**UpdateEmailServerSettings**](docs/ServerSettingsApi.md#updateemailserversettings) | **Put** /serverSettings/emailServer | (Deprecated) Update the email server settings
-*ServerSettingsApi* | [**UpdateGeneralSettings**](docs/ServerSettingsApi.md#updategeneralsettings) | **Put** /serverSettings/generalSettings | Update general settings.
-*ServerSettingsApi* | [**UpdateLogSettings**](docs/ServerSettingsApi.md#updatelogsettings) | **Put** /serverSettings/logSettings | Update log settings.
-*ServerSettingsApi* | [**UpdateNotificationSettings**](docs/ServerSettingsApi.md#updatenotificationsettings) | **Put** /serverSettings/notifications | Update the notification settings.
-*ServerSettingsApi* | [**UpdateOutBoundProvisioningSettings**](docs/ServerSettingsApi.md#updateoutboundprovisioningsettings) | **Put** /serverSettings/outboundProvisioning | Update database used for outbound provisioning
-*ServerSettingsApi* | [**UpdateServerSettings**](docs/ServerSettingsApi.md#updateserversettings) | **Put** /serverSettings | Update the server settings.
-*ServerSettingsApi* | [**UpdateSystemKeys**](docs/ServerSettingsApi.md#updatesystemkeys) | **Put** /serverSettings/systemKeys | Update the system keys.
-*ServerSettingsApi* | [**UpdateWsTrustStsSettings**](docs/ServerSettingsApi.md#updatewstruststssettings) | **Put** /serverSettings/wsTrustStsSettings | Update WS-Trust STS Settings.
-*ServiceAuthenticationApi* | [**GetServiceAuthentication**](docs/ServiceAuthenticationApi.md#getserviceauthentication) | **Get** /serviceAuthentication | Get the service authentication settings.
-*ServiceAuthenticationApi* | [**UpdateServiceAuthentication**](docs/ServiceAuthenticationApi.md#updateserviceauthentication) | **Put** /serviceAuthentication | Update the service authentication settings.
-*SessionApi* | [**CreateSourcePolicy**](docs/SessionApi.md#createsourcepolicy) | **Post** /session/authenticationSessionPolicies | Create a new session policy.
-*SessionApi* | [**DeleteSourcePolicy**](docs/SessionApi.md#deletesourcepolicy) | **Delete** /session/authenticationSessionPolicies/{id} | Delete a session policy.
-*SessionApi* | [**GetApplicationPolicy**](docs/SessionApi.md#getapplicationpolicy) | **Get** /session/applicationSessionPolicy | Get the application session policy.
-*SessionApi* | [**GetGlobalPolicy**](docs/SessionApi.md#getglobalpolicy) | **Get** /session/authenticationSessionPolicies/global | Get the global authentication session policy.
-*SessionApi* | [**GetSessionSettings**](docs/SessionApi.md#getsessionsettings) | **Get** /session/settings | Get general session management settings.
-*SessionApi* | [**GetSourcePolicies**](docs/SessionApi.md#getsourcepolicies) | **Get** /session/authenticationSessionPolicies | Get list of session policies.
-*SessionApi* | [**GetSourcePolicy**](docs/SessionApi.md#getsourcepolicy) | **Get** /session/authenticationSessionPolicies/{id} | Find session policy by ID.
-*SessionApi* | [**UpdateApplicationPolicy**](docs/SessionApi.md#updateapplicationpolicy) | **Put** /session/applicationSessionPolicy | Update the application session policy.
-*SessionApi* | [**UpdateGlobalPolicy**](docs/SessionApi.md#updateglobalpolicy) | **Put** /session/authenticationSessionPolicies/global | Update the global authentication session policy.
-*SessionApi* | [**UpdateSessionSettings**](docs/SessionApi.md#updatesessionsettings) | **Put** /session/settings | Update general session management settings.
-*SessionApi* | [**UpdateSourcePolicy**](docs/SessionApi.md#updatesourcepolicy) | **Put** /session/authenticationSessionPolicies/{id} | Update a session policy.
-*SpAdaptersApi* | [**CreateSpAdapter**](docs/SpAdaptersApi.md#createspadapter) | **Post** /sp/adapters | Create a new SP adapter instance.
-*SpAdaptersApi* | [**DeleteSpAdapter**](docs/SpAdaptersApi.md#deletespadapter) | **Delete** /sp/adapters/{id} | Delete an SP adapter instance.
-*SpAdaptersApi* | [**GetSpAdapter**](docs/SpAdaptersApi.md#getspadapter) | **Get** /sp/adapters/{id} | Find an SP adapter instance by ID.
-*SpAdaptersApi* | [**GetSpAdapterDescriptors**](docs/SpAdaptersApi.md#getspadapterdescriptors) | **Get** /sp/adapters/descriptors | Get the list of available SP adapter descriptors.
-*SpAdaptersApi* | [**GetSpAdapterDescriptorsById**](docs/SpAdaptersApi.md#getspadapterdescriptorsbyid) | **Get** /sp/adapters/descriptors/{id} | Get the description of an SP adapter plugin by ID.
-*SpAdaptersApi* | [**GetSpAdapterUrlMappings**](docs/SpAdaptersApi.md#getspadapterurlmappings) | **Get** /sp/adapters/urlMappings | (Deprecated) List the mappings between URLs and adapter instances.
-*SpAdaptersApi* | [**GetSpAdapters**](docs/SpAdaptersApi.md#getspadapters) | **Get** /sp/adapters | Get the list of configured SP adapter instances.
-*SpAdaptersApi* | [**GetSpAdaptersActionById**](docs/SpAdaptersApi.md#getspadaptersactionbyid) | **Get** /sp/adapters/{id}/actions/{actionId} | Find an SP adapter instance&#39;s action by ID.
-*SpAdaptersApi* | [**GetSpAdaptersActions**](docs/SpAdaptersApi.md#getspadaptersactions) | **Get** /sp/adapters/{id}/actions | List the actions for an SP adapter instance.
-*SpAdaptersApi* | [**InvokeSpAdapterActionWithOptions**](docs/SpAdaptersApi.md#invokespadapteractionwithoptions) | **Post** /sp/adapters/{id}/actions/{actionId}/invokeAction | Invokes an action for an SP adapter instance.
-*SpAdaptersApi* | [**UpdateSpAdapter**](docs/SpAdaptersApi.md#updatespadapter) | **Put** /sp/adapters/{id} | Update an SP adapter instance.
-*SpAdaptersApi* | [**UpdateSpAdapterUrlMappings**](docs/SpAdaptersApi.md#updatespadapterurlmappings) | **Put** /sp/adapters/urlMappings | (Deprecated) Update the mappings between URLs and adapters instances.
-*SpAuthenticationPolicyContractMappingsApi* | [**CreateApcToSpAdapterMapping**](docs/SpAuthenticationPolicyContractMappingsApi.md#createapctospadaptermapping) | **Post** /sp/authenticationPolicyContractMappings | Create a new APC-to-SP Adapter Mapping.
-*SpAuthenticationPolicyContractMappingsApi* | [**DeleteApcToSpAdapterMappingById**](docs/SpAuthenticationPolicyContractMappingsApi.md#deleteapctospadaptermappingbyid) | **Delete** /sp/authenticationPolicyContractMappings/{id} | Delete an APC-to-SP Adapter Mapping.
-*SpAuthenticationPolicyContractMappingsApi* | [**GetApcToSpAdapterMappingById**](docs/SpAuthenticationPolicyContractMappingsApi.md#getapctospadaptermappingbyid) | **Get** /sp/authenticationPolicyContractMappings/{id} | Get an APC-to-SP Adapter Mapping.
-*SpAuthenticationPolicyContractMappingsApi* | [**GetApcToSpAdapterMappings**](docs/SpAuthenticationPolicyContractMappingsApi.md#getapctospadaptermappings) | **Get** /sp/authenticationPolicyContractMappings | Get the list of APC-to-SP Adapter Mappings.
-*SpAuthenticationPolicyContractMappingsApi* | [**UpdateApcToSpAdapterMappingById**](docs/SpAuthenticationPolicyContractMappingsApi.md#updateapctospadaptermappingbyid) | **Put** /sp/authenticationPolicyContractMappings/{id} | Update an APC-to-SP Adapter Mapping.
-*SpDefaultUrlsApi* | [**GetSpDefaultUrls**](docs/SpDefaultUrlsApi.md#getspdefaulturls) | **Get** /sp/defaultUrls | Gets the SP Default URLs. These are Values that affect the user&#39;s experience when executing SP-initiated SSO operations.
-*SpDefaultUrlsApi* | [**UpdateSpDefaultUrls**](docs/SpDefaultUrlsApi.md#updatespdefaulturls) | **Put** /sp/defaultUrls | Update the SP Default URLs. Enter values that affect the user&#39;s experience when executing SP-initiated SSO operations.
-*SpIdpConnectionsApi* | [**AddConnectionCert**](docs/SpIdpConnectionsApi.md#addconnectioncert) | **Post** /sp/idpConnections/{id}/credentials/certs | Add a new IdP connection certificate.
-*SpIdpConnectionsApi* | [**CreateConnection**](docs/SpIdpConnectionsApi.md#createconnection) | **Post** /sp/idpConnections | Create a new IdP connection.
-*SpIdpConnectionsApi* | [**DeleteConnection**](docs/SpIdpConnectionsApi.md#deleteconnection) | **Delete** /sp/idpConnections/{id} | Delete an IdP connection.
-*SpIdpConnectionsApi* | [**GetConnection**](docs/SpIdpConnectionsApi.md#getconnection) | **Get** /sp/idpConnections/{id} | Find IdP connection by ID.
-*SpIdpConnectionsApi* | [**GetConnectionCerts**](docs/SpIdpConnectionsApi.md#getconnectioncerts) | **Get** /sp/idpConnections/{id}/credentials/certs | Get the IdP connection&#39;s certificates.
-*SpIdpConnectionsApi* | [**GetConnections**](docs/SpIdpConnectionsApi.md#getconnections) | **Get** /sp/idpConnections | Get list of IdP connections.
-*SpIdpConnectionsApi* | [**GetIdpConnectionSigningSettings**](docs/SpIdpConnectionsApi.md#getidpconnectionsigningsettings) | **Get** /sp/idpConnections/{id}/credentials/signingSettings | Get the IdP connection&#39;s signature settings.
-*SpIdpConnectionsApi* | [**GetIdpConnectionsDecryptionKeys**](docs/SpIdpConnectionsApi.md#getidpconnectionsdecryptionkeys) | **Get** /sp/idpConnections/{id}/credentials/decryptionKeys | Get the decryption keys of an IdP connection.
-*SpIdpConnectionsApi* | [**UpdateConnection**](docs/SpIdpConnectionsApi.md#updateconnection) | **Put** /sp/idpConnections/{id} | Update an IdP connection.
-*SpIdpConnectionsApi* | [**UpdateConnectionCerts**](docs/SpIdpConnectionsApi.md#updateconnectioncerts) | **Put** /sp/idpConnections/{id}/credentials/certs | Update the IdP connection&#39;s certificates.
-*SpIdpConnectionsApi* | [**UpdateIdpConnectionSigningSettings**](docs/SpIdpConnectionsApi.md#updateidpconnectionsigningsettings) | **Put** /sp/idpConnections/{id}/credentials/signingSettings | Update the IdP connection&#39;s signature settings.
-*SpIdpConnectionsApi* | [**UpdateIdpConnectionsDecryptionKeys**](docs/SpIdpConnectionsApi.md#updateidpconnectionsdecryptionkeys) | **Put** /sp/idpConnections/{id}/credentials/decryptionKeys | Updating the IdP connection&#39;s decryption keys.
-*SpTargetUrlMappingsApi* | [**GetSpUrlMappings**](docs/SpTargetUrlMappingsApi.md#getspurlmappings) | **Get** /sp/targetUrlMappings | List the mappings between URLs and adapter or connection instances.
-*SpTargetUrlMappingsApi* | [**UpdateSpUrlMappings**](docs/SpTargetUrlMappingsApi.md#updatespurlmappings) | **Put** /sp/targetUrlMappings | Update the mappings between URLs and adapters or connections instances.
-*SpTokenGeneratorsApi* | [**CreateTokenGenerator**](docs/SpTokenGeneratorsApi.md#createtokengenerator) | **Post** /sp/tokenGenerators | Create a new token generator instance.
-*SpTokenGeneratorsApi* | [**DeleteTokenGenerator**](docs/SpTokenGeneratorsApi.md#deletetokengenerator) | **Delete** /sp/tokenGenerators/{id} | Delete a token generator instance.
-*SpTokenGeneratorsApi* | [**GetTokenGenerator**](docs/SpTokenGeneratorsApi.md#gettokengenerator) | **Get** /sp/tokenGenerators/{id} | Find a token generator instance by ID.
-*SpTokenGeneratorsApi* | [**GetTokenGeneratorDescriptors**](docs/SpTokenGeneratorsApi.md#gettokengeneratordescriptors) | **Get** /sp/tokenGenerators/descriptors | Get the list of available token generators.
-*SpTokenGeneratorsApi* | [**GetTokenGeneratorDescriptorsById**](docs/SpTokenGeneratorsApi.md#gettokengeneratordescriptorsbyid) | **Get** /sp/tokenGenerators/descriptors/{id} | Get the description of a token generator plugin by ID.
-*SpTokenGeneratorsApi* | [**GetTokenGenerators**](docs/SpTokenGeneratorsApi.md#gettokengenerators) | **Get** /sp/tokenGenerators | Get the list of token generator instances.
-*SpTokenGeneratorsApi* | [**UpdateTokenGenerator**](docs/SpTokenGeneratorsApi.md#updatetokengenerator) | **Put** /sp/tokenGenerators/{id} | Update a token generator instance.
-*TokenProcessorToTokenGeneratorMappingsApi* | [**CreateTokenToTokenMapping**](docs/TokenProcessorToTokenGeneratorMappingsApi.md#createtokentotokenmapping) | **Post** /tokenProcessorToTokenGeneratorMappings | Create a new Token Processor to Token Generator Mapping.
-*TokenProcessorToTokenGeneratorMappingsApi* | [**DeleteTokenToTokenMappingById**](docs/TokenProcessorToTokenGeneratorMappingsApi.md#deletetokentotokenmappingbyid) | **Delete** /tokenProcessorToTokenGeneratorMappings/{id} | Delete a Token Processor to Token Generator Mapping.
-*TokenProcessorToTokenGeneratorMappingsApi* | [**GetTokenToTokenMappingById**](docs/TokenProcessorToTokenGeneratorMappingsApi.md#gettokentotokenmappingbyid) | **Get** /tokenProcessorToTokenGeneratorMappings/{id} | Get a Token Processor to Token Generator Mapping.
-*TokenProcessorToTokenGeneratorMappingsApi* | [**GetTokenToTokenMappings**](docs/TokenProcessorToTokenGeneratorMappingsApi.md#gettokentotokenmappings) | **Get** /tokenProcessorToTokenGeneratorMappings | Get the list of Token Processor to Token Generator Mappings.
-*TokenProcessorToTokenGeneratorMappingsApi* | [**UpdateTokenToTokenMappingById**](docs/TokenProcessorToTokenGeneratorMappingsApi.md#updatetokentotokenmappingbyid) | **Put** /tokenProcessorToTokenGeneratorMappings/{id} | Update a Token Processor to Token Generator Mapping.
-*VersionApi* | [**GetVersion**](docs/VersionApi.md#getversion) | **Get** /version | Gets the server version.
-*VirtualHostNamesApi* | [**GetVirtualHostNamesSettings**](docs/VirtualHostNamesApi.md#getvirtualhostnamessettings) | **Get** /virtualHostNames | Retrieve virtual host names settings.
-*VirtualHostNamesApi* | [**UpdateVirtualHostNamesSettings**](docs/VirtualHostNamesApi.md#updatevirtualhostnamessettings) | **Put** /virtualHostNames | Update virtual host names settings.
+*AdministrativeAccountsAPI* | [**AddAccount**](docs/AdministrativeAccountsAPI.md#addaccount) | **Post** /administrativeAccounts | Add a new PingFederate native Administrative Account.
+*AdministrativeAccountsAPI* | [**ChangePassword**](docs/AdministrativeAccountsAPI.md#changepassword) | **Post** /administrativeAccounts/changePassword | Change the Password of current PingFederate native Account.
+*AdministrativeAccountsAPI* | [**DeleteAccount**](docs/AdministrativeAccountsAPI.md#deleteaccount) | **Delete** /administrativeAccounts/{username} | Delete a PingFederate native Administrative Account information.
+*AdministrativeAccountsAPI* | [**GetAccount**](docs/AdministrativeAccountsAPI.md#getaccount) | **Get** /administrativeAccounts/{username} | Get a PingFederate native Administrative Account.
+*AdministrativeAccountsAPI* | [**GetAccounts**](docs/AdministrativeAccountsAPI.md#getaccounts) | **Get** /administrativeAccounts | Get all the PingFederate native Administrative Accounts.
+*AdministrativeAccountsAPI* | [**ResetPassword**](docs/AdministrativeAccountsAPI.md#resetpassword) | **Post** /administrativeAccounts/{username}/resetPassword | Reset the Password of an existing PingFederate native Administrative Account.
+*AdministrativeAccountsAPI* | [**UpdateAccount**](docs/AdministrativeAccountsAPI.md#updateaccount) | **Put** /administrativeAccounts/{username} | Update the information for a native Administrative Account.
+*AuthenticationApiAPI* | [**CreateApplication**](docs/AuthenticationApiAPI.md#createapplication) | **Post** /authenticationApi/applications | Create a new Authentication API Application.
+*AuthenticationApiAPI* | [**DeleteApplication**](docs/AuthenticationApiAPI.md#deleteapplication) | **Delete** /authenticationApi/applications/{id} | Delete an Authentication API Application.
+*AuthenticationApiAPI* | [**GetApplication**](docs/AuthenticationApiAPI.md#getapplication) | **Get** /authenticationApi/applications/{id} | Find Authentication API Application by ID.
+*AuthenticationApiAPI* | [**GetAuthenticationApiApplications**](docs/AuthenticationApiAPI.md#getauthenticationapiapplications) | **Get** /authenticationApi/applications | Get the collection of Authentication API Applications.
+*AuthenticationApiAPI* | [**GetAuthenticationApiSettings**](docs/AuthenticationApiAPI.md#getauthenticationapisettings) | **Get** /authenticationApi/settings | Get the Authentication API settings.
+*AuthenticationApiAPI* | [**UpdateApplication**](docs/AuthenticationApiAPI.md#updateapplication) | **Put** /authenticationApi/applications/{id} | Update an Authentication API Application.
+*AuthenticationApiAPI* | [**UpdateAuthenticationApiSettings**](docs/AuthenticationApiAPI.md#updateauthenticationapisettings) | **Put** /authenticationApi/settings | Set the Authentication API settings.
+*AuthenticationPoliciesAPI* | [**CreateFragment**](docs/AuthenticationPoliciesAPI.md#createfragment) | **Post** /authenticationPolicies/fragments | Create an authentication policy fragment.
+*AuthenticationPoliciesAPI* | [**CreatePolicy**](docs/AuthenticationPoliciesAPI.md#createpolicy) | **Post** /authenticationPolicies/policy | Create a new authentication policy.
+*AuthenticationPoliciesAPI* | [**DeleteFragment**](docs/AuthenticationPoliciesAPI.md#deletefragment) | **Delete** /authenticationPolicies/fragments/{id} | Delete an authentication policy fragment.
+*AuthenticationPoliciesAPI* | [**DeletePolicy**](docs/AuthenticationPoliciesAPI.md#deletepolicy) | **Delete** /authenticationPolicies/policy/{id} | Delete an authentication policy.
+*AuthenticationPoliciesAPI* | [**GetAuthenticationPolicySettings**](docs/AuthenticationPoliciesAPI.md#getauthenticationpolicysettings) | **Get** /authenticationPolicies/settings | Get the authentication policies settings.
+*AuthenticationPoliciesAPI* | [**GetDefaultAuthenticationPolicy**](docs/AuthenticationPoliciesAPI.md#getdefaultauthenticationpolicy) | **Get** /authenticationPolicies/default | Get the default configured authentication policy.
+*AuthenticationPoliciesAPI* | [**GetFragment**](docs/AuthenticationPoliciesAPI.md#getfragment) | **Get** /authenticationPolicies/fragments/{id} | Get an authentication policy fragment by ID.
+*AuthenticationPoliciesAPI* | [**GetFragments**](docs/AuthenticationPoliciesAPI.md#getfragments) | **Get** /authenticationPolicies/fragments | Get all of the authentication policies fragments.
+*AuthenticationPoliciesAPI* | [**GetPolicy**](docs/AuthenticationPoliciesAPI.md#getpolicy) | **Get** /authenticationPolicies/policy/{id} | Get an authentication policy by ID.
+*AuthenticationPoliciesAPI* | [**MovePolicy**](docs/AuthenticationPoliciesAPI.md#movepolicy) | **Post** /authenticationPolicies/policy/{id}/move | Move an authentication policy to a location within the policy tree.
+*AuthenticationPoliciesAPI* | [**UpdateAuthenticationPolicySettings**](docs/AuthenticationPoliciesAPI.md#updateauthenticationpolicysettings) | **Put** /authenticationPolicies/settings | Set the authentication policies settings.
+*AuthenticationPoliciesAPI* | [**UpdateDefaultAuthenticationPolicy**](docs/AuthenticationPoliciesAPI.md#updatedefaultauthenticationpolicy) | **Put** /authenticationPolicies/default | Set the default authentication policy.
+*AuthenticationPoliciesAPI* | [**UpdateFragment**](docs/AuthenticationPoliciesAPI.md#updatefragment) | **Put** /authenticationPolicies/fragments/{id} | Update an authentication policy fragment.
+*AuthenticationPoliciesAPI* | [**UpdatePolicy**](docs/AuthenticationPoliciesAPI.md#updatepolicy) | **Put** /authenticationPolicies/policy/{id} | Update an authentication policy.
+*AuthenticationPolicyContractsAPI* | [**CreateAuthenticationPolicyContract**](docs/AuthenticationPolicyContractsAPI.md#createauthenticationpolicycontract) | **Post** /authenticationPolicyContracts | Create a new Authentication Policy Contract.
+*AuthenticationPolicyContractsAPI* | [**DeleteAuthenticationPolicyContract**](docs/AuthenticationPolicyContractsAPI.md#deleteauthenticationpolicycontract) | **Delete** /authenticationPolicyContracts/{id} | Delete an Authentication Policy Contract.
+*AuthenticationPolicyContractsAPI* | [**GetAuthenticationPolicyContract**](docs/AuthenticationPolicyContractsAPI.md#getauthenticationpolicycontract) | **Get** /authenticationPolicyContracts/{id} | Gets the Authentication Policy Contract by ID.
+*AuthenticationPolicyContractsAPI* | [**GetAuthenticationPolicyContracts**](docs/AuthenticationPolicyContractsAPI.md#getauthenticationpolicycontracts) | **Get** /authenticationPolicyContracts | Gets the Authentication Policy Contracts.
+*AuthenticationPolicyContractsAPI* | [**UpdateAuthenticationPolicyContract**](docs/AuthenticationPolicyContractsAPI.md#updateauthenticationpolicycontract) | **Put** /authenticationPolicyContracts/{id} | Update an Authentication Policy Contract by ID.
+*AuthenticationSelectorsAPI* | [**CreateAuthenticationSelector**](docs/AuthenticationSelectorsAPI.md#createauthenticationselector) | **Post** /authenticationSelectors | Create a new authentication selector instance.
+*AuthenticationSelectorsAPI* | [**DeleteAuthenticationSelector**](docs/AuthenticationSelectorsAPI.md#deleteauthenticationselector) | **Delete** /authenticationSelectors/{id} | Delete an Authentication Selector instance.
+*AuthenticationSelectorsAPI* | [**GetAuthenticationSelector**](docs/AuthenticationSelectorsAPI.md#getauthenticationselector) | **Get** /authenticationSelectors/{id} | Get an Authentication Selector instance by ID.
+*AuthenticationSelectorsAPI* | [**GetAuthenticationSelectorDescriptors**](docs/AuthenticationSelectorsAPI.md#getauthenticationselectordescriptors) | **Get** /authenticationSelectors/descriptors | Get the list of available Authentication Selector descriptors.
+*AuthenticationSelectorsAPI* | [**GetAuthenticationSelectorDescriptorsById**](docs/AuthenticationSelectorsAPI.md#getauthenticationselectordescriptorsbyid) | **Get** /authenticationSelectors/descriptors/{id} | Get the description of an Authentication Selector plugin by ID.
+*AuthenticationSelectorsAPI* | [**GetAuthenticationSelectors**](docs/AuthenticationSelectorsAPI.md#getauthenticationselectors) | **Get** /authenticationSelectors | Get the list of configured Authentication Selector instances.
+*AuthenticationSelectorsAPI* | [**UpdateAuthenticationSelector**](docs/AuthenticationSelectorsAPI.md#updateauthenticationselector) | **Put** /authenticationSelectors/{id} | Update an authentication selector instance.
+*BulkAPI* | [**ExportConfiguration**](docs/BulkAPI.md#exportconfiguration) | **Get** /bulk/export | Export all API resources to a JSON file.
+*BulkAPI* | [**ImportConfiguration**](docs/BulkAPI.md#importconfiguration) | **Post** /bulk/import | Import configuration for a PingFederate deployment from a JSON file.
+*CaptchaProvidersAPI* | [**CreateCaptchaProvider**](docs/CaptchaProvidersAPI.md#createcaptchaprovider) | **Post** /captchaProviders | Create a CAPTCHA provider plugin instance.
+*CaptchaProvidersAPI* | [**DeleteCaptchaProvider**](docs/CaptchaProvidersAPI.md#deletecaptchaprovider) | **Delete** /captchaProviders/{id} | Delete a CAPTCHA provider plugin instance.
+*CaptchaProvidersAPI* | [**GetCaptchaProvider**](docs/CaptchaProvidersAPI.md#getcaptchaprovider) | **Get** /captchaProviders/{id} | Get a specific CAPTCHA provider plugin instance.
+*CaptchaProvidersAPI* | [**GetCaptchaProviderPluginDescriptor**](docs/CaptchaProvidersAPI.md#getcaptchaproviderplugindescriptor) | **Get** /captchaProviders/descriptors/{id} | Get a CAPTCHA provider plugin descriptor.
+*CaptchaProvidersAPI* | [**GetCaptchaProviderPluginDescriptors**](docs/CaptchaProvidersAPI.md#getcaptchaproviderplugindescriptors) | **Get** /captchaProviders/descriptors | Get a list of available CAPTCHA provider plugin descriptors.
+*CaptchaProvidersAPI* | [**GetCaptchaProviders**](docs/CaptchaProvidersAPI.md#getcaptchaproviders) | **Get** /captchaProviders | Get a list of CAPTCHA provider plugin instances.
+*CaptchaProvidersAPI* | [**GetCaptchaProvidersSettings**](docs/CaptchaProvidersAPI.md#getcaptchaproviderssettings) | **Get** /captchaProviders/settings | Get general CAPTCHA providers settings.
+*CaptchaProvidersAPI* | [**UpdateCaptchaProvider**](docs/CaptchaProvidersAPI.md#updatecaptchaprovider) | **Put** /captchaProviders/{id} | Update a CAPTCHA provider plugin instance.
+*CaptchaProvidersAPI* | [**UpdateCaptchaProvidersSettings**](docs/CaptchaProvidersAPI.md#updatecaptchaproviderssettings) | **Put** /captchaProviders/settings | Update general CAPTCHA providers settings.
+*CertificatesCaAPI* | [**DeleteTrustedCA**](docs/CertificatesCaAPI.md#deletetrustedca) | **Delete** /certificates/ca/{id} | Delete a trusted certificate authority.
+*CertificatesCaAPI* | [**ExportCaCertificateFile**](docs/CertificatesCaAPI.md#exportcacertificatefile) | **Get** /certificates/ca/{id}/file | Download the certificate from a given trusted certificate authority.
+*CertificatesCaAPI* | [**GetTrustedCAs**](docs/CertificatesCaAPI.md#gettrustedcas) | **Get** /certificates/ca | Get list of trusted certificate authorities.
+*CertificatesCaAPI* | [**GetTrustedCert**](docs/CertificatesCaAPI.md#gettrustedcert) | **Get** /certificates/ca/{id} | Retrieve details of a trusted certificate authority.
+*CertificatesCaAPI* | [**ImportTrustedCA**](docs/CertificatesCaAPI.md#importtrustedca) | **Post** /certificates/ca/import | Import a new trusted certificate authority.
+*CertificatesGroupsAPI* | [**DeleteCertificateFromGroup**](docs/CertificatesGroupsAPI.md#deletecertificatefromgroup) | **Delete** /certificates/groups/{groupName}/{id} | Delete a certificate from a group.
+*CertificatesGroupsAPI* | [**GetCertificateFromGroup**](docs/CertificatesGroupsAPI.md#getcertificatefromgroup) | **Get** /certificates/groups/{groupName}/{id} | Retrieve details of a certificate.
+*CertificatesGroupsAPI* | [**GetCertificatesForGroup**](docs/CertificatesGroupsAPI.md#getcertificatesforgroup) | **Get** /certificates/groups/{groupName} | Get list of all certificates for a group.
+*CertificatesGroupsAPI* | [**ImportFeatureCert**](docs/CertificatesGroupsAPI.md#importfeaturecert) | **Post** /certificates/groups/{groupName}/import | Import a new certificate to a group.
+*CertificatesRevocationAPI* | [**DeleteOcspCertificateById**](docs/CertificatesRevocationAPI.md#deleteocspcertificatebyid) | **Delete** /certificates/revocation/ocspCertificates/{id} | Delete an OCSP responder signature verification certificate by ID.
+*CertificatesRevocationAPI* | [**GetOcspCertificateById**](docs/CertificatesRevocationAPI.md#getocspcertificatebyid) | **Get** /certificates/revocation/ocspCertificates/{id} | Get an OCSP responder signature verification certificate by ID.
+*CertificatesRevocationAPI* | [**GetOcspCertificates**](docs/CertificatesRevocationAPI.md#getocspcertificates) | **Get** /certificates/revocation/ocspCertificates | Get the list of available OCSP responder signature verification certificates.
+*CertificatesRevocationAPI* | [**GetRevocationSettings**](docs/CertificatesRevocationAPI.md#getrevocationsettings) | **Get** /certificates/revocation/settings | Get certificate revocation settings.
+*CertificatesRevocationAPI* | [**ImportOcspCertificate**](docs/CertificatesRevocationAPI.md#importocspcertificate) | **Post** /certificates/revocation/ocspCertificates | Import an OCSP responder signature verification certificate.
+*CertificatesRevocationAPI* | [**UpdateRevocationSettings**](docs/CertificatesRevocationAPI.md#updaterevocationsettings) | **Put** /certificates/revocation/settings | Update certificate revocation settings.
+*ClusterAPI* | [**GetClusterStatus**](docs/ClusterAPI.md#getclusterstatus) | **Get** /cluster/status | Get information on the current status of the cluster.
+*ClusterAPI* | [**StartReplication**](docs/ClusterAPI.md#startreplication) | **Post** /cluster/replicate | Replicate configuration updates to all nodes in the cluster.
+*ConfigArchiveAPI* | [**ExportConfigArchive**](docs/ConfigArchiveAPI.md#exportconfigarchive) | **Get** /configArchive/export | Export a configuration archive.
+*ConfigArchiveAPI* | [**ImportConfigArchive**](docs/ConfigArchiveAPI.md#importconfigarchive) | **Post** /configArchive/import | Import a configuration archive.
+*ConfigStoreAPI* | [**DeleteConfigStoreSetting**](docs/ConfigStoreAPI.md#deleteconfigstoresetting) | **Delete** /configStore/{bundle}/{id} | Delete a setting.
+*ConfigStoreAPI* | [**GetConfigStoreSetting**](docs/ConfigStoreAPI.md#getconfigstoresetting) | **Get** /configStore/{bundle}/{id} | Get a single setting from a bundle.
+*ConfigStoreAPI* | [**GetConfigStoreSettings**](docs/ConfigStoreAPI.md#getconfigstoresettings) | **Get** /configStore/{bundle} | Get all settings from a bundle.
+*ConfigStoreAPI* | [**UpdateConfigStoreSetting**](docs/ConfigStoreAPI.md#updateconfigstoresetting) | **Put** /configStore/{bundle}/{id} | Create or update a setting/bundle.
+*ConfigurationEncryptionKeysAPI* | [**GetConfigurationEncryptionKeys**](docs/ConfigurationEncryptionKeysAPI.md#getconfigurationencryptionkeys) | **Get** /configurationEncryptionKeys | Get the list of Configuration Encryption Keys.
+*ConfigurationEncryptionKeysAPI* | [**RotateConfigurationEncryptionKey**](docs/ConfigurationEncryptionKeysAPI.md#rotateconfigurationencryptionkey) | **Post** /configurationEncryptionKeys/rotate | Rotate the current Configuration Encryption Key.
+*ConnectionMetadataAPI* | [**Convert**](docs/ConnectionMetadataAPI.md#convert) | **Post** /connectionMetadata/convert | Convert a partner&#39;s SAML metadata into a JSON representation.
+*ConnectionMetadataAPI* | [**Export**](docs/ConnectionMetadataAPI.md#export) | **Post** /connectionMetadata/export | Export a connection&#39;s SAML metadata that can be given to a partner.
+*DataStoresAPI* | [**CreateDataStore**](docs/DataStoresAPI.md#createdatastore) | **Post** /dataStores | Create a new data store.
+*DataStoresAPI* | [**DeleteDataStore**](docs/DataStoresAPI.md#deletedatastore) | **Delete** /dataStores/{id} | Delete a data store.
+*DataStoresAPI* | [**GetCustomDataStoreDescriptor**](docs/DataStoresAPI.md#getcustomdatastoredescriptor) | **Get** /dataStores/descriptors/{id} | Get the description of a custom data store plugin by ID.
+*DataStoresAPI* | [**GetCustomDataStoreDescriptors**](docs/DataStoresAPI.md#getcustomdatastoredescriptors) | **Get** /dataStores/descriptors | Get the list of available custom data store descriptors.
+*DataStoresAPI* | [**GetDataStore**](docs/DataStoresAPI.md#getdatastore) | **Get** /dataStores/{id} | Find data store by ID.
+*DataStoresAPI* | [**GetDataStores**](docs/DataStoresAPI.md#getdatastores) | **Get** /dataStores | Get list of all data stores.
+*DataStoresAPI* | [**GetDataStoresActionById**](docs/DataStoresAPI.md#getdatastoresactionbyid) | **Get** /dataStores/{id}/actions/{actionId} | Find a data store instance&#39;s action by ID.
+*DataStoresAPI* | [**GetDataStoresActions**](docs/DataStoresAPI.md#getdatastoresactions) | **Get** /dataStores/{id}/actions | List the actions for a data store instance.
+*DataStoresAPI* | [**InvokeActionWithOptions**](docs/DataStoresAPI.md#invokeactionwithoptions) | **Post** /dataStores/{id}/actions/{actionId}/invokeAction | Invokes an action for a data source instance.
+*DataStoresAPI* | [**UpdateDataStore**](docs/DataStoresAPI.md#updatedatastore) | **Put** /dataStores/{id} | Update a data store.
+*ExtendedPropertiesAPI* | [**GetExtendedProperties**](docs/ExtendedPropertiesAPI.md#getextendedproperties) | **Get** /extendedProperties | Get the defined Extended Properties.
+*ExtendedPropertiesAPI* | [**UpdateExtendedProperties**](docs/ExtendedPropertiesAPI.md#updateextendedproperties) | **Put** /extendedProperties | Update the Extended Properties.
+*IdentityStoreProvisionersAPI* | [**CreateIdentityStoreProvisioner**](docs/IdentityStoreProvisionersAPI.md#createidentitystoreprovisioner) | **Post** /identityStoreProvisioners | Create a new identity store provisioner instance.
+*IdentityStoreProvisionersAPI* | [**DeleteIdentityStoreProvisioner**](docs/IdentityStoreProvisionersAPI.md#deleteidentitystoreprovisioner) | **Delete** /identityStoreProvisioners/{id} | Delete an identity store provisioner instance
+*IdentityStoreProvisionersAPI* | [**GetIdentityStoreProvisioner**](docs/IdentityStoreProvisionersAPI.md#getidentitystoreprovisioner) | **Get** /identityStoreProvisioners/{id} | Get an identity store provisioner by ID.
+*IdentityStoreProvisionersAPI* | [**GetIdentityStoreProvisionerDescriptorById**](docs/IdentityStoreProvisionersAPI.md#getidentitystoreprovisionerdescriptorbyid) | **Get** /identityStoreProvisioners/descriptors/{id} | Get the descriptor of an identity store provisioner by ID.
+*IdentityStoreProvisionersAPI* | [**GetIdentityStoreProvisionerDescriptors**](docs/IdentityStoreProvisionersAPI.md#getidentitystoreprovisionerdescriptors) | **Get** /identityStoreProvisioners/descriptors | Get the list of available identity store provisioner descriptors.
+*IdentityStoreProvisionersAPI* | [**GetIdentityStoreProvisioners**](docs/IdentityStoreProvisionersAPI.md#getidentitystoreprovisioners) | **Get** /identityStoreProvisioners | Get the list of configured identity store provisioner instances.
+*IdentityStoreProvisionersAPI* | [**UpdateIdentityStoreProvisioner**](docs/IdentityStoreProvisionersAPI.md#updateidentitystoreprovisioner) | **Put** /identityStoreProvisioners/{id} | Update an identity store provisioner instance
+*IdpAdaptersAPI* | [**CreateIdpAdapter**](docs/IdpAdaptersAPI.md#createidpadapter) | **Post** /idp/adapters | Create a new IdP adapter instance.
+*IdpAdaptersAPI* | [**DeleteIdpAdapter**](docs/IdpAdaptersAPI.md#deleteidpadapter) | **Delete** /idp/adapters/{id} | Delete an IdP adapter instance.
+*IdpAdaptersAPI* | [**GetIdpAdapter**](docs/IdpAdaptersAPI.md#getidpadapter) | **Get** /idp/adapters/{id} | Find an IdP adapter instance by ID.
+*IdpAdaptersAPI* | [**GetIdpAdapterDescriptors**](docs/IdpAdaptersAPI.md#getidpadapterdescriptors) | **Get** /idp/adapters/descriptors | Get the list of available IdP adapter descriptors.
+*IdpAdaptersAPI* | [**GetIdpAdapterDescriptorsById**](docs/IdpAdaptersAPI.md#getidpadapterdescriptorsbyid) | **Get** /idp/adapters/descriptors/{id} | Get the description of an IdP adapter plugin by ID.
+*IdpAdaptersAPI* | [**GetIdpAdapters**](docs/IdpAdaptersAPI.md#getidpadapters) | **Get** /idp/adapters | Get the list of configured IdP adapter instances.
+*IdpAdaptersAPI* | [**GetIdpAdaptersActionById**](docs/IdpAdaptersAPI.md#getidpadaptersactionbyid) | **Get** /idp/adapters/{id}/actions/{actionId} | Find an IdP adapter instance&#39;s action by ID.
+*IdpAdaptersAPI* | [**GetIdpAdaptersActions**](docs/IdpAdaptersAPI.md#getidpadaptersactions) | **Get** /idp/adapters/{id}/actions | List the actions for an IdP adapter instance.
+*IdpAdaptersAPI* | [**InvokeIdpAdaptersActionWithOptions**](docs/IdpAdaptersAPI.md#invokeidpadaptersactionwithoptions) | **Post** /idp/adapters/{id}/actions/{actionId}/invokeAction | Invokes an action for an IdP adapter instance.
+*IdpAdaptersAPI* | [**UpdateIdpAdapter**](docs/IdpAdaptersAPI.md#updateidpadapter) | **Put** /idp/adapters/{id} | Update an IdP adapter instance.
+*IdpConnectorsAPI* | [**GetIdpConnectorDescriptorById**](docs/IdpConnectorsAPI.md#getidpconnectordescriptorbyid) | **Get** /idp/connectors/descriptors/{id} | Get the list of available connector descriptors.
+*IdpConnectorsAPI* | [**GetIdpConnectorDescriptors**](docs/IdpConnectorsAPI.md#getidpconnectordescriptors) | **Get** /idp/connectors/descriptors | Get the list of available IdP connector descriptors.
+*IdpDefaultUrlsAPI* | [**GetDefaultUrl**](docs/IdpDefaultUrlsAPI.md#getdefaulturl) | **Get** /idp/defaultUrls | Gets the IDP Default URL settings.
+*IdpDefaultUrlsAPI* | [**UpdateDefaultUrlSettings**](docs/IdpDefaultUrlsAPI.md#updatedefaulturlsettings) | **Put** /idp/defaultUrls | Update the IDP Default URL settings.
+*IdpSpConnectionsAPI* | [**AddSpConnectionCert**](docs/IdpSpConnectionsAPI.md#addspconnectioncert) | **Post** /idp/spConnections/{id}/credentials/certs | Add a new SP connection certificate.
+*IdpSpConnectionsAPI* | [**CreateSpConnection**](docs/IdpSpConnectionsAPI.md#createspconnection) | **Post** /idp/spConnections | Create a new SP connection.
+*IdpSpConnectionsAPI* | [**DeleteSpConnection**](docs/IdpSpConnectionsAPI.md#deletespconnection) | **Delete** /idp/spConnections/{id} | Delete an SP connection.
+*IdpSpConnectionsAPI* | [**GetDecryptionKeys**](docs/IdpSpConnectionsAPI.md#getdecryptionkeys) | **Get** /idp/spConnections/{id}/credentials/decryptionKeys | Get the decryption keys of an SP connection.
+*IdpSpConnectionsAPI* | [**GetSpConnection**](docs/IdpSpConnectionsAPI.md#getspconnection) | **Get** /idp/spConnections/{id} | Find SP connection by ID.
+*IdpSpConnectionsAPI* | [**GetSpConnectionCerts**](docs/IdpSpConnectionsAPI.md#getspconnectioncerts) | **Get** /idp/spConnections/{id}/credentials/certs | Get the SP connection&#39;s certificates.
+*IdpSpConnectionsAPI* | [**GetSpConnections**](docs/IdpSpConnectionsAPI.md#getspconnections) | **Get** /idp/spConnections | Get list of SP connections.
+*IdpSpConnectionsAPI* | [**GetSpSigningSettings**](docs/IdpSpConnectionsAPI.md#getspsigningsettings) | **Get** /idp/spConnections/{id}/credentials/signingSettings | Get the SP connection&#39;s signature settings.
+*IdpSpConnectionsAPI* | [**UpdateDecryptionKeys**](docs/IdpSpConnectionsAPI.md#updatedecryptionkeys) | **Put** /idp/spConnections/{id}/credentials/decryptionKeys | Updating the SP connection&#39;s decryption keys.
+*IdpSpConnectionsAPI* | [**UpdateSpConnection**](docs/IdpSpConnectionsAPI.md#updatespconnection) | **Put** /idp/spConnections/{id} | Update an SP connection.
+*IdpSpConnectionsAPI* | [**UpdateSpConnectionCerts**](docs/IdpSpConnectionsAPI.md#updatespconnectioncerts) | **Put** /idp/spConnections/{id}/credentials/certs | Update the SP connection&#39;s certificates.
+*IdpSpConnectionsAPI* | [**UpdateSpSigningSettings**](docs/IdpSpConnectionsAPI.md#updatespsigningsettings) | **Put** /idp/spConnections/{id}/credentials/signingSettings | Update the SP connection&#39;s signature settings.
+*IdpStsRequestParametersContractsAPI* | [**CreateStsRequestParamContract**](docs/IdpStsRequestParametersContractsAPI.md#createstsrequestparamcontract) | **Post** /idp/stsRequestParametersContracts | Create a new STS Request Parameters Contract.
+*IdpStsRequestParametersContractsAPI* | [**DeleteStsRequestParamContractById**](docs/IdpStsRequestParametersContractsAPI.md#deletestsrequestparamcontractbyid) | **Delete** /idp/stsRequestParametersContracts/{id} | Delete a STS Request Parameters Contract.
+*IdpStsRequestParametersContractsAPI* | [**GetStsRequestParamContractById**](docs/IdpStsRequestParametersContractsAPI.md#getstsrequestparamcontractbyid) | **Get** /idp/stsRequestParametersContracts/{id} | Get a STS Request Parameters Contract.
+*IdpStsRequestParametersContractsAPI* | [**GetStsRequestParamContracts**](docs/IdpStsRequestParametersContractsAPI.md#getstsrequestparamcontracts) | **Get** /idp/stsRequestParametersContracts | Get the list of STS Request Parameters Contracts.
+*IdpStsRequestParametersContractsAPI* | [**UpdateStsRequestParamContractById**](docs/IdpStsRequestParametersContractsAPI.md#updatestsrequestparamcontractbyid) | **Put** /idp/stsRequestParametersContracts/{id} | Update a STS Request Parameters Contract.
+*IdpToSpAdapterMappingAPI* | [**CreateIdpToSpAdapterMapping**](docs/IdpToSpAdapterMappingAPI.md#createidptospadaptermapping) | **Post** /idpToSpAdapterMapping | Create a new IdP-to-SP Adapter mapping.
+*IdpToSpAdapterMappingAPI* | [**DeleteIdpToSpAdapterMappingsById**](docs/IdpToSpAdapterMappingAPI.md#deleteidptospadaptermappingsbyid) | **Delete** /idpToSpAdapterMapping/{id} | Delete an Adapter to Adapter Mapping.
+*IdpToSpAdapterMappingAPI* | [**GetIdpToSpAdapterMappings**](docs/IdpToSpAdapterMappingAPI.md#getidptospadaptermappings) | **Get** /idpToSpAdapterMapping | Get list of IdP-to-SP Adapter Mappings.
+*IdpToSpAdapterMappingAPI* | [**GetIdpToSpAdapterMappingsById**](docs/IdpToSpAdapterMappingAPI.md#getidptospadaptermappingsbyid) | **Get** /idpToSpAdapterMapping/{id} | Get an IdP-to-SP Adapter Mapping.
+*IdpToSpAdapterMappingAPI* | [**UpdateIdpToSpAdapterMapping**](docs/IdpToSpAdapterMappingAPI.md#updateidptospadaptermapping) | **Put** /idpToSpAdapterMapping/{id} | Update the specified IdP-to-SP Adapter mapping.
+*IdpTokenProcessorsAPI* | [**CreateTokenProcessor**](docs/IdpTokenProcessorsAPI.md#createtokenprocessor) | **Post** /idp/tokenProcessors | Create a new token processor instance.
+*IdpTokenProcessorsAPI* | [**DeleteTokenProcessor**](docs/IdpTokenProcessorsAPI.md#deletetokenprocessor) | **Delete** /idp/tokenProcessors/{id} | Delete a token processor instance.
+*IdpTokenProcessorsAPI* | [**GetTokenProcessor**](docs/IdpTokenProcessorsAPI.md#gettokenprocessor) | **Get** /idp/tokenProcessors/{id} | Find a token processor instance by ID.
+*IdpTokenProcessorsAPI* | [**GetTokenProcessorDescriptors**](docs/IdpTokenProcessorsAPI.md#gettokenprocessordescriptors) | **Get** /idp/tokenProcessors/descriptors | Get the list of available token processors.
+*IdpTokenProcessorsAPI* | [**GetTokenProcessorDescriptorsById**](docs/IdpTokenProcessorsAPI.md#gettokenprocessordescriptorsbyid) | **Get** /idp/tokenProcessors/descriptors/{id} | Get the description of a token processor plugin by ID.
+*IdpTokenProcessorsAPI* | [**GetTokenProcessors**](docs/IdpTokenProcessorsAPI.md#gettokenprocessors) | **Get** /idp/tokenProcessors | Get the list of token processor instances.
+*IdpTokenProcessorsAPI* | [**UpdateTokenProcessor**](docs/IdpTokenProcessorsAPI.md#updatetokenprocessor) | **Put** /idp/tokenProcessors/{id} | Update a token processor instance.
+*IncomingProxySettingsAPI* | [**GetIncomingProxySettings**](docs/IncomingProxySettingsAPI.md#getincomingproxysettings) | **Get** /incomingProxySettings | Get incoming proxy settings.
+*IncomingProxySettingsAPI* | [**UpdateIncomingProxySettings**](docs/IncomingProxySettingsAPI.md#updateincomingproxysettings) | **Put** /incomingProxySettings | Update incoming proxy settings.
+*KerberosRealmsAPI* | [**CreateKerberosRealm**](docs/KerberosRealmsAPI.md#createkerberosrealm) | **Post** /kerberos/realms | Create a new Kerberos Realm.
+*KerberosRealmsAPI* | [**DeleteKerberosRealm**](docs/KerberosRealmsAPI.md#deletekerberosrealm) | **Delete** /kerberos/realms/{id} | Delete a Kerberos Realm.
+*KerberosRealmsAPI* | [**GetKerberosRealm**](docs/KerberosRealmsAPI.md#getkerberosrealm) | **Get** /kerberos/realms/{id} | Find a Kerberos Realm by ID.
+*KerberosRealmsAPI* | [**GetKerberosRealmSettings**](docs/KerberosRealmsAPI.md#getkerberosrealmsettings) | **Get** /kerberos/realms/settings | Gets the Kerberos Realms Settings.
+*KerberosRealmsAPI* | [**GetKerberosRealms**](docs/KerberosRealmsAPI.md#getkerberosrealms) | **Get** /kerberos/realms | Gets the Kerberos Realms.
+*KerberosRealmsAPI* | [**UpdateKerberosRealm**](docs/KerberosRealmsAPI.md#updatekerberosrealm) | **Put** /kerberos/realms/{id} | Update a Kerberos Realm by ID.
+*KerberosRealmsAPI* | [**UpdateKerberosRealmSettings**](docs/KerberosRealmsAPI.md#updatekerberosrealmsettings) | **Put** /kerberos/realms/settings | Set/Update the Kerberos Realms Settings.
+*KeyPairsAPI* | [**GetKeyAlgorithms**](docs/KeyPairsAPI.md#getkeyalgorithms) | **Get** /keyPairs/keyAlgorithms | Get list of the key algorithms supported for key pair generation.
+*KeyPairsOauthOpenIdConnectAPI* | [**CreateKeySet**](docs/KeyPairsOauthOpenIdConnectAPI.md#createkeyset) | **Post** /keyPairs/oauthOpenIdConnect/additionalKeySets | Create a new OAuth/OpenID Connect additional signing key set.
+*KeyPairsOauthOpenIdConnectAPI* | [**DeleteKeySet**](docs/KeyPairsOauthOpenIdConnectAPI.md#deletekeyset) | **Delete** /keyPairs/oauthOpenIdConnect/additionalKeySets/{id} | Delete an existing OAuth/OpenID Connect additional signing key set.
+*KeyPairsOauthOpenIdConnectAPI* | [**GetKeySet**](docs/KeyPairsOauthOpenIdConnectAPI.md#getkeyset) | **Get** /keyPairs/oauthOpenIdConnect/additionalKeySets/{id} | Retrieve an OAuth/OpenID Connect additional signing key set.
+*KeyPairsOauthOpenIdConnectAPI* | [**GetKeySets**](docs/KeyPairsOauthOpenIdConnectAPI.md#getkeysets) | **Get** /keyPairs/oauthOpenIdConnect/additionalKeySets | Retrieve OAuth/OpenID Connect additional signing key sets.
+*KeyPairsOauthOpenIdConnectAPI* | [**GetOauthOidcKeysSettings**](docs/KeyPairsOauthOpenIdConnectAPI.md#getoauthoidckeyssettings) | **Get** /keyPairs/oauthOpenIdConnect | Retrieve OAuth/OpenID Connect key settings.
+*KeyPairsOauthOpenIdConnectAPI* | [**UpdateKeySet**](docs/KeyPairsOauthOpenIdConnectAPI.md#updatekeyset) | **Put** /keyPairs/oauthOpenIdConnect/additionalKeySets/{id} | Update an existing OAuth/OpenID Connect additional signing key set.
+*KeyPairsOauthOpenIdConnectAPI* | [**UpdateOAuthOidcKeysSettings**](docs/KeyPairsOauthOpenIdConnectAPI.md#updateoauthoidckeyssettings) | **Put** /keyPairs/oauthOpenIdConnect | Update OAuth/OpenID Connect key settings.
+*KeyPairsSigningAPI* | [**CreateSigningKeyPair**](docs/KeyPairsSigningAPI.md#createsigningkeypair) | **Post** /keyPairs/signing/generate | Generate a new key pair.
+*KeyPairsSigningAPI* | [**DeleteKeyPairRotationSettings**](docs/KeyPairsSigningAPI.md#deletekeypairrotationsettings) | **Delete** /keyPairs/signing/{id}/rotationSettings | Delete rotation settings for a signing key pair.
+*KeyPairsSigningAPI* | [**DeleteSigningKeyPair**](docs/KeyPairsSigningAPI.md#deletesigningkeypair) | **Delete** /keyPairs/signing/{id} | Delete a key pair.
+*KeyPairsSigningAPI* | [**ExportCertificateFile**](docs/KeyPairsSigningAPI.md#exportcertificatefile) | **Get** /keyPairs/signing/{id}/certificate | Download the certificate from a given key pair.
+*KeyPairsSigningAPI* | [**ExportCsr**](docs/KeyPairsSigningAPI.md#exportcsr) | **Get** /keyPairs/signing/{id}/csr | Generate a new certificate signing request (CSR) for this key pair.
+*KeyPairsSigningAPI* | [**ExportPEMFile**](docs/KeyPairsSigningAPI.md#exportpemfile) | **Post** /keyPairs/signing/{id}/pem | Download the key pair in PEM format.
+*KeyPairsSigningAPI* | [**ExportPKCS12File**](docs/KeyPairsSigningAPI.md#exportpkcs12file) | **Post** /keyPairs/signing/{id}/pkcs12 | Download the key pair in PKCS12 format.
+*KeyPairsSigningAPI* | [**GetRotationSettings**](docs/KeyPairsSigningAPI.md#getrotationsettings) | **Get** /keyPairs/signing/{id}/rotationSettings | Retrieve details of rotation settings for a key pair.
+*KeyPairsSigningAPI* | [**GetSigningKeyPair**](docs/KeyPairsSigningAPI.md#getsigningkeypair) | **Get** /keyPairs/signing/{id} | Retrieve details of a key pair.
+*KeyPairsSigningAPI* | [**GetSigningKeyPairs**](docs/KeyPairsSigningAPI.md#getsigningkeypairs) | **Get** /keyPairs/signing | Get list of key pairs.
+*KeyPairsSigningAPI* | [**ImportCsrResponse**](docs/KeyPairsSigningAPI.md#importcsrresponse) | **Post** /keyPairs/signing/{id}/csr | Import a CSR response for this key pair.
+*KeyPairsSigningAPI* | [**ImportSigningKeyPair**](docs/KeyPairsSigningAPI.md#importsigningkeypair) | **Post** /keyPairs/signing/import | Import a new key pair.
+*KeyPairsSigningAPI* | [**UpdateRotationSettings**](docs/KeyPairsSigningAPI.md#updaterotationsettings) | **Put** /keyPairs/signing/{id}/rotationSettings | Add rotation settings to a key pair
+*KeyPairsSslClientAPI* | [**CreateSslClientKeyPair**](docs/KeyPairsSslClientAPI.md#createsslclientkeypair) | **Post** /keyPairs/sslClient/generate | Generate a new key pair.
+*KeyPairsSslClientAPI* | [**DeleteSslClientKeyPair**](docs/KeyPairsSslClientAPI.md#deletesslclientkeypair) | **Delete** /keyPairs/sslClient/{id} | Delete a key pair.
+*KeyPairsSslClientAPI* | [**ExportSslClientCertificateFile**](docs/KeyPairsSslClientAPI.md#exportsslclientcertificatefile) | **Get** /keyPairs/sslClient/{id}/certificate | Download the certificate from a given key pair.
+*KeyPairsSslClientAPI* | [**ExportSslClientCsr**](docs/KeyPairsSslClientAPI.md#exportsslclientcsr) | **Get** /keyPairs/sslClient/{id}/csr | Generate a new certificate signing request (CSR) for this key pair.
+*KeyPairsSslClientAPI* | [**ExportSslClientPEMFile**](docs/KeyPairsSslClientAPI.md#exportsslclientpemfile) | **Post** /keyPairs/sslClient/{id}/pem | Download the key pair in PEM format.
+*KeyPairsSslClientAPI* | [**ExportSslClientPKCS12File**](docs/KeyPairsSslClientAPI.md#exportsslclientpkcs12file) | **Post** /keyPairs/sslClient/{id}/pkcs12 | Download the key pair in PKCS12 format.
+*KeyPairsSslClientAPI* | [**GetSslClientKeyPair**](docs/KeyPairsSslClientAPI.md#getsslclientkeypair) | **Get** /keyPairs/sslClient/{id} | Retrieve details of a key pair.
+*KeyPairsSslClientAPI* | [**GetSslClientKeyPairs**](docs/KeyPairsSslClientAPI.md#getsslclientkeypairs) | **Get** /keyPairs/sslClient | Get list of key pairs.
+*KeyPairsSslClientAPI* | [**ImportSslClientCsrResponse**](docs/KeyPairsSslClientAPI.md#importsslclientcsrresponse) | **Post** /keyPairs/sslClient/{id}/csr | Import a CSR response for this key pair.
+*KeyPairsSslClientAPI* | [**ImportSslClientKeyPair**](docs/KeyPairsSslClientAPI.md#importsslclientkeypair) | **Post** /keyPairs/sslClient/import | Import a new key pair.
+*KeyPairsSslServerAPI* | [**CreateSslServerKeyPair**](docs/KeyPairsSslServerAPI.md#createsslserverkeypair) | **Post** /keyPairs/sslServer/generate | Generate a new key pair.
+*KeyPairsSslServerAPI* | [**DeleteSslServerKeyPair**](docs/KeyPairsSslServerAPI.md#deletesslserverkeypair) | **Delete** /keyPairs/sslServer/{id} | Delete a key pair.
+*KeyPairsSslServerAPI* | [**ExportSslServerCertificateFile**](docs/KeyPairsSslServerAPI.md#exportsslservercertificatefile) | **Get** /keyPairs/sslServer/{id}/certificate | Download the certificate from a given key pair.
+*KeyPairsSslServerAPI* | [**ExportSslServerCsr**](docs/KeyPairsSslServerAPI.md#exportsslservercsr) | **Get** /keyPairs/sslServer/{id}/csr | Generate a new certificate signing request (CSR) for this key pair.
+*KeyPairsSslServerAPI* | [**ExportSslServerPEMFile**](docs/KeyPairsSslServerAPI.md#exportsslserverpemfile) | **Post** /keyPairs/sslServer/{id}/pem | Download the key pair in PEM format.
+*KeyPairsSslServerAPI* | [**ExportSslServerPKCS12File**](docs/KeyPairsSslServerAPI.md#exportsslserverpkcs12file) | **Post** /keyPairs/sslServer/{id}/pkcs12 | Download the key pair in PKCS12 format.
+*KeyPairsSslServerAPI* | [**GetSslServerKeyPair**](docs/KeyPairsSslServerAPI.md#getsslserverkeypair) | **Get** /keyPairs/sslServer/{id} | Retrieve details of a key pair.
+*KeyPairsSslServerAPI* | [**GetSslServerKeyPairs**](docs/KeyPairsSslServerAPI.md#getsslserverkeypairs) | **Get** /keyPairs/sslServer | Get list of key pairs.
+*KeyPairsSslServerAPI* | [**GetSslServerSettings**](docs/KeyPairsSslServerAPI.md#getsslserversettings) | **Get** /keyPairs/sslServer/settings | Get the SSL Server Certificate Settings.
+*KeyPairsSslServerAPI* | [**ImportSslServerCsrResponse**](docs/KeyPairsSslServerAPI.md#importsslservercsrresponse) | **Post** /keyPairs/sslServer/{id}/csr | Import a CSR response for this key pair.
+*KeyPairsSslServerAPI* | [**ImportSslServerKeyPair**](docs/KeyPairsSslServerAPI.md#importsslserverkeypair) | **Post** /keyPairs/sslServer/import | Import a new key pair.
+*KeyPairsSslServerAPI* | [**UpdateSslServerSettings**](docs/KeyPairsSslServerAPI.md#updatesslserversettings) | **Put** /keyPairs/sslServer/settings | Update the SSL Server Certificate Settings.
+*LicenseAPI* | [**GetLicense**](docs/LicenseAPI.md#getlicense) | **Get** /license | Get a license summary.
+*LicenseAPI* | [**GetLicenseAgreement**](docs/LicenseAPI.md#getlicenseagreement) | **Get** /license/agreement | Get license agreement link.
+*LicenseAPI* | [**UpdateLicense**](docs/LicenseAPI.md#updatelicense) | **Put** /license | Import a license.
+*LicenseAPI* | [**UpdateLicenseAgreement**](docs/LicenseAPI.md#updatelicenseagreement) | **Put** /license/agreement | Accept license agreement.
+*LocalIdentityIdentityProfilesAPI* | [**CreateIdentityProfile**](docs/LocalIdentityIdentityProfilesAPI.md#createidentityprofile) | **Post** /localIdentity/identityProfiles | Create a new local identity profile.
+*LocalIdentityIdentityProfilesAPI* | [**DeleteIdentityProfile**](docs/LocalIdentityIdentityProfilesAPI.md#deleteidentityprofile) | **Delete** /localIdentity/identityProfiles/{id} | Delete the local identity profile by ID.
+*LocalIdentityIdentityProfilesAPI* | [**GetIdentityProfile**](docs/LocalIdentityIdentityProfilesAPI.md#getidentityprofile) | **Get** /localIdentity/identityProfiles/{id} | Get the local identity profile by ID.
+*LocalIdentityIdentityProfilesAPI* | [**GetIdentityProfiles**](docs/LocalIdentityIdentityProfilesAPI.md#getidentityprofiles) | **Get** /localIdentity/identityProfiles | Get the list of configured local identity profiles.
+*LocalIdentityIdentityProfilesAPI* | [**UpdateIdentityProfile**](docs/LocalIdentityIdentityProfilesAPI.md#updateidentityprofile) | **Put** /localIdentity/identityProfiles/{id} | Update the local identity profile by ID.
+*MetadataUrlsAPI* | [**AddMetadataUrl**](docs/MetadataUrlsAPI.md#addmetadataurl) | **Post** /metadataUrls | Add a new Metadata URL.
+*MetadataUrlsAPI* | [**DeleteMetadataUrl**](docs/MetadataUrlsAPI.md#deletemetadataurl) | **Delete** /metadataUrls/{id} | Delete a Metadata URL by ID.
+*MetadataUrlsAPI* | [**GetMetadataUrl**](docs/MetadataUrlsAPI.md#getmetadataurl) | **Get** /metadataUrls/{id} | Get a Metadata URL by ID.
+*MetadataUrlsAPI* | [**GetMetadataUrls**](docs/MetadataUrlsAPI.md#getmetadataurls) | **Get** /metadataUrls | Get a list of Metadata URLs
+*MetadataUrlsAPI* | [**UpdateMetadataUrl**](docs/MetadataUrlsAPI.md#updatemetadataurl) | **Put** /metadataUrls/{id} | Update a Metadata URL by ID.
+*NotificationPublishersAPI* | [**CreateNotificationPublisher**](docs/NotificationPublishersAPI.md#createnotificationpublisher) | **Post** /notificationPublishers | Create a notification publisher plugin instance.
+*NotificationPublishersAPI* | [**DeleteNotificationPublisher**](docs/NotificationPublishersAPI.md#deletenotificationpublisher) | **Delete** /notificationPublishers/{id} | Delete a notification publisher plugin instance.
+*NotificationPublishersAPI* | [**GetNotificationPublisher**](docs/NotificationPublishersAPI.md#getnotificationpublisher) | **Get** /notificationPublishers/{id} | Get a specific notification publisher plugin instance.
+*NotificationPublishersAPI* | [**GetNotificationPublisherActions**](docs/NotificationPublishersAPI.md#getnotificationpublisheractions) | **Get** /notificationPublishers/{id}/actions | List the actions for a notification publisher plugin instance.
+*NotificationPublishersAPI* | [**GetNotificationPublisherPluginDescriptor**](docs/NotificationPublishersAPI.md#getnotificationpublisherplugindescriptor) | **Get** /notificationPublishers/descriptors/{id} | Get the description of a notification publisher plugin descriptor.
+*NotificationPublishersAPI* | [**GetNotificationPublisherPluginDescriptors**](docs/NotificationPublishersAPI.md#getnotificationpublisherplugindescriptors) | **Get** /notificationPublishers/descriptors | Get the list of available Notification Publisher Plugin descriptors.
+*NotificationPublishersAPI* | [**GetNotificationPublishers**](docs/NotificationPublishersAPI.md#getnotificationpublishers) | **Get** /notificationPublishers | Get a list of notification publisher plugin instances.
+*NotificationPublishersAPI* | [**GetNotificationPublishersAction**](docs/NotificationPublishersAPI.md#getnotificationpublishersaction) | **Get** /notificationPublishers/{id}/actions/{actionId} | Find an notification publisher plugin instance&#39;s action by ID.
+*NotificationPublishersAPI* | [**GetNotificationPublishersSettings**](docs/NotificationPublishersAPI.md#getnotificationpublisherssettings) | **Get** /notificationPublishers/settings | Get general notification publisher settings.
+*NotificationPublishersAPI* | [**InvokeNotificationPublishersActionWithOptions**](docs/NotificationPublishersAPI.md#invokenotificationpublishersactionwithoptions) | **Post** /notificationPublishers/{id}/actions/{actionId}/invokeAction | Invokes an action for notification publisher plugin instance.
+*NotificationPublishersAPI* | [**UpdateNotificationPublisher**](docs/NotificationPublishersAPI.md#updatenotificationpublisher) | **Put** /notificationPublishers/{id} | Update a notification publisher plugin instance.
+*NotificationPublishersAPI* | [**UpdateNotificationPublishersSettings**](docs/NotificationPublishersAPI.md#updatenotificationpublisherssettings) | **Put** /notificationPublishers/settings | Update general notification publisher settings.
+*OauthAccessTokenManagersAPI* | [**CreateTokenManager**](docs/OauthAccessTokenManagersAPI.md#createtokenmanager) | **Post** /oauth/accessTokenManagers | Create a token management plugin instance.
+*OauthAccessTokenManagersAPI* | [**DeleteTokenManager**](docs/OauthAccessTokenManagersAPI.md#deletetokenmanager) | **Delete** /oauth/accessTokenManagers/{id} | Delete a token management plugin instance.
+*OauthAccessTokenManagersAPI* | [**GetOauthAccessTokenManagersSettings**](docs/OauthAccessTokenManagersAPI.md#getoauthaccesstokenmanagerssettings) | **Get** /oauth/accessTokenManagers/settings | Get general access token management settings.
+*OauthAccessTokenManagersAPI* | [**GetTokenManager**](docs/OauthAccessTokenManagersAPI.md#gettokenmanager) | **Get** /oauth/accessTokenManagers/{id} | Get a specific token management plugin instance.
+*OauthAccessTokenManagersAPI* | [**GetTokenManagerDescriptor**](docs/OauthAccessTokenManagersAPI.md#gettokenmanagerdescriptor) | **Get** /oauth/accessTokenManagers/descriptors/{id} | Get the description of a token management plugin descriptor.
+*OauthAccessTokenManagersAPI* | [**GetTokenManagerDescriptors**](docs/OauthAccessTokenManagersAPI.md#gettokenmanagerdescriptors) | **Get** /oauth/accessTokenManagers/descriptors | Get the list of available token management plugin descriptors.
+*OauthAccessTokenManagersAPI* | [**GetTokenManagers**](docs/OauthAccessTokenManagersAPI.md#gettokenmanagers) | **Get** /oauth/accessTokenManagers | Get a list of all token management plugin instances.
+*OauthAccessTokenManagersAPI* | [**UpdateOauthAccessTokenManagersSettings**](docs/OauthAccessTokenManagersAPI.md#updateoauthaccesstokenmanagerssettings) | **Put** /oauth/accessTokenManagers/settings | Update general access token management settings.
+*OauthAccessTokenManagersAPI* | [**UpdateTokenManager**](docs/OauthAccessTokenManagersAPI.md#updatetokenmanager) | **Put** /oauth/accessTokenManagers/{id} | Update a token management plugin instance.
+*OauthAccessTokenMappingsAPI* | [**CreateMapping**](docs/OauthAccessTokenMappingsAPI.md#createmapping) | **Post** /oauth/accessTokenMappings | Create a new Access Token Mapping.
+*OauthAccessTokenMappingsAPI* | [**DeleteMapping**](docs/OauthAccessTokenMappingsAPI.md#deletemapping) | **Delete** /oauth/accessTokenMappings/{id} | Delete an Access Token Mapping.
+*OauthAccessTokenMappingsAPI* | [**GetMapping**](docs/OauthAccessTokenMappingsAPI.md#getmapping) | **Get** /oauth/accessTokenMappings/{id} | Find the Access Token Mapping by its ID.
+*OauthAccessTokenMappingsAPI* | [**GetMappings**](docs/OauthAccessTokenMappingsAPI.md#getmappings) | **Get** /oauth/accessTokenMappings | Get the list of Access Token Mappings.
+*OauthAccessTokenMappingsAPI* | [**UpdateMapping**](docs/OauthAccessTokenMappingsAPI.md#updatemapping) | **Put** /oauth/accessTokenMappings/{id} | Update an Access Token Mapping.
+*OauthAuthServerSettingsAPI* | [**AddCommonScope**](docs/OauthAuthServerSettingsAPI.md#addcommonscope) | **Post** /oauth/authServerSettings/scopes/commonScopes | Add a new common scope.
+*OauthAuthServerSettingsAPI* | [**AddCommonScopeGroup**](docs/OauthAuthServerSettingsAPI.md#addcommonscopegroup) | **Post** /oauth/authServerSettings/scopes/commonScopeGroups | Create a new common scope group.
+*OauthAuthServerSettingsAPI* | [**AddExclusiveScope**](docs/OauthAuthServerSettingsAPI.md#addexclusivescope) | **Post** /oauth/authServerSettings/scopes/exclusiveScopes | Add a new exclusive scope.
+*OauthAuthServerSettingsAPI* | [**AddExclusiveScopeGroup**](docs/OauthAuthServerSettingsAPI.md#addexclusivescopegroup) | **Post** /oauth/authServerSettings/scopes/exclusiveScopeGroups | Create a new exclusive scope group.
+*OauthAuthServerSettingsAPI* | [**GetAuthorizationServerSettings**](docs/OauthAuthServerSettingsAPI.md#getauthorizationserversettings) | **Get** /oauth/authServerSettings | Get the Authorization Server Settings.
+*OauthAuthServerSettingsAPI* | [**GetCommonScope**](docs/OauthAuthServerSettingsAPI.md#getcommonscope) | **Get** /oauth/authServerSettings/scopes/commonScopes/{name} | Get an existing common scope.
+*OauthAuthServerSettingsAPI* | [**GetCommonScopeGroup**](docs/OauthAuthServerSettingsAPI.md#getcommonscopegroup) | **Get** /oauth/authServerSettings/scopes/commonScopeGroups/{name} | Get an existing common scope group.
+*OauthAuthServerSettingsAPI* | [**GetExclusiveScope**](docs/OauthAuthServerSettingsAPI.md#getexclusivescope) | **Get** /oauth/authServerSettings/scopes/exclusiveScopes/{name} | Get an existing exclusive scope.
+*OauthAuthServerSettingsAPI* | [**GetExclusiveScopeGroup**](docs/OauthAuthServerSettingsAPI.md#getexclusivescopegroup) | **Get** /oauth/authServerSettings/scopes/exclusiveScopeGroups/{name} | Get an existing exclusive scope group.
+*OauthAuthServerSettingsAPI* | [**RemoveCommonScope**](docs/OauthAuthServerSettingsAPI.md#removecommonscope) | **Delete** /oauth/authServerSettings/scopes/commonScopes/{name} | Remove an existing common scope.
+*OauthAuthServerSettingsAPI* | [**RemoveCommonScopeGroup**](docs/OauthAuthServerSettingsAPI.md#removecommonscopegroup) | **Delete** /oauth/authServerSettings/scopes/commonScopeGroups/{name} | Remove an existing common scope group.
+*OauthAuthServerSettingsAPI* | [**RemoveExclusiveScope**](docs/OauthAuthServerSettingsAPI.md#removeexclusivescope) | **Delete** /oauth/authServerSettings/scopes/exclusiveScopes/{name} | Remove an existing exclusive scope.
+*OauthAuthServerSettingsAPI* | [**RemoveExclusiveScopeGroup**](docs/OauthAuthServerSettingsAPI.md#removeexclusivescopegroup) | **Delete** /oauth/authServerSettings/scopes/exclusiveScopeGroups/{name} | Remove an existing exclusive scope group.
+*OauthAuthServerSettingsAPI* | [**UpdateAuthorizationServerSettings**](docs/OauthAuthServerSettingsAPI.md#updateauthorizationserversettings) | **Put** /oauth/authServerSettings | Update the Authorization Server Settings.
+*OauthAuthServerSettingsAPI* | [**UpdateCommonScope**](docs/OauthAuthServerSettingsAPI.md#updatecommonscope) | **Put** /oauth/authServerSettings/scopes/commonScopes/{name} | Update an existing common scope.
+*OauthAuthServerSettingsAPI* | [**UpdateCommonScopeGroup**](docs/OauthAuthServerSettingsAPI.md#updatecommonscopegroup) | **Put** /oauth/authServerSettings/scopes/commonScopeGroups/{name} | Update an existing common scope group.
+*OauthAuthServerSettingsAPI* | [**UpdateExclusiveScope**](docs/OauthAuthServerSettingsAPI.md#updateexclusivescope) | **Put** /oauth/authServerSettings/scopes/exclusiveScopes/{name} | Update an existing exclusive scope.
+*OauthAuthServerSettingsAPI* | [**UpdateExclusiveScopeGroups**](docs/OauthAuthServerSettingsAPI.md#updateexclusivescopegroups) | **Put** /oauth/authServerSettings/scopes/exclusiveScopeGroups/{name} | Update an existing exclusive scope group.
+*OauthAuthenticationPolicyContractMappingsAPI* | [**CreateApcMapping**](docs/OauthAuthenticationPolicyContractMappingsAPI.md#createapcmapping) | **Post** /oauth/authenticationPolicyContractMappings | Create a new authentication policy contract to persistent grant mapping.
+*OauthAuthenticationPolicyContractMappingsAPI* | [**DeleteApcMapping**](docs/OauthAuthenticationPolicyContractMappingsAPI.md#deleteapcmapping) | **Delete** /oauth/authenticationPolicyContractMappings/{id} | Delete an authentication policy contract to persistent grant mapping.
+*OauthAuthenticationPolicyContractMappingsAPI* | [**GetApcMapping**](docs/OauthAuthenticationPolicyContractMappingsAPI.md#getapcmapping) | **Get** /oauth/authenticationPolicyContractMappings/{id} | Find the authentication policy contract to persistent grant mapping by ID.
+*OauthAuthenticationPolicyContractMappingsAPI* | [**GetApcMappings**](docs/OauthAuthenticationPolicyContractMappingsAPI.md#getapcmappings) | **Get** /oauth/authenticationPolicyContractMappings | Get the list of authentication policy contract to persistent grant mappings.
+*OauthAuthenticationPolicyContractMappingsAPI* | [**UpdateApcMapping**](docs/OauthAuthenticationPolicyContractMappingsAPI.md#updateapcmapping) | **Put** /oauth/authenticationPolicyContractMappings/{id} | Update an authentication policy contract to persistent grant mapping.
+*OauthAuthorizationDetailProcessorsAPI* | [**CreateAuthorizationDetailProcessor**](docs/OauthAuthorizationDetailProcessorsAPI.md#createauthorizationdetailprocessor) | **Post** /oauth/authorizationDetailProcessors | Create an authorization detail processor plugin instance.
+*OauthAuthorizationDetailProcessorsAPI* | [**DeleteAuthorizationDetailProcessor**](docs/OauthAuthorizationDetailProcessorsAPI.md#deleteauthorizationdetailprocessor) | **Delete** /oauth/authorizationDetailProcessors/{id} | Delete an authorization detail processor plugin instance.
+*OauthAuthorizationDetailProcessorsAPI* | [**GetAuthorizationDetailProcessor**](docs/OauthAuthorizationDetailProcessorsAPI.md#getauthorizationdetailprocessor) | **Get** /oauth/authorizationDetailProcessors/{id} | Get a specific authorization detail processor plugin instance.
+*OauthAuthorizationDetailProcessorsAPI* | [**GetAuthorizationDetailProcessorPluginDescriptor**](docs/OauthAuthorizationDetailProcessorsAPI.md#getauthorizationdetailprocessorplugindescriptor) | **Get** /oauth/authorizationDetailProcessors/descriptors/{id} | Get an authorization detail processor plugin descriptor.
+*OauthAuthorizationDetailProcessorsAPI* | [**GetAuthorizationDetailProcessorPluginDescriptors**](docs/OauthAuthorizationDetailProcessorsAPI.md#getauthorizationdetailprocessorplugindescriptors) | **Get** /oauth/authorizationDetailProcessors/descriptors | Get a list of available authorization detail processor plugin descriptors.
+*OauthAuthorizationDetailProcessorsAPI* | [**GetAuthorizationDetailProcessors**](docs/OauthAuthorizationDetailProcessorsAPI.md#getauthorizationdetailprocessors) | **Get** /oauth/authorizationDetailProcessors | Get a list of authorization detail processor plugin instances.
+*OauthAuthorizationDetailProcessorsAPI* | [**UpdateAuthorizationDetailProcessor**](docs/OauthAuthorizationDetailProcessorsAPI.md#updateauthorizationdetailprocessor) | **Put** /oauth/authorizationDetailProcessors/{id} | Update an authorization detail processor plugin instance.
+*OauthAuthorizationDetailTypesAPI* | [**AddAuthorizationDetailType**](docs/OauthAuthorizationDetailTypesAPI.md#addauthorizationdetailtype) | **Post** /oauth/authorizationDetailTypes | Create a new authorization detail type.
+*OauthAuthorizationDetailTypesAPI* | [**DeleteAuthorizationDetailType**](docs/OauthAuthorizationDetailTypesAPI.md#deleteauthorizationdetailtype) | **Delete** /oauth/authorizationDetailTypes/{id} | Delete an authorization detail type.
+*OauthAuthorizationDetailTypesAPI* | [**GetAuthorizationDetailTypeById**](docs/OauthAuthorizationDetailTypesAPI.md#getauthorizationdetailtypebyid) | **Get** /oauth/authorizationDetailTypes/{id} | Get an authorization detail type.
+*OauthAuthorizationDetailTypesAPI* | [**GetAuthorizationDetailTypes**](docs/OauthAuthorizationDetailTypesAPI.md#getauthorizationdetailtypes) | **Get** /oauth/authorizationDetailTypes | Get the list of authorization detail types.
+*OauthAuthorizationDetailTypesAPI* | [**UpdateAuthorizationDetailType**](docs/OauthAuthorizationDetailTypesAPI.md#updateauthorizationdetailtype) | **Put** /oauth/authorizationDetailTypes/{id} | Update an authorization detail type.
+*OauthCibaServerPolicyAPI* | [**CreateCibaServerPolicy**](docs/OauthCibaServerPolicyAPI.md#createcibaserverpolicy) | **Post** /oauth/cibaServerPolicy/requestPolicies | Create a new request policy.
+*OauthCibaServerPolicyAPI* | [**DeleteCibaServerPolicy**](docs/OauthCibaServerPolicyAPI.md#deletecibaserverpolicy) | **Delete** /oauth/cibaServerPolicy/requestPolicies/{id} | Delete a request policy.
+*OauthCibaServerPolicyAPI* | [**GetCibaServerPolicies**](docs/OauthCibaServerPolicyAPI.md#getcibaserverpolicies) | **Get** /oauth/cibaServerPolicy/requestPolicies | Get list of request policies.
+*OauthCibaServerPolicyAPI* | [**GetCibaServerPolicyById**](docs/OauthCibaServerPolicyAPI.md#getcibaserverpolicybyid) | **Get** /oauth/cibaServerPolicy/requestPolicies/{id} | Find request policy by ID.
+*OauthCibaServerPolicyAPI* | [**GetCibaServerPolicySettings**](docs/OauthCibaServerPolicyAPI.md#getcibaserverpolicysettings) | **Get** /oauth/cibaServerPolicy/settings | Get general ciba server request policy settings.
+*OauthCibaServerPolicyAPI* | [**UpdateCibaServerPolicy**](docs/OauthCibaServerPolicyAPI.md#updatecibaserverpolicy) | **Put** /oauth/cibaServerPolicy/requestPolicies/{id} | Update a request policy.
+*OauthCibaServerPolicyAPI* | [**UpdateCibaServerPolicySettings**](docs/OauthCibaServerPolicyAPI.md#updatecibaserverpolicysettings) | **Put** /oauth/cibaServerPolicy/settings | Update general ciba server request policy settings.
+*OauthClientRegistrationPoliciesAPI* | [**CreateDynamicClientRegistrationPolicy**](docs/OauthClientRegistrationPoliciesAPI.md#createdynamicclientregistrationpolicy) | **Post** /oauth/clientRegistrationPolicies | Create a client registration policy plugin instance.
+*OauthClientRegistrationPoliciesAPI* | [**DeleteDynamicClientRegistrationPolicy**](docs/OauthClientRegistrationPoliciesAPI.md#deletedynamicclientregistrationpolicy) | **Delete** /oauth/clientRegistrationPolicies/{id} | Delete a client registration policy plugin instance.
+*OauthClientRegistrationPoliciesAPI* | [**GetDynamicClientRegistrationDescriptor**](docs/OauthClientRegistrationPoliciesAPI.md#getdynamicclientregistrationdescriptor) | **Get** /oauth/clientRegistrationPolicies/descriptors/{id} | Get the description of a client registration policy plugin descriptor.
+*OauthClientRegistrationPoliciesAPI* | [**GetDynamicClientRegistrationDescriptors**](docs/OauthClientRegistrationPoliciesAPI.md#getdynamicclientregistrationdescriptors) | **Get** /oauth/clientRegistrationPolicies/descriptors | Get the list of available client registration policy plugin descriptors.
+*OauthClientRegistrationPoliciesAPI* | [**GetDynamicClientRegistrationPolicies**](docs/OauthClientRegistrationPoliciesAPI.md#getdynamicclientregistrationpolicies) | **Get** /oauth/clientRegistrationPolicies | Get a list of client registration policy plugin instances.
+*OauthClientRegistrationPoliciesAPI* | [**GetDynamicClientRegistrationPolicy**](docs/OauthClientRegistrationPoliciesAPI.md#getdynamicclientregistrationpolicy) | **Get** /oauth/clientRegistrationPolicies/{id} | Get a specific client registration policy plugin instance.
+*OauthClientRegistrationPoliciesAPI* | [**UpdateDynamicClientRegistrationPolicy**](docs/OauthClientRegistrationPoliciesAPI.md#updatedynamicclientregistrationpolicy) | **Put** /oauth/clientRegistrationPolicies/{id} | Update a client registration policy plugin instance.
+*OauthClientSettingsAPI* | [**GetOauthClientSettings**](docs/OauthClientSettingsAPI.md#getoauthclientsettings) | **Get** /oauth/clientSettings | Configure the client settings.
+*OauthClientSettingsAPI* | [**UpdateOauthClientSettings**](docs/OauthClientSettingsAPI.md#updateoauthclientsettings) | **Put** /oauth/clientSettings | Update the client settings.
+*OauthClientsAPI* | [**CreateOauthClient**](docs/OauthClientsAPI.md#createoauthclient) | **Post** /oauth/clients | Create a new OAuth client.
+*OauthClientsAPI* | [**DeleteOauthClient**](docs/OauthClientsAPI.md#deleteoauthclient) | **Delete** /oauth/clients/{id} | Delete an OAuth client.
+*OauthClientsAPI* | [**GetOauthClientById**](docs/OauthClientsAPI.md#getoauthclientbyid) | **Get** /oauth/clients/{id} | Find the OAuth client by ID.
+*OauthClientsAPI* | [**GetOauthClientSecret**](docs/OauthClientsAPI.md#getoauthclientsecret) | **Get** /oauth/clients/{id}/clientAuth/clientSecret | Get the client secret of an existing OAuth client.
+*OauthClientsAPI* | [**GetOauthClients**](docs/OauthClientsAPI.md#getoauthclients) | **Get** /oauth/clients | Get the list of OAuth clients.
+*OauthClientsAPI* | [**UpdateOauthClient**](docs/OauthClientsAPI.md#updateoauthclient) | **Put** /oauth/clients/{id} | Updates the OAuth client.
+*OauthClientsAPI* | [**UpdateOauthClientSecret**](docs/OauthClientsAPI.md#updateoauthclientsecret) | **Put** /oauth/clients/{id}/clientAuth/clientSecret | Update the client secret of an existing OAuth client.
+*OauthIdpAdapterMappingsAPI* | [**CreateIdpAdapterMapping**](docs/OauthIdpAdapterMappingsAPI.md#createidpadaptermapping) | **Post** /oauth/idpAdapterMappings | Create a new IdP adapter mapping.
+*OauthIdpAdapterMappingsAPI* | [**DeleteIdpAdapterMapping**](docs/OauthIdpAdapterMappingsAPI.md#deleteidpadaptermapping) | **Delete** /oauth/idpAdapterMappings/{id} | Delete an IdP adapter mapping.
+*OauthIdpAdapterMappingsAPI* | [**GetIdpAdapterMapping**](docs/OauthIdpAdapterMappingsAPI.md#getidpadaptermapping) | **Get** /oauth/idpAdapterMappings/{id} | Find the IdP adapter mapping by the ID.
+*OauthIdpAdapterMappingsAPI* | [**GetIdpAdapterMappings**](docs/OauthIdpAdapterMappingsAPI.md#getidpadaptermappings) | **Get** /oauth/idpAdapterMappings | Get the list of IdP adapter mappings.
+*OauthIdpAdapterMappingsAPI* | [**UpdateIdpAdapterMapping**](docs/OauthIdpAdapterMappingsAPI.md#updateidpadaptermapping) | **Put** /oauth/idpAdapterMappings/{id} | Update an IdP adapter mapping.
+*OauthIssuersAPI* | [**AddOauthIssuer**](docs/OauthIssuersAPI.md#addoauthissuer) | **Post** /oauth/issuers | Create a new virtual issuer.
+*OauthIssuersAPI* | [**DeleteOauthIssuer**](docs/OauthIssuersAPI.md#deleteoauthissuer) | **Delete** /oauth/issuers/{id} | Delete a virtual issuer.
+*OauthIssuersAPI* | [**GetOauthIssuerById**](docs/OauthIssuersAPI.md#getoauthissuerbyid) | **Get** /oauth/issuers/{id} | Find a virtual issuer by ID.
+*OauthIssuersAPI* | [**GetOauthIssuers**](docs/OauthIssuersAPI.md#getoauthissuers) | **Get** /oauth/issuers | Get the list of virtual issuers.
+*OauthIssuersAPI* | [**UpdateOauthIssuer**](docs/OauthIssuersAPI.md#updateoauthissuer) | **Put** /oauth/issuers/{id} | Update a virtual issuer.
+*OauthOpenIdConnectAPI* | [**CreateOIDCPolicy**](docs/OauthOpenIdConnectAPI.md#createoidcpolicy) | **Post** /oauth/openIdConnect/policies | Create a new OpenID Connect Policy.
+*OauthOpenIdConnectAPI* | [**DeleteOIDCPolicy**](docs/OauthOpenIdConnectAPI.md#deleteoidcpolicy) | **Delete** /oauth/openIdConnect/policies/{id} | Delete an OpenID Connect Policy.
+*OauthOpenIdConnectAPI* | [**GetOIDCPolicies**](docs/OauthOpenIdConnectAPI.md#getoidcpolicies) | **Get** /oauth/openIdConnect/policies | Get list of OpenID Connect Policies.
+*OauthOpenIdConnectAPI* | [**GetOIDCPolicy**](docs/OauthOpenIdConnectAPI.md#getoidcpolicy) | **Get** /oauth/openIdConnect/policies/{id} | Find OpenID Connect Policy by ID.
+*OauthOpenIdConnectAPI* | [**GetOIDCSettings**](docs/OauthOpenIdConnectAPI.md#getoidcsettings) | **Get** /oauth/openIdConnect/settings | Get the OpenID Connect Settings.
+*OauthOpenIdConnectAPI* | [**UpdateOIDCPolicy**](docs/OauthOpenIdConnectAPI.md#updateoidcpolicy) | **Put** /oauth/openIdConnect/policies/{id} | Update an OpenID Connect Policy.
+*OauthOpenIdConnectAPI* | [**UpdateOIDCSettings**](docs/OauthOpenIdConnectAPI.md#updateoidcsettings) | **Put** /oauth/openIdConnect/settings | Set the OpenID Connect Settings.
+*OauthOutOfBandAuthPluginsAPI* | [**CreateOOBAuthenticator**](docs/OauthOutOfBandAuthPluginsAPI.md#createoobauthenticator) | **Post** /oauth/outOfBandAuthPlugins | Create an Out of Band authenticator plugin instance.
+*OauthOutOfBandAuthPluginsAPI* | [**DeleteOOBAuthenticator**](docs/OauthOutOfBandAuthPluginsAPI.md#deleteoobauthenticator) | **Delete** /oauth/outOfBandAuthPlugins/{id} | Delete an Out of Band authenticator plugin instance.
+*OauthOutOfBandAuthPluginsAPI* | [**GetOOBAction**](docs/OauthOutOfBandAuthPluginsAPI.md#getoobaction) | **Get** /oauth/outOfBandAuthPlugins/{id}/actions/{actionId} | Find an Out of Band authenticator plugin instance&#39;s action by ID.
+*OauthOutOfBandAuthPluginsAPI* | [**GetOOBActions**](docs/OauthOutOfBandAuthPluginsAPI.md#getoobactions) | **Get** /oauth/outOfBandAuthPlugins/{id}/actions | List of actions for an Out of Band authenticator plugin instance.
+*OauthOutOfBandAuthPluginsAPI* | [**GetOOBAuthPluginDescriptor**](docs/OauthOutOfBandAuthPluginsAPI.md#getoobauthplugindescriptor) | **Get** /oauth/outOfBandAuthPlugins/descriptors/{id} | Get the descriptor of an Out of Band authenticator plugin.
+*OauthOutOfBandAuthPluginsAPI* | [**GetOOBAuthPluginDescriptors**](docs/OauthOutOfBandAuthPluginsAPI.md#getoobauthplugindescriptors) | **Get** /oauth/outOfBandAuthPlugins/descriptors | Get the list of available Out of Band authenticator plugin descriptors.
+*OauthOutOfBandAuthPluginsAPI* | [**GetOOBAuthenticator**](docs/OauthOutOfBandAuthPluginsAPI.md#getoobauthenticator) | **Get** /oauth/outOfBandAuthPlugins/{id} | Get a specific Out of Band authenticator plugin instance.
+*OauthOutOfBandAuthPluginsAPI* | [**GetOOBAuthenticators**](docs/OauthOutOfBandAuthPluginsAPI.md#getoobauthenticators) | **Get** /oauth/outOfBandAuthPlugins | Get a list of Out of Band authenticator plugin instances.
+*OauthOutOfBandAuthPluginsAPI* | [**InvokeOOBActionWithOptions**](docs/OauthOutOfBandAuthPluginsAPI.md#invokeoobactionwithoptions) | **Post** /oauth/outOfBandAuthPlugins/{id}/actions/{actionId}/invokeAction | Invokes an action for Out of Band authenticator plugin instance.
+*OauthOutOfBandAuthPluginsAPI* | [**UpdateOOBAuthenticator**](docs/OauthOutOfBandAuthPluginsAPI.md#updateoobauthenticator) | **Put** /oauth/outOfBandAuthPlugins/{id} | Update an Out of Band authenticator plugin instance.
+*OauthResourceOwnerCredentialsMappingsAPI* | [**CreateResourceOwnerCredentialsMapping**](docs/OauthResourceOwnerCredentialsMappingsAPI.md#createresourceownercredentialsmapping) | **Post** /oauth/resourceOwnerCredentialsMappings | Create a new Resource Owner Credentials mapping.
+*OauthResourceOwnerCredentialsMappingsAPI* | [**DeleteResourceOwnerCredentialsMapping**](docs/OauthResourceOwnerCredentialsMappingsAPI.md#deleteresourceownercredentialsmapping) | **Delete** /oauth/resourceOwnerCredentialsMappings/{id} | Delete a Resource Owner Credentials mapping.
+*OauthResourceOwnerCredentialsMappingsAPI* | [**GetResourceOwnerCredentialsMapping**](docs/OauthResourceOwnerCredentialsMappingsAPI.md#getresourceownercredentialsmapping) | **Get** /oauth/resourceOwnerCredentialsMappings/{id} | Find the Resource Owner Credentials mapping by the ID.
+*OauthResourceOwnerCredentialsMappingsAPI* | [**GetResourceOwnerCredentialsMappings**](docs/OauthResourceOwnerCredentialsMappingsAPI.md#getresourceownercredentialsmappings) | **Get** /oauth/resourceOwnerCredentialsMappings | Get the list of Resource Owner Credentials Grant Mapping.
+*OauthResourceOwnerCredentialsMappingsAPI* | [**UpdateResourceOwnerCredentialsMapping**](docs/OauthResourceOwnerCredentialsMappingsAPI.md#updateresourceownercredentialsmapping) | **Put** /oauth/resourceOwnerCredentialsMappings/{id} | Update a Resource Owner Credentials mapping.
+*OauthTokenExchangeGeneratorAPI* | [**CreateGroup**](docs/OauthTokenExchangeGeneratorAPI.md#creategroup) | **Post** /oauth/tokenExchange/generator/groups | Create a new OAuth 2.0 Token Exchange Generator group.
+*OauthTokenExchangeGeneratorAPI* | [**DeleteOauthTokenExchangeGroup**](docs/OauthTokenExchangeGeneratorAPI.md#deleteoauthtokenexchangegroup) | **Delete** /oauth/tokenExchange/generator/groups/{id} | Delete an OAuth 2.0 Token Exchange Generator group.
+*OauthTokenExchangeGeneratorAPI* | [**GetOauthTokenExchangeGroupById**](docs/OauthTokenExchangeGeneratorAPI.md#getoauthtokenexchangegroupbyid) | **Get** /oauth/tokenExchange/generator/groups/{id} | Find an OAuth 2.0 Token Exchange Generator group by ID.
+*OauthTokenExchangeGeneratorAPI* | [**GetOauthTokenExchangeGroups**](docs/OauthTokenExchangeGeneratorAPI.md#getoauthtokenexchangegroups) | **Get** /oauth/tokenExchange/generator/groups | Get list of OAuth 2.0 Token Exchange Generator groups.
+*OauthTokenExchangeGeneratorAPI* | [**GetOauthTokenExchangeSettings**](docs/OauthTokenExchangeGeneratorAPI.md#getoauthtokenexchangesettings) | **Get** /oauth/tokenExchange/generator/settings | Get general OAuth 2.0 Token Exchange Generator settings.
+*OauthTokenExchangeGeneratorAPI* | [**UpdateOauthTokenExchangeGroup**](docs/OauthTokenExchangeGeneratorAPI.md#updateoauthtokenexchangegroup) | **Put** /oauth/tokenExchange/generator/groups/{id} | Update an OAuth 2.0 Token Exchange Generator group.
+*OauthTokenExchangeGeneratorAPI* | [**UpdateOauthTokenExchangeSettings**](docs/OauthTokenExchangeGeneratorAPI.md#updateoauthtokenexchangesettings) | **Put** /oauth/tokenExchange/generator/settings | Update general OAuth 2.0 Token Exchange Generator settings.
+*OauthTokenExchangeProcessorAPI* | [**CreateOauthTokenExchangeProcessorPolicy**](docs/OauthTokenExchangeProcessorAPI.md#createoauthtokenexchangeprocessorpolicy) | **Post** /oauth/tokenExchange/processor/policies | Create a new OAuth 2.0 Token Exchange Processor policy.
+*OauthTokenExchangeProcessorAPI* | [**DeleteOauthTokenExchangeProcessorPolicyy**](docs/OauthTokenExchangeProcessorAPI.md#deleteoauthtokenexchangeprocessorpolicyy) | **Delete** /oauth/tokenExchange/processor/policies/{id} | Delete an OAuth 2.0 Token Exchange Processor policy.
+*OauthTokenExchangeProcessorAPI* | [**GetOauthTokenExchangeProcessorPolicyById**](docs/OauthTokenExchangeProcessorAPI.md#getoauthtokenexchangeprocessorpolicybyid) | **Get** /oauth/tokenExchange/processor/policies/{id} | Find an OAuth 2.0 Token Exchange Processor policy by ID.
+*OauthTokenExchangeProcessorAPI* | [**GetOauthTokenExchangeProcessorPolicyPolicies**](docs/OauthTokenExchangeProcessorAPI.md#getoauthtokenexchangeprocessorpolicypolicies) | **Get** /oauth/tokenExchange/processor/policies | Get list of OAuth 2.0 Token Exchange Processor policies.
+*OauthTokenExchangeProcessorAPI* | [**GetOauthTokenExchangeProcessorPolicySettings**](docs/OauthTokenExchangeProcessorAPI.md#getoauthtokenexchangeprocessorpolicysettings) | **Get** /oauth/tokenExchange/processor/settings | Get general OAuth 2.0 Token Exchange Processor settings.
+*OauthTokenExchangeProcessorAPI* | [**UpdateOauthTokenExchangeProcessorPolicy**](docs/OauthTokenExchangeProcessorAPI.md#updateoauthtokenexchangeprocessorpolicy) | **Put** /oauth/tokenExchange/processor/policies/{id} | Update an OAuth 2.0 Token Exchange Processor policy.
+*OauthTokenExchangeProcessorAPI* | [**UpdateOauthTokenExchangeProcessorPolicySettings**](docs/OauthTokenExchangeProcessorAPI.md#updateoauthtokenexchangeprocessorpolicysettings) | **Put** /oauth/tokenExchange/processor/settings | Update general OAuth 2.0 Token Exchange Processor settings.
+*OauthTokenExchangeTokenGeneratorMappingsAPI* | [**CreateTokenGeneratorMapping**](docs/OauthTokenExchangeTokenGeneratorMappingsAPI.md#createtokengeneratormapping) | **Post** /oauth/tokenExchange/tokenGeneratorMappings | Create a new Token Exchange Processor policy to Token Generator Mapping.
+*OauthTokenExchangeTokenGeneratorMappingsAPI* | [**DeleteTokenGeneratorMappingById**](docs/OauthTokenExchangeTokenGeneratorMappingsAPI.md#deletetokengeneratormappingbyid) | **Delete** /oauth/tokenExchange/tokenGeneratorMappings/{id} | Delete a Token Exchange Processor policy to Token Generator Mapping.
+*OauthTokenExchangeTokenGeneratorMappingsAPI* | [**GetTokenGeneratorMappingById**](docs/OauthTokenExchangeTokenGeneratorMappingsAPI.md#gettokengeneratormappingbyid) | **Get** /oauth/tokenExchange/tokenGeneratorMappings/{id} | Get a Token Exchange Processor policy to Token Generator Mapping.
+*OauthTokenExchangeTokenGeneratorMappingsAPI* | [**GetTokenGeneratorMappings**](docs/OauthTokenExchangeTokenGeneratorMappingsAPI.md#gettokengeneratormappings) | **Get** /oauth/tokenExchange/tokenGeneratorMappings | Get the list of Token Exchange Processor policy to Token Generator Mappings.
+*OauthTokenExchangeTokenGeneratorMappingsAPI* | [**UpdateTokenGeneratorMappingById**](docs/OauthTokenExchangeTokenGeneratorMappingsAPI.md#updatetokengeneratormappingbyid) | **Put** /oauth/tokenExchange/tokenGeneratorMappings/{id} | Update a Token Exchange Processor policy to Token Generator Mapping.
+*PasswordCredentialValidatorsAPI* | [**CreatePasswordCredentialValidator**](docs/PasswordCredentialValidatorsAPI.md#createpasswordcredentialvalidator) | **Post** /passwordCredentialValidators | Create a new password credential validator instance
+*PasswordCredentialValidatorsAPI* | [**DeletePasswordCredentialValidator**](docs/PasswordCredentialValidatorsAPI.md#deletepasswordcredentialvalidator) | **Delete** /passwordCredentialValidators/{id} | Delete a password credential validator instance.
+*PasswordCredentialValidatorsAPI* | [**GetPasswordCredentialValidator**](docs/PasswordCredentialValidatorsAPI.md#getpasswordcredentialvalidator) | **Get** /passwordCredentialValidators/{id} | Find a password credential validator by ID.
+*PasswordCredentialValidatorsAPI* | [**GetPasswordCredentialValidatorDescriptor**](docs/PasswordCredentialValidatorsAPI.md#getpasswordcredentialvalidatordescriptor) | **Get** /passwordCredentialValidators/descriptors/{id} | Get the description of a password credential validator by ID.
+*PasswordCredentialValidatorsAPI* | [**GetPasswordCredentialValidatorDescriptors**](docs/PasswordCredentialValidatorsAPI.md#getpasswordcredentialvalidatordescriptors) | **Get** /passwordCredentialValidators/descriptors | Get a list of available password credential validator descriptors.
+*PasswordCredentialValidatorsAPI* | [**GetPasswordCredentialValidators**](docs/PasswordCredentialValidatorsAPI.md#getpasswordcredentialvalidators) | **Get** /passwordCredentialValidators | Get the list of available password credential validators
+*PasswordCredentialValidatorsAPI* | [**UpdatePasswordCredentialValidator**](docs/PasswordCredentialValidatorsAPI.md#updatepasswordcredentialvalidator) | **Put** /passwordCredentialValidators/{id} | Update a password credential validator instance.
+*PingOneConnectionsAPI* | [**CreatePingOneConnection**](docs/PingOneConnectionsAPI.md#createpingoneconnection) | **Post** /pingOneConnections | Create a new PingOne connection.
+*PingOneConnectionsAPI* | [**DeletePingOneConnection**](docs/PingOneConnectionsAPI.md#deletepingoneconnection) | **Delete** /pingOneConnections/{id} | Delete a PingOne connection.
+*PingOneConnectionsAPI* | [**GetCredentialStatus**](docs/PingOneConnectionsAPI.md#getcredentialstatus) | **Get** /pingOneConnections/{id}/credentialStatus | Get the status of the credential associated with the PingOne connection
+*PingOneConnectionsAPI* | [**GetPingOneConnection**](docs/PingOneConnectionsAPI.md#getpingoneconnection) | **Get** /pingOneConnections/{id} | Get a PingOne connection with the specified ID.
+*PingOneConnectionsAPI* | [**GetPingOneConnectionAssociations**](docs/PingOneConnectionsAPI.md#getpingoneconnectionassociations) | **Get** /pingOneConnections/{id}/serviceAssociations | Get information about components using this connection to access PingOne services.
+*PingOneConnectionsAPI* | [**GetPingOneConnectionEnvironments**](docs/PingOneConnectionsAPI.md#getpingoneconnectionenvironments) | **Get** /pingOneConnections/{id}/environments | Get the list of environments that the PingOne connection has access to.
+*PingOneConnectionsAPI* | [**GetPingOneConnectionUsages**](docs/PingOneConnectionsAPI.md#getpingoneconnectionusages) | **Get** /pingOneConnections/{id}/usage | Get the list of resources that reference this PingOne connection.
+*PingOneConnectionsAPI* | [**GetPingOneConnections**](docs/PingOneConnectionsAPI.md#getpingoneconnections) | **Get** /pingOneConnections | Get the list of all PingOne connections.
+*PingOneConnectionsAPI* | [**UpdatePingOneConnection**](docs/PingOneConnectionsAPI.md#updatepingoneconnection) | **Put** /pingOneConnections/{id} | Update a PingOne connection.
+*PingOneForEnterpriseAPI* | [**Disconnect**](docs/PingOneForEnterpriseAPI.md#disconnect) | **Post** /pingOneForEnterprise/disconnect | Disconnect from PingOne for Enterprise
+*PingOneForEnterpriseAPI* | [**GetKeyPairs**](docs/PingOneForEnterpriseAPI.md#getkeypairs) | **Get** /pingOneForEnterprise/keyPairs | Get the PingOne for Enterprise key pair settings
+*PingOneForEnterpriseAPI* | [**GetPingOneForEnterpriseSettings**](docs/PingOneForEnterpriseAPI.md#getpingoneforenterprisesettings) | **Get** /pingOneForEnterprise | Get the PingOne for Enterprise settings
+*PingOneForEnterpriseAPI* | [**RotateKeys**](docs/PingOneForEnterpriseAPI.md#rotatekeys) | **Post** /pingOneForEnterprise/keyPairs/rotate | Rotate the authentication key
+*PingOneForEnterpriseAPI* | [**UpdatePingOneForEnterpriseIdentityRepository**](docs/PingOneForEnterpriseAPI.md#updatepingoneforenterpriseidentityrepository) | **Post** /pingOneForEnterprise/updateIdentityRepository | Update the PingOne Identity Repository
+*PingOneForEnterpriseAPI* | [**UpdatePingOneSettings**](docs/PingOneForEnterpriseAPI.md#updatepingonesettings) | **Put** /pingOneForEnterprise | Update the PingOne for Enterprise settings.
+*ProtocolMetadataAPI* | [**GetLifetimeSettings**](docs/ProtocolMetadataAPI.md#getlifetimesettings) | **Get** /protocolMetadata/lifetimeSettings | Get metadata cache duration and reload delay for automated reloading.
+*ProtocolMetadataAPI* | [**GetSigningSettings**](docs/ProtocolMetadataAPI.md#getsigningsettings) | **Get** /protocolMetadata/signingSettings | Get the certificate ID and algorithm used for metadata signing.
+*ProtocolMetadataAPI* | [**UpdateLifetimeSettings**](docs/ProtocolMetadataAPI.md#updatelifetimesettings) | **Put** /protocolMetadata/lifetimeSettings | Update metadata cache duration and reload delay for automated reloading.
+*ProtocolMetadataAPI* | [**UpdateSigningSettings**](docs/ProtocolMetadataAPI.md#updatesigningsettings) | **Put** /protocolMetadata/signingSettings | Update the certificate and algorithm for metadata signing.
+*RedirectValidationAPI* | [**GetRedirectValidationSettings**](docs/RedirectValidationAPI.md#getredirectvalidationsettings) | **Get** /redirectValidation | Retrieve redirect validation settings.
+*RedirectValidationAPI* | [**UpdateRedirectValidationSettings**](docs/RedirectValidationAPI.md#updateredirectvalidationsettings) | **Put** /redirectValidation | Update redirect validation settings.
+*SecretManagersAPI* | [**CreateSecretManager**](docs/SecretManagersAPI.md#createsecretmanager) | **Post** /secretManagers | Create a secret manager plugin instance.
+*SecretManagersAPI* | [**DeleteSecretManager**](docs/SecretManagersAPI.md#deletesecretmanager) | **Delete** /secretManagers/{id} | Delete a secret manager plugin instance.
+*SecretManagersAPI* | [**GetSecretManager**](docs/SecretManagersAPI.md#getsecretmanager) | **Get** /secretManagers/{id} | Get a specific secret manager plugin instance.
+*SecretManagersAPI* | [**GetSecretManagerPluginDescriptor**](docs/SecretManagersAPI.md#getsecretmanagerplugindescriptor) | **Get** /secretManagers/descriptors/{id} | Get a secret manager plugin descriptor.
+*SecretManagersAPI* | [**GetSecretManagerPluginDescriptors**](docs/SecretManagersAPI.md#getsecretmanagerplugindescriptors) | **Get** /secretManagers/descriptors | Get a list of available secret manager plugin descriptors.
+*SecretManagersAPI* | [**GetSecretManagers**](docs/SecretManagersAPI.md#getsecretmanagers) | **Get** /secretManagers | Get a list of secret manager plugin instances.
+*SecretManagersAPI* | [**GetSecretManagersAction**](docs/SecretManagersAPI.md#getsecretmanagersaction) | **Get** /secretManagers/{id}/actions/{actionId} | Get a secret manager plugin instance&#39;s action by ID.
+*SecretManagersAPI* | [**GetSecretManagersActions**](docs/SecretManagersAPI.md#getsecretmanagersactions) | **Get** /secretManagers/{id}/actions | Get a list of actions for a secret manager plugin instance.
+*SecretManagersAPI* | [**InvokeSecretManagersActionWithOptions**](docs/SecretManagersAPI.md#invokesecretmanagersactionwithoptions) | **Post** /secretManagers/{id}/actions/{actionId}/invokeAction | Invokes an action for secret manager plugin instance.
+*SecretManagersAPI* | [**UpdateSecretManager**](docs/SecretManagersAPI.md#updatesecretmanager) | **Put** /secretManagers/{id} | Update a secret manager plugin instance.
+*ServerSettingsAPI* | [**DeleteCertificate**](docs/ServerSettingsAPI.md#deletecertificate) | **Delete** /serverSettings/wsTrustStsSettings/issuerCertificates/{id} | Delete a certificate from WS-Trust STS Settings.
+*ServerSettingsAPI* | [**GetCaptchaSettings**](docs/ServerSettingsAPI.md#getcaptchasettings) | **Get** /serverSettings/captchaSettings | (Deprecated) Gets the CAPTCHA settings.
+*ServerSettingsAPI* | [**GetCert**](docs/ServerSettingsAPI.md#getcert) | **Get** /serverSettings/wsTrustStsSettings/issuerCertificates/{id} | Retrieve details of a certificate.
+*ServerSettingsAPI* | [**GetCerts**](docs/ServerSettingsAPI.md#getcerts) | **Get** /serverSettings/wsTrustStsSettings/issuerCertificates | Get the list of certificates for WS-Trust STS Settings.
+*ServerSettingsAPI* | [**GetEmailServerSettings**](docs/ServerSettingsAPI.md#getemailserversettings) | **Get** /serverSettings/emailServer | (Deprecated) Gets the email server settings
+*ServerSettingsAPI* | [**GetGeneralSettings**](docs/ServerSettingsAPI.md#getgeneralsettings) | **Get** /serverSettings/generalSettings | Gets the general settings.
+*ServerSettingsAPI* | [**GetLogSettings**](docs/ServerSettingsAPI.md#getlogsettings) | **Get** /serverSettings/logSettings | Gets the log settings.
+*ServerSettingsAPI* | [**GetNotificationSettings**](docs/ServerSettingsAPI.md#getnotificationsettings) | **Get** /serverSettings/notifications | Gets the notification settings
+*ServerSettingsAPI* | [**GetOutBoundProvisioningSettings**](docs/ServerSettingsAPI.md#getoutboundprovisioningsettings) | **Get** /serverSettings/outboundProvisioning | Get database used for outbound provisioning
+*ServerSettingsAPI* | [**GetServerSettings**](docs/ServerSettingsAPI.md#getserversettings) | **Get** /serverSettings | Gets the server settings
+*ServerSettingsAPI* | [**GetSystemKeys**](docs/ServerSettingsAPI.md#getsystemkeys) | **Get** /serverSettings/systemKeys | Get the system keys.
+*ServerSettingsAPI* | [**GetWsTrustStsSettings**](docs/ServerSettingsAPI.md#getwstruststssettings) | **Get** /serverSettings/wsTrustStsSettings | Get the current WS-Trust STS Settings.
+*ServerSettingsAPI* | [**ImportCertificate**](docs/ServerSettingsAPI.md#importcertificate) | **Post** /serverSettings/wsTrustStsSettings/issuerCertificates | Import a new certificate.
+*ServerSettingsAPI* | [**RotateSystemKeys**](docs/ServerSettingsAPI.md#rotatesystemkeys) | **Post** /serverSettings/systemKeys/rotate | Rotate the system keys.
+*ServerSettingsAPI* | [**UpdateCaptchaSettings**](docs/ServerSettingsAPI.md#updatecaptchasettings) | **Put** /serverSettings/captchaSettings | (Deprecated) Update the CAPTCHA settings.
+*ServerSettingsAPI* | [**UpdateEmailServerSettings**](docs/ServerSettingsAPI.md#updateemailserversettings) | **Put** /serverSettings/emailServer | (Deprecated) Update the email server settings
+*ServerSettingsAPI* | [**UpdateGeneralSettings**](docs/ServerSettingsAPI.md#updategeneralsettings) | **Put** /serverSettings/generalSettings | Update general settings.
+*ServerSettingsAPI* | [**UpdateLogSettings**](docs/ServerSettingsAPI.md#updatelogsettings) | **Put** /serverSettings/logSettings | Update log settings.
+*ServerSettingsAPI* | [**UpdateNotificationSettings**](docs/ServerSettingsAPI.md#updatenotificationsettings) | **Put** /serverSettings/notifications | Update the notification settings.
+*ServerSettingsAPI* | [**UpdateOutBoundProvisioningSettings**](docs/ServerSettingsAPI.md#updateoutboundprovisioningsettings) | **Put** /serverSettings/outboundProvisioning | Update database used for outbound provisioning
+*ServerSettingsAPI* | [**UpdateServerSettings**](docs/ServerSettingsAPI.md#updateserversettings) | **Put** /serverSettings | Update the server settings.
+*ServerSettingsAPI* | [**UpdateSystemKeys**](docs/ServerSettingsAPI.md#updatesystemkeys) | **Put** /serverSettings/systemKeys | Update the system keys.
+*ServerSettingsAPI* | [**UpdateWsTrustStsSettings**](docs/ServerSettingsAPI.md#updatewstruststssettings) | **Put** /serverSettings/wsTrustStsSettings | Update WS-Trust STS Settings.
+*ServiceAuthenticationAPI* | [**GetServiceAuthentication**](docs/ServiceAuthenticationAPI.md#getserviceauthentication) | **Get** /serviceAuthentication | Get the service authentication settings.
+*ServiceAuthenticationAPI* | [**UpdateServiceAuthentication**](docs/ServiceAuthenticationAPI.md#updateserviceauthentication) | **Put** /serviceAuthentication | Update the service authentication settings.
+*SessionAPI* | [**CreateSourcePolicy**](docs/SessionAPI.md#createsourcepolicy) | **Post** /session/authenticationSessionPolicies | Create a new session policy.
+*SessionAPI* | [**DeleteSourcePolicy**](docs/SessionAPI.md#deletesourcepolicy) | **Delete** /session/authenticationSessionPolicies/{id} | Delete a session policy.
+*SessionAPI* | [**GetApplicationPolicy**](docs/SessionAPI.md#getapplicationpolicy) | **Get** /session/applicationSessionPolicy | Get the application session policy.
+*SessionAPI* | [**GetGlobalPolicy**](docs/SessionAPI.md#getglobalpolicy) | **Get** /session/authenticationSessionPolicies/global | Get the global authentication session policy.
+*SessionAPI* | [**GetSessionSettings**](docs/SessionAPI.md#getsessionsettings) | **Get** /session/settings | Get general session management settings.
+*SessionAPI* | [**GetSourcePolicies**](docs/SessionAPI.md#getsourcepolicies) | **Get** /session/authenticationSessionPolicies | Get list of session policies.
+*SessionAPI* | [**GetSourcePolicy**](docs/SessionAPI.md#getsourcepolicy) | **Get** /session/authenticationSessionPolicies/{id} | Find session policy by ID.
+*SessionAPI* | [**UpdateApplicationPolicy**](docs/SessionAPI.md#updateapplicationpolicy) | **Put** /session/applicationSessionPolicy | Update the application session policy.
+*SessionAPI* | [**UpdateGlobalPolicy**](docs/SessionAPI.md#updateglobalpolicy) | **Put** /session/authenticationSessionPolicies/global | Update the global authentication session policy.
+*SessionAPI* | [**UpdateSessionSettings**](docs/SessionAPI.md#updatesessionsettings) | **Put** /session/settings | Update general session management settings.
+*SessionAPI* | [**UpdateSourcePolicy**](docs/SessionAPI.md#updatesourcepolicy) | **Put** /session/authenticationSessionPolicies/{id} | Update a session policy.
+*SpAdaptersAPI* | [**CreateSpAdapter**](docs/SpAdaptersAPI.md#createspadapter) | **Post** /sp/adapters | Create a new SP adapter instance.
+*SpAdaptersAPI* | [**DeleteSpAdapter**](docs/SpAdaptersAPI.md#deletespadapter) | **Delete** /sp/adapters/{id} | Delete an SP adapter instance.
+*SpAdaptersAPI* | [**GetSpAdapter**](docs/SpAdaptersAPI.md#getspadapter) | **Get** /sp/adapters/{id} | Find an SP adapter instance by ID.
+*SpAdaptersAPI* | [**GetSpAdapterDescriptors**](docs/SpAdaptersAPI.md#getspadapterdescriptors) | **Get** /sp/adapters/descriptors | Get the list of available SP adapter descriptors.
+*SpAdaptersAPI* | [**GetSpAdapterDescriptorsById**](docs/SpAdaptersAPI.md#getspadapterdescriptorsbyid) | **Get** /sp/adapters/descriptors/{id} | Get the description of an SP adapter plugin by ID.
+*SpAdaptersAPI* | [**GetSpAdapterUrlMappings**](docs/SpAdaptersAPI.md#getspadapterurlmappings) | **Get** /sp/adapters/urlMappings | (Deprecated) List the mappings between URLs and adapter instances.
+*SpAdaptersAPI* | [**GetSpAdapters**](docs/SpAdaptersAPI.md#getspadapters) | **Get** /sp/adapters | Get the list of configured SP adapter instances.
+*SpAdaptersAPI* | [**GetSpAdaptersActionById**](docs/SpAdaptersAPI.md#getspadaptersactionbyid) | **Get** /sp/adapters/{id}/actions/{actionId} | Find an SP adapter instance&#39;s action by ID.
+*SpAdaptersAPI* | [**GetSpAdaptersActions**](docs/SpAdaptersAPI.md#getspadaptersactions) | **Get** /sp/adapters/{id}/actions | List the actions for an SP adapter instance.
+*SpAdaptersAPI* | [**InvokeSpAdapterActionWithOptions**](docs/SpAdaptersAPI.md#invokespadapteractionwithoptions) | **Post** /sp/adapters/{id}/actions/{actionId}/invokeAction | Invokes an action for an SP adapter instance.
+*SpAdaptersAPI* | [**UpdateSpAdapter**](docs/SpAdaptersAPI.md#updatespadapter) | **Put** /sp/adapters/{id} | Update an SP adapter instance.
+*SpAdaptersAPI* | [**UpdateSpAdapterUrlMappings**](docs/SpAdaptersAPI.md#updatespadapterurlmappings) | **Put** /sp/adapters/urlMappings | (Deprecated) Update the mappings between URLs and adapters instances.
+*SpAuthenticationPolicyContractMappingsAPI* | [**CreateApcToSpAdapterMapping**](docs/SpAuthenticationPolicyContractMappingsAPI.md#createapctospadaptermapping) | **Post** /sp/authenticationPolicyContractMappings | Create a new APC-to-SP Adapter Mapping.
+*SpAuthenticationPolicyContractMappingsAPI* | [**DeleteApcToSpAdapterMappingById**](docs/SpAuthenticationPolicyContractMappingsAPI.md#deleteapctospadaptermappingbyid) | **Delete** /sp/authenticationPolicyContractMappings/{id} | Delete an APC-to-SP Adapter Mapping.
+*SpAuthenticationPolicyContractMappingsAPI* | [**GetApcToSpAdapterMappingById**](docs/SpAuthenticationPolicyContractMappingsAPI.md#getapctospadaptermappingbyid) | **Get** /sp/authenticationPolicyContractMappings/{id} | Get an APC-to-SP Adapter Mapping.
+*SpAuthenticationPolicyContractMappingsAPI* | [**GetApcToSpAdapterMappings**](docs/SpAuthenticationPolicyContractMappingsAPI.md#getapctospadaptermappings) | **Get** /sp/authenticationPolicyContractMappings | Get the list of APC-to-SP Adapter Mappings.
+*SpAuthenticationPolicyContractMappingsAPI* | [**UpdateApcToSpAdapterMappingById**](docs/SpAuthenticationPolicyContractMappingsAPI.md#updateapctospadaptermappingbyid) | **Put** /sp/authenticationPolicyContractMappings/{id} | Update an APC-to-SP Adapter Mapping.
+*SpDefaultUrlsAPI* | [**GetSpDefaultUrls**](docs/SpDefaultUrlsAPI.md#getspdefaulturls) | **Get** /sp/defaultUrls | Gets the SP Default URLs. These are Values that affect the user&#39;s experience when executing SP-initiated SSO operations.
+*SpDefaultUrlsAPI* | [**UpdateSpDefaultUrls**](docs/SpDefaultUrlsAPI.md#updatespdefaulturls) | **Put** /sp/defaultUrls | Update the SP Default URLs. Enter values that affect the user&#39;s experience when executing SP-initiated SSO operations.
+*SpIdpConnectionsAPI* | [**AddConnectionCert**](docs/SpIdpConnectionsAPI.md#addconnectioncert) | **Post** /sp/idpConnections/{id}/credentials/certs | Add a new IdP connection certificate.
+*SpIdpConnectionsAPI* | [**CreateConnection**](docs/SpIdpConnectionsAPI.md#createconnection) | **Post** /sp/idpConnections | Create a new IdP connection.
+*SpIdpConnectionsAPI* | [**DeleteConnection**](docs/SpIdpConnectionsAPI.md#deleteconnection) | **Delete** /sp/idpConnections/{id} | Delete an IdP connection.
+*SpIdpConnectionsAPI* | [**GetConnection**](docs/SpIdpConnectionsAPI.md#getconnection) | **Get** /sp/idpConnections/{id} | Find IdP connection by ID.
+*SpIdpConnectionsAPI* | [**GetConnectionCerts**](docs/SpIdpConnectionsAPI.md#getconnectioncerts) | **Get** /sp/idpConnections/{id}/credentials/certs | Get the IdP connection&#39;s certificates.
+*SpIdpConnectionsAPI* | [**GetConnections**](docs/SpIdpConnectionsAPI.md#getconnections) | **Get** /sp/idpConnections | Get list of IdP connections.
+*SpIdpConnectionsAPI* | [**GetIdpConnectionSigningSettings**](docs/SpIdpConnectionsAPI.md#getidpconnectionsigningsettings) | **Get** /sp/idpConnections/{id}/credentials/signingSettings | Get the IdP connection&#39;s signature settings.
+*SpIdpConnectionsAPI* | [**GetIdpConnectionsDecryptionKeys**](docs/SpIdpConnectionsAPI.md#getidpconnectionsdecryptionkeys) | **Get** /sp/idpConnections/{id}/credentials/decryptionKeys | Get the decryption keys of an IdP connection.
+*SpIdpConnectionsAPI* | [**UpdateConnection**](docs/SpIdpConnectionsAPI.md#updateconnection) | **Put** /sp/idpConnections/{id} | Update an IdP connection.
+*SpIdpConnectionsAPI* | [**UpdateConnectionCerts**](docs/SpIdpConnectionsAPI.md#updateconnectioncerts) | **Put** /sp/idpConnections/{id}/credentials/certs | Update the IdP connection&#39;s certificates.
+*SpIdpConnectionsAPI* | [**UpdateIdpConnectionSigningSettings**](docs/SpIdpConnectionsAPI.md#updateidpconnectionsigningsettings) | **Put** /sp/idpConnections/{id}/credentials/signingSettings | Update the IdP connection&#39;s signature settings.
+*SpIdpConnectionsAPI* | [**UpdateIdpConnectionsDecryptionKeys**](docs/SpIdpConnectionsAPI.md#updateidpconnectionsdecryptionkeys) | **Put** /sp/idpConnections/{id}/credentials/decryptionKeys | Updating the IdP connection&#39;s decryption keys.
+*SpTargetUrlMappingsAPI* | [**GetSpUrlMappings**](docs/SpTargetUrlMappingsAPI.md#getspurlmappings) | **Get** /sp/targetUrlMappings | List the mappings between URLs and adapter or connection instances.
+*SpTargetUrlMappingsAPI* | [**UpdateSpUrlMappings**](docs/SpTargetUrlMappingsAPI.md#updatespurlmappings) | **Put** /sp/targetUrlMappings | Update the mappings between URLs and adapters or connections instances.
+*SpTokenGeneratorsAPI* | [**CreateTokenGenerator**](docs/SpTokenGeneratorsAPI.md#createtokengenerator) | **Post** /sp/tokenGenerators | Create a new token generator instance.
+*SpTokenGeneratorsAPI* | [**DeleteTokenGenerator**](docs/SpTokenGeneratorsAPI.md#deletetokengenerator) | **Delete** /sp/tokenGenerators/{id} | Delete a token generator instance.
+*SpTokenGeneratorsAPI* | [**GetTokenGenerator**](docs/SpTokenGeneratorsAPI.md#gettokengenerator) | **Get** /sp/tokenGenerators/{id} | Find a token generator instance by ID.
+*SpTokenGeneratorsAPI* | [**GetTokenGeneratorDescriptors**](docs/SpTokenGeneratorsAPI.md#gettokengeneratordescriptors) | **Get** /sp/tokenGenerators/descriptors | Get the list of available token generators.
+*SpTokenGeneratorsAPI* | [**GetTokenGeneratorDescriptorsById**](docs/SpTokenGeneratorsAPI.md#gettokengeneratordescriptorsbyid) | **Get** /sp/tokenGenerators/descriptors/{id} | Get the description of a token generator plugin by ID.
+*SpTokenGeneratorsAPI* | [**GetTokenGenerators**](docs/SpTokenGeneratorsAPI.md#gettokengenerators) | **Get** /sp/tokenGenerators | Get the list of token generator instances.
+*SpTokenGeneratorsAPI* | [**UpdateTokenGenerator**](docs/SpTokenGeneratorsAPI.md#updatetokengenerator) | **Put** /sp/tokenGenerators/{id} | Update a token generator instance.
+*TokenProcessorToTokenGeneratorMappingsAPI* | [**CreateTokenToTokenMapping**](docs/TokenProcessorToTokenGeneratorMappingsAPI.md#createtokentotokenmapping) | **Post** /tokenProcessorToTokenGeneratorMappings | Create a new Token Processor to Token Generator Mapping.
+*TokenProcessorToTokenGeneratorMappingsAPI* | [**DeleteTokenToTokenMappingById**](docs/TokenProcessorToTokenGeneratorMappingsAPI.md#deletetokentotokenmappingbyid) | **Delete** /tokenProcessorToTokenGeneratorMappings/{id} | Delete a Token Processor to Token Generator Mapping.
+*TokenProcessorToTokenGeneratorMappingsAPI* | [**GetTokenToTokenMappingById**](docs/TokenProcessorToTokenGeneratorMappingsAPI.md#gettokentotokenmappingbyid) | **Get** /tokenProcessorToTokenGeneratorMappings/{id} | Get a Token Processor to Token Generator Mapping.
+*TokenProcessorToTokenGeneratorMappingsAPI* | [**GetTokenToTokenMappings**](docs/TokenProcessorToTokenGeneratorMappingsAPI.md#gettokentotokenmappings) | **Get** /tokenProcessorToTokenGeneratorMappings | Get the list of Token Processor to Token Generator Mappings.
+*TokenProcessorToTokenGeneratorMappingsAPI* | [**UpdateTokenToTokenMappingById**](docs/TokenProcessorToTokenGeneratorMappingsAPI.md#updatetokentotokenmappingbyid) | **Put** /tokenProcessorToTokenGeneratorMappings/{id} | Update a Token Processor to Token Generator Mapping.
+*VersionAPI* | [**GetVersion**](docs/VersionAPI.md#getversion) | **Get** /version | Gets the server version.
+*VirtualHostNamesAPI* | [**GetVirtualHostNamesSettings**](docs/VirtualHostNamesAPI.md#getvirtualhostnamessettings) | **Get** /virtualHostNames | Retrieve virtual host names settings.
+*VirtualHostNamesAPI* | [**UpdateVirtualHostNamesSettings**](docs/VirtualHostNamesAPI.md#updatevirtualhostnamessettings) | **Put** /virtualHostNames | Update virtual host names settings.
 
 
 ## Documentation For Models
@@ -591,6 +591,7 @@ Class | Method | HTTP request | Description
  - [AttributeRule](docs/AttributeRule.md)
  - [AttributeRules](docs/AttributeRules.md)
  - [AttributeSource](docs/AttributeSource.md)
+ - [AttributeSourceAggregation](docs/AttributeSourceAggregation.md)
  - [AuthenticationPoliciesSettings](docs/AuthenticationPoliciesSettings.md)
  - [AuthenticationPolicy](docs/AuthenticationPolicy.md)
  - [AuthenticationPolicyContract](docs/AuthenticationPolicyContract.md)
@@ -1034,7 +1035,21 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
-Endpoints do not require authorization.
+
+Authentication schemes defined for the API:
+### BasicAuth
+
+- **Type**: HTTP basic authentication
+
+Example
+
+```golang
+auth := context.WithValue(context.Background(), sw.ContextBasicAuth, sw.BasicAuth{
+    UserName: "username",
+    Password: "password",
+})
+r, err := client.Service.Operation(auth, args)
+```
 
 
 ## Documentation for Utility Methods

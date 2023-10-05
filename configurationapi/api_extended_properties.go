@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// ExtendedPropertiesApiService ExtendedPropertiesApi service
-type ExtendedPropertiesApiService service
+// ExtendedPropertiesAPIService ExtendedPropertiesAPI service
+type ExtendedPropertiesAPIService service
 
 type ApiGetExtendedPropertiesRequest struct {
 	ctx        context.Context
-	ApiService *ExtendedPropertiesApiService
+	ApiService *ExtendedPropertiesAPIService
 }
 
 func (r ApiGetExtendedPropertiesRequest) Execute() (*ExtendedProperties, *http.Response, error) {
@@ -36,7 +36,7 @@ GetExtendedProperties Get the defined Extended Properties.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetExtendedPropertiesRequest
 */
-func (a *ExtendedPropertiesApiService) GetExtendedProperties(ctx context.Context) ApiGetExtendedPropertiesRequest {
+func (a *ExtendedPropertiesAPIService) GetExtendedProperties(ctx context.Context) ApiGetExtendedPropertiesRequest {
 	return ApiGetExtendedPropertiesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -46,7 +46,7 @@ func (a *ExtendedPropertiesApiService) GetExtendedProperties(ctx context.Context
 // Execute executes the request
 //
 //	@return ExtendedProperties
-func (a *ExtendedPropertiesApiService) GetExtendedPropertiesExecute(r ApiGetExtendedPropertiesRequest) (*ExtendedProperties, *http.Response, error) {
+func (a *ExtendedPropertiesAPIService) GetExtendedPropertiesExecute(r ApiGetExtendedPropertiesRequest) (*ExtendedProperties, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *ExtendedPropertiesApiService) GetExtendedPropertiesExecute(r ApiGetExte
 		localVarReturnValue *ExtendedProperties
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtendedPropertiesApiService.GetExtendedProperties")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtendedPropertiesAPIService.GetExtendedProperties")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -121,7 +121,7 @@ func (a *ExtendedPropertiesApiService) GetExtendedPropertiesExecute(r ApiGetExte
 
 type ApiUpdateExtendedPropertiesRequest struct {
 	ctx        context.Context
-	ApiService *ExtendedPropertiesApiService
+	ApiService *ExtendedPropertiesAPIService
 	body       *ExtendedProperties
 }
 
@@ -141,7 +141,7 @@ UpdateExtendedProperties Update the Extended Properties.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateExtendedPropertiesRequest
 */
-func (a *ExtendedPropertiesApiService) UpdateExtendedProperties(ctx context.Context) ApiUpdateExtendedPropertiesRequest {
+func (a *ExtendedPropertiesAPIService) UpdateExtendedProperties(ctx context.Context) ApiUpdateExtendedPropertiesRequest {
 	return ApiUpdateExtendedPropertiesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -151,7 +151,7 @@ func (a *ExtendedPropertiesApiService) UpdateExtendedProperties(ctx context.Cont
 // Execute executes the request
 //
 //	@return ExtendedProperties
-func (a *ExtendedPropertiesApiService) UpdateExtendedPropertiesExecute(r ApiUpdateExtendedPropertiesRequest) (*ExtendedProperties, *http.Response, error) {
+func (a *ExtendedPropertiesAPIService) UpdateExtendedPropertiesExecute(r ApiUpdateExtendedPropertiesRequest) (*ExtendedProperties, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -159,7 +159,7 @@ func (a *ExtendedPropertiesApiService) UpdateExtendedPropertiesExecute(r ApiUpda
 		localVarReturnValue *ExtendedProperties
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtendedPropertiesApiService.UpdateExtendedProperties")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtendedPropertiesAPIService.UpdateExtendedProperties")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

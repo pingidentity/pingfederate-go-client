@@ -1,21 +1,21 @@
-# \NotificationPublishersApi
+# \NotificationPublishersAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateNotificationPublisher**](NotificationPublishersApi.md#CreateNotificationPublisher) | **Post** /notificationPublishers | Create a notification publisher plugin instance.
-[**DeleteNotificationPublisher**](NotificationPublishersApi.md#DeleteNotificationPublisher) | **Delete** /notificationPublishers/{id} | Delete a notification publisher plugin instance.
-[**GetNotificationPublisher**](NotificationPublishersApi.md#GetNotificationPublisher) | **Get** /notificationPublishers/{id} | Get a specific notification publisher plugin instance.
-[**GetNotificationPublisherActions**](NotificationPublishersApi.md#GetNotificationPublisherActions) | **Get** /notificationPublishers/{id}/actions | List the actions for a notification publisher plugin instance.
-[**GetNotificationPublisherPluginDescriptor**](NotificationPublishersApi.md#GetNotificationPublisherPluginDescriptor) | **Get** /notificationPublishers/descriptors/{id} | Get the description of a notification publisher plugin descriptor.
-[**GetNotificationPublisherPluginDescriptors**](NotificationPublishersApi.md#GetNotificationPublisherPluginDescriptors) | **Get** /notificationPublishers/descriptors | Get the list of available Notification Publisher Plugin descriptors.
-[**GetNotificationPublishers**](NotificationPublishersApi.md#GetNotificationPublishers) | **Get** /notificationPublishers | Get a list of notification publisher plugin instances.
-[**GetNotificationPublishersAction**](NotificationPublishersApi.md#GetNotificationPublishersAction) | **Get** /notificationPublishers/{id}/actions/{actionId} | Find an notification publisher plugin instance&#39;s action by ID.
-[**GetNotificationPublishersSettings**](NotificationPublishersApi.md#GetNotificationPublishersSettings) | **Get** /notificationPublishers/settings | Get general notification publisher settings.
-[**InvokeNotificationPublishersActionWithOptions**](NotificationPublishersApi.md#InvokeNotificationPublishersActionWithOptions) | **Post** /notificationPublishers/{id}/actions/{actionId}/invokeAction | Invokes an action for notification publisher plugin instance.
-[**UpdateNotificationPublisher**](NotificationPublishersApi.md#UpdateNotificationPublisher) | **Put** /notificationPublishers/{id} | Update a notification publisher plugin instance.
-[**UpdateNotificationPublishersSettings**](NotificationPublishersApi.md#UpdateNotificationPublishersSettings) | **Put** /notificationPublishers/settings | Update general notification publisher settings.
+[**CreateNotificationPublisher**](NotificationPublishersAPI.md#CreateNotificationPublisher) | **Post** /notificationPublishers | Create a notification publisher plugin instance.
+[**DeleteNotificationPublisher**](NotificationPublishersAPI.md#DeleteNotificationPublisher) | **Delete** /notificationPublishers/{id} | Delete a notification publisher plugin instance.
+[**GetNotificationPublisher**](NotificationPublishersAPI.md#GetNotificationPublisher) | **Get** /notificationPublishers/{id} | Get a specific notification publisher plugin instance.
+[**GetNotificationPublisherActions**](NotificationPublishersAPI.md#GetNotificationPublisherActions) | **Get** /notificationPublishers/{id}/actions | List the actions for a notification publisher plugin instance.
+[**GetNotificationPublisherPluginDescriptor**](NotificationPublishersAPI.md#GetNotificationPublisherPluginDescriptor) | **Get** /notificationPublishers/descriptors/{id} | Get the description of a notification publisher plugin descriptor.
+[**GetNotificationPublisherPluginDescriptors**](NotificationPublishersAPI.md#GetNotificationPublisherPluginDescriptors) | **Get** /notificationPublishers/descriptors | Get the list of available Notification Publisher Plugin descriptors.
+[**GetNotificationPublishers**](NotificationPublishersAPI.md#GetNotificationPublishers) | **Get** /notificationPublishers | Get a list of notification publisher plugin instances.
+[**GetNotificationPublishersAction**](NotificationPublishersAPI.md#GetNotificationPublishersAction) | **Get** /notificationPublishers/{id}/actions/{actionId} | Find an notification publisher plugin instance&#39;s action by ID.
+[**GetNotificationPublishersSettings**](NotificationPublishersAPI.md#GetNotificationPublishersSettings) | **Get** /notificationPublishers/settings | Get general notification publisher settings.
+[**InvokeNotificationPublishersActionWithOptions**](NotificationPublishersAPI.md#InvokeNotificationPublishersActionWithOptions) | **Post** /notificationPublishers/{id}/actions/{actionId}/invokeAction | Invokes an action for notification publisher plugin instance.
+[**UpdateNotificationPublisher**](NotificationPublishersAPI.md#UpdateNotificationPublisher) | **Put** /notificationPublishers/{id} | Update a notification publisher plugin instance.
+[**UpdateNotificationPublishersSettings**](NotificationPublishersAPI.md#UpdateNotificationPublishersSettings) | **Put** /notificationPublishers/settings | Update general notification publisher settings.
 
 
 
@@ -42,13 +42,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationPublishersApi.CreateNotificationPublisher(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.NotificationPublishersAPI.CreateNotificationPublisher(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersApi.CreateNotificationPublisher``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersAPI.CreateNotificationPublisher``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateNotificationPublisher`: NotificationPublisher
-    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersApi.CreateNotificationPublisher`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersAPI.CreateNotificationPublisher`: %v\n", resp)
 }
 ```
 
@@ -106,9 +106,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.NotificationPublishersApi.DeleteNotificationPublisher(context.Background(), id).Execute()
+    r, err := apiClient.NotificationPublishersAPI.DeleteNotificationPublisher(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersApi.DeleteNotificationPublisher``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersAPI.DeleteNotificationPublisher``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -172,13 +172,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationPublishersApi.GetNotificationPublisher(context.Background(), id).Execute()
+    resp, r, err := apiClient.NotificationPublishersAPI.GetNotificationPublisher(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersApi.GetNotificationPublisher``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersAPI.GetNotificationPublisher``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetNotificationPublisher`: NotificationPublisher
-    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersApi.GetNotificationPublisher`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersAPI.GetNotificationPublisher`: %v\n", resp)
 }
 ```
 
@@ -240,13 +240,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationPublishersApi.GetNotificationPublisherActions(context.Background(), id).Execute()
+    resp, r, err := apiClient.NotificationPublishersAPI.GetNotificationPublisherActions(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersApi.GetNotificationPublisherActions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersAPI.GetNotificationPublisherActions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetNotificationPublisherActions`: Actions
-    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersApi.GetNotificationPublisherActions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersAPI.GetNotificationPublisherActions`: %v\n", resp)
 }
 ```
 
@@ -308,13 +308,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationPublishersApi.GetNotificationPublisherPluginDescriptor(context.Background(), id).Execute()
+    resp, r, err := apiClient.NotificationPublishersAPI.GetNotificationPublisherPluginDescriptor(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersApi.GetNotificationPublisherPluginDescriptor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersAPI.GetNotificationPublisherPluginDescriptor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetNotificationPublisherPluginDescriptor`: NotificationPublisherDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersApi.GetNotificationPublisherPluginDescriptor`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersAPI.GetNotificationPublisherPluginDescriptor`: %v\n", resp)
 }
 ```
 
@@ -375,13 +375,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationPublishersApi.GetNotificationPublisherPluginDescriptors(context.Background()).Execute()
+    resp, r, err := apiClient.NotificationPublishersAPI.GetNotificationPublisherPluginDescriptors(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersApi.GetNotificationPublisherPluginDescriptors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersAPI.GetNotificationPublisherPluginDescriptors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetNotificationPublisherPluginDescriptors`: NotificationPublisherDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersApi.GetNotificationPublisherPluginDescriptors`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersAPI.GetNotificationPublisherPluginDescriptors`: %v\n", resp)
 }
 ```
 
@@ -434,13 +434,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationPublishersApi.GetNotificationPublishers(context.Background()).Execute()
+    resp, r, err := apiClient.NotificationPublishersAPI.GetNotificationPublishers(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersApi.GetNotificationPublishers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersAPI.GetNotificationPublishers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetNotificationPublishers`: NotificationPublishers
-    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersApi.GetNotificationPublishers`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersAPI.GetNotificationPublishers`: %v\n", resp)
 }
 ```
 
@@ -495,13 +495,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationPublishersApi.GetNotificationPublishersAction(context.Background(), id, actionId).Execute()
+    resp, r, err := apiClient.NotificationPublishersAPI.GetNotificationPublishersAction(context.Background(), id, actionId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersApi.GetNotificationPublishersAction``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersAPI.GetNotificationPublishersAction``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetNotificationPublishersAction`: Action
-    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersApi.GetNotificationPublishersAction`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersAPI.GetNotificationPublishersAction`: %v\n", resp)
 }
 ```
 
@@ -564,13 +564,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationPublishersApi.GetNotificationPublishersSettings(context.Background()).Execute()
+    resp, r, err := apiClient.NotificationPublishersAPI.GetNotificationPublishersSettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersApi.GetNotificationPublishersSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersAPI.GetNotificationPublishersSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetNotificationPublishersSettings`: NotificationPublishersSettings
-    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersApi.GetNotificationPublishersSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersAPI.GetNotificationPublishersSettings`: %v\n", resp)
 }
 ```
 
@@ -626,13 +626,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationPublishersApi.InvokeNotificationPublishersActionWithOptions(context.Background(), id, actionId).Body(body).Execute()
+    resp, r, err := apiClient.NotificationPublishersAPI.InvokeNotificationPublishersActionWithOptions(context.Background(), id, actionId).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersApi.InvokeNotificationPublishersActionWithOptions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersAPI.InvokeNotificationPublishersActionWithOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `InvokeNotificationPublishersActionWithOptions`: ActionResult
-    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersApi.InvokeNotificationPublishersActionWithOptions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersAPI.InvokeNotificationPublishersActionWithOptions`: %v\n", resp)
 }
 ```
 
@@ -698,13 +698,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationPublishersApi.UpdateNotificationPublisher(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.NotificationPublishersAPI.UpdateNotificationPublisher(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersApi.UpdateNotificationPublisher``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersAPI.UpdateNotificationPublisher``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateNotificationPublisher`: NotificationPublisher
-    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersApi.UpdateNotificationPublisher`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersAPI.UpdateNotificationPublisher`: %v\n", resp)
 }
 ```
 
@@ -767,13 +767,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationPublishersApi.UpdateNotificationPublishersSettings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.NotificationPublishersAPI.UpdateNotificationPublishersSettings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersApi.UpdateNotificationPublishersSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersAPI.UpdateNotificationPublishersSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateNotificationPublishersSettings`: NotificationPublishersSettings
-    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersApi.UpdateNotificationPublishersSettings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersAPI.UpdateNotificationPublishersSettings`: %v\n", resp)
 }
 ```
 

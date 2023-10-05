@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// NotificationPublishersApiService NotificationPublishersApi service
-type NotificationPublishersApiService service
+// NotificationPublishersAPIService NotificationPublishersAPI service
+type NotificationPublishersAPIService service
 
 type ApiCreateNotificationPublisherRequest struct {
 	ctx        context.Context
-	ApiService *NotificationPublishersApiService
+	ApiService *NotificationPublishersAPIService
 	body       *NotificationPublisher
 }
 
@@ -44,7 +44,7 @@ CreateNotificationPublisher Create a notification publisher plugin instance.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateNotificationPublisherRequest
 */
-func (a *NotificationPublishersApiService) CreateNotificationPublisher(ctx context.Context) ApiCreateNotificationPublisherRequest {
+func (a *NotificationPublishersAPIService) CreateNotificationPublisher(ctx context.Context) ApiCreateNotificationPublisherRequest {
 	return ApiCreateNotificationPublisherRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *NotificationPublishersApiService) CreateNotificationPublisher(ctx conte
 // Execute executes the request
 //
 //	@return NotificationPublisher
-func (a *NotificationPublishersApiService) CreateNotificationPublisherExecute(r ApiCreateNotificationPublisherRequest) (*NotificationPublisher, *http.Response, error) {
+func (a *NotificationPublishersAPIService) CreateNotificationPublisherExecute(r ApiCreateNotificationPublisherRequest) (*NotificationPublisher, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *NotificationPublishersApiService) CreateNotificationPublisherExecute(r 
 		localVarReturnValue *NotificationPublisher
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersApiService.CreateNotificationPublisher")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersAPIService.CreateNotificationPublisher")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,7 +144,7 @@ func (a *NotificationPublishersApiService) CreateNotificationPublisherExecute(r 
 
 type ApiDeleteNotificationPublisherRequest struct {
 	ctx        context.Context
-	ApiService *NotificationPublishersApiService
+	ApiService *NotificationPublishersAPIService
 	id         string
 }
 
@@ -159,7 +159,7 @@ DeleteNotificationPublisher Delete a notification publisher plugin instance.
 	@param id ID of a notification publisher plugin instance.
 	@return ApiDeleteNotificationPublisherRequest
 */
-func (a *NotificationPublishersApiService) DeleteNotificationPublisher(ctx context.Context, id string) ApiDeleteNotificationPublisherRequest {
+func (a *NotificationPublishersAPIService) DeleteNotificationPublisher(ctx context.Context, id string) ApiDeleteNotificationPublisherRequest {
 	return ApiDeleteNotificationPublisherRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -168,14 +168,14 @@ func (a *NotificationPublishersApiService) DeleteNotificationPublisher(ctx conte
 }
 
 // Execute executes the request
-func (a *NotificationPublishersApiService) DeleteNotificationPublisherExecute(r ApiDeleteNotificationPublisherRequest) (*http.Response, error) {
+func (a *NotificationPublishersAPIService) DeleteNotificationPublisherExecute(r ApiDeleteNotificationPublisherRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersApiService.DeleteNotificationPublisher")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersAPIService.DeleteNotificationPublisher")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -244,7 +244,7 @@ func (a *NotificationPublishersApiService) DeleteNotificationPublisherExecute(r 
 
 type ApiGetNotificationPublisherRequest struct {
 	ctx        context.Context
-	ApiService *NotificationPublishersApiService
+	ApiService *NotificationPublishersAPIService
 	id         string
 }
 
@@ -259,7 +259,7 @@ GetNotificationPublisher Get a specific notification publisher plugin instance.
 	@param id ID of a notification publisher plugin instance.
 	@return ApiGetNotificationPublisherRequest
 */
-func (a *NotificationPublishersApiService) GetNotificationPublisher(ctx context.Context, id string) ApiGetNotificationPublisherRequest {
+func (a *NotificationPublishersAPIService) GetNotificationPublisher(ctx context.Context, id string) ApiGetNotificationPublisherRequest {
 	return ApiGetNotificationPublisherRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -270,7 +270,7 @@ func (a *NotificationPublishersApiService) GetNotificationPublisher(ctx context.
 // Execute executes the request
 //
 //	@return NotificationPublisher
-func (a *NotificationPublishersApiService) GetNotificationPublisherExecute(r ApiGetNotificationPublisherRequest) (*NotificationPublisher, *http.Response, error) {
+func (a *NotificationPublishersAPIService) GetNotificationPublisherExecute(r ApiGetNotificationPublisherRequest) (*NotificationPublisher, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -278,7 +278,7 @@ func (a *NotificationPublishersApiService) GetNotificationPublisherExecute(r Api
 		localVarReturnValue *NotificationPublisher
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersApiService.GetNotificationPublisher")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersAPIService.GetNotificationPublisher")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -356,7 +356,7 @@ func (a *NotificationPublishersApiService) GetNotificationPublisherExecute(r Api
 
 type ApiGetNotificationPublisherActionsRequest struct {
 	ctx        context.Context
-	ApiService *NotificationPublishersApiService
+	ApiService *NotificationPublishersAPIService
 	id         string
 }
 
@@ -371,7 +371,7 @@ GetNotificationPublisherActions List the actions for a notification publisher pl
 	@param id ID of the notification publisher plugin instance to which these actions belongs to.
 	@return ApiGetNotificationPublisherActionsRequest
 */
-func (a *NotificationPublishersApiService) GetNotificationPublisherActions(ctx context.Context, id string) ApiGetNotificationPublisherActionsRequest {
+func (a *NotificationPublishersAPIService) GetNotificationPublisherActions(ctx context.Context, id string) ApiGetNotificationPublisherActionsRequest {
 	return ApiGetNotificationPublisherActionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -382,7 +382,7 @@ func (a *NotificationPublishersApiService) GetNotificationPublisherActions(ctx c
 // Execute executes the request
 //
 //	@return Actions
-func (a *NotificationPublishersApiService) GetNotificationPublisherActionsExecute(r ApiGetNotificationPublisherActionsRequest) (*Actions, *http.Response, error) {
+func (a *NotificationPublishersAPIService) GetNotificationPublisherActionsExecute(r ApiGetNotificationPublisherActionsRequest) (*Actions, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -390,7 +390,7 @@ func (a *NotificationPublishersApiService) GetNotificationPublisherActionsExecut
 		localVarReturnValue *Actions
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersApiService.GetNotificationPublisherActions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersAPIService.GetNotificationPublisherActions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -468,7 +468,7 @@ func (a *NotificationPublishersApiService) GetNotificationPublisherActionsExecut
 
 type ApiGetNotificationPublisherPluginDescriptorRequest struct {
 	ctx        context.Context
-	ApiService *NotificationPublishersApiService
+	ApiService *NotificationPublishersAPIService
 	id         string
 }
 
@@ -483,7 +483,7 @@ GetNotificationPublisherPluginDescriptor Get the description of a notification p
 	@param id ID of notification publisher plugin descriptor.
 	@return ApiGetNotificationPublisherPluginDescriptorRequest
 */
-func (a *NotificationPublishersApiService) GetNotificationPublisherPluginDescriptor(ctx context.Context, id string) ApiGetNotificationPublisherPluginDescriptorRequest {
+func (a *NotificationPublishersAPIService) GetNotificationPublisherPluginDescriptor(ctx context.Context, id string) ApiGetNotificationPublisherPluginDescriptorRequest {
 	return ApiGetNotificationPublisherPluginDescriptorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -494,7 +494,7 @@ func (a *NotificationPublishersApiService) GetNotificationPublisherPluginDescrip
 // Execute executes the request
 //
 //	@return NotificationPublisherDescriptor
-func (a *NotificationPublishersApiService) GetNotificationPublisherPluginDescriptorExecute(r ApiGetNotificationPublisherPluginDescriptorRequest) (*NotificationPublisherDescriptor, *http.Response, error) {
+func (a *NotificationPublishersAPIService) GetNotificationPublisherPluginDescriptorExecute(r ApiGetNotificationPublisherPluginDescriptorRequest) (*NotificationPublisherDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -502,7 +502,7 @@ func (a *NotificationPublishersApiService) GetNotificationPublisherPluginDescrip
 		localVarReturnValue *NotificationPublisherDescriptor
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersApiService.GetNotificationPublisherPluginDescriptor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersAPIService.GetNotificationPublisherPluginDescriptor")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -580,7 +580,7 @@ func (a *NotificationPublishersApiService) GetNotificationPublisherPluginDescrip
 
 type ApiGetNotificationPublisherPluginDescriptorsRequest struct {
 	ctx        context.Context
-	ApiService *NotificationPublishersApiService
+	ApiService *NotificationPublishersAPIService
 }
 
 func (r ApiGetNotificationPublisherPluginDescriptorsRequest) Execute() (*NotificationPublisherDescriptors, *http.Response, error) {
@@ -593,7 +593,7 @@ GetNotificationPublisherPluginDescriptors Get the list of available Notification
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetNotificationPublisherPluginDescriptorsRequest
 */
-func (a *NotificationPublishersApiService) GetNotificationPublisherPluginDescriptors(ctx context.Context) ApiGetNotificationPublisherPluginDescriptorsRequest {
+func (a *NotificationPublishersAPIService) GetNotificationPublisherPluginDescriptors(ctx context.Context) ApiGetNotificationPublisherPluginDescriptorsRequest {
 	return ApiGetNotificationPublisherPluginDescriptorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -603,7 +603,7 @@ func (a *NotificationPublishersApiService) GetNotificationPublisherPluginDescrip
 // Execute executes the request
 //
 //	@return NotificationPublisherDescriptors
-func (a *NotificationPublishersApiService) GetNotificationPublisherPluginDescriptorsExecute(r ApiGetNotificationPublisherPluginDescriptorsRequest) (*NotificationPublisherDescriptors, *http.Response, error) {
+func (a *NotificationPublishersAPIService) GetNotificationPublisherPluginDescriptorsExecute(r ApiGetNotificationPublisherPluginDescriptorsRequest) (*NotificationPublisherDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -611,7 +611,7 @@ func (a *NotificationPublishersApiService) GetNotificationPublisherPluginDescrip
 		localVarReturnValue *NotificationPublisherDescriptors
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersApiService.GetNotificationPublisherPluginDescriptors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersAPIService.GetNotificationPublisherPluginDescriptors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -678,7 +678,7 @@ func (a *NotificationPublishersApiService) GetNotificationPublisherPluginDescrip
 
 type ApiGetNotificationPublishersRequest struct {
 	ctx        context.Context
-	ApiService *NotificationPublishersApiService
+	ApiService *NotificationPublishersAPIService
 }
 
 func (r ApiGetNotificationPublishersRequest) Execute() (*NotificationPublishers, *http.Response, error) {
@@ -691,7 +691,7 @@ GetNotificationPublishers Get a list of notification publisher plugin instances.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetNotificationPublishersRequest
 */
-func (a *NotificationPublishersApiService) GetNotificationPublishers(ctx context.Context) ApiGetNotificationPublishersRequest {
+func (a *NotificationPublishersAPIService) GetNotificationPublishers(ctx context.Context) ApiGetNotificationPublishersRequest {
 	return ApiGetNotificationPublishersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -701,7 +701,7 @@ func (a *NotificationPublishersApiService) GetNotificationPublishers(ctx context
 // Execute executes the request
 //
 //	@return NotificationPublishers
-func (a *NotificationPublishersApiService) GetNotificationPublishersExecute(r ApiGetNotificationPublishersRequest) (*NotificationPublishers, *http.Response, error) {
+func (a *NotificationPublishersAPIService) GetNotificationPublishersExecute(r ApiGetNotificationPublishersRequest) (*NotificationPublishers, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -709,7 +709,7 @@ func (a *NotificationPublishersApiService) GetNotificationPublishersExecute(r Ap
 		localVarReturnValue *NotificationPublishers
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersApiService.GetNotificationPublishers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersAPIService.GetNotificationPublishers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -776,7 +776,7 @@ func (a *NotificationPublishersApiService) GetNotificationPublishersExecute(r Ap
 
 type ApiGetNotificationPublishersActionRequest struct {
 	ctx        context.Context
-	ApiService *NotificationPublishersApiService
+	ApiService *NotificationPublishersAPIService
 	id         string
 	actionId   string
 }
@@ -793,7 +793,7 @@ GetNotificationPublishersAction Find an notification publisher plugin instance's
 	@param actionId ID of the action to get.
 	@return ApiGetNotificationPublishersActionRequest
 */
-func (a *NotificationPublishersApiService) GetNotificationPublishersAction(ctx context.Context, id string, actionId string) ApiGetNotificationPublishersActionRequest {
+func (a *NotificationPublishersAPIService) GetNotificationPublishersAction(ctx context.Context, id string, actionId string) ApiGetNotificationPublishersActionRequest {
 	return ApiGetNotificationPublishersActionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -805,7 +805,7 @@ func (a *NotificationPublishersApiService) GetNotificationPublishersAction(ctx c
 // Execute executes the request
 //
 //	@return Action
-func (a *NotificationPublishersApiService) GetNotificationPublishersActionExecute(r ApiGetNotificationPublishersActionRequest) (*Action, *http.Response, error) {
+func (a *NotificationPublishersAPIService) GetNotificationPublishersActionExecute(r ApiGetNotificationPublishersActionRequest) (*Action, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -813,7 +813,7 @@ func (a *NotificationPublishersApiService) GetNotificationPublishersActionExecut
 		localVarReturnValue *Action
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersApiService.GetNotificationPublishersAction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersAPIService.GetNotificationPublishersAction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -892,7 +892,7 @@ func (a *NotificationPublishersApiService) GetNotificationPublishersActionExecut
 
 type ApiGetNotificationPublishersSettingsRequest struct {
 	ctx        context.Context
-	ApiService *NotificationPublishersApiService
+	ApiService *NotificationPublishersAPIService
 }
 
 func (r ApiGetNotificationPublishersSettingsRequest) Execute() (*NotificationPublishersSettings, *http.Response, error) {
@@ -905,7 +905,7 @@ GetNotificationPublishersSettings Get general notification publisher settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetNotificationPublishersSettingsRequest
 */
-func (a *NotificationPublishersApiService) GetNotificationPublishersSettings(ctx context.Context) ApiGetNotificationPublishersSettingsRequest {
+func (a *NotificationPublishersAPIService) GetNotificationPublishersSettings(ctx context.Context) ApiGetNotificationPublishersSettingsRequest {
 	return ApiGetNotificationPublishersSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -915,7 +915,7 @@ func (a *NotificationPublishersApiService) GetNotificationPublishersSettings(ctx
 // Execute executes the request
 //
 //	@return NotificationPublishersSettings
-func (a *NotificationPublishersApiService) GetNotificationPublishersSettingsExecute(r ApiGetNotificationPublishersSettingsRequest) (*NotificationPublishersSettings, *http.Response, error) {
+func (a *NotificationPublishersAPIService) GetNotificationPublishersSettingsExecute(r ApiGetNotificationPublishersSettingsRequest) (*NotificationPublishersSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -923,7 +923,7 @@ func (a *NotificationPublishersApiService) GetNotificationPublishersSettingsExec
 		localVarReturnValue *NotificationPublishersSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersApiService.GetNotificationPublishersSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersAPIService.GetNotificationPublishersSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -990,7 +990,7 @@ func (a *NotificationPublishersApiService) GetNotificationPublishersSettingsExec
 
 type ApiInvokeNotificationPublishersActionWithOptionsRequest struct {
 	ctx        context.Context
-	ApiService *NotificationPublishersApiService
+	ApiService *NotificationPublishersAPIService
 	id         string
 	actionId   string
 	body       *ActionOptions
@@ -1014,7 +1014,7 @@ InvokeNotificationPublishersActionWithOptions Invokes an action for notification
 	@param actionId ID of the action to get.
 	@return ApiInvokeNotificationPublishersActionWithOptionsRequest
 */
-func (a *NotificationPublishersApiService) InvokeNotificationPublishersActionWithOptions(ctx context.Context, id string, actionId string) ApiInvokeNotificationPublishersActionWithOptionsRequest {
+func (a *NotificationPublishersAPIService) InvokeNotificationPublishersActionWithOptions(ctx context.Context, id string, actionId string) ApiInvokeNotificationPublishersActionWithOptionsRequest {
 	return ApiInvokeNotificationPublishersActionWithOptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1026,7 +1026,7 @@ func (a *NotificationPublishersApiService) InvokeNotificationPublishersActionWit
 // Execute executes the request
 //
 //	@return ActionResult
-func (a *NotificationPublishersApiService) InvokeNotificationPublishersActionWithOptionsExecute(r ApiInvokeNotificationPublishersActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
+func (a *NotificationPublishersAPIService) InvokeNotificationPublishersActionWithOptionsExecute(r ApiInvokeNotificationPublishersActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -1034,7 +1034,7 @@ func (a *NotificationPublishersApiService) InvokeNotificationPublishersActionWit
 		localVarReturnValue *ActionResult
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersApiService.InvokeNotificationPublishersActionWithOptions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersAPIService.InvokeNotificationPublishersActionWithOptions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1115,7 +1115,7 @@ func (a *NotificationPublishersApiService) InvokeNotificationPublishersActionWit
 
 type ApiUpdateNotificationPublisherRequest struct {
 	ctx        context.Context
-	ApiService *NotificationPublishersApiService
+	ApiService *NotificationPublishersAPIService
 	id         string
 	body       *NotificationPublisher
 }
@@ -1137,7 +1137,7 @@ UpdateNotificationPublisher Update a notification publisher plugin instance.
 	@param id ID of a notification publisher plugin instance.
 	@return ApiUpdateNotificationPublisherRequest
 */
-func (a *NotificationPublishersApiService) UpdateNotificationPublisher(ctx context.Context, id string) ApiUpdateNotificationPublisherRequest {
+func (a *NotificationPublishersAPIService) UpdateNotificationPublisher(ctx context.Context, id string) ApiUpdateNotificationPublisherRequest {
 	return ApiUpdateNotificationPublisherRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1148,7 +1148,7 @@ func (a *NotificationPublishersApiService) UpdateNotificationPublisher(ctx conte
 // Execute executes the request
 //
 //	@return NotificationPublisher
-func (a *NotificationPublishersApiService) UpdateNotificationPublisherExecute(r ApiUpdateNotificationPublisherRequest) (*NotificationPublisher, *http.Response, error) {
+func (a *NotificationPublishersAPIService) UpdateNotificationPublisherExecute(r ApiUpdateNotificationPublisherRequest) (*NotificationPublisher, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1156,7 +1156,7 @@ func (a *NotificationPublishersApiService) UpdateNotificationPublisherExecute(r 
 		localVarReturnValue *NotificationPublisher
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersApiService.UpdateNotificationPublisher")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersAPIService.UpdateNotificationPublisher")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1250,7 +1250,7 @@ func (a *NotificationPublishersApiService) UpdateNotificationPublisherExecute(r 
 
 type ApiUpdateNotificationPublishersSettingsRequest struct {
 	ctx        context.Context
-	ApiService *NotificationPublishersApiService
+	ApiService *NotificationPublishersAPIService
 	body       *NotificationPublishersSettings
 }
 
@@ -1269,7 +1269,7 @@ UpdateNotificationPublishersSettings Update general notification publisher setti
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateNotificationPublishersSettingsRequest
 */
-func (a *NotificationPublishersApiService) UpdateNotificationPublishersSettings(ctx context.Context) ApiUpdateNotificationPublishersSettingsRequest {
+func (a *NotificationPublishersAPIService) UpdateNotificationPublishersSettings(ctx context.Context) ApiUpdateNotificationPublishersSettingsRequest {
 	return ApiUpdateNotificationPublishersSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1279,7 +1279,7 @@ func (a *NotificationPublishersApiService) UpdateNotificationPublishersSettings(
 // Execute executes the request
 //
 //	@return NotificationPublishersSettings
-func (a *NotificationPublishersApiService) UpdateNotificationPublishersSettingsExecute(r ApiUpdateNotificationPublishersSettingsRequest) (*NotificationPublishersSettings, *http.Response, error) {
+func (a *NotificationPublishersAPIService) UpdateNotificationPublishersSettingsExecute(r ApiUpdateNotificationPublishersSettingsRequest) (*NotificationPublishersSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1287,7 +1287,7 @@ func (a *NotificationPublishersApiService) UpdateNotificationPublishersSettingsE
 		localVarReturnValue *NotificationPublishersSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersApiService.UpdateNotificationPublishersSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationPublishersAPIService.UpdateNotificationPublishersSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

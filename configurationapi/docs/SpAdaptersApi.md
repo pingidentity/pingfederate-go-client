@@ -1,21 +1,21 @@
-# \SpAdaptersApi
+# \SpAdaptersAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateSpAdapter**](SpAdaptersApi.md#CreateSpAdapter) | **Post** /sp/adapters | Create a new SP adapter instance.
-[**DeleteSpAdapter**](SpAdaptersApi.md#DeleteSpAdapter) | **Delete** /sp/adapters/{id} | Delete an SP adapter instance.
-[**GetSpAdapter**](SpAdaptersApi.md#GetSpAdapter) | **Get** /sp/adapters/{id} | Find an SP adapter instance by ID.
-[**GetSpAdapterDescriptors**](SpAdaptersApi.md#GetSpAdapterDescriptors) | **Get** /sp/adapters/descriptors | Get the list of available SP adapter descriptors.
-[**GetSpAdapterDescriptorsById**](SpAdaptersApi.md#GetSpAdapterDescriptorsById) | **Get** /sp/adapters/descriptors/{id} | Get the description of an SP adapter plugin by ID.
-[**GetSpAdapterUrlMappings**](SpAdaptersApi.md#GetSpAdapterUrlMappings) | **Get** /sp/adapters/urlMappings | (Deprecated) List the mappings between URLs and adapter instances.
-[**GetSpAdapters**](SpAdaptersApi.md#GetSpAdapters) | **Get** /sp/adapters | Get the list of configured SP adapter instances.
-[**GetSpAdaptersActionById**](SpAdaptersApi.md#GetSpAdaptersActionById) | **Get** /sp/adapters/{id}/actions/{actionId} | Find an SP adapter instance&#39;s action by ID.
-[**GetSpAdaptersActions**](SpAdaptersApi.md#GetSpAdaptersActions) | **Get** /sp/adapters/{id}/actions | List the actions for an SP adapter instance.
-[**InvokeSpAdapterActionWithOptions**](SpAdaptersApi.md#InvokeSpAdapterActionWithOptions) | **Post** /sp/adapters/{id}/actions/{actionId}/invokeAction | Invokes an action for an SP adapter instance.
-[**UpdateSpAdapter**](SpAdaptersApi.md#UpdateSpAdapter) | **Put** /sp/adapters/{id} | Update an SP adapter instance.
-[**UpdateSpAdapterUrlMappings**](SpAdaptersApi.md#UpdateSpAdapterUrlMappings) | **Put** /sp/adapters/urlMappings | (Deprecated) Update the mappings between URLs and adapters instances.
+[**CreateSpAdapter**](SpAdaptersAPI.md#CreateSpAdapter) | **Post** /sp/adapters | Create a new SP adapter instance.
+[**DeleteSpAdapter**](SpAdaptersAPI.md#DeleteSpAdapter) | **Delete** /sp/adapters/{id} | Delete an SP adapter instance.
+[**GetSpAdapter**](SpAdaptersAPI.md#GetSpAdapter) | **Get** /sp/adapters/{id} | Find an SP adapter instance by ID.
+[**GetSpAdapterDescriptors**](SpAdaptersAPI.md#GetSpAdapterDescriptors) | **Get** /sp/adapters/descriptors | Get the list of available SP adapter descriptors.
+[**GetSpAdapterDescriptorsById**](SpAdaptersAPI.md#GetSpAdapterDescriptorsById) | **Get** /sp/adapters/descriptors/{id} | Get the description of an SP adapter plugin by ID.
+[**GetSpAdapterUrlMappings**](SpAdaptersAPI.md#GetSpAdapterUrlMappings) | **Get** /sp/adapters/urlMappings | (Deprecated) List the mappings between URLs and adapter instances.
+[**GetSpAdapters**](SpAdaptersAPI.md#GetSpAdapters) | **Get** /sp/adapters | Get the list of configured SP adapter instances.
+[**GetSpAdaptersActionById**](SpAdaptersAPI.md#GetSpAdaptersActionById) | **Get** /sp/adapters/{id}/actions/{actionId} | Find an SP adapter instance&#39;s action by ID.
+[**GetSpAdaptersActions**](SpAdaptersAPI.md#GetSpAdaptersActions) | **Get** /sp/adapters/{id}/actions | List the actions for an SP adapter instance.
+[**InvokeSpAdapterActionWithOptions**](SpAdaptersAPI.md#InvokeSpAdapterActionWithOptions) | **Post** /sp/adapters/{id}/actions/{actionId}/invokeAction | Invokes an action for an SP adapter instance.
+[**UpdateSpAdapter**](SpAdaptersAPI.md#UpdateSpAdapter) | **Put** /sp/adapters/{id} | Update an SP adapter instance.
+[**UpdateSpAdapterUrlMappings**](SpAdaptersAPI.md#UpdateSpAdapterUrlMappings) | **Put** /sp/adapters/urlMappings | (Deprecated) Update the mappings between URLs and adapters instances.
 
 
 
@@ -44,13 +44,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAdaptersApi.CreateSpAdapter(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.SpAdaptersAPI.CreateSpAdapter(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersApi.CreateSpAdapter``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.CreateSpAdapter``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateSpAdapter`: SpAdapter
-    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersApi.CreateSpAdapter`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.CreateSpAdapter`: %v\n", resp)
 }
 ```
 
@@ -110,9 +110,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SpAdaptersApi.DeleteSpAdapter(context.Background(), id).Execute()
+    r, err := apiClient.SpAdaptersAPI.DeleteSpAdapter(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersApi.DeleteSpAdapter``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.DeleteSpAdapter``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -178,13 +178,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAdaptersApi.GetSpAdapter(context.Background(), id).Execute()
+    resp, r, err := apiClient.SpAdaptersAPI.GetSpAdapter(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersApi.GetSpAdapter``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.GetSpAdapter``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSpAdapter`: SpAdapter
-    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersApi.GetSpAdapter`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.GetSpAdapter`: %v\n", resp)
 }
 ```
 
@@ -245,13 +245,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAdaptersApi.GetSpAdapterDescriptors(context.Background()).Execute()
+    resp, r, err := apiClient.SpAdaptersAPI.GetSpAdapterDescriptors(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersApi.GetSpAdapterDescriptors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.GetSpAdapterDescriptors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSpAdapterDescriptors`: SpAdapterDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersApi.GetSpAdapterDescriptors`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.GetSpAdapterDescriptors`: %v\n", resp)
 }
 ```
 
@@ -307,13 +307,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAdaptersApi.GetSpAdapterDescriptorsById(context.Background(), id).Execute()
+    resp, r, err := apiClient.SpAdaptersAPI.GetSpAdapterDescriptorsById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersApi.GetSpAdapterDescriptorsById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.GetSpAdapterDescriptorsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSpAdapterDescriptorsById`: SpAdapterDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersApi.GetSpAdapterDescriptorsById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.GetSpAdapterDescriptorsById`: %v\n", resp)
 }
 ```
 
@@ -374,13 +374,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAdaptersApi.GetSpAdapterUrlMappings(context.Background()).Execute()
+    resp, r, err := apiClient.SpAdaptersAPI.GetSpAdapterUrlMappings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersApi.GetSpAdapterUrlMappings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.GetSpAdapterUrlMappings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSpAdapterUrlMappings`: SpAdapterUrlMappings
-    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersApi.GetSpAdapterUrlMappings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.GetSpAdapterUrlMappings`: %v\n", resp)
 }
 ```
 
@@ -436,13 +436,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAdaptersApi.GetSpAdapters(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
+    resp, r, err := apiClient.SpAdaptersAPI.GetSpAdapters(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersApi.GetSpAdapters``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.GetSpAdapters``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSpAdapters`: SpAdapters
-    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersApi.GetSpAdapters`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.GetSpAdapters`: %v\n", resp)
 }
 ```
 
@@ -505,13 +505,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAdaptersApi.GetSpAdaptersActionById(context.Background(), id, actionId).Execute()
+    resp, r, err := apiClient.SpAdaptersAPI.GetSpAdaptersActionById(context.Background(), id, actionId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersApi.GetSpAdaptersActionById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.GetSpAdaptersActionById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSpAdaptersActionById`: Action
-    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersApi.GetSpAdaptersActionById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.GetSpAdaptersActionById`: %v\n", resp)
 }
 ```
 
@@ -577,13 +577,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAdaptersApi.GetSpAdaptersActions(context.Background(), id).Execute()
+    resp, r, err := apiClient.SpAdaptersAPI.GetSpAdaptersActions(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersApi.GetSpAdaptersActions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.GetSpAdaptersActions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSpAdaptersActions`: Actions
-    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersApi.GetSpAdaptersActions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.GetSpAdaptersActions`: %v\n", resp)
 }
 ```
 
@@ -649,13 +649,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAdaptersApi.InvokeSpAdapterActionWithOptions(context.Background(), id, actionId).Body(body).Execute()
+    resp, r, err := apiClient.SpAdaptersAPI.InvokeSpAdapterActionWithOptions(context.Background(), id, actionId).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersApi.InvokeSpAdapterActionWithOptions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.InvokeSpAdapterActionWithOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `InvokeSpAdapterActionWithOptions`: ActionResult
-    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersApi.InvokeSpAdapterActionWithOptions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.InvokeSpAdapterActionWithOptions`: %v\n", resp)
 }
 ```
 
@@ -723,13 +723,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAdaptersApi.UpdateSpAdapter(context.Background(), id).Body(body).Execute()
+    resp, r, err := apiClient.SpAdaptersAPI.UpdateSpAdapter(context.Background(), id).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersApi.UpdateSpAdapter``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.UpdateSpAdapter``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateSpAdapter`: SpAdapter
-    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersApi.UpdateSpAdapter`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.UpdateSpAdapter`: %v\n", resp)
 }
 ```
 
@@ -792,13 +792,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAdaptersApi.UpdateSpAdapterUrlMappings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.SpAdaptersAPI.UpdateSpAdapterUrlMappings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersApi.UpdateSpAdapterUrlMappings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.UpdateSpAdapterUrlMappings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateSpAdapterUrlMappings`: SpAdapterUrlMappings
-    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersApi.UpdateSpAdapterUrlMappings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.UpdateSpAdapterUrlMappings`: %v\n", resp)
 }
 ```
 

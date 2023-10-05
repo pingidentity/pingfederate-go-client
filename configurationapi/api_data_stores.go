@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// DataStoresApiService DataStoresApi service
-type DataStoresApiService service
+// DataStoresAPIService DataStoresAPI service
+type DataStoresAPIService service
 
 type ApiCreateDataStoreRequest struct {
 	ctx                       context.Context
-	ApiService                *DataStoresApiService
+	ApiService                *DataStoresAPIService
 	body                      *DataStore
 	xBypassExternalValidation *bool
 }
@@ -53,7 +53,7 @@ Create a new data store. If the data store is not properly configured, a 422 sta
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateDataStoreRequest
 */
-func (a *DataStoresApiService) CreateDataStore(ctx context.Context) ApiCreateDataStoreRequest {
+func (a *DataStoresAPIService) CreateDataStore(ctx context.Context) ApiCreateDataStoreRequest {
 	return ApiCreateDataStoreRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -63,7 +63,7 @@ func (a *DataStoresApiService) CreateDataStore(ctx context.Context) ApiCreateDat
 // Execute executes the request
 //
 //	@return DataStore
-func (a *DataStoresApiService) CreateDataStoreExecute(r ApiCreateDataStoreRequest) (*DataStore, *http.Response, error) {
+func (a *DataStoresAPIService) CreateDataStoreExecute(r ApiCreateDataStoreRequest) (*DataStore, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -71,7 +71,7 @@ func (a *DataStoresApiService) CreateDataStoreExecute(r ApiCreateDataStoreReques
 		localVarReturnValue *DataStore
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresApiService.CreateDataStore")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresAPIService.CreateDataStore")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -156,7 +156,7 @@ func (a *DataStoresApiService) CreateDataStoreExecute(r ApiCreateDataStoreReques
 
 type ApiDeleteDataStoreRequest struct {
 	ctx        context.Context
-	ApiService *DataStoresApiService
+	ApiService *DataStoresAPIService
 	id         string
 }
 
@@ -173,7 +173,7 @@ Delete a data store with the specified ID. A 404 status code is returned for non
 	@param id ID of data store instance.
 	@return ApiDeleteDataStoreRequest
 */
-func (a *DataStoresApiService) DeleteDataStore(ctx context.Context, id string) ApiDeleteDataStoreRequest {
+func (a *DataStoresAPIService) DeleteDataStore(ctx context.Context, id string) ApiDeleteDataStoreRequest {
 	return ApiDeleteDataStoreRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -182,14 +182,14 @@ func (a *DataStoresApiService) DeleteDataStore(ctx context.Context, id string) A
 }
 
 // Execute executes the request
-func (a *DataStoresApiService) DeleteDataStoreExecute(r ApiDeleteDataStoreRequest) (*http.Response, error) {
+func (a *DataStoresAPIService) DeleteDataStoreExecute(r ApiDeleteDataStoreRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresApiService.DeleteDataStore")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresAPIService.DeleteDataStore")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -269,7 +269,7 @@ func (a *DataStoresApiService) DeleteDataStoreExecute(r ApiDeleteDataStoreReques
 
 type ApiGetCustomDataStoreDescriptorRequest struct {
 	ctx        context.Context
-	ApiService *DataStoresApiService
+	ApiService *DataStoresAPIService
 	id         string
 }
 
@@ -286,7 +286,7 @@ Get the description of a custom data store plugin by ID. A 404 status code is re
 	@param id ID of custom data store descriptor to fetch.
 	@return ApiGetCustomDataStoreDescriptorRequest
 */
-func (a *DataStoresApiService) GetCustomDataStoreDescriptor(ctx context.Context, id string) ApiGetCustomDataStoreDescriptorRequest {
+func (a *DataStoresAPIService) GetCustomDataStoreDescriptor(ctx context.Context, id string) ApiGetCustomDataStoreDescriptorRequest {
 	return ApiGetCustomDataStoreDescriptorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -297,7 +297,7 @@ func (a *DataStoresApiService) GetCustomDataStoreDescriptor(ctx context.Context,
 // Execute executes the request
 //
 //	@return CustomDataStoreDescriptor
-func (a *DataStoresApiService) GetCustomDataStoreDescriptorExecute(r ApiGetCustomDataStoreDescriptorRequest) (*CustomDataStoreDescriptor, *http.Response, error) {
+func (a *DataStoresAPIService) GetCustomDataStoreDescriptorExecute(r ApiGetCustomDataStoreDescriptorRequest) (*CustomDataStoreDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -305,7 +305,7 @@ func (a *DataStoresApiService) GetCustomDataStoreDescriptorExecute(r ApiGetCusto
 		localVarReturnValue *CustomDataStoreDescriptor
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresApiService.GetCustomDataStoreDescriptor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresAPIService.GetCustomDataStoreDescriptor")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -383,7 +383,7 @@ func (a *DataStoresApiService) GetCustomDataStoreDescriptorExecute(r ApiGetCusto
 
 type ApiGetCustomDataStoreDescriptorsRequest struct {
 	ctx        context.Context
-	ApiService *DataStoresApiService
+	ApiService *DataStoresAPIService
 }
 
 func (r ApiGetCustomDataStoreDescriptorsRequest) Execute() (*CustomDataStoreDescriptors, *http.Response, error) {
@@ -396,7 +396,7 @@ GetCustomDataStoreDescriptors Get the list of available custom data store descri
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCustomDataStoreDescriptorsRequest
 */
-func (a *DataStoresApiService) GetCustomDataStoreDescriptors(ctx context.Context) ApiGetCustomDataStoreDescriptorsRequest {
+func (a *DataStoresAPIService) GetCustomDataStoreDescriptors(ctx context.Context) ApiGetCustomDataStoreDescriptorsRequest {
 	return ApiGetCustomDataStoreDescriptorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -406,7 +406,7 @@ func (a *DataStoresApiService) GetCustomDataStoreDescriptors(ctx context.Context
 // Execute executes the request
 //
 //	@return CustomDataStoreDescriptors
-func (a *DataStoresApiService) GetCustomDataStoreDescriptorsExecute(r ApiGetCustomDataStoreDescriptorsRequest) (*CustomDataStoreDescriptors, *http.Response, error) {
+func (a *DataStoresAPIService) GetCustomDataStoreDescriptorsExecute(r ApiGetCustomDataStoreDescriptorsRequest) (*CustomDataStoreDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -414,7 +414,7 @@ func (a *DataStoresApiService) GetCustomDataStoreDescriptorsExecute(r ApiGetCust
 		localVarReturnValue *CustomDataStoreDescriptors
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresApiService.GetCustomDataStoreDescriptors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresAPIService.GetCustomDataStoreDescriptors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -481,7 +481,7 @@ func (a *DataStoresApiService) GetCustomDataStoreDescriptorsExecute(r ApiGetCust
 
 type ApiGetDataStoreRequest struct {
 	ctx        context.Context
-	ApiService *DataStoresApiService
+	ApiService *DataStoresAPIService
 	id         string
 }
 
@@ -498,7 +498,7 @@ Get a data store with the specified ID. A 404 status code is returned for nonexi
 	@param id ID of data store instance.
 	@return ApiGetDataStoreRequest
 */
-func (a *DataStoresApiService) GetDataStore(ctx context.Context, id string) ApiGetDataStoreRequest {
+func (a *DataStoresAPIService) GetDataStore(ctx context.Context, id string) ApiGetDataStoreRequest {
 	return ApiGetDataStoreRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -509,7 +509,7 @@ func (a *DataStoresApiService) GetDataStore(ctx context.Context, id string) ApiG
 // Execute executes the request
 //
 //	@return DataStore
-func (a *DataStoresApiService) GetDataStoreExecute(r ApiGetDataStoreRequest) (*DataStore, *http.Response, error) {
+func (a *DataStoresAPIService) GetDataStoreExecute(r ApiGetDataStoreRequest) (*DataStore, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -517,7 +517,7 @@ func (a *DataStoresApiService) GetDataStoreExecute(r ApiGetDataStoreRequest) (*D
 		localVarReturnValue *DataStore
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresApiService.GetDataStore")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresAPIService.GetDataStore")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -595,7 +595,7 @@ func (a *DataStoresApiService) GetDataStoreExecute(r ApiGetDataStoreRequest) (*D
 
 type ApiGetDataStoresRequest struct {
 	ctx        context.Context
-	ApiService *DataStoresApiService
+	ApiService *DataStoresAPIService
 }
 
 func (r ApiGetDataStoresRequest) Execute() (*DataStores, *http.Response, error) {
@@ -608,7 +608,7 @@ GetDataStores Get list of all data stores.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetDataStoresRequest
 */
-func (a *DataStoresApiService) GetDataStores(ctx context.Context) ApiGetDataStoresRequest {
+func (a *DataStoresAPIService) GetDataStores(ctx context.Context) ApiGetDataStoresRequest {
 	return ApiGetDataStoresRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -618,7 +618,7 @@ func (a *DataStoresApiService) GetDataStores(ctx context.Context) ApiGetDataStor
 // Execute executes the request
 //
 //	@return DataStores
-func (a *DataStoresApiService) GetDataStoresExecute(r ApiGetDataStoresRequest) (*DataStores, *http.Response, error) {
+func (a *DataStoresAPIService) GetDataStoresExecute(r ApiGetDataStoresRequest) (*DataStores, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -626,7 +626,7 @@ func (a *DataStoresApiService) GetDataStoresExecute(r ApiGetDataStoresRequest) (
 		localVarReturnValue *DataStores
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresApiService.GetDataStores")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresAPIService.GetDataStores")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -693,7 +693,7 @@ func (a *DataStoresApiService) GetDataStoresExecute(r ApiGetDataStoresRequest) (
 
 type ApiGetDataStoresActionByIdRequest struct {
 	ctx        context.Context
-	ApiService *DataStoresApiService
+	ApiService *DataStoresAPIService
 	id         string
 	actionId   string
 }
@@ -712,7 +712,7 @@ Find a data store instance's action by ID. A 404 status code is returned for non
 	@param actionId ID of the action.
 	@return ApiGetDataStoresActionByIdRequest
 */
-func (a *DataStoresApiService) GetDataStoresActionById(ctx context.Context, id string, actionId string) ApiGetDataStoresActionByIdRequest {
+func (a *DataStoresAPIService) GetDataStoresActionById(ctx context.Context, id string, actionId string) ApiGetDataStoresActionByIdRequest {
 	return ApiGetDataStoresActionByIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -724,7 +724,7 @@ func (a *DataStoresApiService) GetDataStoresActionById(ctx context.Context, id s
 // Execute executes the request
 //
 //	@return Action
-func (a *DataStoresApiService) GetDataStoresActionByIdExecute(r ApiGetDataStoresActionByIdRequest) (*Action, *http.Response, error) {
+func (a *DataStoresAPIService) GetDataStoresActionByIdExecute(r ApiGetDataStoresActionByIdRequest) (*Action, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -732,7 +732,7 @@ func (a *DataStoresApiService) GetDataStoresActionByIdExecute(r ApiGetDataStores
 		localVarReturnValue *Action
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresApiService.GetDataStoresActionById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresAPIService.GetDataStoresActionById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -811,7 +811,7 @@ func (a *DataStoresApiService) GetDataStoresActionByIdExecute(r ApiGetDataStores
 
 type ApiGetDataStoresActionsRequest struct {
 	ctx        context.Context
-	ApiService *DataStoresApiService
+	ApiService *DataStoresAPIService
 	id         string
 }
 
@@ -828,7 +828,7 @@ List the actions for a data store instance. A 404 status code is returned for no
 	@param id ID of data store to which these actions belong to.
 	@return ApiGetDataStoresActionsRequest
 */
-func (a *DataStoresApiService) GetDataStoresActions(ctx context.Context, id string) ApiGetDataStoresActionsRequest {
+func (a *DataStoresAPIService) GetDataStoresActions(ctx context.Context, id string) ApiGetDataStoresActionsRequest {
 	return ApiGetDataStoresActionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -839,7 +839,7 @@ func (a *DataStoresApiService) GetDataStoresActions(ctx context.Context, id stri
 // Execute executes the request
 //
 //	@return Actions
-func (a *DataStoresApiService) GetDataStoresActionsExecute(r ApiGetDataStoresActionsRequest) (*Actions, *http.Response, error) {
+func (a *DataStoresAPIService) GetDataStoresActionsExecute(r ApiGetDataStoresActionsRequest) (*Actions, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -847,7 +847,7 @@ func (a *DataStoresApiService) GetDataStoresActionsExecute(r ApiGetDataStoresAct
 		localVarReturnValue *Actions
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresApiService.GetDataStoresActions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresAPIService.GetDataStoresActions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -925,7 +925,7 @@ func (a *DataStoresApiService) GetDataStoresActionsExecute(r ApiGetDataStoresAct
 
 type ApiInvokeActionWithOptionsRequest struct {
 	ctx        context.Context
-	ApiService *DataStoresApiService
+	ApiService *DataStoresAPIService
 	id         string
 	actionId   string
 	body       *ActionOptions
@@ -951,7 +951,7 @@ Invokes an action for a data source instance. A 404 status code is returned for 
 	@param actionId ID of the action.
 	@return ApiInvokeActionWithOptionsRequest
 */
-func (a *DataStoresApiService) InvokeActionWithOptions(ctx context.Context, id string, actionId string) ApiInvokeActionWithOptionsRequest {
+func (a *DataStoresAPIService) InvokeActionWithOptions(ctx context.Context, id string, actionId string) ApiInvokeActionWithOptionsRequest {
 	return ApiInvokeActionWithOptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -963,7 +963,7 @@ func (a *DataStoresApiService) InvokeActionWithOptions(ctx context.Context, id s
 // Execute executes the request
 //
 //	@return ActionResult
-func (a *DataStoresApiService) InvokeActionWithOptionsExecute(r ApiInvokeActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
+func (a *DataStoresAPIService) InvokeActionWithOptionsExecute(r ApiInvokeActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -971,7 +971,7 @@ func (a *DataStoresApiService) InvokeActionWithOptionsExecute(r ApiInvokeActionW
 		localVarReturnValue *ActionResult
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresApiService.InvokeActionWithOptions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresAPIService.InvokeActionWithOptions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1052,7 +1052,7 @@ func (a *DataStoresApiService) InvokeActionWithOptionsExecute(r ApiInvokeActionW
 
 type ApiUpdateDataStoreRequest struct {
 	ctx                       context.Context
-	ApiService                *DataStoresApiService
+	ApiService                *DataStoresAPIService
 	id                        string
 	body                      *DataStore
 	xBypassExternalValidation *bool
@@ -1083,7 +1083,7 @@ Update a data store with the matching ID. If the data store is not properly conf
 	@param id ID of data store instance.
 	@return ApiUpdateDataStoreRequest
 */
-func (a *DataStoresApiService) UpdateDataStore(ctx context.Context, id string) ApiUpdateDataStoreRequest {
+func (a *DataStoresAPIService) UpdateDataStore(ctx context.Context, id string) ApiUpdateDataStoreRequest {
 	return ApiUpdateDataStoreRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1094,7 +1094,7 @@ func (a *DataStoresApiService) UpdateDataStore(ctx context.Context, id string) A
 // Execute executes the request
 //
 //	@return DataStore
-func (a *DataStoresApiService) UpdateDataStoreExecute(r ApiUpdateDataStoreRequest) (*DataStore, *http.Response, error) {
+func (a *DataStoresAPIService) UpdateDataStoreExecute(r ApiUpdateDataStoreRequest) (*DataStore, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1102,7 +1102,7 @@ func (a *DataStoresApiService) UpdateDataStoreExecute(r ApiUpdateDataStoreReques
 		localVarReturnValue *DataStore
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresApiService.UpdateDataStore")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresAPIService.UpdateDataStore")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

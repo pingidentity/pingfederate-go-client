@@ -1,19 +1,19 @@
-# \DataStoresApi
+# \DataStoresAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateDataStore**](DataStoresApi.md#CreateDataStore) | **Post** /dataStores | Create a new data store.
-[**DeleteDataStore**](DataStoresApi.md#DeleteDataStore) | **Delete** /dataStores/{id} | Delete a data store.
-[**GetCustomDataStoreDescriptor**](DataStoresApi.md#GetCustomDataStoreDescriptor) | **Get** /dataStores/descriptors/{id} | Get the description of a custom data store plugin by ID.
-[**GetCustomDataStoreDescriptors**](DataStoresApi.md#GetCustomDataStoreDescriptors) | **Get** /dataStores/descriptors | Get the list of available custom data store descriptors.
-[**GetDataStore**](DataStoresApi.md#GetDataStore) | **Get** /dataStores/{id} | Find data store by ID.
-[**GetDataStores**](DataStoresApi.md#GetDataStores) | **Get** /dataStores | Get list of all data stores.
-[**GetDataStoresActionById**](DataStoresApi.md#GetDataStoresActionById) | **Get** /dataStores/{id}/actions/{actionId} | Find a data store instance&#39;s action by ID.
-[**GetDataStoresActions**](DataStoresApi.md#GetDataStoresActions) | **Get** /dataStores/{id}/actions | List the actions for a data store instance.
-[**InvokeActionWithOptions**](DataStoresApi.md#InvokeActionWithOptions) | **Post** /dataStores/{id}/actions/{actionId}/invokeAction | Invokes an action for a data source instance.
-[**UpdateDataStore**](DataStoresApi.md#UpdateDataStore) | **Put** /dataStores/{id} | Update a data store.
+[**CreateDataStore**](DataStoresAPI.md#CreateDataStore) | **Post** /dataStores | Create a new data store.
+[**DeleteDataStore**](DataStoresAPI.md#DeleteDataStore) | **Delete** /dataStores/{id} | Delete a data store.
+[**GetCustomDataStoreDescriptor**](DataStoresAPI.md#GetCustomDataStoreDescriptor) | **Get** /dataStores/descriptors/{id} | Get the description of a custom data store plugin by ID.
+[**GetCustomDataStoreDescriptors**](DataStoresAPI.md#GetCustomDataStoreDescriptors) | **Get** /dataStores/descriptors | Get the list of available custom data store descriptors.
+[**GetDataStore**](DataStoresAPI.md#GetDataStore) | **Get** /dataStores/{id} | Find data store by ID.
+[**GetDataStores**](DataStoresAPI.md#GetDataStores) | **Get** /dataStores | Get list of all data stores.
+[**GetDataStoresActionById**](DataStoresAPI.md#GetDataStoresActionById) | **Get** /dataStores/{id}/actions/{actionId} | Find a data store instance&#39;s action by ID.
+[**GetDataStoresActions**](DataStoresAPI.md#GetDataStoresActions) | **Get** /dataStores/{id}/actions | List the actions for a data store instance.
+[**InvokeActionWithOptions**](DataStoresAPI.md#InvokeActionWithOptions) | **Post** /dataStores/{id}/actions/{actionId}/invokeAction | Invokes an action for a data source instance.
+[**UpdateDataStore**](DataStoresAPI.md#UpdateDataStore) | **Put** /dataStores/{id} | Update a data store.
 
 
 
@@ -43,13 +43,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DataStoresApi.CreateDataStore(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.DataStoresAPI.CreateDataStore(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresApi.CreateDataStore``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.CreateDataStore``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateDataStore`: DataStore
-    fmt.Fprintf(os.Stdout, "Response from `DataStoresApi.CreateDataStore`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.CreateDataStore`: %v\n", resp)
 }
 ```
 
@@ -110,9 +110,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DataStoresApi.DeleteDataStore(context.Background(), id).Execute()
+    r, err := apiClient.DataStoresAPI.DeleteDataStore(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresApi.DeleteDataStore``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.DeleteDataStore``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -178,13 +178,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DataStoresApi.GetCustomDataStoreDescriptor(context.Background(), id).Execute()
+    resp, r, err := apiClient.DataStoresAPI.GetCustomDataStoreDescriptor(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresApi.GetCustomDataStoreDescriptor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.GetCustomDataStoreDescriptor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetCustomDataStoreDescriptor`: CustomDataStoreDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `DataStoresApi.GetCustomDataStoreDescriptor`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.GetCustomDataStoreDescriptor`: %v\n", resp)
 }
 ```
 
@@ -245,13 +245,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DataStoresApi.GetCustomDataStoreDescriptors(context.Background()).Execute()
+    resp, r, err := apiClient.DataStoresAPI.GetCustomDataStoreDescriptors(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresApi.GetCustomDataStoreDescriptors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.GetCustomDataStoreDescriptors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetCustomDataStoreDescriptors`: CustomDataStoreDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `DataStoresApi.GetCustomDataStoreDescriptors`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.GetCustomDataStoreDescriptors`: %v\n", resp)
 }
 ```
 
@@ -307,13 +307,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DataStoresApi.GetDataStore(context.Background(), id).Execute()
+    resp, r, err := apiClient.DataStoresAPI.GetDataStore(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresApi.GetDataStore``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.GetDataStore``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetDataStore`: DataStore
-    fmt.Fprintf(os.Stdout, "Response from `DataStoresApi.GetDataStore`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.GetDataStore`: %v\n", resp)
 }
 ```
 
@@ -374,13 +374,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DataStoresApi.GetDataStores(context.Background()).Execute()
+    resp, r, err := apiClient.DataStoresAPI.GetDataStores(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresApi.GetDataStores``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.GetDataStores``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetDataStores`: DataStores
-    fmt.Fprintf(os.Stdout, "Response from `DataStoresApi.GetDataStores`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.GetDataStores`: %v\n", resp)
 }
 ```
 
@@ -437,13 +437,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DataStoresApi.GetDataStoresActionById(context.Background(), id, actionId).Execute()
+    resp, r, err := apiClient.DataStoresAPI.GetDataStoresActionById(context.Background(), id, actionId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresApi.GetDataStoresActionById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.GetDataStoresActionById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetDataStoresActionById`: Action
-    fmt.Fprintf(os.Stdout, "Response from `DataStoresApi.GetDataStoresActionById`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.GetDataStoresActionById`: %v\n", resp)
 }
 ```
 
@@ -509,13 +509,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DataStoresApi.GetDataStoresActions(context.Background(), id).Execute()
+    resp, r, err := apiClient.DataStoresAPI.GetDataStoresActions(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresApi.GetDataStoresActions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.GetDataStoresActions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetDataStoresActions`: Actions
-    fmt.Fprintf(os.Stdout, "Response from `DataStoresApi.GetDataStoresActions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.GetDataStoresActions`: %v\n", resp)
 }
 ```
 
@@ -581,13 +581,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DataStoresApi.InvokeActionWithOptions(context.Background(), id, actionId).Body(body).Execute()
+    resp, r, err := apiClient.DataStoresAPI.InvokeActionWithOptions(context.Background(), id, actionId).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresApi.InvokeActionWithOptions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.InvokeActionWithOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `InvokeActionWithOptions`: ActionResult
-    fmt.Fprintf(os.Stdout, "Response from `DataStoresApi.InvokeActionWithOptions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.InvokeActionWithOptions`: %v\n", resp)
 }
 ```
 
@@ -656,13 +656,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DataStoresApi.UpdateDataStore(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+    resp, r, err := apiClient.DataStoresAPI.UpdateDataStore(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresApi.UpdateDataStore``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.UpdateDataStore``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateDataStore`: DataStore
-    fmt.Fprintf(os.Stdout, "Response from `DataStoresApi.UpdateDataStore`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.UpdateDataStore`: %v\n", resp)
 }
 ```
 

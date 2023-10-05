@@ -1,11 +1,11 @@
-# \ServiceAuthenticationApi
+# \ServiceAuthenticationAPI
 
 All URIs are relative to *https://localhost/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetServiceAuthentication**](ServiceAuthenticationApi.md#GetServiceAuthentication) | **Get** /serviceAuthentication | Get the service authentication settings.
-[**UpdateServiceAuthentication**](ServiceAuthenticationApi.md#UpdateServiceAuthentication) | **Put** /serviceAuthentication | Update the service authentication settings.
+[**GetServiceAuthentication**](ServiceAuthenticationAPI.md#GetServiceAuthentication) | **Get** /serviceAuthentication | Get the service authentication settings.
+[**UpdateServiceAuthentication**](ServiceAuthenticationAPI.md#UpdateServiceAuthentication) | **Put** /serviceAuthentication | Update the service authentication settings.
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServiceAuthenticationApi.GetServiceAuthentication(context.Background()).Execute()
+    resp, r, err := apiClient.ServiceAuthenticationAPI.GetServiceAuthentication(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServiceAuthenticationApi.GetServiceAuthentication``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServiceAuthenticationAPI.GetServiceAuthentication``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetServiceAuthentication`: ServiceAuthentication
-    fmt.Fprintf(os.Stdout, "Response from `ServiceAuthenticationApi.GetServiceAuthentication`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServiceAuthenticationAPI.GetServiceAuthentication`: %v\n", resp)
 }
 ```
 
@@ -93,13 +93,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServiceAuthenticationApi.UpdateServiceAuthentication(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.ServiceAuthenticationAPI.UpdateServiceAuthentication(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServiceAuthenticationApi.UpdateServiceAuthentication``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServiceAuthenticationAPI.UpdateServiceAuthentication``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateServiceAuthentication`: ServiceAuthentication
-    fmt.Fprintf(os.Stdout, "Response from `ServiceAuthenticationApi.UpdateServiceAuthentication`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServiceAuthenticationAPI.UpdateServiceAuthentication`: %v\n", resp)
 }
 ```
 
