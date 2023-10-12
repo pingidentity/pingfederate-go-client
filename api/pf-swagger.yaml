@@ -30097,7 +30097,7 @@ components:
         attributeSources:
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
           type: array
         attributeContractFulfillment:
           additionalProperties:
