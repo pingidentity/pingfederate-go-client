@@ -20,7 +20,7 @@ var _ MappedNullable = &ApcToSpAdapterMapping{}
 // ApcToSpAdapterMapping The Authentication Policy Contract (APC) to SP Adapter Mapping.
 type ApcToSpAdapterMapping struct {
 	// A list of configured data stores to look up attributes from.
-	AttributeSources []AttributeSource `json:"attributeSources,omitempty" tfsdk:"attribute_sources"`
+	AttributeSources []AttributeSourceAggregation `json:"attributeSources,omitempty" tfsdk:"attribute_sources"`
 	// A list of mappings from attribute names to their fulfillment values.
 	AttributeContractFulfillment map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment" tfsdk:"attribute_contract_fulfillment"`
 	IssuanceCriteria             *IssuanceCriteria                    `json:"issuanceCriteria,omitempty" tfsdk:"issuance_criteria"`
@@ -57,9 +57,9 @@ func NewApcToSpAdapterMappingWithDefaults() *ApcToSpAdapterMapping {
 }
 
 // GetAttributeSources returns the AttributeSources field value if set, zero value otherwise.
-func (o *ApcToSpAdapterMapping) GetAttributeSources() []AttributeSource {
+func (o *ApcToSpAdapterMapping) GetAttributeSources() []AttributeSourceAggregation {
 	if o == nil || IsNil(o.AttributeSources) {
-		var ret []AttributeSource
+		var ret []AttributeSourceAggregation
 		return ret
 	}
 	return o.AttributeSources
@@ -67,7 +67,7 @@ func (o *ApcToSpAdapterMapping) GetAttributeSources() []AttributeSource {
 
 // GetAttributeSourcesOk returns a tuple with the AttributeSources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApcToSpAdapterMapping) GetAttributeSourcesOk() ([]AttributeSource, bool) {
+func (o *ApcToSpAdapterMapping) GetAttributeSourcesOk() ([]AttributeSourceAggregation, bool) {
 	if o == nil || IsNil(o.AttributeSources) {
 		return nil, false
 	}
@@ -83,8 +83,8 @@ func (o *ApcToSpAdapterMapping) HasAttributeSources() bool {
 	return false
 }
 
-// SetAttributeSources gets a reference to the given []AttributeSource and assigns it to the AttributeSources field.
-func (o *ApcToSpAdapterMapping) SetAttributeSources(v []AttributeSource) {
+// SetAttributeSources gets a reference to the given []AttributeSourceAggregation and assigns it to the AttributeSources field.
+func (o *ApcToSpAdapterMapping) SetAttributeSources(v []AttributeSourceAggregation) {
 	o.AttributeSources = v
 }
 
