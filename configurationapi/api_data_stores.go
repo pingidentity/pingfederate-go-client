@@ -25,12 +25,12 @@ type DataStoresAPIService service
 type ApiCreateDataStoreRequest struct {
 	ctx                       context.Context
 	ApiService                *DataStoresAPIService
-	body                      *DataStore
+	body                      *DataStoreAggregation
 	xBypassExternalValidation *bool
 }
 
 // Configuration for new data store.
-func (r ApiCreateDataStoreRequest) Body(body DataStore) ApiCreateDataStoreRequest {
+func (r ApiCreateDataStoreRequest) Body(body DataStoreAggregation) ApiCreateDataStoreRequest {
 	r.body = &body
 	return r
 }
@@ -41,7 +41,7 @@ func (r ApiCreateDataStoreRequest) XBypassExternalValidation(xBypassExternalVali
 	return r
 }
 
-func (r ApiCreateDataStoreRequest) Execute() (*DataStore, *http.Response, error) {
+func (r ApiCreateDataStoreRequest) Execute() (*DataStoreAggregation, *http.Response, error) {
 	return r.ApiService.CreateDataStoreExecute(r)
 }
 
@@ -62,13 +62,13 @@ func (a *DataStoresAPIService) CreateDataStore(ctx context.Context) ApiCreateDat
 
 // Execute executes the request
 //
-//	@return DataStore
-func (a *DataStoresAPIService) CreateDataStoreExecute(r ApiCreateDataStoreRequest) (*DataStore, *http.Response, error) {
+//	@return DataStoreAggregation
+func (a *DataStoresAPIService) CreateDataStoreExecute(r ApiCreateDataStoreRequest) (*DataStoreAggregation, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *DataStore
+		localVarReturnValue *DataStoreAggregation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresAPIService.CreateDataStore")
@@ -485,7 +485,7 @@ type ApiGetDataStoreRequest struct {
 	id         string
 }
 
-func (r ApiGetDataStoreRequest) Execute() (*DataStore, *http.Response, error) {
+func (r ApiGetDataStoreRequest) Execute() (*DataStoreAggregation, *http.Response, error) {
 	return r.ApiService.GetDataStoreExecute(r)
 }
 
@@ -508,13 +508,13 @@ func (a *DataStoresAPIService) GetDataStore(ctx context.Context, id string) ApiG
 
 // Execute executes the request
 //
-//	@return DataStore
-func (a *DataStoresAPIService) GetDataStoreExecute(r ApiGetDataStoreRequest) (*DataStore, *http.Response, error) {
+//	@return DataStoreAggregation
+func (a *DataStoresAPIService) GetDataStoreExecute(r ApiGetDataStoreRequest) (*DataStoreAggregation, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *DataStore
+		localVarReturnValue *DataStoreAggregation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresAPIService.GetDataStore")
@@ -598,7 +598,7 @@ type ApiGetDataStoresRequest struct {
 	ApiService *DataStoresAPIService
 }
 
-func (r ApiGetDataStoresRequest) Execute() (*DataStores, *http.Response, error) {
+func (r ApiGetDataStoresRequest) Execute() (*DataStoreAggregation, *http.Response, error) {
 	return r.ApiService.GetDataStoresExecute(r)
 }
 
@@ -617,13 +617,13 @@ func (a *DataStoresAPIService) GetDataStores(ctx context.Context) ApiGetDataStor
 
 // Execute executes the request
 //
-//	@return DataStores
-func (a *DataStoresAPIService) GetDataStoresExecute(r ApiGetDataStoresRequest) (*DataStores, *http.Response, error) {
+//	@return DataStoreAggregation
+func (a *DataStoresAPIService) GetDataStoresExecute(r ApiGetDataStoresRequest) (*DataStoreAggregation, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *DataStores
+		localVarReturnValue *DataStoreAggregation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresAPIService.GetDataStores")
@@ -1054,12 +1054,12 @@ type ApiUpdateDataStoreRequest struct {
 	ctx                       context.Context
 	ApiService                *DataStoresAPIService
 	id                        string
-	body                      *DataStore
+	body                      *DataStoreAggregation
 	xBypassExternalValidation *bool
 }
 
 // Configuration for the data store.
-func (r ApiUpdateDataStoreRequest) Body(body DataStore) ApiUpdateDataStoreRequest {
+func (r ApiUpdateDataStoreRequest) Body(body DataStoreAggregation) ApiUpdateDataStoreRequest {
 	r.body = &body
 	return r
 }
@@ -1070,7 +1070,7 @@ func (r ApiUpdateDataStoreRequest) XBypassExternalValidation(xBypassExternalVali
 	return r
 }
 
-func (r ApiUpdateDataStoreRequest) Execute() (*DataStore, *http.Response, error) {
+func (r ApiUpdateDataStoreRequest) Execute() (*DataStoreAggregation, *http.Response, error) {
 	return r.ApiService.UpdateDataStoreExecute(r)
 }
 
@@ -1093,13 +1093,13 @@ func (a *DataStoresAPIService) UpdateDataStore(ctx context.Context, id string) A
 
 // Execute executes the request
 //
-//	@return DataStore
-func (a *DataStoresAPIService) UpdateDataStoreExecute(r ApiUpdateDataStoreRequest) (*DataStore, *http.Response, error) {
+//	@return DataStoreAggregation
+func (a *DataStoresAPIService) UpdateDataStoreExecute(r ApiUpdateDataStoreRequest) (*DataStoreAggregation, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *DataStore
+		localVarReturnValue *DataStoreAggregation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresAPIService.UpdateDataStore")

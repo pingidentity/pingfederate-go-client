@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 ## CreateDataStore
 
-> DataStore CreateDataStore(ctx).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+> DataStoreAggregation CreateDataStore(ctx).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
 
 Create a new data store.
 
@@ -38,7 +38,7 @@ import (
 )
 
 func main() {
-    body := *openapiclient.NewDataStore("Type_example") // DataStore | Configuration for new data store.
+    body := openapiclient.DataStoreAggregation{CustomDataStore: openapiclient.NewCustomDataStore("Type_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration())} // DataStoreAggregation | Configuration for new data store.
     xBypassExternalValidation := true // bool | Connection test will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
@@ -48,7 +48,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.CreateDataStore``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateDataStore`: DataStore
+    // response from `CreateDataStore`: DataStoreAggregation
     fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.CreateDataStore`: %v\n", resp)
 }
 ```
@@ -64,12 +64,12 @@ Other parameters are passed through a pointer to a apiCreateDataStoreRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DataStore**](DataStore.md) | Configuration for new data store. | 
+ **body** | [**DataStoreAggregation**](DataStoreAggregation.md) | Configuration for new data store. | 
  **xBypassExternalValidation** | **bool** | Connection test will be bypassed when set to true. Default to false. | [default to false]
 
 ### Return type
 
-[**DataStore**](DataStore.md)
+[**DataStoreAggregation**](DataStoreAggregation.md)
 
 ### Authorization
 
@@ -284,7 +284,7 @@ No authorization required
 
 ## GetDataStore
 
-> DataStore GetDataStore(ctx, id).Execute()
+> DataStoreAggregation GetDataStore(ctx, id).Execute()
 
 Find data store by ID.
 
@@ -312,7 +312,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.GetDataStore``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetDataStore`: DataStore
+    // response from `GetDataStore`: DataStoreAggregation
     fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.GetDataStore`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DataStore**](DataStore.md)
+[**DataStoreAggregation**](DataStoreAggregation.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ No authorization required
 
 ## GetDataStores
 
-> DataStores GetDataStores(ctx).Execute()
+> DataStoreAggregation GetDataStores(ctx).Execute()
 
 Get list of all data stores.
 
@@ -379,7 +379,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.GetDataStores``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetDataStores`: DataStores
+    // response from `GetDataStores`: DataStoreAggregation
     fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.GetDataStores`: %v\n", resp)
 }
 ```
@@ -395,7 +395,7 @@ Other parameters are passed through a pointer to a apiGetDataStoresRequest struc
 
 ### Return type
 
-[**DataStores**](DataStores.md)
+[**DataStoreAggregation**](DataStoreAggregation.md)
 
 ### Authorization
 
@@ -631,7 +631,7 @@ No authorization required
 
 ## UpdateDataStore
 
-> DataStore UpdateDataStore(ctx, id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+> DataStoreAggregation UpdateDataStore(ctx, id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
 
 Update a data store.
 
@@ -651,7 +651,7 @@ import (
 
 func main() {
     id := "id_example" // string | ID of data store instance.
-    body := *openapiclient.NewDataStore("Type_example") // DataStore | Configuration for the data store.
+    body := openapiclient.DataStoreAggregation{CustomDataStore: openapiclient.NewCustomDataStore("Type_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration())} // DataStoreAggregation | Configuration for the data store.
     xBypassExternalValidation := true // bool | Connection test will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
@@ -661,7 +661,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.UpdateDataStore``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateDataStore`: DataStore
+    // response from `UpdateDataStore`: DataStoreAggregation
     fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.UpdateDataStore`: %v\n", resp)
 }
 ```
@@ -682,12 +682,12 @@ Other parameters are passed through a pointer to a apiUpdateDataStoreRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**DataStore**](DataStore.md) | Configuration for the data store. | 
+ **body** | [**DataStoreAggregation**](DataStoreAggregation.md) | Configuration for the data store. | 
  **xBypassExternalValidation** | **bool** | Connection test will be bypassed when set to true. Default to false. | [default to false]
 
 ### Return type
 
-[**DataStore**](DataStore.md)
+[**DataStoreAggregation**](DataStoreAggregation.md)
 
 ### Authorization
 
