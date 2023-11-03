@@ -700,6 +700,7 @@ Class | Method | HTTP request | Description
  - [CustomDataStoreDescriptor](docs/CustomDataStoreDescriptor.md)
  - [CustomDataStoreDescriptors](docs/CustomDataStoreDescriptors.md)
  - [DataStore](docs/DataStore.md)
+ - [DataStoreAggregation](docs/DataStoreAggregation.md)
  - [DataStoreAttribute](docs/DataStoreAttribute.md)
  - [DataStoreConfig](docs/DataStoreConfig.md)
  - [DataStoreRepository](docs/DataStoreRepository.md)

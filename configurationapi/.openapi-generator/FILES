@@ -233,6 +233,7 @@ docs/CustomDataStore.md
 docs/CustomDataStoreDescriptor.md
 docs/CustomDataStoreDescriptors.md
 docs/DataStore.md
+docs/DataStoreAggregation.md
 docs/DataStoreAttribute.md
 docs/DataStoreConfig.md
 docs/DataStoreRepository.md
@@ -737,6 +738,7 @@ model_custom_data_store.go
 model_custom_data_store_descriptor.go
 model_custom_data_store_descriptors.go
 model_data_store.go
+model_data_store_aggregation.go
 model_data_store_attribute.go
 model_data_store_config.go
 model_data_store_repository.go
