@@ -31,7 +31,7 @@ type ClientOIDCPolicy struct {
 	// Determines whether this client is allowed to access the Session Management API.
 	GrantAccessSessionSessionManagementApi *bool `json:"grantAccessSessionSessionManagementApi,omitempty" tfsdk:"grant_access_session_session_management_api"`
 	// Set this value to true if you wish to enable client application logout, and the client is PingFederate, or its logout endpoints follow the PingFederate path convention.
-	PingFederateLogoutCapable *bool `json:"PingFederateLogoutCapable,omitempty" tfsdk:"p_ing_federate_logout_capable"`
+	PingFederateLogoutCapable *bool `json:"PingFederateLogoutCapable,omitempty" tfsdk:"ping_federate_logout_capable"`
 	// A list of client logout URI's which will be invoked when a user logs out through one of PingFederate's SLO endpoints.
 	LogoutUris []string `json:"logoutUris,omitempty" tfsdk:"logout_uris"`
 	// Determines whether the subject identifier type is pairwise.
