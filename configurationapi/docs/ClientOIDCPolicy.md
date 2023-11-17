@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **PolicyGroup** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **GrantAccessSessionRevocationApi** | Pointer to **bool** | Determines whether this client is allowed to access the Session Revocation API. | [optional] 
 **GrantAccessSessionSessionManagementApi** | Pointer to **bool** | Determines whether this client is allowed to access the Session Management API. | [optional] 
-**PingFederateLogoutCapable** | Pointer to **bool** | Set this value to true if you wish to enable client application logout, and the client is PingFederate, or its logout endpoints follow the PingFederate path convention. | [optional] 
+**PingAccessLogoutCapable** | Pointer to **bool** | Set this value to true if you wish to enable client application logout, and the client is PingAccess, or its logout endpoints follow the PingAccess path convention. | [optional] 
 **LogoutUris** | Pointer to **[]string** | A list of client logout URI&#39;s which will be invoked when a user logs out through one of PingFederate&#39;s SLO endpoints. | [optional] 
 **PairwiseIdentifierUserType** | Pointer to **bool** | Determines whether the subject identifier type is pairwise. | [optional] 
 **SectorIdentifierUri** | Pointer to **string** | The URI references a file with a single JSON array of Redirect URI and JWKS URL values. | [optional] 
@@ -184,30 +184,30 @@ SetGrantAccessSessionSessionManagementApi sets GrantAccessSessionSessionManageme
 
 HasGrantAccessSessionSessionManagementApi returns a boolean if a field has been set.
 
-### GetPingFederateLogoutCapable
+### GetPingAccessLogoutCapable
 
-`func (o *ClientOIDCPolicy) GetPingFederateLogoutCapable() bool`
+`func (o *ClientOIDCPolicy) GetPingAccessLogoutCapable() bool`
 
-GetPingFederateLogoutCapable returns the PingFederateLogoutCapable field if non-nil, zero value otherwise.
+GetPingAccessLogoutCapable returns the PingAccessLogoutCapable field if non-nil, zero value otherwise.
 
-### GetPingFederateLogoutCapableOk
+### GetPingAccessLogoutCapableOk
 
-`func (o *ClientOIDCPolicy) GetPingFederateLogoutCapableOk() (*bool, bool)`
+`func (o *ClientOIDCPolicy) GetPingAccessLogoutCapableOk() (*bool, bool)`
 
-GetPingFederateLogoutCapableOk returns a tuple with the PingFederateLogoutCapable field if it's non-nil, zero value otherwise
+GetPingAccessLogoutCapableOk returns a tuple with the PingAccessLogoutCapable field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPingFederateLogoutCapable
+### SetPingAccessLogoutCapable
 
-`func (o *ClientOIDCPolicy) SetPingFederateLogoutCapable(v bool)`
+`func (o *ClientOIDCPolicy) SetPingAccessLogoutCapable(v bool)`
 
-SetPingFederateLogoutCapable sets PingFederateLogoutCapable field to given value.
+SetPingAccessLogoutCapable sets PingAccessLogoutCapable field to given value.
 
-### HasPingFederateLogoutCapable
+### HasPingAccessLogoutCapable
 
-`func (o *ClientOIDCPolicy) HasPingFederateLogoutCapable() bool`
+`func (o *ClientOIDCPolicy) HasPingAccessLogoutCapable() bool`
 
-HasPingFederateLogoutCapable returns a boolean if a field has been set.
+HasPingAccessLogoutCapable returns a boolean if a field has been set.
 
 ### GetLogoutUris
 

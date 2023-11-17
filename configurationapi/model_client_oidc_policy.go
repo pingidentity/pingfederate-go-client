@@ -30,8 +30,8 @@ type ClientOIDCPolicy struct {
 	GrantAccessSessionRevocationApi *bool `json:"grantAccessSessionRevocationApi,omitempty" tfsdk:"grant_access_session_revocation_api"`
 	// Determines whether this client is allowed to access the Session Management API.
 	GrantAccessSessionSessionManagementApi *bool `json:"grantAccessSessionSessionManagementApi,omitempty" tfsdk:"grant_access_session_session_management_api"`
-	// Set this value to true if you wish to enable client application logout, and the client is PingFederate, or its logout endpoints follow the PingFederate path convention.
-	PingFederateLogoutCapable *bool `json:"PingFederateLogoutCapable,omitempty" tfsdk:"ping_federate_logout_capable"`
+	// Set this value to true if you wish to enable client application logout, and the client is PingAccess, or its logout endpoints follow the PingAccess path convention.
+	PingAccessLogoutCapable *bool `json:"pingAccessLogoutCapable,omitempty" tfsdk:"ping_access_logout_capable"`
 	// A list of client logout URI's which will be invoked when a user logs out through one of PingFederate's SLO endpoints.
 	LogoutUris []string `json:"logoutUris,omitempty" tfsdk:"logout_uris"`
 	// Determines whether the subject identifier type is pairwise.
@@ -249,36 +249,36 @@ func (o *ClientOIDCPolicy) SetGrantAccessSessionSessionManagementApi(v bool) {
 	o.GrantAccessSessionSessionManagementApi = &v
 }
 
-// GetPingFederateLogoutCapable returns the PingFederateLogoutCapable field value if set, zero value otherwise.
-func (o *ClientOIDCPolicy) GetPingFederateLogoutCapable() bool {
-	if o == nil || IsNil(o.PingFederateLogoutCapable) {
+// GetPingAccessLogoutCapable returns the PingAccessLogoutCapable field value if set, zero value otherwise.
+func (o *ClientOIDCPolicy) GetPingAccessLogoutCapable() bool {
+	if o == nil || IsNil(o.PingAccessLogoutCapable) {
 		var ret bool
 		return ret
 	}
-	return *o.PingFederateLogoutCapable
+	return *o.PingAccessLogoutCapable
 }
 
-// GetPingFederateLogoutCapableOk returns a tuple with the PingFederateLogoutCapable field value if set, nil otherwise
+// GetPingAccessLogoutCapableOk returns a tuple with the PingAccessLogoutCapable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClientOIDCPolicy) GetPingFederateLogoutCapableOk() (*bool, bool) {
-	if o == nil || IsNil(o.PingFederateLogoutCapable) {
+func (o *ClientOIDCPolicy) GetPingAccessLogoutCapableOk() (*bool, bool) {
+	if o == nil || IsNil(o.PingAccessLogoutCapable) {
 		return nil, false
 	}
-	return o.PingFederateLogoutCapable, true
+	return o.PingAccessLogoutCapable, true
 }
 
-// HasPingFederateLogoutCapable returns a boolean if a field has been set.
-func (o *ClientOIDCPolicy) HasPingFederateLogoutCapable() bool {
-	if o != nil && !IsNil(o.PingFederateLogoutCapable) {
+// HasPingAccessLogoutCapable returns a boolean if a field has been set.
+func (o *ClientOIDCPolicy) HasPingAccessLogoutCapable() bool {
+	if o != nil && !IsNil(o.PingAccessLogoutCapable) {
 		return true
 	}
 
 	return false
 }
 
-// SetPingFederateLogoutCapable gets a reference to the given bool and assigns it to the PingFederateLogoutCapable field.
-func (o *ClientOIDCPolicy) SetPingFederateLogoutCapable(v bool) {
-	o.PingFederateLogoutCapable = &v
+// SetPingAccessLogoutCapable gets a reference to the given bool and assigns it to the PingAccessLogoutCapable field.
+func (o *ClientOIDCPolicy) SetPingAccessLogoutCapable(v bool) {
+	o.PingAccessLogoutCapable = &v
 }
 
 // GetLogoutUris returns the LogoutUris field value if set, zero value otherwise.
@@ -405,8 +405,8 @@ func (o ClientOIDCPolicy) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.GrantAccessSessionSessionManagementApi) {
 		toSerialize["grantAccessSessionSessionManagementApi"] = o.GrantAccessSessionSessionManagementApi
 	}
-	if !IsNil(o.PingFederateLogoutCapable) {
-		toSerialize["PingFederateLogoutCapable"] = o.PingFederateLogoutCapable
+	if !IsNil(o.PingAccessLogoutCapable) {
+		toSerialize["pingAccessLogoutCapable"] = o.PingAccessLogoutCapable
 	}
 	if !IsNil(o.LogoutUris) {
 		toSerialize["logoutUris"] = o.LogoutUris
