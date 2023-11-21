@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** | The id of the Access Token Mapping. | 
 **Context** | [**AccessTokenMappingContext**](AccessTokenMappingContext.md) |  | 
 **AccessTokenManagerRef** | [**ResourceLink**](ResourceLink.md) |  | 
-**AttributeSources** | Pointer to [**[]AttributeSource**](AttributeSource.md) | A list of configured data stores to look up attributes from. | [optional] 
+**AttributeSources** | Pointer to [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) | A list of configured data stores to look up attributes from. | [optional] 
 **AttributeContractFulfillment** | [**map[string]AttributeFulfillmentValue**](AttributeFulfillmentValue.md) | A list of mappings from attribute names to their fulfillment values. | 
 **IssuanceCriteria** | Pointer to [**IssuanceCriteria**](IssuanceCriteria.md) |  | [optional] 
 
@@ -92,20 +92,20 @@ SetAccessTokenManagerRef sets AccessTokenManagerRef field to given value.
 
 ### GetAttributeSources
 
-`func (o *AccessTokenMapping) GetAttributeSources() []AttributeSource`
+`func (o *AccessTokenMapping) GetAttributeSources() []AttributeSourceAggregation`
 
 GetAttributeSources returns the AttributeSources field if non-nil, zero value otherwise.
 
 ### GetAttributeSourcesOk
 
-`func (o *AccessTokenMapping) GetAttributeSourcesOk() (*[]AttributeSource, bool)`
+`func (o *AccessTokenMapping) GetAttributeSourcesOk() (*[]AttributeSourceAggregation, bool)`
 
 GetAttributeSourcesOk returns a tuple with the AttributeSources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributeSources
 
-`func (o *AccessTokenMapping) SetAttributeSources(v []AttributeSource)`
+`func (o *AccessTokenMapping) SetAttributeSources(v []AttributeSourceAggregation)`
 
 SetAttributeSources sets AttributeSources field to given value.
 
