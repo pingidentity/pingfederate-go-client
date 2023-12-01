@@ -26,18 +26,17 @@ type SpSsoServiceEndpoint struct {
 	// Whether or not this endpoint is the default endpoint. Defaults to false.
 	IsDefault *bool `json:"isDefault,omitempty" tfsdk:"is_default"`
 	// The priority of the endpoint.
-	Index int64 `json:"index" tfsdk:"index"`
+	Index *int64 `json:"index,omitempty" tfsdk:"index"`
 }
 
 // NewSpSsoServiceEndpoint instantiates a new SpSsoServiceEndpoint object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSpSsoServiceEndpoint(binding string, url string, index int64) *SpSsoServiceEndpoint {
+func NewSpSsoServiceEndpoint(binding string, url string) *SpSsoServiceEndpoint {
 	this := SpSsoServiceEndpoint{}
 	this.Binding = binding
 	this.Url = url
-	this.Index = index
 	return &this
 }
 
@@ -129,28 +128,36 @@ func (o *SpSsoServiceEndpoint) SetIsDefault(v bool) {
 	o.IsDefault = &v
 }
 
-// GetIndex returns the Index field value
+// GetIndex returns the Index field value if set, zero value otherwise.
 func (o *SpSsoServiceEndpoint) GetIndex() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.Index) {
 		var ret int64
 		return ret
 	}
-
-	return o.Index
+	return *o.Index
 }
 
-// GetIndexOk returns a tuple with the Index field value
+// GetIndexOk returns a tuple with the Index field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpSsoServiceEndpoint) GetIndexOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Index) {
 		return nil, false
 	}
-	return &o.Index, true
+	return o.Index, true
 }
 
-// SetIndex sets field value
+// HasIndex returns a boolean if a field has been set.
+func (o *SpSsoServiceEndpoint) HasIndex() bool {
+	if o != nil && !IsNil(o.Index) {
+		return true
+	}
+
+	return false
+}
+
+// SetIndex gets a reference to the given int64 and assigns it to the Index field.
 func (o *SpSsoServiceEndpoint) SetIndex(v int64) {
-	o.Index = v
+	o.Index = &v
 }
 
 func (o SpSsoServiceEndpoint) MarshalJSON() ([]byte, error) {
@@ -168,7 +175,9 @@ func (o SpSsoServiceEndpoint) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.IsDefault) {
 		toSerialize["isDefault"] = o.IsDefault
 	}
-	toSerialize["index"] = o.Index
+	if !IsNil(o.Index) {
+		toSerialize["index"] = o.Index
+	}
 	return toSerialize, nil
 }
 

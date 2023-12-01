@@ -20798,7 +20798,6 @@ components:
         - adapterMappings
         - assertionLifetime
         - attributeContract
-        - encryptionPolicy
         - protocol
         - ssoServiceEndpoints
       type: object
@@ -20813,7 +20812,6 @@ components:
           type: string
       required:
         - name
-        - nameFormat
       type: object
     SpBrowserSsoAttributeContract:
       description: A set of user attributes that the IdP sends in the SAML assertion.
@@ -20866,8 +20864,6 @@ components:
           format: int32
           type: integer
       required:
-        - binding
-        - index
         - url
       type: object
     SpTokenGeneratorMapping:
