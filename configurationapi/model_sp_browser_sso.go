@@ -52,7 +52,7 @@ type SpBrowserSso struct {
 	SignAssertions *bool `json:"signAssertions,omitempty" tfsdk:"sign_assertions"`
 	// Require AuthN requests to be signed when received via the POST or Redirect bindings.
 	RequireSignedAuthnRequests *bool                         `json:"requireSignedAuthnRequests,omitempty" tfsdk:"require_signed_authn_requests"`
-	EncryptionPolicy           EncryptionPolicy              `json:"encryptionPolicy" tfsdk:"encryption_policy"`
+	EncryptionPolicy           *EncryptionPolicy             `json:"encryptionPolicy,omitempty" tfsdk:"encryption_policy"`
 	AttributeContract          SpBrowserSsoAttributeContract `json:"attributeContract" tfsdk:"attribute_contract"`
 	// A list of adapters that map to outgoing assertions.
 	AdapterMappings []IdpAdapterAssertionMapping `json:"adapterMappings" tfsdk:"adapter_mappings"`
@@ -65,11 +65,10 @@ type SpBrowserSso struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSpBrowserSso(protocol string, ssoServiceEndpoints []SpSsoServiceEndpoint, encryptionPolicy EncryptionPolicy, attributeContract SpBrowserSsoAttributeContract, adapterMappings []IdpAdapterAssertionMapping, assertionLifetime AssertionLifetime) *SpBrowserSso {
+func NewSpBrowserSso(protocol string, ssoServiceEndpoints []SpSsoServiceEndpoint, attributeContract SpBrowserSsoAttributeContract, adapterMappings []IdpAdapterAssertionMapping, assertionLifetime AssertionLifetime) *SpBrowserSso {
 	this := SpBrowserSso{}
 	this.Protocol = protocol
 	this.SsoServiceEndpoints = ssoServiceEndpoints
-	this.EncryptionPolicy = encryptionPolicy
 	this.AttributeContract = attributeContract
 	this.AdapterMappings = adapterMappings
 	this.AssertionLifetime = assertionLifetime
@@ -612,28 +611,36 @@ func (o *SpBrowserSso) SetRequireSignedAuthnRequests(v bool) {
 	o.RequireSignedAuthnRequests = &v
 }
 
-// GetEncryptionPolicy returns the EncryptionPolicy field value
+// GetEncryptionPolicy returns the EncryptionPolicy field value if set, zero value otherwise.
 func (o *SpBrowserSso) GetEncryptionPolicy() EncryptionPolicy {
-	if o == nil {
+	if o == nil || IsNil(o.EncryptionPolicy) {
 		var ret EncryptionPolicy
 		return ret
 	}
-
-	return o.EncryptionPolicy
+	return *o.EncryptionPolicy
 }
 
-// GetEncryptionPolicyOk returns a tuple with the EncryptionPolicy field value
+// GetEncryptionPolicyOk returns a tuple with the EncryptionPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpBrowserSso) GetEncryptionPolicyOk() (*EncryptionPolicy, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.EncryptionPolicy) {
 		return nil, false
 	}
-	return &o.EncryptionPolicy, true
+	return o.EncryptionPolicy, true
 }
 
-// SetEncryptionPolicy sets field value
+// HasEncryptionPolicy returns a boolean if a field has been set.
+func (o *SpBrowserSso) HasEncryptionPolicy() bool {
+	if o != nil && !IsNil(o.EncryptionPolicy) {
+		return true
+	}
+
+	return false
+}
+
+// SetEncryptionPolicy gets a reference to the given EncryptionPolicy and assigns it to the EncryptionPolicy field.
 func (o *SpBrowserSso) SetEncryptionPolicy(v EncryptionPolicy) {
-	o.EncryptionPolicy = v
+	o.EncryptionPolicy = &v
 }
 
 // GetAttributeContract returns the AttributeContract field value
@@ -797,7 +804,9 @@ func (o SpBrowserSso) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RequireSignedAuthnRequests) {
 		toSerialize["requireSignedAuthnRequests"] = o.RequireSignedAuthnRequests
 	}
-	toSerialize["encryptionPolicy"] = o.EncryptionPolicy
+	if !IsNil(o.EncryptionPolicy) {
+		toSerialize["encryptionPolicy"] = o.EncryptionPolicy
+	}
 	toSerialize["attributeContract"] = o.AttributeContract
 	toSerialize["adapterMappings"] = o.AdapterMappings
 	if !IsNil(o.AuthenticationPolicyContractAssertionMappings) {

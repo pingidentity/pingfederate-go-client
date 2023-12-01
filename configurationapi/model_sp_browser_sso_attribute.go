@@ -22,17 +22,16 @@ type SpBrowserSsoAttribute struct {
 	// The name of this attribute.
 	Name string `json:"name" tfsdk:"name"`
 	// The SAML Name Format for the attribute.
-	NameFormat string `json:"nameFormat" tfsdk:"name_format"`
+	NameFormat *string `json:"nameFormat,omitempty" tfsdk:"name_format"`
 }
 
 // NewSpBrowserSsoAttribute instantiates a new SpBrowserSsoAttribute object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSpBrowserSsoAttribute(name string, nameFormat string) *SpBrowserSsoAttribute {
+func NewSpBrowserSsoAttribute(name string) *SpBrowserSsoAttribute {
 	this := SpBrowserSsoAttribute{}
 	this.Name = name
-	this.NameFormat = nameFormat
 	return &this
 }
 
@@ -68,28 +67,36 @@ func (o *SpBrowserSsoAttribute) SetName(v string) {
 	o.Name = v
 }
 
-// GetNameFormat returns the NameFormat field value
+// GetNameFormat returns the NameFormat field value if set, zero value otherwise.
 func (o *SpBrowserSsoAttribute) GetNameFormat() string {
-	if o == nil {
+	if o == nil || IsNil(o.NameFormat) {
 		var ret string
 		return ret
 	}
-
-	return o.NameFormat
+	return *o.NameFormat
 }
 
-// GetNameFormatOk returns a tuple with the NameFormat field value
+// GetNameFormatOk returns a tuple with the NameFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpBrowserSsoAttribute) GetNameFormatOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.NameFormat) {
 		return nil, false
 	}
-	return &o.NameFormat, true
+	return o.NameFormat, true
 }
 
-// SetNameFormat sets field value
+// HasNameFormat returns a boolean if a field has been set.
+func (o *SpBrowserSsoAttribute) HasNameFormat() bool {
+	if o != nil && !IsNil(o.NameFormat) {
+		return true
+	}
+
+	return false
+}
+
+// SetNameFormat gets a reference to the given string and assigns it to the NameFormat field.
 func (o *SpBrowserSsoAttribute) SetNameFormat(v string) {
-	o.NameFormat = v
+	o.NameFormat = &v
 }
 
 func (o SpBrowserSsoAttribute) MarshalJSON() ([]byte, error) {
@@ -103,7 +110,9 @@ func (o SpBrowserSsoAttribute) MarshalJSON() ([]byte, error) {
 func (o SpBrowserSsoAttribute) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
-	toSerialize["nameFormat"] = o.NameFormat
+	if !IsNil(o.NameFormat) {
+		toSerialize["nameFormat"] = o.NameFormat
+	}
 	return toSerialize, nil
 }
 

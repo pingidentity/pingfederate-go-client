@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **SignResponseAsRequired** | Pointer to **bool** | Sign SAML Response as required by the associated binding and encryption policy. Applicable to SAML2.0 only and is defaulted to true. It can be set to false only on SAML2.0 connections when signAssertions is set to true. | [optional] 
 **SignAssertions** | Pointer to **bool** | Always sign the SAML Assertion. | [optional] 
 **RequireSignedAuthnRequests** | Pointer to **bool** | Require AuthN requests to be signed when received via the POST or Redirect bindings. | [optional] 
-**EncryptionPolicy** | [**EncryptionPolicy**](EncryptionPolicy.md) |  | 
+**EncryptionPolicy** | Pointer to [**EncryptionPolicy**](EncryptionPolicy.md) |  | [optional] 
 **AttributeContract** | [**SpBrowserSsoAttributeContract**](SpBrowserSsoAttributeContract.md) |  | 
 **AdapterMappings** | [**[]IdpAdapterAssertionMapping**](IdpAdapterAssertionMapping.md) | A list of adapters that map to outgoing assertions. | 
 **AuthenticationPolicyContractAssertionMappings** | Pointer to [**[]AuthenticationPolicyContractAssertionMapping**](AuthenticationPolicyContractAssertionMapping.md) | A list of authentication policy contracts that map to outgoing assertions. | [optional] 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 
 ### NewSpBrowserSso
 
-`func NewSpBrowserSso(protocol string, ssoServiceEndpoints []SpSsoServiceEndpoint, encryptionPolicy EncryptionPolicy, attributeContract SpBrowserSsoAttributeContract, adapterMappings []IdpAdapterAssertionMapping, assertionLifetime AssertionLifetime, ) *SpBrowserSso`
+`func NewSpBrowserSso(protocol string, ssoServiceEndpoints []SpSsoServiceEndpoint, attributeContract SpBrowserSsoAttributeContract, adapterMappings []IdpAdapterAssertionMapping, assertionLifetime AssertionLifetime, ) *SpBrowserSso`
 
 NewSpBrowserSso instantiates a new SpBrowserSso object
 This constructor will assign default values to properties that have it defined,
@@ -480,6 +480,11 @@ and a boolean to check if the value has been set.
 
 SetEncryptionPolicy sets EncryptionPolicy field to given value.
 
+### HasEncryptionPolicy
+
+`func (o *SpBrowserSso) HasEncryptionPolicy() bool`
+
+HasEncryptionPolicy returns a boolean if a field has been set.
 
 ### GetAttributeContract
 
