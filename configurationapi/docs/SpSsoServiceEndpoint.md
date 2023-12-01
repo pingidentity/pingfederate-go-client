@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Binding** | **string** | The binding of this endpoint, if applicable - usually only required for SAML 2.0 endpoints.  Supported bindings are Artifact and POST. | 
+**Binding** | Pointer to **string** | The binding of this endpoint, if applicable - usually only required for SAML 2.0 endpoints.  Supported bindings are Artifact and POST. | [optional] 
 **Url** | **string** | The absolute or relative URL of the endpoint. A relative URL can be specified if a base URL for the connection has been defined. | 
 **IsDefault** | Pointer to **bool** | Whether or not this endpoint is the default endpoint. Defaults to false. | [optional] 
 **Index** | Pointer to **int64** | The priority of the endpoint. | [optional] 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewSpSsoServiceEndpoint
 
-`func NewSpSsoServiceEndpoint(binding string, url string, ) *SpSsoServiceEndpoint`
+`func NewSpSsoServiceEndpoint(url string, ) *SpSsoServiceEndpoint`
 
 NewSpSsoServiceEndpoint instantiates a new SpSsoServiceEndpoint object
 This constructor will assign default values to properties that have it defined,
@@ -47,6 +47,11 @@ and a boolean to check if the value has been set.
 
 SetBinding sets Binding field to given value.
 
+### HasBinding
+
+`func (o *SpSsoServiceEndpoint) HasBinding() bool`
+
+HasBinding returns a boolean if a field has been set.
 
 ### GetUrl
 

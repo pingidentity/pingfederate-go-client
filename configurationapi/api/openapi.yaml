@@ -21019,7 +21019,6 @@ components:
           format: int32
           type: integer
       required:
-      - binding
       - url
       type: object
     SpTokenGeneratorMapping:

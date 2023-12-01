@@ -20,7 +20,7 @@ var _ MappedNullable = &SpSsoServiceEndpoint{}
 // SpSsoServiceEndpoint The settings that define a service endpoint to a SP SSO service.
 type SpSsoServiceEndpoint struct {
 	// The binding of this endpoint, if applicable - usually only required for SAML 2.0 endpoints.  Supported bindings are Artifact and POST.
-	Binding string `json:"binding" tfsdk:"binding"`
+	Binding *string `json:"binding,omitempty" tfsdk:"binding"`
 	// The absolute or relative URL of the endpoint. A relative URL can be specified if a base URL for the connection has been defined.
 	Url string `json:"url" tfsdk:"url"`
 	// Whether or not this endpoint is the default endpoint. Defaults to false.
@@ -33,9 +33,8 @@ type SpSsoServiceEndpoint struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSpSsoServiceEndpoint(binding string, url string) *SpSsoServiceEndpoint {
+func NewSpSsoServiceEndpoint(url string) *SpSsoServiceEndpoint {
 	this := SpSsoServiceEndpoint{}
-	this.Binding = binding
 	this.Url = url
 	return &this
 }
@@ -48,28 +47,36 @@ func NewSpSsoServiceEndpointWithDefaults() *SpSsoServiceEndpoint {
 	return &this
 }
 
-// GetBinding returns the Binding field value
+// GetBinding returns the Binding field value if set, zero value otherwise.
 func (o *SpSsoServiceEndpoint) GetBinding() string {
-	if o == nil {
+	if o == nil || IsNil(o.Binding) {
 		var ret string
 		return ret
 	}
-
-	return o.Binding
+	return *o.Binding
 }
 
-// GetBindingOk returns a tuple with the Binding field value
+// GetBindingOk returns a tuple with the Binding field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpSsoServiceEndpoint) GetBindingOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Binding) {
 		return nil, false
 	}
-	return &o.Binding, true
+	return o.Binding, true
 }
 
-// SetBinding sets field value
+// HasBinding returns a boolean if a field has been set.
+func (o *SpSsoServiceEndpoint) HasBinding() bool {
+	if o != nil && !IsNil(o.Binding) {
+		return true
+	}
+
+	return false
+}
+
+// SetBinding gets a reference to the given string and assigns it to the Binding field.
 func (o *SpSsoServiceEndpoint) SetBinding(v string) {
-	o.Binding = v
+	o.Binding = &v
 }
 
 // GetUrl returns the Url field value
@@ -170,7 +177,9 @@ func (o SpSsoServiceEndpoint) MarshalJSON() ([]byte, error) {
 
 func (o SpSsoServiceEndpoint) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["binding"] = o.Binding
+	if !IsNil(o.Binding) {
+		toSerialize["binding"] = o.Binding
+	}
 	toSerialize["url"] = o.Url
 	if !IsNil(o.IsDefault) {
 		toSerialize["isDefault"] = o.IsDefault
