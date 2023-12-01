@@ -28,7 +28,7 @@ type IdpAdapterAssertionMapping struct {
 	// If set to true, SSO transaction will be aborted as a fail-safe when the data-store's attribute mappings fail to complete the attribute contract. Otherwise, the attribute contract with default values is used. By default, this value is false.
 	AbortSsoTransactionAsFailSafe *bool `json:"abortSsoTransactionAsFailSafe,omitempty" tfsdk:"abort_sso_transaction_as_fail_safe"`
 	// A list of configured data stores to look up attributes from.
-	AttributeSources []AttributeSource `json:"attributeSources,omitempty" tfsdk:"attribute_sources"`
+	AttributeSources []AttributeSourceAggregation `json:"attributeSources,omitempty" tfsdk:"attribute_sources"`
 	// A list of mappings from attribute names to their fulfillment values.
 	AttributeContractFulfillment map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment" tfsdk:"attribute_contract_fulfillment"`
 	IssuanceCriteria             *IssuanceCriteria                    `json:"issuanceCriteria,omitempty" tfsdk:"issuance_criteria"`
@@ -206,9 +206,9 @@ func (o *IdpAdapterAssertionMapping) SetAbortSsoTransactionAsFailSafe(v bool) {
 }
 
 // GetAttributeSources returns the AttributeSources field value if set, zero value otherwise.
-func (o *IdpAdapterAssertionMapping) GetAttributeSources() []AttributeSource {
+func (o *IdpAdapterAssertionMapping) GetAttributeSources() []AttributeSourceAggregation {
 	if o == nil || IsNil(o.AttributeSources) {
-		var ret []AttributeSource
+		var ret []AttributeSourceAggregation
 		return ret
 	}
 	return o.AttributeSources
@@ -216,7 +216,7 @@ func (o *IdpAdapterAssertionMapping) GetAttributeSources() []AttributeSource {
 
 // GetAttributeSourcesOk returns a tuple with the AttributeSources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IdpAdapterAssertionMapping) GetAttributeSourcesOk() ([]AttributeSource, bool) {
+func (o *IdpAdapterAssertionMapping) GetAttributeSourcesOk() ([]AttributeSourceAggregation, bool) {
 	if o == nil || IsNil(o.AttributeSources) {
 		return nil, false
 	}
@@ -232,8 +232,8 @@ func (o *IdpAdapterAssertionMapping) HasAttributeSources() bool {
 	return false
 }
 
-// SetAttributeSources gets a reference to the given []AttributeSource and assigns it to the AttributeSources field.
-func (o *IdpAdapterAssertionMapping) SetAttributeSources(v []AttributeSource) {
+// SetAttributeSources gets a reference to the given []AttributeSourceAggregation and assigns it to the AttributeSources field.
+func (o *IdpAdapterAssertionMapping) SetAttributeSources(v []AttributeSourceAggregation) {
 	o.AttributeSources = v
 }
 

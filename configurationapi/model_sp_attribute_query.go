@@ -26,14 +26,14 @@ type SpAttributeQuery struct {
 	IssuanceCriteria             *IssuanceCriteria                    `json:"issuanceCriteria,omitempty" tfsdk:"issuance_criteria"`
 	Policy                       *SpAttributeQueryPolicy              `json:"policy,omitempty" tfsdk:"policy"`
 	// A list of configured data stores to look up attributes from.
-	AttributeSources []AttributeSource `json:"attributeSources" tfsdk:"attribute_sources"`
+	AttributeSources []AttributeSourceAggregation `json:"attributeSources" tfsdk:"attribute_sources"`
 }
 
 // NewSpAttributeQuery instantiates a new SpAttributeQuery object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSpAttributeQuery(attributes []string, attributeContractFulfillment map[string]AttributeFulfillmentValue, attributeSources []AttributeSource) *SpAttributeQuery {
+func NewSpAttributeQuery(attributes []string, attributeContractFulfillment map[string]AttributeFulfillmentValue, attributeSources []AttributeSourceAggregation) *SpAttributeQuery {
 	this := SpAttributeQuery{}
 	this.Attributes = attributes
 	this.AttributeContractFulfillment = attributeContractFulfillment
@@ -162,9 +162,9 @@ func (o *SpAttributeQuery) SetPolicy(v SpAttributeQueryPolicy) {
 }
 
 // GetAttributeSources returns the AttributeSources field value
-func (o *SpAttributeQuery) GetAttributeSources() []AttributeSource {
+func (o *SpAttributeQuery) GetAttributeSources() []AttributeSourceAggregation {
 	if o == nil {
-		var ret []AttributeSource
+		var ret []AttributeSourceAggregation
 		return ret
 	}
 
@@ -173,7 +173,7 @@ func (o *SpAttributeQuery) GetAttributeSources() []AttributeSource {
 
 // GetAttributeSourcesOk returns a tuple with the AttributeSources field value
 // and a boolean to check if the value has been set.
-func (o *SpAttributeQuery) GetAttributeSourcesOk() ([]AttributeSource, bool) {
+func (o *SpAttributeQuery) GetAttributeSourcesOk() ([]AttributeSourceAggregation, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -181,7 +181,7 @@ func (o *SpAttributeQuery) GetAttributeSourcesOk() ([]AttributeSource, bool) {
 }
 
 // SetAttributeSources sets field value
-func (o *SpAttributeQuery) SetAttributeSources(v []AttributeSource) {
+func (o *SpAttributeQuery) SetAttributeSources(v []AttributeSourceAggregation) {
 	o.AttributeSources = v
 }
 

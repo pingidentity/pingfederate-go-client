@@ -26,7 +26,7 @@ type EncryptionPolicy struct {
 	// Encrypt the name-identifier attribute in outbound SLO messages.  This can be set if the name id is encrypted.
 	EncryptSloSubjectNameId *bool `json:"encryptSloSubjectNameId,omitempty" tfsdk:"encrypt_slo_subject_name_id"`
 	// Allow the encryption of the name-identifier attribute for inbound SLO messages. This can be set if SP initiated SLO is enabled.
-	SloSubjectNameIDEncrypted *bool `json:"sloSubjectNameIDEncrypted,omitempty" tfsdk:"slo_subject_name_ide_ncrypted"`
+	SloSubjectNameIDEncrypted *bool `json:"sloSubjectNameIDEncrypted,omitempty" tfsdk:"slo_subject_name_id_encrypted"`
 }
 
 // NewEncryptionPolicy instantiates a new EncryptionPolicy object
