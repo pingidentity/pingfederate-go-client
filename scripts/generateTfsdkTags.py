@@ -21,9 +21,9 @@ def buildAttributeValue(attribute) -> str:
         if len(fourUpperChars) > 0:
             underscoreAttribute = re.sub(r'_[a-z]_[a-z]_[a-z]_[a-z]', lambda m: "_" + removeUnderscoresFromGroup(m.group()) + "_", underscoreAttribute).lower()
         elif len(threeUpperChars) > 0:
-            underscoreAttribute = re.sub(r'_[a-z]_[a-z]_[a-z]', lambda m: "_" + removeUnderscoresFromGroup(m.group(0)[:-1]) + m.group(0)[-1] + "_", underscoreAttribute).lower()
+            underscoreAttribute = re.sub(r'_[a-z]_[a-z]_[a-z]', lambda m: "_" + removeUnderscoresFromGroup(m.group()) + "_", underscoreAttribute).lower()
         elif len(twoUpperChars) > 0 :
-            underscoreAttribute = re.sub(r'_[a-z]_[a-z]', lambda m: "_" + removeUnderscoresFromGroup(m.group(0)), underscoreAttribute).lower()
+            underscoreAttribute = re.sub(r'_[a-z]_[a-z]', lambda m: "_" + removeUnderscoresFromGroup(m.group()), underscoreAttribute).lower()
         underscoreAttribute =  underscoreAttribute.replace("__", "_")
     else:
         underscoreAttribute = attribute
