@@ -41,7 +41,7 @@ type LdapDataStore struct {
 	// Use DNS SRV Records to discover LDAP server information. The default value is false.
 	UseDnsSrvRecords *bool `json:"useDnsSrvRecords,omitempty" tfsdk:"use_dns_srv_records"`
 	// Follow LDAP Referrals in the domain tree. The default value is false. This property does not apply to PingDirectory as this functionality is configured in PingDirectory.
-	FollowLDAPReferrals *bool `json:"followLDAPReferrals,omitempty" tfsdk:"follow_ldapr_eferrals"`
+	FollowLDAPReferrals *bool `json:"followLDAPReferrals,omitempty" tfsdk:"follow_ldap_referrals"`
 	// Indicates whether objects are validated before being borrowed from the pool.
 	TestOnBorrow *bool `json:"testOnBorrow,omitempty" tfsdk:"test_on_borrow"`
 	// Indicates whether objects are validated before being returned to the pool.
