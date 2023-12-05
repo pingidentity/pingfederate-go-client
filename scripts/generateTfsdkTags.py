@@ -7,10 +7,10 @@ import re
 modelFiles = glob.glob('model_*.go')
 jsonRegex = re.compile('`json:\"([0-9A-Za-z]*)[\",]')
 
-def removeUnderscore(group) -> str:
+def removeUnderscoresFromGroup(group) -> str:
     return re.sub(r'_', '', group)
 
-def replaceCharWithUnderscorePlusChar(attribute) -> str:
+def buildAttributeValue(attribute) -> str:
     underscoreAttribute = ""
     match = re.findall(r'[0-9A-Z]', attribute)
     if match != None:
@@ -19,11 +19,11 @@ def replaceCharWithUnderscorePlusChar(attribute) -> str:
         threeUpperChars = re.findall(r'[A-Z]{3,3}', attribute)
         twoUpperChars = re.findall(r'[A-Z]{2,2}', attribute)
         if len(fourUpperChars) > 0:
-            underscoreAttribute = re.sub(r'_[a-z]_[a-z]_[a-z]_[a-z]', lambda m: "_" + removeUnderscore(m.group()) + "_", underscoreAttribute).lower()
+            underscoreAttribute = re.sub(r'_[a-z]_[a-z]_[a-z]_[a-z]', lambda m: "_" + removeUnderscoresFromGroup(m.group()) + "_", underscoreAttribute).lower()
         elif len(threeUpperChars) > 0:
-            underscoreAttribute = re.sub(r'_[a-z]_[a-z]_[a-z]', lambda m: "_" + removeUnderscore(m.group(0)[:-1]) + m.group(0)[-1] + "_", underscoreAttribute).lower()
+            underscoreAttribute = re.sub(r'_[a-z]_[a-z]_[a-z]', lambda m: "_" + removeUnderscoresFromGroup(m.group(0)[:-1]) + m.group(0)[-1] + "_", underscoreAttribute).lower()
         elif len(twoUpperChars) > 0 :
-            underscoreAttribute = re.sub(r'_[a-z]_[a-z]', lambda m: "_" + removeUnderscore(m.group(0)), underscoreAttribute).lower()
+            underscoreAttribute = re.sub(r'_[a-z]_[a-z]', lambda m: "_" + removeUnderscoresFromGroup(m.group(0)), underscoreAttribute).lower()
         underscoreAttribute =  underscoreAttribute.replace("__", "_")
     else:
         underscoreAttribute = attribute
@@ -41,7 +41,7 @@ for modelFile in modelFiles:
             if match != None and "tfsdk:" not in line:
                 # Get the attribute name from the json tag
                 attribute = str(match.group(1))
-                finalAttribute = replaceCharWithUnderscorePlusChar(attribute)
+                finalAttribute = buildAttributeValue(attribute)
                 # Add the tfsdk tag to the line
                 line = line.replace("\"`", "\" tfsdk:\"{}\"`".format(finalAttribute))
             updatedLines.append(line)
