@@ -23,7 +23,7 @@ type IdpConnection struct {
 	OidcClientCredentials         *OIDCClientCredentials         `json:"oidcClientCredentials,omitempty" tfsdk:"oidc_client_credentials"`
 	IdpBrowserSso                 *IdpBrowserSso                 `json:"idpBrowserSso,omitempty" tfsdk:"idp_browser_sso"`
 	AttributeQuery                *IdpAttributeQuery             `json:"attributeQuery,omitempty" tfsdk:"attribute_query"`
-	IdpOAuthGrantAttributeMapping *IdpOAuthGrantAttributeMapping `json:"idpOAuthGrantAttributeMapping,omitempty" tfsdk:"idp_oa_uth_grant_attribute_mapping"`
+	IdpOAuthGrantAttributeMapping *IdpOAuthGrantAttributeMapping `json:"idpOAuthGrantAttributeMapping,omitempty" tfsdk:"idp_oauth_grant_attribute_mapping"`
 	WsTrust                       *IdpWsTrust                    `json:"wsTrust,omitempty" tfsdk:"ws_trust"`
 	InboundProvisioning           *IdpInboundProvisioning        `json:"inboundProvisioning,omitempty" tfsdk:"inbound_provisioning"`
 	// Identifier that specifies the message displayed on a user-facing error page.

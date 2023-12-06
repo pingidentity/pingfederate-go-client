@@ -53,7 +53,7 @@ type IdpBrowserSso struct {
 	AdapterMappings []SpAdapterMapping `json:"adapterMappings,omitempty" tfsdk:"adapter_mappings"`
 	// A list of Authentication Policy Contracts that map to incoming assertions.
 	AuthenticationPolicyContractMappings []AuthenticationPolicyContractMapping `json:"authenticationPolicyContractMappings,omitempty" tfsdk:"authentication_policy_contract_mappings"`
-	SsoOAuthMapping                      *SsoOAuthMapping                      `json:"ssoOAuthMapping,omitempty" tfsdk:"sso_oa_uth_mapping"`
+	SsoOAuthMapping                      *SsoOAuthMapping                      `json:"ssoOAuthMapping,omitempty" tfsdk:"sso_oauth_mapping"`
 	OauthAuthenticationPolicyContractRef *ResourceLink                         `json:"oauthAuthenticationPolicyContractRef,omitempty" tfsdk:"oauth_authentication_policy_contract_ref"`
 	JitProvisioning                      *JitProvisioning                      `json:"jitProvisioning,omitempty" tfsdk:"jit_provisioning"`
 }

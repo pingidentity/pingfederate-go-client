@@ -21,7 +21,7 @@ var _ MappedNullable = &IdpOAuthGrantAttributeMapping{}
 type IdpOAuthGrantAttributeMapping struct {
 	// A mapping in a connection that defines how access tokens are created.
 	AccessTokenManagerMappings []AccessTokenManagerMapping `json:"accessTokenManagerMappings,omitempty" tfsdk:"access_token_manager_mappings"`
-	IdpOAuthAttributeContract  *IdpOAuthAttributeContract  `json:"idpOAuthAttributeContract,omitempty" tfsdk:"idp_oa_uth_attribute_contract"`
+	IdpOAuthAttributeContract  *IdpOAuthAttributeContract  `json:"idpOAuthAttributeContract,omitempty" tfsdk:"idp_oauth_attribute_contract"`
 }
 
 // NewIdpOAuthGrantAttributeMapping instantiates a new IdpOAuthGrantAttributeMapping object

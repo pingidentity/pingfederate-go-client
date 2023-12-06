@@ -68,9 +68,9 @@ type AuthorizationServerSettings struct {
 	AllowUnidentifiedClientExtensionGrants *bool         `json:"allowUnidentifiedClientExtensionGrants,omitempty" tfsdk:"allow_unidentified_client_extension_grants"`
 	AdminWebServicePcvRef                  *ResourceLink `json:"adminWebServicePcvRef,omitempty" tfsdk:"admin_web_service_pcv_ref"`
 	// The ID of the Access Token Manager used for OAuth enabled grant management.
-	AtmIdForOAuthGrantManagement *string `json:"atmIdForOAuthGrantManagement,omitempty" tfsdk:"atm_id_for_oa_uth_grant_management"`
+	AtmIdForOAuthGrantManagement *string `json:"atmIdForOAuthGrantManagement,omitempty" tfsdk:"atm_id_for_oauth_grant_management"`
 	// The OAuth scope to validate when accessing grant management service.
-	ScopeForOAuthGrantManagement *string `json:"scopeForOAuthGrantManagement,omitempty" tfsdk:"scope_for_oa_uth_grant_management"`
+	ScopeForOAuthGrantManagement *string `json:"scopeForOAuthGrantManagement,omitempty" tfsdk:"scope_for_oauth_grant_management"`
 	// The list of allowed origins.
 	AllowedOrigins []string `json:"allowedOrigins,omitempty" tfsdk:"allowed_origins"`
 	// The URL used to generate 'verification_url' and 'verification_url_complete' values in a Device Authorization request
