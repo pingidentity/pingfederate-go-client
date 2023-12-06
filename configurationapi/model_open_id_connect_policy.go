@@ -31,7 +31,7 @@ type OpenIdConnectPolicy struct {
 	// Determines whether the User Info is always included in the ID token.
 	IncludeUserInfoInIdToken *bool `json:"includeUserInfoInIdToken,omitempty" tfsdk:"include_user_info_in_id_token"`
 	// Determines whether the State Hash should be included in the ID token.
-	IncludeSHashInIdToken *bool `json:"includeSHashInIdToken,omitempty" tfsdk:"include_sh_ash_in_id_token"`
+	IncludeSHashInIdToken *bool `json:"includeSHashInIdToken,omitempty" tfsdk:"include_shash_in_id_token"`
 	// Determines whether an ID Token should be returned when refresh grant is requested or not.
 	ReturnIdTokenOnRefreshGrant *bool `json:"returnIdTokenOnRefreshGrant,omitempty" tfsdk:"return_id_token_on_refresh_grant"`
 	// Determines whether a new ID Token should be returned during token request of the hybrid flow.
