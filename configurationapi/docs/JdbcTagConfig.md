@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ConnectionUrl** | **string** | The location of the JDBC database.  | 
-**Tags** | Pointer to **string** | Tags associated with this data source. | [optional] 
+**Tags** | Pointer to **string** | Tags associated with the connection URL. At runtime, nodes will use the first JdbcTagConfig that has a tag that matches with node.tags in run.properties. | [optional] 
 **DefaultSource** | Pointer to **bool** | Whether this is the default connection. Defaults to false if not specified. | [optional] 
 
 ## Methods

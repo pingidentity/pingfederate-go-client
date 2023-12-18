@@ -104,7 +104,7 @@ func (a *LicenseAPIService) GetLicenseExecute(r ApiGetLicenseRequest) (*LicenseV
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 422 {
+		if localVarHTTPResponse.StatusCode == 404 {
 			var v ApiResult
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -115,7 +115,7 @@ func (a *LicenseAPIService) GetLicenseExecute(r ApiGetLicenseRequest) (*LicenseV
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-		if localVarHTTPResponse.StatusCode == 404 {
+		if localVarHTTPResponse.StatusCode == 422 {
 			var v ApiResult
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {

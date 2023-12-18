@@ -17,11 +17,11 @@ import (
 // checks if the LdapTagConfig type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &LdapTagConfig{}
 
-// LdapTagConfig An LDAP data store's hostnames and tags configuration. This is required if no default hostname is specified.
+// LdapTagConfig An LDAP data store's hostnames and tags configuration. For regional deployments, provide a separate LdapTagConfig for each region, containing region-specific hostnames and the corresponding tags.
 type LdapTagConfig struct {
-	// The LDAP host names.
+	// The LDAP host names. Failover can be configured by providing multiple host names.
 	Hostnames []string `json:"hostnames" tfsdk:"hostnames"`
-	// Tags associated with this data source.
+	// Tags associated with the host names. At runtime, nodes will use the first LdapTagConfig that has a tag that matches with node.tags in run.properties.
 	Tags *string `json:"tags,omitempty" tfsdk:"tags"`
 	// Whether this is the default connection. Defaults to false if not specified.
 	DefaultSource *bool `json:"defaultSource,omitempty" tfsdk:"default_source"`

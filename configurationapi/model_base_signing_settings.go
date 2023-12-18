@@ -20,7 +20,7 @@ var _ MappedNullable = &BaseSigningSettings{}
 // BaseSigningSettings Settings related to signing messages.
 type BaseSigningSettings struct {
 	SigningKeyPairRef ResourceLink `json:"signingKeyPairRef" tfsdk:"signing_key_pair_ref"`
-	// The algorithm used to sign messages sent to this partner. The default is SHA1withDSA for DSA certs, SHA256withRSA for RSA certs, and SHA256withECDSA for EC certs. For RSA certs, SHA1withRSA, SHA384withRSA, and SHA512withRSA are also supported. For EC certs, SHA384withECDSA and SHA512withECDSA are also supported. If the connection is WS-Federation with JWT token type, then the possible values are RSA SHA256, RSA SHA384, RSA SHA512, ECDSA SHA256, ECDSA SHA384, ECDSA SHA512
+	// The algorithm used to sign messages sent to this partner. The default is SHA1withDSA for DSA certs, SHA256withRSA for RSA certs, and SHA256withECDSA for EC certs. For RSA certs, SHA1withRSA, SHA384withRSA, SHA512withRSA, SHA256withRSAandMGF1, SHA384withRSAandMGF1 and SHA512withRSAandMGF1 are also supported. For EC certs, SHA384withECDSA and SHA512withECDSA are also supported. If the connection is WS-Federation with JWT token type, then the possible values are RSA SHA256, RSA SHA384, RSA SHA512, RSASSA-PSS SHA256, RSASSA-PSS SHA384, RSASSA-PSS SHA512, ECDSA SHA256, ECDSA SHA384, ECDSA SHA512
 	Algorithm *string `json:"algorithm,omitempty" tfsdk:"algorithm"`
 	// Determines whether the signing certificate is included in the signature <KeyInfo> element.
 	IncludeCertInSignature *bool `json:"includeCertInSignature,omitempty" tfsdk:"include_cert_in_signature"`

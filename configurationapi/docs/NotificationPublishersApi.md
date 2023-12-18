@@ -1,17 +1,17 @@
 # \NotificationPublishersAPI
 
-All URIs are relative to *https://localhost/pf-admin-api/v1*
+All URIs are relative to *https://localhost:9999/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateNotificationPublisher**](NotificationPublishersAPI.md#CreateNotificationPublisher) | **Post** /notificationPublishers | Create a notification publisher plugin instance.
 [**DeleteNotificationPublisher**](NotificationPublishersAPI.md#DeleteNotificationPublisher) | **Delete** /notificationPublishers/{id} | Delete a notification publisher plugin instance.
 [**GetNotificationPublisher**](NotificationPublishersAPI.md#GetNotificationPublisher) | **Get** /notificationPublishers/{id} | Get a specific notification publisher plugin instance.
-[**GetNotificationPublisherActions**](NotificationPublishersAPI.md#GetNotificationPublisherActions) | **Get** /notificationPublishers/{id}/actions | List the actions for a notification publisher plugin instance.
 [**GetNotificationPublisherPluginDescriptor**](NotificationPublishersAPI.md#GetNotificationPublisherPluginDescriptor) | **Get** /notificationPublishers/descriptors/{id} | Get the description of a notification publisher plugin descriptor.
 [**GetNotificationPublisherPluginDescriptors**](NotificationPublishersAPI.md#GetNotificationPublisherPluginDescriptors) | **Get** /notificationPublishers/descriptors | Get the list of available Notification Publisher Plugin descriptors.
 [**GetNotificationPublishers**](NotificationPublishersAPI.md#GetNotificationPublishers) | **Get** /notificationPublishers | Get a list of notification publisher plugin instances.
 [**GetNotificationPublishersAction**](NotificationPublishersAPI.md#GetNotificationPublishersAction) | **Get** /notificationPublishers/{id}/actions/{actionId} | Find an notification publisher plugin instance&#39;s action by ID.
+[**GetNotificationPublishersActions**](NotificationPublishersAPI.md#GetNotificationPublishersActions) | **Get** /notificationPublishers/{id}/actions | List the actions for a notification publisher plugin instance.
 [**GetNotificationPublishersSettings**](NotificationPublishersAPI.md#GetNotificationPublishersSettings) | **Get** /notificationPublishers/settings | Get general notification publisher settings.
 [**InvokeNotificationPublishersActionWithOptions**](NotificationPublishersAPI.md#InvokeNotificationPublishersActionWithOptions) | **Post** /notificationPublishers/{id}/actions/{actionId}/invokeAction | Invokes an action for notification publisher plugin instance.
 [**UpdateNotificationPublisher**](NotificationPublishersAPI.md#UpdateNotificationPublisher) | **Put** /notificationPublishers/{id} | Update a notification publisher plugin instance.
@@ -202,74 +202,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**NotificationPublisher**](NotificationPublisher.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetNotificationPublisherActions
-
-> Actions GetNotificationPublisherActions(ctx, id).Execute()
-
-List the actions for a notification publisher plugin instance.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
-)
-
-func main() {
-    id := "id_example" // string | ID of the notification publisher plugin instance to which these actions belongs to.
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationPublishersAPI.GetNotificationPublisherActions(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersAPI.GetNotificationPublisherActions``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetNotificationPublisherActions`: Actions
-    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersAPI.GetNotificationPublisherActions`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** | ID of the notification publisher plugin instance to which these actions belongs to. | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetNotificationPublisherActionsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**Actions**](Actions.md)
 
 ### Authorization
 
@@ -527,6 +459,74 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Action**](Action.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetNotificationPublishersActions
+
+> Actions GetNotificationPublishersActions(ctx, id).Execute()
+
+List the actions for a notification publisher plugin instance.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+    id := "id_example" // string | ID of the notification publisher plugin instance to which these actions belongs to.
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NotificationPublishersAPI.GetNotificationPublishersActions(context.Background(), id).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationPublishersAPI.GetNotificationPublishersActions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetNotificationPublishersActions`: Actions
+    fmt.Fprintf(os.Stdout, "Response from `NotificationPublishersAPI.GetNotificationPublishersActions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | ID of the notification publisher plugin instance to which these actions belongs to. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetNotificationPublishersActionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**Actions**](Actions.md)
 
 ### Authorization
 

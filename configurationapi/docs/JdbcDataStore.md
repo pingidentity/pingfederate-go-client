@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ConnectionUrlTags** | Pointer to [**[]JdbcTagConfig**](JdbcTagConfig.md) | The set of connection URLs and associated tags for this JDBC data store. | [optional] 
-**ConnectionUrl** | Pointer to **string** | The default location of the JDBC database. This field is required if no mapping for JDBC database location and tags are specified. | [optional] 
+**ConnectionUrlTags** | Pointer to [**[]JdbcTagConfig**](JdbcTagConfig.md) | The set of connection URLs and associated tags for this JDBC data store. This is required if &#39;connectionUrl&#39; is not provided. | [optional] 
+**ConnectionUrl** | Pointer to **string** | The default location of the JDBC database. This field is required if no mapping for JDBC database location and tags is specified. | [optional] 
 **Name** | Pointer to **string** | The data store name with a unique value across all data sources. Omitting this attribute will set the value to a combination of the connection url and the username. | [optional] 
 **DriverClass** | **string** | The name of the driver class used to communicate with the source database. | 
-**UserName** | **string** | The name that identifies the user when connecting to the database. | 
+**UserName** | Pointer to **string** | The name that identifies the user when connecting to the database. | [optional] 
 **Password** | Pointer to **string** | The password needed to access the database. GETs will not return this attribute. To update this field, specify the new value in this attribute. | [optional] 
 **EncryptedPassword** | Pointer to **string** | The encrypted password needed to access the database. If you do not want to update the stored value, this attribute should be passed back unchanged. Secret Reference may be provided in this field with format &#39;OBF:MGR:{secretManagerId}:{secretId}&#39;. | [optional] 
 **ValidateConnectionSql** | Pointer to **string** | A simple SQL statement used by PingFederate at runtime to verify that the database connection is still active and to reconnect if needed. | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewJdbcDataStore
 
-`func NewJdbcDataStore(driverClass string, userName string, ) *JdbcDataStore`
+`func NewJdbcDataStore(driverClass string, ) *JdbcDataStore`
 
 NewJdbcDataStore instantiates a new JdbcDataStore object
 This constructor will assign default values to properties that have it defined,
@@ -151,6 +151,11 @@ and a boolean to check if the value has been set.
 
 SetUserName sets UserName field to given value.
 
+### HasUserName
+
+`func (o *JdbcDataStore) HasUserName() bool`
+
+HasUserName returns a boolean if a field has been set.
 
 ### GetPassword
 

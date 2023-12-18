@@ -22,29 +22,29 @@ import (
 // ConfigStoreAPIService ConfigStoreAPI service
 type ConfigStoreAPIService service
 
-type ApiDeleteConfigStoreSettingRequest struct {
+type ApiDeleteSettingRequest struct {
 	ctx        context.Context
 	ApiService *ConfigStoreAPIService
 	bundle     string
 	id         string
 }
 
-func (r ApiDeleteConfigStoreSettingRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteConfigStoreSettingExecute(r)
+func (r ApiDeleteSettingRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteSettingExecute(r)
 }
 
 /*
-DeleteConfigStoreSetting Delete a setting.
+DeleteSetting Delete a setting.
 
 Delete a setting. This is an advanced operation with minimal validation. Incorrect use of this operation can harm the integrity of your PingFederate configuration. Please ensure you have specified the correct bundle name and setting ID before invoking this operation.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param bundle This field represents a configuration file that contains a bundle of settings.
 	@param id ID of setting to delete.
-	@return ApiDeleteConfigStoreSettingRequest
+	@return ApiDeleteSettingRequest
 */
-func (a *ConfigStoreAPIService) DeleteConfigStoreSetting(ctx context.Context, bundle string, id string) ApiDeleteConfigStoreSettingRequest {
-	return ApiDeleteConfigStoreSettingRequest{
+func (a *ConfigStoreAPIService) DeleteSetting(ctx context.Context, bundle string, id string) ApiDeleteSettingRequest {
+	return ApiDeleteSettingRequest{
 		ApiService: a,
 		ctx:        ctx,
 		bundle:     bundle,
@@ -53,14 +53,14 @@ func (a *ConfigStoreAPIService) DeleteConfigStoreSetting(ctx context.Context, bu
 }
 
 // Execute executes the request
-func (a *ConfigStoreAPIService) DeleteConfigStoreSettingExecute(r ApiDeleteConfigStoreSettingRequest) (*http.Response, error) {
+func (a *ConfigStoreAPIService) DeleteSettingExecute(r ApiDeleteSettingRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigStoreAPIService.DeleteConfigStoreSetting")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigStoreAPIService.DeleteSetting")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -126,122 +126,6 @@ func (a *ConfigStoreAPIService) DeleteConfigStoreSettingExecute(r ApiDeleteConfi
 	}
 
 	return localVarHTTPResponse, nil
-}
-
-type ApiGetConfigStoreSettingRequest struct {
-	ctx        context.Context
-	ApiService *ConfigStoreAPIService
-	bundle     string
-	id         string
-}
-
-func (r ApiGetConfigStoreSettingRequest) Execute() (*ConfigStoreSetting, *http.Response, error) {
-	return r.ApiService.GetConfigStoreSettingExecute(r)
-}
-
-/*
-GetConfigStoreSetting Get a single setting from a bundle.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param bundle This field represents a configuration file that contains a bundle of settings.
-	@param id ID of setting to retrieve.
-	@return ApiGetConfigStoreSettingRequest
-*/
-func (a *ConfigStoreAPIService) GetConfigStoreSetting(ctx context.Context, bundle string, id string) ApiGetConfigStoreSettingRequest {
-	return ApiGetConfigStoreSettingRequest{
-		ApiService: a,
-		ctx:        ctx,
-		bundle:     bundle,
-		id:         id,
-	}
-}
-
-// Execute executes the request
-//
-//	@return ConfigStoreSetting
-func (a *ConfigStoreAPIService) GetConfigStoreSettingExecute(r ApiGetConfigStoreSettingRequest) (*ConfigStoreSetting, *http.Response, error) {
-	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *ConfigStoreSetting
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigStoreAPIService.GetConfigStoreSetting")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/configStore/{bundle}/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bundle"+"}", url.PathEscape(parameterValueToString(r.bundle, "bundle")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		if localVarHTTPResponse.StatusCode == 404 {
-			var v ApiResult
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-			newErr.model = v
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
 type ApiGetConfigStoreSettingsRequest struct {
@@ -356,36 +240,27 @@ func (a *ConfigStoreAPIService) GetConfigStoreSettingsExecute(r ApiGetConfigStor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpdateConfigStoreSettingRequest struct {
+type ApiGetSettingRequest struct {
 	ctx        context.Context
 	ApiService *ConfigStoreAPIService
 	bundle     string
 	id         string
-	body       *ConfigStoreSetting
 }
 
-// Configuration setting.
-func (r ApiUpdateConfigStoreSettingRequest) Body(body ConfigStoreSetting) ApiUpdateConfigStoreSettingRequest {
-	r.body = &body
-	return r
-}
-
-func (r ApiUpdateConfigStoreSettingRequest) Execute() (*ConfigStoreSetting, *http.Response, error) {
-	return r.ApiService.UpdateConfigStoreSettingExecute(r)
+func (r ApiGetSettingRequest) Execute() (*ConfigStoreSetting, *http.Response, error) {
+	return r.ApiService.GetSettingExecute(r)
 }
 
 /*
-UpdateConfigStoreSetting Create or update a setting/bundle.
-
-Create or update a setting/bundle. This is an advanced operation with minimal validation. Incorrect use of this operation can harm the integrity of your PingFederate configuration. Please ensure you have specified the correct bundle name, setting ID, and setting value before invoking this operation.
+GetSetting Get a single setting from a bundle.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param bundle This field represents a configuration file that contains a bundle of settings.
-	@param id ID of setting to create/update.
-	@return ApiUpdateConfigStoreSettingRequest
+	@param id ID of setting to retrieve.
+	@return ApiGetSettingRequest
 */
-func (a *ConfigStoreAPIService) UpdateConfigStoreSetting(ctx context.Context, bundle string, id string) ApiUpdateConfigStoreSettingRequest {
-	return ApiUpdateConfigStoreSettingRequest{
+func (a *ConfigStoreAPIService) GetSetting(ctx context.Context, bundle string, id string) ApiGetSettingRequest {
+	return ApiGetSettingRequest{
 		ApiService: a,
 		ctx:        ctx,
 		bundle:     bundle,
@@ -396,7 +271,132 @@ func (a *ConfigStoreAPIService) UpdateConfigStoreSetting(ctx context.Context, bu
 // Execute executes the request
 //
 //	@return ConfigStoreSetting
-func (a *ConfigStoreAPIService) UpdateConfigStoreSettingExecute(r ApiUpdateConfigStoreSettingRequest) (*ConfigStoreSetting, *http.Response, error) {
+func (a *ConfigStoreAPIService) GetSettingExecute(r ApiGetSettingRequest) (*ConfigStoreSetting, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConfigStoreSetting
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigStoreAPIService.GetSetting")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/configStore/{bundle}/{id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bundle"+"}", url.PathEscape(parameterValueToString(r.bundle, "bundle")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v ApiResult
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateSettingRequest struct {
+	ctx        context.Context
+	ApiService *ConfigStoreAPIService
+	bundle     string
+	id         string
+	body       *ConfigStoreSetting
+}
+
+// Configuration setting.
+func (r ApiUpdateSettingRequest) Body(body ConfigStoreSetting) ApiUpdateSettingRequest {
+	r.body = &body
+	return r
+}
+
+func (r ApiUpdateSettingRequest) Execute() (*ConfigStoreSetting, *http.Response, error) {
+	return r.ApiService.UpdateSettingExecute(r)
+}
+
+/*
+UpdateSetting Create or update a setting/bundle.
+
+Create or update a setting/bundle. This is an advanced operation with minimal validation. Incorrect use of this operation can harm the integrity of your PingFederate configuration. Please ensure you have specified the correct bundle name, setting ID, and setting value before invoking this operation.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bundle This field represents a configuration file that contains a bundle of settings.
+	@param id ID of setting to create/update.
+	@return ApiUpdateSettingRequest
+*/
+func (a *ConfigStoreAPIService) UpdateSetting(ctx context.Context, bundle string, id string) ApiUpdateSettingRequest {
+	return ApiUpdateSettingRequest{
+		ApiService: a,
+		ctx:        ctx,
+		bundle:     bundle,
+		id:         id,
+	}
+}
+
+// Execute executes the request
+//
+//	@return ConfigStoreSetting
+func (a *ConfigStoreAPIService) UpdateSettingExecute(r ApiUpdateSettingRequest) (*ConfigStoreSetting, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -404,7 +404,7 @@ func (a *ConfigStoreAPIService) UpdateConfigStoreSettingExecute(r ApiUpdateConfi
 		localVarReturnValue *ConfigStoreSetting
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigStoreAPIService.UpdateConfigStoreSetting")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigStoreAPIService.UpdateSetting")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

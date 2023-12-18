@@ -169,6 +169,8 @@ ImportConfiguration Import configuration for a PingFederate deployment from a JS
 
 All existing configuration will be wiped before the import begins. If any validation errors are found, PingFederate will roll back to the previous configuration. The master key set in pf.jwk must include the key in use when the JSON configuration was originally exported.
 
+JSON configurations exported from earlier versions of PingFederate can be imported. However, this is not a supported way of upgrading from an earlier version. Instead, you should run the upgrade utility and then reexport to get an updated configuration JSON.
+
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiImportConfigurationRequest
 */

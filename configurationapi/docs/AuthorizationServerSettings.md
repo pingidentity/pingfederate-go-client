@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **PersistentGrantIdleTimeoutTimeUnit** | Pointer to **string** | The persistent grant idle timeout time unit. | [optional] 
 **RefreshTokenLength** | **int64** | The refresh token length in number of characters. | 
 **RollRefreshTokenValues** | Pointer to **bool** | The roll refresh token values default policy. The default value is true. | [optional] 
-**RefreshTokenRollingGracePeriod** | Pointer to **int64** | The grace period that a rolled refresh token remains valid in seconds. The default value is 0. | [optional] 
+**RefreshTokenRollingGracePeriod** | Pointer to **int64** | The grace period that a rolled refresh token remains valid in seconds. The default value is 60. | [optional] 
 **RefreshRollingInterval** | **int64** | The minimum interval to roll refresh tokens, in hours. | 
 **PersistentGrantReuseGrantTypes** | Pointer to **[]string** | The grant types that the OAuth AS can reuse rather than creating a new grant for each request. Only &#39;IMPLICIT&#39; or &#39;AUTHORIZATION_CODE&#39; or &#39;RESOURCE_OWNER_CREDENTIALS&#39; are valid grant types. | [optional] 
 **PersistentGrantContract** | Pointer to [**PersistentGrantContract**](PersistentGrantContract.md) |  | [optional] 
@@ -47,6 +47,9 @@ Name | Type | Description | Notes
 **ParStatus** | Pointer to **string** | The status of pushed authorization request support. The default value is ENABLED. | [optional] 
 **ClientSecretRetentionPeriod** | Pointer to **int64** | The length of time in minutes that client secrets will be retained as secondary secrets after secret change. The default value is 0, which will disable secondary client secret retention. | [optional] 
 **JwtSecuredAuthorizationResponseModeLifetime** | Pointer to **int64** | The lifetime, in seconds, of the JWT Secured authorization response. The default value is 600. | [optional] 
+**DpopProofRequireNonce** | Pointer to **bool** | Determines whether nonce is required in the Demonstrating Proof-of-Possession (DPoP) proof JWT. The default value is false. | [optional] 
+**DpopProofLifetimeSeconds** | Pointer to **int64** | The lifetime, in seconds, of the Demonstrating Proof-of-Possession (DPoP) proof JWT. The default value is 120. | [optional] 
+**DpopProofEnforceReplayPrevention** | Pointer to **bool** | Determines whether Demonstrating Proof-of-Possession (DPoP) proof JWT replay prevention is enforced. The default value is false. | [optional] 
 
 ## Methods
 
@@ -1096,6 +1099,81 @@ SetJwtSecuredAuthorizationResponseModeLifetime sets JwtSecuredAuthorizationRespo
 `func (o *AuthorizationServerSettings) HasJwtSecuredAuthorizationResponseModeLifetime() bool`
 
 HasJwtSecuredAuthorizationResponseModeLifetime returns a boolean if a field has been set.
+
+### GetDpopProofRequireNonce
+
+`func (o *AuthorizationServerSettings) GetDpopProofRequireNonce() bool`
+
+GetDpopProofRequireNonce returns the DpopProofRequireNonce field if non-nil, zero value otherwise.
+
+### GetDpopProofRequireNonceOk
+
+`func (o *AuthorizationServerSettings) GetDpopProofRequireNonceOk() (*bool, bool)`
+
+GetDpopProofRequireNonceOk returns a tuple with the DpopProofRequireNonce field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDpopProofRequireNonce
+
+`func (o *AuthorizationServerSettings) SetDpopProofRequireNonce(v bool)`
+
+SetDpopProofRequireNonce sets DpopProofRequireNonce field to given value.
+
+### HasDpopProofRequireNonce
+
+`func (o *AuthorizationServerSettings) HasDpopProofRequireNonce() bool`
+
+HasDpopProofRequireNonce returns a boolean if a field has been set.
+
+### GetDpopProofLifetimeSeconds
+
+`func (o *AuthorizationServerSettings) GetDpopProofLifetimeSeconds() int64`
+
+GetDpopProofLifetimeSeconds returns the DpopProofLifetimeSeconds field if non-nil, zero value otherwise.
+
+### GetDpopProofLifetimeSecondsOk
+
+`func (o *AuthorizationServerSettings) GetDpopProofLifetimeSecondsOk() (*int64, bool)`
+
+GetDpopProofLifetimeSecondsOk returns a tuple with the DpopProofLifetimeSeconds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDpopProofLifetimeSeconds
+
+`func (o *AuthorizationServerSettings) SetDpopProofLifetimeSeconds(v int64)`
+
+SetDpopProofLifetimeSeconds sets DpopProofLifetimeSeconds field to given value.
+
+### HasDpopProofLifetimeSeconds
+
+`func (o *AuthorizationServerSettings) HasDpopProofLifetimeSeconds() bool`
+
+HasDpopProofLifetimeSeconds returns a boolean if a field has been set.
+
+### GetDpopProofEnforceReplayPrevention
+
+`func (o *AuthorizationServerSettings) GetDpopProofEnforceReplayPrevention() bool`
+
+GetDpopProofEnforceReplayPrevention returns the DpopProofEnforceReplayPrevention field if non-nil, zero value otherwise.
+
+### GetDpopProofEnforceReplayPreventionOk
+
+`func (o *AuthorizationServerSettings) GetDpopProofEnforceReplayPreventionOk() (*bool, bool)`
+
+GetDpopProofEnforceReplayPreventionOk returns a tuple with the DpopProofEnforceReplayPrevention field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDpopProofEnforceReplayPrevention
+
+`func (o *AuthorizationServerSettings) SetDpopProofEnforceReplayPrevention(v bool)`
+
+SetDpopProofEnforceReplayPrevention sets DpopProofEnforceReplayPrevention field to given value.
+
+### HasDpopProofEnforceReplayPrevention
+
+`func (o *AuthorizationServerSettings) HasDpopProofEnforceReplayPrevention() bool`
+
+HasDpopProofEnforceReplayPrevention returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

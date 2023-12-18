@@ -93,7 +93,7 @@ func NewConfiguration() *Configuration {
 		Debug:         false,
 		Servers: ServerConfigurations{
 			{
-				URL:         "https://localhost/pf-admin-api/v1",
+				URL:         "https://localhost:9999/pf-admin-api/v1",
 				Description: "No description provided",
 			},
 		},

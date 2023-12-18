@@ -84,13 +84,15 @@ tags:
 - name: /oauth/tokenExchange/tokenGeneratorMappings
 - name: /oauth/tokenExchange/generator
 - name: /oauth/tokenExchange/processor
+security:
+- basicAuth: []
 paths:
   /oauth/accessTokenManagers/settings:
     get:
       tags:
       - /oauth/accessTokenManagers
       summary: Get general access token management settings.
-      operationId: getSettings
+      operationId: getOauthAccessTokenManagersSettings
       responses:
         "200":
           description: Success.
@@ -102,7 +104,7 @@ paths:
       tags:
       - /oauth/accessTokenManagers
       summary: Update general access token management settings.
-      operationId: updateSettings
+      operationId: updateOauthAccessTokenManagersSettings
       requestBody:
         description: Access token management settings.
         content:
@@ -1283,7 +1285,7 @@ paths:
       tags:
       - /authenticationPolicies
       summary: Get the authentication policies settings.
-      operationId: getSettings
+      operationId: getAuthenticationPolicySettings
       responses:
         "200":
           description: Success.
@@ -1295,7 +1297,7 @@ paths:
       tags:
       - /authenticationPolicies
       summary: Set the authentication policies settings.
-      operationId: updateSettings
+      operationId: updateAuthenticationPolicySettings
       requestBody:
         description: Authentication policies settings.
         content:
@@ -3086,7 +3088,7 @@ paths:
       tags:
       - /captchaProviders
       summary: Get general CAPTCHA providers settings.
-      operationId: getSettings
+      operationId: getCaptchaProvidersSettings
       responses:
         "200":
           description: Success.
@@ -3098,7 +3100,7 @@ paths:
       tags:
       - /captchaProviders
       summary: Update general CAPTCHA providers settings.
-      operationId: updateSettings
+      operationId: updateCaptchaProvidersSettings
       requestBody:
         description: CAPTCHA providers settings.
         content:
@@ -3603,7 +3605,7 @@ paths:
       tags:
       - /configStore
       summary: Get all settings from a bundle.
-      operationId: getSettings
+      operationId: getConfigStoreSettings
       parameters:
       - name: bundle
         in: path
@@ -3794,7 +3796,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DataStore'
+              $ref: '#/components/schemas/DataStoreAggregation'
         required: true
       responses:
         "201":
@@ -3802,7 +3804,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DataStore'
+                $ref: '#/components/schemas/DataStoreAggregation'
         "400":
           description: The request was improperly formatted or contained invalid fields.
           content: {}
@@ -3875,7 +3877,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DataStore'
+                $ref: '#/components/schemas/DataStoreAggregation'
         "404":
           description: Resource not found.
           content:
@@ -3910,7 +3912,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DataStore'
+              $ref: '#/components/schemas/DataStoreAggregation'
         required: true
       responses:
         "200":
@@ -3918,7 +3920,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DataStore'
+                $ref: '#/components/schemas/DataStoreAggregation'
         "400":
           description: The request was improperly formatted or contained invalid fields.
           content: {}
@@ -4018,7 +4020,7 @@ paths:
       summary: Find a data store instance's action by ID.
       description: Find a data store instance's action by ID. A 404 status code is
         returned for nonexistent IDs.
-      operationId: getAction
+      operationId: getDataStoresActionById
       parameters:
       - name: id
         in: path
@@ -4052,7 +4054,7 @@ paths:
       summary: List the actions for a data store instance.
       description: List the actions for a data store instance. A 404 status code is
         returned for nonexistent IDs.
-      operationId: getActions
+      operationId: getDataStoresActions
       parameters:
       - name: id
         in: path
@@ -4304,7 +4306,7 @@ paths:
         \ is returned for nonexistent IDs. If the action produces a download file,\
         \ the file will be returned directly in the response. Otherwise an ActionResult\
         \ will be returned."
-      operationId: invokeActionWithOptions
+      operationId: invokeIdpAdaptersActionWithOptions
       parameters:
       - name: id
         in: path
@@ -4580,7 +4582,7 @@ paths:
       summary: Find an IdP adapter instance's action by ID.
       description: Find an IdP adapter instance's action by ID. A 404 status code
         is returned for nonexistent IDs.
-      operationId: getAction
+      operationId: getIdpAdaptersActionById
       parameters:
       - name: id
         in: path
@@ -4615,7 +4617,7 @@ paths:
       summary: List the actions for an IdP adapter instance.
       description: List the actions for an IdP adapter instance. A 404 status code
         is returned for nonexistent IDs.
-      operationId: getActions
+      operationId: getIdpAdaptersActions
       parameters:
       - name: id
         in: path
@@ -4754,7 +4756,7 @@ paths:
       tags:
       - /sp/idpConnections
       summary: Get the decryption keys of an IdP connection.
-      operationId: getDecryptionKeys
+      operationId: getIdpConnectionsDecryptionKeys
       parameters:
       - name: id
         in: path
@@ -4779,7 +4781,7 @@ paths:
       tags:
       - /sp/idpConnections
       summary: Updating the IdP connection's decryption keys.
-      operationId: updateDecryptionKeys
+      operationId: updateIdpConnectionsDecryptionKeys
       parameters:
       - name: id
         in: path
@@ -4822,7 +4824,7 @@ paths:
       tags:
       - /sp/idpConnections
       summary: Get the IdP connection's signature settings.
-      operationId: getSigningSettings
+      operationId: getIdpConnectionSigningSettings
       parameters:
       - name: id
         in: path
@@ -4847,7 +4849,7 @@ paths:
       tags:
       - /sp/idpConnections
       summary: Update the IdP connection's signature settings.
-      operationId: updateSigningSettings
+      operationId: updateIdpConnectionSigningSettings
       parameters:
       - name: id
         in: path
@@ -5339,7 +5341,7 @@ paths:
       tags:
       - /kerberos/realms
       summary: Set/Update the Kerberos Realms Settings.
-      operationId: updateSettings
+      operationId: updateKerberosRealmSettings
       requestBody:
         description: Kerberos Realms Settings.
         content:
@@ -6019,7 +6021,7 @@ paths:
       tags:
       - /notificationPublishers
       summary: Get general notification publisher settings.
-      operationId: getSettings
+      operationId: getNotificationPublishersSettings
       responses:
         "200":
           description: Success.
@@ -6031,7 +6033,7 @@ paths:
       tags:
       - /notificationPublishers
       summary: Update general notification publisher settings.
-      operationId: updateSettings
+      operationId: updateNotificationPublishersSettings
       requestBody:
         content:
           application/json:
@@ -6196,7 +6198,7 @@ paths:
       tags:
       - /notificationPublishers
       summary: Invokes an action for notification publisher plugin instance.
-      operationId: invokeActionWithOptions
+      operationId: invokeNotificationPublishersActionWithOptions
       parameters:
       - name: id
         in: path
@@ -6237,7 +6239,7 @@ paths:
       tags:
       - /notificationPublishers
       summary: Find an notification publisher plugin instance's action by ID.
-      operationId: getAction
+      operationId: getNotificationPublishersAction
       parameters:
       - name: id
         in: path
@@ -6270,7 +6272,7 @@ paths:
       tags:
       - /notificationPublishers
       summary: List the actions for a notification publisher plugin instance.
-      operationId: getActions
+      operationId: getNotificationPublishersActions
       parameters:
       - name: id
         in: path
@@ -6457,7 +6459,7 @@ paths:
       tags:
       - /oauth/cibaServerPolicy
       summary: Get general ciba server request policy settings.
-      operationId: getSettings
+      operationId: getCibaServerPolicySettings
       responses:
         "200":
           description: Success.
@@ -6469,7 +6471,7 @@ paths:
       tags:
       - /oauth/cibaServerPolicy
       summary: Update general ciba server request policy settings.
-      operationId: updateSettings
+      operationId: updateCibaServerPolicySettings
       parameters:
       - name: X-BypassExternalValidation
         in: header
@@ -6509,7 +6511,7 @@ paths:
       summary: Find request policy by ID.
       description: Get a request policy with the specified ID. A 404 status code is
         returned for nonexistent IDs.
-      operationId: getPolicy
+      operationId: getCibaServerPolicyById
       parameters:
       - name: id
         in: path
@@ -6538,7 +6540,7 @@ paths:
         \ not properly configured, a 422 status code is returned along with a list\
         \ of validation errors that must be corrected. Note: A 404 status code is\
         \ returned for nonexistent IDs."
-      operationId: updatePolicy
+      operationId: updateCibaServerPolicy
       parameters:
       - name: id
         in: path
@@ -6591,7 +6593,7 @@ paths:
         \ is returned for nonexistent IDs. Note: If the request succeeds, the response\
         \ body is empty. If the request fails, an ApiResult is returned with details\
         \ of the error."
-      operationId: deletePolicy
+      operationId: deleteCibaServerPolicy
       parameters:
       - name: id
         in: path
@@ -6620,7 +6622,7 @@ paths:
       tags:
       - /oauth/cibaServerPolicy
       summary: Get list of request policies.
-      operationId: getPolicies
+      operationId: getCibaServerPolicies
       responses:
         "200":
           description: Success.
@@ -6635,7 +6637,7 @@ paths:
       description: "Create a new request policy. If the request policy is not properly\
         \ configured, a 422 status code is returned along with a list of validation\
         \ errors that must be corrected."
-      operationId: createPolicy
+      operationId: createCibaServerPolicy
       parameters:
       - name: X-BypassExternalValidation
         in: header
@@ -6792,7 +6794,7 @@ paths:
       description: "Create a new OAuth client. If an OAuth client can't be created,\
         \ a 422 status code is returned along with a list of validation errors that\
         \ must be corrected."
-      operationId: createClient
+      operationId: createOauthClient
       requestBody:
         description: Configuration for new client.
         content:
@@ -6822,7 +6824,7 @@ paths:
       tags:
       - /oauth/clients
       summary: Find the OAuth client by ID.
-      operationId: getClient
+      operationId: getOauthClientById
       parameters:
       - name: id
         in: path
@@ -6847,7 +6849,7 @@ paths:
       tags:
       - /oauth/clients
       summary: Updates the OAuth client.
-      operationId: updateClient
+      operationId: updateOauthClient
       parameters:
       - name: id
         in: path
@@ -6889,7 +6891,7 @@ paths:
       tags:
       - /oauth/clients
       summary: Delete an OAuth client.
-      operationId: deleteClient
+      operationId: deleteOauthClient
       parameters:
       - name: id
         in: path
@@ -7421,7 +7423,7 @@ paths:
       tags:
       - /oauth/outOfBandAuthPlugins
       summary: Invokes an action for Out of Band authenticator plugin instance.
-      operationId: invokeActionWithOptions
+      operationId: invokeOOBActionWithOptions
       parameters:
       - name: id
         in: path
@@ -7501,7 +7503,7 @@ paths:
       tags:
       - /oauth/outOfBandAuthPlugins
       summary: Find an Out of Band authenticator plugin instance's action by ID.
-      operationId: getAction
+      operationId: getOOBAction
       parameters:
       - name: id
         in: path
@@ -7534,7 +7536,7 @@ paths:
       tags:
       - /oauth/outOfBandAuthPlugins
       summary: List of actions for an Out of Band authenticator plugin instance.
-      operationId: getActions
+      operationId: getOOBActions
       parameters:
       - name: id
         in: path
@@ -7892,7 +7894,7 @@ paths:
       tags:
       - /oauth/openIdConnect
       summary: Get the OpenID Connect Settings.
-      operationId: getSettings
+      operationId: getOIDCSettings
       responses:
         "200":
           description: Success.
@@ -7904,7 +7906,7 @@ paths:
       tags:
       - /oauth/openIdConnect
       summary: Set the OpenID Connect Settings.
-      operationId: updateSettings
+      operationId: updateOIDCSettings
       requestBody:
         description: OpenID Connect Settings.
         content:
@@ -7936,7 +7938,7 @@ paths:
       summary: Find OpenID Connect Policy by ID.
       description: Get an OpenID Connect Policy with the specified ID. A 404 status
         code is returned for nonexistent IDs.
-      operationId: getPolicy
+      operationId: getOIDCPolicy
       parameters:
       - name: id
         in: path
@@ -7965,7 +7967,7 @@ paths:
         \ is not properly configured, a 422 status code is returned along with a list\
         \ of validation errors that must be corrected. Note: A 404 status code is\
         \ returned for nonexistent IDs."
-      operationId: updatePolicy
+      operationId: updateOIDCPolicy
       parameters:
       - name: id
         in: path
@@ -8018,7 +8020,7 @@ paths:
         \ code is returned for nonexistent IDs. Note: If the request succeeds, the\
         \ response body is empty. If the request fails, an ApiResult is returned with\
         \ details of the error."
-      operationId: deletePolicy
+      operationId: deleteOIDCPolicy
       parameters:
       - name: id
         in: path
@@ -8047,7 +8049,7 @@ paths:
       tags:
       - /oauth/openIdConnect
       summary: Get list of OpenID Connect Policies.
-      operationId: getPolicies
+      operationId: getOIDCPolicies
       responses:
         "200":
           description: Success.
@@ -8062,7 +8064,7 @@ paths:
       description: "Create a new OpenID Connect Policy. If the OpenID Connect policy\
         \ is not properly configured, a 422 status code is returned along with a list\
         \ of validation errors that must be corrected."
-      operationId: createPolicy
+      operationId: createOIDCPolicy
       parameters:
       - name: X-BypassExternalValidation
         in: header
@@ -9022,7 +9024,7 @@ paths:
         \ code is returned for nonexistent IDs. If the action produces a download\
         \ file, the file will be returned directly in the response. Otherwise an ActionResult\
         \ will be returned."
-      operationId: invokeActionWithOptions
+      operationId: invokeSecretManagersActionWithOptions
       parameters:
       - name: id
         in: path
@@ -9062,7 +9064,7 @@ paths:
       tags:
       - /secretManagers
       summary: Get a secret manager plugin instance's action by ID.
-      operationId: getAction
+      operationId: getSecretManagersAction
       parameters:
       - name: id
         in: path
@@ -9094,7 +9096,7 @@ paths:
       tags:
       - /secretManagers
       summary: Get a list of actions for a secret manager plugin instance.
-      operationId: getActions
+      operationId: getSecretManagersActions
       parameters:
       - name: id
         in: path
@@ -9804,7 +9806,7 @@ paths:
       tags:
       - /keyPairs/signing
       summary: Get list of key pairs.
-      operationId: getKeyPairs
+      operationId: getSigningKeyPairs
       responses:
         "200":
           description: Success.
@@ -9817,7 +9819,7 @@ paths:
       tags:
       - /keyPairs/signing
       summary: Generate a new key pair.
-      operationId: createKeyPair
+      operationId: createSigningKeyPair
       requestBody:
         description: Settings for the new key pair.
         content:
@@ -9847,7 +9849,7 @@ paths:
       tags:
       - /keyPairs/signing
       summary: Retrieve details of a key pair.
-      operationId: getKeyPair
+      operationId: getSigningKeyPair
       parameters:
       - name: id
         in: path
@@ -9874,7 +9876,7 @@ paths:
       summary: Delete a key pair.
       description: "If the request is successful, the response body is empty. If the\
         \ request fails, an ApiResult is returned with details of the error."
-      operationId: deleteKeyPair
+      operationId: deleteSigningKeyPair
       parameters:
       - name: id
         in: path
@@ -10101,7 +10103,7 @@ paths:
       tags:
       - /keyPairs/signing
       summary: Import a new key pair.
-      operationId: importKeyPair
+      operationId: importSigningKeyPair
       requestBody:
         description: File to import.
         content:
@@ -10353,7 +10355,7 @@ paths:
       tags:
       - /sp/adapters
       summary: (Deprecated) List the mappings between URLs and adapter instances.
-      operationId: getUrlMappings
+      operationId: getSpAdapterUrlMappings
       responses:
         "200":
           description: Success.
@@ -10366,7 +10368,7 @@ paths:
       tags:
       - /sp/adapters
       summary: (Deprecated) Update the mappings between URLs and adapters instances.
-      operationId: updateUrlMappings
+      operationId: updateSpAdapterUrlMappings
       requestBody:
         description: The SP adapter URL mappings to update.
         content:
@@ -10398,7 +10400,7 @@ paths:
         \ is returned for nonexistent IDs. If the action produces a download file,\
         \ the file will be returned directly in the response. Otherwise an ActionResult\
         \ will be returned."
-      operationId: invokeActionWithOptions
+      operationId: invokeSpAdapterActionWithOptions
       parameters:
       - name: id
         in: path
@@ -10440,7 +10442,7 @@ paths:
       summary: Find an SP adapter instance's action by ID.
       description: Find an SP adapter instance's action by ID. A 404 status code is
         returned for nonexistent IDs.
-      operationId: getAction
+      operationId: getSpAdaptersActionById
       parameters:
       - name: id
         in: path
@@ -10474,7 +10476,7 @@ paths:
       summary: List the actions for an SP adapter instance.
       description: List the actions for an SP adapter instance. A 404 status code
         is returned for nonexistent IDs.
-      operationId: getActions
+      operationId: getSpAdaptersActions
       parameters:
       - name: id
         in: path
@@ -10500,7 +10502,7 @@ paths:
       tags:
       - /idp/spConnections
       summary: Get the SP connection's certificates.
-      operationId: getConnectionCerts
+      operationId: getSpConnectionCerts
       parameters:
       - name: id
         in: path
@@ -10525,7 +10527,7 @@ paths:
       tags:
       - /idp/spConnections
       summary: Update the SP connection's certificates.
-      operationId: updateConnectionCerts
+      operationId: updateSpConnectionCerts
       parameters:
       - name: id
         in: path
@@ -10569,7 +10571,7 @@ paths:
       summary: Add a new SP connection certificate.
       description: "If the certificate's activeVerificationCert flag is set to true,\
         \ it will become the connection's primary verification certificate."
-      operationId: addConnectionCert
+      operationId: addSpConnectionCert
       parameters:
       - name: id
         in: path
@@ -10680,7 +10682,7 @@ paths:
       tags:
       - /idp/spConnections
       summary: Get the SP connection's signature settings.
-      operationId: getSigningSettings
+      operationId: getSpSigningSettings
       parameters:
       - name: id
         in: path
@@ -10705,7 +10707,7 @@ paths:
       tags:
       - /idp/spConnections
       summary: Update the SP connection's signature settings.
-      operationId: updateSigningSettings
+      operationId: updateSpSigningSettings
       parameters:
       - name: id
         in: path
@@ -10750,7 +10752,7 @@ paths:
       summary: Find SP connection by ID.
       description: Get an SP connection with the specified ID. A 404 status code is
         returned for nonexistent IDs.
-      operationId: getConnection
+      operationId: getSpConnection
       parameters:
       - name: id
         in: path
@@ -10779,7 +10781,7 @@ paths:
         \ is not properly configured, a 422 status code is returned along with a list\
         \ of validation errors that must be corrected. Note: A 404 status code is\
         \ returned for nonexistent IDs."
-      operationId: updateConnection
+      operationId: updateSpConnection
       parameters:
       - name: id
         in: path
@@ -10832,7 +10834,7 @@ paths:
         \ is returned for nonexistent IDs. Note: Only inactive connections can be\
         \ deleted. If the request succeeds, the response body is empty. If the request\
         \ fails, an ApiResult is returned with details of the error."
-      operationId: deleteConnection
+      operationId: deleteSpConnection
       parameters:
       - name: id
         in: path
@@ -10863,7 +10865,7 @@ paths:
       summary: Get list of SP connections.
       description: "Get a list of all the WS-Fed, WS-Trust, SAML1.0, SAML1.1 and SAML\
         \ 2.0 SP connections."
-      operationId: getConnections
+      operationId: getSpConnections
       parameters:
       - name: entityId
         in: query
@@ -10910,7 +10912,7 @@ paths:
       description: "Create a new SP connection. If the SP connection is not properly\
         \ configured, a 422 status code is returned along with a list of validation\
         \ errors that must be corrected."
-      operationId: createConnection
+      operationId: createSpConnection
       parameters:
       - name: X-BypassExternalValidation
         in: header
@@ -10949,7 +10951,7 @@ paths:
       - /sp/defaultUrls
       summary: Gets the SP Default URLs. These are Values that affect the user's experience
         when executing SP-initiated SSO operations.
-      operationId: getDefaultUrls
+      operationId: getSpDefaultUrls
       responses:
         "200":
           description: Success.
@@ -10962,7 +10964,7 @@ paths:
       - /sp/defaultUrls
       summary: Update the SP Default URLs. Enter values that affect the user's experience
         when executing SP-initiated SSO operations.
-      operationId: updateDefaultUrls
+      operationId: updateSpDefaultUrls
       requestBody:
         description: Configuration for the IDP Default URL settings.
         content:
@@ -10992,7 +10994,7 @@ paths:
       tags:
       - /sp/targetUrlMappings
       summary: List the mappings between URLs and adapter or connection instances.
-      operationId: getUrlMappings
+      operationId: getSpUrlMappings
       responses:
         "200":
           description: Success.
@@ -11004,7 +11006,7 @@ paths:
       tags:
       - /sp/targetUrlMappings
       summary: Update the mappings between URLs and adapters or connections instances.
-      operationId: updateUrlMappings
+      operationId: updateSpUrlMappings
       requestBody:
         description: The SP adapter URL mappings to update.
         content:
@@ -11034,7 +11036,7 @@ paths:
       tags:
       - /keyPairs/sslClient
       summary: Get list of key pairs.
-      operationId: getKeyPairs
+      operationId: getSslClientKeyPairs
       responses:
         "200":
           description: Success.
@@ -11047,7 +11049,7 @@ paths:
       tags:
       - /keyPairs/sslClient
       summary: Generate a new key pair.
-      operationId: createKeyPair
+      operationId: createSslClientKeyPair
       requestBody:
         description: Settings for the new key pair.
         content:
@@ -11077,7 +11079,7 @@ paths:
       tags:
       - /keyPairs/sslClient
       summary: Retrieve details of a key pair.
-      operationId: getKeyPair
+      operationId: getSslClientKeyPair
       parameters:
       - name: id
         in: path
@@ -11104,7 +11106,7 @@ paths:
       summary: Delete a key pair.
       description: "If the request is successful, the response body is empty. If the\
         \ request fails, an ApiResult is returned with details of the error."
-      operationId: deleteKeyPair
+      operationId: deleteSslClientKeyPair
       parameters:
       - name: id
         in: path
@@ -11134,7 +11136,7 @@ paths:
         \ returned as text and the response content type is application/pkcs10. If\
         \ an error occurs, an ApiResult is returned in JSON format, and the content\
         \ type is application/json."
-      operationId: exportCsr
+      operationId: exportSslClientCsr
       parameters:
       - name: id
         in: path
@@ -11153,7 +11155,7 @@ paths:
       tags:
       - /keyPairs/sslClient
       summary: Import a CSR response for this key pair.
-      operationId: importCsrResponse
+      operationId: importSslClientCsrResponse
       parameters:
       - name: id
         in: path
@@ -11201,7 +11203,7 @@ paths:
         \ If an error occurs, an ApiResult is returned in JSON format and the content\
         \ type is application/json. Due to the sensitivity of the password parameter,\
         \ the method for this operation is POST rather than GET."
-      operationId: exportPKCS12File
+      operationId: exportSslClientPKCS12File
       parameters:
       - name: id
         in: path
@@ -11254,7 +11256,7 @@ paths:
         \ AES. If an error occurs, an ApiResult is returned in JSON format and the\
         \ content type is application/json. Due to the sensitivity of the password\
         \ parameter, the method for this operation is POST rather than GET."
-      operationId: exportPEMFile
+      operationId: exportSslClientPEMFile
       parameters:
       - name: id
         in: path
@@ -11305,7 +11307,7 @@ paths:
         \ directly returned as text and the response content type is application/x-x509-ca-cert.\
         \ If an error occurs, an ApiResult is returned in JSON format and the content\
         \ type is application/json."
-      operationId: exportCertificateFile
+      operationId: exportSslClientCertificateFile
       parameters:
       - name: id
         in: path
@@ -11331,7 +11333,7 @@ paths:
       tags:
       - /keyPairs/sslClient
       summary: Import a new key pair.
-      operationId: importKeyPair
+      operationId: importSslClientKeyPair
       requestBody:
         description: File to import.
         content:
@@ -11365,7 +11367,7 @@ paths:
       tags:
       - /keyPairs/sslServer
       summary: Get the SSL Server Certificate Settings.
-      operationId: getSettings
+      operationId: getSslServerSettings
       responses:
         "200":
           description: Success.
@@ -11377,7 +11379,7 @@ paths:
       tags:
       - /keyPairs/sslServer
       summary: Update the SSL Server Certificate Settings.
-      operationId: updateSettings
+      operationId: updateSslServerSettings
       requestBody:
         description: Configuration for activation of SSL server certificates.
         content:
@@ -11407,7 +11409,7 @@ paths:
       tags:
       - /keyPairs/sslServer
       summary: Get list of key pairs.
-      operationId: getKeyPairs
+      operationId: getSslServerKeyPairs
       responses:
         "200":
           description: Success.
@@ -11420,7 +11422,7 @@ paths:
       tags:
       - /keyPairs/sslServer
       summary: Generate a new key pair.
-      operationId: createKeyPair
+      operationId: createSslServerKeyPair
       requestBody:
         description: Settings for the new key pair.
         content:
@@ -11450,7 +11452,7 @@ paths:
       tags:
       - /keyPairs/sslServer
       summary: Retrieve details of a key pair.
-      operationId: getKeyPair
+      operationId: getSslServerKeyPair
       parameters:
       - name: id
         in: path
@@ -11477,7 +11479,7 @@ paths:
       summary: Delete a key pair.
       description: "If the request is successful, the response body is empty. If the\
         \ request fails, an ApiResult is returned with details of the error."
-      operationId: deleteKeyPair
+      operationId: deleteSslServerKeyPair
       parameters:
       - name: id
         in: path
@@ -11507,7 +11509,7 @@ paths:
         \ returned as text and the response content type is application/pkcs10. If\
         \ an error occurs, an ApiResult is returned in JSON format, and the content\
         \ type is application/json."
-      operationId: exportCsr
+      operationId: exportSslServerCsr
       parameters:
       - name: id
         in: path
@@ -11526,7 +11528,7 @@ paths:
       tags:
       - /keyPairs/sslServer
       summary: Import a CSR response for this key pair.
-      operationId: importCsrResponse
+      operationId: importSslServerCsrResponse
       parameters:
       - name: id
         in: path
@@ -11574,7 +11576,7 @@ paths:
         \ If an error occurs, an ApiResult is returned in JSON format and the content\
         \ type is application/json. Due to the sensitivity of the password parameter,\
         \ the method for this operation is POST rather than GET."
-      operationId: exportPKCS12File
+      operationId: exportSslServerPKCS12File
       parameters:
       - name: id
         in: path
@@ -11627,7 +11629,7 @@ paths:
         \ AES. If an error occurs, an ApiResult is returned in JSON format and the\
         \ content type is application/json. Due to the sensitivity of the password\
         \ parameter, the method for this operation is POST rather than GET."
-      operationId: exportPEMFile
+      operationId: exportSslServerPEMFile
       parameters:
       - name: id
         in: path
@@ -11678,7 +11680,7 @@ paths:
         \ directly returned as text and the response content type is application/x-x509-ca-cert.\
         \ If an error occurs, an ApiResult is returned in JSON format and the content\
         \ type is application/json."
-      operationId: exportCertificateFile
+      operationId: exportSslServerCertificateFile
       parameters:
       - name: id
         in: path
@@ -11704,7 +11706,7 @@ paths:
       tags:
       - /keyPairs/sslServer
       summary: Import a new key pair.
-      operationId: importKeyPair
+      operationId: importSslServerKeyPair
       requestBody:
         description: File to import.
         content:
@@ -12436,7 +12438,7 @@ paths:
         \ directly returned as text and the response content type is application/x-x509-ca-cert.\
         \ If an error occurs, an ApiResult is returned in JSON format and the content\
         \ type is application/json."
-      operationId: exportCertificateFile
+      operationId: exportCaCertificateFile
       parameters:
       - name: id
         in: path
@@ -12715,7 +12717,7 @@ paths:
       tags:
       - /oauth/issuers
       summary: Get the list of virtual issuers.
-      operationId: getIssuers
+      operationId: getOauthIssuers
       responses:
         "200":
           description: Success.
@@ -12730,7 +12732,7 @@ paths:
       description: "Create a new virtual issuer. If the virtual issuer is not properly\
         \ configured, a 422 status code is returned along with a list of validation\
         \ errors that must be corrected."
-      operationId: addIssuer
+      operationId: addOauthIssuer
       requestBody:
         description: Configuration for new virtual issuer.
         content:
@@ -12762,7 +12764,7 @@ paths:
       summary: Find a virtual issuer by ID.
       description: Get a virtual issuer with the specified ID. A 404 status code is
         returned for nonexistent IDs.
-      operationId: getIssuerById
+      operationId: getOauthIssuerById
       parameters:
       - name: id
         in: path
@@ -12791,7 +12793,7 @@ paths:
         \ not properly configured, a 422 status code is returned along with a list\
         \ of validation errors that must be corrected. Note: A 404 status code is\
         \ returned for nonexistent IDs."
-      operationId: updateIssuer
+      operationId: updateOauthIssuer
       parameters:
       - name: id
         in: path
@@ -12837,7 +12839,7 @@ paths:
         \ is returned for nonexistent IDs. Note: If the request succeeds, the response\
         \ body is empty. If the request fails, an ApiResult is returned with details\
         \ of the error."
-      operationId: deleteIssuer
+      operationId: deleteOauthIssuer
       parameters:
       - name: id
         in: path
@@ -13135,7 +13137,7 @@ paths:
       tags:
       - /oauth/tokenExchange/generator
       summary: Get general OAuth 2.0 Token Exchange Generator settings.
-      operationId: getSettings
+      operationId: getOauthTokenExchangeSettings
       responses:
         "200":
           description: Success.
@@ -13147,7 +13149,7 @@ paths:
       tags:
       - /oauth/tokenExchange/generator
       summary: Update general OAuth 2.0 Token Exchange Generator settings.
-      operationId: updateSettings
+      operationId: updateOauthTokenExchangeSettings
       parameters:
       - name: bypassExternalValidation
         in: header
@@ -13237,7 +13239,7 @@ paths:
       tags:
       - /oauth/tokenExchange/processor
       summary: Get general OAuth 2.0 Token Exchange Processor settings.
-      operationId: getSettings
+      operationId: getOauthTokenExchangeProcessorPolicySettings
       responses:
         "200":
           description: Success.
@@ -13249,7 +13251,7 @@ paths:
       tags:
       - /oauth/tokenExchange/processor
       summary: Update general OAuth 2.0 Token Exchange Processor settings.
-      operationId: updateSettings
+      operationId: updateOauthTokenExchangeProcessorPolicySettings
       parameters:
       - name: bypassExternalValidation
         in: header
@@ -13288,7 +13290,7 @@ paths:
       summary: Find an OAuth 2.0 Token Exchange Processor policy by ID.
       description: Get an OAuth 2.0 Token Exchange Processor policy with the specified
         ID. A 404 status code is returned for nonexistent IDs.
-      operationId: getPolicy
+      operationId: getOauthTokenExchangeProcessorPolicyById
       parameters:
       - name: id
         in: path
@@ -13317,7 +13319,7 @@ paths:
         \ ID. If the policy is not properly configured, a 422 status code is returned\
         \ along with a list of validation errors that must be corrected. Note: A 404\
         \ status code is returned for nonexistent IDs."
-      operationId: updatePolicy
+      operationId: updateOauthTokenExchangeProcessorPolicy
       parameters:
       - name: id
         in: path
@@ -13370,7 +13372,7 @@ paths:
         \ ID. A 404 status code is returned for nonexistent IDs. Note: If the request\
         \ succeeds, the response body is empty. If the request fails, an ApiResult\
         \ is returned with details of the error."
-      operationId: deletePolicy
+      operationId: deleteOauthTokenExchangeProcessorPolicyy
       parameters:
       - name: id
         in: path
@@ -13399,7 +13401,7 @@ paths:
       tags:
       - /oauth/tokenExchange/processor
       summary: Get list of OAuth 2.0 Token Exchange Processor policies.
-      operationId: getPolicies
+      operationId: getOauthTokenExchangeProcessorPolicyPolicies
       responses:
         "200":
           description: Success.
@@ -13415,7 +13417,7 @@ paths:
         \ OAuth 2.0 Token Exchange Processor policy is not properly configured, a\
         \ 422 status code is returned along with a list of validation errors that\
         \ must be corrected."
-      operationId: createPolicy
+      operationId: createOauthTokenExchangeProcessorPolicy
       parameters:
       - name: bypassExternalValidation
         in: header
@@ -13448,6 +13450,10 @@ paths:
                 $ref: '#/components/schemas/ApiResult'
       x-codegen-request-body-name: body
 components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
   schemas:
     AccessTokenManagementSettings:
       type: object
@@ -13621,6 +13627,11 @@ components:
           type: string
           description: The value for this attribute.
       description: Defines how an attribute in an attribute contract should be populated.
+    AttributeSourceAggregation:
+      oneOf:
+        - $ref: "#/components/schemas/CustomAttributeSource"
+        - $ref: "#/components/schemas/JdbcAttributeSource"
+        - $ref: "#/components/schemas/LdapAttributeSource"
     AttributeSource:
       required:
       - dataStoreRef
@@ -13920,7 +13931,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -14746,7 +14757,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -14874,7 +14885,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -14993,7 +15004,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -16324,7 +16335,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -16483,7 +16494,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -16514,7 +16525,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -17031,7 +17042,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -17384,7 +17395,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -17966,7 +17977,6 @@ components:
       description: Settings related to signing messages sent to this partner.
     SloServiceEndpoint:
       required:
-      - binding
       - url
       type: object
       properties:
@@ -18012,7 +18022,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -18050,7 +18060,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
       description: The attribute query profile supports SPs in requesting user attributes.
     SpAttributeQueryPolicy:
       type: object
@@ -18076,7 +18086,6 @@ components:
       - adapterMappings
       - assertionLifetime
       - attributeContract
-      - encryptionPolicy
       - protocol
       - ssoServiceEndpoints
       type: object
@@ -18222,7 +18231,6 @@ components:
     SpBrowserSsoAttribute:
       required:
       - name
-      - nameFormat
       type: object
       properties:
         name:
@@ -18280,8 +18288,6 @@ components:
         description: The set of attributes used to configure an SP connection.
     SpSsoServiceEndpoint:
       required:
-      - binding
-      - index
       - url
       type: object
       properties:
@@ -18330,7 +18336,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -18454,7 +18460,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -18696,6 +18702,12 @@ components:
           type: string
           description: The label for the field.
       description: A plugin configuration field value.
+    DataStoreAggregation:
+      oneOf:
+        - $ref: "#/components/schemas/CustomDataStore"
+        - $ref: "#/components/schemas/JdbcDataStore"
+        - $ref: "#/components/schemas/LdapDataStore"
+        - $ref: "#/components/schemas/PingOneLdapGatewayDataStore"
     CustomDataStore:
       allOf:
       - $ref: '#/components/schemas/DataStore'
@@ -18763,7 +18775,7 @@ components:
           type: array
           description: The actual list of data stores.
           items:
-            $ref: '#/components/schemas/DataStore'
+            $ref: '#/components/schemas/DataStoreAggregation'
       description: A collection of data stores.
     JdbcDataStore:
       allOf:
@@ -19390,7 +19402,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -20074,7 +20086,7 @@ components:
         emailVerificationConfig:
           $ref: '#/components/schemas/EmailVerificationConfig'
         dataStoreConfig:
-          $ref: '#/components/schemas/DataStoreConfig'
+          $ref: '#/components/schemas/LdapDataStoreConfig'
         profileEnabled:
           type: boolean
           description: Whether the profile configuration is enabled or not.
@@ -20224,7 +20236,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -21443,7 +21455,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -21641,7 +21653,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -23167,7 +23179,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -23295,7 +23307,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -23430,7 +23442,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:

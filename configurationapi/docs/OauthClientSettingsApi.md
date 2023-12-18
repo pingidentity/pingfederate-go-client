@@ -1,17 +1,17 @@
 # \OauthClientSettingsAPI
 
-All URIs are relative to *https://localhost/pf-admin-api/v1*
+All URIs are relative to *https://localhost:9999/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetOauthClientSettings**](OauthClientSettingsAPI.md#GetOauthClientSettings) | **Get** /oauth/clientSettings | Configure the client settings.
-[**UpdateOauthClientSettings**](OauthClientSettingsAPI.md#UpdateOauthClientSettings) | **Put** /oauth/clientSettings | Update the client settings.
+[**GetClientSettings**](OauthClientSettingsAPI.md#GetClientSettings) | **Get** /oauth/clientSettings | Configure the client settings.
+[**UpdateClientSettings**](OauthClientSettingsAPI.md#UpdateClientSettings) | **Put** /oauth/clientSettings | Update the client settings.
 
 
 
-## GetOauthClientSettings
+## GetClientSettings
 
-> ClientSettings GetOauthClientSettings(ctx).Execute()
+> ClientSettings GetClientSettings(ctx).Execute()
 
 Configure the client settings.
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientSettingsAPI.GetOauthClientSettings(context.Background()).Execute()
+    resp, r, err := apiClient.OauthClientSettingsAPI.GetClientSettings(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientSettingsAPI.GetOauthClientSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientSettingsAPI.GetClientSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetOauthClientSettings`: ClientSettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientSettingsAPI.GetOauthClientSettings`: %v\n", resp)
+    // response from `GetClientSettings`: ClientSettings
+    fmt.Fprintf(os.Stdout, "Response from `OauthClientSettingsAPI.GetClientSettings`: %v\n", resp)
 }
 ```
 
@@ -47,7 +47,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetOauthClientSettingsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetClientSettingsRequest struct via the builder pattern
 
 
 ### Return type
@@ -68,9 +68,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## UpdateOauthClientSettings
+## UpdateClientSettings
 
-> ClientSettings UpdateOauthClientSettings(ctx).Body(body).Execute()
+> ClientSettings UpdateClientSettings(ctx).Body(body).Execute()
 
 Update the client settings.
 
@@ -91,13 +91,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientSettingsAPI.UpdateOauthClientSettings(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.OauthClientSettingsAPI.UpdateClientSettings(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientSettingsAPI.UpdateOauthClientSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientSettingsAPI.UpdateClientSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateOauthClientSettings`: ClientSettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientSettingsAPI.UpdateOauthClientSettings`: %v\n", resp)
+    // response from `UpdateClientSettings`: ClientSettings
+    fmt.Fprintf(os.Stdout, "Response from `OauthClientSettingsAPI.UpdateClientSettings`: %v\n", resp)
 }
 ```
 
@@ -107,7 +107,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateOauthClientSettingsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateClientSettingsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

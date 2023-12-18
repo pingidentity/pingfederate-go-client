@@ -32,6 +32,10 @@ type OpenIdConnectPolicy struct {
 	IncludeUserInfoInIdToken *bool `json:"includeUserInfoInIdToken,omitempty" tfsdk:"include_user_info_in_id_token"`
 	// Determines whether the State Hash should be included in the ID token.
 	IncludeSHashInIdToken *bool `json:"includeSHashInIdToken,omitempty" tfsdk:"include_shash_in_id_token"`
+	// Determines whether the X.509 thumbprint header should be included in the ID Token.
+	IncludeX5tInIdToken *bool `json:"includeX5tInIdToken,omitempty" tfsdk:"include_x5t_in_id_token"`
+	// ID Token Type (typ) Header Value.
+	IdTokenTypHeaderValue *string `json:"idTokenTypHeaderValue,omitempty" tfsdk:"id_token_typ_header_value"`
 	// Determines whether an ID Token should be returned when refresh grant is requested or not.
 	ReturnIdTokenOnRefreshGrant *bool `json:"returnIdTokenOnRefreshGrant,omitempty" tfsdk:"return_id_token_on_refresh_grant"`
 	// Determines whether a new ID Token should be returned during token request of the hybrid flow.
@@ -264,6 +268,70 @@ func (o *OpenIdConnectPolicy) SetIncludeSHashInIdToken(v bool) {
 	o.IncludeSHashInIdToken = &v
 }
 
+// GetIncludeX5tInIdToken returns the IncludeX5tInIdToken field value if set, zero value otherwise.
+func (o *OpenIdConnectPolicy) GetIncludeX5tInIdToken() bool {
+	if o == nil || IsNil(o.IncludeX5tInIdToken) {
+		var ret bool
+		return ret
+	}
+	return *o.IncludeX5tInIdToken
+}
+
+// GetIncludeX5tInIdTokenOk returns a tuple with the IncludeX5tInIdToken field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OpenIdConnectPolicy) GetIncludeX5tInIdTokenOk() (*bool, bool) {
+	if o == nil || IsNil(o.IncludeX5tInIdToken) {
+		return nil, false
+	}
+	return o.IncludeX5tInIdToken, true
+}
+
+// HasIncludeX5tInIdToken returns a boolean if a field has been set.
+func (o *OpenIdConnectPolicy) HasIncludeX5tInIdToken() bool {
+	if o != nil && !IsNil(o.IncludeX5tInIdToken) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncludeX5tInIdToken gets a reference to the given bool and assigns it to the IncludeX5tInIdToken field.
+func (o *OpenIdConnectPolicy) SetIncludeX5tInIdToken(v bool) {
+	o.IncludeX5tInIdToken = &v
+}
+
+// GetIdTokenTypHeaderValue returns the IdTokenTypHeaderValue field value if set, zero value otherwise.
+func (o *OpenIdConnectPolicy) GetIdTokenTypHeaderValue() string {
+	if o == nil || IsNil(o.IdTokenTypHeaderValue) {
+		var ret string
+		return ret
+	}
+	return *o.IdTokenTypHeaderValue
+}
+
+// GetIdTokenTypHeaderValueOk returns a tuple with the IdTokenTypHeaderValue field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OpenIdConnectPolicy) GetIdTokenTypHeaderValueOk() (*string, bool) {
+	if o == nil || IsNil(o.IdTokenTypHeaderValue) {
+		return nil, false
+	}
+	return o.IdTokenTypHeaderValue, true
+}
+
+// HasIdTokenTypHeaderValue returns a boolean if a field has been set.
+func (o *OpenIdConnectPolicy) HasIdTokenTypHeaderValue() bool {
+	if o != nil && !IsNil(o.IdTokenTypHeaderValue) {
+		return true
+	}
+
+	return false
+}
+
+// SetIdTokenTypHeaderValue gets a reference to the given string and assigns it to the IdTokenTypHeaderValue field.
+func (o *OpenIdConnectPolicy) SetIdTokenTypHeaderValue(v string) {
+	o.IdTokenTypHeaderValue = &v
+}
+
 // GetReturnIdTokenOnRefreshGrant returns the ReturnIdTokenOnRefreshGrant field value if set, zero value otherwise.
 func (o *OpenIdConnectPolicy) GetReturnIdTokenOnRefreshGrant() bool {
 	if o == nil || IsNil(o.ReturnIdTokenOnRefreshGrant) {
@@ -432,6 +500,12 @@ func (o OpenIdConnectPolicy) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.IncludeSHashInIdToken) {
 		toSerialize["includeSHashInIdToken"] = o.IncludeSHashInIdToken
+	}
+	if !IsNil(o.IncludeX5tInIdToken) {
+		toSerialize["includeX5tInIdToken"] = o.IncludeX5tInIdToken
+	}
+	if !IsNil(o.IdTokenTypHeaderValue) {
+		toSerialize["idTokenTypHeaderValue"] = o.IdTokenTypHeaderValue
 	}
 	if !IsNil(o.ReturnIdTokenOnRefreshGrant) {
 		toSerialize["returnIdTokenOnRefreshGrant"] = o.ReturnIdTokenOnRefreshGrant

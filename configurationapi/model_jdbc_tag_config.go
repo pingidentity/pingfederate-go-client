@@ -17,11 +17,11 @@ import (
 // checks if the JdbcTagConfig type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &JdbcTagConfig{}
 
-// JdbcTagConfig A JDBC data store's connection URLs and tags configuration. This is required if no default JDBC database location is specified.
+// JdbcTagConfig A JDBC data store's connection URLs and tags configuration. For regional deployments, provide a separate JdbcTagConfig for each region, containing the region-specific connection URL and the corresponding tags.
 type JdbcTagConfig struct {
 	// The location of the JDBC database.
 	ConnectionUrl string `json:"connectionUrl" tfsdk:"connection_url"`
-	// Tags associated with this data source.
+	// Tags associated with the connection URL. At runtime, nodes will use the first JdbcTagConfig that has a tag that matches with node.tags in run.properties.
 	Tags *string `json:"tags,omitempty" tfsdk:"tags"`
 	// Whether this is the default connection. Defaults to false if not specified.
 	DefaultSource *bool `json:"defaultSource,omitempty" tfsdk:"default_source"`

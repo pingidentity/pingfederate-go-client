@@ -35,6 +35,8 @@ type IdpBrowserSso struct {
 	SloServiceEndpoints []SloServiceEndpoint `json:"sloServiceEndpoints,omitempty" tfsdk:"slo_service_endpoints"`
 	// Specify to always sign the SAML ArtifactResponse.
 	AlwaysSignArtifactResponse *bool `json:"alwaysSignArtifactResponse,omitempty" tfsdk:"always_sign_artifact_response"`
+	// Application endpoint that can be used to invoke single sign-on (SSO) for the connection. This is a read-only parameter.
+	SsoApplicationEndpoint *string `json:"ssoApplicationEndpoint,omitempty" tfsdk:"sso_application_endpoint"`
 	// The IdP SSO endpoints that define where to send your authentication requests. Only required for SP initiated SSO. This is required for SAML x.x and WS-FED Connections.
 	SsoServiceEndpoints []IdpSsoServiceEndpoint `json:"ssoServiceEndpoints,omitempty" tfsdk:"sso_service_endpoints"`
 	// The default target URL for this connection. If defined, this overrides the default URL.
@@ -355,6 +357,38 @@ func (o *IdpBrowserSso) HasAlwaysSignArtifactResponse() bool {
 // SetAlwaysSignArtifactResponse gets a reference to the given bool and assigns it to the AlwaysSignArtifactResponse field.
 func (o *IdpBrowserSso) SetAlwaysSignArtifactResponse(v bool) {
 	o.AlwaysSignArtifactResponse = &v
+}
+
+// GetSsoApplicationEndpoint returns the SsoApplicationEndpoint field value if set, zero value otherwise.
+func (o *IdpBrowserSso) GetSsoApplicationEndpoint() string {
+	if o == nil || IsNil(o.SsoApplicationEndpoint) {
+		var ret string
+		return ret
+	}
+	return *o.SsoApplicationEndpoint
+}
+
+// GetSsoApplicationEndpointOk returns a tuple with the SsoApplicationEndpoint field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IdpBrowserSso) GetSsoApplicationEndpointOk() (*string, bool) {
+	if o == nil || IsNil(o.SsoApplicationEndpoint) {
+		return nil, false
+	}
+	return o.SsoApplicationEndpoint, true
+}
+
+// HasSsoApplicationEndpoint returns a boolean if a field has been set.
+func (o *IdpBrowserSso) HasSsoApplicationEndpoint() bool {
+	if o != nil && !IsNil(o.SsoApplicationEndpoint) {
+		return true
+	}
+
+	return false
+}
+
+// SetSsoApplicationEndpoint gets a reference to the given string and assigns it to the SsoApplicationEndpoint field.
+func (o *IdpBrowserSso) SetSsoApplicationEndpoint(v string) {
+	o.SsoApplicationEndpoint = &v
 }
 
 // GetSsoServiceEndpoints returns the SsoServiceEndpoints field value if set, zero value otherwise.
@@ -799,6 +833,9 @@ func (o IdpBrowserSso) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.AlwaysSignArtifactResponse) {
 		toSerialize["alwaysSignArtifactResponse"] = o.AlwaysSignArtifactResponse
+	}
+	if !IsNil(o.SsoApplicationEndpoint) {
+		toSerialize["ssoApplicationEndpoint"] = o.SsoApplicationEndpoint
 	}
 	if !IsNil(o.SsoServiceEndpoints) {
 		toSerialize["ssoServiceEndpoints"] = o.SsoServiceEndpoints

@@ -1137,7 +1137,7 @@ func (a *AuthenticationPoliciesAPIService) MovePolicyExecute(r ApiMovePolicyRequ
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 422 {
+		if localVarHTTPResponse.StatusCode == 404 {
 			var v ApiResult
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1148,7 +1148,7 @@ func (a *AuthenticationPoliciesAPIService) MovePolicyExecute(r ApiMovePolicyRequ
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-		if localVarHTTPResponse.StatusCode == 404 {
+		if localVarHTTPResponse.StatusCode == 422 {
 			var v ApiResult
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1513,7 +1513,7 @@ func (a *AuthenticationPoliciesAPIService) UpdateFragmentExecute(r ApiUpdateFrag
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 422 {
+		if localVarHTTPResponse.StatusCode == 404 {
 			var v ApiResult
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1524,7 +1524,7 @@ func (a *AuthenticationPoliciesAPIService) UpdateFragmentExecute(r ApiUpdateFrag
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-		if localVarHTTPResponse.StatusCode == 404 {
+		if localVarHTTPResponse.StatusCode == 422 {
 			var v ApiResult
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1658,7 +1658,7 @@ func (a *AuthenticationPoliciesAPIService) UpdatePolicyExecute(r ApiUpdatePolicy
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 422 {
+		if localVarHTTPResponse.StatusCode == 404 {
 			var v ApiResult
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -1669,7 +1669,7 @@ func (a *AuthenticationPoliciesAPIService) UpdatePolicyExecute(r ApiUpdatePolicy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-		if localVarHTTPResponse.StatusCode == 404 {
+		if localVarHTTPResponse.StatusCode == 422 {
 			var v ApiResult
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {

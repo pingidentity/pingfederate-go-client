@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IdpTokenProcessorRef** | [**ResourceLink**](ResourceLink.md) |  | 
 **RestrictedVirtualEntityIds** | Pointer to **[]string** | The list of virtual server IDs that this mapping is restricted to. | [optional] 
-**AttributeSources** | Pointer to [**[]AttributeSource**](AttributeSource.md) | A list of configured data stores to look up attributes from. | [optional] 
+**AttributeSources** | Pointer to [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) | A list of configured data stores to look up attributes from. | [optional] 
 **AttributeContractFulfillment** | [**map[string]AttributeFulfillmentValue**](AttributeFulfillmentValue.md) | A list of mappings from attribute names to their fulfillment values. | 
 **IssuanceCriteria** | Pointer to [**IssuanceCriteria**](IssuanceCriteria.md) |  | [optional] 
 
@@ -76,20 +76,20 @@ HasRestrictedVirtualEntityIds returns a boolean if a field has been set.
 
 ### GetAttributeSources
 
-`func (o *IdpTokenProcessorMapping) GetAttributeSources() []AttributeSource`
+`func (o *IdpTokenProcessorMapping) GetAttributeSources() []AttributeSourceAggregation`
 
 GetAttributeSources returns the AttributeSources field if non-nil, zero value otherwise.
 
 ### GetAttributeSourcesOk
 
-`func (o *IdpTokenProcessorMapping) GetAttributeSourcesOk() (*[]AttributeSource, bool)`
+`func (o *IdpTokenProcessorMapping) GetAttributeSourcesOk() (*[]AttributeSourceAggregation, bool)`
 
 GetAttributeSourcesOk returns a tuple with the AttributeSources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributeSources
 
-`func (o *IdpTokenProcessorMapping) SetAttributeSources(v []AttributeSource)`
+`func (o *IdpTokenProcessorMapping) SetAttributeSources(v []AttributeSourceAggregation)`
 
 SetAttributeSources sets AttributeSources field to given value.
 

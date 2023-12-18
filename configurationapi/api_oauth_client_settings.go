@@ -21,23 +21,23 @@ import (
 // OauthClientSettingsAPIService OauthClientSettingsAPI service
 type OauthClientSettingsAPIService service
 
-type ApiGetOauthClientSettingsRequest struct {
+type ApiGetClientSettingsRequest struct {
 	ctx        context.Context
 	ApiService *OauthClientSettingsAPIService
 }
 
-func (r ApiGetOauthClientSettingsRequest) Execute() (*ClientSettings, *http.Response, error) {
-	return r.ApiService.GetOauthClientSettingsExecute(r)
+func (r ApiGetClientSettingsRequest) Execute() (*ClientSettings, *http.Response, error) {
+	return r.ApiService.GetClientSettingsExecute(r)
 }
 
 /*
-GetOauthClientSettings Configure the client settings.
+GetClientSettings Configure the client settings.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetOauthClientSettingsRequest
+	@return ApiGetClientSettingsRequest
 */
-func (a *OauthClientSettingsAPIService) GetOauthClientSettings(ctx context.Context) ApiGetOauthClientSettingsRequest {
-	return ApiGetOauthClientSettingsRequest{
+func (a *OauthClientSettingsAPIService) GetClientSettings(ctx context.Context) ApiGetClientSettingsRequest {
+	return ApiGetClientSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
@@ -46,7 +46,7 @@ func (a *OauthClientSettingsAPIService) GetOauthClientSettings(ctx context.Conte
 // Execute executes the request
 //
 //	@return ClientSettings
-func (a *OauthClientSettingsAPIService) GetOauthClientSettingsExecute(r ApiGetOauthClientSettingsRequest) (*ClientSettings, *http.Response, error) {
+func (a *OauthClientSettingsAPIService) GetClientSettingsExecute(r ApiGetClientSettingsRequest) (*ClientSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *OauthClientSettingsAPIService) GetOauthClientSettingsExecute(r ApiGetOa
 		localVarReturnValue *ClientSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthClientSettingsAPIService.GetOauthClientSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthClientSettingsAPIService.GetClientSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -119,30 +119,30 @@ func (a *OauthClientSettingsAPIService) GetOauthClientSettingsExecute(r ApiGetOa
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpdateOauthClientSettingsRequest struct {
+type ApiUpdateClientSettingsRequest struct {
 	ctx        context.Context
 	ApiService *OauthClientSettingsAPIService
 	body       *ClientSettings
 }
 
 // Configuration for client settings.
-func (r ApiUpdateOauthClientSettingsRequest) Body(body ClientSettings) ApiUpdateOauthClientSettingsRequest {
+func (r ApiUpdateClientSettingsRequest) Body(body ClientSettings) ApiUpdateClientSettingsRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiUpdateOauthClientSettingsRequest) Execute() (*ClientSettings, *http.Response, error) {
-	return r.ApiService.UpdateOauthClientSettingsExecute(r)
+func (r ApiUpdateClientSettingsRequest) Execute() (*ClientSettings, *http.Response, error) {
+	return r.ApiService.UpdateClientSettingsExecute(r)
 }
 
 /*
-UpdateOauthClientSettings Update the client settings.
+UpdateClientSettings Update the client settings.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUpdateOauthClientSettingsRequest
+	@return ApiUpdateClientSettingsRequest
 */
-func (a *OauthClientSettingsAPIService) UpdateOauthClientSettings(ctx context.Context) ApiUpdateOauthClientSettingsRequest {
-	return ApiUpdateOauthClientSettingsRequest{
+func (a *OauthClientSettingsAPIService) UpdateClientSettings(ctx context.Context) ApiUpdateClientSettingsRequest {
+	return ApiUpdateClientSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
@@ -151,7 +151,7 @@ func (a *OauthClientSettingsAPIService) UpdateOauthClientSettings(ctx context.Co
 // Execute executes the request
 //
 //	@return ClientSettings
-func (a *OauthClientSettingsAPIService) UpdateOauthClientSettingsExecute(r ApiUpdateOauthClientSettingsRequest) (*ClientSettings, *http.Response, error) {
+func (a *OauthClientSettingsAPIService) UpdateClientSettingsExecute(r ApiUpdateClientSettingsRequest) (*ClientSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -159,7 +159,7 @@ func (a *OauthClientSettingsAPIService) UpdateOauthClientSettingsExecute(r ApiUp
 		localVarReturnValue *ClientSettings
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthClientSettingsAPIService.UpdateOauthClientSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthClientSettingsAPIService.UpdateClientSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

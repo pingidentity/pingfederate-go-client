@@ -23,11 +23,13 @@ type OIDCProviderSettings struct {
 	Scopes string `json:"scopes" tfsdk:"scopes"`
 	// URL of the OpenID Provider's OAuth 2.0 Authorization Endpoint.
 	AuthorizationEndpoint string `json:"authorizationEndpoint" tfsdk:"authorization_endpoint"`
+	// URL of the OpenID Provider's OAuth 2.0 Pushed Authorization Request Endpoint.
+	PushedAuthorizationRequestEndpoint *string `json:"pushedAuthorizationRequestEndpoint,omitempty" tfsdk:"pushed_authorization_request_endpoint"`
 	// The OpenID Connect login type. These values maps to: <br>  CODE: Authentication using Code Flow <br> POST: Authentication using Form Post <br> POST_AT: Authentication using Form Post with Access Token
 	LoginType string `json:"loginType" tfsdk:"login_type"`
 	// The OpenID Connect Authentication Scheme. This is required for Authentication using Code Flow.
 	AuthenticationScheme *string `json:"authenticationScheme,omitempty" tfsdk:"authentication_scheme"`
-	// The authentication signing algorithm for token endpoint PRIVATE_KEY_JWT authentication. Only asymmetric algorithms are allowed. For RSASSA-PSS signing algorithm, PingFederate must be integrated with a hardware security module (HSM) or Java 11.
+	// The authentication signing algorithm for token endpoint PRIVATE_KEY_JWT or CLIENT_SECRET_JWT authentication. Asymmetric algorithms are allowed for PRIVATE_KEY_JWT and symmetric algorithms are allowed for CLIENT_SECRET_JWT. For RSASSA-PSS signing algorithm, PingFederate must be integrated with a hardware security module (HSM) or Java 11.
 	AuthenticationSigningAlgorithm *string `json:"authenticationSigningAlgorithm,omitempty" tfsdk:"authentication_signing_algorithm"`
 	// The request signing algorithm. Required only if you wish to use signed requests. Only asymmetric algorithms are allowed. For RSASSA-PSS signing algorithm, PingFederate must be integrated with a hardware security module (HSM) or Java 11.
 	RequestSigningAlgorithm *string `json:"requestSigningAlgorithm,omitempty" tfsdk:"request_signing_algorithm"`
@@ -39,8 +41,14 @@ type OIDCProviderSettings struct {
 	UserInfoEndpoint *string `json:"userInfoEndpoint,omitempty" tfsdk:"user_info_endpoint"`
 	// URL of the OpenID Provider's JSON Web Key Set [JWK] document.
 	JwksURL string `json:"jwksURL" tfsdk:"jwks_url"`
+	// Determines whether PingFederate tracks a logout entry when a user signs in, so that the user session can later be terminated via back-channel logout.
+	TrackUserSessionsForLogout *bool `json:"trackUserSessionsForLogout,omitempty" tfsdk:"track_user_sessions_for_logout"`
 	// A list of request parameters. Request parameters with same name but different attribute values are treated as a multi-valued request parameter.
 	RequestParameters []OIDCRequestParameter `json:"requestParameters,omitempty" tfsdk:"request_parameters"`
+	// The redirect URI. This is a read-only parameter.
+	RedirectUri *string `json:"redirectUri,omitempty" tfsdk:"redirect_uri"`
+	// The Back-Channel Logout URI. This read-only parameter is available when user sessions are tracked for logout.
+	BackChannelLogoutUri *string `json:"backChannelLogoutUri,omitempty" tfsdk:"back_channel_logout_uri"`
 }
 
 // NewOIDCProviderSettings instantiates a new OIDCProviderSettings object
@@ -110,6 +118,38 @@ func (o *OIDCProviderSettings) GetAuthorizationEndpointOk() (*string, bool) {
 // SetAuthorizationEndpoint sets field value
 func (o *OIDCProviderSettings) SetAuthorizationEndpoint(v string) {
 	o.AuthorizationEndpoint = v
+}
+
+// GetPushedAuthorizationRequestEndpoint returns the PushedAuthorizationRequestEndpoint field value if set, zero value otherwise.
+func (o *OIDCProviderSettings) GetPushedAuthorizationRequestEndpoint() string {
+	if o == nil || IsNil(o.PushedAuthorizationRequestEndpoint) {
+		var ret string
+		return ret
+	}
+	return *o.PushedAuthorizationRequestEndpoint
+}
+
+// GetPushedAuthorizationRequestEndpointOk returns a tuple with the PushedAuthorizationRequestEndpoint field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OIDCProviderSettings) GetPushedAuthorizationRequestEndpointOk() (*string, bool) {
+	if o == nil || IsNil(o.PushedAuthorizationRequestEndpoint) {
+		return nil, false
+	}
+	return o.PushedAuthorizationRequestEndpoint, true
+}
+
+// HasPushedAuthorizationRequestEndpoint returns a boolean if a field has been set.
+func (o *OIDCProviderSettings) HasPushedAuthorizationRequestEndpoint() bool {
+	if o != nil && !IsNil(o.PushedAuthorizationRequestEndpoint) {
+		return true
+	}
+
+	return false
+}
+
+// SetPushedAuthorizationRequestEndpoint gets a reference to the given string and assigns it to the PushedAuthorizationRequestEndpoint field.
+func (o *OIDCProviderSettings) SetPushedAuthorizationRequestEndpoint(v string) {
+	o.PushedAuthorizationRequestEndpoint = &v
 }
 
 // GetLoginType returns the LoginType field value
@@ -352,6 +392,38 @@ func (o *OIDCProviderSettings) SetJwksURL(v string) {
 	o.JwksURL = v
 }
 
+// GetTrackUserSessionsForLogout returns the TrackUserSessionsForLogout field value if set, zero value otherwise.
+func (o *OIDCProviderSettings) GetTrackUserSessionsForLogout() bool {
+	if o == nil || IsNil(o.TrackUserSessionsForLogout) {
+		var ret bool
+		return ret
+	}
+	return *o.TrackUserSessionsForLogout
+}
+
+// GetTrackUserSessionsForLogoutOk returns a tuple with the TrackUserSessionsForLogout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OIDCProviderSettings) GetTrackUserSessionsForLogoutOk() (*bool, bool) {
+	if o == nil || IsNil(o.TrackUserSessionsForLogout) {
+		return nil, false
+	}
+	return o.TrackUserSessionsForLogout, true
+}
+
+// HasTrackUserSessionsForLogout returns a boolean if a field has been set.
+func (o *OIDCProviderSettings) HasTrackUserSessionsForLogout() bool {
+	if o != nil && !IsNil(o.TrackUserSessionsForLogout) {
+		return true
+	}
+
+	return false
+}
+
+// SetTrackUserSessionsForLogout gets a reference to the given bool and assigns it to the TrackUserSessionsForLogout field.
+func (o *OIDCProviderSettings) SetTrackUserSessionsForLogout(v bool) {
+	o.TrackUserSessionsForLogout = &v
+}
+
 // GetRequestParameters returns the RequestParameters field value if set, zero value otherwise.
 func (o *OIDCProviderSettings) GetRequestParameters() []OIDCRequestParameter {
 	if o == nil || IsNil(o.RequestParameters) {
@@ -384,6 +456,70 @@ func (o *OIDCProviderSettings) SetRequestParameters(v []OIDCRequestParameter) {
 	o.RequestParameters = v
 }
 
+// GetRedirectUri returns the RedirectUri field value if set, zero value otherwise.
+func (o *OIDCProviderSettings) GetRedirectUri() string {
+	if o == nil || IsNil(o.RedirectUri) {
+		var ret string
+		return ret
+	}
+	return *o.RedirectUri
+}
+
+// GetRedirectUriOk returns a tuple with the RedirectUri field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OIDCProviderSettings) GetRedirectUriOk() (*string, bool) {
+	if o == nil || IsNil(o.RedirectUri) {
+		return nil, false
+	}
+	return o.RedirectUri, true
+}
+
+// HasRedirectUri returns a boolean if a field has been set.
+func (o *OIDCProviderSettings) HasRedirectUri() bool {
+	if o != nil && !IsNil(o.RedirectUri) {
+		return true
+	}
+
+	return false
+}
+
+// SetRedirectUri gets a reference to the given string and assigns it to the RedirectUri field.
+func (o *OIDCProviderSettings) SetRedirectUri(v string) {
+	o.RedirectUri = &v
+}
+
+// GetBackChannelLogoutUri returns the BackChannelLogoutUri field value if set, zero value otherwise.
+func (o *OIDCProviderSettings) GetBackChannelLogoutUri() string {
+	if o == nil || IsNil(o.BackChannelLogoutUri) {
+		var ret string
+		return ret
+	}
+	return *o.BackChannelLogoutUri
+}
+
+// GetBackChannelLogoutUriOk returns a tuple with the BackChannelLogoutUri field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OIDCProviderSettings) GetBackChannelLogoutUriOk() (*string, bool) {
+	if o == nil || IsNil(o.BackChannelLogoutUri) {
+		return nil, false
+	}
+	return o.BackChannelLogoutUri, true
+}
+
+// HasBackChannelLogoutUri returns a boolean if a field has been set.
+func (o *OIDCProviderSettings) HasBackChannelLogoutUri() bool {
+	if o != nil && !IsNil(o.BackChannelLogoutUri) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackChannelLogoutUri gets a reference to the given string and assigns it to the BackChannelLogoutUri field.
+func (o *OIDCProviderSettings) SetBackChannelLogoutUri(v string) {
+	o.BackChannelLogoutUri = &v
+}
+
 func (o OIDCProviderSettings) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -396,6 +532,9 @@ func (o OIDCProviderSettings) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["scopes"] = o.Scopes
 	toSerialize["authorizationEndpoint"] = o.AuthorizationEndpoint
+	if !IsNil(o.PushedAuthorizationRequestEndpoint) {
+		toSerialize["pushedAuthorizationRequestEndpoint"] = o.PushedAuthorizationRequestEndpoint
+	}
 	toSerialize["loginType"] = o.LoginType
 	if !IsNil(o.AuthenticationScheme) {
 		toSerialize["authenticationScheme"] = o.AuthenticationScheme
@@ -416,8 +555,17 @@ func (o OIDCProviderSettings) ToMap() (map[string]interface{}, error) {
 		toSerialize["userInfoEndpoint"] = o.UserInfoEndpoint
 	}
 	toSerialize["jwksURL"] = o.JwksURL
+	if !IsNil(o.TrackUserSessionsForLogout) {
+		toSerialize["trackUserSessionsForLogout"] = o.TrackUserSessionsForLogout
+	}
 	if !IsNil(o.RequestParameters) {
 		toSerialize["requestParameters"] = o.RequestParameters
+	}
+	if !IsNil(o.RedirectUri) {
+		toSerialize["redirectUri"] = o.RedirectUri
+	}
+	if !IsNil(o.BackChannelLogoutUri) {
+		toSerialize["backChannelLogoutUri"] = o.BackChannelLogoutUri
 	}
 	return toSerialize, nil
 }

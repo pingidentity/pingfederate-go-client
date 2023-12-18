@@ -26,6 +26,8 @@ type CertificateExpirationNotificationSettings struct {
 	// Time before certificate expiration when final warning is sent (in days).
 	FinalWarningPeriod       int64         `json:"finalWarningPeriod" tfsdk:"final_warning_period"`
 	NotificationPublisherRef *ResourceLink `json:"notificationPublisherRef,omitempty" tfsdk:"notification_publisher_ref"`
+	// The mode of notification. Set to NOTIFICATION_PUBLISHER to enable email notifications and server log messages. Set to LOGGING_ONLY to enable server log messages. Defaults to NOTIFICATION_PUBLISHER.
+	NotificationMode *string `json:"notificationMode,omitempty" tfsdk:"notification_mode"`
 }
 
 // NewCertificateExpirationNotificationSettings instantiates a new CertificateExpirationNotificationSettings object
@@ -159,6 +161,38 @@ func (o *CertificateExpirationNotificationSettings) SetNotificationPublisherRef(
 	o.NotificationPublisherRef = &v
 }
 
+// GetNotificationMode returns the NotificationMode field value if set, zero value otherwise.
+func (o *CertificateExpirationNotificationSettings) GetNotificationMode() string {
+	if o == nil || IsNil(o.NotificationMode) {
+		var ret string
+		return ret
+	}
+	return *o.NotificationMode
+}
+
+// GetNotificationModeOk returns a tuple with the NotificationMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CertificateExpirationNotificationSettings) GetNotificationModeOk() (*string, bool) {
+	if o == nil || IsNil(o.NotificationMode) {
+		return nil, false
+	}
+	return o.NotificationMode, true
+}
+
+// HasNotificationMode returns a boolean if a field has been set.
+func (o *CertificateExpirationNotificationSettings) HasNotificationMode() bool {
+	if o != nil && !IsNil(o.NotificationMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetNotificationMode gets a reference to the given string and assigns it to the NotificationMode field.
+func (o *CertificateExpirationNotificationSettings) SetNotificationMode(v string) {
+	o.NotificationMode = &v
+}
+
 func (o CertificateExpirationNotificationSettings) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -176,6 +210,9 @@ func (o CertificateExpirationNotificationSettings) ToMap() (map[string]interface
 	toSerialize["finalWarningPeriod"] = o.FinalWarningPeriod
 	if !IsNil(o.NotificationPublisherRef) {
 		toSerialize["notificationPublisherRef"] = o.NotificationPublisherRef
+	}
+	if !IsNil(o.NotificationMode) {
+		toSerialize["notificationMode"] = o.NotificationMode
 	}
 	return toSerialize, nil
 }

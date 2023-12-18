@@ -73,7 +73,7 @@ ctx = context.WithValue(context.Background(), configurationapi.ContextOperationS
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://localhost/pf-admin-api/v1*
+All URIs are relative to *https://localhost:9999/pf-admin-api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -147,10 +147,10 @@ Class | Method | HTTP request | Description
 *ClusterAPI* | [**StartReplication**](docs/ClusterAPI.md#startreplication) | **Post** /cluster/replicate | Replicate configuration updates to all nodes in the cluster.
 *ConfigArchiveAPI* | [**ExportConfigArchive**](docs/ConfigArchiveAPI.md#exportconfigarchive) | **Get** /configArchive/export | Export a configuration archive.
 *ConfigArchiveAPI* | [**ImportConfigArchive**](docs/ConfigArchiveAPI.md#importconfigarchive) | **Post** /configArchive/import | Import a configuration archive.
-*ConfigStoreAPI* | [**DeleteConfigStoreSetting**](docs/ConfigStoreAPI.md#deleteconfigstoresetting) | **Delete** /configStore/{bundle}/{id} | Delete a setting.
-*ConfigStoreAPI* | [**GetConfigStoreSetting**](docs/ConfigStoreAPI.md#getconfigstoresetting) | **Get** /configStore/{bundle}/{id} | Get a single setting from a bundle.
+*ConfigStoreAPI* | [**DeleteSetting**](docs/ConfigStoreAPI.md#deletesetting) | **Delete** /configStore/{bundle}/{id} | Delete a setting.
 *ConfigStoreAPI* | [**GetConfigStoreSettings**](docs/ConfigStoreAPI.md#getconfigstoresettings) | **Get** /configStore/{bundle} | Get all settings from a bundle.
-*ConfigStoreAPI* | [**UpdateConfigStoreSetting**](docs/ConfigStoreAPI.md#updateconfigstoresetting) | **Put** /configStore/{bundle}/{id} | Create or update a setting/bundle.
+*ConfigStoreAPI* | [**GetSetting**](docs/ConfigStoreAPI.md#getsetting) | **Get** /configStore/{bundle}/{id} | Get a single setting from a bundle.
+*ConfigStoreAPI* | [**UpdateSetting**](docs/ConfigStoreAPI.md#updatesetting) | **Put** /configStore/{bundle}/{id} | Create or update a setting/bundle.
 *ConfigurationEncryptionKeysAPI* | [**GetConfigurationEncryptionKeys**](docs/ConfigurationEncryptionKeysAPI.md#getconfigurationencryptionkeys) | **Get** /configurationEncryptionKeys | Get the list of Configuration Encryption Keys.
 *ConfigurationEncryptionKeysAPI* | [**RotateConfigurationEncryptionKey**](docs/ConfigurationEncryptionKeysAPI.md#rotateconfigurationencryptionkey) | **Post** /configurationEncryptionKeys/rotate | Rotate the current Configuration Encryption Key.
 *ConnectionMetadataAPI* | [**Convert**](docs/ConnectionMetadataAPI.md#convert) | **Post** /connectionMetadata/convert | Convert a partner&#39;s SAML metadata into a JSON representation.
@@ -286,11 +286,11 @@ Class | Method | HTTP request | Description
 *NotificationPublishersAPI* | [**CreateNotificationPublisher**](docs/NotificationPublishersAPI.md#createnotificationpublisher) | **Post** /notificationPublishers | Create a notification publisher plugin instance.
 *NotificationPublishersAPI* | [**DeleteNotificationPublisher**](docs/NotificationPublishersAPI.md#deletenotificationpublisher) | **Delete** /notificationPublishers/{id} | Delete a notification publisher plugin instance.
 *NotificationPublishersAPI* | [**GetNotificationPublisher**](docs/NotificationPublishersAPI.md#getnotificationpublisher) | **Get** /notificationPublishers/{id} | Get a specific notification publisher plugin instance.
-*NotificationPublishersAPI* | [**GetNotificationPublisherActions**](docs/NotificationPublishersAPI.md#getnotificationpublisheractions) | **Get** /notificationPublishers/{id}/actions | List the actions for a notification publisher plugin instance.
 *NotificationPublishersAPI* | [**GetNotificationPublisherPluginDescriptor**](docs/NotificationPublishersAPI.md#getnotificationpublisherplugindescriptor) | **Get** /notificationPublishers/descriptors/{id} | Get the description of a notification publisher plugin descriptor.
 *NotificationPublishersAPI* | [**GetNotificationPublisherPluginDescriptors**](docs/NotificationPublishersAPI.md#getnotificationpublisherplugindescriptors) | **Get** /notificationPublishers/descriptors | Get the list of available Notification Publisher Plugin descriptors.
 *NotificationPublishersAPI* | [**GetNotificationPublishers**](docs/NotificationPublishersAPI.md#getnotificationpublishers) | **Get** /notificationPublishers | Get a list of notification publisher plugin instances.
 *NotificationPublishersAPI* | [**GetNotificationPublishersAction**](docs/NotificationPublishersAPI.md#getnotificationpublishersaction) | **Get** /notificationPublishers/{id}/actions/{actionId} | Find an notification publisher plugin instance&#39;s action by ID.
+*NotificationPublishersAPI* | [**GetNotificationPublishersActions**](docs/NotificationPublishersAPI.md#getnotificationpublishersactions) | **Get** /notificationPublishers/{id}/actions | List the actions for a notification publisher plugin instance.
 *NotificationPublishersAPI* | [**GetNotificationPublishersSettings**](docs/NotificationPublishersAPI.md#getnotificationpublisherssettings) | **Get** /notificationPublishers/settings | Get general notification publisher settings.
 *NotificationPublishersAPI* | [**InvokeNotificationPublishersActionWithOptions**](docs/NotificationPublishersAPI.md#invokenotificationpublishersactionwithoptions) | **Post** /notificationPublishers/{id}/actions/{actionId}/invokeAction | Invokes an action for notification publisher plugin instance.
 *NotificationPublishersAPI* | [**UpdateNotificationPublisher**](docs/NotificationPublishersAPI.md#updatenotificationpublisher) | **Put** /notificationPublishers/{id} | Update a notification publisher plugin instance.
@@ -358,15 +358,15 @@ Class | Method | HTTP request | Description
 *OauthClientRegistrationPoliciesAPI* | [**GetDynamicClientRegistrationPolicies**](docs/OauthClientRegistrationPoliciesAPI.md#getdynamicclientregistrationpolicies) | **Get** /oauth/clientRegistrationPolicies | Get a list of client registration policy plugin instances.
 *OauthClientRegistrationPoliciesAPI* | [**GetDynamicClientRegistrationPolicy**](docs/OauthClientRegistrationPoliciesAPI.md#getdynamicclientregistrationpolicy) | **Get** /oauth/clientRegistrationPolicies/{id} | Get a specific client registration policy plugin instance.
 *OauthClientRegistrationPoliciesAPI* | [**UpdateDynamicClientRegistrationPolicy**](docs/OauthClientRegistrationPoliciesAPI.md#updatedynamicclientregistrationpolicy) | **Put** /oauth/clientRegistrationPolicies/{id} | Update a client registration policy plugin instance.
-*OauthClientSettingsAPI* | [**GetOauthClientSettings**](docs/OauthClientSettingsAPI.md#getoauthclientsettings) | **Get** /oauth/clientSettings | Configure the client settings.
-*OauthClientSettingsAPI* | [**UpdateOauthClientSettings**](docs/OauthClientSettingsAPI.md#updateoauthclientsettings) | **Put** /oauth/clientSettings | Update the client settings.
+*OauthClientSettingsAPI* | [**GetClientSettings**](docs/OauthClientSettingsAPI.md#getclientsettings) | **Get** /oauth/clientSettings | Configure the client settings.
+*OauthClientSettingsAPI* | [**UpdateClientSettings**](docs/OauthClientSettingsAPI.md#updateclientsettings) | **Put** /oauth/clientSettings | Update the client settings.
 *OauthClientsAPI* | [**CreateOauthClient**](docs/OauthClientsAPI.md#createoauthclient) | **Post** /oauth/clients | Create a new OAuth client.
 *OauthClientsAPI* | [**DeleteOauthClient**](docs/OauthClientsAPI.md#deleteoauthclient) | **Delete** /oauth/clients/{id} | Delete an OAuth client.
+*OauthClientsAPI* | [**GetClientSecret**](docs/OauthClientsAPI.md#getclientsecret) | **Get** /oauth/clients/{id}/clientAuth/clientSecret | Get the client secret of an existing OAuth client.
+*OauthClientsAPI* | [**GetClients**](docs/OauthClientsAPI.md#getclients) | **Get** /oauth/clients | Get the list of OAuth clients.
 *OauthClientsAPI* | [**GetOauthClientById**](docs/OauthClientsAPI.md#getoauthclientbyid) | **Get** /oauth/clients/{id} | Find the OAuth client by ID.
-*OauthClientsAPI* | [**GetOauthClientSecret**](docs/OauthClientsAPI.md#getoauthclientsecret) | **Get** /oauth/clients/{id}/clientAuth/clientSecret | Get the client secret of an existing OAuth client.
-*OauthClientsAPI* | [**GetOauthClients**](docs/OauthClientsAPI.md#getoauthclients) | **Get** /oauth/clients | Get the list of OAuth clients.
+*OauthClientsAPI* | [**UpdateClientSecret**](docs/OauthClientsAPI.md#updateclientsecret) | **Put** /oauth/clients/{id}/clientAuth/clientSecret | Update the client secret of an existing OAuth client.
 *OauthClientsAPI* | [**UpdateOauthClient**](docs/OauthClientsAPI.md#updateoauthclient) | **Put** /oauth/clients/{id} | Updates the OAuth client.
-*OauthClientsAPI* | [**UpdateOauthClientSecret**](docs/OauthClientsAPI.md#updateoauthclientsecret) | **Put** /oauth/clients/{id}/clientAuth/clientSecret | Update the client secret of an existing OAuth client.
 *OauthIdpAdapterMappingsAPI* | [**CreateIdpAdapterMapping**](docs/OauthIdpAdapterMappingsAPI.md#createidpadaptermapping) | **Post** /oauth/idpAdapterMappings | Create a new IdP adapter mapping.
 *OauthIdpAdapterMappingsAPI* | [**DeleteIdpAdapterMapping**](docs/OauthIdpAdapterMappingsAPI.md#deleteidpadaptermapping) | **Delete** /oauth/idpAdapterMappings/{id} | Delete an IdP adapter mapping.
 *OauthIdpAdapterMappingsAPI* | [**GetIdpAdapterMapping**](docs/OauthIdpAdapterMappingsAPI.md#getidpadaptermapping) | **Get** /oauth/idpAdapterMappings/{id} | Find the IdP adapter mapping by the ID.
@@ -400,11 +400,11 @@ Class | Method | HTTP request | Description
 *OauthResourceOwnerCredentialsMappingsAPI* | [**GetResourceOwnerCredentialsMappings**](docs/OauthResourceOwnerCredentialsMappingsAPI.md#getresourceownercredentialsmappings) | **Get** /oauth/resourceOwnerCredentialsMappings | Get the list of Resource Owner Credentials Grant Mapping.
 *OauthResourceOwnerCredentialsMappingsAPI* | [**UpdateResourceOwnerCredentialsMapping**](docs/OauthResourceOwnerCredentialsMappingsAPI.md#updateresourceownercredentialsmapping) | **Put** /oauth/resourceOwnerCredentialsMappings/{id} | Update a Resource Owner Credentials mapping.
 *OauthTokenExchangeGeneratorAPI* | [**CreateGroup**](docs/OauthTokenExchangeGeneratorAPI.md#creategroup) | **Post** /oauth/tokenExchange/generator/groups | Create a new OAuth 2.0 Token Exchange Generator group.
-*OauthTokenExchangeGeneratorAPI* | [**DeleteOauthTokenExchangeGroup**](docs/OauthTokenExchangeGeneratorAPI.md#deleteoauthtokenexchangegroup) | **Delete** /oauth/tokenExchange/generator/groups/{id} | Delete an OAuth 2.0 Token Exchange Generator group.
-*OauthTokenExchangeGeneratorAPI* | [**GetOauthTokenExchangeGroupById**](docs/OauthTokenExchangeGeneratorAPI.md#getoauthtokenexchangegroupbyid) | **Get** /oauth/tokenExchange/generator/groups/{id} | Find an OAuth 2.0 Token Exchange Generator group by ID.
-*OauthTokenExchangeGeneratorAPI* | [**GetOauthTokenExchangeGroups**](docs/OauthTokenExchangeGeneratorAPI.md#getoauthtokenexchangegroups) | **Get** /oauth/tokenExchange/generator/groups | Get list of OAuth 2.0 Token Exchange Generator groups.
+*OauthTokenExchangeGeneratorAPI* | [**DeleteGroup**](docs/OauthTokenExchangeGeneratorAPI.md#deletegroup) | **Delete** /oauth/tokenExchange/generator/groups/{id} | Delete an OAuth 2.0 Token Exchange Generator group.
+*OauthTokenExchangeGeneratorAPI* | [**GetGroup**](docs/OauthTokenExchangeGeneratorAPI.md#getgroup) | **Get** /oauth/tokenExchange/generator/groups/{id} | Find an OAuth 2.0 Token Exchange Generator group by ID.
+*OauthTokenExchangeGeneratorAPI* | [**GetGroups**](docs/OauthTokenExchangeGeneratorAPI.md#getgroups) | **Get** /oauth/tokenExchange/generator/groups | Get list of OAuth 2.0 Token Exchange Generator groups.
 *OauthTokenExchangeGeneratorAPI* | [**GetOauthTokenExchangeSettings**](docs/OauthTokenExchangeGeneratorAPI.md#getoauthtokenexchangesettings) | **Get** /oauth/tokenExchange/generator/settings | Get general OAuth 2.0 Token Exchange Generator settings.
-*OauthTokenExchangeGeneratorAPI* | [**UpdateOauthTokenExchangeGroup**](docs/OauthTokenExchangeGeneratorAPI.md#updateoauthtokenexchangegroup) | **Put** /oauth/tokenExchange/generator/groups/{id} | Update an OAuth 2.0 Token Exchange Generator group.
+*OauthTokenExchangeGeneratorAPI* | [**UpdateGroup**](docs/OauthTokenExchangeGeneratorAPI.md#updategroup) | **Put** /oauth/tokenExchange/generator/groups/{id} | Update an OAuth 2.0 Token Exchange Generator group.
 *OauthTokenExchangeGeneratorAPI* | [**UpdateOauthTokenExchangeSettings**](docs/OauthTokenExchangeGeneratorAPI.md#updateoauthtokenexchangesettings) | **Put** /oauth/tokenExchange/generator/settings | Update general OAuth 2.0 Token Exchange Generator settings.
 *OauthTokenExchangeProcessorAPI* | [**CreateOauthTokenExchangeProcessorPolicy**](docs/OauthTokenExchangeProcessorAPI.md#createoauthtokenexchangeprocessorpolicy) | **Post** /oauth/tokenExchange/processor/policies | Create a new OAuth 2.0 Token Exchange Processor policy.
 *OauthTokenExchangeProcessorAPI* | [**DeleteOauthTokenExchangeProcessorPolicyy**](docs/OauthTokenExchangeProcessorAPI.md#deleteoauthtokenexchangeprocessorpolicyy) | **Delete** /oauth/tokenExchange/processor/policies/{id} | Delete an OAuth 2.0 Token Exchange Processor policy.
@@ -550,7 +550,6 @@ Class | Method | HTTP request | Description
  - [AccessTokenAttributeContract](docs/AccessTokenAttributeContract.md)
  - [AccessTokenManagementSettings](docs/AccessTokenManagementSettings.md)
  - [AccessTokenManager](docs/AccessTokenManager.md)
- - [AccessTokenManagerAllOf](docs/AccessTokenManagerAllOf.md)
  - [AccessTokenManagerDescriptor](docs/AccessTokenManagerDescriptor.md)
  - [AccessTokenManagerDescriptors](docs/AccessTokenManagerDescriptors.md)
  - [AccessTokenManagerMapping](docs/AccessTokenManagerMapping.md)
@@ -572,7 +571,6 @@ Class | Method | HTTP request | Description
  - [AdministrativeAccounts](docs/AdministrativeAccounts.md)
  - [AlternativeLoginHintTokenIssuer](docs/AlternativeLoginHintTokenIssuer.md)
  - [ApcMappingPolicyAction](docs/ApcMappingPolicyAction.md)
- - [ApcMappingPolicyActionAllOf](docs/ApcMappingPolicyActionAllOf.md)
  - [ApcToPersistentGrantMapping](docs/ApcToPersistentGrantMapping.md)
  - [ApcToPersistentGrantMappings](docs/ApcToPersistentGrantMappings.md)
  - [ApcToSpAdapterMapping](docs/ApcToSpAdapterMapping.md)
@@ -604,7 +602,6 @@ Class | Method | HTTP request | Description
  - [AuthenticationPolicyTree](docs/AuthenticationPolicyTree.md)
  - [AuthenticationPolicyTreeNode](docs/AuthenticationPolicyTreeNode.md)
  - [AuthenticationSelector](docs/AuthenticationSelector.md)
- - [AuthenticationSelectorAllOf](docs/AuthenticationSelectorAllOf.md)
  - [AuthenticationSelectorAttribute](docs/AuthenticationSelectorAttribute.md)
  - [AuthenticationSelectorAttributeContract](docs/AuthenticationSelectorAttributeContract.md)
  - [AuthenticationSelectorDescriptor](docs/AuthenticationSelectorDescriptor.md)
@@ -618,12 +615,9 @@ Class | Method | HTTP request | Description
  - [AuthnApiSettings](docs/AuthnApiSettings.md)
  - [AuthnContextMapping](docs/AuthnContextMapping.md)
  - [AuthnSelectorPolicyAction](docs/AuthnSelectorPolicyAction.md)
- - [AuthnSelectorPolicyActionAllOf](docs/AuthnSelectorPolicyActionAllOf.md)
  - [AuthnSourcePolicyAction](docs/AuthnSourcePolicyAction.md)
- - [AuthnSourcePolicyActionAllOf](docs/AuthnSourcePolicyActionAllOf.md)
  - [AuthorizationDetailProcessor](docs/AuthorizationDetailProcessor.md)
  - [AuthorizationDetailProcessorDescriptor](docs/AuthorizationDetailProcessorDescriptor.md)
- - [AuthorizationDetailProcessorDescriptorAllOf](docs/AuthorizationDetailProcessorDescriptorAllOf.md)
  - [AuthorizationDetailProcessorDescriptors](docs/AuthorizationDetailProcessorDescriptors.md)
  - [AuthorizationDetailProcessors](docs/AuthorizationDetailProcessors.md)
  - [AuthorizationDetailType](docs/AuthorizationDetailType.md)
@@ -631,12 +625,9 @@ Class | Method | HTTP request | Description
  - [AuthorizationServerSettings](docs/AuthorizationServerSettings.md)
  - [BackChannelAuth](docs/BackChannelAuth.md)
  - [BaseDefaultValueLocalIdentityField](docs/BaseDefaultValueLocalIdentityField.md)
- - [BaseDefaultValueLocalIdentityFieldAllOf](docs/BaseDefaultValueLocalIdentityFieldAllOf.md)
  - [BaseProviderRole](docs/BaseProviderRole.md)
  - [BaseSelectionFieldDescriptor](docs/BaseSelectionFieldDescriptor.md)
- - [BaseSelectionFieldDescriptorAllOf](docs/BaseSelectionFieldDescriptorAllOf.md)
  - [BaseSelectionLocalIdentityField](docs/BaseSelectionLocalIdentityField.md)
- - [BaseSelectionLocalIdentityFieldAllOf](docs/BaseSelectionLocalIdentityFieldAllOf.md)
  - [BaseSigningSettings](docs/BaseSigningSettings.md)
  - [BinaryLdapAttributeSettings](docs/BinaryLdapAttributeSettings.md)
  - [BulkConfig](docs/BulkConfig.md)
@@ -656,7 +647,6 @@ Class | Method | HTTP request | Description
  - [ChannelSourceLocation](docs/ChannelSourceLocation.md)
  - [CheckBoxFieldDescriptor](docs/CheckBoxFieldDescriptor.md)
  - [CheckboxGroupLocalIdentityField](docs/CheckboxGroupLocalIdentityField.md)
- - [CheckboxGroupLocalIdentityFieldAllOf](docs/CheckboxGroupLocalIdentityFieldAllOf.md)
  - [CheckboxLocalIdentityField](docs/CheckboxLocalIdentityField.md)
  - [CibaServerPolicySettings](docs/CibaServerPolicySettings.md)
  - [Client](docs/Client.md)
@@ -694,9 +684,7 @@ Class | Method | HTTP request | Description
  - [ConvertMetadataResponse](docs/ConvertMetadataResponse.md)
  - [CrlSettings](docs/CrlSettings.md)
  - [CustomAttributeSource](docs/CustomAttributeSource.md)
- - [CustomAttributeSourceAllOf](docs/CustomAttributeSourceAllOf.md)
  - [CustomDataStore](docs/CustomDataStore.md)
- - [CustomDataStoreAllOf](docs/CustomDataStoreAllOf.md)
  - [CustomDataStoreDescriptor](docs/CustomDataStoreDescriptor.md)
  - [CustomDataStoreDescriptors](docs/CustomDataStoreDescriptors.md)
  - [DataStore](docs/DataStore.md)
@@ -710,7 +698,6 @@ Class | Method | HTTP request | Description
  - [DecryptionPolicy](docs/DecryptionPolicy.md)
  - [DonePolicyAction](docs/DonePolicyAction.md)
  - [DropDownLocalIdentityField](docs/DropDownLocalIdentityField.md)
- - [DropDownLocalIdentityFieldAllOf](docs/DropDownLocalIdentityFieldAllOf.md)
  - [DynamicClientRegistration](docs/DynamicClientRegistration.md)
  - [EmailLocalIdentityField](docs/EmailLocalIdentityField.md)
  - [EmailServerSettings](docs/EmailServerSettings.md)
@@ -726,19 +713,16 @@ Class | Method | HTTP request | Description
  - [FieldDescriptor](docs/FieldDescriptor.md)
  - [FieldEntry](docs/FieldEntry.md)
  - [FragmentPolicyAction](docs/FragmentPolicyAction.md)
- - [FragmentPolicyActionAllOf](docs/FragmentPolicyActionAllOf.md)
  - [GeneralSettings](docs/GeneralSettings.md)
  - [GlobalAuthenticationSessionPolicy](docs/GlobalAuthenticationSessionPolicy.md)
  - [GroupAttribute](docs/GroupAttribute.md)
  - [GroupMembershipDetection](docs/GroupMembershipDetection.md)
  - [Groups](docs/Groups.md)
  - [HashedTextFieldDescriptor](docs/HashedTextFieldDescriptor.md)
- - [HashedTextFieldDescriptorAllOf](docs/HashedTextFieldDescriptorAllOf.md)
  - [HiddenLocalIdentityField](docs/HiddenLocalIdentityField.md)
  - [IdentityHintAttribute](docs/IdentityHintAttribute.md)
  - [IdentityHintContract](docs/IdentityHintContract.md)
  - [IdentityStoreInboundProvisioningUserRepository](docs/IdentityStoreInboundProvisioningUserRepository.md)
- - [IdentityStoreInboundProvisioningUserRepositoryAllOf](docs/IdentityStoreInboundProvisioningUserRepositoryAllOf.md)
  - [IdentityStoreProvisioner](docs/IdentityStoreProvisioner.md)
  - [IdentityStoreProvisionerAttributeContract](docs/IdentityStoreProvisionerAttributeContract.md)
  - [IdentityStoreProvisionerDescriptor](docs/IdentityStoreProvisionerDescriptor.md)
@@ -746,7 +730,6 @@ Class | Method | HTTP request | Description
  - [IdentityStoreProvisionerGroupAttributeContract](docs/IdentityStoreProvisionerGroupAttributeContract.md)
  - [IdentityStoreProvisioners](docs/IdentityStoreProvisioners.md)
  - [IdpAdapter](docs/IdpAdapter.md)
- - [IdpAdapterAllOf](docs/IdpAdapterAllOf.md)
  - [IdpAdapterAssertionMapping](docs/IdpAdapterAssertionMapping.md)
  - [IdpAdapterAttribute](docs/IdpAdapterAttribute.md)
  - [IdpAdapterAttributeContract](docs/IdpAdapterAttributeContract.md)
@@ -762,7 +745,6 @@ Class | Method | HTTP request | Description
  - [IdpBrowserSsoAttribute](docs/IdpBrowserSsoAttribute.md)
  - [IdpBrowserSsoAttributeContract](docs/IdpBrowserSsoAttributeContract.md)
  - [IdpConnection](docs/IdpConnection.md)
- - [IdpConnectionAllOf](docs/IdpConnectionAllOf.md)
  - [IdpConnections](docs/IdpConnections.md)
  - [IdpDefaultUrl](docs/IdpDefaultUrl.md)
  - [IdpInboundProvisioning](docs/IdpInboundProvisioning.md)
@@ -771,7 +753,6 @@ Class | Method | HTTP request | Description
  - [IdpOAuthAttributeContract](docs/IdpOAuthAttributeContract.md)
  - [IdpOAuthGrantAttributeMapping](docs/IdpOAuthGrantAttributeMapping.md)
  - [IdpRole](docs/IdpRole.md)
- - [IdpRoleAllOf](docs/IdpRoleAllOf.md)
  - [IdpSsoServiceEndpoint](docs/IdpSsoServiceEndpoint.md)
  - [IdpToSpAdapterMapping](docs/IdpToSpAdapterMapping.md)
  - [IdpToSpAdapterMappings](docs/IdpToSpAdapterMappings.md)
@@ -780,7 +761,6 @@ Class | Method | HTTP request | Description
  - [IdpWsTrustAttribute](docs/IdpWsTrustAttribute.md)
  - [IdpWsTrustAttributeContract](docs/IdpWsTrustAttributeContract.md)
  - [InboundBackChannelAuth](docs/InboundBackChannelAuth.md)
- - [InboundBackChannelAuthAllOf](docs/InboundBackChannelAuthAllOf.md)
  - [InboundProvisioningUserRepository](docs/InboundProvisioningUserRepository.md)
  - [IncomingProxySettings](docs/IncomingProxySettings.md)
  - [IssuanceCriteria](docs/IssuanceCriteria.md)
@@ -789,11 +769,8 @@ Class | Method | HTTP request | Description
  - [IssuerCerts](docs/IssuerCerts.md)
  - [Issuers](docs/Issuers.md)
  - [JdbcAttributeSource](docs/JdbcAttributeSource.md)
- - [JdbcAttributeSourceAllOf](docs/JdbcAttributeSourceAllOf.md)
  - [JdbcDataStore](docs/JdbcDataStore.md)
- - [JdbcDataStoreAllOf](docs/JdbcDataStoreAllOf.md)
  - [JdbcDataStoreRepository](docs/JdbcDataStoreRepository.md)
- - [JdbcDataStoreRepositoryAllOf](docs/JdbcDataStoreRepositoryAllOf.md)
  - [JdbcTagConfig](docs/JdbcTagConfig.md)
  - [JitProvisioning](docs/JitProvisioning.md)
  - [JitProvisioningUserAttributes](docs/JitProvisioningUserAttributes.md)
@@ -810,15 +787,11 @@ Class | Method | HTTP request | Description
  - [KeyPairView](docs/KeyPairView.md)
  - [KeyPairViews](docs/KeyPairViews.md)
  - [LdapAttributeSource](docs/LdapAttributeSource.md)
- - [LdapAttributeSourceAllOf](docs/LdapAttributeSourceAllOf.md)
  - [LdapDataStore](docs/LdapDataStore.md)
- - [LdapDataStoreAllOf](docs/LdapDataStoreAllOf.md)
  - [LdapDataStoreAttribute](docs/LdapDataStoreAttribute.md)
  - [LdapDataStoreConfig](docs/LdapDataStoreConfig.md)
  - [LdapDataStoreRepository](docs/LdapDataStoreRepository.md)
- - [LdapDataStoreRepositoryAllOf](docs/LdapDataStoreRepositoryAllOf.md)
  - [LdapInboundProvisioningUserRepository](docs/LdapInboundProvisioningUserRepository.md)
- - [LdapInboundProvisioningUserRepositoryAllOf](docs/LdapInboundProvisioningUserRepositoryAllOf.md)
  - [LdapTagConfig](docs/LdapTagConfig.md)
  - [LicenseAgreementInfo](docs/LicenseAgreementInfo.md)
  - [LicenseEventNotificationSettings](docs/LicenseEventNotificationSettings.md)
@@ -829,7 +802,6 @@ Class | Method | HTTP request | Description
  - [LocalIdentityAuthSourceUpdatePolicy](docs/LocalIdentityAuthSourceUpdatePolicy.md)
  - [LocalIdentityField](docs/LocalIdentityField.md)
  - [LocalIdentityMappingPolicyAction](docs/LocalIdentityMappingPolicyAction.md)
- - [LocalIdentityMappingPolicyActionAllOf](docs/LocalIdentityMappingPolicyActionAllOf.md)
  - [LocalIdentityProfile](docs/LocalIdentityProfile.md)
  - [LocalIdentityProfiles](docs/LocalIdentityProfiles.md)
  - [LogCategorySettings](docs/LogCategorySettings.md)
@@ -865,17 +837,14 @@ Class | Method | HTTP request | Description
  - [OutOfBandAuthPluginDescriptor](docs/OutOfBandAuthPluginDescriptor.md)
  - [OutOfBandAuthPluginDescriptors](docs/OutOfBandAuthPluginDescriptors.md)
  - [OutOfBandAuthenticator](docs/OutOfBandAuthenticator.md)
- - [OutOfBandAuthenticatorAllOf](docs/OutOfBandAuthenticatorAllOf.md)
  - [OutOfBandAuthenticators](docs/OutOfBandAuthenticators.md)
  - [OutboundBackChannelAuth](docs/OutboundBackChannelAuth.md)
- - [OutboundBackChannelAuthAllOf](docs/OutboundBackChannelAuthAllOf.md)
  - [OutboundProvision](docs/OutboundProvision.md)
  - [OutboundProvisionDatabase](docs/OutboundProvisionDatabase.md)
  - [P14EKeyPairView](docs/P14EKeyPairView.md)
  - [P14EKeysView](docs/P14EKeysView.md)
  - [ParameterValues](docs/ParameterValues.md)
  - [PasswordCredentialValidator](docs/PasswordCredentialValidator.md)
- - [PasswordCredentialValidatorAllOf](docs/PasswordCredentialValidatorAllOf.md)
  - [PasswordCredentialValidatorAttribute](docs/PasswordCredentialValidatorAttribute.md)
  - [PasswordCredentialValidatorAttributeContract](docs/PasswordCredentialValidatorAttributeContract.md)
  - [PasswordCredentialValidatorDescriptor](docs/PasswordCredentialValidatorDescriptor.md)
@@ -891,7 +860,6 @@ Class | Method | HTTP request | Description
  - [PingOneEnvironments](docs/PingOneEnvironments.md)
  - [PingOneForEnterpriseSettings](docs/PingOneForEnterpriseSettings.md)
  - [PingOneLdapGatewayDataStore](docs/PingOneLdapGatewayDataStore.md)
- - [PingOneLdapGatewayDataStoreAllOf](docs/PingOneLdapGatewayDataStoreAllOf.md)
  - [PluginConfigDescriptor](docs/PluginConfigDescriptor.md)
  - [PluginConfiguration](docs/PluginConfiguration.md)
  - [PluginDescriptor](docs/PluginDescriptor.md)
@@ -949,7 +917,6 @@ Class | Method | HTTP request | Description
  - [SloServiceEndpoint](docs/SloServiceEndpoint.md)
  - [SourceTypeIdKey](docs/SourceTypeIdKey.md)
  - [SpAdapter](docs/SpAdapter.md)
- - [SpAdapterAllOf](docs/SpAdapterAllOf.md)
  - [SpAdapterAttribute](docs/SpAdapterAttribute.md)
  - [SpAdapterAttributeContract](docs/SpAdapterAttributeContract.md)
  - [SpAdapterDescriptor](docs/SpAdapterDescriptor.md)
@@ -965,13 +932,10 @@ Class | Method | HTTP request | Description
  - [SpBrowserSsoAttribute](docs/SpBrowserSsoAttribute.md)
  - [SpBrowserSsoAttributeContract](docs/SpBrowserSsoAttributeContract.md)
  - [SpConnection](docs/SpConnection.md)
- - [SpConnectionAllOf](docs/SpConnectionAllOf.md)
  - [SpConnections](docs/SpConnections.md)
  - [SpDefaultUrls](docs/SpDefaultUrls.md)
  - [SpRole](docs/SpRole.md)
- - [SpRoleAllOf](docs/SpRoleAllOf.md)
  - [SpSAML20Profile](docs/SpSAML20Profile.md)
- - [SpSAML20ProfileAllOf](docs/SpSAML20ProfileAllOf.md)
  - [SpSsoServiceEndpoint](docs/SpSsoServiceEndpoint.md)
  - [SpTokenGeneratorMapping](docs/SpTokenGeneratorMapping.md)
  - [SpUrlMapping](docs/SpUrlMapping.md)
@@ -990,9 +954,7 @@ Class | Method | HTTP request | Description
  - [Table](docs/Table.md)
  - [TableDescriptor](docs/TableDescriptor.md)
  - [TextAreaFieldDescriptor](docs/TextAreaFieldDescriptor.md)
- - [TextAreaFieldDescriptorAllOf](docs/TextAreaFieldDescriptorAllOf.md)
  - [TextFieldDescriptor](docs/TextFieldDescriptor.md)
- - [TextFieldDescriptorAllOf](docs/TextFieldDescriptorAllOf.md)
  - [TextLocalIdentityField](docs/TextLocalIdentityField.md)
  - [TokenExchangeGeneratorGroup](docs/TokenExchangeGeneratorGroup.md)
  - [TokenExchangeGeneratorGroups](docs/TokenExchangeGeneratorGroups.md)
@@ -1005,14 +967,12 @@ Class | Method | HTTP request | Description
  - [TokenExchangeProcessorPolicy](docs/TokenExchangeProcessorPolicy.md)
  - [TokenExchangeProcessorSettings](docs/TokenExchangeProcessorSettings.md)
  - [TokenGenerator](docs/TokenGenerator.md)
- - [TokenGeneratorAllOf](docs/TokenGeneratorAllOf.md)
  - [TokenGeneratorAttribute](docs/TokenGeneratorAttribute.md)
  - [TokenGeneratorAttributeContract](docs/TokenGeneratorAttributeContract.md)
  - [TokenGeneratorDescriptor](docs/TokenGeneratorDescriptor.md)
  - [TokenGeneratorDescriptors](docs/TokenGeneratorDescriptors.md)
  - [TokenGenerators](docs/TokenGenerators.md)
  - [TokenProcessor](docs/TokenProcessor.md)
- - [TokenProcessorAllOf](docs/TokenProcessorAllOf.md)
  - [TokenProcessorAttribute](docs/TokenProcessorAttribute.md)
  - [TokenProcessorAttributeContract](docs/TokenProcessorAttributeContract.md)
  - [TokenProcessorDescriptor](docs/TokenProcessorDescriptor.md)

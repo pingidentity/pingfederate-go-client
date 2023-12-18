@@ -154,27 +154,27 @@ func (a *OauthTokenExchangeGeneratorAPIService) CreateGroupExecute(r ApiCreateGr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeleteOauthTokenExchangeGroupRequest struct {
+type ApiDeleteGroupRequest struct {
 	ctx        context.Context
 	ApiService *OauthTokenExchangeGeneratorAPIService
 	id         string
 }
 
-func (r ApiDeleteOauthTokenExchangeGroupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteOauthTokenExchangeGroupExecute(r)
+func (r ApiDeleteGroupRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteGroupExecute(r)
 }
 
 /*
-DeleteOauthTokenExchangeGroup Delete an OAuth 2.0 Token Exchange Generator group.
+DeleteGroup Delete an OAuth 2.0 Token Exchange Generator group.
 
 Delete an OAuth 2.0 Token Exchange Generator group with the specified ID. A 404 status code is returned for nonexistent IDs. Note: If the request succeeds, the response body is empty. If the request fails, an ApiResult is returned with details of the error.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id ID of OAuth 2.0 Token Exchange Generator group to delete.
-	@return ApiDeleteOauthTokenExchangeGroupRequest
+	@return ApiDeleteGroupRequest
 */
-func (a *OauthTokenExchangeGeneratorAPIService) DeleteOauthTokenExchangeGroup(ctx context.Context, id string) ApiDeleteOauthTokenExchangeGroupRequest {
-	return ApiDeleteOauthTokenExchangeGroupRequest{
+func (a *OauthTokenExchangeGeneratorAPIService) DeleteGroup(ctx context.Context, id string) ApiDeleteGroupRequest {
+	return ApiDeleteGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
 		id:         id,
@@ -182,14 +182,14 @@ func (a *OauthTokenExchangeGeneratorAPIService) DeleteOauthTokenExchangeGroup(ct
 }
 
 // Execute executes the request
-func (a *OauthTokenExchangeGeneratorAPIService) DeleteOauthTokenExchangeGroupExecute(r ApiDeleteOauthTokenExchangeGroupRequest) (*http.Response, error) {
+func (a *OauthTokenExchangeGeneratorAPIService) DeleteGroupExecute(r ApiDeleteGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenExchangeGeneratorAPIService.DeleteOauthTokenExchangeGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenExchangeGeneratorAPIService.DeleteGroup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -267,27 +267,27 @@ func (a *OauthTokenExchangeGeneratorAPIService) DeleteOauthTokenExchangeGroupExe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetOauthTokenExchangeGroupByIdRequest struct {
+type ApiGetGroupRequest struct {
 	ctx        context.Context
 	ApiService *OauthTokenExchangeGeneratorAPIService
 	id         string
 }
 
-func (r ApiGetOauthTokenExchangeGroupByIdRequest) Execute() (*TokenExchangeGeneratorGroup, *http.Response, error) {
-	return r.ApiService.GetOauthTokenExchangeGroupByIdExecute(r)
+func (r ApiGetGroupRequest) Execute() (*TokenExchangeGeneratorGroup, *http.Response, error) {
+	return r.ApiService.GetGroupExecute(r)
 }
 
 /*
-GetOauthTokenExchangeGroupById Find an OAuth 2.0 Token Exchange Generator group by ID.
+GetGroup Find an OAuth 2.0 Token Exchange Generator group by ID.
 
 Get an OAuth 2.0 Token Exchange Generator group with the specified ID. A 404 status code is returned for nonexistent IDs.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id ID of the OAuth 2.0 Token Exchange Generator group to fetch.
-	@return ApiGetOauthTokenExchangeGroupByIdRequest
+	@return ApiGetGroupRequest
 */
-func (a *OauthTokenExchangeGeneratorAPIService) GetOauthTokenExchangeGroupById(ctx context.Context, id string) ApiGetOauthTokenExchangeGroupByIdRequest {
-	return ApiGetOauthTokenExchangeGroupByIdRequest{
+func (a *OauthTokenExchangeGeneratorAPIService) GetGroup(ctx context.Context, id string) ApiGetGroupRequest {
+	return ApiGetGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
 		id:         id,
@@ -297,7 +297,7 @@ func (a *OauthTokenExchangeGeneratorAPIService) GetOauthTokenExchangeGroupById(c
 // Execute executes the request
 //
 //	@return TokenExchangeGeneratorGroup
-func (a *OauthTokenExchangeGeneratorAPIService) GetOauthTokenExchangeGroupByIdExecute(r ApiGetOauthTokenExchangeGroupByIdRequest) (*TokenExchangeGeneratorGroup, *http.Response, error) {
+func (a *OauthTokenExchangeGeneratorAPIService) GetGroupExecute(r ApiGetGroupRequest) (*TokenExchangeGeneratorGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -305,7 +305,7 @@ func (a *OauthTokenExchangeGeneratorAPIService) GetOauthTokenExchangeGroupByIdEx
 		localVarReturnValue *TokenExchangeGeneratorGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenExchangeGeneratorAPIService.GetOauthTokenExchangeGroupById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenExchangeGeneratorAPIService.GetGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -381,23 +381,23 @@ func (a *OauthTokenExchangeGeneratorAPIService) GetOauthTokenExchangeGroupByIdEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetOauthTokenExchangeGroupsRequest struct {
+type ApiGetGroupsRequest struct {
 	ctx        context.Context
 	ApiService *OauthTokenExchangeGeneratorAPIService
 }
 
-func (r ApiGetOauthTokenExchangeGroupsRequest) Execute() (*TokenExchangeGeneratorGroups, *http.Response, error) {
-	return r.ApiService.GetOauthTokenExchangeGroupsExecute(r)
+func (r ApiGetGroupsRequest) Execute() (*TokenExchangeGeneratorGroups, *http.Response, error) {
+	return r.ApiService.GetGroupsExecute(r)
 }
 
 /*
-GetOauthTokenExchangeGroups Get list of OAuth 2.0 Token Exchange Generator groups.
+GetGroups Get list of OAuth 2.0 Token Exchange Generator groups.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetOauthTokenExchangeGroupsRequest
+	@return ApiGetGroupsRequest
 */
-func (a *OauthTokenExchangeGeneratorAPIService) GetOauthTokenExchangeGroups(ctx context.Context) ApiGetOauthTokenExchangeGroupsRequest {
-	return ApiGetOauthTokenExchangeGroupsRequest{
+func (a *OauthTokenExchangeGeneratorAPIService) GetGroups(ctx context.Context) ApiGetGroupsRequest {
+	return ApiGetGroupsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
@@ -406,7 +406,7 @@ func (a *OauthTokenExchangeGeneratorAPIService) GetOauthTokenExchangeGroups(ctx 
 // Execute executes the request
 //
 //	@return TokenExchangeGeneratorGroups
-func (a *OauthTokenExchangeGeneratorAPIService) GetOauthTokenExchangeGroupsExecute(r ApiGetOauthTokenExchangeGroupsRequest) (*TokenExchangeGeneratorGroups, *http.Response, error) {
+func (a *OauthTokenExchangeGeneratorAPIService) GetGroupsExecute(r ApiGetGroupsRequest) (*TokenExchangeGeneratorGroups, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -414,7 +414,7 @@ func (a *OauthTokenExchangeGeneratorAPIService) GetOauthTokenExchangeGroupsExecu
 		localVarReturnValue *TokenExchangeGeneratorGroups
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenExchangeGeneratorAPIService.GetOauthTokenExchangeGroups")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenExchangeGeneratorAPIService.GetGroups")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -577,7 +577,7 @@ func (a *OauthTokenExchangeGeneratorAPIService) GetOauthTokenExchangeSettingsExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpdateOauthTokenExchangeGroupRequest struct {
+type ApiUpdateGroupRequest struct {
 	ctx                      context.Context
 	ApiService               *OauthTokenExchangeGeneratorAPIService
 	id                       string
@@ -586,32 +586,32 @@ type ApiUpdateOauthTokenExchangeGroupRequest struct {
 }
 
 // Configuration for updated OAuth 2.0 Token Exchange Generator group.
-func (r ApiUpdateOauthTokenExchangeGroupRequest) Body(body TokenExchangeGeneratorGroup) ApiUpdateOauthTokenExchangeGroupRequest {
+func (r ApiUpdateGroupRequest) Body(body TokenExchangeGeneratorGroup) ApiUpdateGroupRequest {
 	r.body = &body
 	return r
 }
 
 // External validation will be bypassed when set to true. Default to false.
-func (r ApiUpdateOauthTokenExchangeGroupRequest) BypassExternalValidation(bypassExternalValidation bool) ApiUpdateOauthTokenExchangeGroupRequest {
+func (r ApiUpdateGroupRequest) BypassExternalValidation(bypassExternalValidation bool) ApiUpdateGroupRequest {
 	r.bypassExternalValidation = &bypassExternalValidation
 	return r
 }
 
-func (r ApiUpdateOauthTokenExchangeGroupRequest) Execute() (*TokenExchangeGeneratorGroup, *http.Response, error) {
-	return r.ApiService.UpdateOauthTokenExchangeGroupExecute(r)
+func (r ApiUpdateGroupRequest) Execute() (*TokenExchangeGeneratorGroup, *http.Response, error) {
+	return r.ApiService.UpdateGroupExecute(r)
 }
 
 /*
-UpdateOauthTokenExchangeGroup Update an OAuth 2.0 Token Exchange Generator group.
+UpdateGroup Update an OAuth 2.0 Token Exchange Generator group.
 
 Update an OAuth 2.0 Token Exchange Generator group with the matching ID. If the group is not properly configured, a 422 status code is returned along with a list of validation errors that must be corrected. Note: A 404 status code is returned for nonexistent IDs.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id ID of the OAuth 2.0 Token Exchange Generator group to update.
-	@return ApiUpdateOauthTokenExchangeGroupRequest
+	@return ApiUpdateGroupRequest
 */
-func (a *OauthTokenExchangeGeneratorAPIService) UpdateOauthTokenExchangeGroup(ctx context.Context, id string) ApiUpdateOauthTokenExchangeGroupRequest {
-	return ApiUpdateOauthTokenExchangeGroupRequest{
+func (a *OauthTokenExchangeGeneratorAPIService) UpdateGroup(ctx context.Context, id string) ApiUpdateGroupRequest {
+	return ApiUpdateGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
 		id:         id,
@@ -621,7 +621,7 @@ func (a *OauthTokenExchangeGeneratorAPIService) UpdateOauthTokenExchangeGroup(ct
 // Execute executes the request
 //
 //	@return TokenExchangeGeneratorGroup
-func (a *OauthTokenExchangeGeneratorAPIService) UpdateOauthTokenExchangeGroupExecute(r ApiUpdateOauthTokenExchangeGroupRequest) (*TokenExchangeGeneratorGroup, *http.Response, error) {
+func (a *OauthTokenExchangeGeneratorAPIService) UpdateGroupExecute(r ApiUpdateGroupRequest) (*TokenExchangeGeneratorGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -629,7 +629,7 @@ func (a *OauthTokenExchangeGeneratorAPIService) UpdateOauthTokenExchangeGroupExe
 		localVarReturnValue *TokenExchangeGeneratorGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenExchangeGeneratorAPIService.UpdateOauthTokenExchangeGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenExchangeGeneratorAPIService.UpdateGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

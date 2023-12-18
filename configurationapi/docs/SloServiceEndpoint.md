@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Binding** | **string** | The binding of this endpoint, if applicable - usually only required for SAML 2.0 endpoints. | 
+**Binding** | Pointer to **string** | The binding of this endpoint, if applicable - usually only required for SAML 2.0 endpoints. | [optional] 
 **Url** | **string** | The absolute or relative URL of the endpoint. A relative URL can be specified if a base URL for the connection has been defined. | 
 **ResponseUrl** | Pointer to **string** | The absolute or relative URL to which logout responses are sent. A relative URL can be specified if a base URL for the connection has been defined. | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewSloServiceEndpoint
 
-`func NewSloServiceEndpoint(binding string, url string, ) *SloServiceEndpoint`
+`func NewSloServiceEndpoint(url string, ) *SloServiceEndpoint`
 
 NewSloServiceEndpoint instantiates a new SloServiceEndpoint object
 This constructor will assign default values to properties that have it defined,
@@ -46,6 +46,11 @@ and a boolean to check if the value has been set.
 
 SetBinding sets Binding field to given value.
 
+### HasBinding
+
+`func (o *SloServiceEndpoint) HasBinding() bool`
+
+HasBinding returns a boolean if a field has been set.
 
 ### GetUrl
 

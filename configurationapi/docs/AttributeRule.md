@@ -5,16 +5,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AttributeSource** | Pointer to [**SourceTypeIdKey**](SourceTypeIdKey.md) |  | [optional] 
-**AttributeName** | **string** | The name of the attribute to use in this attribute rule. | 
-**Condition** | **string** | The condition that will be applied to the attribute&#39;s expected value. | 
-**ExpectedValue** | **string** | The expected value of this attribute rule. | 
+**AttributeName** | Pointer to **string** | The name of the attribute to use in this attribute rule. This field is required if the Attribute Source type is not &#39;EXPRESSION&#39;. | [optional] 
+**Condition** | Pointer to **string** | The condition that will be applied to the attribute&#39;s expected value. This field is required if the Attribute Source type is not &#39;EXPRESSION&#39;. | [optional] 
+**ExpectedValue** | Pointer to **string** | The expected value of this attribute rule. This field is required if the Attribute Source type is not &#39;EXPRESSION&#39;. | [optional] 
+**Expression** | Pointer to **string** | The expression of this attribute rule. This field is required if the Attribute Source type is &#39;EXPRESSION&#39;. | [optional] 
 **Result** | **string** | The result of this attribute rule. | 
 
 ## Methods
 
 ### NewAttributeRule
 
-`func NewAttributeRule(attributeName string, condition string, expectedValue string, result string, ) *AttributeRule`
+`func NewAttributeRule(result string, ) *AttributeRule`
 
 NewAttributeRule instantiates a new AttributeRule object
 This constructor will assign default values to properties that have it defined,
@@ -73,6 +74,11 @@ and a boolean to check if the value has been set.
 
 SetAttributeName sets AttributeName field to given value.
 
+### HasAttributeName
+
+`func (o *AttributeRule) HasAttributeName() bool`
+
+HasAttributeName returns a boolean if a field has been set.
 
 ### GetCondition
 
@@ -93,6 +99,11 @@ and a boolean to check if the value has been set.
 
 SetCondition sets Condition field to given value.
 
+### HasCondition
+
+`func (o *AttributeRule) HasCondition() bool`
+
+HasCondition returns a boolean if a field has been set.
 
 ### GetExpectedValue
 
@@ -113,6 +124,36 @@ and a boolean to check if the value has been set.
 
 SetExpectedValue sets ExpectedValue field to given value.
 
+### HasExpectedValue
+
+`func (o *AttributeRule) HasExpectedValue() bool`
+
+HasExpectedValue returns a boolean if a field has been set.
+
+### GetExpression
+
+`func (o *AttributeRule) GetExpression() string`
+
+GetExpression returns the Expression field if non-nil, zero value otherwise.
+
+### GetExpressionOk
+
+`func (o *AttributeRule) GetExpressionOk() (*string, bool)`
+
+GetExpressionOk returns a tuple with the Expression field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpression
+
+`func (o *AttributeRule) SetExpression(v string)`
+
+SetExpression sets Expression field to given value.
+
+### HasExpression
+
+`func (o *AttributeRule) HasExpression() bool`
+
+HasExpression returns a boolean if a field has been set.
 
 ### GetResult
 

@@ -53,7 +53,7 @@ type AuthorizationServerSettings struct {
 	RefreshTokenLength int64 `json:"refreshTokenLength" tfsdk:"refresh_token_length"`
 	// The roll refresh token values default policy. The default value is true.
 	RollRefreshTokenValues *bool `json:"rollRefreshTokenValues,omitempty" tfsdk:"roll_refresh_token_values"`
-	// The grace period that a rolled refresh token remains valid in seconds. The default value is 0.
+	// The grace period that a rolled refresh token remains valid in seconds. The default value is 60.
 	RefreshTokenRollingGracePeriod *int64 `json:"refreshTokenRollingGracePeriod,omitempty" tfsdk:"refresh_token_rolling_grace_period"`
 	// The minimum interval to roll refresh tokens, in hours.
 	RefreshRollingInterval int64 `json:"refreshRollingInterval" tfsdk:"refresh_rolling_interval"`
@@ -103,6 +103,12 @@ type AuthorizationServerSettings struct {
 	ClientSecretRetentionPeriod *int64 `json:"clientSecretRetentionPeriod,omitempty" tfsdk:"client_secret_retention_period"`
 	// The lifetime, in seconds, of the JWT Secured authorization response. The default value is 600.
 	JwtSecuredAuthorizationResponseModeLifetime *int64 `json:"jwtSecuredAuthorizationResponseModeLifetime,omitempty" tfsdk:"jwt_secured_authorization_response_mode_lifetime"`
+	// Determines whether nonce is required in the Demonstrating Proof-of-Possession (DPoP) proof JWT. The default value is false.
+	DpopProofRequireNonce *bool `json:"dpopProofRequireNonce,omitempty" tfsdk:"dpop_proof_require_nonce"`
+	// The lifetime, in seconds, of the Demonstrating Proof-of-Possession (DPoP) proof JWT. The default value is 120.
+	DpopProofLifetimeSeconds *int64 `json:"dpopProofLifetimeSeconds,omitempty" tfsdk:"dpop_proof_lifetime_seconds"`
+	// Determines whether Demonstrating Proof-of-Possession (DPoP) proof JWT replay prevention is enforced. The default value is false.
+	DpopProofEnforceReplayPrevention *bool `json:"dpopProofEnforceReplayPrevention,omitempty" tfsdk:"dpop_proof_enforce_replay_prevention"`
 }
 
 // NewAuthorizationServerSettings instantiates a new AuthorizationServerSettings object
@@ -1435,6 +1441,102 @@ func (o *AuthorizationServerSettings) SetJwtSecuredAuthorizationResponseModeLife
 	o.JwtSecuredAuthorizationResponseModeLifetime = &v
 }
 
+// GetDpopProofRequireNonce returns the DpopProofRequireNonce field value if set, zero value otherwise.
+func (o *AuthorizationServerSettings) GetDpopProofRequireNonce() bool {
+	if o == nil || IsNil(o.DpopProofRequireNonce) {
+		var ret bool
+		return ret
+	}
+	return *o.DpopProofRequireNonce
+}
+
+// GetDpopProofRequireNonceOk returns a tuple with the DpopProofRequireNonce field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AuthorizationServerSettings) GetDpopProofRequireNonceOk() (*bool, bool) {
+	if o == nil || IsNil(o.DpopProofRequireNonce) {
+		return nil, false
+	}
+	return o.DpopProofRequireNonce, true
+}
+
+// HasDpopProofRequireNonce returns a boolean if a field has been set.
+func (o *AuthorizationServerSettings) HasDpopProofRequireNonce() bool {
+	if o != nil && !IsNil(o.DpopProofRequireNonce) {
+		return true
+	}
+
+	return false
+}
+
+// SetDpopProofRequireNonce gets a reference to the given bool and assigns it to the DpopProofRequireNonce field.
+func (o *AuthorizationServerSettings) SetDpopProofRequireNonce(v bool) {
+	o.DpopProofRequireNonce = &v
+}
+
+// GetDpopProofLifetimeSeconds returns the DpopProofLifetimeSeconds field value if set, zero value otherwise.
+func (o *AuthorizationServerSettings) GetDpopProofLifetimeSeconds() int64 {
+	if o == nil || IsNil(o.DpopProofLifetimeSeconds) {
+		var ret int64
+		return ret
+	}
+	return *o.DpopProofLifetimeSeconds
+}
+
+// GetDpopProofLifetimeSecondsOk returns a tuple with the DpopProofLifetimeSeconds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AuthorizationServerSettings) GetDpopProofLifetimeSecondsOk() (*int64, bool) {
+	if o == nil || IsNil(o.DpopProofLifetimeSeconds) {
+		return nil, false
+	}
+	return o.DpopProofLifetimeSeconds, true
+}
+
+// HasDpopProofLifetimeSeconds returns a boolean if a field has been set.
+func (o *AuthorizationServerSettings) HasDpopProofLifetimeSeconds() bool {
+	if o != nil && !IsNil(o.DpopProofLifetimeSeconds) {
+		return true
+	}
+
+	return false
+}
+
+// SetDpopProofLifetimeSeconds gets a reference to the given int64 and assigns it to the DpopProofLifetimeSeconds field.
+func (o *AuthorizationServerSettings) SetDpopProofLifetimeSeconds(v int64) {
+	o.DpopProofLifetimeSeconds = &v
+}
+
+// GetDpopProofEnforceReplayPrevention returns the DpopProofEnforceReplayPrevention field value if set, zero value otherwise.
+func (o *AuthorizationServerSettings) GetDpopProofEnforceReplayPrevention() bool {
+	if o == nil || IsNil(o.DpopProofEnforceReplayPrevention) {
+		var ret bool
+		return ret
+	}
+	return *o.DpopProofEnforceReplayPrevention
+}
+
+// GetDpopProofEnforceReplayPreventionOk returns a tuple with the DpopProofEnforceReplayPrevention field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AuthorizationServerSettings) GetDpopProofEnforceReplayPreventionOk() (*bool, bool) {
+	if o == nil || IsNil(o.DpopProofEnforceReplayPrevention) {
+		return nil, false
+	}
+	return o.DpopProofEnforceReplayPrevention, true
+}
+
+// HasDpopProofEnforceReplayPrevention returns a boolean if a field has been set.
+func (o *AuthorizationServerSettings) HasDpopProofEnforceReplayPrevention() bool {
+	if o != nil && !IsNil(o.DpopProofEnforceReplayPrevention) {
+		return true
+	}
+
+	return false
+}
+
+// SetDpopProofEnforceReplayPrevention gets a reference to the given bool and assigns it to the DpopProofEnforceReplayPrevention field.
+func (o *AuthorizationServerSettings) SetDpopProofEnforceReplayPrevention(v bool) {
+	o.DpopProofEnforceReplayPrevention = &v
+}
+
 func (o AuthorizationServerSettings) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1555,6 +1657,15 @@ func (o AuthorizationServerSettings) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.JwtSecuredAuthorizationResponseModeLifetime) {
 		toSerialize["jwtSecuredAuthorizationResponseModeLifetime"] = o.JwtSecuredAuthorizationResponseModeLifetime
+	}
+	if !IsNil(o.DpopProofRequireNonce) {
+		toSerialize["dpopProofRequireNonce"] = o.DpopProofRequireNonce
+	}
+	if !IsNil(o.DpopProofLifetimeSeconds) {
+		toSerialize["dpopProofLifetimeSeconds"] = o.DpopProofLifetimeSeconds
+	}
+	if !IsNil(o.DpopProofEnforceReplayPrevention) {
+		toSerialize["dpopProofEnforceReplayPrevention"] = o.DpopProofEnforceReplayPrevention
 	}
 	return toSerialize, nil
 }

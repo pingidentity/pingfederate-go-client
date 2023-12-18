@@ -17,8 +17,9 @@ import (
 // checks if the LdapDataStoreConfig type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &LdapDataStoreConfig{}
 
-// LdapDataStoreConfig LDAP data store configuration.
+// LdapDataStoreConfig struct for LdapDataStoreConfig
 type LdapDataStoreConfig struct {
+	DataStoreConfig
 	// The base DN to search from. If not specified, the search will start at the LDAP's root.
 	BaseDn string `json:"baseDn" tfsdk:"base_dn"`
 	// The Relative DN Pattern that will be used to create objects in the directory.
@@ -26,27 +27,23 @@ type LdapDataStoreConfig struct {
 	// The Object Class used by the new objects stored in the LDAP data store.
 	ObjectClass string `json:"objectClass" tfsdk:"object_class"`
 	// The Auxiliary Object Classes used by the new objects stored in the LDAP data store.
-	AuxiliaryObjectClasses []string `json:"auxiliaryObjectClasses" tfsdk:"auxiliary_object_classes"`
+	AuxiliaryObjectClasses []string `json:"auxiliaryObjectClasses,omitempty" tfsdk:"auxiliary_object_classes"`
 	// The data store mapping.
 	DataStoreMapping map[string]DataStoreAttribute `json:"dataStoreMapping" tfsdk:"data_store_mapping"`
-	// The data store config type.
-	Type         string       `json:"type" tfsdk:"type"`
-	DataStoreRef ResourceLink `json:"dataStoreRef" tfsdk:"data_store_ref"`
 }
 
 // NewLdapDataStoreConfig instantiates a new LdapDataStoreConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLdapDataStoreConfig(baseDn string, createPattern string, objectClass string, auxiliaryObjectClasses []string, dataStoreMapping map[string]DataStoreAttribute, type_ string, dataStoreRef ResourceLink) *LdapDataStoreConfig {
+func NewLdapDataStoreConfig(baseDn string, createPattern string, objectClass string, dataStoreMapping map[string]DataStoreAttribute, type_ string, dataStoreRef ResourceLink) *LdapDataStoreConfig {
 	this := LdapDataStoreConfig{}
+	this.Type = type_
+	this.DataStoreRef = dataStoreRef
+	this.DataStoreMapping = dataStoreMapping
 	this.BaseDn = baseDn
 	this.CreatePattern = createPattern
 	this.ObjectClass = objectClass
-	this.AuxiliaryObjectClasses = auxiliaryObjectClasses
-	this.DataStoreMapping = dataStoreMapping
-	this.Type = type_
-	this.DataStoreRef = dataStoreRef
 	return &this
 }
 
@@ -130,26 +127,34 @@ func (o *LdapDataStoreConfig) SetObjectClass(v string) {
 	o.ObjectClass = v
 }
 
-// GetAuxiliaryObjectClasses returns the AuxiliaryObjectClasses field value
+// GetAuxiliaryObjectClasses returns the AuxiliaryObjectClasses field value if set, zero value otherwise.
 func (o *LdapDataStoreConfig) GetAuxiliaryObjectClasses() []string {
-	if o == nil {
+	if o == nil || IsNil(o.AuxiliaryObjectClasses) {
 		var ret []string
 		return ret
 	}
-
 	return o.AuxiliaryObjectClasses
 }
 
-// GetAuxiliaryObjectClassesOk returns a tuple with the AuxiliaryObjectClasses field value
+// GetAuxiliaryObjectClassesOk returns a tuple with the AuxiliaryObjectClasses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapDataStoreConfig) GetAuxiliaryObjectClassesOk() ([]string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.AuxiliaryObjectClasses) {
 		return nil, false
 	}
 	return o.AuxiliaryObjectClasses, true
 }
 
-// SetAuxiliaryObjectClasses sets field value
+// HasAuxiliaryObjectClasses returns a boolean if a field has been set.
+func (o *LdapDataStoreConfig) HasAuxiliaryObjectClasses() bool {
+	if o != nil && !IsNil(o.AuxiliaryObjectClasses) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuxiliaryObjectClasses gets a reference to the given []string and assigns it to the AuxiliaryObjectClasses field.
 func (o *LdapDataStoreConfig) SetAuxiliaryObjectClasses(v []string) {
 	o.AuxiliaryObjectClasses = v
 }
@@ -178,54 +183,6 @@ func (o *LdapDataStoreConfig) SetDataStoreMapping(v map[string]DataStoreAttribut
 	o.DataStoreMapping = v
 }
 
-// GetType returns the Type field value
-func (o *LdapDataStoreConfig) GetType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value
-// and a boolean to check if the value has been set.
-func (o *LdapDataStoreConfig) GetTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Type, true
-}
-
-// SetType sets field value
-func (o *LdapDataStoreConfig) SetType(v string) {
-	o.Type = v
-}
-
-// GetDataStoreRef returns the DataStoreRef field value
-func (o *LdapDataStoreConfig) GetDataStoreRef() ResourceLink {
-	if o == nil {
-		var ret ResourceLink
-		return ret
-	}
-
-	return o.DataStoreRef
-}
-
-// GetDataStoreRefOk returns a tuple with the DataStoreRef field value
-// and a boolean to check if the value has been set.
-func (o *LdapDataStoreConfig) GetDataStoreRefOk() (*ResourceLink, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.DataStoreRef, true
-}
-
-// SetDataStoreRef sets field value
-func (o *LdapDataStoreConfig) SetDataStoreRef(v ResourceLink) {
-	o.DataStoreRef = v
-}
-
 func (o LdapDataStoreConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -236,13 +193,21 @@ func (o LdapDataStoreConfig) MarshalJSON() ([]byte, error) {
 
 func (o LdapDataStoreConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedDataStoreConfig, errDataStoreConfig := json.Marshal(o.DataStoreConfig)
+	if errDataStoreConfig != nil {
+		return map[string]interface{}{}, errDataStoreConfig
+	}
+	errDataStoreConfig = json.Unmarshal([]byte(serializedDataStoreConfig), &toSerialize)
+	if errDataStoreConfig != nil {
+		return map[string]interface{}{}, errDataStoreConfig
+	}
 	toSerialize["baseDn"] = o.BaseDn
 	toSerialize["createPattern"] = o.CreatePattern
 	toSerialize["objectClass"] = o.ObjectClass
-	toSerialize["auxiliaryObjectClasses"] = o.AuxiliaryObjectClasses
+	if !IsNil(o.AuxiliaryObjectClasses) {
+		toSerialize["auxiliaryObjectClasses"] = o.AuxiliaryObjectClasses
+	}
 	toSerialize["dataStoreMapping"] = o.DataStoreMapping
-	toSerialize["type"] = o.Type
-	toSerialize["dataStoreRef"] = o.DataStoreRef
 	return toSerialize, nil
 }
 

@@ -20,28 +20,31 @@ var _ MappedNullable = &LdapDataStore{}
 // LdapDataStore struct for LdapDataStore
 type LdapDataStore struct {
 	DataStore
-	// The set of host names and associated tags for this LDAP data store.
+	// The set of host names and associated tags for this LDAP data store. This is required if 'hostnames' is not provided.
 	HostnamesTags []LdapTagConfig `json:"hostnamesTags,omitempty" tfsdk:"hostnames_tags"`
-	// The default LDAP host names. This field is required if no mapping for host names and tags are specified.
+	// The default LDAP host names. This field is required if no mapping for host names and tags is specified. Failover can be configured by providing multiple host names.
 	Hostnames []string `json:"hostnames,omitempty" tfsdk:"hostnames"`
 	// The data store name with a unique value across all data sources. Omitting this attribute will set the value to a combination of the hostname(s) and the principal.
 	Name *string `json:"name,omitempty" tfsdk:"name"`
 	// A type that allows PingFederate to configure many provisioning settings automatically. The 'UNBOUNDID_DS' type has been deprecated, please use the 'PING_DIRECTORY' type instead.
 	LdapType string `json:"ldapType" tfsdk:"ldap_type"`
-	// Whether username and password are required. The default value is false.
+	// Whether username and password are required. If true, no other authentication fields should be provided. The default value is false.
 	BindAnonymously *bool `json:"bindAnonymously,omitempty" tfsdk:"bind_anonymously"`
-	// The username credential required to access the data store.
+	// The username credential required to access the data store. If specified, no other authentication fields should be provided.
 	UserDN *string `json:"userDN,omitempty" tfsdk:"user_dn"`
 	// The password credential required to access the data store. GETs will not return this attribute. To update this field, specify the new value in this attribute.
 	Password *string `json:"password,omitempty" tfsdk:"password"`
 	// The encrypted password credential required to access the data store.  If you do not want to update the stored value, this attribute should be passed back unchanged. Secret Reference may be provided in this field with format 'OBF:MGR:{secretManagerId}:{secretId}'.
-	EncryptedPassword *string `json:"encryptedPassword,omitempty" tfsdk:"encrypted_password"`
+	EncryptedPassword       *string       `json:"encryptedPassword,omitempty" tfsdk:"encrypted_password"`
+	ClientTlsCertificateRef *ResourceLink `json:"clientTlsCertificateRef,omitempty" tfsdk:"client_tls_certificate_ref"`
 	// Connects to the LDAP data store using secure SSL/TLS encryption (LDAPS). The default value is false.
 	UseSsl *bool `json:"useSsl,omitempty" tfsdk:"use_ssl"`
 	// Use DNS SRV Records to discover LDAP server information. The default value is false.
 	UseDnsSrvRecords *bool `json:"useDnsSrvRecords,omitempty" tfsdk:"use_dns_srv_records"`
 	// Follow LDAP Referrals in the domain tree. The default value is false. This property does not apply to PingDirectory as this functionality is configured in PingDirectory.
 	FollowLDAPReferrals *bool `json:"followLDAPReferrals,omitempty" tfsdk:"follow_ldap_referrals"`
+	// Indicates whether failed operations should be retried. The default is false.
+	RetryFailedOperations *bool `json:"retryFailedOperations,omitempty" tfsdk:"retry_failed_operations"`
 	// Indicates whether objects are validated before being borrowed from the pool.
 	TestOnBorrow *bool `json:"testOnBorrow,omitempty" tfsdk:"test_on_borrow"`
 	// Indicates whether objects are validated before being returned to the pool.
@@ -339,6 +342,38 @@ func (o *LdapDataStore) SetEncryptedPassword(v string) {
 	o.EncryptedPassword = &v
 }
 
+// GetClientTlsCertificateRef returns the ClientTlsCertificateRef field value if set, zero value otherwise.
+func (o *LdapDataStore) GetClientTlsCertificateRef() ResourceLink {
+	if o == nil || IsNil(o.ClientTlsCertificateRef) {
+		var ret ResourceLink
+		return ret
+	}
+	return *o.ClientTlsCertificateRef
+}
+
+// GetClientTlsCertificateRefOk returns a tuple with the ClientTlsCertificateRef field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LdapDataStore) GetClientTlsCertificateRefOk() (*ResourceLink, bool) {
+	if o == nil || IsNil(o.ClientTlsCertificateRef) {
+		return nil, false
+	}
+	return o.ClientTlsCertificateRef, true
+}
+
+// HasClientTlsCertificateRef returns a boolean if a field has been set.
+func (o *LdapDataStore) HasClientTlsCertificateRef() bool {
+	if o != nil && !IsNil(o.ClientTlsCertificateRef) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientTlsCertificateRef gets a reference to the given ResourceLink and assigns it to the ClientTlsCertificateRef field.
+func (o *LdapDataStore) SetClientTlsCertificateRef(v ResourceLink) {
+	o.ClientTlsCertificateRef = &v
+}
+
 // GetUseSsl returns the UseSsl field value if set, zero value otherwise.
 func (o *LdapDataStore) GetUseSsl() bool {
 	if o == nil || IsNil(o.UseSsl) {
@@ -433,6 +468,38 @@ func (o *LdapDataStore) HasFollowLDAPReferrals() bool {
 // SetFollowLDAPReferrals gets a reference to the given bool and assigns it to the FollowLDAPReferrals field.
 func (o *LdapDataStore) SetFollowLDAPReferrals(v bool) {
 	o.FollowLDAPReferrals = &v
+}
+
+// GetRetryFailedOperations returns the RetryFailedOperations field value if set, zero value otherwise.
+func (o *LdapDataStore) GetRetryFailedOperations() bool {
+	if o == nil || IsNil(o.RetryFailedOperations) {
+		var ret bool
+		return ret
+	}
+	return *o.RetryFailedOperations
+}
+
+// GetRetryFailedOperationsOk returns a tuple with the RetryFailedOperations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LdapDataStore) GetRetryFailedOperationsOk() (*bool, bool) {
+	if o == nil || IsNil(o.RetryFailedOperations) {
+		return nil, false
+	}
+	return o.RetryFailedOperations, true
+}
+
+// HasRetryFailedOperations returns a boolean if a field has been set.
+func (o *LdapDataStore) HasRetryFailedOperations() bool {
+	if o != nil && !IsNil(o.RetryFailedOperations) {
+		return true
+	}
+
+	return false
+}
+
+// SetRetryFailedOperations gets a reference to the given bool and assigns it to the RetryFailedOperations field.
+func (o *LdapDataStore) SetRetryFailedOperations(v bool) {
+	o.RetryFailedOperations = &v
 }
 
 // GetTestOnBorrow returns the TestOnBorrow field value if set, zero value otherwise.
@@ -923,6 +990,9 @@ func (o LdapDataStore) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.EncryptedPassword) {
 		toSerialize["encryptedPassword"] = o.EncryptedPassword
 	}
+	if !IsNil(o.ClientTlsCertificateRef) {
+		toSerialize["clientTlsCertificateRef"] = o.ClientTlsCertificateRef
+	}
 	if !IsNil(o.UseSsl) {
 		toSerialize["useSsl"] = o.UseSsl
 	}
@@ -931,6 +1001,9 @@ func (o LdapDataStore) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.FollowLDAPReferrals) {
 		toSerialize["followLDAPReferrals"] = o.FollowLDAPReferrals
+	}
+	if !IsNil(o.RetryFailedOperations) {
+		toSerialize["retryFailedOperations"] = o.RetryFailedOperations
 	}
 	if !IsNil(o.TestOnBorrow) {
 		toSerialize["testOnBorrow"] = o.TestOnBorrow

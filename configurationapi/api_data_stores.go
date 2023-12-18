@@ -598,7 +598,7 @@ type ApiGetDataStoresRequest struct {
 	ApiService *DataStoresAPIService
 }
 
-func (r ApiGetDataStoresRequest) Execute() (*DataStoreAggregation, *http.Response, error) {
+func (r ApiGetDataStoresRequest) Execute() (*DataStores, *http.Response, error) {
 	return r.ApiService.GetDataStoresExecute(r)
 }
 
@@ -617,13 +617,13 @@ func (a *DataStoresAPIService) GetDataStores(ctx context.Context) ApiGetDataStor
 
 // Execute executes the request
 //
-//	@return DataStoreAggregation
-func (a *DataStoresAPIService) GetDataStoresExecute(r ApiGetDataStoresRequest) (*DataStoreAggregation, *http.Response, error) {
+//	@return DataStores
+func (a *DataStoresAPIService) GetDataStoresExecute(r ApiGetDataStoresRequest) (*DataStores, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *DataStoreAggregation
+		localVarReturnValue *DataStores
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataStoresAPIService.GetDataStores")

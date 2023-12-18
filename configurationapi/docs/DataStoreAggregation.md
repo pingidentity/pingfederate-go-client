@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 **Type** | **string** | The data store type. | 
 **Id** | Pointer to **string** | The persistent, unique ID for the data store. It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned if not specified. | [optional] 
 **MaskAttributeValues** | Pointer to **bool** | Whether attribute values should be masked in the log. | [optional] 
-**ConnectionUrlTags** | Pointer to [**[]JdbcTagConfig**](JdbcTagConfig.md) | The set of connection URLs and associated tags for this JDBC data store. | [optional] 
-**ConnectionUrl** | Pointer to **string** | The default location of the JDBC database. This field is required if no mapping for JDBC database location and tags are specified. | [optional] 
+**ConnectionUrlTags** | Pointer to [**[]JdbcTagConfig**](JdbcTagConfig.md) | The set of connection URLs and associated tags for this JDBC data store. This is required if &#39;connectionUrl&#39; is not provided. | [optional] 
+**ConnectionUrl** | Pointer to **string** | The default location of the JDBC database. This field is required if no mapping for JDBC database location and tags is specified. | [optional] 
 **Name** | Pointer to **string** | The data store name with a unique value across all data sources. Omitting this attribute will set the value to a combination of the hostname(s) and the principal. | [optional] 
 **DriverClass** | **string** | The name of the driver class used to communicate with the source database. | 
-**UserName** | **string** | The name that identifies the user when connecting to the database. | 
+**UserName** | Pointer to **string** | The name that identifies the user when connecting to the database. | [optional] 
 **Password** | Pointer to **string** | The password credential required to access the data store. GETs will not return this attribute. To update this field, specify the new value in this attribute. | [optional] 
 **EncryptedPassword** | Pointer to **string** | The encrypted password credential required to access the data store.  If you do not want to update the stored value, this attribute should be passed back unchanged. Secret Reference may be provided in this field with format &#39;OBF:MGR:{secretManagerId}:{secretId}&#39;. | [optional] 
 **ValidateConnectionSql** | Pointer to **string** | A simple SQL statement used by PingFederate at runtime to verify that the database connection is still active and to reconnect if needed. | [optional] 
@@ -20,14 +20,16 @@ Name | Type | Description | Notes
 **MaxPoolSize** | Pointer to **int64** | The largest number of database connections in the connection pool for the given data store. Omitting this attribute will set the value to the connection pool default. | [optional] 
 **BlockingTimeout** | Pointer to **int64** | The amount of time in milliseconds a request waits to get a connection from the connection pool before it fails. Omitting this attribute will set the value to the connection pool default. | [optional] 
 **IdleTimeout** | Pointer to **int64** | The length of time in minutes the connection can be idle in the pool before it is closed. Omitting this attribute will set the value to the connection pool default. | [optional] 
-**HostnamesTags** | Pointer to [**[]LdapTagConfig**](LdapTagConfig.md) | The set of host names and associated tags for this LDAP data store. | [optional] 
-**Hostnames** | Pointer to **[]string** | The default LDAP host names. This field is required if no mapping for host names and tags are specified. | [optional] 
+**HostnamesTags** | Pointer to [**[]LdapTagConfig**](LdapTagConfig.md) | The set of host names and associated tags for this LDAP data store. This is required if &#39;hostnames&#39; is not provided. | [optional] 
+**Hostnames** | Pointer to **[]string** | The default LDAP host names. This field is required if no mapping for host names and tags is specified. Failover can be configured by providing multiple host names. | [optional] 
 **LdapType** | **string** | A type that allows PingFederate to configure many provisioning settings automatically. The value is validated against the LDAP gateway configuration in PingOne unless the header &#39;X-BypassExternalValidation&#39; is set to true. | 
-**BindAnonymously** | Pointer to **bool** | Whether username and password are required. The default value is false. | [optional] 
-**UserDN** | Pointer to **string** | The username credential required to access the data store. | [optional] 
+**BindAnonymously** | Pointer to **bool** | Whether username and password are required. If true, no other authentication fields should be provided. The default value is false. | [optional] 
+**UserDN** | Pointer to **string** | The username credential required to access the data store. If specified, no other authentication fields should be provided. | [optional] 
+**ClientTlsCertificateRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **UseSsl** | Pointer to **bool** | Connects to the LDAP data store using secure SSL/TLS encryption (LDAPS). The default value is false. The value is validated against the LDAP gateway configuration in PingOne unless the header &#39;X-BypassExternalValidation&#39; is set to true. | [optional] 
 **UseDnsSrvRecords** | Pointer to **bool** | Use DNS SRV Records to discover LDAP server information. The default value is false. | [optional] 
 **FollowLDAPReferrals** | Pointer to **bool** | Follow LDAP Referrals in the domain tree. The default value is false. This property does not apply to PingDirectory as this functionality is configured in PingDirectory. | [optional] 
+**RetryFailedOperations** | Pointer to **bool** | Indicates whether failed operations should be retried. The default is false. | [optional] 
 **TestOnBorrow** | Pointer to **bool** | Indicates whether objects are validated before being borrowed from the pool. | [optional] 
 **TestOnReturn** | Pointer to **bool** | Indicates whether objects are validated before being returned to the pool. | [optional] 
 **CreateIfNecessary** | Pointer to **bool** | Indicates whether temporary connections can be created when the Maximum Connections threshold is reached. | [optional] 
@@ -50,7 +52,7 @@ Name | Type | Description | Notes
 
 ### NewDataStoreAggregation
 
-`func NewDataStoreAggregation(type_ string, driverClass string, userName string, ldapType string, pingOneConnectionRef ResourceLink, pingOneEnvironmentId string, pingOneLdapGatewayId string, ) *DataStoreAggregation`
+`func NewDataStoreAggregation(type_ string, driverClass string, ldapType string, pingOneConnectionRef ResourceLink, pingOneEnvironmentId string, pingOneLdapGatewayId string, ) *DataStoreAggregation`
 
 NewDataStoreAggregation instantiates a new DataStoreAggregation object
 This constructor will assign default values to properties that have it defined,
@@ -249,6 +251,11 @@ and a boolean to check if the value has been set.
 
 SetUserName sets UserName field to given value.
 
+### HasUserName
+
+`func (o *DataStoreAggregation) HasUserName() bool`
+
+HasUserName returns a boolean if a field has been set.
 
 ### GetPassword
 
@@ -570,6 +577,31 @@ SetUserDN sets UserDN field to given value.
 
 HasUserDN returns a boolean if a field has been set.
 
+### GetClientTlsCertificateRef
+
+`func (o *DataStoreAggregation) GetClientTlsCertificateRef() ResourceLink`
+
+GetClientTlsCertificateRef returns the ClientTlsCertificateRef field if non-nil, zero value otherwise.
+
+### GetClientTlsCertificateRefOk
+
+`func (o *DataStoreAggregation) GetClientTlsCertificateRefOk() (*ResourceLink, bool)`
+
+GetClientTlsCertificateRefOk returns a tuple with the ClientTlsCertificateRef field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientTlsCertificateRef
+
+`func (o *DataStoreAggregation) SetClientTlsCertificateRef(v ResourceLink)`
+
+SetClientTlsCertificateRef sets ClientTlsCertificateRef field to given value.
+
+### HasClientTlsCertificateRef
+
+`func (o *DataStoreAggregation) HasClientTlsCertificateRef() bool`
+
+HasClientTlsCertificateRef returns a boolean if a field has been set.
+
 ### GetUseSsl
 
 `func (o *DataStoreAggregation) GetUseSsl() bool`
@@ -644,6 +676,31 @@ SetFollowLDAPReferrals sets FollowLDAPReferrals field to given value.
 `func (o *DataStoreAggregation) HasFollowLDAPReferrals() bool`
 
 HasFollowLDAPReferrals returns a boolean if a field has been set.
+
+### GetRetryFailedOperations
+
+`func (o *DataStoreAggregation) GetRetryFailedOperations() bool`
+
+GetRetryFailedOperations returns the RetryFailedOperations field if non-nil, zero value otherwise.
+
+### GetRetryFailedOperationsOk
+
+`func (o *DataStoreAggregation) GetRetryFailedOperationsOk() (*bool, bool)`
+
+GetRetryFailedOperationsOk returns a tuple with the RetryFailedOperations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRetryFailedOperations
+
+`func (o *DataStoreAggregation) SetRetryFailedOperations(v bool)`
+
+SetRetryFailedOperations sets RetryFailedOperations field to given value.
+
+### HasRetryFailedOperations
+
+`func (o *DataStoreAggregation) HasRetryFailedOperations() bool`
+
+HasRetryFailedOperations returns a boolean if a field has been set.
 
 ### GetTestOnBorrow
 

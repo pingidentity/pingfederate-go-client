@@ -20,12 +20,14 @@ var _ MappedNullable = &AttributeRule{}
 // AttributeRule Authentication policy rules using attributes from the previous authentication source. Each rule is evaluated to determine the next action in the policy.
 type AttributeRule struct {
 	AttributeSource *SourceTypeIdKey `json:"attributeSource,omitempty" tfsdk:"attribute_source"`
-	// The name of the attribute to use in this attribute rule.
-	AttributeName string `json:"attributeName" tfsdk:"attribute_name"`
-	// The condition that will be applied to the attribute's expected value.
-	Condition string `json:"condition" tfsdk:"condition"`
-	// The expected value of this attribute rule.
-	ExpectedValue string `json:"expectedValue" tfsdk:"expected_value"`
+	// The name of the attribute to use in this attribute rule. This field is required if the Attribute Source type is not 'EXPRESSION'.
+	AttributeName *string `json:"attributeName,omitempty" tfsdk:"attribute_name"`
+	// The condition that will be applied to the attribute's expected value. This field is required if the Attribute Source type is not 'EXPRESSION'.
+	Condition *string `json:"condition,omitempty" tfsdk:"condition"`
+	// The expected value of this attribute rule. This field is required if the Attribute Source type is not 'EXPRESSION'.
+	ExpectedValue *string `json:"expectedValue,omitempty" tfsdk:"expected_value"`
+	// The expression of this attribute rule. This field is required if the Attribute Source type is 'EXPRESSION'.
+	Expression *string `json:"expression,omitempty" tfsdk:"expression"`
 	// The result of this attribute rule.
 	Result string `json:"result" tfsdk:"result"`
 }
@@ -34,11 +36,8 @@ type AttributeRule struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAttributeRule(attributeName string, condition string, expectedValue string, result string) *AttributeRule {
+func NewAttributeRule(result string) *AttributeRule {
 	this := AttributeRule{}
-	this.AttributeName = attributeName
-	this.Condition = condition
-	this.ExpectedValue = expectedValue
 	this.Result = result
 	return &this
 }
@@ -83,76 +82,132 @@ func (o *AttributeRule) SetAttributeSource(v SourceTypeIdKey) {
 	o.AttributeSource = &v
 }
 
-// GetAttributeName returns the AttributeName field value
+// GetAttributeName returns the AttributeName field value if set, zero value otherwise.
 func (o *AttributeRule) GetAttributeName() string {
-	if o == nil {
+	if o == nil || IsNil(o.AttributeName) {
 		var ret string
 		return ret
 	}
-
-	return o.AttributeName
+	return *o.AttributeName
 }
 
-// GetAttributeNameOk returns a tuple with the AttributeName field value
+// GetAttributeNameOk returns a tuple with the AttributeName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeRule) GetAttributeNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.AttributeName) {
 		return nil, false
 	}
-	return &o.AttributeName, true
+	return o.AttributeName, true
 }
 
-// SetAttributeName sets field value
+// HasAttributeName returns a boolean if a field has been set.
+func (o *AttributeRule) HasAttributeName() bool {
+	if o != nil && !IsNil(o.AttributeName) {
+		return true
+	}
+
+	return false
+}
+
+// SetAttributeName gets a reference to the given string and assigns it to the AttributeName field.
 func (o *AttributeRule) SetAttributeName(v string) {
-	o.AttributeName = v
+	o.AttributeName = &v
 }
 
-// GetCondition returns the Condition field value
+// GetCondition returns the Condition field value if set, zero value otherwise.
 func (o *AttributeRule) GetCondition() string {
-	if o == nil {
+	if o == nil || IsNil(o.Condition) {
 		var ret string
 		return ret
 	}
-
-	return o.Condition
+	return *o.Condition
 }
 
-// GetConditionOk returns a tuple with the Condition field value
+// GetConditionOk returns a tuple with the Condition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeRule) GetConditionOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Condition) {
 		return nil, false
 	}
-	return &o.Condition, true
+	return o.Condition, true
 }
 
-// SetCondition sets field value
+// HasCondition returns a boolean if a field has been set.
+func (o *AttributeRule) HasCondition() bool {
+	if o != nil && !IsNil(o.Condition) {
+		return true
+	}
+
+	return false
+}
+
+// SetCondition gets a reference to the given string and assigns it to the Condition field.
 func (o *AttributeRule) SetCondition(v string) {
-	o.Condition = v
+	o.Condition = &v
 }
 
-// GetExpectedValue returns the ExpectedValue field value
+// GetExpectedValue returns the ExpectedValue field value if set, zero value otherwise.
 func (o *AttributeRule) GetExpectedValue() string {
-	if o == nil {
+	if o == nil || IsNil(o.ExpectedValue) {
 		var ret string
 		return ret
 	}
-
-	return o.ExpectedValue
+	return *o.ExpectedValue
 }
 
-// GetExpectedValueOk returns a tuple with the ExpectedValue field value
+// GetExpectedValueOk returns a tuple with the ExpectedValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeRule) GetExpectedValueOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ExpectedValue) {
 		return nil, false
 	}
-	return &o.ExpectedValue, true
+	return o.ExpectedValue, true
 }
 
-// SetExpectedValue sets field value
+// HasExpectedValue returns a boolean if a field has been set.
+func (o *AttributeRule) HasExpectedValue() bool {
+	if o != nil && !IsNil(o.ExpectedValue) {
+		return true
+	}
+
+	return false
+}
+
+// SetExpectedValue gets a reference to the given string and assigns it to the ExpectedValue field.
 func (o *AttributeRule) SetExpectedValue(v string) {
-	o.ExpectedValue = v
+	o.ExpectedValue = &v
+}
+
+// GetExpression returns the Expression field value if set, zero value otherwise.
+func (o *AttributeRule) GetExpression() string {
+	if o == nil || IsNil(o.Expression) {
+		var ret string
+		return ret
+	}
+	return *o.Expression
+}
+
+// GetExpressionOk returns a tuple with the Expression field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AttributeRule) GetExpressionOk() (*string, bool) {
+	if o == nil || IsNil(o.Expression) {
+		return nil, false
+	}
+	return o.Expression, true
+}
+
+// HasExpression returns a boolean if a field has been set.
+func (o *AttributeRule) HasExpression() bool {
+	if o != nil && !IsNil(o.Expression) {
+		return true
+	}
+
+	return false
+}
+
+// SetExpression gets a reference to the given string and assigns it to the Expression field.
+func (o *AttributeRule) SetExpression(v string) {
+	o.Expression = &v
 }
 
 // GetResult returns the Result field value
@@ -192,9 +247,18 @@ func (o AttributeRule) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AttributeSource) {
 		toSerialize["attributeSource"] = o.AttributeSource
 	}
-	toSerialize["attributeName"] = o.AttributeName
-	toSerialize["condition"] = o.Condition
-	toSerialize["expectedValue"] = o.ExpectedValue
+	if !IsNil(o.AttributeName) {
+		toSerialize["attributeName"] = o.AttributeName
+	}
+	if !IsNil(o.Condition) {
+		toSerialize["condition"] = o.Condition
+	}
+	if !IsNil(o.ExpectedValue) {
+		toSerialize["expectedValue"] = o.ExpectedValue
+	}
+	if !IsNil(o.Expression) {
+		toSerialize["expression"] = o.Expression
+	}
 	toSerialize["result"] = o.Result
 	return toSerialize, nil
 }

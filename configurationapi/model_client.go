@@ -140,6 +140,8 @@ type Client struct {
 	JwtSecuredAuthorizationResponseModeEncryptionAlgorithm *string `json:"jwtSecuredAuthorizationResponseModeEncryptionAlgorithm,omitempty" tfsdk:"jwt_secured_authorization_response_mode_encryption_algorithm"`
 	// The JSON Web Encryption [JWE] content-encryption algorithm for the JWT Secured Authorization Response.<br>AES_128_CBC_HMAC_SHA_256 - Composite AES-CBC-128 HMAC-SHA-256<br>AES_192_CBC_HMAC_SHA_384 - Composite AES-CBC-192 HMAC-SHA-384<br>AES_256_CBC_HMAC_SHA_512 - Composite AES-CBC-256 HMAC-SHA-512<br>AES_128_GCM - AES-GCM-128<br>AES_192_GCM - AES-GCM-192<br>AES_256_GCM - AES-GCM-256
 	JwtSecuredAuthorizationResponseModeContentEncryptionAlgorithm *string `json:"jwtSecuredAuthorizationResponseModeContentEncryptionAlgorithm,omitempty" tfsdk:"jwt_secured_authorization_response_mode_content_encryption_algorithm"`
+	// Determines whether Demonstrating Proof-of-Possession (DPoP) is required for this client.
+	RequireDpop *bool `json:"requireDpop,omitempty" tfsdk:"require_dpop"`
 }
 
 // NewClient instantiates a new Client object
@@ -2154,6 +2156,38 @@ func (o *Client) SetJwtSecuredAuthorizationResponseModeContentEncryptionAlgorith
 	o.JwtSecuredAuthorizationResponseModeContentEncryptionAlgorithm = &v
 }
 
+// GetRequireDpop returns the RequireDpop field value if set, zero value otherwise.
+func (o *Client) GetRequireDpop() bool {
+	if o == nil || IsNil(o.RequireDpop) {
+		var ret bool
+		return ret
+	}
+	return *o.RequireDpop
+}
+
+// GetRequireDpopOk returns a tuple with the RequireDpop field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Client) GetRequireDpopOk() (*bool, bool) {
+	if o == nil || IsNil(o.RequireDpop) {
+		return nil, false
+	}
+	return o.RequireDpop, true
+}
+
+// HasRequireDpop returns a boolean if a field has been set.
+func (o *Client) HasRequireDpop() bool {
+	if o != nil && !IsNil(o.RequireDpop) {
+		return true
+	}
+
+	return false
+}
+
+// SetRequireDpop gets a reference to the given bool and assigns it to the RequireDpop field.
+func (o *Client) SetRequireDpop(v bool) {
+	o.RequireDpop = &v
+}
+
 func (o Client) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -2346,6 +2380,9 @@ func (o Client) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.JwtSecuredAuthorizationResponseModeContentEncryptionAlgorithm) {
 		toSerialize["jwtSecuredAuthorizationResponseModeContentEncryptionAlgorithm"] = o.JwtSecuredAuthorizationResponseModeContentEncryptionAlgorithm
+	}
+	if !IsNil(o.RequireDpop) {
+		toSerialize["requireDpop"] = o.RequireDpop
 	}
 	return toSerialize, nil
 }

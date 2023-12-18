@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | The name of this attribute. | 
-**NameFormat** | **string** | The SAML Name Format for the attribute. | 
+**NameFormat** | Pointer to **string** | The SAML Name Format for the attribute. | [optional] 
 
 ## Methods
 
 ### NewSpBrowserSsoAttribute
 
-`func NewSpBrowserSsoAttribute(name string, nameFormat string, ) *SpBrowserSsoAttribute`
+`func NewSpBrowserSsoAttribute(name string, ) *SpBrowserSsoAttribute`
 
 NewSpBrowserSsoAttribute instantiates a new SpBrowserSsoAttribute object
 This constructor will assign default values to properties that have it defined,
@@ -65,6 +65,11 @@ and a boolean to check if the value has been set.
 
 SetNameFormat sets NameFormat field to given value.
 
+### HasNameFormat
+
+`func (o *SpBrowserSsoAttribute) HasNameFormat() bool`
+
+HasNameFormat returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

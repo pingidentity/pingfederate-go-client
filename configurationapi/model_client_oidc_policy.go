@@ -30,10 +30,14 @@ type ClientOIDCPolicy struct {
 	GrantAccessSessionRevocationApi *bool `json:"grantAccessSessionRevocationApi,omitempty" tfsdk:"grant_access_session_revocation_api"`
 	// Determines whether this client is allowed to access the Session Management API.
 	GrantAccessSessionSessionManagementApi *bool `json:"grantAccessSessionSessionManagementApi,omitempty" tfsdk:"grant_access_session_session_management_api"`
+	// The logout mode for this client. The default is 'NONE'.
+	LogoutMode *string `json:"logoutMode,omitempty" tfsdk:"logout_mode"`
 	// Set this value to true if you wish to enable client application logout, and the client is PingAccess, or its logout endpoints follow the PingAccess path convention.
 	PingAccessLogoutCapable *bool `json:"pingAccessLogoutCapable,omitempty" tfsdk:"ping_access_logout_capable"`
-	// A list of client logout URI's which will be invoked when a user logs out through one of PingFederate's SLO endpoints.
+	// A list of front-channel logout URIs for this client.
 	LogoutUris []string `json:"logoutUris,omitempty" tfsdk:"logout_uris"`
+	// The back-channel logout URI for this client.
+	BackChannelLogoutUri *string `json:"backChannelLogoutUri,omitempty" tfsdk:"back_channel_logout_uri"`
 	// Determines whether the subject identifier type is pairwise.
 	PairwiseIdentifierUserType *bool `json:"pairwiseIdentifierUserType,omitempty" tfsdk:"pairwise_identifier_user_type"`
 	// The URI references a file with a single JSON array of Redirect URI and JWKS URL values.
@@ -249,6 +253,38 @@ func (o *ClientOIDCPolicy) SetGrantAccessSessionSessionManagementApi(v bool) {
 	o.GrantAccessSessionSessionManagementApi = &v
 }
 
+// GetLogoutMode returns the LogoutMode field value if set, zero value otherwise.
+func (o *ClientOIDCPolicy) GetLogoutMode() string {
+	if o == nil || IsNil(o.LogoutMode) {
+		var ret string
+		return ret
+	}
+	return *o.LogoutMode
+}
+
+// GetLogoutModeOk returns a tuple with the LogoutMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientOIDCPolicy) GetLogoutModeOk() (*string, bool) {
+	if o == nil || IsNil(o.LogoutMode) {
+		return nil, false
+	}
+	return o.LogoutMode, true
+}
+
+// HasLogoutMode returns a boolean if a field has been set.
+func (o *ClientOIDCPolicy) HasLogoutMode() bool {
+	if o != nil && !IsNil(o.LogoutMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetLogoutMode gets a reference to the given string and assigns it to the LogoutMode field.
+func (o *ClientOIDCPolicy) SetLogoutMode(v string) {
+	o.LogoutMode = &v
+}
+
 // GetPingAccessLogoutCapable returns the PingAccessLogoutCapable field value if set, zero value otherwise.
 func (o *ClientOIDCPolicy) GetPingAccessLogoutCapable() bool {
 	if o == nil || IsNil(o.PingAccessLogoutCapable) {
@@ -311,6 +347,38 @@ func (o *ClientOIDCPolicy) HasLogoutUris() bool {
 // SetLogoutUris gets a reference to the given []string and assigns it to the LogoutUris field.
 func (o *ClientOIDCPolicy) SetLogoutUris(v []string) {
 	o.LogoutUris = v
+}
+
+// GetBackChannelLogoutUri returns the BackChannelLogoutUri field value if set, zero value otherwise.
+func (o *ClientOIDCPolicy) GetBackChannelLogoutUri() string {
+	if o == nil || IsNil(o.BackChannelLogoutUri) {
+		var ret string
+		return ret
+	}
+	return *o.BackChannelLogoutUri
+}
+
+// GetBackChannelLogoutUriOk returns a tuple with the BackChannelLogoutUri field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientOIDCPolicy) GetBackChannelLogoutUriOk() (*string, bool) {
+	if o == nil || IsNil(o.BackChannelLogoutUri) {
+		return nil, false
+	}
+	return o.BackChannelLogoutUri, true
+}
+
+// HasBackChannelLogoutUri returns a boolean if a field has been set.
+func (o *ClientOIDCPolicy) HasBackChannelLogoutUri() bool {
+	if o != nil && !IsNil(o.BackChannelLogoutUri) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackChannelLogoutUri gets a reference to the given string and assigns it to the BackChannelLogoutUri field.
+func (o *ClientOIDCPolicy) SetBackChannelLogoutUri(v string) {
+	o.BackChannelLogoutUri = &v
 }
 
 // GetPairwiseIdentifierUserType returns the PairwiseIdentifierUserType field value if set, zero value otherwise.
@@ -405,11 +473,17 @@ func (o ClientOIDCPolicy) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.GrantAccessSessionSessionManagementApi) {
 		toSerialize["grantAccessSessionSessionManagementApi"] = o.GrantAccessSessionSessionManagementApi
 	}
+	if !IsNil(o.LogoutMode) {
+		toSerialize["logoutMode"] = o.LogoutMode
+	}
 	if !IsNil(o.PingAccessLogoutCapable) {
 		toSerialize["pingAccessLogoutCapable"] = o.PingAccessLogoutCapable
 	}
 	if !IsNil(o.LogoutUris) {
 		toSerialize["logoutUris"] = o.LogoutUris
+	}
+	if !IsNil(o.BackChannelLogoutUri) {
+		toSerialize["backChannelLogoutUri"] = o.BackChannelLogoutUri
 	}
 	if !IsNil(o.PairwiseIdentifierUserType) {
 		toSerialize["pairwiseIdentifierUserType"] = o.PairwiseIdentifierUserType

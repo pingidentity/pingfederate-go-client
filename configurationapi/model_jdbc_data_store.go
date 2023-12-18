@@ -20,16 +20,16 @@ var _ MappedNullable = &JdbcDataStore{}
 // JdbcDataStore struct for JdbcDataStore
 type JdbcDataStore struct {
 	DataStore
-	// The set of connection URLs and associated tags for this JDBC data store.
+	// The set of connection URLs and associated tags for this JDBC data store. This is required if 'connectionUrl' is not provided.
 	ConnectionUrlTags []JdbcTagConfig `json:"connectionUrlTags,omitempty" tfsdk:"connection_url_tags"`
-	// The default location of the JDBC database. This field is required if no mapping for JDBC database location and tags are specified.
+	// The default location of the JDBC database. This field is required if no mapping for JDBC database location and tags is specified.
 	ConnectionUrl *string `json:"connectionUrl,omitempty" tfsdk:"connection_url"`
 	// The data store name with a unique value across all data sources. Omitting this attribute will set the value to a combination of the connection url and the username.
 	Name *string `json:"name,omitempty" tfsdk:"name"`
 	// The name of the driver class used to communicate with the source database.
 	DriverClass string `json:"driverClass" tfsdk:"driver_class"`
 	// The name that identifies the user when connecting to the database.
-	UserName string `json:"userName" tfsdk:"user_name"`
+	UserName *string `json:"userName,omitempty" tfsdk:"user_name"`
 	// The password needed to access the database. GETs will not return this attribute. To update this field, specify the new value in this attribute.
 	Password *string `json:"password,omitempty" tfsdk:"password"`
 	// The encrypted password needed to access the database. If you do not want to update the stored value, this attribute should be passed back unchanged. Secret Reference may be provided in this field with format 'OBF:MGR:{secretManagerId}:{secretId}'.
@@ -52,11 +52,10 @@ type JdbcDataStore struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewJdbcDataStore(driverClass string, userName string, type_ string) *JdbcDataStore {
+func NewJdbcDataStore(driverClass string, type_ string) *JdbcDataStore {
 	this := JdbcDataStore{}
 	this.Type = type_
 	this.DriverClass = driverClass
-	this.UserName = userName
 	return &this
 }
 
@@ -188,28 +187,36 @@ func (o *JdbcDataStore) SetDriverClass(v string) {
 	o.DriverClass = v
 }
 
-// GetUserName returns the UserName field value
+// GetUserName returns the UserName field value if set, zero value otherwise.
 func (o *JdbcDataStore) GetUserName() string {
-	if o == nil {
+	if o == nil || IsNil(o.UserName) {
 		var ret string
 		return ret
 	}
-
-	return o.UserName
+	return *o.UserName
 }
 
-// GetUserNameOk returns a tuple with the UserName field value
+// GetUserNameOk returns a tuple with the UserName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JdbcDataStore) GetUserNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.UserName) {
 		return nil, false
 	}
-	return &o.UserName, true
+	return o.UserName, true
 }
 
-// SetUserName sets field value
+// HasUserName returns a boolean if a field has been set.
+func (o *JdbcDataStore) HasUserName() bool {
+	if o != nil && !IsNil(o.UserName) {
+		return true
+	}
+
+	return false
+}
+
+// SetUserName gets a reference to the given string and assigns it to the UserName field.
 func (o *JdbcDataStore) SetUserName(v string) {
-	o.UserName = v
+	o.UserName = &v
 }
 
 // GetPassword returns the Password field value if set, zero value otherwise.
@@ -496,7 +503,9 @@ func (o JdbcDataStore) ToMap() (map[string]interface{}, error) {
 		toSerialize["name"] = o.Name
 	}
 	toSerialize["driverClass"] = o.DriverClass
-	toSerialize["userName"] = o.UserName
+	if !IsNil(o.UserName) {
+		toSerialize["userName"] = o.UserName
+	}
 	if !IsNil(o.Password) {
 		toSerialize["password"] = o.Password
 	}

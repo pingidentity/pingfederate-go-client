@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Hostnames** | **[]string** | The LDAP host names. | 
-**Tags** | Pointer to **string** | Tags associated with this data source. | [optional] 
+**Hostnames** | **[]string** | The LDAP host names. Failover can be configured by providing multiple host names. | 
+**Tags** | Pointer to **string** | Tags associated with the host names. At runtime, nodes will use the first LdapTagConfig that has a tag that matches with node.tags in run.properties. | [optional] 
 **DefaultSource** | Pointer to **bool** | Whether this is the default connection. Defaults to false if not specified. | [optional] 
 
 ## Methods
