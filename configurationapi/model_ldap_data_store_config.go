@@ -17,9 +17,8 @@ import (
 // checks if the LdapDataStoreConfig type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &LdapDataStoreConfig{}
 
-// LdapDataStoreConfig struct for LdapDataStoreConfig
+// LdapDataStoreConfig LDAP data store configuration.
 type LdapDataStoreConfig struct {
-	DataStoreConfig
 	// The base DN to search from. If not specified, the search will start at the LDAP's root.
 	BaseDn string `json:"baseDn" tfsdk:"base_dn"`
 	// The Relative DN Pattern that will be used to create objects in the directory.
@@ -30,6 +29,9 @@ type LdapDataStoreConfig struct {
 	AuxiliaryObjectClasses []string `json:"auxiliaryObjectClasses,omitempty" tfsdk:"auxiliary_object_classes"`
 	// The data store mapping.
 	DataStoreMapping map[string]DataStoreAttribute `json:"dataStoreMapping" tfsdk:"data_store_mapping"`
+	// The data store config type.
+	Type         string       `json:"type" tfsdk:"type"`
+	DataStoreRef ResourceLink `json:"dataStoreRef" tfsdk:"data_store_ref"`
 }
 
 // NewLdapDataStoreConfig instantiates a new LdapDataStoreConfig object
@@ -38,12 +40,12 @@ type LdapDataStoreConfig struct {
 // will change when the set of required properties is changed
 func NewLdapDataStoreConfig(baseDn string, createPattern string, objectClass string, dataStoreMapping map[string]DataStoreAttribute, type_ string, dataStoreRef ResourceLink) *LdapDataStoreConfig {
 	this := LdapDataStoreConfig{}
-	this.Type = type_
-	this.DataStoreRef = dataStoreRef
-	this.DataStoreMapping = dataStoreMapping
 	this.BaseDn = baseDn
 	this.CreatePattern = createPattern
 	this.ObjectClass = objectClass
+	this.DataStoreMapping = dataStoreMapping
+	this.Type = type_
+	this.DataStoreRef = dataStoreRef
 	return &this
 }
 
@@ -183,6 +185,54 @@ func (o *LdapDataStoreConfig) SetDataStoreMapping(v map[string]DataStoreAttribut
 	o.DataStoreMapping = v
 }
 
+// GetType returns the Type field value
+func (o *LdapDataStoreConfig) GetType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value
+// and a boolean to check if the value has been set.
+func (o *LdapDataStoreConfig) GetTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Type, true
+}
+
+// SetType sets field value
+func (o *LdapDataStoreConfig) SetType(v string) {
+	o.Type = v
+}
+
+// GetDataStoreRef returns the DataStoreRef field value
+func (o *LdapDataStoreConfig) GetDataStoreRef() ResourceLink {
+	if o == nil {
+		var ret ResourceLink
+		return ret
+	}
+
+	return o.DataStoreRef
+}
+
+// GetDataStoreRefOk returns a tuple with the DataStoreRef field value
+// and a boolean to check if the value has been set.
+func (o *LdapDataStoreConfig) GetDataStoreRefOk() (*ResourceLink, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.DataStoreRef, true
+}
+
+// SetDataStoreRef sets field value
+func (o *LdapDataStoreConfig) SetDataStoreRef(v ResourceLink) {
+	o.DataStoreRef = v
+}
+
 func (o LdapDataStoreConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -193,14 +243,6 @@ func (o LdapDataStoreConfig) MarshalJSON() ([]byte, error) {
 
 func (o LdapDataStoreConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	serializedDataStoreConfig, errDataStoreConfig := json.Marshal(o.DataStoreConfig)
-	if errDataStoreConfig != nil {
-		return map[string]interface{}{}, errDataStoreConfig
-	}
-	errDataStoreConfig = json.Unmarshal([]byte(serializedDataStoreConfig), &toSerialize)
-	if errDataStoreConfig != nil {
-		return map[string]interface{}{}, errDataStoreConfig
-	}
 	toSerialize["baseDn"] = o.BaseDn
 	toSerialize["createPattern"] = o.CreatePattern
 	toSerialize["objectClass"] = o.ObjectClass
@@ -208,6 +250,8 @@ func (o LdapDataStoreConfig) ToMap() (map[string]interface{}, error) {
 		toSerialize["auxiliaryObjectClasses"] = o.AuxiliaryObjectClasses
 	}
 	toSerialize["dataStoreMapping"] = o.DataStoreMapping
+	toSerialize["type"] = o.Type
+	toSerialize["dataStoreRef"] = o.DataStoreRef
 	return toSerialize, nil
 }
 

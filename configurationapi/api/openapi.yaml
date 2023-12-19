@@ -24354,6 +24354,11 @@ components:
       description: The data store attribute.
       discriminator:
         propertyName: type
+      example:
+        metadata:
+          key: metadata
+        name: name
+        type: LDAP
       properties:
         type:
           description: The data store attribute type.
@@ -24568,39 +24573,66 @@ components:
       - description: LDAP data store attribute.
         type: object
     LdapDataStoreConfig:
-      allOf:
-      - $ref: '#/components/schemas/DataStoreConfig'
-      - description: LDAP data store configuration.
-        properties:
-          baseDn:
-            description: "The base DN to search from. If not specified, the search\
-              \ will start at the LDAP's root."
+      description: LDAP data store configuration.
+      example:
+        createPattern: createPattern
+        objectClass: objectClass
+        dataStoreRef:
+          location: location
+          id: id
+        baseDn: baseDn
+        auxiliaryObjectClasses:
+        - auxiliaryObjectClasses
+        - auxiliaryObjectClasses
+        type: LDAP
+        dataStoreMapping:
+          key:
+            metadata:
+              key: metadata
+            name: name
+            type: LDAP
+      properties:
+        baseDn:
+          description: "The base DN to search from. If not specified, the search will\
+            \ start at the LDAP's root."
+          type: string
+        createPattern:
+          description: The Relative DN Pattern that will be used to create objects
+            in the directory.
+          type: string
+        objectClass:
+          description: The Object Class used by the new objects stored in the LDAP
+            data store.
+          type: string
+        auxiliaryObjectClasses:
+          description: The Auxiliary Object Classes used by the new objects stored
+            in the LDAP data store.
+          items:
             type: string
-          createPattern:
-            description: The Relative DN Pattern that will be used to create objects
-              in the directory.
-            type: string
-          objectClass:
-            description: The Object Class used by the new objects stored in the LDAP
-              data store.
-            type: string
-          auxiliaryObjectClasses:
-            description: The Auxiliary Object Classes used by the new objects stored
-              in the LDAP data store.
-            items:
-              type: string
-            type: array
-          dataStoreMapping:
-            additionalProperties:
-              $ref: '#/components/schemas/DataStoreAttribute'
-            description: The data store mapping.
-            type: object
-        required:
-        - baseDn
-        - createPattern
-        - dataStoreMapping
-        - objectClass
-        type: object
+          type: array
+        dataStoreMapping:
+          additionalProperties:
+            $ref: '#/components/schemas/DataStoreAttribute'
+          description: The data store mapping.
+          type: object
+        type:
+          description: The data store config type.
+          enum:
+          - LDAP
+          - PING_ONE_LDAP_GATEWAY
+          - JDBC
+          - CUSTOM
+          type: string
+        dataStoreRef:
+          $ref: '#/components/schemas/ResourceLink'
+      required:
+      - baseDn
+      - createPattern
+      - dataStoreMapping
+      - dataStoreRef
+      - objectClass
+      - type
+      type: object
     LocalIdentityAuthSource:
       description: An authentication source name.
       example:
@@ -24760,7 +24792,23 @@ components:
             id: id
           verifyEmailTemplateName: verifyEmailTemplateName
           emailVerificationSentTemplateName: emailVerificationSentTemplateName
-        dataStoreConfig: null
+        dataStoreConfig:
+          createPattern: createPattern
+          objectClass: objectClass
+          dataStoreRef:
+            location: location
+            id: id
+          baseDn: baseDn
+          auxiliaryObjectClasses:
+          - auxiliaryObjectClasses
+          - auxiliaryObjectClasses
+          type: LDAP
+          dataStoreMapping:
+            key:
+              metadata:
+                key: metadata
+              name: name
+              type: LDAP
       properties:
         id:
           description: "The persistent, unique ID for the local identity profile.\
@@ -24873,7 +24921,23 @@ components:
               id: id
             verifyEmailTemplateName: verifyEmailTemplateName
             emailVerificationSentTemplateName: emailVerificationSentTemplateName
-          dataStoreConfig: null
+          dataStoreConfig:
+            createPattern: createPattern
+            objectClass: objectClass
+            dataStoreRef:
+              location: location
+              id: id
+            baseDn: baseDn
+            auxiliaryObjectClasses:
+            - auxiliaryObjectClasses
+            - auxiliaryObjectClasses
+            type: LDAP
+            dataStoreMapping:
+              key:
+                metadata:
+                  key: metadata
+                name: name
+                type: LDAP
         - registrationEnabled: true
           registrationConfig:
             usernameField: usernameField
@@ -24944,7 +25008,23 @@ components:
               id: id
             verifyEmailTemplateName: verifyEmailTemplateName
             emailVerificationSentTemplateName: emailVerificationSentTemplateName
-          dataStoreConfig: null
+          dataStoreConfig:
+            createPattern: createPattern
+            objectClass: objectClass
+            dataStoreRef:
+              location: location
+              id: id
+            baseDn: baseDn
+            auxiliaryObjectClasses:
+            - auxiliaryObjectClasses
+            - auxiliaryObjectClasses
+            type: LDAP
+            dataStoreMapping:
+              key:
+                metadata:
+                  key: metadata
+                name: name
+                type: LDAP
       properties:
         items:
           description: The actual list of local identity profiles.

@@ -9,12 +9,14 @@ Name | Type | Description | Notes
 **ObjectClass** | **string** | The Object Class used by the new objects stored in the LDAP data store. | 
 **AuxiliaryObjectClasses** | Pointer to **[]string** | The Auxiliary Object Classes used by the new objects stored in the LDAP data store. | [optional] 
 **DataStoreMapping** | [**map[string]DataStoreAttribute**](DataStoreAttribute.md) | The data store mapping. | 
+**Type** | **string** | The data store config type. | 
+**DataStoreRef** | [**ResourceLink**](ResourceLink.md) |  | 
 
 ## Methods
 
 ### NewLdapDataStoreConfig
 
-`func NewLdapDataStoreConfig(baseDn string, createPattern string, objectClass string, dataStoreMapping map[string]DataStoreAttribute, ) *LdapDataStoreConfig`
+`func NewLdapDataStoreConfig(baseDn string, createPattern string, objectClass string, dataStoreMapping map[string]DataStoreAttribute, type_ string, dataStoreRef ResourceLink, ) *LdapDataStoreConfig`
 
 NewLdapDataStoreConfig instantiates a new LdapDataStoreConfig object
 This constructor will assign default values to properties that have it defined,
@@ -132,6 +134,46 @@ and a boolean to check if the value has been set.
 `func (o *LdapDataStoreConfig) SetDataStoreMapping(v map[string]DataStoreAttribute)`
 
 SetDataStoreMapping sets DataStoreMapping field to given value.
+
+
+### GetType
+
+`func (o *LdapDataStoreConfig) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *LdapDataStoreConfig) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *LdapDataStoreConfig) SetType(v string)`
+
+SetType sets Type field to given value.
+
+
+### GetDataStoreRef
+
+`func (o *LdapDataStoreConfig) GetDataStoreRef() ResourceLink`
+
+GetDataStoreRef returns the DataStoreRef field if non-nil, zero value otherwise.
+
+### GetDataStoreRefOk
+
+`func (o *LdapDataStoreConfig) GetDataStoreRefOk() (*ResourceLink, bool)`
+
+GetDataStoreRefOk returns a tuple with the DataStoreRef field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDataStoreRef
+
+`func (o *LdapDataStoreConfig) SetDataStoreRef(v ResourceLink)`
+
+SetDataStoreRef sets DataStoreRef field to given value.
 
 
 

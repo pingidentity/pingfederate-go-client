@@ -19948,39 +19948,49 @@ components:
       - type: object
         description: LDAP data store attribute.
     LdapDataStoreConfig:
-      allOf:
-      - $ref: '#/components/schemas/DataStoreConfig'
-      - required:
-        - baseDn
-        - createPattern
-        - dataStoreMapping
-        - objectClass
-        type: object
-        properties:
-          baseDn:
+      required:
+      - baseDn
+      - createPattern
+      - dataStoreMapping
+      - objectClass
+      - dataStoreRef
+      - type
+      type: object
+      properties:
+        baseDn:
+          type: string
+          description: "The base DN to search from. If not specified, the search\
+            \ will start at the LDAP's root."
+        createPattern:
+          type: string
+          description: The Relative DN Pattern that will be used to create objects
+            in the directory.
+        objectClass:
+          type: string
+          description: The Object Class used by the new objects stored in the LDAP
+            data store.
+        auxiliaryObjectClasses:
+          type: array
+          description: The Auxiliary Object Classes used by the new objects stored
+            in the LDAP data store.
+          items:
             type: string
-            description: "The base DN to search from. If not specified, the search\
-              \ will start at the LDAP's root."
-          createPattern:
-            type: string
-            description: The Relative DN Pattern that will be used to create objects
-              in the directory.
-          objectClass:
-            type: string
-            description: The Object Class used by the new objects stored in the LDAP
-              data store.
-          auxiliaryObjectClasses:
-            type: array
-            description: The Auxiliary Object Classes used by the new objects stored
-              in the LDAP data store.
-            items:
-              type: string
-          dataStoreMapping:
-            type: object
-            additionalProperties:
-              $ref: '#/components/schemas/DataStoreAttribute'
-            description: The data store mapping.
-        description: LDAP data store configuration.
+        dataStoreMapping:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/DataStoreAttribute'
+          description: The data store mapping.
+        type:
+          type: string
+          description: The data store config type.
+          enum:
+          - LDAP
+          - PING_ONE_LDAP_GATEWAY
+          - JDBC
+          - CUSTOM
+        dataStoreRef:
+          $ref: '#/components/schemas/ResourceLink'
+      description: LDAP data store configuration.
     LocalIdentityAuthSource:
       type: object
       properties:
