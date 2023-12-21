@@ -18065,7 +18065,6 @@ components:
       description: Settings related to signing messages sent to this partner.
     SloServiceEndpoint:
       required:
-      - binding
       - url
       type: object
       properties:
@@ -18175,7 +18174,6 @@ components:
       - adapterMappings
       - assertionLifetime
       - attributeContract
-      - encryptionPolicy
       - protocol
       - ssoServiceEndpoints
       type: object
@@ -18321,7 +18319,6 @@ components:
     SpBrowserSsoAttribute:
       required:
       - name
-      - nameFormat
       type: object
       properties:
         name:
@@ -18379,8 +18376,6 @@ components:
         description: The set of attributes used to configure an SP connection.
     SpSsoServiceEndpoint:
       required:
-      - binding
-      - index
       - url
       type: object
       properties:
