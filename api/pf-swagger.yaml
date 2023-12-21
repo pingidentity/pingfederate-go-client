@@ -3923,7 +3923,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DataStore'
+              $ref: '#/components/schemas/DataStoreAggregation'
         required: true
       responses:
         "201":
@@ -3931,7 +3931,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DataStore'
+                $ref: '#/components/schemas/DataStoreAggregation'
         "400":
           description: The request was improperly formatted or contained invalid fields.
           content: {}
@@ -3963,7 +3963,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DataStore'
+                $ref: '#/components/schemas/DataStoreAggregation'
         "404":
           description: Resource not found.
           content:
@@ -3998,7 +3998,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DataStore'
+              $ref: '#/components/schemas/DataStoreAggregation'
         required: true
       responses:
         "200":
@@ -4006,7 +4006,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DataStore'
+                $ref: '#/components/schemas/DataStoreAggregation'
         "400":
           description: The request was improperly formatted or contained invalid fields.
           content: {}
@@ -13976,6 +13976,11 @@ components:
           type: string
           description: The value for this attribute.
       description: Defines how an attribute in an attribute contract should be populated.
+    AttributeSourceAggregation:
+      oneOf:
+        - $ref: "#/components/schemas/CustomAttributeSource"
+        - $ref: "#/components/schemas/JdbcAttributeSource"
+        - $ref: "#/components/schemas/LdapAttributeSource"
     AttributeSource:
       required:
       - dataStoreRef
@@ -14275,7 +14280,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -14799,7 +14804,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -14918,7 +14923,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -15047,7 +15052,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -16407,7 +16412,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -16566,7 +16571,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -16597,7 +16602,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -17123,7 +17128,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -17476,7 +17481,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -18116,7 +18121,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -18154,7 +18159,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
       description: The attribute query profile supports SPs in requesting user attributes.
     SpAttributeQueryPolicy:
       type: object
@@ -18430,7 +18435,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -18554,7 +18559,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -18835,6 +18840,12 @@ components:
           items:
             $ref: '#/components/schemas/CustomDataStoreDescriptor'
       description: A collection of custom data store descriptors.
+    DataStoreAggregation:
+      oneOf:
+        - $ref: "#/components/schemas/CustomDataStore"
+        - $ref: "#/components/schemas/JdbcDataStore"
+        - $ref: "#/components/schemas/LdapDataStore"
+        - $ref: "#/components/schemas/PingOneLdapGatewayDataStore"
     CustomDataStore:
       allOf:
       - $ref: '#/components/schemas/DataStore'
@@ -18905,7 +18916,7 @@ components:
           type: array
           description: The actual list of data stores.
           items:
-            $ref: '#/components/schemas/DataStore'
+            $ref: '#/components/schemas/DataStoreAggregation'
       description: A collection of data stores.
     JdbcDataStore:
       allOf:
@@ -19513,7 +19524,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -20059,39 +20070,49 @@ components:
       - type: object
         description: LDAP data store attribute.
     LdapDataStoreConfig:
-      allOf:
-      - $ref: '#/components/schemas/DataStoreConfig'
-      - required:
-        - baseDn
-        - createPattern
-        - dataStoreMapping
-        - objectClass
-        type: object
-        properties:
-          baseDn:
+      required:
+      - baseDn
+      - createPattern
+      - dataStoreMapping  
+      - objectClass
+      - dataStoreRef
+      - type
+      type: object
+      properties:
+        baseDn:
+          type: string
+          description: "The base DN to search from. If not specified, the search\
+            \ will start at the LDAP's root."
+        createPattern:
+          type: string
+          description: The Relative DN Pattern that will be used to create objects
+            in the directory.
+        objectClass:
+          type: string
+          description: The Object Class used by the new objects stored in the LDAP
+            data store.
+        auxiliaryObjectClasses:
+          type: array
+          description: The Auxiliary Object Classes used by the new objects stored
+            in the LDAP data store.
+          items:
             type: string
-            description: "The base DN to search from. If not specified, the search\
-              \ will start at the LDAP's root."
-          createPattern:
-            type: string
-            description: The Relative DN Pattern that will be used to create objects
-              in the directory.
-          objectClass:
-            type: string
-            description: The Object Class used by the new objects stored in the LDAP
-              data store.
-          auxiliaryObjectClasses:
-            type: array
-            description: The Auxiliary Object Classes used by the new objects stored
-              in the LDAP data store.
-            items:
-              type: string
-          dataStoreMapping:
-            type: object
-            additionalProperties:
-              $ref: '#/components/schemas/DataStoreAttribute'
-            description: The data store mapping.
-        description: LDAP data store configuration.
+        dataStoreMapping:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/DataStoreAttribute'
+          description: The data store mapping.
+        type:
+          type: string
+          description: The data store config type.
+          enum:
+          - LDAP
+          - PING_ONE_LDAP_GATEWAY
+          - JDBC
+          - CUSTOM
+        dataStoreRef:
+          $ref: '#/components/schemas/ResourceLink'
+      description: LDAP data store configuration.
     LocalIdentityAuthSource:
       type: object
       properties:
@@ -20197,7 +20218,7 @@ components:
         emailVerificationConfig:
           $ref: '#/components/schemas/EmailVerificationConfig'
         dataStoreConfig:
-          $ref: '#/components/schemas/DataStoreConfig'
+          $ref: '#/components/schemas/LdapDataStoreConfig'
         profileEnabled:
           type: boolean
           description: Whether the profile configuration is enabled or not.
@@ -20347,7 +20368,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -21588,7 +21609,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -21786,7 +21807,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -23356,7 +23377,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -23484,7 +23505,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
@@ -23619,7 +23640,7 @@ components:
           type: array
           description: A list of configured data stores to look up attributes from.
           items:
-            $ref: '#/components/schemas/AttributeSource'
+            $ref: '#/components/schemas/AttributeSourceAggregation'
         attributeContractFulfillment:
           type: object
           additionalProperties:
