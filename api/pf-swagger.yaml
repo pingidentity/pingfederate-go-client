@@ -85,6 +85,8 @@ tags:
 - name: /oauth/tokenExchange/tokenGeneratorMappings
 - name: /oauth/tokenExchange/generator
 - name: /oauth/tokenExchange/processor
+security:
+  - basicAuth: []
 paths:
   /oauth/accessTokenManagers/settings:
     get:
@@ -13490,6 +13492,10 @@ paths:
                 $ref: '#/components/schemas/ApiResult'
       x-codegen-request-body-name: body
 components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
   schemas:
     AccessTokenManagementSettings:
       type: object
