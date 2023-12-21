@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **InitialWarningPeriod** | Pointer to **int64** | Time before certificate expiration when initial warning is sent (in days). | [optional] 
 **FinalWarningPeriod** | **int64** | Time before certificate expiration when final warning is sent (in days). | 
 **NotificationPublisherRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
+**NotificationMode** | Pointer to **string** | The mode of notification. Set to NOTIFICATION_PUBLISHER to enable email notifications and server log messages. Set to LOGGING_ONLY to enable server log messages. Defaults to NOTIFICATION_PUBLISHER. | [optional] 
 
 ## Methods
 
@@ -117,6 +118,31 @@ SetNotificationPublisherRef sets NotificationPublisherRef field to given value.
 `func (o *CertificateExpirationNotificationSettings) HasNotificationPublisherRef() bool`
 
 HasNotificationPublisherRef returns a boolean if a field has been set.
+
+### GetNotificationMode
+
+`func (o *CertificateExpirationNotificationSettings) GetNotificationMode() string`
+
+GetNotificationMode returns the NotificationMode field if non-nil, zero value otherwise.
+
+### GetNotificationModeOk
+
+`func (o *CertificateExpirationNotificationSettings) GetNotificationModeOk() (*string, bool)`
+
+GetNotificationModeOk returns a tuple with the NotificationMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNotificationMode
+
+`func (o *CertificateExpirationNotificationSettings) SetNotificationMode(v string)`
+
+SetNotificationMode sets NotificationMode field to given value.
+
+### HasNotificationMode
+
+`func (o *CertificateExpirationNotificationSettings) HasNotificationMode() bool`
+
+HasNotificationMode returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

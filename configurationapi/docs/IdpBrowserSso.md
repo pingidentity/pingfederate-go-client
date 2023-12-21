@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Artifact** | Pointer to [**ArtifactSettings**](ArtifactSettings.md) |  | [optional] 
 **SloServiceEndpoints** | Pointer to [**[]SloServiceEndpoint**](SloServiceEndpoint.md) | A list of possible endpoints to send SLO requests and responses. | [optional] 
 **AlwaysSignArtifactResponse** | Pointer to **bool** | Specify to always sign the SAML ArtifactResponse. | [optional] 
+**SsoApplicationEndpoint** | Pointer to **string** | Application endpoint that can be used to invoke single sign-on (SSO) for the connection. This is a read-only parameter. | [optional] 
 **SsoServiceEndpoints** | Pointer to [**[]IdpSsoServiceEndpoint**](IdpSsoServiceEndpoint.md) | The IdP SSO endpoints that define where to send your authentication requests. Only required for SP initiated SSO. This is required for SAML x.x and WS-FED Connections. | [optional] 
 **DefaultTargetUrl** | Pointer to **string** | The default target URL for this connection. If defined, this overrides the default URL. | [optional] 
 **AuthnContextMappings** | Pointer to [**[]AuthnContextMapping**](AuthnContextMapping.md) | A list of authentication context mappings between local and remote values. Applicable for SAML 2.0 and OIDC protocol connections. | [optional] 
@@ -265,6 +266,31 @@ SetAlwaysSignArtifactResponse sets AlwaysSignArtifactResponse field to given val
 `func (o *IdpBrowserSso) HasAlwaysSignArtifactResponse() bool`
 
 HasAlwaysSignArtifactResponse returns a boolean if a field has been set.
+
+### GetSsoApplicationEndpoint
+
+`func (o *IdpBrowserSso) GetSsoApplicationEndpoint() string`
+
+GetSsoApplicationEndpoint returns the SsoApplicationEndpoint field if non-nil, zero value otherwise.
+
+### GetSsoApplicationEndpointOk
+
+`func (o *IdpBrowserSso) GetSsoApplicationEndpointOk() (*string, bool)`
+
+GetSsoApplicationEndpointOk returns a tuple with the SsoApplicationEndpoint field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSsoApplicationEndpoint
+
+`func (o *IdpBrowserSso) SetSsoApplicationEndpoint(v string)`
+
+SetSsoApplicationEndpoint sets SsoApplicationEndpoint field to given value.
+
+### HasSsoApplicationEndpoint
+
+`func (o *IdpBrowserSso) HasSsoApplicationEndpoint() bool`
+
+HasSsoApplicationEndpoint returns a boolean if a field has been set.
 
 ### GetSsoServiceEndpoints
 

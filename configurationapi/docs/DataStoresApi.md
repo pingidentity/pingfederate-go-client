@@ -1,6 +1,6 @@
 # \DataStoresAPI
 
-All URIs are relative to *https://localhost/pf-admin-api/v1*
+All URIs are relative to *https://localhost:9999/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -354,7 +354,7 @@ No authorization required
 
 ## GetDataStores
 
-> DataStoreAggregation GetDataStores(ctx).Execute()
+> DataStores GetDataStores(ctx).Execute()
 
 Get list of all data stores.
 
@@ -379,7 +379,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.GetDataStores``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetDataStores`: DataStoreAggregation
+    // response from `GetDataStores`: DataStores
     fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.GetDataStores`: %v\n", resp)
 }
 ```
@@ -395,7 +395,7 @@ Other parameters are passed through a pointer to a apiGetDataStoresRequest struc
 
 ### Return type
 
-[**DataStoreAggregation**](DataStoreAggregation.md)
+[**DataStores**](DataStores.md)
 
 ### Authorization
 

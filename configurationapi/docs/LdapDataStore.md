@@ -4,17 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HostnamesTags** | Pointer to [**[]LdapTagConfig**](LdapTagConfig.md) | The set of host names and associated tags for this LDAP data store. | [optional] 
-**Hostnames** | Pointer to **[]string** | The default LDAP host names. This field is required if no mapping for host names and tags are specified. | [optional] 
+**HostnamesTags** | Pointer to [**[]LdapTagConfig**](LdapTagConfig.md) | The set of host names and associated tags for this LDAP data store. This is required if &#39;hostnames&#39; is not provided. | [optional] 
+**Hostnames** | Pointer to **[]string** | The default LDAP host names. This field is required if no mapping for host names and tags is specified. Failover can be configured by providing multiple host names. | [optional] 
 **Name** | Pointer to **string** | The data store name with a unique value across all data sources. Omitting this attribute will set the value to a combination of the hostname(s) and the principal. | [optional] 
 **LdapType** | **string** | A type that allows PingFederate to configure many provisioning settings automatically. The &#39;UNBOUNDID_DS&#39; type has been deprecated, please use the &#39;PING_DIRECTORY&#39; type instead. | 
-**BindAnonymously** | Pointer to **bool** | Whether username and password are required. The default value is false. | [optional] 
-**UserDN** | Pointer to **string** | The username credential required to access the data store. | [optional] 
+**BindAnonymously** | Pointer to **bool** | Whether username and password are required. If true, no other authentication fields should be provided. The default value is false. | [optional] 
+**UserDN** | Pointer to **string** | The username credential required to access the data store. If specified, no other authentication fields should be provided. | [optional] 
 **Password** | Pointer to **string** | The password credential required to access the data store. GETs will not return this attribute. To update this field, specify the new value in this attribute. | [optional] 
 **EncryptedPassword** | Pointer to **string** | The encrypted password credential required to access the data store.  If you do not want to update the stored value, this attribute should be passed back unchanged. Secret Reference may be provided in this field with format &#39;OBF:MGR:{secretManagerId}:{secretId}&#39;. | [optional] 
+**ClientTlsCertificateRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **UseSsl** | Pointer to **bool** | Connects to the LDAP data store using secure SSL/TLS encryption (LDAPS). The default value is false. | [optional] 
 **UseDnsSrvRecords** | Pointer to **bool** | Use DNS SRV Records to discover LDAP server information. The default value is false. | [optional] 
 **FollowLDAPReferrals** | Pointer to **bool** | Follow LDAP Referrals in the domain tree. The default value is false. This property does not apply to PingDirectory as this functionality is configured in PingDirectory. | [optional] 
+**RetryFailedOperations** | Pointer to **bool** | Indicates whether failed operations should be retried. The default is false. | [optional] 
 **TestOnBorrow** | Pointer to **bool** | Indicates whether objects are validated before being borrowed from the pool. | [optional] 
 **TestOnReturn** | Pointer to **bool** | Indicates whether objects are validated before being returned to the pool. | [optional] 
 **CreateIfNecessary** | Pointer to **bool** | Indicates whether temporary connections can be created when the Maximum Connections threshold is reached. | [optional] 
@@ -29,6 +31,7 @@ Name | Type | Description | Notes
 **LdapDnsSrvPrefix** | Pointer to **string** | The prefix value used to discover LDAP DNS SRV record. Omitting this attribute will set the value to the default value. | [optional] 
 **LdapsDnsSrvPrefix** | Pointer to **string** | The prefix value used to discover LDAPs DNS SRV record. Omitting this attribute will set the value to the default value. | [optional] 
 **BinaryAttributes** | Pointer to **[]string** | The list of LDAP attributes to be handled as binary data. | [optional] 
+**LastModified** | Pointer to **time.Time** | The time at which the datastore instance was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
 
 ## Methods
 
@@ -244,6 +247,31 @@ SetEncryptedPassword sets EncryptedPassword field to given value.
 
 HasEncryptedPassword returns a boolean if a field has been set.
 
+### GetClientTlsCertificateRef
+
+`func (o *LdapDataStore) GetClientTlsCertificateRef() ResourceLink`
+
+GetClientTlsCertificateRef returns the ClientTlsCertificateRef field if non-nil, zero value otherwise.
+
+### GetClientTlsCertificateRefOk
+
+`func (o *LdapDataStore) GetClientTlsCertificateRefOk() (*ResourceLink, bool)`
+
+GetClientTlsCertificateRefOk returns a tuple with the ClientTlsCertificateRef field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientTlsCertificateRef
+
+`func (o *LdapDataStore) SetClientTlsCertificateRef(v ResourceLink)`
+
+SetClientTlsCertificateRef sets ClientTlsCertificateRef field to given value.
+
+### HasClientTlsCertificateRef
+
+`func (o *LdapDataStore) HasClientTlsCertificateRef() bool`
+
+HasClientTlsCertificateRef returns a boolean if a field has been set.
+
 ### GetUseSsl
 
 `func (o *LdapDataStore) GetUseSsl() bool`
@@ -318,6 +346,31 @@ SetFollowLDAPReferrals sets FollowLDAPReferrals field to given value.
 `func (o *LdapDataStore) HasFollowLDAPReferrals() bool`
 
 HasFollowLDAPReferrals returns a boolean if a field has been set.
+
+### GetRetryFailedOperations
+
+`func (o *LdapDataStore) GetRetryFailedOperations() bool`
+
+GetRetryFailedOperations returns the RetryFailedOperations field if non-nil, zero value otherwise.
+
+### GetRetryFailedOperationsOk
+
+`func (o *LdapDataStore) GetRetryFailedOperationsOk() (*bool, bool)`
+
+GetRetryFailedOperationsOk returns a tuple with the RetryFailedOperations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRetryFailedOperations
+
+`func (o *LdapDataStore) SetRetryFailedOperations(v bool)`
+
+SetRetryFailedOperations sets RetryFailedOperations field to given value.
+
+### HasRetryFailedOperations
+
+`func (o *LdapDataStore) HasRetryFailedOperations() bool`
+
+HasRetryFailedOperations returns a boolean if a field has been set.
 
 ### GetTestOnBorrow
 
@@ -668,6 +721,31 @@ SetBinaryAttributes sets BinaryAttributes field to given value.
 `func (o *LdapDataStore) HasBinaryAttributes() bool`
 
 HasBinaryAttributes returns a boolean if a field has been set.
+
+### GetLastModified
+
+`func (o *LdapDataStore) GetLastModified() time.Time`
+
+GetLastModified returns the LastModified field if non-nil, zero value otherwise.
+
+### GetLastModifiedOk
+
+`func (o *LdapDataStore) GetLastModifiedOk() (*time.Time, bool)`
+
+GetLastModifiedOk returns a tuple with the LastModified field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastModified
+
+`func (o *LdapDataStore) SetLastModified(v time.Time)`
+
+SetLastModified sets LastModified field to given value.
+
+### HasLastModified
+
+`func (o *LdapDataStore) HasLastModified() bool`
+
+HasLastModified returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

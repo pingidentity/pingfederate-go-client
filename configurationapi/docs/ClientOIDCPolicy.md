@@ -10,8 +10,11 @@ Name | Type | Description | Notes
 **PolicyGroup** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **GrantAccessSessionRevocationApi** | Pointer to **bool** | Determines whether this client is allowed to access the Session Revocation API. | [optional] 
 **GrantAccessSessionSessionManagementApi** | Pointer to **bool** | Determines whether this client is allowed to access the Session Management API. | [optional] 
+**LogoutMode** | Pointer to **string** | The logout mode for this client. The default is &#39;NONE&#39;. | [optional] 
 **PingAccessLogoutCapable** | Pointer to **bool** | Set this value to true if you wish to enable client application logout, and the client is PingAccess, or its logout endpoints follow the PingAccess path convention. | [optional] 
-**LogoutUris** | Pointer to **[]string** | A list of client logout URI&#39;s which will be invoked when a user logs out through one of PingFederate&#39;s SLO endpoints. | [optional] 
+**LogoutUris** | Pointer to **[]string** | A list of front-channel logout URIs for this client. | [optional] 
+**BackChannelLogoutUri** | Pointer to **string** | The back-channel logout URI for this client. | [optional] 
+**PostLogoutRedirectUris** | Pointer to **[]string** | URIs to which the OIDC OP may redirect the resource owner&#39;s user agent after RP-initiated logout has completed. Wildcards are allowed. However, for security reasons, make the URL as restrictive as possible. | [optional] 
 **PairwiseIdentifierUserType** | Pointer to **bool** | Determines whether the subject identifier type is pairwise. | [optional] 
 **SectorIdentifierUri** | Pointer to **string** | The URI references a file with a single JSON array of Redirect URI and JWKS URL values. | [optional] 
 
@@ -184,6 +187,31 @@ SetGrantAccessSessionSessionManagementApi sets GrantAccessSessionSessionManageme
 
 HasGrantAccessSessionSessionManagementApi returns a boolean if a field has been set.
 
+### GetLogoutMode
+
+`func (o *ClientOIDCPolicy) GetLogoutMode() string`
+
+GetLogoutMode returns the LogoutMode field if non-nil, zero value otherwise.
+
+### GetLogoutModeOk
+
+`func (o *ClientOIDCPolicy) GetLogoutModeOk() (*string, bool)`
+
+GetLogoutModeOk returns a tuple with the LogoutMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLogoutMode
+
+`func (o *ClientOIDCPolicy) SetLogoutMode(v string)`
+
+SetLogoutMode sets LogoutMode field to given value.
+
+### HasLogoutMode
+
+`func (o *ClientOIDCPolicy) HasLogoutMode() bool`
+
+HasLogoutMode returns a boolean if a field has been set.
+
 ### GetPingAccessLogoutCapable
 
 `func (o *ClientOIDCPolicy) GetPingAccessLogoutCapable() bool`
@@ -233,6 +261,56 @@ SetLogoutUris sets LogoutUris field to given value.
 `func (o *ClientOIDCPolicy) HasLogoutUris() bool`
 
 HasLogoutUris returns a boolean if a field has been set.
+
+### GetBackChannelLogoutUri
+
+`func (o *ClientOIDCPolicy) GetBackChannelLogoutUri() string`
+
+GetBackChannelLogoutUri returns the BackChannelLogoutUri field if non-nil, zero value otherwise.
+
+### GetBackChannelLogoutUriOk
+
+`func (o *ClientOIDCPolicy) GetBackChannelLogoutUriOk() (*string, bool)`
+
+GetBackChannelLogoutUriOk returns a tuple with the BackChannelLogoutUri field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBackChannelLogoutUri
+
+`func (o *ClientOIDCPolicy) SetBackChannelLogoutUri(v string)`
+
+SetBackChannelLogoutUri sets BackChannelLogoutUri field to given value.
+
+### HasBackChannelLogoutUri
+
+`func (o *ClientOIDCPolicy) HasBackChannelLogoutUri() bool`
+
+HasBackChannelLogoutUri returns a boolean if a field has been set.
+
+### GetPostLogoutRedirectUris
+
+`func (o *ClientOIDCPolicy) GetPostLogoutRedirectUris() []string`
+
+GetPostLogoutRedirectUris returns the PostLogoutRedirectUris field if non-nil, zero value otherwise.
+
+### GetPostLogoutRedirectUrisOk
+
+`func (o *ClientOIDCPolicy) GetPostLogoutRedirectUrisOk() (*[]string, bool)`
+
+GetPostLogoutRedirectUrisOk returns a tuple with the PostLogoutRedirectUris field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPostLogoutRedirectUris
+
+`func (o *ClientOIDCPolicy) SetPostLogoutRedirectUris(v []string)`
+
+SetPostLogoutRedirectUris sets PostLogoutRedirectUris field to given value.
+
+### HasPostLogoutRedirectUris
+
+`func (o *ClientOIDCPolicy) HasPostLogoutRedirectUris() bool`
+
+HasPostLogoutRedirectUris returns a boolean if a field has been set.
 
 ### GetPairwiseIdentifierUserType
 

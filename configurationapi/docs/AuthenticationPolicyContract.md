@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | The Authentication Policy Contract Name. Name is unique. | [optional] 
 **CoreAttributes** | Pointer to [**[]AuthenticationPolicyContractAttribute**](AuthenticationPolicyContractAttribute.md) | A list of read-only assertion attributes (for example, subject) that are automatically populated by PingFederate. | [optional] 
 **ExtendedAttributes** | Pointer to [**[]AuthenticationPolicyContractAttribute**](AuthenticationPolicyContractAttribute.md) | A list of additional attributes as needed. | [optional] 
+**LastModified** | Pointer to **time.Time** | The time at which the authentication policy contract was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
 
 ## Methods
 
@@ -127,6 +128,31 @@ SetExtendedAttributes sets ExtendedAttributes field to given value.
 `func (o *AuthenticationPolicyContract) HasExtendedAttributes() bool`
 
 HasExtendedAttributes returns a boolean if a field has been set.
+
+### GetLastModified
+
+`func (o *AuthenticationPolicyContract) GetLastModified() time.Time`
+
+GetLastModified returns the LastModified field if non-nil, zero value otherwise.
+
+### GetLastModifiedOk
+
+`func (o *AuthenticationPolicyContract) GetLastModifiedOk() (*time.Time, bool)`
+
+GetLastModifiedOk returns a tuple with the LastModified field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastModified
+
+`func (o *AuthenticationPolicyContract) SetLastModified(v time.Time)`
+
+SetLastModified sets LastModified field to given value.
+
+### HasLastModified
+
+`func (o *AuthenticationPolicyContract) HasLastModified() bool`
+
+HasLastModified returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

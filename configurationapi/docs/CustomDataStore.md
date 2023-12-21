@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **MaskAttributeValues** | Pointer to **bool** | Whether attribute values should be masked in the log. | [optional] 
 **Name** | **string** | The plugin instance name. | 
 **PluginDescriptorRef** | [**ResourceLink**](ResourceLink.md) |  | 
-**ParentRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **Configuration** | [**PluginConfiguration**](PluginConfiguration.md) |  | 
 
 ## Methods
@@ -140,31 +139,6 @@ and a boolean to check if the value has been set.
 
 SetPluginDescriptorRef sets PluginDescriptorRef field to given value.
 
-
-### GetParentRef
-
-`func (o *CustomDataStore) GetParentRef() ResourceLink`
-
-GetParentRef returns the ParentRef field if non-nil, zero value otherwise.
-
-### GetParentRefOk
-
-`func (o *CustomDataStore) GetParentRefOk() (*ResourceLink, bool)`
-
-GetParentRefOk returns a tuple with the ParentRef field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetParentRef
-
-`func (o *CustomDataStore) SetParentRef(v ResourceLink)`
-
-SetParentRef sets ParentRef field to given value.
-
-### HasParentRef
-
-`func (o *CustomDataStore) HasParentRef() bool`
-
-HasParentRef returns a boolean if a field has been set.
 
 ### GetConfiguration
 

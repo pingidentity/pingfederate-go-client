@@ -11,11 +11,14 @@ Name | Type | Description | Notes
 **IncludeSriInIdToken** | Pointer to **bool** | Determines whether a Session Reference Identifier is included in the ID token. | [optional] 
 **IncludeUserInfoInIdToken** | Pointer to **bool** | Determines whether the User Info is always included in the ID token. | [optional] 
 **IncludeSHashInIdToken** | Pointer to **bool** | Determines whether the State Hash should be included in the ID token. | [optional] 
+**IncludeX5tInIdToken** | Pointer to **bool** | Determines whether the X.509 thumbprint header should be included in the ID Token. | [optional] 
+**IdTokenTypHeaderValue** | Pointer to **string** | ID Token Type (typ) Header Value. | [optional] 
 **ReturnIdTokenOnRefreshGrant** | Pointer to **bool** | Determines whether an ID Token should be returned when refresh grant is requested or not. | [optional] 
 **ReissueIdTokenInHybridFlow** | Pointer to **bool** | Determines whether a new ID Token should be returned during token request of the hybrid flow. | [optional] 
 **AttributeContract** | [**OpenIdConnectAttributeContract**](OpenIdConnectAttributeContract.md) |  | 
 **AttributeMapping** | [**AttributeMapping**](AttributeMapping.md) |  | 
 **ScopeAttributeMappings** | Pointer to [**map[string]ParameterValues**](ParameterValues.md) | The attribute scope mappings from scopes to attribute names. | [optional] 
+**LastModified** | Pointer to **time.Time** | The time at which the policy was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
 
 ## Methods
 
@@ -196,6 +199,56 @@ SetIncludeSHashInIdToken sets IncludeSHashInIdToken field to given value.
 
 HasIncludeSHashInIdToken returns a boolean if a field has been set.
 
+### GetIncludeX5tInIdToken
+
+`func (o *OpenIdConnectPolicy) GetIncludeX5tInIdToken() bool`
+
+GetIncludeX5tInIdToken returns the IncludeX5tInIdToken field if non-nil, zero value otherwise.
+
+### GetIncludeX5tInIdTokenOk
+
+`func (o *OpenIdConnectPolicy) GetIncludeX5tInIdTokenOk() (*bool, bool)`
+
+GetIncludeX5tInIdTokenOk returns a tuple with the IncludeX5tInIdToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeX5tInIdToken
+
+`func (o *OpenIdConnectPolicy) SetIncludeX5tInIdToken(v bool)`
+
+SetIncludeX5tInIdToken sets IncludeX5tInIdToken field to given value.
+
+### HasIncludeX5tInIdToken
+
+`func (o *OpenIdConnectPolicy) HasIncludeX5tInIdToken() bool`
+
+HasIncludeX5tInIdToken returns a boolean if a field has been set.
+
+### GetIdTokenTypHeaderValue
+
+`func (o *OpenIdConnectPolicy) GetIdTokenTypHeaderValue() string`
+
+GetIdTokenTypHeaderValue returns the IdTokenTypHeaderValue field if non-nil, zero value otherwise.
+
+### GetIdTokenTypHeaderValueOk
+
+`func (o *OpenIdConnectPolicy) GetIdTokenTypHeaderValueOk() (*string, bool)`
+
+GetIdTokenTypHeaderValueOk returns a tuple with the IdTokenTypHeaderValue field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIdTokenTypHeaderValue
+
+`func (o *OpenIdConnectPolicy) SetIdTokenTypHeaderValue(v string)`
+
+SetIdTokenTypHeaderValue sets IdTokenTypHeaderValue field to given value.
+
+### HasIdTokenTypHeaderValue
+
+`func (o *OpenIdConnectPolicy) HasIdTokenTypHeaderValue() bool`
+
+HasIdTokenTypHeaderValue returns a boolean if a field has been set.
+
 ### GetReturnIdTokenOnRefreshGrant
 
 `func (o *OpenIdConnectPolicy) GetReturnIdTokenOnRefreshGrant() bool`
@@ -310,6 +363,31 @@ SetScopeAttributeMappings sets ScopeAttributeMappings field to given value.
 `func (o *OpenIdConnectPolicy) HasScopeAttributeMappings() bool`
 
 HasScopeAttributeMappings returns a boolean if a field has been set.
+
+### GetLastModified
+
+`func (o *OpenIdConnectPolicy) GetLastModified() time.Time`
+
+GetLastModified returns the LastModified field if non-nil, zero value otherwise.
+
+### GetLastModifiedOk
+
+`func (o *OpenIdConnectPolicy) GetLastModifiedOk() (*time.Time, bool)`
+
+GetLastModifiedOk returns a tuple with the LastModified field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastModified
+
+`func (o *OpenIdConnectPolicy) SetLastModified(v time.Time)`
+
+SetLastModified sets LastModified field to given value.
+
+### HasLastModified
+
+`func (o *OpenIdConnectPolicy) HasLastModified() bool`
+
+HasLastModified returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

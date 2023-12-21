@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **PingOneLdapGatewayId** | **string** | The ID of the PingOne LDAP Gateway this data store uses. | 
 **UseSsl** | Pointer to **bool** | Connects to the LDAP data store using secure SSL/TLS encryption (LDAPS). The default value is false. The value is validated against the LDAP gateway configuration in PingOne unless the header &#39;X-BypassExternalValidation&#39; is set to true. | [optional] 
 **BinaryAttributes** | Pointer to **[]string** | The list of LDAP attributes to be handled as binary data. | [optional] 
+**LastModified** | Pointer to **time.Time** | The time at which the datastore instance was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
 
 ## Methods
 
@@ -185,6 +186,31 @@ SetBinaryAttributes sets BinaryAttributes field to given value.
 `func (o *PingOneLdapGatewayDataStore) HasBinaryAttributes() bool`
 
 HasBinaryAttributes returns a boolean if a field has been set.
+
+### GetLastModified
+
+`func (o *PingOneLdapGatewayDataStore) GetLastModified() time.Time`
+
+GetLastModified returns the LastModified field if non-nil, zero value otherwise.
+
+### GetLastModifiedOk
+
+`func (o *PingOneLdapGatewayDataStore) GetLastModifiedOk() (*time.Time, bool)`
+
+GetLastModifiedOk returns a tuple with the LastModified field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastModified
+
+`func (o *PingOneLdapGatewayDataStore) SetLastModified(v time.Time)`
+
+SetLastModified sets LastModified field to given value.
+
+### HasLastModified
+
+`func (o *PingOneLdapGatewayDataStore) HasLastModified() bool`
+
+HasLastModified returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
