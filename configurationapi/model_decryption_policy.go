@@ -28,7 +28,7 @@ type DecryptionPolicy struct {
 	// Encrypt the Subject Name ID in SLO messages to the IdP.
 	SloEncryptSubjectNameID *bool `json:"sloEncryptSubjectNameID,omitempty" tfsdk:"slo_encrypt_subject_name_id"`
 	// Allow encrypted Subject Name ID in SLO messages from the IdP.
-	SloSubjectNameIDEncrypted *bool `json:"sloSubjectNameIDEncrypted,omitempty" tfsdk:"slo_subject_name_ide_ncrypted"`
+	SloSubjectNameIDEncrypted *bool `json:"sloSubjectNameIDEncrypted,omitempty" tfsdk:"slo_subject_name_id_encrypted"`
 }
 
 // NewDecryptionPolicy instantiates a new DecryptionPolicy object

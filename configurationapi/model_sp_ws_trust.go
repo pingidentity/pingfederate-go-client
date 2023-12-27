@@ -22,7 +22,7 @@ type SpWsTrust struct {
 	// The partner service identifiers.
 	PartnerServiceIds []string `json:"partnerServiceIds" tfsdk:"partner_service_ids"`
 	// When selected, four additional token-type requests become available.
-	OAuthAssertionProfiles *bool `json:"oAuthAssertionProfiles,omitempty" tfsdk:"o_auth_assertion_profiles"`
+	OAuthAssertionProfiles *bool `json:"oAuthAssertionProfiles,omitempty" tfsdk:"oauth_assertion_profiles"`
 	// The default token type when a web service client (WSC) does not specify in the token request which token type the STS should issue. Defaults to SAML 2.0.
 	DefaultTokenType *string `json:"defaultTokenType,omitempty" tfsdk:"default_token_type"`
 	// When selected, the STS generates a symmetric key to be used in conjunction with the \"Holder of Key\" (HoK) designation for the assertion's Subject Confirmation Method.  This option does not apply to OAuth assertion profiles.
