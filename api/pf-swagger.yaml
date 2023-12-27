@@ -18877,6 +18877,8 @@ components:
             description: The plugin instance name.
           pluginDescriptorRef:
             $ref: '#/components/schemas/ResourceLink'
+          parentRef:
+            $ref: '#/components/schemas/ResourceLink'
           configuration:
             $ref: '#/components/schemas/PluginConfiguration'
         description: A custom data store.

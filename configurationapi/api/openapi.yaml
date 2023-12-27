@@ -22367,6 +22367,8 @@ components:
             type: string
           pluginDescriptorRef:
             $ref: '#/components/schemas/ResourceLink'
+          parentRef:
+            $ref: '#/components/schemas/ResourceLink'
           configuration:
             $ref: '#/components/schemas/PluginConfiguration'
         required:

@@ -29,6 +29,7 @@ type CustomDataStore struct {
 	// The plugin instance name.
 	Name                string              `json:"name" tfsdk:"name"`
 	PluginDescriptorRef ResourceLink        `json:"pluginDescriptorRef" tfsdk:"plugin_descriptor_ref"`
+	ParentRef           *ResourceLink       `json:"parentRef,omitempty" tfsdk:"parent_ref"`
 	Configuration       PluginConfiguration `json:"configuration" tfsdk:"configuration"`
 }
 
@@ -189,6 +190,38 @@ func (o *CustomDataStore) SetPluginDescriptorRef(v ResourceLink) {
 	o.PluginDescriptorRef = v
 }
 
+// GetParentRef returns the ParentRef field value if set, zero value otherwise.
+func (o *CustomDataStore) GetParentRef() ResourceLink {
+	if o == nil || IsNil(o.ParentRef) {
+		var ret ResourceLink
+		return ret
+	}
+	return *o.ParentRef
+}
+
+// GetParentRefOk returns a tuple with the ParentRef field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CustomDataStore) GetParentRefOk() (*ResourceLink, bool) {
+	if o == nil || IsNil(o.ParentRef) {
+		return nil, false
+	}
+	return o.ParentRef, true
+}
+
+// HasParentRef returns a boolean if a field has been set.
+func (o *CustomDataStore) HasParentRef() bool {
+	if o != nil && !IsNil(o.ParentRef) {
+		return true
+	}
+
+	return false
+}
+
+// SetParentRef gets a reference to the given ResourceLink and assigns it to the ParentRef field.
+func (o *CustomDataStore) SetParentRef(v ResourceLink) {
+	o.ParentRef = &v
+}
+
 // GetConfiguration returns the Configuration field value
 func (o *CustomDataStore) GetConfiguration() PluginConfiguration {
 	if o == nil {
@@ -240,6 +273,9 @@ func (o CustomDataStore) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["name"] = o.Name
 	toSerialize["pluginDescriptorRef"] = o.PluginDescriptorRef
+	if !IsNil(o.ParentRef) {
+		toSerialize["parentRef"] = o.ParentRef
+	}
 	toSerialize["configuration"] = o.Configuration
 	return toSerialize, nil
 }
