@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **IdentityHintContract** | [**IdentityHintContract**](IdentityHintContract.md) |  | 
 **IdentityHintContractFulfillment** | Pointer to [**AttributeMapping**](AttributeMapping.md) |  | [optional] 
 **IdentityHintMapping** | Pointer to [**AttributeMapping**](AttributeMapping.md) |  | [optional] 
+**LastModified** | Pointer to **time.Time** | The time at which the request policy was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
 
 ## Methods
 
@@ -289,6 +290,31 @@ SetIdentityHintMapping sets IdentityHintMapping field to given value.
 `func (o *RequestPolicy) HasIdentityHintMapping() bool`
 
 HasIdentityHintMapping returns a boolean if a field has been set.
+
+### GetLastModified
+
+`func (o *RequestPolicy) GetLastModified() time.Time`
+
+GetLastModified returns the LastModified field if non-nil, zero value otherwise.
+
+### GetLastModifiedOk
+
+`func (o *RequestPolicy) GetLastModifiedOk() (*time.Time, bool)`
+
+GetLastModifiedOk returns a tuple with the LastModified field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastModified
+
+`func (o *RequestPolicy) SetLastModified(v time.Time)`
+
+SetLastModified sets LastModified field to given value.
+
+### HasLastModified
+
+`func (o *RequestPolicy) HasLastModified() bool`
+
+HasLastModified returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

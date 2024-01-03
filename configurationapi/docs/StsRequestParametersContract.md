@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** | The ID of the Security Token Service request parameter contract.&lt;br&gt;Note: Ignored for PUT requests. | 
 **Name** | **string** | The name of the Security Token Service request parameter contract.&lt;br&gt;Note: Ignored for PUT requests. | 
 **Parameters** | **[]string** | The list of parameters within the Security  Token Service request parameter contract. | 
+**LastModified** | Pointer to **time.Time** | The time at which the request parameter contract was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
 
 ## Methods
 
@@ -86,6 +87,31 @@ and a boolean to check if the value has been set.
 
 SetParameters sets Parameters field to given value.
 
+
+### GetLastModified
+
+`func (o *StsRequestParametersContract) GetLastModified() time.Time`
+
+GetLastModified returns the LastModified field if non-nil, zero value otherwise.
+
+### GetLastModifiedOk
+
+`func (o *StsRequestParametersContract) GetLastModifiedOk() (*time.Time, bool)`
+
+GetLastModifiedOk returns a tuple with the LastModified field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastModified
+
+`func (o *StsRequestParametersContract) SetLastModified(v time.Time)`
+
+SetLastModified sets LastModified field to given value.
+
+### HasLastModified
+
+`func (o *StsRequestParametersContract) HasLastModified() bool`
+
+HasLastModified returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

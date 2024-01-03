@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Binding** | **string** | The binding of this endpoint, if applicable - usually only required for SAML 2.0 endpoints.  Supported bindings are Artifact and POST. | 
+**Binding** | Pointer to **string** | The binding of this endpoint, if applicable - usually only required for SAML 2.0 endpoints.  Supported bindings are Artifact and POST. | [optional] 
 **Url** | **string** | The absolute or relative URL of the endpoint. A relative URL can be specified if a base URL for the connection has been defined. | 
 **IsDefault** | Pointer to **bool** | Whether or not this endpoint is the default endpoint. Defaults to false. | [optional] 
-**Index** | **int64** | The priority of the endpoint. | 
+**Index** | Pointer to **int64** | The priority of the endpoint. | [optional] 
 
 ## Methods
 
 ### NewSpSsoServiceEndpoint
 
-`func NewSpSsoServiceEndpoint(binding string, url string, index int64, ) *SpSsoServiceEndpoint`
+`func NewSpSsoServiceEndpoint(url string, ) *SpSsoServiceEndpoint`
 
 NewSpSsoServiceEndpoint instantiates a new SpSsoServiceEndpoint object
 This constructor will assign default values to properties that have it defined,
@@ -47,6 +47,11 @@ and a boolean to check if the value has been set.
 
 SetBinding sets Binding field to given value.
 
+### HasBinding
+
+`func (o *SpSsoServiceEndpoint) HasBinding() bool`
+
+HasBinding returns a boolean if a field has been set.
 
 ### GetUrl
 
@@ -112,6 +117,11 @@ and a boolean to check if the value has been set.
 
 SetIndex sets Index field to given value.
 
+### HasIndex
+
+`func (o *SpSsoServiceEndpoint) HasIndex() bool`
+
+HasIndex returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -15,13 +15,14 @@ Name | Type | Description | Notes
 **SloServiceEndpoints** | Pointer to [**[]SloServiceEndpoint**](SloServiceEndpoint.md) | A list of possible endpoints to send SLO requests and responses. | [optional] 
 **DefaultTargetUrl** | Pointer to **string** | Default Target URL for SAML1.x connections. For SP connections, this default URL represents the destination on the SP where the user will be directed. For IdP connections, entering a URL in the Default Target URL field overrides the SP Default URL SSO setting. | [optional] 
 **AlwaysSignArtifactResponse** | Pointer to **bool** | Specify to always sign the SAML ArtifactResponse. | [optional] 
+**SsoApplicationEndpoint** | Pointer to **string** | Application endpoint that can be used to invoke single sign-on (SSO) for the connection. This is a read-only parameter. | [optional] 
 **SsoServiceEndpoints** | [**[]SpSsoServiceEndpoint**](SpSsoServiceEndpoint.md) | A list of possible endpoints to send assertions to. | 
 **SpSamlIdentityMapping** | Pointer to **string** | Process in which users authenticated by the IdP are associated with user accounts local to the SP. | [optional] 
 **SpWsFedIdentityMapping** | Pointer to **string** | Process in which users authenticated by the IdP are associated with user accounts local to the SP for WS-Federation connection types. | [optional] 
 **SignResponseAsRequired** | Pointer to **bool** | Sign SAML Response as required by the associated binding and encryption policy. Applicable to SAML2.0 only and is defaulted to true. It can be set to false only on SAML2.0 connections when signAssertions is set to true. | [optional] 
 **SignAssertions** | Pointer to **bool** | Always sign the SAML Assertion. | [optional] 
 **RequireSignedAuthnRequests** | Pointer to **bool** | Require AuthN requests to be signed when received via the POST or Redirect bindings. | [optional] 
-**EncryptionPolicy** | [**EncryptionPolicy**](EncryptionPolicy.md) |  | 
+**EncryptionPolicy** | Pointer to [**EncryptionPolicy**](EncryptionPolicy.md) |  | [optional] 
 **AttributeContract** | [**SpBrowserSsoAttributeContract**](SpBrowserSsoAttributeContract.md) |  | 
 **AdapterMappings** | [**[]IdpAdapterAssertionMapping**](IdpAdapterAssertionMapping.md) | A list of adapters that map to outgoing assertions. | 
 **AuthenticationPolicyContractAssertionMappings** | Pointer to [**[]AuthenticationPolicyContractAssertionMapping**](AuthenticationPolicyContractAssertionMapping.md) | A list of authentication policy contracts that map to outgoing assertions. | [optional] 
@@ -31,7 +32,7 @@ Name | Type | Description | Notes
 
 ### NewSpBrowserSso
 
-`func NewSpBrowserSso(protocol string, ssoServiceEndpoints []SpSsoServiceEndpoint, encryptionPolicy EncryptionPolicy, attributeContract SpBrowserSsoAttributeContract, adapterMappings []IdpAdapterAssertionMapping, assertionLifetime AssertionLifetime, ) *SpBrowserSso`
+`func NewSpBrowserSso(protocol string, ssoServiceEndpoints []SpSsoServiceEndpoint, attributeContract SpBrowserSsoAttributeContract, adapterMappings []IdpAdapterAssertionMapping, assertionLifetime AssertionLifetime, ) *SpBrowserSso`
 
 NewSpBrowserSso instantiates a new SpBrowserSso object
 This constructor will assign default values to properties that have it defined,
@@ -316,6 +317,31 @@ SetAlwaysSignArtifactResponse sets AlwaysSignArtifactResponse field to given val
 
 HasAlwaysSignArtifactResponse returns a boolean if a field has been set.
 
+### GetSsoApplicationEndpoint
+
+`func (o *SpBrowserSso) GetSsoApplicationEndpoint() string`
+
+GetSsoApplicationEndpoint returns the SsoApplicationEndpoint field if non-nil, zero value otherwise.
+
+### GetSsoApplicationEndpointOk
+
+`func (o *SpBrowserSso) GetSsoApplicationEndpointOk() (*string, bool)`
+
+GetSsoApplicationEndpointOk returns a tuple with the SsoApplicationEndpoint field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSsoApplicationEndpoint
+
+`func (o *SpBrowserSso) SetSsoApplicationEndpoint(v string)`
+
+SetSsoApplicationEndpoint sets SsoApplicationEndpoint field to given value.
+
+### HasSsoApplicationEndpoint
+
+`func (o *SpBrowserSso) HasSsoApplicationEndpoint() bool`
+
+HasSsoApplicationEndpoint returns a boolean if a field has been set.
+
 ### GetSsoServiceEndpoints
 
 `func (o *SpBrowserSso) GetSsoServiceEndpoints() []SpSsoServiceEndpoint`
@@ -480,6 +506,11 @@ and a boolean to check if the value has been set.
 
 SetEncryptionPolicy sets EncryptionPolicy field to given value.
 
+### HasEncryptionPolicy
+
+`func (o *SpBrowserSso) HasEncryptionPolicy() bool`
+
+HasEncryptionPolicy returns a boolean if a field has been set.
 
 ### GetAttributeContract
 

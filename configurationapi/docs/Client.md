@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description of what the client application does. This description appears when the user is prompted for authorization. | [optional] 
 **ModificationDate** | Pointer to **time.Time** | The time at which the client was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
 **CreationDate** | Pointer to **time.Time** | The time at which the client was created. This property is read only and is ignored on PUT and POST requests. | [optional] 
+**ReplicationStatus** | Pointer to **string** | This status indicates whether the client has been replicated to the cluster. This property only applies when using XML client storage and automatic replication of clients is enabled. It is read only and is ignored on PUT and POST requests. | [optional] 
 **LogoUrl** | Pointer to **string** | The location of the logo used on user-facing OAuth grant authorization and revocation pages. | [optional] 
 **DefaultAccessTokenManagerRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **RestrictToDefaultAccessTokenManager** | Pointer to **bool** | Determines whether the client is restricted to using only its default access token manager. The default is false. | [optional] 
@@ -67,6 +68,7 @@ Name | Type | Description | Notes
 **JwtSecuredAuthorizationResponseModeSigningAlgorithm** | Pointer to **string** | The JSON Web Signature [JWS] algorithm required to sign the JWT Secured Authorization Response.&lt;br&gt;HS256 - HMAC using SHA-256&lt;br&gt;HS384 - HMAC using SHA-384&lt;br&gt;HS512 - HMAC using SHA-512&lt;br&gt;RS256 - RSA using SHA-256&lt;br&gt;RS384 - RSA using SHA-384&lt;br&gt;RS512 - RSA using SHA-512&lt;br&gt;ES256 - ECDSA using P256 Curve and SHA-256&lt;br&gt;ES384 - ECDSA using P384 Curve and SHA-384&lt;br&gt;ES512 - ECDSA using P521 Curve and SHA-512&lt;br&gt;PS256 - RSASSA-PSS using SHA-256 and MGF1 padding with SHA-256&lt;br&gt;PS384 - RSASSA-PSS using SHA-384 and MGF1 padding with SHA-384&lt;br&gt;PS512 - RSASSA-PSS using SHA-512 and MGF1 padding with SHA-512&lt;br&gt;A null value will represent the default algorithm which is RS256.&lt;br&gt;RSASSA-PSS is only supported with SafeNet Luna, Thales nCipher or Java 11 | [optional] 
 **JwtSecuredAuthorizationResponseModeEncryptionAlgorithm** | Pointer to **string** | The JSON Web Encryption [JWE] encryption algorithm used to encrypt the content-encryption key of the JWT Secured Authorization Response.&lt;br&gt;DIR - Direct Encryption with symmetric key&lt;br&gt;A128KW - AES-128 Key Wrap&lt;br&gt;A192KW - AES-192 Key Wrap&lt;br&gt;A256KW - AES-256 Key Wrap&lt;br&gt;A128GCMKW - AES-GCM-128 key encryption&lt;br&gt;A192GCMKW - AES-GCM-192 key encryption&lt;br&gt;A256GCMKW - AES-GCM-256 key encryption&lt;br&gt;ECDH_ES - ECDH-ES&lt;br&gt;ECDH_ES_A128KW - ECDH-ES with AES-128 Key Wrap&lt;br&gt;ECDH_ES_A192KW - ECDH-ES with AES-192 Key Wrap&lt;br&gt;ECDH_ES_A256KW - ECDH-ES with AES-256 Key Wrap&lt;br&gt;RSA_OAEP - RSAES OAEP&lt;br&gt;RSA_OAEP_256 - RSAES OAEP using SHA-256 and MGF1 with SHA-256 | [optional] 
 **JwtSecuredAuthorizationResponseModeContentEncryptionAlgorithm** | Pointer to **string** | The JSON Web Encryption [JWE] content-encryption algorithm for the JWT Secured Authorization Response.&lt;br&gt;AES_128_CBC_HMAC_SHA_256 - Composite AES-CBC-128 HMAC-SHA-256&lt;br&gt;AES_192_CBC_HMAC_SHA_384 - Composite AES-CBC-192 HMAC-SHA-384&lt;br&gt;AES_256_CBC_HMAC_SHA_512 - Composite AES-CBC-256 HMAC-SHA-512&lt;br&gt;AES_128_GCM - AES-GCM-128&lt;br&gt;AES_192_GCM - AES-GCM-192&lt;br&gt;AES_256_GCM - AES-GCM-256 | [optional] 
+**RequireDpop** | Pointer to **bool** | Determines whether Demonstrating Proof-of-Possession (DPoP) is required for this client. | [optional] 
 
 ## Methods
 
@@ -271,6 +273,31 @@ SetCreationDate sets CreationDate field to given value.
 `func (o *Client) HasCreationDate() bool`
 
 HasCreationDate returns a boolean if a field has been set.
+
+### GetReplicationStatus
+
+`func (o *Client) GetReplicationStatus() string`
+
+GetReplicationStatus returns the ReplicationStatus field if non-nil, zero value otherwise.
+
+### GetReplicationStatusOk
+
+`func (o *Client) GetReplicationStatusOk() (*string, bool)`
+
+GetReplicationStatusOk returns a tuple with the ReplicationStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReplicationStatus
+
+`func (o *Client) SetReplicationStatus(v string)`
+
+SetReplicationStatus sets ReplicationStatus field to given value.
+
+### HasReplicationStatus
+
+`func (o *Client) HasReplicationStatus() bool`
+
+HasReplicationStatus returns a boolean if a field has been set.
 
 ### GetLogoUrl
 
@@ -1646,6 +1673,31 @@ SetJwtSecuredAuthorizationResponseModeContentEncryptionAlgorithm sets JwtSecured
 `func (o *Client) HasJwtSecuredAuthorizationResponseModeContentEncryptionAlgorithm() bool`
 
 HasJwtSecuredAuthorizationResponseModeContentEncryptionAlgorithm returns a boolean if a field has been set.
+
+### GetRequireDpop
+
+`func (o *Client) GetRequireDpop() bool`
+
+GetRequireDpop returns the RequireDpop field if non-nil, zero value otherwise.
+
+### GetRequireDpopOk
+
+`func (o *Client) GetRequireDpopOk() (*bool, bool)`
+
+GetRequireDpopOk returns a tuple with the RequireDpop field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequireDpop
+
+`func (o *Client) SetRequireDpop(v bool)`
+
+SetRequireDpop sets RequireDpop field to given value.
+
+### HasRequireDpop
+
+`func (o *Client) HasRequireDpop() bool`
+
+HasRequireDpop returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

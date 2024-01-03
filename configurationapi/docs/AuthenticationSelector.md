@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **PluginDescriptorRef** | [**ResourceLink**](ResourceLink.md) |  | 
 **ParentRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **Configuration** | [**PluginConfiguration**](PluginConfiguration.md) |  | 
+**LastModified** | Pointer to **time.Time** | The time at which the plugin instance was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
 **AttributeContract** | Pointer to [**AuthenticationSelectorAttributeContract**](AuthenticationSelectorAttributeContract.md) |  | [optional] 
 
 ## Methods
@@ -134,6 +135,31 @@ and a boolean to check if the value has been set.
 
 SetConfiguration sets Configuration field to given value.
 
+
+### GetLastModified
+
+`func (o *AuthenticationSelector) GetLastModified() time.Time`
+
+GetLastModified returns the LastModified field if non-nil, zero value otherwise.
+
+### GetLastModifiedOk
+
+`func (o *AuthenticationSelector) GetLastModifiedOk() (*time.Time, bool)`
+
+GetLastModifiedOk returns a tuple with the LastModified field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastModified
+
+`func (o *AuthenticationSelector) SetLastModified(v time.Time)`
+
+SetLastModified sets LastModified field to given value.
+
+### HasLastModified
+
+`func (o *AuthenticationSelector) HasLastModified() bool`
+
+HasLastModified returns a boolean if a field has been set.
 
 ### GetAttributeContract
 

@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **LoggingMode** | Pointer to **string** | The level of transaction logging applicable for this connection. Default is STANDARD. | [optional] 
 **AdditionalAllowedEntitiesConfiguration** | Pointer to [**AdditionalAllowedEntitiesConfiguration**](AdditionalAllowedEntitiesConfiguration.md) |  | [optional] 
 **ExtendedProperties** | Pointer to [**map[string]ParameterValues**](ParameterValues.md) | Extended Properties allows to store additional information for IdP/SP Connections. The names of these extended properties should be defined in /extendedProperties. | [optional] 
+**ReplicationStatus** | Pointer to **string** | This status indicates whether the connection has been replicated to the cluster. This property only applies when automatic replication of connections is enabled. It is read only and is ignored on PUT and POST requests. | [optional] 
 
 ## Methods
 
@@ -455,6 +456,31 @@ SetExtendedProperties sets ExtendedProperties field to given value.
 `func (o *Connection) HasExtendedProperties() bool`
 
 HasExtendedProperties returns a boolean if a field has been set.
+
+### GetReplicationStatus
+
+`func (o *Connection) GetReplicationStatus() string`
+
+GetReplicationStatus returns the ReplicationStatus field if non-nil, zero value otherwise.
+
+### GetReplicationStatusOk
+
+`func (o *Connection) GetReplicationStatusOk() (*string, bool)`
+
+GetReplicationStatusOk returns a tuple with the ReplicationStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReplicationStatus
+
+`func (o *Connection) SetReplicationStatus(v string)`
+
+SetReplicationStatus sets ReplicationStatus field to given value.
+
+### HasReplicationStatus
+
+`func (o *Connection) HasReplicationStatus() bool`
+
+HasReplicationStatus returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

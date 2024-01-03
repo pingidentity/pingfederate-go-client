@@ -1,12 +1,73 @@
 # \ClusterAPI
 
-All URIs are relative to *https://localhost/pf-admin-api/v1*
+All URIs are relative to *https://localhost:9999/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**GetClusterSettings**](ClusterAPI.md#GetClusterSettings) | **Get** /cluster/settings | Get the cluster configuration settings.
 [**GetClusterStatus**](ClusterAPI.md#GetClusterStatus) | **Get** /cluster/status | Get information on the current status of the cluster.
 [**StartReplication**](ClusterAPI.md#StartReplication) | **Post** /cluster/replicate | Replicate configuration updates to all nodes in the cluster.
+[**UpdateClusterSettings**](ClusterAPI.md#UpdateClusterSettings) | **Put** /cluster/settings | Update the cluster configuration settings.
 
+
+
+## GetClusterSettings
+
+> ClusterSettings GetClusterSettings(ctx).Execute()
+
+Get the cluster configuration settings.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ClusterAPI.GetClusterSettings(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ClusterAPI.GetClusterSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetClusterSettings`: ClusterSettings
+    fmt.Fprintf(os.Stdout, "Response from `ClusterAPI.GetClusterSettings`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetClusterSettingsRequest struct via the builder pattern
+
+
+### Return type
+
+[**ClusterSettings**](ClusterSettings.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## GetClusterStatus
@@ -112,6 +173,70 @@ Other parameters are passed through a pointer to a apiStartReplicationRequest st
 ### Return type
 
 [**ApiResult**](ApiResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateClusterSettings
+
+> ClusterSettings UpdateClusterSettings(ctx).Body(body).Execute()
+
+Update the cluster configuration settings.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+    body := *openapiclient.NewClusterSettings() // ClusterSettings | Configuration for cluster settings.
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ClusterAPI.UpdateClusterSettings(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ClusterAPI.UpdateClusterSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateClusterSettings`: ClusterSettings
+    fmt.Fprintf(os.Stdout, "Response from `ClusterAPI.UpdateClusterSettings`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateClusterSettingsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ClusterSettings**](ClusterSettings.md) | Configuration for cluster settings. | 
+
+### Return type
+
+[**ClusterSettings**](ClusterSettings.md)
 
 ### Authorization
 

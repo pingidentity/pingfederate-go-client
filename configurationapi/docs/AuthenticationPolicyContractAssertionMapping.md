@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **RestrictVirtualEntityIds** | Pointer to **bool** | Restricts this mapping to specific virtual entity IDs. | [optional] 
 **RestrictedVirtualEntityIds** | Pointer to **[]string** | The list of virtual server IDs that this mapping is restricted to. | [optional] 
 **AbortSsoTransactionAsFailSafe** | Pointer to **bool** | If set to true, SSO transaction will be aborted as a fail-safe when the data-store&#39;s attribute mappings fail to complete the attribute contract. Otherwise, the attribute contract with default values is used. By default, this value is false. | [optional] 
-**AttributeSources** | Pointer to [**[]AttributeSource**](AttributeSource.md) | A list of configured data stores to look up attributes from. | [optional] 
+**AttributeSources** | Pointer to [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) | A list of configured data stores to look up attributes from. | [optional] 
 **AttributeContractFulfillment** | [**map[string]AttributeFulfillmentValue**](AttributeFulfillmentValue.md) | A list of mappings from attribute names to their fulfillment values. | 
 **IssuanceCriteria** | Pointer to [**IssuanceCriteria**](IssuanceCriteria.md) |  | [optional] 
 
@@ -128,20 +128,20 @@ HasAbortSsoTransactionAsFailSafe returns a boolean if a field has been set.
 
 ### GetAttributeSources
 
-`func (o *AuthenticationPolicyContractAssertionMapping) GetAttributeSources() []AttributeSource`
+`func (o *AuthenticationPolicyContractAssertionMapping) GetAttributeSources() []AttributeSourceAggregation`
 
 GetAttributeSources returns the AttributeSources field if non-nil, zero value otherwise.
 
 ### GetAttributeSourcesOk
 
-`func (o *AuthenticationPolicyContractAssertionMapping) GetAttributeSourcesOk() (*[]AttributeSource, bool)`
+`func (o *AuthenticationPolicyContractAssertionMapping) GetAttributeSourcesOk() (*[]AttributeSourceAggregation, bool)`
 
 GetAttributeSourcesOk returns a tuple with the AttributeSources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributeSources
 
-`func (o *AuthenticationPolicyContractAssertionMapping) SetAttributeSources(v []AttributeSource)`
+`func (o *AuthenticationPolicyContractAssertionMapping) SetAttributeSources(v []AttributeSourceAggregation)`
 
 SetAttributeSources sets AttributeSources field to given value.
 

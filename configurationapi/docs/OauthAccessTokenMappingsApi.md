@@ -1,6 +1,6 @@
 # \OauthAccessTokenMappingsAPI
 
-All URIs are relative to *https://localhost/pf-admin-api/v1*
+All URIs are relative to *https://localhost:9999/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -216,7 +216,7 @@ No authorization required
 
 ## GetMappings
 
-> AccessTokenMappings GetMappings(ctx).Execute()
+> []AccessTokenMapping GetMappings(ctx).Execute()
 
 Get the list of Access Token Mappings.
 
@@ -241,7 +241,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenMappingsAPI.GetMappings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetMappings`: AccessTokenMappings
+    // response from `GetMappings`: []AccessTokenMapping
     fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenMappingsAPI.GetMappings`: %v\n", resp)
 }
 ```
@@ -257,7 +257,7 @@ Other parameters are passed through a pointer to a apiGetMappingsRequest struct 
 
 ### Return type
 
-[**AccessTokenMappings**](AccessTokenMappings.md)
+[**[]AccessTokenMapping**](AccessTokenMapping.md)
 
 ### Authorization
 

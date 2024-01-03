@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | The ID of the authentication policy contract to persistent grant mapping. | 
 **AuthenticationPolicyContractRef** | [**ResourceLink**](ResourceLink.md) |  | 
-**AttributeSources** | Pointer to [**[]AttributeSource**](AttributeSource.md) | A list of configured data stores to look up attributes from. | [optional] 
+**AttributeSources** | Pointer to [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) | A list of configured data stores to look up attributes from. | [optional] 
 **AttributeContractFulfillment** | [**map[string]AttributeFulfillmentValue**](AttributeFulfillmentValue.md) | A list of mappings from attribute names to their fulfillment values. | 
 **IssuanceCriteria** | Pointer to [**IssuanceCriteria**](IssuanceCriteria.md) |  | [optional] 
 
@@ -71,20 +71,20 @@ SetAuthenticationPolicyContractRef sets AuthenticationPolicyContractRef field to
 
 ### GetAttributeSources
 
-`func (o *ApcToPersistentGrantMapping) GetAttributeSources() []AttributeSource`
+`func (o *ApcToPersistentGrantMapping) GetAttributeSources() []AttributeSourceAggregation`
 
 GetAttributeSources returns the AttributeSources field if non-nil, zero value otherwise.
 
 ### GetAttributeSourcesOk
 
-`func (o *ApcToPersistentGrantMapping) GetAttributeSourcesOk() (*[]AttributeSource, bool)`
+`func (o *ApcToPersistentGrantMapping) GetAttributeSourcesOk() (*[]AttributeSourceAggregation, bool)`
 
 GetAttributeSourcesOk returns a tuple with the AttributeSources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributeSources
 
-`func (o *ApcToPersistentGrantMapping) SetAttributeSources(v []AttributeSource)`
+`func (o *ApcToPersistentGrantMapping) SetAttributeSources(v []AttributeSourceAggregation)`
 
 SetAttributeSources sets AttributeSources field to given value.
 

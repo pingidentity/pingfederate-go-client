@@ -9,6 +9,9 @@ Name | Type | Description | Notes
 **NotifyAdminUserPasswordChanges** | Pointer to **bool** | Determines whether admin users are notified through email when their account is changed. | [optional] 
 **AccountChangesNotificationPublisherRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **MetadataNotificationSettings** | Pointer to [**MetadataEventNotificationSettings**](MetadataEventNotificationSettings.md) |  | [optional] 
+**ExpiringCertificateAdministrativeConsoleWarningDays** | Pointer to **int64** | Indicates the number of days prior to certificate expiry date, the administrative console warning starts. The default value is 14 days. | [optional] 
+**ExpiredCertificateAdministrativeConsoleWarningDays** | Pointer to **int64** | Indicates the number of days past the certificate expiry date, the administrative console warning ends. The default value is 14 days. | [optional] 
+**ThreadPoolExhaustionNotificationSettings** | Pointer to [**ThreadPoolExhaustionNotificationSettings**](ThreadPoolExhaustionNotificationSettings.md) |  | [optional] 
 
 ## Methods
 
@@ -153,6 +156,81 @@ SetMetadataNotificationSettings sets MetadataNotificationSettings field to given
 `func (o *NotificationSettings) HasMetadataNotificationSettings() bool`
 
 HasMetadataNotificationSettings returns a boolean if a field has been set.
+
+### GetExpiringCertificateAdministrativeConsoleWarningDays
+
+`func (o *NotificationSettings) GetExpiringCertificateAdministrativeConsoleWarningDays() int64`
+
+GetExpiringCertificateAdministrativeConsoleWarningDays returns the ExpiringCertificateAdministrativeConsoleWarningDays field if non-nil, zero value otherwise.
+
+### GetExpiringCertificateAdministrativeConsoleWarningDaysOk
+
+`func (o *NotificationSettings) GetExpiringCertificateAdministrativeConsoleWarningDaysOk() (*int64, bool)`
+
+GetExpiringCertificateAdministrativeConsoleWarningDaysOk returns a tuple with the ExpiringCertificateAdministrativeConsoleWarningDays field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpiringCertificateAdministrativeConsoleWarningDays
+
+`func (o *NotificationSettings) SetExpiringCertificateAdministrativeConsoleWarningDays(v int64)`
+
+SetExpiringCertificateAdministrativeConsoleWarningDays sets ExpiringCertificateAdministrativeConsoleWarningDays field to given value.
+
+### HasExpiringCertificateAdministrativeConsoleWarningDays
+
+`func (o *NotificationSettings) HasExpiringCertificateAdministrativeConsoleWarningDays() bool`
+
+HasExpiringCertificateAdministrativeConsoleWarningDays returns a boolean if a field has been set.
+
+### GetExpiredCertificateAdministrativeConsoleWarningDays
+
+`func (o *NotificationSettings) GetExpiredCertificateAdministrativeConsoleWarningDays() int64`
+
+GetExpiredCertificateAdministrativeConsoleWarningDays returns the ExpiredCertificateAdministrativeConsoleWarningDays field if non-nil, zero value otherwise.
+
+### GetExpiredCertificateAdministrativeConsoleWarningDaysOk
+
+`func (o *NotificationSettings) GetExpiredCertificateAdministrativeConsoleWarningDaysOk() (*int64, bool)`
+
+GetExpiredCertificateAdministrativeConsoleWarningDaysOk returns a tuple with the ExpiredCertificateAdministrativeConsoleWarningDays field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpiredCertificateAdministrativeConsoleWarningDays
+
+`func (o *NotificationSettings) SetExpiredCertificateAdministrativeConsoleWarningDays(v int64)`
+
+SetExpiredCertificateAdministrativeConsoleWarningDays sets ExpiredCertificateAdministrativeConsoleWarningDays field to given value.
+
+### HasExpiredCertificateAdministrativeConsoleWarningDays
+
+`func (o *NotificationSettings) HasExpiredCertificateAdministrativeConsoleWarningDays() bool`
+
+HasExpiredCertificateAdministrativeConsoleWarningDays returns a boolean if a field has been set.
+
+### GetThreadPoolExhaustionNotificationSettings
+
+`func (o *NotificationSettings) GetThreadPoolExhaustionNotificationSettings() ThreadPoolExhaustionNotificationSettings`
+
+GetThreadPoolExhaustionNotificationSettings returns the ThreadPoolExhaustionNotificationSettings field if non-nil, zero value otherwise.
+
+### GetThreadPoolExhaustionNotificationSettingsOk
+
+`func (o *NotificationSettings) GetThreadPoolExhaustionNotificationSettingsOk() (*ThreadPoolExhaustionNotificationSettings, bool)`
+
+GetThreadPoolExhaustionNotificationSettingsOk returns a tuple with the ThreadPoolExhaustionNotificationSettings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetThreadPoolExhaustionNotificationSettings
+
+`func (o *NotificationSettings) SetThreadPoolExhaustionNotificationSettings(v ThreadPoolExhaustionNotificationSettings)`
+
+SetThreadPoolExhaustionNotificationSettings sets ThreadPoolExhaustionNotificationSettings field to given value.
+
+### HasThreadPoolExhaustionNotificationSettings
+
+`func (o *NotificationSettings) HasThreadPoolExhaustionNotificationSettings() bool`
+
+HasThreadPoolExhaustionNotificationSettings returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

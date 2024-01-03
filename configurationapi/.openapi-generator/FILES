@@ -86,7 +86,6 @@ docs/AccessTokenManagerMapping.md
 docs/AccessTokenManagers.md
 docs/AccessTokenMapping.md
 docs/AccessTokenMappingContext.md
-docs/AccessTokenMappings.md
 docs/AccountManagementSettings.md
 docs/Action.md
 docs/ActionDescriptor.md
@@ -203,6 +202,7 @@ docs/ClientSettings.md
 docs/Clients.md
 docs/ClusterAPI.md
 docs/ClusterNode.md
+docs/ClusterSettings.md
 docs/ClusterStatus.md
 docs/ConditionalIssuanceCriteriaEntry.md
 docs/ConfigArchiveAPI.md
@@ -555,6 +555,7 @@ docs/TableDescriptor.md
 docs/TextAreaFieldDescriptor.md
 docs/TextFieldDescriptor.md
 docs/TextLocalIdentityField.md
+docs/ThreadPoolExhaustionNotificationSettings.md
 docs/TokenExchangeGeneratorGroup.md
 docs/TokenExchangeGeneratorGroups.md
 docs/TokenExchangeGeneratorMapping.md
@@ -606,7 +607,6 @@ model_access_token_manager_mapping.go
 model_access_token_managers.go
 model_access_token_mapping.go
 model_access_token_mapping_context.go
-model_access_token_mappings.go
 model_account_management_settings.go
 model_action.go
 model_action_descriptor.go
@@ -711,6 +711,7 @@ model_client_secret.go
 model_client_settings.go
 model_clients.go
 model_cluster_node.go
+model_cluster_settings.go
 model_cluster_status.go
 model_conditional_issuance_criteria_entry.go
 model_config_field.go
@@ -1006,6 +1007,7 @@ model_table_descriptor.go
 model_text_area_field_descriptor.go
 model_text_field_descriptor.go
 model_text_local_identity_field.go
+model_thread_pool_exhaustion_notification_settings.go
 model_token_exchange_generator_group.go
 model_token_exchange_generator_groups.go
 model_token_exchange_generator_mapping.go
