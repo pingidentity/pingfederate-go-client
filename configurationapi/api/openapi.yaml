@@ -19995,7 +19995,6 @@ components:
           $ref: '#/components/schemas/IssuanceCriteria'
       required:
       - attributeContractFulfillment
-      - idpAdapterRef
       type: object
     IdpAttributeQuery:
       description: The attribute query profile supports local applications in requesting
