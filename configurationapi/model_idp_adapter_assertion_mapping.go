@@ -19,7 +19,7 @@ var _ MappedNullable = &IdpAdapterAssertionMapping{}
 
 // IdpAdapterAssertionMapping The IdP Adapter Assertion Mapping.
 type IdpAdapterAssertionMapping struct {
-	IdpAdapterRef ResourceLink `json:"idpAdapterRef" tfsdk:"idp_adapter_ref"`
+	IdpAdapterRef *ResourceLink `json:"idpAdapterRef,omitempty" tfsdk:"idp_adapter_ref"`
 	// Restricts this mapping to specific virtual entity IDs.
 	RestrictVirtualEntityIds *bool `json:"restrictVirtualEntityIds,omitempty" tfsdk:"restrict_virtual_entity_ids"`
 	// The list of virtual server IDs that this mapping is restricted to.
@@ -38,9 +38,8 @@ type IdpAdapterAssertionMapping struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIdpAdapterAssertionMapping(idpAdapterRef ResourceLink, attributeContractFulfillment map[string]AttributeFulfillmentValue) *IdpAdapterAssertionMapping {
+func NewIdpAdapterAssertionMapping(attributeContractFulfillment map[string]AttributeFulfillmentValue) *IdpAdapterAssertionMapping {
 	this := IdpAdapterAssertionMapping{}
-	this.IdpAdapterRef = idpAdapterRef
 	this.AttributeContractFulfillment = attributeContractFulfillment
 	return &this
 }
@@ -53,28 +52,36 @@ func NewIdpAdapterAssertionMappingWithDefaults() *IdpAdapterAssertionMapping {
 	return &this
 }
 
-// GetIdpAdapterRef returns the IdpAdapterRef field value
+// GetIdpAdapterRef returns the IdpAdapterRef field value if set, zero value otherwise.
 func (o *IdpAdapterAssertionMapping) GetIdpAdapterRef() ResourceLink {
-	if o == nil {
+	if o == nil || IsNil(o.IdpAdapterRef) {
 		var ret ResourceLink
 		return ret
 	}
-
-	return o.IdpAdapterRef
+	return *o.IdpAdapterRef
 }
 
-// GetIdpAdapterRefOk returns a tuple with the IdpAdapterRef field value
+// GetIdpAdapterRefOk returns a tuple with the IdpAdapterRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdpAdapterAssertionMapping) GetIdpAdapterRefOk() (*ResourceLink, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.IdpAdapterRef) {
 		return nil, false
 	}
-	return &o.IdpAdapterRef, true
+	return o.IdpAdapterRef, true
 }
 
-// SetIdpAdapterRef sets field value
+// HasIdpAdapterRef returns a boolean if a field has been set.
+func (o *IdpAdapterAssertionMapping) HasIdpAdapterRef() bool {
+	if o != nil && !IsNil(o.IdpAdapterRef) {
+		return true
+	}
+
+	return false
+}
+
+// SetIdpAdapterRef gets a reference to the given ResourceLink and assigns it to the IdpAdapterRef field.
 func (o *IdpAdapterAssertionMapping) SetIdpAdapterRef(v ResourceLink) {
-	o.IdpAdapterRef = v
+	o.IdpAdapterRef = &v
 }
 
 // GetRestrictVirtualEntityIds returns the RestrictVirtualEntityIds field value if set, zero value otherwise.
@@ -303,7 +310,9 @@ func (o IdpAdapterAssertionMapping) MarshalJSON() ([]byte, error) {
 
 func (o IdpAdapterAssertionMapping) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["idpAdapterRef"] = o.IdpAdapterRef
+	if !IsNil(o.IdpAdapterRef) {
+		toSerialize["idpAdapterRef"] = o.IdpAdapterRef
+	}
 	if !IsNil(o.RestrictVirtualEntityIds) {
 		toSerialize["restrictVirtualEntityIds"] = o.RestrictVirtualEntityIds
 	}

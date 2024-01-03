@@ -17102,7 +17102,6 @@ components:
     IdpAdapterAssertionMapping:
       required:
       - attributeContractFulfillment
-      - idpAdapterRef
       type: object
       properties:
         idpAdapterRef:
