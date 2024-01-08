@@ -15242,6 +15242,17 @@ components:
       - $ref: '#/components/schemas/FragmentPolicyAction'
       - $ref: '#/components/schemas/LocalIdentityMappingPolicyAction'
       - $ref: '#/components/schemas/RestartPolicyAction'
+      discriminator:
+        propertyName: type
+        mapping:
+          APC_MAPPING: '#/components/schemas/ApcMappingPolicyAction'
+          AUTHN_SELECTOR: '#/components/schemas/AuthnSelectorPolicyAction'
+          AUTHN_SOURCE: '#/components/schemas/AuthnSourcePolicyAction'
+          CONTINUE: '#/components/schemas/ContinuePolicyAction'
+          DONE: '#/components/schemas/DonePolicyAction'
+          FRAGMENT: '#/components/schemas/FragmentPolicyAction'
+          LOCAL_IDENTITY_MAPPING: '#/components/schemas/LocalIdentityMappingPolicyAction'
+          RESTART: '#/components/schemas/RestartPolicyAction'
     PolicyAction:
       required:
       - type
