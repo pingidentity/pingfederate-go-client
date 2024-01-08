@@ -16499,9 +16499,7 @@ components:
           children:
           - null
           - null
-          action:
-            context: context
-            type: APC_MAPPING
+          action: null
       properties:
         id:
           description: The authentication policy fragment ID. ID is unique.
@@ -16525,12 +16523,10 @@ components:
         children:
         - null
         - null
-        action:
-          context: context
-          type: APC_MAPPING
+        action: null
       properties:
         action:
-          $ref: '#/components/schemas/PolicyAction'
+          $ref: '#/components/schemas/PolicyActionAggregation'
         children:
           description: The nodes inside the authentication policy tree node of type
             AuthenticationPolicyTreeNode.
@@ -16627,13 +16623,20 @@ components:
         - localIdentityRef
         - outboundAttributeMapping
         type: object
+    PolicyActionAggregation:
+      oneOf:
+      - $ref: '#/components/schemas/ApcMappingPolicyAction'
+      - $ref: '#/components/schemas/AuthnSelectorPolicyAction'
+      - $ref: '#/components/schemas/AuthnSourcePolicyAction'
+      - $ref: '#/components/schemas/ContinuePolicyAction'
+      - $ref: '#/components/schemas/DonePolicyAction'
+      - $ref: '#/components/schemas/FragmentPolicyAction'
+      - $ref: '#/components/schemas/LocalIdentityMappingPolicyAction'
+      - $ref: '#/components/schemas/RestartPolicyAction'
     PolicyAction:
       description: An authentication policy selection action.
       discriminator:
         propertyName: type
-      example:
-        context: context
-        type: APC_MAPPING
       properties:
         type:
           description: The authentication selection type.
@@ -16705,9 +16708,7 @@ components:
             children:
             - null
             - null
-            action:
-              context: context
-              type: APC_MAPPING
+            action: null
         - name: name
           description: description
           id: id
@@ -16720,9 +16721,7 @@ components:
             children:
             - null
             - null
-            action:
-              context: context
-              type: APC_MAPPING
+            action: null
         trackedHttpParameters:
         - trackedHttpParameters
         - trackedHttpParameters
@@ -16763,9 +16762,7 @@ components:
           children:
           - null
           - null
-          action:
-            context: context
-            type: APC_MAPPING
+          action: null
       properties:
         id:
           description: The authentication policy ID. ID is unique.
@@ -16805,9 +16802,7 @@ components:
             children:
             - null
             - null
-            action:
-              context: context
-              type: APC_MAPPING
+            action: null
         - outputs:
             location: location
             id: id
@@ -16821,9 +16816,7 @@ components:
             children:
             - null
             - null
-            action:
-              context: context
-              type: APC_MAPPING
+            action: null
       properties:
         items:
           description: The actual list of Authentication Policy Fragments.

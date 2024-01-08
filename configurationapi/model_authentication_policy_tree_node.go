@@ -19,7 +19,7 @@ var _ MappedNullable = &AuthenticationPolicyTreeNode{}
 
 // AuthenticationPolicyTreeNode An authentication policy tree node.
 type AuthenticationPolicyTreeNode struct {
-	Action PolicyAction `json:"action" tfsdk:"action"`
+	Action PolicyActionAggregation `json:"action" tfsdk:"action"`
 	// The nodes inside the authentication policy tree node of type AuthenticationPolicyTreeNode.
 	Children []AuthenticationPolicyTreeNode `json:"children,omitempty" tfsdk:"children"`
 }
@@ -28,7 +28,7 @@ type AuthenticationPolicyTreeNode struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAuthenticationPolicyTreeNode(action PolicyAction) *AuthenticationPolicyTreeNode {
+func NewAuthenticationPolicyTreeNode(action PolicyActionAggregation) *AuthenticationPolicyTreeNode {
 	this := AuthenticationPolicyTreeNode{}
 	this.Action = action
 	return &this
@@ -43,9 +43,9 @@ func NewAuthenticationPolicyTreeNodeWithDefaults() *AuthenticationPolicyTreeNode
 }
 
 // GetAction returns the Action field value
-func (o *AuthenticationPolicyTreeNode) GetAction() PolicyAction {
+func (o *AuthenticationPolicyTreeNode) GetAction() PolicyActionAggregation {
 	if o == nil {
-		var ret PolicyAction
+		var ret PolicyActionAggregation
 		return ret
 	}
 
@@ -54,7 +54,7 @@ func (o *AuthenticationPolicyTreeNode) GetAction() PolicyAction {
 
 // GetActionOk returns a tuple with the Action field value
 // and a boolean to check if the value has been set.
-func (o *AuthenticationPolicyTreeNode) GetActionOk() (*PolicyAction, bool) {
+func (o *AuthenticationPolicyTreeNode) GetActionOk() (*PolicyActionAggregation, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -62,7 +62,7 @@ func (o *AuthenticationPolicyTreeNode) GetActionOk() (*PolicyAction, bool) {
 }
 
 // SetAction sets field value
-func (o *AuthenticationPolicyTreeNode) SetAction(v PolicyAction) {
+func (o *AuthenticationPolicyTreeNode) SetAction(v PolicyActionAggregation) {
 	o.Action = v
 }
 

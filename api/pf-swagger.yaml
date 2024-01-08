@@ -15142,7 +15142,7 @@ components:
       type: object
       properties:
         action:
-          $ref: '#/components/schemas/PolicyAction'
+          $ref: '#/components/schemas/PolicyActionAggregation'
         children:
           type: array
           description: The nodes inside the authentication policy tree node of type
@@ -15232,6 +15232,16 @@ components:
           outboundAttributeMapping:
             $ref: '#/components/schemas/AttributeMapping'
         description: A local identity profile selection action.
+    PolicyActionAggregation:
+      oneOf:
+      - $ref: '#/components/schemas/ApcMappingPolicyAction'
+      - $ref: '#/components/schemas/AuthnSelectorPolicyAction'
+      - $ref: '#/components/schemas/AuthnSourcePolicyAction'
+      - $ref: '#/components/schemas/ContinuePolicyAction'
+      - $ref: '#/components/schemas/DonePolicyAction'
+      - $ref: '#/components/schemas/FragmentPolicyAction'
+      - $ref: '#/components/schemas/LocalIdentityMappingPolicyAction'
+      - $ref: '#/components/schemas/RestartPolicyAction'
     PolicyAction:
       required:
       - type
