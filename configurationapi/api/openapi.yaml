@@ -14941,6 +14941,13 @@ components:
       - value
       type: object
     AttributeSourceAggregation:
+      discriminator:
+        mapping:
+          CUSTOM: '#/components/schemas/CustomAttributeSource'
+          JDBC: '#/components/schemas/JdbcAttributeSource'
+          LDAP: '#/components/schemas/LdapAttributeSource'
+          PING_ONE_LDAP_GATEWAY: '#/components/schemas/LdapAttributeSource'
+        propertyName: type
       oneOf:
       - $ref: '#/components/schemas/CustomAttributeSource'
       - $ref: '#/components/schemas/JdbcAttributeSource'
@@ -22339,6 +22346,13 @@ components:
           type: array
       type: object
     DataStoreAggregation:
+      discriminator:
+        mapping:
+          CUSTOM: '#/components/schemas/CustomDataStore'
+          JDBC: '#/components/schemas/JdbcDataStore'
+          LDAP: '#/components/schemas/LdapDataStore'
+          PING_ONE_LDAP_GATEWAY: '#/components/schemas/PingOneLdapGatewayDataStore'
+        propertyName: type
       oneOf:
       - $ref: '#/components/schemas/CustomDataStore'
       - $ref: '#/components/schemas/JdbcDataStore'

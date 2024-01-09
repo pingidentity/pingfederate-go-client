@@ -13981,6 +13981,13 @@ components:
         - $ref: "#/components/schemas/CustomAttributeSource"
         - $ref: "#/components/schemas/JdbcAttributeSource"
         - $ref: "#/components/schemas/LdapAttributeSource"
+      discriminator:
+        propertyName: type
+        mapping:
+          CUSTOM: '#/components/schemas/CustomAttributeSource'
+          JDBC: '#/components/schemas/JdbcAttributeSource'
+          LDAP: '#/components/schemas/LdapAttributeSource'
+          PING_ONE_LDAP_GATEWAY: '#/components/schemas/LdapAttributeSource'
     AttributeSource:
       required:
       - dataStoreRef
@@ -18866,6 +18873,13 @@ components:
         - $ref: "#/components/schemas/JdbcDataStore"
         - $ref: "#/components/schemas/LdapDataStore"
         - $ref: "#/components/schemas/PingOneLdapGatewayDataStore"
+      discriminator:
+        propertyName: type
+        mapping:
+          CUSTOM: '#/components/schemas/CustomDataStore'
+          JDBC: '#/components/schemas/JdbcDataStore'
+          LDAP: '#/components/schemas/LdapDataStore'
+          PING_ONE_LDAP_GATEWAY: '#/components/schemas/PingOneLdapGatewayDataStore'
     CustomDataStore:
       allOf:
       - $ref: '#/components/schemas/DataStore'
