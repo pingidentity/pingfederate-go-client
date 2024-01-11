@@ -867,6 +867,7 @@ Class | Method | HTTP request | Description
  - [PluginDescriptor](docs/PluginDescriptor.md)
  - [PluginInstance](docs/PluginInstance.md)
  - [PolicyAction](docs/PolicyAction.md)
+ - [PolicyActionAggregation](docs/PolicyActionAggregation.md)
  - [ProcessorPolicyToGeneratorMapping](docs/ProcessorPolicyToGeneratorMapping.md)
  - [ProcessorPolicyToGeneratorMappings](docs/ProcessorPolicyToGeneratorMappings.md)
  - [ProfileConfig](docs/ProfileConfig.md)

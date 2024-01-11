@@ -17,7 +17,7 @@ openapi-generator generate \
     --git-repo-id pingfederate-go-client \
     --git-user-id pingidentity \
     --type-mappings=integer=int64,number=float64 \
-    --additional-properties=enumClassPrefix=true,packageName=configurationapi \
+    --additional-properties=enumClassPrefix=true,packageName=configurationapi,useOneOfDiscriminatorLookup=true \
     --skip-validate-spec
 
 rm -r test/
