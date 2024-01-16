@@ -31,6 +31,15 @@ def buildAttributeValue(attribute) -> str:
         underscoreAttribute = underscoreAttribute[:-1]
     return underscoreAttribute
 
+def cleanExceptionAttributes(attribute) -> str:
+    # Handle OAuth attributes that start with "oAuth"
+    if len(attribute) >= 6 and attribute[0:5] == "oAuth":
+        return "oauth" + attribute[5:]
+    # Handle "IDEncrypted" string
+    if "IDEncrypted" in attribute:
+        return attribute.replace("IDEncrypted", "IdEncrypted")
+    return attribute
+
 for modelFile in modelFiles:
     updatedLines = []
     with open(modelFile, 'r') as model:
@@ -41,7 +50,7 @@ for modelFile in modelFiles:
             if match != None and "tfsdk:" not in line:
                 # Get the attribute name from the json tag
                 attribute = str(match.group(1))
-                finalAttribute = buildAttributeValue(attribute)
+                finalAttribute = buildAttributeValue(cleanExceptionAttributes(attribute))
                 # Add the tfsdk tag to the line
                 line = line.replace("\"`", "\" tfsdk:\"{}\"`".format(finalAttribute))
             updatedLines.append(line)
