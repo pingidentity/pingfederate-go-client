@@ -33,7 +33,7 @@ def buildAttributeValue(attribute) -> str:
 
 def cleanExceptionAttributes(attribute) -> str:
     # Handle OAuth attribute that start with lowercase o
-    if len(attribute) >= 2 and attribute[0:5] == "oAuth":
+    if len(attribute) >= 6 and attribute[0:5] == "oAuth":
         return "oauth" + attribute[5:]
     # Handle "IDEncrypted" string
     if "IDEncrypted" in attribute:
