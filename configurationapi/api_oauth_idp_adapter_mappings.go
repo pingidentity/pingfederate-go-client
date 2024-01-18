@@ -63,9 +63,23 @@ func (a *OauthIdpAdapterMappingsAPIService) CreateIdpAdapterMapping(ctx context.
 // Execute executes the request
 //
 //	@return IdpAdapterMapping
-//
-// example haha
 func (a *OauthIdpAdapterMappingsAPIService) CreateIdpAdapterMappingExecute(r ApiCreateIdpAdapterMappingRequest) (*IdpAdapterMapping, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdpAdapterMapping
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateIdpAdapterMappingExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthIdpAdapterMappingsAPIService) internalCreateIdpAdapterMappingExecute(r ApiCreateIdpAdapterMappingRequest) (*IdpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -284,9 +298,23 @@ func (a *OauthIdpAdapterMappingsAPIService) GetIdpAdapterMapping(ctx context.Con
 // Execute executes the request
 //
 //	@return IdpAdapterMapping
-//
-// example haha
 func (a *OauthIdpAdapterMappingsAPIService) GetIdpAdapterMappingExecute(r ApiGetIdpAdapterMappingRequest) (*IdpAdapterMapping, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdpAdapterMapping
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetIdpAdapterMappingExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthIdpAdapterMappingsAPIService) internalGetIdpAdapterMappingExecute(r ApiGetIdpAdapterMappingRequest) (*IdpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -395,9 +423,23 @@ func (a *OauthIdpAdapterMappingsAPIService) GetIdpAdapterMappings(ctx context.Co
 // Execute executes the request
 //
 //	@return IdpAdapterMappings
-//
-// example haha
 func (a *OauthIdpAdapterMappingsAPIService) GetIdpAdapterMappingsExecute(r ApiGetIdpAdapterMappingsRequest) (*IdpAdapterMappings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdpAdapterMappings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetIdpAdapterMappingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthIdpAdapterMappingsAPIService) internalGetIdpAdapterMappingsExecute(r ApiGetIdpAdapterMappingsRequest) (*IdpAdapterMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -512,9 +554,23 @@ func (a *OauthIdpAdapterMappingsAPIService) UpdateIdpAdapterMapping(ctx context.
 // Execute executes the request
 //
 //	@return IdpAdapterMapping
-//
-// example haha
 func (a *OauthIdpAdapterMappingsAPIService) UpdateIdpAdapterMappingExecute(r ApiUpdateIdpAdapterMappingRequest) (*IdpAdapterMapping, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdpAdapterMapping
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateIdpAdapterMappingExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthIdpAdapterMappingsAPIService) internalUpdateIdpAdapterMappingExecute(r ApiUpdateIdpAdapterMappingRequest) (*IdpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

@@ -46,9 +46,23 @@ func (a *SpTargetUrlMappingsAPIService) GetSpUrlMappings(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return SpUrlMappings
-//
-// example haha
 func (a *SpTargetUrlMappingsAPIService) GetSpUrlMappingsExecute(r ApiGetSpUrlMappingsRequest) (*SpUrlMappings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SpUrlMappings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSpUrlMappingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpTargetUrlMappingsAPIService) internalGetSpUrlMappingsExecute(r ApiGetSpUrlMappingsRequest) (*SpUrlMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -153,9 +167,23 @@ func (a *SpTargetUrlMappingsAPIService) UpdateSpUrlMappings(ctx context.Context)
 // Execute executes the request
 //
 //	@return SpUrlMappings
-//
-// example haha
 func (a *SpTargetUrlMappingsAPIService) UpdateSpUrlMappingsExecute(r ApiUpdateSpUrlMappingsRequest) (*SpUrlMappings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SpUrlMappings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateSpUrlMappingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpTargetUrlMappingsAPIService) internalUpdateSpUrlMappingsExecute(r ApiUpdateSpUrlMappingsRequest) (*SpUrlMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

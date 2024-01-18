@@ -54,9 +54,23 @@ func (a *AuthenticationApiAPIService) CreateApplication(ctx context.Context) Api
 // Execute executes the request
 //
 //	@return AuthnApiApplication
-//
-// example haha
 func (a *AuthenticationApiAPIService) CreateApplicationExecute(r ApiCreateApplicationRequest) (*AuthnApiApplication, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthnApiApplication
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateApplicationExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationApiAPIService) internalCreateApplicationExecute(r ApiCreateApplicationRequest) (*AuthnApiApplication, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -287,9 +301,23 @@ func (a *AuthenticationApiAPIService) GetApplication(ctx context.Context, id str
 // Execute executes the request
 //
 //	@return AuthnApiApplication
-//
-// example haha
 func (a *AuthenticationApiAPIService) GetApplicationExecute(r ApiGetApplicationRequest) (*AuthnApiApplication, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthnApiApplication
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetApplicationExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationApiAPIService) internalGetApplicationExecute(r ApiGetApplicationRequest) (*AuthnApiApplication, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -398,9 +426,23 @@ func (a *AuthenticationApiAPIService) GetAuthenticationApiApplications(ctx conte
 // Execute executes the request
 //
 //	@return AuthnApiApplications
-//
-// example haha
 func (a *AuthenticationApiAPIService) GetAuthenticationApiApplicationsExecute(r ApiGetAuthenticationApiApplicationsRequest) (*AuthnApiApplications, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthnApiApplications
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetAuthenticationApiApplicationsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationApiAPIService) internalGetAuthenticationApiApplicationsExecute(r ApiGetAuthenticationApiApplicationsRequest) (*AuthnApiApplications, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -508,9 +550,23 @@ func (a *AuthenticationApiAPIService) GetAuthenticationApiSettings(ctx context.C
 // Execute executes the request
 //
 //	@return AuthnApiSettings
-//
-// example haha
 func (a *AuthenticationApiAPIService) GetAuthenticationApiSettingsExecute(r ApiGetAuthenticationApiSettingsRequest) (*AuthnApiSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthnApiSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetAuthenticationApiSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationApiAPIService) internalGetAuthenticationApiSettingsExecute(r ApiGetAuthenticationApiSettingsRequest) (*AuthnApiSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -630,9 +686,23 @@ func (a *AuthenticationApiAPIService) UpdateApplication(ctx context.Context, id 
 // Execute executes the request
 //
 //	@return AuthnApiApplication
-//
-// example haha
 func (a *AuthenticationApiAPIService) UpdateApplicationExecute(r ApiUpdateApplicationRequest) (*AuthnApiApplication, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthnApiApplication
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateApplicationExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationApiAPIService) internalUpdateApplicationExecute(r ApiUpdateApplicationRequest) (*AuthnApiApplication, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -764,9 +834,23 @@ func (a *AuthenticationApiAPIService) UpdateAuthenticationApiSettings(ctx contex
 // Execute executes the request
 //
 //	@return AuthnApiSettings
-//
-// example haha
 func (a *AuthenticationApiAPIService) UpdateAuthenticationApiSettingsExecute(r ApiUpdateAuthenticationApiSettingsRequest) (*AuthnApiSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthnApiSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateAuthenticationApiSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationApiAPIService) internalUpdateAuthenticationApiSettingsExecute(r ApiUpdateAuthenticationApiSettingsRequest) (*AuthnApiSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

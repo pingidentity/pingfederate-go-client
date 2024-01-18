@@ -159,9 +159,23 @@ func (a *ConfigStoreAPIService) GetConfigStoreSetting(ctx context.Context, bundl
 // Execute executes the request
 //
 //	@return ConfigStoreSetting
-//
-// example haha
 func (a *ConfigStoreAPIService) GetConfigStoreSettingExecute(r ApiGetConfigStoreSettingRequest) (*ConfigStoreSetting, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ConfigStoreSetting
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetConfigStoreSettingExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ConfigStoreAPIService) internalGetConfigStoreSettingExecute(r ApiGetConfigStoreSettingRequest) (*ConfigStoreSetting, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -274,9 +288,23 @@ func (a *ConfigStoreAPIService) GetConfigStoreSettings(ctx context.Context, bund
 // Execute executes the request
 //
 //	@return ConfigStoreBundle
-//
-// example haha
 func (a *ConfigStoreAPIService) GetConfigStoreSettingsExecute(r ApiGetConfigStoreSettingsRequest) (*ConfigStoreBundle, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ConfigStoreBundle
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetConfigStoreSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ConfigStoreAPIService) internalGetConfigStoreSettingsExecute(r ApiGetConfigStoreSettingsRequest) (*ConfigStoreBundle, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -400,9 +428,23 @@ func (a *ConfigStoreAPIService) UpdateConfigStoreSetting(ctx context.Context, bu
 // Execute executes the request
 //
 //	@return ConfigStoreSetting
-//
-// example haha
 func (a *ConfigStoreAPIService) UpdateConfigStoreSettingExecute(r ApiUpdateConfigStoreSettingRequest) (*ConfigStoreSetting, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ConfigStoreSetting
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateConfigStoreSettingExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ConfigStoreAPIService) internalUpdateConfigStoreSettingExecute(r ApiUpdateConfigStoreSettingRequest) (*ConfigStoreSetting, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

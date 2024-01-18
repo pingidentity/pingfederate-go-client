@@ -48,9 +48,23 @@ func (a *ConfigurationEncryptionKeysAPIService) GetConfigurationEncryptionKeys(c
 // Execute executes the request
 //
 //	@return ConfigurationEncryptionKeys
-//
-// example haha
 func (a *ConfigurationEncryptionKeysAPIService) GetConfigurationEncryptionKeysExecute(r ApiGetConfigurationEncryptionKeysRequest) (*ConfigurationEncryptionKeys, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ConfigurationEncryptionKeys
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetConfigurationEncryptionKeysExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ConfigurationEncryptionKeysAPIService) internalGetConfigurationEncryptionKeysExecute(r ApiGetConfigurationEncryptionKeysRequest) (*ConfigurationEncryptionKeys, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -150,9 +164,23 @@ func (a *ConfigurationEncryptionKeysAPIService) RotateConfigurationEncryptionKey
 // Execute executes the request
 //
 //	@return ConfigurationEncryptionKeys
-//
-// example haha
 func (a *ConfigurationEncryptionKeysAPIService) RotateConfigurationEncryptionKeyExecute(r ApiRotateConfigurationEncryptionKeyRequest) (*ConfigurationEncryptionKeys, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ConfigurationEncryptionKeys
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalRotateConfigurationEncryptionKeyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ConfigurationEncryptionKeysAPIService) internalRotateConfigurationEncryptionKeyExecute(r ApiRotateConfigurationEncryptionKeyRequest) (*ConfigurationEncryptionKeys, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}

@@ -56,9 +56,23 @@ func (a *OauthAuthorizationDetailTypesAPIService) AddAuthorizationDetailType(ctx
 // Execute executes the request
 //
 //	@return AuthorizationDetailType
-//
-// example haha
 func (a *OauthAuthorizationDetailTypesAPIService) AddAuthorizationDetailTypeExecute(r ApiAddAuthorizationDetailTypeRequest) (*AuthorizationDetailType, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthorizationDetailType
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalAddAuthorizationDetailTypeExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAuthorizationDetailTypesAPIService) internalAddAuthorizationDetailTypeExecute(r ApiAddAuthorizationDetailTypeRequest) (*AuthorizationDetailType, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -278,9 +292,23 @@ func (a *OauthAuthorizationDetailTypesAPIService) GetAuthorizationDetailTypeById
 // Execute executes the request
 //
 //	@return AuthorizationDetailType
-//
-// example haha
 func (a *OauthAuthorizationDetailTypesAPIService) GetAuthorizationDetailTypeByIdExecute(r ApiGetAuthorizationDetailTypeByIdRequest) (*AuthorizationDetailType, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthorizationDetailType
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetAuthorizationDetailTypeByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAuthorizationDetailTypesAPIService) internalGetAuthorizationDetailTypeByIdExecute(r ApiGetAuthorizationDetailTypeByIdRequest) (*AuthorizationDetailType, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -379,9 +407,23 @@ func (a *OauthAuthorizationDetailTypesAPIService) GetAuthorizationDetailTypes(ct
 // Execute executes the request
 //
 //	@return AuthorizationDetailTypes
-//
-// example haha
 func (a *OauthAuthorizationDetailTypesAPIService) GetAuthorizationDetailTypesExecute(r ApiGetAuthorizationDetailTypesRequest) (*AuthorizationDetailTypes, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthorizationDetailTypes
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetAuthorizationDetailTypesExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAuthorizationDetailTypesAPIService) internalGetAuthorizationDetailTypesExecute(r ApiGetAuthorizationDetailTypesRequest) (*AuthorizationDetailTypes, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -491,9 +533,23 @@ func (a *OauthAuthorizationDetailTypesAPIService) UpdateAuthorizationDetailType(
 // Execute executes the request
 //
 //	@return AuthorizationDetailType
-//
-// example haha
 func (a *OauthAuthorizationDetailTypesAPIService) UpdateAuthorizationDetailTypeExecute(r ApiUpdateAuthorizationDetailTypeRequest) (*AuthorizationDetailType, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthorizationDetailType
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateAuthorizationDetailTypeExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAuthorizationDetailTypesAPIService) internalUpdateAuthorizationDetailTypeExecute(r ApiUpdateAuthorizationDetailTypeRequest) (*AuthorizationDetailType, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

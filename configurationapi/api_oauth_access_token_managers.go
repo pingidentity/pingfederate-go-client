@@ -54,9 +54,23 @@ func (a *OauthAccessTokenManagersAPIService) CreateTokenManager(ctx context.Cont
 // Execute executes the request
 //
 //	@return AccessTokenManager
-//
-// example haha
 func (a *OauthAccessTokenManagersAPIService) CreateTokenManagerExecute(r ApiCreateTokenManagerRequest) (*AccessTokenManager, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AccessTokenManager
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateTokenManagerExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAccessTokenManagersAPIService) internalCreateTokenManagerExecute(r ApiCreateTokenManagerRequest) (*AccessTokenManager, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -269,9 +283,23 @@ func (a *OauthAccessTokenManagersAPIService) GetOauthAccessTokenManagersSettings
 // Execute executes the request
 //
 //	@return AccessTokenManagementSettings
-//
-// example haha
 func (a *OauthAccessTokenManagersAPIService) GetOauthAccessTokenManagersSettingsExecute(r ApiGetOauthAccessTokenManagersSettingsRequest) (*AccessTokenManagementSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AccessTokenManagementSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOauthAccessTokenManagersSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAccessTokenManagersAPIService) internalGetOauthAccessTokenManagersSettingsExecute(r ApiGetOauthAccessTokenManagersSettingsRequest) (*AccessTokenManagementSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -372,9 +400,23 @@ func (a *OauthAccessTokenManagersAPIService) GetTokenManager(ctx context.Context
 // Execute executes the request
 //
 //	@return AccessTokenManager
-//
-// example haha
 func (a *OauthAccessTokenManagersAPIService) GetTokenManagerExecute(r ApiGetTokenManagerRequest) (*AccessTokenManager, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AccessTokenManager
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetTokenManagerExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAccessTokenManagersAPIService) internalGetTokenManagerExecute(r ApiGetTokenManagerRequest) (*AccessTokenManager, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -486,9 +528,23 @@ func (a *OauthAccessTokenManagersAPIService) GetTokenManagerDescriptor(ctx conte
 // Execute executes the request
 //
 //	@return AccessTokenManagerDescriptor
-//
-// example haha
 func (a *OauthAccessTokenManagersAPIService) GetTokenManagerDescriptorExecute(r ApiGetTokenManagerDescriptorRequest) (*AccessTokenManagerDescriptor, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AccessTokenManagerDescriptor
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetTokenManagerDescriptorExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAccessTokenManagersAPIService) internalGetTokenManagerDescriptorExecute(r ApiGetTokenManagerDescriptorRequest) (*AccessTokenManagerDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -597,9 +653,23 @@ func (a *OauthAccessTokenManagersAPIService) GetTokenManagerDescriptors(ctx cont
 // Execute executes the request
 //
 //	@return AccessTokenManagerDescriptors
-//
-// example haha
 func (a *OauthAccessTokenManagersAPIService) GetTokenManagerDescriptorsExecute(r ApiGetTokenManagerDescriptorsRequest) (*AccessTokenManagerDescriptors, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AccessTokenManagerDescriptors
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetTokenManagerDescriptorsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAccessTokenManagersAPIService) internalGetTokenManagerDescriptorsExecute(r ApiGetTokenManagerDescriptorsRequest) (*AccessTokenManagerDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -697,9 +767,23 @@ func (a *OauthAccessTokenManagersAPIService) GetTokenManagers(ctx context.Contex
 // Execute executes the request
 //
 //	@return AccessTokenManagers
-//
-// example haha
 func (a *OauthAccessTokenManagersAPIService) GetTokenManagersExecute(r ApiGetTokenManagersRequest) (*AccessTokenManagers, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AccessTokenManagers
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetTokenManagersExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAccessTokenManagersAPIService) internalGetTokenManagersExecute(r ApiGetTokenManagersRequest) (*AccessTokenManagers, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -804,9 +888,23 @@ func (a *OauthAccessTokenManagersAPIService) UpdateOauthAccessTokenManagersSetti
 // Execute executes the request
 //
 //	@return AccessTokenManagementSettings
-//
-// example haha
 func (a *OauthAccessTokenManagersAPIService) UpdateOauthAccessTokenManagersSettingsExecute(r ApiUpdateOauthAccessTokenManagersSettingsRequest) (*AccessTokenManagementSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AccessTokenManagementSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateOauthAccessTokenManagersSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAccessTokenManagersAPIService) internalUpdateOauthAccessTokenManagersSettingsExecute(r ApiUpdateOauthAccessTokenManagersSettingsRequest) (*AccessTokenManagementSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -929,9 +1027,23 @@ func (a *OauthAccessTokenManagersAPIService) UpdateTokenManager(ctx context.Cont
 // Execute executes the request
 //
 //	@return AccessTokenManager
-//
-// example haha
 func (a *OauthAccessTokenManagersAPIService) UpdateTokenManagerExecute(r ApiUpdateTokenManagerRequest) (*AccessTokenManager, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AccessTokenManager
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateTokenManagerExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAccessTokenManagersAPIService) internalUpdateTokenManagerExecute(r ApiUpdateTokenManagerRequest) (*AccessTokenManager, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

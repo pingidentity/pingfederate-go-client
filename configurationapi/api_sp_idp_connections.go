@@ -59,9 +59,23 @@ func (a *SpIdpConnectionsAPIService) AddConnectionCert(ctx context.Context, id s
 // Execute executes the request
 //
 //	@return ConnectionCert
-//
-// example haha
 func (a *SpIdpConnectionsAPIService) AddConnectionCertExecute(r ApiAddConnectionCertRequest) (*ConnectionCert, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ConnectionCert
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalAddConnectionCertExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpIdpConnectionsAPIService) internalAddConnectionCertExecute(r ApiAddConnectionCertRequest) (*ConnectionCert, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -202,9 +216,23 @@ func (a *SpIdpConnectionsAPIService) CreateConnection(ctx context.Context) ApiCr
 // Execute executes the request
 //
 //	@return IdpConnection
-//
-// example haha
 func (a *SpIdpConnectionsAPIService) CreateConnectionExecute(r ApiCreateConnectionRequest) (*IdpConnection, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdpConnection
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateConnectionExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpIdpConnectionsAPIService) internalCreateConnectionExecute(r ApiCreateConnectionRequest) (*IdpConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -438,9 +466,23 @@ func (a *SpIdpConnectionsAPIService) GetConnection(ctx context.Context, id strin
 // Execute executes the request
 //
 //	@return IdpConnection
-//
-// example haha
 func (a *SpIdpConnectionsAPIService) GetConnectionExecute(r ApiGetConnectionRequest) (*IdpConnection, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdpConnection
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetConnectionExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpIdpConnectionsAPIService) internalGetConnectionExecute(r ApiGetConnectionRequest) (*IdpConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -552,9 +594,23 @@ func (a *SpIdpConnectionsAPIService) GetConnectionCerts(ctx context.Context, id 
 // Execute executes the request
 //
 //	@return ConnectionCerts
-//
-// example haha
 func (a *SpIdpConnectionsAPIService) GetConnectionCertsExecute(r ApiGetConnectionCertsRequest) (*ConnectionCerts, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ConnectionCerts
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetConnectionCertsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpIdpConnectionsAPIService) internalGetConnectionCertsExecute(r ApiGetConnectionCertsRequest) (*ConnectionCerts, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -693,9 +749,23 @@ func (a *SpIdpConnectionsAPIService) GetConnections(ctx context.Context) ApiGetC
 // Execute executes the request
 //
 //	@return IdpConnections
-//
-// example haha
 func (a *SpIdpConnectionsAPIService) GetConnectionsExecute(r ApiGetConnectionsRequest) (*IdpConnections, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdpConnections
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetConnectionsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpIdpConnectionsAPIService) internalGetConnectionsExecute(r ApiGetConnectionsRequest) (*IdpConnections, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -818,9 +888,23 @@ func (a *SpIdpConnectionsAPIService) GetIdpConnectionSigningSettings(ctx context
 // Execute executes the request
 //
 //	@return SigningSettings
-//
-// example haha
 func (a *SpIdpConnectionsAPIService) GetIdpConnectionSigningSettingsExecute(r ApiGetIdpConnectionSigningSettingsRequest) (*SigningSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SigningSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetIdpConnectionSigningSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpIdpConnectionsAPIService) internalGetIdpConnectionSigningSettingsExecute(r ApiGetIdpConnectionSigningSettingsRequest) (*SigningSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -932,9 +1016,23 @@ func (a *SpIdpConnectionsAPIService) GetIdpConnectionsDecryptionKeys(ctx context
 // Execute executes the request
 //
 //	@return DecryptionKeys
-//
-// example haha
 func (a *SpIdpConnectionsAPIService) GetIdpConnectionsDecryptionKeysExecute(r ApiGetIdpConnectionsDecryptionKeysRequest) (*DecryptionKeys, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *DecryptionKeys
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetIdpConnectionsDecryptionKeysExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpIdpConnectionsAPIService) internalGetIdpConnectionsDecryptionKeysExecute(r ApiGetIdpConnectionsDecryptionKeysRequest) (*DecryptionKeys, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1062,9 +1160,23 @@ func (a *SpIdpConnectionsAPIService) UpdateConnection(ctx context.Context, id st
 // Execute executes the request
 //
 //	@return IdpConnection
-//
-// example haha
 func (a *SpIdpConnectionsAPIService) UpdateConnectionExecute(r ApiUpdateConnectionRequest) (*IdpConnection, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdpConnection
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateConnectionExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpIdpConnectionsAPIService) internalUpdateConnectionExecute(r ApiUpdateConnectionRequest) (*IdpConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1202,9 +1314,23 @@ func (a *SpIdpConnectionsAPIService) UpdateConnectionCerts(ctx context.Context, 
 // Execute executes the request
 //
 //	@return ConnectionCerts
-//
-// example haha
 func (a *SpIdpConnectionsAPIService) UpdateConnectionCertsExecute(r ApiUpdateConnectionCertsRequest) (*ConnectionCerts, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ConnectionCerts
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateConnectionCertsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpIdpConnectionsAPIService) internalUpdateConnectionCertsExecute(r ApiUpdateConnectionCertsRequest) (*ConnectionCerts, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1339,9 +1465,23 @@ func (a *SpIdpConnectionsAPIService) UpdateIdpConnectionSigningSettings(ctx cont
 // Execute executes the request
 //
 //	@return SigningSettings
-//
-// example haha
 func (a *SpIdpConnectionsAPIService) UpdateIdpConnectionSigningSettingsExecute(r ApiUpdateIdpConnectionSigningSettingsRequest) (*SigningSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SigningSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateIdpConnectionSigningSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpIdpConnectionsAPIService) internalUpdateIdpConnectionSigningSettingsExecute(r ApiUpdateIdpConnectionSigningSettingsRequest) (*SigningSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1476,9 +1616,23 @@ func (a *SpIdpConnectionsAPIService) UpdateIdpConnectionsDecryptionKeys(ctx cont
 // Execute executes the request
 //
 //	@return DecryptionKeys
-//
-// example haha
 func (a *SpIdpConnectionsAPIService) UpdateIdpConnectionsDecryptionKeysExecute(r ApiUpdateIdpConnectionsDecryptionKeysRequest) (*DecryptionKeys, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *DecryptionKeys
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateIdpConnectionsDecryptionKeysExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpIdpConnectionsAPIService) internalUpdateIdpConnectionsDecryptionKeysExecute(r ApiUpdateIdpConnectionsDecryptionKeysRequest) (*DecryptionKeys, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

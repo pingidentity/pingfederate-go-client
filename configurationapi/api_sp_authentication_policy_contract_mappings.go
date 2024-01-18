@@ -61,9 +61,23 @@ func (a *SpAuthenticationPolicyContractMappingsAPIService) CreateApcToSpAdapterM
 // Execute executes the request
 //
 //	@return ApcToSpAdapterMapping
-//
-// example haha
 func (a *SpAuthenticationPolicyContractMappingsAPIService) CreateApcToSpAdapterMappingExecute(r ApiCreateApcToSpAdapterMappingRequest) (*ApcToSpAdapterMapping, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ApcToSpAdapterMapping
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateApcToSpAdapterMappingExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpAuthenticationPolicyContractMappingsAPIService) internalCreateApcToSpAdapterMappingExecute(r ApiCreateApcToSpAdapterMappingRequest) (*ApcToSpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -282,9 +296,23 @@ func (a *SpAuthenticationPolicyContractMappingsAPIService) GetApcToSpAdapterMapp
 // Execute executes the request
 //
 //	@return ApcToSpAdapterMapping
-//
-// example haha
 func (a *SpAuthenticationPolicyContractMappingsAPIService) GetApcToSpAdapterMappingByIdExecute(r ApiGetApcToSpAdapterMappingByIdRequest) (*ApcToSpAdapterMapping, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ApcToSpAdapterMapping
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetApcToSpAdapterMappingByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpAuthenticationPolicyContractMappingsAPIService) internalGetApcToSpAdapterMappingByIdExecute(r ApiGetApcToSpAdapterMappingByIdRequest) (*ApcToSpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -393,9 +421,23 @@ func (a *SpAuthenticationPolicyContractMappingsAPIService) GetApcToSpAdapterMapp
 // Execute executes the request
 //
 //	@return ApcToSpAdapterMappings
-//
-// example haha
 func (a *SpAuthenticationPolicyContractMappingsAPIService) GetApcToSpAdapterMappingsExecute(r ApiGetApcToSpAdapterMappingsRequest) (*ApcToSpAdapterMappings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ApcToSpAdapterMappings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetApcToSpAdapterMappingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpAuthenticationPolicyContractMappingsAPIService) internalGetApcToSpAdapterMappingsExecute(r ApiGetApcToSpAdapterMappingsRequest) (*ApcToSpAdapterMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -510,9 +552,23 @@ func (a *SpAuthenticationPolicyContractMappingsAPIService) UpdateApcToSpAdapterM
 // Execute executes the request
 //
 //	@return ApcToSpAdapterMapping
-//
-// example haha
 func (a *SpAuthenticationPolicyContractMappingsAPIService) UpdateApcToSpAdapterMappingByIdExecute(r ApiUpdateApcToSpAdapterMappingByIdRequest) (*ApcToSpAdapterMapping, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ApcToSpAdapterMapping
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateApcToSpAdapterMappingByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpAuthenticationPolicyContractMappingsAPIService) internalUpdateApcToSpAdapterMappingByIdExecute(r ApiUpdateApcToSpAdapterMappingByIdRequest) (*ApcToSpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

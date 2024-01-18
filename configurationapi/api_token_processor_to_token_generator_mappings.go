@@ -61,9 +61,23 @@ func (a *TokenProcessorToTokenGeneratorMappingsAPIService) CreateTokenToTokenMap
 // Execute executes the request
 //
 //	@return TokenToTokenMapping
-//
-// example haha
 func (a *TokenProcessorToTokenGeneratorMappingsAPIService) CreateTokenToTokenMappingExecute(r ApiCreateTokenToTokenMappingRequest) (*TokenToTokenMapping, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenToTokenMapping
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateTokenToTokenMappingExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *TokenProcessorToTokenGeneratorMappingsAPIService) internalCreateTokenToTokenMappingExecute(r ApiCreateTokenToTokenMappingRequest) (*TokenToTokenMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -282,9 +296,23 @@ func (a *TokenProcessorToTokenGeneratorMappingsAPIService) GetTokenToTokenMappin
 // Execute executes the request
 //
 //	@return TokenToTokenMapping
-//
-// example haha
 func (a *TokenProcessorToTokenGeneratorMappingsAPIService) GetTokenToTokenMappingByIdExecute(r ApiGetTokenToTokenMappingByIdRequest) (*TokenToTokenMapping, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenToTokenMapping
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetTokenToTokenMappingByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *TokenProcessorToTokenGeneratorMappingsAPIService) internalGetTokenToTokenMappingByIdExecute(r ApiGetTokenToTokenMappingByIdRequest) (*TokenToTokenMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -393,9 +421,23 @@ func (a *TokenProcessorToTokenGeneratorMappingsAPIService) GetTokenToTokenMappin
 // Execute executes the request
 //
 //	@return TokenToTokenMappings
-//
-// example haha
 func (a *TokenProcessorToTokenGeneratorMappingsAPIService) GetTokenToTokenMappingsExecute(r ApiGetTokenToTokenMappingsRequest) (*TokenToTokenMappings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenToTokenMappings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetTokenToTokenMappingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *TokenProcessorToTokenGeneratorMappingsAPIService) internalGetTokenToTokenMappingsExecute(r ApiGetTokenToTokenMappingsRequest) (*TokenToTokenMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -510,9 +552,23 @@ func (a *TokenProcessorToTokenGeneratorMappingsAPIService) UpdateTokenToTokenMap
 // Execute executes the request
 //
 //	@return TokenToTokenMapping
-//
-// example haha
 func (a *TokenProcessorToTokenGeneratorMappingsAPIService) UpdateTokenToTokenMappingByIdExecute(r ApiUpdateTokenToTokenMappingByIdRequest) (*TokenToTokenMapping, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenToTokenMapping
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateTokenToTokenMappingByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *TokenProcessorToTokenGeneratorMappingsAPIService) internalUpdateTokenToTokenMappingByIdExecute(r ApiUpdateTokenToTokenMappingByIdRequest) (*TokenToTokenMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

@@ -46,9 +46,23 @@ func (a *ProtocolMetadataAPIService) GetLifetimeSettings(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return MetadataLifetimeSettings
-//
-// example haha
 func (a *ProtocolMetadataAPIService) GetLifetimeSettingsExecute(r ApiGetLifetimeSettingsRequest) (*MetadataLifetimeSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *MetadataLifetimeSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetLifetimeSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ProtocolMetadataAPIService) internalGetLifetimeSettingsExecute(r ApiGetLifetimeSettingsRequest) (*MetadataLifetimeSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -146,9 +160,23 @@ func (a *ProtocolMetadataAPIService) GetSigningSettings(ctx context.Context) Api
 // Execute executes the request
 //
 //	@return MetadataSigningSettings
-//
-// example haha
 func (a *ProtocolMetadataAPIService) GetSigningSettingsExecute(r ApiGetSigningSettingsRequest) (*MetadataSigningSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *MetadataSigningSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSigningSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ProtocolMetadataAPIService) internalGetSigningSettingsExecute(r ApiGetSigningSettingsRequest) (*MetadataSigningSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -253,9 +281,23 @@ func (a *ProtocolMetadataAPIService) UpdateLifetimeSettings(ctx context.Context)
 // Execute executes the request
 //
 //	@return MetadataLifetimeSettings
-//
-// example haha
 func (a *ProtocolMetadataAPIService) UpdateLifetimeSettingsExecute(r ApiUpdateLifetimeSettingsRequest) (*MetadataLifetimeSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *MetadataLifetimeSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateLifetimeSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ProtocolMetadataAPIService) internalUpdateLifetimeSettingsExecute(r ApiUpdateLifetimeSettingsRequest) (*MetadataLifetimeSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -374,9 +416,23 @@ func (a *ProtocolMetadataAPIService) UpdateSigningSettings(ctx context.Context) 
 // Execute executes the request
 //
 //	@return MetadataSigningSettings
-//
-// example haha
 func (a *ProtocolMetadataAPIService) UpdateSigningSettingsExecute(r ApiUpdateSigningSettingsRequest) (*MetadataSigningSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *MetadataSigningSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateSigningSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ProtocolMetadataAPIService) internalUpdateSigningSettingsExecute(r ApiUpdateSigningSettingsRequest) (*MetadataSigningSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

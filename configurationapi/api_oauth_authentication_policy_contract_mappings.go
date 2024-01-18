@@ -63,9 +63,23 @@ func (a *OauthAuthenticationPolicyContractMappingsAPIService) CreateApcMapping(c
 // Execute executes the request
 //
 //	@return ApcToPersistentGrantMapping
-//
-// example haha
 func (a *OauthAuthenticationPolicyContractMappingsAPIService) CreateApcMappingExecute(r ApiCreateApcMappingRequest) (*ApcToPersistentGrantMapping, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ApcToPersistentGrantMapping
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateApcMappingExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAuthenticationPolicyContractMappingsAPIService) internalCreateApcMappingExecute(r ApiCreateApcMappingRequest) (*ApcToPersistentGrantMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -284,9 +298,23 @@ func (a *OauthAuthenticationPolicyContractMappingsAPIService) GetApcMapping(ctx 
 // Execute executes the request
 //
 //	@return ApcToPersistentGrantMapping
-//
-// example haha
 func (a *OauthAuthenticationPolicyContractMappingsAPIService) GetApcMappingExecute(r ApiGetApcMappingRequest) (*ApcToPersistentGrantMapping, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ApcToPersistentGrantMapping
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetApcMappingExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAuthenticationPolicyContractMappingsAPIService) internalGetApcMappingExecute(r ApiGetApcMappingRequest) (*ApcToPersistentGrantMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -395,9 +423,23 @@ func (a *OauthAuthenticationPolicyContractMappingsAPIService) GetApcMappings(ctx
 // Execute executes the request
 //
 //	@return ApcToPersistentGrantMappings
-//
-// example haha
 func (a *OauthAuthenticationPolicyContractMappingsAPIService) GetApcMappingsExecute(r ApiGetApcMappingsRequest) (*ApcToPersistentGrantMappings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ApcToPersistentGrantMappings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetApcMappingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAuthenticationPolicyContractMappingsAPIService) internalGetApcMappingsExecute(r ApiGetApcMappingsRequest) (*ApcToPersistentGrantMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -512,9 +554,23 @@ func (a *OauthAuthenticationPolicyContractMappingsAPIService) UpdateApcMapping(c
 // Execute executes the request
 //
 //	@return ApcToPersistentGrantMapping
-//
-// example haha
 func (a *OauthAuthenticationPolicyContractMappingsAPIService) UpdateApcMappingExecute(r ApiUpdateApcMappingRequest) (*ApcToPersistentGrantMapping, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ApcToPersistentGrantMapping
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateApcMappingExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAuthenticationPolicyContractMappingsAPIService) internalUpdateApcMappingExecute(r ApiUpdateApcMappingRequest) (*ApcToPersistentGrantMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

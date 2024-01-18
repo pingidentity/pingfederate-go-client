@@ -54,9 +54,23 @@ func (a *OauthClientRegistrationPoliciesAPIService) CreateDynamicClientRegistrat
 // Execute executes the request
 //
 //	@return ClientRegistrationPolicy
-//
-// example haha
 func (a *OauthClientRegistrationPoliciesAPIService) CreateDynamicClientRegistrationPolicyExecute(r ApiCreateDynamicClientRegistrationPolicyRequest) (*ClientRegistrationPolicy, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ClientRegistrationPolicy
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateDynamicClientRegistrationPolicyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthClientRegistrationPoliciesAPIService) internalCreateDynamicClientRegistrationPolicyExecute(r ApiCreateDynamicClientRegistrationPolicyRequest) (*ClientRegistrationPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -272,9 +286,23 @@ func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistration
 // Execute executes the request
 //
 //	@return ClientRegistrationPolicyDescriptor
-//
-// example haha
 func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistrationDescriptorExecute(r ApiGetDynamicClientRegistrationDescriptorRequest) (*ClientRegistrationPolicyDescriptor, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ClientRegistrationPolicyDescriptor
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetDynamicClientRegistrationDescriptorExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthClientRegistrationPoliciesAPIService) internalGetDynamicClientRegistrationDescriptorExecute(r ApiGetDynamicClientRegistrationDescriptorRequest) (*ClientRegistrationPolicyDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -383,9 +411,23 @@ func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistration
 // Execute executes the request
 //
 //	@return ClientRegistrationPolicyDescriptors
-//
-// example haha
 func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistrationDescriptorsExecute(r ApiGetDynamicClientRegistrationDescriptorsRequest) (*ClientRegistrationPolicyDescriptors, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ClientRegistrationPolicyDescriptors
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetDynamicClientRegistrationDescriptorsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthClientRegistrationPoliciesAPIService) internalGetDynamicClientRegistrationDescriptorsExecute(r ApiGetDynamicClientRegistrationDescriptorsRequest) (*ClientRegistrationPolicyDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -483,9 +525,23 @@ func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistration
 // Execute executes the request
 //
 //	@return ClientRegistrationPolicies
-//
-// example haha
 func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistrationPoliciesExecute(r ApiGetDynamicClientRegistrationPoliciesRequest) (*ClientRegistrationPolicies, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ClientRegistrationPolicies
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetDynamicClientRegistrationPoliciesExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthClientRegistrationPoliciesAPIService) internalGetDynamicClientRegistrationPoliciesExecute(r ApiGetDynamicClientRegistrationPoliciesRequest) (*ClientRegistrationPolicies, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -586,9 +642,23 @@ func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistration
 // Execute executes the request
 //
 //	@return ClientRegistrationPolicy
-//
-// example haha
 func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistrationPolicyExecute(r ApiGetDynamicClientRegistrationPolicyRequest) (*ClientRegistrationPolicy, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ClientRegistrationPolicy
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetDynamicClientRegistrationPolicyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthClientRegistrationPoliciesAPIService) internalGetDynamicClientRegistrationPolicyExecute(r ApiGetDynamicClientRegistrationPolicyRequest) (*ClientRegistrationPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -707,9 +777,23 @@ func (a *OauthClientRegistrationPoliciesAPIService) UpdateDynamicClientRegistrat
 // Execute executes the request
 //
 //	@return ClientRegistrationPolicy
-//
-// example haha
 func (a *OauthClientRegistrationPoliciesAPIService) UpdateDynamicClientRegistrationPolicyExecute(r ApiUpdateDynamicClientRegistrationPolicyRequest) (*ClientRegistrationPolicy, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ClientRegistrationPolicy
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateDynamicClientRegistrationPolicyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthClientRegistrationPoliciesAPIService) internalUpdateDynamicClientRegistrationPolicyExecute(r ApiUpdateDynamicClientRegistrationPolicyRequest) (*ClientRegistrationPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

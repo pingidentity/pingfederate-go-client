@@ -50,9 +50,23 @@ func (a *IdpConnectorsAPIService) GetIdpConnectorDescriptorById(ctx context.Cont
 // Execute executes the request
 //
 //	@return SaasPluginDescriptor
-//
-// example haha
 func (a *IdpConnectorsAPIService) GetIdpConnectorDescriptorByIdExecute(r ApiGetIdpConnectorDescriptorByIdRequest) (*SaasPluginDescriptor, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SaasPluginDescriptor
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetIdpConnectorDescriptorByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpConnectorsAPIService) internalGetIdpConnectorDescriptorByIdExecute(r ApiGetIdpConnectorDescriptorByIdRequest) (*SaasPluginDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -151,9 +165,23 @@ func (a *IdpConnectorsAPIService) GetIdpConnectorDescriptors(ctx context.Context
 // Execute executes the request
 //
 //	@return SaasPluginDescriptors
-//
-// example haha
 func (a *IdpConnectorsAPIService) GetIdpConnectorDescriptorsExecute(r ApiGetIdpConnectorDescriptorsRequest) (*SaasPluginDescriptors, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SaasPluginDescriptors
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetIdpConnectorDescriptorsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpConnectorsAPIService) internalGetIdpConnectorDescriptorsExecute(r ApiGetIdpConnectorDescriptorsRequest) (*SaasPluginDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}

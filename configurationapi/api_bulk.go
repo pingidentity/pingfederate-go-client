@@ -55,9 +55,23 @@ func (a *BulkAPIService) ExportConfiguration(ctx context.Context) ApiExportConfi
 // Execute executes the request
 //
 //	@return BulkConfig
-//
-// example haha
 func (a *BulkAPIService) ExportConfigurationExecute(r ApiExportConfigurationRequest) (*BulkConfig, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *BulkConfig
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalExportConfigurationExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *BulkAPIService) internalExportConfigurationExecute(r ApiExportConfigurationRequest) (*BulkConfig, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}

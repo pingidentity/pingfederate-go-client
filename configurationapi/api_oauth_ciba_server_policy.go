@@ -63,9 +63,23 @@ func (a *OauthCibaServerPolicyAPIService) CreateCibaServerPolicy(ctx context.Con
 // Execute executes the request
 //
 //	@return RequestPolicy
-//
-// example haha
 func (a *OauthCibaServerPolicyAPIService) CreateCibaServerPolicyExecute(r ApiCreateCibaServerPolicyRequest) (*RequestPolicy, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *RequestPolicy
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateCibaServerPolicyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthCibaServerPolicyAPIService) internalCreateCibaServerPolicyExecute(r ApiCreateCibaServerPolicyRequest) (*RequestPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -294,9 +308,23 @@ func (a *OauthCibaServerPolicyAPIService) GetCibaServerPolicies(ctx context.Cont
 // Execute executes the request
 //
 //	@return RequestPolicies
-//
-// example haha
 func (a *OauthCibaServerPolicyAPIService) GetCibaServerPoliciesExecute(r ApiGetCibaServerPoliciesRequest) (*RequestPolicies, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *RequestPolicies
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetCibaServerPoliciesExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthCibaServerPolicyAPIService) internalGetCibaServerPoliciesExecute(r ApiGetCibaServerPoliciesRequest) (*RequestPolicies, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -399,9 +427,23 @@ func (a *OauthCibaServerPolicyAPIService) GetCibaServerPolicyById(ctx context.Co
 // Execute executes the request
 //
 //	@return RequestPolicy
-//
-// example haha
 func (a *OauthCibaServerPolicyAPIService) GetCibaServerPolicyByIdExecute(r ApiGetCibaServerPolicyByIdRequest) (*RequestPolicy, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *RequestPolicy
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetCibaServerPolicyByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthCibaServerPolicyAPIService) internalGetCibaServerPolicyByIdExecute(r ApiGetCibaServerPolicyByIdRequest) (*RequestPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -510,9 +552,23 @@ func (a *OauthCibaServerPolicyAPIService) GetCibaServerPolicySettings(ctx contex
 // Execute executes the request
 //
 //	@return CibaServerPolicySettings
-//
-// example haha
 func (a *OauthCibaServerPolicyAPIService) GetCibaServerPolicySettingsExecute(r ApiGetCibaServerPolicySettingsRequest) (*CibaServerPolicySettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *CibaServerPolicySettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetCibaServerPolicySettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthCibaServerPolicyAPIService) internalGetCibaServerPolicySettingsExecute(r ApiGetCibaServerPolicySettingsRequest) (*CibaServerPolicySettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -629,9 +685,23 @@ func (a *OauthCibaServerPolicyAPIService) UpdateCibaServerPolicy(ctx context.Con
 // Execute executes the request
 //
 //	@return RequestPolicy
-//
-// example haha
 func (a *OauthCibaServerPolicyAPIService) UpdateCibaServerPolicyExecute(r ApiUpdateCibaServerPolicyRequest) (*RequestPolicy, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *RequestPolicy
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateCibaServerPolicyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthCibaServerPolicyAPIService) internalUpdateCibaServerPolicyExecute(r ApiUpdateCibaServerPolicyRequest) (*RequestPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -773,9 +843,23 @@ func (a *OauthCibaServerPolicyAPIService) UpdateCibaServerPolicySettings(ctx con
 // Execute executes the request
 //
 //	@return CibaServerPolicySettings
-//
-// example haha
 func (a *OauthCibaServerPolicyAPIService) UpdateCibaServerPolicySettingsExecute(r ApiUpdateCibaServerPolicySettingsRequest) (*CibaServerPolicySettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *CibaServerPolicySettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateCibaServerPolicySettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthCibaServerPolicyAPIService) internalUpdateCibaServerPolicySettingsExecute(r ApiUpdateCibaServerPolicySettingsRequest) (*CibaServerPolicySettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

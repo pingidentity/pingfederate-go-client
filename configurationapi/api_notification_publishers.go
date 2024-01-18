@@ -54,9 +54,23 @@ func (a *NotificationPublishersAPIService) CreateNotificationPublisher(ctx conte
 // Execute executes the request
 //
 //	@return NotificationPublisher
-//
-// example haha
 func (a *NotificationPublishersAPIService) CreateNotificationPublisherExecute(r ApiCreateNotificationPublisherRequest) (*NotificationPublisher, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *NotificationPublisher
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateNotificationPublisherExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *NotificationPublishersAPIService) internalCreateNotificationPublisherExecute(r ApiCreateNotificationPublisherRequest) (*NotificationPublisher, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -272,9 +286,23 @@ func (a *NotificationPublishersAPIService) GetNotificationPublisher(ctx context.
 // Execute executes the request
 //
 //	@return NotificationPublisher
-//
-// example haha
 func (a *NotificationPublishersAPIService) GetNotificationPublisherExecute(r ApiGetNotificationPublisherRequest) (*NotificationPublisher, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *NotificationPublisher
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetNotificationPublisherExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *NotificationPublishersAPIService) internalGetNotificationPublisherExecute(r ApiGetNotificationPublisherRequest) (*NotificationPublisher, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -386,9 +414,23 @@ func (a *NotificationPublishersAPIService) GetNotificationPublisherActions(ctx c
 // Execute executes the request
 //
 //	@return Actions
-//
-// example haha
 func (a *NotificationPublishersAPIService) GetNotificationPublisherActionsExecute(r ApiGetNotificationPublisherActionsRequest) (*Actions, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *Actions
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetNotificationPublisherActionsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *NotificationPublishersAPIService) internalGetNotificationPublisherActionsExecute(r ApiGetNotificationPublisherActionsRequest) (*Actions, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -500,9 +542,23 @@ func (a *NotificationPublishersAPIService) GetNotificationPublisherPluginDescrip
 // Execute executes the request
 //
 //	@return NotificationPublisherDescriptor
-//
-// example haha
 func (a *NotificationPublishersAPIService) GetNotificationPublisherPluginDescriptorExecute(r ApiGetNotificationPublisherPluginDescriptorRequest) (*NotificationPublisherDescriptor, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *NotificationPublisherDescriptor
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetNotificationPublisherPluginDescriptorExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *NotificationPublishersAPIService) internalGetNotificationPublisherPluginDescriptorExecute(r ApiGetNotificationPublisherPluginDescriptorRequest) (*NotificationPublisherDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -611,9 +667,23 @@ func (a *NotificationPublishersAPIService) GetNotificationPublisherPluginDescrip
 // Execute executes the request
 //
 //	@return NotificationPublisherDescriptors
-//
-// example haha
 func (a *NotificationPublishersAPIService) GetNotificationPublisherPluginDescriptorsExecute(r ApiGetNotificationPublisherPluginDescriptorsRequest) (*NotificationPublisherDescriptors, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *NotificationPublisherDescriptors
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetNotificationPublisherPluginDescriptorsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *NotificationPublishersAPIService) internalGetNotificationPublisherPluginDescriptorsExecute(r ApiGetNotificationPublisherPluginDescriptorsRequest) (*NotificationPublisherDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -711,9 +781,23 @@ func (a *NotificationPublishersAPIService) GetNotificationPublishers(ctx context
 // Execute executes the request
 //
 //	@return NotificationPublishers
-//
-// example haha
 func (a *NotificationPublishersAPIService) GetNotificationPublishersExecute(r ApiGetNotificationPublishersRequest) (*NotificationPublishers, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *NotificationPublishers
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetNotificationPublishersExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *NotificationPublishersAPIService) internalGetNotificationPublishersExecute(r ApiGetNotificationPublishersRequest) (*NotificationPublishers, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -817,9 +901,23 @@ func (a *NotificationPublishersAPIService) GetNotificationPublishersAction(ctx c
 // Execute executes the request
 //
 //	@return Action
-//
-// example haha
 func (a *NotificationPublishersAPIService) GetNotificationPublishersActionExecute(r ApiGetNotificationPublishersActionRequest) (*Action, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *Action
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetNotificationPublishersActionExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *NotificationPublishersAPIService) internalGetNotificationPublishersActionExecute(r ApiGetNotificationPublishersActionRequest) (*Action, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -929,9 +1027,23 @@ func (a *NotificationPublishersAPIService) GetNotificationPublishersSettings(ctx
 // Execute executes the request
 //
 //	@return NotificationPublishersSettings
-//
-// example haha
 func (a *NotificationPublishersAPIService) GetNotificationPublishersSettingsExecute(r ApiGetNotificationPublishersSettingsRequest) (*NotificationPublishersSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *NotificationPublishersSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetNotificationPublishersSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *NotificationPublishersAPIService) internalGetNotificationPublishersSettingsExecute(r ApiGetNotificationPublishersSettingsRequest) (*NotificationPublishersSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1042,9 +1154,23 @@ func (a *NotificationPublishersAPIService) InvokeNotificationPublishersActionWit
 // Execute executes the request
 //
 //	@return ActionResult
-//
-// example haha
 func (a *NotificationPublishersAPIService) InvokeNotificationPublishersActionWithOptionsExecute(r ApiInvokeNotificationPublishersActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ActionResult
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalInvokeNotificationPublishersActionWithOptionsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *NotificationPublishersAPIService) internalInvokeNotificationPublishersActionWithOptionsExecute(r ApiInvokeNotificationPublishersActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -1166,9 +1292,23 @@ func (a *NotificationPublishersAPIService) UpdateNotificationPublisher(ctx conte
 // Execute executes the request
 //
 //	@return NotificationPublisher
-//
-// example haha
 func (a *NotificationPublishersAPIService) UpdateNotificationPublisherExecute(r ApiUpdateNotificationPublisherRequest) (*NotificationPublisher, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *NotificationPublisher
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateNotificationPublisherExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *NotificationPublishersAPIService) internalUpdateNotificationPublisherExecute(r ApiUpdateNotificationPublisherRequest) (*NotificationPublisher, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1299,9 +1439,23 @@ func (a *NotificationPublishersAPIService) UpdateNotificationPublishersSettings(
 // Execute executes the request
 //
 //	@return NotificationPublishersSettings
-//
-// example haha
 func (a *NotificationPublishersAPIService) UpdateNotificationPublishersSettingsExecute(r ApiUpdateNotificationPublishersSettingsRequest) (*NotificationPublishersSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *NotificationPublishersSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateNotificationPublishersSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *NotificationPublishersAPIService) internalUpdateNotificationPublishersSettingsExecute(r ApiUpdateNotificationPublishersSettingsRequest) (*NotificationPublishersSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

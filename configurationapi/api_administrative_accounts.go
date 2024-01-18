@@ -54,9 +54,23 @@ func (a *AdministrativeAccountsAPIService) AddAccount(ctx context.Context) ApiAd
 // Execute executes the request
 //
 //	@return AdministrativeAccount
-//
-// example haha
 func (a *AdministrativeAccountsAPIService) AddAccountExecute(r ApiAddAccountRequest) (*AdministrativeAccount, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AdministrativeAccount
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalAddAccountExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AdministrativeAccountsAPIService) internalAddAccountExecute(r ApiAddAccountRequest) (*AdministrativeAccount, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -187,9 +201,23 @@ func (a *AdministrativeAccountsAPIService) ChangePassword(ctx context.Context) A
 // Execute executes the request
 //
 //	@return UserCredentials
-//
-// example haha
 func (a *AdministrativeAccountsAPIService) ChangePasswordExecute(r ApiChangePasswordRequest) (*UserCredentials, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *UserCredentials
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalChangePasswordExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AdministrativeAccountsAPIService) internalChangePasswordExecute(r ApiChangePasswordRequest) (*UserCredentials, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -416,9 +444,23 @@ func (a *AdministrativeAccountsAPIService) GetAccount(ctx context.Context, usern
 // Execute executes the request
 //
 //	@return AdministrativeAccount
-//
-// example haha
 func (a *AdministrativeAccountsAPIService) GetAccountExecute(r ApiGetAccountRequest) (*AdministrativeAccount, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AdministrativeAccount
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetAccountExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AdministrativeAccountsAPIService) internalGetAccountExecute(r ApiGetAccountRequest) (*AdministrativeAccount, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -527,9 +569,23 @@ func (a *AdministrativeAccountsAPIService) GetAccounts(ctx context.Context) ApiG
 // Execute executes the request
 //
 //	@return AdministrativeAccounts
-//
-// example haha
 func (a *AdministrativeAccountsAPIService) GetAccountsExecute(r ApiGetAccountsRequest) (*AdministrativeAccounts, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AdministrativeAccounts
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetAccountsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AdministrativeAccountsAPIService) internalGetAccountsExecute(r ApiGetAccountsRequest) (*AdministrativeAccounts, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -647,9 +703,23 @@ func (a *AdministrativeAccountsAPIService) ResetPassword(ctx context.Context, us
 // Execute executes the request
 //
 //	@return UserCredentials
-//
-// example haha
 func (a *AdministrativeAccountsAPIService) ResetPasswordExecute(r ApiResetPasswordRequest) (*UserCredentials, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *UserCredentials
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalResetPasswordExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AdministrativeAccountsAPIService) internalResetPasswordExecute(r ApiResetPasswordRequest) (*UserCredentials, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -784,9 +854,23 @@ func (a *AdministrativeAccountsAPIService) UpdateAccount(ctx context.Context, us
 // Execute executes the request
 //
 //	@return AdministrativeAccount
-//
-// example haha
 func (a *AdministrativeAccountsAPIService) UpdateAccountExecute(r ApiUpdateAccountRequest) (*AdministrativeAccount, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AdministrativeAccount
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateAccountExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AdministrativeAccountsAPIService) internalUpdateAccountExecute(r ApiUpdateAccountRequest) (*AdministrativeAccount, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

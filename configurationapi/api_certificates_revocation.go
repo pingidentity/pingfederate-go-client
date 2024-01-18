@@ -151,9 +151,23 @@ func (a *CertificatesRevocationAPIService) GetOcspCertificateById(ctx context.Co
 // Execute executes the request
 //
 //	@return CertView
-//
-// example haha
 func (a *CertificatesRevocationAPIService) GetOcspCertificateByIdExecute(r ApiGetOcspCertificateByIdRequest) (*CertView, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *CertView
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOcspCertificateByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *CertificatesRevocationAPIService) internalGetOcspCertificateByIdExecute(r ApiGetOcspCertificateByIdRequest) (*CertView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -262,9 +276,23 @@ func (a *CertificatesRevocationAPIService) GetOcspCertificates(ctx context.Conte
 // Execute executes the request
 //
 //	@return CertViews
-//
-// example haha
 func (a *CertificatesRevocationAPIService) GetOcspCertificatesExecute(r ApiGetOcspCertificatesRequest) (*CertViews, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *CertViews
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOcspCertificatesExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *CertificatesRevocationAPIService) internalGetOcspCertificatesExecute(r ApiGetOcspCertificatesRequest) (*CertViews, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -362,9 +390,23 @@ func (a *CertificatesRevocationAPIService) GetRevocationSettings(ctx context.Con
 // Execute executes the request
 //
 //	@return CertificateRevocationSettings
-//
-// example haha
 func (a *CertificatesRevocationAPIService) GetRevocationSettingsExecute(r ApiGetRevocationSettingsRequest) (*CertificateRevocationSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *CertificateRevocationSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetRevocationSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *CertificatesRevocationAPIService) internalGetRevocationSettingsExecute(r ApiGetRevocationSettingsRequest) (*CertificateRevocationSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -469,9 +511,23 @@ func (a *CertificatesRevocationAPIService) ImportOcspCertificate(ctx context.Con
 // Execute executes the request
 //
 //	@return CertView
-//
-// example haha
 func (a *CertificatesRevocationAPIService) ImportOcspCertificateExecute(r ApiImportOcspCertificateRequest) (*CertView, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *CertView
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalImportOcspCertificateExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *CertificatesRevocationAPIService) internalImportOcspCertificateExecute(r ApiImportOcspCertificateRequest) (*CertView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -591,9 +647,23 @@ func (a *CertificatesRevocationAPIService) UpdateRevocationSettings(ctx context.
 // Execute executes the request
 //
 //	@return CertificateRevocationSettings
-//
-// example haha
 func (a *CertificatesRevocationAPIService) UpdateRevocationSettingsExecute(r ApiUpdateRevocationSettingsRequest) (*CertificateRevocationSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *CertificateRevocationSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateRevocationSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *CertificatesRevocationAPIService) internalUpdateRevocationSettingsExecute(r ApiUpdateRevocationSettingsRequest) (*CertificateRevocationSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

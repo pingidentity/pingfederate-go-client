@@ -56,9 +56,23 @@ func (a *MetadataUrlsAPIService) AddMetadataUrl(ctx context.Context) ApiAddMetad
 // Execute executes the request
 //
 //	@return MetadataUrl
-//
-// example haha
 func (a *MetadataUrlsAPIService) AddMetadataUrlExecute(r ApiAddMetadataUrlRequest) (*MetadataUrl, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *MetadataUrl
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalAddMetadataUrlExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *MetadataUrlsAPIService) internalAddMetadataUrlExecute(r ApiAddMetadataUrlRequest) (*MetadataUrl, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -289,9 +303,23 @@ func (a *MetadataUrlsAPIService) GetMetadataUrl(ctx context.Context, id string) 
 // Execute executes the request
 //
 //	@return MetadataUrl
-//
-// example haha
 func (a *MetadataUrlsAPIService) GetMetadataUrlExecute(r ApiGetMetadataUrlRequest) (*MetadataUrl, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *MetadataUrl
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetMetadataUrlExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *MetadataUrlsAPIService) internalGetMetadataUrlExecute(r ApiGetMetadataUrlRequest) (*MetadataUrl, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -400,9 +428,23 @@ func (a *MetadataUrlsAPIService) GetMetadataUrls(ctx context.Context) ApiGetMeta
 // Execute executes the request
 //
 //	@return MetadataUrls
-//
-// example haha
 func (a *MetadataUrlsAPIService) GetMetadataUrlsExecute(r ApiGetMetadataUrlsRequest) (*MetadataUrls, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *MetadataUrls
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetMetadataUrlsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *MetadataUrlsAPIService) internalGetMetadataUrlsExecute(r ApiGetMetadataUrlsRequest) (*MetadataUrls, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -512,9 +554,23 @@ func (a *MetadataUrlsAPIService) UpdateMetadataUrl(ctx context.Context, id strin
 // Execute executes the request
 //
 //	@return MetadataUrl
-//
-// example haha
 func (a *MetadataUrlsAPIService) UpdateMetadataUrlExecute(r ApiUpdateMetadataUrlRequest) (*MetadataUrl, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *MetadataUrl
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateMetadataUrlExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *MetadataUrlsAPIService) internalUpdateMetadataUrlExecute(r ApiUpdateMetadataUrlRequest) (*MetadataUrl, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

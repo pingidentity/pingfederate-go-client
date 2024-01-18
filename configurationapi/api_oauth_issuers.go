@@ -56,9 +56,23 @@ func (a *OauthIssuersAPIService) AddOauthIssuer(ctx context.Context) ApiAddOauth
 // Execute executes the request
 //
 //	@return Issuer
-//
-// example haha
 func (a *OauthIssuersAPIService) AddOauthIssuerExecute(r ApiAddOauthIssuerRequest) (*Issuer, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *Issuer
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalAddOauthIssuerExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthIssuersAPIService) internalAddOauthIssuerExecute(r ApiAddOauthIssuerRequest) (*Issuer, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -289,9 +303,23 @@ func (a *OauthIssuersAPIService) GetOauthIssuerById(ctx context.Context, id stri
 // Execute executes the request
 //
 //	@return Issuer
-//
-// example haha
 func (a *OauthIssuersAPIService) GetOauthIssuerByIdExecute(r ApiGetOauthIssuerByIdRequest) (*Issuer, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *Issuer
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOauthIssuerByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthIssuersAPIService) internalGetOauthIssuerByIdExecute(r ApiGetOauthIssuerByIdRequest) (*Issuer, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -400,9 +428,23 @@ func (a *OauthIssuersAPIService) GetOauthIssuers(ctx context.Context) ApiGetOaut
 // Execute executes the request
 //
 //	@return Issuers
-//
-// example haha
 func (a *OauthIssuersAPIService) GetOauthIssuersExecute(r ApiGetOauthIssuersRequest) (*Issuers, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *Issuers
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOauthIssuersExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthIssuersAPIService) internalGetOauthIssuersExecute(r ApiGetOauthIssuersRequest) (*Issuers, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -512,9 +554,23 @@ func (a *OauthIssuersAPIService) UpdateOauthIssuer(ctx context.Context, id strin
 // Execute executes the request
 //
 //	@return Issuer
-//
-// example haha
 func (a *OauthIssuersAPIService) UpdateOauthIssuerExecute(r ApiUpdateOauthIssuerRequest) (*Issuer, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *Issuer
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateOauthIssuerExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthIssuersAPIService) internalUpdateOauthIssuerExecute(r ApiUpdateOauthIssuerRequest) (*Issuer, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

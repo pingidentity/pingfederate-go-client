@@ -63,9 +63,23 @@ func (a *OauthTokenExchangeGeneratorAPIService) CreateGroup(ctx context.Context)
 // Execute executes the request
 //
 //	@return TokenExchangeGeneratorGroup
-//
-// example haha
 func (a *OauthTokenExchangeGeneratorAPIService) CreateGroupExecute(r ApiCreateGroupRequest) (*TokenExchangeGeneratorGroup, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenExchangeGeneratorGroup
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateGroupExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthTokenExchangeGeneratorAPIService) internalCreateGroupExecute(r ApiCreateGroupRequest) (*TokenExchangeGeneratorGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -299,9 +313,23 @@ func (a *OauthTokenExchangeGeneratorAPIService) GetOauthTokenExchangeGroupById(c
 // Execute executes the request
 //
 //	@return TokenExchangeGeneratorGroup
-//
-// example haha
 func (a *OauthTokenExchangeGeneratorAPIService) GetOauthTokenExchangeGroupByIdExecute(r ApiGetOauthTokenExchangeGroupByIdRequest) (*TokenExchangeGeneratorGroup, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenExchangeGeneratorGroup
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOauthTokenExchangeGroupByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthTokenExchangeGeneratorAPIService) internalGetOauthTokenExchangeGroupByIdExecute(r ApiGetOauthTokenExchangeGroupByIdRequest) (*TokenExchangeGeneratorGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -410,9 +438,23 @@ func (a *OauthTokenExchangeGeneratorAPIService) GetOauthTokenExchangeGroups(ctx 
 // Execute executes the request
 //
 //	@return TokenExchangeGeneratorGroups
-//
-// example haha
 func (a *OauthTokenExchangeGeneratorAPIService) GetOauthTokenExchangeGroupsExecute(r ApiGetOauthTokenExchangeGroupsRequest) (*TokenExchangeGeneratorGroups, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenExchangeGeneratorGroups
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOauthTokenExchangeGroupsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthTokenExchangeGeneratorAPIService) internalGetOauthTokenExchangeGroupsExecute(r ApiGetOauthTokenExchangeGroupsRequest) (*TokenExchangeGeneratorGroups, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -510,9 +552,23 @@ func (a *OauthTokenExchangeGeneratorAPIService) GetOauthTokenExchangeSettings(ct
 // Execute executes the request
 //
 //	@return TokenExchangeGeneratorSettings
-//
-// example haha
 func (a *OauthTokenExchangeGeneratorAPIService) GetOauthTokenExchangeSettingsExecute(r ApiGetOauthTokenExchangeSettingsRequest) (*TokenExchangeGeneratorSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenExchangeGeneratorSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOauthTokenExchangeSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthTokenExchangeGeneratorAPIService) internalGetOauthTokenExchangeSettingsExecute(r ApiGetOauthTokenExchangeSettingsRequest) (*TokenExchangeGeneratorSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -629,9 +685,23 @@ func (a *OauthTokenExchangeGeneratorAPIService) UpdateOauthTokenExchangeGroup(ct
 // Execute executes the request
 //
 //	@return TokenExchangeGeneratorGroup
-//
-// example haha
 func (a *OauthTokenExchangeGeneratorAPIService) UpdateOauthTokenExchangeGroupExecute(r ApiUpdateOauthTokenExchangeGroupRequest) (*TokenExchangeGeneratorGroup, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenExchangeGeneratorGroup
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateOauthTokenExchangeGroupExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthTokenExchangeGeneratorAPIService) internalUpdateOauthTokenExchangeGroupExecute(r ApiUpdateOauthTokenExchangeGroupRequest) (*TokenExchangeGeneratorGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -773,9 +843,23 @@ func (a *OauthTokenExchangeGeneratorAPIService) UpdateOauthTokenExchangeSettings
 // Execute executes the request
 //
 //	@return TokenExchangeGeneratorSettings
-//
-// example haha
 func (a *OauthTokenExchangeGeneratorAPIService) UpdateOauthTokenExchangeSettingsExecute(r ApiUpdateOauthTokenExchangeSettingsRequest) (*TokenExchangeGeneratorSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenExchangeGeneratorSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateOauthTokenExchangeSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthTokenExchangeGeneratorAPIService) internalUpdateOauthTokenExchangeSettingsExecute(r ApiUpdateOauthTokenExchangeSettingsRequest) (*TokenExchangeGeneratorSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

@@ -63,9 +63,23 @@ func (a *OauthAccessTokenMappingsAPIService) CreateMapping(ctx context.Context) 
 // Execute executes the request
 //
 //	@return AccessTokenMapping
-//
-// example haha
 func (a *OauthAccessTokenMappingsAPIService) CreateMappingExecute(r ApiCreateMappingRequest) (*AccessTokenMapping, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AccessTokenMapping
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateMappingExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAccessTokenMappingsAPIService) internalCreateMappingExecute(r ApiCreateMappingRequest) (*AccessTokenMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -284,9 +298,23 @@ func (a *OauthAccessTokenMappingsAPIService) GetMapping(ctx context.Context, id 
 // Execute executes the request
 //
 //	@return AccessTokenMapping
-//
-// example haha
 func (a *OauthAccessTokenMappingsAPIService) GetMappingExecute(r ApiGetMappingRequest) (*AccessTokenMapping, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AccessTokenMapping
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetMappingExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAccessTokenMappingsAPIService) internalGetMappingExecute(r ApiGetMappingRequest) (*AccessTokenMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -512,9 +540,23 @@ func (a *OauthAccessTokenMappingsAPIService) UpdateMapping(ctx context.Context, 
 // Execute executes the request
 //
 //	@return AccessTokenMapping
-//
-// example haha
 func (a *OauthAccessTokenMappingsAPIService) UpdateMappingExecute(r ApiUpdateMappingRequest) (*AccessTokenMapping, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AccessTokenMapping
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateMappingExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAccessTokenMappingsAPIService) internalUpdateMappingExecute(r ApiUpdateMappingRequest) (*AccessTokenMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

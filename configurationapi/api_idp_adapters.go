@@ -63,9 +63,23 @@ func (a *IdpAdaptersAPIService) CreateIdpAdapter(ctx context.Context) ApiCreateI
 // Execute executes the request
 //
 //	@return IdpAdapter
-//
-// example haha
 func (a *IdpAdaptersAPIService) CreateIdpAdapterExecute(r ApiCreateIdpAdapterRequest) (*IdpAdapter, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdpAdapter
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateIdpAdapterExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpAdaptersAPIService) internalCreateIdpAdapterExecute(r ApiCreateIdpAdapterRequest) (*IdpAdapter, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -299,9 +313,23 @@ func (a *IdpAdaptersAPIService) GetIdpAdapter(ctx context.Context, id string) Ap
 // Execute executes the request
 //
 //	@return IdpAdapter
-//
-// example haha
 func (a *IdpAdaptersAPIService) GetIdpAdapterExecute(r ApiGetIdpAdapterRequest) (*IdpAdapter, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdpAdapter
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetIdpAdapterExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpAdaptersAPIService) internalGetIdpAdapterExecute(r ApiGetIdpAdapterRequest) (*IdpAdapter, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -410,9 +438,23 @@ func (a *IdpAdaptersAPIService) GetIdpAdapterDescriptors(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return IdpAdapterDescriptors
-//
-// example haha
 func (a *IdpAdaptersAPIService) GetIdpAdapterDescriptorsExecute(r ApiGetIdpAdapterDescriptorsRequest) (*IdpAdapterDescriptors, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdpAdapterDescriptors
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetIdpAdapterDescriptorsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpAdaptersAPIService) internalGetIdpAdapterDescriptorsExecute(r ApiGetIdpAdapterDescriptorsRequest) (*IdpAdapterDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -515,9 +557,23 @@ func (a *IdpAdaptersAPIService) GetIdpAdapterDescriptorsById(ctx context.Context
 // Execute executes the request
 //
 //	@return IdpAdapterDescriptor
-//
-// example haha
 func (a *IdpAdaptersAPIService) GetIdpAdapterDescriptorsByIdExecute(r ApiGetIdpAdapterDescriptorsByIdRequest) (*IdpAdapterDescriptor, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdpAdapterDescriptor
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetIdpAdapterDescriptorsByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpAdaptersAPIService) internalGetIdpAdapterDescriptorsByIdExecute(r ApiGetIdpAdapterDescriptorsByIdRequest) (*IdpAdapterDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -647,9 +703,23 @@ func (a *IdpAdaptersAPIService) GetIdpAdapters(ctx context.Context) ApiGetIdpAda
 // Execute executes the request
 //
 //	@return IdpAdapters
-//
-// example haha
 func (a *IdpAdaptersAPIService) GetIdpAdaptersExecute(r ApiGetIdpAdaptersRequest) (*IdpAdapters, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdpAdapters
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetIdpAdaptersExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpAdaptersAPIService) internalGetIdpAdaptersExecute(r ApiGetIdpAdaptersRequest) (*IdpAdapters, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -774,9 +844,23 @@ func (a *IdpAdaptersAPIService) GetIdpAdaptersActionById(ctx context.Context, id
 // Execute executes the request
 //
 //	@return Action
-//
-// example haha
 func (a *IdpAdaptersAPIService) GetIdpAdaptersActionByIdExecute(r ApiGetIdpAdaptersActionByIdRequest) (*Action, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *Action
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetIdpAdaptersActionByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpAdaptersAPIService) internalGetIdpAdaptersActionByIdExecute(r ApiGetIdpAdaptersActionByIdRequest) (*Action, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -891,9 +975,23 @@ func (a *IdpAdaptersAPIService) GetIdpAdaptersActions(ctx context.Context, id st
 // Execute executes the request
 //
 //	@return Actions
-//
-// example haha
 func (a *IdpAdaptersAPIService) GetIdpAdaptersActionsExecute(r ApiGetIdpAdaptersActionsRequest) (*Actions, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *Actions
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetIdpAdaptersActionsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpAdaptersAPIService) internalGetIdpAdaptersActionsExecute(r ApiGetIdpAdaptersActionsRequest) (*Actions, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1017,9 +1115,23 @@ func (a *IdpAdaptersAPIService) InvokeIdpAdaptersActionWithOptions(ctx context.C
 // Execute executes the request
 //
 //	@return ActionResult
-//
-// example haha
 func (a *IdpAdaptersAPIService) InvokeIdpAdaptersActionWithOptionsExecute(r ApiInvokeIdpAdaptersActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ActionResult
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalInvokeIdpAdaptersActionWithOptionsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpAdaptersAPIService) internalInvokeIdpAdaptersActionWithOptionsExecute(r ApiInvokeIdpAdaptersActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -1150,9 +1262,23 @@ func (a *IdpAdaptersAPIService) UpdateIdpAdapter(ctx context.Context, id string)
 // Execute executes the request
 //
 //	@return IdpAdapter
-//
-// example haha
 func (a *IdpAdaptersAPIService) UpdateIdpAdapterExecute(r ApiUpdateIdpAdapterRequest) (*IdpAdapter, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdpAdapter
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateIdpAdapterExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpAdaptersAPIService) internalUpdateIdpAdapterExecute(r ApiUpdateIdpAdapterRequest) (*IdpAdapter, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

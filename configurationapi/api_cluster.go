@@ -46,9 +46,23 @@ func (a *ClusterAPIService) GetClusterSettings(ctx context.Context) ApiGetCluste
 // Execute executes the request
 //
 //	@return ClusterSettings
-//
-// example haha
 func (a *ClusterAPIService) GetClusterSettingsExecute(r ApiGetClusterSettingsRequest) (*ClusterSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ClusterSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetClusterSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ClusterAPIService) internalGetClusterSettingsExecute(r ApiGetClusterSettingsRequest) (*ClusterSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -146,9 +160,23 @@ func (a *ClusterAPIService) GetClusterStatus(ctx context.Context) ApiGetClusterS
 // Execute executes the request
 //
 //	@return ClusterStatus
-//
-// example haha
 func (a *ClusterAPIService) GetClusterStatusExecute(r ApiGetClusterStatusRequest) (*ClusterStatus, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ClusterStatus
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetClusterStatusExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ClusterAPIService) internalGetClusterStatusExecute(r ApiGetClusterStatusRequest) (*ClusterStatus, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -246,9 +274,23 @@ func (a *ClusterAPIService) StartReplication(ctx context.Context) ApiStartReplic
 // Execute executes the request
 //
 //	@return ApiResult
-//
-// example haha
 func (a *ClusterAPIService) StartReplicationExecute(r ApiStartReplicationRequest) (*ApiResult, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ApiResult
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalStartReplicationExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ClusterAPIService) internalStartReplicationExecute(r ApiStartReplicationRequest) (*ApiResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -353,9 +395,23 @@ func (a *ClusterAPIService) UpdateClusterSettings(ctx context.Context) ApiUpdate
 // Execute executes the request
 //
 //	@return ClusterSettings
-//
-// example haha
 func (a *ClusterAPIService) UpdateClusterSettingsExecute(r ApiUpdateClusterSettingsRequest) (*ClusterSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ClusterSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateClusterSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ClusterAPIService) internalUpdateClusterSettingsExecute(r ApiUpdateClusterSettingsRequest) (*ClusterSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

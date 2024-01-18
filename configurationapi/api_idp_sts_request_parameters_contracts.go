@@ -54,9 +54,23 @@ func (a *IdpStsRequestParametersContractsAPIService) CreateStsRequestParamContra
 // Execute executes the request
 //
 //	@return StsRequestParametersContract
-//
-// example haha
 func (a *IdpStsRequestParametersContractsAPIService) CreateStsRequestParamContractExecute(r ApiCreateStsRequestParamContractRequest) (*StsRequestParametersContract, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *StsRequestParametersContract
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateStsRequestParamContractExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpStsRequestParametersContractsAPIService) internalCreateStsRequestParamContractExecute(r ApiCreateStsRequestParamContractRequest) (*StsRequestParametersContract, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -272,9 +286,23 @@ func (a *IdpStsRequestParametersContractsAPIService) GetStsRequestParamContractB
 // Execute executes the request
 //
 //	@return StsRequestParametersContract
-//
-// example haha
 func (a *IdpStsRequestParametersContractsAPIService) GetStsRequestParamContractByIdExecute(r ApiGetStsRequestParamContractByIdRequest) (*StsRequestParametersContract, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *StsRequestParametersContract
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetStsRequestParamContractByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpStsRequestParametersContractsAPIService) internalGetStsRequestParamContractByIdExecute(r ApiGetStsRequestParamContractByIdRequest) (*StsRequestParametersContract, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -383,9 +411,23 @@ func (a *IdpStsRequestParametersContractsAPIService) GetStsRequestParamContracts
 // Execute executes the request
 //
 //	@return StsRequestParametersContracts
-//
-// example haha
 func (a *IdpStsRequestParametersContractsAPIService) GetStsRequestParamContractsExecute(r ApiGetStsRequestParamContractsRequest) (*StsRequestParametersContracts, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *StsRequestParametersContracts
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetStsRequestParamContractsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpStsRequestParametersContractsAPIService) internalGetStsRequestParamContractsExecute(r ApiGetStsRequestParamContractsRequest) (*StsRequestParametersContracts, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -493,9 +535,23 @@ func (a *IdpStsRequestParametersContractsAPIService) UpdateStsRequestParamContra
 // Execute executes the request
 //
 //	@return StsRequestParametersContract
-//
-// example haha
 func (a *IdpStsRequestParametersContractsAPIService) UpdateStsRequestParamContractByIdExecute(r ApiUpdateStsRequestParamContractByIdRequest) (*StsRequestParametersContract, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *StsRequestParametersContract
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateStsRequestParamContractByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpStsRequestParametersContractsAPIService) internalUpdateStsRequestParamContractByIdExecute(r ApiUpdateStsRequestParamContractByIdRequest) (*StsRequestParametersContract, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

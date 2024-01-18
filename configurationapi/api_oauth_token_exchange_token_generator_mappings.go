@@ -61,9 +61,23 @@ func (a *OauthTokenExchangeTokenGeneratorMappingsAPIService) CreateTokenGenerato
 // Execute executes the request
 //
 //	@return ProcessorPolicyToGeneratorMapping
-//
-// example haha
 func (a *OauthTokenExchangeTokenGeneratorMappingsAPIService) CreateTokenGeneratorMappingExecute(r ApiCreateTokenGeneratorMappingRequest) (*ProcessorPolicyToGeneratorMapping, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ProcessorPolicyToGeneratorMapping
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateTokenGeneratorMappingExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthTokenExchangeTokenGeneratorMappingsAPIService) internalCreateTokenGeneratorMappingExecute(r ApiCreateTokenGeneratorMappingRequest) (*ProcessorPolicyToGeneratorMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -282,9 +296,23 @@ func (a *OauthTokenExchangeTokenGeneratorMappingsAPIService) GetTokenGeneratorMa
 // Execute executes the request
 //
 //	@return ProcessorPolicyToGeneratorMapping
-//
-// example haha
 func (a *OauthTokenExchangeTokenGeneratorMappingsAPIService) GetTokenGeneratorMappingByIdExecute(r ApiGetTokenGeneratorMappingByIdRequest) (*ProcessorPolicyToGeneratorMapping, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ProcessorPolicyToGeneratorMapping
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetTokenGeneratorMappingByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthTokenExchangeTokenGeneratorMappingsAPIService) internalGetTokenGeneratorMappingByIdExecute(r ApiGetTokenGeneratorMappingByIdRequest) (*ProcessorPolicyToGeneratorMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -393,9 +421,23 @@ func (a *OauthTokenExchangeTokenGeneratorMappingsAPIService) GetTokenGeneratorMa
 // Execute executes the request
 //
 //	@return ProcessorPolicyToGeneratorMappings
-//
-// example haha
 func (a *OauthTokenExchangeTokenGeneratorMappingsAPIService) GetTokenGeneratorMappingsExecute(r ApiGetTokenGeneratorMappingsRequest) (*ProcessorPolicyToGeneratorMappings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ProcessorPolicyToGeneratorMappings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetTokenGeneratorMappingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthTokenExchangeTokenGeneratorMappingsAPIService) internalGetTokenGeneratorMappingsExecute(r ApiGetTokenGeneratorMappingsRequest) (*ProcessorPolicyToGeneratorMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -510,9 +552,23 @@ func (a *OauthTokenExchangeTokenGeneratorMappingsAPIService) UpdateTokenGenerato
 // Execute executes the request
 //
 //	@return ProcessorPolicyToGeneratorMapping
-//
-// example haha
 func (a *OauthTokenExchangeTokenGeneratorMappingsAPIService) UpdateTokenGeneratorMappingByIdExecute(r ApiUpdateTokenGeneratorMappingByIdRequest) (*ProcessorPolicyToGeneratorMapping, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ProcessorPolicyToGeneratorMapping
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateTokenGeneratorMappingByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthTokenExchangeTokenGeneratorMappingsAPIService) internalUpdateTokenGeneratorMappingByIdExecute(r ApiUpdateTokenGeneratorMappingByIdRequest) (*ProcessorPolicyToGeneratorMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

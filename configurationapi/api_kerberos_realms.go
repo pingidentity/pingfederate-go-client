@@ -63,9 +63,23 @@ func (a *KerberosRealmsAPIService) CreateKerberosRealm(ctx context.Context) ApiC
 // Execute executes the request
 //
 //	@return KerberosRealm
-//
-// example haha
 func (a *KerberosRealmsAPIService) CreateKerberosRealmExecute(r ApiCreateKerberosRealmRequest) (*KerberosRealm, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *KerberosRealm
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateKerberosRealmExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KerberosRealmsAPIService) internalCreateKerberosRealmExecute(r ApiCreateKerberosRealmRequest) (*KerberosRealm, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -299,9 +313,23 @@ func (a *KerberosRealmsAPIService) GetKerberosRealm(ctx context.Context, id stri
 // Execute executes the request
 //
 //	@return KerberosRealm
-//
-// example haha
 func (a *KerberosRealmsAPIService) GetKerberosRealmExecute(r ApiGetKerberosRealmRequest) (*KerberosRealm, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *KerberosRealm
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetKerberosRealmExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KerberosRealmsAPIService) internalGetKerberosRealmExecute(r ApiGetKerberosRealmRequest) (*KerberosRealm, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -410,9 +438,23 @@ func (a *KerberosRealmsAPIService) GetKerberosRealmSettings(ctx context.Context)
 // Execute executes the request
 //
 //	@return KerberosRealmsSettings
-//
-// example haha
 func (a *KerberosRealmsAPIService) GetKerberosRealmSettingsExecute(r ApiGetKerberosRealmSettingsRequest) (*KerberosRealmsSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *KerberosRealmsSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetKerberosRealmSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KerberosRealmsAPIService) internalGetKerberosRealmSettingsExecute(r ApiGetKerberosRealmSettingsRequest) (*KerberosRealmsSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -510,9 +552,23 @@ func (a *KerberosRealmsAPIService) GetKerberosRealms(ctx context.Context) ApiGet
 // Execute executes the request
 //
 //	@return KerberosRealms
-//
-// example haha
 func (a *KerberosRealmsAPIService) GetKerberosRealmsExecute(r ApiGetKerberosRealmsRequest) (*KerberosRealms, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *KerberosRealms
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetKerberosRealmsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KerberosRealmsAPIService) internalGetKerberosRealmsExecute(r ApiGetKerberosRealmsRequest) (*KerberosRealms, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -629,9 +685,23 @@ func (a *KerberosRealmsAPIService) UpdateKerberosRealm(ctx context.Context, id s
 // Execute executes the request
 //
 //	@return KerberosRealm
-//
-// example haha
 func (a *KerberosRealmsAPIService) UpdateKerberosRealmExecute(r ApiUpdateKerberosRealmRequest) (*KerberosRealm, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *KerberosRealm
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateKerberosRealmExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KerberosRealmsAPIService) internalUpdateKerberosRealmExecute(r ApiUpdateKerberosRealmRequest) (*KerberosRealm, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -766,9 +836,23 @@ func (a *KerberosRealmsAPIService) UpdateKerberosRealmSettings(ctx context.Conte
 // Execute executes the request
 //
 //	@return KerberosRealmsSettings
-//
-// example haha
 func (a *KerberosRealmsAPIService) UpdateKerberosRealmSettingsExecute(r ApiUpdateKerberosRealmSettingsRequest) (*KerberosRealmsSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *KerberosRealmsSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateKerberosRealmSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KerberosRealmsAPIService) internalUpdateKerberosRealmSettingsExecute(r ApiUpdateKerberosRealmSettingsRequest) (*KerberosRealmsSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

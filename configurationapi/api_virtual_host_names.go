@@ -46,9 +46,23 @@ func (a *VirtualHostNamesAPIService) GetVirtualHostNamesSettings(ctx context.Con
 // Execute executes the request
 //
 //	@return VirtualHostNameSettings
-//
-// example haha
 func (a *VirtualHostNamesAPIService) GetVirtualHostNamesSettingsExecute(r ApiGetVirtualHostNamesSettingsRequest) (*VirtualHostNameSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *VirtualHostNameSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetVirtualHostNamesSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *VirtualHostNamesAPIService) internalGetVirtualHostNamesSettingsExecute(r ApiGetVirtualHostNamesSettingsRequest) (*VirtualHostNameSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -153,9 +167,23 @@ func (a *VirtualHostNamesAPIService) UpdateVirtualHostNamesSettings(ctx context.
 // Execute executes the request
 //
 //	@return VirtualHostNameSettings
-//
-// example haha
 func (a *VirtualHostNamesAPIService) UpdateVirtualHostNamesSettingsExecute(r ApiUpdateVirtualHostNamesSettingsRequest) (*VirtualHostNameSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *VirtualHostNameSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateVirtualHostNamesSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *VirtualHostNamesAPIService) internalUpdateVirtualHostNamesSettingsExecute(r ApiUpdateVirtualHostNamesSettingsRequest) (*VirtualHostNameSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

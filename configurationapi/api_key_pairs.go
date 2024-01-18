@@ -46,9 +46,23 @@ func (a *KeyPairsAPIService) GetKeyAlgorithms(ctx context.Context) ApiGetKeyAlgo
 // Execute executes the request
 //
 //	@return KeyAlgorithms
-//
-// example haha
 func (a *KeyPairsAPIService) GetKeyAlgorithmsExecute(r ApiGetKeyAlgorithmsRequest) (*KeyAlgorithms, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *KeyAlgorithms
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetKeyAlgorithmsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsAPIService) internalGetKeyAlgorithmsExecute(r ApiGetKeyAlgorithmsRequest) (*KeyAlgorithms, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}

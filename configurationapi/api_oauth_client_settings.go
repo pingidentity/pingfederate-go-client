@@ -46,9 +46,23 @@ func (a *OauthClientSettingsAPIService) GetOauthClientSettings(ctx context.Conte
 // Execute executes the request
 //
 //	@return ClientSettings
-//
-// example haha
 func (a *OauthClientSettingsAPIService) GetOauthClientSettingsExecute(r ApiGetOauthClientSettingsRequest) (*ClientSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ClientSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOauthClientSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthClientSettingsAPIService) internalGetOauthClientSettingsExecute(r ApiGetOauthClientSettingsRequest) (*ClientSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -153,9 +167,23 @@ func (a *OauthClientSettingsAPIService) UpdateOauthClientSettings(ctx context.Co
 // Execute executes the request
 //
 //	@return ClientSettings
-//
-// example haha
 func (a *OauthClientSettingsAPIService) UpdateOauthClientSettingsExecute(r ApiUpdateOauthClientSettingsRequest) (*ClientSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ClientSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateOauthClientSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthClientSettingsAPIService) internalUpdateOauthClientSettingsExecute(r ApiUpdateOauthClientSettingsRequest) (*ClientSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

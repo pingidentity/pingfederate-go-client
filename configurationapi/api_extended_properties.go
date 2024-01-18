@@ -46,9 +46,23 @@ func (a *ExtendedPropertiesAPIService) GetExtendedProperties(ctx context.Context
 // Execute executes the request
 //
 //	@return ExtendedProperties
-//
-// example haha
 func (a *ExtendedPropertiesAPIService) GetExtendedPropertiesExecute(r ApiGetExtendedPropertiesRequest) (*ExtendedProperties, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ExtendedProperties
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetExtendedPropertiesExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ExtendedPropertiesAPIService) internalGetExtendedPropertiesExecute(r ApiGetExtendedPropertiesRequest) (*ExtendedProperties, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -153,9 +167,23 @@ func (a *ExtendedPropertiesAPIService) UpdateExtendedProperties(ctx context.Cont
 // Execute executes the request
 //
 //	@return ExtendedProperties
-//
-// example haha
 func (a *ExtendedPropertiesAPIService) UpdateExtendedPropertiesExecute(r ApiUpdateExtendedPropertiesRequest) (*ExtendedProperties, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ExtendedProperties
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateExtendedPropertiesExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ExtendedPropertiesAPIService) internalUpdateExtendedPropertiesExecute(r ApiUpdateExtendedPropertiesRequest) (*ExtendedProperties, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

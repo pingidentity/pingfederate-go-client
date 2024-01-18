@@ -161,9 +161,23 @@ func (a *ConfigArchiveAPIService) ImportConfigArchive(ctx context.Context) ApiIm
 // Execute executes the request
 //
 //	@return ApiResult
-//
-// example haha
 func (a *ConfigArchiveAPIService) ImportConfigArchiveExecute(r ApiImportConfigArchiveRequest) (*ApiResult, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ApiResult
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalImportConfigArchiveExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ConfigArchiveAPIService) internalImportConfigArchiveExecute(r ApiImportConfigArchiveRequest) (*ApiResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
