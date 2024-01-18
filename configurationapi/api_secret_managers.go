@@ -56,6 +56,22 @@ func (a *SecretManagersAPIService) CreateSecretManager(ctx context.Context) ApiC
 //	@return SecretManager
 func (a *SecretManagersAPIService) CreateSecretManagerExecute(r ApiCreateSecretManagerRequest) (*SecretManager, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SecretManager
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateSecretManagerExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SecretManagersAPIService) internalCreateSecretManagerExecute(r ApiCreateSecretManagerRequest) (*SecretManager, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -272,6 +288,22 @@ func (a *SecretManagersAPIService) GetSecretManager(ctx context.Context, id stri
 //	@return SecretManager
 func (a *SecretManagersAPIService) GetSecretManagerExecute(r ApiGetSecretManagerRequest) (*SecretManager, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SecretManager
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSecretManagerExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SecretManagersAPIService) internalGetSecretManagerExecute(r ApiGetSecretManagerRequest) (*SecretManager, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -384,6 +416,22 @@ func (a *SecretManagersAPIService) GetSecretManagerPluginDescriptor(ctx context.
 //	@return SecretManagerDescriptor
 func (a *SecretManagersAPIService) GetSecretManagerPluginDescriptorExecute(r ApiGetSecretManagerPluginDescriptorRequest) (*SecretManagerDescriptor, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SecretManagerDescriptor
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSecretManagerPluginDescriptorExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SecretManagersAPIService) internalGetSecretManagerPluginDescriptorExecute(r ApiGetSecretManagerPluginDescriptorRequest) (*SecretManagerDescriptor, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -493,6 +541,22 @@ func (a *SecretManagersAPIService) GetSecretManagerPluginDescriptors(ctx context
 //	@return SecretManagerDescriptors
 func (a *SecretManagersAPIService) GetSecretManagerPluginDescriptorsExecute(r ApiGetSecretManagerPluginDescriptorsRequest) (*SecretManagerDescriptors, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SecretManagerDescriptors
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSecretManagerPluginDescriptorsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SecretManagersAPIService) internalGetSecretManagerPluginDescriptorsExecute(r ApiGetSecretManagerPluginDescriptorsRequest) (*SecretManagerDescriptors, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -590,6 +654,22 @@ func (a *SecretManagersAPIService) GetSecretManagers(ctx context.Context) ApiGet
 //
 //	@return SecretManagers
 func (a *SecretManagersAPIService) GetSecretManagersExecute(r ApiGetSecretManagersRequest) (*SecretManagers, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SecretManagers
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSecretManagersExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SecretManagersAPIService) internalGetSecretManagersExecute(r ApiGetSecretManagersRequest) (*SecretManagers, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -694,6 +774,22 @@ func (a *SecretManagersAPIService) GetSecretManagersAction(ctx context.Context, 
 //
 //	@return Action
 func (a *SecretManagersAPIService) GetSecretManagersActionExecute(r ApiGetSecretManagersActionRequest) (*Action, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *Action
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSecretManagersActionExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SecretManagersAPIService) internalGetSecretManagersActionExecute(r ApiGetSecretManagersActionRequest) (*Action, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -807,6 +903,22 @@ func (a *SecretManagersAPIService) GetSecretManagersActions(ctx context.Context,
 //
 //	@return Actions
 func (a *SecretManagersAPIService) GetSecretManagersActionsExecute(r ApiGetSecretManagersActionsRequest) (*Actions, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *Actions
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSecretManagersActionsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SecretManagersAPIService) internalGetSecretManagersActionsExecute(r ApiGetSecretManagersActionsRequest) (*Actions, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -932,6 +1044,22 @@ func (a *SecretManagersAPIService) InvokeSecretManagersActionWithOptions(ctx con
 //	@return ActionResult
 func (a *SecretManagersAPIService) InvokeSecretManagersActionWithOptionsExecute(r ApiInvokeSecretManagersActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ActionResult
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalInvokeSecretManagersActionWithOptionsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SecretManagersAPIService) internalInvokeSecretManagersActionWithOptionsExecute(r ApiInvokeSecretManagersActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -1053,6 +1181,22 @@ func (a *SecretManagersAPIService) UpdateSecretManager(ctx context.Context, id s
 //
 //	@return SecretManager
 func (a *SecretManagersAPIService) UpdateSecretManagerExecute(r ApiUpdateSecretManagerRequest) (*SecretManager, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SecretManager
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateSecretManagerExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SecretManagersAPIService) internalUpdateSecretManagerExecute(r ApiUpdateSecretManagerRequest) (*SecretManager, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

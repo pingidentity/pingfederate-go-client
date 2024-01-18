@@ -58,6 +58,22 @@ func (a *SpTokenGeneratorsAPIService) CreateTokenGenerator(ctx context.Context) 
 //	@return TokenGenerator
 func (a *SpTokenGeneratorsAPIService) CreateTokenGeneratorExecute(r ApiCreateTokenGeneratorRequest) (*TokenGenerator, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenGenerator
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateTokenGeneratorExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpTokenGeneratorsAPIService) internalCreateTokenGeneratorExecute(r ApiCreateTokenGeneratorRequest) (*TokenGenerator, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -289,6 +305,22 @@ func (a *SpTokenGeneratorsAPIService) GetTokenGenerator(ctx context.Context, id 
 //	@return TokenGenerator
 func (a *SpTokenGeneratorsAPIService) GetTokenGeneratorExecute(r ApiGetTokenGeneratorRequest) (*TokenGenerator, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenGenerator
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetTokenGeneratorExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpTokenGeneratorsAPIService) internalGetTokenGeneratorExecute(r ApiGetTokenGeneratorRequest) (*TokenGenerator, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -398,6 +430,22 @@ func (a *SpTokenGeneratorsAPIService) GetTokenGeneratorDescriptors(ctx context.C
 //	@return TokenGeneratorDescriptors
 func (a *SpTokenGeneratorsAPIService) GetTokenGeneratorDescriptorsExecute(r ApiGetTokenGeneratorDescriptorsRequest) (*TokenGeneratorDescriptors, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenGeneratorDescriptors
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetTokenGeneratorDescriptorsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpTokenGeneratorsAPIService) internalGetTokenGeneratorDescriptorsExecute(r ApiGetTokenGeneratorDescriptorsRequest) (*TokenGeneratorDescriptors, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -500,6 +548,22 @@ func (a *SpTokenGeneratorsAPIService) GetTokenGeneratorDescriptorsById(ctx conte
 //
 //	@return TokenGeneratorDescriptor
 func (a *SpTokenGeneratorsAPIService) GetTokenGeneratorDescriptorsByIdExecute(r ApiGetTokenGeneratorDescriptorsByIdRequest) (*TokenGeneratorDescriptor, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenGeneratorDescriptor
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetTokenGeneratorDescriptorsByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpTokenGeneratorsAPIService) internalGetTokenGeneratorDescriptorsByIdExecute(r ApiGetTokenGeneratorDescriptorsByIdRequest) (*TokenGeneratorDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -610,6 +674,22 @@ func (a *SpTokenGeneratorsAPIService) GetTokenGenerators(ctx context.Context) Ap
 //	@return TokenGenerators
 func (a *SpTokenGeneratorsAPIService) GetTokenGeneratorsExecute(r ApiGetTokenGeneratorsRequest) (*TokenGenerators, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenGenerators
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetTokenGeneratorsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpTokenGeneratorsAPIService) internalGetTokenGeneratorsExecute(r ApiGetTokenGeneratorsRequest) (*TokenGenerators, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -719,6 +799,22 @@ func (a *SpTokenGeneratorsAPIService) UpdateTokenGenerator(ctx context.Context, 
 //
 //	@return TokenGenerator
 func (a *SpTokenGeneratorsAPIService) UpdateTokenGeneratorExecute(r ApiUpdateTokenGeneratorRequest) (*TokenGenerator, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenGenerator
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateTokenGeneratorExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpTokenGeneratorsAPIService) internalUpdateTokenGeneratorExecute(r ApiUpdateTokenGeneratorRequest) (*TokenGenerator, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

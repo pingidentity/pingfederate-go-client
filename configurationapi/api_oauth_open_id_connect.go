@@ -65,6 +65,22 @@ func (a *OauthOpenIdConnectAPIService) CreateOIDCPolicy(ctx context.Context) Api
 //	@return OpenIdConnectPolicy
 func (a *OauthOpenIdConnectAPIService) CreateOIDCPolicyExecute(r ApiCreateOIDCPolicyRequest) (*OpenIdConnectPolicy, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *OpenIdConnectPolicy
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateOIDCPolicyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthOpenIdConnectAPIService) internalCreateOIDCPolicyExecute(r ApiCreateOIDCPolicyRequest) (*OpenIdConnectPolicy, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -294,6 +310,22 @@ func (a *OauthOpenIdConnectAPIService) GetOIDCPolicies(ctx context.Context) ApiG
 //	@return OpenIdConnectPolicies
 func (a *OauthOpenIdConnectAPIService) GetOIDCPoliciesExecute(r ApiGetOIDCPoliciesRequest) (*OpenIdConnectPolicies, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *OpenIdConnectPolicies
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOIDCPoliciesExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthOpenIdConnectAPIService) internalGetOIDCPoliciesExecute(r ApiGetOIDCPoliciesRequest) (*OpenIdConnectPolicies, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -396,6 +428,22 @@ func (a *OauthOpenIdConnectAPIService) GetOIDCPolicy(ctx context.Context, id str
 //
 //	@return OpenIdConnectPolicy
 func (a *OauthOpenIdConnectAPIService) GetOIDCPolicyExecute(r ApiGetOIDCPolicyRequest) (*OpenIdConnectPolicy, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *OpenIdConnectPolicy
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOIDCPolicyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthOpenIdConnectAPIService) internalGetOIDCPolicyExecute(r ApiGetOIDCPolicyRequest) (*OpenIdConnectPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -505,6 +553,22 @@ func (a *OauthOpenIdConnectAPIService) GetOIDCSettings(ctx context.Context) ApiG
 //
 //	@return OpenIdConnectSettings
 func (a *OauthOpenIdConnectAPIService) GetOIDCSettingsExecute(r ApiGetOIDCSettingsRequest) (*OpenIdConnectSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *OpenIdConnectSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOIDCSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthOpenIdConnectAPIService) internalGetOIDCSettingsExecute(r ApiGetOIDCSettingsRequest) (*OpenIdConnectSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -622,6 +686,22 @@ func (a *OauthOpenIdConnectAPIService) UpdateOIDCPolicy(ctx context.Context, id 
 //
 //	@return OpenIdConnectPolicy
 func (a *OauthOpenIdConnectAPIService) UpdateOIDCPolicyExecute(r ApiUpdateOIDCPolicyRequest) (*OpenIdConnectPolicy, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *OpenIdConnectPolicy
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateOIDCPolicyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthOpenIdConnectAPIService) internalUpdateOIDCPolicyExecute(r ApiUpdateOIDCPolicyRequest) (*OpenIdConnectPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -757,6 +837,22 @@ func (a *OauthOpenIdConnectAPIService) UpdateOIDCSettings(ctx context.Context) A
 //
 //	@return OpenIdConnectSettings
 func (a *OauthOpenIdConnectAPIService) UpdateOIDCSettingsExecute(r ApiUpdateOIDCSettingsRequest) (*OpenIdConnectSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *OpenIdConnectSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateOIDCSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthOpenIdConnectAPIService) internalUpdateOIDCSettingsExecute(r ApiUpdateOIDCSettingsRequest) (*OpenIdConnectSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

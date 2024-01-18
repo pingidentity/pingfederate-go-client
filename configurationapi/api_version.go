@@ -48,6 +48,22 @@ func (a *VersionAPIService) GetVersion(ctx context.Context) ApiGetVersionRequest
 //	@return Version
 func (a *VersionAPIService) GetVersionExecute(r ApiGetVersionRequest) (*Version, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *Version
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetVersionExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *VersionAPIService) internalGetVersionExecute(r ApiGetVersionRequest) (*Version, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile

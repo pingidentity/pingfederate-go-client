@@ -58,6 +58,22 @@ func (a *SessionAPIService) CreateSourcePolicy(ctx context.Context) ApiCreateSou
 //	@return AuthenticationSessionPolicy
 func (a *SessionAPIService) CreateSourcePolicyExecute(r ApiCreateSourcePolicyRequest) (*AuthenticationSessionPolicy, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationSessionPolicy
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateSourcePolicyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SessionAPIService) internalCreateSourcePolicyExecute(r ApiCreateSourcePolicyRequest) (*AuthenticationSessionPolicy, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -273,6 +289,22 @@ func (a *SessionAPIService) GetApplicationPolicy(ctx context.Context) ApiGetAppl
 //	@return ApplicationSessionPolicy
 func (a *SessionAPIService) GetApplicationPolicyExecute(r ApiGetApplicationPolicyRequest) (*ApplicationSessionPolicy, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ApplicationSessionPolicy
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetApplicationPolicyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SessionAPIService) internalGetApplicationPolicyExecute(r ApiGetApplicationPolicyRequest) (*ApplicationSessionPolicy, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -371,6 +403,22 @@ func (a *SessionAPIService) GetGlobalPolicy(ctx context.Context) ApiGetGlobalPol
 //	@return GlobalAuthenticationSessionPolicy
 func (a *SessionAPIService) GetGlobalPolicyExecute(r ApiGetGlobalPolicyRequest) (*GlobalAuthenticationSessionPolicy, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *GlobalAuthenticationSessionPolicy
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetGlobalPolicyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SessionAPIService) internalGetGlobalPolicyExecute(r ApiGetGlobalPolicyRequest) (*GlobalAuthenticationSessionPolicy, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -468,6 +516,22 @@ func (a *SessionAPIService) GetSessionSettings(ctx context.Context) ApiGetSessio
 //
 //	@return SessionSettings
 func (a *SessionAPIService) GetSessionSettingsExecute(r ApiGetSessionSettingsRequest) (*SessionSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SessionSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSessionSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SessionAPIService) internalGetSessionSettingsExecute(r ApiGetSessionSettingsRequest) (*SessionSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -568,6 +632,22 @@ func (a *SessionAPIService) GetSourcePolicies(ctx context.Context) ApiGetSourceP
 //
 //	@return AuthenticationSessionPolicies
 func (a *SessionAPIService) GetSourcePoliciesExecute(r ApiGetSourcePoliciesRequest) (*AuthenticationSessionPolicies, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationSessionPolicies
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSourcePoliciesExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SessionAPIService) internalGetSourcePoliciesExecute(r ApiGetSourcePoliciesRequest) (*AuthenticationSessionPolicies, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -671,6 +751,22 @@ func (a *SessionAPIService) GetSourcePolicy(ctx context.Context, id string) ApiG
 //
 //	@return AuthenticationSessionPolicy
 func (a *SessionAPIService) GetSourcePolicyExecute(r ApiGetSourcePolicyRequest) (*AuthenticationSessionPolicy, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationSessionPolicy
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSourcePolicyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SessionAPIService) internalGetSourcePolicyExecute(r ApiGetSourcePolicyRequest) (*AuthenticationSessionPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -787,6 +883,22 @@ func (a *SessionAPIService) UpdateApplicationPolicy(ctx context.Context) ApiUpda
 //
 //	@return ApplicationSessionPolicy
 func (a *SessionAPIService) UpdateApplicationPolicyExecute(r ApiUpdateApplicationPolicyRequest) (*ApplicationSessionPolicy, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ApplicationSessionPolicy
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateApplicationPolicyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SessionAPIService) internalUpdateApplicationPolicyExecute(r ApiUpdateApplicationPolicyRequest) (*ApplicationSessionPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -908,6 +1020,22 @@ func (a *SessionAPIService) UpdateGlobalPolicy(ctx context.Context) ApiUpdateGlo
 //	@return GlobalAuthenticationSessionPolicy
 func (a *SessionAPIService) UpdateGlobalPolicyExecute(r ApiUpdateGlobalPolicyRequest) (*GlobalAuthenticationSessionPolicy, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *GlobalAuthenticationSessionPolicy
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateGlobalPolicyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SessionAPIService) internalUpdateGlobalPolicyExecute(r ApiUpdateGlobalPolicyRequest) (*GlobalAuthenticationSessionPolicy, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -1027,6 +1155,22 @@ func (a *SessionAPIService) UpdateSessionSettings(ctx context.Context) ApiUpdate
 //
 //	@return SessionSettings
 func (a *SessionAPIService) UpdateSessionSettingsExecute(r ApiUpdateSessionSettingsRequest) (*SessionSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SessionSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateSessionSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SessionAPIService) internalUpdateSessionSettingsExecute(r ApiUpdateSessionSettingsRequest) (*SessionSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1152,6 +1296,22 @@ func (a *SessionAPIService) UpdateSourcePolicy(ctx context.Context, id string) A
 //
 //	@return AuthenticationSessionPolicy
 func (a *SessionAPIService) UpdateSourcePolicyExecute(r ApiUpdateSourcePolicyRequest) (*AuthenticationSessionPolicy, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationSessionPolicy
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateSourcePolicyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SessionAPIService) internalUpdateSourcePolicyExecute(r ApiUpdateSourcePolicyRequest) (*AuthenticationSessionPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

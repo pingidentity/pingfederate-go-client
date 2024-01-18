@@ -56,6 +56,22 @@ func (a *CaptchaProvidersAPIService) CreateCaptchaProvider(ctx context.Context) 
 //	@return CaptchaProvider
 func (a *CaptchaProvidersAPIService) CreateCaptchaProviderExecute(r ApiCreateCaptchaProviderRequest) (*CaptchaProvider, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *CaptchaProvider
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateCaptchaProviderExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *CaptchaProvidersAPIService) internalCreateCaptchaProviderExecute(r ApiCreateCaptchaProviderRequest) (*CaptchaProvider, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -272,6 +288,22 @@ func (a *CaptchaProvidersAPIService) GetCaptchaProvider(ctx context.Context, id 
 //	@return CaptchaProvider
 func (a *CaptchaProvidersAPIService) GetCaptchaProviderExecute(r ApiGetCaptchaProviderRequest) (*CaptchaProvider, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *CaptchaProvider
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetCaptchaProviderExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *CaptchaProvidersAPIService) internalGetCaptchaProviderExecute(r ApiGetCaptchaProviderRequest) (*CaptchaProvider, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -384,6 +416,22 @@ func (a *CaptchaProvidersAPIService) GetCaptchaProviderPluginDescriptor(ctx cont
 //	@return ACAPTCHAProviderPluginDescriptor
 func (a *CaptchaProvidersAPIService) GetCaptchaProviderPluginDescriptorExecute(r ApiGetCaptchaProviderPluginDescriptorRequest) (*ACAPTCHAProviderPluginDescriptor, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ACAPTCHAProviderPluginDescriptor
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetCaptchaProviderPluginDescriptorExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *CaptchaProvidersAPIService) internalGetCaptchaProviderPluginDescriptorExecute(r ApiGetCaptchaProviderPluginDescriptorRequest) (*ACAPTCHAProviderPluginDescriptor, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -493,6 +541,22 @@ func (a *CaptchaProvidersAPIService) GetCaptchaProviderPluginDescriptors(ctx con
 //	@return ACollectionOfCAPTCHAProviderPluginDescriptors
 func (a *CaptchaProvidersAPIService) GetCaptchaProviderPluginDescriptorsExecute(r ApiGetCaptchaProviderPluginDescriptorsRequest) (*ACollectionOfCAPTCHAProviderPluginDescriptors, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ACollectionOfCAPTCHAProviderPluginDescriptors
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetCaptchaProviderPluginDescriptorsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *CaptchaProvidersAPIService) internalGetCaptchaProviderPluginDescriptorsExecute(r ApiGetCaptchaProviderPluginDescriptorsRequest) (*ACollectionOfCAPTCHAProviderPluginDescriptors, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -591,6 +655,22 @@ func (a *CaptchaProvidersAPIService) GetCaptchaProviders(ctx context.Context) Ap
 //	@return CaptchaProviders
 func (a *CaptchaProvidersAPIService) GetCaptchaProvidersExecute(r ApiGetCaptchaProvidersRequest) (*CaptchaProviders, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *CaptchaProviders
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetCaptchaProvidersExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *CaptchaProvidersAPIService) internalGetCaptchaProvidersExecute(r ApiGetCaptchaProvidersRequest) (*CaptchaProviders, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -688,6 +768,22 @@ func (a *CaptchaProvidersAPIService) GetCaptchaProvidersSettings(ctx context.Con
 //
 //	@return CaptchaProvidersSettings
 func (a *CaptchaProvidersAPIService) GetCaptchaProvidersSettingsExecute(r ApiGetCaptchaProvidersSettingsRequest) (*CaptchaProvidersSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *CaptchaProvidersSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetCaptchaProvidersSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *CaptchaProvidersAPIService) internalGetCaptchaProvidersSettingsExecute(r ApiGetCaptchaProvidersSettingsRequest) (*CaptchaProvidersSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -796,6 +892,22 @@ func (a *CaptchaProvidersAPIService) UpdateCaptchaProvider(ctx context.Context, 
 //
 //	@return CaptchaProvider
 func (a *CaptchaProvidersAPIService) UpdateCaptchaProviderExecute(r ApiUpdateCaptchaProviderRequest) (*CaptchaProvider, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *CaptchaProvider
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateCaptchaProviderExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *CaptchaProvidersAPIService) internalUpdateCaptchaProviderExecute(r ApiUpdateCaptchaProviderRequest) (*CaptchaProvider, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -928,6 +1040,22 @@ func (a *CaptchaProvidersAPIService) UpdateCaptchaProvidersSettings(ctx context.
 //
 //	@return CaptchaProvidersSettings
 func (a *CaptchaProvidersAPIService) UpdateCaptchaProvidersSettingsExecute(r ApiUpdateCaptchaProvidersSettingsRequest) (*CaptchaProvidersSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *CaptchaProvidersSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateCaptchaProvidersSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *CaptchaProvidersAPIService) internalUpdateCaptchaProvidersSettingsExecute(r ApiUpdateCaptchaProvidersSettingsRequest) (*CaptchaProvidersSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

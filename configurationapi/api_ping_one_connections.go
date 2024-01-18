@@ -63,6 +63,22 @@ func (a *PingOneConnectionsAPIService) CreatePingOneConnection(ctx context.Conte
 //	@return PingOneConnection
 func (a *PingOneConnectionsAPIService) CreatePingOneConnectionExecute(r ApiCreatePingOneConnectionRequest) (*PingOneConnection, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *PingOneConnection
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreatePingOneConnectionExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *PingOneConnectionsAPIService) internalCreatePingOneConnectionExecute(r ApiCreatePingOneConnectionRequest) (*PingOneConnection, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -293,6 +309,22 @@ func (a *PingOneConnectionsAPIService) GetCredentialStatus(ctx context.Context, 
 //	@return PingOneCredentialStatus
 func (a *PingOneConnectionsAPIService) GetCredentialStatusExecute(r ApiGetCredentialStatusRequest) (*PingOneCredentialStatus, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *PingOneCredentialStatus
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetCredentialStatusExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *PingOneConnectionsAPIService) internalGetCredentialStatusExecute(r ApiGetCredentialStatusRequest) (*PingOneCredentialStatus, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -405,6 +437,22 @@ func (a *PingOneConnectionsAPIService) GetPingOneConnection(ctx context.Context,
 //	@return PingOneConnection
 func (a *PingOneConnectionsAPIService) GetPingOneConnectionExecute(r ApiGetPingOneConnectionRequest) (*PingOneConnection, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *PingOneConnection
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetPingOneConnectionExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *PingOneConnectionsAPIService) internalGetPingOneConnectionExecute(r ApiGetPingOneConnectionRequest) (*PingOneConnection, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -516,6 +564,22 @@ func (a *PingOneConnectionsAPIService) GetPingOneConnectionAssociations(ctx cont
 //
 //	@return ServiceAssociations
 func (a *PingOneConnectionsAPIService) GetPingOneConnectionAssociationsExecute(r ApiGetPingOneConnectionAssociationsRequest) (*ServiceAssociations, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ServiceAssociations
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetPingOneConnectionAssociationsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *PingOneConnectionsAPIService) internalGetPingOneConnectionAssociationsExecute(r ApiGetPingOneConnectionAssociationsRequest) (*ServiceAssociations, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -650,6 +714,22 @@ func (a *PingOneConnectionsAPIService) GetPingOneConnectionEnvironments(ctx cont
 //	@return PingOneEnvironments
 func (a *PingOneConnectionsAPIService) GetPingOneConnectionEnvironmentsExecute(r ApiGetPingOneConnectionEnvironmentsRequest) (*PingOneEnvironments, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *PingOneEnvironments
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetPingOneConnectionEnvironmentsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *PingOneConnectionsAPIService) internalGetPingOneConnectionEnvironmentsExecute(r ApiGetPingOneConnectionEnvironmentsRequest) (*PingOneEnvironments, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -772,6 +852,22 @@ func (a *PingOneConnectionsAPIService) GetPingOneConnectionUsages(ctx context.Co
 //	@return ResourceUsages
 func (a *PingOneConnectionsAPIService) GetPingOneConnectionUsagesExecute(r ApiGetPingOneConnectionUsagesRequest) (*ResourceUsages, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ResourceUsages
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetPingOneConnectionUsagesExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *PingOneConnectionsAPIService) internalGetPingOneConnectionUsagesExecute(r ApiGetPingOneConnectionUsagesRequest) (*ResourceUsages, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -880,6 +976,22 @@ func (a *PingOneConnectionsAPIService) GetPingOneConnections(ctx context.Context
 //
 //	@return PingOneConnections
 func (a *PingOneConnectionsAPIService) GetPingOneConnectionsExecute(r ApiGetPingOneConnectionsRequest) (*PingOneConnections, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *PingOneConnections
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetPingOneConnectionsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *PingOneConnectionsAPIService) internalGetPingOneConnectionsExecute(r ApiGetPingOneConnectionsRequest) (*PingOneConnections, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -995,6 +1107,22 @@ func (a *PingOneConnectionsAPIService) UpdatePingOneConnection(ctx context.Conte
 //
 //	@return PingOneConnection
 func (a *PingOneConnectionsAPIService) UpdatePingOneConnectionExecute(r ApiUpdatePingOneConnectionRequest) (*PingOneConnection, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *PingOneConnection
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdatePingOneConnectionExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *PingOneConnectionsAPIService) internalUpdatePingOneConnectionExecute(r ApiUpdatePingOneConnectionRequest) (*PingOneConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

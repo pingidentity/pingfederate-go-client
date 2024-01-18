@@ -58,6 +58,22 @@ func (a *KeyPairsOauthOpenIdConnectAPIService) CreateKeySet(ctx context.Context)
 //	@return AdditionalKeySet
 func (a *KeyPairsOauthOpenIdConnectAPIService) CreateKeySetExecute(r ApiCreateKeySetRequest) (*AdditionalKeySet, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AdditionalKeySet
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateKeySetExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsOauthOpenIdConnectAPIService) internalCreateKeySetExecute(r ApiCreateKeySetRequest) (*AdditionalKeySet, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -274,6 +290,22 @@ func (a *KeyPairsOauthOpenIdConnectAPIService) GetKeySet(ctx context.Context, id
 //	@return AdditionalKeySet
 func (a *KeyPairsOauthOpenIdConnectAPIService) GetKeySetExecute(r ApiGetKeySetRequest) (*AdditionalKeySet, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AdditionalKeySet
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetKeySetExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsOauthOpenIdConnectAPIService) internalGetKeySetExecute(r ApiGetKeySetRequest) (*AdditionalKeySet, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -383,6 +415,22 @@ func (a *KeyPairsOauthOpenIdConnectAPIService) GetKeySets(ctx context.Context) A
 //	@return AdditionalKeySets
 func (a *KeyPairsOauthOpenIdConnectAPIService) GetKeySetsExecute(r ApiGetKeySetsRequest) (*AdditionalKeySets, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AdditionalKeySets
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetKeySetsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsOauthOpenIdConnectAPIService) internalGetKeySetsExecute(r ApiGetKeySetsRequest) (*AdditionalKeySets, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -480,6 +528,22 @@ func (a *KeyPairsOauthOpenIdConnectAPIService) GetOauthOidcKeysSettings(ctx cont
 //
 //	@return OAuthOidcKeysSettings
 func (a *KeyPairsOauthOpenIdConnectAPIService) GetOauthOidcKeysSettingsExecute(r ApiGetOauthOidcKeysSettingsRequest) (*OAuthOidcKeysSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *OAuthOidcKeysSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOauthOidcKeysSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsOauthOpenIdConnectAPIService) internalGetOauthOidcKeysSettingsExecute(r ApiGetOauthOidcKeysSettingsRequest) (*OAuthOidcKeysSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -590,6 +654,22 @@ func (a *KeyPairsOauthOpenIdConnectAPIService) UpdateKeySet(ctx context.Context,
 //
 //	@return AdditionalKeySet
 func (a *KeyPairsOauthOpenIdConnectAPIService) UpdateKeySetExecute(r ApiUpdateKeySetRequest) (*AdditionalKeySet, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AdditionalKeySet
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateKeySetExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsOauthOpenIdConnectAPIService) internalUpdateKeySetExecute(r ApiUpdateKeySetRequest) (*AdditionalKeySet, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -722,6 +802,22 @@ func (a *KeyPairsOauthOpenIdConnectAPIService) UpdateOAuthOidcKeysSettings(ctx c
 //
 //	@return OAuthOidcKeysSettings
 func (a *KeyPairsOauthOpenIdConnectAPIService) UpdateOAuthOidcKeysSettingsExecute(r ApiUpdateOAuthOidcKeysSettingsRequest) (*OAuthOidcKeysSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *OAuthOidcKeysSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateOAuthOidcKeysSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsOauthOpenIdConnectAPIService) internalUpdateOAuthOidcKeysSettingsExecute(r ApiUpdateOAuthOidcKeysSettingsRequest) (*OAuthOidcKeysSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

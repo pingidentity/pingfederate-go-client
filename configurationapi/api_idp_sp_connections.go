@@ -61,6 +61,22 @@ func (a *IdpSpConnectionsAPIService) AddSpConnectionCert(ctx context.Context, id
 //	@return ConnectionCert
 func (a *IdpSpConnectionsAPIService) AddSpConnectionCertExecute(r ApiAddSpConnectionCertRequest) (*ConnectionCert, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ConnectionCert
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalAddSpConnectionCertExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpSpConnectionsAPIService) internalAddSpConnectionCertExecute(r ApiAddSpConnectionCertRequest) (*ConnectionCert, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -201,6 +217,22 @@ func (a *IdpSpConnectionsAPIService) CreateSpConnection(ctx context.Context) Api
 //
 //	@return SpConnection
 func (a *IdpSpConnectionsAPIService) CreateSpConnectionExecute(r ApiCreateSpConnectionRequest) (*SpConnection, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SpConnection
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateSpConnectionExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpSpConnectionsAPIService) internalCreateSpConnectionExecute(r ApiCreateSpConnectionRequest) (*SpConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -434,6 +466,22 @@ func (a *IdpSpConnectionsAPIService) GetDecryptionKeys(ctx context.Context, id s
 //	@return DecryptionKeys
 func (a *IdpSpConnectionsAPIService) GetDecryptionKeysExecute(r ApiGetDecryptionKeysRequest) (*DecryptionKeys, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *DecryptionKeys
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetDecryptionKeysExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpSpConnectionsAPIService) internalGetDecryptionKeysExecute(r ApiGetDecryptionKeysRequest) (*DecryptionKeys, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -548,6 +596,22 @@ func (a *IdpSpConnectionsAPIService) GetSpConnection(ctx context.Context, id str
 //	@return SpConnection
 func (a *IdpSpConnectionsAPIService) GetSpConnectionExecute(r ApiGetSpConnectionRequest) (*SpConnection, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SpConnection
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSpConnectionExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpSpConnectionsAPIService) internalGetSpConnectionExecute(r ApiGetSpConnectionRequest) (*SpConnection, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -659,6 +723,22 @@ func (a *IdpSpConnectionsAPIService) GetSpConnectionCerts(ctx context.Context, i
 //
 //	@return ConnectionCerts
 func (a *IdpSpConnectionsAPIService) GetSpConnectionCertsExecute(r ApiGetSpConnectionCertsRequest) (*ConnectionCerts, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ConnectionCerts
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSpConnectionCertsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpSpConnectionsAPIService) internalGetSpConnectionCertsExecute(r ApiGetSpConnectionCertsRequest) (*ConnectionCerts, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -799,6 +879,22 @@ func (a *IdpSpConnectionsAPIService) GetSpConnections(ctx context.Context) ApiGe
 //	@return SpConnections
 func (a *IdpSpConnectionsAPIService) GetSpConnectionsExecute(r ApiGetSpConnectionsRequest) (*SpConnections, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SpConnections
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSpConnectionsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpSpConnectionsAPIService) internalGetSpConnectionsExecute(r ApiGetSpConnectionsRequest) (*SpConnections, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -922,6 +1018,22 @@ func (a *IdpSpConnectionsAPIService) GetSpSigningSettings(ctx context.Context, i
 //	@return SigningSettings
 func (a *IdpSpConnectionsAPIService) GetSpSigningSettingsExecute(r ApiGetSpSigningSettingsRequest) (*SigningSettings, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SigningSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSpSigningSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpSpConnectionsAPIService) internalGetSpSigningSettingsExecute(r ApiGetSpSigningSettingsRequest) (*SigningSettings, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -1040,6 +1152,22 @@ func (a *IdpSpConnectionsAPIService) UpdateDecryptionKeys(ctx context.Context, i
 //
 //	@return DecryptionKeys
 func (a *IdpSpConnectionsAPIService) UpdateDecryptionKeysExecute(r ApiUpdateDecryptionKeysRequest) (*DecryptionKeys, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *DecryptionKeys
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateDecryptionKeysExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpSpConnectionsAPIService) internalUpdateDecryptionKeysExecute(r ApiUpdateDecryptionKeysRequest) (*DecryptionKeys, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1185,6 +1313,22 @@ func (a *IdpSpConnectionsAPIService) UpdateSpConnection(ctx context.Context, id 
 //	@return SpConnection
 func (a *IdpSpConnectionsAPIService) UpdateSpConnectionExecute(r ApiUpdateSpConnectionRequest) (*SpConnection, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SpConnection
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateSpConnectionExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpSpConnectionsAPIService) internalUpdateSpConnectionExecute(r ApiUpdateSpConnectionRequest) (*SpConnection, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -1323,6 +1467,22 @@ func (a *IdpSpConnectionsAPIService) UpdateSpConnectionCerts(ctx context.Context
 //	@return ConnectionCerts
 func (a *IdpSpConnectionsAPIService) UpdateSpConnectionCertsExecute(r ApiUpdateSpConnectionCertsRequest) (*ConnectionCerts, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ConnectionCerts
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateSpConnectionCertsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpSpConnectionsAPIService) internalUpdateSpConnectionCertsExecute(r ApiUpdateSpConnectionCertsRequest) (*ConnectionCerts, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -1457,6 +1617,22 @@ func (a *IdpSpConnectionsAPIService) UpdateSpSigningSettings(ctx context.Context
 //
 //	@return SigningSettings
 func (a *IdpSpConnectionsAPIService) UpdateSpSigningSettingsExecute(r ApiUpdateSpSigningSettingsRequest) (*SigningSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SigningSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateSpSigningSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpSpConnectionsAPIService) internalUpdateSpSigningSettingsExecute(r ApiUpdateSpSigningSettingsRequest) (*SigningSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

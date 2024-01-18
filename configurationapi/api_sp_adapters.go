@@ -58,6 +58,22 @@ func (a *SpAdaptersAPIService) CreateSpAdapter(ctx context.Context) ApiCreateSpA
 //	@return SpAdapter
 func (a *SpAdaptersAPIService) CreateSpAdapterExecute(r ApiCreateSpAdapterRequest) (*SpAdapter, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SpAdapter
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateSpAdapterExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpAdaptersAPIService) internalCreateSpAdapterExecute(r ApiCreateSpAdapterRequest) (*SpAdapter, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -289,6 +305,22 @@ func (a *SpAdaptersAPIService) GetSpAdapter(ctx context.Context, id string) ApiG
 //	@return SpAdapter
 func (a *SpAdaptersAPIService) GetSpAdapterExecute(r ApiGetSpAdapterRequest) (*SpAdapter, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SpAdapter
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSpAdapterExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpAdaptersAPIService) internalGetSpAdapterExecute(r ApiGetSpAdapterRequest) (*SpAdapter, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -398,6 +430,22 @@ func (a *SpAdaptersAPIService) GetSpAdapterDescriptors(ctx context.Context) ApiG
 //	@return SpAdapterDescriptors
 func (a *SpAdaptersAPIService) GetSpAdapterDescriptorsExecute(r ApiGetSpAdapterDescriptorsRequest) (*SpAdapterDescriptors, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SpAdapterDescriptors
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSpAdapterDescriptorsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpAdaptersAPIService) internalGetSpAdapterDescriptorsExecute(r ApiGetSpAdapterDescriptorsRequest) (*SpAdapterDescriptors, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -500,6 +548,22 @@ func (a *SpAdaptersAPIService) GetSpAdapterDescriptorsById(ctx context.Context, 
 //
 //	@return SpAdapterDescriptor
 func (a *SpAdaptersAPIService) GetSpAdapterDescriptorsByIdExecute(r ApiGetSpAdapterDescriptorsByIdRequest) (*SpAdapterDescriptor, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SpAdapterDescriptor
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSpAdapterDescriptorsByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpAdaptersAPIService) internalGetSpAdapterDescriptorsByIdExecute(r ApiGetSpAdapterDescriptorsByIdRequest) (*SpAdapterDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -613,6 +677,22 @@ func (a *SpAdaptersAPIService) GetSpAdapterUrlMappings(ctx context.Context) ApiG
 //
 // Deprecated
 func (a *SpAdaptersAPIService) GetSpAdapterUrlMappingsExecute(r ApiGetSpAdapterUrlMappingsRequest) (*SpAdapterUrlMappings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SpAdapterUrlMappings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSpAdapterUrlMappingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpAdaptersAPIService) internalGetSpAdapterUrlMappingsExecute(r ApiGetSpAdapterUrlMappingsRequest) (*SpAdapterUrlMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -732,6 +812,22 @@ func (a *SpAdaptersAPIService) GetSpAdapters(ctx context.Context) ApiGetSpAdapte
 //
 //	@return SpAdapters
 func (a *SpAdaptersAPIService) GetSpAdaptersExecute(r ApiGetSpAdaptersRequest) (*SpAdapters, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SpAdapters
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSpAdaptersExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpAdaptersAPIService) internalGetSpAdaptersExecute(r ApiGetSpAdaptersRequest) (*SpAdapters, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -858,6 +954,22 @@ func (a *SpAdaptersAPIService) GetSpAdaptersActionById(ctx context.Context, id s
 //	@return Action
 func (a *SpAdaptersAPIService) GetSpAdaptersActionByIdExecute(r ApiGetSpAdaptersActionByIdRequest) (*Action, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *Action
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSpAdaptersActionByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpAdaptersAPIService) internalGetSpAdaptersActionByIdExecute(r ApiGetSpAdaptersActionByIdRequest) (*Action, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -972,6 +1084,22 @@ func (a *SpAdaptersAPIService) GetSpAdaptersActions(ctx context.Context, id stri
 //
 //	@return Actions
 func (a *SpAdaptersAPIService) GetSpAdaptersActionsExecute(r ApiGetSpAdaptersActionsRequest) (*Actions, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *Actions
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSpAdaptersActionsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpAdaptersAPIService) internalGetSpAdaptersActionsExecute(r ApiGetSpAdaptersActionsRequest) (*Actions, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1097,6 +1225,22 @@ func (a *SpAdaptersAPIService) InvokeSpAdapterActionWithOptions(ctx context.Cont
 //	@return ActionResult
 func (a *SpAdaptersAPIService) InvokeSpAdapterActionWithOptionsExecute(r ApiInvokeSpAdapterActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ActionResult
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalInvokeSpAdapterActionWithOptionsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpAdaptersAPIService) internalInvokeSpAdapterActionWithOptionsExecute(r ApiInvokeSpAdapterActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -1220,6 +1364,22 @@ func (a *SpAdaptersAPIService) UpdateSpAdapter(ctx context.Context, id string) A
 //
 //	@return SpAdapter
 func (a *SpAdaptersAPIService) UpdateSpAdapterExecute(r ApiUpdateSpAdapterRequest) (*SpAdapter, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SpAdapter
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateSpAdapterExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpAdaptersAPIService) internalUpdateSpAdapterExecute(r ApiUpdateSpAdapterRequest) (*SpAdapter, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1356,6 +1516,22 @@ func (a *SpAdaptersAPIService) UpdateSpAdapterUrlMappings(ctx context.Context) A
 //
 // Deprecated
 func (a *SpAdaptersAPIService) UpdateSpAdapterUrlMappingsExecute(r ApiUpdateSpAdapterUrlMappingsRequest) (*SpAdapterUrlMappings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SpAdapterUrlMappings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateSpAdapterUrlMappingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpAdaptersAPIService) internalUpdateSpAdapterUrlMappingsExecute(r ApiUpdateSpAdapterUrlMappingsRequest) (*SpAdapterUrlMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

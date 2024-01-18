@@ -56,6 +56,22 @@ func (a *IdpStsRequestParametersContractsAPIService) CreateStsRequestParamContra
 //	@return StsRequestParametersContract
 func (a *IdpStsRequestParametersContractsAPIService) CreateStsRequestParamContractExecute(r ApiCreateStsRequestParamContractRequest) (*StsRequestParametersContract, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *StsRequestParametersContract
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateStsRequestParamContractExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpStsRequestParametersContractsAPIService) internalCreateStsRequestParamContractExecute(r ApiCreateStsRequestParamContractRequest) (*StsRequestParametersContract, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -272,6 +288,22 @@ func (a *IdpStsRequestParametersContractsAPIService) GetStsRequestParamContractB
 //	@return StsRequestParametersContract
 func (a *IdpStsRequestParametersContractsAPIService) GetStsRequestParamContractByIdExecute(r ApiGetStsRequestParamContractByIdRequest) (*StsRequestParametersContract, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *StsRequestParametersContract
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetStsRequestParamContractByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpStsRequestParametersContractsAPIService) internalGetStsRequestParamContractByIdExecute(r ApiGetStsRequestParamContractByIdRequest) (*StsRequestParametersContract, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -381,6 +413,22 @@ func (a *IdpStsRequestParametersContractsAPIService) GetStsRequestParamContracts
 //	@return StsRequestParametersContracts
 func (a *IdpStsRequestParametersContractsAPIService) GetStsRequestParamContractsExecute(r ApiGetStsRequestParamContractsRequest) (*StsRequestParametersContracts, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *StsRequestParametersContracts
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetStsRequestParamContractsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpStsRequestParametersContractsAPIService) internalGetStsRequestParamContractsExecute(r ApiGetStsRequestParamContractsRequest) (*StsRequestParametersContracts, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -488,6 +536,22 @@ func (a *IdpStsRequestParametersContractsAPIService) UpdateStsRequestParamContra
 //
 //	@return StsRequestParametersContract
 func (a *IdpStsRequestParametersContractsAPIService) UpdateStsRequestParamContractByIdExecute(r ApiUpdateStsRequestParamContractByIdRequest) (*StsRequestParametersContract, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *StsRequestParametersContract
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateStsRequestParamContractByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpStsRequestParametersContractsAPIService) internalUpdateStsRequestParamContractByIdExecute(r ApiUpdateStsRequestParamContractByIdRequest) (*StsRequestParametersContract, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

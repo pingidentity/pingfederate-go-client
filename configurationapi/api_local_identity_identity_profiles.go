@@ -65,6 +65,22 @@ func (a *LocalIdentityIdentityProfilesAPIService) CreateIdentityProfile(ctx cont
 //	@return LocalIdentityProfile
 func (a *LocalIdentityIdentityProfilesAPIService) CreateIdentityProfileExecute(r ApiCreateIdentityProfileRequest) (*LocalIdentityProfile, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *LocalIdentityProfile
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateIdentityProfileExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *LocalIdentityIdentityProfilesAPIService) internalCreateIdentityProfileExecute(r ApiCreateIdentityProfileRequest) (*LocalIdentityProfile, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -299,6 +315,22 @@ func (a *LocalIdentityIdentityProfilesAPIService) GetIdentityProfile(ctx context
 //	@return LocalIdentityProfile
 func (a *LocalIdentityIdentityProfilesAPIService) GetIdentityProfileExecute(r ApiGetIdentityProfileRequest) (*LocalIdentityProfile, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *LocalIdentityProfile
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetIdentityProfileExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *LocalIdentityIdentityProfilesAPIService) internalGetIdentityProfileExecute(r ApiGetIdentityProfileRequest) (*LocalIdentityProfile, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -435,6 +467,22 @@ func (a *LocalIdentityIdentityProfilesAPIService) GetIdentityProfiles(ctx contex
 //
 //	@return LocalIdentityProfiles
 func (a *LocalIdentityIdentityProfilesAPIService) GetIdentityProfilesExecute(r ApiGetIdentityProfilesRequest) (*LocalIdentityProfiles, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *LocalIdentityProfiles
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetIdentityProfilesExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *LocalIdentityIdentityProfilesAPIService) internalGetIdentityProfilesExecute(r ApiGetIdentityProfilesRequest) (*LocalIdentityProfiles, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -574,6 +622,22 @@ func (a *LocalIdentityIdentityProfilesAPIService) UpdateIdentityProfile(ctx cont
 //
 //	@return LocalIdentityProfile
 func (a *LocalIdentityIdentityProfilesAPIService) UpdateIdentityProfileExecute(r ApiUpdateIdentityProfileRequest) (*LocalIdentityProfile, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *LocalIdentityProfile
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateIdentityProfileExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *LocalIdentityIdentityProfilesAPIService) internalUpdateIdentityProfileExecute(r ApiUpdateIdentityProfileRequest) (*LocalIdentityProfile, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

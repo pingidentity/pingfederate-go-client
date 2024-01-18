@@ -48,6 +48,22 @@ func (a *SpDefaultUrlsAPIService) GetSpDefaultUrls(ctx context.Context) ApiGetSp
 //	@return SpDefaultUrls
 func (a *SpDefaultUrlsAPIService) GetSpDefaultUrlsExecute(r ApiGetSpDefaultUrlsRequest) (*SpDefaultUrls, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SpDefaultUrls
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSpDefaultUrlsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpDefaultUrlsAPIService) internalGetSpDefaultUrlsExecute(r ApiGetSpDefaultUrlsRequest) (*SpDefaultUrls, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -152,6 +168,22 @@ func (a *SpDefaultUrlsAPIService) UpdateSpDefaultUrls(ctx context.Context) ApiUp
 //
 //	@return SpDefaultUrls
 func (a *SpDefaultUrlsAPIService) UpdateSpDefaultUrlsExecute(r ApiUpdateSpDefaultUrlsRequest) (*SpDefaultUrls, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SpDefaultUrls
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateSpDefaultUrlsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *SpDefaultUrlsAPIService) internalUpdateSpDefaultUrlsExecute(r ApiUpdateSpDefaultUrlsRequest) (*SpDefaultUrls, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

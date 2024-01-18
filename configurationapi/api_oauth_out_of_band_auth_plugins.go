@@ -56,6 +56,22 @@ func (a *OauthOutOfBandAuthPluginsAPIService) CreateOOBAuthenticator(ctx context
 //	@return OutOfBandAuthenticator
 func (a *OauthOutOfBandAuthPluginsAPIService) CreateOOBAuthenticatorExecute(r ApiCreateOOBAuthenticatorRequest) (*OutOfBandAuthenticator, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *OutOfBandAuthenticator
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateOOBAuthenticatorExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthOutOfBandAuthPluginsAPIService) internalCreateOOBAuthenticatorExecute(r ApiCreateOOBAuthenticatorRequest) (*OutOfBandAuthenticator, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -275,6 +291,22 @@ func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAction(ctx context.Context, 
 //	@return Action
 func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBActionExecute(r ApiGetOOBActionRequest) (*Action, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *Action
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOOBActionExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthOutOfBandAuthPluginsAPIService) internalGetOOBActionExecute(r ApiGetOOBActionRequest) (*Action, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -388,6 +420,22 @@ func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBActions(ctx context.Context,
 //	@return Actions
 func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBActionsExecute(r ApiGetOOBActionsRequest) (*Actions, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *Actions
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOOBActionsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthOutOfBandAuthPluginsAPIService) internalGetOOBActionsExecute(r ApiGetOOBActionsRequest) (*Actions, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -500,6 +548,22 @@ func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthPluginDescriptor(ctx con
 //	@return OutOfBandAuthPluginDescriptor
 func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthPluginDescriptorExecute(r ApiGetOOBAuthPluginDescriptorRequest) (*OutOfBandAuthPluginDescriptor, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *OutOfBandAuthPluginDescriptor
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOOBAuthPluginDescriptorExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthOutOfBandAuthPluginsAPIService) internalGetOOBAuthPluginDescriptorExecute(r ApiGetOOBAuthPluginDescriptorRequest) (*OutOfBandAuthPluginDescriptor, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -609,6 +673,22 @@ func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthPluginDescriptors(ctx co
 //	@return OutOfBandAuthPluginDescriptors
 func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthPluginDescriptorsExecute(r ApiGetOOBAuthPluginDescriptorsRequest) (*OutOfBandAuthPluginDescriptors, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *OutOfBandAuthPluginDescriptors
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOOBAuthPluginDescriptorsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthOutOfBandAuthPluginsAPIService) internalGetOOBAuthPluginDescriptorsExecute(r ApiGetOOBAuthPluginDescriptorsRequest) (*OutOfBandAuthPluginDescriptors, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -709,6 +789,22 @@ func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthenticator(ctx context.Co
 //
 //	@return OutOfBandAuthenticator
 func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthenticatorExecute(r ApiGetOOBAuthenticatorRequest) (*OutOfBandAuthenticator, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *OutOfBandAuthenticator
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOOBAuthenticatorExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthOutOfBandAuthPluginsAPIService) internalGetOOBAuthenticatorExecute(r ApiGetOOBAuthenticatorRequest) (*OutOfBandAuthenticator, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -818,6 +914,22 @@ func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthenticators(ctx context.C
 //
 //	@return OutOfBandAuthenticators
 func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthenticatorsExecute(r ApiGetOOBAuthenticatorsRequest) (*OutOfBandAuthenticators, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *OutOfBandAuthenticators
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOOBAuthenticatorsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthOutOfBandAuthPluginsAPIService) internalGetOOBAuthenticatorsExecute(r ApiGetOOBAuthenticatorsRequest) (*OutOfBandAuthenticators, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -929,6 +1041,22 @@ func (a *OauthOutOfBandAuthPluginsAPIService) InvokeOOBActionWithOptions(ctx con
 //
 //	@return ActionResult
 func (a *OauthOutOfBandAuthPluginsAPIService) InvokeOOBActionWithOptionsExecute(r ApiInvokeOOBActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ActionResult
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalInvokeOOBActionWithOptionsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthOutOfBandAuthPluginsAPIService) internalInvokeOOBActionWithOptionsExecute(r ApiInvokeOOBActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -1051,6 +1179,22 @@ func (a *OauthOutOfBandAuthPluginsAPIService) UpdateOOBAuthenticator(ctx context
 //
 //	@return OutOfBandAuthenticator
 func (a *OauthOutOfBandAuthPluginsAPIService) UpdateOOBAuthenticatorExecute(r ApiUpdateOOBAuthenticatorRequest) (*OutOfBandAuthenticator, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *OutOfBandAuthenticator
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateOOBAuthenticatorExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthOutOfBandAuthPluginsAPIService) internalUpdateOOBAuthenticatorExecute(r ApiUpdateOOBAuthenticatorRequest) (*OutOfBandAuthenticator, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

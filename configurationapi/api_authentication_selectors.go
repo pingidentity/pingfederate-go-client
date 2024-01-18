@@ -58,6 +58,22 @@ func (a *AuthenticationSelectorsAPIService) CreateAuthenticationSelector(ctx con
 //	@return AuthenticationSelector
 func (a *AuthenticationSelectorsAPIService) CreateAuthenticationSelectorExecute(r ApiCreateAuthenticationSelectorRequest) (*AuthenticationSelector, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationSelector
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateAuthenticationSelectorExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationSelectorsAPIService) internalCreateAuthenticationSelectorExecute(r ApiCreateAuthenticationSelectorRequest) (*AuthenticationSelector, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -289,6 +305,22 @@ func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelector(ctx contex
 //	@return AuthenticationSelector
 func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelectorExecute(r ApiGetAuthenticationSelectorRequest) (*AuthenticationSelector, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationSelector
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetAuthenticationSelectorExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationSelectorsAPIService) internalGetAuthenticationSelectorExecute(r ApiGetAuthenticationSelectorRequest) (*AuthenticationSelector, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -398,6 +430,22 @@ func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelectorDescriptors
 //	@return AuthenticationSelectorDescriptors
 func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelectorDescriptorsExecute(r ApiGetAuthenticationSelectorDescriptorsRequest) (*AuthenticationSelectorDescriptors, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationSelectorDescriptors
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetAuthenticationSelectorDescriptorsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationSelectorsAPIService) internalGetAuthenticationSelectorDescriptorsExecute(r ApiGetAuthenticationSelectorDescriptorsRequest) (*AuthenticationSelectorDescriptors, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -500,6 +548,22 @@ func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelectorDescriptors
 //
 //	@return AuthenticationSelectorDescriptor
 func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelectorDescriptorsByIdExecute(r ApiGetAuthenticationSelectorDescriptorsByIdRequest) (*AuthenticationSelectorDescriptor, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationSelectorDescriptor
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetAuthenticationSelectorDescriptorsByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationSelectorsAPIService) internalGetAuthenticationSelectorDescriptorsByIdExecute(r ApiGetAuthenticationSelectorDescriptorsByIdRequest) (*AuthenticationSelectorDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -631,6 +695,22 @@ func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelectors(ctx conte
 //	@return AuthenticationSelectors
 func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelectorsExecute(r ApiGetAuthenticationSelectorsRequest) (*AuthenticationSelectors, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationSelectors
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetAuthenticationSelectorsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationSelectorsAPIService) internalGetAuthenticationSelectorsExecute(r ApiGetAuthenticationSelectorsRequest) (*AuthenticationSelectors, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -759,6 +839,22 @@ func (a *AuthenticationSelectorsAPIService) UpdateAuthenticationSelector(ctx con
 //
 //	@return AuthenticationSelector
 func (a *AuthenticationSelectorsAPIService) UpdateAuthenticationSelectorExecute(r ApiUpdateAuthenticationSelectorRequest) (*AuthenticationSelector, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationSelector
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateAuthenticationSelectorExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationSelectorsAPIService) internalUpdateAuthenticationSelectorExecute(r ApiUpdateAuthenticationSelectorRequest) (*AuthenticationSelector, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

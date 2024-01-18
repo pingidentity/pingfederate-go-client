@@ -48,6 +48,22 @@ func (a *ServiceAuthenticationAPIService) GetServiceAuthentication(ctx context.C
 //	@return ServiceAuthentication
 func (a *ServiceAuthenticationAPIService) GetServiceAuthenticationExecute(r ApiGetServiceAuthenticationRequest) (*ServiceAuthentication, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ServiceAuthentication
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetServiceAuthenticationExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServiceAuthenticationAPIService) internalGetServiceAuthenticationExecute(r ApiGetServiceAuthenticationRequest) (*ServiceAuthentication, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -154,6 +170,22 @@ func (a *ServiceAuthenticationAPIService) UpdateServiceAuthentication(ctx contex
 //
 //	@return ServiceAuthentication
 func (a *ServiceAuthenticationAPIService) UpdateServiceAuthenticationExecute(r ApiUpdateServiceAuthenticationRequest) (*ServiceAuthentication, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ServiceAuthentication
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateServiceAuthenticationExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServiceAuthenticationAPIService) internalUpdateServiceAuthenticationExecute(r ApiUpdateServiceAuthenticationRequest) (*ServiceAuthentication, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

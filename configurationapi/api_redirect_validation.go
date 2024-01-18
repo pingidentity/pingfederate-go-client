@@ -48,6 +48,22 @@ func (a *RedirectValidationAPIService) GetRedirectValidationSettings(ctx context
 //	@return RedirectValidationSettings
 func (a *RedirectValidationAPIService) GetRedirectValidationSettingsExecute(r ApiGetRedirectValidationSettingsRequest) (*RedirectValidationSettings, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *RedirectValidationSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetRedirectValidationSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *RedirectValidationAPIService) internalGetRedirectValidationSettingsExecute(r ApiGetRedirectValidationSettingsRequest) (*RedirectValidationSettings, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -154,6 +170,22 @@ func (a *RedirectValidationAPIService) UpdateRedirectValidationSettings(ctx cont
 //
 //	@return RedirectValidationSettings
 func (a *RedirectValidationAPIService) UpdateRedirectValidationSettingsExecute(r ApiUpdateRedirectValidationSettingsRequest) (*RedirectValidationSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *RedirectValidationSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateRedirectValidationSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *RedirectValidationAPIService) internalUpdateRedirectValidationSettingsExecute(r ApiUpdateRedirectValidationSettingsRequest) (*RedirectValidationSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

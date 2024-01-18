@@ -57,6 +57,22 @@ func (a *ConnectionMetadataAPIService) Convert(ctx context.Context) ApiConvertRe
 //	@return ConvertMetadataResponse
 func (a *ConnectionMetadataAPIService) ConvertExecute(r ApiConvertRequest) (*ConvertMetadataResponse, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ConvertMetadataResponse
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalConvertExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ConnectionMetadataAPIService) internalConvertExecute(r ApiConvertRequest) (*ConvertMetadataResponse, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -176,6 +192,22 @@ func (a *ConnectionMetadataAPIService) Export(ctx context.Context) ApiExportRequ
 //
 //	@return string
 func (a *ConnectionMetadataAPIService) ExportExecute(r ApiExportRequest) (string, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue string
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalExportExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ConnectionMetadataAPIService) internalExportExecute(r ApiExportRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}

@@ -56,6 +56,22 @@ func (a *IdentityStoreProvisionersAPIService) CreateIdentityStoreProvisioner(ctx
 //	@return IdentityStoreProvisioner
 func (a *IdentityStoreProvisionersAPIService) CreateIdentityStoreProvisionerExecute(r ApiCreateIdentityStoreProvisionerRequest) (*IdentityStoreProvisioner, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdentityStoreProvisioner
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateIdentityStoreProvisionerExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdentityStoreProvisionersAPIService) internalCreateIdentityStoreProvisionerExecute(r ApiCreateIdentityStoreProvisionerRequest) (*IdentityStoreProvisioner, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -283,6 +299,22 @@ func (a *IdentityStoreProvisionersAPIService) GetIdentityStoreProvisioner(ctx co
 //	@return IdentityStoreProvisioner
 func (a *IdentityStoreProvisionersAPIService) GetIdentityStoreProvisionerExecute(r ApiGetIdentityStoreProvisionerRequest) (*IdentityStoreProvisioner, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdentityStoreProvisioner
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetIdentityStoreProvisionerExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdentityStoreProvisionersAPIService) internalGetIdentityStoreProvisionerExecute(r ApiGetIdentityStoreProvisionerRequest) (*IdentityStoreProvisioner, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -395,6 +427,22 @@ func (a *IdentityStoreProvisionersAPIService) GetIdentityStoreProvisionerDescrip
 //	@return IdentityStoreProvisionerDescriptor
 func (a *IdentityStoreProvisionersAPIService) GetIdentityStoreProvisionerDescriptorByIdExecute(r ApiGetIdentityStoreProvisionerDescriptorByIdRequest) (*IdentityStoreProvisionerDescriptor, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdentityStoreProvisionerDescriptor
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetIdentityStoreProvisionerDescriptorByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdentityStoreProvisionersAPIService) internalGetIdentityStoreProvisionerDescriptorByIdExecute(r ApiGetIdentityStoreProvisionerDescriptorByIdRequest) (*IdentityStoreProvisionerDescriptor, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -504,6 +552,22 @@ func (a *IdentityStoreProvisionersAPIService) GetIdentityStoreProvisionerDescrip
 //	@return IdentityStoreProvisionerDescriptors
 func (a *IdentityStoreProvisionersAPIService) GetIdentityStoreProvisionerDescriptorsExecute(r ApiGetIdentityStoreProvisionerDescriptorsRequest) (*IdentityStoreProvisionerDescriptors, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdentityStoreProvisionerDescriptors
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetIdentityStoreProvisionerDescriptorsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdentityStoreProvisionersAPIService) internalGetIdentityStoreProvisionerDescriptorsExecute(r ApiGetIdentityStoreProvisionerDescriptorsRequest) (*IdentityStoreProvisionerDescriptors, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -601,6 +665,22 @@ func (a *IdentityStoreProvisionersAPIService) GetIdentityStoreProvisioners(ctx c
 //
 //	@return IdentityStoreProvisioners
 func (a *IdentityStoreProvisionersAPIService) GetIdentityStoreProvisionersExecute(r ApiGetIdentityStoreProvisionersRequest) (*IdentityStoreProvisioners, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdentityStoreProvisioners
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetIdentityStoreProvisionersExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdentityStoreProvisionersAPIService) internalGetIdentityStoreProvisionersExecute(r ApiGetIdentityStoreProvisionersRequest) (*IdentityStoreProvisioners, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -709,6 +789,22 @@ func (a *IdentityStoreProvisionersAPIService) UpdateIdentityStoreProvisioner(ctx
 //
 //	@return IdentityStoreProvisioner
 func (a *IdentityStoreProvisionersAPIService) UpdateIdentityStoreProvisionerExecute(r ApiUpdateIdentityStoreProvisionerRequest) (*IdentityStoreProvisioner, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdentityStoreProvisioner
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateIdentityStoreProvisionerExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdentityStoreProvisionersAPIService) internalUpdateIdentityStoreProvisionerExecute(r ApiUpdateIdentityStoreProvisionerRequest) (*IdentityStoreProvisioner, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

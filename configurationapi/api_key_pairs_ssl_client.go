@@ -56,6 +56,22 @@ func (a *KeyPairsSslClientAPIService) CreateSslClientKeyPair(ctx context.Context
 //	@return KeyPairView
 func (a *KeyPairsSslClientAPIService) CreateSslClientKeyPairExecute(r ApiCreateSslClientKeyPairRequest) (*KeyPairView, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *KeyPairView
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateSslClientKeyPairExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsSslClientAPIService) internalCreateSslClientKeyPairExecute(r ApiCreateSslClientKeyPairRequest) (*KeyPairView, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -277,6 +293,22 @@ func (a *KeyPairsSslClientAPIService) ExportSslClientCertificateFile(ctx context
 //	@return string
 func (a *KeyPairsSslClientAPIService) ExportSslClientCertificateFileExecute(r ApiExportSslClientCertificateFileRequest) (string, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue string
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalExportSslClientCertificateFileExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsSslClientAPIService) internalExportSslClientCertificateFileExecute(r ApiExportSslClientCertificateFileRequest) (string, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -391,6 +423,22 @@ func (a *KeyPairsSslClientAPIService) ExportSslClientCsr(ctx context.Context, id
 //	@return string
 func (a *KeyPairsSslClientAPIService) ExportSslClientCsrExecute(r ApiExportSslClientCsrRequest) (string, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue string
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalExportSslClientCsrExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsSslClientAPIService) internalExportSslClientCsrExecute(r ApiExportSslClientCsrRequest) (string, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -501,6 +549,22 @@ func (a *KeyPairsSslClientAPIService) ExportSslClientPEMFile(ctx context.Context
 //
 //	@return string
 func (a *KeyPairsSslClientAPIService) ExportSslClientPEMFileExecute(r ApiExportSslClientPEMFileRequest) (string, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue string
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalExportSslClientPEMFileExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsSslClientAPIService) internalExportSslClientPEMFileExecute(r ApiExportSslClientPEMFileRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -639,6 +703,22 @@ func (a *KeyPairsSslClientAPIService) ExportSslClientPKCS12File(ctx context.Cont
 //	@return string
 func (a *KeyPairsSslClientAPIService) ExportSslClientPKCS12FileExecute(r ApiExportSslClientPKCS12FileRequest) (string, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue string
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalExportSslClientPKCS12FileExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsSslClientAPIService) internalExportSslClientPKCS12FileExecute(r ApiExportSslClientPKCS12FileRequest) (string, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -767,6 +847,22 @@ func (a *KeyPairsSslClientAPIService) GetSslClientKeyPair(ctx context.Context, i
 //	@return KeyPairView
 func (a *KeyPairsSslClientAPIService) GetSslClientKeyPairExecute(r ApiGetSslClientKeyPairRequest) (*KeyPairView, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *KeyPairView
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSslClientKeyPairExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsSslClientAPIService) internalGetSslClientKeyPairExecute(r ApiGetSslClientKeyPairRequest) (*KeyPairView, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -876,6 +972,22 @@ func (a *KeyPairsSslClientAPIService) GetSslClientKeyPairs(ctx context.Context) 
 //	@return KeyPairViews
 func (a *KeyPairsSslClientAPIService) GetSslClientKeyPairsExecute(r ApiGetSslClientKeyPairsRequest) (*KeyPairViews, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *KeyPairViews
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSslClientKeyPairsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsSslClientAPIService) internalGetSslClientKeyPairsExecute(r ApiGetSslClientKeyPairsRequest) (*KeyPairViews, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -983,6 +1095,22 @@ func (a *KeyPairsSslClientAPIService) ImportSslClientCsrResponse(ctx context.Con
 //
 //	@return KeyPairView
 func (a *KeyPairsSslClientAPIService) ImportSslClientCsrResponseExecute(r ApiImportSslClientCsrResponseRequest) (*KeyPairView, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *KeyPairView
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalImportSslClientCsrResponseExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsSslClientAPIService) internalImportSslClientCsrResponseExecute(r ApiImportSslClientCsrResponseRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -1115,6 +1243,22 @@ func (a *KeyPairsSslClientAPIService) ImportSslClientKeyPair(ctx context.Context
 //
 //	@return KeyPairView
 func (a *KeyPairsSslClientAPIService) ImportSslClientKeyPairExecute(r ApiImportSslClientKeyPairRequest) (*KeyPairView, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *KeyPairView
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalImportSslClientKeyPairExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsSslClientAPIService) internalImportSslClientKeyPairExecute(r ApiImportSslClientKeyPairRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}

@@ -56,6 +56,22 @@ func (a *OauthAuthServerSettingsAPIService) AddCommonScope(ctx context.Context) 
 //	@return ScopeEntry
 func (a *OauthAuthServerSettingsAPIService) AddCommonScopeExecute(r ApiAddCommonScopeRequest) (*ScopeEntry, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ScopeEntry
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalAddCommonScopeExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAuthServerSettingsAPIService) internalAddCommonScopeExecute(r ApiAddCommonScopeRequest) (*ScopeEntry, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -176,6 +192,22 @@ func (a *OauthAuthServerSettingsAPIService) AddCommonScopeGroup(ctx context.Cont
 //	@return ScopeGroupEntry
 func (a *OauthAuthServerSettingsAPIService) AddCommonScopeGroupExecute(r ApiAddCommonScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ScopeGroupEntry
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalAddCommonScopeGroupExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAuthServerSettingsAPIService) internalAddCommonScopeGroupExecute(r ApiAddCommonScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -295,6 +327,22 @@ func (a *OauthAuthServerSettingsAPIService) AddExclusiveScope(ctx context.Contex
 //
 //	@return ScopeEntry
 func (a *OauthAuthServerSettingsAPIService) AddExclusiveScopeExecute(r ApiAddExclusiveScopeRequest) (*ScopeEntry, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ScopeEntry
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalAddExclusiveScopeExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAuthServerSettingsAPIService) internalAddExclusiveScopeExecute(r ApiAddExclusiveScopeRequest) (*ScopeEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -427,6 +475,22 @@ func (a *OauthAuthServerSettingsAPIService) AddExclusiveScopeGroup(ctx context.C
 //	@return ScopeGroupEntry
 func (a *OauthAuthServerSettingsAPIService) AddExclusiveScopeGroupExecute(r ApiAddExclusiveScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ScopeGroupEntry
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalAddExclusiveScopeGroupExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAuthServerSettingsAPIService) internalAddExclusiveScopeGroupExecute(r ApiAddExclusiveScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -540,6 +604,22 @@ func (a *OauthAuthServerSettingsAPIService) GetAuthorizationServerSettings(ctx c
 //	@return AuthorizationServerSettings
 func (a *OauthAuthServerSettingsAPIService) GetAuthorizationServerSettingsExecute(r ApiGetAuthorizationServerSettingsRequest) (*AuthorizationServerSettings, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthorizationServerSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetAuthorizationServerSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAuthServerSettingsAPIService) internalGetAuthorizationServerSettingsExecute(r ApiGetAuthorizationServerSettingsRequest) (*AuthorizationServerSettings, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -640,6 +720,22 @@ func (a *OauthAuthServerSettingsAPIService) GetCommonScope(ctx context.Context, 
 //
 //	@return ScopeEntry
 func (a *OauthAuthServerSettingsAPIService) GetCommonScopeExecute(r ApiGetCommonScopeRequest) (*ScopeEntry, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ScopeEntry
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetCommonScopeExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAuthServerSettingsAPIService) internalGetCommonScopeExecute(r ApiGetCommonScopeRequest) (*ScopeEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -753,6 +849,22 @@ func (a *OauthAuthServerSettingsAPIService) GetCommonScopeGroup(ctx context.Cont
 //	@return ScopeGroupEntry
 func (a *OauthAuthServerSettingsAPIService) GetCommonScopeGroupExecute(r ApiGetCommonScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ScopeGroupEntry
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetCommonScopeGroupExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAuthServerSettingsAPIService) internalGetCommonScopeGroupExecute(r ApiGetCommonScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -865,6 +977,22 @@ func (a *OauthAuthServerSettingsAPIService) GetExclusiveScope(ctx context.Contex
 //	@return ScopeEntry
 func (a *OauthAuthServerSettingsAPIService) GetExclusiveScopeExecute(r ApiGetExclusiveScopeRequest) (*ScopeEntry, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ScopeEntry
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetExclusiveScopeExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAuthServerSettingsAPIService) internalGetExclusiveScopeExecute(r ApiGetExclusiveScopeRequest) (*ScopeEntry, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -976,6 +1104,22 @@ func (a *OauthAuthServerSettingsAPIService) GetExclusiveScopeGroup(ctx context.C
 //
 //	@return ScopeGroupEntry
 func (a *OauthAuthServerSettingsAPIService) GetExclusiveScopeGroupExecute(r ApiGetExclusiveScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ScopeGroupEntry
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetExclusiveScopeGroupExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAuthServerSettingsAPIService) internalGetExclusiveScopeGroupExecute(r ApiGetExclusiveScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1526,6 +1670,22 @@ func (a *OauthAuthServerSettingsAPIService) UpdateAuthorizationServerSettings(ct
 //	@return AuthorizationServerSettings
 func (a *OauthAuthServerSettingsAPIService) UpdateAuthorizationServerSettingsExecute(r ApiUpdateAuthorizationServerSettingsRequest) (*AuthorizationServerSettings, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthorizationServerSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateAuthorizationServerSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAuthServerSettingsAPIService) internalUpdateAuthorizationServerSettingsExecute(r ApiUpdateAuthorizationServerSettingsRequest) (*AuthorizationServerSettings, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -1648,6 +1808,22 @@ func (a *OauthAuthServerSettingsAPIService) UpdateCommonScope(ctx context.Contex
 //
 //	@return ScopeEntry
 func (a *OauthAuthServerSettingsAPIService) UpdateCommonScopeExecute(r ApiUpdateCommonScopeRequest) (*ScopeEntry, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ScopeEntry
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateCommonScopeExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAuthServerSettingsAPIService) internalUpdateCommonScopeExecute(r ApiUpdateCommonScopeRequest) (*ScopeEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1784,6 +1960,22 @@ func (a *OauthAuthServerSettingsAPIService) UpdateCommonScopeGroup(ctx context.C
 //	@return ScopeGroupEntry
 func (a *OauthAuthServerSettingsAPIService) UpdateCommonScopeGroupExecute(r ApiUpdateCommonScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ScopeGroupEntry
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateCommonScopeGroupExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAuthServerSettingsAPIService) internalUpdateCommonScopeGroupExecute(r ApiUpdateCommonScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -1919,6 +2111,22 @@ func (a *OauthAuthServerSettingsAPIService) UpdateExclusiveScope(ctx context.Con
 //	@return ScopeEntry
 func (a *OauthAuthServerSettingsAPIService) UpdateExclusiveScopeExecute(r ApiUpdateExclusiveScopeRequest) (*ScopeEntry, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ScopeEntry
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateExclusiveScopeExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAuthServerSettingsAPIService) internalUpdateExclusiveScopeExecute(r ApiUpdateExclusiveScopeRequest) (*ScopeEntry, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -2053,6 +2261,22 @@ func (a *OauthAuthServerSettingsAPIService) UpdateExclusiveScopeGroups(ctx conte
 //
 //	@return ScopeGroupEntry
 func (a *OauthAuthServerSettingsAPIService) UpdateExclusiveScopeGroupsExecute(r ApiUpdateExclusiveScopeGroupsRequest) (*ScopeGroupEntry, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ScopeGroupEntry
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateExclusiveScopeGroupsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthAuthServerSettingsAPIService) internalUpdateExclusiveScopeGroupsExecute(r ApiUpdateExclusiveScopeGroupsRequest) (*ScopeGroupEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

@@ -48,6 +48,22 @@ func (a *IdpDefaultUrlsAPIService) GetDefaultUrl(ctx context.Context) ApiGetDefa
 //	@return IdpDefaultUrl
 func (a *IdpDefaultUrlsAPIService) GetDefaultUrlExecute(r ApiGetDefaultUrlRequest) (*IdpDefaultUrl, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdpDefaultUrl
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetDefaultUrlExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpDefaultUrlsAPIService) internalGetDefaultUrlExecute(r ApiGetDefaultUrlRequest) (*IdpDefaultUrl, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -152,6 +168,22 @@ func (a *IdpDefaultUrlsAPIService) UpdateDefaultUrlSettings(ctx context.Context)
 //
 //	@return IdpDefaultUrl
 func (a *IdpDefaultUrlsAPIService) UpdateDefaultUrlSettingsExecute(r ApiUpdateDefaultUrlSettingsRequest) (*IdpDefaultUrl, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdpDefaultUrl
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateDefaultUrlSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpDefaultUrlsAPIService) internalUpdateDefaultUrlSettingsExecute(r ApiUpdateDefaultUrlSettingsRequest) (*IdpDefaultUrl, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

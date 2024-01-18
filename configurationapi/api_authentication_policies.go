@@ -63,6 +63,22 @@ func (a *AuthenticationPoliciesAPIService) CreateFragment(ctx context.Context) A
 //	@return AuthenticationPolicyFragment
 func (a *AuthenticationPoliciesAPIService) CreateFragmentExecute(r ApiCreateFragmentRequest) (*AuthenticationPolicyFragment, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationPolicyFragment
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateFragmentExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationPoliciesAPIService) internalCreateFragmentExecute(r ApiCreateFragmentRequest) (*AuthenticationPolicyFragment, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -192,6 +208,22 @@ func (a *AuthenticationPoliciesAPIService) CreatePolicy(ctx context.Context) Api
 //
 //	@return AuthenticationPolicyTree
 func (a *AuthenticationPoliciesAPIService) CreatePolicyExecute(r ApiCreatePolicyRequest) (*AuthenticationPolicyTree, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationPolicyTree
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreatePolicyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationPoliciesAPIService) internalCreatePolicyExecute(r ApiCreatePolicyRequest) (*AuthenticationPolicyTree, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -520,6 +552,22 @@ func (a *AuthenticationPoliciesAPIService) GetAuthenticationPolicySettings(ctx c
 //	@return AuthenticationPoliciesSettings
 func (a *AuthenticationPoliciesAPIService) GetAuthenticationPolicySettingsExecute(r ApiGetAuthenticationPolicySettingsRequest) (*AuthenticationPoliciesSettings, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationPoliciesSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetAuthenticationPolicySettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationPoliciesAPIService) internalGetAuthenticationPolicySettingsExecute(r ApiGetAuthenticationPolicySettingsRequest) (*AuthenticationPoliciesSettings, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -617,6 +665,22 @@ func (a *AuthenticationPoliciesAPIService) GetDefaultAuthenticationPolicy(ctx co
 //
 //	@return AuthenticationPolicy
 func (a *AuthenticationPoliciesAPIService) GetDefaultAuthenticationPolicyExecute(r ApiGetDefaultAuthenticationPolicyRequest) (*AuthenticationPolicy, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationPolicy
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetDefaultAuthenticationPolicyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationPoliciesAPIService) internalGetDefaultAuthenticationPolicyExecute(r ApiGetDefaultAuthenticationPolicyRequest) (*AuthenticationPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -718,6 +782,22 @@ func (a *AuthenticationPoliciesAPIService) GetFragment(ctx context.Context, id s
 //
 //	@return AuthenticationPolicyFragment
 func (a *AuthenticationPoliciesAPIService) GetFragmentExecute(r ApiGetFragmentRequest) (*AuthenticationPolicyFragment, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationPolicyFragment
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetFragmentExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationPoliciesAPIService) internalGetFragmentExecute(r ApiGetFragmentRequest) (*AuthenticationPolicyFragment, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -849,6 +929,22 @@ func (a *AuthenticationPoliciesAPIService) GetFragments(ctx context.Context) Api
 //	@return AuthenticationPolicyFragments
 func (a *AuthenticationPoliciesAPIService) GetFragmentsExecute(r ApiGetFragmentsRequest) (*AuthenticationPolicyFragments, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationPolicyFragments
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetFragmentsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationPoliciesAPIService) internalGetFragmentsExecute(r ApiGetFragmentsRequest) (*AuthenticationPolicyFragments, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -958,6 +1054,22 @@ func (a *AuthenticationPoliciesAPIService) GetPolicy(ctx context.Context, id str
 //
 //	@return AuthenticationPolicyTree
 func (a *AuthenticationPoliciesAPIService) GetPolicyExecute(r ApiGetPolicyRequest) (*AuthenticationPolicyTree, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationPolicyTree
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetPolicyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationPoliciesAPIService) internalGetPolicyExecute(r ApiGetPolicyRequest) (*AuthenticationPolicyTree, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1198,6 +1310,22 @@ func (a *AuthenticationPoliciesAPIService) UpdateAuthenticationPolicySettings(ct
 //	@return AuthenticationPoliciesSettings
 func (a *AuthenticationPoliciesAPIService) UpdateAuthenticationPolicySettingsExecute(r ApiUpdateAuthenticationPolicySettingsRequest) (*AuthenticationPoliciesSettings, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationPoliciesSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateAuthenticationPolicySettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationPoliciesAPIService) internalUpdateAuthenticationPolicySettingsExecute(r ApiUpdateAuthenticationPolicySettingsRequest) (*AuthenticationPoliciesSettings, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -1314,6 +1442,22 @@ func (a *AuthenticationPoliciesAPIService) UpdateDefaultAuthenticationPolicy(ctx
 //
 //	@return AuthenticationPolicy
 func (a *AuthenticationPoliciesAPIService) UpdateDefaultAuthenticationPolicyExecute(r ApiUpdateDefaultAuthenticationPolicyRequest) (*AuthenticationPolicy, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationPolicy
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateDefaultAuthenticationPolicyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationPoliciesAPIService) internalUpdateDefaultAuthenticationPolicyExecute(r ApiUpdateDefaultAuthenticationPolicyRequest) (*AuthenticationPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1447,6 +1591,22 @@ func (a *AuthenticationPoliciesAPIService) UpdateFragment(ctx context.Context, i
 //
 //	@return AuthenticationPolicyFragment
 func (a *AuthenticationPoliciesAPIService) UpdateFragmentExecute(r ApiUpdateFragmentRequest) (*AuthenticationPolicyFragment, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationPolicyFragment
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateFragmentExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationPoliciesAPIService) internalUpdateFragmentExecute(r ApiUpdateFragmentRequest) (*AuthenticationPolicyFragment, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1592,6 +1752,22 @@ func (a *AuthenticationPoliciesAPIService) UpdatePolicy(ctx context.Context, id 
 //
 //	@return AuthenticationPolicyTree
 func (a *AuthenticationPoliciesAPIService) UpdatePolicyExecute(r ApiUpdatePolicyRequest) (*AuthenticationPolicyTree, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationPolicyTree
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdatePolicyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationPoliciesAPIService) internalUpdatePolicyExecute(r ApiUpdatePolicyRequest) (*AuthenticationPolicyTree, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

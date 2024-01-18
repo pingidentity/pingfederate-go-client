@@ -166,6 +166,22 @@ func (a *ServerSettingsAPIService) GetCaptchaSettings(ctx context.Context) ApiGe
 // Deprecated
 func (a *ServerSettingsAPIService) GetCaptchaSettingsExecute(r ApiGetCaptchaSettingsRequest) (*CaptchaSettings, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *CaptchaSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetCaptchaSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServerSettingsAPIService) internalGetCaptchaSettingsExecute(r ApiGetCaptchaSettingsRequest) (*CaptchaSettings, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -266,6 +282,22 @@ func (a *ServerSettingsAPIService) GetCert(ctx context.Context, id string) ApiGe
 //
 //	@return IssuerCert
 func (a *ServerSettingsAPIService) GetCertExecute(r ApiGetCertRequest) (*IssuerCert, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IssuerCert
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetCertExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServerSettingsAPIService) internalGetCertExecute(r ApiGetCertRequest) (*IssuerCert, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -376,6 +408,22 @@ func (a *ServerSettingsAPIService) GetCerts(ctx context.Context) ApiGetCertsRequ
 //	@return IssuerCerts
 func (a *ServerSettingsAPIService) GetCertsExecute(r ApiGetCertsRequest) (*IssuerCerts, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IssuerCerts
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetCertsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServerSettingsAPIService) internalGetCertsExecute(r ApiGetCertsRequest) (*IssuerCerts, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -477,6 +525,22 @@ func (a *ServerSettingsAPIService) GetEmailServerSettings(ctx context.Context) A
 //
 // Deprecated
 func (a *ServerSettingsAPIService) GetEmailServerSettingsExecute(r ApiGetEmailServerSettingsRequest) (*EmailServerSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *EmailServerSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetEmailServerSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServerSettingsAPIService) internalGetEmailServerSettingsExecute(r ApiGetEmailServerSettingsRequest) (*EmailServerSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -586,6 +650,22 @@ func (a *ServerSettingsAPIService) GetGeneralSettings(ctx context.Context) ApiGe
 //	@return GeneralSettings
 func (a *ServerSettingsAPIService) GetGeneralSettingsExecute(r ApiGetGeneralSettingsRequest) (*GeneralSettings, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *GeneralSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetGeneralSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServerSettingsAPIService) internalGetGeneralSettingsExecute(r ApiGetGeneralSettingsRequest) (*GeneralSettings, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -684,6 +764,22 @@ func (a *ServerSettingsAPIService) GetLogSettings(ctx context.Context) ApiGetLog
 //	@return LogSettings
 func (a *ServerSettingsAPIService) GetLogSettingsExecute(r ApiGetLogSettingsRequest) (*LogSettings, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *LogSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetLogSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServerSettingsAPIService) internalGetLogSettingsExecute(r ApiGetLogSettingsRequest) (*LogSettings, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -781,6 +877,22 @@ func (a *ServerSettingsAPIService) GetNotificationSettings(ctx context.Context) 
 //
 //	@return NotificationSettings
 func (a *ServerSettingsAPIService) GetNotificationSettingsExecute(r ApiGetNotificationSettingsRequest) (*NotificationSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *NotificationSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetNotificationSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServerSettingsAPIService) internalGetNotificationSettingsExecute(r ApiGetNotificationSettingsRequest) (*NotificationSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -882,6 +994,22 @@ func (a *ServerSettingsAPIService) GetOutBoundProvisioningSettings(ctx context.C
 //	@return OutboundProvisionDatabase
 func (a *ServerSettingsAPIService) GetOutBoundProvisioningSettingsExecute(r ApiGetOutBoundProvisioningSettingsRequest) (*OutboundProvisionDatabase, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *OutboundProvisionDatabase
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOutBoundProvisioningSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServerSettingsAPIService) internalGetOutBoundProvisioningSettingsExecute(r ApiGetOutBoundProvisioningSettingsRequest) (*OutboundProvisionDatabase, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -979,6 +1107,22 @@ func (a *ServerSettingsAPIService) GetServerSettings(ctx context.Context) ApiGet
 //
 //	@return ServerSettings
 func (a *ServerSettingsAPIService) GetServerSettingsExecute(r ApiGetServerSettingsRequest) (*ServerSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ServerSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetServerSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServerSettingsAPIService) internalGetServerSettingsExecute(r ApiGetServerSettingsRequest) (*ServerSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1080,6 +1224,22 @@ func (a *ServerSettingsAPIService) GetSystemKeys(ctx context.Context) ApiGetSyst
 //	@return SystemKeys
 func (a *ServerSettingsAPIService) GetSystemKeysExecute(r ApiGetSystemKeysRequest) (*SystemKeys, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SystemKeys
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSystemKeysExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServerSettingsAPIService) internalGetSystemKeysExecute(r ApiGetSystemKeysRequest) (*SystemKeys, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -1177,6 +1337,22 @@ func (a *ServerSettingsAPIService) GetWsTrustStsSettings(ctx context.Context) Ap
 //
 //	@return WsTrustStsSettings
 func (a *ServerSettingsAPIService) GetWsTrustStsSettingsExecute(r ApiGetWsTrustStsSettingsRequest) (*WsTrustStsSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *WsTrustStsSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetWsTrustStsSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServerSettingsAPIService) internalGetWsTrustStsSettingsExecute(r ApiGetWsTrustStsSettingsRequest) (*WsTrustStsSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1282,6 +1458,22 @@ func (a *ServerSettingsAPIService) ImportCertificate(ctx context.Context) ApiImp
 //
 //	@return IssuerCert
 func (a *ServerSettingsAPIService) ImportCertificateExecute(r ApiImportCertificateRequest) (*IssuerCert, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IssuerCert
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalImportCertificateExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServerSettingsAPIService) internalImportCertificateExecute(r ApiImportCertificateRequest) (*IssuerCert, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -1397,6 +1589,22 @@ func (a *ServerSettingsAPIService) RotateSystemKeys(ctx context.Context) ApiRota
 //
 //	@return SystemKeys
 func (a *ServerSettingsAPIService) RotateSystemKeysExecute(r ApiRotateSystemKeysRequest) (*SystemKeys, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SystemKeys
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalRotateSystemKeysExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServerSettingsAPIService) internalRotateSystemKeysExecute(r ApiRotateSystemKeysRequest) (*SystemKeys, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -1516,6 +1724,22 @@ func (a *ServerSettingsAPIService) UpdateCaptchaSettings(ctx context.Context) Ap
 //
 // Deprecated
 func (a *ServerSettingsAPIService) UpdateCaptchaSettingsExecute(r ApiUpdateCaptchaSettingsRequest) (*CaptchaSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *CaptchaSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateCaptchaSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServerSettingsAPIService) internalUpdateCaptchaSettingsExecute(r ApiUpdateCaptchaSettingsRequest) (*CaptchaSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -1657,6 +1881,22 @@ func (a *ServerSettingsAPIService) UpdateEmailServerSettings(ctx context.Context
 // Deprecated
 func (a *ServerSettingsAPIService) UpdateEmailServerSettingsExecute(r ApiUpdateEmailServerSettingsRequest) (*EmailServerSettings, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *EmailServerSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateEmailServerSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServerSettingsAPIService) internalUpdateEmailServerSettingsExecute(r ApiUpdateEmailServerSettingsRequest) (*EmailServerSettings, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -1794,6 +2034,22 @@ func (a *ServerSettingsAPIService) UpdateGeneralSettings(ctx context.Context) Ap
 //	@return GeneralSettings
 func (a *ServerSettingsAPIService) UpdateGeneralSettingsExecute(r ApiUpdateGeneralSettingsRequest) (*GeneralSettings, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *GeneralSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateGeneralSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServerSettingsAPIService) internalUpdateGeneralSettingsExecute(r ApiUpdateGeneralSettingsRequest) (*GeneralSettings, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -1914,6 +2170,22 @@ func (a *ServerSettingsAPIService) UpdateLogSettings(ctx context.Context) ApiUpd
 //	@return LogSettings
 func (a *ServerSettingsAPIService) UpdateLogSettingsExecute(r ApiUpdateLogSettingsRequest) (*LogSettings, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *LogSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateLogSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServerSettingsAPIService) internalUpdateLogSettingsExecute(r ApiUpdateLogSettingsRequest) (*LogSettings, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -2033,6 +2305,22 @@ func (a *ServerSettingsAPIService) UpdateNotificationSettings(ctx context.Contex
 //
 //	@return NotificationSettings
 func (a *ServerSettingsAPIService) UpdateNotificationSettingsExecute(r ApiUpdateNotificationSettingsRequest) (*NotificationSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *NotificationSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateNotificationSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServerSettingsAPIService) internalUpdateNotificationSettingsExecute(r ApiUpdateNotificationSettingsRequest) (*NotificationSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -2156,6 +2444,22 @@ func (a *ServerSettingsAPIService) UpdateOutBoundProvisioningSettings(ctx contex
 //	@return OutboundProvisionDatabase
 func (a *ServerSettingsAPIService) UpdateOutBoundProvisioningSettingsExecute(r ApiUpdateOutBoundProvisioningSettingsRequest) (*OutboundProvisionDatabase, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *OutboundProvisionDatabase
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateOutBoundProvisioningSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServerSettingsAPIService) internalUpdateOutBoundProvisioningSettingsExecute(r ApiUpdateOutBoundProvisioningSettingsRequest) (*OutboundProvisionDatabase, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -2275,6 +2579,22 @@ func (a *ServerSettingsAPIService) UpdateServerSettings(ctx context.Context) Api
 //
 //	@return ServerSettings
 func (a *ServerSettingsAPIService) UpdateServerSettingsExecute(r ApiUpdateServerSettingsRequest) (*ServerSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ServerSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateServerSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServerSettingsAPIService) internalUpdateServerSettingsExecute(r ApiUpdateServerSettingsRequest) (*ServerSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -2409,6 +2729,22 @@ func (a *ServerSettingsAPIService) UpdateSystemKeys(ctx context.Context) ApiUpda
 //	@return SystemKeys
 func (a *ServerSettingsAPIService) UpdateSystemKeysExecute(r ApiUpdateSystemKeysRequest) (*SystemKeys, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *SystemKeys
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateSystemKeysExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServerSettingsAPIService) internalUpdateSystemKeysExecute(r ApiUpdateSystemKeysRequest) (*SystemKeys, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -2528,6 +2864,22 @@ func (a *ServerSettingsAPIService) UpdateWsTrustStsSettings(ctx context.Context)
 //
 //	@return WsTrustStsSettings
 func (a *ServerSettingsAPIService) UpdateWsTrustStsSettingsExecute(r ApiUpdateWsTrustStsSettingsRequest) (*WsTrustStsSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *WsTrustStsSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateWsTrustStsSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *ServerSettingsAPIService) internalUpdateWsTrustStsSettingsExecute(r ApiUpdateWsTrustStsSettingsRequest) (*WsTrustStsSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

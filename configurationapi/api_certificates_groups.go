@@ -161,6 +161,22 @@ func (a *CertificatesGroupsAPIService) GetCertificateFromGroup(ctx context.Conte
 //	@return CertView
 func (a *CertificatesGroupsAPIService) GetCertificateFromGroupExecute(r ApiGetCertificateFromGroupRequest) (*CertView, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *CertView
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetCertificateFromGroupExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *CertificatesGroupsAPIService) internalGetCertificateFromGroupExecute(r ApiGetCertificateFromGroupRequest) (*CertView, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -273,6 +289,22 @@ func (a *CertificatesGroupsAPIService) GetCertificatesForGroup(ctx context.Conte
 //
 //	@return CertViews
 func (a *CertificatesGroupsAPIService) GetCertificatesForGroupExecute(r ApiGetCertificatesForGroupRequest) (*CertViews, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *CertViews
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetCertificatesForGroupExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *CertificatesGroupsAPIService) internalGetCertificatesForGroupExecute(r ApiGetCertificatesForGroupRequest) (*CertViews, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -392,6 +424,22 @@ func (a *CertificatesGroupsAPIService) ImportFeatureCert(ctx context.Context, gr
 //
 //	@return CertView
 func (a *CertificatesGroupsAPIService) ImportFeatureCertExecute(r ApiImportFeatureCertRequest) (*CertView, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *CertView
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalImportFeatureCertExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *CertificatesGroupsAPIService) internalImportFeatureCertExecute(r ApiImportFeatureCertRequest) (*CertView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}

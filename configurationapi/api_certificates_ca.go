@@ -156,6 +156,22 @@ func (a *CertificatesCaAPIService) ExportCaCertificateFile(ctx context.Context, 
 //	@return string
 func (a *CertificatesCaAPIService) ExportCaCertificateFileExecute(r ApiExportCaCertificateFileRequest) (string, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue string
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalExportCaCertificateFileExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *CertificatesCaAPIService) internalExportCaCertificateFileExecute(r ApiExportCaCertificateFileRequest) (string, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -265,6 +281,22 @@ func (a *CertificatesCaAPIService) GetTrustedCAs(ctx context.Context) ApiGetTrus
 //	@return CertViews
 func (a *CertificatesCaAPIService) GetTrustedCAsExecute(r ApiGetTrustedCAsRequest) (*CertViews, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *CertViews
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetTrustedCAsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *CertificatesCaAPIService) internalGetTrustedCAsExecute(r ApiGetTrustedCAsRequest) (*CertViews, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -365,6 +397,22 @@ func (a *CertificatesCaAPIService) GetTrustedCert(ctx context.Context, id string
 //
 //	@return CertView
 func (a *CertificatesCaAPIService) GetTrustedCertExecute(r ApiGetTrustedCertRequest) (*CertView, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *CertView
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetTrustedCertExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *CertificatesCaAPIService) internalGetTrustedCertExecute(r ApiGetTrustedCertRequest) (*CertView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -481,6 +529,22 @@ func (a *CertificatesCaAPIService) ImportTrustedCA(ctx context.Context) ApiImpor
 //
 //	@return CertView
 func (a *CertificatesCaAPIService) ImportTrustedCAExecute(r ApiImportTrustedCARequest) (*CertView, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *CertView
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalImportTrustedCAExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *CertificatesCaAPIService) internalImportTrustedCAExecute(r ApiImportTrustedCARequest) (*CertView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}

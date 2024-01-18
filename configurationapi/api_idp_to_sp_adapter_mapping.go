@@ -63,6 +63,22 @@ func (a *IdpToSpAdapterMappingAPIService) CreateIdpToSpAdapterMapping(ctx contex
 //	@return IdpToSpAdapterMapping
 func (a *IdpToSpAdapterMappingAPIService) CreateIdpToSpAdapterMappingExecute(r ApiCreateIdpToSpAdapterMappingRequest) (*IdpToSpAdapterMapping, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdpToSpAdapterMapping
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateIdpToSpAdapterMappingExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpToSpAdapterMappingAPIService) internalCreateIdpToSpAdapterMappingExecute(r ApiCreateIdpToSpAdapterMappingRequest) (*IdpToSpAdapterMapping, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -279,6 +295,22 @@ func (a *IdpToSpAdapterMappingAPIService) GetIdpToSpAdapterMappings(ctx context.
 //	@return IdpToSpAdapterMappings
 func (a *IdpToSpAdapterMappingAPIService) GetIdpToSpAdapterMappingsExecute(r ApiGetIdpToSpAdapterMappingsRequest) (*IdpToSpAdapterMappings, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdpToSpAdapterMappings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetIdpToSpAdapterMappingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpToSpAdapterMappingAPIService) internalGetIdpToSpAdapterMappingsExecute(r ApiGetIdpToSpAdapterMappingsRequest) (*IdpToSpAdapterMappings, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -379,6 +411,22 @@ func (a *IdpToSpAdapterMappingAPIService) GetIdpToSpAdapterMappingsById(ctx cont
 //
 //	@return IdpToSpAdapterMapping
 func (a *IdpToSpAdapterMappingAPIService) GetIdpToSpAdapterMappingsByIdExecute(r ApiGetIdpToSpAdapterMappingsByIdRequest) (*IdpToSpAdapterMapping, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdpToSpAdapterMapping
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetIdpToSpAdapterMappingsByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpToSpAdapterMappingAPIService) internalGetIdpToSpAdapterMappingsByIdExecute(r ApiGetIdpToSpAdapterMappingsByIdRequest) (*IdpToSpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -505,6 +553,22 @@ func (a *IdpToSpAdapterMappingAPIService) UpdateIdpToSpAdapterMapping(ctx contex
 //
 //	@return IdpToSpAdapterMapping
 func (a *IdpToSpAdapterMappingAPIService) UpdateIdpToSpAdapterMappingExecute(r ApiUpdateIdpToSpAdapterMappingRequest) (*IdpToSpAdapterMapping, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IdpToSpAdapterMapping
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateIdpToSpAdapterMappingExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpToSpAdapterMappingAPIService) internalUpdateIdpToSpAdapterMappingExecute(r ApiUpdateIdpToSpAdapterMappingRequest) (*IdpToSpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

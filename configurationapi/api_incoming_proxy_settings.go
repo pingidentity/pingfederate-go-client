@@ -50,6 +50,22 @@ func (a *IncomingProxySettingsAPIService) GetIncomingProxySettings(ctx context.C
 //	@return IncomingProxySettings
 func (a *IncomingProxySettingsAPIService) GetIncomingProxySettingsExecute(r ApiGetIncomingProxySettingsRequest) (*IncomingProxySettings, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IncomingProxySettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetIncomingProxySettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IncomingProxySettingsAPIService) internalGetIncomingProxySettingsExecute(r ApiGetIncomingProxySettingsRequest) (*IncomingProxySettings, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -156,6 +172,22 @@ func (a *IncomingProxySettingsAPIService) UpdateIncomingProxySettings(ctx contex
 //
 //	@return IncomingProxySettings
 func (a *IncomingProxySettingsAPIService) UpdateIncomingProxySettingsExecute(r ApiUpdateIncomingProxySettingsRequest) (*IncomingProxySettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *IncomingProxySettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateIncomingProxySettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IncomingProxySettingsAPIService) internalUpdateIncomingProxySettingsExecute(r ApiUpdateIncomingProxySettingsRequest) (*IncomingProxySettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

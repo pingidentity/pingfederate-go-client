@@ -58,6 +58,22 @@ func (a *OauthClientsAPIService) CreateOauthClient(ctx context.Context) ApiCreat
 //	@return Client
 func (a *OauthClientsAPIService) CreateOauthClientExecute(r ApiCreateOauthClientRequest) (*Client, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *Client
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateOauthClientExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthClientsAPIService) internalCreateOauthClientExecute(r ApiCreateOauthClientRequest) (*Client, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -285,6 +301,22 @@ func (a *OauthClientsAPIService) GetOauthClientById(ctx context.Context, id stri
 //	@return Client
 func (a *OauthClientsAPIService) GetOauthClientByIdExecute(r ApiGetOauthClientByIdRequest) (*Client, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *Client
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOauthClientByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthClientsAPIService) internalGetOauthClientByIdExecute(r ApiGetOauthClientByIdRequest) (*Client, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -396,6 +428,22 @@ func (a *OauthClientsAPIService) GetOauthClientSecret(ctx context.Context, id st
 //
 //	@return ClientSecret
 func (a *OauthClientsAPIService) GetOauthClientSecretExecute(r ApiGetOauthClientSecretRequest) (*ClientSecret, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ClientSecret
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOauthClientSecretExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthClientsAPIService) internalGetOauthClientSecretExecute(r ApiGetOauthClientSecretRequest) (*ClientSecret, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -538,6 +586,22 @@ func (a *OauthClientsAPIService) GetOauthClients(ctx context.Context) ApiGetOaut
 //	@return Clients
 func (a *OauthClientsAPIService) GetOauthClientsExecute(r ApiGetOauthClientsRequest) (*Clients, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *Clients
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOauthClientsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthClientsAPIService) internalGetOauthClientsExecute(r ApiGetOauthClientsRequest) (*Clients, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -664,6 +728,22 @@ func (a *OauthClientsAPIService) UpdateOauthClient(ctx context.Context, id strin
 //
 //	@return Client
 func (a *OauthClientsAPIService) UpdateOauthClientExecute(r ApiUpdateOauthClientRequest) (*Client, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *Client
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateOauthClientExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthClientsAPIService) internalUpdateOauthClientExecute(r ApiUpdateOauthClientRequest) (*Client, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -799,6 +879,22 @@ func (a *OauthClientsAPIService) UpdateOauthClientSecret(ctx context.Context, id
 //
 //	@return ClientSecret
 func (a *OauthClientsAPIService) UpdateOauthClientSecretExecute(r ApiUpdateOauthClientSecretRequest) (*ClientSecret, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *ClientSecret
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateOauthClientSecretExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthClientsAPIService) internalUpdateOauthClientSecretExecute(r ApiUpdateOauthClientSecretRequest) (*ClientSecret, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

@@ -56,6 +56,22 @@ func (a *KeyPairsSigningAPIService) CreateSigningKeyPair(ctx context.Context) Ap
 //	@return KeyPairView
 func (a *KeyPairsSigningAPIService) CreateSigningKeyPairExecute(r ApiCreateSigningKeyPairRequest) (*KeyPairView, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *KeyPairView
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateSigningKeyPairExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsSigningAPIService) internalCreateSigningKeyPairExecute(r ApiCreateSigningKeyPairRequest) (*KeyPairView, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -379,6 +395,22 @@ func (a *KeyPairsSigningAPIService) ExportCertificateFile(ctx context.Context, i
 //	@return string
 func (a *KeyPairsSigningAPIService) ExportCertificateFileExecute(r ApiExportCertificateFileRequest) (string, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue string
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalExportCertificateFileExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsSigningAPIService) internalExportCertificateFileExecute(r ApiExportCertificateFileRequest) (string, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -493,6 +525,22 @@ func (a *KeyPairsSigningAPIService) ExportCsr(ctx context.Context, id string) Ap
 //	@return string
 func (a *KeyPairsSigningAPIService) ExportCsrExecute(r ApiExportCsrRequest) (string, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue string
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalExportCsrExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsSigningAPIService) internalExportCsrExecute(r ApiExportCsrRequest) (string, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -603,6 +651,22 @@ func (a *KeyPairsSigningAPIService) ExportPEMFile(ctx context.Context, id string
 //
 //	@return string
 func (a *KeyPairsSigningAPIService) ExportPEMFileExecute(r ApiExportPEMFileRequest) (string, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue string
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalExportPEMFileExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsSigningAPIService) internalExportPEMFileExecute(r ApiExportPEMFileRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -741,6 +805,22 @@ func (a *KeyPairsSigningAPIService) ExportPKCS12File(ctx context.Context, id str
 //	@return string
 func (a *KeyPairsSigningAPIService) ExportPKCS12FileExecute(r ApiExportPKCS12FileRequest) (string, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue string
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalExportPKCS12FileExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsSigningAPIService) internalExportPKCS12FileExecute(r ApiExportPKCS12FileRequest) (string, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -869,6 +949,22 @@ func (a *KeyPairsSigningAPIService) GetRotationSettings(ctx context.Context, id 
 //	@return KeyPairRotationSettings
 func (a *KeyPairsSigningAPIService) GetRotationSettingsExecute(r ApiGetRotationSettingsRequest) (*KeyPairRotationSettings, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *KeyPairRotationSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetRotationSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsSigningAPIService) internalGetRotationSettingsExecute(r ApiGetRotationSettingsRequest) (*KeyPairRotationSettings, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -981,6 +1077,22 @@ func (a *KeyPairsSigningAPIService) GetSigningKeyPair(ctx context.Context, id st
 //	@return KeyPairView
 func (a *KeyPairsSigningAPIService) GetSigningKeyPairExecute(r ApiGetSigningKeyPairRequest) (*KeyPairView, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *KeyPairView
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSigningKeyPairExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsSigningAPIService) internalGetSigningKeyPairExecute(r ApiGetSigningKeyPairRequest) (*KeyPairView, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -1090,6 +1202,22 @@ func (a *KeyPairsSigningAPIService) GetSigningKeyPairs(ctx context.Context) ApiG
 //	@return KeyPairViews
 func (a *KeyPairsSigningAPIService) GetSigningKeyPairsExecute(r ApiGetSigningKeyPairsRequest) (*KeyPairViews, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *KeyPairViews
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetSigningKeyPairsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsSigningAPIService) internalGetSigningKeyPairsExecute(r ApiGetSigningKeyPairsRequest) (*KeyPairViews, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -1197,6 +1325,22 @@ func (a *KeyPairsSigningAPIService) ImportCsrResponse(ctx context.Context, id st
 //
 //	@return KeyPairView
 func (a *KeyPairsSigningAPIService) ImportCsrResponseExecute(r ApiImportCsrResponseRequest) (*KeyPairView, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *KeyPairView
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalImportCsrResponseExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsSigningAPIService) internalImportCsrResponseExecute(r ApiImportCsrResponseRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -1330,6 +1474,22 @@ func (a *KeyPairsSigningAPIService) ImportSigningKeyPair(ctx context.Context) Ap
 //	@return KeyPairView
 func (a *KeyPairsSigningAPIService) ImportSigningKeyPairExecute(r ApiImportSigningKeyPairRequest) (*KeyPairView, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *KeyPairView
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalImportSigningKeyPairExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsSigningAPIService) internalImportSigningKeyPairExecute(r ApiImportSigningKeyPairRequest) (*KeyPairView, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -1452,6 +1612,22 @@ func (a *KeyPairsSigningAPIService) UpdateRotationSettings(ctx context.Context, 
 //
 //	@return KeyPairRotationSettings
 func (a *KeyPairsSigningAPIService) UpdateRotationSettingsExecute(r ApiUpdateRotationSettingsRequest) (*KeyPairRotationSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *KeyPairRotationSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateRotationSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *KeyPairsSigningAPIService) internalUpdateRotationSettingsExecute(r ApiUpdateRotationSettingsRequest) (*KeyPairRotationSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

@@ -48,6 +48,22 @@ func (a *PingOneForEnterpriseAPIService) Disconnect(ctx context.Context) ApiDisc
 //	@return PingOneForEnterpriseSettings
 func (a *PingOneForEnterpriseAPIService) DisconnectExecute(r ApiDisconnectRequest) (*PingOneForEnterpriseSettings, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *PingOneForEnterpriseSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalDisconnectExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *PingOneForEnterpriseAPIService) internalDisconnectExecute(r ApiDisconnectRequest) (*PingOneForEnterpriseSettings, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -145,6 +161,22 @@ func (a *PingOneForEnterpriseAPIService) GetKeyPairs(ctx context.Context) ApiGet
 //
 //	@return P14EKeysView
 func (a *PingOneForEnterpriseAPIService) GetKeyPairsExecute(r ApiGetKeyPairsRequest) (*P14EKeysView, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *P14EKeysView
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetKeyPairsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *PingOneForEnterpriseAPIService) internalGetKeyPairsExecute(r ApiGetKeyPairsRequest) (*P14EKeysView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -244,6 +276,22 @@ func (a *PingOneForEnterpriseAPIService) GetPingOneForEnterpriseSettings(ctx con
 //	@return PingOneForEnterpriseSettings
 func (a *PingOneForEnterpriseAPIService) GetPingOneForEnterpriseSettingsExecute(r ApiGetPingOneForEnterpriseSettingsRequest) (*PingOneForEnterpriseSettings, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *PingOneForEnterpriseSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetPingOneForEnterpriseSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *PingOneForEnterpriseAPIService) internalGetPingOneForEnterpriseSettingsExecute(r ApiGetPingOneForEnterpriseSettingsRequest) (*PingOneForEnterpriseSettings, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -341,6 +389,22 @@ func (a *PingOneForEnterpriseAPIService) RotateKeys(ctx context.Context) ApiRota
 //
 //	@return P14EKeysView
 func (a *PingOneForEnterpriseAPIService) RotateKeysExecute(r ApiRotateKeysRequest) (*P14EKeysView, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *P14EKeysView
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalRotateKeysExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *PingOneForEnterpriseAPIService) internalRotateKeysExecute(r ApiRotateKeysRequest) (*P14EKeysView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -441,6 +505,22 @@ func (a *PingOneForEnterpriseAPIService) UpdatePingOneForEnterpriseIdentityRepos
 //
 //	@return PingOneForEnterpriseSettings
 func (a *PingOneForEnterpriseAPIService) UpdatePingOneForEnterpriseIdentityRepositoryExecute(r ApiUpdatePingOneForEnterpriseIdentityRepositoryRequest) (*PingOneForEnterpriseSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *PingOneForEnterpriseSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdatePingOneForEnterpriseIdentityRepositoryExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *PingOneForEnterpriseAPIService) internalUpdatePingOneForEnterpriseIdentityRepositoryExecute(r ApiUpdatePingOneForEnterpriseIdentityRepositoryRequest) (*PingOneForEnterpriseSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -556,6 +636,22 @@ func (a *PingOneForEnterpriseAPIService) UpdatePingOneSettings(ctx context.Conte
 //
 //	@return PingOneForEnterpriseSettings
 func (a *PingOneForEnterpriseAPIService) UpdatePingOneSettingsExecute(r ApiUpdatePingOneSettingsRequest) (*PingOneForEnterpriseSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *PingOneForEnterpriseSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdatePingOneSettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *PingOneForEnterpriseAPIService) internalUpdatePingOneSettingsExecute(r ApiUpdatePingOneSettingsRequest) (*PingOneForEnterpriseSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

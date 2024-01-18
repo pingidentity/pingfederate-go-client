@@ -65,6 +65,22 @@ func (a *OauthTokenExchangeProcessorAPIService) CreateOauthTokenExchangeProcesso
 //	@return TokenExchangeProcessorPolicy
 func (a *OauthTokenExchangeProcessorAPIService) CreateOauthTokenExchangeProcessorPolicyExecute(r ApiCreateOauthTokenExchangeProcessorPolicyRequest) (*TokenExchangeProcessorPolicy, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenExchangeProcessorPolicy
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateOauthTokenExchangeProcessorPolicyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthTokenExchangeProcessorAPIService) internalCreateOauthTokenExchangeProcessorPolicyExecute(r ApiCreateOauthTokenExchangeProcessorPolicyRequest) (*TokenExchangeProcessorPolicy, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -299,6 +315,22 @@ func (a *OauthTokenExchangeProcessorAPIService) GetOauthTokenExchangeProcessorPo
 //	@return TokenExchangeProcessorPolicy
 func (a *OauthTokenExchangeProcessorAPIService) GetOauthTokenExchangeProcessorPolicyByIdExecute(r ApiGetOauthTokenExchangeProcessorPolicyByIdRequest) (*TokenExchangeProcessorPolicy, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenExchangeProcessorPolicy
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOauthTokenExchangeProcessorPolicyByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthTokenExchangeProcessorAPIService) internalGetOauthTokenExchangeProcessorPolicyByIdExecute(r ApiGetOauthTokenExchangeProcessorPolicyByIdRequest) (*TokenExchangeProcessorPolicy, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -408,6 +440,22 @@ func (a *OauthTokenExchangeProcessorAPIService) GetOauthTokenExchangeProcessorPo
 //	@return TokenExchangeProcessorPolicies
 func (a *OauthTokenExchangeProcessorAPIService) GetOauthTokenExchangeProcessorPolicyPoliciesExecute(r ApiGetOauthTokenExchangeProcessorPolicyPoliciesRequest) (*TokenExchangeProcessorPolicies, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenExchangeProcessorPolicies
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOauthTokenExchangeProcessorPolicyPoliciesExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthTokenExchangeProcessorAPIService) internalGetOauthTokenExchangeProcessorPolicyPoliciesExecute(r ApiGetOauthTokenExchangeProcessorPolicyPoliciesRequest) (*TokenExchangeProcessorPolicies, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -505,6 +553,22 @@ func (a *OauthTokenExchangeProcessorAPIService) GetOauthTokenExchangeProcessorPo
 //
 //	@return TokenExchangeProcessorSettings
 func (a *OauthTokenExchangeProcessorAPIService) GetOauthTokenExchangeProcessorPolicySettingsExecute(r ApiGetOauthTokenExchangeProcessorPolicySettingsRequest) (*TokenExchangeProcessorSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenExchangeProcessorSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetOauthTokenExchangeProcessorPolicySettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthTokenExchangeProcessorAPIService) internalGetOauthTokenExchangeProcessorPolicySettingsExecute(r ApiGetOauthTokenExchangeProcessorPolicySettingsRequest) (*TokenExchangeProcessorSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -622,6 +686,22 @@ func (a *OauthTokenExchangeProcessorAPIService) UpdateOauthTokenExchangeProcesso
 //
 //	@return TokenExchangeProcessorPolicy
 func (a *OauthTokenExchangeProcessorAPIService) UpdateOauthTokenExchangeProcessorPolicyExecute(r ApiUpdateOauthTokenExchangeProcessorPolicyRequest) (*TokenExchangeProcessorPolicy, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenExchangeProcessorPolicy
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateOauthTokenExchangeProcessorPolicyExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthTokenExchangeProcessorAPIService) internalUpdateOauthTokenExchangeProcessorPolicyExecute(r ApiUpdateOauthTokenExchangeProcessorPolicyRequest) (*TokenExchangeProcessorPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
@@ -764,6 +844,22 @@ func (a *OauthTokenExchangeProcessorAPIService) UpdateOauthTokenExchangeProcesso
 //
 //	@return TokenExchangeProcessorSettings
 func (a *OauthTokenExchangeProcessorAPIService) UpdateOauthTokenExchangeProcessorPolicySettingsExecute(r ApiUpdateOauthTokenExchangeProcessorPolicySettingsRequest) (*TokenExchangeProcessorSettings, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenExchangeProcessorSettings
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateOauthTokenExchangeProcessorPolicySettingsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *OauthTokenExchangeProcessorAPIService) internalUpdateOauthTokenExchangeProcessorPolicySettingsExecute(r ApiUpdateOauthTokenExchangeProcessorPolicySettingsRequest) (*TokenExchangeProcessorSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

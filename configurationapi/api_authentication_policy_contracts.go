@@ -58,6 +58,22 @@ func (a *AuthenticationPolicyContractsAPIService) CreateAuthenticationPolicyCont
 //	@return AuthenticationPolicyContract
 func (a *AuthenticationPolicyContractsAPIService) CreateAuthenticationPolicyContractExecute(r ApiCreateAuthenticationPolicyContractRequest) (*AuthenticationPolicyContract, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationPolicyContract
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateAuthenticationPolicyContractExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationPolicyContractsAPIService) internalCreateAuthenticationPolicyContractExecute(r ApiCreateAuthenticationPolicyContractRequest) (*AuthenticationPolicyContract, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -289,6 +305,22 @@ func (a *AuthenticationPolicyContractsAPIService) GetAuthenticationPolicyContrac
 //	@return AuthenticationPolicyContract
 func (a *AuthenticationPolicyContractsAPIService) GetAuthenticationPolicyContractExecute(r ApiGetAuthenticationPolicyContractRequest) (*AuthenticationPolicyContract, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationPolicyContract
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetAuthenticationPolicyContractExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationPolicyContractsAPIService) internalGetAuthenticationPolicyContractExecute(r ApiGetAuthenticationPolicyContractRequest) (*AuthenticationPolicyContract, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -419,6 +451,22 @@ func (a *AuthenticationPolicyContractsAPIService) GetAuthenticationPolicyContrac
 //	@return AuthenticationPolicyContracts
 func (a *AuthenticationPolicyContractsAPIService) GetAuthenticationPolicyContractsExecute(r ApiGetAuthenticationPolicyContractsRequest) (*AuthenticationPolicyContracts, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationPolicyContracts
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetAuthenticationPolicyContractsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationPolicyContractsAPIService) internalGetAuthenticationPolicyContractsExecute(r ApiGetAuthenticationPolicyContractsRequest) (*AuthenticationPolicyContracts, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -547,6 +595,22 @@ func (a *AuthenticationPolicyContractsAPIService) UpdateAuthenticationPolicyCont
 //
 //	@return AuthenticationPolicyContract
 func (a *AuthenticationPolicyContractsAPIService) UpdateAuthenticationPolicyContractExecute(r ApiUpdateAuthenticationPolicyContractRequest) (*AuthenticationPolicyContract, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *AuthenticationPolicyContract
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateAuthenticationPolicyContractExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *AuthenticationPolicyContractsAPIService) internalUpdateAuthenticationPolicyContractExecute(r ApiUpdateAuthenticationPolicyContractRequest) (*AuthenticationPolicyContract, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}

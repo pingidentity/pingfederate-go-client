@@ -58,6 +58,22 @@ func (a *IdpTokenProcessorsAPIService) CreateTokenProcessor(ctx context.Context)
 //	@return TokenProcessor
 func (a *IdpTokenProcessorsAPIService) CreateTokenProcessorExecute(r ApiCreateTokenProcessorRequest) (*TokenProcessor, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenProcessor
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalCreateTokenProcessorExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpTokenProcessorsAPIService) internalCreateTokenProcessorExecute(r ApiCreateTokenProcessorRequest) (*TokenProcessor, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -289,6 +305,22 @@ func (a *IdpTokenProcessorsAPIService) GetTokenProcessor(ctx context.Context, id
 //	@return TokenProcessor
 func (a *IdpTokenProcessorsAPIService) GetTokenProcessorExecute(r ApiGetTokenProcessorRequest) (*TokenProcessor, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenProcessor
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetTokenProcessorExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpTokenProcessorsAPIService) internalGetTokenProcessorExecute(r ApiGetTokenProcessorRequest) (*TokenProcessor, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -398,6 +430,22 @@ func (a *IdpTokenProcessorsAPIService) GetTokenProcessorDescriptors(ctx context.
 //	@return TokenProcessorDescriptors
 func (a *IdpTokenProcessorsAPIService) GetTokenProcessorDescriptorsExecute(r ApiGetTokenProcessorDescriptorsRequest) (*TokenProcessorDescriptors, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenProcessorDescriptors
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetTokenProcessorDescriptorsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpTokenProcessorsAPIService) internalGetTokenProcessorDescriptorsExecute(r ApiGetTokenProcessorDescriptorsRequest) (*TokenProcessorDescriptors, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -500,6 +548,22 @@ func (a *IdpTokenProcessorsAPIService) GetTokenProcessorDescriptorsById(ctx cont
 //
 //	@return TokenProcessorDescriptor
 func (a *IdpTokenProcessorsAPIService) GetTokenProcessorDescriptorsByIdExecute(r ApiGetTokenProcessorDescriptorsByIdRequest) (*TokenProcessorDescriptor, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenProcessorDescriptor
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetTokenProcessorDescriptorsByIdExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpTokenProcessorsAPIService) internalGetTokenProcessorDescriptorsByIdExecute(r ApiGetTokenProcessorDescriptorsByIdRequest) (*TokenProcessorDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -610,6 +674,22 @@ func (a *IdpTokenProcessorsAPIService) GetTokenProcessors(ctx context.Context) A
 //	@return TokenProcessors
 func (a *IdpTokenProcessorsAPIService) GetTokenProcessorsExecute(r ApiGetTokenProcessorsRequest) (*TokenProcessors, *http.Response, error) {
 	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenProcessors
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalGetTokenProcessorsExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpTokenProcessorsAPIService) internalGetTokenProcessorsExecute(r ApiGetTokenProcessorsRequest) (*TokenProcessors, *http.Response, error) {
+	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
@@ -719,6 +799,22 @@ func (a *IdpTokenProcessorsAPIService) UpdateTokenProcessor(ctx context.Context,
 //
 //	@return TokenProcessor
 func (a *IdpTokenProcessorsAPIService) UpdateTokenProcessorExecute(r ApiUpdateTokenProcessorRequest) (*TokenProcessor, *http.Response, error) {
+	var (
+		err                 error
+		response            *http.Response
+		localVarReturnValue *TokenProcessor
+	)
+
+	response, err = processResponse(
+		func() (any, *http.Response, error) {
+			return r.ApiService.internalUpdateTokenProcessorExecute(r)
+		},
+		&localVarReturnValue,
+	)
+	return localVarReturnValue, response, err
+}
+
+func (a *IdpTokenProcessorsAPIService) internalUpdateTokenProcessorExecute(r ApiUpdateTokenProcessorRequest) (*TokenProcessor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
