@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IdpAdapterRef** | [**ResourceLink**](ResourceLink.md) |  | 
+**IdpAdapterRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **RestrictVirtualEntityIds** | Pointer to **bool** | Restricts this mapping to specific virtual entity IDs. | [optional] 
 **RestrictedVirtualEntityIds** | Pointer to **[]string** | The list of virtual server IDs that this mapping is restricted to. | [optional] 
 **AdapterOverrideSettings** | Pointer to [**IdpAdapter**](IdpAdapter.md) |  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewIdpAdapterAssertionMapping
 
-`func NewIdpAdapterAssertionMapping(idpAdapterRef ResourceLink, attributeContractFulfillment map[string]AttributeFulfillmentValue, ) *IdpAdapterAssertionMapping`
+`func NewIdpAdapterAssertionMapping(attributeContractFulfillment map[string]AttributeFulfillmentValue, ) *IdpAdapterAssertionMapping`
 
 NewIdpAdapterAssertionMapping instantiates a new IdpAdapterAssertionMapping object
 This constructor will assign default values to properties that have it defined,
@@ -51,6 +51,11 @@ and a boolean to check if the value has been set.
 
 SetIdpAdapterRef sets IdpAdapterRef field to given value.
 
+### HasIdpAdapterRef
+
+`func (o *IdpAdapterAssertionMapping) HasIdpAdapterRef() bool`
+
+HasIdpAdapterRef returns a boolean if a field has been set.
 
 ### GetRestrictVirtualEntityIds
 

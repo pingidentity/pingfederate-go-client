@@ -54,72 +54,110 @@ func PingOneLdapGatewayDataStoreAsDataStoreAggregation(v *PingOneLdapGatewayData
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *DataStoreAggregation) UnmarshalJSON(data []byte) error {
 	var err error
-	match := 0
-	// try to unmarshal data into CustomDataStore
-	err = newStrictDecoder(data).Decode(&dst.CustomDataStore)
-	if err == nil {
-		jsonCustomDataStore, _ := json.Marshal(dst.CustomDataStore)
-		if string(jsonCustomDataStore) == "{}" { // empty struct
+	// use discriminator value to speed up the lookup
+	var jsonDict map[string]interface{}
+	err = newStrictDecoder(data).Decode(&jsonDict)
+	if err != nil {
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
+	}
+
+	// check if the discriminator value is 'CUSTOM'
+	if jsonDict["type"] == "CUSTOM" {
+		// try to unmarshal JSON data into CustomDataStore
+		err = json.Unmarshal(data, &dst.CustomDataStore)
+		if err == nil {
+			return nil // data stored in dst.CustomDataStore, return on the first match
+		} else {
 			dst.CustomDataStore = nil
-		} else {
-			match++
+			return fmt.Errorf("failed to unmarshal DataStoreAggregation as CustomDataStore: %s", err.Error())
 		}
-	} else {
-		dst.CustomDataStore = nil
 	}
 
-	// try to unmarshal data into JdbcDataStore
-	err = newStrictDecoder(data).Decode(&dst.JdbcDataStore)
-	if err == nil {
-		jsonJdbcDataStore, _ := json.Marshal(dst.JdbcDataStore)
-		if string(jsonJdbcDataStore) == "{}" { // empty struct
+	// check if the discriminator value is 'CustomDataStore'
+	if jsonDict["type"] == "CustomDataStore" {
+		// try to unmarshal JSON data into CustomDataStore
+		err = json.Unmarshal(data, &dst.CustomDataStore)
+		if err == nil {
+			return nil // data stored in dst.CustomDataStore, return on the first match
+		} else {
+			dst.CustomDataStore = nil
+			return fmt.Errorf("failed to unmarshal DataStoreAggregation as CustomDataStore: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'JDBC'
+	if jsonDict["type"] == "JDBC" {
+		// try to unmarshal JSON data into JdbcDataStore
+		err = json.Unmarshal(data, &dst.JdbcDataStore)
+		if err == nil {
+			return nil // data stored in dst.JdbcDataStore, return on the first match
+		} else {
 			dst.JdbcDataStore = nil
-		} else {
-			match++
+			return fmt.Errorf("failed to unmarshal DataStoreAggregation as JdbcDataStore: %s", err.Error())
 		}
-	} else {
-		dst.JdbcDataStore = nil
 	}
 
-	// try to unmarshal data into LdapDataStore
-	err = newStrictDecoder(data).Decode(&dst.LdapDataStore)
-	if err == nil {
-		jsonLdapDataStore, _ := json.Marshal(dst.LdapDataStore)
-		if string(jsonLdapDataStore) == "{}" { // empty struct
+	// check if the discriminator value is 'JdbcDataStore'
+	if jsonDict["type"] == "JdbcDataStore" {
+		// try to unmarshal JSON data into JdbcDataStore
+		err = json.Unmarshal(data, &dst.JdbcDataStore)
+		if err == nil {
+			return nil // data stored in dst.JdbcDataStore, return on the first match
+		} else {
+			dst.JdbcDataStore = nil
+			return fmt.Errorf("failed to unmarshal DataStoreAggregation as JdbcDataStore: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'LDAP'
+	if jsonDict["type"] == "LDAP" {
+		// try to unmarshal JSON data into LdapDataStore
+		err = json.Unmarshal(data, &dst.LdapDataStore)
+		if err == nil {
+			return nil // data stored in dst.LdapDataStore, return on the first match
+		} else {
 			dst.LdapDataStore = nil
-		} else {
-			match++
+			return fmt.Errorf("failed to unmarshal DataStoreAggregation as LdapDataStore: %s", err.Error())
 		}
-	} else {
-		dst.LdapDataStore = nil
 	}
 
-	// try to unmarshal data into PingOneLdapGatewayDataStore
-	err = newStrictDecoder(data).Decode(&dst.PingOneLdapGatewayDataStore)
-	if err == nil {
-		jsonPingOneLdapGatewayDataStore, _ := json.Marshal(dst.PingOneLdapGatewayDataStore)
-		if string(jsonPingOneLdapGatewayDataStore) == "{}" { // empty struct
+	// check if the discriminator value is 'LdapDataStore'
+	if jsonDict["type"] == "LdapDataStore" {
+		// try to unmarshal JSON data into LdapDataStore
+		err = json.Unmarshal(data, &dst.LdapDataStore)
+		if err == nil {
+			return nil // data stored in dst.LdapDataStore, return on the first match
+		} else {
+			dst.LdapDataStore = nil
+			return fmt.Errorf("failed to unmarshal DataStoreAggregation as LdapDataStore: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'PING_ONE_LDAP_GATEWAY'
+	if jsonDict["type"] == "PING_ONE_LDAP_GATEWAY" {
+		// try to unmarshal JSON data into PingOneLdapGatewayDataStore
+		err = json.Unmarshal(data, &dst.PingOneLdapGatewayDataStore)
+		if err == nil {
+			return nil // data stored in dst.PingOneLdapGatewayDataStore, return on the first match
+		} else {
 			dst.PingOneLdapGatewayDataStore = nil
-		} else {
-			match++
+			return fmt.Errorf("failed to unmarshal DataStoreAggregation as PingOneLdapGatewayDataStore: %s", err.Error())
 		}
-	} else {
-		dst.PingOneLdapGatewayDataStore = nil
 	}
 
-	if match > 1 { // more than 1 match
-		// reset to nil
-		dst.CustomDataStore = nil
-		dst.JdbcDataStore = nil
-		dst.LdapDataStore = nil
-		dst.PingOneLdapGatewayDataStore = nil
-
-		return fmt.Errorf("data matches more than one schema in oneOf(DataStoreAggregation)")
-	} else if match == 1 {
-		return nil // exactly one match
-	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(DataStoreAggregation)")
+	// check if the discriminator value is 'PingOneLdapGatewayDataStore'
+	if jsonDict["type"] == "PingOneLdapGatewayDataStore" {
+		// try to unmarshal JSON data into PingOneLdapGatewayDataStore
+		err = json.Unmarshal(data, &dst.PingOneLdapGatewayDataStore)
+		if err == nil {
+			return nil // data stored in dst.PingOneLdapGatewayDataStore, return on the first match
+		} else {
+			dst.PingOneLdapGatewayDataStore = nil
+			return fmt.Errorf("failed to unmarshal DataStoreAggregation as PingOneLdapGatewayDataStore: %s", err.Error())
+		}
 	}
+
+	return nil
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON

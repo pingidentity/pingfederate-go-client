@@ -452,6 +452,7 @@ docs/PluginConfiguration.md
 docs/PluginDescriptor.md
 docs/PluginInstance.md
 docs/PolicyAction.md
+docs/PolicyActionAggregation.md
 docs/ProcessorPolicyToGeneratorMapping.md
 docs/ProcessorPolicyToGeneratorMappings.md
 docs/ProfileConfig.md
@@ -916,6 +917,7 @@ model_plugin_configuration.go
 model_plugin_descriptor.go
 model_plugin_instance.go
 model_policy_action.go
+model_policy_action_aggregation.go
 model_processor_policy_to_generator_mapping.go
 model_processor_policy_to_generator_mappings.go
 model_profile_config.go

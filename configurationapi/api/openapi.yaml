@@ -14941,6 +14941,13 @@ components:
       - value
       type: object
     AttributeSourceAggregation:
+      discriminator:
+        mapping:
+          CUSTOM: '#/components/schemas/CustomAttributeSource'
+          JDBC: '#/components/schemas/JdbcAttributeSource'
+          LDAP: '#/components/schemas/LdapAttributeSource'
+          PING_ONE_LDAP_GATEWAY: '#/components/schemas/LdapAttributeSource'
+        propertyName: type
       oneOf:
       - $ref: '#/components/schemas/CustomAttributeSource'
       - $ref: '#/components/schemas/JdbcAttributeSource'
@@ -16499,9 +16506,7 @@ components:
           children:
           - null
           - null
-          action:
-            context: context
-            type: APC_MAPPING
+          action: null
       properties:
         id:
           description: The authentication policy fragment ID. ID is unique.
@@ -16525,12 +16530,10 @@ components:
         children:
         - null
         - null
-        action:
-          context: context
-          type: APC_MAPPING
+        action: null
       properties:
         action:
-          $ref: '#/components/schemas/PolicyAction'
+          $ref: '#/components/schemas/PolicyActionAggregation'
         children:
           description: The nodes inside the authentication policy tree node of type
             AuthenticationPolicyTreeNode.
@@ -16627,13 +16630,31 @@ components:
         - localIdentityRef
         - outboundAttributeMapping
         type: object
+    PolicyActionAggregation:
+      discriminator:
+        mapping:
+          APC_MAPPING: '#/components/schemas/ApcMappingPolicyAction'
+          AUTHN_SELECTOR: '#/components/schemas/AuthnSelectorPolicyAction'
+          AUTHN_SOURCE: '#/components/schemas/AuthnSourcePolicyAction'
+          CONTINUE: '#/components/schemas/ContinuePolicyAction'
+          DONE: '#/components/schemas/DonePolicyAction'
+          FRAGMENT: '#/components/schemas/FragmentPolicyAction'
+          LOCAL_IDENTITY_MAPPING: '#/components/schemas/LocalIdentityMappingPolicyAction'
+          RESTART: '#/components/schemas/RestartPolicyAction'
+        propertyName: type
+      oneOf:
+      - $ref: '#/components/schemas/ApcMappingPolicyAction'
+      - $ref: '#/components/schemas/AuthnSelectorPolicyAction'
+      - $ref: '#/components/schemas/AuthnSourcePolicyAction'
+      - $ref: '#/components/schemas/ContinuePolicyAction'
+      - $ref: '#/components/schemas/DonePolicyAction'
+      - $ref: '#/components/schemas/FragmentPolicyAction'
+      - $ref: '#/components/schemas/LocalIdentityMappingPolicyAction'
+      - $ref: '#/components/schemas/RestartPolicyAction'
     PolicyAction:
       description: An authentication policy selection action.
       discriminator:
         propertyName: type
-      example:
-        context: context
-        type: APC_MAPPING
       properties:
         type:
           description: The authentication selection type.
@@ -16705,9 +16726,7 @@ components:
             children:
             - null
             - null
-            action:
-              context: context
-              type: APC_MAPPING
+            action: null
         - name: name
           description: description
           id: id
@@ -16720,9 +16739,7 @@ components:
             children:
             - null
             - null
-            action:
-              context: context
-              type: APC_MAPPING
+            action: null
         trackedHttpParameters:
         - trackedHttpParameters
         - trackedHttpParameters
@@ -16763,9 +16780,7 @@ components:
           children:
           - null
           - null
-          action:
-            context: context
-            type: APC_MAPPING
+          action: null
       properties:
         id:
           description: The authentication policy ID. ID is unique.
@@ -16805,9 +16820,7 @@ components:
             children:
             - null
             - null
-            action:
-              context: context
-              type: APC_MAPPING
+            action: null
         - outputs:
             location: location
             id: id
@@ -16821,9 +16834,7 @@ components:
             children:
             - null
             - null
-            action:
-              context: context
-              type: APC_MAPPING
+            action: null
       properties:
         items:
           description: The actual list of Authentication Policy Fragments.
@@ -19995,7 +20006,6 @@ components:
           $ref: '#/components/schemas/IssuanceCriteria'
       required:
       - attributeContractFulfillment
-      - idpAdapterRef
       type: object
     IdpAttributeQuery:
       description: The attribute query profile supports local applications in requesting
@@ -22336,6 +22346,13 @@ components:
           type: array
       type: object
     DataStoreAggregation:
+      discriminator:
+        mapping:
+          CUSTOM: '#/components/schemas/CustomDataStore'
+          JDBC: '#/components/schemas/JdbcDataStore'
+          LDAP: '#/components/schemas/LdapDataStore'
+          PING_ONE_LDAP_GATEWAY: '#/components/schemas/PingOneLdapGatewayDataStore'
+        propertyName: type
       oneOf:
       - $ref: '#/components/schemas/CustomDataStore'
       - $ref: '#/components/schemas/JdbcDataStore'
