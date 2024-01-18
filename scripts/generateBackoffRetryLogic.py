@@ -4,7 +4,7 @@ import glob
 import re
 
 # Find all files in the repo starting with "api_"
-modelFiles = glob.glob('api_*.go')
+apiFiles = glob.glob('api_*.go')
 executeFunctionRegex = re.compile("func \(([a-zA-Z0-9\* ]+)\) ([A-Z][a-zA-Z0-9]+Execute)\(([a-zA-Z0-9 ]*)\) \(([\*a-zA-Z0-9]*), \*http\.Response, error\) {")
 internalFunctionRegex = re.compile(".* internal([a-zA-Z0-9]+Execute)\(.*")
 
@@ -29,11 +29,11 @@ def backoffRetryLines(receiver, prefix, parameter, returnType):
 func ({0}) internal{1}({2}) ({3}, *http.Response, error) {{
     """.format(receiver, prefix, parameter, returnType)
 
-for modelFile in modelFiles:
+for apiFile in apiFiles:
     updatedLines = []
     allLines = []
     internalMethodsFound = []
-    with open(modelFile, 'r') as model:
+    with open(apiFile, 'r') as model:
         # Find internalMethods that were already created by this process
         for line in model:
             allLines.append(line)
@@ -55,6 +55,6 @@ for modelFile in modelFiles:
             else:
                 updatedLines.append(line)
     # Rewrite the file
-    with open(modelFile, 'w') as model:
+    with open(apiFile, 'w') as model:
         for line in updatedLines:
             model.write(line)
