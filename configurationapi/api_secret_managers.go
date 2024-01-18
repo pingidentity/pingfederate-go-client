@@ -54,6 +54,8 @@ func (a *SecretManagersAPIService) CreateSecretManager(ctx context.Context) ApiC
 // Execute executes the request
 //
 //	@return SecretManager
+//
+// example haha
 func (a *SecretManagersAPIService) CreateSecretManagerExecute(r ApiCreateSecretManagerRequest) (*SecretManager, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -270,6 +272,8 @@ func (a *SecretManagersAPIService) GetSecretManager(ctx context.Context, id stri
 // Execute executes the request
 //
 //	@return SecretManager
+//
+// example haha
 func (a *SecretManagersAPIService) GetSecretManagerExecute(r ApiGetSecretManagerRequest) (*SecretManager, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -382,6 +386,8 @@ func (a *SecretManagersAPIService) GetSecretManagerPluginDescriptor(ctx context.
 // Execute executes the request
 //
 //	@return SecretManagerDescriptor
+//
+// example haha
 func (a *SecretManagersAPIService) GetSecretManagerPluginDescriptorExecute(r ApiGetSecretManagerPluginDescriptorRequest) (*SecretManagerDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -491,6 +497,8 @@ func (a *SecretManagersAPIService) GetSecretManagerPluginDescriptors(ctx context
 // Execute executes the request
 //
 //	@return SecretManagerDescriptors
+//
+// example haha
 func (a *SecretManagersAPIService) GetSecretManagerPluginDescriptorsExecute(r ApiGetSecretManagerPluginDescriptorsRequest) (*SecretManagerDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -589,6 +597,8 @@ func (a *SecretManagersAPIService) GetSecretManagers(ctx context.Context) ApiGet
 // Execute executes the request
 //
 //	@return SecretManagers
+//
+// example haha
 func (a *SecretManagersAPIService) GetSecretManagersExecute(r ApiGetSecretManagersRequest) (*SecretManagers, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -693,6 +703,8 @@ func (a *SecretManagersAPIService) GetSecretManagersAction(ctx context.Context, 
 // Execute executes the request
 //
 //	@return Action
+//
+// example haha
 func (a *SecretManagersAPIService) GetSecretManagersActionExecute(r ApiGetSecretManagersActionRequest) (*Action, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -806,6 +818,8 @@ func (a *SecretManagersAPIService) GetSecretManagersActions(ctx context.Context,
 // Execute executes the request
 //
 //	@return Actions
+//
+// example haha
 func (a *SecretManagersAPIService) GetSecretManagersActionsExecute(r ApiGetSecretManagersActionsRequest) (*Actions, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -930,6 +944,8 @@ func (a *SecretManagersAPIService) InvokeSecretManagersActionWithOptions(ctx con
 // Execute executes the request
 //
 //	@return ActionResult
+//
+// example haha
 func (a *SecretManagersAPIService) InvokeSecretManagersActionWithOptionsExecute(r ApiInvokeSecretManagersActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1052,6 +1068,8 @@ func (a *SecretManagersAPIService) UpdateSecretManager(ctx context.Context, id s
 // Execute executes the request
 //
 //	@return SecretManager
+//
+// example haha
 func (a *SecretManagersAPIService) UpdateSecretManagerExecute(r ApiUpdateSecretManagerRequest) (*SecretManager, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

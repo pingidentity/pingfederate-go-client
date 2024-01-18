@@ -54,6 +54,8 @@ func (a *NotificationPublishersAPIService) CreateNotificationPublisher(ctx conte
 // Execute executes the request
 //
 //	@return NotificationPublisher
+//
+// example haha
 func (a *NotificationPublishersAPIService) CreateNotificationPublisherExecute(r ApiCreateNotificationPublisherRequest) (*NotificationPublisher, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -270,6 +272,8 @@ func (a *NotificationPublishersAPIService) GetNotificationPublisher(ctx context.
 // Execute executes the request
 //
 //	@return NotificationPublisher
+//
+// example haha
 func (a *NotificationPublishersAPIService) GetNotificationPublisherExecute(r ApiGetNotificationPublisherRequest) (*NotificationPublisher, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -382,6 +386,8 @@ func (a *NotificationPublishersAPIService) GetNotificationPublisherActions(ctx c
 // Execute executes the request
 //
 //	@return Actions
+//
+// example haha
 func (a *NotificationPublishersAPIService) GetNotificationPublisherActionsExecute(r ApiGetNotificationPublisherActionsRequest) (*Actions, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -494,6 +500,8 @@ func (a *NotificationPublishersAPIService) GetNotificationPublisherPluginDescrip
 // Execute executes the request
 //
 //	@return NotificationPublisherDescriptor
+//
+// example haha
 func (a *NotificationPublishersAPIService) GetNotificationPublisherPluginDescriptorExecute(r ApiGetNotificationPublisherPluginDescriptorRequest) (*NotificationPublisherDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -603,6 +611,8 @@ func (a *NotificationPublishersAPIService) GetNotificationPublisherPluginDescrip
 // Execute executes the request
 //
 //	@return NotificationPublisherDescriptors
+//
+// example haha
 func (a *NotificationPublishersAPIService) GetNotificationPublisherPluginDescriptorsExecute(r ApiGetNotificationPublisherPluginDescriptorsRequest) (*NotificationPublisherDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -701,6 +711,8 @@ func (a *NotificationPublishersAPIService) GetNotificationPublishers(ctx context
 // Execute executes the request
 //
 //	@return NotificationPublishers
+//
+// example haha
 func (a *NotificationPublishersAPIService) GetNotificationPublishersExecute(r ApiGetNotificationPublishersRequest) (*NotificationPublishers, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -805,6 +817,8 @@ func (a *NotificationPublishersAPIService) GetNotificationPublishersAction(ctx c
 // Execute executes the request
 //
 //	@return Action
+//
+// example haha
 func (a *NotificationPublishersAPIService) GetNotificationPublishersActionExecute(r ApiGetNotificationPublishersActionRequest) (*Action, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -915,6 +929,8 @@ func (a *NotificationPublishersAPIService) GetNotificationPublishersSettings(ctx
 // Execute executes the request
 //
 //	@return NotificationPublishersSettings
+//
+// example haha
 func (a *NotificationPublishersAPIService) GetNotificationPublishersSettingsExecute(r ApiGetNotificationPublishersSettingsRequest) (*NotificationPublishersSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1026,6 +1042,8 @@ func (a *NotificationPublishersAPIService) InvokeNotificationPublishersActionWit
 // Execute executes the request
 //
 //	@return ActionResult
+//
+// example haha
 func (a *NotificationPublishersAPIService) InvokeNotificationPublishersActionWithOptionsExecute(r ApiInvokeNotificationPublishersActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1148,6 +1166,8 @@ func (a *NotificationPublishersAPIService) UpdateNotificationPublisher(ctx conte
 // Execute executes the request
 //
 //	@return NotificationPublisher
+//
+// example haha
 func (a *NotificationPublishersAPIService) UpdateNotificationPublisherExecute(r ApiUpdateNotificationPublisherRequest) (*NotificationPublisher, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1279,6 +1299,8 @@ func (a *NotificationPublishersAPIService) UpdateNotificationPublishersSettings(
 // Execute executes the request
 //
 //	@return NotificationPublishersSettings
+//
+// example haha
 func (a *NotificationPublishersAPIService) UpdateNotificationPublishersSettingsExecute(r ApiUpdateNotificationPublishersSettingsRequest) (*NotificationPublishersSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

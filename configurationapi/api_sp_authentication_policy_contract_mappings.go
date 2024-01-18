@@ -61,6 +61,8 @@ func (a *SpAuthenticationPolicyContractMappingsAPIService) CreateApcToSpAdapterM
 // Execute executes the request
 //
 //	@return ApcToSpAdapterMapping
+//
+// example haha
 func (a *SpAuthenticationPolicyContractMappingsAPIService) CreateApcToSpAdapterMappingExecute(r ApiCreateApcToSpAdapterMappingRequest) (*ApcToSpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -280,6 +282,8 @@ func (a *SpAuthenticationPolicyContractMappingsAPIService) GetApcToSpAdapterMapp
 // Execute executes the request
 //
 //	@return ApcToSpAdapterMapping
+//
+// example haha
 func (a *SpAuthenticationPolicyContractMappingsAPIService) GetApcToSpAdapterMappingByIdExecute(r ApiGetApcToSpAdapterMappingByIdRequest) (*ApcToSpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -389,6 +393,8 @@ func (a *SpAuthenticationPolicyContractMappingsAPIService) GetApcToSpAdapterMapp
 // Execute executes the request
 //
 //	@return ApcToSpAdapterMappings
+//
+// example haha
 func (a *SpAuthenticationPolicyContractMappingsAPIService) GetApcToSpAdapterMappingsExecute(r ApiGetApcToSpAdapterMappingsRequest) (*ApcToSpAdapterMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -504,6 +510,8 @@ func (a *SpAuthenticationPolicyContractMappingsAPIService) UpdateApcToSpAdapterM
 // Execute executes the request
 //
 //	@return ApcToSpAdapterMapping
+//
+// example haha
 func (a *SpAuthenticationPolicyContractMappingsAPIService) UpdateApcToSpAdapterMappingByIdExecute(r ApiUpdateApcToSpAdapterMappingByIdRequest) (*ApcToSpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

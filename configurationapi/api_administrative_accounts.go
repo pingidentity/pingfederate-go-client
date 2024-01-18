@@ -54,6 +54,8 @@ func (a *AdministrativeAccountsAPIService) AddAccount(ctx context.Context) ApiAd
 // Execute executes the request
 //
 //	@return AdministrativeAccount
+//
+// example haha
 func (a *AdministrativeAccountsAPIService) AddAccountExecute(r ApiAddAccountRequest) (*AdministrativeAccount, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -185,6 +187,8 @@ func (a *AdministrativeAccountsAPIService) ChangePassword(ctx context.Context) A
 // Execute executes the request
 //
 //	@return UserCredentials
+//
+// example haha
 func (a *AdministrativeAccountsAPIService) ChangePasswordExecute(r ApiChangePasswordRequest) (*UserCredentials, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -412,6 +416,8 @@ func (a *AdministrativeAccountsAPIService) GetAccount(ctx context.Context, usern
 // Execute executes the request
 //
 //	@return AdministrativeAccount
+//
+// example haha
 func (a *AdministrativeAccountsAPIService) GetAccountExecute(r ApiGetAccountRequest) (*AdministrativeAccount, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -521,6 +527,8 @@ func (a *AdministrativeAccountsAPIService) GetAccounts(ctx context.Context) ApiG
 // Execute executes the request
 //
 //	@return AdministrativeAccounts
+//
+// example haha
 func (a *AdministrativeAccountsAPIService) GetAccountsExecute(r ApiGetAccountsRequest) (*AdministrativeAccounts, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -639,6 +647,8 @@ func (a *AdministrativeAccountsAPIService) ResetPassword(ctx context.Context, us
 // Execute executes the request
 //
 //	@return UserCredentials
+//
+// example haha
 func (a *AdministrativeAccountsAPIService) ResetPasswordExecute(r ApiResetPasswordRequest) (*UserCredentials, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -774,6 +784,8 @@ func (a *AdministrativeAccountsAPIService) UpdateAccount(ctx context.Context, us
 // Execute executes the request
 //
 //	@return AdministrativeAccount
+//
+// example haha
 func (a *AdministrativeAccountsAPIService) UpdateAccountExecute(r ApiUpdateAccountRequest) (*AdministrativeAccount, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

@@ -46,6 +46,8 @@ func (a *SpTargetUrlMappingsAPIService) GetSpUrlMappings(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return SpUrlMappings
+//
+// example haha
 func (a *SpTargetUrlMappingsAPIService) GetSpUrlMappingsExecute(r ApiGetSpUrlMappingsRequest) (*SpUrlMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -151,6 +153,8 @@ func (a *SpTargetUrlMappingsAPIService) UpdateSpUrlMappings(ctx context.Context)
 // Execute executes the request
 //
 //	@return SpUrlMappings
+//
+// example haha
 func (a *SpTargetUrlMappingsAPIService) UpdateSpUrlMappingsExecute(r ApiUpdateSpUrlMappingsRequest) (*SpUrlMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

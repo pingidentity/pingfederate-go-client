@@ -54,6 +54,8 @@ func (a *OauthAuthorizationDetailProcessorsAPIService) CreateAuthorizationDetail
 // Execute executes the request
 //
 //	@return AuthorizationDetailProcessor
+//
+// example haha
 func (a *OauthAuthorizationDetailProcessorsAPIService) CreateAuthorizationDetailProcessorExecute(r ApiCreateAuthorizationDetailProcessorRequest) (*AuthorizationDetailProcessor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -270,6 +272,8 @@ func (a *OauthAuthorizationDetailProcessorsAPIService) GetAuthorizationDetailPro
 // Execute executes the request
 //
 //	@return AuthorizationDetailProcessor
+//
+// example haha
 func (a *OauthAuthorizationDetailProcessorsAPIService) GetAuthorizationDetailProcessorExecute(r ApiGetAuthorizationDetailProcessorRequest) (*AuthorizationDetailProcessor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -382,6 +386,8 @@ func (a *OauthAuthorizationDetailProcessorsAPIService) GetAuthorizationDetailPro
 // Execute executes the request
 //
 //	@return AuthorizationDetailProcessorDescriptor
+//
+// example haha
 func (a *OauthAuthorizationDetailProcessorsAPIService) GetAuthorizationDetailProcessorPluginDescriptorExecute(r ApiGetAuthorizationDetailProcessorPluginDescriptorRequest) (*AuthorizationDetailProcessorDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -491,6 +497,8 @@ func (a *OauthAuthorizationDetailProcessorsAPIService) GetAuthorizationDetailPro
 // Execute executes the request
 //
 //	@return AuthorizationDetailProcessorDescriptors
+//
+// example haha
 func (a *OauthAuthorizationDetailProcessorsAPIService) GetAuthorizationDetailProcessorPluginDescriptorsExecute(r ApiGetAuthorizationDetailProcessorPluginDescriptorsRequest) (*AuthorizationDetailProcessorDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -589,6 +597,8 @@ func (a *OauthAuthorizationDetailProcessorsAPIService) GetAuthorizationDetailPro
 // Execute executes the request
 //
 //	@return AuthorizationDetailProcessors
+//
+// example haha
 func (a *OauthAuthorizationDetailProcessorsAPIService) GetAuthorizationDetailProcessorsExecute(r ApiGetAuthorizationDetailProcessorsRequest) (*AuthorizationDetailProcessors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -697,6 +707,8 @@ func (a *OauthAuthorizationDetailProcessorsAPIService) UpdateAuthorizationDetail
 // Execute executes the request
 //
 //	@return AuthorizationDetailProcessor
+//
+// example haha
 func (a *OauthAuthorizationDetailProcessorsAPIService) UpdateAuthorizationDetailProcessorExecute(r ApiUpdateAuthorizationDetailProcessorRequest) (*AuthorizationDetailProcessor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

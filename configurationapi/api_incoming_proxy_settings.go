@@ -48,6 +48,8 @@ func (a *IncomingProxySettingsAPIService) GetIncomingProxySettings(ctx context.C
 // Execute executes the request
 //
 //	@return IncomingProxySettings
+//
+// example haha
 func (a *IncomingProxySettingsAPIService) GetIncomingProxySettingsExecute(r ApiGetIncomingProxySettingsRequest) (*IncomingProxySettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -155,6 +157,8 @@ func (a *IncomingProxySettingsAPIService) UpdateIncomingProxySettings(ctx contex
 // Execute executes the request
 //
 //	@return IncomingProxySettings
+//
+// example haha
 func (a *IncomingProxySettingsAPIService) UpdateIncomingProxySettingsExecute(r ApiUpdateIncomingProxySettingsRequest) (*IncomingProxySettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

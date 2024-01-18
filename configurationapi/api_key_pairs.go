@@ -46,6 +46,8 @@ func (a *KeyPairsAPIService) GetKeyAlgorithms(ctx context.Context) ApiGetKeyAlgo
 // Execute executes the request
 //
 //	@return KeyAlgorithms
+//
+// example haha
 func (a *KeyPairsAPIService) GetKeyAlgorithmsExecute(r ApiGetKeyAlgorithmsRequest) (*KeyAlgorithms, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

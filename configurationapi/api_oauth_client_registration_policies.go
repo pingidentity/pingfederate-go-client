@@ -54,6 +54,8 @@ func (a *OauthClientRegistrationPoliciesAPIService) CreateDynamicClientRegistrat
 // Execute executes the request
 //
 //	@return ClientRegistrationPolicy
+//
+// example haha
 func (a *OauthClientRegistrationPoliciesAPIService) CreateDynamicClientRegistrationPolicyExecute(r ApiCreateDynamicClientRegistrationPolicyRequest) (*ClientRegistrationPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -270,6 +272,8 @@ func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistration
 // Execute executes the request
 //
 //	@return ClientRegistrationPolicyDescriptor
+//
+// example haha
 func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistrationDescriptorExecute(r ApiGetDynamicClientRegistrationDescriptorRequest) (*ClientRegistrationPolicyDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -379,6 +383,8 @@ func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistration
 // Execute executes the request
 //
 //	@return ClientRegistrationPolicyDescriptors
+//
+// example haha
 func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistrationDescriptorsExecute(r ApiGetDynamicClientRegistrationDescriptorsRequest) (*ClientRegistrationPolicyDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -477,6 +483,8 @@ func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistration
 // Execute executes the request
 //
 //	@return ClientRegistrationPolicies
+//
+// example haha
 func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistrationPoliciesExecute(r ApiGetDynamicClientRegistrationPoliciesRequest) (*ClientRegistrationPolicies, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -578,6 +586,8 @@ func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistration
 // Execute executes the request
 //
 //	@return ClientRegistrationPolicy
+//
+// example haha
 func (a *OauthClientRegistrationPoliciesAPIService) GetDynamicClientRegistrationPolicyExecute(r ApiGetDynamicClientRegistrationPolicyRequest) (*ClientRegistrationPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -697,6 +707,8 @@ func (a *OauthClientRegistrationPoliciesAPIService) UpdateDynamicClientRegistrat
 // Execute executes the request
 //
 //	@return ClientRegistrationPolicy
+//
+// example haha
 func (a *OauthClientRegistrationPoliciesAPIService) UpdateDynamicClientRegistrationPolicyExecute(r ApiUpdateDynamicClientRegistrationPolicyRequest) (*ClientRegistrationPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

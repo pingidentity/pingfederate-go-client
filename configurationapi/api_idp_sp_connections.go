@@ -59,6 +59,8 @@ func (a *IdpSpConnectionsAPIService) AddSpConnectionCert(ctx context.Context, id
 // Execute executes the request
 //
 //	@return ConnectionCert
+//
+// example haha
 func (a *IdpSpConnectionsAPIService) AddSpConnectionCertExecute(r ApiAddSpConnectionCertRequest) (*ConnectionCert, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -200,6 +202,8 @@ func (a *IdpSpConnectionsAPIService) CreateSpConnection(ctx context.Context) Api
 // Execute executes the request
 //
 //	@return SpConnection
+//
+// example haha
 func (a *IdpSpConnectionsAPIService) CreateSpConnectionExecute(r ApiCreateSpConnectionRequest) (*SpConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -432,6 +436,8 @@ func (a *IdpSpConnectionsAPIService) GetDecryptionKeys(ctx context.Context, id s
 // Execute executes the request
 //
 //	@return DecryptionKeys
+//
+// example haha
 func (a *IdpSpConnectionsAPIService) GetDecryptionKeysExecute(r ApiGetDecryptionKeysRequest) (*DecryptionKeys, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -546,6 +552,8 @@ func (a *IdpSpConnectionsAPIService) GetSpConnection(ctx context.Context, id str
 // Execute executes the request
 //
 //	@return SpConnection
+//
+// example haha
 func (a *IdpSpConnectionsAPIService) GetSpConnectionExecute(r ApiGetSpConnectionRequest) (*SpConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -658,6 +666,8 @@ func (a *IdpSpConnectionsAPIService) GetSpConnectionCerts(ctx context.Context, i
 // Execute executes the request
 //
 //	@return ConnectionCerts
+//
+// example haha
 func (a *IdpSpConnectionsAPIService) GetSpConnectionCertsExecute(r ApiGetSpConnectionCertsRequest) (*ConnectionCerts, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -797,6 +807,8 @@ func (a *IdpSpConnectionsAPIService) GetSpConnections(ctx context.Context) ApiGe
 // Execute executes the request
 //
 //	@return SpConnections
+//
+// example haha
 func (a *IdpSpConnectionsAPIService) GetSpConnectionsExecute(r ApiGetSpConnectionsRequest) (*SpConnections, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -920,6 +932,8 @@ func (a *IdpSpConnectionsAPIService) GetSpSigningSettings(ctx context.Context, i
 // Execute executes the request
 //
 //	@return SigningSettings
+//
+// example haha
 func (a *IdpSpConnectionsAPIService) GetSpSigningSettingsExecute(r ApiGetSpSigningSettingsRequest) (*SigningSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1039,6 +1053,8 @@ func (a *IdpSpConnectionsAPIService) UpdateDecryptionKeys(ctx context.Context, i
 // Execute executes the request
 //
 //	@return DecryptionKeys
+//
+// example haha
 func (a *IdpSpConnectionsAPIService) UpdateDecryptionKeysExecute(r ApiUpdateDecryptionKeysRequest) (*DecryptionKeys, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1183,6 +1199,8 @@ func (a *IdpSpConnectionsAPIService) UpdateSpConnection(ctx context.Context, id 
 // Execute executes the request
 //
 //	@return SpConnection
+//
+// example haha
 func (a *IdpSpConnectionsAPIService) UpdateSpConnectionExecute(r ApiUpdateSpConnectionRequest) (*SpConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1321,6 +1339,8 @@ func (a *IdpSpConnectionsAPIService) UpdateSpConnectionCerts(ctx context.Context
 // Execute executes the request
 //
 //	@return ConnectionCerts
+//
+// example haha
 func (a *IdpSpConnectionsAPIService) UpdateSpConnectionCertsExecute(r ApiUpdateSpConnectionCertsRequest) (*ConnectionCerts, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1456,6 +1476,8 @@ func (a *IdpSpConnectionsAPIService) UpdateSpSigningSettings(ctx context.Context
 // Execute executes the request
 //
 //	@return SigningSettings
+//
+// example haha
 func (a *IdpSpConnectionsAPIService) UpdateSpSigningSettingsExecute(r ApiUpdateSpSigningSettingsRequest) (*SigningSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

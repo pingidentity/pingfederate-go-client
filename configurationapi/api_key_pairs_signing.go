@@ -54,6 +54,8 @@ func (a *KeyPairsSigningAPIService) CreateSigningKeyPair(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return KeyPairView
+//
+// example haha
 func (a *KeyPairsSigningAPIService) CreateSigningKeyPairExecute(r ApiCreateSigningKeyPairRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -377,6 +379,8 @@ func (a *KeyPairsSigningAPIService) ExportCertificateFile(ctx context.Context, i
 // Execute executes the request
 //
 //	@return string
+//
+// example haha
 func (a *KeyPairsSigningAPIService) ExportCertificateFileExecute(r ApiExportCertificateFileRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -491,6 +495,8 @@ func (a *KeyPairsSigningAPIService) ExportCsr(ctx context.Context, id string) Ap
 // Execute executes the request
 //
 //	@return string
+//
+// example haha
 func (a *KeyPairsSigningAPIService) ExportCsrExecute(r ApiExportCsrRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -602,6 +608,8 @@ func (a *KeyPairsSigningAPIService) ExportPEMFile(ctx context.Context, id string
 // Execute executes the request
 //
 //	@return string
+//
+// example haha
 func (a *KeyPairsSigningAPIService) ExportPEMFileExecute(r ApiExportPEMFileRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -739,6 +747,8 @@ func (a *KeyPairsSigningAPIService) ExportPKCS12File(ctx context.Context, id str
 // Execute executes the request
 //
 //	@return string
+//
+// example haha
 func (a *KeyPairsSigningAPIService) ExportPKCS12FileExecute(r ApiExportPKCS12FileRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -867,6 +877,8 @@ func (a *KeyPairsSigningAPIService) GetRotationSettings(ctx context.Context, id 
 // Execute executes the request
 //
 //	@return KeyPairRotationSettings
+//
+// example haha
 func (a *KeyPairsSigningAPIService) GetRotationSettingsExecute(r ApiGetRotationSettingsRequest) (*KeyPairRotationSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -979,6 +991,8 @@ func (a *KeyPairsSigningAPIService) GetSigningKeyPair(ctx context.Context, id st
 // Execute executes the request
 //
 //	@return KeyPairView
+//
+// example haha
 func (a *KeyPairsSigningAPIService) GetSigningKeyPairExecute(r ApiGetSigningKeyPairRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1088,6 +1102,8 @@ func (a *KeyPairsSigningAPIService) GetSigningKeyPairs(ctx context.Context) ApiG
 // Execute executes the request
 //
 //	@return KeyPairViews
+//
+// example haha
 func (a *KeyPairsSigningAPIService) GetSigningKeyPairsExecute(r ApiGetSigningKeyPairsRequest) (*KeyPairViews, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1196,6 +1212,8 @@ func (a *KeyPairsSigningAPIService) ImportCsrResponse(ctx context.Context, id st
 // Execute executes the request
 //
 //	@return KeyPairView
+//
+// example haha
 func (a *KeyPairsSigningAPIService) ImportCsrResponseExecute(r ApiImportCsrResponseRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1328,6 +1346,8 @@ func (a *KeyPairsSigningAPIService) ImportSigningKeyPair(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return KeyPairView
+//
+// example haha
 func (a *KeyPairsSigningAPIService) ImportSigningKeyPairExecute(r ApiImportSigningKeyPairRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1451,6 +1471,8 @@ func (a *KeyPairsSigningAPIService) UpdateRotationSettings(ctx context.Context, 
 // Execute executes the request
 //
 //	@return KeyPairRotationSettings
+//
+// example haha
 func (a *KeyPairsSigningAPIService) UpdateRotationSettingsExecute(r ApiUpdateRotationSettingsRequest) (*KeyPairRotationSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

@@ -56,6 +56,8 @@ func (a *KeyPairsOauthOpenIdConnectAPIService) CreateKeySet(ctx context.Context)
 // Execute executes the request
 //
 //	@return AdditionalKeySet
+//
+// example haha
 func (a *KeyPairsOauthOpenIdConnectAPIService) CreateKeySetExecute(r ApiCreateKeySetRequest) (*AdditionalKeySet, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -272,6 +274,8 @@ func (a *KeyPairsOauthOpenIdConnectAPIService) GetKeySet(ctx context.Context, id
 // Execute executes the request
 //
 //	@return AdditionalKeySet
+//
+// example haha
 func (a *KeyPairsOauthOpenIdConnectAPIService) GetKeySetExecute(r ApiGetKeySetRequest) (*AdditionalKeySet, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -381,6 +385,8 @@ func (a *KeyPairsOauthOpenIdConnectAPIService) GetKeySets(ctx context.Context) A
 // Execute executes the request
 //
 //	@return AdditionalKeySets
+//
+// example haha
 func (a *KeyPairsOauthOpenIdConnectAPIService) GetKeySetsExecute(r ApiGetKeySetsRequest) (*AdditionalKeySets, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -479,6 +485,8 @@ func (a *KeyPairsOauthOpenIdConnectAPIService) GetOauthOidcKeysSettings(ctx cont
 // Execute executes the request
 //
 //	@return OAuthOidcKeysSettings
+//
+// example haha
 func (a *KeyPairsOauthOpenIdConnectAPIService) GetOauthOidcKeysSettingsExecute(r ApiGetOauthOidcKeysSettingsRequest) (*OAuthOidcKeysSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -589,6 +597,8 @@ func (a *KeyPairsOauthOpenIdConnectAPIService) UpdateKeySet(ctx context.Context,
 // Execute executes the request
 //
 //	@return AdditionalKeySet
+//
+// example haha
 func (a *KeyPairsOauthOpenIdConnectAPIService) UpdateKeySetExecute(r ApiUpdateKeySetRequest) (*AdditionalKeySet, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -721,6 +731,8 @@ func (a *KeyPairsOauthOpenIdConnectAPIService) UpdateOAuthOidcKeysSettings(ctx c
 // Execute executes the request
 //
 //	@return OAuthOidcKeysSettings
+//
+// example haha
 func (a *KeyPairsOauthOpenIdConnectAPIService) UpdateOAuthOidcKeysSettingsExecute(r ApiUpdateOAuthOidcKeysSettingsRequest) (*OAuthOidcKeysSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

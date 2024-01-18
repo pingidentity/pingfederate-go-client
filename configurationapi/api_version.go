@@ -46,6 +46,8 @@ func (a *VersionAPIService) GetVersion(ctx context.Context) ApiGetVersionRequest
 // Execute executes the request
 //
 //	@return Version
+//
+// example haha
 func (a *VersionAPIService) GetVersionExecute(r ApiGetVersionRequest) (*Version, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

@@ -154,6 +154,8 @@ func (a *CertificatesCaAPIService) ExportCaCertificateFile(ctx context.Context, 
 // Execute executes the request
 //
 //	@return string
+//
+// example haha
 func (a *CertificatesCaAPIService) ExportCaCertificateFileExecute(r ApiExportCaCertificateFileRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -263,6 +265,8 @@ func (a *CertificatesCaAPIService) GetTrustedCAs(ctx context.Context) ApiGetTrus
 // Execute executes the request
 //
 //	@return CertViews
+//
+// example haha
 func (a *CertificatesCaAPIService) GetTrustedCAsExecute(r ApiGetTrustedCAsRequest) (*CertViews, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -364,6 +368,8 @@ func (a *CertificatesCaAPIService) GetTrustedCert(ctx context.Context, id string
 // Execute executes the request
 //
 //	@return CertView
+//
+// example haha
 func (a *CertificatesCaAPIService) GetTrustedCertExecute(r ApiGetTrustedCertRequest) (*CertView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -480,6 +486,8 @@ func (a *CertificatesCaAPIService) ImportTrustedCA(ctx context.Context) ApiImpor
 // Execute executes the request
 //
 //	@return CertView
+//
+// example haha
 func (a *CertificatesCaAPIService) ImportTrustedCAExecute(r ApiImportTrustedCARequest) (*CertView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

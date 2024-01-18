@@ -56,6 +56,8 @@ func (a *AuthenticationPolicyContractsAPIService) CreateAuthenticationPolicyCont
 // Execute executes the request
 //
 //	@return AuthenticationPolicyContract
+//
+// example haha
 func (a *AuthenticationPolicyContractsAPIService) CreateAuthenticationPolicyContractExecute(r ApiCreateAuthenticationPolicyContractRequest) (*AuthenticationPolicyContract, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -287,6 +289,8 @@ func (a *AuthenticationPolicyContractsAPIService) GetAuthenticationPolicyContrac
 // Execute executes the request
 //
 //	@return AuthenticationPolicyContract
+//
+// example haha
 func (a *AuthenticationPolicyContractsAPIService) GetAuthenticationPolicyContractExecute(r ApiGetAuthenticationPolicyContractRequest) (*AuthenticationPolicyContract, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -417,6 +421,8 @@ func (a *AuthenticationPolicyContractsAPIService) GetAuthenticationPolicyContrac
 // Execute executes the request
 //
 //	@return AuthenticationPolicyContracts
+//
+// example haha
 func (a *AuthenticationPolicyContractsAPIService) GetAuthenticationPolicyContractsExecute(r ApiGetAuthenticationPolicyContractsRequest) (*AuthenticationPolicyContracts, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -546,6 +552,8 @@ func (a *AuthenticationPolicyContractsAPIService) UpdateAuthenticationPolicyCont
 // Execute executes the request
 //
 //	@return AuthenticationPolicyContract
+//
+// example haha
 func (a *AuthenticationPolicyContractsAPIService) UpdateAuthenticationPolicyContractExecute(r ApiUpdateAuthenticationPolicyContractRequest) (*AuthenticationPolicyContract, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

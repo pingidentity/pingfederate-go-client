@@ -61,6 +61,8 @@ func (a *IdpToSpAdapterMappingAPIService) CreateIdpToSpAdapterMapping(ctx contex
 // Execute executes the request
 //
 //	@return IdpToSpAdapterMapping
+//
+// example haha
 func (a *IdpToSpAdapterMappingAPIService) CreateIdpToSpAdapterMappingExecute(r ApiCreateIdpToSpAdapterMappingRequest) (*IdpToSpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -277,6 +279,8 @@ func (a *IdpToSpAdapterMappingAPIService) GetIdpToSpAdapterMappings(ctx context.
 // Execute executes the request
 //
 //	@return IdpToSpAdapterMappings
+//
+// example haha
 func (a *IdpToSpAdapterMappingAPIService) GetIdpToSpAdapterMappingsExecute(r ApiGetIdpToSpAdapterMappingsRequest) (*IdpToSpAdapterMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -378,6 +382,8 @@ func (a *IdpToSpAdapterMappingAPIService) GetIdpToSpAdapterMappingsById(ctx cont
 // Execute executes the request
 //
 //	@return IdpToSpAdapterMapping
+//
+// example haha
 func (a *IdpToSpAdapterMappingAPIService) GetIdpToSpAdapterMappingsByIdExecute(r ApiGetIdpToSpAdapterMappingsByIdRequest) (*IdpToSpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -504,6 +510,8 @@ func (a *IdpToSpAdapterMappingAPIService) UpdateIdpToSpAdapterMapping(ctx contex
 // Execute executes the request
 //
 //	@return IdpToSpAdapterMapping
+//
+// example haha
 func (a *IdpToSpAdapterMappingAPIService) UpdateIdpToSpAdapterMappingExecute(r ApiUpdateIdpToSpAdapterMappingRequest) (*IdpToSpAdapterMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

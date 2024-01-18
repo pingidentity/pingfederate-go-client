@@ -55,6 +55,8 @@ func (a *ConnectionMetadataAPIService) Convert(ctx context.Context) ApiConvertRe
 // Execute executes the request
 //
 //	@return ConvertMetadataResponse
+//
+// example haha
 func (a *ConnectionMetadataAPIService) ConvertExecute(r ApiConvertRequest) (*ConvertMetadataResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -175,6 +177,8 @@ func (a *ConnectionMetadataAPIService) Export(ctx context.Context) ApiExportRequ
 // Execute executes the request
 //
 //	@return string
+//
+// example haha
 func (a *ConnectionMetadataAPIService) ExportExecute(r ApiExportRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

@@ -56,6 +56,8 @@ func (a *OauthIssuersAPIService) AddOauthIssuer(ctx context.Context) ApiAddOauth
 // Execute executes the request
 //
 //	@return Issuer
+//
+// example haha
 func (a *OauthIssuersAPIService) AddOauthIssuerExecute(r ApiAddOauthIssuerRequest) (*Issuer, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -287,6 +289,8 @@ func (a *OauthIssuersAPIService) GetOauthIssuerById(ctx context.Context, id stri
 // Execute executes the request
 //
 //	@return Issuer
+//
+// example haha
 func (a *OauthIssuersAPIService) GetOauthIssuerByIdExecute(r ApiGetOauthIssuerByIdRequest) (*Issuer, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -396,6 +400,8 @@ func (a *OauthIssuersAPIService) GetOauthIssuers(ctx context.Context) ApiGetOaut
 // Execute executes the request
 //
 //	@return Issuers
+//
+// example haha
 func (a *OauthIssuersAPIService) GetOauthIssuersExecute(r ApiGetOauthIssuersRequest) (*Issuers, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -506,6 +512,8 @@ func (a *OauthIssuersAPIService) UpdateOauthIssuer(ctx context.Context, id strin
 // Execute executes the request
 //
 //	@return Issuer
+//
+// example haha
 func (a *OauthIssuersAPIService) UpdateOauthIssuerExecute(r ApiUpdateOauthIssuerRequest) (*Issuer, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

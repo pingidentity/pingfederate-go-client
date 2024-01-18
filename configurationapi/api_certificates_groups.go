@@ -159,6 +159,8 @@ func (a *CertificatesGroupsAPIService) GetCertificateFromGroup(ctx context.Conte
 // Execute executes the request
 //
 //	@return CertView
+//
+// example haha
 func (a *CertificatesGroupsAPIService) GetCertificateFromGroupExecute(r ApiGetCertificateFromGroupRequest) (*CertView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -272,6 +274,8 @@ func (a *CertificatesGroupsAPIService) GetCertificatesForGroup(ctx context.Conte
 // Execute executes the request
 //
 //	@return CertViews
+//
+// example haha
 func (a *CertificatesGroupsAPIService) GetCertificatesForGroupExecute(r ApiGetCertificatesForGroupRequest) (*CertViews, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -391,6 +395,8 @@ func (a *CertificatesGroupsAPIService) ImportFeatureCert(ctx context.Context, gr
 // Execute executes the request
 //
 //	@return CertView
+//
+// example haha
 func (a *CertificatesGroupsAPIService) ImportFeatureCertExecute(r ApiImportFeatureCertRequest) (*CertView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

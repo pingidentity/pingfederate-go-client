@@ -63,6 +63,8 @@ func (a *OauthAuthenticationPolicyContractMappingsAPIService) CreateApcMapping(c
 // Execute executes the request
 //
 //	@return ApcToPersistentGrantMapping
+//
+// example haha
 func (a *OauthAuthenticationPolicyContractMappingsAPIService) CreateApcMappingExecute(r ApiCreateApcMappingRequest) (*ApcToPersistentGrantMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -282,6 +284,8 @@ func (a *OauthAuthenticationPolicyContractMappingsAPIService) GetApcMapping(ctx 
 // Execute executes the request
 //
 //	@return ApcToPersistentGrantMapping
+//
+// example haha
 func (a *OauthAuthenticationPolicyContractMappingsAPIService) GetApcMappingExecute(r ApiGetApcMappingRequest) (*ApcToPersistentGrantMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -391,6 +395,8 @@ func (a *OauthAuthenticationPolicyContractMappingsAPIService) GetApcMappings(ctx
 // Execute executes the request
 //
 //	@return ApcToPersistentGrantMappings
+//
+// example haha
 func (a *OauthAuthenticationPolicyContractMappingsAPIService) GetApcMappingsExecute(r ApiGetApcMappingsRequest) (*ApcToPersistentGrantMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -506,6 +512,8 @@ func (a *OauthAuthenticationPolicyContractMappingsAPIService) UpdateApcMapping(c
 // Execute executes the request
 //
 //	@return ApcToPersistentGrantMapping
+//
+// example haha
 func (a *OauthAuthenticationPolicyContractMappingsAPIService) UpdateApcMappingExecute(r ApiUpdateApcMappingRequest) (*ApcToPersistentGrantMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

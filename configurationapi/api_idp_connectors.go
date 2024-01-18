@@ -50,6 +50,8 @@ func (a *IdpConnectorsAPIService) GetIdpConnectorDescriptorById(ctx context.Cont
 // Execute executes the request
 //
 //	@return SaasPluginDescriptor
+//
+// example haha
 func (a *IdpConnectorsAPIService) GetIdpConnectorDescriptorByIdExecute(r ApiGetIdpConnectorDescriptorByIdRequest) (*SaasPluginDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -149,6 +151,8 @@ func (a *IdpConnectorsAPIService) GetIdpConnectorDescriptors(ctx context.Context
 // Execute executes the request
 //
 //	@return SaasPluginDescriptors
+//
+// example haha
 func (a *IdpConnectorsAPIService) GetIdpConnectorDescriptorsExecute(r ApiGetIdpConnectorDescriptorsRequest) (*SaasPluginDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

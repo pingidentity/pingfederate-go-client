@@ -56,6 +56,8 @@ func (a *OauthClientsAPIService) CreateOauthClient(ctx context.Context) ApiCreat
 // Execute executes the request
 //
 //	@return Client
+//
+// example haha
 func (a *OauthClientsAPIService) CreateOauthClientExecute(r ApiCreateOauthClientRequest) (*Client, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -283,6 +285,8 @@ func (a *OauthClientsAPIService) GetOauthClientById(ctx context.Context, id stri
 // Execute executes the request
 //
 //	@return Client
+//
+// example haha
 func (a *OauthClientsAPIService) GetOauthClientByIdExecute(r ApiGetOauthClientByIdRequest) (*Client, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -395,6 +399,8 @@ func (a *OauthClientsAPIService) GetOauthClientSecret(ctx context.Context, id st
 // Execute executes the request
 //
 //	@return ClientSecret
+//
+// example haha
 func (a *OauthClientsAPIService) GetOauthClientSecretExecute(r ApiGetOauthClientSecretRequest) (*ClientSecret, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -536,6 +542,8 @@ func (a *OauthClientsAPIService) GetOauthClients(ctx context.Context) ApiGetOaut
 // Execute executes the request
 //
 //	@return Clients
+//
+// example haha
 func (a *OauthClientsAPIService) GetOauthClientsExecute(r ApiGetOauthClientsRequest) (*Clients, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -663,6 +671,8 @@ func (a *OauthClientsAPIService) UpdateOauthClient(ctx context.Context, id strin
 // Execute executes the request
 //
 //	@return Client
+//
+// example haha
 func (a *OauthClientsAPIService) UpdateOauthClientExecute(r ApiUpdateOauthClientRequest) (*Client, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -798,6 +808,8 @@ func (a *OauthClientsAPIService) UpdateOauthClientSecret(ctx context.Context, id
 // Execute executes the request
 //
 //	@return ClientSecret
+//
+// example haha
 func (a *OauthClientsAPIService) UpdateOauthClientSecretExecute(r ApiUpdateOauthClientSecretRequest) (*ClientSecret, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

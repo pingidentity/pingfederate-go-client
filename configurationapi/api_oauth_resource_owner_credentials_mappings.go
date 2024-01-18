@@ -63,6 +63,8 @@ func (a *OauthResourceOwnerCredentialsMappingsAPIService) CreateResourceOwnerCre
 // Execute executes the request
 //
 //	@return ResourceOwnerCredentialsMapping
+//
+// example haha
 func (a *OauthResourceOwnerCredentialsMappingsAPIService) CreateResourceOwnerCredentialsMappingExecute(r ApiCreateResourceOwnerCredentialsMappingRequest) (*ResourceOwnerCredentialsMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -282,6 +284,8 @@ func (a *OauthResourceOwnerCredentialsMappingsAPIService) GetResourceOwnerCreden
 // Execute executes the request
 //
 //	@return ResourceOwnerCredentialsMapping
+//
+// example haha
 func (a *OauthResourceOwnerCredentialsMappingsAPIService) GetResourceOwnerCredentialsMappingExecute(r ApiGetResourceOwnerCredentialsMappingRequest) (*ResourceOwnerCredentialsMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -391,6 +395,8 @@ func (a *OauthResourceOwnerCredentialsMappingsAPIService) GetResourceOwnerCreden
 // Execute executes the request
 //
 //	@return ResourceOwnerCredentialsMappings
+//
+// example haha
 func (a *OauthResourceOwnerCredentialsMappingsAPIService) GetResourceOwnerCredentialsMappingsExecute(r ApiGetResourceOwnerCredentialsMappingsRequest) (*ResourceOwnerCredentialsMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -506,6 +512,8 @@ func (a *OauthResourceOwnerCredentialsMappingsAPIService) UpdateResourceOwnerCre
 // Execute executes the request
 //
 //	@return ResourceOwnerCredentialsMapping
+//
+// example haha
 func (a *OauthResourceOwnerCredentialsMappingsAPIService) UpdateResourceOwnerCredentialsMappingExecute(r ApiUpdateResourceOwnerCredentialsMappingRequest) (*ResourceOwnerCredentialsMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

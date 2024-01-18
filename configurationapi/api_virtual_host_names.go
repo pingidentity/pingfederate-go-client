@@ -46,6 +46,8 @@ func (a *VirtualHostNamesAPIService) GetVirtualHostNamesSettings(ctx context.Con
 // Execute executes the request
 //
 //	@return VirtualHostNameSettings
+//
+// example haha
 func (a *VirtualHostNamesAPIService) GetVirtualHostNamesSettingsExecute(r ApiGetVirtualHostNamesSettingsRequest) (*VirtualHostNameSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -151,6 +153,8 @@ func (a *VirtualHostNamesAPIService) UpdateVirtualHostNamesSettings(ctx context.
 // Execute executes the request
 //
 //	@return VirtualHostNameSettings
+//
+// example haha
 func (a *VirtualHostNamesAPIService) UpdateVirtualHostNamesSettingsExecute(r ApiUpdateVirtualHostNamesSettingsRequest) (*VirtualHostNameSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

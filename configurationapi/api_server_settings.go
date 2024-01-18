@@ -164,6 +164,7 @@ func (a *ServerSettingsAPIService) GetCaptchaSettings(ctx context.Context) ApiGe
 //	@return CaptchaSettings
 //
 // Deprecated
+// example haha
 func (a *ServerSettingsAPIService) GetCaptchaSettingsExecute(r ApiGetCaptchaSettingsRequest) (*CaptchaSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -265,6 +266,8 @@ func (a *ServerSettingsAPIService) GetCert(ctx context.Context, id string) ApiGe
 // Execute executes the request
 //
 //	@return IssuerCert
+//
+// example haha
 func (a *ServerSettingsAPIService) GetCertExecute(r ApiGetCertRequest) (*IssuerCert, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -374,6 +377,8 @@ func (a *ServerSettingsAPIService) GetCerts(ctx context.Context) ApiGetCertsRequ
 // Execute executes the request
 //
 //	@return IssuerCerts
+//
+// example haha
 func (a *ServerSettingsAPIService) GetCertsExecute(r ApiGetCertsRequest) (*IssuerCerts, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -476,6 +481,7 @@ func (a *ServerSettingsAPIService) GetEmailServerSettings(ctx context.Context) A
 //	@return EmailServerSettings
 //
 // Deprecated
+// example haha
 func (a *ServerSettingsAPIService) GetEmailServerSettingsExecute(r ApiGetEmailServerSettingsRequest) (*EmailServerSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -584,6 +590,8 @@ func (a *ServerSettingsAPIService) GetGeneralSettings(ctx context.Context) ApiGe
 // Execute executes the request
 //
 //	@return GeneralSettings
+//
+// example haha
 func (a *ServerSettingsAPIService) GetGeneralSettingsExecute(r ApiGetGeneralSettingsRequest) (*GeneralSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -682,6 +690,8 @@ func (a *ServerSettingsAPIService) GetLogSettings(ctx context.Context) ApiGetLog
 // Execute executes the request
 //
 //	@return LogSettings
+//
+// example haha
 func (a *ServerSettingsAPIService) GetLogSettingsExecute(r ApiGetLogSettingsRequest) (*LogSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -780,6 +790,8 @@ func (a *ServerSettingsAPIService) GetNotificationSettings(ctx context.Context) 
 // Execute executes the request
 //
 //	@return NotificationSettings
+//
+// example haha
 func (a *ServerSettingsAPIService) GetNotificationSettingsExecute(r ApiGetNotificationSettingsRequest) (*NotificationSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -880,6 +892,8 @@ func (a *ServerSettingsAPIService) GetOutBoundProvisioningSettings(ctx context.C
 // Execute executes the request
 //
 //	@return OutboundProvisionDatabase
+//
+// example haha
 func (a *ServerSettingsAPIService) GetOutBoundProvisioningSettingsExecute(r ApiGetOutBoundProvisioningSettingsRequest) (*OutboundProvisionDatabase, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -978,6 +992,8 @@ func (a *ServerSettingsAPIService) GetServerSettings(ctx context.Context) ApiGet
 // Execute executes the request
 //
 //	@return ServerSettings
+//
+// example haha
 func (a *ServerSettingsAPIService) GetServerSettingsExecute(r ApiGetServerSettingsRequest) (*ServerSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1078,6 +1094,8 @@ func (a *ServerSettingsAPIService) GetSystemKeys(ctx context.Context) ApiGetSyst
 // Execute executes the request
 //
 //	@return SystemKeys
+//
+// example haha
 func (a *ServerSettingsAPIService) GetSystemKeysExecute(r ApiGetSystemKeysRequest) (*SystemKeys, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1176,6 +1194,8 @@ func (a *ServerSettingsAPIService) GetWsTrustStsSettings(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return WsTrustStsSettings
+//
+// example haha
 func (a *ServerSettingsAPIService) GetWsTrustStsSettingsExecute(r ApiGetWsTrustStsSettingsRequest) (*WsTrustStsSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1281,6 +1301,8 @@ func (a *ServerSettingsAPIService) ImportCertificate(ctx context.Context) ApiImp
 // Execute executes the request
 //
 //	@return IssuerCert
+//
+// example haha
 func (a *ServerSettingsAPIService) ImportCertificateExecute(r ApiImportCertificateRequest) (*IssuerCert, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1396,6 +1418,8 @@ func (a *ServerSettingsAPIService) RotateSystemKeys(ctx context.Context) ApiRota
 // Execute executes the request
 //
 //	@return SystemKeys
+//
+// example haha
 func (a *ServerSettingsAPIService) RotateSystemKeysExecute(r ApiRotateSystemKeysRequest) (*SystemKeys, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1515,6 +1539,7 @@ func (a *ServerSettingsAPIService) UpdateCaptchaSettings(ctx context.Context) Ap
 //	@return CaptchaSettings
 //
 // Deprecated
+// example haha
 func (a *ServerSettingsAPIService) UpdateCaptchaSettingsExecute(r ApiUpdateCaptchaSettingsRequest) (*CaptchaSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1655,6 +1680,7 @@ func (a *ServerSettingsAPIService) UpdateEmailServerSettings(ctx context.Context
 //	@return EmailServerSettings
 //
 // Deprecated
+// example haha
 func (a *ServerSettingsAPIService) UpdateEmailServerSettingsExecute(r ApiUpdateEmailServerSettingsRequest) (*EmailServerSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1792,6 +1818,8 @@ func (a *ServerSettingsAPIService) UpdateGeneralSettings(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return GeneralSettings
+//
+// example haha
 func (a *ServerSettingsAPIService) UpdateGeneralSettingsExecute(r ApiUpdateGeneralSettingsRequest) (*GeneralSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1912,6 +1940,8 @@ func (a *ServerSettingsAPIService) UpdateLogSettings(ctx context.Context) ApiUpd
 // Execute executes the request
 //
 //	@return LogSettings
+//
+// example haha
 func (a *ServerSettingsAPIService) UpdateLogSettingsExecute(r ApiUpdateLogSettingsRequest) (*LogSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -2032,6 +2062,8 @@ func (a *ServerSettingsAPIService) UpdateNotificationSettings(ctx context.Contex
 // Execute executes the request
 //
 //	@return NotificationSettings
+//
+// example haha
 func (a *ServerSettingsAPIService) UpdateNotificationSettingsExecute(r ApiUpdateNotificationSettingsRequest) (*NotificationSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -2154,6 +2186,8 @@ func (a *ServerSettingsAPIService) UpdateOutBoundProvisioningSettings(ctx contex
 // Execute executes the request
 //
 //	@return OutboundProvisionDatabase
+//
+// example haha
 func (a *ServerSettingsAPIService) UpdateOutBoundProvisioningSettingsExecute(r ApiUpdateOutBoundProvisioningSettingsRequest) (*OutboundProvisionDatabase, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -2274,6 +2308,8 @@ func (a *ServerSettingsAPIService) UpdateServerSettings(ctx context.Context) Api
 // Execute executes the request
 //
 //	@return ServerSettings
+//
+// example haha
 func (a *ServerSettingsAPIService) UpdateServerSettingsExecute(r ApiUpdateServerSettingsRequest) (*ServerSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -2407,6 +2443,8 @@ func (a *ServerSettingsAPIService) UpdateSystemKeys(ctx context.Context) ApiUpda
 // Execute executes the request
 //
 //	@return SystemKeys
+//
+// example haha
 func (a *ServerSettingsAPIService) UpdateSystemKeysExecute(r ApiUpdateSystemKeysRequest) (*SystemKeys, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -2527,6 +2565,8 @@ func (a *ServerSettingsAPIService) UpdateWsTrustStsSettings(ctx context.Context)
 // Execute executes the request
 //
 //	@return WsTrustStsSettings
+//
+// example haha
 func (a *ServerSettingsAPIService) UpdateWsTrustStsSettingsExecute(r ApiUpdateWsTrustStsSettingsRequest) (*WsTrustStsSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

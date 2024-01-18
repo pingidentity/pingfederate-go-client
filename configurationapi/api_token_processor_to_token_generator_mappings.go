@@ -61,6 +61,8 @@ func (a *TokenProcessorToTokenGeneratorMappingsAPIService) CreateTokenToTokenMap
 // Execute executes the request
 //
 //	@return TokenToTokenMapping
+//
+// example haha
 func (a *TokenProcessorToTokenGeneratorMappingsAPIService) CreateTokenToTokenMappingExecute(r ApiCreateTokenToTokenMappingRequest) (*TokenToTokenMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -280,6 +282,8 @@ func (a *TokenProcessorToTokenGeneratorMappingsAPIService) GetTokenToTokenMappin
 // Execute executes the request
 //
 //	@return TokenToTokenMapping
+//
+// example haha
 func (a *TokenProcessorToTokenGeneratorMappingsAPIService) GetTokenToTokenMappingByIdExecute(r ApiGetTokenToTokenMappingByIdRequest) (*TokenToTokenMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -389,6 +393,8 @@ func (a *TokenProcessorToTokenGeneratorMappingsAPIService) GetTokenToTokenMappin
 // Execute executes the request
 //
 //	@return TokenToTokenMappings
+//
+// example haha
 func (a *TokenProcessorToTokenGeneratorMappingsAPIService) GetTokenToTokenMappingsExecute(r ApiGetTokenToTokenMappingsRequest) (*TokenToTokenMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -504,6 +510,8 @@ func (a *TokenProcessorToTokenGeneratorMappingsAPIService) UpdateTokenToTokenMap
 // Execute executes the request
 //
 //	@return TokenToTokenMapping
+//
+// example haha
 func (a *TokenProcessorToTokenGeneratorMappingsAPIService) UpdateTokenToTokenMappingByIdExecute(r ApiUpdateTokenToTokenMappingByIdRequest) (*TokenToTokenMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

@@ -61,6 +61,8 @@ func (a *OauthTokenExchangeTokenGeneratorMappingsAPIService) CreateTokenGenerato
 // Execute executes the request
 //
 //	@return ProcessorPolicyToGeneratorMapping
+//
+// example haha
 func (a *OauthTokenExchangeTokenGeneratorMappingsAPIService) CreateTokenGeneratorMappingExecute(r ApiCreateTokenGeneratorMappingRequest) (*ProcessorPolicyToGeneratorMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -280,6 +282,8 @@ func (a *OauthTokenExchangeTokenGeneratorMappingsAPIService) GetTokenGeneratorMa
 // Execute executes the request
 //
 //	@return ProcessorPolicyToGeneratorMapping
+//
+// example haha
 func (a *OauthTokenExchangeTokenGeneratorMappingsAPIService) GetTokenGeneratorMappingByIdExecute(r ApiGetTokenGeneratorMappingByIdRequest) (*ProcessorPolicyToGeneratorMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -389,6 +393,8 @@ func (a *OauthTokenExchangeTokenGeneratorMappingsAPIService) GetTokenGeneratorMa
 // Execute executes the request
 //
 //	@return ProcessorPolicyToGeneratorMappings
+//
+// example haha
 func (a *OauthTokenExchangeTokenGeneratorMappingsAPIService) GetTokenGeneratorMappingsExecute(r ApiGetTokenGeneratorMappingsRequest) (*ProcessorPolicyToGeneratorMappings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -504,6 +510,8 @@ func (a *OauthTokenExchangeTokenGeneratorMappingsAPIService) UpdateTokenGenerato
 // Execute executes the request
 //
 //	@return ProcessorPolicyToGeneratorMapping
+//
+// example haha
 func (a *OauthTokenExchangeTokenGeneratorMappingsAPIService) UpdateTokenGeneratorMappingByIdExecute(r ApiUpdateTokenGeneratorMappingByIdRequest) (*ProcessorPolicyToGeneratorMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

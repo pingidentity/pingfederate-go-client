@@ -46,6 +46,8 @@ func (a *RedirectValidationAPIService) GetRedirectValidationSettings(ctx context
 // Execute executes the request
 //
 //	@return RedirectValidationSettings
+//
+// example haha
 func (a *RedirectValidationAPIService) GetRedirectValidationSettingsExecute(r ApiGetRedirectValidationSettingsRequest) (*RedirectValidationSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -153,6 +155,8 @@ func (a *RedirectValidationAPIService) UpdateRedirectValidationSettings(ctx cont
 // Execute executes the request
 //
 //	@return RedirectValidationSettings
+//
+// example haha
 func (a *RedirectValidationAPIService) UpdateRedirectValidationSettingsExecute(r ApiUpdateRedirectValidationSettingsRequest) (*RedirectValidationSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

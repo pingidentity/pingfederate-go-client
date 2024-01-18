@@ -54,6 +54,8 @@ func (a *CaptchaProvidersAPIService) CreateCaptchaProvider(ctx context.Context) 
 // Execute executes the request
 //
 //	@return CaptchaProvider
+//
+// example haha
 func (a *CaptchaProvidersAPIService) CreateCaptchaProviderExecute(r ApiCreateCaptchaProviderRequest) (*CaptchaProvider, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -270,6 +272,8 @@ func (a *CaptchaProvidersAPIService) GetCaptchaProvider(ctx context.Context, id 
 // Execute executes the request
 //
 //	@return CaptchaProvider
+//
+// example haha
 func (a *CaptchaProvidersAPIService) GetCaptchaProviderExecute(r ApiGetCaptchaProviderRequest) (*CaptchaProvider, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -382,6 +386,8 @@ func (a *CaptchaProvidersAPIService) GetCaptchaProviderPluginDescriptor(ctx cont
 // Execute executes the request
 //
 //	@return ACAPTCHAProviderPluginDescriptor
+//
+// example haha
 func (a *CaptchaProvidersAPIService) GetCaptchaProviderPluginDescriptorExecute(r ApiGetCaptchaProviderPluginDescriptorRequest) (*ACAPTCHAProviderPluginDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -491,6 +497,8 @@ func (a *CaptchaProvidersAPIService) GetCaptchaProviderPluginDescriptors(ctx con
 // Execute executes the request
 //
 //	@return ACollectionOfCAPTCHAProviderPluginDescriptors
+//
+// example haha
 func (a *CaptchaProvidersAPIService) GetCaptchaProviderPluginDescriptorsExecute(r ApiGetCaptchaProviderPluginDescriptorsRequest) (*ACollectionOfCAPTCHAProviderPluginDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -589,6 +597,8 @@ func (a *CaptchaProvidersAPIService) GetCaptchaProviders(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return CaptchaProviders
+//
+// example haha
 func (a *CaptchaProvidersAPIService) GetCaptchaProvidersExecute(r ApiGetCaptchaProvidersRequest) (*CaptchaProviders, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -687,6 +697,8 @@ func (a *CaptchaProvidersAPIService) GetCaptchaProvidersSettings(ctx context.Con
 // Execute executes the request
 //
 //	@return CaptchaProvidersSettings
+//
+// example haha
 func (a *CaptchaProvidersAPIService) GetCaptchaProvidersSettingsExecute(r ApiGetCaptchaProvidersSettingsRequest) (*CaptchaProvidersSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -795,6 +807,8 @@ func (a *CaptchaProvidersAPIService) UpdateCaptchaProvider(ctx context.Context, 
 // Execute executes the request
 //
 //	@return CaptchaProvider
+//
+// example haha
 func (a *CaptchaProvidersAPIService) UpdateCaptchaProviderExecute(r ApiUpdateCaptchaProviderRequest) (*CaptchaProvider, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -927,6 +941,8 @@ func (a *CaptchaProvidersAPIService) UpdateCaptchaProvidersSettings(ctx context.
 // Execute executes the request
 //
 //	@return CaptchaProvidersSettings
+//
+// example haha
 func (a *CaptchaProvidersAPIService) UpdateCaptchaProvidersSettingsExecute(r ApiUpdateCaptchaProvidersSettingsRequest) (*CaptchaProvidersSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

@@ -54,6 +54,8 @@ func (a *KeyPairsSslClientAPIService) CreateSslClientKeyPair(ctx context.Context
 // Execute executes the request
 //
 //	@return KeyPairView
+//
+// example haha
 func (a *KeyPairsSslClientAPIService) CreateSslClientKeyPairExecute(r ApiCreateSslClientKeyPairRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -275,6 +277,8 @@ func (a *KeyPairsSslClientAPIService) ExportSslClientCertificateFile(ctx context
 // Execute executes the request
 //
 //	@return string
+//
+// example haha
 func (a *KeyPairsSslClientAPIService) ExportSslClientCertificateFileExecute(r ApiExportSslClientCertificateFileRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -389,6 +393,8 @@ func (a *KeyPairsSslClientAPIService) ExportSslClientCsr(ctx context.Context, id
 // Execute executes the request
 //
 //	@return string
+//
+// example haha
 func (a *KeyPairsSslClientAPIService) ExportSslClientCsrExecute(r ApiExportSslClientCsrRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -500,6 +506,8 @@ func (a *KeyPairsSslClientAPIService) ExportSslClientPEMFile(ctx context.Context
 // Execute executes the request
 //
 //	@return string
+//
+// example haha
 func (a *KeyPairsSslClientAPIService) ExportSslClientPEMFileExecute(r ApiExportSslClientPEMFileRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -637,6 +645,8 @@ func (a *KeyPairsSslClientAPIService) ExportSslClientPKCS12File(ctx context.Cont
 // Execute executes the request
 //
 //	@return string
+//
+// example haha
 func (a *KeyPairsSslClientAPIService) ExportSslClientPKCS12FileExecute(r ApiExportSslClientPKCS12FileRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -765,6 +775,8 @@ func (a *KeyPairsSslClientAPIService) GetSslClientKeyPair(ctx context.Context, i
 // Execute executes the request
 //
 //	@return KeyPairView
+//
+// example haha
 func (a *KeyPairsSslClientAPIService) GetSslClientKeyPairExecute(r ApiGetSslClientKeyPairRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -874,6 +886,8 @@ func (a *KeyPairsSslClientAPIService) GetSslClientKeyPairs(ctx context.Context) 
 // Execute executes the request
 //
 //	@return KeyPairViews
+//
+// example haha
 func (a *KeyPairsSslClientAPIService) GetSslClientKeyPairsExecute(r ApiGetSslClientKeyPairsRequest) (*KeyPairViews, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -982,6 +996,8 @@ func (a *KeyPairsSslClientAPIService) ImportSslClientCsrResponse(ctx context.Con
 // Execute executes the request
 //
 //	@return KeyPairView
+//
+// example haha
 func (a *KeyPairsSslClientAPIService) ImportSslClientCsrResponseExecute(r ApiImportSslClientCsrResponseRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1114,6 +1130,8 @@ func (a *KeyPairsSslClientAPIService) ImportSslClientKeyPair(ctx context.Context
 // Execute executes the request
 //
 //	@return KeyPairView
+//
+// example haha
 func (a *KeyPairsSslClientAPIService) ImportSslClientKeyPairExecute(r ApiImportSslClientKeyPairRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

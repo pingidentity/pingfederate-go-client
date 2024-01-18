@@ -46,6 +46,8 @@ func (a *LicenseAPIService) GetLicense(ctx context.Context) ApiGetLicenseRequest
 // Execute executes the request
 //
 //	@return LicenseView
+//
+// example haha
 func (a *LicenseAPIService) GetLicenseExecute(r ApiGetLicenseRequest) (*LicenseView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -167,6 +169,8 @@ func (a *LicenseAPIService) GetLicenseAgreement(ctx context.Context) ApiGetLicen
 // Execute executes the request
 //
 //	@return LicenseAgreementInfo
+//
+// example haha
 func (a *LicenseAPIService) GetLicenseAgreementExecute(r ApiGetLicenseAgreementRequest) (*LicenseAgreementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -282,6 +286,8 @@ func (a *LicenseAPIService) UpdateLicense(ctx context.Context) ApiUpdateLicenseR
 // Execute executes the request
 //
 //	@return LicenseView
+//
+// example haha
 func (a *LicenseAPIService) UpdateLicenseExecute(r ApiUpdateLicenseRequest) (*LicenseView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -404,6 +410,8 @@ func (a *LicenseAPIService) UpdateLicenseAgreement(ctx context.Context) ApiUpdat
 // Execute executes the request
 //
 //	@return LicenseAgreementInfo
+//
+// example haha
 func (a *LicenseAPIService) UpdateLicenseAgreementExecute(r ApiUpdateLicenseAgreementRequest) (*LicenseAgreementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

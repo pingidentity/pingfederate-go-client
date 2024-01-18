@@ -54,6 +54,8 @@ func (a *OauthAccessTokenManagersAPIService) CreateTokenManager(ctx context.Cont
 // Execute executes the request
 //
 //	@return AccessTokenManager
+//
+// example haha
 func (a *OauthAccessTokenManagersAPIService) CreateTokenManagerExecute(r ApiCreateTokenManagerRequest) (*AccessTokenManager, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -267,6 +269,8 @@ func (a *OauthAccessTokenManagersAPIService) GetOauthAccessTokenManagersSettings
 // Execute executes the request
 //
 //	@return AccessTokenManagementSettings
+//
+// example haha
 func (a *OauthAccessTokenManagersAPIService) GetOauthAccessTokenManagersSettingsExecute(r ApiGetOauthAccessTokenManagersSettingsRequest) (*AccessTokenManagementSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -368,6 +372,8 @@ func (a *OauthAccessTokenManagersAPIService) GetTokenManager(ctx context.Context
 // Execute executes the request
 //
 //	@return AccessTokenManager
+//
+// example haha
 func (a *OauthAccessTokenManagersAPIService) GetTokenManagerExecute(r ApiGetTokenManagerRequest) (*AccessTokenManager, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -480,6 +486,8 @@ func (a *OauthAccessTokenManagersAPIService) GetTokenManagerDescriptor(ctx conte
 // Execute executes the request
 //
 //	@return AccessTokenManagerDescriptor
+//
+// example haha
 func (a *OauthAccessTokenManagersAPIService) GetTokenManagerDescriptorExecute(r ApiGetTokenManagerDescriptorRequest) (*AccessTokenManagerDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -589,6 +597,8 @@ func (a *OauthAccessTokenManagersAPIService) GetTokenManagerDescriptors(ctx cont
 // Execute executes the request
 //
 //	@return AccessTokenManagerDescriptors
+//
+// example haha
 func (a *OauthAccessTokenManagersAPIService) GetTokenManagerDescriptorsExecute(r ApiGetTokenManagerDescriptorsRequest) (*AccessTokenManagerDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -687,6 +697,8 @@ func (a *OauthAccessTokenManagersAPIService) GetTokenManagers(ctx context.Contex
 // Execute executes the request
 //
 //	@return AccessTokenManagers
+//
+// example haha
 func (a *OauthAccessTokenManagersAPIService) GetTokenManagersExecute(r ApiGetTokenManagersRequest) (*AccessTokenManagers, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -792,6 +804,8 @@ func (a *OauthAccessTokenManagersAPIService) UpdateOauthAccessTokenManagersSetti
 // Execute executes the request
 //
 //	@return AccessTokenManagementSettings
+//
+// example haha
 func (a *OauthAccessTokenManagersAPIService) UpdateOauthAccessTokenManagersSettingsExecute(r ApiUpdateOauthAccessTokenManagersSettingsRequest) (*AccessTokenManagementSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -915,6 +929,8 @@ func (a *OauthAccessTokenManagersAPIService) UpdateTokenManager(ctx context.Cont
 // Execute executes the request
 //
 //	@return AccessTokenManager
+//
+// example haha
 func (a *OauthAccessTokenManagersAPIService) UpdateTokenManagerExecute(r ApiUpdateTokenManagerRequest) (*AccessTokenManager, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

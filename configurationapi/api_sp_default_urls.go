@@ -46,6 +46,8 @@ func (a *SpDefaultUrlsAPIService) GetSpDefaultUrls(ctx context.Context) ApiGetSp
 // Execute executes the request
 //
 //	@return SpDefaultUrls
+//
+// example haha
 func (a *SpDefaultUrlsAPIService) GetSpDefaultUrlsExecute(r ApiGetSpDefaultUrlsRequest) (*SpDefaultUrls, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -151,6 +153,8 @@ func (a *SpDefaultUrlsAPIService) UpdateSpDefaultUrls(ctx context.Context) ApiUp
 // Execute executes the request
 //
 //	@return SpDefaultUrls
+//
+// example haha
 func (a *SpDefaultUrlsAPIService) UpdateSpDefaultUrlsExecute(r ApiUpdateSpDefaultUrlsRequest) (*SpDefaultUrls, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

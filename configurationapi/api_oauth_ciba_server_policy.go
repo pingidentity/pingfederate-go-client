@@ -63,6 +63,8 @@ func (a *OauthCibaServerPolicyAPIService) CreateCibaServerPolicy(ctx context.Con
 // Execute executes the request
 //
 //	@return RequestPolicy
+//
+// example haha
 func (a *OauthCibaServerPolicyAPIService) CreateCibaServerPolicyExecute(r ApiCreateCibaServerPolicyRequest) (*RequestPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -292,6 +294,8 @@ func (a *OauthCibaServerPolicyAPIService) GetCibaServerPolicies(ctx context.Cont
 // Execute executes the request
 //
 //	@return RequestPolicies
+//
+// example haha
 func (a *OauthCibaServerPolicyAPIService) GetCibaServerPoliciesExecute(r ApiGetCibaServerPoliciesRequest) (*RequestPolicies, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -395,6 +399,8 @@ func (a *OauthCibaServerPolicyAPIService) GetCibaServerPolicyById(ctx context.Co
 // Execute executes the request
 //
 //	@return RequestPolicy
+//
+// example haha
 func (a *OauthCibaServerPolicyAPIService) GetCibaServerPolicyByIdExecute(r ApiGetCibaServerPolicyByIdRequest) (*RequestPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -504,6 +510,8 @@ func (a *OauthCibaServerPolicyAPIService) GetCibaServerPolicySettings(ctx contex
 // Execute executes the request
 //
 //	@return CibaServerPolicySettings
+//
+// example haha
 func (a *OauthCibaServerPolicyAPIService) GetCibaServerPolicySettingsExecute(r ApiGetCibaServerPolicySettingsRequest) (*CibaServerPolicySettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -621,6 +629,8 @@ func (a *OauthCibaServerPolicyAPIService) UpdateCibaServerPolicy(ctx context.Con
 // Execute executes the request
 //
 //	@return RequestPolicy
+//
+// example haha
 func (a *OauthCibaServerPolicyAPIService) UpdateCibaServerPolicyExecute(r ApiUpdateCibaServerPolicyRequest) (*RequestPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -763,6 +773,8 @@ func (a *OauthCibaServerPolicyAPIService) UpdateCibaServerPolicySettings(ctx con
 // Execute executes the request
 //
 //	@return CibaServerPolicySettings
+//
+// example haha
 func (a *OauthCibaServerPolicyAPIService) UpdateCibaServerPolicySettingsExecute(r ApiUpdateCibaServerPolicySettingsRequest) (*CibaServerPolicySettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

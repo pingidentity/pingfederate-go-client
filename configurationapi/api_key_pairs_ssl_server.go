@@ -54,6 +54,8 @@ func (a *KeyPairsSslServerAPIService) CreateSslServerKeyPair(ctx context.Context
 // Execute executes the request
 //
 //	@return KeyPairView
+//
+// example haha
 func (a *KeyPairsSslServerAPIService) CreateSslServerKeyPairExecute(r ApiCreateSslServerKeyPairRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -275,6 +277,8 @@ func (a *KeyPairsSslServerAPIService) ExportSslServerCertificateFile(ctx context
 // Execute executes the request
 //
 //	@return string
+//
+// example haha
 func (a *KeyPairsSslServerAPIService) ExportSslServerCertificateFileExecute(r ApiExportSslServerCertificateFileRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -389,6 +393,8 @@ func (a *KeyPairsSslServerAPIService) ExportSslServerCsr(ctx context.Context, id
 // Execute executes the request
 //
 //	@return string
+//
+// example haha
 func (a *KeyPairsSslServerAPIService) ExportSslServerCsrExecute(r ApiExportSslServerCsrRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -500,6 +506,8 @@ func (a *KeyPairsSslServerAPIService) ExportSslServerPEMFile(ctx context.Context
 // Execute executes the request
 //
 //	@return string
+//
+// example haha
 func (a *KeyPairsSslServerAPIService) ExportSslServerPEMFileExecute(r ApiExportSslServerPEMFileRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -637,6 +645,8 @@ func (a *KeyPairsSslServerAPIService) ExportSslServerPKCS12File(ctx context.Cont
 // Execute executes the request
 //
 //	@return string
+//
+// example haha
 func (a *KeyPairsSslServerAPIService) ExportSslServerPKCS12FileExecute(r ApiExportSslServerPKCS12FileRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -765,6 +775,8 @@ func (a *KeyPairsSslServerAPIService) GetSslServerKeyPair(ctx context.Context, i
 // Execute executes the request
 //
 //	@return KeyPairView
+//
+// example haha
 func (a *KeyPairsSslServerAPIService) GetSslServerKeyPairExecute(r ApiGetSslServerKeyPairRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -874,6 +886,8 @@ func (a *KeyPairsSslServerAPIService) GetSslServerKeyPairs(ctx context.Context) 
 // Execute executes the request
 //
 //	@return KeyPairViews
+//
+// example haha
 func (a *KeyPairsSslServerAPIService) GetSslServerKeyPairsExecute(r ApiGetSslServerKeyPairsRequest) (*KeyPairViews, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -972,6 +986,8 @@ func (a *KeyPairsSslServerAPIService) GetSslServerSettings(ctx context.Context) 
 // Execute executes the request
 //
 //	@return SslServerSettings
+//
+// example haha
 func (a *KeyPairsSslServerAPIService) GetSslServerSettingsExecute(r ApiGetSslServerSettingsRequest) (*SslServerSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1080,6 +1096,8 @@ func (a *KeyPairsSslServerAPIService) ImportSslServerCsrResponse(ctx context.Con
 // Execute executes the request
 //
 //	@return KeyPairView
+//
+// example haha
 func (a *KeyPairsSslServerAPIService) ImportSslServerCsrResponseExecute(r ApiImportSslServerCsrResponseRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1212,6 +1230,8 @@ func (a *KeyPairsSslServerAPIService) ImportSslServerKeyPair(ctx context.Context
 // Execute executes the request
 //
 //	@return KeyPairView
+//
+// example haha
 func (a *KeyPairsSslServerAPIService) ImportSslServerKeyPairExecute(r ApiImportSslServerKeyPairRequest) (*KeyPairView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1332,6 +1352,8 @@ func (a *KeyPairsSslServerAPIService) UpdateSslServerSettings(ctx context.Contex
 // Execute executes the request
 //
 //	@return SslServerSettings
+//
+// example haha
 func (a *KeyPairsSslServerAPIService) UpdateSslServerSettingsExecute(r ApiUpdateSslServerSettingsRequest) (*SslServerSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

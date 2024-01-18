@@ -46,6 +46,8 @@ func (a *ProtocolMetadataAPIService) GetLifetimeSettings(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return MetadataLifetimeSettings
+//
+// example haha
 func (a *ProtocolMetadataAPIService) GetLifetimeSettingsExecute(r ApiGetLifetimeSettingsRequest) (*MetadataLifetimeSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -144,6 +146,8 @@ func (a *ProtocolMetadataAPIService) GetSigningSettings(ctx context.Context) Api
 // Execute executes the request
 //
 //	@return MetadataSigningSettings
+//
+// example haha
 func (a *ProtocolMetadataAPIService) GetSigningSettingsExecute(r ApiGetSigningSettingsRequest) (*MetadataSigningSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -249,6 +253,8 @@ func (a *ProtocolMetadataAPIService) UpdateLifetimeSettings(ctx context.Context)
 // Execute executes the request
 //
 //	@return MetadataLifetimeSettings
+//
+// example haha
 func (a *ProtocolMetadataAPIService) UpdateLifetimeSettingsExecute(r ApiUpdateLifetimeSettingsRequest) (*MetadataLifetimeSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -368,6 +374,8 @@ func (a *ProtocolMetadataAPIService) UpdateSigningSettings(ctx context.Context) 
 // Execute executes the request
 //
 //	@return MetadataSigningSettings
+//
+// example haha
 func (a *ProtocolMetadataAPIService) UpdateSigningSettingsExecute(r ApiUpdateSigningSettingsRequest) (*MetadataSigningSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

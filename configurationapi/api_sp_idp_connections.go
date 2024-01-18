@@ -59,6 +59,8 @@ func (a *SpIdpConnectionsAPIService) AddConnectionCert(ctx context.Context, id s
 // Execute executes the request
 //
 //	@return ConnectionCert
+//
+// example haha
 func (a *SpIdpConnectionsAPIService) AddConnectionCertExecute(r ApiAddConnectionCertRequest) (*ConnectionCert, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -200,6 +202,8 @@ func (a *SpIdpConnectionsAPIService) CreateConnection(ctx context.Context) ApiCr
 // Execute executes the request
 //
 //	@return IdpConnection
+//
+// example haha
 func (a *SpIdpConnectionsAPIService) CreateConnectionExecute(r ApiCreateConnectionRequest) (*IdpConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -434,6 +438,8 @@ func (a *SpIdpConnectionsAPIService) GetConnection(ctx context.Context, id strin
 // Execute executes the request
 //
 //	@return IdpConnection
+//
+// example haha
 func (a *SpIdpConnectionsAPIService) GetConnectionExecute(r ApiGetConnectionRequest) (*IdpConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -546,6 +552,8 @@ func (a *SpIdpConnectionsAPIService) GetConnectionCerts(ctx context.Context, id 
 // Execute executes the request
 //
 //	@return ConnectionCerts
+//
+// example haha
 func (a *SpIdpConnectionsAPIService) GetConnectionCertsExecute(r ApiGetConnectionCertsRequest) (*ConnectionCerts, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -685,6 +693,8 @@ func (a *SpIdpConnectionsAPIService) GetConnections(ctx context.Context) ApiGetC
 // Execute executes the request
 //
 //	@return IdpConnections
+//
+// example haha
 func (a *SpIdpConnectionsAPIService) GetConnectionsExecute(r ApiGetConnectionsRequest) (*IdpConnections, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -808,6 +818,8 @@ func (a *SpIdpConnectionsAPIService) GetIdpConnectionSigningSettings(ctx context
 // Execute executes the request
 //
 //	@return SigningSettings
+//
+// example haha
 func (a *SpIdpConnectionsAPIService) GetIdpConnectionSigningSettingsExecute(r ApiGetIdpConnectionSigningSettingsRequest) (*SigningSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -920,6 +932,8 @@ func (a *SpIdpConnectionsAPIService) GetIdpConnectionsDecryptionKeys(ctx context
 // Execute executes the request
 //
 //	@return DecryptionKeys
+//
+// example haha
 func (a *SpIdpConnectionsAPIService) GetIdpConnectionsDecryptionKeysExecute(r ApiGetIdpConnectionsDecryptionKeysRequest) (*DecryptionKeys, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1048,6 +1062,8 @@ func (a *SpIdpConnectionsAPIService) UpdateConnection(ctx context.Context, id st
 // Execute executes the request
 //
 //	@return IdpConnection
+//
+// example haha
 func (a *SpIdpConnectionsAPIService) UpdateConnectionExecute(r ApiUpdateConnectionRequest) (*IdpConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1186,6 +1202,8 @@ func (a *SpIdpConnectionsAPIService) UpdateConnectionCerts(ctx context.Context, 
 // Execute executes the request
 //
 //	@return ConnectionCerts
+//
+// example haha
 func (a *SpIdpConnectionsAPIService) UpdateConnectionCertsExecute(r ApiUpdateConnectionCertsRequest) (*ConnectionCerts, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1321,6 +1339,8 @@ func (a *SpIdpConnectionsAPIService) UpdateIdpConnectionSigningSettings(ctx cont
 // Execute executes the request
 //
 //	@return SigningSettings
+//
+// example haha
 func (a *SpIdpConnectionsAPIService) UpdateIdpConnectionSigningSettingsExecute(r ApiUpdateIdpConnectionSigningSettingsRequest) (*SigningSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1456,6 +1476,8 @@ func (a *SpIdpConnectionsAPIService) UpdateIdpConnectionsDecryptionKeys(ctx cont
 // Execute executes the request
 //
 //	@return DecryptionKeys
+//
+// example haha
 func (a *SpIdpConnectionsAPIService) UpdateIdpConnectionsDecryptionKeysExecute(r ApiUpdateIdpConnectionsDecryptionKeysRequest) (*DecryptionKeys, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

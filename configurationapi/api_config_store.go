@@ -159,6 +159,8 @@ func (a *ConfigStoreAPIService) GetConfigStoreSetting(ctx context.Context, bundl
 // Execute executes the request
 //
 //	@return ConfigStoreSetting
+//
+// example haha
 func (a *ConfigStoreAPIService) GetConfigStoreSettingExecute(r ApiGetConfigStoreSettingRequest) (*ConfigStoreSetting, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -272,6 +274,8 @@ func (a *ConfigStoreAPIService) GetConfigStoreSettings(ctx context.Context, bund
 // Execute executes the request
 //
 //	@return ConfigStoreBundle
+//
+// example haha
 func (a *ConfigStoreAPIService) GetConfigStoreSettingsExecute(r ApiGetConfigStoreSettingsRequest) (*ConfigStoreBundle, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -396,6 +400,8 @@ func (a *ConfigStoreAPIService) UpdateConfigStoreSetting(ctx context.Context, bu
 // Execute executes the request
 //
 //	@return ConfigStoreSetting
+//
+// example haha
 func (a *ConfigStoreAPIService) UpdateConfigStoreSettingExecute(r ApiUpdateConfigStoreSettingRequest) (*ConfigStoreSetting, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

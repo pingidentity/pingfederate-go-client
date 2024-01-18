@@ -46,6 +46,8 @@ func (a *OauthClientSettingsAPIService) GetOauthClientSettings(ctx context.Conte
 // Execute executes the request
 //
 //	@return ClientSettings
+//
+// example haha
 func (a *OauthClientSettingsAPIService) GetOauthClientSettingsExecute(r ApiGetOauthClientSettingsRequest) (*ClientSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -151,6 +153,8 @@ func (a *OauthClientSettingsAPIService) UpdateOauthClientSettings(ctx context.Co
 // Execute executes the request
 //
 //	@return ClientSettings
+//
+// example haha
 func (a *OauthClientSettingsAPIService) UpdateOauthClientSettingsExecute(r ApiUpdateOauthClientSettingsRequest) (*ClientSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

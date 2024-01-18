@@ -56,6 +56,8 @@ func (a *MetadataUrlsAPIService) AddMetadataUrl(ctx context.Context) ApiAddMetad
 // Execute executes the request
 //
 //	@return MetadataUrl
+//
+// example haha
 func (a *MetadataUrlsAPIService) AddMetadataUrlExecute(r ApiAddMetadataUrlRequest) (*MetadataUrl, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -287,6 +289,8 @@ func (a *MetadataUrlsAPIService) GetMetadataUrl(ctx context.Context, id string) 
 // Execute executes the request
 //
 //	@return MetadataUrl
+//
+// example haha
 func (a *MetadataUrlsAPIService) GetMetadataUrlExecute(r ApiGetMetadataUrlRequest) (*MetadataUrl, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -396,6 +400,8 @@ func (a *MetadataUrlsAPIService) GetMetadataUrls(ctx context.Context) ApiGetMeta
 // Execute executes the request
 //
 //	@return MetadataUrls
+//
+// example haha
 func (a *MetadataUrlsAPIService) GetMetadataUrlsExecute(r ApiGetMetadataUrlsRequest) (*MetadataUrls, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -506,6 +512,8 @@ func (a *MetadataUrlsAPIService) UpdateMetadataUrl(ctx context.Context, id strin
 // Execute executes the request
 //
 //	@return MetadataUrl
+//
+// example haha
 func (a *MetadataUrlsAPIService) UpdateMetadataUrlExecute(r ApiUpdateMetadataUrlRequest) (*MetadataUrl, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

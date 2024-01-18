@@ -54,6 +54,8 @@ func (a *OauthAuthServerSettingsAPIService) AddCommonScope(ctx context.Context) 
 // Execute executes the request
 //
 //	@return ScopeEntry
+//
+// example haha
 func (a *OauthAuthServerSettingsAPIService) AddCommonScopeExecute(r ApiAddCommonScopeRequest) (*ScopeEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -174,6 +176,8 @@ func (a *OauthAuthServerSettingsAPIService) AddCommonScopeGroup(ctx context.Cont
 // Execute executes the request
 //
 //	@return ScopeGroupEntry
+//
+// example haha
 func (a *OauthAuthServerSettingsAPIService) AddCommonScopeGroupExecute(r ApiAddCommonScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -294,6 +298,8 @@ func (a *OauthAuthServerSettingsAPIService) AddExclusiveScope(ctx context.Contex
 // Execute executes the request
 //
 //	@return ScopeEntry
+//
+// example haha
 func (a *OauthAuthServerSettingsAPIService) AddExclusiveScopeExecute(r ApiAddExclusiveScopeRequest) (*ScopeEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -425,6 +431,8 @@ func (a *OauthAuthServerSettingsAPIService) AddExclusiveScopeGroup(ctx context.C
 // Execute executes the request
 //
 //	@return ScopeGroupEntry
+//
+// example haha
 func (a *OauthAuthServerSettingsAPIService) AddExclusiveScopeGroupExecute(r ApiAddExclusiveScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -538,6 +546,8 @@ func (a *OauthAuthServerSettingsAPIService) GetAuthorizationServerSettings(ctx c
 // Execute executes the request
 //
 //	@return AuthorizationServerSettings
+//
+// example haha
 func (a *OauthAuthServerSettingsAPIService) GetAuthorizationServerSettingsExecute(r ApiGetAuthorizationServerSettingsRequest) (*AuthorizationServerSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -639,6 +649,8 @@ func (a *OauthAuthServerSettingsAPIService) GetCommonScope(ctx context.Context, 
 // Execute executes the request
 //
 //	@return ScopeEntry
+//
+// example haha
 func (a *OauthAuthServerSettingsAPIService) GetCommonScopeExecute(r ApiGetCommonScopeRequest) (*ScopeEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -751,6 +763,8 @@ func (a *OauthAuthServerSettingsAPIService) GetCommonScopeGroup(ctx context.Cont
 // Execute executes the request
 //
 //	@return ScopeGroupEntry
+//
+// example haha
 func (a *OauthAuthServerSettingsAPIService) GetCommonScopeGroupExecute(r ApiGetCommonScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -863,6 +877,8 @@ func (a *OauthAuthServerSettingsAPIService) GetExclusiveScope(ctx context.Contex
 // Execute executes the request
 //
 //	@return ScopeEntry
+//
+// example haha
 func (a *OauthAuthServerSettingsAPIService) GetExclusiveScopeExecute(r ApiGetExclusiveScopeRequest) (*ScopeEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -975,6 +991,8 @@ func (a *OauthAuthServerSettingsAPIService) GetExclusiveScopeGroup(ctx context.C
 // Execute executes the request
 //
 //	@return ScopeGroupEntry
+//
+// example haha
 func (a *OauthAuthServerSettingsAPIService) GetExclusiveScopeGroupExecute(r ApiGetExclusiveScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1524,6 +1542,8 @@ func (a *OauthAuthServerSettingsAPIService) UpdateAuthorizationServerSettings(ct
 // Execute executes the request
 //
 //	@return AuthorizationServerSettings
+//
+// example haha
 func (a *OauthAuthServerSettingsAPIService) UpdateAuthorizationServerSettingsExecute(r ApiUpdateAuthorizationServerSettingsRequest) (*AuthorizationServerSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1647,6 +1667,8 @@ func (a *OauthAuthServerSettingsAPIService) UpdateCommonScope(ctx context.Contex
 // Execute executes the request
 //
 //	@return ScopeEntry
+//
+// example haha
 func (a *OauthAuthServerSettingsAPIService) UpdateCommonScopeExecute(r ApiUpdateCommonScopeRequest) (*ScopeEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1782,6 +1804,8 @@ func (a *OauthAuthServerSettingsAPIService) UpdateCommonScopeGroup(ctx context.C
 // Execute executes the request
 //
 //	@return ScopeGroupEntry
+//
+// example haha
 func (a *OauthAuthServerSettingsAPIService) UpdateCommonScopeGroupExecute(r ApiUpdateCommonScopeGroupRequest) (*ScopeGroupEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1917,6 +1941,8 @@ func (a *OauthAuthServerSettingsAPIService) UpdateExclusiveScope(ctx context.Con
 // Execute executes the request
 //
 //	@return ScopeEntry
+//
+// example haha
 func (a *OauthAuthServerSettingsAPIService) UpdateExclusiveScopeExecute(r ApiUpdateExclusiveScopeRequest) (*ScopeEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -2052,6 +2078,8 @@ func (a *OauthAuthServerSettingsAPIService) UpdateExclusiveScopeGroups(ctx conte
 // Execute executes the request
 //
 //	@return ScopeGroupEntry
+//
+// example haha
 func (a *OauthAuthServerSettingsAPIService) UpdateExclusiveScopeGroupsExecute(r ApiUpdateExclusiveScopeGroupsRequest) (*ScopeGroupEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

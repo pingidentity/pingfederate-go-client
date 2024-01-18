@@ -56,6 +56,8 @@ func (a *AuthenticationSelectorsAPIService) CreateAuthenticationSelector(ctx con
 // Execute executes the request
 //
 //	@return AuthenticationSelector
+//
+// example haha
 func (a *AuthenticationSelectorsAPIService) CreateAuthenticationSelectorExecute(r ApiCreateAuthenticationSelectorRequest) (*AuthenticationSelector, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -287,6 +289,8 @@ func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelector(ctx contex
 // Execute executes the request
 //
 //	@return AuthenticationSelector
+//
+// example haha
 func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelectorExecute(r ApiGetAuthenticationSelectorRequest) (*AuthenticationSelector, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -396,6 +400,8 @@ func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelectorDescriptors
 // Execute executes the request
 //
 //	@return AuthenticationSelectorDescriptors
+//
+// example haha
 func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelectorDescriptorsExecute(r ApiGetAuthenticationSelectorDescriptorsRequest) (*AuthenticationSelectorDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -499,6 +505,8 @@ func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelectorDescriptors
 // Execute executes the request
 //
 //	@return AuthenticationSelectorDescriptor
+//
+// example haha
 func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelectorDescriptorsByIdExecute(r ApiGetAuthenticationSelectorDescriptorsByIdRequest) (*AuthenticationSelectorDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -629,6 +637,8 @@ func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelectors(ctx conte
 // Execute executes the request
 //
 //	@return AuthenticationSelectors
+//
+// example haha
 func (a *AuthenticationSelectorsAPIService) GetAuthenticationSelectorsExecute(r ApiGetAuthenticationSelectorsRequest) (*AuthenticationSelectors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -758,6 +768,8 @@ func (a *AuthenticationSelectorsAPIService) UpdateAuthenticationSelector(ctx con
 // Execute executes the request
 //
 //	@return AuthenticationSelector
+//
+// example haha
 func (a *AuthenticationSelectorsAPIService) UpdateAuthenticationSelectorExecute(r ApiUpdateAuthenticationSelectorRequest) (*AuthenticationSelector, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

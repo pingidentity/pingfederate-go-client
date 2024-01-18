@@ -56,6 +56,8 @@ func (a *SpTokenGeneratorsAPIService) CreateTokenGenerator(ctx context.Context) 
 // Execute executes the request
 //
 //	@return TokenGenerator
+//
+// example haha
 func (a *SpTokenGeneratorsAPIService) CreateTokenGeneratorExecute(r ApiCreateTokenGeneratorRequest) (*TokenGenerator, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -287,6 +289,8 @@ func (a *SpTokenGeneratorsAPIService) GetTokenGenerator(ctx context.Context, id 
 // Execute executes the request
 //
 //	@return TokenGenerator
+//
+// example haha
 func (a *SpTokenGeneratorsAPIService) GetTokenGeneratorExecute(r ApiGetTokenGeneratorRequest) (*TokenGenerator, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -396,6 +400,8 @@ func (a *SpTokenGeneratorsAPIService) GetTokenGeneratorDescriptors(ctx context.C
 // Execute executes the request
 //
 //	@return TokenGeneratorDescriptors
+//
+// example haha
 func (a *SpTokenGeneratorsAPIService) GetTokenGeneratorDescriptorsExecute(r ApiGetTokenGeneratorDescriptorsRequest) (*TokenGeneratorDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -499,6 +505,8 @@ func (a *SpTokenGeneratorsAPIService) GetTokenGeneratorDescriptorsById(ctx conte
 // Execute executes the request
 //
 //	@return TokenGeneratorDescriptor
+//
+// example haha
 func (a *SpTokenGeneratorsAPIService) GetTokenGeneratorDescriptorsByIdExecute(r ApiGetTokenGeneratorDescriptorsByIdRequest) (*TokenGeneratorDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -608,6 +616,8 @@ func (a *SpTokenGeneratorsAPIService) GetTokenGenerators(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return TokenGenerators
+//
+// example haha
 func (a *SpTokenGeneratorsAPIService) GetTokenGeneratorsExecute(r ApiGetTokenGeneratorsRequest) (*TokenGenerators, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -718,6 +728,8 @@ func (a *SpTokenGeneratorsAPIService) UpdateTokenGenerator(ctx context.Context, 
 // Execute executes the request
 //
 //	@return TokenGenerator
+//
+// example haha
 func (a *SpTokenGeneratorsAPIService) UpdateTokenGeneratorExecute(r ApiUpdateTokenGeneratorRequest) (*TokenGenerator, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

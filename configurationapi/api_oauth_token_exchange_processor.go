@@ -63,6 +63,8 @@ func (a *OauthTokenExchangeProcessorAPIService) CreateOauthTokenExchangeProcesso
 // Execute executes the request
 //
 //	@return TokenExchangeProcessorPolicy
+//
+// example haha
 func (a *OauthTokenExchangeProcessorAPIService) CreateOauthTokenExchangeProcessorPolicyExecute(r ApiCreateOauthTokenExchangeProcessorPolicyRequest) (*TokenExchangeProcessorPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -297,6 +299,8 @@ func (a *OauthTokenExchangeProcessorAPIService) GetOauthTokenExchangeProcessorPo
 // Execute executes the request
 //
 //	@return TokenExchangeProcessorPolicy
+//
+// example haha
 func (a *OauthTokenExchangeProcessorAPIService) GetOauthTokenExchangeProcessorPolicyByIdExecute(r ApiGetOauthTokenExchangeProcessorPolicyByIdRequest) (*TokenExchangeProcessorPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -406,6 +410,8 @@ func (a *OauthTokenExchangeProcessorAPIService) GetOauthTokenExchangeProcessorPo
 // Execute executes the request
 //
 //	@return TokenExchangeProcessorPolicies
+//
+// example haha
 func (a *OauthTokenExchangeProcessorAPIService) GetOauthTokenExchangeProcessorPolicyPoliciesExecute(r ApiGetOauthTokenExchangeProcessorPolicyPoliciesRequest) (*TokenExchangeProcessorPolicies, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -504,6 +510,8 @@ func (a *OauthTokenExchangeProcessorAPIService) GetOauthTokenExchangeProcessorPo
 // Execute executes the request
 //
 //	@return TokenExchangeProcessorSettings
+//
+// example haha
 func (a *OauthTokenExchangeProcessorAPIService) GetOauthTokenExchangeProcessorPolicySettingsExecute(r ApiGetOauthTokenExchangeProcessorPolicySettingsRequest) (*TokenExchangeProcessorSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -621,6 +629,8 @@ func (a *OauthTokenExchangeProcessorAPIService) UpdateOauthTokenExchangeProcesso
 // Execute executes the request
 //
 //	@return TokenExchangeProcessorPolicy
+//
+// example haha
 func (a *OauthTokenExchangeProcessorAPIService) UpdateOauthTokenExchangeProcessorPolicyExecute(r ApiUpdateOauthTokenExchangeProcessorPolicyRequest) (*TokenExchangeProcessorPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -763,6 +773,8 @@ func (a *OauthTokenExchangeProcessorAPIService) UpdateOauthTokenExchangeProcesso
 // Execute executes the request
 //
 //	@return TokenExchangeProcessorSettings
+//
+// example haha
 func (a *OauthTokenExchangeProcessorAPIService) UpdateOauthTokenExchangeProcessorPolicySettingsExecute(r ApiUpdateOauthTokenExchangeProcessorPolicySettingsRequest) (*TokenExchangeProcessorSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

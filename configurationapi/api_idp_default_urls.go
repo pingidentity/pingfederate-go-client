@@ -46,6 +46,8 @@ func (a *IdpDefaultUrlsAPIService) GetDefaultUrl(ctx context.Context) ApiGetDefa
 // Execute executes the request
 //
 //	@return IdpDefaultUrl
+//
+// example haha
 func (a *IdpDefaultUrlsAPIService) GetDefaultUrlExecute(r ApiGetDefaultUrlRequest) (*IdpDefaultUrl, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -151,6 +153,8 @@ func (a *IdpDefaultUrlsAPIService) UpdateDefaultUrlSettings(ctx context.Context)
 // Execute executes the request
 //
 //	@return IdpDefaultUrl
+//
+// example haha
 func (a *IdpDefaultUrlsAPIService) UpdateDefaultUrlSettingsExecute(r ApiUpdateDefaultUrlSettingsRequest) (*IdpDefaultUrl, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

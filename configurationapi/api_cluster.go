@@ -46,6 +46,8 @@ func (a *ClusterAPIService) GetClusterSettings(ctx context.Context) ApiGetCluste
 // Execute executes the request
 //
 //	@return ClusterSettings
+//
+// example haha
 func (a *ClusterAPIService) GetClusterSettingsExecute(r ApiGetClusterSettingsRequest) (*ClusterSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -144,6 +146,8 @@ func (a *ClusterAPIService) GetClusterStatus(ctx context.Context) ApiGetClusterS
 // Execute executes the request
 //
 //	@return ClusterStatus
+//
+// example haha
 func (a *ClusterAPIService) GetClusterStatusExecute(r ApiGetClusterStatusRequest) (*ClusterStatus, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -242,6 +246,8 @@ func (a *ClusterAPIService) StartReplication(ctx context.Context) ApiStartReplic
 // Execute executes the request
 //
 //	@return ApiResult
+//
+// example haha
 func (a *ClusterAPIService) StartReplicationExecute(r ApiStartReplicationRequest) (*ApiResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -347,6 +353,8 @@ func (a *ClusterAPIService) UpdateClusterSettings(ctx context.Context) ApiUpdate
 // Execute executes the request
 //
 //	@return ClusterSettings
+//
+// example haha
 func (a *ClusterAPIService) UpdateClusterSettingsExecute(r ApiUpdateClusterSettingsRequest) (*ClusterSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

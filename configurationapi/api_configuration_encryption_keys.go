@@ -48,6 +48,8 @@ func (a *ConfigurationEncryptionKeysAPIService) GetConfigurationEncryptionKeys(c
 // Execute executes the request
 //
 //	@return ConfigurationEncryptionKeys
+//
+// example haha
 func (a *ConfigurationEncryptionKeysAPIService) GetConfigurationEncryptionKeysExecute(r ApiGetConfigurationEncryptionKeysRequest) (*ConfigurationEncryptionKeys, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -148,6 +150,8 @@ func (a *ConfigurationEncryptionKeysAPIService) RotateConfigurationEncryptionKey
 // Execute executes the request
 //
 //	@return ConfigurationEncryptionKeys
+//
+// example haha
 func (a *ConfigurationEncryptionKeysAPIService) RotateConfigurationEncryptionKeyExecute(r ApiRotateConfigurationEncryptionKeyRequest) (*ConfigurationEncryptionKeys, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

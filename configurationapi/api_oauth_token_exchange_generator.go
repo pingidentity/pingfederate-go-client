@@ -63,6 +63,8 @@ func (a *OauthTokenExchangeGeneratorAPIService) CreateGroup(ctx context.Context)
 // Execute executes the request
 //
 //	@return TokenExchangeGeneratorGroup
+//
+// example haha
 func (a *OauthTokenExchangeGeneratorAPIService) CreateGroupExecute(r ApiCreateGroupRequest) (*TokenExchangeGeneratorGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -297,6 +299,8 @@ func (a *OauthTokenExchangeGeneratorAPIService) GetOauthTokenExchangeGroupById(c
 // Execute executes the request
 //
 //	@return TokenExchangeGeneratorGroup
+//
+// example haha
 func (a *OauthTokenExchangeGeneratorAPIService) GetOauthTokenExchangeGroupByIdExecute(r ApiGetOauthTokenExchangeGroupByIdRequest) (*TokenExchangeGeneratorGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -406,6 +410,8 @@ func (a *OauthTokenExchangeGeneratorAPIService) GetOauthTokenExchangeGroups(ctx 
 // Execute executes the request
 //
 //	@return TokenExchangeGeneratorGroups
+//
+// example haha
 func (a *OauthTokenExchangeGeneratorAPIService) GetOauthTokenExchangeGroupsExecute(r ApiGetOauthTokenExchangeGroupsRequest) (*TokenExchangeGeneratorGroups, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -504,6 +510,8 @@ func (a *OauthTokenExchangeGeneratorAPIService) GetOauthTokenExchangeSettings(ct
 // Execute executes the request
 //
 //	@return TokenExchangeGeneratorSettings
+//
+// example haha
 func (a *OauthTokenExchangeGeneratorAPIService) GetOauthTokenExchangeSettingsExecute(r ApiGetOauthTokenExchangeSettingsRequest) (*TokenExchangeGeneratorSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -621,6 +629,8 @@ func (a *OauthTokenExchangeGeneratorAPIService) UpdateOauthTokenExchangeGroup(ct
 // Execute executes the request
 //
 //	@return TokenExchangeGeneratorGroup
+//
+// example haha
 func (a *OauthTokenExchangeGeneratorAPIService) UpdateOauthTokenExchangeGroupExecute(r ApiUpdateOauthTokenExchangeGroupRequest) (*TokenExchangeGeneratorGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -763,6 +773,8 @@ func (a *OauthTokenExchangeGeneratorAPIService) UpdateOauthTokenExchangeSettings
 // Execute executes the request
 //
 //	@return TokenExchangeGeneratorSettings
+//
+// example haha
 func (a *OauthTokenExchangeGeneratorAPIService) UpdateOauthTokenExchangeSettingsExecute(r ApiUpdateOauthTokenExchangeSettingsRequest) (*TokenExchangeGeneratorSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

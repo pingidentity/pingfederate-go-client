@@ -63,6 +63,8 @@ func (a *DataStoresAPIService) CreateDataStore(ctx context.Context) ApiCreateDat
 // Execute executes the request
 //
 //	@return DataStoreAggregation
+//
+// example haha
 func (a *DataStoresAPIService) CreateDataStoreExecute(r ApiCreateDataStoreRequest) (*DataStoreAggregation, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -297,6 +299,8 @@ func (a *DataStoresAPIService) GetCustomDataStoreDescriptor(ctx context.Context,
 // Execute executes the request
 //
 //	@return CustomDataStoreDescriptor
+//
+// example haha
 func (a *DataStoresAPIService) GetCustomDataStoreDescriptorExecute(r ApiGetCustomDataStoreDescriptorRequest) (*CustomDataStoreDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -406,6 +410,8 @@ func (a *DataStoresAPIService) GetCustomDataStoreDescriptors(ctx context.Context
 // Execute executes the request
 //
 //	@return CustomDataStoreDescriptors
+//
+// example haha
 func (a *DataStoresAPIService) GetCustomDataStoreDescriptorsExecute(r ApiGetCustomDataStoreDescriptorsRequest) (*CustomDataStoreDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -509,6 +515,8 @@ func (a *DataStoresAPIService) GetDataStore(ctx context.Context, id string) ApiG
 // Execute executes the request
 //
 //	@return DataStoreAggregation
+//
+// example haha
 func (a *DataStoresAPIService) GetDataStoreExecute(r ApiGetDataStoreRequest) (*DataStoreAggregation, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -618,6 +626,8 @@ func (a *DataStoresAPIService) GetDataStores(ctx context.Context) ApiGetDataStor
 // Execute executes the request
 //
 //	@return DataStores
+//
+// example haha
 func (a *DataStoresAPIService) GetDataStoresExecute(r ApiGetDataStoresRequest) (*DataStores, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -724,6 +734,8 @@ func (a *DataStoresAPIService) GetDataStoresActionById(ctx context.Context, id s
 // Execute executes the request
 //
 //	@return Action
+//
+// example haha
 func (a *DataStoresAPIService) GetDataStoresActionByIdExecute(r ApiGetDataStoresActionByIdRequest) (*Action, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -839,6 +851,8 @@ func (a *DataStoresAPIService) GetDataStoresActions(ctx context.Context, id stri
 // Execute executes the request
 //
 //	@return Actions
+//
+// example haha
 func (a *DataStoresAPIService) GetDataStoresActionsExecute(r ApiGetDataStoresActionsRequest) (*Actions, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -963,6 +977,8 @@ func (a *DataStoresAPIService) InvokeActionWithOptions(ctx context.Context, id s
 // Execute executes the request
 //
 //	@return ActionResult
+//
+// example haha
 func (a *DataStoresAPIService) InvokeActionWithOptionsExecute(r ApiInvokeActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1094,6 +1110,8 @@ func (a *DataStoresAPIService) UpdateDataStore(ctx context.Context, id string) A
 // Execute executes the request
 //
 //	@return DataStoreAggregation
+//
+// example haha
 func (a *DataStoresAPIService) UpdateDataStoreExecute(r ApiUpdateDataStoreRequest) (*DataStoreAggregation, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

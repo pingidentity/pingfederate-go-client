@@ -46,6 +46,8 @@ func (a *ExtendedPropertiesAPIService) GetExtendedProperties(ctx context.Context
 // Execute executes the request
 //
 //	@return ExtendedProperties
+//
+// example haha
 func (a *ExtendedPropertiesAPIService) GetExtendedPropertiesExecute(r ApiGetExtendedPropertiesRequest) (*ExtendedProperties, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -151,6 +153,8 @@ func (a *ExtendedPropertiesAPIService) UpdateExtendedProperties(ctx context.Cont
 // Execute executes the request
 //
 //	@return ExtendedProperties
+//
+// example haha
 func (a *ExtendedPropertiesAPIService) UpdateExtendedPropertiesExecute(r ApiUpdateExtendedPropertiesRequest) (*ExtendedProperties, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

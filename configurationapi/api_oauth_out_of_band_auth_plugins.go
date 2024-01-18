@@ -54,6 +54,8 @@ func (a *OauthOutOfBandAuthPluginsAPIService) CreateOOBAuthenticator(ctx context
 // Execute executes the request
 //
 //	@return OutOfBandAuthenticator
+//
+// example haha
 func (a *OauthOutOfBandAuthPluginsAPIService) CreateOOBAuthenticatorExecute(r ApiCreateOOBAuthenticatorRequest) (*OutOfBandAuthenticator, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -273,6 +275,8 @@ func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAction(ctx context.Context, 
 // Execute executes the request
 //
 //	@return Action
+//
+// example haha
 func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBActionExecute(r ApiGetOOBActionRequest) (*Action, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -386,6 +390,8 @@ func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBActions(ctx context.Context,
 // Execute executes the request
 //
 //	@return Actions
+//
+// example haha
 func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBActionsExecute(r ApiGetOOBActionsRequest) (*Actions, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -498,6 +504,8 @@ func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthPluginDescriptor(ctx con
 // Execute executes the request
 //
 //	@return OutOfBandAuthPluginDescriptor
+//
+// example haha
 func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthPluginDescriptorExecute(r ApiGetOOBAuthPluginDescriptorRequest) (*OutOfBandAuthPluginDescriptor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -607,6 +615,8 @@ func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthPluginDescriptors(ctx co
 // Execute executes the request
 //
 //	@return OutOfBandAuthPluginDescriptors
+//
+// example haha
 func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthPluginDescriptorsExecute(r ApiGetOOBAuthPluginDescriptorsRequest) (*OutOfBandAuthPluginDescriptors, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -708,6 +718,8 @@ func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthenticator(ctx context.Co
 // Execute executes the request
 //
 //	@return OutOfBandAuthenticator
+//
+// example haha
 func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthenticatorExecute(r ApiGetOOBAuthenticatorRequest) (*OutOfBandAuthenticator, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -817,6 +829,8 @@ func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthenticators(ctx context.C
 // Execute executes the request
 //
 //	@return OutOfBandAuthenticators
+//
+// example haha
 func (a *OauthOutOfBandAuthPluginsAPIService) GetOOBAuthenticatorsExecute(r ApiGetOOBAuthenticatorsRequest) (*OutOfBandAuthenticators, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -928,6 +942,8 @@ func (a *OauthOutOfBandAuthPluginsAPIService) InvokeOOBActionWithOptions(ctx con
 // Execute executes the request
 //
 //	@return ActionResult
+//
+// example haha
 func (a *OauthOutOfBandAuthPluginsAPIService) InvokeOOBActionWithOptionsExecute(r ApiInvokeOOBActionWithOptionsRequest) (*ActionResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1050,6 +1066,8 @@ func (a *OauthOutOfBandAuthPluginsAPIService) UpdateOOBAuthenticator(ctx context
 // Execute executes the request
 //
 //	@return OutOfBandAuthenticator
+//
+// example haha
 func (a *OauthOutOfBandAuthPluginsAPIService) UpdateOOBAuthenticatorExecute(r ApiUpdateOOBAuthenticatorRequest) (*OutOfBandAuthenticator, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

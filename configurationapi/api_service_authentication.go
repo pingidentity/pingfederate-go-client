@@ -46,6 +46,8 @@ func (a *ServiceAuthenticationAPIService) GetServiceAuthentication(ctx context.C
 // Execute executes the request
 //
 //	@return ServiceAuthentication
+//
+// example haha
 func (a *ServiceAuthenticationAPIService) GetServiceAuthenticationExecute(r ApiGetServiceAuthenticationRequest) (*ServiceAuthentication, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -153,6 +155,8 @@ func (a *ServiceAuthenticationAPIService) UpdateServiceAuthentication(ctx contex
 // Execute executes the request
 //
 //	@return ServiceAuthentication
+//
+// example haha
 func (a *ServiceAuthenticationAPIService) UpdateServiceAuthenticationExecute(r ApiUpdateServiceAuthenticationRequest) (*ServiceAuthentication, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

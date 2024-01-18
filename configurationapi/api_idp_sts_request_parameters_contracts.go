@@ -54,6 +54,8 @@ func (a *IdpStsRequestParametersContractsAPIService) CreateStsRequestParamContra
 // Execute executes the request
 //
 //	@return StsRequestParametersContract
+//
+// example haha
 func (a *IdpStsRequestParametersContractsAPIService) CreateStsRequestParamContractExecute(r ApiCreateStsRequestParamContractRequest) (*StsRequestParametersContract, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -270,6 +272,8 @@ func (a *IdpStsRequestParametersContractsAPIService) GetStsRequestParamContractB
 // Execute executes the request
 //
 //	@return StsRequestParametersContract
+//
+// example haha
 func (a *IdpStsRequestParametersContractsAPIService) GetStsRequestParamContractByIdExecute(r ApiGetStsRequestParamContractByIdRequest) (*StsRequestParametersContract, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -379,6 +383,8 @@ func (a *IdpStsRequestParametersContractsAPIService) GetStsRequestParamContracts
 // Execute executes the request
 //
 //	@return StsRequestParametersContracts
+//
+// example haha
 func (a *IdpStsRequestParametersContractsAPIService) GetStsRequestParamContractsExecute(r ApiGetStsRequestParamContractsRequest) (*StsRequestParametersContracts, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -487,6 +493,8 @@ func (a *IdpStsRequestParametersContractsAPIService) UpdateStsRequestParamContra
 // Execute executes the request
 //
 //	@return StsRequestParametersContract
+//
+// example haha
 func (a *IdpStsRequestParametersContractsAPIService) UpdateStsRequestParamContractByIdExecute(r ApiUpdateStsRequestParamContractByIdRequest) (*StsRequestParametersContract, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

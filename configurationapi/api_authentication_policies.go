@@ -61,6 +61,8 @@ func (a *AuthenticationPoliciesAPIService) CreateFragment(ctx context.Context) A
 // Execute executes the request
 //
 //	@return AuthenticationPolicyFragment
+//
+// example haha
 func (a *AuthenticationPoliciesAPIService) CreateFragmentExecute(r ApiCreateFragmentRequest) (*AuthenticationPolicyFragment, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -191,6 +193,8 @@ func (a *AuthenticationPoliciesAPIService) CreatePolicy(ctx context.Context) Api
 // Execute executes the request
 //
 //	@return AuthenticationPolicyTree
+//
+// example haha
 func (a *AuthenticationPoliciesAPIService) CreatePolicyExecute(r ApiCreatePolicyRequest) (*AuthenticationPolicyTree, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -518,6 +522,8 @@ func (a *AuthenticationPoliciesAPIService) GetAuthenticationPolicySettings(ctx c
 // Execute executes the request
 //
 //	@return AuthenticationPoliciesSettings
+//
+// example haha
 func (a *AuthenticationPoliciesAPIService) GetAuthenticationPolicySettingsExecute(r ApiGetAuthenticationPolicySettingsRequest) (*AuthenticationPoliciesSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -616,6 +622,8 @@ func (a *AuthenticationPoliciesAPIService) GetDefaultAuthenticationPolicy(ctx co
 // Execute executes the request
 //
 //	@return AuthenticationPolicy
+//
+// example haha
 func (a *AuthenticationPoliciesAPIService) GetDefaultAuthenticationPolicyExecute(r ApiGetDefaultAuthenticationPolicyRequest) (*AuthenticationPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -717,6 +725,8 @@ func (a *AuthenticationPoliciesAPIService) GetFragment(ctx context.Context, id s
 // Execute executes the request
 //
 //	@return AuthenticationPolicyFragment
+//
+// example haha
 func (a *AuthenticationPoliciesAPIService) GetFragmentExecute(r ApiGetFragmentRequest) (*AuthenticationPolicyFragment, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -847,6 +857,8 @@ func (a *AuthenticationPoliciesAPIService) GetFragments(ctx context.Context) Api
 // Execute executes the request
 //
 //	@return AuthenticationPolicyFragments
+//
+// example haha
 func (a *AuthenticationPoliciesAPIService) GetFragmentsExecute(r ApiGetFragmentsRequest) (*AuthenticationPolicyFragments, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -957,6 +969,8 @@ func (a *AuthenticationPoliciesAPIService) GetPolicy(ctx context.Context, id str
 // Execute executes the request
 //
 //	@return AuthenticationPolicyTree
+//
+// example haha
 func (a *AuthenticationPoliciesAPIService) GetPolicyExecute(r ApiGetPolicyRequest) (*AuthenticationPolicyTree, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1196,6 +1210,8 @@ func (a *AuthenticationPoliciesAPIService) UpdateAuthenticationPolicySettings(ct
 // Execute executes the request
 //
 //	@return AuthenticationPoliciesSettings
+//
+// example haha
 func (a *AuthenticationPoliciesAPIService) UpdateAuthenticationPolicySettingsExecute(r ApiUpdateAuthenticationPolicySettingsRequest) (*AuthenticationPoliciesSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1313,6 +1329,8 @@ func (a *AuthenticationPoliciesAPIService) UpdateDefaultAuthenticationPolicy(ctx
 // Execute executes the request
 //
 //	@return AuthenticationPolicy
+//
+// example haha
 func (a *AuthenticationPoliciesAPIService) UpdateDefaultAuthenticationPolicyExecute(r ApiUpdateDefaultAuthenticationPolicyRequest) (*AuthenticationPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1446,6 +1464,8 @@ func (a *AuthenticationPoliciesAPIService) UpdateFragment(ctx context.Context, i
 // Execute executes the request
 //
 //	@return AuthenticationPolicyFragment
+//
+// example haha
 func (a *AuthenticationPoliciesAPIService) UpdateFragmentExecute(r ApiUpdateFragmentRequest) (*AuthenticationPolicyFragment, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1591,6 +1611,8 @@ func (a *AuthenticationPoliciesAPIService) UpdatePolicy(ctx context.Context, id 
 // Execute executes the request
 //
 //	@return AuthenticationPolicyTree
+//
+// example haha
 func (a *AuthenticationPoliciesAPIService) UpdatePolicyExecute(r ApiUpdatePolicyRequest) (*AuthenticationPolicyTree, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

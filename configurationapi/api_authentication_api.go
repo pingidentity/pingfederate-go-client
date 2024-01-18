@@ -54,6 +54,8 @@ func (a *AuthenticationApiAPIService) CreateApplication(ctx context.Context) Api
 // Execute executes the request
 //
 //	@return AuthnApiApplication
+//
+// example haha
 func (a *AuthenticationApiAPIService) CreateApplicationExecute(r ApiCreateApplicationRequest) (*AuthnApiApplication, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -285,6 +287,8 @@ func (a *AuthenticationApiAPIService) GetApplication(ctx context.Context, id str
 // Execute executes the request
 //
 //	@return AuthnApiApplication
+//
+// example haha
 func (a *AuthenticationApiAPIService) GetApplicationExecute(r ApiGetApplicationRequest) (*AuthnApiApplication, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -394,6 +398,8 @@ func (a *AuthenticationApiAPIService) GetAuthenticationApiApplications(ctx conte
 // Execute executes the request
 //
 //	@return AuthnApiApplications
+//
+// example haha
 func (a *AuthenticationApiAPIService) GetAuthenticationApiApplicationsExecute(r ApiGetAuthenticationApiApplicationsRequest) (*AuthnApiApplications, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -502,6 +508,8 @@ func (a *AuthenticationApiAPIService) GetAuthenticationApiSettings(ctx context.C
 // Execute executes the request
 //
 //	@return AuthnApiSettings
+//
+// example haha
 func (a *AuthenticationApiAPIService) GetAuthenticationApiSettingsExecute(r ApiGetAuthenticationApiSettingsRequest) (*AuthnApiSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -622,6 +630,8 @@ func (a *AuthenticationApiAPIService) UpdateApplication(ctx context.Context, id 
 // Execute executes the request
 //
 //	@return AuthnApiApplication
+//
+// example haha
 func (a *AuthenticationApiAPIService) UpdateApplicationExecute(r ApiUpdateApplicationRequest) (*AuthnApiApplication, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -754,6 +764,8 @@ func (a *AuthenticationApiAPIService) UpdateAuthenticationApiSettings(ctx contex
 // Execute executes the request
 //
 //	@return AuthnApiSettings
+//
+// example haha
 func (a *AuthenticationApiAPIService) UpdateAuthenticationApiSettingsExecute(r ApiUpdateAuthenticationApiSettingsRequest) (*AuthnApiSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

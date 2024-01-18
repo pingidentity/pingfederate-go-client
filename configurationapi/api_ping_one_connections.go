@@ -61,6 +61,8 @@ func (a *PingOneConnectionsAPIService) CreatePingOneConnection(ctx context.Conte
 // Execute executes the request
 //
 //	@return PingOneConnection
+//
+// example haha
 func (a *PingOneConnectionsAPIService) CreatePingOneConnectionExecute(r ApiCreatePingOneConnectionRequest) (*PingOneConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -291,6 +293,8 @@ func (a *PingOneConnectionsAPIService) GetCredentialStatus(ctx context.Context, 
 // Execute executes the request
 //
 //	@return PingOneCredentialStatus
+//
+// example haha
 func (a *PingOneConnectionsAPIService) GetCredentialStatusExecute(r ApiGetCredentialStatusRequest) (*PingOneCredentialStatus, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -403,6 +407,8 @@ func (a *PingOneConnectionsAPIService) GetPingOneConnection(ctx context.Context,
 // Execute executes the request
 //
 //	@return PingOneConnection
+//
+// example haha
 func (a *PingOneConnectionsAPIService) GetPingOneConnectionExecute(r ApiGetPingOneConnectionRequest) (*PingOneConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -515,6 +521,8 @@ func (a *PingOneConnectionsAPIService) GetPingOneConnectionAssociations(ctx cont
 // Execute executes the request
 //
 //	@return ServiceAssociations
+//
+// example haha
 func (a *PingOneConnectionsAPIService) GetPingOneConnectionAssociationsExecute(r ApiGetPingOneConnectionAssociationsRequest) (*ServiceAssociations, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -648,6 +656,8 @@ func (a *PingOneConnectionsAPIService) GetPingOneConnectionEnvironments(ctx cont
 // Execute executes the request
 //
 //	@return PingOneEnvironments
+//
+// example haha
 func (a *PingOneConnectionsAPIService) GetPingOneConnectionEnvironmentsExecute(r ApiGetPingOneConnectionEnvironmentsRequest) (*PingOneEnvironments, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -770,6 +780,8 @@ func (a *PingOneConnectionsAPIService) GetPingOneConnectionUsages(ctx context.Co
 // Execute executes the request
 //
 //	@return ResourceUsages
+//
+// example haha
 func (a *PingOneConnectionsAPIService) GetPingOneConnectionUsagesExecute(r ApiGetPingOneConnectionUsagesRequest) (*ResourceUsages, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -879,6 +891,8 @@ func (a *PingOneConnectionsAPIService) GetPingOneConnections(ctx context.Context
 // Execute executes the request
 //
 //	@return PingOneConnections
+//
+// example haha
 func (a *PingOneConnectionsAPIService) GetPingOneConnectionsExecute(r ApiGetPingOneConnectionsRequest) (*PingOneConnections, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -994,6 +1008,8 @@ func (a *PingOneConnectionsAPIService) UpdatePingOneConnection(ctx context.Conte
 // Execute executes the request
 //
 //	@return PingOneConnection
+//
+// example haha
 func (a *PingOneConnectionsAPIService) UpdatePingOneConnectionExecute(r ApiUpdatePingOneConnectionRequest) (*PingOneConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

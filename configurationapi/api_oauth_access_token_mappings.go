@@ -63,6 +63,8 @@ func (a *OauthAccessTokenMappingsAPIService) CreateMapping(ctx context.Context) 
 // Execute executes the request
 //
 //	@return AccessTokenMapping
+//
+// example haha
 func (a *OauthAccessTokenMappingsAPIService) CreateMappingExecute(r ApiCreateMappingRequest) (*AccessTokenMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -282,6 +284,8 @@ func (a *OauthAccessTokenMappingsAPIService) GetMapping(ctx context.Context, id 
 // Execute executes the request
 //
 //	@return AccessTokenMapping
+//
+// example haha
 func (a *OauthAccessTokenMappingsAPIService) GetMappingExecute(r ApiGetMappingRequest) (*AccessTokenMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -508,6 +512,8 @@ func (a *OauthAccessTokenMappingsAPIService) UpdateMapping(ctx context.Context, 
 // Execute executes the request
 //
 //	@return AccessTokenMapping
+//
+// example haha
 func (a *OauthAccessTokenMappingsAPIService) UpdateMappingExecute(r ApiUpdateMappingRequest) (*AccessTokenMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

@@ -63,6 +63,8 @@ func (a *OauthOpenIdConnectAPIService) CreateOIDCPolicy(ctx context.Context) Api
 // Execute executes the request
 //
 //	@return OpenIdConnectPolicy
+//
+// example haha
 func (a *OauthOpenIdConnectAPIService) CreateOIDCPolicyExecute(r ApiCreateOIDCPolicyRequest) (*OpenIdConnectPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -292,6 +294,8 @@ func (a *OauthOpenIdConnectAPIService) GetOIDCPolicies(ctx context.Context) ApiG
 // Execute executes the request
 //
 //	@return OpenIdConnectPolicies
+//
+// example haha
 func (a *OauthOpenIdConnectAPIService) GetOIDCPoliciesExecute(r ApiGetOIDCPoliciesRequest) (*OpenIdConnectPolicies, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -395,6 +399,8 @@ func (a *OauthOpenIdConnectAPIService) GetOIDCPolicy(ctx context.Context, id str
 // Execute executes the request
 //
 //	@return OpenIdConnectPolicy
+//
+// example haha
 func (a *OauthOpenIdConnectAPIService) GetOIDCPolicyExecute(r ApiGetOIDCPolicyRequest) (*OpenIdConnectPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -504,6 +510,8 @@ func (a *OauthOpenIdConnectAPIService) GetOIDCSettings(ctx context.Context) ApiG
 // Execute executes the request
 //
 //	@return OpenIdConnectSettings
+//
+// example haha
 func (a *OauthOpenIdConnectAPIService) GetOIDCSettingsExecute(r ApiGetOIDCSettingsRequest) (*OpenIdConnectSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -621,6 +629,8 @@ func (a *OauthOpenIdConnectAPIService) UpdateOIDCPolicy(ctx context.Context, id 
 // Execute executes the request
 //
 //	@return OpenIdConnectPolicy
+//
+// example haha
 func (a *OauthOpenIdConnectAPIService) UpdateOIDCPolicyExecute(r ApiUpdateOIDCPolicyRequest) (*OpenIdConnectPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -756,6 +766,8 @@ func (a *OauthOpenIdConnectAPIService) UpdateOIDCSettings(ctx context.Context) A
 // Execute executes the request
 //
 //	@return OpenIdConnectSettings
+//
+// example haha
 func (a *OauthOpenIdConnectAPIService) UpdateOIDCSettingsExecute(r ApiUpdateOIDCSettingsRequest) (*OpenIdConnectSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

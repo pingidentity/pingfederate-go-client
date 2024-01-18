@@ -46,6 +46,8 @@ func (a *PingOneForEnterpriseAPIService) Disconnect(ctx context.Context) ApiDisc
 // Execute executes the request
 //
 //	@return PingOneForEnterpriseSettings
+//
+// example haha
 func (a *PingOneForEnterpriseAPIService) DisconnectExecute(r ApiDisconnectRequest) (*PingOneForEnterpriseSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -144,6 +146,8 @@ func (a *PingOneForEnterpriseAPIService) GetKeyPairs(ctx context.Context) ApiGet
 // Execute executes the request
 //
 //	@return P14EKeysView
+//
+// example haha
 func (a *PingOneForEnterpriseAPIService) GetKeyPairsExecute(r ApiGetKeyPairsRequest) (*P14EKeysView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -242,6 +246,8 @@ func (a *PingOneForEnterpriseAPIService) GetPingOneForEnterpriseSettings(ctx con
 // Execute executes the request
 //
 //	@return PingOneForEnterpriseSettings
+//
+// example haha
 func (a *PingOneForEnterpriseAPIService) GetPingOneForEnterpriseSettingsExecute(r ApiGetPingOneForEnterpriseSettingsRequest) (*PingOneForEnterpriseSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -340,6 +346,8 @@ func (a *PingOneForEnterpriseAPIService) RotateKeys(ctx context.Context) ApiRota
 // Execute executes the request
 //
 //	@return P14EKeysView
+//
+// example haha
 func (a *PingOneForEnterpriseAPIService) RotateKeysExecute(r ApiRotateKeysRequest) (*P14EKeysView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -440,6 +448,8 @@ func (a *PingOneForEnterpriseAPIService) UpdatePingOneForEnterpriseIdentityRepos
 // Execute executes the request
 //
 //	@return PingOneForEnterpriseSettings
+//
+// example haha
 func (a *PingOneForEnterpriseAPIService) UpdatePingOneForEnterpriseIdentityRepositoryExecute(r ApiUpdatePingOneForEnterpriseIdentityRepositoryRequest) (*PingOneForEnterpriseSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -555,6 +565,8 @@ func (a *PingOneForEnterpriseAPIService) UpdatePingOneSettings(ctx context.Conte
 // Execute executes the request
 //
 //	@return PingOneForEnterpriseSettings
+//
+// example haha
 func (a *PingOneForEnterpriseAPIService) UpdatePingOneSettingsExecute(r ApiUpdatePingOneSettingsRequest) (*PingOneForEnterpriseSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

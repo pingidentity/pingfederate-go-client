@@ -56,6 +56,8 @@ func (a *SessionAPIService) CreateSourcePolicy(ctx context.Context) ApiCreateSou
 // Execute executes the request
 //
 //	@return AuthenticationSessionPolicy
+//
+// example haha
 func (a *SessionAPIService) CreateSourcePolicyExecute(r ApiCreateSourcePolicyRequest) (*AuthenticationSessionPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -271,6 +273,8 @@ func (a *SessionAPIService) GetApplicationPolicy(ctx context.Context) ApiGetAppl
 // Execute executes the request
 //
 //	@return ApplicationSessionPolicy
+//
+// example haha
 func (a *SessionAPIService) GetApplicationPolicyExecute(r ApiGetApplicationPolicyRequest) (*ApplicationSessionPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -369,6 +373,8 @@ func (a *SessionAPIService) GetGlobalPolicy(ctx context.Context) ApiGetGlobalPol
 // Execute executes the request
 //
 //	@return GlobalAuthenticationSessionPolicy
+//
+// example haha
 func (a *SessionAPIService) GetGlobalPolicyExecute(r ApiGetGlobalPolicyRequest) (*GlobalAuthenticationSessionPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -467,6 +473,8 @@ func (a *SessionAPIService) GetSessionSettings(ctx context.Context) ApiGetSessio
 // Execute executes the request
 //
 //	@return SessionSettings
+//
+// example haha
 func (a *SessionAPIService) GetSessionSettingsExecute(r ApiGetSessionSettingsRequest) (*SessionSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -567,6 +575,8 @@ func (a *SessionAPIService) GetSourcePolicies(ctx context.Context) ApiGetSourceP
 // Execute executes the request
 //
 //	@return AuthenticationSessionPolicies
+//
+// example haha
 func (a *SessionAPIService) GetSourcePoliciesExecute(r ApiGetSourcePoliciesRequest) (*AuthenticationSessionPolicies, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -670,6 +680,8 @@ func (a *SessionAPIService) GetSourcePolicy(ctx context.Context, id string) ApiG
 // Execute executes the request
 //
 //	@return AuthenticationSessionPolicy
+//
+// example haha
 func (a *SessionAPIService) GetSourcePolicyExecute(r ApiGetSourcePolicyRequest) (*AuthenticationSessionPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -786,6 +798,8 @@ func (a *SessionAPIService) UpdateApplicationPolicy(ctx context.Context) ApiUpda
 // Execute executes the request
 //
 //	@return ApplicationSessionPolicy
+//
+// example haha
 func (a *SessionAPIService) UpdateApplicationPolicyExecute(r ApiUpdateApplicationPolicyRequest) (*ApplicationSessionPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -906,6 +920,8 @@ func (a *SessionAPIService) UpdateGlobalPolicy(ctx context.Context) ApiUpdateGlo
 // Execute executes the request
 //
 //	@return GlobalAuthenticationSessionPolicy
+//
+// example haha
 func (a *SessionAPIService) UpdateGlobalPolicyExecute(r ApiUpdateGlobalPolicyRequest) (*GlobalAuthenticationSessionPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1026,6 +1042,8 @@ func (a *SessionAPIService) UpdateSessionSettings(ctx context.Context) ApiUpdate
 // Execute executes the request
 //
 //	@return SessionSettings
+//
+// example haha
 func (a *SessionAPIService) UpdateSessionSettingsExecute(r ApiUpdateSessionSettingsRequest) (*SessionSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1151,6 +1169,8 @@ func (a *SessionAPIService) UpdateSourcePolicy(ctx context.Context, id string) A
 // Execute executes the request
 //
 //	@return AuthenticationSessionPolicy
+//
+// example haha
 func (a *SessionAPIService) UpdateSourcePolicyExecute(r ApiUpdateSourcePolicyRequest) (*AuthenticationSessionPolicy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
