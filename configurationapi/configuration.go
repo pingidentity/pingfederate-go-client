@@ -75,21 +75,21 @@ type ServerConfigurations []ServerConfiguration
 
 // Configuration stores the configuration of the API client
 type Configuration struct {
-	Host             string            `json:"host,omitempty"`
-	Scheme           string            `json:"scheme,omitempty"`
-	DefaultHeader    map[string]string `json:"defaultHeader,omitempty"`
-	UserAgent        string            `json:"userAgent,omitempty"`
-	Debug            bool              `json:"debug,omitempty"`
-	Servers          ServerConfigurations
-	OperationServers map[string]ServerConfigurations
-	HTTPClient       *http.Client
+	Host              string            `json:"host,omitempty"`
+	Scheme            string            `json:"scheme,omitempty"`
+	DefaultHeader     map[string]string `json:"defaultHeader,omitempty"`
+	UserAgentSuffix   *string           `json:"userAgentSuffix,omitempty"`
+	UserAgentOverride *string           `json:"userAgentOverride,omitempty"`
+	Debug             bool              `json:"debug,omitempty"`
+	Servers           ServerConfigurations
+	OperationServers  map[string]ServerConfigurations
+	HTTPClient        *http.Client
 }
 
 // NewConfiguration returns a new Configuration object
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "OpenAPI-Generator/1.0.0/go",
 		Debug:         false,
 		Servers: ServerConfigurations{
 			{
@@ -214,4 +214,16 @@ func (c *Configuration) ServerURLWithContext(ctx context.Context, endpoint strin
 	}
 
 	return sc.URL(index, variables)
+}
+
+func (c *Configuration) UserAgent() string {
+	if c.UserAgentOverride != nil {
+		return *c.UserAgentOverride
+	}
+
+	result := "PingFederate-GOLANG-SDK/1200.0.3"
+	if c.UserAgentSuffix != nil {
+		result += fmt.Sprintf(" %s", *c.UserAgentSuffix)
+	}
+	return result
 }
