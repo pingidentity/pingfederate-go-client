@@ -36,5 +36,3 @@ git_push.sh
 # And so that we use the top-level go.mod and go.sum files in the repository root
 go.mod
 go.sum
-
-client.go

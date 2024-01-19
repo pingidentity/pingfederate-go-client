@@ -5,3 +5,5 @@ package configurationapi
 //go:generate ../scripts/generateTfsdkTags.py
 
 //go:generate ../scripts/generateBackoffRetryLogic.py
+
+//go:generate ../scripts/updateClientAndConfiguration.py

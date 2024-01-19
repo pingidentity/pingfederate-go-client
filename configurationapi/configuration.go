@@ -78,8 +78,8 @@ type Configuration struct {
 	Host              string            `json:"host,omitempty"`
 	Scheme            string            `json:"scheme,omitempty"`
 	DefaultHeader     map[string]string `json:"defaultHeader,omitempty"`
-	UserAgentSuffix   *string            `json:"userAgentSuffix,omitempty"`
-	UserAgentOverride *string `json:"userAgentOverride,omitempty"`
+	UserAgentSuffix   *string           `json:"userAgentSuffix,omitempty"`
+	UserAgentOverride *string           `json:"userAgentOverride,omitempty"`
 	Debug             bool              `json:"debug,omitempty"`
 	Servers           ServerConfigurations
 	OperationServers  map[string]ServerConfigurations

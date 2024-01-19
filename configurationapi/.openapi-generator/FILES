@@ -73,6 +73,7 @@ api_sp_token_generators.go
 api_token_processor_to_token_generator_mappings.go
 api_version.go
 api_virtual_host_names.go
+client.go
 configuration.go
 docs/ACAPTCHAProviderPluginDescriptor.md
 docs/ACollectionOfCAPTCHAProviderPluginDescriptors.md
