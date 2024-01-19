@@ -46,8 +46,7 @@ func (c *Configuration) UserAgent() string {
 
 	result := "PingFederate-GOLANG-SDK/1200.0.3"
 	if c.UserAgentSuffix != nil {
-		result += " "
-		result += *c.UserAgentSuffix
+		result += fmt.Sprintf(" %s", *c.UserAgentSuffix)
 	}
 	return result
 }
