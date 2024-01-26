@@ -30,9 +30,6 @@ func (oav OAuthValues) Token() (*oauth2.Token, error) {
 }
 
 func getToken(oav OAuthValues, ctx context.Context) (*oauth2.Token, error) {
-	var token *oauth2.Token
-	var err error
-
 	oauthConfig := &clientcredentials.Config{
 		TokenURL:     oav.TokenUrl,
 		ClientID:     oav.ClientId,
@@ -43,16 +40,11 @@ func getToken(oav OAuthValues, ctx context.Context) (*oauth2.Token, error) {
 	httpClient := &http.Client{Transport: oav.Transport}
 	ctx = context.WithValue(ctx, oauth2.HTTPClient, httpClient)
 
-	token, err = oAuthExponentialBackOffRetry(func() (*oauth2.Token, error) {
+	return oAuthExponentialBackOffRetry(func() (*oauth2.Token, error) {
 		return oAuthProcessResponse(func() (*oauth2.Token, error) {
 			return oauthConfig.Token(ctx)
 		})
 	})
-
-	if err != nil {
-		return nil, err
-	}
-	return token, nil
 }
 
 func oAuthProcessResponse(f func() (*oauth2.Token, error)) (*oauth2.Token, error) {
@@ -93,7 +85,6 @@ func oAuthTestForRetryable(err error, currentBackoff time.Duration) (time.Durati
 	retryAbleCodes := []int{
 		429,
 		500,
-		501,
 		502,
 		503,
 		504,
