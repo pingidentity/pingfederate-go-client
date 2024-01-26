@@ -12,6 +12,7 @@ package configurationapi
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the Channel type satisfies the MappedNullable interface at compile time
@@ -31,6 +32,8 @@ type Channel struct {
 	// Timeout, in seconds, for individual user and group provisioning operations on the target service provider. The default value is 60.
 	Timeout int64 `json:"timeout" tfsdk:"timeout"`
 }
+
+type _Channel Channel
 
 // NewChannel instantiates a new Channel object
 // This constructor will assign default values to properties that have it defined,
@@ -216,6 +219,46 @@ func (o Channel) ToMap() (map[string]interface{}, error) {
 	toSerialize["maxThreads"] = o.MaxThreads
 	toSerialize["timeout"] = o.Timeout
 	return toSerialize, nil
+}
+
+func (o *Channel) UnmarshalJSON(bytes []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"active",
+		"channelSource",
+		"attributeMapping",
+		"name",
+		"maxThreads",
+		"timeout",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varChannel := _Channel{}
+
+	err = json.Unmarshal(bytes, &varChannel)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Channel(varChannel)
+
+	return err
 }
 
 type NullableChannel struct {

@@ -12,6 +12,7 @@ package configurationapi
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the MetadataUrl type satisfies the MappedNullable interface at compile time
@@ -30,6 +31,8 @@ type MetadataUrl struct {
 	// Perform Metadata Signature Validation. The default value is TRUE.
 	ValidateSignature *bool `json:"validateSignature,omitempty" tfsdk:"validate_signature"`
 }
+
+type _MetadataUrl MetadataUrl
 
 // NewMetadataUrl instantiates a new MetadataUrl object
 // This constructor will assign default values to properties that have it defined,
@@ -251,6 +254,42 @@ func (o MetadataUrl) ToMap() (map[string]interface{}, error) {
 		toSerialize["validateSignature"] = o.ValidateSignature
 	}
 	return toSerialize, nil
+}
+
+func (o *MetadataUrl) UnmarshalJSON(bytes []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+		"url",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varMetadataUrl := _MetadataUrl{}
+
+	err = json.Unmarshal(bytes, &varMetadataUrl)
+
+	if err != nil {
+		return err
+	}
+
+	*o = MetadataUrl(varMetadataUrl)
+
+	return err
 }
 
 type NullableMetadataUrl struct {

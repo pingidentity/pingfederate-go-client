@@ -58,7 +58,7 @@ Other parameters are passed through a pointer to a apiGetConfigurationEncryption
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -119,7 +119,7 @@ Other parameters are passed through a pointer to a apiRotateConfigurationEncrypt
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 

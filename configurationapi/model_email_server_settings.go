@@ -12,6 +12,7 @@ package configurationapi
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the EmailServerSettings type satisfies the MappedNullable interface at compile time
@@ -50,6 +51,8 @@ type EmailServerSettings struct {
 	// For GET requests, this field contains the encrypted password, if one exists.  For POST and PUT requests, if you wish to reuse the existing password, this field should be passed back unchanged.
 	EncryptedPassword *string `json:"encryptedPassword,omitempty" tfsdk:"encrypted_password"`
 }
+
+type _EmailServerSettings EmailServerSettings
 
 // NewEmailServerSettings instantiates a new EmailServerSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -577,6 +580,43 @@ func (o EmailServerSettings) ToMap() (map[string]interface{}, error) {
 		toSerialize["encryptedPassword"] = o.EncryptedPassword
 	}
 	return toSerialize, nil
+}
+
+func (o *EmailServerSettings) UnmarshalJSON(bytes []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"sourceAddr",
+		"emailServer",
+		"port",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varEmailServerSettings := _EmailServerSettings{}
+
+	err = json.Unmarshal(bytes, &varEmailServerSettings)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EmailServerSettings(varEmailServerSettings)
+
+	return err
 }
 
 type NullableEmailServerSettings struct {

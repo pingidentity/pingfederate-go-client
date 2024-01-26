@@ -12,6 +12,7 @@ package configurationapi
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AttributeSource type satisfies the MappedNullable interface at compile time
@@ -29,6 +30,8 @@ type AttributeSource struct {
 	// A list of mappings from attribute names to their fulfillment values. This field is only valid for the SP Connection's Browser SSO mappings
 	AttributeContractFulfillment *map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment,omitempty" tfsdk:"attribute_contract_fulfillment"`
 }
+
+type _AttributeSource AttributeSource
 
 // NewAttributeSource instantiates a new AttributeSource object
 // This constructor will assign default values to properties that have it defined,
@@ -215,6 +218,42 @@ func (o AttributeSource) ToMap() (map[string]interface{}, error) {
 		toSerialize["attributeContractFulfillment"] = o.AttributeContractFulfillment
 	}
 	return toSerialize, nil
+}
+
+func (o *AttributeSource) UnmarshalJSON(bytes []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"type",
+		"dataStoreRef",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAttributeSource := _AttributeSource{}
+
+	err = json.Unmarshal(bytes, &varAttributeSource)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AttributeSource(varAttributeSource)
+
+	return err
 }
 
 type NullableAttributeSource struct {

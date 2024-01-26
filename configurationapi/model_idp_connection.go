@@ -12,6 +12,7 @@ package configurationapi
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the IdpConnection type satisfies the MappedNullable interface at compile time
@@ -29,6 +30,8 @@ type IdpConnection struct {
 	// Identifier that specifies the message displayed on a user-facing error page.
 	ErrorPageMsgId *string `json:"errorPageMsgId,omitempty" tfsdk:"error_page_msg_id"`
 }
+
+type _IdpConnection IdpConnection
 
 // NewIdpConnection instantiates a new IdpConnection object
 // This constructor will assign default values to properties that have it defined,
@@ -313,6 +316,42 @@ func (o IdpConnection) ToMap() (map[string]interface{}, error) {
 		toSerialize["errorPageMsgId"] = o.ErrorPageMsgId
 	}
 	return toSerialize, nil
+}
+
+func (o *IdpConnection) UnmarshalJSON(bytes []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"entityId",
+		"name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varIdpConnection := _IdpConnection{}
+
+	err = json.Unmarshal(bytes, &varIdpConnection)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IdpConnection(varIdpConnection)
+
+	return err
 }
 
 type NullableIdpConnection struct {

@@ -12,6 +12,7 @@ package configurationapi
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the RegistrationConfig type satisfies the MappedNullable interface at compile time
@@ -34,6 +35,8 @@ type RegistrationConfig struct {
 	// This setting indicates whether PingFederate should execute the workflow before or after account creation. The default is to run the registration workflow after account creation.
 	ExecuteWorkflow *string `json:"executeWorkflow,omitempty" tfsdk:"execute_workflow"`
 }
+
+type _RegistrationConfig RegistrationConfig
 
 // NewRegistrationConfig instantiates a new RegistrationConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -334,6 +337,41 @@ func (o RegistrationConfig) ToMap() (map[string]interface{}, error) {
 		toSerialize["executeWorkflow"] = o.ExecuteWorkflow
 	}
 	return toSerialize, nil
+}
+
+func (o *RegistrationConfig) UnmarshalJSON(bytes []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"templateName",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varRegistrationConfig := _RegistrationConfig{}
+
+	err = json.Unmarshal(bytes, &varRegistrationConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RegistrationConfig(varRegistrationConfig)
+
+	return err
 }
 
 type NullableRegistrationConfig struct {

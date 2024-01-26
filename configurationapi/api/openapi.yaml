@@ -14,6 +14,8 @@ servers:
 - url: https://localhost:9999/pf-admin-api/v1
 security:
 - basicAuth: []
+- bearer: []
+- oauth2: []
 tags:
 - name: /oauth/accessTokenManagers
 - name: /oauth/accessTokenMappings
@@ -31814,4 +31816,16 @@ components:
     BasicAuth:
       scheme: basic
       type: http
+    bearer:
+      bearerFormat: JWT
+      description: OAuth bearer token (see documentation)
+      scheme: bearer
+      type: http
+    oAuth:
+      flows:
+        clientCredentials:
+          authorizationUrl: https://localhost:9031/as/authorization.oauth2
+          scopes: {}
+          tokenUrl: https://localhost:9031/as/token.oauth2
+      type: oauth2
 x-original-swagger-version: "2.0"

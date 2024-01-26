@@ -12,6 +12,7 @@ package configurationapi
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the GroupAttribute type satisfies the MappedNullable interface at compile time
@@ -22,6 +23,8 @@ type GroupAttribute struct {
 	// The name of this attribute.
 	Name string `json:"name" tfsdk:"name"`
 }
+
+type _GroupAttribute GroupAttribute
 
 // NewGroupAttribute instantiates a new GroupAttribute object
 // This constructor will assign default values to properties that have it defined,
@@ -77,6 +80,41 @@ func (o GroupAttribute) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
 	return toSerialize, nil
+}
+
+func (o *GroupAttribute) UnmarshalJSON(bytes []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varGroupAttribute := _GroupAttribute{}
+
+	err = json.Unmarshal(bytes, &varGroupAttribute)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GroupAttribute(varGroupAttribute)
+
+	return err
 }
 
 type NullableGroupAttribute struct {

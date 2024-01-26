@@ -12,6 +12,7 @@ package configurationapi
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the SpWsTrustAttribute type satisfies the MappedNullable interface at compile time
@@ -24,6 +25,8 @@ type SpWsTrustAttribute struct {
 	// The attribute namespace.  This is required when the Default Token Type is SAML2.0 or SAML1.1 or SAML1.1 for Office 365.
 	Namespace string `json:"namespace" tfsdk:"namespace"`
 }
+
+type _SpWsTrustAttribute SpWsTrustAttribute
 
 // NewSpWsTrustAttribute instantiates a new SpWsTrustAttribute object
 // This constructor will assign default values to properties that have it defined,
@@ -105,6 +108,42 @@ func (o SpWsTrustAttribute) ToMap() (map[string]interface{}, error) {
 	toSerialize["name"] = o.Name
 	toSerialize["namespace"] = o.Namespace
 	return toSerialize, nil
+}
+
+func (o *SpWsTrustAttribute) UnmarshalJSON(bytes []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+		"namespace",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varSpWsTrustAttribute := _SpWsTrustAttribute{}
+
+	err = json.Unmarshal(bytes, &varSpWsTrustAttribute)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SpWsTrustAttribute(varSpWsTrustAttribute)
+
+	return err
 }
 
 type NullableSpWsTrustAttribute struct {

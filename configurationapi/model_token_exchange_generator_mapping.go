@@ -12,6 +12,7 @@ package configurationapi
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the TokenExchangeGeneratorMapping type satisfies the MappedNullable interface at compile time
@@ -25,6 +26,8 @@ type TokenExchangeGeneratorMapping struct {
 	// Whether this is the default Token Generator Mapping. Defaults to false if not specified.
 	DefaultMapping *bool `json:"defaultMapping,omitempty" tfsdk:"default_mapping"`
 }
+
+type _TokenExchangeGeneratorMapping TokenExchangeGeneratorMapping
 
 // NewTokenExchangeGeneratorMapping instantiates a new TokenExchangeGeneratorMapping object
 // This constructor will assign default values to properties that have it defined,
@@ -141,6 +144,42 @@ func (o TokenExchangeGeneratorMapping) ToMap() (map[string]interface{}, error) {
 		toSerialize["defaultMapping"] = o.DefaultMapping
 	}
 	return toSerialize, nil
+}
+
+func (o *TokenExchangeGeneratorMapping) UnmarshalJSON(bytes []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"requestedTokenType",
+		"tokenGenerator",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varTokenExchangeGeneratorMapping := _TokenExchangeGeneratorMapping{}
+
+	err = json.Unmarshal(bytes, &varTokenExchangeGeneratorMapping)
+
+	if err != nil {
+		return err
+	}
+
+	*o = TokenExchangeGeneratorMapping(varTokenExchangeGeneratorMapping)
+
+	return err
 }
 
 type NullableTokenExchangeGeneratorMapping struct {

@@ -12,6 +12,7 @@ package configurationapi
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the ConfigOperation type satisfies the MappedNullable interface at compile time
@@ -30,6 +31,8 @@ type ConfigOperation struct {
 	// The item ID's for the operation. This field only applies to the DELETE operation type.
 	ItemIds []string `json:"itemIds,omitempty" tfsdk:"item_ids"`
 }
+
+type _ConfigOperation ConfigOperation
 
 // NewConfigOperation instantiates a new ConfigOperation object
 // This constructor will assign default values to properties that have it defined,
@@ -216,6 +219,42 @@ func (o ConfigOperation) ToMap() (map[string]interface{}, error) {
 		toSerialize["itemIds"] = o.ItemIds
 	}
 	return toSerialize, nil
+}
+
+func (o *ConfigOperation) UnmarshalJSON(bytes []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"resourceType",
+		"operationType",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varConfigOperation := _ConfigOperation{}
+
+	err = json.Unmarshal(bytes, &varConfigOperation)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ConfigOperation(varConfigOperation)
+
+	return err
 }
 
 type NullableConfigOperation struct {

@@ -12,6 +12,7 @@ package configurationapi
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the SaasPluginFieldInfoDescriptor type satisfies the MappedNullable interface at compile time
@@ -48,6 +49,8 @@ type SaasPluginFieldInfoDescriptor struct {
 	// Indicates whether this field belongs to group of attribute such as multivalued or sub-type custom attributes.
 	AttributeGroup *bool `json:"attributeGroup,omitempty" tfsdk:"attribute_group"`
 }
+
+type _SaasPluginFieldInfoDescriptor SaasPluginFieldInfoDescriptor
 
 // NewSaasPluginFieldInfoDescriptor instantiates a new SaasPluginFieldInfoDescriptor object
 // This constructor will assign default values to properties that have it defined,
@@ -549,6 +552,42 @@ func (o SaasPluginFieldInfoDescriptor) ToMap() (map[string]interface{}, error) {
 		toSerialize["attributeGroup"] = o.AttributeGroup
 	}
 	return toSerialize, nil
+}
+
+func (o *SaasPluginFieldInfoDescriptor) UnmarshalJSON(bytes []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"code",
+		"label",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varSaasPluginFieldInfoDescriptor := _SaasPluginFieldInfoDescriptor{}
+
+	err = json.Unmarshal(bytes, &varSaasPluginFieldInfoDescriptor)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SaasPluginFieldInfoDescriptor(varSaasPluginFieldInfoDescriptor)
+
+	return err
 }
 
 type NullableSaasPluginFieldInfoDescriptor struct {

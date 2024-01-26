@@ -12,6 +12,7 @@ package configurationapi
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the ArtifactResolverLocation type satisfies the MappedNullable interface at compile time
@@ -24,6 +25,8 @@ type ArtifactResolverLocation struct {
 	// Remote party URLs that you will use to resolve/translate the artifact and get the actual protocol message
 	Url string `json:"url" tfsdk:"url"`
 }
+
+type _ArtifactResolverLocation ArtifactResolverLocation
 
 // NewArtifactResolverLocation instantiates a new ArtifactResolverLocation object
 // This constructor will assign default values to properties that have it defined,
@@ -105,6 +108,42 @@ func (o ArtifactResolverLocation) ToMap() (map[string]interface{}, error) {
 	toSerialize["index"] = o.Index
 	toSerialize["url"] = o.Url
 	return toSerialize, nil
+}
+
+func (o *ArtifactResolverLocation) UnmarshalJSON(bytes []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"index",
+		"url",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varArtifactResolverLocation := _ArtifactResolverLocation{}
+
+	err = json.Unmarshal(bytes, &varArtifactResolverLocation)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ArtifactResolverLocation(varArtifactResolverLocation)
+
+	return err
 }
 
 type NullableArtifactResolverLocation struct {

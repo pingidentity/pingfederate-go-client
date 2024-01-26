@@ -12,6 +12,7 @@ package configurationapi
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the PersistentGrantContract type satisfies the MappedNullable interface at compile time
@@ -24,6 +25,8 @@ type PersistentGrantContract struct {
 	// A list of additional attributes for the persistent grant contract.
 	ExtendedAttributes []PersistentGrantAttribute `json:"extendedAttributes,omitempty" tfsdk:"extended_attributes"`
 }
+
+type _PersistentGrantContract PersistentGrantContract
 
 // NewPersistentGrantContract instantiates a new PersistentGrantContract object
 // This constructor will assign default values to properties that have it defined,
@@ -114,6 +117,41 @@ func (o PersistentGrantContract) ToMap() (map[string]interface{}, error) {
 		toSerialize["extendedAttributes"] = o.ExtendedAttributes
 	}
 	return toSerialize, nil
+}
+
+func (o *PersistentGrantContract) UnmarshalJSON(bytes []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"coreAttributes",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varPersistentGrantContract := _PersistentGrantContract{}
+
+	err = json.Unmarshal(bytes, &varPersistentGrantContract)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PersistentGrantContract(varPersistentGrantContract)
+
+	return err
 }
 
 type NullablePersistentGrantContract struct {
