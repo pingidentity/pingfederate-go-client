@@ -12,6 +12,7 @@ package configurationapi
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the CheckboxGroupLocalIdentityField type satisfies the MappedNullable interface at compile time
@@ -23,6 +24,8 @@ type CheckboxGroupLocalIdentityField struct {
 	// The list of options for this selection field.
 	Options []string `json:"options" tfsdk:"options"`
 }
+
+type _CheckboxGroupLocalIdentityField CheckboxGroupLocalIdentityField
 
 // NewCheckboxGroupLocalIdentityField instantiates a new CheckboxGroupLocalIdentityField object
 // This constructor will assign default values to properties that have it defined,
@@ -89,6 +92,44 @@ func (o CheckboxGroupLocalIdentityField) ToMap() (map[string]interface{}, error)
 	}
 	toSerialize["options"] = o.Options
 	return toSerialize, nil
+}
+
+func (o *CheckboxGroupLocalIdentityField) UnmarshalJSON(bytes []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"options",
+		"type",
+		"id",
+		"label",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varCheckboxGroupLocalIdentityField := _CheckboxGroupLocalIdentityField{}
+
+	err = json.Unmarshal(bytes, &varCheckboxGroupLocalIdentityField)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CheckboxGroupLocalIdentityField(varCheckboxGroupLocalIdentityField)
+
+	return err
 }
 
 type NullableCheckboxGroupLocalIdentityField struct {

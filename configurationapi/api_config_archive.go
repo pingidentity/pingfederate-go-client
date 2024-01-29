@@ -233,7 +233,6 @@ func (a *ConfigArchiveAPIService) internalImportConfigArchiveExecute(r ApiImport
 	var fileLocalVarFileBytes []byte
 
 	fileLocalVarFormFileName = "file"
-
 	fileLocalVarFile := r.file
 
 	if fileLocalVarFile != nil {

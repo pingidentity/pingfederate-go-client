@@ -12,6 +12,7 @@ package configurationapi
 
 import (
 	"encoding/json"
+	"fmt"
 	"time"
 )
 
@@ -30,6 +31,8 @@ type SecretManager struct {
 	// The time at which the plugin instance was last changed. This property is read only and is ignored on PUT and POST requests.
 	LastModified *time.Time `json:"lastModified,omitempty" tfsdk:"last_modified"`
 }
+
+type _SecretManager SecretManager
 
 // NewSecretManager instantiates a new SecretManager object
 // This constructor will assign default values to properties that have it defined,
@@ -233,6 +236,44 @@ func (o SecretManager) ToMap() (map[string]interface{}, error) {
 		toSerialize["lastModified"] = o.LastModified
 	}
 	return toSerialize, nil
+}
+
+func (o *SecretManager) UnmarshalJSON(bytes []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"id",
+		"name",
+		"pluginDescriptorRef",
+		"configuration",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varSecretManager := _SecretManager{}
+
+	err = json.Unmarshal(bytes, &varSecretManager)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SecretManager(varSecretManager)
+
+	return err
 }
 
 type NullableSecretManager struct {

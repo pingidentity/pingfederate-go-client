@@ -12,6 +12,7 @@ package configurationapi
 
 import (
 	"encoding/json"
+	"fmt"
 	"time"
 )
 
@@ -49,6 +50,8 @@ type PingOneConnection struct {
 	// The PingOne authentication API endpoint. This field is read only.
 	PingOneAuthenticationApiEndpoint *string `json:"pingOneAuthenticationApiEndpoint,omitempty" tfsdk:"ping_one_authentication_api_endpoint"`
 }
+
+type _PingOneConnection PingOneConnection
 
 // NewPingOneConnection instantiates a new PingOneConnection object
 // This constructor will assign default values to properties that have it defined,
@@ -559,6 +562,41 @@ func (o PingOneConnection) ToMap() (map[string]interface{}, error) {
 		toSerialize["pingOneAuthenticationApiEndpoint"] = o.PingOneAuthenticationApiEndpoint
 	}
 	return toSerialize, nil
+}
+
+func (o *PingOneConnection) UnmarshalJSON(bytes []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varPingOneConnection := _PingOneConnection{}
+
+	err = json.Unmarshal(bytes, &varPingOneConnection)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PingOneConnection(varPingOneConnection)
+
+	return err
 }
 
 type NullablePingOneConnection struct {

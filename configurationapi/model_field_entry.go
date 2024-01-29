@@ -12,6 +12,7 @@ package configurationapi
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the FieldEntry type satisfies the MappedNullable interface at compile time
@@ -24,6 +25,8 @@ type FieldEntry struct {
 	// The name of this field.
 	Name string `json:"name" tfsdk:"name"`
 }
+
+type _FieldEntry FieldEntry
 
 // NewFieldEntry instantiates a new FieldEntry object
 // This constructor will assign default values to properties that have it defined,
@@ -114,6 +117,41 @@ func (o FieldEntry) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["name"] = o.Name
 	return toSerialize, nil
+}
+
+func (o *FieldEntry) UnmarshalJSON(bytes []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varFieldEntry := _FieldEntry{}
+
+	err = json.Unmarshal(bytes, &varFieldEntry)
+
+	if err != nil {
+		return err
+	}
+
+	*o = FieldEntry(varFieldEntry)
+
+	return err
 }
 
 type NullableFieldEntry struct {

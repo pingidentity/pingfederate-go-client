@@ -12,6 +12,7 @@ package configurationapi
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the Table type satisfies the MappedNullable interface at compile time
@@ -26,6 +27,8 @@ type Table struct {
 	// The database column that uniquely identifies the provisioned user on the SP side.
 	UniqueIdColumn string `json:"uniqueIdColumn" tfsdk:"unique_id_column"`
 }
+
+type _Table Table
 
 // NewTable instantiates a new Table object
 // This constructor will assign default values to properties that have it defined,
@@ -133,6 +136,43 @@ func (o Table) ToMap() (map[string]interface{}, error) {
 	toSerialize["tableName"] = o.TableName
 	toSerialize["uniqueIdColumn"] = o.UniqueIdColumn
 	return toSerialize, nil
+}
+
+func (o *Table) UnmarshalJSON(bytes []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"schema",
+		"tableName",
+		"uniqueIdColumn",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varTable := _Table{}
+
+	err = json.Unmarshal(bytes, &varTable)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Table(varTable)
+
+	return err
 }
 
 type NullableTable struct {

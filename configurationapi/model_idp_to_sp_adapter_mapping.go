@@ -12,6 +12,7 @@ package configurationapi
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the IdpToSpAdapterMapping type satisfies the MappedNullable interface at compile time
@@ -39,6 +40,8 @@ type IdpToSpAdapterMapping struct {
 	// The application icon URL.
 	ApplicationIconUrl *string `json:"applicationIconUrl,omitempty" tfsdk:"application_icon_url"`
 }
+
+type _IdpToSpAdapterMapping IdpToSpAdapterMapping
 
 // NewIdpToSpAdapterMapping instantiates a new IdpToSpAdapterMapping object
 // This constructor will assign default values to properties that have it defined,
@@ -391,6 +394,43 @@ func (o IdpToSpAdapterMapping) ToMap() (map[string]interface{}, error) {
 		toSerialize["applicationIconUrl"] = o.ApplicationIconUrl
 	}
 	return toSerialize, nil
+}
+
+func (o *IdpToSpAdapterMapping) UnmarshalJSON(bytes []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"attributeContractFulfillment",
+		"sourceId",
+		"targetId",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varIdpToSpAdapterMapping := _IdpToSpAdapterMapping{}
+
+	err = json.Unmarshal(bytes, &varIdpToSpAdapterMapping)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IdpToSpAdapterMapping(varIdpToSpAdapterMapping)
+
+	return err
 }
 
 type NullableIdpToSpAdapterMapping struct {

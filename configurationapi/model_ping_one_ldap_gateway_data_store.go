@@ -12,6 +12,7 @@ package configurationapi
 
 import (
 	"encoding/json"
+	"fmt"
 	"time"
 )
 
@@ -37,6 +38,8 @@ type PingOneLdapGatewayDataStore struct {
 	// The time at which the datastore instance was last changed. This property is read only and is ignored on PUT and POST requests.
 	LastModified *time.Time `json:"lastModified,omitempty" tfsdk:"last_modified"`
 }
+
+type _PingOneLdapGatewayDataStore PingOneLdapGatewayDataStore
 
 // NewPingOneLdapGatewayDataStore instantiates a new PingOneLdapGatewayDataStore object
 // This constructor will assign default values to properties that have it defined,
@@ -319,6 +322,45 @@ func (o PingOneLdapGatewayDataStore) ToMap() (map[string]interface{}, error) {
 		toSerialize["lastModified"] = o.LastModified
 	}
 	return toSerialize, nil
+}
+
+func (o *PingOneLdapGatewayDataStore) UnmarshalJSON(bytes []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"ldapType",
+		"pingOneConnectionRef",
+		"pingOneEnvironmentId",
+		"pingOneLdapGatewayId",
+		"type",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varPingOneLdapGatewayDataStore := _PingOneLdapGatewayDataStore{}
+
+	err = json.Unmarshal(bytes, &varPingOneLdapGatewayDataStore)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PingOneLdapGatewayDataStore(varPingOneLdapGatewayDataStore)
+
+	return err
 }
 
 type NullablePingOneLdapGatewayDataStore struct {

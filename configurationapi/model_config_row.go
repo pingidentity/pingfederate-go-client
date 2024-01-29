@@ -12,6 +12,7 @@ package configurationapi
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the ConfigRow type satisfies the MappedNullable interface at compile time
@@ -24,6 +25,8 @@ type ConfigRow struct {
 	// Whether this row is the default.
 	DefaultRow *bool `json:"defaultRow,omitempty" tfsdk:"default_row"`
 }
+
+type _ConfigRow ConfigRow
 
 // NewConfigRow instantiates a new ConfigRow object
 // This constructor will assign default values to properties that have it defined,
@@ -114,6 +117,41 @@ func (o ConfigRow) ToMap() (map[string]interface{}, error) {
 		toSerialize["defaultRow"] = o.DefaultRow
 	}
 	return toSerialize, nil
+}
+
+func (o *ConfigRow) UnmarshalJSON(bytes []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"fields",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(bytes, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varConfigRow := _ConfigRow{}
+
+	err = json.Unmarshal(bytes, &varConfigRow)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ConfigRow(varConfigRow)
+
+	return err
 }
 
 type NullableConfigRow struct {
