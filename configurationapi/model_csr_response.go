@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the CSRResponse type satisfies the MappedNullable interface at compile time
@@ -23,8 +22,6 @@ type CSRResponse struct {
 	// The CSR response file data in PKCS7 format or as an X.509 certificate. PEM encoding (with or without the header and footer lines) is required. New line characters should be omitted or encoded in this value.
 	FileData string `json:"fileData" tfsdk:"file_data"`
 }
-
-type _CSRResponse CSRResponse
 
 // NewCSRResponse instantiates a new CSRResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -80,41 +77,6 @@ func (o CSRResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["fileData"] = o.FileData
 	return toSerialize, nil
-}
-
-func (o *CSRResponse) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"fileData",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varCSRResponse := _CSRResponse{}
-
-	err = json.Unmarshal(bytes, &varCSRResponse)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CSRResponse(varCSRResponse)
-
-	return err
 }
 
 type NullableCSRResponse struct {

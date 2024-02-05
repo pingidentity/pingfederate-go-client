@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ConnectionMetadataUrl type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,6 @@ type ConnectionMetadataUrl struct {
 	// Specifies whether the metadata of the connection will be automatically reloaded. The default value is true.
 	EnableAutoMetadataUpdate *bool `json:"enableAutoMetadataUpdate,omitempty" tfsdk:"enable_auto_metadata_update"`
 }
-
-type _ConnectionMetadataUrl ConnectionMetadataUrl
 
 // NewConnectionMetadataUrl instantiates a new ConnectionMetadataUrl object
 // This constructor will assign default values to properties that have it defined,
@@ -116,41 +113,6 @@ func (o ConnectionMetadataUrl) ToMap() (map[string]interface{}, error) {
 		toSerialize["enableAutoMetadataUpdate"] = o.EnableAutoMetadataUpdate
 	}
 	return toSerialize, nil
-}
-
-func (o *ConnectionMetadataUrl) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"metadataUrlRef",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varConnectionMetadataUrl := _ConnectionMetadataUrl{}
-
-	err = json.Unmarshal(bytes, &varConnectionMetadataUrl)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ConnectionMetadataUrl(varConnectionMetadataUrl)
-
-	return err
 }
 
 type NullableConnectionMetadataUrl struct {

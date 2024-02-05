@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the KerberosRealm type satisfies the MappedNullable interface at compile time
@@ -42,8 +41,6 @@ type KerberosRealm struct {
 	SuppressDomainNameConcatenation *bool         `json:"suppressDomainNameConcatenation,omitempty" tfsdk:"suppress_domain_name_concatenation"`
 	LdapGatewayDataStoreRef         *ResourceLink `json:"ldapGatewayDataStoreRef,omitempty" tfsdk:"ldap_gateway_data_store_ref"`
 }
-
-type _KerberosRealm KerberosRealm
 
 // NewKerberosRealm instantiates a new KerberosRealm object
 // This constructor will assign default values to properties that have it defined,
@@ -449,41 +446,6 @@ func (o KerberosRealm) ToMap() (map[string]interface{}, error) {
 		toSerialize["ldapGatewayDataStoreRef"] = o.LdapGatewayDataStoreRef
 	}
 	return toSerialize, nil
-}
-
-func (o *KerberosRealm) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"kerberosRealmName",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varKerberosRealm := _KerberosRealm{}
-
-	err = json.Unmarshal(bytes, &varKerberosRealm)
-
-	if err != nil {
-		return err
-	}
-
-	*o = KerberosRealm(varKerberosRealm)
-
-	return err
 }
 
 type NullableKerberosRealm struct {

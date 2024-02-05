@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the BaseDefaultValueLocalIdentityField type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,6 @@ type BaseDefaultValueLocalIdentityField struct {
 	// The default value for this field.
 	DefaultValue *string `json:"defaultValue,omitempty" tfsdk:"default_value"`
 }
-
-type _BaseDefaultValueLocalIdentityField BaseDefaultValueLocalIdentityField
 
 // NewBaseDefaultValueLocalIdentityField instantiates a new BaseDefaultValueLocalIdentityField object
 // This constructor will assign default values to properties that have it defined,
@@ -101,43 +98,6 @@ func (o BaseDefaultValueLocalIdentityField) ToMap() (map[string]interface{}, err
 		toSerialize["defaultValue"] = o.DefaultValue
 	}
 	return toSerialize, nil
-}
-
-func (o *BaseDefaultValueLocalIdentityField) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"type",
-		"id",
-		"label",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varBaseDefaultValueLocalIdentityField := _BaseDefaultValueLocalIdentityField{}
-
-	err = json.Unmarshal(bytes, &varBaseDefaultValueLocalIdentityField)
-
-	if err != nil {
-		return err
-	}
-
-	*o = BaseDefaultValueLocalIdentityField(varBaseDefaultValueLocalIdentityField)
-
-	return err
 }
 
 type NullableBaseDefaultValueLocalIdentityField struct {

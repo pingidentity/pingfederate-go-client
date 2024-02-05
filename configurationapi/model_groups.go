@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the Groups type satisfies the MappedNullable interface at compile time
@@ -23,8 +22,6 @@ type Groups struct {
 	WriteGroups WriteGroups `json:"writeGroups" tfsdk:"write_groups"`
 	ReadGroups  ReadGroups  `json:"readGroups" tfsdk:"read_groups"`
 }
-
-type _Groups Groups
 
 // NewGroups instantiates a new Groups object
 // This constructor will assign default values to properties that have it defined,
@@ -106,42 +103,6 @@ func (o Groups) ToMap() (map[string]interface{}, error) {
 	toSerialize["writeGroups"] = o.WriteGroups
 	toSerialize["readGroups"] = o.ReadGroups
 	return toSerialize, nil
-}
-
-func (o *Groups) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"writeGroups",
-		"readGroups",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varGroups := _Groups{}
-
-	err = json.Unmarshal(bytes, &varGroups)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Groups(varGroups)
-
-	return err
 }
 
 type NullableGroups struct {

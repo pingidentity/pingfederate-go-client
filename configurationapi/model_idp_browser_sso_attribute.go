@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the IdpBrowserSsoAttribute type satisfies the MappedNullable interface at compile time
@@ -25,8 +24,6 @@ type IdpBrowserSsoAttribute struct {
 	// Specifies whether this attribute is masked in PingFederate logs. Defaults to false.
 	Masked *bool `json:"masked,omitempty" tfsdk:"masked"`
 }
-
-type _IdpBrowserSsoAttribute IdpBrowserSsoAttribute
 
 // NewIdpBrowserSsoAttribute instantiates a new IdpBrowserSsoAttribute object
 // This constructor will assign default values to properties that have it defined,
@@ -117,41 +114,6 @@ func (o IdpBrowserSsoAttribute) ToMap() (map[string]interface{}, error) {
 		toSerialize["masked"] = o.Masked
 	}
 	return toSerialize, nil
-}
-
-func (o *IdpBrowserSsoAttribute) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varIdpBrowserSsoAttribute := _IdpBrowserSsoAttribute{}
-
-	err = json.Unmarshal(bytes, &varIdpBrowserSsoAttribute)
-
-	if err != nil {
-		return err
-	}
-
-	*o = IdpBrowserSsoAttribute(varIdpBrowserSsoAttribute)
-
-	return err
 }
 
 type NullableIdpBrowserSsoAttribute struct {

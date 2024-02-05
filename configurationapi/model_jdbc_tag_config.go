@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the JdbcTagConfig type satisfies the MappedNullable interface at compile time
@@ -27,8 +26,6 @@ type JdbcTagConfig struct {
 	// Whether this is the default connection. Defaults to false if not specified.
 	DefaultSource *bool `json:"defaultSource,omitempty" tfsdk:"default_source"`
 }
-
-type _JdbcTagConfig JdbcTagConfig
 
 // NewJdbcTagConfig instantiates a new JdbcTagConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -154,41 +151,6 @@ func (o JdbcTagConfig) ToMap() (map[string]interface{}, error) {
 		toSerialize["defaultSource"] = o.DefaultSource
 	}
 	return toSerialize, nil
-}
-
-func (o *JdbcTagConfig) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"connectionUrl",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varJdbcTagConfig := _JdbcTagConfig{}
-
-	err = json.Unmarshal(bytes, &varJdbcTagConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = JdbcTagConfig(varJdbcTagConfig)
-
-	return err
 }
 
 type NullableJdbcTagConfig struct {

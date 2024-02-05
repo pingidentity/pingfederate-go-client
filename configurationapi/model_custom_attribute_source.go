@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the CustomAttributeSource type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,6 @@ type CustomAttributeSource struct {
 	// The list of fields that can be used to filter a request to the custom data store.
 	FilterFields []FieldEntry `json:"filterFields,omitempty" tfsdk:"filter_fields"`
 }
-
-type _CustomAttributeSource CustomAttributeSource
 
 // NewCustomAttributeSource instantiates a new CustomAttributeSource object
 // This constructor will assign default values to properties that have it defined,
@@ -100,42 +97,6 @@ func (o CustomAttributeSource) ToMap() (map[string]interface{}, error) {
 		toSerialize["filterFields"] = o.FilterFields
 	}
 	return toSerialize, nil
-}
-
-func (o *CustomAttributeSource) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"type",
-		"dataStoreRef",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varCustomAttributeSource := _CustomAttributeSource{}
-
-	err = json.Unmarshal(bytes, &varCustomAttributeSource)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CustomAttributeSource(varCustomAttributeSource)
-
-	return err
 }
 
 type NullableCustomAttributeSource struct {

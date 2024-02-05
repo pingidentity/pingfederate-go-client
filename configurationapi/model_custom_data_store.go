@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the CustomDataStore type satisfies the MappedNullable interface at compile time
@@ -33,8 +32,6 @@ type CustomDataStore struct {
 	ParentRef           *ResourceLink       `json:"parentRef,omitempty" tfsdk:"parent_ref"`
 	Configuration       PluginConfiguration `json:"configuration" tfsdk:"configuration"`
 }
-
-type _CustomDataStore CustomDataStore
 
 // NewCustomDataStore instantiates a new CustomDataStore object
 // This constructor will assign default values to properties that have it defined,
@@ -281,44 +278,6 @@ func (o CustomDataStore) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["configuration"] = o.Configuration
 	return toSerialize, nil
-}
-
-func (o *CustomDataStore) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"type",
-		"name",
-		"pluginDescriptorRef",
-		"configuration",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varCustomDataStore := _CustomDataStore{}
-
-	err = json.Unmarshal(bytes, &varCustomDataStore)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CustomDataStore(varCustomDataStore)
-
-	return err
 }
 
 type NullableCustomDataStore struct {

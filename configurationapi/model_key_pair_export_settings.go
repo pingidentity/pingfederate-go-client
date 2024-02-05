@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the KeyPairExportSettings type satisfies the MappedNullable interface at compile time
@@ -23,8 +22,6 @@ type KeyPairExportSettings struct {
 	// The password for the key pair file that is created.
 	Password string `json:"password" tfsdk:"password"`
 }
-
-type _KeyPairExportSettings KeyPairExportSettings
 
 // NewKeyPairExportSettings instantiates a new KeyPairExportSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -80,41 +77,6 @@ func (o KeyPairExportSettings) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["password"] = o.Password
 	return toSerialize, nil
-}
-
-func (o *KeyPairExportSettings) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"password",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varKeyPairExportSettings := _KeyPairExportSettings{}
-
-	err = json.Unmarshal(bytes, &varKeyPairExportSettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = KeyPairExportSettings(varKeyPairExportSettings)
-
-	return err
 }
 
 type NullableKeyPairExportSettings struct {

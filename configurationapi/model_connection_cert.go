@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ConnectionCert type satisfies the MappedNullable interface at compile time
@@ -31,8 +30,6 @@ type ConnectionCert struct {
 	// Indicates whether to use this cert to encrypt outgoing assertions. Only one certificate in the collection can have this flag set.
 	EncryptionCert *bool `json:"encryptionCert,omitempty" tfsdk:"encryption_cert"`
 }
-
-type _ConnectionCert ConnectionCert
 
 // NewConnectionCert instantiates a new ConnectionCert object
 // This constructor will assign default values to properties that have it defined,
@@ -263,41 +260,6 @@ func (o ConnectionCert) ToMap() (map[string]interface{}, error) {
 		toSerialize["encryptionCert"] = o.EncryptionCert
 	}
 	return toSerialize, nil
-}
-
-func (o *ConnectionCert) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"x509File",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varConnectionCert := _ConnectionCert{}
-
-	err = json.Unmarshal(bytes, &varConnectionCert)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ConnectionCert(varConnectionCert)
-
-	return err
 }
 
 type NullableConnectionCert struct {

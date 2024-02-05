@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the IdpAdapterContractMapping type satisfies the MappedNullable interface at compile time
@@ -28,8 +27,6 @@ type IdpAdapterContractMapping struct {
 	// Whether this attribute mapping is inherited from its parent instance. If true, the rest of the properties in this model become read-only. The default value is false.
 	Inherited *bool `json:"inherited,omitempty" tfsdk:"inherited"`
 }
-
-type _IdpAdapterContractMapping IdpAdapterContractMapping
 
 // NewIdpAdapterContractMapping instantiates a new IdpAdapterContractMapping object
 // This constructor will assign default values to properties that have it defined,
@@ -190,41 +187,6 @@ func (o IdpAdapterContractMapping) ToMap() (map[string]interface{}, error) {
 		toSerialize["inherited"] = o.Inherited
 	}
 	return toSerialize, nil
-}
-
-func (o *IdpAdapterContractMapping) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"attributeContractFulfillment",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varIdpAdapterContractMapping := _IdpAdapterContractMapping{}
-
-	err = json.Unmarshal(bytes, &varIdpAdapterContractMapping)
-
-	if err != nil {
-		return err
-	}
-
-	*o = IdpAdapterContractMapping(varIdpAdapterContractMapping)
-
-	return err
 }
 
 type NullableIdpAdapterContractMapping struct {

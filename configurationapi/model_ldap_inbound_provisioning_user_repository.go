@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the LdapInboundProvisioningUserRepository type satisfies the MappedNullable interface at compile time
@@ -29,8 +28,6 @@ type LdapInboundProvisioningUserRepository struct {
 	// The expression that results in a unique group identifier, when combined with the Base DN.
 	UniqueGroupIdFilter string `json:"uniqueGroupIdFilter" tfsdk:"unique_group_id_filter"`
 }
-
-type _LdapInboundProvisioningUserRepository LdapInboundProvisioningUserRepository
 
 // NewLdapInboundProvisioningUserRepository instantiates a new LdapInboundProvisioningUserRepository object
 // This constructor will assign default values to properties that have it defined,
@@ -182,44 +179,6 @@ func (o LdapInboundProvisioningUserRepository) ToMap() (map[string]interface{}, 
 	toSerialize["uniqueUserIdFilter"] = o.UniqueUserIdFilter
 	toSerialize["uniqueGroupIdFilter"] = o.UniqueGroupIdFilter
 	return toSerialize, nil
-}
-
-func (o *LdapInboundProvisioningUserRepository) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"dataStoreRef",
-		"uniqueUserIdFilter",
-		"uniqueGroupIdFilter",
-		"type",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varLdapInboundProvisioningUserRepository := _LdapInboundProvisioningUserRepository{}
-
-	err = json.Unmarshal(bytes, &varLdapInboundProvisioningUserRepository)
-
-	if err != nil {
-		return err
-	}
-
-	*o = LdapInboundProvisioningUserRepository(varLdapInboundProvisioningUserRepository)
-
-	return err
 }
 
 type NullableLdapInboundProvisioningUserRepository struct {

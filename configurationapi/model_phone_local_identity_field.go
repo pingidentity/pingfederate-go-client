@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the PhoneLocalIdentityField type satisfies the MappedNullable interface at compile time
@@ -22,8 +21,6 @@ var _ MappedNullable = &PhoneLocalIdentityField{}
 type PhoneLocalIdentityField struct {
 	LocalIdentityField
 }
-
-type _PhoneLocalIdentityField PhoneLocalIdentityField
 
 // NewPhoneLocalIdentityField instantiates a new PhoneLocalIdentityField object
 // This constructor will assign default values to properties that have it defined,
@@ -64,43 +61,6 @@ func (o PhoneLocalIdentityField) ToMap() (map[string]interface{}, error) {
 		return map[string]interface{}{}, errLocalIdentityField
 	}
 	return toSerialize, nil
-}
-
-func (o *PhoneLocalIdentityField) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"type",
-		"id",
-		"label",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varPhoneLocalIdentityField := _PhoneLocalIdentityField{}
-
-	err = json.Unmarshal(bytes, &varPhoneLocalIdentityField)
-
-	if err != nil {
-		return err
-	}
-
-	*o = PhoneLocalIdentityField(varPhoneLocalIdentityField)
-
-	return err
 }
 
 type NullablePhoneLocalIdentityField struct {

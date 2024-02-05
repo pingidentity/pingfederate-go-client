@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the Users type satisfies the MappedNullable interface at compile time
@@ -23,8 +22,6 @@ type Users struct {
 	WriteUsers WriteUsers `json:"writeUsers" tfsdk:"write_users"`
 	ReadUsers  ReadUsers  `json:"readUsers" tfsdk:"read_users"`
 }
-
-type _Users Users
 
 // NewUsers instantiates a new Users object
 // This constructor will assign default values to properties that have it defined,
@@ -106,42 +103,6 @@ func (o Users) ToMap() (map[string]interface{}, error) {
 	toSerialize["writeUsers"] = o.WriteUsers
 	toSerialize["readUsers"] = o.ReadUsers
 	return toSerialize, nil
-}
-
-func (o *Users) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"writeUsers",
-		"readUsers",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varUsers := _Users{}
-
-	err = json.Unmarshal(bytes, &varUsers)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Users(varUsers)
-
-	return err
 }
 
 type NullableUsers struct {
