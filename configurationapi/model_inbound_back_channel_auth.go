@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the InboundBackChannelAuth type satisfies the MappedNullable interface at compile time
@@ -30,8 +29,6 @@ type InboundBackChannelAuth struct {
 	// Incoming HTTP transmissions must use a secure channel.
 	RequireSsl *bool `json:"requireSsl,omitempty" tfsdk:"require_ssl"`
 }
-
-type _InboundBackChannelAuth InboundBackChannelAuth
 
 // NewInboundBackChannelAuth instantiates a new InboundBackChannelAuth object
 // This constructor will assign default values to properties that have it defined,
@@ -210,41 +207,6 @@ func (o InboundBackChannelAuth) ToMap() (map[string]interface{}, error) {
 		toSerialize["requireSsl"] = o.RequireSsl
 	}
 	return toSerialize, nil
-}
-
-func (o *InboundBackChannelAuth) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"type",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varInboundBackChannelAuth := _InboundBackChannelAuth{}
-
-	err = json.Unmarshal(bytes, &varInboundBackChannelAuth)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InboundBackChannelAuth(varInboundBackChannelAuth)
-
-	return err
 }
 
 type NullableInboundBackChannelAuth struct {

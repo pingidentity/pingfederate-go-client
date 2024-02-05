@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ConvertMetadataRequest type satisfies the MappedNullable interface at compile time
@@ -32,8 +31,6 @@ type ConvertMetadataRequest struct {
 	VerificationCertificate *string     `json:"verificationCertificate,omitempty" tfsdk:"verification_certificate"`
 	TemplateConnection      *Connection `json:"templateConnection,omitempty" tfsdk:"template_connection"`
 }
-
-type _ConvertMetadataRequest ConvertMetadataRequest
 
 // NewConvertMetadataRequest instantiates a new ConvertMetadataRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -246,43 +243,6 @@ func (o ConvertMetadataRequest) ToMap() (map[string]interface{}, error) {
 		toSerialize["templateConnection"] = o.TemplateConnection
 	}
 	return toSerialize, nil
-}
-
-func (o *ConvertMetadataRequest) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"connectionType",
-		"expectedProtocol",
-		"samlMetadata",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varConvertMetadataRequest := _ConvertMetadataRequest{}
-
-	err = json.Unmarshal(bytes, &varConvertMetadataRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ConvertMetadataRequest(varConvertMetadataRequest)
-
-	return err
 }
 
 type NullableConvertMetadataRequest struct {

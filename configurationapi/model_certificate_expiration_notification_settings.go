@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the CertificateExpirationNotificationSettings type satisfies the MappedNullable interface at compile time
@@ -30,8 +29,6 @@ type CertificateExpirationNotificationSettings struct {
 	// The mode of notification. Set to NOTIFICATION_PUBLISHER to enable email notifications and server log messages. Set to LOGGING_ONLY to enable server log messages. Defaults to NOTIFICATION_PUBLISHER.
 	NotificationMode *string `json:"notificationMode,omitempty" tfsdk:"notification_mode"`
 }
-
-type _CertificateExpirationNotificationSettings CertificateExpirationNotificationSettings
 
 // NewCertificateExpirationNotificationSettings instantiates a new CertificateExpirationNotificationSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -218,42 +215,6 @@ func (o CertificateExpirationNotificationSettings) ToMap() (map[string]interface
 		toSerialize["notificationMode"] = o.NotificationMode
 	}
 	return toSerialize, nil
-}
-
-func (o *CertificateExpirationNotificationSettings) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"emailAddress",
-		"finalWarningPeriod",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varCertificateExpirationNotificationSettings := _CertificateExpirationNotificationSettings{}
-
-	err = json.Unmarshal(bytes, &varCertificateExpirationNotificationSettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CertificateExpirationNotificationSettings(varCertificateExpirationNotificationSettings)
-
-	return err
 }
 
 type NullableCertificateExpirationNotificationSettings struct {

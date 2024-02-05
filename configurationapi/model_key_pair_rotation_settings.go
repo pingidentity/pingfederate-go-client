@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the KeyPairRotationSettings type satisfies the MappedNullable interface at compile time
@@ -34,8 +33,6 @@ type KeyPairRotationSettings struct {
 	// Required if the original key pair used SHA1 algorithm. If this property is unset, the default signature algorithm of the original key pair will be used. Supported signature algorithms are available through the /keyPairs/keyAlgorithms endpoint.
 	SignatureAlgorithm *string `json:"signatureAlgorithm,omitempty" tfsdk:"signature_algorithm"`
 }
-
-type _KeyPairRotationSettings KeyPairRotationSettings
 
 // NewKeyPairRotationSettings instantiates a new KeyPairRotationSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -292,42 +289,6 @@ func (o KeyPairRotationSettings) ToMap() (map[string]interface{}, error) {
 		toSerialize["signatureAlgorithm"] = o.SignatureAlgorithm
 	}
 	return toSerialize, nil
-}
-
-func (o *KeyPairRotationSettings) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"creationBufferDays",
-		"activationBufferDays",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varKeyPairRotationSettings := _KeyPairRotationSettings{}
-
-	err = json.Unmarshal(bytes, &varKeyPairRotationSettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = KeyPairRotationSettings(varKeyPairRotationSettings)
-
-	return err
 }
 
 type NullableKeyPairRotationSettings struct {

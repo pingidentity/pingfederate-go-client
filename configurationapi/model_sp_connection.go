@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the SpConnection type satisfies the MappedNullable interface at compile time
@@ -32,8 +31,6 @@ type SpConnection struct {
 	// The connection target type. This field is intended for bulk import/export usage. Changing its value may result in unexpected behavior.
 	ConnectionTargetType *string `json:"connectionTargetType,omitempty" tfsdk:"connection_target_type"`
 }
-
-type _SpConnection SpConnection
 
 // NewSpConnection instantiates a new SpConnection object
 // This constructor will assign default values to properties that have it defined,
@@ -318,42 +315,6 @@ func (o SpConnection) ToMap() (map[string]interface{}, error) {
 		toSerialize["connectionTargetType"] = o.ConnectionTargetType
 	}
 	return toSerialize, nil
-}
-
-func (o *SpConnection) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"entityId",
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varSpConnection := _SpConnection{}
-
-	err = json.Unmarshal(bytes, &varSpConnection)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SpConnection(varSpConnection)
-
-	return err
 }
 
 type NullableSpConnection struct {

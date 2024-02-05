@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AdministrativeAccount type satisfies the MappedNullable interface at compile time
@@ -41,8 +40,6 @@ type AdministrativeAccount struct {
 	// Roles available for an administrator. <br>USER_ADMINISTRATOR - Can create, deactivate or delete accounts and reset passwords. Additionally, install replacement license keys. <br> CRYPTO_ADMINISTRATOR - Can manage local keys and certificates. <br> ADMINISTRATOR - Can configure partner connections and most system settings (except the management of native accounts and the handling of local keys and certificates. <br>EXPRESSION_ADMINISTRATOR - Can add and update OGNL expressions. <br>
 	Roles []string `json:"roles,omitempty" tfsdk:"roles"`
 }
-
-type _AdministrativeAccount AdministrativeAccount
 
 // NewAdministrativeAccount instantiates a new AdministrativeAccount object
 // This constructor will assign default values to properties that have it defined,
@@ -413,41 +410,6 @@ func (o AdministrativeAccount) ToMap() (map[string]interface{}, error) {
 		toSerialize["roles"] = o.Roles
 	}
 	return toSerialize, nil
-}
-
-func (o *AdministrativeAccount) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"username",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAdministrativeAccount := _AdministrativeAccount{}
-
-	err = json.Unmarshal(bytes, &varAdministrativeAccount)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AdministrativeAccount(varAdministrativeAccount)
-
-	return err
 }
 
 type NullableAdministrativeAccount struct {

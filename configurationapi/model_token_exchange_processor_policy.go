@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the TokenExchangeProcessorPolicy type satisfies the MappedNullable interface at compile time
@@ -30,8 +29,6 @@ type TokenExchangeProcessorPolicy struct {
 	// A list of Token Processor(s) mappings into an OAuth 2.0 Token Exchange Processor policy.
 	ProcessorMappings []TokenExchangeProcessorMapping `json:"processorMappings" tfsdk:"processor_mappings"`
 }
-
-type _TokenExchangeProcessorPolicy TokenExchangeProcessorPolicy
 
 // NewTokenExchangeProcessorPolicy instantiates a new TokenExchangeProcessorPolicy object
 // This constructor will assign default values to properties that have it defined,
@@ -200,44 +197,6 @@ func (o TokenExchangeProcessorPolicy) ToMap() (map[string]interface{}, error) {
 	toSerialize["attributeContract"] = o.AttributeContract
 	toSerialize["processorMappings"] = o.ProcessorMappings
 	return toSerialize, nil
-}
-
-func (o *TokenExchangeProcessorPolicy) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"id",
-		"name",
-		"attributeContract",
-		"processorMappings",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varTokenExchangeProcessorPolicy := _TokenExchangeProcessorPolicy{}
-
-	err = json.Unmarshal(bytes, &varTokenExchangeProcessorPolicy)
-
-	if err != nil {
-		return err
-	}
-
-	*o = TokenExchangeProcessorPolicy(varTokenExchangeProcessorPolicy)
-
-	return err
 }
 
 type NullableTokenExchangeProcessorPolicy struct {

@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the MetadataEventNotificationSettings type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,6 @@ type MetadataEventNotificationSettings struct {
 	EmailAddress             string        `json:"emailAddress" tfsdk:"email_address"`
 	NotificationPublisherRef *ResourceLink `json:"notificationPublisherRef,omitempty" tfsdk:"notification_publisher_ref"`
 }
-
-type _MetadataEventNotificationSettings MetadataEventNotificationSettings
 
 // NewMetadataEventNotificationSettings instantiates a new MetadataEventNotificationSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -116,41 +113,6 @@ func (o MetadataEventNotificationSettings) ToMap() (map[string]interface{}, erro
 		toSerialize["notificationPublisherRef"] = o.NotificationPublisherRef
 	}
 	return toSerialize, nil
-}
-
-func (o *MetadataEventNotificationSettings) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"emailAddress",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varMetadataEventNotificationSettings := _MetadataEventNotificationSettings{}
-
-	err = json.Unmarshal(bytes, &varMetadataEventNotificationSettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = MetadataEventNotificationSettings(varMetadataEventNotificationSettings)
-
-	return err
 }
 
 type NullableMetadataEventNotificationSettings struct {

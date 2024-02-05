@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the EmailVerificationConfig type satisfies the MappedNullable interface at compile time
@@ -54,8 +53,6 @@ type EmailVerificationConfig struct {
 	// The template to render when the user must verify their email address before they can complete a single sign-on transaction. The default is local.identity.email.verification.required.html.<br>Note:Only applicable if EmailVerificationType is OTL and requireVerifiedEmail is true.
 	RequireVerifiedEmailTemplateName *string `json:"requireVerifiedEmailTemplateName,omitempty" tfsdk:"require_verified_email_template_name"`
 }
-
-type _EmailVerificationConfig EmailVerificationConfig
 
 // NewEmailVerificationConfig instantiates a new EmailVerificationConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -662,42 +659,6 @@ func (o EmailVerificationConfig) ToMap() (map[string]interface{}, error) {
 		toSerialize["requireVerifiedEmailTemplateName"] = o.RequireVerifiedEmailTemplateName
 	}
 	return toSerialize, nil
-}
-
-func (o *EmailVerificationConfig) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"fieldForEmailToVerify",
-		"fieldStoringVerificationStatus",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varEmailVerificationConfig := _EmailVerificationConfig{}
-
-	err = json.Unmarshal(bytes, &varEmailVerificationConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = EmailVerificationConfig(varEmailVerificationConfig)
-
-	return err
 }
 
 type NullableEmailVerificationConfig struct {

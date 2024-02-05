@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ThreadPoolExhaustionNotificationSettings type satisfies the MappedNullable interface at compile time
@@ -28,8 +27,6 @@ type ThreadPoolExhaustionNotificationSettings struct {
 	// The mode of notification. Set to NOTIFICATION_PUBLISHER to enable email notifications and server log messages. Set to LOGGING_ONLY to enable server log messages. Defaults to LOGGING_ONLY.
 	NotificationMode *string `json:"notificationMode,omitempty" tfsdk:"notification_mode"`
 }
-
-type _ThreadPoolExhaustionNotificationSettings ThreadPoolExhaustionNotificationSettings
 
 // NewThreadPoolExhaustionNotificationSettings instantiates a new ThreadPoolExhaustionNotificationSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -190,41 +187,6 @@ func (o ThreadPoolExhaustionNotificationSettings) ToMap() (map[string]interface{
 		toSerialize["notificationMode"] = o.NotificationMode
 	}
 	return toSerialize, nil
-}
-
-func (o *ThreadPoolExhaustionNotificationSettings) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"emailAddress",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varThreadPoolExhaustionNotificationSettings := _ThreadPoolExhaustionNotificationSettings{}
-
-	err = json.Unmarshal(bytes, &varThreadPoolExhaustionNotificationSettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ThreadPoolExhaustionNotificationSettings(varThreadPoolExhaustionNotificationSettings)
-
-	return err
 }
 
 type NullableThreadPoolExhaustionNotificationSettings struct {

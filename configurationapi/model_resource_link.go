@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ResourceLink type satisfies the MappedNullable interface at compile time
@@ -25,8 +24,6 @@ type ResourceLink struct {
 	// A read-only URL that references the resource. If the resource is not currently URL-accessible, this property will be null.
 	Location *string `json:"location,omitempty" tfsdk:"location"`
 }
-
-type _ResourceLink ResourceLink
 
 // NewResourceLink instantiates a new ResourceLink object
 // This constructor will assign default values to properties that have it defined,
@@ -117,41 +114,6 @@ func (o ResourceLink) ToMap() (map[string]interface{}, error) {
 		toSerialize["location"] = o.Location
 	}
 	return toSerialize, nil
-}
-
-func (o *ResourceLink) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"id",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varResourceLink := _ResourceLink{}
-
-	err = json.Unmarshal(bytes, &varResourceLink)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ResourceLink(varResourceLink)
-
-	return err
 }
 
 type NullableResourceLink struct {

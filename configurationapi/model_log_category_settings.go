@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the LogCategorySettings type satisfies the MappedNullable interface at compile time
@@ -29,8 +28,6 @@ type LogCategorySettings struct {
 	// Determines whether or not the log category is enabled. The default is false.
 	Enabled *bool `json:"enabled,omitempty" tfsdk:"enabled"`
 }
-
-type _LogCategorySettings LogCategorySettings
 
 // NewLogCategorySettings instantiates a new LogCategorySettings object
 // This constructor will assign default values to properties that have it defined,
@@ -191,41 +188,6 @@ func (o LogCategorySettings) ToMap() (map[string]interface{}, error) {
 		toSerialize["enabled"] = o.Enabled
 	}
 	return toSerialize, nil
-}
-
-func (o *LogCategorySettings) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"id",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varLogCategorySettings := _LogCategorySettings{}
-
-	err = json.Unmarshal(bytes, &varLogCategorySettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = LogCategorySettings(varLogCategorySettings)
-
-	return err
 }
 
 type NullableLogCategorySettings struct {

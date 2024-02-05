@@ -65,8 +65,32 @@ func (dst *AttributeSourceAggregation) UnmarshalJSON(data []byte) error {
 		}
 	}
 
+	// check if the discriminator value is 'CustomAttributeSource'
+	if jsonDict["type"] == "CustomAttributeSource" {
+		// try to unmarshal JSON data into CustomAttributeSource
+		err = json.Unmarshal(data, &dst.CustomAttributeSource)
+		if err == nil {
+			return nil // data stored in dst.CustomAttributeSource, return on the first match
+		} else {
+			dst.CustomAttributeSource = nil
+			return fmt.Errorf("failed to unmarshal AttributeSourceAggregation as CustomAttributeSource: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'JDBC'
 	if jsonDict["type"] == "JDBC" {
+		// try to unmarshal JSON data into JdbcAttributeSource
+		err = json.Unmarshal(data, &dst.JdbcAttributeSource)
+		if err == nil {
+			return nil // data stored in dst.JdbcAttributeSource, return on the first match
+		} else {
+			dst.JdbcAttributeSource = nil
+			return fmt.Errorf("failed to unmarshal AttributeSourceAggregation as JdbcAttributeSource: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'JdbcAttributeSource'
+	if jsonDict["type"] == "JdbcAttributeSource" {
 		// try to unmarshal JSON data into JdbcAttributeSource
 		err = json.Unmarshal(data, &dst.JdbcAttributeSource)
 		if err == nil {
@@ -89,8 +113,8 @@ func (dst *AttributeSourceAggregation) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'PING_ONE_LDAP_GATEWAY'
-	if jsonDict["type"] == "PING_ONE_LDAP_GATEWAY" {
+	// check if the discriminator value is 'LdapAttributeSource'
+	if jsonDict["type"] == "LdapAttributeSource" {
 		// try to unmarshal JSON data into LdapAttributeSource
 		err = json.Unmarshal(data, &dst.LdapAttributeSource)
 		if err == nil {
@@ -101,32 +125,8 @@ func (dst *AttributeSourceAggregation) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'CustomAttributeSource'
-	if jsonDict["type"] == "CustomAttributeSource" {
-		// try to unmarshal JSON data into CustomAttributeSource
-		err = json.Unmarshal(data, &dst.CustomAttributeSource)
-		if err == nil {
-			return nil // data stored in dst.CustomAttributeSource, return on the first match
-		} else {
-			dst.CustomAttributeSource = nil
-			return fmt.Errorf("failed to unmarshal AttributeSourceAggregation as CustomAttributeSource: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'JdbcAttributeSource'
-	if jsonDict["type"] == "JdbcAttributeSource" {
-		// try to unmarshal JSON data into JdbcAttributeSource
-		err = json.Unmarshal(data, &dst.JdbcAttributeSource)
-		if err == nil {
-			return nil // data stored in dst.JdbcAttributeSource, return on the first match
-		} else {
-			dst.JdbcAttributeSource = nil
-			return fmt.Errorf("failed to unmarshal AttributeSourceAggregation as JdbcAttributeSource: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'LdapAttributeSource'
-	if jsonDict["type"] == "LdapAttributeSource" {
+	// check if the discriminator value is 'PING_ONE_LDAP_GATEWAY'
+	if jsonDict["type"] == "PING_ONE_LDAP_GATEWAY" {
 		// try to unmarshal JSON data into LdapAttributeSource
 		err = json.Unmarshal(data, &dst.LdapAttributeSource)
 		if err == nil {

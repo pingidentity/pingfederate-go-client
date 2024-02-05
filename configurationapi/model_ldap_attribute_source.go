@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the LdapAttributeSource type satisfies the MappedNullable interface at compile time
@@ -34,8 +33,6 @@ type LdapAttributeSource struct {
 	// Set this to true to return transitive group memberships for the 'memberOf' attribute.  This only applies for Active Directory data sources.  All other data sources will be set to false.
 	MemberOfNestedGroup *bool `json:"memberOfNestedGroup,omitempty" tfsdk:"member_of_nested_group"`
 }
-
-type _LdapAttributeSource LdapAttributeSource
 
 // NewLdapAttributeSource instantiates a new LdapAttributeSource object
 // This constructor will assign default values to properties that have it defined,
@@ -267,44 +264,6 @@ func (o LdapAttributeSource) ToMap() (map[string]interface{}, error) {
 		toSerialize["memberOfNestedGroup"] = o.MemberOfNestedGroup
 	}
 	return toSerialize, nil
-}
-
-func (o *LdapAttributeSource) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"searchScope",
-		"searchFilter",
-		"type",
-		"dataStoreRef",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varLdapAttributeSource := _LdapAttributeSource{}
-
-	err = json.Unmarshal(bytes, &varLdapAttributeSource)
-
-	if err != nil {
-		return err
-	}
-
-	*o = LdapAttributeSource(varLdapAttributeSource)
-
-	return err
 }
 
 type NullableLdapAttributeSource struct {

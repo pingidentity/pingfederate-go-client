@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the MoveItemRequest type satisfies the MappedNullable interface at compile time
@@ -25,8 +24,6 @@ type MoveItemRequest struct {
 	// When moving an item relative to another, this value indicates the target move-to ID.
 	MoveToId *string `json:"moveToId,omitempty" tfsdk:"move_to_id"`
 }
-
-type _MoveItemRequest MoveItemRequest
 
 // NewMoveItemRequest instantiates a new MoveItemRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -117,41 +114,6 @@ func (o MoveItemRequest) ToMap() (map[string]interface{}, error) {
 		toSerialize["moveToId"] = o.MoveToId
 	}
 	return toSerialize, nil
-}
-
-func (o *MoveItemRequest) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"location",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varMoveItemRequest := _MoveItemRequest{}
-
-	err = json.Unmarshal(bytes, &varMoveItemRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = MoveItemRequest(varMoveItemRequest)
-
-	return err
 }
 
 type NullableMoveItemRequest struct {

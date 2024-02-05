@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ProfileConfig type satisfies the MappedNullable interface at compile time
@@ -25,8 +24,6 @@ type ProfileConfig struct {
 	// The template name for end-user profile management.
 	TemplateName string `json:"templateName" tfsdk:"template_name"`
 }
-
-type _ProfileConfig ProfileConfig
 
 // NewProfileConfig instantiates a new ProfileConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -117,41 +114,6 @@ func (o ProfileConfig) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["templateName"] = o.TemplateName
 	return toSerialize, nil
-}
-
-func (o *ProfileConfig) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"templateName",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varProfileConfig := _ProfileConfig{}
-
-	err = json.Unmarshal(bytes, &varProfileConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProfileConfig(varProfileConfig)
-
-	return err
 }
 
 type NullableProfileConfig struct {

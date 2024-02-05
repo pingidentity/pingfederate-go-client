@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the IdpSsoServiceEndpoint type satisfies the MappedNullable interface at compile time
@@ -25,8 +24,6 @@ type IdpSsoServiceEndpoint struct {
 	// The absolute or relative URL of the endpoint. A relative URL can be specified if a base URL for the connection has been defined.
 	Url string `json:"url" tfsdk:"url"`
 }
-
-type _IdpSsoServiceEndpoint IdpSsoServiceEndpoint
 
 // NewIdpSsoServiceEndpoint instantiates a new IdpSsoServiceEndpoint object
 // This constructor will assign default values to properties that have it defined,
@@ -108,42 +105,6 @@ func (o IdpSsoServiceEndpoint) ToMap() (map[string]interface{}, error) {
 	toSerialize["binding"] = o.Binding
 	toSerialize["url"] = o.Url
 	return toSerialize, nil
-}
-
-func (o *IdpSsoServiceEndpoint) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"binding",
-		"url",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varIdpSsoServiceEndpoint := _IdpSsoServiceEndpoint{}
-
-	err = json.Unmarshal(bytes, &varIdpSsoServiceEndpoint)
-
-	if err != nil {
-		return err
-	}
-
-	*o = IdpSsoServiceEndpoint(varIdpSsoServiceEndpoint)
-
-	return err
 }
 
 type NullableIdpSsoServiceEndpoint struct {

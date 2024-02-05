@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the IdpWsTrust type satisfies the MappedNullable interface at compile time
@@ -26,8 +25,6 @@ type IdpWsTrust struct {
 	// A list of token generators to generate local tokens. Required if a local token needs to be generated.
 	TokenGeneratorMappings []SpTokenGeneratorMapping `json:"tokenGeneratorMappings,omitempty" tfsdk:"token_generator_mappings"`
 }
-
-type _IdpWsTrust IdpWsTrust
 
 // NewIdpWsTrust instantiates a new IdpWsTrust object
 // This constructor will assign default values to properties that have it defined,
@@ -144,42 +141,6 @@ func (o IdpWsTrust) ToMap() (map[string]interface{}, error) {
 		toSerialize["tokenGeneratorMappings"] = o.TokenGeneratorMappings
 	}
 	return toSerialize, nil
-}
-
-func (o *IdpWsTrust) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"attributeContract",
-		"generateLocalToken",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varIdpWsTrust := _IdpWsTrust{}
-
-	err = json.Unmarshal(bytes, &varIdpWsTrust)
-
-	if err != nil {
-		return err
-	}
-
-	*o = IdpWsTrust(varIdpWsTrust)
-
-	return err
 }
 
 type NullableIdpWsTrust struct {

@@ -31821,7 +31821,7 @@ components:
       description: OAuth bearer token (see documentation)
       scheme: bearer
       type: http
-    oAuth:
+    oAuth2:
       flows:
         clientCredentials:
           authorizationUrl: https://localhost:9031/as/authorization.oauth2

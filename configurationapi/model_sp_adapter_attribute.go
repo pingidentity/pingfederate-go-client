@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the SpAdapterAttribute type satisfies the MappedNullable interface at compile time
@@ -23,8 +22,6 @@ type SpAdapterAttribute struct {
 	// The name of this attribute.
 	Name string `json:"name" tfsdk:"name"`
 }
-
-type _SpAdapterAttribute SpAdapterAttribute
 
 // NewSpAdapterAttribute instantiates a new SpAdapterAttribute object
 // This constructor will assign default values to properties that have it defined,
@@ -80,41 +77,6 @@ func (o SpAdapterAttribute) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
 	return toSerialize, nil
-}
-
-func (o *SpAdapterAttribute) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varSpAdapterAttribute := _SpAdapterAttribute{}
-
-	err = json.Unmarshal(bytes, &varSpAdapterAttribute)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SpAdapterAttribute(varSpAdapterAttribute)
-
-	return err
 }
 
 type NullableSpAdapterAttribute struct {

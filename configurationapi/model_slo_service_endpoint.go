@@ -12,7 +12,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the SloServiceEndpoint type satisfies the MappedNullable interface at compile time
@@ -27,8 +26,6 @@ type SloServiceEndpoint struct {
 	// The absolute or relative URL to which logout responses are sent. A relative URL can be specified if a base URL for the connection has been defined.
 	ResponseUrl *string `json:"responseUrl,omitempty" tfsdk:"response_url"`
 }
-
-type _SloServiceEndpoint SloServiceEndpoint
 
 // NewSloServiceEndpoint instantiates a new SloServiceEndpoint object
 // This constructor will assign default values to properties that have it defined,
@@ -154,41 +151,6 @@ func (o SloServiceEndpoint) ToMap() (map[string]interface{}, error) {
 		toSerialize["responseUrl"] = o.ResponseUrl
 	}
 	return toSerialize, nil
-}
-
-func (o *SloServiceEndpoint) UnmarshalJSON(bytes []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"url",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varSloServiceEndpoint := _SloServiceEndpoint{}
-
-	err = json.Unmarshal(bytes, &varSloServiceEndpoint)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SloServiceEndpoint(varSloServiceEndpoint)
-
-	return err
 }
 
 type NullableSloServiceEndpoint struct {
