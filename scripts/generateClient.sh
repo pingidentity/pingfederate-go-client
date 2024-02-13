@@ -8,11 +8,11 @@ set -e
 # rm ./model_*.go
 # rm -r docs/
 
-cd configurationapi
-
-openapi-generator generate \
-    -i ../api/pf-swagger.yaml \
+docker run --rm \
+    -v "$PWD:/local" openapitools/openapi-generator-cli:v7.0.1 generate \
+    -i /local/api/pf-swagger.yaml \
     -g go \
+    -o /local/configurationapi \
     --git-host github.com \
     --git-repo-id pingfederate-go-client \
     --git-user-id pingidentity \
@@ -20,7 +20,7 @@ openapi-generator generate \
     --additional-properties=enumClassPrefix=true,packageName=configurationapi,useOneOfDiscriminatorLookup=true \
     --skip-validate-spec
 
-rm -r test/
+rm -r configurationapi/test/
 
 # Run any code generators
 go mod tidy
