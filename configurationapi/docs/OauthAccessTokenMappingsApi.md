@@ -33,7 +33,7 @@ import (
 )
 
 func main() {
-    body := *openapiclient.NewAccessTokenMapping("Id_example", *openapiclient.NewAccessTokenMappingContext("Type_example", *openapiclient.NewResourceLink("Id_example")), *openapiclient.NewResourceLink("Id_example"), map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // AccessTokenMapping | Configuration for the new Access Token Mapping.
+    body := *openapiclient.NewAccessTokenMapping(*openapiclient.NewAccessTokenMappingContext("Type_example", *openapiclient.NewResourceLink("Id_example")), *openapiclient.NewResourceLink("Id_example"), map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // AccessTokenMapping | Configuration for the new Access Token Mapping.
     xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
@@ -295,7 +295,7 @@ import (
 
 func main() {
     id := "id_example" // string | ID of the Access Token Mapping to update.
-    body := *openapiclient.NewAccessTokenMapping("Id_example", *openapiclient.NewAccessTokenMappingContext("Type_example", *openapiclient.NewResourceLink("Id_example")), *openapiclient.NewResourceLink("Id_example"), map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // AccessTokenMapping | Configuration for updated mapping.
+    body := *openapiclient.NewAccessTokenMapping(*openapiclient.NewAccessTokenMappingContext("Type_example", *openapiclient.NewResourceLink("Id_example")), *openapiclient.NewResourceLink("Id_example"), map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // AccessTokenMapping | Configuration for updated mapping.
     xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()

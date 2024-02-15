@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | The id of the Access Token Mapping. | 
+**Id** | Pointer to **string** | The id of the Access Token Mapping. | [optional] 
 **Context** | [**AccessTokenMappingContext**](AccessTokenMappingContext.md) |  | 
 **AccessTokenManagerRef** | [**ResourceLink**](ResourceLink.md) |  | 
 **AttributeSources** | Pointer to [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) | A list of configured data stores to look up attributes from. | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewAccessTokenMapping
 
-`func NewAccessTokenMapping(id string, context AccessTokenMappingContext, accessTokenManagerRef ResourceLink, attributeContractFulfillment map[string]AttributeFulfillmentValue, ) *AccessTokenMapping`
+`func NewAccessTokenMapping(context AccessTokenMappingContext, accessTokenManagerRef ResourceLink, attributeContractFulfillment map[string]AttributeFulfillmentValue, ) *AccessTokenMapping`
 
 NewAccessTokenMapping instantiates a new AccessTokenMapping object
 This constructor will assign default values to properties that have it defined,
@@ -49,6 +49,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *AccessTokenMapping) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetContext
 

@@ -15183,7 +15183,6 @@ components:
         - accessTokenManagerRef
         - attributeContractFulfillment
         - context
-        - id
       type: object
       properties:
         id:
