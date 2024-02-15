@@ -15957,7 +15957,6 @@ components:
       - accessTokenManagerRef
       - attributeContractFulfillment
       - context
-      - id
       type: object
     AccessTokenMappingContext:
       description: The Access Token Attribute Mapping.

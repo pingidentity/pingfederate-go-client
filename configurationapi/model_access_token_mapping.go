@@ -20,7 +20,7 @@ var _ MappedNullable = &AccessTokenMapping{}
 // AccessTokenMapping The Access Token Attribute Mapping.
 type AccessTokenMapping struct {
 	// The id of the Access Token Mapping.
-	Id                    string                    `json:"id" tfsdk:"id"`
+	Id                    *string                   `json:"id,omitempty" tfsdk:"id"`
 	Context               AccessTokenMappingContext `json:"context" tfsdk:"context"`
 	AccessTokenManagerRef ResourceLink              `json:"accessTokenManagerRef" tfsdk:"access_token_manager_ref"`
 	// A list of configured data stores to look up attributes from.
@@ -34,9 +34,8 @@ type AccessTokenMapping struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAccessTokenMapping(id string, context AccessTokenMappingContext, accessTokenManagerRef ResourceLink, attributeContractFulfillment map[string]AttributeFulfillmentValue) *AccessTokenMapping {
+func NewAccessTokenMapping(context AccessTokenMappingContext, accessTokenManagerRef ResourceLink, attributeContractFulfillment map[string]AttributeFulfillmentValue) *AccessTokenMapping {
 	this := AccessTokenMapping{}
-	this.Id = id
 	this.Context = context
 	this.AccessTokenManagerRef = accessTokenManagerRef
 	this.AttributeContractFulfillment = attributeContractFulfillment
@@ -51,28 +50,36 @@ func NewAccessTokenMappingWithDefaults() *AccessTokenMapping {
 	return &this
 }
 
-// GetId returns the Id field value
+// GetId returns the Id field value if set, zero value otherwise.
 func (o *AccessTokenMapping) GetId() string {
-	if o == nil {
+	if o == nil || IsNil(o.Id) {
 		var ret string
 		return ret
 	}
-
-	return o.Id
+	return *o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenMapping) GetIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
-	return &o.Id, true
+	return o.Id, true
 }
 
-// SetId sets field value
+// HasId returns a boolean if a field has been set.
+func (o *AccessTokenMapping) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
 func (o *AccessTokenMapping) SetId(v string) {
-	o.Id = v
+	o.Id = &v
 }
 
 // GetContext returns the Context field value
@@ -221,7 +228,9 @@ func (o AccessTokenMapping) MarshalJSON() ([]byte, error) {
 
 func (o AccessTokenMapping) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
 	toSerialize["context"] = o.Context
 	toSerialize["accessTokenManagerRef"] = o.AccessTokenManagerRef
 	if !IsNil(o.AttributeSources) {
