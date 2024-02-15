@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# This script should be run from the root of the repository (./scripts/generateClient.sh)
+
 set -x
 set -e
 
