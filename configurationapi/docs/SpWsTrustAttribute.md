@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | The name of this attribute. | 
-**Namespace** | **string** | The attribute namespace.  This is required when the Default Token Type is SAML2.0 or SAML1.1 or SAML1.1 for Office 365. | 
+**Namespace** | Pointer to **string** | The attribute namespace.  This is required when the Default Token Type is SAML2.0 or SAML1.1 or SAML1.1 for Office 365. | [optional] 
 
 ## Methods
 
 ### NewSpWsTrustAttribute
 
-`func NewSpWsTrustAttribute(name string, namespace string, ) *SpWsTrustAttribute`
+`func NewSpWsTrustAttribute(name string, ) *SpWsTrustAttribute`
 
 NewSpWsTrustAttribute instantiates a new SpWsTrustAttribute object
 This constructor will assign default values to properties that have it defined,
@@ -65,6 +65,11 @@ and a boolean to check if the value has been set.
 
 SetNamespace sets Namespace field to given value.
 
+### HasNamespace
+
+`func (o *SpWsTrustAttribute) HasNamespace() bool`
+
+HasNamespace returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -19223,7 +19223,6 @@ components:
     SpWsTrustAttribute:
       required:
         - name
-        - namespace
       type: object
       properties:
         name:

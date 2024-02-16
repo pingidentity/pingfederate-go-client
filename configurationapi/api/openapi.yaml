@@ -30984,7 +30984,6 @@ components:
           type: string
       required:
       - name
-      - namespace
       type: object
     SpWsTrustAttributeContract:
       description: A set of user attributes that this server will send in the token.
