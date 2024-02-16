@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AccessTokenMapping type satisfies the MappedNullable interface at compile time
@@ -29,6 +31,8 @@ type AccessTokenMapping struct {
 	AttributeContractFulfillment map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment" tfsdk:"attribute_contract_fulfillment"`
 	IssuanceCriteria             *IssuanceCriteria                    `json:"issuanceCriteria,omitempty" tfsdk:"issuance_criteria"`
 }
+
+type _AccessTokenMapping AccessTokenMapping
 
 // NewAccessTokenMapping instantiates a new AccessTokenMapping object
 // This constructor will assign default values to properties that have it defined,
@@ -241,6 +245,44 @@ func (o AccessTokenMapping) ToMap() (map[string]interface{}, error) {
 		toSerialize["issuanceCriteria"] = o.IssuanceCriteria
 	}
 	return toSerialize, nil
+}
+
+func (o *AccessTokenMapping) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"context",
+		"accessTokenManagerRef",
+		"attributeContractFulfillment",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAccessTokenMapping := _AccessTokenMapping{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varAccessTokenMapping)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AccessTokenMapping(varAccessTokenMapping)
+
+	return err
 }
 
 type NullableAccessTokenMapping struct {

@@ -4,6 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Type** | **string** | The data store type. | 
+**Id** | Pointer to **string** | The persistent, unique ID for the data store. It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned if not specified. | [optional] 
+**MaskAttributeValues** | Pointer to **bool** | Whether attribute values should be masked in the log. | [optional] 
+**LastModified** | Pointer to **time.Time** | The time at which the datastore instance was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
 **ConnectionUrlTags** | Pointer to [**[]JdbcTagConfig**](JdbcTagConfig.md) | The set of connection URLs and associated tags for this JDBC data store. This is required if &#39;connectionUrl&#39; is not provided. | [optional] 
 **ConnectionUrl** | Pointer to **string** | The default location of the JDBC database. This field is required if no mapping for JDBC database location and tags is specified. | [optional] 
 **Name** | Pointer to **string** | The data store name with a unique value across all data sources. Omitting this attribute will set the value to a combination of the connection url and the username. | [optional] 
@@ -17,13 +21,12 @@ Name | Type | Description | Notes
 **MaxPoolSize** | Pointer to **int64** | The largest number of database connections in the connection pool for the given data store. Omitting this attribute will set the value to the connection pool default. | [optional] 
 **BlockingTimeout** | Pointer to **int64** | The amount of time in milliseconds a request waits to get a connection from the connection pool before it fails. Omitting this attribute will set the value to the connection pool default. | [optional] 
 **IdleTimeout** | Pointer to **int64** | The length of time in minutes the connection can be idle in the pool before it is closed. Omitting this attribute will set the value to the connection pool default. | [optional] 
-**LastModified** | Pointer to **time.Time** | The time at which the datastore instance was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
 
 ## Methods
 
 ### NewJdbcDataStore
 
-`func NewJdbcDataStore(driverClass string, ) *JdbcDataStore`
+`func NewJdbcDataStore(type_ string, driverClass string, ) *JdbcDataStore`
 
 NewJdbcDataStore instantiates a new JdbcDataStore object
 This constructor will assign default values to properties that have it defined,
@@ -37,6 +40,101 @@ will change when the set of required properties is changed
 NewJdbcDataStoreWithDefaults instantiates a new JdbcDataStore object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetType
+
+`func (o *JdbcDataStore) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *JdbcDataStore) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *JdbcDataStore) SetType(v string)`
+
+SetType sets Type field to given value.
+
+
+### GetId
+
+`func (o *JdbcDataStore) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *JdbcDataStore) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *JdbcDataStore) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *JdbcDataStore) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetMaskAttributeValues
+
+`func (o *JdbcDataStore) GetMaskAttributeValues() bool`
+
+GetMaskAttributeValues returns the MaskAttributeValues field if non-nil, zero value otherwise.
+
+### GetMaskAttributeValuesOk
+
+`func (o *JdbcDataStore) GetMaskAttributeValuesOk() (*bool, bool)`
+
+GetMaskAttributeValuesOk returns a tuple with the MaskAttributeValues field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaskAttributeValues
+
+`func (o *JdbcDataStore) SetMaskAttributeValues(v bool)`
+
+SetMaskAttributeValues sets MaskAttributeValues field to given value.
+
+### HasMaskAttributeValues
+
+`func (o *JdbcDataStore) HasMaskAttributeValues() bool`
+
+HasMaskAttributeValues returns a boolean if a field has been set.
+
+### GetLastModified
+
+`func (o *JdbcDataStore) GetLastModified() time.Time`
+
+GetLastModified returns the LastModified field if non-nil, zero value otherwise.
+
+### GetLastModifiedOk
+
+`func (o *JdbcDataStore) GetLastModifiedOk() (*time.Time, bool)`
+
+GetLastModifiedOk returns a tuple with the LastModified field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastModified
+
+`func (o *JdbcDataStore) SetLastModified(v time.Time)`
+
+SetLastModified sets LastModified field to given value.
+
+### HasLastModified
+
+`func (o *JdbcDataStore) HasLastModified() bool`
+
+HasLastModified returns a boolean if a field has been set.
 
 ### GetConnectionUrlTags
 
@@ -357,31 +455,6 @@ SetIdleTimeout sets IdleTimeout field to given value.
 `func (o *JdbcDataStore) HasIdleTimeout() bool`
 
 HasIdleTimeout returns a boolean if a field has been set.
-
-### GetLastModified
-
-`func (o *JdbcDataStore) GetLastModified() time.Time`
-
-GetLastModified returns the LastModified field if non-nil, zero value otherwise.
-
-### GetLastModifiedOk
-
-`func (o *JdbcDataStore) GetLastModifiedOk() (*time.Time, bool)`
-
-GetLastModifiedOk returns a tuple with the LastModified field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastModified
-
-`func (o *JdbcDataStore) SetLastModified(v time.Time)`
-
-SetLastModified sets LastModified field to given value.
-
-### HasLastModified
-
-`func (o *JdbcDataStore) HasLastModified() bool`
-
-HasLastModified returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

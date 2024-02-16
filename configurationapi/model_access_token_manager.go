@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 	"time"
 )
 
@@ -36,6 +38,8 @@ type AccessTokenManager struct {
 	// Number added to an access token to identify which Access Token Manager issued the token.
 	SequenceNumber *int64 `json:"sequenceNumber,omitempty" tfsdk:"sequence_number"`
 }
+
+type _AccessTokenManager AccessTokenManager
 
 // NewAccessTokenManager instantiates a new AccessTokenManager object
 // This constructor will assign default values to properties that have it defined,
@@ -414,6 +418,45 @@ func (o AccessTokenManager) ToMap() (map[string]interface{}, error) {
 		toSerialize["sequenceNumber"] = o.SequenceNumber
 	}
 	return toSerialize, nil
+}
+
+func (o *AccessTokenManager) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"id",
+		"name",
+		"pluginDescriptorRef",
+		"configuration",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAccessTokenManager := _AccessTokenManager{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varAccessTokenManager)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AccessTokenManager(varAccessTokenManager)
+
+	return err
 }
 
 type NullableAccessTokenManager struct {

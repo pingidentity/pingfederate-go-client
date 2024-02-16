@@ -14345,8 +14345,6 @@ components:
       description:
         The configured settings to look up attributes from an associated
         data store.
-      discriminator:
-        propertyName: type
     AuthenticationSelector:
       allOf:
         - $ref: "#/components/schemas/PluginInstance"
@@ -15689,8 +15687,6 @@ components:
           type: string
           description: The result context.
       description: An authentication policy selection action.
-      discriminator:
-        propertyName: type
     RestartPolicyAction:
       allOf:
         - $ref: "#/components/schemas/PolicyAction"
@@ -17426,8 +17422,6 @@ components:
             - REPLICATED
             - NOT_REPLICATED
       description: Settings shared by SP-side and IdP-side connections.
-      discriminator:
-        propertyName: type
     ConnectionCert:
       required:
         - x509File
@@ -19649,8 +19643,6 @@ components:
             This property is read only and is ignored on PUT and POST requests.
           format: date-time
       description: The set of attributes used to configure a data store.
-      discriminator:
-        propertyName: type
     DataStores:
       type: object
       properties:

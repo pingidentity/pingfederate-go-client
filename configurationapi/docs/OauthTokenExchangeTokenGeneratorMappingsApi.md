@@ -24,25 +24,25 @@ Create a new Token Exchange Processor policy to Token Generator Mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewProcessorPolicyToGeneratorMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "SourceId_example", "TargetId_example") // ProcessorPolicyToGeneratorMapping | Configuration for a new Token Exchange Processor policy to Token Generator Mapping.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	body := *openapiclient.NewProcessorPolicyToGeneratorMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "SourceId_example", "TargetId_example") // ProcessorPolicyToGeneratorMapping | Configuration for a new Token Exchange Processor policy to Token Generator Mapping.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeTokenGeneratorMappingsAPI.CreateTokenGeneratorMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeTokenGeneratorMappingsAPI.CreateTokenGeneratorMapping``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateTokenGeneratorMapping`: ProcessorPolicyToGeneratorMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeTokenGeneratorMappingsAPI.CreateTokenGeneratorMapping`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthTokenExchangeTokenGeneratorMappingsAPI.CreateTokenGeneratorMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeTokenGeneratorMappingsAPI.CreateTokenGeneratorMapping``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateTokenGeneratorMapping`: ProcessorPolicyToGeneratorMapping
+	fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeTokenGeneratorMappingsAPI.CreateTokenGeneratorMapping`: %v\n", resp)
 }
 ```
 
@@ -90,22 +90,22 @@ Delete a Token Exchange Processor policy to Token Generator Mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of Token Exchange Processor policy to Token Generator Mapping to delete.
+	id := "id_example" // string | ID of Token Exchange Processor policy to Token Generator Mapping to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthTokenExchangeTokenGeneratorMappingsAPI.DeleteTokenGeneratorMappingById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeTokenGeneratorMappingsAPI.DeleteTokenGeneratorMappingById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.OauthTokenExchangeTokenGeneratorMappingsAPI.DeleteTokenGeneratorMappingById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeTokenGeneratorMappingsAPI.DeleteTokenGeneratorMappingById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -156,24 +156,24 @@ Get a Token Exchange Processor policy to Token Generator Mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of Token Exchange Processor policy to Token Generator Mapping to fetch.
+	id := "id_example" // string | ID of Token Exchange Processor policy to Token Generator Mapping to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeTokenGeneratorMappingsAPI.GetTokenGeneratorMappingById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeTokenGeneratorMappingsAPI.GetTokenGeneratorMappingById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetTokenGeneratorMappingById`: ProcessorPolicyToGeneratorMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeTokenGeneratorMappingsAPI.GetTokenGeneratorMappingById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthTokenExchangeTokenGeneratorMappingsAPI.GetTokenGeneratorMappingById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeTokenGeneratorMappingsAPI.GetTokenGeneratorMappingById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTokenGeneratorMappingById`: ProcessorPolicyToGeneratorMapping
+	fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeTokenGeneratorMappingsAPI.GetTokenGeneratorMappingById`: %v\n", resp)
 }
 ```
 
@@ -224,23 +224,23 @@ Get the list of Token Exchange Processor policy to Token Generator Mappings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeTokenGeneratorMappingsAPI.GetTokenGeneratorMappings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeTokenGeneratorMappingsAPI.GetTokenGeneratorMappings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetTokenGeneratorMappings`: ProcessorPolicyToGeneratorMappings
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeTokenGeneratorMappingsAPI.GetTokenGeneratorMappings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthTokenExchangeTokenGeneratorMappingsAPI.GetTokenGeneratorMappings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeTokenGeneratorMappingsAPI.GetTokenGeneratorMappings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTokenGeneratorMappings`: ProcessorPolicyToGeneratorMappings
+	fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeTokenGeneratorMappingsAPI.GetTokenGeneratorMappings`: %v\n", resp)
 }
 ```
 
@@ -283,26 +283,26 @@ Update a Token Exchange Processor policy to Token Generator Mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of Token Exchange Processor policy to Token Generator Mapping to update.
-    body := *openapiclient.NewProcessorPolicyToGeneratorMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "SourceId_example", "TargetId_example") // ProcessorPolicyToGeneratorMapping | Configuration for updated Token Exchange Processor policy to Token Generator Mapping.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	id := "id_example" // string | ID of Token Exchange Processor policy to Token Generator Mapping to update.
+	body := *openapiclient.NewProcessorPolicyToGeneratorMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "SourceId_example", "TargetId_example") // ProcessorPolicyToGeneratorMapping | Configuration for updated Token Exchange Processor policy to Token Generator Mapping.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeTokenGeneratorMappingsAPI.UpdateTokenGeneratorMappingById(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeTokenGeneratorMappingsAPI.UpdateTokenGeneratorMappingById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateTokenGeneratorMappingById`: ProcessorPolicyToGeneratorMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeTokenGeneratorMappingsAPI.UpdateTokenGeneratorMappingById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthTokenExchangeTokenGeneratorMappingsAPI.UpdateTokenGeneratorMappingById(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeTokenGeneratorMappingsAPI.UpdateTokenGeneratorMappingById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateTokenGeneratorMappingById`: ProcessorPolicyToGeneratorMapping
+	fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeTokenGeneratorMappingsAPI.UpdateTokenGeneratorMappingById`: %v\n", resp)
 }
 ```
 

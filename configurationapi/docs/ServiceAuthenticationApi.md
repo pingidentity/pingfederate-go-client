@@ -21,23 +21,23 @@ Get the service authentication settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServiceAuthenticationAPI.GetServiceAuthentication(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServiceAuthenticationAPI.GetServiceAuthentication``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetServiceAuthentication`: ServiceAuthentication
-    fmt.Fprintf(os.Stdout, "Response from `ServiceAuthenticationAPI.GetServiceAuthentication`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServiceAuthenticationAPI.GetServiceAuthentication(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServiceAuthenticationAPI.GetServiceAuthentication``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetServiceAuthentication`: ServiceAuthentication
+	fmt.Fprintf(os.Stdout, "Response from `ServiceAuthenticationAPI.GetServiceAuthentication`: %v\n", resp)
 }
 ```
 
@@ -82,24 +82,24 @@ Update the service authentication settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewServiceAuthentication() // ServiceAuthentication | Service authentication settings.
+	body := *openapiclient.NewServiceAuthentication() // ServiceAuthentication | Service authentication settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServiceAuthenticationAPI.UpdateServiceAuthentication(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServiceAuthenticationAPI.UpdateServiceAuthentication``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateServiceAuthentication`: ServiceAuthentication
-    fmt.Fprintf(os.Stdout, "Response from `ServiceAuthenticationAPI.UpdateServiceAuthentication`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServiceAuthenticationAPI.UpdateServiceAuthentication(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServiceAuthenticationAPI.UpdateServiceAuthentication``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateServiceAuthentication`: ServiceAuthentication
+	fmt.Fprintf(os.Stdout, "Response from `ServiceAuthenticationAPI.UpdateServiceAuthentication`: %v\n", resp)
 }
 ```
 

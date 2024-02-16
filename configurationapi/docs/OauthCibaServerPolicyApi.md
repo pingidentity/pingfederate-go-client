@@ -28,25 +28,25 @@ Create a new request policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewRequestPolicy("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewIdentityHintContract([]openapiclient.IdentityHintAttribute{*openapiclient.NewIdentityHintAttribute("Name_example")})) // RequestPolicy | Configuration for new policy.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	body := *openapiclient.NewRequestPolicy("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewIdentityHintContract([]openapiclient.IdentityHintAttribute{*openapiclient.NewIdentityHintAttribute("Name_example")})) // RequestPolicy | Configuration for new policy.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthCibaServerPolicyAPI.CreateCibaServerPolicy(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyAPI.CreateCibaServerPolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCibaServerPolicy`: RequestPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyAPI.CreateCibaServerPolicy`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthCibaServerPolicyAPI.CreateCibaServerPolicy(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyAPI.CreateCibaServerPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCibaServerPolicy`: RequestPolicy
+	fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyAPI.CreateCibaServerPolicy`: %v\n", resp)
 }
 ```
 
@@ -96,22 +96,22 @@ Delete a request policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of request policy to delete.
+	id := "id_example" // string | ID of request policy to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthCibaServerPolicyAPI.DeleteCibaServerPolicy(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyAPI.DeleteCibaServerPolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.OauthCibaServerPolicyAPI.DeleteCibaServerPolicy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyAPI.DeleteCibaServerPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -162,23 +162,23 @@ Get list of request policies.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthCibaServerPolicyAPI.GetCibaServerPolicies(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyAPI.GetCibaServerPolicies``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCibaServerPolicies`: RequestPolicies
-    fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyAPI.GetCibaServerPolicies`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthCibaServerPolicyAPI.GetCibaServerPolicies(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyAPI.GetCibaServerPolicies``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCibaServerPolicies`: RequestPolicies
+	fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyAPI.GetCibaServerPolicies`: %v\n", resp)
 }
 ```
 
@@ -223,24 +223,24 @@ Find request policy by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the request policy to fetch.
+	id := "id_example" // string | ID of the request policy to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthCibaServerPolicyAPI.GetCibaServerPolicyById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyAPI.GetCibaServerPolicyById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCibaServerPolicyById`: RequestPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyAPI.GetCibaServerPolicyById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthCibaServerPolicyAPI.GetCibaServerPolicyById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyAPI.GetCibaServerPolicyById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCibaServerPolicyById`: RequestPolicy
+	fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyAPI.GetCibaServerPolicyById`: %v\n", resp)
 }
 ```
 
@@ -291,23 +291,23 @@ Get general ciba server request policy settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthCibaServerPolicyAPI.GetCibaServerPolicySettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyAPI.GetCibaServerPolicySettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCibaServerPolicySettings`: CibaServerPolicySettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyAPI.GetCibaServerPolicySettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthCibaServerPolicyAPI.GetCibaServerPolicySettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyAPI.GetCibaServerPolicySettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCibaServerPolicySettings`: CibaServerPolicySettings
+	fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyAPI.GetCibaServerPolicySettings`: %v\n", resp)
 }
 ```
 
@@ -352,26 +352,26 @@ Update a request policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the request policy to update.
-    body := *openapiclient.NewRequestPolicy("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewIdentityHintContract([]openapiclient.IdentityHintAttribute{*openapiclient.NewIdentityHintAttribute("Name_example")})) // RequestPolicy | Configuration for updated policy.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	id := "id_example" // string | ID of the request policy to update.
+	body := *openapiclient.NewRequestPolicy("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewIdentityHintContract([]openapiclient.IdentityHintAttribute{*openapiclient.NewIdentityHintAttribute("Name_example")})) // RequestPolicy | Configuration for updated policy.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthCibaServerPolicyAPI.UpdateCibaServerPolicy(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyAPI.UpdateCibaServerPolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCibaServerPolicy`: RequestPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyAPI.UpdateCibaServerPolicy`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthCibaServerPolicyAPI.UpdateCibaServerPolicy(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyAPI.UpdateCibaServerPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCibaServerPolicy`: RequestPolicy
+	fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyAPI.UpdateCibaServerPolicy`: %v\n", resp)
 }
 ```
 
@@ -424,25 +424,25 @@ Update general ciba server request policy settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewCibaServerPolicySettings() // CibaServerPolicySettings | Ciba server request policy settings.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	body := *openapiclient.NewCibaServerPolicySettings() // CibaServerPolicySettings | Ciba server request policy settings.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthCibaServerPolicyAPI.UpdateCibaServerPolicySettings(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyAPI.UpdateCibaServerPolicySettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCibaServerPolicySettings`: CibaServerPolicySettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyAPI.UpdateCibaServerPolicySettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthCibaServerPolicyAPI.UpdateCibaServerPolicySettings(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthCibaServerPolicyAPI.UpdateCibaServerPolicySettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCibaServerPolicySettings`: CibaServerPolicySettings
+	fmt.Fprintf(os.Stdout, "Response from `OauthCibaServerPolicyAPI.UpdateCibaServerPolicySettings`: %v\n", resp)
 }
 ```
 

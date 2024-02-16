@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the JdbcDataStoreRepository type satisfies the MappedNullable interface at compile time
@@ -24,6 +26,8 @@ type JdbcDataStoreRepository struct {
 	// A list of user repository mappings from attribute names to their fulfillment values.
 	JitRepositoryAttributeMapping map[string]AttributeFulfillmentValue `json:"jitRepositoryAttributeMapping" tfsdk:"jit_repository_attribute_mapping"`
 }
+
+type _JdbcDataStoreRepository JdbcDataStoreRepository
 
 // NewJdbcDataStoreRepository instantiates a new JdbcDataStoreRepository object
 // This constructor will assign default values to properties that have it defined,
@@ -115,6 +119,45 @@ func (o JdbcDataStoreRepository) ToMap() (map[string]interface{}, error) {
 	toSerialize["sqlMethod"] = o.SqlMethod
 	toSerialize["jitRepositoryAttributeMapping"] = o.JitRepositoryAttributeMapping
 	return toSerialize, nil
+}
+
+func (o *JdbcDataStoreRepository) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"sqlMethod",
+		"jitRepositoryAttributeMapping",
+		"type",
+		"dataStoreRef",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varJdbcDataStoreRepository := _JdbcDataStoreRepository{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varJdbcDataStoreRepository)
+
+	if err != nil {
+		return err
+	}
+
+	*o = JdbcDataStoreRepository(varJdbcDataStoreRepository)
+
+	return err
 }
 
 type NullableJdbcDataStoreRepository struct {

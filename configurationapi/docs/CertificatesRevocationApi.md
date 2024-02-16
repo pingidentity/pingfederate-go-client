@@ -25,22 +25,22 @@ Delete an OCSP responder signature verification certificate by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | Certificate ID.
+	id := "id_example" // string | Certificate ID.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CertificatesRevocationAPI.DeleteOcspCertificateById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationAPI.DeleteOcspCertificateById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CertificatesRevocationAPI.DeleteOcspCertificateById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationAPI.DeleteOcspCertificateById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -91,24 +91,24 @@ Get an OCSP responder signature verification certificate by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | Certificate ID.
+	id := "id_example" // string | Certificate ID.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificatesRevocationAPI.GetOcspCertificateById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationAPI.GetOcspCertificateById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOcspCertificateById`: CertView
-    fmt.Fprintf(os.Stdout, "Response from `CertificatesRevocationAPI.GetOcspCertificateById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CertificatesRevocationAPI.GetOcspCertificateById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationAPI.GetOcspCertificateById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOcspCertificateById`: CertView
+	fmt.Fprintf(os.Stdout, "Response from `CertificatesRevocationAPI.GetOcspCertificateById`: %v\n", resp)
 }
 ```
 
@@ -159,23 +159,23 @@ Get the list of available OCSP responder signature verification certificates.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificatesRevocationAPI.GetOcspCertificates(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationAPI.GetOcspCertificates``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOcspCertificates`: CertViews
-    fmt.Fprintf(os.Stdout, "Response from `CertificatesRevocationAPI.GetOcspCertificates`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CertificatesRevocationAPI.GetOcspCertificates(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationAPI.GetOcspCertificates``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOcspCertificates`: CertViews
+	fmt.Fprintf(os.Stdout, "Response from `CertificatesRevocationAPI.GetOcspCertificates`: %v\n", resp)
 }
 ```
 
@@ -218,23 +218,23 @@ Get certificate revocation settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificatesRevocationAPI.GetRevocationSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationAPI.GetRevocationSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetRevocationSettings`: CertificateRevocationSettings
-    fmt.Fprintf(os.Stdout, "Response from `CertificatesRevocationAPI.GetRevocationSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CertificatesRevocationAPI.GetRevocationSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationAPI.GetRevocationSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetRevocationSettings`: CertificateRevocationSettings
+	fmt.Fprintf(os.Stdout, "Response from `CertificatesRevocationAPI.GetRevocationSettings`: %v\n", resp)
 }
 ```
 
@@ -277,24 +277,24 @@ Import an OCSP responder signature verification certificate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewX509File("FileData_example") // X509File | File to import.
+	body := *openapiclient.NewX509File("FileData_example") // X509File | File to import.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificatesRevocationAPI.ImportOcspCertificate(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationAPI.ImportOcspCertificate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ImportOcspCertificate`: CertView
-    fmt.Fprintf(os.Stdout, "Response from `CertificatesRevocationAPI.ImportOcspCertificate`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CertificatesRevocationAPI.ImportOcspCertificate(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationAPI.ImportOcspCertificate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ImportOcspCertificate`: CertView
+	fmt.Fprintf(os.Stdout, "Response from `CertificatesRevocationAPI.ImportOcspCertificate`: %v\n", resp)
 }
 ```
 
@@ -341,24 +341,24 @@ Update certificate revocation settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewCertificateRevocationSettings() // CertificateRevocationSettings | Certificate revocation settings.
+	body := *openapiclient.NewCertificateRevocationSettings() // CertificateRevocationSettings | Certificate revocation settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificatesRevocationAPI.UpdateRevocationSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationAPI.UpdateRevocationSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateRevocationSettings`: CertificateRevocationSettings
-    fmt.Fprintf(os.Stdout, "Response from `CertificatesRevocationAPI.UpdateRevocationSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CertificatesRevocationAPI.UpdateRevocationSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CertificatesRevocationAPI.UpdateRevocationSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateRevocationSettings`: CertificateRevocationSettings
+	fmt.Fprintf(os.Stdout, "Response from `CertificatesRevocationAPI.UpdateRevocationSettings`: %v\n", resp)
 }
 ```
 

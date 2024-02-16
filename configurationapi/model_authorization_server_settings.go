@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AuthorizationServerSettings type satisfies the MappedNullable interface at compile time
@@ -114,6 +116,8 @@ type AuthorizationServerSettings struct {
 	// Determines whether Demonstrating Proof-of-Possession (DPoP) proof JWT replay prevention is enforced. The default value is false.
 	DpopProofEnforceReplayPrevention *bool `json:"dpopProofEnforceReplayPrevention,omitempty" tfsdk:"dpop_proof_enforce_replay_prevention"`
 }
+
+type _AuthorizationServerSettings AuthorizationServerSettings
 
 // NewAuthorizationServerSettings instantiates a new AuthorizationServerSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -1742,6 +1746,50 @@ func (o AuthorizationServerSettings) ToMap() (map[string]interface{}, error) {
 		toSerialize["dpopProofEnforceReplayPrevention"] = o.DpopProofEnforceReplayPrevention
 	}
 	return toSerialize, nil
+}
+
+func (o *AuthorizationServerSettings) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"defaultScopeDescription",
+		"authorizationCodeTimeout",
+		"authorizationCodeEntropy",
+		"refreshTokenLength",
+		"refreshRollingInterval",
+		"registeredAuthorizationPath",
+		"pendingAuthorizationTimeout",
+		"devicePollingInterval",
+		"bypassActivationCodeConfirmation",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAuthorizationServerSettings := _AuthorizationServerSettings{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varAuthorizationServerSettings)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AuthorizationServerSettings(varAuthorizationServerSettings)
+
+	return err
 }
 
 type NullableAuthorizationServerSettings struct {

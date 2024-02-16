@@ -11,7 +11,7 @@ set -e
 # rm -r docs/
 
 docker run --rm \
-    -v "$PWD:/local" openapitools/openapi-generator-cli:v7.0.1 generate \
+    -v "$PWD:/local" openapitools/openapi-generator-cli:v7.3.0 generate \
     -i /local/api/pf-swagger.yaml \
     -g go \
     -o /local/configurationapi \

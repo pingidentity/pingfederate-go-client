@@ -26,24 +26,24 @@ Create a new Authentication Policy Contract.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewAuthenticationPolicyContract() // AuthenticationPolicyContract | Configuration for a new contract.
+	body := *openapiclient.NewAuthenticationPolicyContract() // AuthenticationPolicyContract | Configuration for a new contract.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPolicyContractsAPI.CreateAuthenticationPolicyContract(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPolicyContractsAPI.CreateAuthenticationPolicyContract``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateAuthenticationPolicyContract`: AuthenticationPolicyContract
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPolicyContractsAPI.CreateAuthenticationPolicyContract`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationPolicyContractsAPI.CreateAuthenticationPolicyContract(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPolicyContractsAPI.CreateAuthenticationPolicyContract``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateAuthenticationPolicyContract`: AuthenticationPolicyContract
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationPolicyContractsAPI.CreateAuthenticationPolicyContract`: %v\n", resp)
 }
 ```
 
@@ -92,22 +92,22 @@ Delete an Authentication Policy Contract.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of Authentication Policy Contract to delete.
+	id := "id_example" // string | ID of Authentication Policy Contract to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AuthenticationPolicyContractsAPI.DeleteAuthenticationPolicyContract(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPolicyContractsAPI.DeleteAuthenticationPolicyContract``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.AuthenticationPolicyContractsAPI.DeleteAuthenticationPolicyContract(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPolicyContractsAPI.DeleteAuthenticationPolicyContract``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -160,24 +160,24 @@ Gets the Authentication Policy Contract by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of contract to fetch
+	id := "id_example" // string | ID of contract to fetch
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPolicyContractsAPI.GetAuthenticationPolicyContract(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPolicyContractsAPI.GetAuthenticationPolicyContract``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAuthenticationPolicyContract`: AuthenticationPolicyContract
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPolicyContractsAPI.GetAuthenticationPolicyContract`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationPolicyContractsAPI.GetAuthenticationPolicyContract(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPolicyContractsAPI.GetAuthenticationPolicyContract``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAuthenticationPolicyContract`: AuthenticationPolicyContract
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationPolicyContractsAPI.GetAuthenticationPolicyContract`: %v\n", resp)
 }
 ```
 
@@ -228,26 +228,26 @@ Gets the Authentication Policy Contracts.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    page := int64(56) // int64 | Page number to retrieve. (optional)
-    numberPerPage := int64(56) // int64 | Number of contracts per page. (optional)
-    filter := "filter_example" // string | Filter criteria limits the authentication policy contracts that are returned to only those that match it. The filter criteria is compared to the authentication policy contract name and ID fields. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. (optional)
+	page := int64(56) // int64 | Page number to retrieve. (optional)
+	numberPerPage := int64(56) // int64 | Number of contracts per page. (optional)
+	filter := "filter_example" // string | Filter criteria limits the authentication policy contracts that are returned to only those that match it. The filter criteria is compared to the authentication policy contract name and ID fields. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPolicyContractsAPI.GetAuthenticationPolicyContracts(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPolicyContractsAPI.GetAuthenticationPolicyContracts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAuthenticationPolicyContracts`: AuthenticationPolicyContracts
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPolicyContractsAPI.GetAuthenticationPolicyContracts`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationPolicyContractsAPI.GetAuthenticationPolicyContracts(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPolicyContractsAPI.GetAuthenticationPolicyContracts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAuthenticationPolicyContracts`: AuthenticationPolicyContracts
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationPolicyContractsAPI.GetAuthenticationPolicyContracts`: %v\n", resp)
 }
 ```
 
@@ -298,25 +298,25 @@ Update an Authentication Policy Contract by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the Authentication Policy Contract to update.
-    body := *openapiclient.NewAuthenticationPolicyContract() // AuthenticationPolicyContract | Configuration for updated Authentication Policy Contract.
+	id := "id_example" // string | ID of the Authentication Policy Contract to update.
+	body := *openapiclient.NewAuthenticationPolicyContract() // AuthenticationPolicyContract | Configuration for updated Authentication Policy Contract.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPolicyContractsAPI.UpdateAuthenticationPolicyContract(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPolicyContractsAPI.UpdateAuthenticationPolicyContract``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateAuthenticationPolicyContract`: AuthenticationPolicyContract
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPolicyContractsAPI.UpdateAuthenticationPolicyContract`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationPolicyContractsAPI.UpdateAuthenticationPolicyContract(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPolicyContractsAPI.UpdateAuthenticationPolicyContract``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateAuthenticationPolicyContract`: AuthenticationPolicyContract
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationPolicyContractsAPI.UpdateAuthenticationPolicyContract`: %v\n", resp)
 }
 ```
 

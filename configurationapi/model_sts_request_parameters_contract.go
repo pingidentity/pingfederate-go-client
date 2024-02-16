@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 	"time"
 )
 
@@ -29,6 +31,8 @@ type StsRequestParametersContract struct {
 	// The time at which the request parameter contract was last changed. This property is read only and is ignored on PUT and POST requests.
 	LastModified *time.Time `json:"lastModified,omitempty" tfsdk:"last_modified"`
 }
+
+type _StsRequestParametersContract StsRequestParametersContract
 
 // NewStsRequestParametersContract instantiates a new StsRequestParametersContract object
 // This constructor will assign default values to properties that have it defined,
@@ -171,6 +175,44 @@ func (o StsRequestParametersContract) ToMap() (map[string]interface{}, error) {
 		toSerialize["lastModified"] = o.LastModified
 	}
 	return toSerialize, nil
+}
+
+func (o *StsRequestParametersContract) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"id",
+		"name",
+		"parameters",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varStsRequestParametersContract := _StsRequestParametersContract{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varStsRequestParametersContract)
+
+	if err != nil {
+		return err
+	}
+
+	*o = StsRequestParametersContract(varStsRequestParametersContract)
+
+	return err
 }
 
 type NullableStsRequestParametersContract struct {

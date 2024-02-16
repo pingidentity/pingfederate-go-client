@@ -33,25 +33,25 @@ Add a new SP connection certificate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the SP Connection to update.
-    body := *openapiclient.NewConnectionCert(*openapiclient.NewX509File("FileData_example")) // ConnectionCert | Configuration for a verification certificate.
+	id := "id_example" // string | ID of the SP Connection to update.
+	body := *openapiclient.NewConnectionCert(*openapiclient.NewX509File("FileData_example")) // ConnectionCert | Configuration for a verification certificate.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpSpConnectionsAPI.AddSpConnectionCert(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.AddSpConnectionCert``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AddSpConnectionCert`: ConnectionCert
-    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.AddSpConnectionCert`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpSpConnectionsAPI.AddSpConnectionCert(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.AddSpConnectionCert``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AddSpConnectionCert`: ConnectionCert
+	fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.AddSpConnectionCert`: %v\n", resp)
 }
 ```
 
@@ -105,25 +105,25 @@ Create a new SP connection.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewSpConnection("EntityId_example", "Name_example") // SpConnection | Configuration for new connection.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	body := *openapiclient.NewSpConnection("EntityId_example", "Name_example") // SpConnection | Configuration for new connection.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpSpConnectionsAPI.CreateSpConnection(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.CreateSpConnection``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateSpConnection`: SpConnection
-    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.CreateSpConnection`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpSpConnectionsAPI.CreateSpConnection(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.CreateSpConnection``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateSpConnection`: SpConnection
+	fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.CreateSpConnection`: %v\n", resp)
 }
 ```
 
@@ -173,22 +173,22 @@ Delete an SP connection.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of SP Connection to delete.
+	id := "id_example" // string | ID of SP Connection to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IdpSpConnectionsAPI.DeleteSpConnection(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.DeleteSpConnection``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.IdpSpConnectionsAPI.DeleteSpConnection(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.DeleteSpConnection``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -239,24 +239,24 @@ Get the decryption keys of an SP connection.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the SP Connection to update.
+	id := "id_example" // string | ID of the SP Connection to update.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpSpConnectionsAPI.GetDecryptionKeys(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.GetDecryptionKeys``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetDecryptionKeys`: DecryptionKeys
-    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.GetDecryptionKeys`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpSpConnectionsAPI.GetDecryptionKeys(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.GetDecryptionKeys``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetDecryptionKeys`: DecryptionKeys
+	fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.GetDecryptionKeys`: %v\n", resp)
 }
 ```
 
@@ -309,24 +309,24 @@ Find SP connection by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the SP Connection to fetch.
+	id := "id_example" // string | ID of the SP Connection to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpSpConnectionsAPI.GetSpConnection(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.GetSpConnection``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSpConnection`: SpConnection
-    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.GetSpConnection`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpSpConnectionsAPI.GetSpConnection(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.GetSpConnection``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSpConnection`: SpConnection
+	fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.GetSpConnection`: %v\n", resp)
 }
 ```
 
@@ -377,24 +377,24 @@ Get the SP connection's certificates.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the SP Connection.
+	id := "id_example" // string | ID of the SP Connection.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpSpConnectionsAPI.GetSpConnectionCerts(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.GetSpConnectionCerts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSpConnectionCerts`: ConnectionCerts
-    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.GetSpConnectionCerts`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpSpConnectionsAPI.GetSpConnectionCerts(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.GetSpConnectionCerts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSpConnectionCerts`: ConnectionCerts
+	fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.GetSpConnectionCerts`: %v\n", resp)
 }
 ```
 
@@ -447,27 +447,27 @@ Get list of SP connections.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    entityId := "entityId_example" // string | Entity ID of the connection to fetch. (case-sensitive) (optional)
-    page := int64(56) // int64 | Page number to retrieve. (optional)
-    numberPerPage := int64(56) // int64 | Number of connections per page. (optional)
-    filter := "filter_example" // string | Filter criteria limits the SP connections that are returned to only those that match it. The filter criteria is compared to the SP connection name and partner entity ID fields. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. (optional)
+	entityId := "entityId_example" // string | Entity ID of the connection to fetch. (case-sensitive) (optional)
+	page := int64(56) // int64 | Page number to retrieve. (optional)
+	numberPerPage := int64(56) // int64 | Number of connections per page. (optional)
+	filter := "filter_example" // string | Filter criteria limits the SP connections that are returned to only those that match it. The filter criteria is compared to the SP connection name and partner entity ID fields. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpSpConnectionsAPI.GetSpConnections(context.Background()).EntityId(entityId).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.GetSpConnections``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSpConnections`: SpConnections
-    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.GetSpConnections`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpSpConnectionsAPI.GetSpConnections(context.Background()).EntityId(entityId).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.GetSpConnections``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSpConnections`: SpConnections
+	fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.GetSpConnections`: %v\n", resp)
 }
 ```
 
@@ -517,24 +517,24 @@ Get the SP connection's signature settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the SP Connection.
+	id := "id_example" // string | ID of the SP Connection.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpSpConnectionsAPI.GetSpSigningSettings(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.GetSpSigningSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSpSigningSettings`: SigningSettings
-    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.GetSpSigningSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpSpConnectionsAPI.GetSpSigningSettings(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.GetSpSigningSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSpSigningSettings`: SigningSettings
+	fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.GetSpSigningSettings`: %v\n", resp)
 }
 ```
 
@@ -585,25 +585,25 @@ Updating the SP connection's decryption keys.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the SP Connection to update.
-    body := *openapiclient.NewDecryptionKeys() // DecryptionKeys | Configuration for decryption keys.
+	id := "id_example" // string | ID of the SP Connection to update.
+	body := *openapiclient.NewDecryptionKeys() // DecryptionKeys | Configuration for decryption keys.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpSpConnectionsAPI.UpdateDecryptionKeys(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.UpdateDecryptionKeys``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateDecryptionKeys`: DecryptionKeys
-    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.UpdateDecryptionKeys`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpSpConnectionsAPI.UpdateDecryptionKeys(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.UpdateDecryptionKeys``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateDecryptionKeys`: DecryptionKeys
+	fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.UpdateDecryptionKeys`: %v\n", resp)
 }
 ```
 
@@ -657,26 +657,26 @@ Update an SP connection.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of SP Connection to update.
-    body := *openapiclient.NewSpConnection("EntityId_example", "Name_example") // SpConnection | Configuration for updated connection.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	id := "id_example" // string | ID of SP Connection to update.
+	body := *openapiclient.NewSpConnection("EntityId_example", "Name_example") // SpConnection | Configuration for updated connection.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpSpConnectionsAPI.UpdateSpConnection(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.UpdateSpConnection``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateSpConnection`: SpConnection
-    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.UpdateSpConnection`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpSpConnectionsAPI.UpdateSpConnection(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.UpdateSpConnection``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSpConnection`: SpConnection
+	fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.UpdateSpConnection`: %v\n", resp)
 }
 ```
 
@@ -729,25 +729,25 @@ Update the SP connection's certificates.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the SP Connection to update.
-    body := *openapiclient.NewConnectionCerts() // ConnectionCerts | Configuration for a verification certificates.
+	id := "id_example" // string | ID of the SP Connection to update.
+	body := *openapiclient.NewConnectionCerts() // ConnectionCerts | Configuration for a verification certificates.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpSpConnectionsAPI.UpdateSpConnectionCerts(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.UpdateSpConnectionCerts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateSpConnectionCerts`: ConnectionCerts
-    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.UpdateSpConnectionCerts`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpSpConnectionsAPI.UpdateSpConnectionCerts(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.UpdateSpConnectionCerts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSpConnectionCerts`: ConnectionCerts
+	fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.UpdateSpConnectionCerts`: %v\n", resp)
 }
 ```
 
@@ -799,25 +799,25 @@ Update the SP connection's signature settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the SP Connection to update.
-    body := *openapiclient.NewSigningSettings(*openapiclient.NewResourceLink("Id_example")) // SigningSettings | Signature settings.
+	id := "id_example" // string | ID of the SP Connection to update.
+	body := *openapiclient.NewSigningSettings(*openapiclient.NewResourceLink("Id_example")) // SigningSettings | Signature settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpSpConnectionsAPI.UpdateSpSigningSettings(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.UpdateSpSigningSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateSpSigningSettings`: SigningSettings
-    fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.UpdateSpSigningSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpSpConnectionsAPI.UpdateSpSigningSettings(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpSpConnectionsAPI.UpdateSpSigningSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSpSigningSettings`: SigningSettings
+	fmt.Fprintf(os.Stdout, "Response from `IdpSpConnectionsAPI.UpdateSpSigningSettings`: %v\n", resp)
 }
 ```
 

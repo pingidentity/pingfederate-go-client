@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the SourceTypeIdKey type satisfies the MappedNullable interface at compile time
@@ -24,6 +26,8 @@ type SourceTypeIdKey struct {
 	// The attribute source ID that refers to the attribute source that this key references. In some resources, the ID is optional and will be ignored. In these cases the ID should be omitted. If the source type is not an attribute source then the ID can be omitted.
 	Id *string `json:"id,omitempty" tfsdk:"id"`
 }
+
+type _SourceTypeIdKey SourceTypeIdKey
 
 // NewSourceTypeIdKey instantiates a new SourceTypeIdKey object
 // This constructor will assign default values to properties that have it defined,
@@ -114,6 +118,42 @@ func (o SourceTypeIdKey) ToMap() (map[string]interface{}, error) {
 		toSerialize["id"] = o.Id
 	}
 	return toSerialize, nil
+}
+
+func (o *SourceTypeIdKey) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"type",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varSourceTypeIdKey := _SourceTypeIdKey{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varSourceTypeIdKey)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SourceTypeIdKey(varSourceTypeIdKey)
+
+	return err
 }
 
 type NullableSourceTypeIdKey struct {

@@ -24,24 +24,24 @@ Create a new STS Request Parameters Contract.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewStsRequestParametersContract("Id_example", "Name_example", []string{"Parameters_example"}) // StsRequestParametersContract | Details for the STS Request Parameters Contract.
+	body := *openapiclient.NewStsRequestParametersContract("Id_example", "Name_example", []string{"Parameters_example"}) // StsRequestParametersContract | Details for the STS Request Parameters Contract.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpStsRequestParametersContractsAPI.CreateStsRequestParamContract(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpStsRequestParametersContractsAPI.CreateStsRequestParamContract``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateStsRequestParamContract`: StsRequestParametersContract
-    fmt.Fprintf(os.Stdout, "Response from `IdpStsRequestParametersContractsAPI.CreateStsRequestParamContract`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpStsRequestParametersContractsAPI.CreateStsRequestParamContract(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpStsRequestParametersContractsAPI.CreateStsRequestParamContract``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateStsRequestParamContract`: StsRequestParametersContract
+	fmt.Fprintf(os.Stdout, "Response from `IdpStsRequestParametersContractsAPI.CreateStsRequestParamContract`: %v\n", resp)
 }
 ```
 
@@ -88,22 +88,22 @@ Delete a STS Request Parameters Contract.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of STS Request Parameters Contract to delete.
+	id := "id_example" // string | ID of STS Request Parameters Contract to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IdpStsRequestParametersContractsAPI.DeleteStsRequestParamContractById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpStsRequestParametersContractsAPI.DeleteStsRequestParamContractById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.IdpStsRequestParametersContractsAPI.DeleteStsRequestParamContractById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpStsRequestParametersContractsAPI.DeleteStsRequestParamContractById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -154,24 +154,24 @@ Get a STS Request Parameters Contract.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of STS Request Parameters Contract to fetch.
+	id := "id_example" // string | ID of STS Request Parameters Contract to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpStsRequestParametersContractsAPI.GetStsRequestParamContractById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpStsRequestParametersContractsAPI.GetStsRequestParamContractById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetStsRequestParamContractById`: StsRequestParametersContract
-    fmt.Fprintf(os.Stdout, "Response from `IdpStsRequestParametersContractsAPI.GetStsRequestParamContractById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpStsRequestParametersContractsAPI.GetStsRequestParamContractById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpStsRequestParametersContractsAPI.GetStsRequestParamContractById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetStsRequestParamContractById`: StsRequestParametersContract
+	fmt.Fprintf(os.Stdout, "Response from `IdpStsRequestParametersContractsAPI.GetStsRequestParamContractById`: %v\n", resp)
 }
 ```
 
@@ -222,23 +222,23 @@ Get the list of STS Request Parameters Contracts.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpStsRequestParametersContractsAPI.GetStsRequestParamContracts(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpStsRequestParametersContractsAPI.GetStsRequestParamContracts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetStsRequestParamContracts`: StsRequestParametersContracts
-    fmt.Fprintf(os.Stdout, "Response from `IdpStsRequestParametersContractsAPI.GetStsRequestParamContracts`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpStsRequestParametersContractsAPI.GetStsRequestParamContracts(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpStsRequestParametersContractsAPI.GetStsRequestParamContracts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetStsRequestParamContracts`: StsRequestParametersContracts
+	fmt.Fprintf(os.Stdout, "Response from `IdpStsRequestParametersContractsAPI.GetStsRequestParamContracts`: %v\n", resp)
 }
 ```
 
@@ -281,25 +281,25 @@ Update a STS Request Parameters Contract.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of STS Request Parameters Contract to update.
-    body := *openapiclient.NewStsRequestParametersContract("Id_example", "Name_example", []string{"Parameters_example"}) // StsRequestParametersContract | Details for updated STS Request Parameters Contract.
+	id := "id_example" // string | ID of STS Request Parameters Contract to update.
+	body := *openapiclient.NewStsRequestParametersContract("Id_example", "Name_example", []string{"Parameters_example"}) // StsRequestParametersContract | Details for updated STS Request Parameters Contract.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpStsRequestParametersContractsAPI.UpdateStsRequestParamContractById(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpStsRequestParametersContractsAPI.UpdateStsRequestParamContractById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateStsRequestParamContractById`: StsRequestParametersContract
-    fmt.Fprintf(os.Stdout, "Response from `IdpStsRequestParametersContractsAPI.UpdateStsRequestParamContractById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpStsRequestParametersContractsAPI.UpdateStsRequestParamContractById(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpStsRequestParametersContractsAPI.UpdateStsRequestParamContractById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateStsRequestParamContractById`: StsRequestParametersContract
+	fmt.Fprintf(os.Stdout, "Response from `IdpStsRequestParametersContractsAPI.UpdateStsRequestParamContractById`: %v\n", resp)
 }
 ```
 

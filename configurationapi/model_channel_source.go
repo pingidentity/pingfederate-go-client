@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the ChannelSource type satisfies the MappedNullable interface at compile time
@@ -32,6 +34,8 @@ type ChannelSource struct {
 	UserSourceLocation  ChannelSourceLocation  `json:"userSourceLocation" tfsdk:"user_source_location"`
 	GroupSourceLocation *ChannelSourceLocation `json:"groupSourceLocation,omitempty" tfsdk:"group_source_location"`
 }
+
+type _ChannelSource ChannelSource
 
 // NewChannelSource instantiates a new ChannelSource object
 // This constructor will assign default values to properties that have it defined,
@@ -304,6 +308,49 @@ func (o ChannelSource) ToMap() (map[string]interface{}, error) {
 		toSerialize["groupSourceLocation"] = o.GroupSourceLocation
 	}
 	return toSerialize, nil
+}
+
+func (o *ChannelSource) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"dataSource",
+		"guidAttributeName",
+		"guidBinary",
+		"changeDetectionSettings",
+		"groupMembershipDetection",
+		"accountManagementSettings",
+		"baseDn",
+		"userSourceLocation",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varChannelSource := _ChannelSource{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varChannelSource)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ChannelSource(varChannelSource)
+
+	return err
 }
 
 type NullableChannelSource struct {

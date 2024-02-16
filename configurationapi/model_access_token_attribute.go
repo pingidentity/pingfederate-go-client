@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AccessTokenAttribute type satisfies the MappedNullable interface at compile time
@@ -24,6 +26,8 @@ type AccessTokenAttribute struct {
 	// Indicates whether attribute value is always returned as an array.
 	MultiValued *bool `json:"multiValued,omitempty" tfsdk:"multi_valued"`
 }
+
+type _AccessTokenAttribute AccessTokenAttribute
 
 // NewAccessTokenAttribute instantiates a new AccessTokenAttribute object
 // This constructor will assign default values to properties that have it defined,
@@ -114,6 +118,42 @@ func (o AccessTokenAttribute) ToMap() (map[string]interface{}, error) {
 		toSerialize["multiValued"] = o.MultiValued
 	}
 	return toSerialize, nil
+}
+
+func (o *AccessTokenAttribute) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAccessTokenAttribute := _AccessTokenAttribute{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varAccessTokenAttribute)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AccessTokenAttribute(varAccessTokenAttribute)
+
+	return err
 }
 
 type NullableAccessTokenAttribute struct {

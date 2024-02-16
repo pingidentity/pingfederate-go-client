@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the IdentityHintContract type satisfies the MappedNullable interface at compile time
@@ -24,6 +26,8 @@ type IdentityHintContract struct {
 	// A list of additional identity hint contract attributes.
 	ExtendedAttributes []IdentityHintAttribute `json:"extendedAttributes,omitempty" tfsdk:"extended_attributes"`
 }
+
+type _IdentityHintContract IdentityHintContract
 
 // NewIdentityHintContract instantiates a new IdentityHintContract object
 // This constructor will assign default values to properties that have it defined,
@@ -114,6 +118,42 @@ func (o IdentityHintContract) ToMap() (map[string]interface{}, error) {
 		toSerialize["extendedAttributes"] = o.ExtendedAttributes
 	}
 	return toSerialize, nil
+}
+
+func (o *IdentityHintContract) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"coreAttributes",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varIdentityHintContract := _IdentityHintContract{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varIdentityHintContract)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IdentityHintContract(varIdentityHintContract)
+
+	return err
 }
 
 type NullableIdentityHintContract struct {

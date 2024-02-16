@@ -11,7 +11,10 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
+	"time"
 )
 
 // checks if the CustomDataStore type satisfies the MappedNullable interface at compile time
@@ -19,19 +22,22 @@ var _ MappedNullable = &CustomDataStore{}
 
 // CustomDataStore struct for CustomDataStore
 type CustomDataStore struct {
-	DataStore
 	// The data store type.
 	Type string `json:"type" tfsdk:"type"`
 	// The persistent, unique ID for the data store. It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned if not specified.
 	Id *string `json:"id,omitempty" tfsdk:"id"`
 	// Whether attribute values should be masked in the log.
 	MaskAttributeValues *bool `json:"maskAttributeValues,omitempty" tfsdk:"mask_attribute_values"`
+	// The time at which the datastore instance was last changed. This property is read only and is ignored on PUT and POST requests.
+	LastModified *time.Time `json:"lastModified,omitempty" tfsdk:"last_modified"`
 	// The plugin instance name.
 	Name                string              `json:"name" tfsdk:"name"`
 	PluginDescriptorRef ResourceLink        `json:"pluginDescriptorRef" tfsdk:"plugin_descriptor_ref"`
 	ParentRef           *ResourceLink       `json:"parentRef,omitempty" tfsdk:"parent_ref"`
 	Configuration       PluginConfiguration `json:"configuration" tfsdk:"configuration"`
 }
+
+type _CustomDataStore CustomDataStore
 
 // NewCustomDataStore instantiates a new CustomDataStore object
 // This constructor will assign default values to properties that have it defined,
@@ -140,6 +146,38 @@ func (o *CustomDataStore) HasMaskAttributeValues() bool {
 // SetMaskAttributeValues gets a reference to the given bool and assigns it to the MaskAttributeValues field.
 func (o *CustomDataStore) SetMaskAttributeValues(v bool) {
 	o.MaskAttributeValues = &v
+}
+
+// GetLastModified returns the LastModified field value if set, zero value otherwise.
+func (o *CustomDataStore) GetLastModified() time.Time {
+	if o == nil || IsNil(o.LastModified) {
+		var ret time.Time
+		return ret
+	}
+	return *o.LastModified
+}
+
+// GetLastModifiedOk returns a tuple with the LastModified field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CustomDataStore) GetLastModifiedOk() (*time.Time, bool) {
+	if o == nil || IsNil(o.LastModified) {
+		return nil, false
+	}
+	return o.LastModified, true
+}
+
+// HasLastModified returns a boolean if a field has been set.
+func (o *CustomDataStore) HasLastModified() bool {
+	if o != nil && !IsNil(o.LastModified) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastModified gets a reference to the given time.Time and assigns it to the LastModified field.
+func (o *CustomDataStore) SetLastModified(v time.Time) {
+	o.LastModified = &v
 }
 
 // GetName returns the Name field value
@@ -256,20 +294,15 @@ func (o CustomDataStore) MarshalJSON() ([]byte, error) {
 
 func (o CustomDataStore) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	serializedDataStore, errDataStore := json.Marshal(o.DataStore)
-	if errDataStore != nil {
-		return map[string]interface{}{}, errDataStore
-	}
-	errDataStore = json.Unmarshal([]byte(serializedDataStore), &toSerialize)
-	if errDataStore != nil {
-		return map[string]interface{}{}, errDataStore
-	}
 	toSerialize["type"] = o.Type
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if !IsNil(o.MaskAttributeValues) {
 		toSerialize["maskAttributeValues"] = o.MaskAttributeValues
+	}
+	if !IsNil(o.LastModified) {
+		toSerialize["lastModified"] = o.LastModified
 	}
 	toSerialize["name"] = o.Name
 	toSerialize["pluginDescriptorRef"] = o.PluginDescriptorRef
@@ -278,6 +311,45 @@ func (o CustomDataStore) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["configuration"] = o.Configuration
 	return toSerialize, nil
+}
+
+func (o *CustomDataStore) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"type",
+		"name",
+		"pluginDescriptorRef",
+		"configuration",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varCustomDataStore := _CustomDataStore{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varCustomDataStore)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CustomDataStore(varCustomDataStore)
+
+	return err
 }
 
 type NullableCustomDataStore struct {

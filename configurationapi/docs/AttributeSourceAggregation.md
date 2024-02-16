@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** | The ID that defines this attribute source. Only alphanumeric characters allowed.&lt;br&gt;Note: Required for OpenID Connect policy attribute sources, OAuth IdP adapter mappings, OAuth access token mappings and APC-to-SP Adapter Mappings. IdP Connections will ignore this property since it only allows one attribute source to be defined per mapping. IdP-to-SP Adapter Mappings can contain multiple attribute sources. | [optional] 
 **Description** | Pointer to **string** | The description of this attribute source. The description needs to be unique amongst the attribute sources for the mapping.&lt;br&gt;Note: Required for APC-to-SP Adapter Mappings | [optional] 
 **AttributeContractFulfillment** | Pointer to [**map[string]AttributeFulfillmentValue**](AttributeFulfillmentValue.md) | A list of mappings from attribute names to their fulfillment values. This field is only valid for the SP Connection&#39;s Browser SSO mappings | [optional] 
+**FilterFields** | Pointer to [**[]FieldEntry**](FieldEntry.md) | The list of fields that can be used to filter a request to the custom data store. | [optional] 
 **Schema** | Pointer to **string** | Lists the table structure that stores information within a database. Some databases, such as Oracle, require a schema for a JDBC query. Other databases, such as MySQL, do not require a schema. | [optional] 
 **Table** | **string** | The name of the database table. The name is used to construct the SQL query to retrieve data from the data store. | 
 **ColumnNames** | Pointer to **[]string** | A list of column names used to construct the SQL query to retrieve data from the specified table in the datastore. | [optional] 
@@ -153,6 +154,31 @@ SetAttributeContractFulfillment sets AttributeContractFulfillment field to given
 `func (o *AttributeSourceAggregation) HasAttributeContractFulfillment() bool`
 
 HasAttributeContractFulfillment returns a boolean if a field has been set.
+
+### GetFilterFields
+
+`func (o *AttributeSourceAggregation) GetFilterFields() []FieldEntry`
+
+GetFilterFields returns the FilterFields field if non-nil, zero value otherwise.
+
+### GetFilterFieldsOk
+
+`func (o *AttributeSourceAggregation) GetFilterFieldsOk() (*[]FieldEntry, bool)`
+
+GetFilterFieldsOk returns a tuple with the FilterFields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFilterFields
+
+`func (o *AttributeSourceAggregation) SetFilterFields(v []FieldEntry)`
+
+SetFilterFields sets FilterFields field to given value.
+
+### HasFilterFields
+
+`func (o *AttributeSourceAggregation) HasFilterFields() bool`
+
+HasFilterFields returns a boolean if a field has been set.
 
 ### GetSchema
 

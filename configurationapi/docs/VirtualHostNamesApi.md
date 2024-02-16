@@ -21,23 +21,23 @@ Retrieve virtual host names settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualHostNamesAPI.GetVirtualHostNamesSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualHostNamesAPI.GetVirtualHostNamesSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetVirtualHostNamesSettings`: VirtualHostNameSettings
-    fmt.Fprintf(os.Stdout, "Response from `VirtualHostNamesAPI.GetVirtualHostNamesSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VirtualHostNamesAPI.GetVirtualHostNamesSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VirtualHostNamesAPI.GetVirtualHostNamesSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetVirtualHostNamesSettings`: VirtualHostNameSettings
+	fmt.Fprintf(os.Stdout, "Response from `VirtualHostNamesAPI.GetVirtualHostNamesSettings`: %v\n", resp)
 }
 ```
 
@@ -80,24 +80,24 @@ Update virtual host names settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewVirtualHostNameSettings() // VirtualHostNameSettings | Virtual host names settings.
+	body := *openapiclient.NewVirtualHostNameSettings() // VirtualHostNameSettings | Virtual host names settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualHostNamesAPI.UpdateVirtualHostNamesSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualHostNamesAPI.UpdateVirtualHostNamesSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateVirtualHostNamesSettings`: VirtualHostNameSettings
-    fmt.Fprintf(os.Stdout, "Response from `VirtualHostNamesAPI.UpdateVirtualHostNamesSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VirtualHostNamesAPI.UpdateVirtualHostNamesSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VirtualHostNamesAPI.UpdateVirtualHostNamesSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateVirtualHostNamesSettings`: VirtualHostNameSettings
+	fmt.Fprintf(os.Stdout, "Response from `VirtualHostNamesAPI.UpdateVirtualHostNamesSettings`: %v\n", resp)
 }
 ```
 

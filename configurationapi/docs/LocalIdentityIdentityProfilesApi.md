@@ -26,25 +26,25 @@ Create a new local identity profile.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewLocalIdentityProfile("Name_example", *openapiclient.NewResourceLink("Id_example")) // LocalIdentityProfile | Configuration for a new profile.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	body := *openapiclient.NewLocalIdentityProfile("Name_example", *openapiclient.NewResourceLink("Id_example")) // LocalIdentityProfile | Configuration for a new profile.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalIdentityIdentityProfilesAPI.CreateIdentityProfile(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalIdentityIdentityProfilesAPI.CreateIdentityProfile``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateIdentityProfile`: LocalIdentityProfile
-    fmt.Fprintf(os.Stdout, "Response from `LocalIdentityIdentityProfilesAPI.CreateIdentityProfile`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.LocalIdentityIdentityProfilesAPI.CreateIdentityProfile(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `LocalIdentityIdentityProfilesAPI.CreateIdentityProfile``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateIdentityProfile`: LocalIdentityProfile
+	fmt.Fprintf(os.Stdout, "Response from `LocalIdentityIdentityProfilesAPI.CreateIdentityProfile`: %v\n", resp)
 }
 ```
 
@@ -94,22 +94,22 @@ Delete the local identity profile by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the profile to delete
+	id := "id_example" // string | ID of the profile to delete
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.LocalIdentityIdentityProfilesAPI.DeleteIdentityProfile(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalIdentityIdentityProfilesAPI.DeleteIdentityProfile``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.LocalIdentityIdentityProfilesAPI.DeleteIdentityProfile(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `LocalIdentityIdentityProfilesAPI.DeleteIdentityProfile``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -162,24 +162,24 @@ Get the local identity profile by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of profile to fetch
+	id := "id_example" // string | ID of profile to fetch
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalIdentityIdentityProfilesAPI.GetIdentityProfile(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalIdentityIdentityProfilesAPI.GetIdentityProfile``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetIdentityProfile`: LocalIdentityProfile
-    fmt.Fprintf(os.Stdout, "Response from `LocalIdentityIdentityProfilesAPI.GetIdentityProfile`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.LocalIdentityIdentityProfilesAPI.GetIdentityProfile(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `LocalIdentityIdentityProfilesAPI.GetIdentityProfile``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetIdentityProfile`: LocalIdentityProfile
+	fmt.Fprintf(os.Stdout, "Response from `LocalIdentityIdentityProfilesAPI.GetIdentityProfile`: %v\n", resp)
 }
 ```
 
@@ -230,27 +230,27 @@ Get the list of configured local identity profiles.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    page := int64(56) // int64 | Page number to retrieve. (optional)
-    numberPerPage := int64(56) // int64 | Number of local identity profiles per page. (optional)
-    filter := "filter_example" // string | Filter criteria limits the local identity profiles that are returned to only those that match it. The filter criteria is compared to the local identity profile name and ID fields. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. (optional)
-    apcId := "apcId_example" // string | Filter the local identity profiles by matching policy contract ID. (optional)
+	page := int64(56) // int64 | Page number to retrieve. (optional)
+	numberPerPage := int64(56) // int64 | Number of local identity profiles per page. (optional)
+	filter := "filter_example" // string | Filter criteria limits the local identity profiles that are returned to only those that match it. The filter criteria is compared to the local identity profile name and ID fields. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. (optional)
+	apcId := "apcId_example" // string | Filter the local identity profiles by matching policy contract ID. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalIdentityIdentityProfilesAPI.GetIdentityProfiles(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).ApcId(apcId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalIdentityIdentityProfilesAPI.GetIdentityProfiles``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetIdentityProfiles`: LocalIdentityProfiles
-    fmt.Fprintf(os.Stdout, "Response from `LocalIdentityIdentityProfilesAPI.GetIdentityProfiles`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.LocalIdentityIdentityProfilesAPI.GetIdentityProfiles(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).ApcId(apcId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `LocalIdentityIdentityProfilesAPI.GetIdentityProfiles``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetIdentityProfiles`: LocalIdentityProfiles
+	fmt.Fprintf(os.Stdout, "Response from `LocalIdentityIdentityProfilesAPI.GetIdentityProfiles`: %v\n", resp)
 }
 ```
 
@@ -302,26 +302,26 @@ Update the local identity profile by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the profile to update
-    body := *openapiclient.NewLocalIdentityProfile("Name_example", *openapiclient.NewResourceLink("Id_example")) // LocalIdentityProfile | Configuration for updated local identity profile.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	id := "id_example" // string | ID of the profile to update
+	body := *openapiclient.NewLocalIdentityProfile("Name_example", *openapiclient.NewResourceLink("Id_example")) // LocalIdentityProfile | Configuration for updated local identity profile.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalIdentityIdentityProfilesAPI.UpdateIdentityProfile(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalIdentityIdentityProfilesAPI.UpdateIdentityProfile``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateIdentityProfile`: LocalIdentityProfile
-    fmt.Fprintf(os.Stdout, "Response from `LocalIdentityIdentityProfilesAPI.UpdateIdentityProfile`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.LocalIdentityIdentityProfilesAPI.UpdateIdentityProfile(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `LocalIdentityIdentityProfilesAPI.UpdateIdentityProfile``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateIdentityProfile`: LocalIdentityProfile
+	fmt.Fprintf(os.Stdout, "Response from `LocalIdentityIdentityProfilesAPI.UpdateIdentityProfile`: %v\n", resp)
 }
 ```
 

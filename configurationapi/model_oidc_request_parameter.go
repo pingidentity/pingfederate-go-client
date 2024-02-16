@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the OIDCRequestParameter type satisfies the MappedNullable interface at compile time
@@ -27,6 +29,8 @@ type OIDCRequestParameter struct {
 	// Indicates whether the parameter value can be overridden by an Application Endpoint parameter
 	ApplicationEndpointOverride bool `json:"applicationEndpointOverride" tfsdk:"application_endpoint_override"`
 }
+
+type _OIDCRequestParameter OIDCRequestParameter
 
 // NewOIDCRequestParameter instantiates a new OIDCRequestParameter object
 // This constructor will assign default values to properties that have it defined,
@@ -169,6 +173,44 @@ func (o OIDCRequestParameter) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["applicationEndpointOverride"] = o.ApplicationEndpointOverride
 	return toSerialize, nil
+}
+
+func (o *OIDCRequestParameter) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+		"attributeValue",
+		"applicationEndpointOverride",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varOIDCRequestParameter := _OIDCRequestParameter{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varOIDCRequestParameter)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OIDCRequestParameter(varOIDCRequestParameter)
+
+	return err
 }
 
 type NullableOIDCRequestParameter struct {

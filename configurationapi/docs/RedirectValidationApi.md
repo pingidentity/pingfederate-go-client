@@ -21,23 +21,23 @@ Retrieve redirect validation settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RedirectValidationAPI.GetRedirectValidationSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RedirectValidationAPI.GetRedirectValidationSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetRedirectValidationSettings`: RedirectValidationSettings
-    fmt.Fprintf(os.Stdout, "Response from `RedirectValidationAPI.GetRedirectValidationSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RedirectValidationAPI.GetRedirectValidationSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RedirectValidationAPI.GetRedirectValidationSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetRedirectValidationSettings`: RedirectValidationSettings
+	fmt.Fprintf(os.Stdout, "Response from `RedirectValidationAPI.GetRedirectValidationSettings`: %v\n", resp)
 }
 ```
 
@@ -82,24 +82,24 @@ Update redirect validation settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewRedirectValidationSettings() // RedirectValidationSettings | Redirect validation settings.
+	body := *openapiclient.NewRedirectValidationSettings() // RedirectValidationSettings | Redirect validation settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RedirectValidationAPI.UpdateRedirectValidationSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RedirectValidationAPI.UpdateRedirectValidationSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateRedirectValidationSettings`: RedirectValidationSettings
-    fmt.Fprintf(os.Stdout, "Response from `RedirectValidationAPI.UpdateRedirectValidationSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RedirectValidationAPI.UpdateRedirectValidationSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RedirectValidationAPI.UpdateRedirectValidationSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateRedirectValidationSettings`: RedirectValidationSettings
+	fmt.Fprintf(os.Stdout, "Response from `RedirectValidationAPI.UpdateRedirectValidationSettings`: %v\n", resp)
 }
 ```
 

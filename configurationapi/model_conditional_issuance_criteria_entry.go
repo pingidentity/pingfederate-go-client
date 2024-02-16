@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the ConditionalIssuanceCriteriaEntry type satisfies the MappedNullable interface at compile time
@@ -29,6 +31,8 @@ type ConditionalIssuanceCriteriaEntry struct {
 	// The error result to return if this issuance criterion fails. This error result will show up in the PingFederate server logs.
 	ErrorResult *string `json:"errorResult,omitempty" tfsdk:"error_result"`
 }
+
+type _ConditionalIssuanceCriteriaEntry ConditionalIssuanceCriteriaEntry
 
 // NewConditionalIssuanceCriteriaEntry instantiates a new ConditionalIssuanceCriteriaEntry object
 // This constructor will assign default values to properties that have it defined,
@@ -197,6 +201,45 @@ func (o ConditionalIssuanceCriteriaEntry) ToMap() (map[string]interface{}, error
 		toSerialize["errorResult"] = o.ErrorResult
 	}
 	return toSerialize, nil
+}
+
+func (o *ConditionalIssuanceCriteriaEntry) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"source",
+		"attributeName",
+		"condition",
+		"value",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varConditionalIssuanceCriteriaEntry := _ConditionalIssuanceCriteriaEntry{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varConditionalIssuanceCriteriaEntry)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ConditionalIssuanceCriteriaEntry(varConditionalIssuanceCriteriaEntry)
+
+	return err
 }
 
 type NullableConditionalIssuanceCriteriaEntry struct {

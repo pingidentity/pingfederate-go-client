@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 	"time"
 )
 
@@ -25,6 +27,8 @@ type KerberosKeySet struct {
 	// Time at which the key set was deactivated due to password change. This field is not populated if the key set is active.
 	DeactivatedAt *time.Time `json:"deactivatedAt,omitempty" tfsdk:"deactivated_at"`
 }
+
+type _KerberosKeySet KerberosKeySet
 
 // NewKerberosKeySet instantiates a new KerberosKeySet object
 // This constructor will assign default values to properties that have it defined,
@@ -115,6 +119,42 @@ func (o KerberosKeySet) ToMap() (map[string]interface{}, error) {
 		toSerialize["deactivatedAt"] = o.DeactivatedAt
 	}
 	return toSerialize, nil
+}
+
+func (o *KerberosKeySet) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"encryptedKeySet",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varKerberosKeySet := _KerberosKeySet{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varKerberosKeySet)
+
+	if err != nil {
+		return err
+	}
+
+	*o = KerberosKeySet(varKerberosKeySet)
+
+	return err
 }
 
 type NullableKerberosKeySet struct {

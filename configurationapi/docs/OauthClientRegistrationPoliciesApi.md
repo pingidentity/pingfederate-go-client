@@ -26,24 +26,24 @@ Create a client registration policy plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewClientRegistrationPolicy("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // ClientRegistrationPolicy | Configuration for a client registration policy plugin instance.
+	body := *openapiclient.NewClientRegistrationPolicy("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // ClientRegistrationPolicy | Configuration for a client registration policy plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientRegistrationPoliciesAPI.CreateDynamicClientRegistrationPolicy(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesAPI.CreateDynamicClientRegistrationPolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateDynamicClientRegistrationPolicy`: ClientRegistrationPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesAPI.CreateDynamicClientRegistrationPolicy`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthClientRegistrationPoliciesAPI.CreateDynamicClientRegistrationPolicy(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesAPI.CreateDynamicClientRegistrationPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateDynamicClientRegistrationPolicy`: ClientRegistrationPolicy
+	fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesAPI.CreateDynamicClientRegistrationPolicy`: %v\n", resp)
 }
 ```
 
@@ -90,22 +90,22 @@ Delete a client registration policy plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of a client registration policy plugin instance.
+	id := "id_example" // string | ID of a client registration policy plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthClientRegistrationPoliciesAPI.DeleteDynamicClientRegistrationPolicy(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesAPI.DeleteDynamicClientRegistrationPolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.OauthClientRegistrationPoliciesAPI.DeleteDynamicClientRegistrationPolicy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesAPI.DeleteDynamicClientRegistrationPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -156,24 +156,24 @@ Get the description of a client registration policy plugin descriptor.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of client registration policy plugin descriptor.
+	id := "id_example" // string | ID of client registration policy plugin descriptor.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationDescriptor(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetDynamicClientRegistrationDescriptor`: ClientRegistrationPolicyDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationDescriptor(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetDynamicClientRegistrationDescriptor`: ClientRegistrationPolicyDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationDescriptor`: %v\n", resp)
 }
 ```
 
@@ -224,23 +224,23 @@ Get the list of available client registration policy plugin descriptors.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationDescriptors(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationDescriptors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetDynamicClientRegistrationDescriptors`: ClientRegistrationPolicyDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationDescriptors`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationDescriptors(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationDescriptors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetDynamicClientRegistrationDescriptors`: ClientRegistrationPolicyDescriptors
+	fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationDescriptors`: %v\n", resp)
 }
 ```
 
@@ -283,23 +283,23 @@ Get a list of client registration policy plugin instances.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationPolicies(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationPolicies``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetDynamicClientRegistrationPolicies`: ClientRegistrationPolicies
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationPolicies`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationPolicies(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationPolicies``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetDynamicClientRegistrationPolicies`: ClientRegistrationPolicies
+	fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationPolicies`: %v\n", resp)
 }
 ```
 
@@ -342,24 +342,24 @@ Get a specific client registration policy plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of client registration policy plugin instance.
+	id := "id_example" // string | ID of client registration policy plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationPolicy(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationPolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetDynamicClientRegistrationPolicy`: ClientRegistrationPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationPolicy`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationPolicy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetDynamicClientRegistrationPolicy`: ClientRegistrationPolicy
+	fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesAPI.GetDynamicClientRegistrationPolicy`: %v\n", resp)
 }
 ```
 
@@ -410,25 +410,25 @@ Update a client registration policy plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of a client registration policy plugin instance.
-    body := *openapiclient.NewClientRegistrationPolicy("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // ClientRegistrationPolicy | Configuration for a client registration policy plugin instance.
+	id := "id_example" // string | ID of a client registration policy plugin instance.
+	body := *openapiclient.NewClientRegistrationPolicy("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // ClientRegistrationPolicy | Configuration for a client registration policy plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientRegistrationPoliciesAPI.UpdateDynamicClientRegistrationPolicy(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesAPI.UpdateDynamicClientRegistrationPolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateDynamicClientRegistrationPolicy`: ClientRegistrationPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesAPI.UpdateDynamicClientRegistrationPolicy`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthClientRegistrationPoliciesAPI.UpdateDynamicClientRegistrationPolicy(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthClientRegistrationPoliciesAPI.UpdateDynamicClientRegistrationPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateDynamicClientRegistrationPolicy`: ClientRegistrationPolicy
+	fmt.Fprintf(os.Stdout, "Response from `OauthClientRegistrationPoliciesAPI.UpdateDynamicClientRegistrationPolicy`: %v\n", resp)
 }
 ```
 

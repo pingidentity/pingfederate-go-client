@@ -31,25 +31,25 @@ Create a new data store.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := openapiclient.DataStoreAggregation{CustomDataStore: openapiclient.NewCustomDataStore("Type_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration())} // DataStoreAggregation | Configuration for new data store.
-    xBypassExternalValidation := true // bool | Connection test will be bypassed when set to true. Default to false. (optional) (default to false)
+	body := openapiclient.DataStoreAggregation{CustomDataStore: openapiclient.NewCustomDataStore("Type_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration())} // DataStoreAggregation | Configuration for new data store.
+	xBypassExternalValidation := true // bool | Connection test will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DataStoresAPI.CreateDataStore(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.CreateDataStore``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateDataStore`: DataStoreAggregation
-    fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.CreateDataStore`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DataStoresAPI.CreateDataStore(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.CreateDataStore``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateDataStore`: DataStoreAggregation
+	fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.CreateDataStore`: %v\n", resp)
 }
 ```
 
@@ -99,22 +99,22 @@ Delete a data store.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of data store instance.
+	id := "id_example" // string | ID of data store instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DataStoresAPI.DeleteDataStore(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.DeleteDataStore``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.DataStoresAPI.DeleteDataStore(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.DeleteDataStore``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -167,24 +167,24 @@ Get the description of a custom data store plugin by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of custom data store descriptor to fetch.
+	id := "id_example" // string | ID of custom data store descriptor to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DataStoresAPI.GetCustomDataStoreDescriptor(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.GetCustomDataStoreDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCustomDataStoreDescriptor`: CustomDataStoreDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.GetCustomDataStoreDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DataStoresAPI.GetCustomDataStoreDescriptor(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.GetCustomDataStoreDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCustomDataStoreDescriptor`: CustomDataStoreDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.GetCustomDataStoreDescriptor`: %v\n", resp)
 }
 ```
 
@@ -235,23 +235,23 @@ Get the list of available custom data store descriptors.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DataStoresAPI.GetCustomDataStoreDescriptors(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.GetCustomDataStoreDescriptors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCustomDataStoreDescriptors`: CustomDataStoreDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.GetCustomDataStoreDescriptors`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DataStoresAPI.GetCustomDataStoreDescriptors(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.GetCustomDataStoreDescriptors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCustomDataStoreDescriptors`: CustomDataStoreDescriptors
+	fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.GetCustomDataStoreDescriptors`: %v\n", resp)
 }
 ```
 
@@ -296,24 +296,24 @@ Find data store by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of data store instance.
+	id := "id_example" // string | ID of data store instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DataStoresAPI.GetDataStore(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.GetDataStore``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetDataStore`: DataStoreAggregation
-    fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.GetDataStore`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DataStoresAPI.GetDataStore(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.GetDataStore``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetDataStore`: DataStoreAggregation
+	fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.GetDataStore`: %v\n", resp)
 }
 ```
 
@@ -364,23 +364,23 @@ Get list of all data stores.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DataStoresAPI.GetDataStores(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.GetDataStores``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetDataStores`: DataStores
-    fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.GetDataStores`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DataStoresAPI.GetDataStores(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.GetDataStores``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetDataStores`: DataStores
+	fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.GetDataStores`: %v\n", resp)
 }
 ```
 
@@ -425,25 +425,25 @@ Find a data store instance's action by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of data store to which these actions belong to.
-    actionId := "actionId_example" // string | ID of the action.
+	id := "id_example" // string | ID of data store to which these actions belong to.
+	actionId := "actionId_example" // string | ID of the action.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DataStoresAPI.GetDataStoresActionById(context.Background(), id, actionId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.GetDataStoresActionById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetDataStoresActionById`: Action
-    fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.GetDataStoresActionById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DataStoresAPI.GetDataStoresActionById(context.Background(), id, actionId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.GetDataStoresActionById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetDataStoresActionById`: Action
+	fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.GetDataStoresActionById`: %v\n", resp)
 }
 ```
 
@@ -498,24 +498,24 @@ List the actions for a data store instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of data store to which these actions belong to.
+	id := "id_example" // string | ID of data store to which these actions belong to.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DataStoresAPI.GetDataStoresActions(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.GetDataStoresActions``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetDataStoresActions`: Actions
-    fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.GetDataStoresActions`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DataStoresAPI.GetDataStoresActions(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.GetDataStoresActions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetDataStoresActions`: Actions
+	fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.GetDataStoresActions`: %v\n", resp)
 }
 ```
 
@@ -568,26 +568,26 @@ Invokes an action for a data source instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of data store to which these actions belong to.
-    actionId := "actionId_example" // string | ID of the action.
-    body := *openapiclient.NewActionOptions([]openapiclient.ActionParameter{*openapiclient.NewActionParameter("Name_example")}) // ActionOptions | Action options for action invoked. (optional)
+	id := "id_example" // string | ID of data store to which these actions belong to.
+	actionId := "actionId_example" // string | ID of the action.
+	body := *openapiclient.NewActionOptions([]openapiclient.ActionParameter{*openapiclient.NewActionParameter("Name_example")}) // ActionOptions | Action options for action invoked. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DataStoresAPI.InvokeActionWithOptions(context.Background(), id, actionId).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.InvokeActionWithOptions``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `InvokeActionWithOptions`: ActionResult
-    fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.InvokeActionWithOptions`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DataStoresAPI.InvokeActionWithOptions(context.Background(), id, actionId).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.InvokeActionWithOptions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvokeActionWithOptions`: ActionResult
+	fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.InvokeActionWithOptions`: %v\n", resp)
 }
 ```
 
@@ -643,26 +643,26 @@ Update a data store.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of data store instance.
-    body := openapiclient.DataStoreAggregation{CustomDataStore: openapiclient.NewCustomDataStore("Type_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration())} // DataStoreAggregation | Configuration for the data store.
-    xBypassExternalValidation := true // bool | Connection test will be bypassed when set to true. Default to false. (optional) (default to false)
+	id := "id_example" // string | ID of data store instance.
+	body := openapiclient.DataStoreAggregation{CustomDataStore: openapiclient.NewCustomDataStore("Type_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration())} // DataStoreAggregation | Configuration for the data store.
+	xBypassExternalValidation := true // bool | Connection test will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DataStoresAPI.UpdateDataStore(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.UpdateDataStore``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateDataStore`: DataStoreAggregation
-    fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.UpdateDataStore`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DataStoresAPI.UpdateDataStore(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DataStoresAPI.UpdateDataStore``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateDataStore`: DataStoreAggregation
+	fmt.Fprintf(os.Stdout, "Response from `DataStoresAPI.UpdateDataStore`: %v\n", resp)
 }
 ```
 

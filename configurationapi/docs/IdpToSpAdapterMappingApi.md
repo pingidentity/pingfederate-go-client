@@ -24,25 +24,25 @@ Create a new IdP-to-SP Adapter mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewIdpToSpAdapterMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "SourceId_example", "TargetId_example") // IdpToSpAdapterMapping | Configuration for new IdP-to-SP Adapter Mapping.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	body := *openapiclient.NewIdpToSpAdapterMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "SourceId_example", "TargetId_example") // IdpToSpAdapterMapping | Configuration for new IdP-to-SP Adapter Mapping.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpToSpAdapterMappingAPI.CreateIdpToSpAdapterMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpToSpAdapterMappingAPI.CreateIdpToSpAdapterMapping``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateIdpToSpAdapterMapping`: IdpToSpAdapterMapping
-    fmt.Fprintf(os.Stdout, "Response from `IdpToSpAdapterMappingAPI.CreateIdpToSpAdapterMapping`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpToSpAdapterMappingAPI.CreateIdpToSpAdapterMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpToSpAdapterMappingAPI.CreateIdpToSpAdapterMapping``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateIdpToSpAdapterMapping`: IdpToSpAdapterMapping
+	fmt.Fprintf(os.Stdout, "Response from `IdpToSpAdapterMappingAPI.CreateIdpToSpAdapterMapping`: %v\n", resp)
 }
 ```
 
@@ -90,22 +90,22 @@ Delete an Adapter to Adapter Mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the IdP-to-SP Adapter Mapping to delete.
+	id := "id_example" // string | ID of the IdP-to-SP Adapter Mapping to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IdpToSpAdapterMappingAPI.DeleteIdpToSpAdapterMappingsById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpToSpAdapterMappingAPI.DeleteIdpToSpAdapterMappingsById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.IdpToSpAdapterMappingAPI.DeleteIdpToSpAdapterMappingsById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpToSpAdapterMappingAPI.DeleteIdpToSpAdapterMappingsById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -156,23 +156,23 @@ Get list of IdP-to-SP Adapter Mappings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpToSpAdapterMappingAPI.GetIdpToSpAdapterMappings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpToSpAdapterMappingAPI.GetIdpToSpAdapterMappings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetIdpToSpAdapterMappings`: IdpToSpAdapterMappings
-    fmt.Fprintf(os.Stdout, "Response from `IdpToSpAdapterMappingAPI.GetIdpToSpAdapterMappings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpToSpAdapterMappingAPI.GetIdpToSpAdapterMappings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpToSpAdapterMappingAPI.GetIdpToSpAdapterMappings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetIdpToSpAdapterMappings`: IdpToSpAdapterMappings
+	fmt.Fprintf(os.Stdout, "Response from `IdpToSpAdapterMappingAPI.GetIdpToSpAdapterMappings`: %v\n", resp)
 }
 ```
 
@@ -215,24 +215,24 @@ Get an IdP-to-SP Adapter Mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of IdP-to-SP Adapter Mapping to fetch.
+	id := "id_example" // string | ID of IdP-to-SP Adapter Mapping to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpToSpAdapterMappingAPI.GetIdpToSpAdapterMappingsById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpToSpAdapterMappingAPI.GetIdpToSpAdapterMappingsById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetIdpToSpAdapterMappingsById`: IdpToSpAdapterMapping
-    fmt.Fprintf(os.Stdout, "Response from `IdpToSpAdapterMappingAPI.GetIdpToSpAdapterMappingsById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpToSpAdapterMappingAPI.GetIdpToSpAdapterMappingsById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpToSpAdapterMappingAPI.GetIdpToSpAdapterMappingsById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetIdpToSpAdapterMappingsById`: IdpToSpAdapterMapping
+	fmt.Fprintf(os.Stdout, "Response from `IdpToSpAdapterMappingAPI.GetIdpToSpAdapterMappingsById`: %v\n", resp)
 }
 ```
 
@@ -283,26 +283,26 @@ Update the specified IdP-to-SP Adapter mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of source adapter in the IdP-to-SP Adapter Mapping to fetch.
-    body := *openapiclient.NewIdpToSpAdapterMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "SourceId_example", "TargetId_example") // IdpToSpAdapterMapping | Configuration for updated IdP-to-SP Adapter Mapping.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	id := "id_example" // string | ID of source adapter in the IdP-to-SP Adapter Mapping to fetch.
+	body := *openapiclient.NewIdpToSpAdapterMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "SourceId_example", "TargetId_example") // IdpToSpAdapterMapping | Configuration for updated IdP-to-SP Adapter Mapping.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpToSpAdapterMappingAPI.UpdateIdpToSpAdapterMapping(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpToSpAdapterMappingAPI.UpdateIdpToSpAdapterMapping``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateIdpToSpAdapterMapping`: IdpToSpAdapterMapping
-    fmt.Fprintf(os.Stdout, "Response from `IdpToSpAdapterMappingAPI.UpdateIdpToSpAdapterMapping`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpToSpAdapterMappingAPI.UpdateIdpToSpAdapterMapping(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpToSpAdapterMappingAPI.UpdateIdpToSpAdapterMapping``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateIdpToSpAdapterMapping`: IdpToSpAdapterMapping
+	fmt.Fprintf(os.Stdout, "Response from `IdpToSpAdapterMappingAPI.UpdateIdpToSpAdapterMapping`: %v\n", resp)
 }
 ```
 

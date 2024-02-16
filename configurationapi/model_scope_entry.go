@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the ScopeEntry type satisfies the MappedNullable interface at compile time
@@ -26,6 +28,8 @@ type ScopeEntry struct {
 	// True if the scope is dynamic. (Defaults to false)
 	Dynamic *bool `json:"dynamic,omitempty" tfsdk:"dynamic"`
 }
+
+type _ScopeEntry ScopeEntry
 
 // NewScopeEntry instantiates a new ScopeEntry object
 // This constructor will assign default values to properties that have it defined,
@@ -142,6 +146,43 @@ func (o ScopeEntry) ToMap() (map[string]interface{}, error) {
 		toSerialize["dynamic"] = o.Dynamic
 	}
 	return toSerialize, nil
+}
+
+func (o *ScopeEntry) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+		"description",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varScopeEntry := _ScopeEntry{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varScopeEntry)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ScopeEntry(varScopeEntry)
+
+	return err
 }
 
 type NullableScopeEntry struct {

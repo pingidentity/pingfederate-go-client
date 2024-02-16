@@ -28,24 +28,24 @@ Create a token management plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewAccessTokenManager("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // AccessTokenManager | Configuration for plugin instance.
+	body := *openapiclient.NewAccessTokenManager("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // AccessTokenManager | Configuration for plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenManagersAPI.CreateTokenManager(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.CreateTokenManager``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateTokenManager`: AccessTokenManager
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.CreateTokenManager`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAccessTokenManagersAPI.CreateTokenManager(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.CreateTokenManager``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateTokenManager`: AccessTokenManager
+	fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.CreateTokenManager`: %v\n", resp)
 }
 ```
 
@@ -92,22 +92,22 @@ Delete a token management plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of token management plugin instance.
+	id := "id_example" // string | ID of token management plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthAccessTokenManagersAPI.DeleteTokenManager(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.DeleteTokenManager``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.OauthAccessTokenManagersAPI.DeleteTokenManager(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.DeleteTokenManager``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -158,23 +158,23 @@ Get general access token management settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenManagersAPI.GetOauthAccessTokenManagersSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.GetOauthAccessTokenManagersSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOauthAccessTokenManagersSettings`: AccessTokenManagementSettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.GetOauthAccessTokenManagersSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAccessTokenManagersAPI.GetOauthAccessTokenManagersSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.GetOauthAccessTokenManagersSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOauthAccessTokenManagersSettings`: AccessTokenManagementSettings
+	fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.GetOauthAccessTokenManagersSettings`: %v\n", resp)
 }
 ```
 
@@ -217,24 +217,24 @@ Get a specific token management plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of token management plugin instance.
+	id := "id_example" // string | ID of token management plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenManagersAPI.GetTokenManager(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.GetTokenManager``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetTokenManager`: AccessTokenManager
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.GetTokenManager`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAccessTokenManagersAPI.GetTokenManager(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.GetTokenManager``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTokenManager`: AccessTokenManager
+	fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.GetTokenManager`: %v\n", resp)
 }
 ```
 
@@ -285,24 +285,24 @@ Get the description of a token management plugin descriptor.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of token management plugin descriptor.
+	id := "id_example" // string | ID of token management plugin descriptor.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenManagersAPI.GetTokenManagerDescriptor(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.GetTokenManagerDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetTokenManagerDescriptor`: AccessTokenManagerDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.GetTokenManagerDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAccessTokenManagersAPI.GetTokenManagerDescriptor(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.GetTokenManagerDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTokenManagerDescriptor`: AccessTokenManagerDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.GetTokenManagerDescriptor`: %v\n", resp)
 }
 ```
 
@@ -353,23 +353,23 @@ Get the list of available token management plugin descriptors.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenManagersAPI.GetTokenManagerDescriptors(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.GetTokenManagerDescriptors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetTokenManagerDescriptors`: AccessTokenManagerDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.GetTokenManagerDescriptors`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAccessTokenManagersAPI.GetTokenManagerDescriptors(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.GetTokenManagerDescriptors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTokenManagerDescriptors`: AccessTokenManagerDescriptors
+	fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.GetTokenManagerDescriptors`: %v\n", resp)
 }
 ```
 
@@ -412,23 +412,23 @@ Get a list of all token management plugin instances.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenManagersAPI.GetTokenManagers(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.GetTokenManagers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetTokenManagers`: AccessTokenManagers
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.GetTokenManagers`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAccessTokenManagersAPI.GetTokenManagers(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.GetTokenManagers``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTokenManagers`: AccessTokenManagers
+	fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.GetTokenManagers`: %v\n", resp)
 }
 ```
 
@@ -471,24 +471,24 @@ Update general access token management settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewAccessTokenManagementSettings() // AccessTokenManagementSettings | Access token management settings.
+	body := *openapiclient.NewAccessTokenManagementSettings() // AccessTokenManagementSettings | Access token management settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenManagersAPI.UpdateOauthAccessTokenManagersSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.UpdateOauthAccessTokenManagersSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateOauthAccessTokenManagersSettings`: AccessTokenManagementSettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.UpdateOauthAccessTokenManagersSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAccessTokenManagersAPI.UpdateOauthAccessTokenManagersSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.UpdateOauthAccessTokenManagersSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateOauthAccessTokenManagersSettings`: AccessTokenManagementSettings
+	fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.UpdateOauthAccessTokenManagersSettings`: %v\n", resp)
 }
 ```
 
@@ -535,25 +535,25 @@ Update a token management plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of token management plugin instance.
-    body := *openapiclient.NewAccessTokenManager("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // AccessTokenManager | Configuration for token management plugin instance.
+	id := "id_example" // string | ID of token management plugin instance.
+	body := *openapiclient.NewAccessTokenManager("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // AccessTokenManager | Configuration for token management plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenManagersAPI.UpdateTokenManager(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.UpdateTokenManager``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateTokenManager`: AccessTokenManager
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.UpdateTokenManager`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAccessTokenManagersAPI.UpdateTokenManager(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenManagersAPI.UpdateTokenManager``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateTokenManager`: AccessTokenManager
+	fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenManagersAPI.UpdateTokenManager`: %v\n", resp)
 }
 ```
 

@@ -29,24 +29,24 @@ Create an Out of Band authenticator plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewOutOfBandAuthenticator("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // OutOfBandAuthenticator | Configuration for an Out of Band authenticator plugin instance.
+	body := *openapiclient.NewOutOfBandAuthenticator("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // OutOfBandAuthenticator | Configuration for an Out of Band authenticator plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.CreateOOBAuthenticator(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.CreateOOBAuthenticator``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateOOBAuthenticator`: OutOfBandAuthenticator
-    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.CreateOOBAuthenticator`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.CreateOOBAuthenticator(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.CreateOOBAuthenticator``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateOOBAuthenticator`: OutOfBandAuthenticator
+	fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.CreateOOBAuthenticator`: %v\n", resp)
 }
 ```
 
@@ -93,22 +93,22 @@ Delete an Out of Band authenticator plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of Out of Band authenticator plugin instance.
+	id := "id_example" // string | ID of Out of Band authenticator plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthOutOfBandAuthPluginsAPI.DeleteOOBAuthenticator(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.DeleteOOBAuthenticator``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.OauthOutOfBandAuthPluginsAPI.DeleteOOBAuthenticator(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.DeleteOOBAuthenticator``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -159,25 +159,25 @@ Find an Out of Band authenticator plugin instance's action by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the Out of Band authenticator plugin instance to which these actions belongs to.
-    actionId := "actionId_example" // string | ID of the action.
+	id := "id_example" // string | ID of the Out of Band authenticator plugin instance to which these actions belongs to.
+	actionId := "actionId_example" // string | ID of the action.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.GetOOBAction(context.Background(), id, actionId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.GetOOBAction``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOOBAction`: Action
-    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.GetOOBAction`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.GetOOBAction(context.Background(), id, actionId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.GetOOBAction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOOBAction`: Action
+	fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.GetOOBAction`: %v\n", resp)
 }
 ```
 
@@ -230,24 +230,24 @@ List of actions for an Out of Band authenticator plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the Out of Band authenticator plugin instance to which these actions belongs to.
+	id := "id_example" // string | ID of the Out of Band authenticator plugin instance to which these actions belongs to.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.GetOOBActions(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.GetOOBActions``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOOBActions`: Actions
-    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.GetOOBActions`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.GetOOBActions(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.GetOOBActions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOOBActions`: Actions
+	fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.GetOOBActions`: %v\n", resp)
 }
 ```
 
@@ -298,24 +298,24 @@ Get the descriptor of an Out of Band authenticator plugin.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of an Out of Band authenticator plugin descriptor.
+	id := "id_example" // string | ID of an Out of Band authenticator plugin descriptor.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.GetOOBAuthPluginDescriptor(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.GetOOBAuthPluginDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOOBAuthPluginDescriptor`: OutOfBandAuthPluginDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.GetOOBAuthPluginDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.GetOOBAuthPluginDescriptor(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.GetOOBAuthPluginDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOOBAuthPluginDescriptor`: OutOfBandAuthPluginDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.GetOOBAuthPluginDescriptor`: %v\n", resp)
 }
 ```
 
@@ -366,23 +366,23 @@ Get the list of available Out of Band authenticator plugin descriptors.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.GetOOBAuthPluginDescriptors(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.GetOOBAuthPluginDescriptors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOOBAuthPluginDescriptors`: OutOfBandAuthPluginDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.GetOOBAuthPluginDescriptors`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.GetOOBAuthPluginDescriptors(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.GetOOBAuthPluginDescriptors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOOBAuthPluginDescriptors`: OutOfBandAuthPluginDescriptors
+	fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.GetOOBAuthPluginDescriptors`: %v\n", resp)
 }
 ```
 
@@ -425,24 +425,24 @@ Get a specific Out of Band authenticator plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of Out of Band authenticator plugin instance.
+	id := "id_example" // string | ID of Out of Band authenticator plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.GetOOBAuthenticator(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.GetOOBAuthenticator``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOOBAuthenticator`: OutOfBandAuthenticator
-    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.GetOOBAuthenticator`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.GetOOBAuthenticator(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.GetOOBAuthenticator``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOOBAuthenticator`: OutOfBandAuthenticator
+	fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.GetOOBAuthenticator`: %v\n", resp)
 }
 ```
 
@@ -493,23 +493,23 @@ Get a list of Out of Band authenticator plugin instances.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.GetOOBAuthenticators(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.GetOOBAuthenticators``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOOBAuthenticators`: OutOfBandAuthenticators
-    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.GetOOBAuthenticators`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.GetOOBAuthenticators(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.GetOOBAuthenticators``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOOBAuthenticators`: OutOfBandAuthenticators
+	fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.GetOOBAuthenticators`: %v\n", resp)
 }
 ```
 
@@ -552,26 +552,26 @@ Invokes an action for Out of Band authenticator plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the Out of Band authenticator plugin instance to which these actions belongs to.
-    actionId := "actionId_example" // string | ID of the action.
-    body := *openapiclient.NewActionOptions([]openapiclient.ActionParameter{*openapiclient.NewActionParameter("Name_example")}) // ActionOptions | Action options for action invoked. (optional)
+	id := "id_example" // string | ID of the Out of Band authenticator plugin instance to which these actions belongs to.
+	actionId := "actionId_example" // string | ID of the action.
+	body := *openapiclient.NewActionOptions([]openapiclient.ActionParameter{*openapiclient.NewActionParameter("Name_example")}) // ActionOptions | Action options for action invoked. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.InvokeOOBActionWithOptions(context.Background(), id, actionId).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.InvokeOOBActionWithOptions``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `InvokeOOBActionWithOptions`: ActionResult
-    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.InvokeOOBActionWithOptions`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.InvokeOOBActionWithOptions(context.Background(), id, actionId).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.InvokeOOBActionWithOptions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvokeOOBActionWithOptions`: ActionResult
+	fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.InvokeOOBActionWithOptions`: %v\n", resp)
 }
 ```
 
@@ -625,25 +625,25 @@ Update an Out of Band authenticator plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of Out of Band authenticator plugin instance.
-    body := *openapiclient.NewOutOfBandAuthenticator("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // OutOfBandAuthenticator | Configuration for an Out of Band authenticator plugin instance.
+	id := "id_example" // string | ID of Out of Band authenticator plugin instance.
+	body := *openapiclient.NewOutOfBandAuthenticator("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // OutOfBandAuthenticator | Configuration for an Out of Band authenticator plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.UpdateOOBAuthenticator(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.UpdateOOBAuthenticator``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateOOBAuthenticator`: OutOfBandAuthenticator
-    fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.UpdateOOBAuthenticator`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthOutOfBandAuthPluginsAPI.UpdateOOBAuthenticator(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthOutOfBandAuthPluginsAPI.UpdateOOBAuthenticator``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateOOBAuthenticator`: OutOfBandAuthenticator
+	fmt.Fprintf(os.Stdout, "Response from `OauthOutOfBandAuthPluginsAPI.UpdateOOBAuthenticator`: %v\n", resp)
 }
 ```
 

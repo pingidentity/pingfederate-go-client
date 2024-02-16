@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the ProcessorPolicyToGeneratorMapping type satisfies the MappedNullable interface at compile time
@@ -33,6 +35,8 @@ type ProcessorPolicyToGeneratorMapping struct {
 	// The license connection group.
 	LicenseConnectionGroupAssignment *string `json:"licenseConnectionGroupAssignment,omitempty" tfsdk:"license_connection_group_assignment"`
 }
+
+type _ProcessorPolicyToGeneratorMapping ProcessorPolicyToGeneratorMapping
 
 // NewProcessorPolicyToGeneratorMapping instantiates a new ProcessorPolicyToGeneratorMapping object
 // This constructor will assign default values to properties that have it defined,
@@ -280,6 +284,44 @@ func (o ProcessorPolicyToGeneratorMapping) ToMap() (map[string]interface{}, erro
 		toSerialize["licenseConnectionGroupAssignment"] = o.LicenseConnectionGroupAssignment
 	}
 	return toSerialize, nil
+}
+
+func (o *ProcessorPolicyToGeneratorMapping) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"attributeContractFulfillment",
+		"sourceId",
+		"targetId",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varProcessorPolicyToGeneratorMapping := _ProcessorPolicyToGeneratorMapping{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varProcessorPolicyToGeneratorMapping)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProcessorPolicyToGeneratorMapping(varProcessorPolicyToGeneratorMapping)
+
+	return err
 }
 
 type NullableProcessorPolicyToGeneratorMapping struct {

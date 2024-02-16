@@ -21,21 +21,21 @@ Export a configuration archive.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ConfigArchiveAPI.ExportConfigArchive(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConfigArchiveAPI.ExportConfigArchive``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.ConfigArchiveAPI.ExportConfigArchive(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ConfigArchiveAPI.ExportConfigArchive``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -80,27 +80,27 @@ Import a configuration archive.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    forceImport := true // bool |  (optional)
-    forceUnsupportedImport := true // bool | Force import of unsupported versions. (optional) (default to false)
-    reencryptData := true // bool | Reencrypt configuration archive data with the current deployment's encryption key. (optional) (default to false)
-    file := os.NewFile(1234, "some_file") // *os.File |  (optional)
+	forceImport := true // bool |  (optional)
+	forceUnsupportedImport := true // bool | Force import of unsupported versions. (optional) (default to false)
+	reencryptData := true // bool | Reencrypt configuration archive data with the current deployment's encryption key. (optional) (default to false)
+	file := os.NewFile(1234, "some_file") // *os.File |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConfigArchiveAPI.ImportConfigArchive(context.Background()).ForceImport(forceImport).ForceUnsupportedImport(forceUnsupportedImport).ReencryptData(reencryptData).File(file).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConfigArchiveAPI.ImportConfigArchive``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ImportConfigArchive`: ApiResult
-    fmt.Fprintf(os.Stdout, "Response from `ConfigArchiveAPI.ImportConfigArchive`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ConfigArchiveAPI.ImportConfigArchive(context.Background()).ForceImport(forceImport).ForceUnsupportedImport(forceUnsupportedImport).ReencryptData(reencryptData).File(file).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ConfigArchiveAPI.ImportConfigArchive``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ImportConfigArchive`: ApiResult
+	fmt.Fprintf(os.Stdout, "Response from `ConfigArchiveAPI.ImportConfigArchive`: %v\n", resp)
 }
 ```
 

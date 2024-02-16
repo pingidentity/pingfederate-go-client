@@ -28,25 +28,25 @@ Create a new OAuth 2.0 Token Exchange Processor policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewTokenExchangeProcessorPolicy("Id_example", "Name_example", *openapiclient.NewTokenExchangeProcessorAttributeContract(), []openapiclient.TokenExchangeProcessorMapping{*openapiclient.NewTokenExchangeProcessorMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "SubjectTokenType_example", *openapiclient.NewResourceLink("Id_example"))}) // TokenExchangeProcessorPolicy | Configuration for new OAuth 2.0 Token Exchange Processor.
-    bypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional)
+	body := *openapiclient.NewTokenExchangeProcessorPolicy("Id_example", "Name_example", *openapiclient.NewTokenExchangeProcessorAttributeContract(), []openapiclient.TokenExchangeProcessorMapping{*openapiclient.NewTokenExchangeProcessorMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "SubjectTokenType_example", *openapiclient.NewResourceLink("Id_example"))}) // TokenExchangeProcessorPolicy | Configuration for new OAuth 2.0 Token Exchange Processor.
+	bypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.CreateOauthTokenExchangeProcessorPolicy(context.Background()).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.CreateOauthTokenExchangeProcessorPolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateOauthTokenExchangeProcessorPolicy`: TokenExchangeProcessorPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorAPI.CreateOauthTokenExchangeProcessorPolicy`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.CreateOauthTokenExchangeProcessorPolicy(context.Background()).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.CreateOauthTokenExchangeProcessorPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateOauthTokenExchangeProcessorPolicy`: TokenExchangeProcessorPolicy
+	fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorAPI.CreateOauthTokenExchangeProcessorPolicy`: %v\n", resp)
 }
 ```
 
@@ -96,22 +96,22 @@ Delete an OAuth 2.0 Token Exchange Processor policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of OAuth 2.0 Token Exchange Processor policy to delete.
+	id := "id_example" // string | ID of OAuth 2.0 Token Exchange Processor policy to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthTokenExchangeProcessorAPI.DeleteOauthTokenExchangeProcessorPolicyy(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.DeleteOauthTokenExchangeProcessorPolicyy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.OauthTokenExchangeProcessorAPI.DeleteOauthTokenExchangeProcessorPolicyy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.DeleteOauthTokenExchangeProcessorPolicyy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -164,24 +164,24 @@ Find an OAuth 2.0 Token Exchange Processor policy by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the OAuth 2.0 Token Exchange Processor policy to fetch.
+	id := "id_example" // string | ID of the OAuth 2.0 Token Exchange Processor policy to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicyById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicyById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOauthTokenExchangeProcessorPolicyById`: TokenExchangeProcessorPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicyById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicyById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicyById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOauthTokenExchangeProcessorPolicyById`: TokenExchangeProcessorPolicy
+	fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicyById`: %v\n", resp)
 }
 ```
 
@@ -232,23 +232,23 @@ Get list of OAuth 2.0 Token Exchange Processor policies.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicyPolicies(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicyPolicies``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOauthTokenExchangeProcessorPolicyPolicies`: TokenExchangeProcessorPolicies
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicyPolicies`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicyPolicies(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicyPolicies``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOauthTokenExchangeProcessorPolicyPolicies`: TokenExchangeProcessorPolicies
+	fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicyPolicies`: %v\n", resp)
 }
 ```
 
@@ -291,23 +291,23 @@ Get general OAuth 2.0 Token Exchange Processor settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicySettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicySettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOauthTokenExchangeProcessorPolicySettings`: TokenExchangeProcessorSettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicySettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicySettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicySettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOauthTokenExchangeProcessorPolicySettings`: TokenExchangeProcessorSettings
+	fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorAPI.GetOauthTokenExchangeProcessorPolicySettings`: %v\n", resp)
 }
 ```
 
@@ -352,26 +352,26 @@ Update an OAuth 2.0 Token Exchange Processor policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the OAuth 2.0 Token Exchange Processor policy to update.
-    body := *openapiclient.NewTokenExchangeProcessorPolicy("Id_example", "Name_example", *openapiclient.NewTokenExchangeProcessorAttributeContract(), []openapiclient.TokenExchangeProcessorMapping{*openapiclient.NewTokenExchangeProcessorMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "SubjectTokenType_example", *openapiclient.NewResourceLink("Id_example"))}) // TokenExchangeProcessorPolicy | Configuration for updated OAuth 2.0 Token Exchange Processor policy.
-    bypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional)
+	id := "id_example" // string | ID of the OAuth 2.0 Token Exchange Processor policy to update.
+	body := *openapiclient.NewTokenExchangeProcessorPolicy("Id_example", "Name_example", *openapiclient.NewTokenExchangeProcessorAttributeContract(), []openapiclient.TokenExchangeProcessorMapping{*openapiclient.NewTokenExchangeProcessorMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "SubjectTokenType_example", *openapiclient.NewResourceLink("Id_example"))}) // TokenExchangeProcessorPolicy | Configuration for updated OAuth 2.0 Token Exchange Processor policy.
+	bypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicy(context.Background(), id).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateOauthTokenExchangeProcessorPolicy`: TokenExchangeProcessorPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicy`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicy(context.Background(), id).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateOauthTokenExchangeProcessorPolicy`: TokenExchangeProcessorPolicy
+	fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicy`: %v\n", resp)
 }
 ```
 
@@ -424,25 +424,25 @@ Update general OAuth 2.0 Token Exchange Processor settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewTokenExchangeProcessorSettings() // TokenExchangeProcessorSettings | OAuth 2.0 Token Exchange Processor settings.
-    bypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional)
+	body := *openapiclient.NewTokenExchangeProcessorSettings() // TokenExchangeProcessorSettings | OAuth 2.0 Token Exchange Processor settings.
+	bypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicySettings(context.Background()).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicySettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateOauthTokenExchangeProcessorPolicySettings`: TokenExchangeProcessorSettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicySettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicySettings(context.Background()).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicySettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateOauthTokenExchangeProcessorPolicySettings`: TokenExchangeProcessorSettings
+	fmt.Fprintf(os.Stdout, "Response from `OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicySettings`: %v\n", resp)
 }
 ```
 

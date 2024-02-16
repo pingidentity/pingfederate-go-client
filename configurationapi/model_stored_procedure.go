@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the StoredProcedure type satisfies the MappedNullable interface at compile time
@@ -24,6 +26,8 @@ type StoredProcedure struct {
 	// The name of the database stored procedure.
 	StoredProcedure string `json:"storedProcedure" tfsdk:"stored_procedure"`
 }
+
+type _StoredProcedure StoredProcedure
 
 // NewStoredProcedure instantiates a new StoredProcedure object
 // This constructor will assign default values to properties that have it defined,
@@ -105,6 +109,43 @@ func (o StoredProcedure) ToMap() (map[string]interface{}, error) {
 	toSerialize["schema"] = o.Schema
 	toSerialize["storedProcedure"] = o.StoredProcedure
 	return toSerialize, nil
+}
+
+func (o *StoredProcedure) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"schema",
+		"storedProcedure",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varStoredProcedure := _StoredProcedure{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varStoredProcedure)
+
+	if err != nil {
+		return err
+	}
+
+	*o = StoredProcedure(varStoredProcedure)
+
+	return err
 }
 
 type NullableStoredProcedure struct {

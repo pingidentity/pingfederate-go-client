@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the IdpBrowserSso type satisfies the MappedNullable interface at compile time
@@ -59,6 +61,8 @@ type IdpBrowserSso struct {
 	OauthAuthenticationPolicyContractRef *ResourceLink                         `json:"oauthAuthenticationPolicyContractRef,omitempty" tfsdk:"oauth_authentication_policy_contract_ref"`
 	JitProvisioning                      *JitProvisioning                      `json:"jitProvisioning,omitempty" tfsdk:"jit_provisioning"`
 }
+
+type _IdpBrowserSso IdpBrowserSso
 
 // NewIdpBrowserSso instantiates a new IdpBrowserSso object
 // This constructor will assign default values to properties that have it defined,
@@ -875,6 +879,43 @@ func (o IdpBrowserSso) ToMap() (map[string]interface{}, error) {
 		toSerialize["jitProvisioning"] = o.JitProvisioning
 	}
 	return toSerialize, nil
+}
+
+func (o *IdpBrowserSso) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"protocol",
+		"idpIdentityMapping",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varIdpBrowserSso := _IdpBrowserSso{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varIdpBrowserSso)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IdpBrowserSso(varIdpBrowserSso)
+
+	return err
 }
 
 type NullableIdpBrowserSso struct {

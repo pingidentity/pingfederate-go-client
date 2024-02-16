@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the ActionOptions type satisfies the MappedNullable interface at compile time
@@ -22,6 +24,8 @@ type ActionOptions struct {
 	// List of action parameters.
 	Parameters []ActionParameter `json:"parameters" tfsdk:"parameters"`
 }
+
+type _ActionOptions ActionOptions
 
 // NewActionOptions instantiates a new ActionOptions object
 // This constructor will assign default values to properties that have it defined,
@@ -77,6 +81,42 @@ func (o ActionOptions) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["parameters"] = o.Parameters
 	return toSerialize, nil
+}
+
+func (o *ActionOptions) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"parameters",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varActionOptions := _ActionOptions{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varActionOptions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ActionOptions(varActionOptions)
+
+	return err
 }
 
 type NullableActionOptions struct {

@@ -28,24 +28,24 @@ Create a new token generator instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewTokenGenerator("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // TokenGenerator | Configuration for a token generator instance.
+	body := *openapiclient.NewTokenGenerator("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // TokenGenerator | Configuration for a token generator instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpTokenGeneratorsAPI.CreateTokenGenerator(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsAPI.CreateTokenGenerator``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateTokenGenerator`: TokenGenerator
-    fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsAPI.CreateTokenGenerator`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpTokenGeneratorsAPI.CreateTokenGenerator(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsAPI.CreateTokenGenerator``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateTokenGenerator`: TokenGenerator
+	fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsAPI.CreateTokenGenerator`: %v\n", resp)
 }
 ```
 
@@ -94,22 +94,22 @@ Delete a token generator instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the token generator instance to delete.
+	id := "id_example" // string | ID of the token generator instance to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SpTokenGeneratorsAPI.DeleteTokenGenerator(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsAPI.DeleteTokenGenerator``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SpTokenGeneratorsAPI.DeleteTokenGenerator(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsAPI.DeleteTokenGenerator``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -162,24 +162,24 @@ Find a token generator instance by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the token generator instance to fetch.
+	id := "id_example" // string | ID of the token generator instance to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpTokenGeneratorsAPI.GetTokenGenerator(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsAPI.GetTokenGenerator``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetTokenGenerator`: TokenGenerator
-    fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsAPI.GetTokenGenerator`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpTokenGeneratorsAPI.GetTokenGenerator(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsAPI.GetTokenGenerator``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTokenGenerator`: TokenGenerator
+	fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsAPI.GetTokenGenerator`: %v\n", resp)
 }
 ```
 
@@ -230,23 +230,23 @@ Get the list of available token generators.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpTokenGeneratorsAPI.GetTokenGeneratorDescriptors(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsAPI.GetTokenGeneratorDescriptors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetTokenGeneratorDescriptors`: TokenGeneratorDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsAPI.GetTokenGeneratorDescriptors`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpTokenGeneratorsAPI.GetTokenGeneratorDescriptors(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsAPI.GetTokenGeneratorDescriptors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTokenGeneratorDescriptors`: TokenGeneratorDescriptors
+	fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsAPI.GetTokenGeneratorDescriptors`: %v\n", resp)
 }
 ```
 
@@ -291,24 +291,24 @@ Get the description of a token generator plugin by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of a token generator descriptor to fetch.
+	id := "id_example" // string | ID of a token generator descriptor to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpTokenGeneratorsAPI.GetTokenGeneratorDescriptorsById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsAPI.GetTokenGeneratorDescriptorsById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetTokenGeneratorDescriptorsById`: TokenGeneratorDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsAPI.GetTokenGeneratorDescriptorsById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpTokenGeneratorsAPI.GetTokenGeneratorDescriptorsById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsAPI.GetTokenGeneratorDescriptorsById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTokenGeneratorDescriptorsById`: TokenGeneratorDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsAPI.GetTokenGeneratorDescriptorsById`: %v\n", resp)
 }
 ```
 
@@ -359,23 +359,23 @@ Get the list of token generator instances.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpTokenGeneratorsAPI.GetTokenGenerators(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsAPI.GetTokenGenerators``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetTokenGenerators`: TokenGenerators
-    fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsAPI.GetTokenGenerators`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpTokenGeneratorsAPI.GetTokenGenerators(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsAPI.GetTokenGenerators``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTokenGenerators`: TokenGenerators
+	fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsAPI.GetTokenGenerators`: %v\n", resp)
 }
 ```
 
@@ -420,25 +420,25 @@ Update a token generator instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the token generator instance.
-    body := *openapiclient.NewTokenGenerator("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // TokenGenerator | Configuration for the updated token generator instance.
+	id := "id_example" // string | ID of the token generator instance.
+	body := *openapiclient.NewTokenGenerator("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // TokenGenerator | Configuration for the updated token generator instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpTokenGeneratorsAPI.UpdateTokenGenerator(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsAPI.UpdateTokenGenerator``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateTokenGenerator`: TokenGenerator
-    fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsAPI.UpdateTokenGenerator`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpTokenGeneratorsAPI.UpdateTokenGenerator(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpTokenGeneratorsAPI.UpdateTokenGenerator``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateTokenGenerator`: TokenGenerator
+	fmt.Fprintf(os.Stdout, "Response from `SpTokenGeneratorsAPI.UpdateTokenGenerator`: %v\n", resp)
 }
 ```
 

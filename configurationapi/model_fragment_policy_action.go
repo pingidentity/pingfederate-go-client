@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the FragmentPolicyAction type satisfies the MappedNullable interface at compile time
@@ -19,17 +21,22 @@ var _ MappedNullable = &FragmentPolicyAction{}
 
 // FragmentPolicyAction struct for FragmentPolicyAction
 type FragmentPolicyAction struct {
-	PolicyAction
+	// The authentication selection type.
+	Type string `json:"type" tfsdk:"type"`
+	// The result context.
+	Context         *string           `json:"context,omitempty" tfsdk:"context"`
 	AttributeRules  *AttributeRules   `json:"attributeRules,omitempty" tfsdk:"attribute_rules"`
 	Fragment        ResourceLink      `json:"fragment" tfsdk:"fragment"`
 	FragmentMapping *AttributeMapping `json:"fragmentMapping,omitempty" tfsdk:"fragment_mapping"`
 }
 
+type _FragmentPolicyAction FragmentPolicyAction
+
 // NewFragmentPolicyAction instantiates a new FragmentPolicyAction object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFragmentPolicyAction(fragment ResourceLink, type_ string) *FragmentPolicyAction {
+func NewFragmentPolicyAction(type_ string, fragment ResourceLink) *FragmentPolicyAction {
 	this := FragmentPolicyAction{}
 	this.Type = type_
 	this.Fragment = fragment
@@ -42,6 +49,62 @@ func NewFragmentPolicyAction(fragment ResourceLink, type_ string) *FragmentPolic
 func NewFragmentPolicyActionWithDefaults() *FragmentPolicyAction {
 	this := FragmentPolicyAction{}
 	return &this
+}
+
+// GetType returns the Type field value
+func (o *FragmentPolicyAction) GetType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value
+// and a boolean to check if the value has been set.
+func (o *FragmentPolicyAction) GetTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Type, true
+}
+
+// SetType sets field value
+func (o *FragmentPolicyAction) SetType(v string) {
+	o.Type = v
+}
+
+// GetContext returns the Context field value if set, zero value otherwise.
+func (o *FragmentPolicyAction) GetContext() string {
+	if o == nil || IsNil(o.Context) {
+		var ret string
+		return ret
+	}
+	return *o.Context
+}
+
+// GetContextOk returns a tuple with the Context field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FragmentPolicyAction) GetContextOk() (*string, bool) {
+	if o == nil || IsNil(o.Context) {
+		return nil, false
+	}
+	return o.Context, true
+}
+
+// HasContext returns a boolean if a field has been set.
+func (o *FragmentPolicyAction) HasContext() bool {
+	if o != nil && !IsNil(o.Context) {
+		return true
+	}
+
+	return false
+}
+
+// SetContext gets a reference to the given string and assigns it to the Context field.
+func (o *FragmentPolicyAction) SetContext(v string) {
+	o.Context = &v
 }
 
 // GetAttributeRules returns the AttributeRules field value if set, zero value otherwise.
@@ -142,13 +205,9 @@ func (o FragmentPolicyAction) MarshalJSON() ([]byte, error) {
 
 func (o FragmentPolicyAction) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	serializedPolicyAction, errPolicyAction := json.Marshal(o.PolicyAction)
-	if errPolicyAction != nil {
-		return map[string]interface{}{}, errPolicyAction
-	}
-	errPolicyAction = json.Unmarshal([]byte(serializedPolicyAction), &toSerialize)
-	if errPolicyAction != nil {
-		return map[string]interface{}{}, errPolicyAction
+	toSerialize["type"] = o.Type
+	if !IsNil(o.Context) {
+		toSerialize["context"] = o.Context
 	}
 	if !IsNil(o.AttributeRules) {
 		toSerialize["attributeRules"] = o.AttributeRules
@@ -158,6 +217,43 @@ func (o FragmentPolicyAction) ToMap() (map[string]interface{}, error) {
 		toSerialize["fragmentMapping"] = o.FragmentMapping
 	}
 	return toSerialize, nil
+}
+
+func (o *FragmentPolicyAction) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"type",
+		"fragment",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varFragmentPolicyAction := _FragmentPolicyAction{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varFragmentPolicyAction)
+
+	if err != nil {
+		return err
+	}
+
+	*o = FragmentPolicyAction(varFragmentPolicyAction)
+
+	return err
 }
 
 type NullableFragmentPolicyAction struct {

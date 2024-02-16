@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AdditionalKeySet type satisfies the MappedNullable interface at compile time
@@ -29,6 +31,8 @@ type AdditionalKeySet struct {
 	// A list of virtual issuers that will use the current key set. Once assigned to a key set, the same virtual issuer cannot be assigned to another key set instance.
 	Issuers []ResourceLink `json:"issuers" tfsdk:"issuers"`
 }
+
+type _AdditionalKeySet AdditionalKeySet
 
 // NewAdditionalKeySet instantiates a new AdditionalKeySet object
 // This constructor will assign default values to properties that have it defined,
@@ -206,6 +210,44 @@ func (o AdditionalKeySet) ToMap() (map[string]interface{}, error) {
 	toSerialize["signingKeys"] = o.SigningKeys
 	toSerialize["issuers"] = o.Issuers
 	return toSerialize, nil
+}
+
+func (o *AdditionalKeySet) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+		"signingKeys",
+		"issuers",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAdditionalKeySet := _AdditionalKeySet{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varAdditionalKeySet)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AdditionalKeySet(varAdditionalKeySet)
+
+	return err
 }
 
 type NullableAdditionalKeySet struct {

@@ -28,24 +28,24 @@ Create a CAPTCHA provider plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewCaptchaProvider("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // CaptchaProvider | Configuration for a CAPTCHA provider plugin instance.
+	body := *openapiclient.NewCaptchaProvider("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // CaptchaProvider | Configuration for a CAPTCHA provider plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CaptchaProvidersAPI.CreateCaptchaProvider(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CaptchaProvidersAPI.CreateCaptchaProvider``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCaptchaProvider`: CaptchaProvider
-    fmt.Fprintf(os.Stdout, "Response from `CaptchaProvidersAPI.CreateCaptchaProvider`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CaptchaProvidersAPI.CreateCaptchaProvider(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CaptchaProvidersAPI.CreateCaptchaProvider``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCaptchaProvider`: CaptchaProvider
+	fmt.Fprintf(os.Stdout, "Response from `CaptchaProvidersAPI.CreateCaptchaProvider`: %v\n", resp)
 }
 ```
 
@@ -92,22 +92,22 @@ Delete a CAPTCHA provider plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of a CAPTCHA provider plugin instance.
+	id := "id_example" // string | ID of a CAPTCHA provider plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CaptchaProvidersAPI.DeleteCaptchaProvider(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CaptchaProvidersAPI.DeleteCaptchaProvider``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CaptchaProvidersAPI.DeleteCaptchaProvider(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CaptchaProvidersAPI.DeleteCaptchaProvider``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -158,24 +158,24 @@ Get a specific CAPTCHA provider plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of a CAPTCHA provider plugin instance.
+	id := "id_example" // string | ID of a CAPTCHA provider plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CaptchaProvidersAPI.GetCaptchaProvider(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CaptchaProvidersAPI.GetCaptchaProvider``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCaptchaProvider`: CaptchaProvider
-    fmt.Fprintf(os.Stdout, "Response from `CaptchaProvidersAPI.GetCaptchaProvider`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CaptchaProvidersAPI.GetCaptchaProvider(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CaptchaProvidersAPI.GetCaptchaProvider``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCaptchaProvider`: CaptchaProvider
+	fmt.Fprintf(os.Stdout, "Response from `CaptchaProvidersAPI.GetCaptchaProvider`: %v\n", resp)
 }
 ```
 
@@ -226,24 +226,24 @@ Get a CAPTCHA provider plugin descriptor.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of CAPTCHA provider plugin descriptor.
+	id := "id_example" // string | ID of CAPTCHA provider plugin descriptor.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CaptchaProvidersAPI.GetCaptchaProviderPluginDescriptor(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CaptchaProvidersAPI.GetCaptchaProviderPluginDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCaptchaProviderPluginDescriptor`: ACAPTCHAProviderPluginDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CaptchaProvidersAPI.GetCaptchaProviderPluginDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CaptchaProvidersAPI.GetCaptchaProviderPluginDescriptor(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CaptchaProvidersAPI.GetCaptchaProviderPluginDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCaptchaProviderPluginDescriptor`: ACAPTCHAProviderPluginDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CaptchaProvidersAPI.GetCaptchaProviderPluginDescriptor`: %v\n", resp)
 }
 ```
 
@@ -294,23 +294,23 @@ Get a list of available CAPTCHA provider plugin descriptors.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CaptchaProvidersAPI.GetCaptchaProviderPluginDescriptors(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CaptchaProvidersAPI.GetCaptchaProviderPluginDescriptors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCaptchaProviderPluginDescriptors`: ACollectionOfCAPTCHAProviderPluginDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `CaptchaProvidersAPI.GetCaptchaProviderPluginDescriptors`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CaptchaProvidersAPI.GetCaptchaProviderPluginDescriptors(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CaptchaProvidersAPI.GetCaptchaProviderPluginDescriptors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCaptchaProviderPluginDescriptors`: ACollectionOfCAPTCHAProviderPluginDescriptors
+	fmt.Fprintf(os.Stdout, "Response from `CaptchaProvidersAPI.GetCaptchaProviderPluginDescriptors`: %v\n", resp)
 }
 ```
 
@@ -353,23 +353,23 @@ Get a list of CAPTCHA provider plugin instances.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CaptchaProvidersAPI.GetCaptchaProviders(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CaptchaProvidersAPI.GetCaptchaProviders``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCaptchaProviders`: CaptchaProviders
-    fmt.Fprintf(os.Stdout, "Response from `CaptchaProvidersAPI.GetCaptchaProviders`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CaptchaProvidersAPI.GetCaptchaProviders(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CaptchaProvidersAPI.GetCaptchaProviders``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCaptchaProviders`: CaptchaProviders
+	fmt.Fprintf(os.Stdout, "Response from `CaptchaProvidersAPI.GetCaptchaProviders`: %v\n", resp)
 }
 ```
 
@@ -412,23 +412,23 @@ Get general CAPTCHA providers settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CaptchaProvidersAPI.GetCaptchaProvidersSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CaptchaProvidersAPI.GetCaptchaProvidersSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCaptchaProvidersSettings`: CaptchaProvidersSettings
-    fmt.Fprintf(os.Stdout, "Response from `CaptchaProvidersAPI.GetCaptchaProvidersSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CaptchaProvidersAPI.GetCaptchaProvidersSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CaptchaProvidersAPI.GetCaptchaProvidersSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCaptchaProvidersSettings`: CaptchaProvidersSettings
+	fmt.Fprintf(os.Stdout, "Response from `CaptchaProvidersAPI.GetCaptchaProvidersSettings`: %v\n", resp)
 }
 ```
 
@@ -471,25 +471,25 @@ Update a CAPTCHA provider plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of a CAPTCHA provider plugin instance.
-    body := *openapiclient.NewCaptchaProvider("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // CaptchaProvider | Configuration for a CAPTCHA provider plugin instance.
+	id := "id_example" // string | ID of a CAPTCHA provider plugin instance.
+	body := *openapiclient.NewCaptchaProvider("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // CaptchaProvider | Configuration for a CAPTCHA provider plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CaptchaProvidersAPI.UpdateCaptchaProvider(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CaptchaProvidersAPI.UpdateCaptchaProvider``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCaptchaProvider`: CaptchaProvider
-    fmt.Fprintf(os.Stdout, "Response from `CaptchaProvidersAPI.UpdateCaptchaProvider`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CaptchaProvidersAPI.UpdateCaptchaProvider(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CaptchaProvidersAPI.UpdateCaptchaProvider``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCaptchaProvider`: CaptchaProvider
+	fmt.Fprintf(os.Stdout, "Response from `CaptchaProvidersAPI.UpdateCaptchaProvider`: %v\n", resp)
 }
 ```
 
@@ -541,24 +541,24 @@ Update general CAPTCHA providers settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewCaptchaProvidersSettings() // CaptchaProvidersSettings | CAPTCHA providers settings.
+	body := *openapiclient.NewCaptchaProvidersSettings() // CaptchaProvidersSettings | CAPTCHA providers settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CaptchaProvidersAPI.UpdateCaptchaProvidersSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CaptchaProvidersAPI.UpdateCaptchaProvidersSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCaptchaProvidersSettings`: CaptchaProvidersSettings
-    fmt.Fprintf(os.Stdout, "Response from `CaptchaProvidersAPI.UpdateCaptchaProvidersSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CaptchaProvidersAPI.UpdateCaptchaProvidersSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CaptchaProvidersAPI.UpdateCaptchaProvidersSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCaptchaProvidersSettings`: CaptchaProvidersSettings
+	fmt.Fprintf(os.Stdout, "Response from `CaptchaProvidersAPI.UpdateCaptchaProvidersSettings`: %v\n", resp)
 }
 ```
 

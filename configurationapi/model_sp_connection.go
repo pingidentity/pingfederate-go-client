@@ -11,7 +11,10 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
+	"time"
 )
 
 // checks if the SpConnection type satisfies the MappedNullable interface at compile time
@@ -19,10 +22,41 @@ var _ MappedNullable = &SpConnection{}
 
 // SpConnection struct for SpConnection
 type SpConnection struct {
-	Connection
-	SpBrowserSso   *SpBrowserSso     `json:"spBrowserSso,omitempty" tfsdk:"sp_browser_sso"`
-	AttributeQuery *SpAttributeQuery `json:"attributeQuery,omitempty" tfsdk:"attribute_query"`
-	WsTrust        *SpWsTrust        `json:"wsTrust,omitempty" tfsdk:"ws_trust"`
+	// The type of this connection. Default is 'IDP'.
+	Type *string `json:"type,omitempty" tfsdk:"type"`
+	// The persistent, unique ID for the connection. It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned if not specified.
+	Id *string `json:"id,omitempty" tfsdk:"id"`
+	// The partner's entity ID (connection ID) or issuer value (for OIDC Connections).
+	EntityId string `json:"entityId" tfsdk:"entity_id"`
+	// The connection name.
+	Name string `json:"name" tfsdk:"name"`
+	// The time at which the connection was last changed. This property is read only and is ignored on PUT and POST requests.
+	ModificationDate *time.Time `json:"modificationDate,omitempty" tfsdk:"modification_date"`
+	// The time at which the connection was created. This property is read only and is ignored on PUT and POST requests.
+	CreationDate *time.Time `json:"creationDate,omitempty" tfsdk:"creation_date"`
+	// Specifies whether the connection is active and ready to process incoming requests. The default value is false.
+	Active *bool `json:"active,omitempty" tfsdk:"active"`
+	// The fully-qualified hostname and port on which your partner's federation deployment runs.
+	BaseUrl *string `json:"baseUrl,omitempty" tfsdk:"base_url"`
+	// The default alternate entity ID that identifies the local server to this partner. It is required when virtualEntityIds is not empty and must be included in that list.
+	DefaultVirtualEntityId *string `json:"defaultVirtualEntityId,omitempty" tfsdk:"default_virtual_entity_id"`
+	// List of alternate entity IDs that identifies the local server to this partner.
+	VirtualEntityIds       []string               `json:"virtualEntityIds,omitempty" tfsdk:"virtual_entity_ids"`
+	MetadataReloadSettings *ConnectionMetadataUrl `json:"metadataReloadSettings,omitempty" tfsdk:"metadata_reload_settings"`
+	Credentials            *ConnectionCredentials `json:"credentials,omitempty" tfsdk:"credentials"`
+	ContactInfo            *ContactInfo           `json:"contactInfo,omitempty" tfsdk:"contact_info"`
+	// The license connection group. If your PingFederate license is based on connection groups, each connection must be assigned to a group before it can be used.
+	LicenseConnectionGroup *string `json:"licenseConnectionGroup,omitempty" tfsdk:"license_connection_group"`
+	// The level of transaction logging applicable for this connection. Default is STANDARD.
+	LoggingMode                            *string                                 `json:"loggingMode,omitempty" tfsdk:"logging_mode"`
+	AdditionalAllowedEntitiesConfiguration *AdditionalAllowedEntitiesConfiguration `json:"additionalAllowedEntitiesConfiguration,omitempty" tfsdk:"additional_allowed_entities_configuration"`
+	// Extended Properties allows to store additional information for IdP/SP Connections. The names of these extended properties should be defined in /extendedProperties.
+	ExtendedProperties *map[string]ParameterValues `json:"extendedProperties,omitempty" tfsdk:"extended_properties"`
+	// This status indicates whether the connection has been replicated to the cluster. This property only applies when automatic replication of connections is enabled. It is read only and is ignored on PUT and POST requests.
+	ReplicationStatus *string           `json:"replicationStatus,omitempty" tfsdk:"replication_status"`
+	SpBrowserSso      *SpBrowserSso     `json:"spBrowserSso,omitempty" tfsdk:"sp_browser_sso"`
+	AttributeQuery    *SpAttributeQuery `json:"attributeQuery,omitempty" tfsdk:"attribute_query"`
+	WsTrust           *SpWsTrust        `json:"wsTrust,omitempty" tfsdk:"ws_trust"`
 	// The application name.
 	ApplicationName *string `json:"applicationName,omitempty" tfsdk:"application_name"`
 	// The application icon url.
@@ -31,6 +65,8 @@ type SpConnection struct {
 	// The connection target type. This field is intended for bulk import/export usage. Changing its value may result in unexpected behavior.
 	ConnectionTargetType *string `json:"connectionTargetType,omitempty" tfsdk:"connection_target_type"`
 }
+
+type _SpConnection SpConnection
 
 // NewSpConnection instantiates a new SpConnection object
 // This constructor will assign default values to properties that have it defined,
@@ -49,6 +85,566 @@ func NewSpConnection(entityId string, name string) *SpConnection {
 func NewSpConnectionWithDefaults() *SpConnection {
 	this := SpConnection{}
 	return &this
+}
+
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *SpConnection) GetType() string {
+	if o == nil || IsNil(o.Type) {
+		var ret string
+		return ret
+	}
+	return *o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpConnection) GetTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *SpConnection) HasType() bool {
+	if o != nil && !IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given string and assigns it to the Type field.
+func (o *SpConnection) SetType(v string) {
+	o.Type = &v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *SpConnection) GetId() string {
+	if o == nil || IsNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpConnection) GetIdOk() (*string, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *SpConnection) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *SpConnection) SetId(v string) {
+	o.Id = &v
+}
+
+// GetEntityId returns the EntityId field value
+func (o *SpConnection) GetEntityId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.EntityId
+}
+
+// GetEntityIdOk returns a tuple with the EntityId field value
+// and a boolean to check if the value has been set.
+func (o *SpConnection) GetEntityIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.EntityId, true
+}
+
+// SetEntityId sets field value
+func (o *SpConnection) SetEntityId(v string) {
+	o.EntityId = v
+}
+
+// GetName returns the Name field value
+func (o *SpConnection) GetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value
+// and a boolean to check if the value has been set.
+func (o *SpConnection) GetNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Name, true
+}
+
+// SetName sets field value
+func (o *SpConnection) SetName(v string) {
+	o.Name = v
+}
+
+// GetModificationDate returns the ModificationDate field value if set, zero value otherwise.
+func (o *SpConnection) GetModificationDate() time.Time {
+	if o == nil || IsNil(o.ModificationDate) {
+		var ret time.Time
+		return ret
+	}
+	return *o.ModificationDate
+}
+
+// GetModificationDateOk returns a tuple with the ModificationDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpConnection) GetModificationDateOk() (*time.Time, bool) {
+	if o == nil || IsNil(o.ModificationDate) {
+		return nil, false
+	}
+	return o.ModificationDate, true
+}
+
+// HasModificationDate returns a boolean if a field has been set.
+func (o *SpConnection) HasModificationDate() bool {
+	if o != nil && !IsNil(o.ModificationDate) {
+		return true
+	}
+
+	return false
+}
+
+// SetModificationDate gets a reference to the given time.Time and assigns it to the ModificationDate field.
+func (o *SpConnection) SetModificationDate(v time.Time) {
+	o.ModificationDate = &v
+}
+
+// GetCreationDate returns the CreationDate field value if set, zero value otherwise.
+func (o *SpConnection) GetCreationDate() time.Time {
+	if o == nil || IsNil(o.CreationDate) {
+		var ret time.Time
+		return ret
+	}
+	return *o.CreationDate
+}
+
+// GetCreationDateOk returns a tuple with the CreationDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpConnection) GetCreationDateOk() (*time.Time, bool) {
+	if o == nil || IsNil(o.CreationDate) {
+		return nil, false
+	}
+	return o.CreationDate, true
+}
+
+// HasCreationDate returns a boolean if a field has been set.
+func (o *SpConnection) HasCreationDate() bool {
+	if o != nil && !IsNil(o.CreationDate) {
+		return true
+	}
+
+	return false
+}
+
+// SetCreationDate gets a reference to the given time.Time and assigns it to the CreationDate field.
+func (o *SpConnection) SetCreationDate(v time.Time) {
+	o.CreationDate = &v
+}
+
+// GetActive returns the Active field value if set, zero value otherwise.
+func (o *SpConnection) GetActive() bool {
+	if o == nil || IsNil(o.Active) {
+		var ret bool
+		return ret
+	}
+	return *o.Active
+}
+
+// GetActiveOk returns a tuple with the Active field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpConnection) GetActiveOk() (*bool, bool) {
+	if o == nil || IsNil(o.Active) {
+		return nil, false
+	}
+	return o.Active, true
+}
+
+// HasActive returns a boolean if a field has been set.
+func (o *SpConnection) HasActive() bool {
+	if o != nil && !IsNil(o.Active) {
+		return true
+	}
+
+	return false
+}
+
+// SetActive gets a reference to the given bool and assigns it to the Active field.
+func (o *SpConnection) SetActive(v bool) {
+	o.Active = &v
+}
+
+// GetBaseUrl returns the BaseUrl field value if set, zero value otherwise.
+func (o *SpConnection) GetBaseUrl() string {
+	if o == nil || IsNil(o.BaseUrl) {
+		var ret string
+		return ret
+	}
+	return *o.BaseUrl
+}
+
+// GetBaseUrlOk returns a tuple with the BaseUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpConnection) GetBaseUrlOk() (*string, bool) {
+	if o == nil || IsNil(o.BaseUrl) {
+		return nil, false
+	}
+	return o.BaseUrl, true
+}
+
+// HasBaseUrl returns a boolean if a field has been set.
+func (o *SpConnection) HasBaseUrl() bool {
+	if o != nil && !IsNil(o.BaseUrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetBaseUrl gets a reference to the given string and assigns it to the BaseUrl field.
+func (o *SpConnection) SetBaseUrl(v string) {
+	o.BaseUrl = &v
+}
+
+// GetDefaultVirtualEntityId returns the DefaultVirtualEntityId field value if set, zero value otherwise.
+func (o *SpConnection) GetDefaultVirtualEntityId() string {
+	if o == nil || IsNil(o.DefaultVirtualEntityId) {
+		var ret string
+		return ret
+	}
+	return *o.DefaultVirtualEntityId
+}
+
+// GetDefaultVirtualEntityIdOk returns a tuple with the DefaultVirtualEntityId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpConnection) GetDefaultVirtualEntityIdOk() (*string, bool) {
+	if o == nil || IsNil(o.DefaultVirtualEntityId) {
+		return nil, false
+	}
+	return o.DefaultVirtualEntityId, true
+}
+
+// HasDefaultVirtualEntityId returns a boolean if a field has been set.
+func (o *SpConnection) HasDefaultVirtualEntityId() bool {
+	if o != nil && !IsNil(o.DefaultVirtualEntityId) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultVirtualEntityId gets a reference to the given string and assigns it to the DefaultVirtualEntityId field.
+func (o *SpConnection) SetDefaultVirtualEntityId(v string) {
+	o.DefaultVirtualEntityId = &v
+}
+
+// GetVirtualEntityIds returns the VirtualEntityIds field value if set, zero value otherwise.
+func (o *SpConnection) GetVirtualEntityIds() []string {
+	if o == nil || IsNil(o.VirtualEntityIds) {
+		var ret []string
+		return ret
+	}
+	return o.VirtualEntityIds
+}
+
+// GetVirtualEntityIdsOk returns a tuple with the VirtualEntityIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpConnection) GetVirtualEntityIdsOk() ([]string, bool) {
+	if o == nil || IsNil(o.VirtualEntityIds) {
+		return nil, false
+	}
+	return o.VirtualEntityIds, true
+}
+
+// HasVirtualEntityIds returns a boolean if a field has been set.
+func (o *SpConnection) HasVirtualEntityIds() bool {
+	if o != nil && !IsNil(o.VirtualEntityIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetVirtualEntityIds gets a reference to the given []string and assigns it to the VirtualEntityIds field.
+func (o *SpConnection) SetVirtualEntityIds(v []string) {
+	o.VirtualEntityIds = v
+}
+
+// GetMetadataReloadSettings returns the MetadataReloadSettings field value if set, zero value otherwise.
+func (o *SpConnection) GetMetadataReloadSettings() ConnectionMetadataUrl {
+	if o == nil || IsNil(o.MetadataReloadSettings) {
+		var ret ConnectionMetadataUrl
+		return ret
+	}
+	return *o.MetadataReloadSettings
+}
+
+// GetMetadataReloadSettingsOk returns a tuple with the MetadataReloadSettings field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpConnection) GetMetadataReloadSettingsOk() (*ConnectionMetadataUrl, bool) {
+	if o == nil || IsNil(o.MetadataReloadSettings) {
+		return nil, false
+	}
+	return o.MetadataReloadSettings, true
+}
+
+// HasMetadataReloadSettings returns a boolean if a field has been set.
+func (o *SpConnection) HasMetadataReloadSettings() bool {
+	if o != nil && !IsNil(o.MetadataReloadSettings) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadataReloadSettings gets a reference to the given ConnectionMetadataUrl and assigns it to the MetadataReloadSettings field.
+func (o *SpConnection) SetMetadataReloadSettings(v ConnectionMetadataUrl) {
+	o.MetadataReloadSettings = &v
+}
+
+// GetCredentials returns the Credentials field value if set, zero value otherwise.
+func (o *SpConnection) GetCredentials() ConnectionCredentials {
+	if o == nil || IsNil(o.Credentials) {
+		var ret ConnectionCredentials
+		return ret
+	}
+	return *o.Credentials
+}
+
+// GetCredentialsOk returns a tuple with the Credentials field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpConnection) GetCredentialsOk() (*ConnectionCredentials, bool) {
+	if o == nil || IsNil(o.Credentials) {
+		return nil, false
+	}
+	return o.Credentials, true
+}
+
+// HasCredentials returns a boolean if a field has been set.
+func (o *SpConnection) HasCredentials() bool {
+	if o != nil && !IsNil(o.Credentials) {
+		return true
+	}
+
+	return false
+}
+
+// SetCredentials gets a reference to the given ConnectionCredentials and assigns it to the Credentials field.
+func (o *SpConnection) SetCredentials(v ConnectionCredentials) {
+	o.Credentials = &v
+}
+
+// GetContactInfo returns the ContactInfo field value if set, zero value otherwise.
+func (o *SpConnection) GetContactInfo() ContactInfo {
+	if o == nil || IsNil(o.ContactInfo) {
+		var ret ContactInfo
+		return ret
+	}
+	return *o.ContactInfo
+}
+
+// GetContactInfoOk returns a tuple with the ContactInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpConnection) GetContactInfoOk() (*ContactInfo, bool) {
+	if o == nil || IsNil(o.ContactInfo) {
+		return nil, false
+	}
+	return o.ContactInfo, true
+}
+
+// HasContactInfo returns a boolean if a field has been set.
+func (o *SpConnection) HasContactInfo() bool {
+	if o != nil && !IsNil(o.ContactInfo) {
+		return true
+	}
+
+	return false
+}
+
+// SetContactInfo gets a reference to the given ContactInfo and assigns it to the ContactInfo field.
+func (o *SpConnection) SetContactInfo(v ContactInfo) {
+	o.ContactInfo = &v
+}
+
+// GetLicenseConnectionGroup returns the LicenseConnectionGroup field value if set, zero value otherwise.
+func (o *SpConnection) GetLicenseConnectionGroup() string {
+	if o == nil || IsNil(o.LicenseConnectionGroup) {
+		var ret string
+		return ret
+	}
+	return *o.LicenseConnectionGroup
+}
+
+// GetLicenseConnectionGroupOk returns a tuple with the LicenseConnectionGroup field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpConnection) GetLicenseConnectionGroupOk() (*string, bool) {
+	if o == nil || IsNil(o.LicenseConnectionGroup) {
+		return nil, false
+	}
+	return o.LicenseConnectionGroup, true
+}
+
+// HasLicenseConnectionGroup returns a boolean if a field has been set.
+func (o *SpConnection) HasLicenseConnectionGroup() bool {
+	if o != nil && !IsNil(o.LicenseConnectionGroup) {
+		return true
+	}
+
+	return false
+}
+
+// SetLicenseConnectionGroup gets a reference to the given string and assigns it to the LicenseConnectionGroup field.
+func (o *SpConnection) SetLicenseConnectionGroup(v string) {
+	o.LicenseConnectionGroup = &v
+}
+
+// GetLoggingMode returns the LoggingMode field value if set, zero value otherwise.
+func (o *SpConnection) GetLoggingMode() string {
+	if o == nil || IsNil(o.LoggingMode) {
+		var ret string
+		return ret
+	}
+	return *o.LoggingMode
+}
+
+// GetLoggingModeOk returns a tuple with the LoggingMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpConnection) GetLoggingModeOk() (*string, bool) {
+	if o == nil || IsNil(o.LoggingMode) {
+		return nil, false
+	}
+	return o.LoggingMode, true
+}
+
+// HasLoggingMode returns a boolean if a field has been set.
+func (o *SpConnection) HasLoggingMode() bool {
+	if o != nil && !IsNil(o.LoggingMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetLoggingMode gets a reference to the given string and assigns it to the LoggingMode field.
+func (o *SpConnection) SetLoggingMode(v string) {
+	o.LoggingMode = &v
+}
+
+// GetAdditionalAllowedEntitiesConfiguration returns the AdditionalAllowedEntitiesConfiguration field value if set, zero value otherwise.
+func (o *SpConnection) GetAdditionalAllowedEntitiesConfiguration() AdditionalAllowedEntitiesConfiguration {
+	if o == nil || IsNil(o.AdditionalAllowedEntitiesConfiguration) {
+		var ret AdditionalAllowedEntitiesConfiguration
+		return ret
+	}
+	return *o.AdditionalAllowedEntitiesConfiguration
+}
+
+// GetAdditionalAllowedEntitiesConfigurationOk returns a tuple with the AdditionalAllowedEntitiesConfiguration field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpConnection) GetAdditionalAllowedEntitiesConfigurationOk() (*AdditionalAllowedEntitiesConfiguration, bool) {
+	if o == nil || IsNil(o.AdditionalAllowedEntitiesConfiguration) {
+		return nil, false
+	}
+	return o.AdditionalAllowedEntitiesConfiguration, true
+}
+
+// HasAdditionalAllowedEntitiesConfiguration returns a boolean if a field has been set.
+func (o *SpConnection) HasAdditionalAllowedEntitiesConfiguration() bool {
+	if o != nil && !IsNil(o.AdditionalAllowedEntitiesConfiguration) {
+		return true
+	}
+
+	return false
+}
+
+// SetAdditionalAllowedEntitiesConfiguration gets a reference to the given AdditionalAllowedEntitiesConfiguration and assigns it to the AdditionalAllowedEntitiesConfiguration field.
+func (o *SpConnection) SetAdditionalAllowedEntitiesConfiguration(v AdditionalAllowedEntitiesConfiguration) {
+	o.AdditionalAllowedEntitiesConfiguration = &v
+}
+
+// GetExtendedProperties returns the ExtendedProperties field value if set, zero value otherwise.
+func (o *SpConnection) GetExtendedProperties() map[string]ParameterValues {
+	if o == nil || IsNil(o.ExtendedProperties) {
+		var ret map[string]ParameterValues
+		return ret
+	}
+	return *o.ExtendedProperties
+}
+
+// GetExtendedPropertiesOk returns a tuple with the ExtendedProperties field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpConnection) GetExtendedPropertiesOk() (*map[string]ParameterValues, bool) {
+	if o == nil || IsNil(o.ExtendedProperties) {
+		return nil, false
+	}
+	return o.ExtendedProperties, true
+}
+
+// HasExtendedProperties returns a boolean if a field has been set.
+func (o *SpConnection) HasExtendedProperties() bool {
+	if o != nil && !IsNil(o.ExtendedProperties) {
+		return true
+	}
+
+	return false
+}
+
+// SetExtendedProperties gets a reference to the given map[string]ParameterValues and assigns it to the ExtendedProperties field.
+func (o *SpConnection) SetExtendedProperties(v map[string]ParameterValues) {
+	o.ExtendedProperties = &v
+}
+
+// GetReplicationStatus returns the ReplicationStatus field value if set, zero value otherwise.
+func (o *SpConnection) GetReplicationStatus() string {
+	if o == nil || IsNil(o.ReplicationStatus) {
+		var ret string
+		return ret
+	}
+	return *o.ReplicationStatus
+}
+
+// GetReplicationStatusOk returns a tuple with the ReplicationStatus field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpConnection) GetReplicationStatusOk() (*string, bool) {
+	if o == nil || IsNil(o.ReplicationStatus) {
+		return nil, false
+	}
+	return o.ReplicationStatus, true
+}
+
+// HasReplicationStatus returns a boolean if a field has been set.
+func (o *SpConnection) HasReplicationStatus() bool {
+	if o != nil && !IsNil(o.ReplicationStatus) {
+		return true
+	}
+
+	return false
+}
+
+// SetReplicationStatus gets a reference to the given string and assigns it to the ReplicationStatus field.
+func (o *SpConnection) SetReplicationStatus(v string) {
+	o.ReplicationStatus = &v
 }
 
 // GetSpBrowserSso returns the SpBrowserSso field value if set, zero value otherwise.
@@ -285,13 +881,55 @@ func (o SpConnection) MarshalJSON() ([]byte, error) {
 
 func (o SpConnection) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	serializedConnection, errConnection := json.Marshal(o.Connection)
-	if errConnection != nil {
-		return map[string]interface{}{}, errConnection
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
 	}
-	errConnection = json.Unmarshal([]byte(serializedConnection), &toSerialize)
-	if errConnection != nil {
-		return map[string]interface{}{}, errConnection
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
+	toSerialize["entityId"] = o.EntityId
+	toSerialize["name"] = o.Name
+	if !IsNil(o.ModificationDate) {
+		toSerialize["modificationDate"] = o.ModificationDate
+	}
+	if !IsNil(o.CreationDate) {
+		toSerialize["creationDate"] = o.CreationDate
+	}
+	if !IsNil(o.Active) {
+		toSerialize["active"] = o.Active
+	}
+	if !IsNil(o.BaseUrl) {
+		toSerialize["baseUrl"] = o.BaseUrl
+	}
+	if !IsNil(o.DefaultVirtualEntityId) {
+		toSerialize["defaultVirtualEntityId"] = o.DefaultVirtualEntityId
+	}
+	if !IsNil(o.VirtualEntityIds) {
+		toSerialize["virtualEntityIds"] = o.VirtualEntityIds
+	}
+	if !IsNil(o.MetadataReloadSettings) {
+		toSerialize["metadataReloadSettings"] = o.MetadataReloadSettings
+	}
+	if !IsNil(o.Credentials) {
+		toSerialize["credentials"] = o.Credentials
+	}
+	if !IsNil(o.ContactInfo) {
+		toSerialize["contactInfo"] = o.ContactInfo
+	}
+	if !IsNil(o.LicenseConnectionGroup) {
+		toSerialize["licenseConnectionGroup"] = o.LicenseConnectionGroup
+	}
+	if !IsNil(o.LoggingMode) {
+		toSerialize["loggingMode"] = o.LoggingMode
+	}
+	if !IsNil(o.AdditionalAllowedEntitiesConfiguration) {
+		toSerialize["additionalAllowedEntitiesConfiguration"] = o.AdditionalAllowedEntitiesConfiguration
+	}
+	if !IsNil(o.ExtendedProperties) {
+		toSerialize["extendedProperties"] = o.ExtendedProperties
+	}
+	if !IsNil(o.ReplicationStatus) {
+		toSerialize["replicationStatus"] = o.ReplicationStatus
 	}
 	if !IsNil(o.SpBrowserSso) {
 		toSerialize["spBrowserSso"] = o.SpBrowserSso
@@ -315,6 +953,43 @@ func (o SpConnection) ToMap() (map[string]interface{}, error) {
 		toSerialize["connectionTargetType"] = o.ConnectionTargetType
 	}
 	return toSerialize, nil
+}
+
+func (o *SpConnection) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"entityId",
+		"name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varSpConnection := _SpConnection{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varSpConnection)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SpConnection(varSpConnection)
+
+	return err
 }
 
 type NullableSpConnection struct {

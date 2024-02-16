@@ -33,24 +33,24 @@ Create a new SP adapter instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewSpAdapter("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // SpAdapter | Configuration for the SP adapter instance.
+	body := *openapiclient.NewSpAdapter("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // SpAdapter | Configuration for the SP adapter instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAdaptersAPI.CreateSpAdapter(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.CreateSpAdapter``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateSpAdapter`: SpAdapter
-    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.CreateSpAdapter`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpAdaptersAPI.CreateSpAdapter(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.CreateSpAdapter``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateSpAdapter`: SpAdapter
+	fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.CreateSpAdapter`: %v\n", resp)
 }
 ```
 
@@ -99,22 +99,22 @@ Delete an SP adapter instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of SP adapter instance.
+	id := "id_example" // string | ID of SP adapter instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SpAdaptersAPI.DeleteSpAdapter(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.DeleteSpAdapter``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SpAdaptersAPI.DeleteSpAdapter(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.DeleteSpAdapter``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -167,24 +167,24 @@ Find an SP adapter instance by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of SP adapter instance.
+	id := "id_example" // string | ID of SP adapter instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAdaptersAPI.GetSpAdapter(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.GetSpAdapter``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSpAdapter`: SpAdapter
-    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.GetSpAdapter`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpAdaptersAPI.GetSpAdapter(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.GetSpAdapter``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSpAdapter`: SpAdapter
+	fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.GetSpAdapter`: %v\n", resp)
 }
 ```
 
@@ -235,23 +235,23 @@ Get the list of available SP adapter descriptors.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAdaptersAPI.GetSpAdapterDescriptors(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.GetSpAdapterDescriptors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSpAdapterDescriptors`: SpAdapterDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.GetSpAdapterDescriptors`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpAdaptersAPI.GetSpAdapterDescriptors(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.GetSpAdapterDescriptors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSpAdapterDescriptors`: SpAdapterDescriptors
+	fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.GetSpAdapterDescriptors`: %v\n", resp)
 }
 ```
 
@@ -296,24 +296,24 @@ Get the description of an SP adapter plugin by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of SP adapter descriptor to fetch.
+	id := "id_example" // string | ID of SP adapter descriptor to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAdaptersAPI.GetSpAdapterDescriptorsById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.GetSpAdapterDescriptorsById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSpAdapterDescriptorsById`: SpAdapterDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.GetSpAdapterDescriptorsById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpAdaptersAPI.GetSpAdapterDescriptorsById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.GetSpAdapterDescriptorsById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSpAdapterDescriptorsById`: SpAdapterDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.GetSpAdapterDescriptorsById`: %v\n", resp)
 }
 ```
 
@@ -364,23 +364,23 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAdaptersAPI.GetSpAdapterUrlMappings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.GetSpAdapterUrlMappings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSpAdapterUrlMappings`: SpAdapterUrlMappings
-    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.GetSpAdapterUrlMappings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpAdaptersAPI.GetSpAdapterUrlMappings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.GetSpAdapterUrlMappings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSpAdapterUrlMappings`: SpAdapterUrlMappings
+	fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.GetSpAdapterUrlMappings`: %v\n", resp)
 }
 ```
 
@@ -423,26 +423,26 @@ Get the list of configured SP adapter instances.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    page := int64(56) // int64 | Page number to retrieve. (optional)
-    numberPerPage := int64(56) // int64 | Number of adapters per page. (optional)
-    filter := "filter_example" // string | Filter criteria limits the SP adapters that are returned to only those that match it. The filter criteria is compared to the SP adapter instance name and ID fields. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. (optional)
+	page := int64(56) // int64 | Page number to retrieve. (optional)
+	numberPerPage := int64(56) // int64 | Number of adapters per page. (optional)
+	filter := "filter_example" // string | Filter criteria limits the SP adapters that are returned to only those that match it. The filter criteria is compared to the SP adapter instance name and ID fields. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAdaptersAPI.GetSpAdapters(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.GetSpAdapters``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSpAdapters`: SpAdapters
-    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.GetSpAdapters`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpAdaptersAPI.GetSpAdapters(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.GetSpAdapters``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSpAdapters`: SpAdapters
+	fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.GetSpAdapters`: %v\n", resp)
 }
 ```
 
@@ -493,25 +493,25 @@ Find an SP adapter instance's action by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the SP adapter instance to which this action belongs to.
-    actionId := "actionId_example" // string | ID of the action.
+	id := "id_example" // string | ID of the SP adapter instance to which this action belongs to.
+	actionId := "actionId_example" // string | ID of the action.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAdaptersAPI.GetSpAdaptersActionById(context.Background(), id, actionId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.GetSpAdaptersActionById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSpAdaptersActionById`: Action
-    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.GetSpAdaptersActionById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpAdaptersAPI.GetSpAdaptersActionById(context.Background(), id, actionId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.GetSpAdaptersActionById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSpAdaptersActionById`: Action
+	fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.GetSpAdaptersActionById`: %v\n", resp)
 }
 ```
 
@@ -566,24 +566,24 @@ List the actions for an SP adapter instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the SP adapter instance to which this action belongs to.
+	id := "id_example" // string | ID of the SP adapter instance to which this action belongs to.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAdaptersAPI.GetSpAdaptersActions(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.GetSpAdaptersActions``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSpAdaptersActions`: Actions
-    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.GetSpAdaptersActions`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpAdaptersAPI.GetSpAdaptersActions(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.GetSpAdaptersActions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSpAdaptersActions`: Actions
+	fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.GetSpAdaptersActions`: %v\n", resp)
 }
 ```
 
@@ -636,26 +636,26 @@ Invokes an action for an SP adapter instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the SP adapter instance to which this action belongs to.
-    actionId := "actionId_example" // string | ID of the action.
-    body := *openapiclient.NewActionOptions([]openapiclient.ActionParameter{*openapiclient.NewActionParameter("Name_example")}) // ActionOptions | Action options for action invoked. (optional)
+	id := "id_example" // string | ID of the SP adapter instance to which this action belongs to.
+	actionId := "actionId_example" // string | ID of the action.
+	body := *openapiclient.NewActionOptions([]openapiclient.ActionParameter{*openapiclient.NewActionParameter("Name_example")}) // ActionOptions | Action options for action invoked. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAdaptersAPI.InvokeSpAdapterActionWithOptions(context.Background(), id, actionId).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.InvokeSpAdapterActionWithOptions``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `InvokeSpAdapterActionWithOptions`: ActionResult
-    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.InvokeSpAdapterActionWithOptions`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpAdaptersAPI.InvokeSpAdapterActionWithOptions(context.Background(), id, actionId).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.InvokeSpAdapterActionWithOptions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvokeSpAdapterActionWithOptions`: ActionResult
+	fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.InvokeSpAdapterActionWithOptions`: %v\n", resp)
 }
 ```
 
@@ -711,25 +711,25 @@ Update an SP adapter instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of SP adapter instance.
-    body := *openapiclient.NewSpAdapter("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // SpAdapter | Configuration for the SP adapter instance.
+	id := "id_example" // string | ID of SP adapter instance.
+	body := *openapiclient.NewSpAdapter("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // SpAdapter | Configuration for the SP adapter instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAdaptersAPI.UpdateSpAdapter(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.UpdateSpAdapter``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateSpAdapter`: SpAdapter
-    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.UpdateSpAdapter`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpAdaptersAPI.UpdateSpAdapter(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.UpdateSpAdapter``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSpAdapter`: SpAdapter
+	fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.UpdateSpAdapter`: %v\n", resp)
 }
 ```
 
@@ -781,24 +781,24 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewSpAdapterUrlMappings() // SpAdapterUrlMappings | The SP adapter URL mappings to update.
+	body := *openapiclient.NewSpAdapterUrlMappings() // SpAdapterUrlMappings | The SP adapter URL mappings to update.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAdaptersAPI.UpdateSpAdapterUrlMappings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.UpdateSpAdapterUrlMappings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateSpAdapterUrlMappings`: SpAdapterUrlMappings
-    fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.UpdateSpAdapterUrlMappings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpAdaptersAPI.UpdateSpAdapterUrlMappings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpAdaptersAPI.UpdateSpAdapterUrlMappings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSpAdapterUrlMappings`: SpAdapterUrlMappings
+	fmt.Fprintf(os.Stdout, "Response from `SpAdaptersAPI.UpdateSpAdapterUrlMappings`: %v\n", resp)
 }
 ```
 

@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AuthenticationSource type satisfies the MappedNullable interface at compile time
@@ -23,6 +25,8 @@ type AuthenticationSource struct {
 	Type      string       `json:"type" tfsdk:"type"`
 	SourceRef ResourceLink `json:"sourceRef" tfsdk:"source_ref"`
 }
+
+type _AuthenticationSource AuthenticationSource
 
 // NewAuthenticationSource instantiates a new AuthenticationSource object
 // This constructor will assign default values to properties that have it defined,
@@ -104,6 +108,43 @@ func (o AuthenticationSource) ToMap() (map[string]interface{}, error) {
 	toSerialize["type"] = o.Type
 	toSerialize["sourceRef"] = o.SourceRef
 	return toSerialize, nil
+}
+
+func (o *AuthenticationSource) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"type",
+		"sourceRef",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAuthenticationSource := _AuthenticationSource{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varAuthenticationSource)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AuthenticationSource(varAuthenticationSource)
+
+	return err
 }
 
 type NullableAuthenticationSource struct {

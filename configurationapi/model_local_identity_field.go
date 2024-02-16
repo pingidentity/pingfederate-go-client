@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the LocalIdentityField type satisfies the MappedNullable interface at compile time
@@ -32,6 +34,8 @@ type LocalIdentityField struct {
 	// Attributes of the local identity field.
 	Attributes *map[string]bool `json:"attributes,omitempty" tfsdk:"attributes"`
 }
+
+type _LocalIdentityField LocalIdentityField
 
 // NewLocalIdentityField instantiates a new LocalIdentityField object
 // This constructor will assign default values to properties that have it defined,
@@ -244,6 +248,44 @@ func (o LocalIdentityField) ToMap() (map[string]interface{}, error) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
+}
+
+func (o *LocalIdentityField) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"type",
+		"id",
+		"label",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varLocalIdentityField := _LocalIdentityField{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varLocalIdentityField)
+
+	if err != nil {
+		return err
+	}
+
+	*o = LocalIdentityField(varLocalIdentityField)
+
+	return err
 }
 
 type NullableLocalIdentityField struct {

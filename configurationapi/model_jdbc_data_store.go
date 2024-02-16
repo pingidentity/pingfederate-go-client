@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 	"time"
 )
 
@@ -20,7 +22,14 @@ var _ MappedNullable = &JdbcDataStore{}
 
 // JdbcDataStore struct for JdbcDataStore
 type JdbcDataStore struct {
-	DataStore
+	// The data store type.
+	Type string `json:"type" tfsdk:"type"`
+	// The persistent, unique ID for the data store. It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned if not specified.
+	Id *string `json:"id,omitempty" tfsdk:"id"`
+	// Whether attribute values should be masked in the log.
+	MaskAttributeValues *bool `json:"maskAttributeValues,omitempty" tfsdk:"mask_attribute_values"`
+	// The time at which the datastore instance was last changed. This property is read only and is ignored on PUT and POST requests.
+	LastModified *time.Time `json:"lastModified,omitempty" tfsdk:"last_modified"`
 	// The set of connection URLs and associated tags for this JDBC data store. This is required if 'connectionUrl' is not provided.
 	ConnectionUrlTags []JdbcTagConfig `json:"connectionUrlTags,omitempty" tfsdk:"connection_url_tags"`
 	// The default location of the JDBC database. This field is required if no mapping for JDBC database location and tags is specified.
@@ -47,15 +56,15 @@ type JdbcDataStore struct {
 	BlockingTimeout *int64 `json:"blockingTimeout,omitempty" tfsdk:"blocking_timeout"`
 	// The length of time in minutes the connection can be idle in the pool before it is closed. Omitting this attribute will set the value to the connection pool default.
 	IdleTimeout *int64 `json:"idleTimeout,omitempty" tfsdk:"idle_timeout"`
-	// The time at which the datastore instance was last changed. This property is read only and is ignored on PUT and POST requests.
-	LastModified *time.Time `json:"lastModified,omitempty" tfsdk:"last_modified"`
 }
+
+type _JdbcDataStore JdbcDataStore
 
 // NewJdbcDataStore instantiates a new JdbcDataStore object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewJdbcDataStore(driverClass string, type_ string) *JdbcDataStore {
+func NewJdbcDataStore(type_ string, driverClass string) *JdbcDataStore {
 	this := JdbcDataStore{}
 	this.Type = type_
 	this.DriverClass = driverClass
@@ -68,6 +77,126 @@ func NewJdbcDataStore(driverClass string, type_ string) *JdbcDataStore {
 func NewJdbcDataStoreWithDefaults() *JdbcDataStore {
 	this := JdbcDataStore{}
 	return &this
+}
+
+// GetType returns the Type field value
+func (o *JdbcDataStore) GetType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value
+// and a boolean to check if the value has been set.
+func (o *JdbcDataStore) GetTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Type, true
+}
+
+// SetType sets field value
+func (o *JdbcDataStore) SetType(v string) {
+	o.Type = v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *JdbcDataStore) GetId() string {
+	if o == nil || IsNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *JdbcDataStore) GetIdOk() (*string, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *JdbcDataStore) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *JdbcDataStore) SetId(v string) {
+	o.Id = &v
+}
+
+// GetMaskAttributeValues returns the MaskAttributeValues field value if set, zero value otherwise.
+func (o *JdbcDataStore) GetMaskAttributeValues() bool {
+	if o == nil || IsNil(o.MaskAttributeValues) {
+		var ret bool
+		return ret
+	}
+	return *o.MaskAttributeValues
+}
+
+// GetMaskAttributeValuesOk returns a tuple with the MaskAttributeValues field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *JdbcDataStore) GetMaskAttributeValuesOk() (*bool, bool) {
+	if o == nil || IsNil(o.MaskAttributeValues) {
+		return nil, false
+	}
+	return o.MaskAttributeValues, true
+}
+
+// HasMaskAttributeValues returns a boolean if a field has been set.
+func (o *JdbcDataStore) HasMaskAttributeValues() bool {
+	if o != nil && !IsNil(o.MaskAttributeValues) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaskAttributeValues gets a reference to the given bool and assigns it to the MaskAttributeValues field.
+func (o *JdbcDataStore) SetMaskAttributeValues(v bool) {
+	o.MaskAttributeValues = &v
+}
+
+// GetLastModified returns the LastModified field value if set, zero value otherwise.
+func (o *JdbcDataStore) GetLastModified() time.Time {
+	if o == nil || IsNil(o.LastModified) {
+		var ret time.Time
+		return ret
+	}
+	return *o.LastModified
+}
+
+// GetLastModifiedOk returns a tuple with the LastModified field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *JdbcDataStore) GetLastModifiedOk() (*time.Time, bool) {
+	if o == nil || IsNil(o.LastModified) {
+		return nil, false
+	}
+	return o.LastModified, true
+}
+
+// HasLastModified returns a boolean if a field has been set.
+func (o *JdbcDataStore) HasLastModified() bool {
+	if o != nil && !IsNil(o.LastModified) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastModified gets a reference to the given time.Time and assigns it to the LastModified field.
+func (o *JdbcDataStore) SetLastModified(v time.Time) {
+	o.LastModified = &v
 }
 
 // GetConnectionUrlTags returns the ConnectionUrlTags field value if set, zero value otherwise.
@@ -478,38 +607,6 @@ func (o *JdbcDataStore) SetIdleTimeout(v int64) {
 	o.IdleTimeout = &v
 }
 
-// GetLastModified returns the LastModified field value if set, zero value otherwise.
-func (o *JdbcDataStore) GetLastModified() time.Time {
-	if o == nil || IsNil(o.LastModified) {
-		var ret time.Time
-		return ret
-	}
-	return *o.LastModified
-}
-
-// GetLastModifiedOk returns a tuple with the LastModified field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *JdbcDataStore) GetLastModifiedOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastModified) {
-		return nil, false
-	}
-	return o.LastModified, true
-}
-
-// HasLastModified returns a boolean if a field has been set.
-func (o *JdbcDataStore) HasLastModified() bool {
-	if o != nil && !IsNil(o.LastModified) {
-		return true
-	}
-
-	return false
-}
-
-// SetLastModified gets a reference to the given time.Time and assigns it to the LastModified field.
-func (o *JdbcDataStore) SetLastModified(v time.Time) {
-	o.LastModified = &v
-}
-
 func (o JdbcDataStore) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -520,13 +617,15 @@ func (o JdbcDataStore) MarshalJSON() ([]byte, error) {
 
 func (o JdbcDataStore) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	serializedDataStore, errDataStore := json.Marshal(o.DataStore)
-	if errDataStore != nil {
-		return map[string]interface{}{}, errDataStore
+	toSerialize["type"] = o.Type
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
-	errDataStore = json.Unmarshal([]byte(serializedDataStore), &toSerialize)
-	if errDataStore != nil {
-		return map[string]interface{}{}, errDataStore
+	if !IsNil(o.MaskAttributeValues) {
+		toSerialize["maskAttributeValues"] = o.MaskAttributeValues
+	}
+	if !IsNil(o.LastModified) {
+		toSerialize["lastModified"] = o.LastModified
 	}
 	if !IsNil(o.ConnectionUrlTags) {
 		toSerialize["connectionUrlTags"] = o.ConnectionUrlTags
@@ -565,10 +664,44 @@ func (o JdbcDataStore) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.IdleTimeout) {
 		toSerialize["idleTimeout"] = o.IdleTimeout
 	}
-	if !IsNil(o.LastModified) {
-		toSerialize["lastModified"] = o.LastModified
-	}
 	return toSerialize, nil
+}
+
+func (o *JdbcDataStore) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"type",
+		"driverClass",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varJdbcDataStore := _JdbcDataStore{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varJdbcDataStore)
+
+	if err != nil {
+		return err
+	}
+
+	*o = JdbcDataStore(varJdbcDataStore)
+
+	return err
 }
 
 type NullableJdbcDataStore struct {

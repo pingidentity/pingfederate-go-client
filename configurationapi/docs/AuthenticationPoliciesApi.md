@@ -33,25 +33,25 @@ Create an authentication policy fragment.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewAuthenticationPolicyFragment() // AuthenticationPolicyFragment | Configuration of the authentication policy fragment.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	body := *openapiclient.NewAuthenticationPolicyFragment() // AuthenticationPolicyFragment | Configuration of the authentication policy fragment.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPoliciesAPI.CreateFragment(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.CreateFragment``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateFragment`: AuthenticationPolicyFragment
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.CreateFragment`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationPoliciesAPI.CreateFragment(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.CreateFragment``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateFragment`: AuthenticationPolicyFragment
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.CreateFragment`: %v\n", resp)
 }
 ```
 
@@ -99,25 +99,25 @@ Create a new authentication policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewAuthenticationPolicyTree() // AuthenticationPolicyTree | Configuration of the authentication policy.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	body := *openapiclient.NewAuthenticationPolicyTree() // AuthenticationPolicyTree | Configuration of the authentication policy.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPoliciesAPI.CreatePolicy(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.CreatePolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreatePolicy`: AuthenticationPolicyTree
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.CreatePolicy`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationPoliciesAPI.CreatePolicy(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.CreatePolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreatePolicy`: AuthenticationPolicyTree
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.CreatePolicy`: %v\n", resp)
 }
 ```
 
@@ -165,22 +165,22 @@ Delete an authentication policy fragment.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the policy fragment to delete.
+	id := "id_example" // string | ID of the policy fragment to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AuthenticationPoliciesAPI.DeleteFragment(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.DeleteFragment``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.AuthenticationPoliciesAPI.DeleteFragment(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.DeleteFragment``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -231,22 +231,22 @@ Delete an authentication policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | Authentication policy Id.
+	id := "id_example" // string | Authentication policy Id.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AuthenticationPoliciesAPI.DeletePolicy(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.DeletePolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.AuthenticationPoliciesAPI.DeletePolicy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.DeletePolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -297,23 +297,23 @@ Get the authentication policies settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPoliciesAPI.GetAuthenticationPolicySettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.GetAuthenticationPolicySettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAuthenticationPolicySettings`: AuthenticationPoliciesSettings
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.GetAuthenticationPolicySettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationPoliciesAPI.GetAuthenticationPolicySettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.GetAuthenticationPolicySettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAuthenticationPolicySettings`: AuthenticationPoliciesSettings
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.GetAuthenticationPolicySettings`: %v\n", resp)
 }
 ```
 
@@ -356,23 +356,23 @@ Get the default configured authentication policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPoliciesAPI.GetDefaultAuthenticationPolicy(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.GetDefaultAuthenticationPolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetDefaultAuthenticationPolicy`: AuthenticationPolicy
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.GetDefaultAuthenticationPolicy`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationPoliciesAPI.GetDefaultAuthenticationPolicy(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.GetDefaultAuthenticationPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetDefaultAuthenticationPolicy`: AuthenticationPolicy
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.GetDefaultAuthenticationPolicy`: %v\n", resp)
 }
 ```
 
@@ -415,24 +415,24 @@ Get an authentication policy fragment by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the policy fragment to fetch.
+	id := "id_example" // string | ID of the policy fragment to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPoliciesAPI.GetFragment(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.GetFragment``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetFragment`: AuthenticationPolicyFragment
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.GetFragment`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationPoliciesAPI.GetFragment(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.GetFragment``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetFragment`: AuthenticationPolicyFragment
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.GetFragment`: %v\n", resp)
 }
 ```
 
@@ -483,26 +483,26 @@ Get all of the authentication policies fragments.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    page := int64(56) // int64 | Page number to retrieve. (optional)
-    numberPerPage := int64(56) // int64 | Number of fragments per page. (optional)
-    filter := "filter_example" // string | Filter criteria limits the fragments that are returned to only those that match it. The filter criteria is compared to the fragment instance name and ID fields. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. (optional)
+	page := int64(56) // int64 | Page number to retrieve. (optional)
+	numberPerPage := int64(56) // int64 | Number of fragments per page. (optional)
+	filter := "filter_example" // string | Filter criteria limits the fragments that are returned to only those that match it. The filter criteria is compared to the fragment instance name and ID fields. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPoliciesAPI.GetFragments(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.GetFragments``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetFragments`: AuthenticationPolicyFragments
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.GetFragments`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationPoliciesAPI.GetFragments(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.GetFragments``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetFragments`: AuthenticationPolicyFragments
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.GetFragments`: %v\n", resp)
 }
 ```
 
@@ -551,24 +551,24 @@ Get an authentication policy by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | Authentication policy Id.
+	id := "id_example" // string | Authentication policy Id.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPoliciesAPI.GetPolicy(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.GetPolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetPolicy`: AuthenticationPolicyTree
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.GetPolicy`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationPoliciesAPI.GetPolicy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.GetPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetPolicy`: AuthenticationPolicyTree
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.GetPolicy`: %v\n", resp)
 }
 ```
 
@@ -619,23 +619,23 @@ Move an authentication policy to a location within the policy tree.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | Authentication policy Id.
-    body := *openapiclient.NewMoveItemRequest("Location_example") // MoveItemRequest | Metadata about where to move the policy
+	id := "id_example" // string | Authentication policy Id.
+	body := *openapiclient.NewMoveItemRequest("Location_example") // MoveItemRequest | Metadata about where to move the policy
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AuthenticationPoliciesAPI.MovePolicy(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.MovePolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.AuthenticationPoliciesAPI.MovePolicy(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.MovePolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -687,24 +687,24 @@ Set the authentication policies settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewAuthenticationPoliciesSettings() // AuthenticationPoliciesSettings | Authentication policies settings.
+	body := *openapiclient.NewAuthenticationPoliciesSettings() // AuthenticationPoliciesSettings | Authentication policies settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPoliciesAPI.UpdateAuthenticationPolicySettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.UpdateAuthenticationPolicySettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateAuthenticationPolicySettings`: AuthenticationPoliciesSettings
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.UpdateAuthenticationPolicySettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationPoliciesAPI.UpdateAuthenticationPolicySettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.UpdateAuthenticationPolicySettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateAuthenticationPolicySettings`: AuthenticationPoliciesSettings
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.UpdateAuthenticationPolicySettings`: %v\n", resp)
 }
 ```
 
@@ -751,25 +751,25 @@ Set the default authentication policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewAuthenticationPolicy() // AuthenticationPolicy | Default authentication policy.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	body := *openapiclient.NewAuthenticationPolicy() // AuthenticationPolicy | Default authentication policy.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPoliciesAPI.UpdateDefaultAuthenticationPolicy(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.UpdateDefaultAuthenticationPolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateDefaultAuthenticationPolicy`: AuthenticationPolicy
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.UpdateDefaultAuthenticationPolicy`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationPoliciesAPI.UpdateDefaultAuthenticationPolicy(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.UpdateDefaultAuthenticationPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateDefaultAuthenticationPolicy`: AuthenticationPolicy
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.UpdateDefaultAuthenticationPolicy`: %v\n", resp)
 }
 ```
 
@@ -817,26 +817,26 @@ Update an authentication policy fragment.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the policy fragment to  update.
-    body := *openapiclient.NewAuthenticationPolicyFragment() // AuthenticationPolicyFragment | Configuration of the authentication policy fragment.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	id := "id_example" // string | ID of the policy fragment to  update.
+	body := *openapiclient.NewAuthenticationPolicyFragment() // AuthenticationPolicyFragment | Configuration of the authentication policy fragment.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPoliciesAPI.UpdateFragment(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.UpdateFragment``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateFragment`: AuthenticationPolicyFragment
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.UpdateFragment`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationPoliciesAPI.UpdateFragment(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.UpdateFragment``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateFragment`: AuthenticationPolicyFragment
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.UpdateFragment`: %v\n", resp)
 }
 ```
 
@@ -889,26 +889,26 @@ Update an authentication policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | Authentication policy Id.
-    body := *openapiclient.NewAuthenticationPolicyTree() // AuthenticationPolicyTree | Configuration of the authentication policy.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	id := "id_example" // string | Authentication policy Id.
+	body := *openapiclient.NewAuthenticationPolicyTree() // AuthenticationPolicyTree | Configuration of the authentication policy.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationPoliciesAPI.UpdatePolicy(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.UpdatePolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdatePolicy`: AuthenticationPolicyTree
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.UpdatePolicy`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationPoliciesAPI.UpdatePolicy(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationPoliciesAPI.UpdatePolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdatePolicy`: AuthenticationPolicyTree
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationPoliciesAPI.UpdatePolicy`: %v\n", resp)
 }
 ```
 

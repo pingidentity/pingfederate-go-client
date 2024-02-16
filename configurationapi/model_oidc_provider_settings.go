@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the OIDCProviderSettings type satisfies the MappedNullable interface at compile time
@@ -56,6 +58,8 @@ type OIDCProviderSettings struct {
 	// The Post-Logout Redirect URI, where the OpenID Provider may redirect the user when RP-Initiated Logout has completed. This is a read-only parameter.
 	PostLogoutRedirectUri *string `json:"postLogoutRedirectUri,omitempty" tfsdk:"post_logout_redirect_uri"`
 }
+
+type _OIDCProviderSettings OIDCProviderSettings
 
 // NewOIDCProviderSettings instantiates a new OIDCProviderSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -679,6 +683,45 @@ func (o OIDCProviderSettings) ToMap() (map[string]interface{}, error) {
 		toSerialize["postLogoutRedirectUri"] = o.PostLogoutRedirectUri
 	}
 	return toSerialize, nil
+}
+
+func (o *OIDCProviderSettings) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"scopes",
+		"authorizationEndpoint",
+		"loginType",
+		"jwksURL",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varOIDCProviderSettings := _OIDCProviderSettings{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varOIDCProviderSettings)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OIDCProviderSettings(varOIDCProviderSettings)
+
+	return err
 }
 
 type NullableOIDCProviderSettings struct {

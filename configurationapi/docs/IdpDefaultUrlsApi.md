@@ -21,23 +21,23 @@ Gets the IDP Default URL settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpDefaultUrlsAPI.GetDefaultUrl(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpDefaultUrlsAPI.GetDefaultUrl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetDefaultUrl`: IdpDefaultUrl
-    fmt.Fprintf(os.Stdout, "Response from `IdpDefaultUrlsAPI.GetDefaultUrl`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpDefaultUrlsAPI.GetDefaultUrl(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpDefaultUrlsAPI.GetDefaultUrl``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetDefaultUrl`: IdpDefaultUrl
+	fmt.Fprintf(os.Stdout, "Response from `IdpDefaultUrlsAPI.GetDefaultUrl`: %v\n", resp)
 }
 ```
 
@@ -80,24 +80,24 @@ Update the IDP Default URL settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewIdpDefaultUrl("IdpErrorMsg_example") // IdpDefaultUrl | Configuration for the IdP Default URL settings.
+	body := *openapiclient.NewIdpDefaultUrl("IdpErrorMsg_example") // IdpDefaultUrl | Configuration for the IdP Default URL settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpDefaultUrlsAPI.UpdateDefaultUrlSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpDefaultUrlsAPI.UpdateDefaultUrlSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateDefaultUrlSettings`: IdpDefaultUrl
-    fmt.Fprintf(os.Stdout, "Response from `IdpDefaultUrlsAPI.UpdateDefaultUrlSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpDefaultUrlsAPI.UpdateDefaultUrlSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpDefaultUrlsAPI.UpdateDefaultUrlSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateDefaultUrlSettings`: IdpDefaultUrl
+	fmt.Fprintf(os.Stdout, "Response from `IdpDefaultUrlsAPI.UpdateDefaultUrlSettings`: %v\n", resp)
 }
 ```
 

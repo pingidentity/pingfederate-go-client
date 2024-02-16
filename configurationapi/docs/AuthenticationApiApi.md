@@ -26,24 +26,24 @@ Create a new Authentication API Application.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewAuthnApiApplication("Id_example", "Name_example", "Url_example") // AuthnApiApplication | Configuration for new Authentication API Application.
+	body := *openapiclient.NewAuthnApiApplication("Id_example", "Name_example", "Url_example") // AuthnApiApplication | Configuration for new Authentication API Application.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationApiAPI.CreateApplication(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiAPI.CreateApplication``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateApplication`: AuthnApiApplication
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiAPI.CreateApplication`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationApiAPI.CreateApplication(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiAPI.CreateApplication``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateApplication`: AuthnApiApplication
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiAPI.CreateApplication`: %v\n", resp)
 }
 ```
 
@@ -92,22 +92,22 @@ Delete an Authentication API Application.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of Authentication API Application to delete.
+	id := "id_example" // string | ID of Authentication API Application to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AuthenticationApiAPI.DeleteApplication(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiAPI.DeleteApplication``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.AuthenticationApiAPI.DeleteApplication(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiAPI.DeleteApplication``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -160,24 +160,24 @@ Find Authentication API Application by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the Authentication API Application to fetch.
+	id := "id_example" // string | ID of the Authentication API Application to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationApiAPI.GetApplication(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiAPI.GetApplication``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetApplication`: AuthnApiApplication
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiAPI.GetApplication`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationApiAPI.GetApplication(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiAPI.GetApplication``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetApplication`: AuthnApiApplication
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiAPI.GetApplication`: %v\n", resp)
 }
 ```
 
@@ -228,23 +228,23 @@ Get the collection of Authentication API Applications.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationApiAPI.GetAuthenticationApiApplications(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiAPI.GetAuthenticationApiApplications``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAuthenticationApiApplications`: AuthnApiApplications
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiAPI.GetAuthenticationApiApplications`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationApiAPI.GetAuthenticationApiApplications(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiAPI.GetAuthenticationApiApplications``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAuthenticationApiApplications`: AuthnApiApplications
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiAPI.GetAuthenticationApiApplications`: %v\n", resp)
 }
 ```
 
@@ -287,23 +287,23 @@ Get the Authentication API settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationApiAPI.GetAuthenticationApiSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiAPI.GetAuthenticationApiSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAuthenticationApiSettings`: AuthnApiSettings
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiAPI.GetAuthenticationApiSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationApiAPI.GetAuthenticationApiSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiAPI.GetAuthenticationApiSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAuthenticationApiSettings`: AuthnApiSettings
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiAPI.GetAuthenticationApiSettings`: %v\n", resp)
 }
 ```
 
@@ -348,25 +348,25 @@ Update an Authentication API Application.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the Authentication API Application to update.
-    body := *openapiclient.NewAuthnApiApplication("Id_example", "Name_example", "Url_example") // AuthnApiApplication | Configuration for updated application.
+	id := "id_example" // string | ID of the Authentication API Application to update.
+	body := *openapiclient.NewAuthnApiApplication("Id_example", "Name_example", "Url_example") // AuthnApiApplication | Configuration for updated application.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationApiAPI.UpdateApplication(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiAPI.UpdateApplication``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateApplication`: AuthnApiApplication
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiAPI.UpdateApplication`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationApiAPI.UpdateApplication(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiAPI.UpdateApplication``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateApplication`: AuthnApiApplication
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiAPI.UpdateApplication`: %v\n", resp)
 }
 ```
 
@@ -418,24 +418,24 @@ Set the Authentication API settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewAuthnApiSettings() // AuthnApiSettings | Authentication API Settings
+	body := *openapiclient.NewAuthnApiSettings() // AuthnApiSettings | Authentication API Settings
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationApiAPI.UpdateAuthenticationApiSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiAPI.UpdateAuthenticationApiSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateAuthenticationApiSettings`: AuthnApiSettings
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiAPI.UpdateAuthenticationApiSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationApiAPI.UpdateAuthenticationApiSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationApiAPI.UpdateAuthenticationApiSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateAuthenticationApiSettings`: AuthnApiSettings
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationApiAPI.UpdateAuthenticationApiSettings`: %v\n", resp)
 }
 ```
 

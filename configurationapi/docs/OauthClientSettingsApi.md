@@ -21,23 +21,23 @@ Configure the client settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientSettingsAPI.GetOauthClientSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientSettingsAPI.GetOauthClientSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOauthClientSettings`: ClientSettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientSettingsAPI.GetOauthClientSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthClientSettingsAPI.GetOauthClientSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthClientSettingsAPI.GetOauthClientSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOauthClientSettings`: ClientSettings
+	fmt.Fprintf(os.Stdout, "Response from `OauthClientSettingsAPI.GetOauthClientSettings`: %v\n", resp)
 }
 ```
 
@@ -80,24 +80,24 @@ Update the client settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewClientSettings() // ClientSettings | Configuration for client settings.
+	body := *openapiclient.NewClientSettings() // ClientSettings | Configuration for client settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientSettingsAPI.UpdateOauthClientSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientSettingsAPI.UpdateOauthClientSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateOauthClientSettings`: ClientSettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientSettingsAPI.UpdateOauthClientSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthClientSettingsAPI.UpdateOauthClientSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthClientSettingsAPI.UpdateOauthClientSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateOauthClientSettings`: ClientSettings
+	fmt.Fprintf(os.Stdout, "Response from `OauthClientSettingsAPI.UpdateOauthClientSettings`: %v\n", resp)
 }
 ```
 

@@ -26,24 +26,24 @@ Create an authorization detail processor plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewAuthorizationDetailProcessor("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // AuthorizationDetailProcessor | Configuration for a authorization detail processor plugin instance.
+	body := *openapiclient.NewAuthorizationDetailProcessor("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // AuthorizationDetailProcessor | Configuration for a authorization detail processor plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthorizationDetailProcessorsAPI.CreateAuthorizationDetailProcessor(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsAPI.CreateAuthorizationDetailProcessor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateAuthorizationDetailProcessor`: AuthorizationDetailProcessor
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsAPI.CreateAuthorizationDetailProcessor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthorizationDetailProcessorsAPI.CreateAuthorizationDetailProcessor(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsAPI.CreateAuthorizationDetailProcessor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateAuthorizationDetailProcessor`: AuthorizationDetailProcessor
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsAPI.CreateAuthorizationDetailProcessor`: %v\n", resp)
 }
 ```
 
@@ -90,22 +90,22 @@ Delete an authorization detail processor plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of an authorization detail processor plugin instance.
+	id := "id_example" // string | ID of an authorization detail processor plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthAuthorizationDetailProcessorsAPI.DeleteAuthorizationDetailProcessor(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsAPI.DeleteAuthorizationDetailProcessor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.OauthAuthorizationDetailProcessorsAPI.DeleteAuthorizationDetailProcessor(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsAPI.DeleteAuthorizationDetailProcessor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -156,24 +156,24 @@ Get a specific authorization detail processor plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of an authorization detail processor plugin instance.
+	id := "id_example" // string | ID of an authorization detail processor plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessor(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAuthorizationDetailProcessor`: AuthorizationDetailProcessor
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessor(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAuthorizationDetailProcessor`: AuthorizationDetailProcessor
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessor`: %v\n", resp)
 }
 ```
 
@@ -224,24 +224,24 @@ Get an authorization detail processor plugin descriptor.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of authorization detail processor plugin descriptor.
+	id := "id_example" // string | ID of authorization detail processor plugin descriptor.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessorPluginDescriptor(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessorPluginDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAuthorizationDetailProcessorPluginDescriptor`: AuthorizationDetailProcessorDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessorPluginDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessorPluginDescriptor(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessorPluginDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAuthorizationDetailProcessorPluginDescriptor`: AuthorizationDetailProcessorDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessorPluginDescriptor`: %v\n", resp)
 }
 ```
 
@@ -292,23 +292,23 @@ Get a list of available authorization detail processor plugin descriptors.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessorPluginDescriptors(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessorPluginDescriptors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAuthorizationDetailProcessorPluginDescriptors`: AuthorizationDetailProcessorDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessorPluginDescriptors`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessorPluginDescriptors(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessorPluginDescriptors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAuthorizationDetailProcessorPluginDescriptors`: AuthorizationDetailProcessorDescriptors
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessorPluginDescriptors`: %v\n", resp)
 }
 ```
 
@@ -351,23 +351,23 @@ Get a list of authorization detail processor plugin instances.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessors(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAuthorizationDetailProcessors`: AuthorizationDetailProcessors
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessors`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessors(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAuthorizationDetailProcessors`: AuthorizationDetailProcessors
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsAPI.GetAuthorizationDetailProcessors`: %v\n", resp)
 }
 ```
 
@@ -410,25 +410,25 @@ Update an authorization detail processor plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of an authorization detail processor plugin instance.
-    body := *openapiclient.NewAuthorizationDetailProcessor("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // AuthorizationDetailProcessor | Configuration for a authorization detail processor plugin instance.
+	id := "id_example" // string | ID of an authorization detail processor plugin instance.
+	body := *openapiclient.NewAuthorizationDetailProcessor("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // AuthorizationDetailProcessor | Configuration for a authorization detail processor plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthorizationDetailProcessorsAPI.UpdateAuthorizationDetailProcessor(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsAPI.UpdateAuthorizationDetailProcessor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateAuthorizationDetailProcessor`: AuthorizationDetailProcessor
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsAPI.UpdateAuthorizationDetailProcessor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthorizationDetailProcessorsAPI.UpdateAuthorizationDetailProcessor(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailProcessorsAPI.UpdateAuthorizationDetailProcessor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateAuthorizationDetailProcessor`: AuthorizationDetailProcessor
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailProcessorsAPI.UpdateAuthorizationDetailProcessor`: %v\n", resp)
 }
 ```
 

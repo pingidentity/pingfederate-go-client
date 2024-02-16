@@ -21,24 +21,24 @@ Get the list of available connector descriptors.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | the type of connector descriptor to fetch.
+	id := "id_example" // string | the type of connector descriptor to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpConnectorsAPI.GetIdpConnectorDescriptorById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpConnectorsAPI.GetIdpConnectorDescriptorById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetIdpConnectorDescriptorById`: SaasPluginDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `IdpConnectorsAPI.GetIdpConnectorDescriptorById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpConnectorsAPI.GetIdpConnectorDescriptorById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpConnectorsAPI.GetIdpConnectorDescriptorById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetIdpConnectorDescriptorById`: SaasPluginDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `IdpConnectorsAPI.GetIdpConnectorDescriptorById`: %v\n", resp)
 }
 ```
 
@@ -89,23 +89,23 @@ Get the list of available IdP connector descriptors.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpConnectorsAPI.GetIdpConnectorDescriptors(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpConnectorsAPI.GetIdpConnectorDescriptors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetIdpConnectorDescriptors`: SaasPluginDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `IdpConnectorsAPI.GetIdpConnectorDescriptors`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpConnectorsAPI.GetIdpConnectorDescriptors(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpConnectorsAPI.GetIdpConnectorDescriptors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetIdpConnectorDescriptors`: SaasPluginDescriptors
+	fmt.Fprintf(os.Stdout, "Response from `IdpConnectorsAPI.GetIdpConnectorDescriptors`: %v\n", resp)
 }
 ```
 

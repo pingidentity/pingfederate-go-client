@@ -28,24 +28,24 @@ Create a new authentication selector instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewAuthenticationSelector("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // AuthenticationSelector | Configuration for a new authentication selector instance.
+	body := *openapiclient.NewAuthenticationSelector("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // AuthenticationSelector | Configuration for a new authentication selector instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationSelectorsAPI.CreateAuthenticationSelector(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsAPI.CreateAuthenticationSelector``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateAuthenticationSelector`: AuthenticationSelector
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsAPI.CreateAuthenticationSelector`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationSelectorsAPI.CreateAuthenticationSelector(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsAPI.CreateAuthenticationSelector``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateAuthenticationSelector`: AuthenticationSelector
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsAPI.CreateAuthenticationSelector`: %v\n", resp)
 }
 ```
 
@@ -94,22 +94,22 @@ Delete an Authentication Selector instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of Authentication Selector to delete.
+	id := "id_example" // string | ID of Authentication Selector to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AuthenticationSelectorsAPI.DeleteAuthenticationSelector(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsAPI.DeleteAuthenticationSelector``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.AuthenticationSelectorsAPI.DeleteAuthenticationSelector(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsAPI.DeleteAuthenticationSelector``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -162,24 +162,24 @@ Get an Authentication Selector instance by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of Authentication Selector instance to fetch.
+	id := "id_example" // string | ID of Authentication Selector instance to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationSelectorsAPI.GetAuthenticationSelector(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsAPI.GetAuthenticationSelector``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAuthenticationSelector`: AuthenticationSelector
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsAPI.GetAuthenticationSelector`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationSelectorsAPI.GetAuthenticationSelector(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsAPI.GetAuthenticationSelector``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAuthenticationSelector`: AuthenticationSelector
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsAPI.GetAuthenticationSelector`: %v\n", resp)
 }
 ```
 
@@ -230,23 +230,23 @@ Get the list of available Authentication Selector descriptors.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationSelectorsAPI.GetAuthenticationSelectorDescriptors(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsAPI.GetAuthenticationSelectorDescriptors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAuthenticationSelectorDescriptors`: AuthenticationSelectorDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsAPI.GetAuthenticationSelectorDescriptors`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationSelectorsAPI.GetAuthenticationSelectorDescriptors(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsAPI.GetAuthenticationSelectorDescriptors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAuthenticationSelectorDescriptors`: AuthenticationSelectorDescriptors
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsAPI.GetAuthenticationSelectorDescriptors`: %v\n", resp)
 }
 ```
 
@@ -291,24 +291,24 @@ Get the description of an Authentication Selector plugin by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of Authentication Selector descriptor to fetch.
+	id := "id_example" // string | ID of Authentication Selector descriptor to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationSelectorsAPI.GetAuthenticationSelectorDescriptorsById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsAPI.GetAuthenticationSelectorDescriptorsById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAuthenticationSelectorDescriptorsById`: AuthenticationSelectorDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsAPI.GetAuthenticationSelectorDescriptorsById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationSelectorsAPI.GetAuthenticationSelectorDescriptorsById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsAPI.GetAuthenticationSelectorDescriptorsById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAuthenticationSelectorDescriptorsById`: AuthenticationSelectorDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsAPI.GetAuthenticationSelectorDescriptorsById`: %v\n", resp)
 }
 ```
 
@@ -359,26 +359,26 @@ Get the list of configured Authentication Selector instances.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    page := int64(56) // int64 | Page number to retrieve. (optional)
-    numberPerPage := int64(56) // int64 | Number of selectors per page. (optional)
-    filter := "filter_example" // string | Filter criteria limits the authentication selector instances that are returned to only those that match it. The filter criteria is compared to the authentication selector instance name and ID fields. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. (optional)
+	page := int64(56) // int64 | Page number to retrieve. (optional)
+	numberPerPage := int64(56) // int64 | Number of selectors per page. (optional)
+	filter := "filter_example" // string | Filter criteria limits the authentication selector instances that are returned to only those that match it. The filter criteria is compared to the authentication selector instance name and ID fields. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationSelectorsAPI.GetAuthenticationSelectors(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsAPI.GetAuthenticationSelectors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAuthenticationSelectors`: AuthenticationSelectors
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsAPI.GetAuthenticationSelectors`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationSelectorsAPI.GetAuthenticationSelectors(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsAPI.GetAuthenticationSelectors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAuthenticationSelectors`: AuthenticationSelectors
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsAPI.GetAuthenticationSelectors`: %v\n", resp)
 }
 ```
 
@@ -429,25 +429,25 @@ Update an authentication selector instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the authentication selector instance.
-    body := *openapiclient.NewAuthenticationSelector("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // AuthenticationSelector | Configuration for updated authentication selector instance.
+	id := "id_example" // string | ID of the authentication selector instance.
+	body := *openapiclient.NewAuthenticationSelector("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // AuthenticationSelector | Configuration for updated authentication selector instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthenticationSelectorsAPI.UpdateAuthenticationSelector(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsAPI.UpdateAuthenticationSelector``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateAuthenticationSelector`: AuthenticationSelector
-    fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsAPI.UpdateAuthenticationSelector`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthenticationSelectorsAPI.UpdateAuthenticationSelector(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationSelectorsAPI.UpdateAuthenticationSelector``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateAuthenticationSelector`: AuthenticationSelector
+	fmt.Fprintf(os.Stdout, "Response from `AuthenticationSelectorsAPI.UpdateAuthenticationSelector`: %v\n", resp)
 }
 ```
 

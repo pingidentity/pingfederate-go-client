@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 	"time"
 )
 
@@ -48,6 +50,8 @@ type OpenIdConnectPolicy struct {
 	// The time at which the policy was last changed. This property is read only and is ignored on PUT and POST requests.
 	LastModified *time.Time `json:"lastModified,omitempty" tfsdk:"last_modified"`
 }
+
+type _OpenIdConnectPolicy OpenIdConnectPolicy
 
 // NewOpenIdConnectPolicy instantiates a new OpenIdConnectPolicy object
 // This constructor will assign default values to properties that have it defined,
@@ -557,6 +561,46 @@ func (o OpenIdConnectPolicy) ToMap() (map[string]interface{}, error) {
 		toSerialize["lastModified"] = o.LastModified
 	}
 	return toSerialize, nil
+}
+
+func (o *OpenIdConnectPolicy) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"id",
+		"name",
+		"accessTokenManagerRef",
+		"attributeContract",
+		"attributeMapping",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varOpenIdConnectPolicy := _OpenIdConnectPolicy{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varOpenIdConnectPolicy)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OpenIdConnectPolicy(varOpenIdConnectPolicy)
+
+	return err
 }
 
 type NullableOpenIdConnectPolicy struct {

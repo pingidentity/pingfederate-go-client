@@ -23,23 +23,23 @@ Get the cluster configuration settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ClusterAPI.GetClusterSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ClusterAPI.GetClusterSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetClusterSettings`: ClusterSettings
-    fmt.Fprintf(os.Stdout, "Response from `ClusterAPI.GetClusterSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ClusterAPI.GetClusterSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ClusterAPI.GetClusterSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetClusterSettings`: ClusterSettings
+	fmt.Fprintf(os.Stdout, "Response from `ClusterAPI.GetClusterSettings`: %v\n", resp)
 }
 ```
 
@@ -82,23 +82,23 @@ Get information on the current status of the cluster.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ClusterAPI.GetClusterStatus(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ClusterAPI.GetClusterStatus``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetClusterStatus`: ClusterStatus
-    fmt.Fprintf(os.Stdout, "Response from `ClusterAPI.GetClusterStatus`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ClusterAPI.GetClusterStatus(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ClusterAPI.GetClusterStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetClusterStatus`: ClusterStatus
+	fmt.Fprintf(os.Stdout, "Response from `ClusterAPI.GetClusterStatus`: %v\n", resp)
 }
 ```
 
@@ -141,23 +141,23 @@ Replicate configuration updates to all nodes in the cluster.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ClusterAPI.StartReplication(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ClusterAPI.StartReplication``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `StartReplication`: ApiResult
-    fmt.Fprintf(os.Stdout, "Response from `ClusterAPI.StartReplication`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ClusterAPI.StartReplication(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ClusterAPI.StartReplication``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `StartReplication`: ApiResult
+	fmt.Fprintf(os.Stdout, "Response from `ClusterAPI.StartReplication`: %v\n", resp)
 }
 ```
 
@@ -200,24 +200,24 @@ Update the cluster configuration settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewClusterSettings() // ClusterSettings | Configuration for cluster settings.
+	body := *openapiclient.NewClusterSettings() // ClusterSettings | Configuration for cluster settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ClusterAPI.UpdateClusterSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ClusterAPI.UpdateClusterSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateClusterSettings`: ClusterSettings
-    fmt.Fprintf(os.Stdout, "Response from `ClusterAPI.UpdateClusterSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ClusterAPI.UpdateClusterSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ClusterAPI.UpdateClusterSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateClusterSettings`: ClusterSettings
+	fmt.Fprintf(os.Stdout, "Response from `ClusterAPI.UpdateClusterSettings`: %v\n", resp)
 }
 ```
 

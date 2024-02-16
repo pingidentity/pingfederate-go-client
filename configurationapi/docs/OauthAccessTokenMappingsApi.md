@@ -26,25 +26,25 @@ Create a new Access Token Mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewAccessTokenMapping(*openapiclient.NewAccessTokenMappingContext("Type_example", *openapiclient.NewResourceLink("Id_example")), *openapiclient.NewResourceLink("Id_example"), map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // AccessTokenMapping | Configuration for the new Access Token Mapping.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	body := *openapiclient.NewAccessTokenMapping(*openapiclient.NewAccessTokenMappingContext("Type_example", *openapiclient.NewResourceLink("Id_example")), *openapiclient.NewResourceLink("Id_example"), map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // AccessTokenMapping | Configuration for the new Access Token Mapping.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenMappingsAPI.CreateMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenMappingsAPI.CreateMapping``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateMapping`: AccessTokenMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenMappingsAPI.CreateMapping`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAccessTokenMappingsAPI.CreateMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenMappingsAPI.CreateMapping``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateMapping`: AccessTokenMapping
+	fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenMappingsAPI.CreateMapping`: %v\n", resp)
 }
 ```
 
@@ -92,22 +92,22 @@ Delete an Access Token Mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the Access Token Mapping.
+	id := "id_example" // string | ID of the Access Token Mapping.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthAccessTokenMappingsAPI.DeleteMapping(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenMappingsAPI.DeleteMapping``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.OauthAccessTokenMappingsAPI.DeleteMapping(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenMappingsAPI.DeleteMapping``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -158,24 +158,24 @@ Find the Access Token Mapping by its ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the Access Token Mapping.
+	id := "id_example" // string | ID of the Access Token Mapping.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenMappingsAPI.GetMapping(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenMappingsAPI.GetMapping``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetMapping`: AccessTokenMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenMappingsAPI.GetMapping`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAccessTokenMappingsAPI.GetMapping(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenMappingsAPI.GetMapping``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMapping`: AccessTokenMapping
+	fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenMappingsAPI.GetMapping`: %v\n", resp)
 }
 ```
 
@@ -226,23 +226,23 @@ Get the list of Access Token Mappings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenMappingsAPI.GetMappings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenMappingsAPI.GetMappings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetMappings`: []AccessTokenMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenMappingsAPI.GetMappings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAccessTokenMappingsAPI.GetMappings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenMappingsAPI.GetMappings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMappings`: []AccessTokenMapping
+	fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenMappingsAPI.GetMappings`: %v\n", resp)
 }
 ```
 
@@ -287,26 +287,26 @@ Update an Access Token Mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the Access Token Mapping to update.
-    body := *openapiclient.NewAccessTokenMapping(*openapiclient.NewAccessTokenMappingContext("Type_example", *openapiclient.NewResourceLink("Id_example")), *openapiclient.NewResourceLink("Id_example"), map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // AccessTokenMapping | Configuration for updated mapping.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	id := "id_example" // string | ID of the Access Token Mapping to update.
+	body := *openapiclient.NewAccessTokenMapping(*openapiclient.NewAccessTokenMappingContext("Type_example", *openapiclient.NewResourceLink("Id_example")), *openapiclient.NewResourceLink("Id_example"), map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // AccessTokenMapping | Configuration for updated mapping.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAccessTokenMappingsAPI.UpdateMapping(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenMappingsAPI.UpdateMapping``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateMapping`: AccessTokenMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenMappingsAPI.UpdateMapping`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAccessTokenMappingsAPI.UpdateMapping(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAccessTokenMappingsAPI.UpdateMapping``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateMapping`: AccessTokenMapping
+	fmt.Fprintf(os.Stdout, "Response from `OauthAccessTokenMappingsAPI.UpdateMapping`: %v\n", resp)
 }
 ```
 

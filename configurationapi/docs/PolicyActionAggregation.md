@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The authentication selection type. | 
 **Context** | Pointer to **string** | The result context. | [optional] 
+**AuthenticationPolicyContractRef** | [**ResourceLink**](ResourceLink.md) |  | 
+**AttributeMapping** | [**AttributeMapping**](AttributeMapping.md) |  | 
 **AuthenticationSelectorRef** | [**ResourceLink**](ResourceLink.md) |  | 
 **AttributeRules** | Pointer to [**AttributeRules**](AttributeRules.md) |  | [optional] 
 **AuthenticationSource** | [**AuthenticationSource**](AuthenticationSource.md) |  | 
@@ -21,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewPolicyActionAggregation
 
-`func NewPolicyActionAggregation(type_ string, authenticationSelectorRef ResourceLink, authenticationSource AuthenticationSource, fragment ResourceLink, localIdentityRef ResourceLink, outboundAttributeMapping AttributeMapping, ) *PolicyActionAggregation`
+`func NewPolicyActionAggregation(type_ string, authenticationPolicyContractRef ResourceLink, attributeMapping AttributeMapping, authenticationSelectorRef ResourceLink, authenticationSource AuthenticationSource, fragment ResourceLink, localIdentityRef ResourceLink, outboundAttributeMapping AttributeMapping, ) *PolicyActionAggregation`
 
 NewPolicyActionAggregation instantiates a new PolicyActionAggregation object
 This constructor will assign default values to properties that have it defined,
@@ -80,6 +82,46 @@ SetContext sets Context field to given value.
 `func (o *PolicyActionAggregation) HasContext() bool`
 
 HasContext returns a boolean if a field has been set.
+
+### GetAuthenticationPolicyContractRef
+
+`func (o *PolicyActionAggregation) GetAuthenticationPolicyContractRef() ResourceLink`
+
+GetAuthenticationPolicyContractRef returns the AuthenticationPolicyContractRef field if non-nil, zero value otherwise.
+
+### GetAuthenticationPolicyContractRefOk
+
+`func (o *PolicyActionAggregation) GetAuthenticationPolicyContractRefOk() (*ResourceLink, bool)`
+
+GetAuthenticationPolicyContractRefOk returns a tuple with the AuthenticationPolicyContractRef field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthenticationPolicyContractRef
+
+`func (o *PolicyActionAggregation) SetAuthenticationPolicyContractRef(v ResourceLink)`
+
+SetAuthenticationPolicyContractRef sets AuthenticationPolicyContractRef field to given value.
+
+
+### GetAttributeMapping
+
+`func (o *PolicyActionAggregation) GetAttributeMapping() AttributeMapping`
+
+GetAttributeMapping returns the AttributeMapping field if non-nil, zero value otherwise.
+
+### GetAttributeMappingOk
+
+`func (o *PolicyActionAggregation) GetAttributeMappingOk() (*AttributeMapping, bool)`
+
+GetAttributeMappingOk returns a tuple with the AttributeMapping field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributeMapping
+
+`func (o *PolicyActionAggregation) SetAttributeMapping(v AttributeMapping)`
+
+SetAttributeMapping sets AttributeMapping field to given value.
+
 
 ### GetAuthenticationSelectorRef
 

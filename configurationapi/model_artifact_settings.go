@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the ArtifactSettings type satisfies the MappedNullable interface at compile time
@@ -26,6 +28,8 @@ type ArtifactSettings struct {
 	// Source ID for SAML1.x connections
 	SourceId *string `json:"sourceId,omitempty" tfsdk:"source_id"`
 }
+
+type _ArtifactSettings ArtifactSettings
 
 // NewArtifactSettings instantiates a new ArtifactSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -142,6 +146,43 @@ func (o ArtifactSettings) ToMap() (map[string]interface{}, error) {
 		toSerialize["sourceId"] = o.SourceId
 	}
 	return toSerialize, nil
+}
+
+func (o *ArtifactSettings) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"lifetime",
+		"resolverLocations",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varArtifactSettings := _ArtifactSettings{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varArtifactSettings)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ArtifactSettings(varArtifactSettings)
+
+	return err
 }
 
 type NullableArtifactSettings struct {

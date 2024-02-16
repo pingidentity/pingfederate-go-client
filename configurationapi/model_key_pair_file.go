@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the KeyPairFile type satisfies the MappedNullable interface at compile time
@@ -32,6 +34,8 @@ type KeyPairFile struct {
 	// Cryptographic Provider. This is only applicable if Hybrid HSM mode is true.
 	CryptoProvider *string `json:"cryptoProvider,omitempty" tfsdk:"crypto_provider"`
 }
+
+type _KeyPairFile KeyPairFile
 
 // NewKeyPairFile instantiates a new KeyPairFile object
 // This constructor will assign default values to properties that have it defined,
@@ -253,6 +257,43 @@ func (o KeyPairFile) ToMap() (map[string]interface{}, error) {
 		toSerialize["cryptoProvider"] = o.CryptoProvider
 	}
 	return toSerialize, nil
+}
+
+func (o *KeyPairFile) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"fileData",
+		"password",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varKeyPairFile := _KeyPairFile{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varKeyPairFile)
+
+	if err != nil {
+		return err
+	}
+
+	*o = KeyPairFile(varKeyPairFile)
+
+	return err
 }
 
 type NullableKeyPairFile struct {

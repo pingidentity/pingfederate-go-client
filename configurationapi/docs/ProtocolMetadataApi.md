@@ -23,23 +23,23 @@ Get metadata cache duration and reload delay for automated reloading.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProtocolMetadataAPI.GetLifetimeSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProtocolMetadataAPI.GetLifetimeSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetLifetimeSettings`: MetadataLifetimeSettings
-    fmt.Fprintf(os.Stdout, "Response from `ProtocolMetadataAPI.GetLifetimeSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProtocolMetadataAPI.GetLifetimeSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProtocolMetadataAPI.GetLifetimeSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetLifetimeSettings`: MetadataLifetimeSettings
+	fmt.Fprintf(os.Stdout, "Response from `ProtocolMetadataAPI.GetLifetimeSettings`: %v\n", resp)
 }
 ```
 
@@ -82,23 +82,23 @@ Get the certificate ID and algorithm used for metadata signing.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProtocolMetadataAPI.GetSigningSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProtocolMetadataAPI.GetSigningSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSigningSettings`: MetadataSigningSettings
-    fmt.Fprintf(os.Stdout, "Response from `ProtocolMetadataAPI.GetSigningSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProtocolMetadataAPI.GetSigningSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProtocolMetadataAPI.GetSigningSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSigningSettings`: MetadataSigningSettings
+	fmt.Fprintf(os.Stdout, "Response from `ProtocolMetadataAPI.GetSigningSettings`: %v\n", resp)
 }
 ```
 
@@ -141,24 +141,24 @@ Update metadata cache duration and reload delay for automated reloading.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewMetadataLifetimeSettings() // MetadataLifetimeSettings | Metadata lifetime settings.
+	body := *openapiclient.NewMetadataLifetimeSettings() // MetadataLifetimeSettings | Metadata lifetime settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProtocolMetadataAPI.UpdateLifetimeSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProtocolMetadataAPI.UpdateLifetimeSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateLifetimeSettings`: MetadataLifetimeSettings
-    fmt.Fprintf(os.Stdout, "Response from `ProtocolMetadataAPI.UpdateLifetimeSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProtocolMetadataAPI.UpdateLifetimeSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProtocolMetadataAPI.UpdateLifetimeSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateLifetimeSettings`: MetadataLifetimeSettings
+	fmt.Fprintf(os.Stdout, "Response from `ProtocolMetadataAPI.UpdateLifetimeSettings`: %v\n", resp)
 }
 ```
 
@@ -205,24 +205,24 @@ Update the certificate and algorithm for metadata signing.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewMetadataSigningSettings() // MetadataSigningSettings |  (optional)
+	body := *openapiclient.NewMetadataSigningSettings() // MetadataSigningSettings |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProtocolMetadataAPI.UpdateSigningSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProtocolMetadataAPI.UpdateSigningSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateSigningSettings`: MetadataSigningSettings
-    fmt.Fprintf(os.Stdout, "Response from `ProtocolMetadataAPI.UpdateSigningSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProtocolMetadataAPI.UpdateSigningSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProtocolMetadataAPI.UpdateSigningSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSigningSettings`: MetadataSigningSettings
+	fmt.Fprintf(os.Stdout, "Response from `ProtocolMetadataAPI.UpdateSigningSettings`: %v\n", resp)
 }
 ```
 

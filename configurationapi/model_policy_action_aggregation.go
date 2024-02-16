@@ -129,6 +129,66 @@ func (dst *PolicyActionAggregation) UnmarshalJSON(data []byte) error {
 		}
 	}
 
+	// check if the discriminator value is 'CONTINUE'
+	if jsonDict["type"] == "CONTINUE" {
+		// try to unmarshal JSON data into ContinuePolicyAction
+		err = json.Unmarshal(data, &dst.ContinuePolicyAction)
+		if err == nil {
+			return nil // data stored in dst.ContinuePolicyAction, return on the first match
+		} else {
+			dst.ContinuePolicyAction = nil
+			return fmt.Errorf("failed to unmarshal PolicyActionAggregation as ContinuePolicyAction: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'DONE'
+	if jsonDict["type"] == "DONE" {
+		// try to unmarshal JSON data into DonePolicyAction
+		err = json.Unmarshal(data, &dst.DonePolicyAction)
+		if err == nil {
+			return nil // data stored in dst.DonePolicyAction, return on the first match
+		} else {
+			dst.DonePolicyAction = nil
+			return fmt.Errorf("failed to unmarshal PolicyActionAggregation as DonePolicyAction: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'FRAGMENT'
+	if jsonDict["type"] == "FRAGMENT" {
+		// try to unmarshal JSON data into FragmentPolicyAction
+		err = json.Unmarshal(data, &dst.FragmentPolicyAction)
+		if err == nil {
+			return nil // data stored in dst.FragmentPolicyAction, return on the first match
+		} else {
+			dst.FragmentPolicyAction = nil
+			return fmt.Errorf("failed to unmarshal PolicyActionAggregation as FragmentPolicyAction: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'LOCAL_IDENTITY_MAPPING'
+	if jsonDict["type"] == "LOCAL_IDENTITY_MAPPING" {
+		// try to unmarshal JSON data into LocalIdentityMappingPolicyAction
+		err = json.Unmarshal(data, &dst.LocalIdentityMappingPolicyAction)
+		if err == nil {
+			return nil // data stored in dst.LocalIdentityMappingPolicyAction, return on the first match
+		} else {
+			dst.LocalIdentityMappingPolicyAction = nil
+			return fmt.Errorf("failed to unmarshal PolicyActionAggregation as LocalIdentityMappingPolicyAction: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'RESTART'
+	if jsonDict["type"] == "RESTART" {
+		// try to unmarshal JSON data into RestartPolicyAction
+		err = json.Unmarshal(data, &dst.RestartPolicyAction)
+		if err == nil {
+			return nil // data stored in dst.RestartPolicyAction, return on the first match
+		} else {
+			dst.RestartPolicyAction = nil
+			return fmt.Errorf("failed to unmarshal PolicyActionAggregation as RestartPolicyAction: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'ApcMappingPolicyAction'
 	if jsonDict["type"] == "ApcMappingPolicyAction" {
 		// try to unmarshal JSON data into ApcMappingPolicyAction
@@ -165,18 +225,6 @@ func (dst *PolicyActionAggregation) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'CONTINUE'
-	if jsonDict["type"] == "CONTINUE" {
-		// try to unmarshal JSON data into ContinuePolicyAction
-		err = json.Unmarshal(data, &dst.ContinuePolicyAction)
-		if err == nil {
-			return nil // data stored in dst.ContinuePolicyAction, return on the first match
-		} else {
-			dst.ContinuePolicyAction = nil
-			return fmt.Errorf("failed to unmarshal PolicyActionAggregation as ContinuePolicyAction: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'ContinuePolicyAction'
 	if jsonDict["type"] == "ContinuePolicyAction" {
 		// try to unmarshal JSON data into ContinuePolicyAction
@@ -186,18 +234,6 @@ func (dst *PolicyActionAggregation) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.ContinuePolicyAction = nil
 			return fmt.Errorf("failed to unmarshal PolicyActionAggregation as ContinuePolicyAction: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'DONE'
-	if jsonDict["type"] == "DONE" {
-		// try to unmarshal JSON data into DonePolicyAction
-		err = json.Unmarshal(data, &dst.DonePolicyAction)
-		if err == nil {
-			return nil // data stored in dst.DonePolicyAction, return on the first match
-		} else {
-			dst.DonePolicyAction = nil
-			return fmt.Errorf("failed to unmarshal PolicyActionAggregation as DonePolicyAction: %s", err.Error())
 		}
 	}
 
@@ -213,18 +249,6 @@ func (dst *PolicyActionAggregation) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'FRAGMENT'
-	if jsonDict["type"] == "FRAGMENT" {
-		// try to unmarshal JSON data into FragmentPolicyAction
-		err = json.Unmarshal(data, &dst.FragmentPolicyAction)
-		if err == nil {
-			return nil // data stored in dst.FragmentPolicyAction, return on the first match
-		} else {
-			dst.FragmentPolicyAction = nil
-			return fmt.Errorf("failed to unmarshal PolicyActionAggregation as FragmentPolicyAction: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'FragmentPolicyAction'
 	if jsonDict["type"] == "FragmentPolicyAction" {
 		// try to unmarshal JSON data into FragmentPolicyAction
@@ -237,18 +261,6 @@ func (dst *PolicyActionAggregation) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'LOCAL_IDENTITY_MAPPING'
-	if jsonDict["type"] == "LOCAL_IDENTITY_MAPPING" {
-		// try to unmarshal JSON data into LocalIdentityMappingPolicyAction
-		err = json.Unmarshal(data, &dst.LocalIdentityMappingPolicyAction)
-		if err == nil {
-			return nil // data stored in dst.LocalIdentityMappingPolicyAction, return on the first match
-		} else {
-			dst.LocalIdentityMappingPolicyAction = nil
-			return fmt.Errorf("failed to unmarshal PolicyActionAggregation as LocalIdentityMappingPolicyAction: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'LocalIdentityMappingPolicyAction'
 	if jsonDict["type"] == "LocalIdentityMappingPolicyAction" {
 		// try to unmarshal JSON data into LocalIdentityMappingPolicyAction
@@ -258,18 +270,6 @@ func (dst *PolicyActionAggregation) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.LocalIdentityMappingPolicyAction = nil
 			return fmt.Errorf("failed to unmarshal PolicyActionAggregation as LocalIdentityMappingPolicyAction: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'RESTART'
-	if jsonDict["type"] == "RESTART" {
-		// try to unmarshal JSON data into RestartPolicyAction
-		err = json.Unmarshal(data, &dst.RestartPolicyAction)
-		if err == nil {
-			return nil // data stored in dst.RestartPolicyAction, return on the first match
-		} else {
-			dst.RestartPolicyAction = nil
-			return fmt.Errorf("failed to unmarshal PolicyActionAggregation as RestartPolicyAction: %s", err.Error())
 		}
 	}
 

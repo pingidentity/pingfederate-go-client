@@ -44,22 +44,22 @@ Delete a certificate from WS-Trust STS Settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the certificate to delete
+	id := "id_example" // string | ID of the certificate to delete
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ServerSettingsAPI.DeleteCertificate(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.DeleteCertificate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.ServerSettingsAPI.DeleteCertificate(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.DeleteCertificate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -110,23 +110,23 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsAPI.GetCaptchaSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetCaptchaSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCaptchaSettings`: CaptchaSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetCaptchaSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServerSettingsAPI.GetCaptchaSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetCaptchaSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCaptchaSettings`: CaptchaSettings
+	fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetCaptchaSettings`: %v\n", resp)
 }
 ```
 
@@ -169,24 +169,24 @@ Retrieve details of a certificate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the certificate to retrieve.
+	id := "id_example" // string | ID of the certificate to retrieve.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsAPI.GetCert(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetCert``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCert`: IssuerCert
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetCert`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServerSettingsAPI.GetCert(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetCert``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCert`: IssuerCert
+	fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetCert`: %v\n", resp)
 }
 ```
 
@@ -237,23 +237,23 @@ Get the list of certificates for WS-Trust STS Settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsAPI.GetCerts(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetCerts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCerts`: IssuerCerts
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetCerts`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServerSettingsAPI.GetCerts(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetCerts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCerts`: IssuerCerts
+	fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetCerts`: %v\n", resp)
 }
 ```
 
@@ -296,23 +296,23 @@ Other parameters are passed through a pointer to a apiGetCertsRequest struct via
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsAPI.GetEmailServerSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetEmailServerSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetEmailServerSettings`: EmailServerSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetEmailServerSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServerSettingsAPI.GetEmailServerSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetEmailServerSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetEmailServerSettings`: EmailServerSettings
+	fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetEmailServerSettings`: %v\n", resp)
 }
 ```
 
@@ -355,23 +355,23 @@ Gets the general settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsAPI.GetGeneralSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetGeneralSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetGeneralSettings`: GeneralSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetGeneralSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServerSettingsAPI.GetGeneralSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetGeneralSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetGeneralSettings`: GeneralSettings
+	fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetGeneralSettings`: %v\n", resp)
 }
 ```
 
@@ -414,23 +414,23 @@ Gets the log settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsAPI.GetLogSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetLogSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetLogSettings`: LogSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetLogSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServerSettingsAPI.GetLogSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetLogSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetLogSettings`: LogSettings
+	fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetLogSettings`: %v\n", resp)
 }
 ```
 
@@ -473,23 +473,23 @@ Gets the notification settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsAPI.GetNotificationSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetNotificationSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetNotificationSettings`: NotificationSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetNotificationSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServerSettingsAPI.GetNotificationSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetNotificationSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetNotificationSettings`: NotificationSettings
+	fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetNotificationSettings`: %v\n", resp)
 }
 ```
 
@@ -534,23 +534,23 @@ Get database used for outbound provisioning
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsAPI.GetOutBoundProvisioningSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetOutBoundProvisioningSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOutBoundProvisioningSettings`: OutboundProvisionDatabase
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetOutBoundProvisioningSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServerSettingsAPI.GetOutBoundProvisioningSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetOutBoundProvisioningSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOutBoundProvisioningSettings`: OutboundProvisionDatabase
+	fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetOutBoundProvisioningSettings`: %v\n", resp)
 }
 ```
 
@@ -593,23 +593,23 @@ Gets the server settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsAPI.GetServerSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetServerSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetServerSettings`: ServerSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetServerSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServerSettingsAPI.GetServerSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetServerSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetServerSettings`: ServerSettings
+	fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetServerSettings`: %v\n", resp)
 }
 ```
 
@@ -654,23 +654,23 @@ Get the system keys.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsAPI.GetSystemKeys(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetSystemKeys``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSystemKeys`: SystemKeys
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetSystemKeys`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServerSettingsAPI.GetSystemKeys(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetSystemKeys``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSystemKeys`: SystemKeys
+	fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetSystemKeys`: %v\n", resp)
 }
 ```
 
@@ -713,23 +713,23 @@ Get the current WS-Trust STS Settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsAPI.GetWsTrustStsSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetWsTrustStsSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetWsTrustStsSettings`: WsTrustStsSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetWsTrustStsSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServerSettingsAPI.GetWsTrustStsSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetWsTrustStsSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetWsTrustStsSettings`: WsTrustStsSettings
+	fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetWsTrustStsSettings`: %v\n", resp)
 }
 ```
 
@@ -772,24 +772,24 @@ Import a new certificate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewX509File("FileData_example") // X509File | File data to import.
+	body := *openapiclient.NewX509File("FileData_example") // X509File | File data to import.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsAPI.ImportCertificate(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.ImportCertificate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ImportCertificate`: IssuerCert
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.ImportCertificate`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServerSettingsAPI.ImportCertificate(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.ImportCertificate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ImportCertificate`: IssuerCert
+	fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.ImportCertificate`: %v\n", resp)
 }
 ```
 
@@ -838,23 +838,23 @@ Rotate the system keys.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsAPI.RotateSystemKeys(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.RotateSystemKeys``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RotateSystemKeys`: SystemKeys
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.RotateSystemKeys`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServerSettingsAPI.RotateSystemKeys(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.RotateSystemKeys``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RotateSystemKeys`: SystemKeys
+	fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.RotateSystemKeys`: %v\n", resp)
 }
 ```
 
@@ -897,24 +897,24 @@ Other parameters are passed through a pointer to a apiRotateSystemKeysRequest st
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewCaptchaSettings() // CaptchaSettings | CAPTCHA settings.
+	body := *openapiclient.NewCaptchaSettings() // CaptchaSettings | CAPTCHA settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsAPI.UpdateCaptchaSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateCaptchaSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCaptchaSettings`: CaptchaSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateCaptchaSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServerSettingsAPI.UpdateCaptchaSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateCaptchaSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCaptchaSettings`: CaptchaSettings
+	fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateCaptchaSettings`: %v\n", resp)
 }
 ```
 
@@ -963,26 +963,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewEmailServerSettings("SourceAddr_example", "EmailServer_example", int64(123)) // EmailServerSettings | Configuration for email server settings.
-    validationEmail := "validationEmail_example" // string | The email address used to validate the email server settings. (optional)
-    validateOnly := true // bool | Only validation will be performed.  Email server settings will not be saved. (optional)
+	body := *openapiclient.NewEmailServerSettings("SourceAddr_example", "EmailServer_example", int64(123)) // EmailServerSettings | Configuration for email server settings.
+	validationEmail := "validationEmail_example" // string | The email address used to validate the email server settings. (optional)
+	validateOnly := true // bool | Only validation will be performed.  Email server settings will not be saved. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsAPI.UpdateEmailServerSettings(context.Background()).Body(body).ValidationEmail(validationEmail).ValidateOnly(validateOnly).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateEmailServerSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateEmailServerSettings`: EmailServerSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateEmailServerSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServerSettingsAPI.UpdateEmailServerSettings(context.Background()).Body(body).ValidationEmail(validationEmail).ValidateOnly(validateOnly).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateEmailServerSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateEmailServerSettings`: EmailServerSettings
+	fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateEmailServerSettings`: %v\n", resp)
 }
 ```
 
@@ -1031,24 +1031,24 @@ Update general settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewGeneralSettings() // GeneralSettings | Configuration for general settings.
+	body := *openapiclient.NewGeneralSettings() // GeneralSettings | Configuration for general settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsAPI.UpdateGeneralSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateGeneralSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateGeneralSettings`: GeneralSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateGeneralSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServerSettingsAPI.UpdateGeneralSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateGeneralSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateGeneralSettings`: GeneralSettings
+	fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateGeneralSettings`: %v\n", resp)
 }
 ```
 
@@ -1095,24 +1095,24 @@ Update log settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewLogSettings() // LogSettings | Configuration for log settings.
+	body := *openapiclient.NewLogSettings() // LogSettings | Configuration for log settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsAPI.UpdateLogSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateLogSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateLogSettings`: LogSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateLogSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServerSettingsAPI.UpdateLogSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateLogSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateLogSettings`: LogSettings
+	fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateLogSettings`: %v\n", resp)
 }
 ```
 
@@ -1159,24 +1159,24 @@ Update the notification settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewNotificationSettings() // NotificationSettings | Notification settings.
+	body := *openapiclient.NewNotificationSettings() // NotificationSettings | Notification settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsAPI.UpdateNotificationSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateNotificationSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateNotificationSettings`: NotificationSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateNotificationSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServerSettingsAPI.UpdateNotificationSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateNotificationSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateNotificationSettings`: NotificationSettings
+	fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateNotificationSettings`: %v\n", resp)
 }
 ```
 
@@ -1225,24 +1225,24 @@ Update database used for outbound provisioning
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewOutboundProvisionDatabase(*openapiclient.NewResourceLink("Id_example")) // OutboundProvisionDatabase | The Outbound Provision Database settings.
+	body := *openapiclient.NewOutboundProvisionDatabase(*openapiclient.NewResourceLink("Id_example")) // OutboundProvisionDatabase | The Outbound Provision Database settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsAPI.UpdateOutBoundProvisioningSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateOutBoundProvisioningSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateOutBoundProvisioningSettings`: OutboundProvisionDatabase
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateOutBoundProvisioningSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServerSettingsAPI.UpdateOutBoundProvisioningSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateOutBoundProvisioningSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateOutBoundProvisioningSettings`: OutboundProvisionDatabase
+	fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateOutBoundProvisioningSettings`: %v\n", resp)
 }
 ```
 
@@ -1289,24 +1289,24 @@ Update the server settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewServerSettings() // ServerSettings | Configuration for server settings.
+	body := *openapiclient.NewServerSettings() // ServerSettings | Configuration for server settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsAPI.UpdateServerSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateServerSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateServerSettings`: ServerSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateServerSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServerSettingsAPI.UpdateServerSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateServerSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateServerSettings`: ServerSettings
+	fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateServerSettings`: %v\n", resp)
 }
 ```
 
@@ -1355,24 +1355,24 @@ Update the system keys.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewSystemKeys(*openapiclient.NewSystemKey(), *openapiclient.NewSystemKey()) // SystemKeys | System keys.
+	body := *openapiclient.NewSystemKeys(*openapiclient.NewSystemKey(), *openapiclient.NewSystemKey()) // SystemKeys | System keys.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsAPI.UpdateSystemKeys(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateSystemKeys``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateSystemKeys`: SystemKeys
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateSystemKeys`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServerSettingsAPI.UpdateSystemKeys(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateSystemKeys``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSystemKeys`: SystemKeys
+	fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateSystemKeys`: %v\n", resp)
 }
 ```
 
@@ -1419,24 +1419,24 @@ Update WS-Trust STS Settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewWsTrustStsSettings() // WsTrustStsSettings | Configuration for WS-Trust STS Settings.
+	body := *openapiclient.NewWsTrustStsSettings() // WsTrustStsSettings | Configuration for WS-Trust STS Settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerSettingsAPI.UpdateWsTrustStsSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateWsTrustStsSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateWsTrustStsSettings`: WsTrustStsSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateWsTrustStsSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServerSettingsAPI.UpdateWsTrustStsSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateWsTrustStsSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateWsTrustStsSettings`: WsTrustStsSettings
+	fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateWsTrustStsSettings`: %v\n", resp)
 }
 ```
 

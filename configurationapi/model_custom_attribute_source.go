@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the CustomAttributeSource type satisfies the MappedNullable interface at compile time
@@ -19,10 +21,20 @@ var _ MappedNullable = &CustomAttributeSource{}
 
 // CustomAttributeSource struct for CustomAttributeSource
 type CustomAttributeSource struct {
-	AttributeSource
+	// The data store type of this attribute source.
+	Type         string       `json:"type" tfsdk:"type"`
+	DataStoreRef ResourceLink `json:"dataStoreRef" tfsdk:"data_store_ref"`
+	// The ID that defines this attribute source. Only alphanumeric characters allowed.<br>Note: Required for OpenID Connect policy attribute sources, OAuth IdP adapter mappings, OAuth access token mappings and APC-to-SP Adapter Mappings. IdP Connections will ignore this property since it only allows one attribute source to be defined per mapping. IdP-to-SP Adapter Mappings can contain multiple attribute sources.
+	Id *string `json:"id,omitempty" tfsdk:"id"`
+	// The description of this attribute source. The description needs to be unique amongst the attribute sources for the mapping.<br>Note: Required for APC-to-SP Adapter Mappings
+	Description *string `json:"description,omitempty" tfsdk:"description"`
+	// A list of mappings from attribute names to their fulfillment values. This field is only valid for the SP Connection's Browser SSO mappings
+	AttributeContractFulfillment *map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment,omitempty" tfsdk:"attribute_contract_fulfillment"`
 	// The list of fields that can be used to filter a request to the custom data store.
 	FilterFields []FieldEntry `json:"filterFields,omitempty" tfsdk:"filter_fields"`
 }
+
+type _CustomAttributeSource CustomAttributeSource
 
 // NewCustomAttributeSource instantiates a new CustomAttributeSource object
 // This constructor will assign default values to properties that have it defined,
@@ -41,6 +53,150 @@ func NewCustomAttributeSource(type_ string, dataStoreRef ResourceLink) *CustomAt
 func NewCustomAttributeSourceWithDefaults() *CustomAttributeSource {
 	this := CustomAttributeSource{}
 	return &this
+}
+
+// GetType returns the Type field value
+func (o *CustomAttributeSource) GetType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value
+// and a boolean to check if the value has been set.
+func (o *CustomAttributeSource) GetTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Type, true
+}
+
+// SetType sets field value
+func (o *CustomAttributeSource) SetType(v string) {
+	o.Type = v
+}
+
+// GetDataStoreRef returns the DataStoreRef field value
+func (o *CustomAttributeSource) GetDataStoreRef() ResourceLink {
+	if o == nil {
+		var ret ResourceLink
+		return ret
+	}
+
+	return o.DataStoreRef
+}
+
+// GetDataStoreRefOk returns a tuple with the DataStoreRef field value
+// and a boolean to check if the value has been set.
+func (o *CustomAttributeSource) GetDataStoreRefOk() (*ResourceLink, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.DataStoreRef, true
+}
+
+// SetDataStoreRef sets field value
+func (o *CustomAttributeSource) SetDataStoreRef(v ResourceLink) {
+	o.DataStoreRef = v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *CustomAttributeSource) GetId() string {
+	if o == nil || IsNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CustomAttributeSource) GetIdOk() (*string, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *CustomAttributeSource) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *CustomAttributeSource) SetId(v string) {
+	o.Id = &v
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *CustomAttributeSource) GetDescription() string {
+	if o == nil || IsNil(o.Description) {
+		var ret string
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CustomAttributeSource) GetDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.Description) {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// HasDescription returns a boolean if a field has been set.
+func (o *CustomAttributeSource) HasDescription() bool {
+	if o != nil && !IsNil(o.Description) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *CustomAttributeSource) SetDescription(v string) {
+	o.Description = &v
+}
+
+// GetAttributeContractFulfillment returns the AttributeContractFulfillment field value if set, zero value otherwise.
+func (o *CustomAttributeSource) GetAttributeContractFulfillment() map[string]AttributeFulfillmentValue {
+	if o == nil || IsNil(o.AttributeContractFulfillment) {
+		var ret map[string]AttributeFulfillmentValue
+		return ret
+	}
+	return *o.AttributeContractFulfillment
+}
+
+// GetAttributeContractFulfillmentOk returns a tuple with the AttributeContractFulfillment field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CustomAttributeSource) GetAttributeContractFulfillmentOk() (*map[string]AttributeFulfillmentValue, bool) {
+	if o == nil || IsNil(o.AttributeContractFulfillment) {
+		return nil, false
+	}
+	return o.AttributeContractFulfillment, true
+}
+
+// HasAttributeContractFulfillment returns a boolean if a field has been set.
+func (o *CustomAttributeSource) HasAttributeContractFulfillment() bool {
+	if o != nil && !IsNil(o.AttributeContractFulfillment) {
+		return true
+	}
+
+	return false
+}
+
+// SetAttributeContractFulfillment gets a reference to the given map[string]AttributeFulfillmentValue and assigns it to the AttributeContractFulfillment field.
+func (o *CustomAttributeSource) SetAttributeContractFulfillment(v map[string]AttributeFulfillmentValue) {
+	o.AttributeContractFulfillment = &v
 }
 
 // GetFilterFields returns the FilterFields field value if set, zero value otherwise.
@@ -85,18 +241,58 @@ func (o CustomAttributeSource) MarshalJSON() ([]byte, error) {
 
 func (o CustomAttributeSource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	serializedAttributeSource, errAttributeSource := json.Marshal(o.AttributeSource)
-	if errAttributeSource != nil {
-		return map[string]interface{}{}, errAttributeSource
+	toSerialize["type"] = o.Type
+	toSerialize["dataStoreRef"] = o.DataStoreRef
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
-	errAttributeSource = json.Unmarshal([]byte(serializedAttributeSource), &toSerialize)
-	if errAttributeSource != nil {
-		return map[string]interface{}{}, errAttributeSource
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.AttributeContractFulfillment) {
+		toSerialize["attributeContractFulfillment"] = o.AttributeContractFulfillment
 	}
 	if !IsNil(o.FilterFields) {
 		toSerialize["filterFields"] = o.FilterFields
 	}
 	return toSerialize, nil
+}
+
+func (o *CustomAttributeSource) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"type",
+		"dataStoreRef",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varCustomAttributeSource := _CustomAttributeSource{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varCustomAttributeSource)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CustomAttributeSource(varCustomAttributeSource)
+
+	return err
 }
 
 type NullableCustomAttributeSource struct {

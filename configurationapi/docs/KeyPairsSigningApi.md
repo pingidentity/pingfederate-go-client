@@ -32,24 +32,24 @@ Generate a new key pair.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewNewKeyPairSettings("CommonName_example", "Organization_example", "Country_example", int64(123), "KeyAlgorithm_example") // NewKeyPairSettings | Settings for the new key pair.
+	body := *openapiclient.NewNewKeyPairSettings("CommonName_example", "Organization_example", "Country_example", int64(123), "KeyAlgorithm_example") // NewKeyPairSettings | Settings for the new key pair.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSigningAPI.CreateSigningKeyPair(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.CreateSigningKeyPair``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateSigningKeyPair`: KeyPairView
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.CreateSigningKeyPair`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsSigningAPI.CreateSigningKeyPair(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.CreateSigningKeyPair``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateSigningKeyPair`: KeyPairView
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.CreateSigningKeyPair`: %v\n", resp)
 }
 ```
 
@@ -98,22 +98,22 @@ Delete rotation settings for a signing key pair.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the key pair's rotation settings to delete.
+	id := "id_example" // string | ID of the key pair's rotation settings to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.KeyPairsSigningAPI.DeleteKeyPairRotationSettings(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.DeleteKeyPairRotationSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.KeyPairsSigningAPI.DeleteKeyPairRotationSettings(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.DeleteKeyPairRotationSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -166,22 +166,22 @@ Delete a key pair.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the key pair to delete.
+	id := "id_example" // string | ID of the key pair to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.KeyPairsSigningAPI.DeleteSigningKeyPair(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.DeleteSigningKeyPair``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.KeyPairsSigningAPI.DeleteSigningKeyPair(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.DeleteSigningKeyPair``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -234,24 +234,24 @@ Download the certificate from a given key pair.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the key pair.
+	id := "id_example" // string | ID of the key pair.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSigningAPI.ExportCertificateFile(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.ExportCertificateFile``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ExportCertificateFile`: string
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.ExportCertificateFile`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsSigningAPI.ExportCertificateFile(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.ExportCertificateFile``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ExportCertificateFile`: string
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.ExportCertificateFile`: %v\n", resp)
 }
 ```
 
@@ -304,24 +304,24 @@ Generate a new certificate signing request (CSR) for this key pair.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the key pair.
+	id := "id_example" // string | ID of the key pair.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSigningAPI.ExportCsr(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.ExportCsr``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ExportCsr`: string
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.ExportCsr`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsSigningAPI.ExportCsr(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.ExportCsr``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ExportCsr`: string
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.ExportCsr`: %v\n", resp)
 }
 ```
 
@@ -374,25 +374,25 @@ Download the key pair in PEM format.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the key pair.
-    body := *openapiclient.NewKeyPairExportSettings("Password_example") // KeyPairExportSettings | Parameters for the export request
+	id := "id_example" // string | ID of the key pair.
+	body := *openapiclient.NewKeyPairExportSettings("Password_example") // KeyPairExportSettings | Parameters for the export request
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSigningAPI.ExportPEMFile(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.ExportPEMFile``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ExportPEMFile`: string
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.ExportPEMFile`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsSigningAPI.ExportPEMFile(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.ExportPEMFile``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ExportPEMFile`: string
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.ExportPEMFile`: %v\n", resp)
 }
 ```
 
@@ -446,25 +446,25 @@ Download the key pair in PKCS12 format.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the key pair.
-    body := *openapiclient.NewKeyPairExportSettings("Password_example") // KeyPairExportSettings | Parameters for the export request
+	id := "id_example" // string | ID of the key pair.
+	body := *openapiclient.NewKeyPairExportSettings("Password_example") // KeyPairExportSettings | Parameters for the export request
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSigningAPI.ExportPKCS12File(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.ExportPKCS12File``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ExportPKCS12File`: string
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.ExportPKCS12File`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsSigningAPI.ExportPKCS12File(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.ExportPKCS12File``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ExportPKCS12File`: string
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.ExportPKCS12File`: %v\n", resp)
 }
 ```
 
@@ -516,24 +516,24 @@ Retrieve details of rotation settings for a key pair.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the key pair to retrieve its rotation settings.
+	id := "id_example" // string | ID of the key pair to retrieve its rotation settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSigningAPI.GetRotationSettings(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.GetRotationSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetRotationSettings`: KeyPairRotationSettings
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.GetRotationSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsSigningAPI.GetRotationSettings(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.GetRotationSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetRotationSettings`: KeyPairRotationSettings
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.GetRotationSettings`: %v\n", resp)
 }
 ```
 
@@ -584,24 +584,24 @@ Retrieve details of a key pair.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the key pair to retrieve.
+	id := "id_example" // string | ID of the key pair to retrieve.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSigningAPI.GetSigningKeyPair(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.GetSigningKeyPair``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSigningKeyPair`: KeyPairView
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.GetSigningKeyPair`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsSigningAPI.GetSigningKeyPair(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.GetSigningKeyPair``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSigningKeyPair`: KeyPairView
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.GetSigningKeyPair`: %v\n", resp)
 }
 ```
 
@@ -652,23 +652,23 @@ Get list of key pairs.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSigningAPI.GetSigningKeyPairs(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.GetSigningKeyPairs``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSigningKeyPairs`: KeyPairViews
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.GetSigningKeyPairs`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsSigningAPI.GetSigningKeyPairs(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.GetSigningKeyPairs``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSigningKeyPairs`: KeyPairViews
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.GetSigningKeyPairs`: %v\n", resp)
 }
 ```
 
@@ -711,25 +711,25 @@ Import a CSR response for this key pair.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the key pair.
-    body := *openapiclient.NewCSRResponse("FileData_example") // CSRResponse | The CSR response.
+	id := "id_example" // string | ID of the key pair.
+	body := *openapiclient.NewCSRResponse("FileData_example") // CSRResponse | The CSR response.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSigningAPI.ImportCsrResponse(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.ImportCsrResponse``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ImportCsrResponse`: KeyPairView
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.ImportCsrResponse`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsSigningAPI.ImportCsrResponse(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.ImportCsrResponse``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ImportCsrResponse`: KeyPairView
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.ImportCsrResponse`: %v\n", resp)
 }
 ```
 
@@ -781,24 +781,24 @@ Import a new key pair.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewKeyPairFile("FileData_example", "Password_example") // KeyPairFile | File to import.
+	body := *openapiclient.NewKeyPairFile("FileData_example", "Password_example") // KeyPairFile | File to import.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSigningAPI.ImportSigningKeyPair(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.ImportSigningKeyPair``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ImportSigningKeyPair`: KeyPairView
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.ImportSigningKeyPair`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsSigningAPI.ImportSigningKeyPair(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.ImportSigningKeyPair``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ImportSigningKeyPair`: KeyPairView
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.ImportSigningKeyPair`: %v\n", resp)
 }
 ```
 
@@ -845,25 +845,25 @@ Add rotation settings to a key pair
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the key pair.
-    body := *openapiclient.NewKeyPairRotationSettings(int64(123), int64(123)) // KeyPairRotationSettings | The key rotation settings.
+	id := "id_example" // string | ID of the key pair.
+	body := *openapiclient.NewKeyPairRotationSettings(int64(123), int64(123)) // KeyPairRotationSettings | The key rotation settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSigningAPI.UpdateRotationSettings(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.UpdateRotationSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateRotationSettings`: KeyPairRotationSettings
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.UpdateRotationSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsSigningAPI.UpdateRotationSettings(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSigningAPI.UpdateRotationSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateRotationSettings`: KeyPairRotationSettings
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsSigningAPI.UpdateRotationSettings`: %v\n", resp)
 }
 ```
 

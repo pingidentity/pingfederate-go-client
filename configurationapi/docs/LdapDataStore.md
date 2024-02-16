@@ -4,6 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Type** | **string** | The data store type. | 
+**Id** | Pointer to **string** | The persistent, unique ID for the data store. It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned if not specified. | [optional] 
+**MaskAttributeValues** | Pointer to **bool** | Whether attribute values should be masked in the log. | [optional] 
+**LastModified** | Pointer to **time.Time** | The time at which the datastore instance was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
 **HostnamesTags** | Pointer to [**[]LdapTagConfig**](LdapTagConfig.md) | The set of host names and associated tags for this LDAP data store. This is required if &#39;hostnames&#39; is not provided. | [optional] 
 **Hostnames** | Pointer to **[]string** | The default LDAP host names. This field is required if no mapping for host names and tags is specified. Failover can be configured by providing multiple host names. | [optional] 
 **Name** | Pointer to **string** | The data store name with a unique value across all data sources. Omitting this attribute will set the value to a combination of the hostname(s) and the principal. | [optional] 
@@ -31,13 +35,12 @@ Name | Type | Description | Notes
 **LdapDnsSrvPrefix** | Pointer to **string** | The prefix value used to discover LDAP DNS SRV record. Omitting this attribute will set the value to the default value. | [optional] 
 **LdapsDnsSrvPrefix** | Pointer to **string** | The prefix value used to discover LDAPs DNS SRV record. Omitting this attribute will set the value to the default value. | [optional] 
 **BinaryAttributes** | Pointer to **[]string** | The list of LDAP attributes to be handled as binary data. | [optional] 
-**LastModified** | Pointer to **time.Time** | The time at which the datastore instance was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
 
 ## Methods
 
 ### NewLdapDataStore
 
-`func NewLdapDataStore(ldapType string, ) *LdapDataStore`
+`func NewLdapDataStore(type_ string, ldapType string, ) *LdapDataStore`
 
 NewLdapDataStore instantiates a new LdapDataStore object
 This constructor will assign default values to properties that have it defined,
@@ -51,6 +54,101 @@ will change when the set of required properties is changed
 NewLdapDataStoreWithDefaults instantiates a new LdapDataStore object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetType
+
+`func (o *LdapDataStore) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *LdapDataStore) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *LdapDataStore) SetType(v string)`
+
+SetType sets Type field to given value.
+
+
+### GetId
+
+`func (o *LdapDataStore) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *LdapDataStore) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *LdapDataStore) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *LdapDataStore) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetMaskAttributeValues
+
+`func (o *LdapDataStore) GetMaskAttributeValues() bool`
+
+GetMaskAttributeValues returns the MaskAttributeValues field if non-nil, zero value otherwise.
+
+### GetMaskAttributeValuesOk
+
+`func (o *LdapDataStore) GetMaskAttributeValuesOk() (*bool, bool)`
+
+GetMaskAttributeValuesOk returns a tuple with the MaskAttributeValues field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaskAttributeValues
+
+`func (o *LdapDataStore) SetMaskAttributeValues(v bool)`
+
+SetMaskAttributeValues sets MaskAttributeValues field to given value.
+
+### HasMaskAttributeValues
+
+`func (o *LdapDataStore) HasMaskAttributeValues() bool`
+
+HasMaskAttributeValues returns a boolean if a field has been set.
+
+### GetLastModified
+
+`func (o *LdapDataStore) GetLastModified() time.Time`
+
+GetLastModified returns the LastModified field if non-nil, zero value otherwise.
+
+### GetLastModifiedOk
+
+`func (o *LdapDataStore) GetLastModifiedOk() (*time.Time, bool)`
+
+GetLastModifiedOk returns a tuple with the LastModified field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastModified
+
+`func (o *LdapDataStore) SetLastModified(v time.Time)`
+
+SetLastModified sets LastModified field to given value.
+
+### HasLastModified
+
+`func (o *LdapDataStore) HasLastModified() bool`
+
+HasLastModified returns a boolean if a field has been set.
 
 ### GetHostnamesTags
 
@@ -721,31 +819,6 @@ SetBinaryAttributes sets BinaryAttributes field to given value.
 `func (o *LdapDataStore) HasBinaryAttributes() bool`
 
 HasBinaryAttributes returns a boolean if a field has been set.
-
-### GetLastModified
-
-`func (o *LdapDataStore) GetLastModified() time.Time`
-
-GetLastModified returns the LastModified field if non-nil, zero value otherwise.
-
-### GetLastModifiedOk
-
-`func (o *LdapDataStore) GetLastModifiedOk() (*time.Time, bool)`
-
-GetLastModifiedOk returns a tuple with the LastModified field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastModified
-
-`func (o *LdapDataStore) SetLastModified(v time.Time)`
-
-SetLastModified sets LastModified field to given value.
-
-### HasLastModified
-
-`func (o *LdapDataStore) HasLastModified() bool`
-
-HasLastModified returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

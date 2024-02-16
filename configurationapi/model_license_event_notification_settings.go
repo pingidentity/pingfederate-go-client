@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the LicenseEventNotificationSettings type satisfies the MappedNullable interface at compile time
@@ -23,6 +25,8 @@ type LicenseEventNotificationSettings struct {
 	EmailAddress             string        `json:"emailAddress" tfsdk:"email_address"`
 	NotificationPublisherRef *ResourceLink `json:"notificationPublisherRef,omitempty" tfsdk:"notification_publisher_ref"`
 }
+
+type _LicenseEventNotificationSettings LicenseEventNotificationSettings
 
 // NewLicenseEventNotificationSettings instantiates a new LicenseEventNotificationSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -113,6 +117,42 @@ func (o LicenseEventNotificationSettings) ToMap() (map[string]interface{}, error
 		toSerialize["notificationPublisherRef"] = o.NotificationPublisherRef
 	}
 	return toSerialize, nil
+}
+
+func (o *LicenseEventNotificationSettings) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"emailAddress",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varLicenseEventNotificationSettings := _LicenseEventNotificationSettings{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varLicenseEventNotificationSettings)
+
+	if err != nil {
+		return err
+	}
+
+	*o = LicenseEventNotificationSettings(varLicenseEventNotificationSettings)
+
+	return err
 }
 
 type NullableLicenseEventNotificationSettings struct {

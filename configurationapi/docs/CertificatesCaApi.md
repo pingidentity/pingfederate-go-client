@@ -26,22 +26,22 @@ Delete a trusted certificate authority.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the trusted certificate authority to delete.
+	id := "id_example" // string | ID of the trusted certificate authority to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CertificatesCaAPI.DeleteTrustedCA(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesCaAPI.DeleteTrustedCA``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CertificatesCaAPI.DeleteTrustedCA(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CertificatesCaAPI.DeleteTrustedCA``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -94,24 +94,24 @@ Download the certificate from a given trusted certificate authority.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the trusted certificate authority.
+	id := "id_example" // string | ID of the trusted certificate authority.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificatesCaAPI.ExportCaCertificateFile(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesCaAPI.ExportCaCertificateFile``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ExportCaCertificateFile`: string
-    fmt.Fprintf(os.Stdout, "Response from `CertificatesCaAPI.ExportCaCertificateFile`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CertificatesCaAPI.ExportCaCertificateFile(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CertificatesCaAPI.ExportCaCertificateFile``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ExportCaCertificateFile`: string
+	fmt.Fprintf(os.Stdout, "Response from `CertificatesCaAPI.ExportCaCertificateFile`: %v\n", resp)
 }
 ```
 
@@ -162,23 +162,23 @@ Get list of trusted certificate authorities.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificatesCaAPI.GetTrustedCAs(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesCaAPI.GetTrustedCAs``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetTrustedCAs`: CertViews
-    fmt.Fprintf(os.Stdout, "Response from `CertificatesCaAPI.GetTrustedCAs`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CertificatesCaAPI.GetTrustedCAs(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CertificatesCaAPI.GetTrustedCAs``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTrustedCAs`: CertViews
+	fmt.Fprintf(os.Stdout, "Response from `CertificatesCaAPI.GetTrustedCAs`: %v\n", resp)
 }
 ```
 
@@ -221,24 +221,24 @@ Retrieve details of a trusted certificate authority.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the trusted certificate authority to retrieve.
+	id := "id_example" // string | ID of the trusted certificate authority to retrieve.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificatesCaAPI.GetTrustedCert(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesCaAPI.GetTrustedCert``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetTrustedCert`: CertView
-    fmt.Fprintf(os.Stdout, "Response from `CertificatesCaAPI.GetTrustedCert`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CertificatesCaAPI.GetTrustedCert(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CertificatesCaAPI.GetTrustedCert``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTrustedCert`: CertView
+	fmt.Fprintf(os.Stdout, "Response from `CertificatesCaAPI.GetTrustedCert`: %v\n", resp)
 }
 ```
 
@@ -289,24 +289,24 @@ Import a new trusted certificate authority.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewX509File("FileData_example") // X509File | File data to import.
+	body := *openapiclient.NewX509File("FileData_example") // X509File | File data to import.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificatesCaAPI.ImportTrustedCA(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificatesCaAPI.ImportTrustedCA``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ImportTrustedCA`: CertView
-    fmt.Fprintf(os.Stdout, "Response from `CertificatesCaAPI.ImportTrustedCA`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CertificatesCaAPI.ImportTrustedCA(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CertificatesCaAPI.ImportTrustedCA``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ImportTrustedCA`: CertView
+	fmt.Fprintf(os.Stdout, "Response from `CertificatesCaAPI.ImportTrustedCA`: %v\n", resp)
 }
 ```
 

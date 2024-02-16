@@ -28,24 +28,24 @@ Create a new OAuth client.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewClient("ClientId_example", []string{"GrantTypes_example"}, "Name_example") // Client | Configuration for new client.
+	body := *openapiclient.NewClient("ClientId_example", []string{"GrantTypes_example"}, "Name_example") // Client | Configuration for new client.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientsAPI.CreateOauthClient(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsAPI.CreateOauthClient``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateOauthClient`: Client
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientsAPI.CreateOauthClient`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthClientsAPI.CreateOauthClient(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsAPI.CreateOauthClient``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateOauthClient`: Client
+	fmt.Fprintf(os.Stdout, "Response from `OauthClientsAPI.CreateOauthClient`: %v\n", resp)
 }
 ```
 
@@ -92,22 +92,22 @@ Delete an OAuth client.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the client.
+	id := "id_example" // string | ID of the client.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthClientsAPI.DeleteOauthClient(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsAPI.DeleteOauthClient``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.OauthClientsAPI.DeleteOauthClient(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsAPI.DeleteOauthClient``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -158,24 +158,24 @@ Find the OAuth client by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the client.
+	id := "id_example" // string | ID of the client.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientsAPI.GetOauthClientById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsAPI.GetOauthClientById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOauthClientById`: Client
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientsAPI.GetOauthClientById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthClientsAPI.GetOauthClientById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsAPI.GetOauthClientById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOauthClientById`: Client
+	fmt.Fprintf(os.Stdout, "Response from `OauthClientsAPI.GetOauthClientById`: %v\n", resp)
 }
 ```
 
@@ -226,24 +226,24 @@ Get the client secret of an existing OAuth client.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the client.
+	id := "id_example" // string | ID of the client.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientsAPI.GetOauthClientSecret(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsAPI.GetOauthClientSecret``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOauthClientSecret`: ClientSecret
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientsAPI.GetOauthClientSecret`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthClientsAPI.GetOauthClientSecret(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsAPI.GetOauthClientSecret``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOauthClientSecret`: ClientSecret
+	fmt.Fprintf(os.Stdout, "Response from `OauthClientsAPI.GetOauthClientSecret`: %v\n", resp)
 }
 ```
 
@@ -294,26 +294,26 @@ Get the list of OAuth clients.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    page := int64(56) // int64 | Page number to retrieve. (optional)
-    numberPerPage := int64(56) // int64 | Number of OAuth clients per page. (uncapped if unspecified) (optional)
-    filter := "filter_example" // string | Filter criteria limits the OAuth clients that are returned to only those that match it. The filter criteria is compared to the OAuth client name and ID fields. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. (optional)
+	page := int64(56) // int64 | Page number to retrieve. (optional)
+	numberPerPage := int64(56) // int64 | Number of OAuth clients per page. (uncapped if unspecified) (optional)
+	filter := "filter_example" // string | Filter criteria limits the OAuth clients that are returned to only those that match it. The filter criteria is compared to the OAuth client name and ID fields. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientsAPI.GetOauthClients(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsAPI.GetOauthClients``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOauthClients`: Clients
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientsAPI.GetOauthClients`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthClientsAPI.GetOauthClients(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsAPI.GetOauthClients``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOauthClients`: Clients
+	fmt.Fprintf(os.Stdout, "Response from `OauthClientsAPI.GetOauthClients`: %v\n", resp)
 }
 ```
 
@@ -362,25 +362,25 @@ Updates the OAuth client.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the client to be updated.
-    body := *openapiclient.NewClient("ClientId_example", []string{"GrantTypes_example"}, "Name_example") // Client | Configuration for the client.
+	id := "id_example" // string | ID of the client to be updated.
+	body := *openapiclient.NewClient("ClientId_example", []string{"GrantTypes_example"}, "Name_example") // Client | Configuration for the client.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientsAPI.UpdateOauthClient(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsAPI.UpdateOauthClient``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateOauthClient`: Client
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientsAPI.UpdateOauthClient`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthClientsAPI.UpdateOauthClient(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsAPI.UpdateOauthClient``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateOauthClient`: Client
+	fmt.Fprintf(os.Stdout, "Response from `OauthClientsAPI.UpdateOauthClient`: %v\n", resp)
 }
 ```
 
@@ -432,25 +432,25 @@ Update the client secret of an existing OAuth client.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the client to be updated.
-    body := *openapiclient.NewClientSecret() // ClientSecret | Client Secret.
+	id := "id_example" // string | ID of the client to be updated.
+	body := *openapiclient.NewClientSecret() // ClientSecret | Client Secret.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientsAPI.UpdateOauthClientSecret(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsAPI.UpdateOauthClientSecret``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateOauthClientSecret`: ClientSecret
-    fmt.Fprintf(os.Stdout, "Response from `OauthClientsAPI.UpdateOauthClientSecret`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthClientsAPI.UpdateOauthClientSecret(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsAPI.UpdateOauthClientSecret``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateOauthClientSecret`: ClientSecret
+	fmt.Fprintf(os.Stdout, "Response from `OauthClientsAPI.UpdateOauthClientSecret`: %v\n", resp)
 }
 ```
 

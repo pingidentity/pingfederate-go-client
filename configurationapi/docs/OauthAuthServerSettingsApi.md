@@ -37,24 +37,24 @@ Add a new common scope.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewScopeEntry("Name_example", "Description_example") // ScopeEntry | The scope definition.
+	body := *openapiclient.NewScopeEntry("Name_example", "Description_example") // ScopeEntry | The scope definition.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsAPI.AddCommonScope(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.AddCommonScope``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AddCommonScope`: ScopeEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.AddCommonScope`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthServerSettingsAPI.AddCommonScope(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.AddCommonScope``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AddCommonScope`: ScopeEntry
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.AddCommonScope`: %v\n", resp)
 }
 ```
 
@@ -101,24 +101,24 @@ Create a new common scope group.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewScopeGroupEntry("Name_example", "Description_example", []string{"Scopes_example"}) // ScopeGroupEntry | The scope group definition
+	body := *openapiclient.NewScopeGroupEntry("Name_example", "Description_example", []string{"Scopes_example"}) // ScopeGroupEntry | The scope group definition
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsAPI.AddCommonScopeGroup(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.AddCommonScopeGroup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AddCommonScopeGroup`: ScopeGroupEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.AddCommonScopeGroup`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthServerSettingsAPI.AddCommonScopeGroup(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.AddCommonScopeGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AddCommonScopeGroup`: ScopeGroupEntry
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.AddCommonScopeGroup`: %v\n", resp)
 }
 ```
 
@@ -165,24 +165,24 @@ Add a new exclusive scope.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewScopeEntry("Name_example", "Description_example") // ScopeEntry | A new exclusive scope
+	body := *openapiclient.NewScopeEntry("Name_example", "Description_example") // ScopeEntry | A new exclusive scope
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsAPI.AddExclusiveScope(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.AddExclusiveScope``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AddExclusiveScope`: ScopeEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.AddExclusiveScope`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthServerSettingsAPI.AddExclusiveScope(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.AddExclusiveScope``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AddExclusiveScope`: ScopeEntry
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.AddExclusiveScope`: %v\n", resp)
 }
 ```
 
@@ -229,24 +229,24 @@ Create a new exclusive scope group.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewScopeGroupEntry("Name_example", "Description_example", []string{"Scopes_example"}) // ScopeGroupEntry | The scope group definition
+	body := *openapiclient.NewScopeGroupEntry("Name_example", "Description_example", []string{"Scopes_example"}) // ScopeGroupEntry | The scope group definition
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsAPI.AddExclusiveScopeGroup(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.AddExclusiveScopeGroup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AddExclusiveScopeGroup`: ScopeGroupEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.AddExclusiveScopeGroup`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthServerSettingsAPI.AddExclusiveScopeGroup(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.AddExclusiveScopeGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AddExclusiveScopeGroup`: ScopeGroupEntry
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.AddExclusiveScopeGroup`: %v\n", resp)
 }
 ```
 
@@ -293,23 +293,23 @@ Get the Authorization Server Settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsAPI.GetAuthorizationServerSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.GetAuthorizationServerSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAuthorizationServerSettings`: AuthorizationServerSettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.GetAuthorizationServerSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthServerSettingsAPI.GetAuthorizationServerSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.GetAuthorizationServerSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAuthorizationServerSettings`: AuthorizationServerSettings
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.GetAuthorizationServerSettings`: %v\n", resp)
 }
 ```
 
@@ -352,24 +352,24 @@ Get an existing common scope.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    name := "name_example" // string | Name of the common scope.
+	name := "name_example" // string | Name of the common scope.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsAPI.GetCommonScope(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.GetCommonScope``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCommonScope`: ScopeEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.GetCommonScope`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthServerSettingsAPI.GetCommonScope(context.Background(), name).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.GetCommonScope``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCommonScope`: ScopeEntry
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.GetCommonScope`: %v\n", resp)
 }
 ```
 
@@ -420,24 +420,24 @@ Get an existing common scope group.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    name := "name_example" // string | Name of the common scope group.
+	name := "name_example" // string | Name of the common scope group.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsAPI.GetCommonScopeGroup(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.GetCommonScopeGroup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCommonScopeGroup`: ScopeGroupEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.GetCommonScopeGroup`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthServerSettingsAPI.GetCommonScopeGroup(context.Background(), name).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.GetCommonScopeGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCommonScopeGroup`: ScopeGroupEntry
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.GetCommonScopeGroup`: %v\n", resp)
 }
 ```
 
@@ -488,24 +488,24 @@ Get an existing exclusive scope.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    name := "name_example" // string | Name of the exclusive scope.
+	name := "name_example" // string | Name of the exclusive scope.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsAPI.GetExclusiveScope(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.GetExclusiveScope``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetExclusiveScope`: ScopeEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.GetExclusiveScope`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthServerSettingsAPI.GetExclusiveScope(context.Background(), name).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.GetExclusiveScope``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetExclusiveScope`: ScopeEntry
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.GetExclusiveScope`: %v\n", resp)
 }
 ```
 
@@ -556,24 +556,24 @@ Get an existing exclusive scope group.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    name := "name_example" // string | Name of the exclusive scope group.
+	name := "name_example" // string | Name of the exclusive scope group.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsAPI.GetExclusiveScopeGroup(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.GetExclusiveScopeGroup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetExclusiveScopeGroup`: ScopeGroupEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.GetExclusiveScopeGroup`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthServerSettingsAPI.GetExclusiveScopeGroup(context.Background(), name).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.GetExclusiveScopeGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetExclusiveScopeGroup`: ScopeGroupEntry
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.GetExclusiveScopeGroup`: %v\n", resp)
 }
 ```
 
@@ -624,22 +624,22 @@ Remove an existing common scope.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    name := "name_example" // string | Name of the common scope.
+	name := "name_example" // string | Name of the common scope.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthAuthServerSettingsAPI.RemoveCommonScope(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.RemoveCommonScope``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.OauthAuthServerSettingsAPI.RemoveCommonScope(context.Background(), name).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.RemoveCommonScope``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -690,22 +690,22 @@ Remove an existing common scope group.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    name := "name_example" // string | Name of the common scope group.
+	name := "name_example" // string | Name of the common scope group.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthAuthServerSettingsAPI.RemoveCommonScopeGroup(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.RemoveCommonScopeGroup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.OauthAuthServerSettingsAPI.RemoveCommonScopeGroup(context.Background(), name).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.RemoveCommonScopeGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -756,22 +756,22 @@ Remove an existing exclusive scope.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    name := "name_example" // string | Name of the exclusive scope.
+	name := "name_example" // string | Name of the exclusive scope.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthAuthServerSettingsAPI.RemoveExclusiveScope(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.RemoveExclusiveScope``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.OauthAuthServerSettingsAPI.RemoveExclusiveScope(context.Background(), name).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.RemoveExclusiveScope``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -822,22 +822,22 @@ Remove an existing exclusive scope group.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    name := "name_example" // string | Name of the exclusive scope group.
+	name := "name_example" // string | Name of the exclusive scope group.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthAuthServerSettingsAPI.RemoveExclusiveScopeGroup(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.RemoveExclusiveScopeGroup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.OauthAuthServerSettingsAPI.RemoveExclusiveScopeGroup(context.Background(), name).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.RemoveExclusiveScopeGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -888,24 +888,24 @@ Update the Authorization Server Settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewAuthorizationServerSettings("DefaultScopeDescription_example", int64(123), int64(123), int64(123), int64(123), "RegisteredAuthorizationPath_example", int64(123), int64(123), false) // AuthorizationServerSettings | Configuration for updated server settings.
+	body := *openapiclient.NewAuthorizationServerSettings("DefaultScopeDescription_example", int64(123), int64(123), int64(123), int64(123), "RegisteredAuthorizationPath_example", int64(123), int64(123), false) // AuthorizationServerSettings | Configuration for updated server settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsAPI.UpdateAuthorizationServerSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.UpdateAuthorizationServerSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateAuthorizationServerSettings`: AuthorizationServerSettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.UpdateAuthorizationServerSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthServerSettingsAPI.UpdateAuthorizationServerSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.UpdateAuthorizationServerSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateAuthorizationServerSettings`: AuthorizationServerSettings
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.UpdateAuthorizationServerSettings`: %v\n", resp)
 }
 ```
 
@@ -952,25 +952,25 @@ Update an existing common scope.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    name := "name_example" // string | Name of the common scope.
-    body := *openapiclient.NewScopeEntry("Name_example", "Description_example") // ScopeEntry | The scope definition
+	name := "name_example" // string | Name of the common scope.
+	body := *openapiclient.NewScopeEntry("Name_example", "Description_example") // ScopeEntry | The scope definition
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsAPI.UpdateCommonScope(context.Background(), name).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.UpdateCommonScope``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCommonScope`: ScopeEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.UpdateCommonScope`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthServerSettingsAPI.UpdateCommonScope(context.Background(), name).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.UpdateCommonScope``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCommonScope`: ScopeEntry
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.UpdateCommonScope`: %v\n", resp)
 }
 ```
 
@@ -1022,25 +1022,25 @@ Update an existing common scope group.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    name := "name_example" // string | Name of the common scope group.
-    body := *openapiclient.NewScopeGroupEntry("Name_example", "Description_example", []string{"Scopes_example"}) // ScopeGroupEntry | The scope group definition.
+	name := "name_example" // string | Name of the common scope group.
+	body := *openapiclient.NewScopeGroupEntry("Name_example", "Description_example", []string{"Scopes_example"}) // ScopeGroupEntry | The scope group definition.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsAPI.UpdateCommonScopeGroup(context.Background(), name).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.UpdateCommonScopeGroup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCommonScopeGroup`: ScopeGroupEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.UpdateCommonScopeGroup`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthServerSettingsAPI.UpdateCommonScopeGroup(context.Background(), name).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.UpdateCommonScopeGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCommonScopeGroup`: ScopeGroupEntry
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.UpdateCommonScopeGroup`: %v\n", resp)
 }
 ```
 
@@ -1092,25 +1092,25 @@ Update an existing exclusive scope.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    name := "name_example" // string | Name of the exclusive scope.
-    body := *openapiclient.NewScopeEntry("Name_example", "Description_example") // ScopeEntry | The scope definition.
+	name := "name_example" // string | Name of the exclusive scope.
+	body := *openapiclient.NewScopeEntry("Name_example", "Description_example") // ScopeEntry | The scope definition.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsAPI.UpdateExclusiveScope(context.Background(), name).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.UpdateExclusiveScope``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateExclusiveScope`: ScopeEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.UpdateExclusiveScope`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthServerSettingsAPI.UpdateExclusiveScope(context.Background(), name).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.UpdateExclusiveScope``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateExclusiveScope`: ScopeEntry
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.UpdateExclusiveScope`: %v\n", resp)
 }
 ```
 
@@ -1162,25 +1162,25 @@ Update an existing exclusive scope group.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    name := "name_example" // string | Name of the exclusive scope group.
-    body := *openapiclient.NewScopeGroupEntry("Name_example", "Description_example", []string{"Scopes_example"}) // ScopeGroupEntry | The scope group definition
+	name := "name_example" // string | Name of the exclusive scope group.
+	body := *openapiclient.NewScopeGroupEntry("Name_example", "Description_example", []string{"Scopes_example"}) // ScopeGroupEntry | The scope group definition
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthServerSettingsAPI.UpdateExclusiveScopeGroups(context.Background(), name).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.UpdateExclusiveScopeGroups``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateExclusiveScopeGroups`: ScopeGroupEntry
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.UpdateExclusiveScopeGroups`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthServerSettingsAPI.UpdateExclusiveScopeGroups(context.Background(), name).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.UpdateExclusiveScopeGroups``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateExclusiveScopeGroups`: ScopeGroupEntry
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.UpdateExclusiveScopeGroups`: %v\n", resp)
 }
 ```
 

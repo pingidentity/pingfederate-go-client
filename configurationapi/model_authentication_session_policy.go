@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AuthenticationSessionPolicy type satisfies the MappedNullable interface at compile time
@@ -37,6 +39,8 @@ type AuthenticationSessionPolicy struct {
 	// Determines whether the requested authentication context is considered when deciding whether an existing session is valid for a given request. The default is false.
 	AuthnContextSensitive *bool `json:"authnContextSensitive,omitempty" tfsdk:"authn_context_sensitive"`
 }
+
+type _AuthenticationSessionPolicy AuthenticationSessionPolicy
 
 // NewAuthenticationSessionPolicy instantiates a new AuthenticationSessionPolicy object
 // This constructor will assign default values to properties that have it defined,
@@ -363,6 +367,43 @@ func (o AuthenticationSessionPolicy) ToMap() (map[string]interface{}, error) {
 		toSerialize["authnContextSensitive"] = o.AuthnContextSensitive
 	}
 	return toSerialize, nil
+}
+
+func (o *AuthenticationSessionPolicy) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"authenticationSource",
+		"enableSessions",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAuthenticationSessionPolicy := _AuthenticationSessionPolicy{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varAuthenticationSessionPolicy)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AuthenticationSessionPolicy(varAuthenticationSessionPolicy)
+
+	return err
 }
 
 type NullableAuthenticationSessionPolicy struct {

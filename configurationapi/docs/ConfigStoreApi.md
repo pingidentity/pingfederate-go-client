@@ -25,23 +25,23 @@ Delete a setting.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    bundle := "bundle_example" // string | This field represents a configuration file that contains a bundle of settings.
-    id := "id_example" // string | ID of setting to delete.
+	bundle := "bundle_example" // string | This field represents a configuration file that contains a bundle of settings.
+	id := "id_example" // string | ID of setting to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ConfigStoreAPI.DeleteConfigStoreSetting(context.Background(), bundle, id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreAPI.DeleteConfigStoreSetting``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.ConfigStoreAPI.DeleteConfigStoreSetting(context.Background(), bundle, id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreAPI.DeleteConfigStoreSetting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -94,25 +94,25 @@ Get a single setting from a bundle.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    bundle := "bundle_example" // string | This field represents a configuration file that contains a bundle of settings.
-    id := "id_example" // string | ID of setting to retrieve.
+	bundle := "bundle_example" // string | This field represents a configuration file that contains a bundle of settings.
+	id := "id_example" // string | ID of setting to retrieve.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConfigStoreAPI.GetConfigStoreSetting(context.Background(), bundle, id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreAPI.GetConfigStoreSetting``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetConfigStoreSetting`: ConfigStoreSetting
-    fmt.Fprintf(os.Stdout, "Response from `ConfigStoreAPI.GetConfigStoreSetting`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ConfigStoreAPI.GetConfigStoreSetting(context.Background(), bundle, id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreAPI.GetConfigStoreSetting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetConfigStoreSetting`: ConfigStoreSetting
+	fmt.Fprintf(os.Stdout, "Response from `ConfigStoreAPI.GetConfigStoreSetting`: %v\n", resp)
 }
 ```
 
@@ -165,24 +165,24 @@ Get all settings from a bundle.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    bundle := "bundle_example" // string | This field represents a configuration file that contains a bundle of settings.
+	bundle := "bundle_example" // string | This field represents a configuration file that contains a bundle of settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConfigStoreAPI.GetConfigStoreSettings(context.Background(), bundle).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreAPI.GetConfigStoreSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetConfigStoreSettings`: ConfigStoreBundle
-    fmt.Fprintf(os.Stdout, "Response from `ConfigStoreAPI.GetConfigStoreSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ConfigStoreAPI.GetConfigStoreSettings(context.Background(), bundle).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreAPI.GetConfigStoreSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetConfigStoreSettings`: ConfigStoreBundle
+	fmt.Fprintf(os.Stdout, "Response from `ConfigStoreAPI.GetConfigStoreSettings`: %v\n", resp)
 }
 ```
 
@@ -235,26 +235,26 @@ Create or update a setting/bundle.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    bundle := "bundle_example" // string | This field represents a configuration file that contains a bundle of settings.
-    id := "id_example" // string | ID of setting to create/update.
-    body := *openapiclient.NewConfigStoreSetting("Id_example", "Type_example") // ConfigStoreSetting | Configuration setting.
+	bundle := "bundle_example" // string | This field represents a configuration file that contains a bundle of settings.
+	id := "id_example" // string | ID of setting to create/update.
+	body := *openapiclient.NewConfigStoreSetting("Id_example", "Type_example") // ConfigStoreSetting | Configuration setting.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConfigStoreAPI.UpdateConfigStoreSetting(context.Background(), bundle, id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreAPI.UpdateConfigStoreSetting``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateConfigStoreSetting`: ConfigStoreSetting
-    fmt.Fprintf(os.Stdout, "Response from `ConfigStoreAPI.UpdateConfigStoreSetting`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ConfigStoreAPI.UpdateConfigStoreSetting(context.Background(), bundle, id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreAPI.UpdateConfigStoreSetting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateConfigStoreSetting`: ConfigStoreSetting
+	fmt.Fprintf(os.Stdout, "Response from `ConfigStoreAPI.UpdateConfigStoreSetting`: %v\n", resp)
 }
 ```
 

@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 	"time"
 )
 
@@ -145,6 +147,8 @@ type Client struct {
 	// Determines whether Demonstrating Proof-of-Possession (DPoP) is required for this client.
 	RequireDpop *bool `json:"requireDpop,omitempty" tfsdk:"require_dpop"`
 }
+
+type _Client Client
 
 // NewClient instantiates a new Client object
 // This constructor will assign default values to properties that have it defined,
@@ -2422,6 +2426,44 @@ func (o Client) ToMap() (map[string]interface{}, error) {
 		toSerialize["requireDpop"] = o.RequireDpop
 	}
 	return toSerialize, nil
+}
+
+func (o *Client) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"clientId",
+		"grantTypes",
+		"name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varClient := _Client{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varClient)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Client(varClient)
+
+	return err
 }
 
 type NullableClient struct {

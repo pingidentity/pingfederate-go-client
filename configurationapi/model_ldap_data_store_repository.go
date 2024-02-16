@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the LdapDataStoreRepository type satisfies the MappedNullable interface at compile time
@@ -27,6 +29,8 @@ type LdapDataStoreRepository struct {
 	// A list of user repository mappings from attribute names to their fulfillment values.
 	JitRepositoryAttributeMapping map[string]AttributeFulfillmentValue `json:"jitRepositoryAttributeMapping" tfsdk:"jit_repository_attribute_mapping"`
 }
+
+type _LdapDataStoreRepository LdapDataStoreRepository
 
 // NewLdapDataStoreRepository instantiates a new LdapDataStoreRepository object
 // This constructor will assign default values to properties that have it defined,
@@ -153,6 +157,45 @@ func (o LdapDataStoreRepository) ToMap() (map[string]interface{}, error) {
 	toSerialize["uniqueUserIdFilter"] = o.UniqueUserIdFilter
 	toSerialize["jitRepositoryAttributeMapping"] = o.JitRepositoryAttributeMapping
 	return toSerialize, nil
+}
+
+func (o *LdapDataStoreRepository) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"uniqueUserIdFilter",
+		"jitRepositoryAttributeMapping",
+		"type",
+		"dataStoreRef",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varLdapDataStoreRepository := _LdapDataStoreRepository{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varLdapDataStoreRepository)
+
+	if err != nil {
+		return err
+	}
+
+	*o = LdapDataStoreRepository(varLdapDataStoreRepository)
+
+	return err
 }
 
 type NullableLdapDataStoreRepository struct {

@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Type** | **string** | The authentication selection type. | 
+**Context** | Pointer to **string** | The result context. | [optional] 
 **LocalIdentityRef** | [**ResourceLink**](ResourceLink.md) |  | 
 **InboundMapping** | Pointer to [**AttributeMapping**](AttributeMapping.md) |  | [optional] 
 **OutboundAttributeMapping** | [**AttributeMapping**](AttributeMapping.md) |  | 
@@ -12,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewLocalIdentityMappingPolicyAction
 
-`func NewLocalIdentityMappingPolicyAction(localIdentityRef ResourceLink, outboundAttributeMapping AttributeMapping, ) *LocalIdentityMappingPolicyAction`
+`func NewLocalIdentityMappingPolicyAction(type_ string, localIdentityRef ResourceLink, outboundAttributeMapping AttributeMapping, ) *LocalIdentityMappingPolicyAction`
 
 NewLocalIdentityMappingPolicyAction instantiates a new LocalIdentityMappingPolicyAction object
 This constructor will assign default values to properties that have it defined,
@@ -26,6 +28,51 @@ will change when the set of required properties is changed
 NewLocalIdentityMappingPolicyActionWithDefaults instantiates a new LocalIdentityMappingPolicyAction object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetType
+
+`func (o *LocalIdentityMappingPolicyAction) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *LocalIdentityMappingPolicyAction) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *LocalIdentityMappingPolicyAction) SetType(v string)`
+
+SetType sets Type field to given value.
+
+
+### GetContext
+
+`func (o *LocalIdentityMappingPolicyAction) GetContext() string`
+
+GetContext returns the Context field if non-nil, zero value otherwise.
+
+### GetContextOk
+
+`func (o *LocalIdentityMappingPolicyAction) GetContextOk() (*string, bool)`
+
+GetContextOk returns a tuple with the Context field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContext
+
+`func (o *LocalIdentityMappingPolicyAction) SetContext(v string)`
+
+SetContext sets Context field to given value.
+
+### HasContext
+
+`func (o *LocalIdentityMappingPolicyAction) HasContext() bool`
+
+HasContext returns a boolean if a field has been set.
 
 ### GetLocalIdentityRef
 

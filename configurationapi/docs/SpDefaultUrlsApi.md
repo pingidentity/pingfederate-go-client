@@ -21,23 +21,23 @@ Gets the SP Default URLs. These are Values that affect the user's experience whe
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpDefaultUrlsAPI.GetSpDefaultUrls(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpDefaultUrlsAPI.GetSpDefaultUrls``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSpDefaultUrls`: SpDefaultUrls
-    fmt.Fprintf(os.Stdout, "Response from `SpDefaultUrlsAPI.GetSpDefaultUrls`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpDefaultUrlsAPI.GetSpDefaultUrls(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpDefaultUrlsAPI.GetSpDefaultUrls``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSpDefaultUrls`: SpDefaultUrls
+	fmt.Fprintf(os.Stdout, "Response from `SpDefaultUrlsAPI.GetSpDefaultUrls`: %v\n", resp)
 }
 ```
 
@@ -80,24 +80,24 @@ Update the SP Default URLs. Enter values that affect the user's experience when 
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewSpDefaultUrls() // SpDefaultUrls | Configuration for the IDP Default URL settings.
+	body := *openapiclient.NewSpDefaultUrls() // SpDefaultUrls | Configuration for the IDP Default URL settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpDefaultUrlsAPI.UpdateSpDefaultUrls(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpDefaultUrlsAPI.UpdateSpDefaultUrls``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateSpDefaultUrls`: SpDefaultUrls
-    fmt.Fprintf(os.Stdout, "Response from `SpDefaultUrlsAPI.UpdateSpDefaultUrls`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpDefaultUrlsAPI.UpdateSpDefaultUrls(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpDefaultUrlsAPI.UpdateSpDefaultUrls``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSpDefaultUrls`: SpDefaultUrls
+	fmt.Fprintf(os.Stdout, "Response from `SpDefaultUrlsAPI.UpdateSpDefaultUrls`: %v\n", resp)
 }
 ```
 

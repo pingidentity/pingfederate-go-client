@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 	"time"
 )
 
@@ -20,7 +22,14 @@ var _ MappedNullable = &LdapDataStore{}
 
 // LdapDataStore struct for LdapDataStore
 type LdapDataStore struct {
-	DataStore
+	// The data store type.
+	Type string `json:"type" tfsdk:"type"`
+	// The persistent, unique ID for the data store. It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned if not specified.
+	Id *string `json:"id,omitempty" tfsdk:"id"`
+	// Whether attribute values should be masked in the log.
+	MaskAttributeValues *bool `json:"maskAttributeValues,omitempty" tfsdk:"mask_attribute_values"`
+	// The time at which the datastore instance was last changed. This property is read only and is ignored on PUT and POST requests.
+	LastModified *time.Time `json:"lastModified,omitempty" tfsdk:"last_modified"`
 	// The set of host names and associated tags for this LDAP data store. This is required if 'hostnames' is not provided.
 	HostnamesTags []LdapTagConfig `json:"hostnamesTags,omitempty" tfsdk:"hostnames_tags"`
 	// The default LDAP host names. This field is required if no mapping for host names and tags is specified. Failover can be configured by providing multiple host names.
@@ -74,15 +83,15 @@ type LdapDataStore struct {
 	LdapsDnsSrvPrefix *string `json:"ldapsDnsSrvPrefix,omitempty" tfsdk:"ldaps_dns_srv_prefix"`
 	// The list of LDAP attributes to be handled as binary data.
 	BinaryAttributes []string `json:"binaryAttributes,omitempty" tfsdk:"binary_attributes"`
-	// The time at which the datastore instance was last changed. This property is read only and is ignored on PUT and POST requests.
-	LastModified *time.Time `json:"lastModified,omitempty" tfsdk:"last_modified"`
 }
+
+type _LdapDataStore LdapDataStore
 
 // NewLdapDataStore instantiates a new LdapDataStore object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLdapDataStore(ldapType string, type_ string) *LdapDataStore {
+func NewLdapDataStore(type_ string, ldapType string) *LdapDataStore {
 	this := LdapDataStore{}
 	this.Type = type_
 	this.LdapType = ldapType
@@ -95,6 +104,126 @@ func NewLdapDataStore(ldapType string, type_ string) *LdapDataStore {
 func NewLdapDataStoreWithDefaults() *LdapDataStore {
 	this := LdapDataStore{}
 	return &this
+}
+
+// GetType returns the Type field value
+func (o *LdapDataStore) GetType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value
+// and a boolean to check if the value has been set.
+func (o *LdapDataStore) GetTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Type, true
+}
+
+// SetType sets field value
+func (o *LdapDataStore) SetType(v string) {
+	o.Type = v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *LdapDataStore) GetId() string {
+	if o == nil || IsNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LdapDataStore) GetIdOk() (*string, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *LdapDataStore) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *LdapDataStore) SetId(v string) {
+	o.Id = &v
+}
+
+// GetMaskAttributeValues returns the MaskAttributeValues field value if set, zero value otherwise.
+func (o *LdapDataStore) GetMaskAttributeValues() bool {
+	if o == nil || IsNil(o.MaskAttributeValues) {
+		var ret bool
+		return ret
+	}
+	return *o.MaskAttributeValues
+}
+
+// GetMaskAttributeValuesOk returns a tuple with the MaskAttributeValues field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LdapDataStore) GetMaskAttributeValuesOk() (*bool, bool) {
+	if o == nil || IsNil(o.MaskAttributeValues) {
+		return nil, false
+	}
+	return o.MaskAttributeValues, true
+}
+
+// HasMaskAttributeValues returns a boolean if a field has been set.
+func (o *LdapDataStore) HasMaskAttributeValues() bool {
+	if o != nil && !IsNil(o.MaskAttributeValues) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaskAttributeValues gets a reference to the given bool and assigns it to the MaskAttributeValues field.
+func (o *LdapDataStore) SetMaskAttributeValues(v bool) {
+	o.MaskAttributeValues = &v
+}
+
+// GetLastModified returns the LastModified field value if set, zero value otherwise.
+func (o *LdapDataStore) GetLastModified() time.Time {
+	if o == nil || IsNil(o.LastModified) {
+		var ret time.Time
+		return ret
+	}
+	return *o.LastModified
+}
+
+// GetLastModifiedOk returns a tuple with the LastModified field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LdapDataStore) GetLastModifiedOk() (*time.Time, bool) {
+	if o == nil || IsNil(o.LastModified) {
+		return nil, false
+	}
+	return o.LastModified, true
+}
+
+// HasLastModified returns a boolean if a field has been set.
+func (o *LdapDataStore) HasLastModified() bool {
+	if o != nil && !IsNil(o.LastModified) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastModified gets a reference to the given time.Time and assigns it to the LastModified field.
+func (o *LdapDataStore) SetLastModified(v time.Time) {
+	o.LastModified = &v
 }
 
 // GetHostnamesTags returns the HostnamesTags field value if set, zero value otherwise.
@@ -953,38 +1082,6 @@ func (o *LdapDataStore) SetBinaryAttributes(v []string) {
 	o.BinaryAttributes = v
 }
 
-// GetLastModified returns the LastModified field value if set, zero value otherwise.
-func (o *LdapDataStore) GetLastModified() time.Time {
-	if o == nil || IsNil(o.LastModified) {
-		var ret time.Time
-		return ret
-	}
-	return *o.LastModified
-}
-
-// GetLastModifiedOk returns a tuple with the LastModified field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LdapDataStore) GetLastModifiedOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastModified) {
-		return nil, false
-	}
-	return o.LastModified, true
-}
-
-// HasLastModified returns a boolean if a field has been set.
-func (o *LdapDataStore) HasLastModified() bool {
-	if o != nil && !IsNil(o.LastModified) {
-		return true
-	}
-
-	return false
-}
-
-// SetLastModified gets a reference to the given time.Time and assigns it to the LastModified field.
-func (o *LdapDataStore) SetLastModified(v time.Time) {
-	o.LastModified = &v
-}
-
 func (o LdapDataStore) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -995,13 +1092,15 @@ func (o LdapDataStore) MarshalJSON() ([]byte, error) {
 
 func (o LdapDataStore) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	serializedDataStore, errDataStore := json.Marshal(o.DataStore)
-	if errDataStore != nil {
-		return map[string]interface{}{}, errDataStore
+	toSerialize["type"] = o.Type
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
-	errDataStore = json.Unmarshal([]byte(serializedDataStore), &toSerialize)
-	if errDataStore != nil {
-		return map[string]interface{}{}, errDataStore
+	if !IsNil(o.MaskAttributeValues) {
+		toSerialize["maskAttributeValues"] = o.MaskAttributeValues
+	}
+	if !IsNil(o.LastModified) {
+		toSerialize["lastModified"] = o.LastModified
 	}
 	if !IsNil(o.HostnamesTags) {
 		toSerialize["hostnamesTags"] = o.HostnamesTags
@@ -1082,10 +1181,44 @@ func (o LdapDataStore) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.BinaryAttributes) {
 		toSerialize["binaryAttributes"] = o.BinaryAttributes
 	}
-	if !IsNil(o.LastModified) {
-		toSerialize["lastModified"] = o.LastModified
-	}
 	return toSerialize, nil
+}
+
+func (o *LdapDataStore) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"type",
+		"ldapType",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varLdapDataStore := _LdapDataStore{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varLdapDataStore)
+
+	if err != nil {
+		return err
+	}
+
+	*o = LdapDataStore(varLdapDataStore)
+
+	return err
 }
 
 type NullableLdapDataStore struct {

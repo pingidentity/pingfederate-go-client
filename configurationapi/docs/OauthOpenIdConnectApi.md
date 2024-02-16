@@ -28,25 +28,25 @@ Create a new OpenID Connect Policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewOpenIdConnectPolicy("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewOpenIdConnectAttributeContract(), *openapiclient.NewAttributeMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")})) // OpenIdConnectPolicy | Configuration for new policy.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	body := *openapiclient.NewOpenIdConnectPolicy("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewOpenIdConnectAttributeContract(), *openapiclient.NewAttributeMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")})) // OpenIdConnectPolicy | Configuration for new policy.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOpenIdConnectAPI.CreateOIDCPolicy(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectAPI.CreateOIDCPolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateOIDCPolicy`: OpenIdConnectPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectAPI.CreateOIDCPolicy`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthOpenIdConnectAPI.CreateOIDCPolicy(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectAPI.CreateOIDCPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateOIDCPolicy`: OpenIdConnectPolicy
+	fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectAPI.CreateOIDCPolicy`: %v\n", resp)
 }
 ```
 
@@ -96,22 +96,22 @@ Delete an OpenID Connect Policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of OpenID Connect Policy to delete.
+	id := "id_example" // string | ID of OpenID Connect Policy to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthOpenIdConnectAPI.DeleteOIDCPolicy(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectAPI.DeleteOIDCPolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.OauthOpenIdConnectAPI.DeleteOIDCPolicy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectAPI.DeleteOIDCPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -162,23 +162,23 @@ Get list of OpenID Connect Policies.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOpenIdConnectAPI.GetOIDCPolicies(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectAPI.GetOIDCPolicies``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOIDCPolicies`: OpenIdConnectPolicies
-    fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectAPI.GetOIDCPolicies`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthOpenIdConnectAPI.GetOIDCPolicies(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectAPI.GetOIDCPolicies``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOIDCPolicies`: OpenIdConnectPolicies
+	fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectAPI.GetOIDCPolicies`: %v\n", resp)
 }
 ```
 
@@ -223,24 +223,24 @@ Find OpenID Connect Policy by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the OpenID Connect Policy to fetch.
+	id := "id_example" // string | ID of the OpenID Connect Policy to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOpenIdConnectAPI.GetOIDCPolicy(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectAPI.GetOIDCPolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOIDCPolicy`: OpenIdConnectPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectAPI.GetOIDCPolicy`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthOpenIdConnectAPI.GetOIDCPolicy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectAPI.GetOIDCPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOIDCPolicy`: OpenIdConnectPolicy
+	fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectAPI.GetOIDCPolicy`: %v\n", resp)
 }
 ```
 
@@ -291,23 +291,23 @@ Get the OpenID Connect Settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOpenIdConnectAPI.GetOIDCSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectAPI.GetOIDCSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOIDCSettings`: OpenIdConnectSettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectAPI.GetOIDCSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthOpenIdConnectAPI.GetOIDCSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectAPI.GetOIDCSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOIDCSettings`: OpenIdConnectSettings
+	fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectAPI.GetOIDCSettings`: %v\n", resp)
 }
 ```
 
@@ -352,26 +352,26 @@ Update an OpenID Connect Policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the OpenID Connect Policy to update.
-    body := *openapiclient.NewOpenIdConnectPolicy("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewOpenIdConnectAttributeContract(), *openapiclient.NewAttributeMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")})) // OpenIdConnectPolicy | Configuration for updated policy.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	id := "id_example" // string | ID of the OpenID Connect Policy to update.
+	body := *openapiclient.NewOpenIdConnectPolicy("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewOpenIdConnectAttributeContract(), *openapiclient.NewAttributeMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")})) // OpenIdConnectPolicy | Configuration for updated policy.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOpenIdConnectAPI.UpdateOIDCPolicy(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectAPI.UpdateOIDCPolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateOIDCPolicy`: OpenIdConnectPolicy
-    fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectAPI.UpdateOIDCPolicy`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthOpenIdConnectAPI.UpdateOIDCPolicy(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectAPI.UpdateOIDCPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateOIDCPolicy`: OpenIdConnectPolicy
+	fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectAPI.UpdateOIDCPolicy`: %v\n", resp)
 }
 ```
 
@@ -424,24 +424,24 @@ Set the OpenID Connect Settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewOpenIdConnectSettings() // OpenIdConnectSettings | OpenID Connect Settings.
+	body := *openapiclient.NewOpenIdConnectSettings() // OpenIdConnectSettings | OpenID Connect Settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthOpenIdConnectAPI.UpdateOIDCSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectAPI.UpdateOIDCSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateOIDCSettings`: OpenIdConnectSettings
-    fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectAPI.UpdateOIDCSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthOpenIdConnectAPI.UpdateOIDCSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthOpenIdConnectAPI.UpdateOIDCSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateOIDCSettings`: OpenIdConnectSettings
+	fmt.Fprintf(os.Stdout, "Response from `OauthOpenIdConnectAPI.UpdateOIDCSettings`: %v\n", resp)
 }
 ```
 

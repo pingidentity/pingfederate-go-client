@@ -28,24 +28,24 @@ Create a new token processor instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewTokenProcessor("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // TokenProcessor | Configuration for a token processor instance.
+	body := *openapiclient.NewTokenProcessor("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // TokenProcessor | Configuration for a token processor instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpTokenProcessorsAPI.CreateTokenProcessor(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsAPI.CreateTokenProcessor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateTokenProcessor`: TokenProcessor
-    fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsAPI.CreateTokenProcessor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpTokenProcessorsAPI.CreateTokenProcessor(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsAPI.CreateTokenProcessor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateTokenProcessor`: TokenProcessor
+	fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsAPI.CreateTokenProcessor`: %v\n", resp)
 }
 ```
 
@@ -94,22 +94,22 @@ Delete a token processor instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the token processor instance to delete.
+	id := "id_example" // string | ID of the token processor instance to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IdpTokenProcessorsAPI.DeleteTokenProcessor(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsAPI.DeleteTokenProcessor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.IdpTokenProcessorsAPI.DeleteTokenProcessor(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsAPI.DeleteTokenProcessor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -162,24 +162,24 @@ Find a token processor instance by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the token processor instance to fetch.
+	id := "id_example" // string | ID of the token processor instance to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpTokenProcessorsAPI.GetTokenProcessor(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsAPI.GetTokenProcessor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetTokenProcessor`: TokenProcessor
-    fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsAPI.GetTokenProcessor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpTokenProcessorsAPI.GetTokenProcessor(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsAPI.GetTokenProcessor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTokenProcessor`: TokenProcessor
+	fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsAPI.GetTokenProcessor`: %v\n", resp)
 }
 ```
 
@@ -230,23 +230,23 @@ Get the list of available token processors.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpTokenProcessorsAPI.GetTokenProcessorDescriptors(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsAPI.GetTokenProcessorDescriptors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetTokenProcessorDescriptors`: TokenProcessorDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsAPI.GetTokenProcessorDescriptors`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpTokenProcessorsAPI.GetTokenProcessorDescriptors(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsAPI.GetTokenProcessorDescriptors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTokenProcessorDescriptors`: TokenProcessorDescriptors
+	fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsAPI.GetTokenProcessorDescriptors`: %v\n", resp)
 }
 ```
 
@@ -291,24 +291,24 @@ Get the description of a token processor plugin by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of a token processor descriptor to fetch.
+	id := "id_example" // string | ID of a token processor descriptor to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpTokenProcessorsAPI.GetTokenProcessorDescriptorsById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsAPI.GetTokenProcessorDescriptorsById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetTokenProcessorDescriptorsById`: TokenProcessorDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsAPI.GetTokenProcessorDescriptorsById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpTokenProcessorsAPI.GetTokenProcessorDescriptorsById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsAPI.GetTokenProcessorDescriptorsById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTokenProcessorDescriptorsById`: TokenProcessorDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsAPI.GetTokenProcessorDescriptorsById`: %v\n", resp)
 }
 ```
 
@@ -359,23 +359,23 @@ Get the list of token processor instances.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpTokenProcessorsAPI.GetTokenProcessors(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsAPI.GetTokenProcessors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetTokenProcessors`: TokenProcessors
-    fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsAPI.GetTokenProcessors`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpTokenProcessorsAPI.GetTokenProcessors(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsAPI.GetTokenProcessors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTokenProcessors`: TokenProcessors
+	fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsAPI.GetTokenProcessors`: %v\n", resp)
 }
 ```
 
@@ -420,25 +420,25 @@ Update a token processor instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of token processor instance.
-    body := *openapiclient.NewTokenProcessor("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // TokenProcessor | Configuration for updated token processor instance.
+	id := "id_example" // string | ID of token processor instance.
+	body := *openapiclient.NewTokenProcessor("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // TokenProcessor | Configuration for updated token processor instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpTokenProcessorsAPI.UpdateTokenProcessor(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsAPI.UpdateTokenProcessor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateTokenProcessor`: TokenProcessor
-    fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsAPI.UpdateTokenProcessor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpTokenProcessorsAPI.UpdateTokenProcessor(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpTokenProcessorsAPI.UpdateTokenProcessor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateTokenProcessor`: TokenProcessor
+	fmt.Fprintf(os.Stdout, "Response from `IdpTokenProcessorsAPI.UpdateTokenProcessor`: %v\n", resp)
 }
 ```
 

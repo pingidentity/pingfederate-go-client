@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** | The data store type. | 
 **Id** | Pointer to **string** | The persistent, unique ID for the data store. It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned if not specified. | [optional] 
 **MaskAttributeValues** | Pointer to **bool** | Whether attribute values should be masked in the log. | [optional] 
+**LastModified** | Pointer to **time.Time** | The time at which the datastore instance was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
 **Name** | **string** | The plugin instance name. | 
 **PluginDescriptorRef** | [**ResourceLink**](ResourceLink.md) |  | 
 **ParentRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
@@ -100,6 +101,31 @@ SetMaskAttributeValues sets MaskAttributeValues field to given value.
 `func (o *CustomDataStore) HasMaskAttributeValues() bool`
 
 HasMaskAttributeValues returns a boolean if a field has been set.
+
+### GetLastModified
+
+`func (o *CustomDataStore) GetLastModified() time.Time`
+
+GetLastModified returns the LastModified field if non-nil, zero value otherwise.
+
+### GetLastModifiedOk
+
+`func (o *CustomDataStore) GetLastModifiedOk() (*time.Time, bool)`
+
+GetLastModifiedOk returns a tuple with the LastModified field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastModified
+
+`func (o *CustomDataStore) SetLastModified(v time.Time)`
+
+SetLastModified sets LastModified field to given value.
+
+### HasLastModified
+
+`func (o *CustomDataStore) HasLastModified() bool`
+
+HasLastModified returns a boolean if a field has been set.
 
 ### GetName
 

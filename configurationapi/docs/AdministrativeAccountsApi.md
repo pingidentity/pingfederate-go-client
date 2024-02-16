@@ -26,24 +26,24 @@ Add a new PingFederate native Administrative Account.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewAdministrativeAccount("Username_example") // AdministrativeAccount | Administrative account information.
+	body := *openapiclient.NewAdministrativeAccount("Username_example") // AdministrativeAccount | Administrative account information.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AdministrativeAccountsAPI.AddAccount(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsAPI.AddAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AddAccount`: AdministrativeAccount
-    fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsAPI.AddAccount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AdministrativeAccountsAPI.AddAccount(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsAPI.AddAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AddAccount`: AdministrativeAccount
+	fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsAPI.AddAccount`: %v\n", resp)
 }
 ```
 
@@ -90,24 +90,24 @@ Change the Password of current PingFederate native Account.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewUserCredentials("NewPassword_example") // UserCredentials | User Account credential.
+	body := *openapiclient.NewUserCredentials("NewPassword_example") // UserCredentials | User Account credential.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AdministrativeAccountsAPI.ChangePassword(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsAPI.ChangePassword``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ChangePassword`: UserCredentials
-    fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsAPI.ChangePassword`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AdministrativeAccountsAPI.ChangePassword(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsAPI.ChangePassword``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ChangePassword`: UserCredentials
+	fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsAPI.ChangePassword`: %v\n", resp)
 }
 ```
 
@@ -154,22 +154,22 @@ Delete a PingFederate native Administrative Account information.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    username := "username_example" // string | Username of the account to be deleted.
+	username := "username_example" // string | Username of the account to be deleted.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AdministrativeAccountsAPI.DeleteAccount(context.Background(), username).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsAPI.DeleteAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.AdministrativeAccountsAPI.DeleteAccount(context.Background(), username).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsAPI.DeleteAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -220,24 +220,24 @@ Get a PingFederate native Administrative Account.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    username := "username_example" // string | Username of the administrative account.
+	username := "username_example" // string | Username of the administrative account.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AdministrativeAccountsAPI.GetAccount(context.Background(), username).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsAPI.GetAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAccount`: AdministrativeAccount
-    fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsAPI.GetAccount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AdministrativeAccountsAPI.GetAccount(context.Background(), username).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsAPI.GetAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAccount`: AdministrativeAccount
+	fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsAPI.GetAccount`: %v\n", resp)
 }
 ```
 
@@ -288,23 +288,23 @@ Get all the PingFederate native Administrative Accounts.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AdministrativeAccountsAPI.GetAccounts(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsAPI.GetAccounts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAccounts`: AdministrativeAccounts
-    fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsAPI.GetAccounts`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AdministrativeAccountsAPI.GetAccounts(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsAPI.GetAccounts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAccounts`: AdministrativeAccounts
+	fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsAPI.GetAccounts`: %v\n", resp)
 }
 ```
 
@@ -347,25 +347,25 @@ Reset the Password of an existing PingFederate native Administrative Account.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    username := "username_example" // string | Username of the administrative account.
-    body := *openapiclient.NewUserCredentials("NewPassword_example") // UserCredentials | New password.
+	username := "username_example" // string | Username of the administrative account.
+	body := *openapiclient.NewUserCredentials("NewPassword_example") // UserCredentials | New password.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AdministrativeAccountsAPI.ResetPassword(context.Background(), username).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsAPI.ResetPassword``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ResetPassword`: UserCredentials
-    fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsAPI.ResetPassword`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AdministrativeAccountsAPI.ResetPassword(context.Background(), username).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsAPI.ResetPassword``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ResetPassword`: UserCredentials
+	fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsAPI.ResetPassword`: %v\n", resp)
 }
 ```
 
@@ -417,25 +417,25 @@ Update the information for a native Administrative Account.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    username := "username_example" // string | Username of the account to be updated.
-    body := *openapiclient.NewAdministrativeAccount("Username_example") // AdministrativeAccount | Administrative account information.
+	username := "username_example" // string | Username of the account to be updated.
+	body := *openapiclient.NewAdministrativeAccount("Username_example") // AdministrativeAccount | Administrative account information.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AdministrativeAccountsAPI.UpdateAccount(context.Background(), username).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsAPI.UpdateAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateAccount`: AdministrativeAccount
-    fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsAPI.UpdateAccount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AdministrativeAccountsAPI.UpdateAccount(context.Background(), username).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AdministrativeAccountsAPI.UpdateAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateAccount`: AdministrativeAccount
+	fmt.Fprintf(os.Stdout, "Response from `AdministrativeAccountsAPI.UpdateAccount`: %v\n", resp)
 }
 ```
 

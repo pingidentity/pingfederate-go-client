@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the Issuer type satisfies the MappedNullable interface at compile time
@@ -30,6 +32,8 @@ type Issuer struct {
 	// The path of this virtual issuer.
 	Path *string `json:"path,omitempty" tfsdk:"path"`
 }
+
+type _Issuer Issuer
 
 // NewIssuer instantiates a new Issuer object
 // This constructor will assign default values to properties that have it defined,
@@ -216,6 +220,43 @@ func (o Issuer) ToMap() (map[string]interface{}, error) {
 		toSerialize["path"] = o.Path
 	}
 	return toSerialize, nil
+}
+
+func (o *Issuer) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+		"host",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varIssuer := _Issuer{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varIssuer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Issuer(varIssuer)
+
+	return err
 }
 
 type NullableIssuer struct {

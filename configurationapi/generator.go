@@ -7,3 +7,5 @@ package configurationapi
 //go:generate ../scripts/generateBackoffRetryLogic.py
 
 //go:generate ../scripts/updateClientAndConfiguration.py
+
+//go:generate ../scripts/removeJsonDisallowUnknownProperties.py

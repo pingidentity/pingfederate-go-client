@@ -29,24 +29,24 @@ Create a secret manager plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewSecretManager("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // SecretManager | Configuration for a secret manager plugin instance.
+	body := *openapiclient.NewSecretManager("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // SecretManager | Configuration for a secret manager plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecretManagersAPI.CreateSecretManager(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.CreateSecretManager``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateSecretManager`: SecretManager
-    fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.CreateSecretManager`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SecretManagersAPI.CreateSecretManager(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.CreateSecretManager``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateSecretManager`: SecretManager
+	fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.CreateSecretManager`: %v\n", resp)
 }
 ```
 
@@ -93,22 +93,22 @@ Delete a secret manager plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of a secret manager plugin instance.
+	id := "id_example" // string | ID of a secret manager plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SecretManagersAPI.DeleteSecretManager(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.DeleteSecretManager``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SecretManagersAPI.DeleteSecretManager(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.DeleteSecretManager``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -159,24 +159,24 @@ Get a specific secret manager plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of a secret manager plugin instance.
+	id := "id_example" // string | ID of a secret manager plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecretManagersAPI.GetSecretManager(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.GetSecretManager``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSecretManager`: SecretManager
-    fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.GetSecretManager`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SecretManagersAPI.GetSecretManager(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.GetSecretManager``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSecretManager`: SecretManager
+	fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.GetSecretManager`: %v\n", resp)
 }
 ```
 
@@ -227,24 +227,24 @@ Get a secret manager plugin descriptor.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of secret manager plugin descriptor.
+	id := "id_example" // string | ID of secret manager plugin descriptor.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecretManagersAPI.GetSecretManagerPluginDescriptor(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.GetSecretManagerPluginDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSecretManagerPluginDescriptor`: SecretManagerDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.GetSecretManagerPluginDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SecretManagersAPI.GetSecretManagerPluginDescriptor(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.GetSecretManagerPluginDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSecretManagerPluginDescriptor`: SecretManagerDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.GetSecretManagerPluginDescriptor`: %v\n", resp)
 }
 ```
 
@@ -295,23 +295,23 @@ Get a list of available secret manager plugin descriptors.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecretManagersAPI.GetSecretManagerPluginDescriptors(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.GetSecretManagerPluginDescriptors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSecretManagerPluginDescriptors`: SecretManagerDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.GetSecretManagerPluginDescriptors`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SecretManagersAPI.GetSecretManagerPluginDescriptors(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.GetSecretManagerPluginDescriptors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSecretManagerPluginDescriptors`: SecretManagerDescriptors
+	fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.GetSecretManagerPluginDescriptors`: %v\n", resp)
 }
 ```
 
@@ -354,23 +354,23 @@ Get a list of secret manager plugin instances.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecretManagersAPI.GetSecretManagers(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.GetSecretManagers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSecretManagers`: SecretManagers
-    fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.GetSecretManagers`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SecretManagersAPI.GetSecretManagers(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.GetSecretManagers``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSecretManagers`: SecretManagers
+	fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.GetSecretManagers`: %v\n", resp)
 }
 ```
 
@@ -413,25 +413,25 @@ Get a secret manager plugin instance's action by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of a secret manager plugin instance.
-    actionId := "actionId_example" // string | ID of the action.
+	id := "id_example" // string | ID of a secret manager plugin instance.
+	actionId := "actionId_example" // string | ID of the action.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecretManagersAPI.GetSecretManagersAction(context.Background(), id, actionId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.GetSecretManagersAction``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSecretManagersAction`: Action
-    fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.GetSecretManagersAction`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SecretManagersAPI.GetSecretManagersAction(context.Background(), id, actionId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.GetSecretManagersAction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSecretManagersAction`: Action
+	fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.GetSecretManagersAction`: %v\n", resp)
 }
 ```
 
@@ -484,24 +484,24 @@ Get a list of actions for a secret manager plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of a secret manager plugin instance.
+	id := "id_example" // string | ID of a secret manager plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecretManagersAPI.GetSecretManagersActions(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.GetSecretManagersActions``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSecretManagersActions`: Actions
-    fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.GetSecretManagersActions`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SecretManagersAPI.GetSecretManagersActions(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.GetSecretManagersActions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSecretManagersActions`: Actions
+	fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.GetSecretManagersActions`: %v\n", resp)
 }
 ```
 
@@ -554,26 +554,26 @@ Invokes an action for secret manager plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of a secret manager plugin instance.
-    actionId := "actionId_example" // string | ID of the action.
-    body := *openapiclient.NewActionOptions([]openapiclient.ActionParameter{*openapiclient.NewActionParameter("Name_example")}) // ActionOptions | Action options for action invoked. (optional)
+	id := "id_example" // string | ID of a secret manager plugin instance.
+	actionId := "actionId_example" // string | ID of the action.
+	body := *openapiclient.NewActionOptions([]openapiclient.ActionParameter{*openapiclient.NewActionParameter("Name_example")}) // ActionOptions | Action options for action invoked. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecretManagersAPI.InvokeSecretManagersActionWithOptions(context.Background(), id, actionId).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.InvokeSecretManagersActionWithOptions``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `InvokeSecretManagersActionWithOptions`: ActionResult
-    fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.InvokeSecretManagersActionWithOptions`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SecretManagersAPI.InvokeSecretManagersActionWithOptions(context.Background(), id, actionId).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.InvokeSecretManagersActionWithOptions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvokeSecretManagersActionWithOptions`: ActionResult
+	fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.InvokeSecretManagersActionWithOptions`: %v\n", resp)
 }
 ```
 
@@ -627,25 +627,25 @@ Update a secret manager plugin instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of a secret manager plugin instance.
-    body := *openapiclient.NewSecretManager("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // SecretManager | Configuration for a secret manager plugin instance.
+	id := "id_example" // string | ID of a secret manager plugin instance.
+	body := *openapiclient.NewSecretManager("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // SecretManager | Configuration for a secret manager plugin instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecretManagersAPI.UpdateSecretManager(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.UpdateSecretManager``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateSecretManager`: SecretManager
-    fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.UpdateSecretManager`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SecretManagersAPI.UpdateSecretManager(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecretManagersAPI.UpdateSecretManager``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSecretManager`: SecretManager
+	fmt.Fprintf(os.Stdout, "Response from `SecretManagersAPI.UpdateSecretManager`: %v\n", resp)
 }
 ```
 

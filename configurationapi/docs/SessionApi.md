@@ -32,24 +32,24 @@ Create a new session policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewAuthenticationSessionPolicy(*openapiclient.NewAuthenticationSource("Type_example", *openapiclient.NewResourceLink("Id_example")), false) // AuthenticationSessionPolicy | Configuration for new policy.
+	body := *openapiclient.NewAuthenticationSessionPolicy(*openapiclient.NewAuthenticationSource("Type_example", *openapiclient.NewResourceLink("Id_example")), false) // AuthenticationSessionPolicy | Configuration for new policy.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionAPI.CreateSourcePolicy(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.CreateSourcePolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateSourcePolicy`: AuthenticationSessionPolicy
-    fmt.Fprintf(os.Stdout, "Response from `SessionAPI.CreateSourcePolicy`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SessionAPI.CreateSourcePolicy(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.CreateSourcePolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateSourcePolicy`: AuthenticationSessionPolicy
+	fmt.Fprintf(os.Stdout, "Response from `SessionAPI.CreateSourcePolicy`: %v\n", resp)
 }
 ```
 
@@ -98,22 +98,22 @@ Delete a session policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of session policy to delete.
+	id := "id_example" // string | ID of session policy to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SessionAPI.DeleteSourcePolicy(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.DeleteSourcePolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SessionAPI.DeleteSourcePolicy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.DeleteSourcePolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -164,23 +164,23 @@ Get the application session policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionAPI.GetApplicationPolicy(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.GetApplicationPolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetApplicationPolicy`: ApplicationSessionPolicy
-    fmt.Fprintf(os.Stdout, "Response from `SessionAPI.GetApplicationPolicy`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SessionAPI.GetApplicationPolicy(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.GetApplicationPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetApplicationPolicy`: ApplicationSessionPolicy
+	fmt.Fprintf(os.Stdout, "Response from `SessionAPI.GetApplicationPolicy`: %v\n", resp)
 }
 ```
 
@@ -223,23 +223,23 @@ Get the global authentication session policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionAPI.GetGlobalPolicy(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.GetGlobalPolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetGlobalPolicy`: GlobalAuthenticationSessionPolicy
-    fmt.Fprintf(os.Stdout, "Response from `SessionAPI.GetGlobalPolicy`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SessionAPI.GetGlobalPolicy(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.GetGlobalPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetGlobalPolicy`: GlobalAuthenticationSessionPolicy
+	fmt.Fprintf(os.Stdout, "Response from `SessionAPI.GetGlobalPolicy`: %v\n", resp)
 }
 ```
 
@@ -282,23 +282,23 @@ Get general session management settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionAPI.GetSessionSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.GetSessionSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSessionSettings`: SessionSettings
-    fmt.Fprintf(os.Stdout, "Response from `SessionAPI.GetSessionSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SessionAPI.GetSessionSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.GetSessionSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSessionSettings`: SessionSettings
+	fmt.Fprintf(os.Stdout, "Response from `SessionAPI.GetSessionSettings`: %v\n", resp)
 }
 ```
 
@@ -343,23 +343,23 @@ Get list of session policies.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionAPI.GetSourcePolicies(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.GetSourcePolicies``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSourcePolicies`: AuthenticationSessionPolicies
-    fmt.Fprintf(os.Stdout, "Response from `SessionAPI.GetSourcePolicies`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SessionAPI.GetSourcePolicies(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.GetSourcePolicies``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSourcePolicies`: AuthenticationSessionPolicies
+	fmt.Fprintf(os.Stdout, "Response from `SessionAPI.GetSourcePolicies`: %v\n", resp)
 }
 ```
 
@@ -404,24 +404,24 @@ Find session policy by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the session policy to fetch.
+	id := "id_example" // string | ID of the session policy to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionAPI.GetSourcePolicy(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.GetSourcePolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSourcePolicy`: AuthenticationSessionPolicy
-    fmt.Fprintf(os.Stdout, "Response from `SessionAPI.GetSourcePolicy`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SessionAPI.GetSourcePolicy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.GetSourcePolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSourcePolicy`: AuthenticationSessionPolicy
+	fmt.Fprintf(os.Stdout, "Response from `SessionAPI.GetSourcePolicy`: %v\n", resp)
 }
 ```
 
@@ -472,24 +472,24 @@ Update the application session policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewApplicationSessionPolicy() // ApplicationSessionPolicy | Application session policy.
+	body := *openapiclient.NewApplicationSessionPolicy() // ApplicationSessionPolicy | Application session policy.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionAPI.UpdateApplicationPolicy(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.UpdateApplicationPolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateApplicationPolicy`: ApplicationSessionPolicy
-    fmt.Fprintf(os.Stdout, "Response from `SessionAPI.UpdateApplicationPolicy`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SessionAPI.UpdateApplicationPolicy(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.UpdateApplicationPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateApplicationPolicy`: ApplicationSessionPolicy
+	fmt.Fprintf(os.Stdout, "Response from `SessionAPI.UpdateApplicationPolicy`: %v\n", resp)
 }
 ```
 
@@ -536,24 +536,24 @@ Update the global authentication session policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewGlobalAuthenticationSessionPolicy(false) // GlobalAuthenticationSessionPolicy | Global authentication session policy.
+	body := *openapiclient.NewGlobalAuthenticationSessionPolicy(false) // GlobalAuthenticationSessionPolicy | Global authentication session policy.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionAPI.UpdateGlobalPolicy(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.UpdateGlobalPolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateGlobalPolicy`: GlobalAuthenticationSessionPolicy
-    fmt.Fprintf(os.Stdout, "Response from `SessionAPI.UpdateGlobalPolicy`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SessionAPI.UpdateGlobalPolicy(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.UpdateGlobalPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateGlobalPolicy`: GlobalAuthenticationSessionPolicy
+	fmt.Fprintf(os.Stdout, "Response from `SessionAPI.UpdateGlobalPolicy`: %v\n", resp)
 }
 ```
 
@@ -600,24 +600,24 @@ Update general session management settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewSessionSettings() // SessionSettings | Session settings.
+	body := *openapiclient.NewSessionSettings() // SessionSettings | Session settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionAPI.UpdateSessionSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.UpdateSessionSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateSessionSettings`: SessionSettings
-    fmt.Fprintf(os.Stdout, "Response from `SessionAPI.UpdateSessionSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SessionAPI.UpdateSessionSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.UpdateSessionSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSessionSettings`: SessionSettings
+	fmt.Fprintf(os.Stdout, "Response from `SessionAPI.UpdateSessionSettings`: %v\n", resp)
 }
 ```
 
@@ -666,25 +666,25 @@ Update a session policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the session policy to update.
-    body := *openapiclient.NewAuthenticationSessionPolicy(*openapiclient.NewAuthenticationSource("Type_example", *openapiclient.NewResourceLink("Id_example")), false) // AuthenticationSessionPolicy | Configuration for updated policy.
+	id := "id_example" // string | ID of the session policy to update.
+	body := *openapiclient.NewAuthenticationSessionPolicy(*openapiclient.NewAuthenticationSource("Type_example", *openapiclient.NewResourceLink("Id_example")), false) // AuthenticationSessionPolicy | Configuration for updated policy.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionAPI.UpdateSourcePolicy(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.UpdateSourcePolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateSourcePolicy`: AuthenticationSessionPolicy
-    fmt.Fprintf(os.Stdout, "Response from `SessionAPI.UpdateSourcePolicy`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SessionAPI.UpdateSourcePolicy(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.UpdateSourcePolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSourcePolicy`: AuthenticationSessionPolicy
+	fmt.Fprintf(os.Stdout, "Response from `SessionAPI.UpdateSourcePolicy`: %v\n", resp)
 }
 ```
 

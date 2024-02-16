@@ -26,24 +26,24 @@ Create a new virtual issuer.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewIssuer("Name_example", "Host_example") // Issuer | Configuration for new virtual issuer.
+	body := *openapiclient.NewIssuer("Name_example", "Host_example") // Issuer | Configuration for new virtual issuer.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthIssuersAPI.AddOauthIssuer(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthIssuersAPI.AddOauthIssuer``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AddOauthIssuer`: Issuer
-    fmt.Fprintf(os.Stdout, "Response from `OauthIssuersAPI.AddOauthIssuer`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthIssuersAPI.AddOauthIssuer(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthIssuersAPI.AddOauthIssuer``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AddOauthIssuer`: Issuer
+	fmt.Fprintf(os.Stdout, "Response from `OauthIssuersAPI.AddOauthIssuer`: %v\n", resp)
 }
 ```
 
@@ -92,22 +92,22 @@ Delete a virtual issuer.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the virtual issuer to delete.
+	id := "id_example" // string | ID of the virtual issuer to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthIssuersAPI.DeleteOauthIssuer(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthIssuersAPI.DeleteOauthIssuer``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.OauthIssuersAPI.DeleteOauthIssuer(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthIssuersAPI.DeleteOauthIssuer``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -160,24 +160,24 @@ Find a virtual issuer by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the virtual issuer to fetch.
+	id := "id_example" // string | ID of the virtual issuer to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthIssuersAPI.GetOauthIssuerById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthIssuersAPI.GetOauthIssuerById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOauthIssuerById`: Issuer
-    fmt.Fprintf(os.Stdout, "Response from `OauthIssuersAPI.GetOauthIssuerById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthIssuersAPI.GetOauthIssuerById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthIssuersAPI.GetOauthIssuerById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOauthIssuerById`: Issuer
+	fmt.Fprintf(os.Stdout, "Response from `OauthIssuersAPI.GetOauthIssuerById`: %v\n", resp)
 }
 ```
 
@@ -228,23 +228,23 @@ Get the list of virtual issuers.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthIssuersAPI.GetOauthIssuers(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthIssuersAPI.GetOauthIssuers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetOauthIssuers`: Issuers
-    fmt.Fprintf(os.Stdout, "Response from `OauthIssuersAPI.GetOauthIssuers`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthIssuersAPI.GetOauthIssuers(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthIssuersAPI.GetOauthIssuers``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOauthIssuers`: Issuers
+	fmt.Fprintf(os.Stdout, "Response from `OauthIssuersAPI.GetOauthIssuers`: %v\n", resp)
 }
 ```
 
@@ -289,25 +289,25 @@ Update a virtual issuer.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the virtual issuer to update.
-    body := *openapiclient.NewIssuer("Name_example", "Host_example") // Issuer | Configuration for updated virtual issuer.
+	id := "id_example" // string | ID of the virtual issuer to update.
+	body := *openapiclient.NewIssuer("Name_example", "Host_example") // Issuer | Configuration for updated virtual issuer.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthIssuersAPI.UpdateOauthIssuer(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthIssuersAPI.UpdateOauthIssuer``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateOauthIssuer`: Issuer
-    fmt.Fprintf(os.Stdout, "Response from `OauthIssuersAPI.UpdateOauthIssuer`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthIssuersAPI.UpdateOauthIssuer(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthIssuersAPI.UpdateOauthIssuer``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateOauthIssuer`: Issuer
+	fmt.Fprintf(os.Stdout, "Response from `OauthIssuersAPI.UpdateOauthIssuer`: %v\n", resp)
 }
 ```
 

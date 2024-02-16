@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 	"time"
 )
 
@@ -53,6 +55,8 @@ type Connection struct {
 	// This status indicates whether the connection has been replicated to the cluster. This property only applies when automatic replication of connections is enabled. It is read only and is ignored on PUT and POST requests.
 	ReplicationStatus *string `json:"replicationStatus,omitempty" tfsdk:"replication_status"`
 }
+
+type _Connection Connection
 
 // NewConnection instantiates a new Connection object
 // This constructor will assign default values to properties that have it defined,
@@ -694,6 +698,43 @@ func (o Connection) ToMap() (map[string]interface{}, error) {
 		toSerialize["replicationStatus"] = o.ReplicationStatus
 	}
 	return toSerialize, nil
+}
+
+func (o *Connection) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"entityId",
+		"name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varConnection := _Connection{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varConnection)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Connection(varConnection)
+
+	return err
 }
 
 type NullableConnection struct {

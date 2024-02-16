@@ -26,24 +26,24 @@ Add a new Metadata URL.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewMetadataUrl("Name_example", "Url_example") // MetadataUrl | Configuration for a new Metadata URL.
+	body := *openapiclient.NewMetadataUrl("Name_example", "Url_example") // MetadataUrl | Configuration for a new Metadata URL.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataUrlsAPI.AddMetadataUrl(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataUrlsAPI.AddMetadataUrl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AddMetadataUrl`: MetadataUrl
-    fmt.Fprintf(os.Stdout, "Response from `MetadataUrlsAPI.AddMetadataUrl`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetadataUrlsAPI.AddMetadataUrl(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetadataUrlsAPI.AddMetadataUrl``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AddMetadataUrl`: MetadataUrl
+	fmt.Fprintf(os.Stdout, "Response from `MetadataUrlsAPI.AddMetadataUrl`: %v\n", resp)
 }
 ```
 
@@ -92,22 +92,22 @@ Delete a Metadata URL by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of Metadata URL to delete.
+	id := "id_example" // string | ID of Metadata URL to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.MetadataUrlsAPI.DeleteMetadataUrl(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataUrlsAPI.DeleteMetadataUrl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.MetadataUrlsAPI.DeleteMetadataUrl(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetadataUrlsAPI.DeleteMetadataUrl``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -160,24 +160,24 @@ Get a Metadata URL by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of Metadata URL to fetch
+	id := "id_example" // string | ID of Metadata URL to fetch
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataUrlsAPI.GetMetadataUrl(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataUrlsAPI.GetMetadataUrl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetMetadataUrl`: MetadataUrl
-    fmt.Fprintf(os.Stdout, "Response from `MetadataUrlsAPI.GetMetadataUrl`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetadataUrlsAPI.GetMetadataUrl(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetadataUrlsAPI.GetMetadataUrl``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMetadataUrl`: MetadataUrl
+	fmt.Fprintf(os.Stdout, "Response from `MetadataUrlsAPI.GetMetadataUrl`: %v\n", resp)
 }
 ```
 
@@ -228,23 +228,23 @@ Get a list of Metadata URLs
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataUrlsAPI.GetMetadataUrls(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataUrlsAPI.GetMetadataUrls``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetMetadataUrls`: MetadataUrls
-    fmt.Fprintf(os.Stdout, "Response from `MetadataUrlsAPI.GetMetadataUrls`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetadataUrlsAPI.GetMetadataUrls(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetadataUrlsAPI.GetMetadataUrls``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMetadataUrls`: MetadataUrls
+	fmt.Fprintf(os.Stdout, "Response from `MetadataUrlsAPI.GetMetadataUrls`: %v\n", resp)
 }
 ```
 
@@ -289,25 +289,25 @@ Update a Metadata URL by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the Metadata URL to update.
-    body := *openapiclient.NewMetadataUrl("Name_example", "Url_example") // MetadataUrl | Configuration for the Metadata URL.
+	id := "id_example" // string | ID of the Metadata URL to update.
+	body := *openapiclient.NewMetadataUrl("Name_example", "Url_example") // MetadataUrl | Configuration for the Metadata URL.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataUrlsAPI.UpdateMetadataUrl(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataUrlsAPI.UpdateMetadataUrl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateMetadataUrl`: MetadataUrl
-    fmt.Fprintf(os.Stdout, "Response from `MetadataUrlsAPI.UpdateMetadataUrl`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetadataUrlsAPI.UpdateMetadataUrl(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetadataUrlsAPI.UpdateMetadataUrl``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateMetadataUrl`: MetadataUrl
+	fmt.Fprintf(os.Stdout, "Response from `MetadataUrlsAPI.UpdateMetadataUrl`: %v\n", resp)
 }
 ```
 

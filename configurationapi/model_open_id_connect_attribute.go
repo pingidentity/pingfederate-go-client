@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the OpenIdConnectAttribute type satisfies the MappedNullable interface at compile time
@@ -28,6 +30,8 @@ type OpenIdConnectAttribute struct {
 	// Indicates whether attribute value is always returned as an array.
 	MultiValued *bool `json:"multiValued,omitempty" tfsdk:"multi_valued"`
 }
+
+type _OpenIdConnectAttribute OpenIdConnectAttribute
 
 // NewOpenIdConnectAttribute instantiates a new OpenIdConnectAttribute object
 // This constructor will assign default values to properties that have it defined,
@@ -188,6 +192,42 @@ func (o OpenIdConnectAttribute) ToMap() (map[string]interface{}, error) {
 		toSerialize["multiValued"] = o.MultiValued
 	}
 	return toSerialize, nil
+}
+
+func (o *OpenIdConnectAttribute) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varOpenIdConnectAttribute := _OpenIdConnectAttribute{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varOpenIdConnectAttribute)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OpenIdConnectAttribute(varOpenIdConnectAttribute)
+
+	return err
 }
 
 type NullableOpenIdConnectAttribute struct {

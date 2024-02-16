@@ -31,25 +31,25 @@ Create a new IdP adapter instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewIdpAdapter("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // IdpAdapter | Configuration for the IdP adapter instance.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	body := *openapiclient.NewIdpAdapter("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // IdpAdapter | Configuration for the IdP adapter instance.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpAdaptersAPI.CreateIdpAdapter(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.CreateIdpAdapter``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateIdpAdapter`: IdpAdapter
-    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.CreateIdpAdapter`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpAdaptersAPI.CreateIdpAdapter(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.CreateIdpAdapter``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateIdpAdapter`: IdpAdapter
+	fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.CreateIdpAdapter`: %v\n", resp)
 }
 ```
 
@@ -99,22 +99,22 @@ Delete an IdP adapter instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of IdP adapter instance.
+	id := "id_example" // string | ID of IdP adapter instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IdpAdaptersAPI.DeleteIdpAdapter(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.DeleteIdpAdapter``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.IdpAdaptersAPI.DeleteIdpAdapter(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.DeleteIdpAdapter``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -167,24 +167,24 @@ Find an IdP adapter instance by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of IdP adapter instance.
+	id := "id_example" // string | ID of IdP adapter instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpAdaptersAPI.GetIdpAdapter(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.GetIdpAdapter``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetIdpAdapter`: IdpAdapter
-    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.GetIdpAdapter`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpAdaptersAPI.GetIdpAdapter(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.GetIdpAdapter``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetIdpAdapter`: IdpAdapter
+	fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.GetIdpAdapter`: %v\n", resp)
 }
 ```
 
@@ -235,23 +235,23 @@ Get the list of available IdP adapter descriptors.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpAdaptersAPI.GetIdpAdapterDescriptors(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.GetIdpAdapterDescriptors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetIdpAdapterDescriptors`: IdpAdapterDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.GetIdpAdapterDescriptors`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpAdaptersAPI.GetIdpAdapterDescriptors(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.GetIdpAdapterDescriptors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetIdpAdapterDescriptors`: IdpAdapterDescriptors
+	fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.GetIdpAdapterDescriptors`: %v\n", resp)
 }
 ```
 
@@ -296,24 +296,24 @@ Get the description of an IdP adapter plugin by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of IdP adapter descriptor to fetch.
+	id := "id_example" // string | ID of IdP adapter descriptor to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpAdaptersAPI.GetIdpAdapterDescriptorsById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.GetIdpAdapterDescriptorsById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetIdpAdapterDescriptorsById`: IdpAdapterDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.GetIdpAdapterDescriptorsById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpAdaptersAPI.GetIdpAdapterDescriptorsById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.GetIdpAdapterDescriptorsById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetIdpAdapterDescriptorsById`: IdpAdapterDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.GetIdpAdapterDescriptorsById`: %v\n", resp)
 }
 ```
 
@@ -364,26 +364,26 @@ Get the list of configured IdP adapter instances.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    page := int64(56) // int64 | Page number to retrieve. (optional)
-    numberPerPage := int64(56) // int64 | Number of adapters per page. (optional)
-    filter := "filter_example" // string | Filter criteria limits the IdP adapters that are returned to only those that match it. The filter criteria is compared to the IdP adapter instance name and ID fields. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. (optional)
+	page := int64(56) // int64 | Page number to retrieve. (optional)
+	numberPerPage := int64(56) // int64 | Number of adapters per page. (optional)
+	filter := "filter_example" // string | Filter criteria limits the IdP adapters that are returned to only those that match it. The filter criteria is compared to the IdP adapter instance name and ID fields. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpAdaptersAPI.GetIdpAdapters(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.GetIdpAdapters``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetIdpAdapters`: IdpAdapters
-    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.GetIdpAdapters`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpAdaptersAPI.GetIdpAdapters(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.GetIdpAdapters``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetIdpAdapters`: IdpAdapters
+	fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.GetIdpAdapters`: %v\n", resp)
 }
 ```
 
@@ -434,25 +434,25 @@ Find an IdP adapter instance's action by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the IdP adapter instance to which these actions belongs to.
-    actionId := "actionId_example" // string | ID of the action.
+	id := "id_example" // string | ID of the IdP adapter instance to which these actions belongs to.
+	actionId := "actionId_example" // string | ID of the action.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpAdaptersAPI.GetIdpAdaptersActionById(context.Background(), id, actionId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.GetIdpAdaptersActionById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetIdpAdaptersActionById`: Action
-    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.GetIdpAdaptersActionById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpAdaptersAPI.GetIdpAdaptersActionById(context.Background(), id, actionId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.GetIdpAdaptersActionById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetIdpAdaptersActionById`: Action
+	fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.GetIdpAdaptersActionById`: %v\n", resp)
 }
 ```
 
@@ -507,24 +507,24 @@ List the actions for an IdP adapter instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the IdP adapter instance to which these actions belongs to.
+	id := "id_example" // string | ID of the IdP adapter instance to which these actions belongs to.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpAdaptersAPI.GetIdpAdaptersActions(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.GetIdpAdaptersActions``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetIdpAdaptersActions`: Actions
-    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.GetIdpAdaptersActions`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpAdaptersAPI.GetIdpAdaptersActions(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.GetIdpAdaptersActions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetIdpAdaptersActions`: Actions
+	fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.GetIdpAdaptersActions`: %v\n", resp)
 }
 ```
 
@@ -577,26 +577,26 @@ Invokes an action for an IdP adapter instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the IdP adapter instance to which these actions belongs to.
-    actionId := "actionId_example" // string | ID of the action.
-    body := *openapiclient.NewActionOptions([]openapiclient.ActionParameter{*openapiclient.NewActionParameter("Name_example")}) // ActionOptions | Action options for action invoked. (optional)
+	id := "id_example" // string | ID of the IdP adapter instance to which these actions belongs to.
+	actionId := "actionId_example" // string | ID of the action.
+	body := *openapiclient.NewActionOptions([]openapiclient.ActionParameter{*openapiclient.NewActionParameter("Name_example")}) // ActionOptions | Action options for action invoked. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpAdaptersAPI.InvokeIdpAdaptersActionWithOptions(context.Background(), id, actionId).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.InvokeIdpAdaptersActionWithOptions``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `InvokeIdpAdaptersActionWithOptions`: ActionResult
-    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.InvokeIdpAdaptersActionWithOptions`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpAdaptersAPI.InvokeIdpAdaptersActionWithOptions(context.Background(), id, actionId).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.InvokeIdpAdaptersActionWithOptions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvokeIdpAdaptersActionWithOptions`: ActionResult
+	fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.InvokeIdpAdaptersActionWithOptions`: %v\n", resp)
 }
 ```
 
@@ -652,26 +652,26 @@ Update an IdP adapter instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of IdP adapter instance.
-    body := *openapiclient.NewIdpAdapter("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // IdpAdapter | Configuration for the IdP adapter instance.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	id := "id_example" // string | ID of IdP adapter instance.
+	body := *openapiclient.NewIdpAdapter("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // IdpAdapter | Configuration for the IdP adapter instance.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdpAdaptersAPI.UpdateIdpAdapter(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.UpdateIdpAdapter``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateIdpAdapter`: IdpAdapter
-    fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.UpdateIdpAdapter`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdpAdaptersAPI.UpdateIdpAdapter(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdpAdaptersAPI.UpdateIdpAdapter``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateIdpAdapter`: IdpAdapter
+	fmt.Fprintf(os.Stdout, "Response from `IdpAdaptersAPI.UpdateIdpAdapter`: %v\n", resp)
 }
 ```
 

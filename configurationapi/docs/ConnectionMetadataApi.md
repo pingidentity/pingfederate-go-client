@@ -23,24 +23,24 @@ Convert a partner's SAML metadata into a JSON representation.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewConvertMetadataRequest("ConnectionType_example", "ExpectedProtocol_example", "SamlMetadata_example") // ConvertMetadataRequest | Convert metadata request.
+	body := *openapiclient.NewConvertMetadataRequest("ConnectionType_example", "ExpectedProtocol_example", "SamlMetadata_example") // ConvertMetadataRequest | Convert metadata request.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConnectionMetadataAPI.Convert(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionMetadataAPI.Convert``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `Convert`: ConvertMetadataResponse
-    fmt.Fprintf(os.Stdout, "Response from `ConnectionMetadataAPI.Convert`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ConnectionMetadataAPI.Convert(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionMetadataAPI.Convert``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `Convert`: ConvertMetadataResponse
+	fmt.Fprintf(os.Stdout, "Response from `ConnectionMetadataAPI.Convert`: %v\n", resp)
 }
 ```
 
@@ -87,24 +87,24 @@ Export a connection's SAML metadata that can be given to a partner.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewExportMetadataRequest("ConnectionType_example", "ConnectionId_example") // ExportMetadataRequest | Export metadata request.
+	body := *openapiclient.NewExportMetadataRequest("ConnectionType_example", "ConnectionId_example") // ExportMetadataRequest | Export metadata request.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConnectionMetadataAPI.Export(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionMetadataAPI.Export``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `Export`: string
-    fmt.Fprintf(os.Stdout, "Response from `ConnectionMetadataAPI.Export`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ConnectionMetadataAPI.Export(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionMetadataAPI.Export``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `Export`: string
+	fmt.Fprintf(os.Stdout, "Response from `ConnectionMetadataAPI.Export`: %v\n", resp)
 }
 ```
 

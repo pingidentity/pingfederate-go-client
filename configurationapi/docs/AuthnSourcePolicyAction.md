@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Type** | **string** | The authentication selection type. | 
+**Context** | Pointer to **string** | The result context. | [optional] 
 **AttributeRules** | Pointer to [**AttributeRules**](AttributeRules.md) |  | [optional] 
 **AuthenticationSource** | [**AuthenticationSource**](AuthenticationSource.md) |  | 
 **InputUserIdMapping** | Pointer to [**AttributeFulfillmentValue**](AttributeFulfillmentValue.md) |  | [optional] 
@@ -13,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewAuthnSourcePolicyAction
 
-`func NewAuthnSourcePolicyAction(authenticationSource AuthenticationSource, ) *AuthnSourcePolicyAction`
+`func NewAuthnSourcePolicyAction(type_ string, authenticationSource AuthenticationSource, ) *AuthnSourcePolicyAction`
 
 NewAuthnSourcePolicyAction instantiates a new AuthnSourcePolicyAction object
 This constructor will assign default values to properties that have it defined,
@@ -27,6 +29,51 @@ will change when the set of required properties is changed
 NewAuthnSourcePolicyActionWithDefaults instantiates a new AuthnSourcePolicyAction object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetType
+
+`func (o *AuthnSourcePolicyAction) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *AuthnSourcePolicyAction) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *AuthnSourcePolicyAction) SetType(v string)`
+
+SetType sets Type field to given value.
+
+
+### GetContext
+
+`func (o *AuthnSourcePolicyAction) GetContext() string`
+
+GetContext returns the Context field if non-nil, zero value otherwise.
+
+### GetContextOk
+
+`func (o *AuthnSourcePolicyAction) GetContextOk() (*string, bool)`
+
+GetContextOk returns a tuple with the Context field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContext
+
+`func (o *AuthnSourcePolicyAction) SetContext(v string)`
+
+SetContext sets Context field to given value.
+
+### HasContext
+
+`func (o *AuthnSourcePolicyAction) HasContext() bool`
+
+HasContext returns a boolean if a field has been set.
 
 ### GetAttributeRules
 

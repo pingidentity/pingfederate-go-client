@@ -8,9 +8,12 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** | The persistent, unique ID for the data store. It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned if not specified. | [optional] 
 **MaskAttributeValues** | Pointer to **bool** | Whether attribute values should be masked in the log. | [optional] 
 **LastModified** | Pointer to **time.Time** | The time at which the datastore instance was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
+**Name** | **string** | The data store name with a unique value across all data sources. Omitting this attribute will set the value to a combination of the hostname(s) and the principal. | 
+**PluginDescriptorRef** | [**ResourceLink**](ResourceLink.md) |  | 
+**ParentRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
+**Configuration** | [**PluginConfiguration**](PluginConfiguration.md) |  | 
 **ConnectionUrlTags** | Pointer to [**[]JdbcTagConfig**](JdbcTagConfig.md) | The set of connection URLs and associated tags for this JDBC data store. This is required if &#39;connectionUrl&#39; is not provided. | [optional] 
 **ConnectionUrl** | Pointer to **string** | The default location of the JDBC database. This field is required if no mapping for JDBC database location and tags is specified. | [optional] 
-**Name** | Pointer to **string** | The data store name with a unique value across all data sources. Omitting this attribute will set the value to a combination of the hostname(s) and the principal. | [optional] 
 **DriverClass** | **string** | The name of the driver class used to communicate with the source database. | 
 **UserName** | Pointer to **string** | The name that identifies the user when connecting to the database. | [optional] 
 **Password** | Pointer to **string** | The password credential required to access the data store. GETs will not return this attribute. To update this field, specify the new value in this attribute. | [optional] 
@@ -53,7 +56,7 @@ Name | Type | Description | Notes
 
 ### NewDataStoreAggregation
 
-`func NewDataStoreAggregation(type_ string, driverClass string, ldapType string, pingOneConnectionRef ResourceLink, pingOneEnvironmentId string, pingOneLdapGatewayId string, ) *DataStoreAggregation`
+`func NewDataStoreAggregation(type_ string, name string, pluginDescriptorRef ResourceLink, configuration PluginConfiguration, driverClass string, ldapType string, pingOneConnectionRef ResourceLink, pingOneEnvironmentId string, pingOneLdapGatewayId string, ) *DataStoreAggregation`
 
 NewDataStoreAggregation instantiates a new DataStoreAggregation object
 This constructor will assign default values to properties that have it defined,
@@ -163,6 +166,91 @@ SetLastModified sets LastModified field to given value.
 
 HasLastModified returns a boolean if a field has been set.
 
+### GetName
+
+`func (o *DataStoreAggregation) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *DataStoreAggregation) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *DataStoreAggregation) SetName(v string)`
+
+SetName sets Name field to given value.
+
+
+### GetPluginDescriptorRef
+
+`func (o *DataStoreAggregation) GetPluginDescriptorRef() ResourceLink`
+
+GetPluginDescriptorRef returns the PluginDescriptorRef field if non-nil, zero value otherwise.
+
+### GetPluginDescriptorRefOk
+
+`func (o *DataStoreAggregation) GetPluginDescriptorRefOk() (*ResourceLink, bool)`
+
+GetPluginDescriptorRefOk returns a tuple with the PluginDescriptorRef field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPluginDescriptorRef
+
+`func (o *DataStoreAggregation) SetPluginDescriptorRef(v ResourceLink)`
+
+SetPluginDescriptorRef sets PluginDescriptorRef field to given value.
+
+
+### GetParentRef
+
+`func (o *DataStoreAggregation) GetParentRef() ResourceLink`
+
+GetParentRef returns the ParentRef field if non-nil, zero value otherwise.
+
+### GetParentRefOk
+
+`func (o *DataStoreAggregation) GetParentRefOk() (*ResourceLink, bool)`
+
+GetParentRefOk returns a tuple with the ParentRef field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentRef
+
+`func (o *DataStoreAggregation) SetParentRef(v ResourceLink)`
+
+SetParentRef sets ParentRef field to given value.
+
+### HasParentRef
+
+`func (o *DataStoreAggregation) HasParentRef() bool`
+
+HasParentRef returns a boolean if a field has been set.
+
+### GetConfiguration
+
+`func (o *DataStoreAggregation) GetConfiguration() PluginConfiguration`
+
+GetConfiguration returns the Configuration field if non-nil, zero value otherwise.
+
+### GetConfigurationOk
+
+`func (o *DataStoreAggregation) GetConfigurationOk() (*PluginConfiguration, bool)`
+
+GetConfigurationOk returns a tuple with the Configuration field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfiguration
+
+`func (o *DataStoreAggregation) SetConfiguration(v PluginConfiguration)`
+
+SetConfiguration sets Configuration field to given value.
+
+
 ### GetConnectionUrlTags
 
 `func (o *DataStoreAggregation) GetConnectionUrlTags() []JdbcTagConfig`
@@ -212,31 +300,6 @@ SetConnectionUrl sets ConnectionUrl field to given value.
 `func (o *DataStoreAggregation) HasConnectionUrl() bool`
 
 HasConnectionUrl returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *DataStoreAggregation) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *DataStoreAggregation) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *DataStoreAggregation) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *DataStoreAggregation) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetDriverClass
 

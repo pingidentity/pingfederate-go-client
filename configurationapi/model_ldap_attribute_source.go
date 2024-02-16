@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the LdapAttributeSource type satisfies the MappedNullable interface at compile time
@@ -19,7 +21,15 @@ var _ MappedNullable = &LdapAttributeSource{}
 
 // LdapAttributeSource struct for LdapAttributeSource
 type LdapAttributeSource struct {
-	AttributeSource
+	// The data store type of this attribute source.
+	Type         string       `json:"type" tfsdk:"type"`
+	DataStoreRef ResourceLink `json:"dataStoreRef" tfsdk:"data_store_ref"`
+	// The ID that defines this attribute source. Only alphanumeric characters allowed.<br>Note: Required for OpenID Connect policy attribute sources, OAuth IdP adapter mappings, OAuth access token mappings and APC-to-SP Adapter Mappings. IdP Connections will ignore this property since it only allows one attribute source to be defined per mapping. IdP-to-SP Adapter Mappings can contain multiple attribute sources.
+	Id *string `json:"id,omitempty" tfsdk:"id"`
+	// The description of this attribute source. The description needs to be unique amongst the attribute sources for the mapping.<br>Note: Required for APC-to-SP Adapter Mappings
+	Description *string `json:"description,omitempty" tfsdk:"description"`
+	// A list of mappings from attribute names to their fulfillment values. This field is only valid for the SP Connection's Browser SSO mappings
+	AttributeContractFulfillment *map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment,omitempty" tfsdk:"attribute_contract_fulfillment"`
 	// The base DN to search from. If not specified, the search will start at the LDAP's root.
 	BaseDn *string `json:"baseDn,omitempty" tfsdk:"base_dn"`
 	// Determines the node depth of the query.
@@ -34,11 +44,13 @@ type LdapAttributeSource struct {
 	MemberOfNestedGroup *bool `json:"memberOfNestedGroup,omitempty" tfsdk:"member_of_nested_group"`
 }
 
+type _LdapAttributeSource LdapAttributeSource
+
 // NewLdapAttributeSource instantiates a new LdapAttributeSource object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLdapAttributeSource(searchScope string, searchFilter string, type_ string, dataStoreRef ResourceLink) *LdapAttributeSource {
+func NewLdapAttributeSource(type_ string, dataStoreRef ResourceLink, searchScope string, searchFilter string) *LdapAttributeSource {
 	this := LdapAttributeSource{}
 	this.Type = type_
 	this.DataStoreRef = dataStoreRef
@@ -53,6 +65,150 @@ func NewLdapAttributeSource(searchScope string, searchFilter string, type_ strin
 func NewLdapAttributeSourceWithDefaults() *LdapAttributeSource {
 	this := LdapAttributeSource{}
 	return &this
+}
+
+// GetType returns the Type field value
+func (o *LdapAttributeSource) GetType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value
+// and a boolean to check if the value has been set.
+func (o *LdapAttributeSource) GetTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Type, true
+}
+
+// SetType sets field value
+func (o *LdapAttributeSource) SetType(v string) {
+	o.Type = v
+}
+
+// GetDataStoreRef returns the DataStoreRef field value
+func (o *LdapAttributeSource) GetDataStoreRef() ResourceLink {
+	if o == nil {
+		var ret ResourceLink
+		return ret
+	}
+
+	return o.DataStoreRef
+}
+
+// GetDataStoreRefOk returns a tuple with the DataStoreRef field value
+// and a boolean to check if the value has been set.
+func (o *LdapAttributeSource) GetDataStoreRefOk() (*ResourceLink, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.DataStoreRef, true
+}
+
+// SetDataStoreRef sets field value
+func (o *LdapAttributeSource) SetDataStoreRef(v ResourceLink) {
+	o.DataStoreRef = v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *LdapAttributeSource) GetId() string {
+	if o == nil || IsNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LdapAttributeSource) GetIdOk() (*string, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *LdapAttributeSource) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *LdapAttributeSource) SetId(v string) {
+	o.Id = &v
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *LdapAttributeSource) GetDescription() string {
+	if o == nil || IsNil(o.Description) {
+		var ret string
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LdapAttributeSource) GetDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.Description) {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// HasDescription returns a boolean if a field has been set.
+func (o *LdapAttributeSource) HasDescription() bool {
+	if o != nil && !IsNil(o.Description) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *LdapAttributeSource) SetDescription(v string) {
+	o.Description = &v
+}
+
+// GetAttributeContractFulfillment returns the AttributeContractFulfillment field value if set, zero value otherwise.
+func (o *LdapAttributeSource) GetAttributeContractFulfillment() map[string]AttributeFulfillmentValue {
+	if o == nil || IsNil(o.AttributeContractFulfillment) {
+		var ret map[string]AttributeFulfillmentValue
+		return ret
+	}
+	return *o.AttributeContractFulfillment
+}
+
+// GetAttributeContractFulfillmentOk returns a tuple with the AttributeContractFulfillment field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LdapAttributeSource) GetAttributeContractFulfillmentOk() (*map[string]AttributeFulfillmentValue, bool) {
+	if o == nil || IsNil(o.AttributeContractFulfillment) {
+		return nil, false
+	}
+	return o.AttributeContractFulfillment, true
+}
+
+// HasAttributeContractFulfillment returns a boolean if a field has been set.
+func (o *LdapAttributeSource) HasAttributeContractFulfillment() bool {
+	if o != nil && !IsNil(o.AttributeContractFulfillment) {
+		return true
+	}
+
+	return false
+}
+
+// SetAttributeContractFulfillment gets a reference to the given map[string]AttributeFulfillmentValue and assigns it to the AttributeContractFulfillment field.
+func (o *LdapAttributeSource) SetAttributeContractFulfillment(v map[string]AttributeFulfillmentValue) {
+	o.AttributeContractFulfillment = &v
 }
 
 // GetBaseDn returns the BaseDn field value if set, zero value otherwise.
@@ -241,13 +397,16 @@ func (o LdapAttributeSource) MarshalJSON() ([]byte, error) {
 
 func (o LdapAttributeSource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	serializedAttributeSource, errAttributeSource := json.Marshal(o.AttributeSource)
-	if errAttributeSource != nil {
-		return map[string]interface{}{}, errAttributeSource
+	toSerialize["type"] = o.Type
+	toSerialize["dataStoreRef"] = o.DataStoreRef
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
-	errAttributeSource = json.Unmarshal([]byte(serializedAttributeSource), &toSerialize)
-	if errAttributeSource != nil {
-		return map[string]interface{}{}, errAttributeSource
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.AttributeContractFulfillment) {
+		toSerialize["attributeContractFulfillment"] = o.AttributeContractFulfillment
 	}
 	if !IsNil(o.BaseDn) {
 		toSerialize["baseDn"] = o.BaseDn
@@ -264,6 +423,45 @@ func (o LdapAttributeSource) ToMap() (map[string]interface{}, error) {
 		toSerialize["memberOfNestedGroup"] = o.MemberOfNestedGroup
 	}
 	return toSerialize, nil
+}
+
+func (o *LdapAttributeSource) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"type",
+		"dataStoreRef",
+		"searchScope",
+		"searchFilter",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varLdapAttributeSource := _LdapAttributeSource{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varLdapAttributeSource)
+
+	if err != nil {
+		return err
+	}
+
+	*o = LdapAttributeSource(varLdapAttributeSource)
+
+	return err
 }
 
 type NullableLdapAttributeSource struct {

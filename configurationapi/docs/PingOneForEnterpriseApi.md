@@ -25,23 +25,23 @@ Disconnect from PingOne for Enterprise
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PingOneForEnterpriseAPI.Disconnect(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PingOneForEnterpriseAPI.Disconnect``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `Disconnect`: PingOneForEnterpriseSettings
-    fmt.Fprintf(os.Stdout, "Response from `PingOneForEnterpriseAPI.Disconnect`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PingOneForEnterpriseAPI.Disconnect(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PingOneForEnterpriseAPI.Disconnect``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `Disconnect`: PingOneForEnterpriseSettings
+	fmt.Fprintf(os.Stdout, "Response from `PingOneForEnterpriseAPI.Disconnect`: %v\n", resp)
 }
 ```
 
@@ -84,23 +84,23 @@ Get the PingOne for Enterprise key pair settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PingOneForEnterpriseAPI.GetKeyPairs(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PingOneForEnterpriseAPI.GetKeyPairs``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetKeyPairs`: P14EKeysView
-    fmt.Fprintf(os.Stdout, "Response from `PingOneForEnterpriseAPI.GetKeyPairs`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PingOneForEnterpriseAPI.GetKeyPairs(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PingOneForEnterpriseAPI.GetKeyPairs``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetKeyPairs`: P14EKeysView
+	fmt.Fprintf(os.Stdout, "Response from `PingOneForEnterpriseAPI.GetKeyPairs`: %v\n", resp)
 }
 ```
 
@@ -143,23 +143,23 @@ Get the PingOne for Enterprise settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PingOneForEnterpriseAPI.GetPingOneForEnterpriseSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PingOneForEnterpriseAPI.GetPingOneForEnterpriseSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetPingOneForEnterpriseSettings`: PingOneForEnterpriseSettings
-    fmt.Fprintf(os.Stdout, "Response from `PingOneForEnterpriseAPI.GetPingOneForEnterpriseSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PingOneForEnterpriseAPI.GetPingOneForEnterpriseSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PingOneForEnterpriseAPI.GetPingOneForEnterpriseSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetPingOneForEnterpriseSettings`: PingOneForEnterpriseSettings
+	fmt.Fprintf(os.Stdout, "Response from `PingOneForEnterpriseAPI.GetPingOneForEnterpriseSettings`: %v\n", resp)
 }
 ```
 
@@ -202,23 +202,23 @@ Rotate the authentication key
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PingOneForEnterpriseAPI.RotateKeys(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PingOneForEnterpriseAPI.RotateKeys``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RotateKeys`: P14EKeysView
-    fmt.Fprintf(os.Stdout, "Response from `PingOneForEnterpriseAPI.RotateKeys`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PingOneForEnterpriseAPI.RotateKeys(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PingOneForEnterpriseAPI.RotateKeys``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RotateKeys`: P14EKeysView
+	fmt.Fprintf(os.Stdout, "Response from `PingOneForEnterpriseAPI.RotateKeys`: %v\n", resp)
 }
 ```
 
@@ -263,23 +263,23 @@ Update the PingOne Identity Repository
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PingOneForEnterpriseAPI.UpdatePingOneForEnterpriseIdentityRepository(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PingOneForEnterpriseAPI.UpdatePingOneForEnterpriseIdentityRepository``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdatePingOneForEnterpriseIdentityRepository`: PingOneForEnterpriseSettings
-    fmt.Fprintf(os.Stdout, "Response from `PingOneForEnterpriseAPI.UpdatePingOneForEnterpriseIdentityRepository`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PingOneForEnterpriseAPI.UpdatePingOneForEnterpriseIdentityRepository(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PingOneForEnterpriseAPI.UpdatePingOneForEnterpriseIdentityRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdatePingOneForEnterpriseIdentityRepository`: PingOneForEnterpriseSettings
+	fmt.Fprintf(os.Stdout, "Response from `PingOneForEnterpriseAPI.UpdatePingOneForEnterpriseIdentityRepository`: %v\n", resp)
 }
 ```
 
@@ -322,24 +322,24 @@ Update the PingOne for Enterprise settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewPingOneForEnterpriseSettings() // PingOneForEnterpriseSettings | PingOne for Enterprise connection settings
+	body := *openapiclient.NewPingOneForEnterpriseSettings() // PingOneForEnterpriseSettings | PingOne for Enterprise connection settings
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PingOneForEnterpriseAPI.UpdatePingOneSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PingOneForEnterpriseAPI.UpdatePingOneSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdatePingOneSettings`: PingOneForEnterpriseSettings
-    fmt.Fprintf(os.Stdout, "Response from `PingOneForEnterpriseAPI.UpdatePingOneSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PingOneForEnterpriseAPI.UpdatePingOneSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PingOneForEnterpriseAPI.UpdatePingOneSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdatePingOneSettings`: PingOneForEnterpriseSettings
+	fmt.Fprintf(os.Stdout, "Response from `PingOneForEnterpriseAPI.UpdatePingOneSettings`: %v\n", resp)
 }
 ```
 

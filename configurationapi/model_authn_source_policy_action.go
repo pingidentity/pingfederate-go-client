@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AuthnSourcePolicyAction type satisfies the MappedNullable interface at compile time
@@ -19,7 +21,10 @@ var _ MappedNullable = &AuthnSourcePolicyAction{}
 
 // AuthnSourcePolicyAction struct for AuthnSourcePolicyAction
 type AuthnSourcePolicyAction struct {
-	PolicyAction
+	// The authentication selection type.
+	Type string `json:"type" tfsdk:"type"`
+	// The result context.
+	Context              *string                    `json:"context,omitempty" tfsdk:"context"`
 	AttributeRules       *AttributeRules            `json:"attributeRules,omitempty" tfsdk:"attribute_rules"`
 	AuthenticationSource AuthenticationSource       `json:"authenticationSource" tfsdk:"authentication_source"`
 	InputUserIdMapping   *AttributeFulfillmentValue `json:"inputUserIdMapping,omitempty" tfsdk:"input_user_id_mapping"`
@@ -27,11 +32,13 @@ type AuthnSourcePolicyAction struct {
 	UserIdAuthenticated *bool `json:"userIdAuthenticated,omitempty" tfsdk:"user_id_authenticated"`
 }
 
+type _AuthnSourcePolicyAction AuthnSourcePolicyAction
+
 // NewAuthnSourcePolicyAction instantiates a new AuthnSourcePolicyAction object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAuthnSourcePolicyAction(authenticationSource AuthenticationSource, type_ string) *AuthnSourcePolicyAction {
+func NewAuthnSourcePolicyAction(type_ string, authenticationSource AuthenticationSource) *AuthnSourcePolicyAction {
 	this := AuthnSourcePolicyAction{}
 	this.Type = type_
 	this.AuthenticationSource = authenticationSource
@@ -44,6 +51,62 @@ func NewAuthnSourcePolicyAction(authenticationSource AuthenticationSource, type_
 func NewAuthnSourcePolicyActionWithDefaults() *AuthnSourcePolicyAction {
 	this := AuthnSourcePolicyAction{}
 	return &this
+}
+
+// GetType returns the Type field value
+func (o *AuthnSourcePolicyAction) GetType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value
+// and a boolean to check if the value has been set.
+func (o *AuthnSourcePolicyAction) GetTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Type, true
+}
+
+// SetType sets field value
+func (o *AuthnSourcePolicyAction) SetType(v string) {
+	o.Type = v
+}
+
+// GetContext returns the Context field value if set, zero value otherwise.
+func (o *AuthnSourcePolicyAction) GetContext() string {
+	if o == nil || IsNil(o.Context) {
+		var ret string
+		return ret
+	}
+	return *o.Context
+}
+
+// GetContextOk returns a tuple with the Context field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AuthnSourcePolicyAction) GetContextOk() (*string, bool) {
+	if o == nil || IsNil(o.Context) {
+		return nil, false
+	}
+	return o.Context, true
+}
+
+// HasContext returns a boolean if a field has been set.
+func (o *AuthnSourcePolicyAction) HasContext() bool {
+	if o != nil && !IsNil(o.Context) {
+		return true
+	}
+
+	return false
+}
+
+// SetContext gets a reference to the given string and assigns it to the Context field.
+func (o *AuthnSourcePolicyAction) SetContext(v string) {
+	o.Context = &v
 }
 
 // GetAttributeRules returns the AttributeRules field value if set, zero value otherwise.
@@ -176,13 +239,9 @@ func (o AuthnSourcePolicyAction) MarshalJSON() ([]byte, error) {
 
 func (o AuthnSourcePolicyAction) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	serializedPolicyAction, errPolicyAction := json.Marshal(o.PolicyAction)
-	if errPolicyAction != nil {
-		return map[string]interface{}{}, errPolicyAction
-	}
-	errPolicyAction = json.Unmarshal([]byte(serializedPolicyAction), &toSerialize)
-	if errPolicyAction != nil {
-		return map[string]interface{}{}, errPolicyAction
+	toSerialize["type"] = o.Type
+	if !IsNil(o.Context) {
+		toSerialize["context"] = o.Context
 	}
 	if !IsNil(o.AttributeRules) {
 		toSerialize["attributeRules"] = o.AttributeRules
@@ -195,6 +254,43 @@ func (o AuthnSourcePolicyAction) ToMap() (map[string]interface{}, error) {
 		toSerialize["userIdAuthenticated"] = o.UserIdAuthenticated
 	}
 	return toSerialize, nil
+}
+
+func (o *AuthnSourcePolicyAction) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"type",
+		"authenticationSource",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAuthnSourcePolicyAction := _AuthnSourcePolicyAction{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varAuthnSourcePolicyAction)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AuthnSourcePolicyAction(varAuthnSourcePolicyAction)
+
+	return err
 }
 
 type NullableAuthnSourcePolicyAction struct {

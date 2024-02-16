@@ -26,25 +26,25 @@ Create a new Resource Owner Credentials mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewResourceOwnerCredentialsMapping("Id_example", map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // ResourceOwnerCredentialsMapping | Configuration for Resource Owner Credentials mapping.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	body := *openapiclient.NewResourceOwnerCredentialsMapping("Id_example", map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // ResourceOwnerCredentialsMapping | Configuration for Resource Owner Credentials mapping.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthResourceOwnerCredentialsMappingsAPI.CreateResourceOwnerCredentialsMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthResourceOwnerCredentialsMappingsAPI.CreateResourceOwnerCredentialsMapping``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateResourceOwnerCredentialsMapping`: ResourceOwnerCredentialsMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthResourceOwnerCredentialsMappingsAPI.CreateResourceOwnerCredentialsMapping`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthResourceOwnerCredentialsMappingsAPI.CreateResourceOwnerCredentialsMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthResourceOwnerCredentialsMappingsAPI.CreateResourceOwnerCredentialsMapping``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateResourceOwnerCredentialsMapping`: ResourceOwnerCredentialsMapping
+	fmt.Fprintf(os.Stdout, "Response from `OauthResourceOwnerCredentialsMappingsAPI.CreateResourceOwnerCredentialsMapping`: %v\n", resp)
 }
 ```
 
@@ -92,22 +92,22 @@ Delete a Resource Owner Credentials mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the Resource Owner Credentials mapping.
+	id := "id_example" // string | ID of the Resource Owner Credentials mapping.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthResourceOwnerCredentialsMappingsAPI.DeleteResourceOwnerCredentialsMapping(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthResourceOwnerCredentialsMappingsAPI.DeleteResourceOwnerCredentialsMapping``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.OauthResourceOwnerCredentialsMappingsAPI.DeleteResourceOwnerCredentialsMapping(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthResourceOwnerCredentialsMappingsAPI.DeleteResourceOwnerCredentialsMapping``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -158,24 +158,24 @@ Find the Resource Owner Credentials mapping by the ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the Resource Owner Credentials mapping.
+	id := "id_example" // string | ID of the Resource Owner Credentials mapping.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthResourceOwnerCredentialsMappingsAPI.GetResourceOwnerCredentialsMapping(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthResourceOwnerCredentialsMappingsAPI.GetResourceOwnerCredentialsMapping``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetResourceOwnerCredentialsMapping`: ResourceOwnerCredentialsMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthResourceOwnerCredentialsMappingsAPI.GetResourceOwnerCredentialsMapping`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthResourceOwnerCredentialsMappingsAPI.GetResourceOwnerCredentialsMapping(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthResourceOwnerCredentialsMappingsAPI.GetResourceOwnerCredentialsMapping``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetResourceOwnerCredentialsMapping`: ResourceOwnerCredentialsMapping
+	fmt.Fprintf(os.Stdout, "Response from `OauthResourceOwnerCredentialsMappingsAPI.GetResourceOwnerCredentialsMapping`: %v\n", resp)
 }
 ```
 
@@ -226,23 +226,23 @@ Get the list of Resource Owner Credentials Grant Mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthResourceOwnerCredentialsMappingsAPI.GetResourceOwnerCredentialsMappings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthResourceOwnerCredentialsMappingsAPI.GetResourceOwnerCredentialsMappings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetResourceOwnerCredentialsMappings`: ResourceOwnerCredentialsMappings
-    fmt.Fprintf(os.Stdout, "Response from `OauthResourceOwnerCredentialsMappingsAPI.GetResourceOwnerCredentialsMappings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthResourceOwnerCredentialsMappingsAPI.GetResourceOwnerCredentialsMappings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthResourceOwnerCredentialsMappingsAPI.GetResourceOwnerCredentialsMappings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetResourceOwnerCredentialsMappings`: ResourceOwnerCredentialsMappings
+	fmt.Fprintf(os.Stdout, "Response from `OauthResourceOwnerCredentialsMappingsAPI.GetResourceOwnerCredentialsMappings`: %v\n", resp)
 }
 ```
 
@@ -285,26 +285,26 @@ Update a Resource Owner Credentials mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the Resource Owner Credentials mapping to update.
-    body := *openapiclient.NewResourceOwnerCredentialsMapping("Id_example", map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // ResourceOwnerCredentialsMapping | Configuration for Resource Owner Credentials mapping.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	id := "id_example" // string | ID of the Resource Owner Credentials mapping to update.
+	body := *openapiclient.NewResourceOwnerCredentialsMapping("Id_example", map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // ResourceOwnerCredentialsMapping | Configuration for Resource Owner Credentials mapping.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthResourceOwnerCredentialsMappingsAPI.UpdateResourceOwnerCredentialsMapping(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthResourceOwnerCredentialsMappingsAPI.UpdateResourceOwnerCredentialsMapping``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateResourceOwnerCredentialsMapping`: ResourceOwnerCredentialsMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthResourceOwnerCredentialsMappingsAPI.UpdateResourceOwnerCredentialsMapping`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthResourceOwnerCredentialsMappingsAPI.UpdateResourceOwnerCredentialsMapping(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthResourceOwnerCredentialsMappingsAPI.UpdateResourceOwnerCredentialsMapping``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateResourceOwnerCredentialsMapping`: ResourceOwnerCredentialsMapping
+	fmt.Fprintf(os.Stdout, "Response from `OauthResourceOwnerCredentialsMappingsAPI.UpdateResourceOwnerCredentialsMapping`: %v\n", resp)
 }
 ```
 

@@ -26,24 +26,24 @@ Create a new authorization detail type.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewAuthorizationDetailType("Type_example", *openapiclient.NewResourceLink("Id_example")) // AuthorizationDetailType | Configuration for new authorization detail type.
+	body := *openapiclient.NewAuthorizationDetailType("Type_example", *openapiclient.NewResourceLink("Id_example")) // AuthorizationDetailType | Configuration for new authorization detail type.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthorizationDetailTypesAPI.AddAuthorizationDetailType(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailTypesAPI.AddAuthorizationDetailType``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AddAuthorizationDetailType`: AuthorizationDetailType
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailTypesAPI.AddAuthorizationDetailType`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthorizationDetailTypesAPI.AddAuthorizationDetailType(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailTypesAPI.AddAuthorizationDetailType``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AddAuthorizationDetailType`: AuthorizationDetailType
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailTypesAPI.AddAuthorizationDetailType`: %v\n", resp)
 }
 ```
 
@@ -92,22 +92,22 @@ Delete an authorization detail type.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the authorization detail type.
+	id := "id_example" // string | ID of the authorization detail type.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthAuthorizationDetailTypesAPI.DeleteAuthorizationDetailType(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailTypesAPI.DeleteAuthorizationDetailType``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.OauthAuthorizationDetailTypesAPI.DeleteAuthorizationDetailType(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailTypesAPI.DeleteAuthorizationDetailType``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -160,24 +160,24 @@ Get an authorization detail type.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the authorization detail type.
+	id := "id_example" // string | ID of the authorization detail type.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthorizationDetailTypesAPI.GetAuthorizationDetailTypeById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailTypesAPI.GetAuthorizationDetailTypeById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAuthorizationDetailTypeById`: AuthorizationDetailType
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailTypesAPI.GetAuthorizationDetailTypeById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthorizationDetailTypesAPI.GetAuthorizationDetailTypeById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailTypesAPI.GetAuthorizationDetailTypeById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAuthorizationDetailTypeById`: AuthorizationDetailType
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailTypesAPI.GetAuthorizationDetailTypeById`: %v\n", resp)
 }
 ```
 
@@ -228,23 +228,23 @@ Get the list of authorization detail types.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthorizationDetailTypesAPI.GetAuthorizationDetailTypes(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailTypesAPI.GetAuthorizationDetailTypes``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAuthorizationDetailTypes`: AuthorizationDetailTypes
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailTypesAPI.GetAuthorizationDetailTypes`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthorizationDetailTypesAPI.GetAuthorizationDetailTypes(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailTypesAPI.GetAuthorizationDetailTypes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAuthorizationDetailTypes`: AuthorizationDetailTypes
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailTypesAPI.GetAuthorizationDetailTypes`: %v\n", resp)
 }
 ```
 
@@ -289,25 +289,25 @@ Update an authorization detail type.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the authorization detail type.
-    body := *openapiclient.NewAuthorizationDetailType("Type_example", *openapiclient.NewResourceLink("Id_example")) // AuthorizationDetailType | Configuration for updated authorization detail type.
+	id := "id_example" // string | ID of the authorization detail type.
+	body := *openapiclient.NewAuthorizationDetailType("Type_example", *openapiclient.NewResourceLink("Id_example")) // AuthorizationDetailType | Configuration for updated authorization detail type.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthorizationDetailTypesAPI.UpdateAuthorizationDetailType(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailTypesAPI.UpdateAuthorizationDetailType``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateAuthorizationDetailType`: AuthorizationDetailType
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailTypesAPI.UpdateAuthorizationDetailType`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthorizationDetailTypesAPI.UpdateAuthorizationDetailType(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthorizationDetailTypesAPI.UpdateAuthorizationDetailType``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateAuthorizationDetailType`: AuthorizationDetailType
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthorizationDetailTypesAPI.UpdateAuthorizationDetailType`: %v\n", resp)
 }
 ```
 

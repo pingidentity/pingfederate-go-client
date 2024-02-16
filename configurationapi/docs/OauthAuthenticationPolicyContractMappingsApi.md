@@ -26,25 +26,25 @@ Create a new authentication policy contract to persistent grant mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewApcToPersistentGrantMapping("Id_example", *openapiclient.NewResourceLink("Id_example"), map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // ApcToPersistentGrantMapping | Configuration for an authentication policy contract to persistent grant mapping.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	body := *openapiclient.NewApcToPersistentGrantMapping("Id_example", *openapiclient.NewResourceLink("Id_example"), map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // ApcToPersistentGrantMapping | Configuration for an authentication policy contract to persistent grant mapping.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthenticationPolicyContractMappingsAPI.CreateApcMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthenticationPolicyContractMappingsAPI.CreateApcMapping``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateApcMapping`: ApcToPersistentGrantMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthenticationPolicyContractMappingsAPI.CreateApcMapping`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthenticationPolicyContractMappingsAPI.CreateApcMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthenticationPolicyContractMappingsAPI.CreateApcMapping``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateApcMapping`: ApcToPersistentGrantMapping
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthenticationPolicyContractMappingsAPI.CreateApcMapping`: %v\n", resp)
 }
 ```
 
@@ -92,22 +92,22 @@ Delete an authentication policy contract to persistent grant mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the authentication policy contract to persistent grant mapping.
+	id := "id_example" // string | ID of the authentication policy contract to persistent grant mapping.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthAuthenticationPolicyContractMappingsAPI.DeleteApcMapping(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthenticationPolicyContractMappingsAPI.DeleteApcMapping``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.OauthAuthenticationPolicyContractMappingsAPI.DeleteApcMapping(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthenticationPolicyContractMappingsAPI.DeleteApcMapping``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -158,24 +158,24 @@ Find the authentication policy contract to persistent grant mapping by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the authentication policy contract to persistent grant mapping.
+	id := "id_example" // string | ID of the authentication policy contract to persistent grant mapping.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthenticationPolicyContractMappingsAPI.GetApcMapping(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthenticationPolicyContractMappingsAPI.GetApcMapping``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetApcMapping`: ApcToPersistentGrantMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthenticationPolicyContractMappingsAPI.GetApcMapping`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthenticationPolicyContractMappingsAPI.GetApcMapping(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthenticationPolicyContractMappingsAPI.GetApcMapping``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetApcMapping`: ApcToPersistentGrantMapping
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthenticationPolicyContractMappingsAPI.GetApcMapping`: %v\n", resp)
 }
 ```
 
@@ -226,23 +226,23 @@ Get the list of authentication policy contract to persistent grant mappings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthenticationPolicyContractMappingsAPI.GetApcMappings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthenticationPolicyContractMappingsAPI.GetApcMappings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetApcMappings`: ApcToPersistentGrantMappings
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthenticationPolicyContractMappingsAPI.GetApcMappings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthenticationPolicyContractMappingsAPI.GetApcMappings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthenticationPolicyContractMappingsAPI.GetApcMappings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetApcMappings`: ApcToPersistentGrantMappings
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthenticationPolicyContractMappingsAPI.GetApcMappings`: %v\n", resp)
 }
 ```
 
@@ -285,26 +285,26 @@ Update an authentication policy contract to persistent grant mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the authentication policy contract to persistent grant mapping to update.
-    body := *openapiclient.NewApcToPersistentGrantMapping("Id_example", *openapiclient.NewResourceLink("Id_example"), map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // ApcToPersistentGrantMapping | Configuration for an authentication policy contract to persistent grant mapping.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	id := "id_example" // string | ID of the authentication policy contract to persistent grant mapping to update.
+	body := *openapiclient.NewApcToPersistentGrantMapping("Id_example", *openapiclient.NewResourceLink("Id_example"), map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // ApcToPersistentGrantMapping | Configuration for an authentication policy contract to persistent grant mapping.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthAuthenticationPolicyContractMappingsAPI.UpdateApcMapping(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthenticationPolicyContractMappingsAPI.UpdateApcMapping``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateApcMapping`: ApcToPersistentGrantMapping
-    fmt.Fprintf(os.Stdout, "Response from `OauthAuthenticationPolicyContractMappingsAPI.UpdateApcMapping`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OauthAuthenticationPolicyContractMappingsAPI.UpdateApcMapping(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthenticationPolicyContractMappingsAPI.UpdateApcMapping``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateApcMapping`: ApcToPersistentGrantMapping
+	fmt.Fprintf(os.Stdout, "Response from `OauthAuthenticationPolicyContractMappingsAPI.UpdateApcMapping`: %v\n", resp)
 }
 ```
 

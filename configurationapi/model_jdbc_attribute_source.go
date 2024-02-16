@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the JdbcAttributeSource type satisfies the MappedNullable interface at compile time
@@ -19,7 +21,15 @@ var _ MappedNullable = &JdbcAttributeSource{}
 
 // JdbcAttributeSource struct for JdbcAttributeSource
 type JdbcAttributeSource struct {
-	AttributeSource
+	// The data store type of this attribute source.
+	Type         string       `json:"type" tfsdk:"type"`
+	DataStoreRef ResourceLink `json:"dataStoreRef" tfsdk:"data_store_ref"`
+	// The ID that defines this attribute source. Only alphanumeric characters allowed.<br>Note: Required for OpenID Connect policy attribute sources, OAuth IdP adapter mappings, OAuth access token mappings and APC-to-SP Adapter Mappings. IdP Connections will ignore this property since it only allows one attribute source to be defined per mapping. IdP-to-SP Adapter Mappings can contain multiple attribute sources.
+	Id *string `json:"id,omitempty" tfsdk:"id"`
+	// The description of this attribute source. The description needs to be unique amongst the attribute sources for the mapping.<br>Note: Required for APC-to-SP Adapter Mappings
+	Description *string `json:"description,omitempty" tfsdk:"description"`
+	// A list of mappings from attribute names to their fulfillment values. This field is only valid for the SP Connection's Browser SSO mappings
+	AttributeContractFulfillment *map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment,omitempty" tfsdk:"attribute_contract_fulfillment"`
 	// Lists the table structure that stores information within a database. Some databases, such as Oracle, require a schema for a JDBC query. Other databases, such as MySQL, do not require a schema.
 	Schema *string `json:"schema,omitempty" tfsdk:"schema"`
 	// The name of the database table. The name is used to construct the SQL query to retrieve data from the data store.
@@ -30,11 +40,13 @@ type JdbcAttributeSource struct {
 	Filter string `json:"filter" tfsdk:"filter"`
 }
 
+type _JdbcAttributeSource JdbcAttributeSource
+
 // NewJdbcAttributeSource instantiates a new JdbcAttributeSource object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewJdbcAttributeSource(table string, filter string, type_ string, dataStoreRef ResourceLink) *JdbcAttributeSource {
+func NewJdbcAttributeSource(type_ string, dataStoreRef ResourceLink, table string, filter string) *JdbcAttributeSource {
 	this := JdbcAttributeSource{}
 	this.Type = type_
 	this.DataStoreRef = dataStoreRef
@@ -49,6 +61,150 @@ func NewJdbcAttributeSource(table string, filter string, type_ string, dataStore
 func NewJdbcAttributeSourceWithDefaults() *JdbcAttributeSource {
 	this := JdbcAttributeSource{}
 	return &this
+}
+
+// GetType returns the Type field value
+func (o *JdbcAttributeSource) GetType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value
+// and a boolean to check if the value has been set.
+func (o *JdbcAttributeSource) GetTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Type, true
+}
+
+// SetType sets field value
+func (o *JdbcAttributeSource) SetType(v string) {
+	o.Type = v
+}
+
+// GetDataStoreRef returns the DataStoreRef field value
+func (o *JdbcAttributeSource) GetDataStoreRef() ResourceLink {
+	if o == nil {
+		var ret ResourceLink
+		return ret
+	}
+
+	return o.DataStoreRef
+}
+
+// GetDataStoreRefOk returns a tuple with the DataStoreRef field value
+// and a boolean to check if the value has been set.
+func (o *JdbcAttributeSource) GetDataStoreRefOk() (*ResourceLink, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.DataStoreRef, true
+}
+
+// SetDataStoreRef sets field value
+func (o *JdbcAttributeSource) SetDataStoreRef(v ResourceLink) {
+	o.DataStoreRef = v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *JdbcAttributeSource) GetId() string {
+	if o == nil || IsNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *JdbcAttributeSource) GetIdOk() (*string, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *JdbcAttributeSource) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *JdbcAttributeSource) SetId(v string) {
+	o.Id = &v
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *JdbcAttributeSource) GetDescription() string {
+	if o == nil || IsNil(o.Description) {
+		var ret string
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *JdbcAttributeSource) GetDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.Description) {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// HasDescription returns a boolean if a field has been set.
+func (o *JdbcAttributeSource) HasDescription() bool {
+	if o != nil && !IsNil(o.Description) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *JdbcAttributeSource) SetDescription(v string) {
+	o.Description = &v
+}
+
+// GetAttributeContractFulfillment returns the AttributeContractFulfillment field value if set, zero value otherwise.
+func (o *JdbcAttributeSource) GetAttributeContractFulfillment() map[string]AttributeFulfillmentValue {
+	if o == nil || IsNil(o.AttributeContractFulfillment) {
+		var ret map[string]AttributeFulfillmentValue
+		return ret
+	}
+	return *o.AttributeContractFulfillment
+}
+
+// GetAttributeContractFulfillmentOk returns a tuple with the AttributeContractFulfillment field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *JdbcAttributeSource) GetAttributeContractFulfillmentOk() (*map[string]AttributeFulfillmentValue, bool) {
+	if o == nil || IsNil(o.AttributeContractFulfillment) {
+		return nil, false
+	}
+	return o.AttributeContractFulfillment, true
+}
+
+// HasAttributeContractFulfillment returns a boolean if a field has been set.
+func (o *JdbcAttributeSource) HasAttributeContractFulfillment() bool {
+	if o != nil && !IsNil(o.AttributeContractFulfillment) {
+		return true
+	}
+
+	return false
+}
+
+// SetAttributeContractFulfillment gets a reference to the given map[string]AttributeFulfillmentValue and assigns it to the AttributeContractFulfillment field.
+func (o *JdbcAttributeSource) SetAttributeContractFulfillment(v map[string]AttributeFulfillmentValue) {
+	o.AttributeContractFulfillment = &v
 }
 
 // GetSchema returns the Schema field value if set, zero value otherwise.
@@ -173,13 +329,16 @@ func (o JdbcAttributeSource) MarshalJSON() ([]byte, error) {
 
 func (o JdbcAttributeSource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	serializedAttributeSource, errAttributeSource := json.Marshal(o.AttributeSource)
-	if errAttributeSource != nil {
-		return map[string]interface{}{}, errAttributeSource
+	toSerialize["type"] = o.Type
+	toSerialize["dataStoreRef"] = o.DataStoreRef
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
-	errAttributeSource = json.Unmarshal([]byte(serializedAttributeSource), &toSerialize)
-	if errAttributeSource != nil {
-		return map[string]interface{}{}, errAttributeSource
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.AttributeContractFulfillment) {
+		toSerialize["attributeContractFulfillment"] = o.AttributeContractFulfillment
 	}
 	if !IsNil(o.Schema) {
 		toSerialize["schema"] = o.Schema
@@ -190,6 +349,45 @@ func (o JdbcAttributeSource) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["filter"] = o.Filter
 	return toSerialize, nil
+}
+
+func (o *JdbcAttributeSource) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"type",
+		"dataStoreRef",
+		"table",
+		"filter",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varJdbcAttributeSource := _JdbcAttributeSource{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varJdbcAttributeSource)
+
+	if err != nil {
+		return err
+	}
+
+	*o = JdbcAttributeSource(varJdbcAttributeSource)
+
+	return err
 }
 
 type NullableJdbcAttributeSource struct {

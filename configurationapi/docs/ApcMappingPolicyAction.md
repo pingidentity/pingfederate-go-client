@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Type** | **string** | The authentication selection type. | 
+**Context** | Pointer to **string** | The result context. | [optional] 
 **AuthenticationPolicyContractRef** | [**ResourceLink**](ResourceLink.md) |  | 
 **AttributeMapping** | [**AttributeMapping**](AttributeMapping.md) |  | 
 
@@ -11,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewApcMappingPolicyAction
 
-`func NewApcMappingPolicyAction(authenticationPolicyContractRef ResourceLink, attributeMapping AttributeMapping, ) *ApcMappingPolicyAction`
+`func NewApcMappingPolicyAction(type_ string, authenticationPolicyContractRef ResourceLink, attributeMapping AttributeMapping, ) *ApcMappingPolicyAction`
 
 NewApcMappingPolicyAction instantiates a new ApcMappingPolicyAction object
 This constructor will assign default values to properties that have it defined,
@@ -25,6 +27,51 @@ will change when the set of required properties is changed
 NewApcMappingPolicyActionWithDefaults instantiates a new ApcMappingPolicyAction object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetType
+
+`func (o *ApcMappingPolicyAction) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *ApcMappingPolicyAction) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *ApcMappingPolicyAction) SetType(v string)`
+
+SetType sets Type field to given value.
+
+
+### GetContext
+
+`func (o *ApcMappingPolicyAction) GetContext() string`
+
+GetContext returns the Context field if non-nil, zero value otherwise.
+
+### GetContextOk
+
+`func (o *ApcMappingPolicyAction) GetContextOk() (*string, bool)`
+
+GetContextOk returns a tuple with the Context field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContext
+
+`func (o *ApcMappingPolicyAction) SetContext(v string)`
+
+SetContext sets Context field to given value.
+
+### HasContext
+
+`func (o *ApcMappingPolicyAction) HasContext() bool`
+
+HasContext returns a boolean if a field has been set.
 
 ### GetAuthenticationPolicyContractRef
 

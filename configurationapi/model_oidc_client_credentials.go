@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the OIDCClientCredentials type satisfies the MappedNullable interface at compile time
@@ -26,6 +28,8 @@ type OIDCClientCredentials struct {
 	// For GET requests, this field contains the encrypted client secret, if one exists.  For POST and PUT requests, if you wish to reuse the existing secret, this field should be passed back unchanged.
 	EncryptedSecret *string `json:"encryptedSecret,omitempty" tfsdk:"encrypted_secret"`
 }
+
+type _OIDCClientCredentials OIDCClientCredentials
 
 // NewOIDCClientCredentials instantiates a new OIDCClientCredentials object
 // This constructor will assign default values to properties that have it defined,
@@ -151,6 +155,42 @@ func (o OIDCClientCredentials) ToMap() (map[string]interface{}, error) {
 		toSerialize["encryptedSecret"] = o.EncryptedSecret
 	}
 	return toSerialize, nil
+}
+
+func (o *OIDCClientCredentials) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"clientId",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varOIDCClientCredentials := _OIDCClientCredentials{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varOIDCClientCredentials)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OIDCClientCredentials(varOIDCClientCredentials)
+
+	return err
 }
 
 type NullableOIDCClientCredentials struct {

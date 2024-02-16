@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the DropDownLocalIdentityField type satisfies the MappedNullable interface at compile time
@@ -25,6 +27,8 @@ type DropDownLocalIdentityField struct {
 	// The list of options for this selection field.
 	Options []string `json:"options" tfsdk:"options"`
 }
+
+type _DropDownLocalIdentityField DropDownLocalIdentityField
 
 // NewDropDownLocalIdentityField instantiates a new DropDownLocalIdentityField object
 // This constructor will assign default values to properties that have it defined,
@@ -126,6 +130,45 @@ func (o DropDownLocalIdentityField) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["options"] = o.Options
 	return toSerialize, nil
+}
+
+func (o *DropDownLocalIdentityField) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"options",
+		"type",
+		"id",
+		"label",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varDropDownLocalIdentityField := _DropDownLocalIdentityField{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varDropDownLocalIdentityField)
+
+	if err != nil {
+		return err
+	}
+
+	*o = DropDownLocalIdentityField(varDropDownLocalIdentityField)
+
+	return err
 }
 
 type NullableDropDownLocalIdentityField struct {

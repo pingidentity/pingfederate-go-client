@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the GroupMembershipDetection type satisfies the MappedNullable interface at compile time
@@ -24,6 +26,8 @@ type GroupMembershipDetection struct {
 	// The name of the attribute that represents group members in a group, also known as group member attribute.
 	GroupMemberAttributeName string `json:"groupMemberAttributeName" tfsdk:"group_member_attribute_name"`
 }
+
+type _GroupMembershipDetection GroupMembershipDetection
 
 // NewGroupMembershipDetection instantiates a new GroupMembershipDetection object
 // This constructor will assign default values to properties that have it defined,
@@ -114,6 +118,42 @@ func (o GroupMembershipDetection) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["groupMemberAttributeName"] = o.GroupMemberAttributeName
 	return toSerialize, nil
+}
+
+func (o *GroupMembershipDetection) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"groupMemberAttributeName",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varGroupMembershipDetection := _GroupMembershipDetection{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varGroupMembershipDetection)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GroupMembershipDetection(varGroupMembershipDetection)
+
+	return err
 }
 
 type NullableGroupMembershipDetection struct {

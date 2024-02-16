@@ -23,23 +23,23 @@ Get a license summary.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LicenseAPI.GetLicense(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LicenseAPI.GetLicense``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetLicense`: LicenseView
-    fmt.Fprintf(os.Stdout, "Response from `LicenseAPI.GetLicense`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.LicenseAPI.GetLicense(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `LicenseAPI.GetLicense``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetLicense`: LicenseView
+	fmt.Fprintf(os.Stdout, "Response from `LicenseAPI.GetLicense`: %v\n", resp)
 }
 ```
 
@@ -84,23 +84,23 @@ Get license agreement link.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LicenseAPI.GetLicenseAgreement(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LicenseAPI.GetLicenseAgreement``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetLicenseAgreement`: LicenseAgreementInfo
-    fmt.Fprintf(os.Stdout, "Response from `LicenseAPI.GetLicenseAgreement`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.LicenseAPI.GetLicenseAgreement(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `LicenseAPI.GetLicenseAgreement``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetLicenseAgreement`: LicenseAgreementInfo
+	fmt.Fprintf(os.Stdout, "Response from `LicenseAPI.GetLicenseAgreement`: %v\n", resp)
 }
 ```
 
@@ -143,24 +143,24 @@ Import a license.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewLicenseFile("FileData_example") // LicenseFile | Base64 encoded value of a license.
+	body := *openapiclient.NewLicenseFile("FileData_example") // LicenseFile | Base64 encoded value of a license.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LicenseAPI.UpdateLicense(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LicenseAPI.UpdateLicense``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateLicense`: LicenseView
-    fmt.Fprintf(os.Stdout, "Response from `LicenseAPI.UpdateLicense`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.LicenseAPI.UpdateLicense(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `LicenseAPI.UpdateLicense``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateLicense`: LicenseView
+	fmt.Fprintf(os.Stdout, "Response from `LicenseAPI.UpdateLicense`: %v\n", resp)
 }
 ```
 
@@ -209,24 +209,24 @@ Accept license agreement.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewLicenseAgreementInfo() // LicenseAgreementInfo | License Agreement reference.
+	body := *openapiclient.NewLicenseAgreementInfo() // LicenseAgreementInfo | License Agreement reference.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LicenseAPI.UpdateLicenseAgreement(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LicenseAPI.UpdateLicenseAgreement``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateLicenseAgreement`: LicenseAgreementInfo
-    fmt.Fprintf(os.Stdout, "Response from `LicenseAPI.UpdateLicenseAgreement`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.LicenseAPI.UpdateLicenseAgreement(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `LicenseAPI.UpdateLicenseAgreement``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateLicenseAgreement`: LicenseAgreementInfo
+	fmt.Fprintf(os.Stdout, "Response from `LicenseAPI.UpdateLicenseAgreement`: %v\n", resp)
 }
 ```
 

@@ -26,24 +26,24 @@ Create a new identity store provisioner instance.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewIdentityStoreProvisioner("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // IdentityStoreProvisioner | Configuration for the identity store provisioner instance.
+	body := *openapiclient.NewIdentityStoreProvisioner("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // IdentityStoreProvisioner | Configuration for the identity store provisioner instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityStoreProvisionersAPI.CreateIdentityStoreProvisioner(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersAPI.CreateIdentityStoreProvisioner``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateIdentityStoreProvisioner`: IdentityStoreProvisioner
-    fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersAPI.CreateIdentityStoreProvisioner`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdentityStoreProvisionersAPI.CreateIdentityStoreProvisioner(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersAPI.CreateIdentityStoreProvisioner``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateIdentityStoreProvisioner`: IdentityStoreProvisioner
+	fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersAPI.CreateIdentityStoreProvisioner`: %v\n", resp)
 }
 ```
 
@@ -90,22 +90,22 @@ Delete an identity store provisioner instance
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of identity store provisioner instance
+	id := "id_example" // string | ID of identity store provisioner instance
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IdentityStoreProvisionersAPI.DeleteIdentityStoreProvisioner(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersAPI.DeleteIdentityStoreProvisioner``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.IdentityStoreProvisionersAPI.DeleteIdentityStoreProvisioner(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersAPI.DeleteIdentityStoreProvisioner``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -156,24 +156,24 @@ Get an identity store provisioner by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of identity store provisioner instance
+	id := "id_example" // string | ID of identity store provisioner instance
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityStoreProvisionersAPI.GetIdentityStoreProvisioner(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersAPI.GetIdentityStoreProvisioner``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetIdentityStoreProvisioner`: IdentityStoreProvisioner
-    fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersAPI.GetIdentityStoreProvisioner`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdentityStoreProvisionersAPI.GetIdentityStoreProvisioner(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersAPI.GetIdentityStoreProvisioner``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetIdentityStoreProvisioner`: IdentityStoreProvisioner
+	fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersAPI.GetIdentityStoreProvisioner`: %v\n", resp)
 }
 ```
 
@@ -224,24 +224,24 @@ Get the descriptor of an identity store provisioner by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of identity store provisioner descriptor
+	id := "id_example" // string | ID of identity store provisioner descriptor
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityStoreProvisionersAPI.GetIdentityStoreProvisionerDescriptorById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersAPI.GetIdentityStoreProvisionerDescriptorById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetIdentityStoreProvisionerDescriptorById`: IdentityStoreProvisionerDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersAPI.GetIdentityStoreProvisionerDescriptorById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdentityStoreProvisionersAPI.GetIdentityStoreProvisionerDescriptorById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersAPI.GetIdentityStoreProvisionerDescriptorById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetIdentityStoreProvisionerDescriptorById`: IdentityStoreProvisionerDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersAPI.GetIdentityStoreProvisionerDescriptorById`: %v\n", resp)
 }
 ```
 
@@ -292,23 +292,23 @@ Get the list of available identity store provisioner descriptors.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityStoreProvisionersAPI.GetIdentityStoreProvisionerDescriptors(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersAPI.GetIdentityStoreProvisionerDescriptors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetIdentityStoreProvisionerDescriptors`: IdentityStoreProvisionerDescriptors
-    fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersAPI.GetIdentityStoreProvisionerDescriptors`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdentityStoreProvisionersAPI.GetIdentityStoreProvisionerDescriptors(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersAPI.GetIdentityStoreProvisionerDescriptors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetIdentityStoreProvisionerDescriptors`: IdentityStoreProvisionerDescriptors
+	fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersAPI.GetIdentityStoreProvisionerDescriptors`: %v\n", resp)
 }
 ```
 
@@ -351,23 +351,23 @@ Get the list of configured identity store provisioner instances.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityStoreProvisionersAPI.GetIdentityStoreProvisioners(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersAPI.GetIdentityStoreProvisioners``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetIdentityStoreProvisioners`: IdentityStoreProvisioners
-    fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersAPI.GetIdentityStoreProvisioners`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdentityStoreProvisionersAPI.GetIdentityStoreProvisioners(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersAPI.GetIdentityStoreProvisioners``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetIdentityStoreProvisioners`: IdentityStoreProvisioners
+	fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersAPI.GetIdentityStoreProvisioners`: %v\n", resp)
 }
 ```
 
@@ -410,25 +410,25 @@ Update an identity store provisioner instance
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of identity store provisioner instance
-    body := *openapiclient.NewIdentityStoreProvisioner("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // IdentityStoreProvisioner | Configuration for the identity store provisioner instance
+	id := "id_example" // string | ID of identity store provisioner instance
+	body := *openapiclient.NewIdentityStoreProvisioner("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration()) // IdentityStoreProvisioner | Configuration for the identity store provisioner instance
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityStoreProvisionersAPI.UpdateIdentityStoreProvisioner(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersAPI.UpdateIdentityStoreProvisioner``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateIdentityStoreProvisioner`: IdentityStoreProvisioner
-    fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersAPI.UpdateIdentityStoreProvisioner`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IdentityStoreProvisionersAPI.UpdateIdentityStoreProvisioner(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IdentityStoreProvisionersAPI.UpdateIdentityStoreProvisioner``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateIdentityStoreProvisioner`: IdentityStoreProvisioner
+	fmt.Fprintf(os.Stdout, "Response from `IdentityStoreProvisionersAPI.UpdateIdentityStoreProvisioner`: %v\n", resp)
 }
 ```
 

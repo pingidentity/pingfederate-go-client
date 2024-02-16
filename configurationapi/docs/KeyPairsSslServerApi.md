@@ -31,24 +31,24 @@ Generate a new key pair.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewNewKeyPairSettings("CommonName_example", "Organization_example", "Country_example", int64(123), "KeyAlgorithm_example") // NewKeyPairSettings | Settings for the new key pair.
+	body := *openapiclient.NewNewKeyPairSettings("CommonName_example", "Organization_example", "Country_example", int64(123), "KeyAlgorithm_example") // NewKeyPairSettings | Settings for the new key pair.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSslServerAPI.CreateSslServerKeyPair(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.CreateSslServerKeyPair``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateSslServerKeyPair`: KeyPairView
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslServerAPI.CreateSslServerKeyPair`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsSslServerAPI.CreateSslServerKeyPair(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.CreateSslServerKeyPair``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateSslServerKeyPair`: KeyPairView
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslServerAPI.CreateSslServerKeyPair`: %v\n", resp)
 }
 ```
 
@@ -97,22 +97,22 @@ Delete a key pair.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the key pair to delete.
+	id := "id_example" // string | ID of the key pair to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.KeyPairsSslServerAPI.DeleteSslServerKeyPair(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.DeleteSslServerKeyPair``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.KeyPairsSslServerAPI.DeleteSslServerKeyPair(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.DeleteSslServerKeyPair``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -165,24 +165,24 @@ Download the certificate from a given key pair.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the key pair.
+	id := "id_example" // string | ID of the key pair.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSslServerAPI.ExportSslServerCertificateFile(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.ExportSslServerCertificateFile``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ExportSslServerCertificateFile`: string
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslServerAPI.ExportSslServerCertificateFile`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsSslServerAPI.ExportSslServerCertificateFile(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.ExportSslServerCertificateFile``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ExportSslServerCertificateFile`: string
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslServerAPI.ExportSslServerCertificateFile`: %v\n", resp)
 }
 ```
 
@@ -235,24 +235,24 @@ Generate a new certificate signing request (CSR) for this key pair.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the key pair.
+	id := "id_example" // string | ID of the key pair.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSslServerAPI.ExportSslServerCsr(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.ExportSslServerCsr``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ExportSslServerCsr`: string
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslServerAPI.ExportSslServerCsr`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsSslServerAPI.ExportSslServerCsr(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.ExportSslServerCsr``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ExportSslServerCsr`: string
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslServerAPI.ExportSslServerCsr`: %v\n", resp)
 }
 ```
 
@@ -305,25 +305,25 @@ Download the key pair in PEM format.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the key pair.
-    body := *openapiclient.NewKeyPairExportSettings("Password_example") // KeyPairExportSettings | Parameters for the export request
+	id := "id_example" // string | ID of the key pair.
+	body := *openapiclient.NewKeyPairExportSettings("Password_example") // KeyPairExportSettings | Parameters for the export request
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSslServerAPI.ExportSslServerPEMFile(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.ExportSslServerPEMFile``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ExportSslServerPEMFile`: string
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslServerAPI.ExportSslServerPEMFile`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsSslServerAPI.ExportSslServerPEMFile(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.ExportSslServerPEMFile``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ExportSslServerPEMFile`: string
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslServerAPI.ExportSslServerPEMFile`: %v\n", resp)
 }
 ```
 
@@ -377,25 +377,25 @@ Download the key pair in PKCS12 format.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the key pair.
-    body := *openapiclient.NewKeyPairExportSettings("Password_example") // KeyPairExportSettings | Parameters for the export request
+	id := "id_example" // string | ID of the key pair.
+	body := *openapiclient.NewKeyPairExportSettings("Password_example") // KeyPairExportSettings | Parameters for the export request
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSslServerAPI.ExportSslServerPKCS12File(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.ExportSslServerPKCS12File``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ExportSslServerPKCS12File`: string
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslServerAPI.ExportSslServerPKCS12File`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsSslServerAPI.ExportSslServerPKCS12File(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.ExportSslServerPKCS12File``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ExportSslServerPKCS12File`: string
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslServerAPI.ExportSslServerPKCS12File`: %v\n", resp)
 }
 ```
 
@@ -447,24 +447,24 @@ Retrieve details of a key pair.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the key pair to retrieve.
+	id := "id_example" // string | ID of the key pair to retrieve.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSslServerAPI.GetSslServerKeyPair(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.GetSslServerKeyPair``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSslServerKeyPair`: KeyPairView
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslServerAPI.GetSslServerKeyPair`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsSslServerAPI.GetSslServerKeyPair(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.GetSslServerKeyPair``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSslServerKeyPair`: KeyPairView
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslServerAPI.GetSslServerKeyPair`: %v\n", resp)
 }
 ```
 
@@ -515,23 +515,23 @@ Get list of key pairs.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSslServerAPI.GetSslServerKeyPairs(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.GetSslServerKeyPairs``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSslServerKeyPairs`: KeyPairViews
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslServerAPI.GetSslServerKeyPairs`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsSslServerAPI.GetSslServerKeyPairs(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.GetSslServerKeyPairs``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSslServerKeyPairs`: KeyPairViews
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslServerAPI.GetSslServerKeyPairs`: %v\n", resp)
 }
 ```
 
@@ -574,23 +574,23 @@ Get the SSL Server Certificate Settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSslServerAPI.GetSslServerSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.GetSslServerSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSslServerSettings`: SslServerSettings
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslServerAPI.GetSslServerSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsSslServerAPI.GetSslServerSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.GetSslServerSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSslServerSettings`: SslServerSettings
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslServerAPI.GetSslServerSettings`: %v\n", resp)
 }
 ```
 
@@ -633,25 +633,25 @@ Import a CSR response for this key pair.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the key pair.
-    body := *openapiclient.NewCSRResponse("FileData_example") // CSRResponse | The CSR response.
+	id := "id_example" // string | ID of the key pair.
+	body := *openapiclient.NewCSRResponse("FileData_example") // CSRResponse | The CSR response.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSslServerAPI.ImportSslServerCsrResponse(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.ImportSslServerCsrResponse``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ImportSslServerCsrResponse`: KeyPairView
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslServerAPI.ImportSslServerCsrResponse`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsSslServerAPI.ImportSslServerCsrResponse(context.Background(), id).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.ImportSslServerCsrResponse``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ImportSslServerCsrResponse`: KeyPairView
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslServerAPI.ImportSslServerCsrResponse`: %v\n", resp)
 }
 ```
 
@@ -703,24 +703,24 @@ Import a new key pair.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewKeyPairFile("FileData_example", "Password_example") // KeyPairFile | File to import.
+	body := *openapiclient.NewKeyPairFile("FileData_example", "Password_example") // KeyPairFile | File to import.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSslServerAPI.ImportSslServerKeyPair(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.ImportSslServerKeyPair``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ImportSslServerKeyPair`: KeyPairView
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslServerAPI.ImportSslServerKeyPair`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsSslServerAPI.ImportSslServerKeyPair(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.ImportSslServerKeyPair``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ImportSslServerKeyPair`: KeyPairView
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslServerAPI.ImportSslServerKeyPair`: %v\n", resp)
 }
 ```
 
@@ -767,24 +767,24 @@ Update the SSL Server Certificate Settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewSslServerSettings(*openapiclient.NewResourceLink("Id_example"), *openapiclient.NewResourceLink("Id_example")) // SslServerSettings | Configuration for activation of SSL server certificates.
+	body := *openapiclient.NewSslServerSettings(*openapiclient.NewResourceLink("Id_example"), *openapiclient.NewResourceLink("Id_example")) // SslServerSettings | Configuration for activation of SSL server certificates.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsSslServerAPI.UpdateSslServerSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.UpdateSslServerSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateSslServerSettings`: SslServerSettings
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslServerAPI.UpdateSslServerSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsSslServerAPI.UpdateSslServerSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.UpdateSslServerSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSslServerSettings`: SslServerSettings
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsSslServerAPI.UpdateSslServerSettings`: %v\n", resp)
 }
 ```
 

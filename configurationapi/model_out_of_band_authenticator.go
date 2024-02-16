@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 	"time"
 )
 
@@ -31,6 +33,8 @@ type OutOfBandAuthenticator struct {
 	LastModified      *time.Time                      `json:"lastModified,omitempty" tfsdk:"last_modified"`
 	AttributeContract *OutOfBandAuthAttributeContract `json:"attributeContract,omitempty" tfsdk:"attribute_contract"`
 }
+
+type _OutOfBandAuthenticator OutOfBandAuthenticator
 
 // NewOutOfBandAuthenticator instantiates a new OutOfBandAuthenticator object
 // This constructor will assign default values to properties that have it defined,
@@ -269,6 +273,45 @@ func (o OutOfBandAuthenticator) ToMap() (map[string]interface{}, error) {
 		toSerialize["attributeContract"] = o.AttributeContract
 	}
 	return toSerialize, nil
+}
+
+func (o *OutOfBandAuthenticator) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"id",
+		"name",
+		"pluginDescriptorRef",
+		"configuration",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varOutOfBandAuthenticator := _OutOfBandAuthenticator{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varOutOfBandAuthenticator)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OutOfBandAuthenticator(varOutOfBandAuthenticator)
+
+	return err
 }
 
 type NullableOutOfBandAuthenticator struct {

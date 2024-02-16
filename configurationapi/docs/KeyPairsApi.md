@@ -20,23 +20,23 @@ Get list of the key algorithms supported for key pair generation.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairsAPI.GetKeyAlgorithms(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsAPI.GetKeyAlgorithms``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetKeyAlgorithms`: KeyAlgorithms
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairsAPI.GetKeyAlgorithms`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KeyPairsAPI.GetKeyAlgorithms(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsAPI.GetKeyAlgorithms``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetKeyAlgorithms`: KeyAlgorithms
+	fmt.Fprintf(os.Stdout, "Response from `KeyPairsAPI.GetKeyAlgorithms`: %v\n", resp)
 }
 ```
 

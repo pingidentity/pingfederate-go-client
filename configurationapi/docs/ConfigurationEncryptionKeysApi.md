@@ -23,23 +23,23 @@ Get the list of Configuration Encryption Keys.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConfigurationEncryptionKeysAPI.GetConfigurationEncryptionKeys(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConfigurationEncryptionKeysAPI.GetConfigurationEncryptionKeys``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetConfigurationEncryptionKeys`: ConfigurationEncryptionKeys
-    fmt.Fprintf(os.Stdout, "Response from `ConfigurationEncryptionKeysAPI.GetConfigurationEncryptionKeys`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ConfigurationEncryptionKeysAPI.GetConfigurationEncryptionKeys(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ConfigurationEncryptionKeysAPI.GetConfigurationEncryptionKeys``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetConfigurationEncryptionKeys`: ConfigurationEncryptionKeys
+	fmt.Fprintf(os.Stdout, "Response from `ConfigurationEncryptionKeysAPI.GetConfigurationEncryptionKeys`: %v\n", resp)
 }
 ```
 
@@ -84,23 +84,23 @@ Rotate the current Configuration Encryption Key.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConfigurationEncryptionKeysAPI.RotateConfigurationEncryptionKey(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConfigurationEncryptionKeysAPI.RotateConfigurationEncryptionKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RotateConfigurationEncryptionKey`: ConfigurationEncryptionKeys
-    fmt.Fprintf(os.Stdout, "Response from `ConfigurationEncryptionKeysAPI.RotateConfigurationEncryptionKey`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ConfigurationEncryptionKeysAPI.RotateConfigurationEncryptionKey(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ConfigurationEncryptionKeysAPI.RotateConfigurationEncryptionKey``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RotateConfigurationEncryptionKey`: ConfigurationEncryptionKeys
+	fmt.Fprintf(os.Stdout, "Response from `ConfigurationEncryptionKeysAPI.RotateConfigurationEncryptionKey`: %v\n", resp)
 }
 ```
 

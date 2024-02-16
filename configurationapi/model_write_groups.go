@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the WriteGroups type satisfies the MappedNullable interface at compile time
@@ -22,6 +24,8 @@ type WriteGroups struct {
 	// A list of user repository mappings from attribute names to their fulfillment values.
 	AttributeFulfillment map[string]AttributeFulfillmentValue `json:"attributeFulfillment" tfsdk:"attribute_fulfillment"`
 }
+
+type _WriteGroups WriteGroups
 
 // NewWriteGroups instantiates a new WriteGroups object
 // This constructor will assign default values to properties that have it defined,
@@ -77,6 +81,42 @@ func (o WriteGroups) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["attributeFulfillment"] = o.AttributeFulfillment
 	return toSerialize, nil
+}
+
+func (o *WriteGroups) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"attributeFulfillment",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varWriteGroups := _WriteGroups{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varWriteGroups)
+
+	if err != nil {
+		return err
+	}
+
+	*o = WriteGroups(varWriteGroups)
+
+	return err
 }
 
 type NullableWriteGroups struct {

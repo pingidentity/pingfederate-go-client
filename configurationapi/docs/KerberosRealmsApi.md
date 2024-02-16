@@ -28,25 +28,25 @@ Create a new Kerberos Realm.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewKerberosRealm("KerberosRealmName_example") // KerberosRealm | Configuration for new policy.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Defaults to false. (optional) (default to false)
+	body := *openapiclient.NewKerberosRealm("KerberosRealmName_example") // KerberosRealm | Configuration for new policy.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Defaults to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KerberosRealmsAPI.CreateKerberosRealm(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsAPI.CreateKerberosRealm``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateKerberosRealm`: KerberosRealm
-    fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsAPI.CreateKerberosRealm`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KerberosRealmsAPI.CreateKerberosRealm(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsAPI.CreateKerberosRealm``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateKerberosRealm`: KerberosRealm
+	fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsAPI.CreateKerberosRealm`: %v\n", resp)
 }
 ```
 
@@ -96,22 +96,22 @@ Delete a Kerberos Realm.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of Kerberos Realm to delete.
+	id := "id_example" // string | ID of Kerberos Realm to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.KerberosRealmsAPI.DeleteKerberosRealm(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsAPI.DeleteKerberosRealm``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.KerberosRealmsAPI.DeleteKerberosRealm(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsAPI.DeleteKerberosRealm``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -164,24 +164,24 @@ Find a Kerberos Realm by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the Kerberos Realm to fetch.
+	id := "id_example" // string | ID of the Kerberos Realm to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KerberosRealmsAPI.GetKerberosRealm(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsAPI.GetKerberosRealm``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetKerberosRealm`: KerberosRealm
-    fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsAPI.GetKerberosRealm`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KerberosRealmsAPI.GetKerberosRealm(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsAPI.GetKerberosRealm``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetKerberosRealm`: KerberosRealm
+	fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsAPI.GetKerberosRealm`: %v\n", resp)
 }
 ```
 
@@ -232,23 +232,23 @@ Gets the Kerberos Realms Settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KerberosRealmsAPI.GetKerberosRealmSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsAPI.GetKerberosRealmSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetKerberosRealmSettings`: KerberosRealmsSettings
-    fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsAPI.GetKerberosRealmSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KerberosRealmsAPI.GetKerberosRealmSettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsAPI.GetKerberosRealmSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetKerberosRealmSettings`: KerberosRealmsSettings
+	fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsAPI.GetKerberosRealmSettings`: %v\n", resp)
 }
 ```
 
@@ -291,23 +291,23 @@ Gets the Kerberos Realms.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KerberosRealmsAPI.GetKerberosRealms(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsAPI.GetKerberosRealms``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetKerberosRealms`: KerberosRealms
-    fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsAPI.GetKerberosRealms`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KerberosRealmsAPI.GetKerberosRealms(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsAPI.GetKerberosRealms``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetKerberosRealms`: KerberosRealms
+	fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsAPI.GetKerberosRealms`: %v\n", resp)
 }
 ```
 
@@ -352,26 +352,26 @@ Update a Kerberos Realm by ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of the Kerberos Realm to update.
-    body := *openapiclient.NewKerberosRealm("KerberosRealmName_example") // KerberosRealm | Configuration for updated Domain/Realm.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Defaults to false. (optional) (default to false)
+	id := "id_example" // string | ID of the Kerberos Realm to update.
+	body := *openapiclient.NewKerberosRealm("KerberosRealmName_example") // KerberosRealm | Configuration for updated Domain/Realm.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Defaults to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KerberosRealmsAPI.UpdateKerberosRealm(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsAPI.UpdateKerberosRealm``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateKerberosRealm`: KerberosRealm
-    fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsAPI.UpdateKerberosRealm`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KerberosRealmsAPI.UpdateKerberosRealm(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsAPI.UpdateKerberosRealm``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateKerberosRealm`: KerberosRealm
+	fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsAPI.UpdateKerberosRealm`: %v\n", resp)
 }
 ```
 
@@ -424,24 +424,24 @@ Set/Update the Kerberos Realms Settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewKerberosRealmsSettings("KdcRetries_example", "KdcTimeout_example") // KerberosRealmsSettings | Kerberos Realms Settings.
+	body := *openapiclient.NewKerberosRealmsSettings("KdcRetries_example", "KdcTimeout_example") // KerberosRealmsSettings | Kerberos Realms Settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KerberosRealmsAPI.UpdateKerberosRealmSettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsAPI.UpdateKerberosRealmSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateKerberosRealmSettings`: KerberosRealmsSettings
-    fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsAPI.UpdateKerberosRealmSettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KerberosRealmsAPI.UpdateKerberosRealmSettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KerberosRealmsAPI.UpdateKerberosRealmSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateKerberosRealmSettings`: KerberosRealmsSettings
+	fmt.Fprintf(os.Stdout, "Response from `KerberosRealmsAPI.UpdateKerberosRealmSettings`: %v\n", resp)
 }
 ```
 

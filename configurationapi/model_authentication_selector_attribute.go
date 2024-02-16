@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AuthenticationSelectorAttribute type satisfies the MappedNullable interface at compile time
@@ -22,6 +24,8 @@ type AuthenticationSelectorAttribute struct {
 	// The name of this attribute.
 	Name string `json:"name" tfsdk:"name"`
 }
+
+type _AuthenticationSelectorAttribute AuthenticationSelectorAttribute
 
 // NewAuthenticationSelectorAttribute instantiates a new AuthenticationSelectorAttribute object
 // This constructor will assign default values to properties that have it defined,
@@ -77,6 +81,42 @@ func (o AuthenticationSelectorAttribute) ToMap() (map[string]interface{}, error)
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
 	return toSerialize, nil
+}
+
+func (o *AuthenticationSelectorAttribute) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAuthenticationSelectorAttribute := _AuthenticationSelectorAttribute{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varAuthenticationSelectorAttribute)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AuthenticationSelectorAttribute(varAuthenticationSelectorAttribute)
+
+	return err
 }
 
 type NullableAuthenticationSelectorAttribute struct {

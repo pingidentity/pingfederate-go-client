@@ -24,25 +24,25 @@ Create a new Token Processor to Token Generator Mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewTokenToTokenMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "SourceId_example", "TargetId_example") // TokenToTokenMapping | Configuration for a new Token Processor to Token Generator Mapping.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	body := *openapiclient.NewTokenToTokenMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "SourceId_example", "TargetId_example") // TokenToTokenMapping | Configuration for a new Token Processor to Token Generator Mapping.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TokenProcessorToTokenGeneratorMappingsAPI.CreateTokenToTokenMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TokenProcessorToTokenGeneratorMappingsAPI.CreateTokenToTokenMapping``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateTokenToTokenMapping`: TokenToTokenMapping
-    fmt.Fprintf(os.Stdout, "Response from `TokenProcessorToTokenGeneratorMappingsAPI.CreateTokenToTokenMapping`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TokenProcessorToTokenGeneratorMappingsAPI.CreateTokenToTokenMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TokenProcessorToTokenGeneratorMappingsAPI.CreateTokenToTokenMapping``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateTokenToTokenMapping`: TokenToTokenMapping
+	fmt.Fprintf(os.Stdout, "Response from `TokenProcessorToTokenGeneratorMappingsAPI.CreateTokenToTokenMapping`: %v\n", resp)
 }
 ```
 
@@ -90,22 +90,22 @@ Delete a Token Processor to Token Generator Mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of Token Processor to Token Generator Mapping to delete.
+	id := "id_example" // string | ID of Token Processor to Token Generator Mapping to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TokenProcessorToTokenGeneratorMappingsAPI.DeleteTokenToTokenMappingById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TokenProcessorToTokenGeneratorMappingsAPI.DeleteTokenToTokenMappingById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.TokenProcessorToTokenGeneratorMappingsAPI.DeleteTokenToTokenMappingById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TokenProcessorToTokenGeneratorMappingsAPI.DeleteTokenToTokenMappingById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -156,24 +156,24 @@ Get a Token Processor to Token Generator Mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of Token Processor to Token Generator Mapping to fetch.
+	id := "id_example" // string | ID of Token Processor to Token Generator Mapping to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TokenProcessorToTokenGeneratorMappingsAPI.GetTokenToTokenMappingById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TokenProcessorToTokenGeneratorMappingsAPI.GetTokenToTokenMappingById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetTokenToTokenMappingById`: TokenToTokenMapping
-    fmt.Fprintf(os.Stdout, "Response from `TokenProcessorToTokenGeneratorMappingsAPI.GetTokenToTokenMappingById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TokenProcessorToTokenGeneratorMappingsAPI.GetTokenToTokenMappingById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TokenProcessorToTokenGeneratorMappingsAPI.GetTokenToTokenMappingById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTokenToTokenMappingById`: TokenToTokenMapping
+	fmt.Fprintf(os.Stdout, "Response from `TokenProcessorToTokenGeneratorMappingsAPI.GetTokenToTokenMappingById`: %v\n", resp)
 }
 ```
 
@@ -224,23 +224,23 @@ Get the list of Token Processor to Token Generator Mappings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TokenProcessorToTokenGeneratorMappingsAPI.GetTokenToTokenMappings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TokenProcessorToTokenGeneratorMappingsAPI.GetTokenToTokenMappings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetTokenToTokenMappings`: TokenToTokenMappings
-    fmt.Fprintf(os.Stdout, "Response from `TokenProcessorToTokenGeneratorMappingsAPI.GetTokenToTokenMappings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TokenProcessorToTokenGeneratorMappingsAPI.GetTokenToTokenMappings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TokenProcessorToTokenGeneratorMappingsAPI.GetTokenToTokenMappings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTokenToTokenMappings`: TokenToTokenMappings
+	fmt.Fprintf(os.Stdout, "Response from `TokenProcessorToTokenGeneratorMappingsAPI.GetTokenToTokenMappings`: %v\n", resp)
 }
 ```
 
@@ -283,26 +283,26 @@ Update a Token Processor to Token Generator Mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of Token Processor to Token Generator Mapping to update.
-    body := *openapiclient.NewTokenToTokenMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "SourceId_example", "TargetId_example") // TokenToTokenMapping | Configuration for updated Token Processor to Token Generator Mapping.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	id := "id_example" // string | ID of Token Processor to Token Generator Mapping to update.
+	body := *openapiclient.NewTokenToTokenMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "SourceId_example", "TargetId_example") // TokenToTokenMapping | Configuration for updated Token Processor to Token Generator Mapping.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TokenProcessorToTokenGeneratorMappingsAPI.UpdateTokenToTokenMappingById(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TokenProcessorToTokenGeneratorMappingsAPI.UpdateTokenToTokenMappingById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateTokenToTokenMappingById`: TokenToTokenMapping
-    fmt.Fprintf(os.Stdout, "Response from `TokenProcessorToTokenGeneratorMappingsAPI.UpdateTokenToTokenMappingById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TokenProcessorToTokenGeneratorMappingsAPI.UpdateTokenToTokenMappingById(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TokenProcessorToTokenGeneratorMappingsAPI.UpdateTokenToTokenMappingById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateTokenToTokenMappingById`: TokenToTokenMapping
+	fmt.Fprintf(os.Stdout, "Response from `TokenProcessorToTokenGeneratorMappingsAPI.UpdateTokenToTokenMappingById`: %v\n", resp)
 }
 ```
 

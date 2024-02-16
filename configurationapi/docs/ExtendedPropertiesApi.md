@@ -21,23 +21,23 @@ Get the defined Extended Properties.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExtendedPropertiesAPI.GetExtendedProperties(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ExtendedPropertiesAPI.GetExtendedProperties``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetExtendedProperties`: ExtendedProperties
-    fmt.Fprintf(os.Stdout, "Response from `ExtendedPropertiesAPI.GetExtendedProperties`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ExtendedPropertiesAPI.GetExtendedProperties(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ExtendedPropertiesAPI.GetExtendedProperties``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetExtendedProperties`: ExtendedProperties
+	fmt.Fprintf(os.Stdout, "Response from `ExtendedPropertiesAPI.GetExtendedProperties`: %v\n", resp)
 }
 ```
 
@@ -80,24 +80,24 @@ Update the Extended Properties.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewExtendedProperties() // ExtendedProperties | Definition of extended properties.
+	body := *openapiclient.NewExtendedProperties() // ExtendedProperties | Definition of extended properties.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExtendedPropertiesAPI.UpdateExtendedProperties(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ExtendedPropertiesAPI.UpdateExtendedProperties``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateExtendedProperties`: ExtendedProperties
-    fmt.Fprintf(os.Stdout, "Response from `ExtendedPropertiesAPI.UpdateExtendedProperties`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ExtendedPropertiesAPI.UpdateExtendedProperties(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ExtendedPropertiesAPI.UpdateExtendedProperties``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateExtendedProperties`: ExtendedProperties
+	fmt.Fprintf(os.Stdout, "Response from `ExtendedPropertiesAPI.UpdateExtendedProperties`: %v\n", resp)
 }
 ```
 

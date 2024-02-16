@@ -24,25 +24,25 @@ Create a new APC-to-SP Adapter Mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewApcToSpAdapterMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "SourceId_example", "TargetId_example") // ApcToSpAdapterMapping | Configuration for a new APC-to-SP Adapter Mapping.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	body := *openapiclient.NewApcToSpAdapterMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "SourceId_example", "TargetId_example") // ApcToSpAdapterMapping | Configuration for a new APC-to-SP Adapter Mapping.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAuthenticationPolicyContractMappingsAPI.CreateApcToSpAdapterMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAuthenticationPolicyContractMappingsAPI.CreateApcToSpAdapterMapping``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateApcToSpAdapterMapping`: ApcToSpAdapterMapping
-    fmt.Fprintf(os.Stdout, "Response from `SpAuthenticationPolicyContractMappingsAPI.CreateApcToSpAdapterMapping`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpAuthenticationPolicyContractMappingsAPI.CreateApcToSpAdapterMapping(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpAuthenticationPolicyContractMappingsAPI.CreateApcToSpAdapterMapping``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateApcToSpAdapterMapping`: ApcToSpAdapterMapping
+	fmt.Fprintf(os.Stdout, "Response from `SpAuthenticationPolicyContractMappingsAPI.CreateApcToSpAdapterMapping`: %v\n", resp)
 }
 ```
 
@@ -90,22 +90,22 @@ Delete an APC-to-SP Adapter Mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of APC-to-SP Adapter Mapping to delete.
+	id := "id_example" // string | ID of APC-to-SP Adapter Mapping to delete.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SpAuthenticationPolicyContractMappingsAPI.DeleteApcToSpAdapterMappingById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAuthenticationPolicyContractMappingsAPI.DeleteApcToSpAdapterMappingById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SpAuthenticationPolicyContractMappingsAPI.DeleteApcToSpAdapterMappingById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpAuthenticationPolicyContractMappingsAPI.DeleteApcToSpAdapterMappingById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -156,24 +156,24 @@ Get an APC-to-SP Adapter Mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of APC-to-SP Adapter Mapping to fetch.
+	id := "id_example" // string | ID of APC-to-SP Adapter Mapping to fetch.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAuthenticationPolicyContractMappingsAPI.GetApcToSpAdapterMappingById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAuthenticationPolicyContractMappingsAPI.GetApcToSpAdapterMappingById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetApcToSpAdapterMappingById`: ApcToSpAdapterMapping
-    fmt.Fprintf(os.Stdout, "Response from `SpAuthenticationPolicyContractMappingsAPI.GetApcToSpAdapterMappingById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpAuthenticationPolicyContractMappingsAPI.GetApcToSpAdapterMappingById(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpAuthenticationPolicyContractMappingsAPI.GetApcToSpAdapterMappingById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetApcToSpAdapterMappingById`: ApcToSpAdapterMapping
+	fmt.Fprintf(os.Stdout, "Response from `SpAuthenticationPolicyContractMappingsAPI.GetApcToSpAdapterMappingById`: %v\n", resp)
 }
 ```
 
@@ -224,23 +224,23 @@ Get the list of APC-to-SP Adapter Mappings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAuthenticationPolicyContractMappingsAPI.GetApcToSpAdapterMappings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAuthenticationPolicyContractMappingsAPI.GetApcToSpAdapterMappings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetApcToSpAdapterMappings`: ApcToSpAdapterMappings
-    fmt.Fprintf(os.Stdout, "Response from `SpAuthenticationPolicyContractMappingsAPI.GetApcToSpAdapterMappings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpAuthenticationPolicyContractMappingsAPI.GetApcToSpAdapterMappings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpAuthenticationPolicyContractMappingsAPI.GetApcToSpAdapterMappings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetApcToSpAdapterMappings`: ApcToSpAdapterMappings
+	fmt.Fprintf(os.Stdout, "Response from `SpAuthenticationPolicyContractMappingsAPI.GetApcToSpAdapterMappings`: %v\n", resp)
 }
 ```
 
@@ -283,26 +283,26 @@ Update an APC-to-SP Adapter Mapping.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    id := "id_example" // string | ID of APC-to-SP Adapter Mapping to update.
-    body := *openapiclient.NewApcToSpAdapterMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "SourceId_example", "TargetId_example") // ApcToSpAdapterMapping | Configuration for updated APC-to-SP Adapter Mapping.
-    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
+	id := "id_example" // string | ID of APC-to-SP Adapter Mapping to update.
+	body := *openapiclient.NewApcToSpAdapterMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "SourceId_example", "TargetId_example") // ApcToSpAdapterMapping | Configuration for updated APC-to-SP Adapter Mapping.
+	xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SpAuthenticationPolicyContractMappingsAPI.UpdateApcToSpAdapterMappingById(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SpAuthenticationPolicyContractMappingsAPI.UpdateApcToSpAdapterMappingById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateApcToSpAdapterMappingById`: ApcToSpAdapterMapping
-    fmt.Fprintf(os.Stdout, "Response from `SpAuthenticationPolicyContractMappingsAPI.UpdateApcToSpAdapterMappingById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SpAuthenticationPolicyContractMappingsAPI.UpdateApcToSpAdapterMappingById(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SpAuthenticationPolicyContractMappingsAPI.UpdateApcToSpAdapterMappingById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateApcToSpAdapterMappingById`: ApcToSpAdapterMapping
+	fmt.Fprintf(os.Stdout, "Response from `SpAuthenticationPolicyContractMappingsAPI.UpdateApcToSpAdapterMappingById`: %v\n", resp)
 }
 ```
 

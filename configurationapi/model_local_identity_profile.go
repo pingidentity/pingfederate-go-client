@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the LocalIdentityProfile type satisfies the MappedNullable interface at compile time
@@ -37,6 +39,8 @@ type LocalIdentityProfile struct {
 	// Whether the profile configuration is enabled or not.
 	ProfileEnabled *bool `json:"profileEnabled,omitempty" tfsdk:"profile_enabled"`
 }
+
+type _LocalIdentityProfile LocalIdentityProfile
 
 // NewLocalIdentityProfile instantiates a new LocalIdentityProfile object
 // This constructor will assign default values to properties that have it defined,
@@ -468,6 +472,43 @@ func (o LocalIdentityProfile) ToMap() (map[string]interface{}, error) {
 		toSerialize["profileEnabled"] = o.ProfileEnabled
 	}
 	return toSerialize, nil
+}
+
+func (o *LocalIdentityProfile) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+		"apcId",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varLocalIdentityProfile := _LocalIdentityProfile{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varLocalIdentityProfile)
+
+	if err != nil {
+		return err
+	}
+
+	*o = LocalIdentityProfile(varLocalIdentityProfile)
+
+	return err
 }
 
 type NullableLocalIdentityProfile struct {

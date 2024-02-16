@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the OutOfBandAuthAttributeContract type satisfies the MappedNullable interface at compile time
@@ -24,6 +26,8 @@ type OutOfBandAuthAttributeContract struct {
 	// A list of additional attributes that can be returned by the out of band authenticator plugin instance. The extended attributes are only used if the plugin supports them.
 	ExtendedAttributes []OutOfBandAuthAttribute `json:"extendedAttributes,omitempty" tfsdk:"extended_attributes"`
 }
+
+type _OutOfBandAuthAttributeContract OutOfBandAuthAttributeContract
 
 // NewOutOfBandAuthAttributeContract instantiates a new OutOfBandAuthAttributeContract object
 // This constructor will assign default values to properties that have it defined,
@@ -114,6 +118,42 @@ func (o OutOfBandAuthAttributeContract) ToMap() (map[string]interface{}, error) 
 		toSerialize["extendedAttributes"] = o.ExtendedAttributes
 	}
 	return toSerialize, nil
+}
+
+func (o *OutOfBandAuthAttributeContract) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"coreAttributes",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varOutOfBandAuthAttributeContract := _OutOfBandAuthAttributeContract{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varOutOfBandAuthAttributeContract)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OutOfBandAuthAttributeContract(varOutOfBandAuthAttributeContract)
+
+	return err
 }
 
 type NullableOutOfBandAuthAttributeContract struct {

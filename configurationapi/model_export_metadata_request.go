@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the ExportMetadataRequest type satisfies the MappedNullable interface at compile time
@@ -31,6 +33,8 @@ type ExportMetadataRequest struct {
 	// The virtual host name to be used as the base url.
 	VirtualHostName *string `json:"virtualHostName,omitempty" tfsdk:"virtual_host_name"`
 }
+
+type _ExportMetadataRequest ExportMetadataRequest
 
 // NewExportMetadataRequest instantiates a new ExportMetadataRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -252,6 +256,43 @@ func (o ExportMetadataRequest) ToMap() (map[string]interface{}, error) {
 		toSerialize["virtualHostName"] = o.VirtualHostName
 	}
 	return toSerialize, nil
+}
+
+func (o *ExportMetadataRequest) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"connectionType",
+		"connectionId",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varExportMetadataRequest := _ExportMetadataRequest{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varExportMetadataRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ExportMetadataRequest(varExportMetadataRequest)
+
+	return err
 }
 
 type NullableExportMetadataRequest struct {

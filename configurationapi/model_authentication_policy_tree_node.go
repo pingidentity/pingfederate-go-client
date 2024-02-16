@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AuthenticationPolicyTreeNode type satisfies the MappedNullable interface at compile time
@@ -23,6 +25,8 @@ type AuthenticationPolicyTreeNode struct {
 	// The nodes inside the authentication policy tree node of type AuthenticationPolicyTreeNode.
 	Children []AuthenticationPolicyTreeNode `json:"children,omitempty" tfsdk:"children"`
 }
+
+type _AuthenticationPolicyTreeNode AuthenticationPolicyTreeNode
 
 // NewAuthenticationPolicyTreeNode instantiates a new AuthenticationPolicyTreeNode object
 // This constructor will assign default values to properties that have it defined,
@@ -113,6 +117,42 @@ func (o AuthenticationPolicyTreeNode) ToMap() (map[string]interface{}, error) {
 		toSerialize["children"] = o.Children
 	}
 	return toSerialize, nil
+}
+
+func (o *AuthenticationPolicyTreeNode) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"action",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAuthenticationPolicyTreeNode := _AuthenticationPolicyTreeNode{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varAuthenticationPolicyTreeNode)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AuthenticationPolicyTreeNode(varAuthenticationPolicyTreeNode)
+
+	return err
 }
 
 type NullableAuthenticationPolicyTreeNode struct {

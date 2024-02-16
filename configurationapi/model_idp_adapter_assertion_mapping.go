@@ -11,7 +11,9 @@ API version: 12.0.0.9
 package configurationapi
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the IdpAdapterAssertionMapping type satisfies the MappedNullable interface at compile time
@@ -33,6 +35,8 @@ type IdpAdapterAssertionMapping struct {
 	AttributeContractFulfillment map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment" tfsdk:"attribute_contract_fulfillment"`
 	IssuanceCriteria             *IssuanceCriteria                    `json:"issuanceCriteria,omitempty" tfsdk:"issuance_criteria"`
 }
+
+type _IdpAdapterAssertionMapping IdpAdapterAssertionMapping
 
 // NewIdpAdapterAssertionMapping instantiates a new IdpAdapterAssertionMapping object
 // This constructor will assign default values to properties that have it defined,
@@ -333,6 +337,42 @@ func (o IdpAdapterAssertionMapping) ToMap() (map[string]interface{}, error) {
 		toSerialize["issuanceCriteria"] = o.IssuanceCriteria
 	}
 	return toSerialize, nil
+}
+
+func (o *IdpAdapterAssertionMapping) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"attributeContractFulfillment",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varIdpAdapterAssertionMapping := _IdpAdapterAssertionMapping{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	err = decoder.Decode(&varIdpAdapterAssertionMapping)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IdpAdapterAssertionMapping(varIdpAdapterAssertionMapping)
+
+	return err
 }
 
 type NullableIdpAdapterAssertionMapping struct {

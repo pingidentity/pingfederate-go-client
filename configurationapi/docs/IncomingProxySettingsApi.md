@@ -23,23 +23,23 @@ Get incoming proxy settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IncomingProxySettingsAPI.GetIncomingProxySettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IncomingProxySettingsAPI.GetIncomingProxySettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetIncomingProxySettings`: IncomingProxySettings
-    fmt.Fprintf(os.Stdout, "Response from `IncomingProxySettingsAPI.GetIncomingProxySettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IncomingProxySettingsAPI.GetIncomingProxySettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IncomingProxySettingsAPI.GetIncomingProxySettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetIncomingProxySettings`: IncomingProxySettings
+	fmt.Fprintf(os.Stdout, "Response from `IncomingProxySettingsAPI.GetIncomingProxySettings`: %v\n", resp)
 }
 ```
 
@@ -84,24 +84,24 @@ Update incoming proxy settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/pingidentity/pingfederate-go-client"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/pingidentity/pingfederate-go-client"
 )
 
 func main() {
-    body := *openapiclient.NewIncomingProxySettings() // IncomingProxySettings | Incoming proxy settings.
+	body := *openapiclient.NewIncomingProxySettings() // IncomingProxySettings | Incoming proxy settings.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IncomingProxySettingsAPI.UpdateIncomingProxySettings(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IncomingProxySettingsAPI.UpdateIncomingProxySettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateIncomingProxySettings`: IncomingProxySettings
-    fmt.Fprintf(os.Stdout, "Response from `IncomingProxySettingsAPI.UpdateIncomingProxySettings`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.IncomingProxySettingsAPI.UpdateIncomingProxySettings(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `IncomingProxySettingsAPI.UpdateIncomingProxySettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateIncomingProxySettings`: IncomingProxySettings
+	fmt.Fprintf(os.Stdout, "Response from `IncomingProxySettingsAPI.UpdateIncomingProxySettings`: %v\n", resp)
 }
 ```
 
