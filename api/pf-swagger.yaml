@@ -14195,12 +14195,6 @@ components:
             this access token management plugin instance.
           items:
             $ref: "#/components/schemas/AccessTokenAttribute"
-        inherited:
-          type: boolean
-          description:
-            "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
         defaultSubjectAttribute:
           type: string
           description:
@@ -14240,13 +14234,6 @@ components:
     AtmAccessControlSettings:
       type: object
       properties:
-        inherited:
-          type: boolean
-          description:
-            "If this token manager has a parent, this flag determines whether\
-            \ access control settings are inherited from the parent. When set to true,\
-            \ the other fields in this model become read-only. The default value is\
-            \ false."
         restrictClients:
           type: boolean
           description:
@@ -14264,13 +14251,6 @@ components:
     AtmSelectionSettings:
       type: object
       properties:
-        inherited:
-          type: boolean
-          description:
-            "If this token manager has a parent, this flag determines whether\
-            \ selection settings, such as resource URI's, are inherited from the parent.\
-            \ When set to true, the other fields in this model become read-only. The\
-            \ default value is false."
         resourceUris:
           type: array
           description:
@@ -14463,12 +14443,6 @@ components:
             \ encrypted representation of the field's value, if a value is defined.\
             \ If you do not want to update the stored value, this attribute should\
             \ be passed back unchanged."
-        inherited:
-          type: boolean
-          description:
-            "Whether this field is inherited from its parent instance.\
-            \ If true, the value/encrypted value properties become read-only. The\
-            \ default value is false."
       description: A plugin configuration field value.
     ConfigRow:
       required:
@@ -14497,11 +14471,6 @@ components:
           description: List of table rows.
           items:
             $ref: "#/components/schemas/ConfigRow"
-        inherited:
-          type: boolean
-          description:
-            "Whether this table is inherited from its parent instance.\
-            \ If true, the rows become read-only. The default value is false."
       description: A plugin configuration table populated with values.
     CustomAttributeSource:
       allOf:
@@ -14612,12 +14581,6 @@ components:
           description:
             Whether or not all OGNL expressions used to fulfill an outgoing
             assertion contract should be masked in the logs. Defaults to false.
-        inherited:
-          type: boolean
-          description:
-            "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
       description: A set of attributes exposed by an IdP adapter.
     IdpAdapterContractMapping:
       required:
@@ -14638,12 +14601,6 @@ components:
             values.
         issuanceCriteria:
           $ref: "#/components/schemas/IssuanceCriteria"
-        inherited:
-          type: boolean
-          description:
-            "Whether this attribute mapping is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
       description: An IdP Adapter Contract Mapping.
     IssuanceCriteria:
       type: object
@@ -14829,12 +14786,6 @@ components:
             the adapter supports them.
           items:
             $ref: "#/components/schemas/PasswordCredentialValidatorAttribute"
-        inherited:
-          type: boolean
-          description:
-            "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
     PluginConfiguration:
       type: object
       properties:
@@ -14890,13 +14841,6 @@ components:
     SessionValidationSettings:
       type: object
       properties:
-        inherited:
-          type: boolean
-          description:
-            "If this token manager has a parent, this flag determines whether\
-            \ session validation settings, such as checkValidAuthnSession, are inherited\
-            \ from the parent. When set to true, the other fields in this model become\
-            \ read-only. The default value is false."
         includeSessionId:
           type: boolean
           description:
@@ -15057,12 +15001,6 @@ components:
             them.
           items:
             $ref: "#/components/schemas/SpAdapterAttribute"
-        inherited:
-          type: boolean
-          description:
-            "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
       description: A set of attributes exposed by an SP adapter.
     SpAdapterTargetApplicationInfo:
       type: object
@@ -15073,12 +15011,6 @@ components:
         applicationIconUrl:
           type: string
           description: The application icon URL.
-        inherited:
-          type: boolean
-          description:
-            "Specifies Whether target application information is inherited\
-            \ from its parent instance. If true, the rest of the properties in this\
-            \ model become read-only. The default value is false."
       description: Target Application Information exposed by an SP adapter.
     TokenGenerator:
       allOf:
@@ -15117,12 +15049,6 @@ components:
             supports them.
           items:
             $ref: "#/components/schemas/TokenGeneratorAttribute"
-        inherited:
-          type: boolean
-          description:
-            "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
       description: A set of attributes exposed by a token generator.
     TokenProcessor:
       allOf:
@@ -15171,12 +15097,6 @@ components:
           description:
             Whether or not all OGNL expressions used to fulfill an outgoing
             assertion contract should be masked in the logs. Defaults to false.
-        inherited:
-          type: boolean
-          description:
-            "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
       description: A set of attributes exposed by a token processor.
     AccessTokenMapping:
       required:
@@ -20214,12 +20134,6 @@ components:
             provisioner supports them.
           items:
             $ref: "#/components/schemas/Attribute"
-        inherited:
-          type: boolean
-          description:
-            "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
       description: A set of attributes exposed by an identity store provisioner.
     IdentityStoreProvisionerGroupAttributeContract:
       required:
@@ -20242,12 +20156,6 @@ components:
             used if the provisioner supports them.
           items:
             $ref: "#/components/schemas/GroupAttribute"
-        inherited:
-          type: boolean
-          description:
-            "Whether this group attribute contract is inherited from its\
-            \ parent instance. If true, the rest of the properties in this model become\
-            \ read-only. The default value is false."
       description: A set of group attributes exposed by an identity store provisioner.
     IdentityStoreProvisioners:
       type: object
