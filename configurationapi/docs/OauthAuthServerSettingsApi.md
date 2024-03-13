@@ -895,7 +895,7 @@ import (
 )
 
 func main() {
-    body := *openapiclient.NewAuthorizationServerSettings("DefaultScopeDescription_example", int64(123), int64(123), int64(123), int64(123), "RegisteredAuthorizationPath_example", int64(123), int64(123), false) // AuthorizationServerSettings | Configuration for updated server settings.
+    body := *openapiclient.NewAuthorizationServerSettings(int64(123), int64(123), int64(123), int64(123)) // AuthorizationServerSettings | Configuration for updated server settings.
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
