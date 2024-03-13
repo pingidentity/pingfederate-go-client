@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DefaultScopeDescription** | **string** | The default scope description. | 
+**DefaultScopeDescription** | Pointer to **string** | The default scope description. | [optional] 
 **Scopes** | Pointer to [**[]ScopeEntry**](ScopeEntry.md) | The list of common scopes. | [optional] 
 **ScopeGroups** | Pointer to [**[]ScopeGroupEntry**](ScopeGroupEntry.md) | The list of common scope groups. | [optional] 
 **ExclusiveScopes** | Pointer to [**[]ScopeEntry**](ScopeEntry.md) | The list of exclusive scopes. | [optional] 
@@ -35,11 +35,11 @@ Name | Type | Description | Notes
 **ScopeForOAuthGrantManagement** | Pointer to **string** | The OAuth scope to validate when accessing grant management service. | [optional] 
 **AllowedOrigins** | Pointer to **[]string** | The list of allowed origins. | [optional] 
 **UserAuthorizationUrl** | Pointer to **string** | The URL used to generate &#39;verification_url&#39; and &#39;verification_url_complete&#39; values in a Device Authorization request | [optional] 
-**RegisteredAuthorizationPath** | **string** | The Registered Authorization Path is concatenated to PingFederate base URL to generate &#39;verification_url&#39; and &#39;verification_url_complete&#39; values in a Device Authorization request. PingFederate listens to this path if specified | 
-**PendingAuthorizationTimeout** | **int64** | The &#39;device_code&#39; and &#39;user_code&#39; timeout, in seconds. | 
-**DevicePollingInterval** | **int64** | The amount of time client should wait between polling requests, in seconds. | 
+**RegisteredAuthorizationPath** | Pointer to **string** | The Registered Authorization Path is concatenated to PingFederate base URL to generate &#39;verification_url&#39; and &#39;verification_url_complete&#39; values in a Device Authorization request. PingFederate listens to this path if specified | [optional] 
+**PendingAuthorizationTimeout** | Pointer to **int64** | The &#39;device_code&#39; and &#39;user_code&#39; timeout, in seconds. | [optional] 
+**DevicePollingInterval** | Pointer to **int64** | The amount of time client should wait between polling requests, in seconds. | [optional] 
 **ActivationCodeCheckMode** | Pointer to **string** | Determines whether the user is prompted to enter or confirm the activation code after authenticating or before. The default is AFTER_AUTHENTICATION. | [optional] 
-**BypassActivationCodeConfirmation** | **bool** | Indicates if the Activation Code Confirmation page should be bypassed if &#39;verification_url_complete&#39; is used by the end user to authorize a device. | 
+**BypassActivationCodeConfirmation** | Pointer to **bool** | Indicates if the Activation Code Confirmation page should be bypassed if &#39;verification_url_complete&#39; is used by the end user to authorize a device. | [optional] 
 **UserAuthorizationConsentPageSetting** | Pointer to **string** | User Authorization Consent Page setting to use PingFederate&#39;s internal consent page or an external system | [optional] 
 **UserAuthorizationConsentAdapter** | Pointer to **string** | Adapter ID of the external consent adapter to be used for the consent page user interface. | [optional] 
 **ApprovedScopesAttribute** | Pointer to **string** | Attribute from the external consent adapter&#39;s contract, intended for storing approved scopes returned by the external consent page. | [optional] 
@@ -57,7 +57,7 @@ Name | Type | Description | Notes
 
 ### NewAuthorizationServerSettings
 
-`func NewAuthorizationServerSettings(defaultScopeDescription string, authorizationCodeTimeout int64, authorizationCodeEntropy int64, refreshTokenLength int64, refreshRollingInterval int64, registeredAuthorizationPath string, pendingAuthorizationTimeout int64, devicePollingInterval int64, bypassActivationCodeConfirmation bool, ) *AuthorizationServerSettings`
+`func NewAuthorizationServerSettings(authorizationCodeTimeout int64, authorizationCodeEntropy int64, refreshTokenLength int64, refreshRollingInterval int64, ) *AuthorizationServerSettings`
 
 NewAuthorizationServerSettings instantiates a new AuthorizationServerSettings object
 This constructor will assign default values to properties that have it defined,
@@ -91,6 +91,11 @@ and a boolean to check if the value has been set.
 
 SetDefaultScopeDescription sets DefaultScopeDescription field to given value.
 
+### HasDefaultScopeDescription
+
+`func (o *AuthorizationServerSettings) HasDefaultScopeDescription() bool`
+
+HasDefaultScopeDescription returns a boolean if a field has been set.
 
 ### GetScopes
 
@@ -841,6 +846,11 @@ and a boolean to check if the value has been set.
 
 SetRegisteredAuthorizationPath sets RegisteredAuthorizationPath field to given value.
 
+### HasRegisteredAuthorizationPath
+
+`func (o *AuthorizationServerSettings) HasRegisteredAuthorizationPath() bool`
+
+HasRegisteredAuthorizationPath returns a boolean if a field has been set.
 
 ### GetPendingAuthorizationTimeout
 
@@ -861,6 +871,11 @@ and a boolean to check if the value has been set.
 
 SetPendingAuthorizationTimeout sets PendingAuthorizationTimeout field to given value.
 
+### HasPendingAuthorizationTimeout
+
+`func (o *AuthorizationServerSettings) HasPendingAuthorizationTimeout() bool`
+
+HasPendingAuthorizationTimeout returns a boolean if a field has been set.
 
 ### GetDevicePollingInterval
 
@@ -881,6 +896,11 @@ and a boolean to check if the value has been set.
 
 SetDevicePollingInterval sets DevicePollingInterval field to given value.
 
+### HasDevicePollingInterval
+
+`func (o *AuthorizationServerSettings) HasDevicePollingInterval() bool`
+
+HasDevicePollingInterval returns a boolean if a field has been set.
 
 ### GetActivationCodeCheckMode
 
@@ -926,6 +946,11 @@ and a boolean to check if the value has been set.
 
 SetBypassActivationCodeConfirmation sets BypassActivationCodeConfirmation field to given value.
 
+### HasBypassActivationCodeConfirmation
+
+`func (o *AuthorizationServerSettings) HasBypassActivationCodeConfirmation() bool`
+
+HasBypassActivationCodeConfirmation returns a boolean if a field has been set.
 
 ### GetUserAuthorizationConsentPageSetting
 

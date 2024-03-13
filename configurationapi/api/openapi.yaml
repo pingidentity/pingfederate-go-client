@@ -17518,13 +17518,8 @@ components:
       required:
       - authorizationCodeEntropy
       - authorizationCodeTimeout
-      - bypassActivationCodeConfirmation
-      - defaultScopeDescription
-      - devicePollingInterval
-      - pendingAuthorizationTimeout
       - refreshRollingInterval
       - refreshTokenLength
-      - registeredAuthorizationPath
       type: object
     PersistentGrantAttribute:
       description: A persistent grant contract attribute.

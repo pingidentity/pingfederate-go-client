@@ -20,7 +20,7 @@ var _ MappedNullable = &AuthorizationServerSettings{}
 // AuthorizationServerSettings Authorization Server Settings attributes.
 type AuthorizationServerSettings struct {
 	// The default scope description.
-	DefaultScopeDescription string `json:"defaultScopeDescription" tfsdk:"default_scope_description"`
+	DefaultScopeDescription *string `json:"defaultScopeDescription,omitempty" tfsdk:"default_scope_description"`
 	// The list of common scopes.
 	Scopes []ScopeEntry `json:"scopes,omitempty" tfsdk:"scopes"`
 	// The list of common scope groups.
@@ -80,15 +80,15 @@ type AuthorizationServerSettings struct {
 	// The URL used to generate 'verification_url' and 'verification_url_complete' values in a Device Authorization request
 	UserAuthorizationUrl *string `json:"userAuthorizationUrl,omitempty" tfsdk:"user_authorization_url"`
 	// The Registered Authorization Path is concatenated to PingFederate base URL to generate 'verification_url' and 'verification_url_complete' values in a Device Authorization request. PingFederate listens to this path if specified
-	RegisteredAuthorizationPath string `json:"registeredAuthorizationPath" tfsdk:"registered_authorization_path"`
+	RegisteredAuthorizationPath *string `json:"registeredAuthorizationPath,omitempty" tfsdk:"registered_authorization_path"`
 	// The 'device_code' and 'user_code' timeout, in seconds.
-	PendingAuthorizationTimeout int64 `json:"pendingAuthorizationTimeout" tfsdk:"pending_authorization_timeout"`
+	PendingAuthorizationTimeout *int64 `json:"pendingAuthorizationTimeout,omitempty" tfsdk:"pending_authorization_timeout"`
 	// The amount of time client should wait between polling requests, in seconds.
-	DevicePollingInterval int64 `json:"devicePollingInterval" tfsdk:"device_polling_interval"`
+	DevicePollingInterval *int64 `json:"devicePollingInterval,omitempty" tfsdk:"device_polling_interval"`
 	// Determines whether the user is prompted to enter or confirm the activation code after authenticating or before. The default is AFTER_AUTHENTICATION.
 	ActivationCodeCheckMode *string `json:"activationCodeCheckMode,omitempty" tfsdk:"activation_code_check_mode"`
 	// Indicates if the Activation Code Confirmation page should be bypassed if 'verification_url_complete' is used by the end user to authorize a device.
-	BypassActivationCodeConfirmation bool `json:"bypassActivationCodeConfirmation" tfsdk:"bypass_activation_code_confirmation"`
+	BypassActivationCodeConfirmation *bool `json:"bypassActivationCodeConfirmation,omitempty" tfsdk:"bypass_activation_code_confirmation"`
 	// User Authorization Consent Page setting to use PingFederate's internal consent page or an external system
 	UserAuthorizationConsentPageSetting *string `json:"userAuthorizationConsentPageSetting,omitempty" tfsdk:"user_authorization_consent_page_setting"`
 	// Adapter ID of the external consent adapter to be used for the consent page user interface.
@@ -119,17 +119,12 @@ type AuthorizationServerSettings struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAuthorizationServerSettings(defaultScopeDescription string, authorizationCodeTimeout int64, authorizationCodeEntropy int64, refreshTokenLength int64, refreshRollingInterval int64, registeredAuthorizationPath string, pendingAuthorizationTimeout int64, devicePollingInterval int64, bypassActivationCodeConfirmation bool) *AuthorizationServerSettings {
+func NewAuthorizationServerSettings(authorizationCodeTimeout int64, authorizationCodeEntropy int64, refreshTokenLength int64, refreshRollingInterval int64) *AuthorizationServerSettings {
 	this := AuthorizationServerSettings{}
-	this.DefaultScopeDescription = defaultScopeDescription
 	this.AuthorizationCodeTimeout = authorizationCodeTimeout
 	this.AuthorizationCodeEntropy = authorizationCodeEntropy
 	this.RefreshTokenLength = refreshTokenLength
 	this.RefreshRollingInterval = refreshRollingInterval
-	this.RegisteredAuthorizationPath = registeredAuthorizationPath
-	this.PendingAuthorizationTimeout = pendingAuthorizationTimeout
-	this.DevicePollingInterval = devicePollingInterval
-	this.BypassActivationCodeConfirmation = bypassActivationCodeConfirmation
 	return &this
 }
 
@@ -141,28 +136,36 @@ func NewAuthorizationServerSettingsWithDefaults() *AuthorizationServerSettings {
 	return &this
 }
 
-// GetDefaultScopeDescription returns the DefaultScopeDescription field value
+// GetDefaultScopeDescription returns the DefaultScopeDescription field value if set, zero value otherwise.
 func (o *AuthorizationServerSettings) GetDefaultScopeDescription() string {
-	if o == nil {
+	if o == nil || IsNil(o.DefaultScopeDescription) {
 		var ret string
 		return ret
 	}
-
-	return o.DefaultScopeDescription
+	return *o.DefaultScopeDescription
 }
 
-// GetDefaultScopeDescriptionOk returns a tuple with the DefaultScopeDescription field value
+// GetDefaultScopeDescriptionOk returns a tuple with the DefaultScopeDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationServerSettings) GetDefaultScopeDescriptionOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DefaultScopeDescription) {
 		return nil, false
 	}
-	return &o.DefaultScopeDescription, true
+	return o.DefaultScopeDescription, true
 }
 
-// SetDefaultScopeDescription sets field value
+// HasDefaultScopeDescription returns a boolean if a field has been set.
+func (o *AuthorizationServerSettings) HasDefaultScopeDescription() bool {
+	if o != nil && !IsNil(o.DefaultScopeDescription) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultScopeDescription gets a reference to the given string and assigns it to the DefaultScopeDescription field.
 func (o *AuthorizationServerSettings) SetDefaultScopeDescription(v string) {
-	o.DefaultScopeDescription = v
+	o.DefaultScopeDescription = &v
 }
 
 // GetScopes returns the Scopes field value if set, zero value otherwise.
@@ -1093,76 +1096,100 @@ func (o *AuthorizationServerSettings) SetUserAuthorizationUrl(v string) {
 	o.UserAuthorizationUrl = &v
 }
 
-// GetRegisteredAuthorizationPath returns the RegisteredAuthorizationPath field value
+// GetRegisteredAuthorizationPath returns the RegisteredAuthorizationPath field value if set, zero value otherwise.
 func (o *AuthorizationServerSettings) GetRegisteredAuthorizationPath() string {
-	if o == nil {
+	if o == nil || IsNil(o.RegisteredAuthorizationPath) {
 		var ret string
 		return ret
 	}
-
-	return o.RegisteredAuthorizationPath
+	return *o.RegisteredAuthorizationPath
 }
 
-// GetRegisteredAuthorizationPathOk returns a tuple with the RegisteredAuthorizationPath field value
+// GetRegisteredAuthorizationPathOk returns a tuple with the RegisteredAuthorizationPath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationServerSettings) GetRegisteredAuthorizationPathOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.RegisteredAuthorizationPath) {
 		return nil, false
 	}
-	return &o.RegisteredAuthorizationPath, true
+	return o.RegisteredAuthorizationPath, true
 }
 
-// SetRegisteredAuthorizationPath sets field value
+// HasRegisteredAuthorizationPath returns a boolean if a field has been set.
+func (o *AuthorizationServerSettings) HasRegisteredAuthorizationPath() bool {
+	if o != nil && !IsNil(o.RegisteredAuthorizationPath) {
+		return true
+	}
+
+	return false
+}
+
+// SetRegisteredAuthorizationPath gets a reference to the given string and assigns it to the RegisteredAuthorizationPath field.
 func (o *AuthorizationServerSettings) SetRegisteredAuthorizationPath(v string) {
-	o.RegisteredAuthorizationPath = v
+	o.RegisteredAuthorizationPath = &v
 }
 
-// GetPendingAuthorizationTimeout returns the PendingAuthorizationTimeout field value
+// GetPendingAuthorizationTimeout returns the PendingAuthorizationTimeout field value if set, zero value otherwise.
 func (o *AuthorizationServerSettings) GetPendingAuthorizationTimeout() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.PendingAuthorizationTimeout) {
 		var ret int64
 		return ret
 	}
-
-	return o.PendingAuthorizationTimeout
+	return *o.PendingAuthorizationTimeout
 }
 
-// GetPendingAuthorizationTimeoutOk returns a tuple with the PendingAuthorizationTimeout field value
+// GetPendingAuthorizationTimeoutOk returns a tuple with the PendingAuthorizationTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationServerSettings) GetPendingAuthorizationTimeoutOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.PendingAuthorizationTimeout) {
 		return nil, false
 	}
-	return &o.PendingAuthorizationTimeout, true
+	return o.PendingAuthorizationTimeout, true
 }
 
-// SetPendingAuthorizationTimeout sets field value
+// HasPendingAuthorizationTimeout returns a boolean if a field has been set.
+func (o *AuthorizationServerSettings) HasPendingAuthorizationTimeout() bool {
+	if o != nil && !IsNil(o.PendingAuthorizationTimeout) {
+		return true
+	}
+
+	return false
+}
+
+// SetPendingAuthorizationTimeout gets a reference to the given int64 and assigns it to the PendingAuthorizationTimeout field.
 func (o *AuthorizationServerSettings) SetPendingAuthorizationTimeout(v int64) {
-	o.PendingAuthorizationTimeout = v
+	o.PendingAuthorizationTimeout = &v
 }
 
-// GetDevicePollingInterval returns the DevicePollingInterval field value
+// GetDevicePollingInterval returns the DevicePollingInterval field value if set, zero value otherwise.
 func (o *AuthorizationServerSettings) GetDevicePollingInterval() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.DevicePollingInterval) {
 		var ret int64
 		return ret
 	}
-
-	return o.DevicePollingInterval
+	return *o.DevicePollingInterval
 }
 
-// GetDevicePollingIntervalOk returns a tuple with the DevicePollingInterval field value
+// GetDevicePollingIntervalOk returns a tuple with the DevicePollingInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationServerSettings) GetDevicePollingIntervalOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DevicePollingInterval) {
 		return nil, false
 	}
-	return &o.DevicePollingInterval, true
+	return o.DevicePollingInterval, true
 }
 
-// SetDevicePollingInterval sets field value
+// HasDevicePollingInterval returns a boolean if a field has been set.
+func (o *AuthorizationServerSettings) HasDevicePollingInterval() bool {
+	if o != nil && !IsNil(o.DevicePollingInterval) {
+		return true
+	}
+
+	return false
+}
+
+// SetDevicePollingInterval gets a reference to the given int64 and assigns it to the DevicePollingInterval field.
 func (o *AuthorizationServerSettings) SetDevicePollingInterval(v int64) {
-	o.DevicePollingInterval = v
+	o.DevicePollingInterval = &v
 }
 
 // GetActivationCodeCheckMode returns the ActivationCodeCheckMode field value if set, zero value otherwise.
@@ -1197,28 +1224,36 @@ func (o *AuthorizationServerSettings) SetActivationCodeCheckMode(v string) {
 	o.ActivationCodeCheckMode = &v
 }
 
-// GetBypassActivationCodeConfirmation returns the BypassActivationCodeConfirmation field value
+// GetBypassActivationCodeConfirmation returns the BypassActivationCodeConfirmation field value if set, zero value otherwise.
 func (o *AuthorizationServerSettings) GetBypassActivationCodeConfirmation() bool {
-	if o == nil {
+	if o == nil || IsNil(o.BypassActivationCodeConfirmation) {
 		var ret bool
 		return ret
 	}
-
-	return o.BypassActivationCodeConfirmation
+	return *o.BypassActivationCodeConfirmation
 }
 
-// GetBypassActivationCodeConfirmationOk returns a tuple with the BypassActivationCodeConfirmation field value
+// GetBypassActivationCodeConfirmationOk returns a tuple with the BypassActivationCodeConfirmation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationServerSettings) GetBypassActivationCodeConfirmationOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.BypassActivationCodeConfirmation) {
 		return nil, false
 	}
-	return &o.BypassActivationCodeConfirmation, true
+	return o.BypassActivationCodeConfirmation, true
 }
 
-// SetBypassActivationCodeConfirmation sets field value
+// HasBypassActivationCodeConfirmation returns a boolean if a field has been set.
+func (o *AuthorizationServerSettings) HasBypassActivationCodeConfirmation() bool {
+	if o != nil && !IsNil(o.BypassActivationCodeConfirmation) {
+		return true
+	}
+
+	return false
+}
+
+// SetBypassActivationCodeConfirmation gets a reference to the given bool and assigns it to the BypassActivationCodeConfirmation field.
 func (o *AuthorizationServerSettings) SetBypassActivationCodeConfirmation(v bool) {
-	o.BypassActivationCodeConfirmation = v
+	o.BypassActivationCodeConfirmation = &v
 }
 
 // GetUserAuthorizationConsentPageSetting returns the UserAuthorizationConsentPageSetting field value if set, zero value otherwise.
@@ -1615,7 +1650,9 @@ func (o AuthorizationServerSettings) MarshalJSON() ([]byte, error) {
 
 func (o AuthorizationServerSettings) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["defaultScopeDescription"] = o.DefaultScopeDescription
+	if !IsNil(o.DefaultScopeDescription) {
+		toSerialize["defaultScopeDescription"] = o.DefaultScopeDescription
+	}
 	if !IsNil(o.Scopes) {
 		toSerialize["scopes"] = o.Scopes
 	}
@@ -1698,13 +1735,21 @@ func (o AuthorizationServerSettings) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.UserAuthorizationUrl) {
 		toSerialize["userAuthorizationUrl"] = o.UserAuthorizationUrl
 	}
-	toSerialize["registeredAuthorizationPath"] = o.RegisteredAuthorizationPath
-	toSerialize["pendingAuthorizationTimeout"] = o.PendingAuthorizationTimeout
-	toSerialize["devicePollingInterval"] = o.DevicePollingInterval
+	if !IsNil(o.RegisteredAuthorizationPath) {
+		toSerialize["registeredAuthorizationPath"] = o.RegisteredAuthorizationPath
+	}
+	if !IsNil(o.PendingAuthorizationTimeout) {
+		toSerialize["pendingAuthorizationTimeout"] = o.PendingAuthorizationTimeout
+	}
+	if !IsNil(o.DevicePollingInterval) {
+		toSerialize["devicePollingInterval"] = o.DevicePollingInterval
+	}
 	if !IsNil(o.ActivationCodeCheckMode) {
 		toSerialize["activationCodeCheckMode"] = o.ActivationCodeCheckMode
 	}
-	toSerialize["bypassActivationCodeConfirmation"] = o.BypassActivationCodeConfirmation
+	if !IsNil(o.BypassActivationCodeConfirmation) {
+		toSerialize["bypassActivationCodeConfirmation"] = o.BypassActivationCodeConfirmation
+	}
 	if !IsNil(o.UserAuthorizationConsentPageSetting) {
 		toSerialize["userAuthorizationConsentPageSetting"] = o.UserAuthorizationConsentPageSetting
 	}

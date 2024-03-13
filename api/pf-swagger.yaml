@@ -16036,13 +16036,8 @@ components:
       required:
         - authorizationCodeEntropy
         - authorizationCodeTimeout
-        - bypassActivationCodeConfirmation
-        - defaultScopeDescription
-        - devicePollingInterval
-        - pendingAuthorizationTimeout
         - refreshRollingInterval
         - refreshTokenLength
-        - registeredAuthorizationPath
       type: object
       properties:
         defaultScopeDescription:
