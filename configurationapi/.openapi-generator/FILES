@@ -479,6 +479,7 @@ docs/ResourceUsage.md
 docs/ResourceUsages.md
 docs/RestartPolicyAction.md
 docs/RolesAndProtocols.md
+docs/RsaAlgKeyId.md
 docs/SAML20Profile.md
 docs/SaasAttributeMapping.md
 docs/SaasFieldConfiguration.md
@@ -942,6 +943,7 @@ model_resource_usage.go
 model_resource_usages.go
 model_restart_policy_action.go
 model_roles_and_protocols.go
+model_rsa_alg_key_id.go
 model_saas_attribute_mapping.go
 model_saas_field_configuration.go
 model_saas_plugin_descriptor.go

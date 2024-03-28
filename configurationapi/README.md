@@ -892,6 +892,7 @@ Class | Method | HTTP request | Description
  - [ResourceUsages](docs/ResourceUsages.md)
  - [RestartPolicyAction](docs/RestartPolicyAction.md)
  - [RolesAndProtocols](docs/RolesAndProtocols.md)
+ - [RsaAlgKeyId](docs/RsaAlgKeyId.md)
  - [SAML20Profile](docs/SAML20Profile.md)
  - [SaasAttributeMapping](docs/SaasAttributeMapping.md)
  - [SaasFieldConfiguration](docs/SaasFieldConfiguration.md)

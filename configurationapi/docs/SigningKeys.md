@@ -7,15 +7,25 @@ Name | Type | Description | Notes
 **P256ActiveCertRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **P256PreviousCertRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **P256PublishX5cParameter** | Pointer to **bool** | Enable publishing of the P-256 certificate chain associated with the active key. | [optional] 
+**P256ActiveKeyId** | Pointer to **string** | Key Id for currently active P-256 key. | [optional] 
+**P256PreviousKeyId** | Pointer to **string** | Key Id for previously active P-256 key. | [optional] 
 **P384ActiveCertRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **P384PreviousCertRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **P384PublishX5cParameter** | Pointer to **bool** | Enable publishing of the P-384 certificate chain associated with the active key. | [optional] 
+**P384ActiveKeyId** | Pointer to **string** | Key Id for currently active P-384 key. | [optional] 
+**P384PreviousKeyId** | Pointer to **string** | Key Id for previously active P-384 key. | [optional] 
 **P521ActiveCertRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **P521PreviousCertRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **P521PublishX5cParameter** | Pointer to **bool** | Enable publishing of the P-521 certificate chain associated with the active key. | [optional] 
+**P521ActiveKeyId** | Pointer to **string** | Key Id for currently active P-521 key. | [optional] 
+**P521PreviousKeyId** | Pointer to **string** | Key Id for previously active P-521 key. | [optional] 
 **RsaActiveCertRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **RsaPreviousCertRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **RsaPublishX5cParameter** | Pointer to **bool** | Enable publishing of the RSA certificate chain associated with the active key. | [optional] 
+**RsaActiveKeyId** | Pointer to **string** | Key Id for currently active RSA key. | [optional] 
+**RsaPreviousKeyId** | Pointer to **string** | Key Id for previously active RSA key. | [optional] 
+**RsaAlgorithmActiveKeyIds** | Pointer to [**[]RsaAlgKeyId**](RsaAlgKeyId.md) | PingFederate uses the same RSA key for all RSA signing algorithms. To enable active RSA JWK entry to have unique single valued &#39;&#39;alg&#39;&#39; parameter, use this list to set a key identifier for each RSA algorithm (RS256, RS384, RS512, PS256, PS384 and PS512). | [optional] 
+**RsaAlgorithmPreviousKeyIds** | Pointer to [**[]RsaAlgKeyId**](RsaAlgKeyId.md) | PingFederate uses the same RSA key for all RSA signing algorithms. To enable previously active RSA JWK entry to have unique single valued &#39;&#39;alg&#39;&#39; parameter, use this list to set a key identifier for each RSA algorithm (RS256, RS384, RS512, PS256, PS384 and PS512). | [optional] 
 
 ## Methods
 
@@ -111,6 +121,56 @@ SetP256PublishX5cParameter sets P256PublishX5cParameter field to given value.
 
 HasP256PublishX5cParameter returns a boolean if a field has been set.
 
+### GetP256ActiveKeyId
+
+`func (o *SigningKeys) GetP256ActiveKeyId() string`
+
+GetP256ActiveKeyId returns the P256ActiveKeyId field if non-nil, zero value otherwise.
+
+### GetP256ActiveKeyIdOk
+
+`func (o *SigningKeys) GetP256ActiveKeyIdOk() (*string, bool)`
+
+GetP256ActiveKeyIdOk returns a tuple with the P256ActiveKeyId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetP256ActiveKeyId
+
+`func (o *SigningKeys) SetP256ActiveKeyId(v string)`
+
+SetP256ActiveKeyId sets P256ActiveKeyId field to given value.
+
+### HasP256ActiveKeyId
+
+`func (o *SigningKeys) HasP256ActiveKeyId() bool`
+
+HasP256ActiveKeyId returns a boolean if a field has been set.
+
+### GetP256PreviousKeyId
+
+`func (o *SigningKeys) GetP256PreviousKeyId() string`
+
+GetP256PreviousKeyId returns the P256PreviousKeyId field if non-nil, zero value otherwise.
+
+### GetP256PreviousKeyIdOk
+
+`func (o *SigningKeys) GetP256PreviousKeyIdOk() (*string, bool)`
+
+GetP256PreviousKeyIdOk returns a tuple with the P256PreviousKeyId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetP256PreviousKeyId
+
+`func (o *SigningKeys) SetP256PreviousKeyId(v string)`
+
+SetP256PreviousKeyId sets P256PreviousKeyId field to given value.
+
+### HasP256PreviousKeyId
+
+`func (o *SigningKeys) HasP256PreviousKeyId() bool`
+
+HasP256PreviousKeyId returns a boolean if a field has been set.
+
 ### GetP384ActiveCertRef
 
 `func (o *SigningKeys) GetP384ActiveCertRef() ResourceLink`
@@ -185,6 +245,56 @@ SetP384PublishX5cParameter sets P384PublishX5cParameter field to given value.
 `func (o *SigningKeys) HasP384PublishX5cParameter() bool`
 
 HasP384PublishX5cParameter returns a boolean if a field has been set.
+
+### GetP384ActiveKeyId
+
+`func (o *SigningKeys) GetP384ActiveKeyId() string`
+
+GetP384ActiveKeyId returns the P384ActiveKeyId field if non-nil, zero value otherwise.
+
+### GetP384ActiveKeyIdOk
+
+`func (o *SigningKeys) GetP384ActiveKeyIdOk() (*string, bool)`
+
+GetP384ActiveKeyIdOk returns a tuple with the P384ActiveKeyId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetP384ActiveKeyId
+
+`func (o *SigningKeys) SetP384ActiveKeyId(v string)`
+
+SetP384ActiveKeyId sets P384ActiveKeyId field to given value.
+
+### HasP384ActiveKeyId
+
+`func (o *SigningKeys) HasP384ActiveKeyId() bool`
+
+HasP384ActiveKeyId returns a boolean if a field has been set.
+
+### GetP384PreviousKeyId
+
+`func (o *SigningKeys) GetP384PreviousKeyId() string`
+
+GetP384PreviousKeyId returns the P384PreviousKeyId field if non-nil, zero value otherwise.
+
+### GetP384PreviousKeyIdOk
+
+`func (o *SigningKeys) GetP384PreviousKeyIdOk() (*string, bool)`
+
+GetP384PreviousKeyIdOk returns a tuple with the P384PreviousKeyId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetP384PreviousKeyId
+
+`func (o *SigningKeys) SetP384PreviousKeyId(v string)`
+
+SetP384PreviousKeyId sets P384PreviousKeyId field to given value.
+
+### HasP384PreviousKeyId
+
+`func (o *SigningKeys) HasP384PreviousKeyId() bool`
+
+HasP384PreviousKeyId returns a boolean if a field has been set.
 
 ### GetP521ActiveCertRef
 
@@ -261,6 +371,56 @@ SetP521PublishX5cParameter sets P521PublishX5cParameter field to given value.
 
 HasP521PublishX5cParameter returns a boolean if a field has been set.
 
+### GetP521ActiveKeyId
+
+`func (o *SigningKeys) GetP521ActiveKeyId() string`
+
+GetP521ActiveKeyId returns the P521ActiveKeyId field if non-nil, zero value otherwise.
+
+### GetP521ActiveKeyIdOk
+
+`func (o *SigningKeys) GetP521ActiveKeyIdOk() (*string, bool)`
+
+GetP521ActiveKeyIdOk returns a tuple with the P521ActiveKeyId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetP521ActiveKeyId
+
+`func (o *SigningKeys) SetP521ActiveKeyId(v string)`
+
+SetP521ActiveKeyId sets P521ActiveKeyId field to given value.
+
+### HasP521ActiveKeyId
+
+`func (o *SigningKeys) HasP521ActiveKeyId() bool`
+
+HasP521ActiveKeyId returns a boolean if a field has been set.
+
+### GetP521PreviousKeyId
+
+`func (o *SigningKeys) GetP521PreviousKeyId() string`
+
+GetP521PreviousKeyId returns the P521PreviousKeyId field if non-nil, zero value otherwise.
+
+### GetP521PreviousKeyIdOk
+
+`func (o *SigningKeys) GetP521PreviousKeyIdOk() (*string, bool)`
+
+GetP521PreviousKeyIdOk returns a tuple with the P521PreviousKeyId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetP521PreviousKeyId
+
+`func (o *SigningKeys) SetP521PreviousKeyId(v string)`
+
+SetP521PreviousKeyId sets P521PreviousKeyId field to given value.
+
+### HasP521PreviousKeyId
+
+`func (o *SigningKeys) HasP521PreviousKeyId() bool`
+
+HasP521PreviousKeyId returns a boolean if a field has been set.
+
 ### GetRsaActiveCertRef
 
 `func (o *SigningKeys) GetRsaActiveCertRef() ResourceLink`
@@ -335,6 +495,106 @@ SetRsaPublishX5cParameter sets RsaPublishX5cParameter field to given value.
 `func (o *SigningKeys) HasRsaPublishX5cParameter() bool`
 
 HasRsaPublishX5cParameter returns a boolean if a field has been set.
+
+### GetRsaActiveKeyId
+
+`func (o *SigningKeys) GetRsaActiveKeyId() string`
+
+GetRsaActiveKeyId returns the RsaActiveKeyId field if non-nil, zero value otherwise.
+
+### GetRsaActiveKeyIdOk
+
+`func (o *SigningKeys) GetRsaActiveKeyIdOk() (*string, bool)`
+
+GetRsaActiveKeyIdOk returns a tuple with the RsaActiveKeyId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRsaActiveKeyId
+
+`func (o *SigningKeys) SetRsaActiveKeyId(v string)`
+
+SetRsaActiveKeyId sets RsaActiveKeyId field to given value.
+
+### HasRsaActiveKeyId
+
+`func (o *SigningKeys) HasRsaActiveKeyId() bool`
+
+HasRsaActiveKeyId returns a boolean if a field has been set.
+
+### GetRsaPreviousKeyId
+
+`func (o *SigningKeys) GetRsaPreviousKeyId() string`
+
+GetRsaPreviousKeyId returns the RsaPreviousKeyId field if non-nil, zero value otherwise.
+
+### GetRsaPreviousKeyIdOk
+
+`func (o *SigningKeys) GetRsaPreviousKeyIdOk() (*string, bool)`
+
+GetRsaPreviousKeyIdOk returns a tuple with the RsaPreviousKeyId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRsaPreviousKeyId
+
+`func (o *SigningKeys) SetRsaPreviousKeyId(v string)`
+
+SetRsaPreviousKeyId sets RsaPreviousKeyId field to given value.
+
+### HasRsaPreviousKeyId
+
+`func (o *SigningKeys) HasRsaPreviousKeyId() bool`
+
+HasRsaPreviousKeyId returns a boolean if a field has been set.
+
+### GetRsaAlgorithmActiveKeyIds
+
+`func (o *SigningKeys) GetRsaAlgorithmActiveKeyIds() []RsaAlgKeyId`
+
+GetRsaAlgorithmActiveKeyIds returns the RsaAlgorithmActiveKeyIds field if non-nil, zero value otherwise.
+
+### GetRsaAlgorithmActiveKeyIdsOk
+
+`func (o *SigningKeys) GetRsaAlgorithmActiveKeyIdsOk() (*[]RsaAlgKeyId, bool)`
+
+GetRsaAlgorithmActiveKeyIdsOk returns a tuple with the RsaAlgorithmActiveKeyIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRsaAlgorithmActiveKeyIds
+
+`func (o *SigningKeys) SetRsaAlgorithmActiveKeyIds(v []RsaAlgKeyId)`
+
+SetRsaAlgorithmActiveKeyIds sets RsaAlgorithmActiveKeyIds field to given value.
+
+### HasRsaAlgorithmActiveKeyIds
+
+`func (o *SigningKeys) HasRsaAlgorithmActiveKeyIds() bool`
+
+HasRsaAlgorithmActiveKeyIds returns a boolean if a field has been set.
+
+### GetRsaAlgorithmPreviousKeyIds
+
+`func (o *SigningKeys) GetRsaAlgorithmPreviousKeyIds() []RsaAlgKeyId`
+
+GetRsaAlgorithmPreviousKeyIds returns the RsaAlgorithmPreviousKeyIds field if non-nil, zero value otherwise.
+
+### GetRsaAlgorithmPreviousKeyIdsOk
+
+`func (o *SigningKeys) GetRsaAlgorithmPreviousKeyIdsOk() (*[]RsaAlgKeyId, bool)`
+
+GetRsaAlgorithmPreviousKeyIdsOk returns a tuple with the RsaAlgorithmPreviousKeyIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRsaAlgorithmPreviousKeyIds
+
+`func (o *SigningKeys) SetRsaAlgorithmPreviousKeyIds(v []RsaAlgKeyId)`
+
+SetRsaAlgorithmPreviousKeyIds sets RsaAlgorithmPreviousKeyIds field to given value.
+
+### HasRsaAlgorithmPreviousKeyIds
+
+`func (o *SigningKeys) HasRsaAlgorithmPreviousKeyIds() bool`
+
+HasRsaAlgorithmPreviousKeyIds returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
