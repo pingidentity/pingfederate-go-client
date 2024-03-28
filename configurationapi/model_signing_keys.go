@@ -22,19 +22,39 @@ type SigningKeys struct {
 	P256ActiveCertRef   *ResourceLink `json:"p256ActiveCertRef,omitempty" tfsdk:"p256_active_cert_ref"`
 	P256PreviousCertRef *ResourceLink `json:"p256PreviousCertRef,omitempty" tfsdk:"p256_previous_cert_ref"`
 	// Enable publishing of the P-256 certificate chain associated with the active key.
-	P256PublishX5cParameter *bool         `json:"p256PublishX5cParameter,omitempty" tfsdk:"p256_publish_x5c_parameter"`
-	P384ActiveCertRef       *ResourceLink `json:"p384ActiveCertRef,omitempty" tfsdk:"p384_active_cert_ref"`
-	P384PreviousCertRef     *ResourceLink `json:"p384PreviousCertRef,omitempty" tfsdk:"p384_previous_cert_ref"`
+	P256PublishX5cParameter *bool `json:"p256PublishX5cParameter,omitempty" tfsdk:"p256_publish_x5c_parameter"`
+	// Key Id for currently active P-256 key.
+	P256ActiveKeyId *string `json:"p256ActiveKeyId,omitempty" tfsdk:"p256_active_key_id"`
+	// Key Id for previously active P-256 key.
+	P256PreviousKeyId   *string       `json:"p256PreviousKeyId,omitempty" tfsdk:"p256_previous_key_id"`
+	P384ActiveCertRef   *ResourceLink `json:"p384ActiveCertRef,omitempty" tfsdk:"p384_active_cert_ref"`
+	P384PreviousCertRef *ResourceLink `json:"p384PreviousCertRef,omitempty" tfsdk:"p384_previous_cert_ref"`
 	// Enable publishing of the P-384 certificate chain associated with the active key.
-	P384PublishX5cParameter *bool         `json:"p384PublishX5cParameter,omitempty" tfsdk:"p384_publish_x5c_parameter"`
-	P521ActiveCertRef       *ResourceLink `json:"p521ActiveCertRef,omitempty" tfsdk:"p521_active_cert_ref"`
-	P521PreviousCertRef     *ResourceLink `json:"p521PreviousCertRef,omitempty" tfsdk:"p521_previous_cert_ref"`
+	P384PublishX5cParameter *bool `json:"p384PublishX5cParameter,omitempty" tfsdk:"p384_publish_x5c_parameter"`
+	// Key Id for currently active P-384 key.
+	P384ActiveKeyId *string `json:"p384ActiveKeyId,omitempty" tfsdk:"p384_active_key_id"`
+	// Key Id for previously active P-384 key.
+	P384PreviousKeyId   *string       `json:"p384PreviousKeyId,omitempty" tfsdk:"p384_previous_key_id"`
+	P521ActiveCertRef   *ResourceLink `json:"p521ActiveCertRef,omitempty" tfsdk:"p521_active_cert_ref"`
+	P521PreviousCertRef *ResourceLink `json:"p521PreviousCertRef,omitempty" tfsdk:"p521_previous_cert_ref"`
 	// Enable publishing of the P-521 certificate chain associated with the active key.
-	P521PublishX5cParameter *bool         `json:"p521PublishX5cParameter,omitempty" tfsdk:"p521_publish_x5c_parameter"`
-	RsaActiveCertRef        *ResourceLink `json:"rsaActiveCertRef,omitempty" tfsdk:"rsa_active_cert_ref"`
-	RsaPreviousCertRef      *ResourceLink `json:"rsaPreviousCertRef,omitempty" tfsdk:"rsa_previous_cert_ref"`
+	P521PublishX5cParameter *bool `json:"p521PublishX5cParameter,omitempty" tfsdk:"p521_publish_x5c_parameter"`
+	// Key Id for currently active P-521 key.
+	P521ActiveKeyId *string `json:"p521ActiveKeyId,omitempty" tfsdk:"p521_active_key_id"`
+	// Key Id for previously active P-521 key.
+	P521PreviousKeyId  *string       `json:"p521PreviousKeyId,omitempty" tfsdk:"p521_previous_key_id"`
+	RsaActiveCertRef   *ResourceLink `json:"rsaActiveCertRef,omitempty" tfsdk:"rsa_active_cert_ref"`
+	RsaPreviousCertRef *ResourceLink `json:"rsaPreviousCertRef,omitempty" tfsdk:"rsa_previous_cert_ref"`
 	// Enable publishing of the RSA certificate chain associated with the active key.
 	RsaPublishX5cParameter *bool `json:"rsaPublishX5cParameter,omitempty" tfsdk:"rsa_publish_x5c_parameter"`
+	// Key Id for currently active RSA key.
+	RsaActiveKeyId *string `json:"rsaActiveKeyId,omitempty" tfsdk:"rsa_active_key_id"`
+	// Key Id for previously active RSA key.
+	RsaPreviousKeyId *string `json:"rsaPreviousKeyId,omitempty" tfsdk:"rsa_previous_key_id"`
+	// PingFederate uses the same RSA key for all RSA signing algorithms. To enable active RSA JWK entry to have unique single valued ''alg'' parameter, use this list to set a key identifier for each RSA algorithm (RS256, RS384, RS512, PS256, PS384 and PS512).
+	RsaAlgorithmActiveKeyIds []RsaAlgKeyId `json:"rsaAlgorithmActiveKeyIds,omitempty" tfsdk:"rsa_algorithm_active_key_ids"`
+	// PingFederate uses the same RSA key for all RSA signing algorithms. To enable previously active RSA JWK entry to have unique single valued ''alg'' parameter, use this list to set a key identifier for each RSA algorithm (RS256, RS384, RS512, PS256, PS384 and PS512).
+	RsaAlgorithmPreviousKeyIds []RsaAlgKeyId `json:"rsaAlgorithmPreviousKeyIds,omitempty" tfsdk:"rsa_algorithm_previous_key_ids"`
 }
 
 // NewSigningKeys instantiates a new SigningKeys object
@@ -150,6 +170,70 @@ func (o *SigningKeys) SetP256PublishX5cParameter(v bool) {
 	o.P256PublishX5cParameter = &v
 }
 
+// GetP256ActiveKeyId returns the P256ActiveKeyId field value if set, zero value otherwise.
+func (o *SigningKeys) GetP256ActiveKeyId() string {
+	if o == nil || IsNil(o.P256ActiveKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.P256ActiveKeyId
+}
+
+// GetP256ActiveKeyIdOk returns a tuple with the P256ActiveKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SigningKeys) GetP256ActiveKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.P256ActiveKeyId) {
+		return nil, false
+	}
+	return o.P256ActiveKeyId, true
+}
+
+// HasP256ActiveKeyId returns a boolean if a field has been set.
+func (o *SigningKeys) HasP256ActiveKeyId() bool {
+	if o != nil && !IsNil(o.P256ActiveKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetP256ActiveKeyId gets a reference to the given string and assigns it to the P256ActiveKeyId field.
+func (o *SigningKeys) SetP256ActiveKeyId(v string) {
+	o.P256ActiveKeyId = &v
+}
+
+// GetP256PreviousKeyId returns the P256PreviousKeyId field value if set, zero value otherwise.
+func (o *SigningKeys) GetP256PreviousKeyId() string {
+	if o == nil || IsNil(o.P256PreviousKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.P256PreviousKeyId
+}
+
+// GetP256PreviousKeyIdOk returns a tuple with the P256PreviousKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SigningKeys) GetP256PreviousKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.P256PreviousKeyId) {
+		return nil, false
+	}
+	return o.P256PreviousKeyId, true
+}
+
+// HasP256PreviousKeyId returns a boolean if a field has been set.
+func (o *SigningKeys) HasP256PreviousKeyId() bool {
+	if o != nil && !IsNil(o.P256PreviousKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetP256PreviousKeyId gets a reference to the given string and assigns it to the P256PreviousKeyId field.
+func (o *SigningKeys) SetP256PreviousKeyId(v string) {
+	o.P256PreviousKeyId = &v
+}
+
 // GetP384ActiveCertRef returns the P384ActiveCertRef field value if set, zero value otherwise.
 func (o *SigningKeys) GetP384ActiveCertRef() ResourceLink {
 	if o == nil || IsNil(o.P384ActiveCertRef) {
@@ -244,6 +328,70 @@ func (o *SigningKeys) HasP384PublishX5cParameter() bool {
 // SetP384PublishX5cParameter gets a reference to the given bool and assigns it to the P384PublishX5cParameter field.
 func (o *SigningKeys) SetP384PublishX5cParameter(v bool) {
 	o.P384PublishX5cParameter = &v
+}
+
+// GetP384ActiveKeyId returns the P384ActiveKeyId field value if set, zero value otherwise.
+func (o *SigningKeys) GetP384ActiveKeyId() string {
+	if o == nil || IsNil(o.P384ActiveKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.P384ActiveKeyId
+}
+
+// GetP384ActiveKeyIdOk returns a tuple with the P384ActiveKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SigningKeys) GetP384ActiveKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.P384ActiveKeyId) {
+		return nil, false
+	}
+	return o.P384ActiveKeyId, true
+}
+
+// HasP384ActiveKeyId returns a boolean if a field has been set.
+func (o *SigningKeys) HasP384ActiveKeyId() bool {
+	if o != nil && !IsNil(o.P384ActiveKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetP384ActiveKeyId gets a reference to the given string and assigns it to the P384ActiveKeyId field.
+func (o *SigningKeys) SetP384ActiveKeyId(v string) {
+	o.P384ActiveKeyId = &v
+}
+
+// GetP384PreviousKeyId returns the P384PreviousKeyId field value if set, zero value otherwise.
+func (o *SigningKeys) GetP384PreviousKeyId() string {
+	if o == nil || IsNil(o.P384PreviousKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.P384PreviousKeyId
+}
+
+// GetP384PreviousKeyIdOk returns a tuple with the P384PreviousKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SigningKeys) GetP384PreviousKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.P384PreviousKeyId) {
+		return nil, false
+	}
+	return o.P384PreviousKeyId, true
+}
+
+// HasP384PreviousKeyId returns a boolean if a field has been set.
+func (o *SigningKeys) HasP384PreviousKeyId() bool {
+	if o != nil && !IsNil(o.P384PreviousKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetP384PreviousKeyId gets a reference to the given string and assigns it to the P384PreviousKeyId field.
+func (o *SigningKeys) SetP384PreviousKeyId(v string) {
+	o.P384PreviousKeyId = &v
 }
 
 // GetP521ActiveCertRef returns the P521ActiveCertRef field value if set, zero value otherwise.
@@ -342,6 +490,70 @@ func (o *SigningKeys) SetP521PublishX5cParameter(v bool) {
 	o.P521PublishX5cParameter = &v
 }
 
+// GetP521ActiveKeyId returns the P521ActiveKeyId field value if set, zero value otherwise.
+func (o *SigningKeys) GetP521ActiveKeyId() string {
+	if o == nil || IsNil(o.P521ActiveKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.P521ActiveKeyId
+}
+
+// GetP521ActiveKeyIdOk returns a tuple with the P521ActiveKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SigningKeys) GetP521ActiveKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.P521ActiveKeyId) {
+		return nil, false
+	}
+	return o.P521ActiveKeyId, true
+}
+
+// HasP521ActiveKeyId returns a boolean if a field has been set.
+func (o *SigningKeys) HasP521ActiveKeyId() bool {
+	if o != nil && !IsNil(o.P521ActiveKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetP521ActiveKeyId gets a reference to the given string and assigns it to the P521ActiveKeyId field.
+func (o *SigningKeys) SetP521ActiveKeyId(v string) {
+	o.P521ActiveKeyId = &v
+}
+
+// GetP521PreviousKeyId returns the P521PreviousKeyId field value if set, zero value otherwise.
+func (o *SigningKeys) GetP521PreviousKeyId() string {
+	if o == nil || IsNil(o.P521PreviousKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.P521PreviousKeyId
+}
+
+// GetP521PreviousKeyIdOk returns a tuple with the P521PreviousKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SigningKeys) GetP521PreviousKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.P521PreviousKeyId) {
+		return nil, false
+	}
+	return o.P521PreviousKeyId, true
+}
+
+// HasP521PreviousKeyId returns a boolean if a field has been set.
+func (o *SigningKeys) HasP521PreviousKeyId() bool {
+	if o != nil && !IsNil(o.P521PreviousKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetP521PreviousKeyId gets a reference to the given string and assigns it to the P521PreviousKeyId field.
+func (o *SigningKeys) SetP521PreviousKeyId(v string) {
+	o.P521PreviousKeyId = &v
+}
+
 // GetRsaActiveCertRef returns the RsaActiveCertRef field value if set, zero value otherwise.
 func (o *SigningKeys) GetRsaActiveCertRef() ResourceLink {
 	if o == nil || IsNil(o.RsaActiveCertRef) {
@@ -438,6 +650,134 @@ func (o *SigningKeys) SetRsaPublishX5cParameter(v bool) {
 	o.RsaPublishX5cParameter = &v
 }
 
+// GetRsaActiveKeyId returns the RsaActiveKeyId field value if set, zero value otherwise.
+func (o *SigningKeys) GetRsaActiveKeyId() string {
+	if o == nil || IsNil(o.RsaActiveKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.RsaActiveKeyId
+}
+
+// GetRsaActiveKeyIdOk returns a tuple with the RsaActiveKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SigningKeys) GetRsaActiveKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.RsaActiveKeyId) {
+		return nil, false
+	}
+	return o.RsaActiveKeyId, true
+}
+
+// HasRsaActiveKeyId returns a boolean if a field has been set.
+func (o *SigningKeys) HasRsaActiveKeyId() bool {
+	if o != nil && !IsNil(o.RsaActiveKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetRsaActiveKeyId gets a reference to the given string and assigns it to the RsaActiveKeyId field.
+func (o *SigningKeys) SetRsaActiveKeyId(v string) {
+	o.RsaActiveKeyId = &v
+}
+
+// GetRsaPreviousKeyId returns the RsaPreviousKeyId field value if set, zero value otherwise.
+func (o *SigningKeys) GetRsaPreviousKeyId() string {
+	if o == nil || IsNil(o.RsaPreviousKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.RsaPreviousKeyId
+}
+
+// GetRsaPreviousKeyIdOk returns a tuple with the RsaPreviousKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SigningKeys) GetRsaPreviousKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.RsaPreviousKeyId) {
+		return nil, false
+	}
+	return o.RsaPreviousKeyId, true
+}
+
+// HasRsaPreviousKeyId returns a boolean if a field has been set.
+func (o *SigningKeys) HasRsaPreviousKeyId() bool {
+	if o != nil && !IsNil(o.RsaPreviousKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetRsaPreviousKeyId gets a reference to the given string and assigns it to the RsaPreviousKeyId field.
+func (o *SigningKeys) SetRsaPreviousKeyId(v string) {
+	o.RsaPreviousKeyId = &v
+}
+
+// GetRsaAlgorithmActiveKeyIds returns the RsaAlgorithmActiveKeyIds field value if set, zero value otherwise.
+func (o *SigningKeys) GetRsaAlgorithmActiveKeyIds() []RsaAlgKeyId {
+	if o == nil || IsNil(o.RsaAlgorithmActiveKeyIds) {
+		var ret []RsaAlgKeyId
+		return ret
+	}
+	return o.RsaAlgorithmActiveKeyIds
+}
+
+// GetRsaAlgorithmActiveKeyIdsOk returns a tuple with the RsaAlgorithmActiveKeyIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SigningKeys) GetRsaAlgorithmActiveKeyIdsOk() ([]RsaAlgKeyId, bool) {
+	if o == nil || IsNil(o.RsaAlgorithmActiveKeyIds) {
+		return nil, false
+	}
+	return o.RsaAlgorithmActiveKeyIds, true
+}
+
+// HasRsaAlgorithmActiveKeyIds returns a boolean if a field has been set.
+func (o *SigningKeys) HasRsaAlgorithmActiveKeyIds() bool {
+	if o != nil && !IsNil(o.RsaAlgorithmActiveKeyIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetRsaAlgorithmActiveKeyIds gets a reference to the given []RsaAlgKeyId and assigns it to the RsaAlgorithmActiveKeyIds field.
+func (o *SigningKeys) SetRsaAlgorithmActiveKeyIds(v []RsaAlgKeyId) {
+	o.RsaAlgorithmActiveKeyIds = v
+}
+
+// GetRsaAlgorithmPreviousKeyIds returns the RsaAlgorithmPreviousKeyIds field value if set, zero value otherwise.
+func (o *SigningKeys) GetRsaAlgorithmPreviousKeyIds() []RsaAlgKeyId {
+	if o == nil || IsNil(o.RsaAlgorithmPreviousKeyIds) {
+		var ret []RsaAlgKeyId
+		return ret
+	}
+	return o.RsaAlgorithmPreviousKeyIds
+}
+
+// GetRsaAlgorithmPreviousKeyIdsOk returns a tuple with the RsaAlgorithmPreviousKeyIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SigningKeys) GetRsaAlgorithmPreviousKeyIdsOk() ([]RsaAlgKeyId, bool) {
+	if o == nil || IsNil(o.RsaAlgorithmPreviousKeyIds) {
+		return nil, false
+	}
+	return o.RsaAlgorithmPreviousKeyIds, true
+}
+
+// HasRsaAlgorithmPreviousKeyIds returns a boolean if a field has been set.
+func (o *SigningKeys) HasRsaAlgorithmPreviousKeyIds() bool {
+	if o != nil && !IsNil(o.RsaAlgorithmPreviousKeyIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetRsaAlgorithmPreviousKeyIds gets a reference to the given []RsaAlgKeyId and assigns it to the RsaAlgorithmPreviousKeyIds field.
+func (o *SigningKeys) SetRsaAlgorithmPreviousKeyIds(v []RsaAlgKeyId) {
+	o.RsaAlgorithmPreviousKeyIds = v
+}
+
 func (o SigningKeys) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -457,6 +797,12 @@ func (o SigningKeys) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.P256PublishX5cParameter) {
 		toSerialize["p256PublishX5cParameter"] = o.P256PublishX5cParameter
 	}
+	if !IsNil(o.P256ActiveKeyId) {
+		toSerialize["p256ActiveKeyId"] = o.P256ActiveKeyId
+	}
+	if !IsNil(o.P256PreviousKeyId) {
+		toSerialize["p256PreviousKeyId"] = o.P256PreviousKeyId
+	}
 	if !IsNil(o.P384ActiveCertRef) {
 		toSerialize["p384ActiveCertRef"] = o.P384ActiveCertRef
 	}
@@ -465,6 +811,12 @@ func (o SigningKeys) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.P384PublishX5cParameter) {
 		toSerialize["p384PublishX5cParameter"] = o.P384PublishX5cParameter
+	}
+	if !IsNil(o.P384ActiveKeyId) {
+		toSerialize["p384ActiveKeyId"] = o.P384ActiveKeyId
+	}
+	if !IsNil(o.P384PreviousKeyId) {
+		toSerialize["p384PreviousKeyId"] = o.P384PreviousKeyId
 	}
 	if !IsNil(o.P521ActiveCertRef) {
 		toSerialize["p521ActiveCertRef"] = o.P521ActiveCertRef
@@ -475,6 +827,12 @@ func (o SigningKeys) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.P521PublishX5cParameter) {
 		toSerialize["p521PublishX5cParameter"] = o.P521PublishX5cParameter
 	}
+	if !IsNil(o.P521ActiveKeyId) {
+		toSerialize["p521ActiveKeyId"] = o.P521ActiveKeyId
+	}
+	if !IsNil(o.P521PreviousKeyId) {
+		toSerialize["p521PreviousKeyId"] = o.P521PreviousKeyId
+	}
 	if !IsNil(o.RsaActiveCertRef) {
 		toSerialize["rsaActiveCertRef"] = o.RsaActiveCertRef
 	}
@@ -483,6 +841,18 @@ func (o SigningKeys) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.RsaPublishX5cParameter) {
 		toSerialize["rsaPublishX5cParameter"] = o.RsaPublishX5cParameter
+	}
+	if !IsNil(o.RsaActiveKeyId) {
+		toSerialize["rsaActiveKeyId"] = o.RsaActiveKeyId
+	}
+	if !IsNil(o.RsaPreviousKeyId) {
+		toSerialize["rsaPreviousKeyId"] = o.RsaPreviousKeyId
+	}
+	if !IsNil(o.RsaAlgorithmActiveKeyIds) {
+		toSerialize["rsaAlgorithmActiveKeyIds"] = o.RsaAlgorithmActiveKeyIds
+	}
+	if !IsNil(o.RsaAlgorithmPreviousKeyIds) {
+		toSerialize["rsaAlgorithmPreviousKeyIds"] = o.RsaAlgorithmPreviousKeyIds
 	}
 	return toSerialize, nil
 }

@@ -27725,12 +27725,15 @@ components:
       description: Setting for OAuth/OpenID Connect signing and decryption key settings.
       example:
         p384DecryptionPublishX5cParameter: true
+        rsaDecryptionActiveKeyId: rsaDecryptionActiveKeyId
         p256DecryptionActiveCertRef:
           location: location
           id: id
+        rsaDecryptionPreviousKeyId: rsaDecryptionPreviousKeyId
         p521ActiveCertRef:
           location: location
           id: id
+        p384DecryptionPreviousKeyId: p384DecryptionPreviousKeyId
         rsaActiveCertRef:
           location: location
           id: id
@@ -27744,23 +27747,43 @@ components:
           location: location
           id: id
         p521DecryptionPublishX5cParameter: true
+        rsaAlgorithmActiveKeyIds:
+        - keyId: keyId
+          rsaAlgType: rsaAlgType
+        - keyId: keyId
+          rsaAlgType: rsaAlgType
+        p521PreviousKeyId: p521PreviousKeyId
+        p384DecryptionActiveKeyId: p384DecryptionActiveKeyId
+        p256ActiveKeyId: p256ActiveKeyId
         p521PublishX5cParameter: true
+        rsaActiveKeyId: rsaActiveKeyId
         p384DecryptionActiveCertRef:
           location: location
           id: id
         p521PreviousCertRef:
           location: location
           id: id
+        p521DecryptionActiveKeyId: p521DecryptionActiveKeyId
+        p256PreviousKeyId: p256PreviousKeyId
         rsaDecryptionPublishX5cParameter: true
         rsaPreviousCertRef:
           location: location
           id: id
+        p521DecryptionPreviousKeyId: p521DecryptionPreviousKeyId
+        rsaAlgorithmPreviousKeyIds:
+        - keyId: keyId
+          rsaAlgType: rsaAlgType
+        - keyId: keyId
+          rsaAlgType: rsaAlgType
+        p384PreviousKeyId: p384PreviousKeyId
         p384PreviousCertRef:
           location: location
           id: id
+        rsaPreviousKeyId: rsaPreviousKeyId
         rsaDecryptionActiveCertRef:
           location: location
           id: id
+        p521ActiveKeyId: p521ActiveKeyId
         p256ActiveCertRef:
           location: location
           id: id
@@ -27769,6 +27792,7 @@ components:
           location: location
           id: id
         p384PublishX5cParameter: true
+        p256DecryptionActiveKeyId: p256DecryptionActiveKeyId
         p256PublishX5cParameter: true
         p521DecryptionPreviousCertRef:
           location: location
@@ -27780,75 +27804,141 @@ components:
           location: location
           id: id
         staticJwksEnabled: true
+        p384ActiveKeyId: p384ActiveKeyId
         rsaPublishX5cParameter: true
+        p256DecryptionPreviousKeyId: p256DecryptionPreviousKeyId
       properties:
         staticJwksEnabled:
           description: Enable static keys.
           type: boolean
         p256ActiveCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         p256PreviousCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         p256PublishX5cParameter:
           description: Enable publishing of the P-256 certificate chain associated
             with the active key.
           type: boolean
+        p256ActiveKeyId:
+          description: Key Id for currently active P-256 key.
+          type: string
+        p256PreviousKeyId:
+          description: Key Id for previously active P-256 key.
+          type: string
         p384ActiveCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         p384PreviousCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         p384PublishX5cParameter:
           description: Enable publishing of the P-384 certificate chain associated
             with the active key.
           type: boolean
+        p384ActiveKeyId:
+          description: Key Id for currently active P-384 key.
+          type: string
+        p384PreviousKeyId:
+          description: Key Id for previously active P-384 key.
+          type: string
         p521ActiveCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         p521PreviousCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         p521PublishX5cParameter:
           description: Enable publishing of the P-521 certificate chain associated
             with the active key.
           type: boolean
+        p521ActiveKeyId:
+          description: Key Id for currently active P-521 key.
+          type: string
+        p521PreviousKeyId:
+          description: Key Id for previously active P-521 key.
+          type: string
         rsaActiveCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         rsaPreviousCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         rsaPublishX5cParameter:
           description: Enable publishing of the RSA certificate chain associated with
             the active key.
           type: boolean
+        rsaActiveKeyId:
+          description: Key Id for currently active RSA key.
+          type: string
+        rsaPreviousKeyId:
+          description: Key Id for previously active RSA key.
+          type: string
         p256DecryptionActiveCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         p256DecryptionPreviousCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         p256DecryptionPublishX5cParameter:
           description: Enable publishing of the P-256 certificate chain associated
             with the active key.
           type: boolean
+        p256DecryptionActiveKeyId:
+          description: Key Id for currently active P-256 decryption key.
+          type: string
+        p256DecryptionPreviousKeyId:
+          description: Key Id for previously active P-256 decryption key.
+          type: string
         p384DecryptionActiveCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         p384DecryptionPreviousCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         p384DecryptionPublishX5cParameter:
           description: Enable publishing of the P-384 certificate chain associated
             with the active key.
           type: boolean
+        p384DecryptionActiveKeyId:
+          description: Key Id for currently active P-384 decryption key.
+          type: string
+        p384DecryptionPreviousKeyId:
+          description: Key Id for previously active P-384 decryption key.
+          type: string
         p521DecryptionActiveCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         p521DecryptionPreviousCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         p521DecryptionPublishX5cParameter:
           description: Enable publishing of the P-521 certificate chain associated
             with the active key.
           type: boolean
+        p521DecryptionActiveKeyId:
+          description: Key Id for currently active P-521 decryption key.
+          type: string
+        p521DecryptionPreviousKeyId:
+          description: Key Id for previously active P-521 decryption key.
+          type: string
         rsaDecryptionActiveCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         rsaDecryptionPreviousCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         rsaDecryptionPublishX5cParameter:
           description: Enable publishing of the RSA certificate chain associated with
             the active key.
           type: boolean
+        rsaDecryptionActiveKeyId:
+          description: Key Id for currently active RSA decryption key.
+          type: string
+        rsaDecryptionPreviousKeyId:
+          description: Key Id for previously active RSA decryption key.
+          type: string
+        rsaAlgorithmActiveKeyIds:
+          description: "PingFederate uses the same RSA key for all RSA signing algorithms.\
+            \ To enable active RSA JWK entry to have unique single valued ''alg''\
+            \ parameter, use this list to set a key identifier for each RSA algorithm\
+            \ (RS256, RS384, RS512, PS256, PS384 and PS512)."
+          items:
+            $ref: '#/definitions/RsaAlgKeyId'
+          type: array
+        rsaAlgorithmPreviousKeyIds:
+          description: "PingFederate uses the same RSA key for all RSA signing algorithms.\
+            \ To enable previously active RSA JWK entry to have unique single valued\
+            \ ''alg'' parameter, use this list to set a key identifier for each RSA\
+            \ algorithm (RS256, RS384, RS512, PS256, PS384 and PS512)."
+          items:
+            $ref: '#/definitions/RsaAlgKeyId'
+          type: array
       required:
       - staticJwksEnabled
       type: object
@@ -27857,13 +27947,34 @@ components:
         signing key set with virtual issuers.
       example:
         signingKeys:
-          p256ActiveCertRef:
-            location: location
-            id: id
+          p256PreviousKeyId: p256PreviousKeyId
           rsaPreviousCertRef:
             location: location
             id: id
           p521ActiveCertRef:
+            location: location
+            id: id
+          rsaActiveCertRef:
+            location: location
+            id: id
+          rsaAlgorithmPreviousKeyIds:
+          - keyId: keyId
+            rsaAlgType: rsaAlgType
+          - keyId: keyId
+            rsaAlgType: rsaAlgType
+          p384PreviousKeyId: p384PreviousKeyId
+          p384PreviousCertRef:
+            location: location
+            id: id
+          rsaAlgorithmActiveKeyIds:
+          - keyId: keyId
+            rsaAlgType: rsaAlgType
+          - keyId: keyId
+            rsaAlgType: rsaAlgType
+          rsaPreviousKeyId: rsaPreviousKeyId
+          p521ActiveKeyId: p521ActiveKeyId
+          p521PreviousKeyId: p521PreviousKeyId
+          p256ActiveCertRef:
             location: location
             id: id
           p384ActiveCertRef:
@@ -27874,13 +27985,10 @@ components:
           p256PreviousCertRef:
             location: location
             id: id
-          rsaActiveCertRef:
-            location: location
-            id: id
+          p256ActiveKeyId: p256ActiveKeyId
           p521PublishX5cParameter: true
-          p384PreviousCertRef:
-            location: location
-            id: id
+          rsaActiveKeyId: rsaActiveKeyId
+          p384ActiveKeyId: p384ActiveKeyId
           p521PreviousCertRef:
             location: location
             id: id
@@ -27918,17 +28026,55 @@ components:
       - name
       - signingKeys
       type: object
+    RsaAlgKeyId:
+      description: This class represents a pair of RSA algorithm type and key identifier.
+      example:
+        keyId: keyId
+        rsaAlgType: rsaAlgType
+      properties:
+        rsaAlgType:
+          description: "The RSA signing algorithm type. The supported RSA signing\
+            \ algorithm types are RS256, RS384, RS512, PS256, PS384 and PS512."
+          type: string
+        keyId:
+          description: Unique key identifier.
+          type: string
+      required:
+      - keyId
+      - rsaAlgType
+      type: object
     SigningKeys:
       description: Setting for a OAuth/OpenID Connect signing key set while using
         multiple virtual issuers.
       example:
-        p256ActiveCertRef:
-          location: location
-          id: id
+        p256PreviousKeyId: p256PreviousKeyId
         rsaPreviousCertRef:
           location: location
           id: id
         p521ActiveCertRef:
+          location: location
+          id: id
+        rsaActiveCertRef:
+          location: location
+          id: id
+        rsaAlgorithmPreviousKeyIds:
+        - keyId: keyId
+          rsaAlgType: rsaAlgType
+        - keyId: keyId
+          rsaAlgType: rsaAlgType
+        p384PreviousKeyId: p384PreviousKeyId
+        p384PreviousCertRef:
+          location: location
+          id: id
+        rsaAlgorithmActiveKeyIds:
+        - keyId: keyId
+          rsaAlgType: rsaAlgType
+        - keyId: keyId
+          rsaAlgType: rsaAlgType
+        rsaPreviousKeyId: rsaPreviousKeyId
+        p521ActiveKeyId: p521ActiveKeyId
+        p521PreviousKeyId: p521PreviousKeyId
+        p256ActiveCertRef:
           location: location
           id: id
         p384ActiveCertRef:
@@ -27939,63 +28085,121 @@ components:
         p256PreviousCertRef:
           location: location
           id: id
-        rsaActiveCertRef:
-          location: location
-          id: id
+        p256ActiveKeyId: p256ActiveKeyId
         p521PublishX5cParameter: true
-        p384PreviousCertRef:
-          location: location
-          id: id
+        rsaActiveKeyId: rsaActiveKeyId
+        p384ActiveKeyId: p384ActiveKeyId
         p521PreviousCertRef:
           location: location
           id: id
         rsaPublishX5cParameter: true
       properties:
         p256ActiveCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         p256PreviousCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         p256PublishX5cParameter:
           description: Enable publishing of the P-256 certificate chain associated
             with the active key.
           type: boolean
+        p256ActiveKeyId:
+          description: Key Id for currently active P-256 key.
+          type: string
+        p256PreviousKeyId:
+          description: Key Id for previously active P-256 key.
+          type: string
         p384ActiveCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         p384PreviousCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         p384PublishX5cParameter:
           description: Enable publishing of the P-384 certificate chain associated
             with the active key.
           type: boolean
+        p384ActiveKeyId:
+          description: Key Id for currently active P-384 key.
+          type: string
+        p384PreviousKeyId:
+          description: Key Id for previously active P-384 key.
+          type: string
         p521ActiveCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         p521PreviousCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         p521PublishX5cParameter:
           description: Enable publishing of the P-521 certificate chain associated
             with the active key.
           type: boolean
+        p521ActiveKeyId:
+          description: Key Id for currently active P-521 key.
+          type: string
+        p521PreviousKeyId:
+          description: Key Id for previously active P-521 key.
+          type: string
         rsaActiveCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         rsaPreviousCertRef:
-          $ref: '#/components/schemas/ResourceLink'
+          $ref: '#/definitions/ResourceLink'
         rsaPublishX5cParameter:
           description: Enable publishing of the RSA certificate chain associated with
             the active key.
           type: boolean
+        rsaActiveKeyId:
+          description: Key Id for currently active RSA key.
+          type: string
+        rsaPreviousKeyId:
+          description: Key Id for previously active RSA key.
+          type: string
+        rsaAlgorithmActiveKeyIds:
+          description: "PingFederate uses the same RSA key for all RSA signing algorithms.\
+            \ To enable active RSA JWK entry to have unique single valued ''alg''\
+            \ parameter, use this list to set a key identifier for each RSA algorithm\
+            \ (RS256, RS384, RS512, PS256, PS384 and PS512)."
+          items:
+            $ref: '#/definitions/RsaAlgKeyId'
+          type: array
+        rsaAlgorithmPreviousKeyIds:
+          description: "PingFederate uses the same RSA key for all RSA signing algorithms.\
+            \ To enable previously active RSA JWK entry to have unique single valued\
+            \ ''alg'' parameter, use this list to set a key identifier for each RSA\
+            \ algorithm (RS256, RS384, RS512, PS256, PS384 and PS512)."
+          items:
+            $ref: '#/definitions/RsaAlgKeyId'
+          type: array
       type: object
     AdditionalKeySets:
       description: A collection of OAuth/OpenID Connect additional signing key sets.
       example:
         items:
         - signingKeys:
-            p256ActiveCertRef:
-              location: location
-              id: id
+            p256PreviousKeyId: p256PreviousKeyId
             rsaPreviousCertRef:
               location: location
               id: id
             p521ActiveCertRef:
+              location: location
+              id: id
+            rsaActiveCertRef:
+              location: location
+              id: id
+            rsaAlgorithmPreviousKeyIds:
+            - keyId: keyId
+              rsaAlgType: rsaAlgType
+            - keyId: keyId
+              rsaAlgType: rsaAlgType
+            p384PreviousKeyId: p384PreviousKeyId
+            p384PreviousCertRef:
+              location: location
+              id: id
+            rsaAlgorithmActiveKeyIds:
+            - keyId: keyId
+              rsaAlgType: rsaAlgType
+            - keyId: keyId
+              rsaAlgType: rsaAlgType
+            rsaPreviousKeyId: rsaPreviousKeyId
+            p521ActiveKeyId: p521ActiveKeyId
+            p521PreviousKeyId: p521PreviousKeyId
+            p256ActiveCertRef:
               location: location
               id: id
             p384ActiveCertRef:
@@ -28006,13 +28210,10 @@ components:
             p256PreviousCertRef:
               location: location
               id: id
-            rsaActiveCertRef:
-              location: location
-              id: id
+            p256ActiveKeyId: p256ActiveKeyId
             p521PublishX5cParameter: true
-            p384PreviousCertRef:
-              location: location
-              id: id
+            rsaActiveKeyId: rsaActiveKeyId
+            p384ActiveKeyId: p384ActiveKeyId
             p521PreviousCertRef:
               location: location
               id: id
@@ -28026,13 +28227,34 @@ components:
           - location: location
             id: id
         - signingKeys:
-            p256ActiveCertRef:
-              location: location
-              id: id
+            p256PreviousKeyId: p256PreviousKeyId
             rsaPreviousCertRef:
               location: location
               id: id
             p521ActiveCertRef:
+              location: location
+              id: id
+            rsaActiveCertRef:
+              location: location
+              id: id
+            rsaAlgorithmPreviousKeyIds:
+            - keyId: keyId
+              rsaAlgType: rsaAlgType
+            - keyId: keyId
+              rsaAlgType: rsaAlgType
+            p384PreviousKeyId: p384PreviousKeyId
+            p384PreviousCertRef:
+              location: location
+              id: id
+            rsaAlgorithmActiveKeyIds:
+            - keyId: keyId
+              rsaAlgType: rsaAlgType
+            - keyId: keyId
+              rsaAlgType: rsaAlgType
+            rsaPreviousKeyId: rsaPreviousKeyId
+            p521ActiveKeyId: p521ActiveKeyId
+            p521PreviousKeyId: p521PreviousKeyId
+            p256ActiveCertRef:
               location: location
               id: id
             p384ActiveCertRef:
@@ -28043,13 +28265,10 @@ components:
             p256PreviousCertRef:
               location: location
               id: id
-            rsaActiveCertRef:
-              location: location
-              id: id
+            p256ActiveKeyId: p256ActiveKeyId
             p521PublishX5cParameter: true
-            p384PreviousCertRef:
-              location: location
-              id: id
+            rsaActiveKeyId: rsaActiveKeyId
+            p384ActiveKeyId: p384ActiveKeyId
             p521PreviousCertRef:
               location: location
               id: id

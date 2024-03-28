@@ -24,35 +24,71 @@ type OAuthOidcKeysSettings struct {
 	P256ActiveCertRef   *ResourceLink `json:"p256ActiveCertRef,omitempty" tfsdk:"p256_active_cert_ref"`
 	P256PreviousCertRef *ResourceLink `json:"p256PreviousCertRef,omitempty" tfsdk:"p256_previous_cert_ref"`
 	// Enable publishing of the P-256 certificate chain associated with the active key.
-	P256PublishX5cParameter *bool         `json:"p256PublishX5cParameter,omitempty" tfsdk:"p256_publish_x5c_parameter"`
-	P384ActiveCertRef       *ResourceLink `json:"p384ActiveCertRef,omitempty" tfsdk:"p384_active_cert_ref"`
-	P384PreviousCertRef     *ResourceLink `json:"p384PreviousCertRef,omitempty" tfsdk:"p384_previous_cert_ref"`
+	P256PublishX5cParameter *bool `json:"p256PublishX5cParameter,omitempty" tfsdk:"p256_publish_x5c_parameter"`
+	// Key Id for currently active P-256 key.
+	P256ActiveKeyId *string `json:"p256ActiveKeyId,omitempty" tfsdk:"p256_active_key_id"`
+	// Key Id for previously active P-256 key.
+	P256PreviousKeyId   *string       `json:"p256PreviousKeyId,omitempty" tfsdk:"p256_previous_key_id"`
+	P384ActiveCertRef   *ResourceLink `json:"p384ActiveCertRef,omitempty" tfsdk:"p384_active_cert_ref"`
+	P384PreviousCertRef *ResourceLink `json:"p384PreviousCertRef,omitempty" tfsdk:"p384_previous_cert_ref"`
 	// Enable publishing of the P-384 certificate chain associated with the active key.
-	P384PublishX5cParameter *bool         `json:"p384PublishX5cParameter,omitempty" tfsdk:"p384_publish_x5c_parameter"`
-	P521ActiveCertRef       *ResourceLink `json:"p521ActiveCertRef,omitempty" tfsdk:"p521_active_cert_ref"`
-	P521PreviousCertRef     *ResourceLink `json:"p521PreviousCertRef,omitempty" tfsdk:"p521_previous_cert_ref"`
+	P384PublishX5cParameter *bool `json:"p384PublishX5cParameter,omitempty" tfsdk:"p384_publish_x5c_parameter"`
+	// Key Id for currently active P-384 key.
+	P384ActiveKeyId *string `json:"p384ActiveKeyId,omitempty" tfsdk:"p384_active_key_id"`
+	// Key Id for previously active P-384 key.
+	P384PreviousKeyId   *string       `json:"p384PreviousKeyId,omitempty" tfsdk:"p384_previous_key_id"`
+	P521ActiveCertRef   *ResourceLink `json:"p521ActiveCertRef,omitempty" tfsdk:"p521_active_cert_ref"`
+	P521PreviousCertRef *ResourceLink `json:"p521PreviousCertRef,omitempty" tfsdk:"p521_previous_cert_ref"`
 	// Enable publishing of the P-521 certificate chain associated with the active key.
-	P521PublishX5cParameter *bool         `json:"p521PublishX5cParameter,omitempty" tfsdk:"p521_publish_x5c_parameter"`
-	RsaActiveCertRef        *ResourceLink `json:"rsaActiveCertRef,omitempty" tfsdk:"rsa_active_cert_ref"`
-	RsaPreviousCertRef      *ResourceLink `json:"rsaPreviousCertRef,omitempty" tfsdk:"rsa_previous_cert_ref"`
+	P521PublishX5cParameter *bool `json:"p521PublishX5cParameter,omitempty" tfsdk:"p521_publish_x5c_parameter"`
+	// Key Id for currently active P-521 key.
+	P521ActiveKeyId *string `json:"p521ActiveKeyId,omitempty" tfsdk:"p521_active_key_id"`
+	// Key Id for previously active P-521 key.
+	P521PreviousKeyId  *string       `json:"p521PreviousKeyId,omitempty" tfsdk:"p521_previous_key_id"`
+	RsaActiveCertRef   *ResourceLink `json:"rsaActiveCertRef,omitempty" tfsdk:"rsa_active_cert_ref"`
+	RsaPreviousCertRef *ResourceLink `json:"rsaPreviousCertRef,omitempty" tfsdk:"rsa_previous_cert_ref"`
 	// Enable publishing of the RSA certificate chain associated with the active key.
-	RsaPublishX5cParameter        *bool         `json:"rsaPublishX5cParameter,omitempty" tfsdk:"rsa_publish_x5c_parameter"`
+	RsaPublishX5cParameter *bool `json:"rsaPublishX5cParameter,omitempty" tfsdk:"rsa_publish_x5c_parameter"`
+	// Key Id for currently active RSA key.
+	RsaActiveKeyId *string `json:"rsaActiveKeyId,omitempty" tfsdk:"rsa_active_key_id"`
+	// Key Id for previously active RSA key.
+	RsaPreviousKeyId              *string       `json:"rsaPreviousKeyId,omitempty" tfsdk:"rsa_previous_key_id"`
 	P256DecryptionActiveCertRef   *ResourceLink `json:"p256DecryptionActiveCertRef,omitempty" tfsdk:"p256_decryption_active_cert_ref"`
 	P256DecryptionPreviousCertRef *ResourceLink `json:"p256DecryptionPreviousCertRef,omitempty" tfsdk:"p256_decryption_previous_cert_ref"`
 	// Enable publishing of the P-256 certificate chain associated with the active key.
-	P256DecryptionPublishX5cParameter *bool         `json:"p256DecryptionPublishX5cParameter,omitempty" tfsdk:"p256_decryption_publish_x5c_parameter"`
-	P384DecryptionActiveCertRef       *ResourceLink `json:"p384DecryptionActiveCertRef,omitempty" tfsdk:"p384_decryption_active_cert_ref"`
-	P384DecryptionPreviousCertRef     *ResourceLink `json:"p384DecryptionPreviousCertRef,omitempty" tfsdk:"p384_decryption_previous_cert_ref"`
+	P256DecryptionPublishX5cParameter *bool `json:"p256DecryptionPublishX5cParameter,omitempty" tfsdk:"p256_decryption_publish_x5c_parameter"`
+	// Key Id for currently active P-256 decryption key.
+	P256DecryptionActiveKeyId *string `json:"p256DecryptionActiveKeyId,omitempty" tfsdk:"p256_decryption_active_key_id"`
+	// Key Id for previously active P-256 decryption key.
+	P256DecryptionPreviousKeyId   *string       `json:"p256DecryptionPreviousKeyId,omitempty" tfsdk:"p256_decryption_previous_key_id"`
+	P384DecryptionActiveCertRef   *ResourceLink `json:"p384DecryptionActiveCertRef,omitempty" tfsdk:"p384_decryption_active_cert_ref"`
+	P384DecryptionPreviousCertRef *ResourceLink `json:"p384DecryptionPreviousCertRef,omitempty" tfsdk:"p384_decryption_previous_cert_ref"`
 	// Enable publishing of the P-384 certificate chain associated with the active key.
-	P384DecryptionPublishX5cParameter *bool         `json:"p384DecryptionPublishX5cParameter,omitempty" tfsdk:"p384_decryption_publish_x5c_parameter"`
-	P521DecryptionActiveCertRef       *ResourceLink `json:"p521DecryptionActiveCertRef,omitempty" tfsdk:"p521_decryption_active_cert_ref"`
-	P521DecryptionPreviousCertRef     *ResourceLink `json:"p521DecryptionPreviousCertRef,omitempty" tfsdk:"p521_decryption_previous_cert_ref"`
+	P384DecryptionPublishX5cParameter *bool `json:"p384DecryptionPublishX5cParameter,omitempty" tfsdk:"p384_decryption_publish_x5c_parameter"`
+	// Key Id for currently active P-384 decryption key.
+	P384DecryptionActiveKeyId *string `json:"p384DecryptionActiveKeyId,omitempty" tfsdk:"p384_decryption_active_key_id"`
+	// Key Id for previously active P-384 decryption key.
+	P384DecryptionPreviousKeyId   *string       `json:"p384DecryptionPreviousKeyId,omitempty" tfsdk:"p384_decryption_previous_key_id"`
+	P521DecryptionActiveCertRef   *ResourceLink `json:"p521DecryptionActiveCertRef,omitempty" tfsdk:"p521_decryption_active_cert_ref"`
+	P521DecryptionPreviousCertRef *ResourceLink `json:"p521DecryptionPreviousCertRef,omitempty" tfsdk:"p521_decryption_previous_cert_ref"`
 	// Enable publishing of the P-521 certificate chain associated with the active key.
-	P521DecryptionPublishX5cParameter *bool         `json:"p521DecryptionPublishX5cParameter,omitempty" tfsdk:"p521_decryption_publish_x5c_parameter"`
-	RsaDecryptionActiveCertRef        *ResourceLink `json:"rsaDecryptionActiveCertRef,omitempty" tfsdk:"rsa_decryption_active_cert_ref"`
-	RsaDecryptionPreviousCertRef      *ResourceLink `json:"rsaDecryptionPreviousCertRef,omitempty" tfsdk:"rsa_decryption_previous_cert_ref"`
+	P521DecryptionPublishX5cParameter *bool `json:"p521DecryptionPublishX5cParameter,omitempty" tfsdk:"p521_decryption_publish_x5c_parameter"`
+	// Key Id for currently active P-521 decryption key.
+	P521DecryptionActiveKeyId *string `json:"p521DecryptionActiveKeyId,omitempty" tfsdk:"p521_decryption_active_key_id"`
+	// Key Id for previously active P-521 decryption key.
+	P521DecryptionPreviousKeyId  *string       `json:"p521DecryptionPreviousKeyId,omitempty" tfsdk:"p521_decryption_previous_key_id"`
+	RsaDecryptionActiveCertRef   *ResourceLink `json:"rsaDecryptionActiveCertRef,omitempty" tfsdk:"rsa_decryption_active_cert_ref"`
+	RsaDecryptionPreviousCertRef *ResourceLink `json:"rsaDecryptionPreviousCertRef,omitempty" tfsdk:"rsa_decryption_previous_cert_ref"`
 	// Enable publishing of the RSA certificate chain associated with the active key.
 	RsaDecryptionPublishX5cParameter *bool `json:"rsaDecryptionPublishX5cParameter,omitempty" tfsdk:"rsa_decryption_publish_x5c_parameter"`
+	// Key Id for currently active RSA decryption key.
+	RsaDecryptionActiveKeyId *string `json:"rsaDecryptionActiveKeyId,omitempty" tfsdk:"rsa_decryption_active_key_id"`
+	// Key Id for previously active RSA decryption key.
+	RsaDecryptionPreviousKeyId *string `json:"rsaDecryptionPreviousKeyId,omitempty" tfsdk:"rsa_decryption_previous_key_id"`
+	// PingFederate uses the same RSA key for all RSA signing algorithms. To enable active RSA JWK entry to have unique single valued ''alg'' parameter, use this list to set a key identifier for each RSA algorithm (RS256, RS384, RS512, PS256, PS384 and PS512).
+	RsaAlgorithmActiveKeyIds []RsaAlgKeyId `json:"rsaAlgorithmActiveKeyIds,omitempty" tfsdk:"rsa_algorithm_active_key_ids"`
+	// PingFederate uses the same RSA key for all RSA signing algorithms. To enable previously active RSA JWK entry to have unique single valued ''alg'' parameter, use this list to set a key identifier for each RSA algorithm (RS256, RS384, RS512, PS256, PS384 and PS512).
+	RsaAlgorithmPreviousKeyIds []RsaAlgKeyId `json:"rsaAlgorithmPreviousKeyIds,omitempty" tfsdk:"rsa_algorithm_previous_key_ids"`
 }
 
 // NewOAuthOidcKeysSettings instantiates a new OAuthOidcKeysSettings object
@@ -193,6 +229,70 @@ func (o *OAuthOidcKeysSettings) SetP256PublishX5cParameter(v bool) {
 	o.P256PublishX5cParameter = &v
 }
 
+// GetP256ActiveKeyId returns the P256ActiveKeyId field value if set, zero value otherwise.
+func (o *OAuthOidcKeysSettings) GetP256ActiveKeyId() string {
+	if o == nil || IsNil(o.P256ActiveKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.P256ActiveKeyId
+}
+
+// GetP256ActiveKeyIdOk returns a tuple with the P256ActiveKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OAuthOidcKeysSettings) GetP256ActiveKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.P256ActiveKeyId) {
+		return nil, false
+	}
+	return o.P256ActiveKeyId, true
+}
+
+// HasP256ActiveKeyId returns a boolean if a field has been set.
+func (o *OAuthOidcKeysSettings) HasP256ActiveKeyId() bool {
+	if o != nil && !IsNil(o.P256ActiveKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetP256ActiveKeyId gets a reference to the given string and assigns it to the P256ActiveKeyId field.
+func (o *OAuthOidcKeysSettings) SetP256ActiveKeyId(v string) {
+	o.P256ActiveKeyId = &v
+}
+
+// GetP256PreviousKeyId returns the P256PreviousKeyId field value if set, zero value otherwise.
+func (o *OAuthOidcKeysSettings) GetP256PreviousKeyId() string {
+	if o == nil || IsNil(o.P256PreviousKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.P256PreviousKeyId
+}
+
+// GetP256PreviousKeyIdOk returns a tuple with the P256PreviousKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OAuthOidcKeysSettings) GetP256PreviousKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.P256PreviousKeyId) {
+		return nil, false
+	}
+	return o.P256PreviousKeyId, true
+}
+
+// HasP256PreviousKeyId returns a boolean if a field has been set.
+func (o *OAuthOidcKeysSettings) HasP256PreviousKeyId() bool {
+	if o != nil && !IsNil(o.P256PreviousKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetP256PreviousKeyId gets a reference to the given string and assigns it to the P256PreviousKeyId field.
+func (o *OAuthOidcKeysSettings) SetP256PreviousKeyId(v string) {
+	o.P256PreviousKeyId = &v
+}
+
 // GetP384ActiveCertRef returns the P384ActiveCertRef field value if set, zero value otherwise.
 func (o *OAuthOidcKeysSettings) GetP384ActiveCertRef() ResourceLink {
 	if o == nil || IsNil(o.P384ActiveCertRef) {
@@ -287,6 +387,70 @@ func (o *OAuthOidcKeysSettings) HasP384PublishX5cParameter() bool {
 // SetP384PublishX5cParameter gets a reference to the given bool and assigns it to the P384PublishX5cParameter field.
 func (o *OAuthOidcKeysSettings) SetP384PublishX5cParameter(v bool) {
 	o.P384PublishX5cParameter = &v
+}
+
+// GetP384ActiveKeyId returns the P384ActiveKeyId field value if set, zero value otherwise.
+func (o *OAuthOidcKeysSettings) GetP384ActiveKeyId() string {
+	if o == nil || IsNil(o.P384ActiveKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.P384ActiveKeyId
+}
+
+// GetP384ActiveKeyIdOk returns a tuple with the P384ActiveKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OAuthOidcKeysSettings) GetP384ActiveKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.P384ActiveKeyId) {
+		return nil, false
+	}
+	return o.P384ActiveKeyId, true
+}
+
+// HasP384ActiveKeyId returns a boolean if a field has been set.
+func (o *OAuthOidcKeysSettings) HasP384ActiveKeyId() bool {
+	if o != nil && !IsNil(o.P384ActiveKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetP384ActiveKeyId gets a reference to the given string and assigns it to the P384ActiveKeyId field.
+func (o *OAuthOidcKeysSettings) SetP384ActiveKeyId(v string) {
+	o.P384ActiveKeyId = &v
+}
+
+// GetP384PreviousKeyId returns the P384PreviousKeyId field value if set, zero value otherwise.
+func (o *OAuthOidcKeysSettings) GetP384PreviousKeyId() string {
+	if o == nil || IsNil(o.P384PreviousKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.P384PreviousKeyId
+}
+
+// GetP384PreviousKeyIdOk returns a tuple with the P384PreviousKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OAuthOidcKeysSettings) GetP384PreviousKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.P384PreviousKeyId) {
+		return nil, false
+	}
+	return o.P384PreviousKeyId, true
+}
+
+// HasP384PreviousKeyId returns a boolean if a field has been set.
+func (o *OAuthOidcKeysSettings) HasP384PreviousKeyId() bool {
+	if o != nil && !IsNil(o.P384PreviousKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetP384PreviousKeyId gets a reference to the given string and assigns it to the P384PreviousKeyId field.
+func (o *OAuthOidcKeysSettings) SetP384PreviousKeyId(v string) {
+	o.P384PreviousKeyId = &v
 }
 
 // GetP521ActiveCertRef returns the P521ActiveCertRef field value if set, zero value otherwise.
@@ -385,6 +549,70 @@ func (o *OAuthOidcKeysSettings) SetP521PublishX5cParameter(v bool) {
 	o.P521PublishX5cParameter = &v
 }
 
+// GetP521ActiveKeyId returns the P521ActiveKeyId field value if set, zero value otherwise.
+func (o *OAuthOidcKeysSettings) GetP521ActiveKeyId() string {
+	if o == nil || IsNil(o.P521ActiveKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.P521ActiveKeyId
+}
+
+// GetP521ActiveKeyIdOk returns a tuple with the P521ActiveKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OAuthOidcKeysSettings) GetP521ActiveKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.P521ActiveKeyId) {
+		return nil, false
+	}
+	return o.P521ActiveKeyId, true
+}
+
+// HasP521ActiveKeyId returns a boolean if a field has been set.
+func (o *OAuthOidcKeysSettings) HasP521ActiveKeyId() bool {
+	if o != nil && !IsNil(o.P521ActiveKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetP521ActiveKeyId gets a reference to the given string and assigns it to the P521ActiveKeyId field.
+func (o *OAuthOidcKeysSettings) SetP521ActiveKeyId(v string) {
+	o.P521ActiveKeyId = &v
+}
+
+// GetP521PreviousKeyId returns the P521PreviousKeyId field value if set, zero value otherwise.
+func (o *OAuthOidcKeysSettings) GetP521PreviousKeyId() string {
+	if o == nil || IsNil(o.P521PreviousKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.P521PreviousKeyId
+}
+
+// GetP521PreviousKeyIdOk returns a tuple with the P521PreviousKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OAuthOidcKeysSettings) GetP521PreviousKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.P521PreviousKeyId) {
+		return nil, false
+	}
+	return o.P521PreviousKeyId, true
+}
+
+// HasP521PreviousKeyId returns a boolean if a field has been set.
+func (o *OAuthOidcKeysSettings) HasP521PreviousKeyId() bool {
+	if o != nil && !IsNil(o.P521PreviousKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetP521PreviousKeyId gets a reference to the given string and assigns it to the P521PreviousKeyId field.
+func (o *OAuthOidcKeysSettings) SetP521PreviousKeyId(v string) {
+	o.P521PreviousKeyId = &v
+}
+
 // GetRsaActiveCertRef returns the RsaActiveCertRef field value if set, zero value otherwise.
 func (o *OAuthOidcKeysSettings) GetRsaActiveCertRef() ResourceLink {
 	if o == nil || IsNil(o.RsaActiveCertRef) {
@@ -479,6 +707,70 @@ func (o *OAuthOidcKeysSettings) HasRsaPublishX5cParameter() bool {
 // SetRsaPublishX5cParameter gets a reference to the given bool and assigns it to the RsaPublishX5cParameter field.
 func (o *OAuthOidcKeysSettings) SetRsaPublishX5cParameter(v bool) {
 	o.RsaPublishX5cParameter = &v
+}
+
+// GetRsaActiveKeyId returns the RsaActiveKeyId field value if set, zero value otherwise.
+func (o *OAuthOidcKeysSettings) GetRsaActiveKeyId() string {
+	if o == nil || IsNil(o.RsaActiveKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.RsaActiveKeyId
+}
+
+// GetRsaActiveKeyIdOk returns a tuple with the RsaActiveKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OAuthOidcKeysSettings) GetRsaActiveKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.RsaActiveKeyId) {
+		return nil, false
+	}
+	return o.RsaActiveKeyId, true
+}
+
+// HasRsaActiveKeyId returns a boolean if a field has been set.
+func (o *OAuthOidcKeysSettings) HasRsaActiveKeyId() bool {
+	if o != nil && !IsNil(o.RsaActiveKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetRsaActiveKeyId gets a reference to the given string and assigns it to the RsaActiveKeyId field.
+func (o *OAuthOidcKeysSettings) SetRsaActiveKeyId(v string) {
+	o.RsaActiveKeyId = &v
+}
+
+// GetRsaPreviousKeyId returns the RsaPreviousKeyId field value if set, zero value otherwise.
+func (o *OAuthOidcKeysSettings) GetRsaPreviousKeyId() string {
+	if o == nil || IsNil(o.RsaPreviousKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.RsaPreviousKeyId
+}
+
+// GetRsaPreviousKeyIdOk returns a tuple with the RsaPreviousKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OAuthOidcKeysSettings) GetRsaPreviousKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.RsaPreviousKeyId) {
+		return nil, false
+	}
+	return o.RsaPreviousKeyId, true
+}
+
+// HasRsaPreviousKeyId returns a boolean if a field has been set.
+func (o *OAuthOidcKeysSettings) HasRsaPreviousKeyId() bool {
+	if o != nil && !IsNil(o.RsaPreviousKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetRsaPreviousKeyId gets a reference to the given string and assigns it to the RsaPreviousKeyId field.
+func (o *OAuthOidcKeysSettings) SetRsaPreviousKeyId(v string) {
+	o.RsaPreviousKeyId = &v
 }
 
 // GetP256DecryptionActiveCertRef returns the P256DecryptionActiveCertRef field value if set, zero value otherwise.
@@ -577,6 +869,70 @@ func (o *OAuthOidcKeysSettings) SetP256DecryptionPublishX5cParameter(v bool) {
 	o.P256DecryptionPublishX5cParameter = &v
 }
 
+// GetP256DecryptionActiveKeyId returns the P256DecryptionActiveKeyId field value if set, zero value otherwise.
+func (o *OAuthOidcKeysSettings) GetP256DecryptionActiveKeyId() string {
+	if o == nil || IsNil(o.P256DecryptionActiveKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.P256DecryptionActiveKeyId
+}
+
+// GetP256DecryptionActiveKeyIdOk returns a tuple with the P256DecryptionActiveKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OAuthOidcKeysSettings) GetP256DecryptionActiveKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.P256DecryptionActiveKeyId) {
+		return nil, false
+	}
+	return o.P256DecryptionActiveKeyId, true
+}
+
+// HasP256DecryptionActiveKeyId returns a boolean if a field has been set.
+func (o *OAuthOidcKeysSettings) HasP256DecryptionActiveKeyId() bool {
+	if o != nil && !IsNil(o.P256DecryptionActiveKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetP256DecryptionActiveKeyId gets a reference to the given string and assigns it to the P256DecryptionActiveKeyId field.
+func (o *OAuthOidcKeysSettings) SetP256DecryptionActiveKeyId(v string) {
+	o.P256DecryptionActiveKeyId = &v
+}
+
+// GetP256DecryptionPreviousKeyId returns the P256DecryptionPreviousKeyId field value if set, zero value otherwise.
+func (o *OAuthOidcKeysSettings) GetP256DecryptionPreviousKeyId() string {
+	if o == nil || IsNil(o.P256DecryptionPreviousKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.P256DecryptionPreviousKeyId
+}
+
+// GetP256DecryptionPreviousKeyIdOk returns a tuple with the P256DecryptionPreviousKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OAuthOidcKeysSettings) GetP256DecryptionPreviousKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.P256DecryptionPreviousKeyId) {
+		return nil, false
+	}
+	return o.P256DecryptionPreviousKeyId, true
+}
+
+// HasP256DecryptionPreviousKeyId returns a boolean if a field has been set.
+func (o *OAuthOidcKeysSettings) HasP256DecryptionPreviousKeyId() bool {
+	if o != nil && !IsNil(o.P256DecryptionPreviousKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetP256DecryptionPreviousKeyId gets a reference to the given string and assigns it to the P256DecryptionPreviousKeyId field.
+func (o *OAuthOidcKeysSettings) SetP256DecryptionPreviousKeyId(v string) {
+	o.P256DecryptionPreviousKeyId = &v
+}
+
 // GetP384DecryptionActiveCertRef returns the P384DecryptionActiveCertRef field value if set, zero value otherwise.
 func (o *OAuthOidcKeysSettings) GetP384DecryptionActiveCertRef() ResourceLink {
 	if o == nil || IsNil(o.P384DecryptionActiveCertRef) {
@@ -671,6 +1027,70 @@ func (o *OAuthOidcKeysSettings) HasP384DecryptionPublishX5cParameter() bool {
 // SetP384DecryptionPublishX5cParameter gets a reference to the given bool and assigns it to the P384DecryptionPublishX5cParameter field.
 func (o *OAuthOidcKeysSettings) SetP384DecryptionPublishX5cParameter(v bool) {
 	o.P384DecryptionPublishX5cParameter = &v
+}
+
+// GetP384DecryptionActiveKeyId returns the P384DecryptionActiveKeyId field value if set, zero value otherwise.
+func (o *OAuthOidcKeysSettings) GetP384DecryptionActiveKeyId() string {
+	if o == nil || IsNil(o.P384DecryptionActiveKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.P384DecryptionActiveKeyId
+}
+
+// GetP384DecryptionActiveKeyIdOk returns a tuple with the P384DecryptionActiveKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OAuthOidcKeysSettings) GetP384DecryptionActiveKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.P384DecryptionActiveKeyId) {
+		return nil, false
+	}
+	return o.P384DecryptionActiveKeyId, true
+}
+
+// HasP384DecryptionActiveKeyId returns a boolean if a field has been set.
+func (o *OAuthOidcKeysSettings) HasP384DecryptionActiveKeyId() bool {
+	if o != nil && !IsNil(o.P384DecryptionActiveKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetP384DecryptionActiveKeyId gets a reference to the given string and assigns it to the P384DecryptionActiveKeyId field.
+func (o *OAuthOidcKeysSettings) SetP384DecryptionActiveKeyId(v string) {
+	o.P384DecryptionActiveKeyId = &v
+}
+
+// GetP384DecryptionPreviousKeyId returns the P384DecryptionPreviousKeyId field value if set, zero value otherwise.
+func (o *OAuthOidcKeysSettings) GetP384DecryptionPreviousKeyId() string {
+	if o == nil || IsNil(o.P384DecryptionPreviousKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.P384DecryptionPreviousKeyId
+}
+
+// GetP384DecryptionPreviousKeyIdOk returns a tuple with the P384DecryptionPreviousKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OAuthOidcKeysSettings) GetP384DecryptionPreviousKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.P384DecryptionPreviousKeyId) {
+		return nil, false
+	}
+	return o.P384DecryptionPreviousKeyId, true
+}
+
+// HasP384DecryptionPreviousKeyId returns a boolean if a field has been set.
+func (o *OAuthOidcKeysSettings) HasP384DecryptionPreviousKeyId() bool {
+	if o != nil && !IsNil(o.P384DecryptionPreviousKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetP384DecryptionPreviousKeyId gets a reference to the given string and assigns it to the P384DecryptionPreviousKeyId field.
+func (o *OAuthOidcKeysSettings) SetP384DecryptionPreviousKeyId(v string) {
+	o.P384DecryptionPreviousKeyId = &v
 }
 
 // GetP521DecryptionActiveCertRef returns the P521DecryptionActiveCertRef field value if set, zero value otherwise.
@@ -769,6 +1189,70 @@ func (o *OAuthOidcKeysSettings) SetP521DecryptionPublishX5cParameter(v bool) {
 	o.P521DecryptionPublishX5cParameter = &v
 }
 
+// GetP521DecryptionActiveKeyId returns the P521DecryptionActiveKeyId field value if set, zero value otherwise.
+func (o *OAuthOidcKeysSettings) GetP521DecryptionActiveKeyId() string {
+	if o == nil || IsNil(o.P521DecryptionActiveKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.P521DecryptionActiveKeyId
+}
+
+// GetP521DecryptionActiveKeyIdOk returns a tuple with the P521DecryptionActiveKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OAuthOidcKeysSettings) GetP521DecryptionActiveKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.P521DecryptionActiveKeyId) {
+		return nil, false
+	}
+	return o.P521DecryptionActiveKeyId, true
+}
+
+// HasP521DecryptionActiveKeyId returns a boolean if a field has been set.
+func (o *OAuthOidcKeysSettings) HasP521DecryptionActiveKeyId() bool {
+	if o != nil && !IsNil(o.P521DecryptionActiveKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetP521DecryptionActiveKeyId gets a reference to the given string and assigns it to the P521DecryptionActiveKeyId field.
+func (o *OAuthOidcKeysSettings) SetP521DecryptionActiveKeyId(v string) {
+	o.P521DecryptionActiveKeyId = &v
+}
+
+// GetP521DecryptionPreviousKeyId returns the P521DecryptionPreviousKeyId field value if set, zero value otherwise.
+func (o *OAuthOidcKeysSettings) GetP521DecryptionPreviousKeyId() string {
+	if o == nil || IsNil(o.P521DecryptionPreviousKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.P521DecryptionPreviousKeyId
+}
+
+// GetP521DecryptionPreviousKeyIdOk returns a tuple with the P521DecryptionPreviousKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OAuthOidcKeysSettings) GetP521DecryptionPreviousKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.P521DecryptionPreviousKeyId) {
+		return nil, false
+	}
+	return o.P521DecryptionPreviousKeyId, true
+}
+
+// HasP521DecryptionPreviousKeyId returns a boolean if a field has been set.
+func (o *OAuthOidcKeysSettings) HasP521DecryptionPreviousKeyId() bool {
+	if o != nil && !IsNil(o.P521DecryptionPreviousKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetP521DecryptionPreviousKeyId gets a reference to the given string and assigns it to the P521DecryptionPreviousKeyId field.
+func (o *OAuthOidcKeysSettings) SetP521DecryptionPreviousKeyId(v string) {
+	o.P521DecryptionPreviousKeyId = &v
+}
+
 // GetRsaDecryptionActiveCertRef returns the RsaDecryptionActiveCertRef field value if set, zero value otherwise.
 func (o *OAuthOidcKeysSettings) GetRsaDecryptionActiveCertRef() ResourceLink {
 	if o == nil || IsNil(o.RsaDecryptionActiveCertRef) {
@@ -865,6 +1349,134 @@ func (o *OAuthOidcKeysSettings) SetRsaDecryptionPublishX5cParameter(v bool) {
 	o.RsaDecryptionPublishX5cParameter = &v
 }
 
+// GetRsaDecryptionActiveKeyId returns the RsaDecryptionActiveKeyId field value if set, zero value otherwise.
+func (o *OAuthOidcKeysSettings) GetRsaDecryptionActiveKeyId() string {
+	if o == nil || IsNil(o.RsaDecryptionActiveKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.RsaDecryptionActiveKeyId
+}
+
+// GetRsaDecryptionActiveKeyIdOk returns a tuple with the RsaDecryptionActiveKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OAuthOidcKeysSettings) GetRsaDecryptionActiveKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.RsaDecryptionActiveKeyId) {
+		return nil, false
+	}
+	return o.RsaDecryptionActiveKeyId, true
+}
+
+// HasRsaDecryptionActiveKeyId returns a boolean if a field has been set.
+func (o *OAuthOidcKeysSettings) HasRsaDecryptionActiveKeyId() bool {
+	if o != nil && !IsNil(o.RsaDecryptionActiveKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetRsaDecryptionActiveKeyId gets a reference to the given string and assigns it to the RsaDecryptionActiveKeyId field.
+func (o *OAuthOidcKeysSettings) SetRsaDecryptionActiveKeyId(v string) {
+	o.RsaDecryptionActiveKeyId = &v
+}
+
+// GetRsaDecryptionPreviousKeyId returns the RsaDecryptionPreviousKeyId field value if set, zero value otherwise.
+func (o *OAuthOidcKeysSettings) GetRsaDecryptionPreviousKeyId() string {
+	if o == nil || IsNil(o.RsaDecryptionPreviousKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.RsaDecryptionPreviousKeyId
+}
+
+// GetRsaDecryptionPreviousKeyIdOk returns a tuple with the RsaDecryptionPreviousKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OAuthOidcKeysSettings) GetRsaDecryptionPreviousKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.RsaDecryptionPreviousKeyId) {
+		return nil, false
+	}
+	return o.RsaDecryptionPreviousKeyId, true
+}
+
+// HasRsaDecryptionPreviousKeyId returns a boolean if a field has been set.
+func (o *OAuthOidcKeysSettings) HasRsaDecryptionPreviousKeyId() bool {
+	if o != nil && !IsNil(o.RsaDecryptionPreviousKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetRsaDecryptionPreviousKeyId gets a reference to the given string and assigns it to the RsaDecryptionPreviousKeyId field.
+func (o *OAuthOidcKeysSettings) SetRsaDecryptionPreviousKeyId(v string) {
+	o.RsaDecryptionPreviousKeyId = &v
+}
+
+// GetRsaAlgorithmActiveKeyIds returns the RsaAlgorithmActiveKeyIds field value if set, zero value otherwise.
+func (o *OAuthOidcKeysSettings) GetRsaAlgorithmActiveKeyIds() []RsaAlgKeyId {
+	if o == nil || IsNil(o.RsaAlgorithmActiveKeyIds) {
+		var ret []RsaAlgKeyId
+		return ret
+	}
+	return o.RsaAlgorithmActiveKeyIds
+}
+
+// GetRsaAlgorithmActiveKeyIdsOk returns a tuple with the RsaAlgorithmActiveKeyIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OAuthOidcKeysSettings) GetRsaAlgorithmActiveKeyIdsOk() ([]RsaAlgKeyId, bool) {
+	if o == nil || IsNil(o.RsaAlgorithmActiveKeyIds) {
+		return nil, false
+	}
+	return o.RsaAlgorithmActiveKeyIds, true
+}
+
+// HasRsaAlgorithmActiveKeyIds returns a boolean if a field has been set.
+func (o *OAuthOidcKeysSettings) HasRsaAlgorithmActiveKeyIds() bool {
+	if o != nil && !IsNil(o.RsaAlgorithmActiveKeyIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetRsaAlgorithmActiveKeyIds gets a reference to the given []RsaAlgKeyId and assigns it to the RsaAlgorithmActiveKeyIds field.
+func (o *OAuthOidcKeysSettings) SetRsaAlgorithmActiveKeyIds(v []RsaAlgKeyId) {
+	o.RsaAlgorithmActiveKeyIds = v
+}
+
+// GetRsaAlgorithmPreviousKeyIds returns the RsaAlgorithmPreviousKeyIds field value if set, zero value otherwise.
+func (o *OAuthOidcKeysSettings) GetRsaAlgorithmPreviousKeyIds() []RsaAlgKeyId {
+	if o == nil || IsNil(o.RsaAlgorithmPreviousKeyIds) {
+		var ret []RsaAlgKeyId
+		return ret
+	}
+	return o.RsaAlgorithmPreviousKeyIds
+}
+
+// GetRsaAlgorithmPreviousKeyIdsOk returns a tuple with the RsaAlgorithmPreviousKeyIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OAuthOidcKeysSettings) GetRsaAlgorithmPreviousKeyIdsOk() ([]RsaAlgKeyId, bool) {
+	if o == nil || IsNil(o.RsaAlgorithmPreviousKeyIds) {
+		return nil, false
+	}
+	return o.RsaAlgorithmPreviousKeyIds, true
+}
+
+// HasRsaAlgorithmPreviousKeyIds returns a boolean if a field has been set.
+func (o *OAuthOidcKeysSettings) HasRsaAlgorithmPreviousKeyIds() bool {
+	if o != nil && !IsNil(o.RsaAlgorithmPreviousKeyIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetRsaAlgorithmPreviousKeyIds gets a reference to the given []RsaAlgKeyId and assigns it to the RsaAlgorithmPreviousKeyIds field.
+func (o *OAuthOidcKeysSettings) SetRsaAlgorithmPreviousKeyIds(v []RsaAlgKeyId) {
+	o.RsaAlgorithmPreviousKeyIds = v
+}
+
 func (o OAuthOidcKeysSettings) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -885,6 +1497,12 @@ func (o OAuthOidcKeysSettings) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.P256PublishX5cParameter) {
 		toSerialize["p256PublishX5cParameter"] = o.P256PublishX5cParameter
 	}
+	if !IsNil(o.P256ActiveKeyId) {
+		toSerialize["p256ActiveKeyId"] = o.P256ActiveKeyId
+	}
+	if !IsNil(o.P256PreviousKeyId) {
+		toSerialize["p256PreviousKeyId"] = o.P256PreviousKeyId
+	}
 	if !IsNil(o.P384ActiveCertRef) {
 		toSerialize["p384ActiveCertRef"] = o.P384ActiveCertRef
 	}
@@ -893,6 +1511,12 @@ func (o OAuthOidcKeysSettings) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.P384PublishX5cParameter) {
 		toSerialize["p384PublishX5cParameter"] = o.P384PublishX5cParameter
+	}
+	if !IsNil(o.P384ActiveKeyId) {
+		toSerialize["p384ActiveKeyId"] = o.P384ActiveKeyId
+	}
+	if !IsNil(o.P384PreviousKeyId) {
+		toSerialize["p384PreviousKeyId"] = o.P384PreviousKeyId
 	}
 	if !IsNil(o.P521ActiveCertRef) {
 		toSerialize["p521ActiveCertRef"] = o.P521ActiveCertRef
@@ -903,6 +1527,12 @@ func (o OAuthOidcKeysSettings) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.P521PublishX5cParameter) {
 		toSerialize["p521PublishX5cParameter"] = o.P521PublishX5cParameter
 	}
+	if !IsNil(o.P521ActiveKeyId) {
+		toSerialize["p521ActiveKeyId"] = o.P521ActiveKeyId
+	}
+	if !IsNil(o.P521PreviousKeyId) {
+		toSerialize["p521PreviousKeyId"] = o.P521PreviousKeyId
+	}
 	if !IsNil(o.RsaActiveCertRef) {
 		toSerialize["rsaActiveCertRef"] = o.RsaActiveCertRef
 	}
@@ -911,6 +1541,12 @@ func (o OAuthOidcKeysSettings) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.RsaPublishX5cParameter) {
 		toSerialize["rsaPublishX5cParameter"] = o.RsaPublishX5cParameter
+	}
+	if !IsNil(o.RsaActiveKeyId) {
+		toSerialize["rsaActiveKeyId"] = o.RsaActiveKeyId
+	}
+	if !IsNil(o.RsaPreviousKeyId) {
+		toSerialize["rsaPreviousKeyId"] = o.RsaPreviousKeyId
 	}
 	if !IsNil(o.P256DecryptionActiveCertRef) {
 		toSerialize["p256DecryptionActiveCertRef"] = o.P256DecryptionActiveCertRef
@@ -921,6 +1557,12 @@ func (o OAuthOidcKeysSettings) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.P256DecryptionPublishX5cParameter) {
 		toSerialize["p256DecryptionPublishX5cParameter"] = o.P256DecryptionPublishX5cParameter
 	}
+	if !IsNil(o.P256DecryptionActiveKeyId) {
+		toSerialize["p256DecryptionActiveKeyId"] = o.P256DecryptionActiveKeyId
+	}
+	if !IsNil(o.P256DecryptionPreviousKeyId) {
+		toSerialize["p256DecryptionPreviousKeyId"] = o.P256DecryptionPreviousKeyId
+	}
 	if !IsNil(o.P384DecryptionActiveCertRef) {
 		toSerialize["p384DecryptionActiveCertRef"] = o.P384DecryptionActiveCertRef
 	}
@@ -929,6 +1571,12 @@ func (o OAuthOidcKeysSettings) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.P384DecryptionPublishX5cParameter) {
 		toSerialize["p384DecryptionPublishX5cParameter"] = o.P384DecryptionPublishX5cParameter
+	}
+	if !IsNil(o.P384DecryptionActiveKeyId) {
+		toSerialize["p384DecryptionActiveKeyId"] = o.P384DecryptionActiveKeyId
+	}
+	if !IsNil(o.P384DecryptionPreviousKeyId) {
+		toSerialize["p384DecryptionPreviousKeyId"] = o.P384DecryptionPreviousKeyId
 	}
 	if !IsNil(o.P521DecryptionActiveCertRef) {
 		toSerialize["p521DecryptionActiveCertRef"] = o.P521DecryptionActiveCertRef
@@ -939,6 +1587,12 @@ func (o OAuthOidcKeysSettings) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.P521DecryptionPublishX5cParameter) {
 		toSerialize["p521DecryptionPublishX5cParameter"] = o.P521DecryptionPublishX5cParameter
 	}
+	if !IsNil(o.P521DecryptionActiveKeyId) {
+		toSerialize["p521DecryptionActiveKeyId"] = o.P521DecryptionActiveKeyId
+	}
+	if !IsNil(o.P521DecryptionPreviousKeyId) {
+		toSerialize["p521DecryptionPreviousKeyId"] = o.P521DecryptionPreviousKeyId
+	}
 	if !IsNil(o.RsaDecryptionActiveCertRef) {
 		toSerialize["rsaDecryptionActiveCertRef"] = o.RsaDecryptionActiveCertRef
 	}
@@ -947,6 +1601,18 @@ func (o OAuthOidcKeysSettings) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.RsaDecryptionPublishX5cParameter) {
 		toSerialize["rsaDecryptionPublishX5cParameter"] = o.RsaDecryptionPublishX5cParameter
+	}
+	if !IsNil(o.RsaDecryptionActiveKeyId) {
+		toSerialize["rsaDecryptionActiveKeyId"] = o.RsaDecryptionActiveKeyId
+	}
+	if !IsNil(o.RsaDecryptionPreviousKeyId) {
+		toSerialize["rsaDecryptionPreviousKeyId"] = o.RsaDecryptionPreviousKeyId
+	}
+	if !IsNil(o.RsaAlgorithmActiveKeyIds) {
+		toSerialize["rsaAlgorithmActiveKeyIds"] = o.RsaAlgorithmActiveKeyIds
+	}
+	if !IsNil(o.RsaAlgorithmPreviousKeyIds) {
+		toSerialize["rsaAlgorithmPreviousKeyIds"] = o.RsaAlgorithmPreviousKeyIds
 	}
 	return toSerialize, nil
 }
