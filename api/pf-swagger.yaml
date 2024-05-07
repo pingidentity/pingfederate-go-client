@@ -22617,11 +22617,11 @@ components:
         p256ActiveCertRef:
           position: 15
           description: Reference to the P-256 key currently active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p256PreviousCertRef:
           position: 20
           description: Reference to the P-256 key previously active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p256PublishX5cParameter:
           type: boolean
           position: 25
@@ -22637,11 +22637,11 @@ components:
         p384ActiveCertRef:
           position: 30
           description: Reference to the P-384 key currently active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p384PreviousCertRef:
           position: 35
           description: Reference to the P-384 key previously active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p384PublishX5cParameter:
           type: boolean
           position: 40
@@ -22657,11 +22657,11 @@ components:
         p521ActiveCertRef:
           position: 45
           description: Reference to the P-521 key currently active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p521PreviousCertRef:
           position: 50
           description: Reference to the P-521 key previously active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p521PublishX5cParameter:
           type: boolean
           position: 55
@@ -22677,11 +22677,11 @@ components:
         rsaActiveCertRef:
           position: 60
           description: Reference to the RSA key currently active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         rsaPreviousCertRef:
           position: 65
           description: Reference to the RSA key previously active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         rsaPublishX5cParameter:
           type: boolean
           position: 70
@@ -22697,11 +22697,11 @@ components:
         p256DecryptionActiveCertRef:
           position: 75
           description: Reference to the P-256 decryption key currently active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p256DecryptionPreviousCertRef:
           position: 80
           description: Reference to the P-256 decryption key previously active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p256DecryptionPublishX5cParameter:
           type: boolean
           position: 85
@@ -22717,11 +22717,11 @@ components:
         p384DecryptionActiveCertRef:
           position: 90
           description: Reference to the P-384 decryption key currently active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p384DecryptionPreviousCertRef:
           position: 95
           description: Reference to the P-384 decryption key previously active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p384DecryptionPublishX5cParameter:
           type: boolean
           position: 100
@@ -22737,11 +22737,11 @@ components:
         p521DecryptionActiveCertRef:
           position: 105
           description: Reference to the P-521 decryption key currently active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p521DecryptionPreviousCertRef:
           position: 110
           description: Reference to the P-521 decryption key previously active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p521DecryptionPublishX5cParameter:
           type: boolean
           position: 115
@@ -22757,11 +22757,11 @@ components:
         rsaDecryptionActiveCertRef:
           position: 120
           description: Reference to the RSA decryption key currently active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         rsaDecryptionPreviousCertRef:
           position: 125
           description: Reference to the RSA decryption key previously active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         rsaDecryptionPublishX5cParameter:
           type: boolean
           position: 130
@@ -22779,13 +22779,13 @@ components:
           position: 140
           description: PingFederate uses the same RSA key for all RSA signing algorithms. To enable active RSA JWK entry to have unique single valued ''alg'' parameter, use this list to set a key identifier for each RSA algorithm (RS256, RS384, RS512, PS256, PS384 and PS512).
           items:
-            $ref: '#/definitions/RsaAlgKeyId'
+            $ref: '#/components/schemas/RsaAlgKeyId'
         rsaAlgorithmPreviousKeyIds:
           type: array
           position: 150
           description: PingFederate uses the same RSA key for all RSA signing algorithms. To enable previously active RSA JWK entry to have unique single valued ''alg'' parameter, use this list to set a key identifier for each RSA algorithm (RS256, RS384, RS512, PS256, PS384 and PS512).
           items:
-            $ref: '#/definitions/RsaAlgKeyId'
+            $ref: '#/components/schemas/RsaAlgKeyId'
       description: Setting for OAuth/OpenID Connect signing and decryption key settings.
     AdditionalKeySet:
       required:
@@ -22839,11 +22839,11 @@ components:
         p256ActiveCertRef:
           position: 15
           description: Reference to the P-256 key currently active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p256PreviousCertRef:
           position: 20
           description: Reference to the P-256 key previously active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p256PublishX5cParameter:
           type: boolean
           position: 25
@@ -22859,11 +22859,11 @@ components:
         p384ActiveCertRef:
           position: 30
           description: Reference to the P-384 key currently active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p384PreviousCertRef:
           position: 35
           description: Reference to the P-384 key previously active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p384PublishX5cParameter:
           type: boolean
           position: 40
@@ -22879,11 +22879,11 @@ components:
         p521ActiveCertRef:
           position: 45
           description: Reference to the P-521 key currently active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p521PreviousCertRef:
           position: 50
           description: Reference to the P-521 key previously active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p521PublishX5cParameter:
           type: boolean
           position: 55
@@ -22899,11 +22899,11 @@ components:
         rsaActiveCertRef:
           position: 60
           description: Reference to the RSA key currently active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         rsaPreviousCertRef:
           position: 65
           description: Reference to the RSA key previously active.
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         rsaPublishX5cParameter:
           type: boolean
           position: 67
@@ -22921,13 +22921,13 @@ components:
           position: 75
           description: PingFederate uses the same RSA key for all RSA signing algorithms. To enable active RSA JWK entry to have unique single valued ''alg'' parameter, use this list to set a key identifier for each RSA algorithm (RS256, RS384, RS512, PS256, PS384 and PS512).
           items:
-            $ref: '#/definitions/RsaAlgKeyId'
+            $ref: '#/components/schemas/RsaAlgKeyId'
         rsaAlgorithmPreviousKeyIds:
           type: array
           position: 80
           description: PingFederate uses the same RSA key for all RSA signing algorithms. To enable previously active RSA JWK entry to have unique single valued ''alg'' parameter, use this list to set a key identifier for each RSA algorithm (RS256, RS384, RS512, PS256, PS384 and PS512).
           items:
-            $ref: '#/definitions/RsaAlgKeyId'
+            $ref: '#/components/schemas/RsaAlgKeyId'
       description:
         Setting for a OAuth/OpenID Connect signing key set while using
         multiple virtual issuers.

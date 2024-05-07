@@ -27812,9 +27812,9 @@ components:
           description: Enable static keys.
           type: boolean
         p256ActiveCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p256PreviousCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p256PublishX5cParameter:
           description: Enable publishing of the P-256 certificate chain associated
             with the active key.
@@ -27826,9 +27826,9 @@ components:
           description: Key Id for previously active P-256 key.
           type: string
         p384ActiveCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p384PreviousCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p384PublishX5cParameter:
           description: Enable publishing of the P-384 certificate chain associated
             with the active key.
@@ -27840,9 +27840,9 @@ components:
           description: Key Id for previously active P-384 key.
           type: string
         p521ActiveCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p521PreviousCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p521PublishX5cParameter:
           description: Enable publishing of the P-521 certificate chain associated
             with the active key.
@@ -27854,9 +27854,9 @@ components:
           description: Key Id for previously active P-521 key.
           type: string
         rsaActiveCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         rsaPreviousCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         rsaPublishX5cParameter:
           description: Enable publishing of the RSA certificate chain associated with
             the active key.
@@ -27868,9 +27868,9 @@ components:
           description: Key Id for previously active RSA key.
           type: string
         p256DecryptionActiveCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p256DecryptionPreviousCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p256DecryptionPublishX5cParameter:
           description: Enable publishing of the P-256 certificate chain associated
             with the active key.
@@ -27882,9 +27882,9 @@ components:
           description: Key Id for previously active P-256 decryption key.
           type: string
         p384DecryptionActiveCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p384DecryptionPreviousCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p384DecryptionPublishX5cParameter:
           description: Enable publishing of the P-384 certificate chain associated
             with the active key.
@@ -27896,9 +27896,9 @@ components:
           description: Key Id for previously active P-384 decryption key.
           type: string
         p521DecryptionActiveCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p521DecryptionPreviousCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p521DecryptionPublishX5cParameter:
           description: Enable publishing of the P-521 certificate chain associated
             with the active key.
@@ -27910,9 +27910,9 @@ components:
           description: Key Id for previously active P-521 decryption key.
           type: string
         rsaDecryptionActiveCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         rsaDecryptionPreviousCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         rsaDecryptionPublishX5cParameter:
           description: Enable publishing of the RSA certificate chain associated with
             the active key.
@@ -27929,7 +27929,7 @@ components:
             \ parameter, use this list to set a key identifier for each RSA algorithm\
             \ (RS256, RS384, RS512, PS256, PS384 and PS512)."
           items:
-            $ref: '#/definitions/RsaAlgKeyId'
+            $ref: '#/components/schemas/RsaAlgKeyId'
           type: array
         rsaAlgorithmPreviousKeyIds:
           description: "PingFederate uses the same RSA key for all RSA signing algorithms.\
@@ -27937,7 +27937,7 @@ components:
             \ ''alg'' parameter, use this list to set a key identifier for each RSA\
             \ algorithm (RS256, RS384, RS512, PS256, PS384 and PS512)."
           items:
-            $ref: '#/definitions/RsaAlgKeyId'
+            $ref: '#/components/schemas/RsaAlgKeyId'
           type: array
       required:
       - staticJwksEnabled
@@ -28095,9 +28095,9 @@ components:
         rsaPublishX5cParameter: true
       properties:
         p256ActiveCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p256PreviousCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p256PublishX5cParameter:
           description: Enable publishing of the P-256 certificate chain associated
             with the active key.
@@ -28109,9 +28109,9 @@ components:
           description: Key Id for previously active P-256 key.
           type: string
         p384ActiveCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p384PreviousCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p384PublishX5cParameter:
           description: Enable publishing of the P-384 certificate chain associated
             with the active key.
@@ -28123,9 +28123,9 @@ components:
           description: Key Id for previously active P-384 key.
           type: string
         p521ActiveCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p521PreviousCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         p521PublishX5cParameter:
           description: Enable publishing of the P-521 certificate chain associated
             with the active key.
@@ -28137,9 +28137,9 @@ components:
           description: Key Id for previously active P-521 key.
           type: string
         rsaActiveCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         rsaPreviousCertRef:
-          $ref: '#/definitions/ResourceLink'
+          $ref: '#/components/schemas/ResourceLink'
         rsaPublishX5cParameter:
           description: Enable publishing of the RSA certificate chain associated with
             the active key.
@@ -28156,7 +28156,7 @@ components:
             \ parameter, use this list to set a key identifier for each RSA algorithm\
             \ (RS256, RS384, RS512, PS256, PS384 and PS512)."
           items:
-            $ref: '#/definitions/RsaAlgKeyId'
+            $ref: '#/components/schemas/RsaAlgKeyId'
           type: array
         rsaAlgorithmPreviousKeyIds:
           description: "PingFederate uses the same RSA key for all RSA signing algorithms.\
@@ -28164,7 +28164,7 @@ components:
             \ ''alg'' parameter, use this list to set a key identifier for each RSA\
             \ algorithm (RS256, RS384, RS512, PS256, PS384 and PS512)."
           items:
-            $ref: '#/definitions/RsaAlgKeyId'
+            $ref: '#/components/schemas/RsaAlgKeyId'
           type: array
       type: object
     AdditionalKeySets:
