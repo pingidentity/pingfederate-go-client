@@ -21,8 +21,6 @@ var _ MappedNullable = &ResourceLink{}
 type ResourceLink struct {
 	// The ID of the resource.
 	Id string `json:"id" tfsdk:"id"`
-	// A read-only URL that references the resource. If the resource is not currently URL-accessible, this property will be null.
-	Location *string `json:"location,omitempty" tfsdk:"location"`
 }
 
 // NewResourceLink instantiates a new ResourceLink object
@@ -67,38 +65,6 @@ func (o *ResourceLink) SetId(v string) {
 	o.Id = v
 }
 
-// GetLocation returns the Location field value if set, zero value otherwise.
-func (o *ResourceLink) GetLocation() string {
-	if o == nil || IsNil(o.Location) {
-		var ret string
-		return ret
-	}
-	return *o.Location
-}
-
-// GetLocationOk returns a tuple with the Location field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResourceLink) GetLocationOk() (*string, bool) {
-	if o == nil || IsNil(o.Location) {
-		return nil, false
-	}
-	return o.Location, true
-}
-
-// HasLocation returns a boolean if a field has been set.
-func (o *ResourceLink) HasLocation() bool {
-	if o != nil && !IsNil(o.Location) {
-		return true
-	}
-
-	return false
-}
-
-// SetLocation gets a reference to the given string and assigns it to the Location field.
-func (o *ResourceLink) SetLocation(v string) {
-	o.Location = &v
-}
-
 func (o ResourceLink) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -110,9 +76,6 @@ func (o ResourceLink) MarshalJSON() ([]byte, error) {
 func (o ResourceLink) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
-	if !IsNil(o.Location) {
-		toSerialize["location"] = o.Location
-	}
 	return toSerialize, nil
 }
 
