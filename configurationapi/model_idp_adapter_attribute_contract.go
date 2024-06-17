@@ -27,8 +27,6 @@ type IdpAdapterAttributeContract struct {
 	UniqueUserKeyAttribute *string `json:"uniqueUserKeyAttribute,omitempty" tfsdk:"unique_user_key_attribute"`
 	// Whether or not all OGNL expressions used to fulfill an outgoing assertion contract should be masked in the logs. Defaults to false.
 	MaskOgnlValues *bool `json:"maskOgnlValues,omitempty" tfsdk:"mask_ognl_values"`
-	// Whether this attribute contract is inherited from its parent instance. If true, the rest of the properties in this model become read-only. The default value is false.
-	Inherited *bool `json:"inherited,omitempty" tfsdk:"inherited"`
 }
 
 // NewIdpAdapterAttributeContract instantiates a new IdpAdapterAttributeContract object
@@ -169,38 +167,6 @@ func (o *IdpAdapterAttributeContract) SetMaskOgnlValues(v bool) {
 	o.MaskOgnlValues = &v
 }
 
-// GetInherited returns the Inherited field value if set, zero value otherwise.
-func (o *IdpAdapterAttributeContract) GetInherited() bool {
-	if o == nil || IsNil(o.Inherited) {
-		var ret bool
-		return ret
-	}
-	return *o.Inherited
-}
-
-// GetInheritedOk returns a tuple with the Inherited field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *IdpAdapterAttributeContract) GetInheritedOk() (*bool, bool) {
-	if o == nil || IsNil(o.Inherited) {
-		return nil, false
-	}
-	return o.Inherited, true
-}
-
-// HasInherited returns a boolean if a field has been set.
-func (o *IdpAdapterAttributeContract) HasInherited() bool {
-	if o != nil && !IsNil(o.Inherited) {
-		return true
-	}
-
-	return false
-}
-
-// SetInherited gets a reference to the given bool and assigns it to the Inherited field.
-func (o *IdpAdapterAttributeContract) SetInherited(v bool) {
-	o.Inherited = &v
-}
-
 func (o IdpAdapterAttributeContract) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -220,9 +186,6 @@ func (o IdpAdapterAttributeContract) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.MaskOgnlValues) {
 		toSerialize["maskOgnlValues"] = o.MaskOgnlValues
-	}
-	if !IsNil(o.Inherited) {
-		toSerialize["inherited"] = o.Inherited
 	}
 	return toSerialize, nil
 }

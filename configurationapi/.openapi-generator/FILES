@@ -238,6 +238,7 @@ docs/DataStoreAggregation.md
 docs/DataStoreAttribute.md
 docs/DataStoreConfig.md
 docs/DataStoreRepository.md
+docs/DataStoreRepositoryAggregation.md
 docs/DataStores.md
 docs/DataStoresAPI.md
 docs/DateLocalIdentityField.md
@@ -318,6 +319,7 @@ docs/IdpWsTrustAttribute.md
 docs/IdpWsTrustAttributeContract.md
 docs/InboundBackChannelAuth.md
 docs/InboundProvisioningUserRepository.md
+docs/InboundProvisioningUserRepositoryAggregation.md
 docs/IncomingProxySettings.md
 docs/IncomingProxySettingsAPI.md
 docs/IssuanceCriteria.md
@@ -746,6 +748,7 @@ model_data_store_aggregation.go
 model_data_store_attribute.go
 model_data_store_config.go
 model_data_store_repository.go
+model_data_store_repository_aggregation.go
 model_data_stores.go
 model_date_local_identity_field.go
 model_decryption_keys.go
@@ -816,6 +819,7 @@ model_idp_ws_trust_attribute.go
 model_idp_ws_trust_attribute_contract.go
 model_inbound_back_channel_auth.go
 model_inbound_provisioning_user_repository.go
+model_inbound_provisioning_user_repository_aggregation.go
 model_incoming_proxy_settings.go
 model_issuance_criteria.go
 model_issuer.go

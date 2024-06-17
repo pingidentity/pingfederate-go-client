@@ -23,8 +23,6 @@ type SpAdapterTargetApplicationInfo struct {
 	ApplicationName *string `json:"applicationName,omitempty" tfsdk:"application_name"`
 	// The application icon URL.
 	ApplicationIconUrl *string `json:"applicationIconUrl,omitempty" tfsdk:"application_icon_url"`
-	// Specifies Whether target application information is inherited from its parent instance. If true, the rest of the properties in this model become read-only. The default value is false.
-	Inherited *bool `json:"inherited,omitempty" tfsdk:"inherited"`
 }
 
 // NewSpAdapterTargetApplicationInfo instantiates a new SpAdapterTargetApplicationInfo object
@@ -108,38 +106,6 @@ func (o *SpAdapterTargetApplicationInfo) SetApplicationIconUrl(v string) {
 	o.ApplicationIconUrl = &v
 }
 
-// GetInherited returns the Inherited field value if set, zero value otherwise.
-func (o *SpAdapterTargetApplicationInfo) GetInherited() bool {
-	if o == nil || IsNil(o.Inherited) {
-		var ret bool
-		return ret
-	}
-	return *o.Inherited
-}
-
-// GetInheritedOk returns a tuple with the Inherited field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SpAdapterTargetApplicationInfo) GetInheritedOk() (*bool, bool) {
-	if o == nil || IsNil(o.Inherited) {
-		return nil, false
-	}
-	return o.Inherited, true
-}
-
-// HasInherited returns a boolean if a field has been set.
-func (o *SpAdapterTargetApplicationInfo) HasInherited() bool {
-	if o != nil && !IsNil(o.Inherited) {
-		return true
-	}
-
-	return false
-}
-
-// SetInherited gets a reference to the given bool and assigns it to the Inherited field.
-func (o *SpAdapterTargetApplicationInfo) SetInherited(v bool) {
-	o.Inherited = &v
-}
-
 func (o SpAdapterTargetApplicationInfo) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -155,9 +121,6 @@ func (o SpAdapterTargetApplicationInfo) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.ApplicationIconUrl) {
 		toSerialize["applicationIconUrl"] = o.ApplicationIconUrl
-	}
-	if !IsNil(o.Inherited) {
-		toSerialize["inherited"] = o.Inherited
 	}
 	return toSerialize, nil
 }

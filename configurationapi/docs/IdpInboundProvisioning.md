@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **GroupSupport** | **bool** | Specify support for provisioning of groups. | 
-**UserRepository** | [**InboundProvisioningUserRepository**](InboundProvisioningUserRepository.md) |  | 
+**UserRepository** | [**InboundProvisioningUserRepositoryAggregation**](InboundProvisioningUserRepositoryAggregation.md) |  | 
 **CustomSchema** | [**Schema**](Schema.md) |  | 
 **Users** | [**Users**](Users.md) |  | 
 **Groups** | [**Groups**](Groups.md) |  | 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewIdpInboundProvisioning
 
-`func NewIdpInboundProvisioning(groupSupport bool, userRepository InboundProvisioningUserRepository, customSchema Schema, users Users, groups Groups, ) *IdpInboundProvisioning`
+`func NewIdpInboundProvisioning(groupSupport bool, userRepository InboundProvisioningUserRepositoryAggregation, customSchema Schema, users Users, groups Groups, ) *IdpInboundProvisioning`
 
 NewIdpInboundProvisioning instantiates a new IdpInboundProvisioning object
 This constructor will assign default values to properties that have it defined,
@@ -52,20 +52,20 @@ SetGroupSupport sets GroupSupport field to given value.
 
 ### GetUserRepository
 
-`func (o *IdpInboundProvisioning) GetUserRepository() InboundProvisioningUserRepository`
+`func (o *IdpInboundProvisioning) GetUserRepository() InboundProvisioningUserRepositoryAggregation`
 
 GetUserRepository returns the UserRepository field if non-nil, zero value otherwise.
 
 ### GetUserRepositoryOk
 
-`func (o *IdpInboundProvisioning) GetUserRepositoryOk() (*InboundProvisioningUserRepository, bool)`
+`func (o *IdpInboundProvisioning) GetUserRepositoryOk() (*InboundProvisioningUserRepositoryAggregation, bool)`
 
 GetUserRepositoryOk returns a tuple with the UserRepository field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserRepository
 
-`func (o *IdpInboundProvisioning) SetUserRepository(v InboundProvisioningUserRepository)`
+`func (o *IdpInboundProvisioning) SetUserRepository(v InboundProvisioningUserRepositoryAggregation)`
 
 SetUserRepository sets UserRepository field to given value.
 
