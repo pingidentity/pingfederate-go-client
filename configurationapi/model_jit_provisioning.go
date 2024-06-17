@@ -19,8 +19,8 @@ var _ MappedNullable = &JitProvisioning{}
 
 // JitProvisioning The settings used to specify how and when to provision user accounts.
 type JitProvisioning struct {
-	UserAttributes JitProvisioningUserAttributes `json:"userAttributes" tfsdk:"user_attributes"`
-	UserRepository DataStoreRepository           `json:"userRepository" tfsdk:"user_repository"`
+	UserAttributes JitProvisioningUserAttributes  `json:"userAttributes" tfsdk:"user_attributes"`
+	UserRepository DataStoreRepositoryAggregation `json:"userRepository" tfsdk:"user_repository"`
 	// Specify when provisioning occurs during assertion processing. The default is 'NEW_USER_ONLY'.
 	EventTrigger *string `json:"eventTrigger,omitempty" tfsdk:"event_trigger"`
 	// Specify behavior when provisioning request fails. The default is 'CONTINUE_SSO'.
@@ -31,7 +31,7 @@ type JitProvisioning struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewJitProvisioning(userAttributes JitProvisioningUserAttributes, userRepository DataStoreRepository) *JitProvisioning {
+func NewJitProvisioning(userAttributes JitProvisioningUserAttributes, userRepository DataStoreRepositoryAggregation) *JitProvisioning {
 	this := JitProvisioning{}
 	this.UserAttributes = userAttributes
 	this.UserRepository = userRepository
@@ -71,9 +71,9 @@ func (o *JitProvisioning) SetUserAttributes(v JitProvisioningUserAttributes) {
 }
 
 // GetUserRepository returns the UserRepository field value
-func (o *JitProvisioning) GetUserRepository() DataStoreRepository {
+func (o *JitProvisioning) GetUserRepository() DataStoreRepositoryAggregation {
 	if o == nil {
-		var ret DataStoreRepository
+		var ret DataStoreRepositoryAggregation
 		return ret
 	}
 
@@ -82,7 +82,7 @@ func (o *JitProvisioning) GetUserRepository() DataStoreRepository {
 
 // GetUserRepositoryOk returns a tuple with the UserRepository field value
 // and a boolean to check if the value has been set.
-func (o *JitProvisioning) GetUserRepositoryOk() (*DataStoreRepository, bool) {
+func (o *JitProvisioning) GetUserRepositoryOk() (*DataStoreRepositoryAggregation, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -90,7 +90,7 @@ func (o *JitProvisioning) GetUserRepositoryOk() (*DataStoreRepository, bool) {
 }
 
 // SetUserRepository sets field value
-func (o *JitProvisioning) SetUserRepository(v DataStoreRepository) {
+func (o *JitProvisioning) SetUserRepository(v DataStoreRepositoryAggregation) {
 	o.UserRepository = v
 }
 

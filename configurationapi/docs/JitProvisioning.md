@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **UserAttributes** | [**JitProvisioningUserAttributes**](JitProvisioningUserAttributes.md) |  | 
-**UserRepository** | [**DataStoreRepository**](DataStoreRepository.md) |  | 
+**UserRepository** | [**DataStoreRepositoryAggregation**](DataStoreRepositoryAggregation.md) |  | 
 **EventTrigger** | Pointer to **string** | Specify when provisioning occurs during assertion processing. The default is &#39;NEW_USER_ONLY&#39;. | [optional] 
 **ErrorHandling** | Pointer to **string** | Specify behavior when provisioning request fails. The default is &#39;CONTINUE_SSO&#39;. | [optional] 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewJitProvisioning
 
-`func NewJitProvisioning(userAttributes JitProvisioningUserAttributes, userRepository DataStoreRepository, ) *JitProvisioning`
+`func NewJitProvisioning(userAttributes JitProvisioningUserAttributes, userRepository DataStoreRepositoryAggregation, ) *JitProvisioning`
 
 NewJitProvisioning instantiates a new JitProvisioning object
 This constructor will assign default values to properties that have it defined,
@@ -50,20 +50,20 @@ SetUserAttributes sets UserAttributes field to given value.
 
 ### GetUserRepository
 
-`func (o *JitProvisioning) GetUserRepository() DataStoreRepository`
+`func (o *JitProvisioning) GetUserRepository() DataStoreRepositoryAggregation`
 
 GetUserRepository returns the UserRepository field if non-nil, zero value otherwise.
 
 ### GetUserRepositoryOk
 
-`func (o *JitProvisioning) GetUserRepositoryOk() (*DataStoreRepository, bool)`
+`func (o *JitProvisioning) GetUserRepositoryOk() (*DataStoreRepositoryAggregation, bool)`
 
 GetUserRepositoryOk returns a tuple with the UserRepository field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserRepository
 
-`func (o *JitProvisioning) SetUserRepository(v DataStoreRepository)`
+`func (o *JitProvisioning) SetUserRepository(v DataStoreRepositoryAggregation)`
 
 SetUserRepository sets UserRepository field to given value.
 

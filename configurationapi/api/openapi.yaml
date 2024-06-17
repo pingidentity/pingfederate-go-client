@@ -14838,11 +14838,6 @@ components:
           items:
             $ref: '#/components/schemas/AccessTokenAttribute'
           type: array
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
         defaultSubjectAttribute:
           description: Default subject attribute to use for audit logging when validating
             the access token. Blank value means to use USER_KEY attribute value after
@@ -14884,12 +14879,6 @@ components:
     AtmAccessControlSettings:
       description: Access control settings for an access token management plugin instance.
       properties:
-        inherited:
-          description: "If this token manager has a parent, this flag determines whether\
-            \ access control settings are inherited from the parent. When set to true,\
-            \ the other fields in this model become read-only. The default value is\
-            \ false."
-          type: boolean
         restrictClients:
           description: "Determines whether access to this token manager is restricted\
             \ to specific OAuth clients. If false, the 'allowedClients' field is ignored.\
@@ -14905,12 +14894,6 @@ components:
     AtmSelectionSettings:
       description: Selection settings for an access token management plugin instance.
       properties:
-        inherited:
-          description: "If this token manager has a parent, this flag determines whether\
-            \ selection settings, such as resource URI's, are inherited from the parent.\
-            \ When set to true, the other fields in this model become read-only. The\
-            \ default value is false."
-          type: boolean
         resourceUris:
           description: "The list of base resource URI's which map to this token manager.\
             \ A resource URI, specified via the 'aud' parameter, can be used to select\
@@ -15088,7 +15071,6 @@ components:
     ConfigField:
       description: A plugin configuration field value.
       example:
-        inherited: true
         encryptedValue: encryptedValue
         name: name
         value: value
@@ -15107,11 +15089,6 @@ components:
             \ If you do not want to update the stored value, this attribute should\
             \ be passed back unchanged."
           type: string
-        inherited:
-          description: "Whether this field is inherited from its parent instance.\
-            \ If true, the value/encrypted value properties become read-only. The\
-            \ default value is false."
-          type: boolean
       required:
       - name
       type: object
@@ -15120,12 +15097,10 @@ components:
       example:
         defaultRow: true
         fields:
-        - inherited: true
-          encryptedValue: encryptedValue
+        - encryptedValue: encryptedValue
           name: name
           value: value
-        - inherited: true
-          encryptedValue: encryptedValue
+        - encryptedValue: encryptedValue
           name: name
           value: value
       properties:
@@ -15143,27 +15118,22 @@ components:
     ConfigTable:
       description: A plugin configuration table populated with values.
       example:
-        inherited: true
         name: name
         rows:
         - defaultRow: true
           fields:
-          - inherited: true
-            encryptedValue: encryptedValue
+          - encryptedValue: encryptedValue
             name: name
             value: value
-          - inherited: true
-            encryptedValue: encryptedValue
+          - encryptedValue: encryptedValue
             name: name
             value: value
         - defaultRow: true
           fields:
-          - inherited: true
-            encryptedValue: encryptedValue
+          - encryptedValue: encryptedValue
             name: name
             value: value
-          - inherited: true
-            encryptedValue: encryptedValue
+          - encryptedValue: encryptedValue
             name: name
             value: value
       properties:
@@ -15175,10 +15145,6 @@ components:
           items:
             $ref: '#/components/schemas/ConfigRow'
           type: array
-        inherited:
-          description: "Whether this table is inherited from its parent instance.\
-            \ If true, the rows become read-only. The default value is false."
-          type: boolean
       required:
       - name
       type: object
@@ -15281,11 +15247,6 @@ components:
           description: Whether or not all OGNL expressions used to fulfill an outgoing
             assertion contract should be masked in the logs. Defaults to false.
           type: boolean
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
       required:
       - coreAttributes
       type: object
@@ -15305,11 +15266,6 @@ components:
           type: object
         issuanceCriteria:
           $ref: '#/components/schemas/IssuanceCriteria'
-        inherited:
-          description: "Whether this attribute mapping is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
       required:
       - attributeContractFulfillment
       type: object
@@ -15498,69 +15454,52 @@ components:
           items:
             $ref: '#/components/schemas/PasswordCredentialValidatorAttribute'
           type: array
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
       type: object
     PluginConfiguration:
       description: Configuration settings for a plugin instance.
       example:
         tables:
-        - inherited: true
-          name: name
+        - name: name
           rows:
           - defaultRow: true
             fields:
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
           - defaultRow: true
             fields:
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
-        - inherited: true
-          name: name
+        - name: name
           rows:
           - defaultRow: true
             fields:
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
           - defaultRow: true
             fields:
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
         fields:
-        - inherited: true
-          encryptedValue: encryptedValue
+        - encryptedValue: encryptedValue
           name: name
           value: value
-        - inherited: true
-          encryptedValue: encryptedValue
+        - encryptedValue: encryptedValue
           name: name
           value: value
       properties:
@@ -15614,12 +15553,6 @@ components:
       description: Session validation settings for an access token management plugin
         instance.
       properties:
-        inherited:
-          description: "If this token manager has a parent, this flag determines whether\
-            \ session validation settings, such as checkValidAuthnSession, are inherited\
-            \ from the parent. When set to true, the other fields in this model become\
-            \ read-only. The default value is false."
-          type: boolean
         includeSessionId:
           description: "Include the session identifier in the access token. Note that\
             \ if any of the session validation features is enabled, the session identifier\
@@ -15773,11 +15706,6 @@ components:
           items:
             $ref: '#/components/schemas/SpAdapterAttribute'
           type: array
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
       type: object
     SpAdapterTargetApplicationInfo:
       description: Target Application Information exposed by an SP adapter.
@@ -15788,11 +15716,6 @@ components:
         applicationIconUrl:
           description: The application icon URL.
           type: string
-        inherited:
-          description: "Specifies Whether target application information is inherited\
-            \ from its parent instance. If true, the rest of the properties in this\
-            \ model become read-only. The default value is false."
-          type: boolean
       type: object
     TokenGenerator:
       allOf:
@@ -15827,11 +15750,6 @@ components:
           items:
             $ref: '#/components/schemas/TokenGeneratorAttribute'
           type: array
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
       required:
       - coreAttributes
       type: object
@@ -15875,11 +15793,6 @@ components:
         maskOgnlValues:
           description: Whether or not all OGNL expressions used to fulfill an outgoing
             assertion contract should be masked in the logs. Defaults to false.
-          type: boolean
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
           type: boolean
       required:
       - coreAttributes
@@ -18054,59 +17967,47 @@ components:
       example:
         configuration:
           tables:
-          - inherited: true
-            name: name
+          - name: name
             rows:
             - defaultRow: true
               fields:
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
             - defaultRow: true
               fields:
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
-          - inherited: true
-            name: name
+          - name: name
             rows:
             - defaultRow: true
               fields:
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
             - defaultRow: true
               fields:
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
           fields:
-          - inherited: true
-            encryptedValue: encryptedValue
+          - encryptedValue: encryptedValue
             name: name
             value: value
-          - inherited: true
-            encryptedValue: encryptedValue
+          - encryptedValue: encryptedValue
             name: name
             value: value
         name: name
@@ -18150,59 +18051,47 @@ components:
         items:
         - configuration:
             tables:
-            - inherited: true
-              name: name
+            - name: name
               rows:
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-            - inherited: true
-              name: name
+            - name: name
               rows:
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
             fields:
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
           name: name
@@ -18214,59 +18103,47 @@ components:
             id: id
         - configuration:
             tables:
-            - inherited: true
-              name: name
+            - name: name
               rows:
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-            - inherited: true
-              name: name
+            - name: name
               rows:
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
             fields:
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
           name: name
@@ -19794,6 +19671,15 @@ components:
         connection:
           $ref: '#/components/schemas/Connection'
       type: object
+    DataStoreRepositoryAggregation:
+      discriminator:
+        mapping:
+          JDBC: '#/components/schemas/JdbcDataStoreRepository'
+          LDAP: '#/components/schemas/LdapDataStoreRepository'
+        propertyName: type
+      oneOf:
+      - $ref: '#/components/schemas/JdbcDataStoreRepository'
+      - $ref: '#/components/schemas/LdapDataStoreRepository'
     DataStoreRepository:
       description: Jit Provisioning user repository data store.
       discriminator:
@@ -19897,6 +19783,15 @@ components:
       - readGroups
       - writeGroups
       type: object
+    InboundProvisioningUserRepositoryAggregation:
+      discriminator:
+        mapping:
+          IDENTITY_STORE: '#/components/schemas/IdentityStoreInboundProvisioningUserRepository'
+          LDAP: '#/components/schemas/LdapInboundProvisioningUserRepository'
+        propertyName: type
+      oneOf:
+      - $ref: '#/components/schemas/IdentityStoreInboundProvisioningUserRepository'
+      - $ref: '#/components/schemas/LdapInboundProvisioningUserRepository'
     IdentityStoreInboundProvisioningUserRepository:
       allOf:
       - $ref: '#/components/schemas/InboundProvisioningUserRepository'
@@ -20172,7 +20067,7 @@ components:
           description: Specify support for provisioning of groups.
           type: boolean
         userRepository:
-          $ref: '#/components/schemas/InboundProvisioningUserRepository'
+          $ref: '#/components/schemas/InboundProvisioningUserRepositoryAggregation'
         customSchema:
           $ref: '#/components/schemas/Schema'
         users:
@@ -20411,7 +20306,7 @@ components:
         userAttributes:
           $ref: '#/components/schemas/JitProvisioningUserAttributes'
         userRepository:
-          $ref: '#/components/schemas/DataStoreRepository'
+          $ref: '#/components/schemas/DataStoreRepositoryAggregation'
         eventTrigger:
           description: Specify when provisioning occurs during assertion processing.
             The default is 'NEW_USER_ONLY'.
@@ -23253,7 +23148,6 @@ components:
       description: An identity store provisioner instance.
       example:
         groupAttributeContract:
-          inherited: true
           coreAttributes:
           - name: name
           - name: name
@@ -23262,59 +23156,47 @@ components:
           - name: name
         configuration:
           tables:
-          - inherited: true
-            name: name
+          - name: name
             rows:
             - defaultRow: true
               fields:
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
             - defaultRow: true
               fields:
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
-          - inherited: true
-            name: name
+          - name: name
             rows:
             - defaultRow: true
               fields:
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
             - defaultRow: true
               fields:
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
           fields:
-          - inherited: true
-            encryptedValue: encryptedValue
+          - encryptedValue: encryptedValue
             name: name
             value: value
-          - inherited: true
-            encryptedValue: encryptedValue
+          - encryptedValue: encryptedValue
             name: name
             value: value
         name: name
@@ -23323,7 +23205,6 @@ components:
         pluginDescriptorRef:
           id: id
         attributeContract:
-          inherited: true
           coreAttributes:
           - name: name
           - name: name
@@ -23367,7 +23248,6 @@ components:
     IdentityStoreProvisionerAttributeContract:
       description: A set of attributes exposed by an identity store provisioner.
       example:
-        inherited: true
         coreAttributes:
         - name: name
         - name: name
@@ -23388,18 +23268,12 @@ components:
           items:
             $ref: '#/components/schemas/Attribute'
           type: array
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
       required:
       - coreAttributes
       type: object
     IdentityStoreProvisionerGroupAttributeContract:
       description: A set of group attributes exposed by an identity store provisioner.
       example:
-        inherited: true
         coreAttributes:
         - name: name
         - name: name
@@ -23421,11 +23295,6 @@ components:
           items:
             $ref: '#/components/schemas/GroupAttribute'
           type: array
-        inherited:
-          description: "Whether this group attribute contract is inherited from its\
-            \ parent instance. If true, the rest of the properties in this model become\
-            \ read-only. The default value is false."
-          type: boolean
       required:
       - coreAttributes
       type: object
@@ -23434,7 +23303,6 @@ components:
       example:
         items:
         - groupAttributeContract:
-            inherited: true
             coreAttributes:
             - name: name
             - name: name
@@ -23443,59 +23311,47 @@ components:
             - name: name
           configuration:
             tables:
-            - inherited: true
-              name: name
+            - name: name
               rows:
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-            - inherited: true
-              name: name
+            - name: name
               rows:
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
             fields:
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
           name: name
@@ -23504,7 +23360,6 @@ components:
           pluginDescriptorRef:
             id: id
           attributeContract:
-            inherited: true
             coreAttributes:
             - name: name
             - name: name
@@ -23514,7 +23369,6 @@ components:
           parentRef:
             id: id
         - groupAttributeContract:
-            inherited: true
             coreAttributes:
             - name: name
             - name: name
@@ -23523,59 +23377,47 @@ components:
             - name: name
           configuration:
             tables:
-            - inherited: true
-              name: name
+            - name: name
               rows:
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-            - inherited: true
-              name: name
+            - name: name
               rows:
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
             fields:
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
           name: name
@@ -23584,7 +23426,6 @@ components:
           pluginDescriptorRef:
             id: id
           attributeContract:
-            inherited: true
             coreAttributes:
             - name: name
             - name: name

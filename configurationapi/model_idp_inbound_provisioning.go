@@ -20,11 +20,11 @@ var _ MappedNullable = &IdpInboundProvisioning{}
 // IdpInboundProvisioning SCIM Inbound Provisioning specifies how and when to provision user accounts and groups.
 type IdpInboundProvisioning struct {
 	// Specify support for provisioning of groups.
-	GroupSupport   bool                              `json:"groupSupport" tfsdk:"group_support"`
-	UserRepository InboundProvisioningUserRepository `json:"userRepository" tfsdk:"user_repository"`
-	CustomSchema   Schema                            `json:"customSchema" tfsdk:"custom_schema"`
-	Users          Users                             `json:"users" tfsdk:"users"`
-	Groups         Groups                            `json:"groups" tfsdk:"groups"`
+	GroupSupport   bool                                         `json:"groupSupport" tfsdk:"group_support"`
+	UserRepository InboundProvisioningUserRepositoryAggregation `json:"userRepository" tfsdk:"user_repository"`
+	CustomSchema   Schema                                       `json:"customSchema" tfsdk:"custom_schema"`
+	Users          Users                                        `json:"users" tfsdk:"users"`
+	Groups         Groups                                       `json:"groups" tfsdk:"groups"`
 	// Specify behavior of how SCIM DELETE requests are handled.
 	ActionOnDelete *string `json:"actionOnDelete,omitempty" tfsdk:"action_on_delete"`
 }
@@ -33,7 +33,7 @@ type IdpInboundProvisioning struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIdpInboundProvisioning(groupSupport bool, userRepository InboundProvisioningUserRepository, customSchema Schema, users Users, groups Groups) *IdpInboundProvisioning {
+func NewIdpInboundProvisioning(groupSupport bool, userRepository InboundProvisioningUserRepositoryAggregation, customSchema Schema, users Users, groups Groups) *IdpInboundProvisioning {
 	this := IdpInboundProvisioning{}
 	this.GroupSupport = groupSupport
 	this.UserRepository = userRepository
@@ -76,9 +76,9 @@ func (o *IdpInboundProvisioning) SetGroupSupport(v bool) {
 }
 
 // GetUserRepository returns the UserRepository field value
-func (o *IdpInboundProvisioning) GetUserRepository() InboundProvisioningUserRepository {
+func (o *IdpInboundProvisioning) GetUserRepository() InboundProvisioningUserRepositoryAggregation {
 	if o == nil {
-		var ret InboundProvisioningUserRepository
+		var ret InboundProvisioningUserRepositoryAggregation
 		return ret
 	}
 
@@ -87,7 +87,7 @@ func (o *IdpInboundProvisioning) GetUserRepository() InboundProvisioningUserRepo
 
 // GetUserRepositoryOk returns a tuple with the UserRepository field value
 // and a boolean to check if the value has been set.
-func (o *IdpInboundProvisioning) GetUserRepositoryOk() (*InboundProvisioningUserRepository, bool) {
+func (o *IdpInboundProvisioning) GetUserRepositoryOk() (*InboundProvisioningUserRepositoryAggregation, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -95,7 +95,7 @@ func (o *IdpInboundProvisioning) GetUserRepositoryOk() (*InboundProvisioningUser
 }
 
 // SetUserRepository sets field value
-func (o *IdpInboundProvisioning) SetUserRepository(v InboundProvisioningUserRepository) {
+func (o *IdpInboundProvisioning) SetUserRepository(v InboundProvisioningUserRepositoryAggregation) {
 	o.UserRepository = v
 }
 
