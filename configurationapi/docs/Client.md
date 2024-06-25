@@ -19,7 +19,8 @@ Name | Type | Description | Notes
 **ValidateUsingAllEligibleAtms** | Pointer to **bool** | Validates token using all eligible access token managers for the client. This setting is ignored if &#39;restrictToDefaultAccessTokenManager&#39; is set to true. | [optional] 
 **RefreshRolling** | Pointer to **string** | Use ROLL or DONT_ROLL to override the Roll Refresh Token Values setting on the Authorization Server Settings. SERVER_DEFAULT will default to the Roll Refresh Token Values setting on the Authorization Server Setting screen. Defaults to SERVER_DEFAULT. | [optional] 
 **RefreshTokenRollingIntervalType** | Pointer to **string** | Use OVERRIDE_SERVER_DEFAULT to override the Refresh Token Rolling Interval value on the Authorization Server Settings. SERVER_DEFAULT will default to the Refresh Token Rolling Interval value on the Authorization Server Setting. Defaults to SERVER_DEFAULT. | [optional] 
-**RefreshTokenRollingInterval** | Pointer to **int64** | The minimum interval to roll refresh tokens, in hours. This value will override the Refresh Token Rolling Interval Value on the Authorization Server Settings. | [optional] 
+**RefreshTokenRollingInterval** | Pointer to **int64** | The minimum interval to roll refresh tokens. This value will override the Refresh Token Rolling Interval Value on the Authorization Server Settings. | [optional] 
+**RefreshTokenRollingIntervalTimeUnit** | Pointer to **string** | The refresh token rolling interval time unit. Defaults to HOURS. | [optional] 
 **PersistentGrantExpirationType** | Pointer to **string** | Allows an administrator to override the Persistent Grant Lifetime set globally for the OAuth AS. Defaults to SERVER_DEFAULT. | [optional] 
 **PersistentGrantExpirationTime** | Pointer to **int64** | The persistent grant expiration time. -1 indicates an indefinite amount of time. | [optional] 
 **PersistentGrantExpirationTimeUnit** | Pointer to **string** | The persistent grant expiration time unit. | [optional] 
@@ -29,6 +30,7 @@ Name | Type | Description | Notes
 **PersistentGrantReuseType** | Pointer to **string** | Allows and administrator to override the Reuse Existing Persistent Access Grants for Grant Types set globally for OAuth AS. Defaults to SERVER_DEFAULT. | [optional] 
 **PersistentGrantReuseGrantTypes** | Pointer to **[]string** | The grant types that the OAuth AS can reuse rather than creating a new grant for each request. This value will override the Reuse Existing Persistent Access Grants for Grant Types on the Authorization Server Settings. Only &#39;IMPLICIT&#39; or &#39;AUTHORIZATION_CODE&#39; or &#39;RESOURCE_OWNER_CREDENTIALS&#39; are valid grant types. | [optional] 
 **AllowAuthenticationApiInit** | Pointer to **bool** | Set to true to allow this client to initiate the authentication API redirectless flow. | [optional] 
+**EnableCookielessAuthenticationApi** | Pointer to **bool** | Set to true to allow the authentication API redirectless flow to function without requiring any cookies. | [optional] 
 **BypassApprovalPage** | Pointer to **bool** | Use this setting, for example, when you want to deploy a trusted application and authenticate end users via an IdP adapter or IdP connection. | [optional] 
 **RestrictScopes** | Pointer to **bool** | Restricts this client&#39;s access to specific scopes. | [optional] 
 **RestrictedScopes** | Pointer to **[]string** | The scopes available for this client. | [optional] 
@@ -69,6 +71,8 @@ Name | Type | Description | Notes
 **JwtSecuredAuthorizationResponseModeEncryptionAlgorithm** | Pointer to **string** | The JSON Web Encryption [JWE] encryption algorithm used to encrypt the content-encryption key of the JWT Secured Authorization Response.&lt;br&gt;DIR - Direct Encryption with symmetric key&lt;br&gt;A128KW - AES-128 Key Wrap&lt;br&gt;A192KW - AES-192 Key Wrap&lt;br&gt;A256KW - AES-256 Key Wrap&lt;br&gt;A128GCMKW - AES-GCM-128 key encryption&lt;br&gt;A192GCMKW - AES-GCM-192 key encryption&lt;br&gt;A256GCMKW - AES-GCM-256 key encryption&lt;br&gt;ECDH_ES - ECDH-ES&lt;br&gt;ECDH_ES_A128KW - ECDH-ES with AES-128 Key Wrap&lt;br&gt;ECDH_ES_A192KW - ECDH-ES with AES-192 Key Wrap&lt;br&gt;ECDH_ES_A256KW - ECDH-ES with AES-256 Key Wrap&lt;br&gt;RSA_OAEP - RSAES OAEP&lt;br&gt;RSA_OAEP_256 - RSAES OAEP using SHA-256 and MGF1 with SHA-256 | [optional] 
 **JwtSecuredAuthorizationResponseModeContentEncryptionAlgorithm** | Pointer to **string** | The JSON Web Encryption [JWE] content-encryption algorithm for the JWT Secured Authorization Response.&lt;br&gt;AES_128_CBC_HMAC_SHA_256 - Composite AES-CBC-128 HMAC-SHA-256&lt;br&gt;AES_192_CBC_HMAC_SHA_384 - Composite AES-CBC-192 HMAC-SHA-384&lt;br&gt;AES_256_CBC_HMAC_SHA_512 - Composite AES-CBC-256 HMAC-SHA-512&lt;br&gt;AES_128_GCM - AES-GCM-128&lt;br&gt;AES_192_GCM - AES-GCM-192&lt;br&gt;AES_256_GCM - AES-GCM-256 | [optional] 
 **RequireDpop** | Pointer to **bool** | Determines whether Demonstrating Proof-of-Possession (DPoP) is required for this client. | [optional] 
+**RequireOfflineAccessScopeToIssueRefreshTokens** | Pointer to **string** | Determines whether offline_access scope is required to issue refresh tokens by this client or not. &#39;SERVER_DEFAULT&#39; is the default value.  | [optional] 
+**OfflineAccessRequireConsentPrompt** | Pointer to **string** | Determines whether offline_access requires the prompt parameter value to be set to &#39;consent&#39; by this client or not. The value will be reset to default if the &#39;requireOfflineAccessScopeToIssueRefreshTokens&#39; attribute is set to &#39;SERVER_DEFAULT&#39; or &#39;false&#39;. &#39;SERVER_DEFAULT&#39; is the default value. | [optional] 
 
 ## Methods
 
@@ -474,6 +478,31 @@ SetRefreshTokenRollingInterval sets RefreshTokenRollingInterval field to given v
 
 HasRefreshTokenRollingInterval returns a boolean if a field has been set.
 
+### GetRefreshTokenRollingIntervalTimeUnit
+
+`func (o *Client) GetRefreshTokenRollingIntervalTimeUnit() string`
+
+GetRefreshTokenRollingIntervalTimeUnit returns the RefreshTokenRollingIntervalTimeUnit field if non-nil, zero value otherwise.
+
+### GetRefreshTokenRollingIntervalTimeUnitOk
+
+`func (o *Client) GetRefreshTokenRollingIntervalTimeUnitOk() (*string, bool)`
+
+GetRefreshTokenRollingIntervalTimeUnitOk returns a tuple with the RefreshTokenRollingIntervalTimeUnit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRefreshTokenRollingIntervalTimeUnit
+
+`func (o *Client) SetRefreshTokenRollingIntervalTimeUnit(v string)`
+
+SetRefreshTokenRollingIntervalTimeUnit sets RefreshTokenRollingIntervalTimeUnit field to given value.
+
+### HasRefreshTokenRollingIntervalTimeUnit
+
+`func (o *Client) HasRefreshTokenRollingIntervalTimeUnit() bool`
+
+HasRefreshTokenRollingIntervalTimeUnit returns a boolean if a field has been set.
+
 ### GetPersistentGrantExpirationType
 
 `func (o *Client) GetPersistentGrantExpirationType() string`
@@ -698,6 +727,31 @@ SetAllowAuthenticationApiInit sets AllowAuthenticationApiInit field to given val
 `func (o *Client) HasAllowAuthenticationApiInit() bool`
 
 HasAllowAuthenticationApiInit returns a boolean if a field has been set.
+
+### GetEnableCookielessAuthenticationApi
+
+`func (o *Client) GetEnableCookielessAuthenticationApi() bool`
+
+GetEnableCookielessAuthenticationApi returns the EnableCookielessAuthenticationApi field if non-nil, zero value otherwise.
+
+### GetEnableCookielessAuthenticationApiOk
+
+`func (o *Client) GetEnableCookielessAuthenticationApiOk() (*bool, bool)`
+
+GetEnableCookielessAuthenticationApiOk returns a tuple with the EnableCookielessAuthenticationApi field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableCookielessAuthenticationApi
+
+`func (o *Client) SetEnableCookielessAuthenticationApi(v bool)`
+
+SetEnableCookielessAuthenticationApi sets EnableCookielessAuthenticationApi field to given value.
+
+### HasEnableCookielessAuthenticationApi
+
+`func (o *Client) HasEnableCookielessAuthenticationApi() bool`
+
+HasEnableCookielessAuthenticationApi returns a boolean if a field has been set.
 
 ### GetBypassApprovalPage
 
@@ -1698,6 +1752,56 @@ SetRequireDpop sets RequireDpop field to given value.
 `func (o *Client) HasRequireDpop() bool`
 
 HasRequireDpop returns a boolean if a field has been set.
+
+### GetRequireOfflineAccessScopeToIssueRefreshTokens
+
+`func (o *Client) GetRequireOfflineAccessScopeToIssueRefreshTokens() string`
+
+GetRequireOfflineAccessScopeToIssueRefreshTokens returns the RequireOfflineAccessScopeToIssueRefreshTokens field if non-nil, zero value otherwise.
+
+### GetRequireOfflineAccessScopeToIssueRefreshTokensOk
+
+`func (o *Client) GetRequireOfflineAccessScopeToIssueRefreshTokensOk() (*string, bool)`
+
+GetRequireOfflineAccessScopeToIssueRefreshTokensOk returns a tuple with the RequireOfflineAccessScopeToIssueRefreshTokens field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequireOfflineAccessScopeToIssueRefreshTokens
+
+`func (o *Client) SetRequireOfflineAccessScopeToIssueRefreshTokens(v string)`
+
+SetRequireOfflineAccessScopeToIssueRefreshTokens sets RequireOfflineAccessScopeToIssueRefreshTokens field to given value.
+
+### HasRequireOfflineAccessScopeToIssueRefreshTokens
+
+`func (o *Client) HasRequireOfflineAccessScopeToIssueRefreshTokens() bool`
+
+HasRequireOfflineAccessScopeToIssueRefreshTokens returns a boolean if a field has been set.
+
+### GetOfflineAccessRequireConsentPrompt
+
+`func (o *Client) GetOfflineAccessRequireConsentPrompt() string`
+
+GetOfflineAccessRequireConsentPrompt returns the OfflineAccessRequireConsentPrompt field if non-nil, zero value otherwise.
+
+### GetOfflineAccessRequireConsentPromptOk
+
+`func (o *Client) GetOfflineAccessRequireConsentPromptOk() (*string, bool)`
+
+GetOfflineAccessRequireConsentPromptOk returns a tuple with the OfflineAccessRequireConsentPrompt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOfflineAccessRequireConsentPrompt
+
+`func (o *Client) SetOfflineAccessRequireConsentPrompt(v string)`
+
+SetOfflineAccessRequireConsentPrompt sets OfflineAccessRequireConsentPrompt field to given value.
+
+### HasOfflineAccessRequireConsentPrompt
+
+`func (o *Client) HasOfflineAccessRequireConsentPrompt() bool`
+
+HasOfflineAccessRequireConsentPrompt returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

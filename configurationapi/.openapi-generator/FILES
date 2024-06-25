@@ -75,8 +75,6 @@ api_version.go
 api_virtual_host_names.go
 client.go
 configuration.go
-docs/ACAPTCHAProviderPluginDescriptor.md
-docs/ACollectionOfCAPTCHAProviderPluginDescriptors.md
 docs/AccessTokenAttribute.md
 docs/AccessTokenAttributeContract.md
 docs/AccessTokenManagementSettings.md
@@ -97,6 +95,8 @@ docs/Actions.md
 docs/AdditionalAllowedEntitiesConfiguration.md
 docs/AdditionalKeySet.md
 docs/AdditionalKeySets.md
+docs/AdminConsoleInfo.md
+docs/AdminNodeRoleServiceInfo.md
 docs/AdministrativeAccount.md
 docs/AdministrativeAccounts.md
 docs/AdministrativeAccountsAPI.md
@@ -168,8 +168,11 @@ docs/BinaryLdapAttributeSettings.md
 docs/BulkAPI.md
 docs/BulkConfig.md
 docs/BulkConfigMetadata.md
+docs/BulkheadAlertNotificationSettings.md
 docs/CSRResponse.md
 docs/CaptchaProvider.md
+docs/CaptchaProviderDescriptor.md
+docs/CaptchaProviderDescriptors.md
 docs/CaptchaProviders.md
 docs/CaptchaProvidersAPI.md
 docs/CaptchaProvidersSettings.md
@@ -469,6 +472,7 @@ docs/RedirectValidationAPI.md
 docs/RedirectValidationLocalSettings.md
 docs/RedirectValidationPartnerSettings.md
 docs/RedirectValidationSettings.md
+docs/RedirectValidationSettingsUriAllowlistEntry.md
 docs/RedirectValidationSettingsWhitelistEntry.md
 docs/RegistrationConfig.md
 docs/RequestPolicies.md
@@ -491,7 +495,9 @@ docs/SaasPluginFieldInfoDescriptor.md
 docs/SaasPluginFieldOption.md
 docs/Schema.md
 docs/SchemaAttribute.md
+docs/ScopeEntries.md
 docs/ScopeEntry.md
+docs/ScopeGroupEntries.md
 docs/ScopeGroupEntry.md
 docs/SecondarySecret.md
 docs/SecretManager.md
@@ -600,8 +606,6 @@ docs/WriteGroups.md
 docs/WriteUsers.md
 docs/WsTrustStsSettings.md
 docs/X509File.md
-model_a_captcha_provider_plugin_descriptor_.go
-model_a_collection_of_captcha_provider_plugin_descriptors_.go
 model_access_token_attribute.go
 model_access_token_attribute_contract.go
 model_access_token_management_settings.go
@@ -622,6 +626,8 @@ model_actions.go
 model_additional_allowed_entities_configuration.go
 model_additional_key_set.go
 model_additional_key_sets.go
+model_admin_console_info.go
+model_admin_node_role_service_info.go
 model_administrative_account.go
 model_administrative_accounts.go
 model_alternative_login_hint_token_issuer.go
@@ -687,7 +693,10 @@ model_base_signing_settings.go
 model_binary_ldap_attribute_settings.go
 model_bulk_config.go
 model_bulk_config_metadata.go
+model_bulkhead_alert_notification_settings.go
 model_captcha_provider.go
+model_captcha_provider_descriptor.go
+model_captcha_provider_descriptors.go
 model_captcha_providers.go
 model_captcha_providers_settings.go
 model_captcha_settings.go
@@ -935,6 +944,7 @@ model_read_users.go
 model_redirect_validation_local_settings.go
 model_redirect_validation_partner_settings.go
 model_redirect_validation_settings.go
+model_redirect_validation_settings_uri_allowlist_entry.go
 model_redirect_validation_settings_whitelist_entry.go
 model_registration_config.go
 model_request_policies.go
@@ -957,7 +967,9 @@ model_saas_plugin_field_option.go
 model_saml20_profile.go
 model_schema.go
 model_schema_attribute.go
+model_scope_entries.go
 model_scope_entry.go
+model_scope_group_entries.go
 model_scope_group_entry.go
 model_secondary_secret.go
 model_secret_manager.go

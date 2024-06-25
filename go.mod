@@ -1,4 +1,4 @@
-module github.com/pingidentity/pingfederate-go-client/v1200
+module github.com/pingidentity/pingfederate-go-client/v1210
 
 go 1.18
 

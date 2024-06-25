@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TrackUserSessionsForLogout** | Pointer to **bool** | Determines whether user sessions are tracked for logout. This property is now available under /oauth/authServerSettings and should be accessed through that resource. | [optional] 
-**RevokeUserSessionOnLogout** | Pointer to **bool** | Determines whether the user&#39;s session is revoked on logout. This property is now available under /session/settings and should be accessed through that resource. | [optional] 
-**SessionRevocationLifetime** | Pointer to **int64** | How long a session revocation is tracked and stored, in minutes. This property is now available under /session/settings and should be accessed through that resource. | [optional] 
+**TrackUserSessionsForLogout** | Pointer to **bool** | (Deprecated) Determines whether user sessions are tracked for logout. This property is now available under /oauth/authServerSettings and should be accessed through that resource. | [optional] 
+**RevokeUserSessionOnLogout** | Pointer to **bool** | (Deprecated) Determines whether the user&#39;s session is revoked on logout. This property is now available under /session/settings and should be accessed through that resource. | [optional] 
+**SessionRevocationLifetime** | Pointer to **int64** | (Deprecated) How long a session revocation is tracked and stored, in minutes. This property is now available under /session/settings and should be accessed through that resource. | [optional] 
 
 ## Methods
 

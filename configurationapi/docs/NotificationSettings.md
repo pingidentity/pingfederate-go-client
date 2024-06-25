@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **ExpiringCertificateAdministrativeConsoleWarningDays** | Pointer to **int64** | Indicates the number of days prior to certificate expiry date, the administrative console warning starts. The default value is 14 days. | [optional] 
 **ExpiredCertificateAdministrativeConsoleWarningDays** | Pointer to **int64** | Indicates the number of days past the certificate expiry date, the administrative console warning ends. The default value is 14 days. | [optional] 
 **ThreadPoolExhaustionNotificationSettings** | Pointer to [**ThreadPoolExhaustionNotificationSettings**](ThreadPoolExhaustionNotificationSettings.md) |  | [optional] 
+**BulkheadAlertNotificationSettings** | Pointer to [**BulkheadAlertNotificationSettings**](BulkheadAlertNotificationSettings.md) |  | [optional] 
 
 ## Methods
 
@@ -231,6 +232,31 @@ SetThreadPoolExhaustionNotificationSettings sets ThreadPoolExhaustionNotificatio
 `func (o *NotificationSettings) HasThreadPoolExhaustionNotificationSettings() bool`
 
 HasThreadPoolExhaustionNotificationSettings returns a boolean if a field has been set.
+
+### GetBulkheadAlertNotificationSettings
+
+`func (o *NotificationSettings) GetBulkheadAlertNotificationSettings() BulkheadAlertNotificationSettings`
+
+GetBulkheadAlertNotificationSettings returns the BulkheadAlertNotificationSettings field if non-nil, zero value otherwise.
+
+### GetBulkheadAlertNotificationSettingsOk
+
+`func (o *NotificationSettings) GetBulkheadAlertNotificationSettingsOk() (*BulkheadAlertNotificationSettings, bool)`
+
+GetBulkheadAlertNotificationSettingsOk returns a tuple with the BulkheadAlertNotificationSettings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBulkheadAlertNotificationSettings
+
+`func (o *NotificationSettings) SetBulkheadAlertNotificationSettings(v BulkheadAlertNotificationSettings)`
+
+SetBulkheadAlertNotificationSettings sets BulkheadAlertNotificationSettings field to given value.
+
+### HasBulkheadAlertNotificationSettings
+
+`func (o *NotificationSettings) HasBulkheadAlertNotificationSettings() bool`
+
+HasBulkheadAlertNotificationSettings returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

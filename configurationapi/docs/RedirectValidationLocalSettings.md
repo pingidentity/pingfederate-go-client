@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **EnableTargetResourceValidationForIdpDiscovery** | Pointer to **bool** | Enable target resource validation for IdP discovery. | [optional] 
 **EnableInErrorResourceValidation** | Pointer to **bool** | Enable validation for error resource. | [optional] 
 **WhiteList** | Pointer to [**[]RedirectValidationSettingsWhitelistEntry**](RedirectValidationSettingsWhitelistEntry.md) | List of URLs that are designated as valid target resources. | [optional] 
+**UriAllowList** | Pointer to [**[]RedirectValidationSettingsUriAllowlistEntry**](RedirectValidationSettingsUriAllowlistEntry.md) | List of URIs that are designated as valid target resources. | [optional] 
 
 ## Methods
 
@@ -153,6 +154,31 @@ SetWhiteList sets WhiteList field to given value.
 `func (o *RedirectValidationLocalSettings) HasWhiteList() bool`
 
 HasWhiteList returns a boolean if a field has been set.
+
+### GetUriAllowList
+
+`func (o *RedirectValidationLocalSettings) GetUriAllowList() []RedirectValidationSettingsUriAllowlistEntry`
+
+GetUriAllowList returns the UriAllowList field if non-nil, zero value otherwise.
+
+### GetUriAllowListOk
+
+`func (o *RedirectValidationLocalSettings) GetUriAllowListOk() (*[]RedirectValidationSettingsUriAllowlistEntry, bool)`
+
+GetUriAllowListOk returns a tuple with the UriAllowList field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUriAllowList
+
+`func (o *RedirectValidationLocalSettings) SetUriAllowList(v []RedirectValidationSettingsUriAllowlistEntry)`
+
+SetUriAllowList sets UriAllowList field to given value.
+
+### HasUriAllowList
+
+`func (o *RedirectValidationLocalSettings) HasUriAllowList() bool`
+
+HasUriAllowList returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

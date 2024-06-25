@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Inherited** | Pointer to **bool** | If this token manager has a parent, this flag determines whether session validation settings, such as checkValidAuthnSession, are inherited from the parent. When set to true, the other fields in this model become read-only. The default value is false. | [optional] 
 **IncludeSessionId** | Pointer to **bool** | Include the session identifier in the access token. Note that if any of the session validation features is enabled, the session identifier will already be included in the access tokens. | [optional] 
 **CheckValidAuthnSession** | Pointer to **bool** | Check for a valid authentication session when validating the access token. | [optional] 
 **CheckSessionRevocationStatus** | Pointer to **bool** | Check the session revocation status when validating the access token. | [optional] 
@@ -27,6 +28,31 @@ will change when the set of required properties is changed
 NewSessionValidationSettingsWithDefaults instantiates a new SessionValidationSettings object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetInherited
+
+`func (o *SessionValidationSettings) GetInherited() bool`
+
+GetInherited returns the Inherited field if non-nil, zero value otherwise.
+
+### GetInheritedOk
+
+`func (o *SessionValidationSettings) GetInheritedOk() (*bool, bool)`
+
+GetInheritedOk returns a tuple with the Inherited field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInherited
+
+`func (o *SessionValidationSettings) SetInherited(v bool)`
+
+SetInherited sets Inherited field to given value.
+
+### HasInherited
+
+`func (o *SessionValidationSettings) HasInherited() bool`
+
+HasInherited returns a boolean if a field has been set.
 
 ### GetIncludeSessionId
 

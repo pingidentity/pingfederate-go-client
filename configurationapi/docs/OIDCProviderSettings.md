@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **AuthorizationEndpoint** | **string** | URL of the OpenID Provider&#39;s OAuth 2.0 Authorization Endpoint. | 
 **PushedAuthorizationRequestEndpoint** | Pointer to **string** | URL of the OpenID Provider&#39;s OAuth 2.0 Pushed Authorization Request Endpoint. | [optional] 
 **LoginType** | **string** | The OpenID Connect login type. These values maps to: &lt;br&gt;  CODE: Authentication using Code Flow &lt;br&gt; POST: Authentication using Form Post &lt;br&gt; POST_AT: Authentication using Form Post with Access Token | 
+**JwtSecuredAuthorizationResponseModeType** | Pointer to **string** | The OpenId Connect JWT Secured Authorization Response Mode (JARM). These values map to: &lt;br&gt;  DISABLED: Authorization responses will not be encoded using JARM. This is the default value. &lt;br&gt;  QUERY_JWT: query.jwt &lt;br&gt; FORM_POST_JWT: form_post.jwt &lt;br&gt;&lt;br&gt; Note: QUERY_JWT must not be used in conjunction with loginType POST or  POST_AT unless the response JWT is encrypted to prevent token leakage in the URL. | [optional] 
 **AuthenticationScheme** | Pointer to **string** | The OpenID Connect Authentication Scheme. This is required for Authentication using Code Flow.  | [optional] 
 **AuthenticationSigningAlgorithm** | Pointer to **string** | The authentication signing algorithm for token endpoint PRIVATE_KEY_JWT or CLIENT_SECRET_JWT authentication. Asymmetric algorithms are allowed for PRIVATE_KEY_JWT and symmetric algorithms are allowed for CLIENT_SECRET_JWT. For RSASSA-PSS signing algorithm, PingFederate must be integrated with a hardware security module (HSM) or Java 11. | [optional] 
 **RequestSigningAlgorithm** | Pointer to **string** | The request signing algorithm. Required only if you wish to use signed requests. Only asymmetric algorithms are allowed. For RSASSA-PSS signing algorithm, PingFederate must be integrated with a hardware security module (HSM) or Java 11. | [optional] 
@@ -126,6 +127,31 @@ and a boolean to check if the value has been set.
 
 SetLoginType sets LoginType field to given value.
 
+
+### GetJwtSecuredAuthorizationResponseModeType
+
+`func (o *OIDCProviderSettings) GetJwtSecuredAuthorizationResponseModeType() string`
+
+GetJwtSecuredAuthorizationResponseModeType returns the JwtSecuredAuthorizationResponseModeType field if non-nil, zero value otherwise.
+
+### GetJwtSecuredAuthorizationResponseModeTypeOk
+
+`func (o *OIDCProviderSettings) GetJwtSecuredAuthorizationResponseModeTypeOk() (*string, bool)`
+
+GetJwtSecuredAuthorizationResponseModeTypeOk returns a tuple with the JwtSecuredAuthorizationResponseModeType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetJwtSecuredAuthorizationResponseModeType
+
+`func (o *OIDCProviderSettings) SetJwtSecuredAuthorizationResponseModeType(v string)`
+
+SetJwtSecuredAuthorizationResponseModeType sets JwtSecuredAuthorizationResponseModeType field to given value.
+
+### HasJwtSecuredAuthorizationResponseModeType
+
+`func (o *OIDCProviderSettings) HasJwtSecuredAuthorizationResponseModeType() bool`
+
+HasJwtSecuredAuthorizationResponseModeType returns a boolean if a field has been set.
 
 ### GetAuthenticationScheme
 

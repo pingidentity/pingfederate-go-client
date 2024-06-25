@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **IncludeIssuerInAuthorizationResponse** | Pointer to **bool** | Determines whether the authorization server&#39;s issuer value is added to the authorization response or not. The default value is false. | [optional] 
 **TrackUserSessionsForLogout** | Pointer to **bool** | Determines whether user sessions are tracked for logout. If this property is not provided on a PUT, the setting is left unchanged. | [optional] 
 **TokenEndpointBaseUrl** | Pointer to **string** | The token endpoint base URL used to validate the &#39;aud&#39; claim during Private Key JWT Client Authentication. | [optional] 
+**RequireOfflineAccessScopeToIssueRefreshTokens** | Pointer to **bool** | Determines whether offline_access scope is required to issue refresh tokens or not. The default value is false. | [optional] 
+**OfflineAccessRequireConsentPrompt** | Pointer to **bool** | Determines whether offline_access requires the prompt parameter value be &#39;consent&#39; or not. The value will be reset to default if the &#39;requireOfflineAccessScopeToIssueRefreshTokens&#39; attribute is set to false. The default value is false. | [optional] 
 **PersistentGrantLifetime** | Pointer to **int64** | The persistent grant lifetime. The default value is indefinite. -1 indicates an indefinite amount of time. | [optional] 
 **PersistentGrantLifetimeUnit** | Pointer to **string** | The persistent grant lifetime unit. | [optional] 
 **PersistentGrantIdleTimeout** | Pointer to **int64** | The persistent grant idle timeout. The default value is 30 (days). -1 indicates an indefinite amount of time. | [optional] 
@@ -22,7 +24,8 @@ Name | Type | Description | Notes
 **RefreshTokenLength** | **int64** | The refresh token length in number of characters. | 
 **RollRefreshTokenValues** | Pointer to **bool** | The roll refresh token values default policy. The default value is true. | [optional] 
 **RefreshTokenRollingGracePeriod** | Pointer to **int64** | The grace period that a rolled refresh token remains valid in seconds. The default value is 60. | [optional] 
-**RefreshRollingInterval** | **int64** | The minimum interval to roll refresh tokens, in hours. | 
+**RefreshRollingInterval** | **int64** | The minimum interval to roll refresh tokens. | 
+**RefreshRollingIntervalTimeUnit** | Pointer to **string** | The refresh token rolling interval time unit. The default unit is HOURS. | [optional] 
 **PersistentGrantReuseGrantTypes** | Pointer to **[]string** | The grant types that the OAuth AS can reuse rather than creating a new grant for each request. Only &#39;IMPLICIT&#39; or &#39;AUTHORIZATION_CODE&#39; or &#39;RESOURCE_OWNER_CREDENTIALS&#39; are valid grant types. | [optional] 
 **PersistentGrantContract** | Pointer to [**PersistentGrantContract**](PersistentGrantContract.md) |  | [optional] 
 **BypassAuthorizationForApprovedGrants** | Pointer to **bool** | Bypass authorization for previously approved persistent grants. The default value is false. | [optional] 
@@ -36,10 +39,11 @@ Name | Type | Description | Notes
 **AllowedOrigins** | Pointer to **[]string** | The list of allowed origins. | [optional] 
 **UserAuthorizationUrl** | Pointer to **string** | The URL used to generate &#39;verification_url&#39; and &#39;verification_url_complete&#39; values in a Device Authorization request | [optional] 
 **RegisteredAuthorizationPath** | Pointer to **string** | The Registered Authorization Path is concatenated to PingFederate base URL to generate &#39;verification_url&#39; and &#39;verification_url_complete&#39; values in a Device Authorization request. PingFederate listens to this path if specified | [optional] 
-**PendingAuthorizationTimeout** | Pointer to **int64** | The &#39;device_code&#39; and &#39;user_code&#39; timeout, in seconds. | [optional] 
-**DevicePollingInterval** | Pointer to **int64** | The amount of time client should wait between polling requests, in seconds. | [optional] 
+**PendingAuthorizationTimeout** | Pointer to **int64** | The &#39;device_code&#39; and &#39;user_code&#39; timeout, in seconds. The default is 600 seconds. | [optional] 
+**DevicePollingInterval** | Pointer to **int64** | The amount of time client should wait between polling requests, in seconds. The default is 5 seconds. | [optional] 
 **ActivationCodeCheckMode** | Pointer to **string** | Determines whether the user is prompted to enter or confirm the activation code after authenticating or before. The default is AFTER_AUTHENTICATION. | [optional] 
-**BypassActivationCodeConfirmation** | Pointer to **bool** | Indicates if the Activation Code Confirmation page should be bypassed if &#39;verification_url_complete&#39; is used by the end user to authorize a device. | [optional] 
+**BypassActivationCodeConfirmation** | Pointer to **bool** | Indicates if the Activation Code Confirmation page should be bypassed if &#39;verification_url_complete&#39; is used by the end user to authorize a device. The default is false. | [optional] 
+**EnableCookielessUserAuthorizationAuthenticationApi** | Pointer to **bool** | Indicates if cookies should be used for state tracking when the user authorization endpoint is operating in authentication API redirectless mode | [optional] 
 **UserAuthorizationConsentPageSetting** | Pointer to **string** | User Authorization Consent Page setting to use PingFederate&#39;s internal consent page or an external system | [optional] 
 **UserAuthorizationConsentAdapter** | Pointer to **string** | Adapter ID of the external consent adapter to be used for the consent page user interface. | [optional] 
 **ApprovedScopesAttribute** | Pointer to **string** | Attribute from the external consent adapter&#39;s contract, intended for storing approved scopes returned by the external consent page. | [optional] 
@@ -337,6 +341,56 @@ SetTokenEndpointBaseUrl sets TokenEndpointBaseUrl field to given value.
 
 HasTokenEndpointBaseUrl returns a boolean if a field has been set.
 
+### GetRequireOfflineAccessScopeToIssueRefreshTokens
+
+`func (o *AuthorizationServerSettings) GetRequireOfflineAccessScopeToIssueRefreshTokens() bool`
+
+GetRequireOfflineAccessScopeToIssueRefreshTokens returns the RequireOfflineAccessScopeToIssueRefreshTokens field if non-nil, zero value otherwise.
+
+### GetRequireOfflineAccessScopeToIssueRefreshTokensOk
+
+`func (o *AuthorizationServerSettings) GetRequireOfflineAccessScopeToIssueRefreshTokensOk() (*bool, bool)`
+
+GetRequireOfflineAccessScopeToIssueRefreshTokensOk returns a tuple with the RequireOfflineAccessScopeToIssueRefreshTokens field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequireOfflineAccessScopeToIssueRefreshTokens
+
+`func (o *AuthorizationServerSettings) SetRequireOfflineAccessScopeToIssueRefreshTokens(v bool)`
+
+SetRequireOfflineAccessScopeToIssueRefreshTokens sets RequireOfflineAccessScopeToIssueRefreshTokens field to given value.
+
+### HasRequireOfflineAccessScopeToIssueRefreshTokens
+
+`func (o *AuthorizationServerSettings) HasRequireOfflineAccessScopeToIssueRefreshTokens() bool`
+
+HasRequireOfflineAccessScopeToIssueRefreshTokens returns a boolean if a field has been set.
+
+### GetOfflineAccessRequireConsentPrompt
+
+`func (o *AuthorizationServerSettings) GetOfflineAccessRequireConsentPrompt() bool`
+
+GetOfflineAccessRequireConsentPrompt returns the OfflineAccessRequireConsentPrompt field if non-nil, zero value otherwise.
+
+### GetOfflineAccessRequireConsentPromptOk
+
+`func (o *AuthorizationServerSettings) GetOfflineAccessRequireConsentPromptOk() (*bool, bool)`
+
+GetOfflineAccessRequireConsentPromptOk returns a tuple with the OfflineAccessRequireConsentPrompt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOfflineAccessRequireConsentPrompt
+
+`func (o *AuthorizationServerSettings) SetOfflineAccessRequireConsentPrompt(v bool)`
+
+SetOfflineAccessRequireConsentPrompt sets OfflineAccessRequireConsentPrompt field to given value.
+
+### HasOfflineAccessRequireConsentPrompt
+
+`func (o *AuthorizationServerSettings) HasOfflineAccessRequireConsentPrompt() bool`
+
+HasOfflineAccessRequireConsentPrompt returns a boolean if a field has been set.
+
 ### GetPersistentGrantLifetime
 
 `func (o *AuthorizationServerSettings) GetPersistentGrantLifetime() int64`
@@ -526,6 +580,31 @@ and a boolean to check if the value has been set.
 
 SetRefreshRollingInterval sets RefreshRollingInterval field to given value.
 
+
+### GetRefreshRollingIntervalTimeUnit
+
+`func (o *AuthorizationServerSettings) GetRefreshRollingIntervalTimeUnit() string`
+
+GetRefreshRollingIntervalTimeUnit returns the RefreshRollingIntervalTimeUnit field if non-nil, zero value otherwise.
+
+### GetRefreshRollingIntervalTimeUnitOk
+
+`func (o *AuthorizationServerSettings) GetRefreshRollingIntervalTimeUnitOk() (*string, bool)`
+
+GetRefreshRollingIntervalTimeUnitOk returns a tuple with the RefreshRollingIntervalTimeUnit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRefreshRollingIntervalTimeUnit
+
+`func (o *AuthorizationServerSettings) SetRefreshRollingIntervalTimeUnit(v string)`
+
+SetRefreshRollingIntervalTimeUnit sets RefreshRollingIntervalTimeUnit field to given value.
+
+### HasRefreshRollingIntervalTimeUnit
+
+`func (o *AuthorizationServerSettings) HasRefreshRollingIntervalTimeUnit() bool`
+
+HasRefreshRollingIntervalTimeUnit returns a boolean if a field has been set.
 
 ### GetPersistentGrantReuseGrantTypes
 
@@ -951,6 +1030,31 @@ SetBypassActivationCodeConfirmation sets BypassActivationCodeConfirmation field 
 `func (o *AuthorizationServerSettings) HasBypassActivationCodeConfirmation() bool`
 
 HasBypassActivationCodeConfirmation returns a boolean if a field has been set.
+
+### GetEnableCookielessUserAuthorizationAuthenticationApi
+
+`func (o *AuthorizationServerSettings) GetEnableCookielessUserAuthorizationAuthenticationApi() bool`
+
+GetEnableCookielessUserAuthorizationAuthenticationApi returns the EnableCookielessUserAuthorizationAuthenticationApi field if non-nil, zero value otherwise.
+
+### GetEnableCookielessUserAuthorizationAuthenticationApiOk
+
+`func (o *AuthorizationServerSettings) GetEnableCookielessUserAuthorizationAuthenticationApiOk() (*bool, bool)`
+
+GetEnableCookielessUserAuthorizationAuthenticationApiOk returns a tuple with the EnableCookielessUserAuthorizationAuthenticationApi field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableCookielessUserAuthorizationAuthenticationApi
+
+`func (o *AuthorizationServerSettings) SetEnableCookielessUserAuthorizationAuthenticationApi(v bool)`
+
+SetEnableCookielessUserAuthorizationAuthenticationApi sets EnableCookielessUserAuthorizationAuthenticationApi field to given value.
+
+### HasEnableCookielessUserAuthorizationAuthenticationApi
+
+`func (o *AuthorizationServerSettings) HasEnableCookielessUserAuthorizationAuthenticationApi() bool`
+
+HasEnableCookielessUserAuthorizationAuthenticationApi returns a boolean if a field has been set.
 
 ### GetUserAuthorizationConsentPageSetting
 

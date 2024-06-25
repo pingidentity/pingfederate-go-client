@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ## GetCaptchaProviderPluginDescriptor
 
-> ACAPTCHAProviderPluginDescriptor GetCaptchaProviderPluginDescriptor(ctx, id).Execute()
+> CaptchaProvider GetCaptchaProviderPluginDescriptor(ctx, id).Execute()
 
 Get a CAPTCHA provider plugin descriptor.
 
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CaptchaProvidersAPI.GetCaptchaProviderPluginDescriptor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetCaptchaProviderPluginDescriptor`: ACAPTCHAProviderPluginDescriptor
+    // response from `GetCaptchaProviderPluginDescriptor`: CaptchaProvider
     fmt.Fprintf(os.Stdout, "Response from `CaptchaProvidersAPI.GetCaptchaProviderPluginDescriptor`: %v\n", resp)
 }
 ```
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ACAPTCHAProviderPluginDescriptor**](ACAPTCHAProviderPluginDescriptor.md)
+[**CaptchaProvider**](CaptchaProvider.md)
 
 ### Authorization
 
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 
 ## GetCaptchaProviderPluginDescriptors
 
-> ACollectionOfCAPTCHAProviderPluginDescriptors GetCaptchaProviderPluginDescriptors(ctx).Execute()
+> CaptchaProviderDescriptors GetCaptchaProviderPluginDescriptors(ctx).Execute()
 
 Get a list of available CAPTCHA provider plugin descriptors.
 
@@ -309,7 +309,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CaptchaProvidersAPI.GetCaptchaProviderPluginDescriptors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetCaptchaProviderPluginDescriptors`: ACollectionOfCAPTCHAProviderPluginDescriptors
+    // response from `GetCaptchaProviderPluginDescriptors`: CaptchaProviderDescriptors
     fmt.Fprintf(os.Stdout, "Response from `CaptchaProvidersAPI.GetCaptchaProviderPluginDescriptors`: %v\n", resp)
 }
 ```
@@ -325,7 +325,7 @@ Other parameters are passed through a pointer to a apiGetCaptchaProviderPluginDe
 
 ### Return type
 
-[**ACollectionOfCAPTCHAProviderPluginDescriptors**](ACollectionOfCAPTCHAProviderPluginDescriptors.md)
+[**CaptchaProviderDescriptors**](CaptchaProviderDescriptors.md)
 
 ### Authorization
 

@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MemberOfGroupAttributeName** | Pointer to **string** | The name of the attribute that indicates the entity is a member of a group, also known as member of attribute. | [optional] 
-**GroupMemberAttributeName** | **string** | The name of the attribute that represents group members in a group, also known as group member attribute. | 
+**GroupMemberAttributeName** | Pointer to **string** | The name of the attribute that represents group members in a group, also known as group member attribute. | [optional] 
 
 ## Methods
 
 ### NewGroupMembershipDetection
 
-`func NewGroupMembershipDetection(groupMemberAttributeName string, ) *GroupMembershipDetection`
+`func NewGroupMembershipDetection() *GroupMembershipDetection`
 
 NewGroupMembershipDetection instantiates a new GroupMembershipDetection object
 This constructor will assign default values to properties that have it defined,
@@ -70,6 +70,11 @@ and a boolean to check if the value has been set.
 
 SetGroupMemberAttributeName sets GroupMemberAttributeName field to given value.
 
+### HasGroupMemberAttributeName
+
+`func (o *GroupMembershipDetection) HasGroupMemberAttributeName() bool`
+
+HasGroupMemberAttributeName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

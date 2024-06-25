@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CoreAttributes** | [**[]TokenGeneratorAttribute**](TokenGeneratorAttribute.md) | A list of token generator attributes that correspond to the attributes exposed by the token generator type. | 
 **ExtendedAttributes** | Pointer to [**[]TokenGeneratorAttribute**](TokenGeneratorAttribute.md) | A list of additional attributes that can be returned by the token processor. The extended attributes are only used if the token generator supports them. | [optional] 
+**Inherited** | Pointer to **bool** | Whether this attribute contract is inherited from its parent instance. If true, the rest of the properties in this model become read-only. The default value is false. | [optional] 
 
 ## Methods
 
@@ -70,6 +71,31 @@ SetExtendedAttributes sets ExtendedAttributes field to given value.
 `func (o *TokenGeneratorAttributeContract) HasExtendedAttributes() bool`
 
 HasExtendedAttributes returns a boolean if a field has been set.
+
+### GetInherited
+
+`func (o *TokenGeneratorAttributeContract) GetInherited() bool`
+
+GetInherited returns the Inherited field if non-nil, zero value otherwise.
+
+### GetInheritedOk
+
+`func (o *TokenGeneratorAttributeContract) GetInheritedOk() (*bool, bool)`
+
+GetInheritedOk returns a tuple with the Inherited field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInherited
+
+`func (o *TokenGeneratorAttributeContract) SetInherited(v bool)`
+
+SetInherited sets Inherited field to given value.
+
+### HasInherited
+
+`func (o *TokenGeneratorAttributeContract) HasInherited() bool`
+
+HasInherited returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

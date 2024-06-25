@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **PingOneEnvironmentId** | **string** | The environment ID that the gateway belongs to. | 
 **PingOneLdapGatewayId** | **string** | The ID of the PingOne LDAP Gateway this data store uses. | 
 **UseSsl** | Pointer to **bool** | Connects to the LDAP data store using secure SSL/TLS encryption (LDAPS). The default value is false. The value is validated against the LDAP gateway configuration in PingOne unless the header &#39;X-BypassExternalValidation&#39; is set to true. | [optional] 
+**UseStartTLS** | Pointer to **bool** | Connects to the LDAP data store using StartTLS. The default value is false. The value is validated against the LDAP gateway configuration in PingOne unless the header &#39;X-BypassExternalValidation&#39; is set to true. | [optional] 
 **BinaryAttributes** | Pointer to **[]string** | The list of LDAP attributes to be handled as binary data. | [optional] 
 **LastModified** | Pointer to **time.Time** | The time at which the datastore instance was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
 
@@ -161,6 +162,31 @@ SetUseSsl sets UseSsl field to given value.
 `func (o *PingOneLdapGatewayDataStore) HasUseSsl() bool`
 
 HasUseSsl returns a boolean if a field has been set.
+
+### GetUseStartTLS
+
+`func (o *PingOneLdapGatewayDataStore) GetUseStartTLS() bool`
+
+GetUseStartTLS returns the UseStartTLS field if non-nil, zero value otherwise.
+
+### GetUseStartTLSOk
+
+`func (o *PingOneLdapGatewayDataStore) GetUseStartTLSOk() (*bool, bool)`
+
+GetUseStartTLSOk returns a tuple with the UseStartTLS field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseStartTLS
+
+`func (o *PingOneLdapGatewayDataStore) SetUseStartTLS(v bool)`
+
+SetUseStartTLS sets UseStartTLS field to given value.
+
+### HasUseStartTLS
+
+`func (o *PingOneLdapGatewayDataStore) HasUseStartTLS() bool`
+
+HasUseStartTLS returns a boolean if a field has been set.
 
 ### GetBinaryAttributes
 

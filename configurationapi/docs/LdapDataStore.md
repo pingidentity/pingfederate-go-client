@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **UseSsl** | Pointer to **bool** | Connects to the LDAP data store using secure SSL/TLS encryption (LDAPS). The default value is false. | [optional] 
 **UseDnsSrvRecords** | Pointer to **bool** | Use DNS SRV Records to discover LDAP server information. The default value is false. | [optional] 
 **FollowLDAPReferrals** | Pointer to **bool** | Follow LDAP Referrals in the domain tree. The default value is false. This property does not apply to PingDirectory as this functionality is configured in PingDirectory. | [optional] 
+**UseStartTLS** | Pointer to **bool** | Connects to the LDAP data store using secure StartTLS encryption. The default value is false. | [optional] 
 **RetryFailedOperations** | Pointer to **bool** | Indicates whether failed operations should be retried. The default is false. | [optional] 
 **TestOnBorrow** | Pointer to **bool** | Indicates whether objects are validated before being borrowed from the pool. | [optional] 
 **TestOnReturn** | Pointer to **bool** | Indicates whether objects are validated before being returned to the pool. | [optional] 
@@ -346,6 +347,31 @@ SetFollowLDAPReferrals sets FollowLDAPReferrals field to given value.
 `func (o *LdapDataStore) HasFollowLDAPReferrals() bool`
 
 HasFollowLDAPReferrals returns a boolean if a field has been set.
+
+### GetUseStartTLS
+
+`func (o *LdapDataStore) GetUseStartTLS() bool`
+
+GetUseStartTLS returns the UseStartTLS field if non-nil, zero value otherwise.
+
+### GetUseStartTLSOk
+
+`func (o *LdapDataStore) GetUseStartTLSOk() (*bool, bool)`
+
+GetUseStartTLSOk returns a tuple with the UseStartTLS field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseStartTLS
+
+`func (o *LdapDataStore) SetUseStartTLS(v bool)`
+
+SetUseStartTLS sets UseStartTLS field to given value.
+
+### HasUseStartTLS
+
+`func (o *LdapDataStore) HasUseStartTLS() bool`
+
+HasUseStartTLS returns a boolean if a field has been set.
 
 ### GetRetryFailedOperations
 

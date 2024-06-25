@@ -11,8 +11,12 @@ Method | HTTP request | Description
 [**GetAuthorizationServerSettings**](OauthAuthServerSettingsAPI.md#GetAuthorizationServerSettings) | **Get** /oauth/authServerSettings | Get the Authorization Server Settings.
 [**GetCommonScope**](OauthAuthServerSettingsAPI.md#GetCommonScope) | **Get** /oauth/authServerSettings/scopes/commonScopes/{name} | Get an existing common scope.
 [**GetCommonScopeGroup**](OauthAuthServerSettingsAPI.md#GetCommonScopeGroup) | **Get** /oauth/authServerSettings/scopes/commonScopeGroups/{name} | Get an existing common scope group.
+[**GetCommonScopeGroups**](OauthAuthServerSettingsAPI.md#GetCommonScopeGroups) | **Get** /oauth/authServerSettings/scopes/commonScopeGroups | Get the common scope groups.
+[**GetCommonScopes**](OauthAuthServerSettingsAPI.md#GetCommonScopes) | **Get** /oauth/authServerSettings/scopes/commonScopes | Get the common scopes.
 [**GetExclusiveScope**](OauthAuthServerSettingsAPI.md#GetExclusiveScope) | **Get** /oauth/authServerSettings/scopes/exclusiveScopes/{name} | Get an existing exclusive scope.
 [**GetExclusiveScopeGroup**](OauthAuthServerSettingsAPI.md#GetExclusiveScopeGroup) | **Get** /oauth/authServerSettings/scopes/exclusiveScopeGroups/{name} | Get an existing exclusive scope group.
+[**GetExclusiveScopeGroups**](OauthAuthServerSettingsAPI.md#GetExclusiveScopeGroups) | **Get** /oauth/authServerSettings/scopes/exclusiveScopeGroups | Get the exclusive scope groups.
+[**GetExclusiveScopes**](OauthAuthServerSettingsAPI.md#GetExclusiveScopes) | **Get** /oauth/authServerSettings/scopes/exclusiveScopes | Get the exclusive scopes.
 [**RemoveCommonScope**](OauthAuthServerSettingsAPI.md#RemoveCommonScope) | **Delete** /oauth/authServerSettings/scopes/commonScopes/{name} | Remove an existing common scope.
 [**RemoveCommonScopeGroup**](OauthAuthServerSettingsAPI.md#RemoveCommonScopeGroup) | **Delete** /oauth/authServerSettings/scopes/commonScopeGroups/{name} | Remove an existing common scope group.
 [**RemoveExclusiveScope**](OauthAuthServerSettingsAPI.md#RemoveExclusiveScope) | **Delete** /oauth/authServerSettings/scopes/exclusiveScopes/{name} | Remove an existing exclusive scope.
@@ -476,6 +480,152 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetCommonScopeGroups
+
+> ScopeGroupEntries GetCommonScopeGroups(ctx).Page(page).NumberPerPage(numberPerPage).Filter(filter).SortOrder(sortOrder).Execute()
+
+Get the common scope groups.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+    page := int64(56) // int64 | Page number to retrieve. (optional)
+    numberPerPage := int64(56) // int64 | Number of common scope groups per page. (optional)
+    filter := "filter_example" // string | Filter criteria limits the common scope groups that are returned to only those that match it. The filter criteria is compared to the scope group name. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. (optional)
+    sortOrder := "sortOrder_example" // string | Sort order of scope group names to retrieve group by. By default, scope groups are sorted in ascending order by scope group name. (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OauthAuthServerSettingsAPI.GetCommonScopeGroups(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).SortOrder(sortOrder).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.GetCommonScopeGroups``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetCommonScopeGroups`: ScopeGroupEntries
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.GetCommonScopeGroups`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCommonScopeGroupsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int64** | Page number to retrieve. | 
+ **numberPerPage** | **int64** | Number of common scope groups per page. | 
+ **filter** | **string** | Filter criteria limits the common scope groups that are returned to only those that match it. The filter criteria is compared to the scope group name. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. | 
+ **sortOrder** | **string** | Sort order of scope group names to retrieve group by. By default, scope groups are sorted in ascending order by scope group name. | 
+
+### Return type
+
+[**ScopeGroupEntries**](ScopeGroupEntries.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCommonScopes
+
+> ScopeEntries GetCommonScopes(ctx).Page(page).NumberPerPage(numberPerPage).Filter(filter).SortOrder(sortOrder).IncludeDefaultOpenId(includeDefaultOpenId).Execute()
+
+Get the common scopes.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+    page := int64(56) // int64 | Page number to retrieve. (optional)
+    numberPerPage := int64(56) // int64 | Number of common scopes per page. (optional)
+    filter := "filter_example" // string | Filter criteria limits the common scopes that are returned to only those that match it. The filter criteria is compared to the scope name. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. (optional)
+    sortOrder := "sortOrder_example" // string | Sort order of scopes names to retrieve scopes by. By default, scopes are sorted in ascending order by scope name. (optional)
+    includeDefaultOpenId := true // bool | Include a default 'openid' scope and description if one is not already configured. (optional) (default to false)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OauthAuthServerSettingsAPI.GetCommonScopes(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).SortOrder(sortOrder).IncludeDefaultOpenId(includeDefaultOpenId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.GetCommonScopes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetCommonScopes`: ScopeEntries
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.GetCommonScopes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCommonScopesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int64** | Page number to retrieve. | 
+ **numberPerPage** | **int64** | Number of common scopes per page. | 
+ **filter** | **string** | Filter criteria limits the common scopes that are returned to only those that match it. The filter criteria is compared to the scope name. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. | 
+ **sortOrder** | **string** | Sort order of scopes names to retrieve scopes by. By default, scopes are sorted in ascending order by scope name. | 
+ **includeDefaultOpenId** | **bool** | Include a default &#39;openid&#39; scope and description if one is not already configured. | [default to false]
+
+### Return type
+
+[**ScopeEntries**](ScopeEntries.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetExclusiveScope
 
 > ScopeEntry GetExclusiveScope(ctx, name).Execute()
@@ -597,6 +747,150 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ScopeGroupEntry**](ScopeGroupEntry.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetExclusiveScopeGroups
+
+> ScopeGroupEntries GetExclusiveScopeGroups(ctx).Page(page).NumberPerPage(numberPerPage).Filter(filter).SortOrder(sortOrder).Execute()
+
+Get the exclusive scope groups.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+    page := int64(56) // int64 | Page number to retrieve. (optional)
+    numberPerPage := int64(56) // int64 | Number of exclusive scope groups per page. (optional)
+    filter := "filter_example" // string | Filter criteria limits the exclusive scope groups that are returned to only those that match it. The filter criteria is compared to the scope group name. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. (optional)
+    sortOrder := "sortOrder_example" // string | Sort order of scope group names to retrieve group by. By default, scope groups are sorted in ascending order by scope group name. (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OauthAuthServerSettingsAPI.GetExclusiveScopeGroups(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).SortOrder(sortOrder).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.GetExclusiveScopeGroups``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetExclusiveScopeGroups`: ScopeGroupEntries
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.GetExclusiveScopeGroups`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetExclusiveScopeGroupsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int64** | Page number to retrieve. | 
+ **numberPerPage** | **int64** | Number of exclusive scope groups per page. | 
+ **filter** | **string** | Filter criteria limits the exclusive scope groups that are returned to only those that match it. The filter criteria is compared to the scope group name. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. | 
+ **sortOrder** | **string** | Sort order of scope group names to retrieve group by. By default, scope groups are sorted in ascending order by scope group name. | 
+
+### Return type
+
+[**ScopeGroupEntries**](ScopeGroupEntries.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetExclusiveScopes
+
+> ScopeEntries GetExclusiveScopes(ctx).Page(page).NumberPerPage(numberPerPage).Filter(filter).SortOrder(sortOrder).Execute()
+
+Get the exclusive scopes.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+    page := int64(56) // int64 | Page number to retrieve. (optional)
+    numberPerPage := int64(56) // int64 | Number of exclusive scopes per page. (optional)
+    filter := "filter_example" // string | Filter criteria limits the exclusive scopes that are returned to only those that match it. The filter criteria is compared to the scope name. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. (optional)
+    sortOrder := "sortOrder_example" // string | Sort order of scopes names to retrieve scopes by. By default, scopes are sorted in ascending order by scope name. (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OauthAuthServerSettingsAPI.GetExclusiveScopes(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).SortOrder(sortOrder).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthAuthServerSettingsAPI.GetExclusiveScopes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetExclusiveScopes`: ScopeEntries
+    fmt.Fprintf(os.Stdout, "Response from `OauthAuthServerSettingsAPI.GetExclusiveScopes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetExclusiveScopesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int64** | Page number to retrieve. | 
+ **numberPerPage** | **int64** | Number of exclusive scopes per page. | 
+ **filter** | **string** | Filter criteria limits the exclusive scopes that are returned to only those that match it. The filter criteria is compared to the scope name. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. | 
+ **sortOrder** | **string** | Sort order of scopes names to retrieve scopes by. By default, scopes are sorted in ascending order by scope name. | 
+
+### Return type
+
+[**ScopeEntries**](ScopeEntries.md)
 
 ### Authorization
 

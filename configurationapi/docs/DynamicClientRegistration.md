@@ -23,7 +23,8 @@ Name | Type | Description | Notes
 **ClientCertIssuerRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **RefreshRolling** | Pointer to **string** | Use ROLL or DONT_ROLL to override the Roll Refresh Token Values setting on the Authorization Server Settings. SERVER_DEFAULT will default to the Roll Refresh Token Values setting on the Authorization Server Setting screen. Defaults to SERVER_DEFAULT. | [optional] 
 **RefreshTokenRollingIntervalType** | Pointer to **string** | Use OVERRIDE_SERVER_DEFAULT to override the Refresh Token Rolling Interval value on the Authorization Server Settings. SERVER_DEFAULT will default to the Refresh Token Rolling Interval value on the Authorization Server Setting. Defaults to SERVER_DEFAULT. | [optional] 
-**RefreshTokenRollingInterval** | Pointer to **int64** | The minimum interval to roll refresh tokens, in hours. This value will override the Refresh Token Rolling Interval Value on the Authorization Server Settings. | [optional] 
+**RefreshTokenRollingInterval** | Pointer to **int64** | The minimum interval to roll refresh tokens. This value will override the Refresh Token Rolling Interval Value on the Authorization Server Settings. | [optional] 
+**RefreshTokenRollingIntervalTimeUnit** | Pointer to **string** | The refresh token rolling interval time unit. Defaults to HOURS. | [optional] 
 **OidcPolicy** | Pointer to [**ClientRegistrationOIDCPolicy**](ClientRegistrationOIDCPolicy.md) |  | [optional] 
 **PolicyRefs** | Pointer to [**[]ResourceLink**](ResourceLink.md) | The client registration policies. | [optional] 
 **DeviceFlowSettingType** | Pointer to **string** | Allows an administrator to override the Device Authorization Settings set globally for the OAuth AS. Defaults to SERVER_DEFAULT. | [optional] 
@@ -46,6 +47,8 @@ Name | Type | Description | Notes
 **ClientSecretRetentionPeriodType** | Pointer to **string** | Use OVERRIDE_SERVER_DEFAULT to override the Client Secret Retention Period value on the Authorization Server Settings. SERVER_DEFAULT will default to the Client Secret Retention Period value on the Authorization Server Setting. Defaults to SERVER_DEFAULT. | [optional] 
 **ClientSecretRetentionPeriodOverride** | Pointer to **int64** | The length of time in minutes that client secrets will be retained as secondary secrets after secret change. The default value is 0, which will disable secondary client secret retention. This value will override the Client Secret Retention Period value on the Authorization Server Settings. | [optional] 
 **RequireJwtSecuredAuthorizationResponseMode** | Pointer to **bool** | Determines whether JWT Secured authorization response mode is required when initiating an authorization request. The default is false. | [optional] 
+**RequireOfflineAccessScopeToIssueRefreshTokens** | Pointer to **string** | Determines whether offline_access scope is required to issue refresh tokens or not. &#39;SERVER_DEFAULT&#39; is the default value.  | [optional] 
+**OfflineAccessRequireConsentPrompt** | Pointer to **string** | Determines whether offline_access requires the prompt parameter value to be set to &#39;consent&#39; or not. The value will be reset to default if the &#39;requireOfflineAccessScopeToIssueRefreshTokens&#39; attribute is set to &#39;SERVER_DEFAULT&#39; or &#39;false&#39;. &#39;SERVER_DEFAULT&#39; is the default value. | [optional] 
 
 ## Methods
 
@@ -565,6 +568,31 @@ SetRefreshTokenRollingInterval sets RefreshTokenRollingInterval field to given v
 `func (o *DynamicClientRegistration) HasRefreshTokenRollingInterval() bool`
 
 HasRefreshTokenRollingInterval returns a boolean if a field has been set.
+
+### GetRefreshTokenRollingIntervalTimeUnit
+
+`func (o *DynamicClientRegistration) GetRefreshTokenRollingIntervalTimeUnit() string`
+
+GetRefreshTokenRollingIntervalTimeUnit returns the RefreshTokenRollingIntervalTimeUnit field if non-nil, zero value otherwise.
+
+### GetRefreshTokenRollingIntervalTimeUnitOk
+
+`func (o *DynamicClientRegistration) GetRefreshTokenRollingIntervalTimeUnitOk() (*string, bool)`
+
+GetRefreshTokenRollingIntervalTimeUnitOk returns a tuple with the RefreshTokenRollingIntervalTimeUnit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRefreshTokenRollingIntervalTimeUnit
+
+`func (o *DynamicClientRegistration) SetRefreshTokenRollingIntervalTimeUnit(v string)`
+
+SetRefreshTokenRollingIntervalTimeUnit sets RefreshTokenRollingIntervalTimeUnit field to given value.
+
+### HasRefreshTokenRollingIntervalTimeUnit
+
+`func (o *DynamicClientRegistration) HasRefreshTokenRollingIntervalTimeUnit() bool`
+
+HasRefreshTokenRollingIntervalTimeUnit returns a boolean if a field has been set.
 
 ### GetOidcPolicy
 
@@ -1115,6 +1143,56 @@ SetRequireJwtSecuredAuthorizationResponseMode sets RequireJwtSecuredAuthorizatio
 `func (o *DynamicClientRegistration) HasRequireJwtSecuredAuthorizationResponseMode() bool`
 
 HasRequireJwtSecuredAuthorizationResponseMode returns a boolean if a field has been set.
+
+### GetRequireOfflineAccessScopeToIssueRefreshTokens
+
+`func (o *DynamicClientRegistration) GetRequireOfflineAccessScopeToIssueRefreshTokens() string`
+
+GetRequireOfflineAccessScopeToIssueRefreshTokens returns the RequireOfflineAccessScopeToIssueRefreshTokens field if non-nil, zero value otherwise.
+
+### GetRequireOfflineAccessScopeToIssueRefreshTokensOk
+
+`func (o *DynamicClientRegistration) GetRequireOfflineAccessScopeToIssueRefreshTokensOk() (*string, bool)`
+
+GetRequireOfflineAccessScopeToIssueRefreshTokensOk returns a tuple with the RequireOfflineAccessScopeToIssueRefreshTokens field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequireOfflineAccessScopeToIssueRefreshTokens
+
+`func (o *DynamicClientRegistration) SetRequireOfflineAccessScopeToIssueRefreshTokens(v string)`
+
+SetRequireOfflineAccessScopeToIssueRefreshTokens sets RequireOfflineAccessScopeToIssueRefreshTokens field to given value.
+
+### HasRequireOfflineAccessScopeToIssueRefreshTokens
+
+`func (o *DynamicClientRegistration) HasRequireOfflineAccessScopeToIssueRefreshTokens() bool`
+
+HasRequireOfflineAccessScopeToIssueRefreshTokens returns a boolean if a field has been set.
+
+### GetOfflineAccessRequireConsentPrompt
+
+`func (o *DynamicClientRegistration) GetOfflineAccessRequireConsentPrompt() string`
+
+GetOfflineAccessRequireConsentPrompt returns the OfflineAccessRequireConsentPrompt field if non-nil, zero value otherwise.
+
+### GetOfflineAccessRequireConsentPromptOk
+
+`func (o *DynamicClientRegistration) GetOfflineAccessRequireConsentPromptOk() (*string, bool)`
+
+GetOfflineAccessRequireConsentPromptOk returns a tuple with the OfflineAccessRequireConsentPrompt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOfflineAccessRequireConsentPrompt
+
+`func (o *DynamicClientRegistration) SetOfflineAccessRequireConsentPrompt(v string)`
+
+SetOfflineAccessRequireConsentPrompt sets OfflineAccessRequireConsentPrompt field to given value.
+
+### HasOfflineAccessRequireConsentPrompt
+
+`func (o *DynamicClientRegistration) HasOfflineAccessRequireConsentPrompt() bool`
+
+HasOfflineAccessRequireConsentPrompt returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

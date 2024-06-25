@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **NodeTags** | Pointer to **string** | The node tags for this node. This field is only populated for engine nodes. | [optional] 
 **ConfigurationTimestamp** | Pointer to **time.Time** | The time stamp of the configuration data retrieved by this node. | [optional] 
 **ReplicationStatus** | Pointer to **string** | The replication status of the node. | [optional] 
+**AdminConsoleInfo** | Pointer to [**AdminConsoleInfo**](AdminConsoleInfo.md) |  | [optional] 
 
 ## Methods
 
@@ -231,6 +232,31 @@ SetReplicationStatus sets ReplicationStatus field to given value.
 `func (o *ClusterNode) HasReplicationStatus() bool`
 
 HasReplicationStatus returns a boolean if a field has been set.
+
+### GetAdminConsoleInfo
+
+`func (o *ClusterNode) GetAdminConsoleInfo() AdminConsoleInfo`
+
+GetAdminConsoleInfo returns the AdminConsoleInfo field if non-nil, zero value otherwise.
+
+### GetAdminConsoleInfoOk
+
+`func (o *ClusterNode) GetAdminConsoleInfoOk() (*AdminConsoleInfo, bool)`
+
+GetAdminConsoleInfoOk returns a tuple with the AdminConsoleInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAdminConsoleInfo
+
+`func (o *ClusterNode) SetAdminConsoleInfo(v AdminConsoleInfo)`
+
+SetAdminConsoleInfo sets AdminConsoleInfo field to given value.
+
+### HasAdminConsoleInfo
+
+`func (o *ClusterNode) HasAdminConsoleInfo() bool`
+
+HasAdminConsoleInfo returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
