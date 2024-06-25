@@ -1,7 +1,8 @@
+version: 2
 before:
   hooks:
     - go mod tidy
 builds:
 - skip: true
 changelog:
-  skip: true
+  disable: true
