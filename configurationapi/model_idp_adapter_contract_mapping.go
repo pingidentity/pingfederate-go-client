@@ -24,8 +24,6 @@ type IdpAdapterContractMapping struct {
 	// A list of mappings from attribute names to their fulfillment values.
 	AttributeContractFulfillment map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment" tfsdk:"attribute_contract_fulfillment"`
 	IssuanceCriteria             *IssuanceCriteria                    `json:"issuanceCriteria,omitempty" tfsdk:"issuance_criteria"`
-	// Whether this attribute mapping is inherited from its parent instance. If true, the rest of the properties in this model become read-only. The default value is false.
-	Inherited *bool `json:"inherited,omitempty" tfsdk:"inherited"`
 }
 
 // NewIdpAdapterContractMapping instantiates a new IdpAdapterContractMapping object
@@ -134,38 +132,6 @@ func (o *IdpAdapterContractMapping) SetIssuanceCriteria(v IssuanceCriteria) {
 	o.IssuanceCriteria = &v
 }
 
-// GetInherited returns the Inherited field value if set, zero value otherwise.
-func (o *IdpAdapterContractMapping) GetInherited() bool {
-	if o == nil || IsNil(o.Inherited) {
-		var ret bool
-		return ret
-	}
-	return *o.Inherited
-}
-
-// GetInheritedOk returns a tuple with the Inherited field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *IdpAdapterContractMapping) GetInheritedOk() (*bool, bool) {
-	if o == nil || IsNil(o.Inherited) {
-		return nil, false
-	}
-	return o.Inherited, true
-}
-
-// HasInherited returns a boolean if a field has been set.
-func (o *IdpAdapterContractMapping) HasInherited() bool {
-	if o != nil && !IsNil(o.Inherited) {
-		return true
-	}
-
-	return false
-}
-
-// SetInherited gets a reference to the given bool and assigns it to the Inherited field.
-func (o *IdpAdapterContractMapping) SetInherited(v bool) {
-	o.Inherited = &v
-}
-
 func (o IdpAdapterContractMapping) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -182,9 +148,6 @@ func (o IdpAdapterContractMapping) ToMap() (map[string]interface{}, error) {
 	toSerialize["attributeContractFulfillment"] = o.AttributeContractFulfillment
 	if !IsNil(o.IssuanceCriteria) {
 		toSerialize["issuanceCriteria"] = o.IssuanceCriteria
-	}
-	if !IsNil(o.Inherited) {
-		toSerialize["inherited"] = o.Inherited
 	}
 	return toSerialize, nil
 }

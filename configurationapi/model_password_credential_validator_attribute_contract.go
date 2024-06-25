@@ -23,8 +23,6 @@ type PasswordCredentialValidatorAttributeContract struct {
 	CoreAttributes []PasswordCredentialValidatorAttribute `json:"coreAttributes,omitempty" tfsdk:"core_attributes"`
 	// A list of additional attributes that can be returned by the password credential validator. The extended attributes are only used if the adapter supports them.
 	ExtendedAttributes []PasswordCredentialValidatorAttribute `json:"extendedAttributes,omitempty" tfsdk:"extended_attributes"`
-	// Whether this attribute contract is inherited from its parent instance. If true, the rest of the properties in this model become read-only. The default value is false.
-	Inherited *bool `json:"inherited,omitempty" tfsdk:"inherited"`
 }
 
 // NewPasswordCredentialValidatorAttributeContract instantiates a new PasswordCredentialValidatorAttributeContract object
@@ -108,38 +106,6 @@ func (o *PasswordCredentialValidatorAttributeContract) SetExtendedAttributes(v [
 	o.ExtendedAttributes = v
 }
 
-// GetInherited returns the Inherited field value if set, zero value otherwise.
-func (o *PasswordCredentialValidatorAttributeContract) GetInherited() bool {
-	if o == nil || IsNil(o.Inherited) {
-		var ret bool
-		return ret
-	}
-	return *o.Inherited
-}
-
-// GetInheritedOk returns a tuple with the Inherited field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PasswordCredentialValidatorAttributeContract) GetInheritedOk() (*bool, bool) {
-	if o == nil || IsNil(o.Inherited) {
-		return nil, false
-	}
-	return o.Inherited, true
-}
-
-// HasInherited returns a boolean if a field has been set.
-func (o *PasswordCredentialValidatorAttributeContract) HasInherited() bool {
-	if o != nil && !IsNil(o.Inherited) {
-		return true
-	}
-
-	return false
-}
-
-// SetInherited gets a reference to the given bool and assigns it to the Inherited field.
-func (o *PasswordCredentialValidatorAttributeContract) SetInherited(v bool) {
-	o.Inherited = &v
-}
-
 func (o PasswordCredentialValidatorAttributeContract) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -155,9 +121,6 @@ func (o PasswordCredentialValidatorAttributeContract) ToMap() (map[string]interf
 	}
 	if !IsNil(o.ExtendedAttributes) {
 		toSerialize["extendedAttributes"] = o.ExtendedAttributes
-	}
-	if !IsNil(o.Inherited) {
-		toSerialize["inherited"] = o.Inherited
 	}
 	return toSerialize, nil
 }

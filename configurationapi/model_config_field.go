@@ -25,8 +25,6 @@ type ConfigField struct {
 	Value *string `json:"value,omitempty" tfsdk:"value"`
 	// For encrypted or hashed fields, this attribute contains the encrypted representation of the field's value, if a value is defined. If you do not want to update the stored value, this attribute should be passed back unchanged.
 	EncryptedValue *string `json:"encryptedValue,omitempty" tfsdk:"encrypted_value"`
-	// Whether this field is inherited from its parent instance. If true, the value/encrypted value properties become read-only. The default value is false.
-	Inherited *bool `json:"inherited,omitempty" tfsdk:"inherited"`
 }
 
 // NewConfigField instantiates a new ConfigField object
@@ -135,38 +133,6 @@ func (o *ConfigField) SetEncryptedValue(v string) {
 	o.EncryptedValue = &v
 }
 
-// GetInherited returns the Inherited field value if set, zero value otherwise.
-func (o *ConfigField) GetInherited() bool {
-	if o == nil || IsNil(o.Inherited) {
-		var ret bool
-		return ret
-	}
-	return *o.Inherited
-}
-
-// GetInheritedOk returns a tuple with the Inherited field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ConfigField) GetInheritedOk() (*bool, bool) {
-	if o == nil || IsNil(o.Inherited) {
-		return nil, false
-	}
-	return o.Inherited, true
-}
-
-// HasInherited returns a boolean if a field has been set.
-func (o *ConfigField) HasInherited() bool {
-	if o != nil && !IsNil(o.Inherited) {
-		return true
-	}
-
-	return false
-}
-
-// SetInherited gets a reference to the given bool and assigns it to the Inherited field.
-func (o *ConfigField) SetInherited(v bool) {
-	o.Inherited = &v
-}
-
 func (o ConfigField) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -183,9 +149,6 @@ func (o ConfigField) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.EncryptedValue) {
 		toSerialize["encryptedValue"] = o.EncryptedValue
-	}
-	if !IsNil(o.Inherited) {
-		toSerialize["inherited"] = o.Inherited
 	}
 	return toSerialize, nil
 }

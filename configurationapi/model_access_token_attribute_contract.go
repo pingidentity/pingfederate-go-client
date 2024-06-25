@@ -23,8 +23,6 @@ type AccessTokenAttributeContract struct {
 	CoreAttributes []AccessTokenAttribute `json:"coreAttributes,omitempty" tfsdk:"core_attributes"`
 	// A list of additional token attributes that are associated with this access token management plugin instance.
 	ExtendedAttributes []AccessTokenAttribute `json:"extendedAttributes,omitempty" tfsdk:"extended_attributes"`
-	// Whether this attribute contract is inherited from its parent instance. If true, the rest of the properties in this model become read-only. The default value is false.
-	Inherited *bool `json:"inherited,omitempty" tfsdk:"inherited"`
 	// Default subject attribute to use for audit logging when validating the access token. Blank value means to use USER_KEY attribute value after grant lookup.
 	DefaultSubjectAttribute *string `json:"defaultSubjectAttribute,omitempty" tfsdk:"default_subject_attribute"`
 }
@@ -110,38 +108,6 @@ func (o *AccessTokenAttributeContract) SetExtendedAttributes(v []AccessTokenAttr
 	o.ExtendedAttributes = v
 }
 
-// GetInherited returns the Inherited field value if set, zero value otherwise.
-func (o *AccessTokenAttributeContract) GetInherited() bool {
-	if o == nil || IsNil(o.Inherited) {
-		var ret bool
-		return ret
-	}
-	return *o.Inherited
-}
-
-// GetInheritedOk returns a tuple with the Inherited field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AccessTokenAttributeContract) GetInheritedOk() (*bool, bool) {
-	if o == nil || IsNil(o.Inherited) {
-		return nil, false
-	}
-	return o.Inherited, true
-}
-
-// HasInherited returns a boolean if a field has been set.
-func (o *AccessTokenAttributeContract) HasInherited() bool {
-	if o != nil && !IsNil(o.Inherited) {
-		return true
-	}
-
-	return false
-}
-
-// SetInherited gets a reference to the given bool and assigns it to the Inherited field.
-func (o *AccessTokenAttributeContract) SetInherited(v bool) {
-	o.Inherited = &v
-}
-
 // GetDefaultSubjectAttribute returns the DefaultSubjectAttribute field value if set, zero value otherwise.
 func (o *AccessTokenAttributeContract) GetDefaultSubjectAttribute() string {
 	if o == nil || IsNil(o.DefaultSubjectAttribute) {
@@ -189,9 +155,6 @@ func (o AccessTokenAttributeContract) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ExtendedAttributes) {
 		toSerialize["extendedAttributes"] = o.ExtendedAttributes
-	}
-	if !IsNil(o.Inherited) {
-		toSerialize["inherited"] = o.Inherited
 	}
 	if !IsNil(o.DefaultSubjectAttribute) {
 		toSerialize["defaultSubjectAttribute"] = o.DefaultSubjectAttribute

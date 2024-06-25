@@ -19,8 +19,6 @@ var _ MappedNullable = &SessionValidationSettings{}
 
 // SessionValidationSettings Session validation settings for an access token management plugin instance.
 type SessionValidationSettings struct {
-	// If this token manager has a parent, this flag determines whether session validation settings, such as checkValidAuthnSession, are inherited from the parent. When set to true, the other fields in this model become read-only. The default value is false.
-	Inherited *bool `json:"inherited,omitempty" tfsdk:"inherited"`
 	// Include the session identifier in the access token. Note that if any of the session validation features is enabled, the session identifier will already be included in the access tokens.
 	IncludeSessionId *bool `json:"includeSessionId,omitempty" tfsdk:"include_session_id"`
 	// Check for a valid authentication session when validating the access token.
@@ -46,38 +44,6 @@ func NewSessionValidationSettings() *SessionValidationSettings {
 func NewSessionValidationSettingsWithDefaults() *SessionValidationSettings {
 	this := SessionValidationSettings{}
 	return &this
-}
-
-// GetInherited returns the Inherited field value if set, zero value otherwise.
-func (o *SessionValidationSettings) GetInherited() bool {
-	if o == nil || IsNil(o.Inherited) {
-		var ret bool
-		return ret
-	}
-	return *o.Inherited
-}
-
-// GetInheritedOk returns a tuple with the Inherited field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SessionValidationSettings) GetInheritedOk() (*bool, bool) {
-	if o == nil || IsNil(o.Inherited) {
-		return nil, false
-	}
-	return o.Inherited, true
-}
-
-// HasInherited returns a boolean if a field has been set.
-func (o *SessionValidationSettings) HasInherited() bool {
-	if o != nil && !IsNil(o.Inherited) {
-		return true
-	}
-
-	return false
-}
-
-// SetInherited gets a reference to the given bool and assigns it to the Inherited field.
-func (o *SessionValidationSettings) SetInherited(v bool) {
-	o.Inherited = &v
 }
 
 // GetIncludeSessionId returns the IncludeSessionId field value if set, zero value otherwise.
@@ -218,9 +184,6 @@ func (o SessionValidationSettings) MarshalJSON() ([]byte, error) {
 
 func (o SessionValidationSettings) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Inherited) {
-		toSerialize["inherited"] = o.Inherited
-	}
 	if !IsNil(o.IncludeSessionId) {
 		toSerialize["includeSessionId"] = o.IncludeSessionId
 	}

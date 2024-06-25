@@ -19,8 +19,6 @@ var _ MappedNullable = &AtmSelectionSettings{}
 
 // AtmSelectionSettings Selection settings for an access token management plugin instance.
 type AtmSelectionSettings struct {
-	// If this token manager has a parent, this flag determines whether selection settings, such as resource URI's, are inherited from the parent. When set to true, the other fields in this model become read-only. The default value is false.
-	Inherited *bool `json:"inherited,omitempty" tfsdk:"inherited"`
 	// The list of base resource URI's which map to this token manager. A resource URI, specified via the 'aud' parameter, can be used to select a specific token manager for an OAuth request.
 	ResourceUris []string `json:"resourceUris,omitempty" tfsdk:"resource_uris"`
 }
@@ -40,38 +38,6 @@ func NewAtmSelectionSettings() *AtmSelectionSettings {
 func NewAtmSelectionSettingsWithDefaults() *AtmSelectionSettings {
 	this := AtmSelectionSettings{}
 	return &this
-}
-
-// GetInherited returns the Inherited field value if set, zero value otherwise.
-func (o *AtmSelectionSettings) GetInherited() bool {
-	if o == nil || IsNil(o.Inherited) {
-		var ret bool
-		return ret
-	}
-	return *o.Inherited
-}
-
-// GetInheritedOk returns a tuple with the Inherited field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AtmSelectionSettings) GetInheritedOk() (*bool, bool) {
-	if o == nil || IsNil(o.Inherited) {
-		return nil, false
-	}
-	return o.Inherited, true
-}
-
-// HasInherited returns a boolean if a field has been set.
-func (o *AtmSelectionSettings) HasInherited() bool {
-	if o != nil && !IsNil(o.Inherited) {
-		return true
-	}
-
-	return false
-}
-
-// SetInherited gets a reference to the given bool and assigns it to the Inherited field.
-func (o *AtmSelectionSettings) SetInherited(v bool) {
-	o.Inherited = &v
 }
 
 // GetResourceUris returns the ResourceUris field value if set, zero value otherwise.
@@ -116,9 +82,6 @@ func (o AtmSelectionSettings) MarshalJSON() ([]byte, error) {
 
 func (o AtmSelectionSettings) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Inherited) {
-		toSerialize["inherited"] = o.Inherited
-	}
 	if !IsNil(o.ResourceUris) {
 		toSerialize["resourceUris"] = o.ResourceUris
 	}
