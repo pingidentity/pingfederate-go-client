@@ -24,7 +24,7 @@ type IdpInboundProvisioning struct {
 	UserRepository InboundProvisioningUserRepositoryAggregation `json:"userRepository" tfsdk:"user_repository"`
 	CustomSchema   Schema                                       `json:"customSchema" tfsdk:"custom_schema"`
 	Users          Users                                        `json:"users" tfsdk:"users"`
-	Groups         Groups                                       `json:"groups" tfsdk:"groups"`
+	Groups         *Groups                                      `json:"groups,omitempty" tfsdk:"groups"`
 	// Specify behavior of how SCIM DELETE requests are handled.
 	ActionOnDelete *string `json:"actionOnDelete,omitempty" tfsdk:"action_on_delete"`
 }
@@ -33,13 +33,12 @@ type IdpInboundProvisioning struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIdpInboundProvisioning(groupSupport bool, userRepository InboundProvisioningUserRepositoryAggregation, customSchema Schema, users Users, groups Groups) *IdpInboundProvisioning {
+func NewIdpInboundProvisioning(groupSupport bool, userRepository InboundProvisioningUserRepositoryAggregation, customSchema Schema, users Users) *IdpInboundProvisioning {
 	this := IdpInboundProvisioning{}
 	this.GroupSupport = groupSupport
 	this.UserRepository = userRepository
 	this.CustomSchema = customSchema
 	this.Users = users
-	this.Groups = groups
 	return &this
 }
 
@@ -147,28 +146,36 @@ func (o *IdpInboundProvisioning) SetUsers(v Users) {
 	o.Users = v
 }
 
-// GetGroups returns the Groups field value
+// GetGroups returns the Groups field value if set, zero value otherwise.
 func (o *IdpInboundProvisioning) GetGroups() Groups {
-	if o == nil {
+	if o == nil || IsNil(o.Groups) {
 		var ret Groups
 		return ret
 	}
-
-	return o.Groups
+	return *o.Groups
 }
 
-// GetGroupsOk returns a tuple with the Groups field value
+// GetGroupsOk returns a tuple with the Groups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdpInboundProvisioning) GetGroupsOk() (*Groups, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Groups) {
 		return nil, false
 	}
-	return &o.Groups, true
+	return o.Groups, true
 }
 
-// SetGroups sets field value
+// HasGroups returns a boolean if a field has been set.
+func (o *IdpInboundProvisioning) HasGroups() bool {
+	if o != nil && !IsNil(o.Groups) {
+		return true
+	}
+
+	return false
+}
+
+// SetGroups gets a reference to the given Groups and assigns it to the Groups field.
 func (o *IdpInboundProvisioning) SetGroups(v Groups) {
-	o.Groups = v
+	o.Groups = &v
 }
 
 // GetActionOnDelete returns the ActionOnDelete field value if set, zero value otherwise.
@@ -217,7 +224,9 @@ func (o IdpInboundProvisioning) ToMap() (map[string]interface{}, error) {
 	toSerialize["userRepository"] = o.UserRepository
 	toSerialize["customSchema"] = o.CustomSchema
 	toSerialize["users"] = o.Users
-	toSerialize["groups"] = o.Groups
+	if !IsNil(o.Groups) {
+		toSerialize["groups"] = o.Groups
+	}
 	if !IsNil(o.ActionOnDelete) {
 		toSerialize["actionOnDelete"] = o.ActionOnDelete
 	}

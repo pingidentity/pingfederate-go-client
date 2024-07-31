@@ -8,14 +8,14 @@ Name | Type | Description | Notes
 **UserRepository** | [**InboundProvisioningUserRepositoryAggregation**](InboundProvisioningUserRepositoryAggregation.md) |  | 
 **CustomSchema** | [**Schema**](Schema.md) |  | 
 **Users** | [**Users**](Users.md) |  | 
-**Groups** | [**Groups**](Groups.md) |  | 
+**Groups** | Pointer to [**Groups**](Groups.md) |  | [optional] 
 **ActionOnDelete** | Pointer to **string** | Specify behavior of how SCIM DELETE requests are handled. | [optional] 
 
 ## Methods
 
 ### NewIdpInboundProvisioning
 
-`func NewIdpInboundProvisioning(groupSupport bool, userRepository InboundProvisioningUserRepositoryAggregation, customSchema Schema, users Users, groups Groups, ) *IdpInboundProvisioning`
+`func NewIdpInboundProvisioning(groupSupport bool, userRepository InboundProvisioningUserRepositoryAggregation, customSchema Schema, users Users, ) *IdpInboundProvisioning`
 
 NewIdpInboundProvisioning instantiates a new IdpInboundProvisioning object
 This constructor will assign default values to properties that have it defined,
@@ -129,6 +129,11 @@ and a boolean to check if the value has been set.
 
 SetGroups sets Groups field to given value.
 
+### HasGroups
+
+`func (o *IdpInboundProvisioning) HasGroups() bool`
+
+HasGroups returns a boolean if a field has been set.
 
 ### GetActionOnDelete
 

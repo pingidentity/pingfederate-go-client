@@ -20521,7 +20521,6 @@ components:
       required:
       - customSchema
       - groupSupport
-      - groups
       - userRepository
       - users
       type: object
