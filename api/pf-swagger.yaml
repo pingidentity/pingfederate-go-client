@@ -21330,6 +21330,14 @@ components:
           additionalProperties:
             type: boolean
           description: Attributes of the local identity field.
+        options:
+          type: array
+          description: The list of options for this selection field.
+          items:
+            type: string
+        defaultValue:
+          type: string
+          description: "The default value for this field."
       description: Local identity profile fields.
       discriminator:
         propertyName: type

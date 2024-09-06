@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **RegistrationPageField** | Pointer to **bool** | Whether this is a registration page field or not. | [optional] 
 **ProfilePageField** | Pointer to **bool** | Whether this is a profile page field or not. | [optional] 
 **Attributes** | Pointer to **map[string]bool** | Attributes of the local identity field. | [optional] 
+**Options** | Pointer to **[]string** | The list of options for this selection field. | [optional] 
+**DefaultValue** | Pointer to **string** | The default value for this field. | [optional] 
 
 ## Methods
 
@@ -164,6 +166,56 @@ SetAttributes sets Attributes field to given value.
 `func (o *LocalIdentityField) HasAttributes() bool`
 
 HasAttributes returns a boolean if a field has been set.
+
+### GetOptions
+
+`func (o *LocalIdentityField) GetOptions() []string`
+
+GetOptions returns the Options field if non-nil, zero value otherwise.
+
+### GetOptionsOk
+
+`func (o *LocalIdentityField) GetOptionsOk() (*[]string, bool)`
+
+GetOptionsOk returns a tuple with the Options field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOptions
+
+`func (o *LocalIdentityField) SetOptions(v []string)`
+
+SetOptions sets Options field to given value.
+
+### HasOptions
+
+`func (o *LocalIdentityField) HasOptions() bool`
+
+HasOptions returns a boolean if a field has been set.
+
+### GetDefaultValue
+
+`func (o *LocalIdentityField) GetDefaultValue() string`
+
+GetDefaultValue returns the DefaultValue field if non-nil, zero value otherwise.
+
+### GetDefaultValueOk
+
+`func (o *LocalIdentityField) GetDefaultValueOk() (*string, bool)`
+
+GetDefaultValueOk returns a tuple with the DefaultValue field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultValue
+
+`func (o *LocalIdentityField) SetDefaultValue(v string)`
+
+SetDefaultValue sets DefaultValue field to given value.
+
+### HasDefaultValue
+
+`func (o *LocalIdentityField) HasDefaultValue() bool`
+
+HasDefaultValue returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

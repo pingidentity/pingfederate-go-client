@@ -24842,6 +24842,10 @@ components:
         stripSpaceFromUniqueField: true
         fields:
         - profilePageField: true
+          defaultValue: defaultValue
+          options:
+          - options
+          - options
           attributes:
             key: true
           id: id
@@ -24849,6 +24853,10 @@ components:
           type: CHECKBOX
           registrationPageField: true
         - profilePageField: true
+          defaultValue: defaultValue
+          options:
+          - options
+          - options
           attributes:
             key: true
           id: id
@@ -24981,6 +24989,10 @@ components:
         propertyName: type
       example:
         profilePageField: true
+        defaultValue: defaultValue
+        options:
+        - options
+        - options
         attributes:
           key: true
         id: id
@@ -25017,6 +25029,14 @@ components:
             type: boolean
           description: Attributes of the local identity field.
           type: object
+        options:
+          description: The list of options for this selection field.
+          items:
+            type: string
+          type: array
+        defaultValue:
+          description: The default value for this field.
+          type: string
       required:
       - id
       - label
@@ -25050,6 +25070,10 @@ components:
           stripSpaceFromUniqueField: true
           fields:
           - profilePageField: true
+            defaultValue: defaultValue
+            options:
+            - options
+            - options
             attributes:
               key: true
             id: id
@@ -25057,6 +25081,10 @@ components:
             type: CHECKBOX
             registrationPageField: true
           - profilePageField: true
+            defaultValue: defaultValue
+            options:
+            - options
+            - options
             attributes:
               key: true
             id: id
@@ -25174,6 +25202,10 @@ components:
             stripSpaceFromUniqueField: true
             fields:
             - profilePageField: true
+              defaultValue: defaultValue
+              options:
+              - options
+              - options
               attributes:
                 key: true
               id: id
@@ -25181,6 +25213,10 @@ components:
               type: CHECKBOX
               registrationPageField: true
             - profilePageField: true
+              defaultValue: defaultValue
+              options:
+              - options
+              - options
               attributes:
                 key: true
               id: id
@@ -25256,6 +25292,10 @@ components:
             stripSpaceFromUniqueField: true
             fields:
             - profilePageField: true
+              defaultValue: defaultValue
+              options:
+              - options
+              - options
               attributes:
                 key: true
               id: id
@@ -25263,6 +25303,10 @@ components:
               type: CHECKBOX
               registrationPageField: true
             - profilePageField: true
+              defaultValue: defaultValue
+              options:
+              - options
+              - options
               attributes:
                 key: true
               id: id

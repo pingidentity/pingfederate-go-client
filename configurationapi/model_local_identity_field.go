@@ -31,6 +31,10 @@ type LocalIdentityField struct {
 	ProfilePageField *bool `json:"profilePageField,omitempty" tfsdk:"profile_page_field"`
 	// Attributes of the local identity field.
 	Attributes *map[string]bool `json:"attributes,omitempty" tfsdk:"attributes"`
+	// The list of options for this selection field.
+	Options []string `json:"options,omitempty" tfsdk:"options"`
+	// The default value for this field.
+	DefaultValue *string `json:"defaultValue,omitempty" tfsdk:"default_value"`
 }
 
 // NewLocalIdentityField instantiates a new LocalIdentityField object
@@ -221,6 +225,70 @@ func (o *LocalIdentityField) SetAttributes(v map[string]bool) {
 	o.Attributes = &v
 }
 
+// GetOptions returns the Options field value if set, zero value otherwise.
+func (o *LocalIdentityField) GetOptions() []string {
+	if o == nil || IsNil(o.Options) {
+		var ret []string
+		return ret
+	}
+	return o.Options
+}
+
+// GetOptionsOk returns a tuple with the Options field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LocalIdentityField) GetOptionsOk() ([]string, bool) {
+	if o == nil || IsNil(o.Options) {
+		return nil, false
+	}
+	return o.Options, true
+}
+
+// HasOptions returns a boolean if a field has been set.
+func (o *LocalIdentityField) HasOptions() bool {
+	if o != nil && !IsNil(o.Options) {
+		return true
+	}
+
+	return false
+}
+
+// SetOptions gets a reference to the given []string and assigns it to the Options field.
+func (o *LocalIdentityField) SetOptions(v []string) {
+	o.Options = v
+}
+
+// GetDefaultValue returns the DefaultValue field value if set, zero value otherwise.
+func (o *LocalIdentityField) GetDefaultValue() string {
+	if o == nil || IsNil(o.DefaultValue) {
+		var ret string
+		return ret
+	}
+	return *o.DefaultValue
+}
+
+// GetDefaultValueOk returns a tuple with the DefaultValue field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LocalIdentityField) GetDefaultValueOk() (*string, bool) {
+	if o == nil || IsNil(o.DefaultValue) {
+		return nil, false
+	}
+	return o.DefaultValue, true
+}
+
+// HasDefaultValue returns a boolean if a field has been set.
+func (o *LocalIdentityField) HasDefaultValue() bool {
+	if o != nil && !IsNil(o.DefaultValue) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultValue gets a reference to the given string and assigns it to the DefaultValue field.
+func (o *LocalIdentityField) SetDefaultValue(v string) {
+	o.DefaultValue = &v
+}
+
 func (o LocalIdentityField) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -242,6 +310,12 @@ func (o LocalIdentityField) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
+	}
+	if !IsNil(o.Options) {
+		toSerialize["options"] = o.Options
+	}
+	if !IsNil(o.DefaultValue) {
+		toSerialize["defaultValue"] = o.DefaultValue
 	}
 	return toSerialize, nil
 }
