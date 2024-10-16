@@ -15,7 +15,7 @@ with open("client.go", 'r') as clientFile:
                 line = clientFile.readline()
         # Use configuration.go method for UserAgent
         if "User-Agent" in line:
-            line = line.replace("c.cfg.UserAgent", "c.cfg.UserAgent()")
+            line = line.replace("c.cfg.UserAgent)", "c.cfg.UserAgent())")
         updatedClientLines.append(line)
 
 with open("client.go", 'w') as clientFile:
@@ -25,6 +25,7 @@ with open("client.go", 'w') as clientFile:
 
 # Update configuration.go
 updatedConfigurationLines = []
+userAgentMethodFound = False
 with open("configuration.go", 'r') as configurationFile:
     for line in configurationFile:
         # Split UserAgent into two fields in the Configuration struct
@@ -35,10 +36,13 @@ with open("configuration.go", 'r') as configurationFile:
         # Remove UserAgent from the default configuration struct
         if "UserAgent:" in line:
             continue
+        if "UserAgent()" in line:
+            userAgentMethodFound = True
         updatedConfigurationLines.append(line)
 
 # Add new UserAgent() method with default that handle override and suffix
-updatedConfigurationLines.append("""
+if not userAgentMethodFound:
+    updatedConfigurationLines.append("""
 func (c *Configuration) UserAgent() string {
 	if c.UserAgentOverride != nil {
 		return *c.UserAgentOverride
