@@ -3,10 +3,10 @@ name: Code Check
 on:
   pull_request:
     branches:
-      - "main"
+      - "v1210"
   push:
     branches:
-      - "main"
+      - "v1210"
 
 permissions:
   contents: read
