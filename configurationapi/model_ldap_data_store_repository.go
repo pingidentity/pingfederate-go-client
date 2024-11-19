@@ -24,15 +24,13 @@ type LdapDataStoreRepository struct {
 	BaseDn *string `json:"baseDn,omitempty" tfsdk:"base_dn"`
 	// The expression that results in a unique user identifier, when combined with the Base DN.
 	UniqueUserIdFilter string `json:"uniqueUserIdFilter" tfsdk:"unique_user_id_filter"`
-	// A list of user repository mappings from attribute names to their fulfillment values.
-	JitRepositoryAttributeMapping map[string]AttributeFulfillmentValue `json:"jitRepositoryAttributeMapping" tfsdk:"jit_repository_attribute_mapping"`
 }
 
 // NewLdapDataStoreRepository instantiates a new LdapDataStoreRepository object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLdapDataStoreRepository(uniqueUserIdFilter string, jitRepositoryAttributeMapping map[string]AttributeFulfillmentValue, type_ string, dataStoreRef ResourceLink) *LdapDataStoreRepository {
+func NewLdapDataStoreRepository(uniqueUserIdFilter string, type_ string, dataStoreRef ResourceLink, jitRepositoryAttributeMapping map[string]AttributeFulfillmentValue) *LdapDataStoreRepository {
 	this := LdapDataStoreRepository{}
 	this.Type = type_
 	this.DataStoreRef = dataStoreRef
@@ -105,30 +103,6 @@ func (o *LdapDataStoreRepository) SetUniqueUserIdFilter(v string) {
 	o.UniqueUserIdFilter = v
 }
 
-// GetJitRepositoryAttributeMapping returns the JitRepositoryAttributeMapping field value
-func (o *LdapDataStoreRepository) GetJitRepositoryAttributeMapping() map[string]AttributeFulfillmentValue {
-	if o == nil {
-		var ret map[string]AttributeFulfillmentValue
-		return ret
-	}
-
-	return o.JitRepositoryAttributeMapping
-}
-
-// GetJitRepositoryAttributeMappingOk returns a tuple with the JitRepositoryAttributeMapping field value
-// and a boolean to check if the value has been set.
-func (o *LdapDataStoreRepository) GetJitRepositoryAttributeMappingOk() (*map[string]AttributeFulfillmentValue, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.JitRepositoryAttributeMapping, true
-}
-
-// SetJitRepositoryAttributeMapping sets field value
-func (o *LdapDataStoreRepository) SetJitRepositoryAttributeMapping(v map[string]AttributeFulfillmentValue) {
-	o.JitRepositoryAttributeMapping = v
-}
-
 func (o LdapDataStoreRepository) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -151,7 +125,6 @@ func (o LdapDataStoreRepository) ToMap() (map[string]interface{}, error) {
 		toSerialize["baseDn"] = o.BaseDn
 	}
 	toSerialize["uniqueUserIdFilter"] = o.UniqueUserIdFilter
-	toSerialize["jitRepositoryAttributeMapping"] = o.JitRepositoryAttributeMapping
 	return toSerialize, nil
 }
 

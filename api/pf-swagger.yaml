@@ -17300,7 +17300,6 @@ components:
       description: The remote party URLs to resolve the artifact.
     ArtifactSettings:
       required:
-        - lifetime
         - resolverLocations
       type: object
       properties:
@@ -18497,19 +18496,11 @@ components:
       allOf:
         - $ref: "#/components/schemas/DataStoreRepository"
         - required:
-            - jitRepositoryAttributeMapping
             - sqlMethod
           type: object
           properties:
             sqlMethod:
               $ref: "#/components/schemas/SqlMethod"
-            jitRepositoryAttributeMapping:
-              type: object
-              additionalProperties:
-                $ref: "#/components/schemas/AttributeFulfillmentValue"
-              description:
-                A list of user repository mappings from attribute names to
-                their fulfillment values.
           description: JDBC data store user repository.
     JitProvisioning:
       required:
@@ -18555,7 +18546,6 @@ components:
       allOf:
         - $ref: "#/components/schemas/DataStoreRepository"
         - required:
-            - jitRepositoryAttributeMapping
             - uniqueUserIdFilter
           type: object
           properties:
@@ -18569,13 +18559,6 @@ components:
               description:
                 "The expression that results in a unique user identifier,\
                 \ when combined with the Base DN."
-            jitRepositoryAttributeMapping:
-              type: object
-              additionalProperties:
-                $ref: "#/components/schemas/AttributeFulfillmentValue"
-              description:
-                A list of user repository mappings from attribute names to
-                their fulfillment values.
           description: LDAP data store user repository.
     LdapInboundProvisioningUserRepository:
       allOf:

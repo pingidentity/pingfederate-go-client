@@ -20,7 +20,7 @@ var _ MappedNullable = &ArtifactSettings{}
 // ArtifactSettings The settings for an Artifact binding.
 type ArtifactSettings struct {
 	// The lifetime of the artifact in seconds.
-	Lifetime int64 `json:"lifetime" tfsdk:"lifetime"`
+	Lifetime *int64 `json:"lifetime,omitempty" tfsdk:"lifetime"`
 	// Remote party URLs that you will use to resolve/translate the artifact and get the actual protocol message
 	ResolverLocations []ArtifactResolverLocation `json:"resolverLocations" tfsdk:"resolver_locations"`
 	// Source ID for SAML1.x connections
@@ -31,9 +31,8 @@ type ArtifactSettings struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewArtifactSettings(lifetime int64, resolverLocations []ArtifactResolverLocation) *ArtifactSettings {
+func NewArtifactSettings(resolverLocations []ArtifactResolverLocation) *ArtifactSettings {
 	this := ArtifactSettings{}
-	this.Lifetime = lifetime
 	this.ResolverLocations = resolverLocations
 	return &this
 }
@@ -46,28 +45,36 @@ func NewArtifactSettingsWithDefaults() *ArtifactSettings {
 	return &this
 }
 
-// GetLifetime returns the Lifetime field value
+// GetLifetime returns the Lifetime field value if set, zero value otherwise.
 func (o *ArtifactSettings) GetLifetime() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.Lifetime) {
 		var ret int64
 		return ret
 	}
-
-	return o.Lifetime
+	return *o.Lifetime
 }
 
-// GetLifetimeOk returns a tuple with the Lifetime field value
+// GetLifetimeOk returns a tuple with the Lifetime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtifactSettings) GetLifetimeOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Lifetime) {
 		return nil, false
 	}
-	return &o.Lifetime, true
+	return o.Lifetime, true
 }
 
-// SetLifetime sets field value
+// HasLifetime returns a boolean if a field has been set.
+func (o *ArtifactSettings) HasLifetime() bool {
+	if o != nil && !IsNil(o.Lifetime) {
+		return true
+	}
+
+	return false
+}
+
+// SetLifetime gets a reference to the given int64 and assigns it to the Lifetime field.
 func (o *ArtifactSettings) SetLifetime(v int64) {
-	o.Lifetime = v
+	o.Lifetime = &v
 }
 
 // GetResolverLocations returns the ResolverLocations field value
@@ -136,7 +143,9 @@ func (o ArtifactSettings) MarshalJSON() ([]byte, error) {
 
 func (o ArtifactSettings) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["lifetime"] = o.Lifetime
+	if !IsNil(o.Lifetime) {
+		toSerialize["lifetime"] = o.Lifetime
+	}
 	toSerialize["resolverLocations"] = o.ResolverLocations
 	if !IsNil(o.SourceId) {
 		toSerialize["sourceId"] = o.SourceId
