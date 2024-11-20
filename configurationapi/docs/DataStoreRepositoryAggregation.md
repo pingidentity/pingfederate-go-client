@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The data store repository type. | 
 **DataStoreRef** | [**ResourceLink**](ResourceLink.md) |  | 
-**JitRepositoryAttributeMapping** | [**map[string]AttributeFulfillmentValue**](AttributeFulfillmentValue.md) | A list of user repository mappings from attribute names to their fulfillment values. | 
+**JitRepositoryAttributeMapping** | [**map[string]AttributeFulfillmentValue**](AttributeFulfillmentValue.md) | The user repository attribute mapping. | 
 **BaseDn** | Pointer to **string** | The base DN to search from. If not specified, the search will start at the LDAP&#39;s root. | [optional] 
 **UniqueUserIdFilter** | **string** | The expression that results in a unique user identifier, when combined with the Base DN. | 
 

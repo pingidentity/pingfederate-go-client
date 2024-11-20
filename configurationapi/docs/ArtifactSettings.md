@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Lifetime** | **int64** | The lifetime of the artifact in seconds. | 
+**Lifetime** | Pointer to **int64** | The lifetime of the artifact in seconds. | [optional] 
 **ResolverLocations** | [**[]ArtifactResolverLocation**](ArtifactResolverLocation.md) | Remote party URLs that you will use to resolve/translate the artifact and get the actual protocol message | 
 **SourceId** | Pointer to **string** | Source ID for SAML1.x connections | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewArtifactSettings
 
-`func NewArtifactSettings(lifetime int64, resolverLocations []ArtifactResolverLocation, ) *ArtifactSettings`
+`func NewArtifactSettings(resolverLocations []ArtifactResolverLocation, ) *ArtifactSettings`
 
 NewArtifactSettings instantiates a new ArtifactSettings object
 This constructor will assign default values to properties that have it defined,
@@ -46,6 +46,11 @@ and a boolean to check if the value has been set.
 
 SetLifetime sets Lifetime field to given value.
 
+### HasLifetime
+
+`func (o *ArtifactSettings) HasLifetime() bool`
+
+HasLifetime returns a boolean if a field has been set.
 
 ### GetResolverLocations
 

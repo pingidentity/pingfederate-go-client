@@ -19283,7 +19283,6 @@ components:
           description: Source ID for SAML1.x connections
           type: string
       required:
-      - lifetime
       - resolverLocations
       type: object
     AssertionLifetime:
@@ -20726,14 +20725,7 @@ components:
         properties:
           sqlMethod:
             $ref: '#/components/schemas/SqlMethod'
-          jitRepositoryAttributeMapping:
-            additionalProperties:
-              $ref: '#/components/schemas/AttributeFulfillmentValue'
-            description: A list of user repository mappings from attribute names to
-              their fulfillment values.
-            type: object
         required:
-        - jitRepositoryAttributeMapping
         - sqlMethod
         type: object
     JitProvisioning:
@@ -20786,14 +20778,7 @@ components:
             description: "The expression that results in a unique user identifier,\
               \ when combined with the Base DN."
             type: string
-          jitRepositoryAttributeMapping:
-            additionalProperties:
-              $ref: '#/components/schemas/AttributeFulfillmentValue'
-            description: A list of user repository mappings from attribute names to
-              their fulfillment values.
-            type: object
         required:
-        - jitRepositoryAttributeMapping
         - uniqueUserIdFilter
         type: object
     LdapInboundProvisioningUserRepository:

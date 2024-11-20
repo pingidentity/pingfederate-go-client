@@ -21,15 +21,13 @@ var _ MappedNullable = &JdbcDataStoreRepository{}
 type JdbcDataStoreRepository struct {
 	DataStoreRepository
 	SqlMethod SqlMethod `json:"sqlMethod" tfsdk:"sql_method"`
-	// A list of user repository mappings from attribute names to their fulfillment values.
-	JitRepositoryAttributeMapping map[string]AttributeFulfillmentValue `json:"jitRepositoryAttributeMapping" tfsdk:"jit_repository_attribute_mapping"`
 }
 
 // NewJdbcDataStoreRepository instantiates a new JdbcDataStoreRepository object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewJdbcDataStoreRepository(sqlMethod SqlMethod, jitRepositoryAttributeMapping map[string]AttributeFulfillmentValue, type_ string, dataStoreRef ResourceLink) *JdbcDataStoreRepository {
+func NewJdbcDataStoreRepository(sqlMethod SqlMethod, type_ string, dataStoreRef ResourceLink, jitRepositoryAttributeMapping map[string]AttributeFulfillmentValue) *JdbcDataStoreRepository {
 	this := JdbcDataStoreRepository{}
 	this.Type = type_
 	this.DataStoreRef = dataStoreRef
@@ -70,30 +68,6 @@ func (o *JdbcDataStoreRepository) SetSqlMethod(v SqlMethod) {
 	o.SqlMethod = v
 }
 
-// GetJitRepositoryAttributeMapping returns the JitRepositoryAttributeMapping field value
-func (o *JdbcDataStoreRepository) GetJitRepositoryAttributeMapping() map[string]AttributeFulfillmentValue {
-	if o == nil {
-		var ret map[string]AttributeFulfillmentValue
-		return ret
-	}
-
-	return o.JitRepositoryAttributeMapping
-}
-
-// GetJitRepositoryAttributeMappingOk returns a tuple with the JitRepositoryAttributeMapping field value
-// and a boolean to check if the value has been set.
-func (o *JdbcDataStoreRepository) GetJitRepositoryAttributeMappingOk() (*map[string]AttributeFulfillmentValue, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.JitRepositoryAttributeMapping, true
-}
-
-// SetJitRepositoryAttributeMapping sets field value
-func (o *JdbcDataStoreRepository) SetJitRepositoryAttributeMapping(v map[string]AttributeFulfillmentValue) {
-	o.JitRepositoryAttributeMapping = v
-}
-
 func (o JdbcDataStoreRepository) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -113,7 +87,6 @@ func (o JdbcDataStoreRepository) ToMap() (map[string]interface{}, error) {
 		return map[string]interface{}{}, errDataStoreRepository
 	}
 	toSerialize["sqlMethod"] = o.SqlMethod
-	toSerialize["jitRepositoryAttributeMapping"] = o.JitRepositoryAttributeMapping
 	return toSerialize, nil
 }
 

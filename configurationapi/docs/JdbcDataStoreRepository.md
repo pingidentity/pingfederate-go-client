@@ -5,13 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SqlMethod** | [**SqlMethod**](SqlMethod.md) |  | 
-**JitRepositoryAttributeMapping** | [**map[string]AttributeFulfillmentValue**](AttributeFulfillmentValue.md) | A list of user repository mappings from attribute names to their fulfillment values. | 
 
 ## Methods
 
 ### NewJdbcDataStoreRepository
 
-`func NewJdbcDataStoreRepository(sqlMethod SqlMethod, jitRepositoryAttributeMapping map[string]AttributeFulfillmentValue, ) *JdbcDataStoreRepository`
+`func NewJdbcDataStoreRepository(sqlMethod SqlMethod, ) *JdbcDataStoreRepository`
 
 NewJdbcDataStoreRepository instantiates a new JdbcDataStoreRepository object
 This constructor will assign default values to properties that have it defined,
@@ -44,26 +43,6 @@ and a boolean to check if the value has been set.
 `func (o *JdbcDataStoreRepository) SetSqlMethod(v SqlMethod)`
 
 SetSqlMethod sets SqlMethod field to given value.
-
-
-### GetJitRepositoryAttributeMapping
-
-`func (o *JdbcDataStoreRepository) GetJitRepositoryAttributeMapping() map[string]AttributeFulfillmentValue`
-
-GetJitRepositoryAttributeMapping returns the JitRepositoryAttributeMapping field if non-nil, zero value otherwise.
-
-### GetJitRepositoryAttributeMappingOk
-
-`func (o *JdbcDataStoreRepository) GetJitRepositoryAttributeMappingOk() (*map[string]AttributeFulfillmentValue, bool)`
-
-GetJitRepositoryAttributeMappingOk returns a tuple with the JitRepositoryAttributeMapping field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetJitRepositoryAttributeMapping
-
-`func (o *JdbcDataStoreRepository) SetJitRepositoryAttributeMapping(v map[string]AttributeFulfillmentValue)`
-
-SetJitRepositoryAttributeMapping sets JitRepositoryAttributeMapping field to given value.
 
 
 
