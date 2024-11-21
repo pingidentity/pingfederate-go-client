@@ -19,7 +19,7 @@ var _ MappedNullable = &SpAdapterMapping{}
 
 // SpAdapterMapping A mapping to a SP adapter.
 type SpAdapterMapping struct {
-	SpAdapterRef ResourceLink `json:"spAdapterRef" tfsdk:"sp_adapter_ref"`
+	SpAdapterRef *ResourceLink `json:"spAdapterRef,omitempty" tfsdk:"sp_adapter_ref"`
 	// Restricts this mapping to specific virtual entity IDs.
 	RestrictVirtualEntityIds *bool `json:"restrictVirtualEntityIds,omitempty" tfsdk:"restrict_virtual_entity_ids"`
 	// The list of virtual server IDs that this mapping is restricted to.
@@ -36,9 +36,8 @@ type SpAdapterMapping struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSpAdapterMapping(spAdapterRef ResourceLink, attributeContractFulfillment map[string]AttributeFulfillmentValue) *SpAdapterMapping {
+func NewSpAdapterMapping(attributeContractFulfillment map[string]AttributeFulfillmentValue) *SpAdapterMapping {
 	this := SpAdapterMapping{}
-	this.SpAdapterRef = spAdapterRef
 	this.AttributeContractFulfillment = attributeContractFulfillment
 	return &this
 }
@@ -51,28 +50,36 @@ func NewSpAdapterMappingWithDefaults() *SpAdapterMapping {
 	return &this
 }
 
-// GetSpAdapterRef returns the SpAdapterRef field value
+// GetSpAdapterRef returns the SpAdapterRef field value if set, zero value otherwise.
 func (o *SpAdapterMapping) GetSpAdapterRef() ResourceLink {
-	if o == nil {
+	if o == nil || IsNil(o.SpAdapterRef) {
 		var ret ResourceLink
 		return ret
 	}
-
-	return o.SpAdapterRef
+	return *o.SpAdapterRef
 }
 
-// GetSpAdapterRefOk returns a tuple with the SpAdapterRef field value
+// GetSpAdapterRefOk returns a tuple with the SpAdapterRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpAdapterMapping) GetSpAdapterRefOk() (*ResourceLink, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.SpAdapterRef) {
 		return nil, false
 	}
-	return &o.SpAdapterRef, true
+	return o.SpAdapterRef, true
 }
 
-// SetSpAdapterRef sets field value
+// HasSpAdapterRef returns a boolean if a field has been set.
+func (o *SpAdapterMapping) HasSpAdapterRef() bool {
+	if o != nil && !IsNil(o.SpAdapterRef) {
+		return true
+	}
+
+	return false
+}
+
+// SetSpAdapterRef gets a reference to the given ResourceLink and assigns it to the SpAdapterRef field.
 func (o *SpAdapterMapping) SetSpAdapterRef(v ResourceLink) {
-	o.SpAdapterRef = v
+	o.SpAdapterRef = &v
 }
 
 // GetRestrictVirtualEntityIds returns the RestrictVirtualEntityIds field value if set, zero value otherwise.
@@ -269,7 +276,9 @@ func (o SpAdapterMapping) MarshalJSON() ([]byte, error) {
 
 func (o SpAdapterMapping) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["spAdapterRef"] = o.SpAdapterRef
+	if !IsNil(o.SpAdapterRef) {
+		toSerialize["spAdapterRef"] = o.SpAdapterRef
+	}
 	if !IsNil(o.RestrictVirtualEntityIds) {
 		toSerialize["restrictVirtualEntityIds"] = o.RestrictVirtualEntityIds
 	}

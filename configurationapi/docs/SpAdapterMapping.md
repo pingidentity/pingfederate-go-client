@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SpAdapterRef** | [**ResourceLink**](ResourceLink.md) |  | 
+**SpAdapterRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **RestrictVirtualEntityIds** | Pointer to **bool** | Restricts this mapping to specific virtual entity IDs. | [optional] 
 **RestrictedVirtualEntityIds** | Pointer to **[]string** | The list of virtual server IDs that this mapping is restricted to. | [optional] 
 **AdapterOverrideSettings** | Pointer to [**SpAdapter**](SpAdapter.md) |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewSpAdapterMapping
 
-`func NewSpAdapterMapping(spAdapterRef ResourceLink, attributeContractFulfillment map[string]AttributeFulfillmentValue, ) *SpAdapterMapping`
+`func NewSpAdapterMapping(attributeContractFulfillment map[string]AttributeFulfillmentValue, ) *SpAdapterMapping`
 
 NewSpAdapterMapping instantiates a new SpAdapterMapping object
 This constructor will assign default values to properties that have it defined,
@@ -50,6 +50,11 @@ and a boolean to check if the value has been set.
 
 SetSpAdapterRef sets SpAdapterRef field to given value.
 
+### HasSpAdapterRef
+
+`func (o *SpAdapterMapping) HasSpAdapterRef() bool`
+
+HasSpAdapterRef returns a boolean if a field has been set.
 
 ### GetRestrictVirtualEntityIds
 
