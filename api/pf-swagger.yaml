@@ -19052,7 +19052,6 @@ components:
     SpAdapterMapping:
       required:
         - attributeContractFulfillment
-        - spAdapterRef
       type: object
       properties:
         spAdapterRef:

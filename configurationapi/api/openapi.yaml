@@ -21273,7 +21273,6 @@ components:
           $ref: '#/components/schemas/IssuanceCriteria'
       required:
       - attributeContractFulfillment
-      - spAdapterRef
       type: object
     SpAttributeQuery:
       description: The attribute query profile supports SPs in requesting user attributes.
