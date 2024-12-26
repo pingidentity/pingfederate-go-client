@@ -17,6 +17,9 @@ Name | Type | Description | Notes
 **PostLogoutRedirectUris** | Pointer to **[]string** | URIs to which the OIDC OP may redirect the resource owner&#39;s user agent after RP-initiated logout has completed. Wildcards are allowed. However, for security reasons, make the URL as restrictive as possible. | [optional] 
 **PairwiseIdentifierUserType** | Pointer to **bool** | Determines whether the subject identifier type is pairwise. | [optional] 
 **SectorIdentifierUri** | Pointer to **string** | The URI references a file with a single JSON array of Redirect URI and JWKS URL values. | [optional] 
+**UserInfoResponseSigningAlgorithm** | Pointer to **string** | The JSON Web Signature [JWS] algorithm required to sign the UserInfo response. | [optional] 
+**UserInfoResponseEncryptionAlgorithm** | Pointer to **string** | The JSON Web Encryption [JWE] encryption algorithm used to encrypt the content-encryption key of the UserInfo response. | [optional] 
+**UserInfoResponseContentEncryptionAlgorithm** | Pointer to **string** | The JSON Web Encryption [JWE] content-encryption algorithm for the UserInfo Response. | [optional] 
 
 ## Methods
 
@@ -361,6 +364,81 @@ SetSectorIdentifierUri sets SectorIdentifierUri field to given value.
 `func (o *ClientOIDCPolicy) HasSectorIdentifierUri() bool`
 
 HasSectorIdentifierUri returns a boolean if a field has been set.
+
+### GetUserInfoResponseSigningAlgorithm
+
+`func (o *ClientOIDCPolicy) GetUserInfoResponseSigningAlgorithm() string`
+
+GetUserInfoResponseSigningAlgorithm returns the UserInfoResponseSigningAlgorithm field if non-nil, zero value otherwise.
+
+### GetUserInfoResponseSigningAlgorithmOk
+
+`func (o *ClientOIDCPolicy) GetUserInfoResponseSigningAlgorithmOk() (*string, bool)`
+
+GetUserInfoResponseSigningAlgorithmOk returns a tuple with the UserInfoResponseSigningAlgorithm field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserInfoResponseSigningAlgorithm
+
+`func (o *ClientOIDCPolicy) SetUserInfoResponseSigningAlgorithm(v string)`
+
+SetUserInfoResponseSigningAlgorithm sets UserInfoResponseSigningAlgorithm field to given value.
+
+### HasUserInfoResponseSigningAlgorithm
+
+`func (o *ClientOIDCPolicy) HasUserInfoResponseSigningAlgorithm() bool`
+
+HasUserInfoResponseSigningAlgorithm returns a boolean if a field has been set.
+
+### GetUserInfoResponseEncryptionAlgorithm
+
+`func (o *ClientOIDCPolicy) GetUserInfoResponseEncryptionAlgorithm() string`
+
+GetUserInfoResponseEncryptionAlgorithm returns the UserInfoResponseEncryptionAlgorithm field if non-nil, zero value otherwise.
+
+### GetUserInfoResponseEncryptionAlgorithmOk
+
+`func (o *ClientOIDCPolicy) GetUserInfoResponseEncryptionAlgorithmOk() (*string, bool)`
+
+GetUserInfoResponseEncryptionAlgorithmOk returns a tuple with the UserInfoResponseEncryptionAlgorithm field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserInfoResponseEncryptionAlgorithm
+
+`func (o *ClientOIDCPolicy) SetUserInfoResponseEncryptionAlgorithm(v string)`
+
+SetUserInfoResponseEncryptionAlgorithm sets UserInfoResponseEncryptionAlgorithm field to given value.
+
+### HasUserInfoResponseEncryptionAlgorithm
+
+`func (o *ClientOIDCPolicy) HasUserInfoResponseEncryptionAlgorithm() bool`
+
+HasUserInfoResponseEncryptionAlgorithm returns a boolean if a field has been set.
+
+### GetUserInfoResponseContentEncryptionAlgorithm
+
+`func (o *ClientOIDCPolicy) GetUserInfoResponseContentEncryptionAlgorithm() string`
+
+GetUserInfoResponseContentEncryptionAlgorithm returns the UserInfoResponseContentEncryptionAlgorithm field if non-nil, zero value otherwise.
+
+### GetUserInfoResponseContentEncryptionAlgorithmOk
+
+`func (o *ClientOIDCPolicy) GetUserInfoResponseContentEncryptionAlgorithmOk() (*string, bool)`
+
+GetUserInfoResponseContentEncryptionAlgorithmOk returns a tuple with the UserInfoResponseContentEncryptionAlgorithm field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserInfoResponseContentEncryptionAlgorithm
+
+`func (o *ClientOIDCPolicy) SetUserInfoResponseContentEncryptionAlgorithm(v string)`
+
+SetUserInfoResponseContentEncryptionAlgorithm sets UserInfoResponseContentEncryptionAlgorithm field to given value.
+
+### HasUserInfoResponseContentEncryptionAlgorithm
+
+`func (o *ClientOIDCPolicy) HasUserInfoResponseContentEncryptionAlgorithm() bool`
+
+HasUserInfoResponseContentEncryptionAlgorithm returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **AttributeContract** | Pointer to **[]string** | The attribute contract for this plugin. | [optional] 
 **SupportsExtendedContract** | Pointer to **bool** | Determines whether this plugin supports extending the attribute contract. | [optional] 
 **ConfigDescriptor** | Pointer to [**PluginConfigDescriptor**](PluginConfigDescriptor.md) |  | [optional] 
+**TokenEndpointAttributeContract** | Pointer to **[]string** | The token endpoint attribute contract for this plugin. | [optional] 
 
 ## Methods
 
@@ -179,6 +180,31 @@ SetConfigDescriptor sets ConfigDescriptor field to given value.
 `func (o *AccessTokenManagerDescriptor) HasConfigDescriptor() bool`
 
 HasConfigDescriptor returns a boolean if a field has been set.
+
+### GetTokenEndpointAttributeContract
+
+`func (o *AccessTokenManagerDescriptor) GetTokenEndpointAttributeContract() []string`
+
+GetTokenEndpointAttributeContract returns the TokenEndpointAttributeContract field if non-nil, zero value otherwise.
+
+### GetTokenEndpointAttributeContractOk
+
+`func (o *AccessTokenManagerDescriptor) GetTokenEndpointAttributeContractOk() (*[]string, bool)`
+
+GetTokenEndpointAttributeContractOk returns a tuple with the TokenEndpointAttributeContract field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTokenEndpointAttributeContract
+
+`func (o *AccessTokenManagerDescriptor) SetTokenEndpointAttributeContract(v []string)`
+
+SetTokenEndpointAttributeContract sets TokenEndpointAttributeContract field to given value.
+
+### HasTokenEndpointAttributeContract
+
+`func (o *AccessTokenManagerDescriptor) HasTokenEndpointAttributeContract() bool`
+
+HasTokenEndpointAttributeContract returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

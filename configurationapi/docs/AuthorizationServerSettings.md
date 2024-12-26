@@ -44,6 +44,7 @@ Name | Type | Description | Notes
 **ActivationCodeCheckMode** | Pointer to **string** | Determines whether the user is prompted to enter or confirm the activation code after authenticating or before. The default is AFTER_AUTHENTICATION. | [optional] 
 **BypassActivationCodeConfirmation** | Pointer to **bool** | Indicates if the Activation Code Confirmation page should be bypassed if &#39;verification_url_complete&#39; is used by the end user to authorize a device. The default is false. | [optional] 
 **EnableCookielessUserAuthorizationAuthenticationApi** | Pointer to **bool** | Indicates if cookies should be used for state tracking when the user authorization endpoint is operating in authentication API redirectless mode | [optional] 
+**ReturnIdTokenOnOpenIdWithDeviceAuthzGrant** | Pointer to **bool** | Indicates if an ID token should be returned during the device authorization grant flow when the &#39;openid&#39; scope is approved. The default is false. | [optional] 
 **UserAuthorizationConsentPageSetting** | Pointer to **string** | User Authorization Consent Page setting to use PingFederate&#39;s internal consent page or an external system | [optional] 
 **UserAuthorizationConsentAdapter** | Pointer to **string** | Adapter ID of the external consent adapter to be used for the consent page user interface. | [optional] 
 **ApprovedScopesAttribute** | Pointer to **string** | Attribute from the external consent adapter&#39;s contract, intended for storing approved scopes returned by the external consent page. | [optional] 
@@ -1055,6 +1056,31 @@ SetEnableCookielessUserAuthorizationAuthenticationApi sets EnableCookielessUserA
 `func (o *AuthorizationServerSettings) HasEnableCookielessUserAuthorizationAuthenticationApi() bool`
 
 HasEnableCookielessUserAuthorizationAuthenticationApi returns a boolean if a field has been set.
+
+### GetReturnIdTokenOnOpenIdWithDeviceAuthzGrant
+
+`func (o *AuthorizationServerSettings) GetReturnIdTokenOnOpenIdWithDeviceAuthzGrant() bool`
+
+GetReturnIdTokenOnOpenIdWithDeviceAuthzGrant returns the ReturnIdTokenOnOpenIdWithDeviceAuthzGrant field if non-nil, zero value otherwise.
+
+### GetReturnIdTokenOnOpenIdWithDeviceAuthzGrantOk
+
+`func (o *AuthorizationServerSettings) GetReturnIdTokenOnOpenIdWithDeviceAuthzGrantOk() (*bool, bool)`
+
+GetReturnIdTokenOnOpenIdWithDeviceAuthzGrantOk returns a tuple with the ReturnIdTokenOnOpenIdWithDeviceAuthzGrant field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReturnIdTokenOnOpenIdWithDeviceAuthzGrant
+
+`func (o *AuthorizationServerSettings) SetReturnIdTokenOnOpenIdWithDeviceAuthzGrant(v bool)`
+
+SetReturnIdTokenOnOpenIdWithDeviceAuthzGrant sets ReturnIdTokenOnOpenIdWithDeviceAuthzGrant field to given value.
+
+### HasReturnIdTokenOnOpenIdWithDeviceAuthzGrant
+
+`func (o *AuthorizationServerSettings) HasReturnIdTokenOnOpenIdWithDeviceAuthzGrant() bool`
+
+HasReturnIdTokenOnOpenIdWithDeviceAuthzGrant returns a boolean if a field has been set.
 
 ### GetUserAuthorizationConsentPageSetting
 

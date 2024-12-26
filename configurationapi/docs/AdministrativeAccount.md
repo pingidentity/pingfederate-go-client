@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **PhoneNumber** | Pointer to **string** | Phone number associated with the account. | [optional] 
 **EmailAddress** | Pointer to **string** | Email address associated with the account. | [optional] 
 **Department** | Pointer to **string** | The Department name of account user. | [optional] 
-**Roles** | Pointer to **[]string** | Roles available for an administrator. &lt;br&gt;USER_ADMINISTRATOR - Can create, deactivate or delete accounts and reset passwords. Additionally, install replacement license keys. &lt;br&gt; CRYPTO_ADMINISTRATOR - Can manage local keys and certificates. &lt;br&gt; ADMINISTRATOR - Can configure partner connections and most system settings (except the management of native accounts and the handling of local keys and certificates. &lt;br&gt;EXPRESSION_ADMINISTRATOR - Can add and update OGNL expressions. &lt;br&gt; | [optional] 
+**Roles** | Pointer to **[]string** | Roles available for an administrator. &lt;br&gt;USER_ADMINISTRATOR - Can create, deactivate or delete accounts and reset passwords. Additionally, install replacement license keys. &lt;br&gt; CRYPTO_ADMINISTRATOR - Can manage local keys and certificates. &lt;br&gt; ADMINISTRATOR - Can configure partner connections and most system settings (except the management of native accounts and the handling of local keys and certificates. &lt;br&gt;EXPRESSION_ADMINISTRATOR - Can add and update OGNL expressions. &lt;br&gt;DATA_COLLECTION_ADMINISTRATOR - Can run the Collect Support Data Utility. &lt;br&gt; | [optional] 
 
 ## Methods
 

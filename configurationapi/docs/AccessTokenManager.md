@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **AccessControlSettings** | Pointer to [**AtmAccessControlSettings**](AtmAccessControlSettings.md) |  | [optional] 
 **SessionValidationSettings** | Pointer to [**SessionValidationSettings**](SessionValidationSettings.md) |  | [optional] 
 **SequenceNumber** | Pointer to **int64** | Number added to an access token to identify which Access Token Manager issued the token. | [optional] 
+**TokenEndpointAttributeContract** | Pointer to [**TokenEndpointAttributeContract**](TokenEndpointAttributeContract.md) |  | [optional] 
 
 ## Methods
 
@@ -289,6 +290,31 @@ SetSequenceNumber sets SequenceNumber field to given value.
 `func (o *AccessTokenManager) HasSequenceNumber() bool`
 
 HasSequenceNumber returns a boolean if a field has been set.
+
+### GetTokenEndpointAttributeContract
+
+`func (o *AccessTokenManager) GetTokenEndpointAttributeContract() TokenEndpointAttributeContract`
+
+GetTokenEndpointAttributeContract returns the TokenEndpointAttributeContract field if non-nil, zero value otherwise.
+
+### GetTokenEndpointAttributeContractOk
+
+`func (o *AccessTokenManager) GetTokenEndpointAttributeContractOk() (*TokenEndpointAttributeContract, bool)`
+
+GetTokenEndpointAttributeContractOk returns a tuple with the TokenEndpointAttributeContract field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTokenEndpointAttributeContract
+
+`func (o *AccessTokenManager) SetTokenEndpointAttributeContract(v TokenEndpointAttributeContract)`
+
+SetTokenEndpointAttributeContract sets TokenEndpointAttributeContract field to given value.
+
+### HasTokenEndpointAttributeContract
+
+`func (o *AccessTokenManager) HasTokenEndpointAttributeContract() bool`
+
+HasTokenEndpointAttributeContract returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

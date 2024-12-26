@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **IncludeX5tInIdToken** | Pointer to **bool** | Determines whether the X.509 thumbprint header should be included in the ID Token. | [optional] 
 **IdTokenTypHeaderValue** | Pointer to **string** | ID Token Type (typ) Header Value. | [optional] 
 **ReturnIdTokenOnRefreshGrant** | Pointer to **bool** | Determines whether an ID Token should be returned when refresh grant is requested or not. | [optional] 
+**ReturnIdTokenOnTokenExchangeGrant** | Pointer to **bool** | Determines whether an ID Token should be returned when token exchange is requested or not. | [optional] 
 **ReissueIdTokenInHybridFlow** | Pointer to **bool** | Determines whether a new ID Token should be returned during token request of the hybrid flow. | [optional] 
 **AttributeContract** | [**OpenIdConnectAttributeContract**](OpenIdConnectAttributeContract.md) |  | 
 **AttributeMapping** | [**AttributeMapping**](AttributeMapping.md) |  | 
@@ -273,6 +274,31 @@ SetReturnIdTokenOnRefreshGrant sets ReturnIdTokenOnRefreshGrant field to given v
 `func (o *OpenIdConnectPolicy) HasReturnIdTokenOnRefreshGrant() bool`
 
 HasReturnIdTokenOnRefreshGrant returns a boolean if a field has been set.
+
+### GetReturnIdTokenOnTokenExchangeGrant
+
+`func (o *OpenIdConnectPolicy) GetReturnIdTokenOnTokenExchangeGrant() bool`
+
+GetReturnIdTokenOnTokenExchangeGrant returns the ReturnIdTokenOnTokenExchangeGrant field if non-nil, zero value otherwise.
+
+### GetReturnIdTokenOnTokenExchangeGrantOk
+
+`func (o *OpenIdConnectPolicy) GetReturnIdTokenOnTokenExchangeGrantOk() (*bool, bool)`
+
+GetReturnIdTokenOnTokenExchangeGrantOk returns a tuple with the ReturnIdTokenOnTokenExchangeGrant field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReturnIdTokenOnTokenExchangeGrant
+
+`func (o *OpenIdConnectPolicy) SetReturnIdTokenOnTokenExchangeGrant(v bool)`
+
+SetReturnIdTokenOnTokenExchangeGrant sets ReturnIdTokenOnTokenExchangeGrant field to given value.
+
+### HasReturnIdTokenOnTokenExchangeGrant
+
+`func (o *OpenIdConnectPolicy) HasReturnIdTokenOnTokenExchangeGrant() bool`
+
+HasReturnIdTokenOnTokenExchangeGrant returns a boolean if a field has been set.
 
 ### GetReissueIdTokenInHybridFlow
 

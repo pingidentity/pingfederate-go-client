@@ -49,6 +49,8 @@ Name | Type | Description | Notes
 **RequireJwtSecuredAuthorizationResponseMode** | Pointer to **bool** | Determines whether JWT Secured authorization response mode is required when initiating an authorization request. The default is false. | [optional] 
 **RequireOfflineAccessScopeToIssueRefreshTokens** | Pointer to **string** | Determines whether offline_access scope is required to issue refresh tokens or not. &#39;SERVER_DEFAULT&#39; is the default value.  | [optional] 
 **OfflineAccessRequireConsentPrompt** | Pointer to **string** | Determines whether offline_access requires the prompt parameter value to be set to &#39;consent&#39; or not. The value will be reset to default if the &#39;requireOfflineAccessScopeToIssueRefreshTokens&#39; attribute is set to &#39;SERVER_DEFAULT&#39; or &#39;false&#39;. &#39;SERVER_DEFAULT&#39; is the default value. | [optional] 
+**LockoutMaxMaliciousActionsType** | Pointer to **string** | Allows an administrator to override the Max Malicious Actions configuration set globally in AccountLockingService. Defaults to SERVER_DEFAULT. | [optional] 
+**LockoutMaxMaliciousActions** | Pointer to **int64** | The number of malicious actions allowed before an OAuth client is locked out. Currently, the only operation that is tracked as a malicious action is an attempt to revoke an invalid access token or refresh token. This value will override the global MaxMaliciousActions value on the AccountLockingService in the config-store. | [optional] 
 
 ## Methods
 
@@ -1193,6 +1195,56 @@ SetOfflineAccessRequireConsentPrompt sets OfflineAccessRequireConsentPrompt fiel
 `func (o *DynamicClientRegistration) HasOfflineAccessRequireConsentPrompt() bool`
 
 HasOfflineAccessRequireConsentPrompt returns a boolean if a field has been set.
+
+### GetLockoutMaxMaliciousActionsType
+
+`func (o *DynamicClientRegistration) GetLockoutMaxMaliciousActionsType() string`
+
+GetLockoutMaxMaliciousActionsType returns the LockoutMaxMaliciousActionsType field if non-nil, zero value otherwise.
+
+### GetLockoutMaxMaliciousActionsTypeOk
+
+`func (o *DynamicClientRegistration) GetLockoutMaxMaliciousActionsTypeOk() (*string, bool)`
+
+GetLockoutMaxMaliciousActionsTypeOk returns a tuple with the LockoutMaxMaliciousActionsType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLockoutMaxMaliciousActionsType
+
+`func (o *DynamicClientRegistration) SetLockoutMaxMaliciousActionsType(v string)`
+
+SetLockoutMaxMaliciousActionsType sets LockoutMaxMaliciousActionsType field to given value.
+
+### HasLockoutMaxMaliciousActionsType
+
+`func (o *DynamicClientRegistration) HasLockoutMaxMaliciousActionsType() bool`
+
+HasLockoutMaxMaliciousActionsType returns a boolean if a field has been set.
+
+### GetLockoutMaxMaliciousActions
+
+`func (o *DynamicClientRegistration) GetLockoutMaxMaliciousActions() int64`
+
+GetLockoutMaxMaliciousActions returns the LockoutMaxMaliciousActions field if non-nil, zero value otherwise.
+
+### GetLockoutMaxMaliciousActionsOk
+
+`func (o *DynamicClientRegistration) GetLockoutMaxMaliciousActionsOk() (*int64, bool)`
+
+GetLockoutMaxMaliciousActionsOk returns a tuple with the LockoutMaxMaliciousActions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLockoutMaxMaliciousActions
+
+`func (o *DynamicClientRegistration) SetLockoutMaxMaliciousActions(v int64)`
+
+SetLockoutMaxMaliciousActions sets LockoutMaxMaliciousActions field to given value.
+
+### HasLockoutMaxMaliciousActions
+
+`func (o *DynamicClientRegistration) HasLockoutMaxMaliciousActions() bool`
+
+HasLockoutMaxMaliciousActions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

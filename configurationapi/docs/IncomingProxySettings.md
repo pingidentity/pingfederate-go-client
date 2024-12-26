@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **ForwardedIpAddressHeaderIndex** | Pointer to **string** | PingFederate combines multiple comma-separated header values into the same order that they are received. Define which IP address you want to use. Default is to use the last address. | [optional] 
 **ForwardedHostHeaderName** | Pointer to **string** | Globally specify the header name (for example, X-Forwarded-Host) where PingFederate should attempt to retrieve the hostname and port in all HTTP requests. | [optional] 
 **ForwardedHostHeaderIndex** | Pointer to **string** | PingFederate combines multiple comma-separated header values into the same order that they are received. Define which hostname you want to use. Default is to use the last hostname. | [optional] 
+**EnableClientCertHeaderAuth** | Pointer to **bool** | Enable client certificate header authentication. | [optional] 
+**ClientCertHeaderEncodingFormat** | Pointer to **string** | Specify the encoding format of the client certificate header. The default value is APACHE_MOD_SSL. | [optional] 
 **ClientCertSSLHeaderName** | Pointer to **string** | While the proxy server is configured to pass client certificates as HTTP request headers, specify the header name here. | [optional] 
 **ClientCertChainSSLHeaderName** | Pointer to **string** | While the proxy server is configured to pass client certificates as HTTP request headers, specify the chain header name here. | [optional] 
 **ProxyTerminatesHttpsConns** | Pointer to **bool** | Allows you to globally specify that connections to the reverse proxy are made over HTTPS even when HTTP is used between the reverse proxy and PingFederate. | [optional] 
@@ -130,6 +132,56 @@ SetForwardedHostHeaderIndex sets ForwardedHostHeaderIndex field to given value.
 `func (o *IncomingProxySettings) HasForwardedHostHeaderIndex() bool`
 
 HasForwardedHostHeaderIndex returns a boolean if a field has been set.
+
+### GetEnableClientCertHeaderAuth
+
+`func (o *IncomingProxySettings) GetEnableClientCertHeaderAuth() bool`
+
+GetEnableClientCertHeaderAuth returns the EnableClientCertHeaderAuth field if non-nil, zero value otherwise.
+
+### GetEnableClientCertHeaderAuthOk
+
+`func (o *IncomingProxySettings) GetEnableClientCertHeaderAuthOk() (*bool, bool)`
+
+GetEnableClientCertHeaderAuthOk returns a tuple with the EnableClientCertHeaderAuth field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableClientCertHeaderAuth
+
+`func (o *IncomingProxySettings) SetEnableClientCertHeaderAuth(v bool)`
+
+SetEnableClientCertHeaderAuth sets EnableClientCertHeaderAuth field to given value.
+
+### HasEnableClientCertHeaderAuth
+
+`func (o *IncomingProxySettings) HasEnableClientCertHeaderAuth() bool`
+
+HasEnableClientCertHeaderAuth returns a boolean if a field has been set.
+
+### GetClientCertHeaderEncodingFormat
+
+`func (o *IncomingProxySettings) GetClientCertHeaderEncodingFormat() string`
+
+GetClientCertHeaderEncodingFormat returns the ClientCertHeaderEncodingFormat field if non-nil, zero value otherwise.
+
+### GetClientCertHeaderEncodingFormatOk
+
+`func (o *IncomingProxySettings) GetClientCertHeaderEncodingFormatOk() (*string, bool)`
+
+GetClientCertHeaderEncodingFormatOk returns a tuple with the ClientCertHeaderEncodingFormat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientCertHeaderEncodingFormat
+
+`func (o *IncomingProxySettings) SetClientCertHeaderEncodingFormat(v string)`
+
+SetClientCertHeaderEncodingFormat sets ClientCertHeaderEncodingFormat field to given value.
+
+### HasClientCertHeaderEncodingFormat
+
+`func (o *IncomingProxySettings) HasClientCertHeaderEncodingFormat() bool`
+
+HasClientCertHeaderEncodingFormat returns a boolean if a field has been set.
 
 ### GetClientCertSSLHeaderName
 

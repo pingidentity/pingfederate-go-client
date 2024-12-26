@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**GetCert**](ServerSettingsAPI.md#GetCert) | **Get** /serverSettings/wsTrustStsSettings/issuerCertificates/{id} | Retrieve details of a certificate.
 [**GetCerts**](ServerSettingsAPI.md#GetCerts) | **Get** /serverSettings/wsTrustStsSettings/issuerCertificates | Get the list of certificates for WS-Trust STS Settings.
 [**GetEmailServerSettings**](ServerSettingsAPI.md#GetEmailServerSettings) | **Get** /serverSettings/emailServer | (Deprecated) Gets the email server settings
+[**GetFederationInfo**](ServerSettingsAPI.md#GetFederationInfo) | **Get** /serverSettings/federationInfo | Gets the federation info.
 [**GetGeneralSettings**](ServerSettingsAPI.md#GetGeneralSettings) | **Get** /serverSettings/generalSettings | Gets the general settings.
 [**GetLogSettings**](ServerSettingsAPI.md#GetLogSettings) | **Get** /serverSettings/logSettings | Gets the log settings.
 [**GetNotificationSettings**](ServerSettingsAPI.md#GetNotificationSettings) | **Get** /serverSettings/notifications | Gets the notification settings
@@ -20,6 +21,7 @@ Method | HTTP request | Description
 [**RotateSystemKeys**](ServerSettingsAPI.md#RotateSystemKeys) | **Post** /serverSettings/systemKeys/rotate | Rotate the system keys.
 [**UpdateCaptchaSettings**](ServerSettingsAPI.md#UpdateCaptchaSettings) | **Put** /serverSettings/captchaSettings | (Deprecated) Update the CAPTCHA settings.
 [**UpdateEmailServerSettings**](ServerSettingsAPI.md#UpdateEmailServerSettings) | **Put** /serverSettings/emailServer | (Deprecated) Update the email server settings
+[**UpdateFederationInfo**](ServerSettingsAPI.md#UpdateFederationInfo) | **Put** /serverSettings/federationInfo | Update the federation info.
 [**UpdateGeneralSettings**](ServerSettingsAPI.md#UpdateGeneralSettings) | **Put** /serverSettings/generalSettings | Update general settings.
 [**UpdateLogSettings**](ServerSettingsAPI.md#UpdateLogSettings) | **Put** /serverSettings/logSettings | Update log settings.
 [**UpdateNotificationSettings**](ServerSettingsAPI.md#UpdateNotificationSettings) | **Put** /serverSettings/notifications | Update the notification settings.
@@ -328,6 +330,65 @@ Other parameters are passed through a pointer to a apiGetEmailServerSettingsRequ
 ### Return type
 
 [**EmailServerSettings**](EmailServerSettings.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetFederationInfo
+
+> FederationInfo GetFederationInfo(ctx).Execute()
+
+Gets the federation info.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ServerSettingsAPI.GetFederationInfo(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetFederationInfo``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetFederationInfo`: FederationInfo
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetFederationInfo`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetFederationInfoRequest struct via the builder pattern
+
+
+### Return type
+
+[**FederationInfo**](FederationInfo.md)
 
 ### Authorization
 
@@ -1004,6 +1065,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EmailServerSettings**](EmailServerSettings.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateFederationInfo
+
+> FederationInfo UpdateFederationInfo(ctx).Body(body).Execute()
+
+Update the federation info.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+    body := *openapiclient.NewFederationInfo() // FederationInfo |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ServerSettingsAPI.UpdateFederationInfo(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateFederationInfo``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateFederationInfo`: FederationInfo
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateFederationInfo`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateFederationInfoRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**FederationInfo**](FederationInfo.md) |  | 
+
+### Return type
+
+[**FederationInfo**](FederationInfo.md)
 
 ### Authorization
 

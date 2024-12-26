@@ -12,6 +12,7 @@ api_certificates_ca.go
 api_certificates_groups.go
 api_certificates_revocation.go
 api_cluster.go
+api_collect_support_data.go
 api_config_archive.go
 api_config_store.go
 api_configuration_encryption_keys.go
@@ -51,6 +52,7 @@ api_oauth_idp_adapter_mappings.go
 api_oauth_issuers.go
 api_oauth_open_id_connect.go
 api_oauth_out_of_band_auth_plugins.go
+api_oauth_processor_policy_mappings.go
 api_oauth_resource_owner_credentials_mappings.go
 api_oauth_token_exchange_generator.go
 api_oauth_token_exchange_processor.go
@@ -208,6 +210,7 @@ docs/ClusterAPI.md
 docs/ClusterNode.md
 docs/ClusterSettings.md
 docs/ClusterStatus.md
+docs/CollectSupportDataAPI.md
 docs/ConditionalIssuanceCriteriaEntry.md
 docs/ConfigArchiveAPI.md
 docs/ConfigField.md
@@ -232,6 +235,9 @@ docs/ContinuePolicyAction.md
 docs/ConvertMetadataRequest.md
 docs/ConvertMetadataResponse.md
 docs/CrlSettings.md
+docs/CsdArchiveInfo.md
+docs/CsdArchives.md
+docs/CsdSettings.md
 docs/CustomAttributeSource.md
 docs/CustomDataStore.md
 docs/CustomDataStoreDescriptor.md
@@ -411,6 +417,7 @@ docs/OauthIdpAdapterMappingsAPI.md
 docs/OauthIssuersAPI.md
 docs/OauthOpenIdConnectAPI.md
 docs/OauthOutOfBandAuthPluginsAPI.md
+docs/OauthProcessorPolicyMappingsAPI.md
 docs/OauthResourceOwnerCredentialsMappingsAPI.md
 docs/OauthTokenExchangeGeneratorAPI.md
 docs/OauthTokenExchangeProcessorAPI.md
@@ -461,6 +468,8 @@ docs/PolicyAction.md
 docs/PolicyActionAggregation.md
 docs/ProcessorPolicyToGeneratorMapping.md
 docs/ProcessorPolicyToGeneratorMappings.md
+docs/ProcessorPolicyToPersistentGrantMapping.md
+docs/ProcessorPolicyToPersistentGrantMappings.md
 docs/ProfileConfig.md
 docs/ProtocolMessageCustomization.md
 docs/ProtocolMetadataAPI.md
@@ -567,6 +576,8 @@ docs/TextAreaFieldDescriptor.md
 docs/TextFieldDescriptor.md
 docs/TextLocalIdentityField.md
 docs/ThreadPoolExhaustionNotificationSettings.md
+docs/TokenEndpointAttribute.md
+docs/TokenEndpointAttributeContract.md
 docs/TokenExchangeGeneratorGroup.md
 docs/TokenExchangeGeneratorGroups.md
 docs/TokenExchangeGeneratorMapping.md
@@ -747,6 +758,9 @@ model_continue_policy_action.go
 model_convert_metadata_request.go
 model_convert_metadata_response.go
 model_crl_settings.go
+model_csd_archive_info.go
+model_csd_archives.go
+model_csd_settings.go
 model_csr_response.go
 model_custom_attribute_source.go
 model_custom_data_store.go
@@ -935,6 +949,8 @@ model_policy_action.go
 model_policy_action_aggregation.go
 model_processor_policy_to_generator_mapping.go
 model_processor_policy_to_generator_mappings.go
+model_processor_policy_to_persistent_grant_mapping.go
+model_processor_policy_to_persistent_grant_mappings.go
 model_profile_config.go
 model_protocol_message_customization.go
 model_proxy_settings.go
@@ -1029,6 +1045,8 @@ model_text_area_field_descriptor.go
 model_text_field_descriptor.go
 model_text_local_identity_field.go
 model_thread_pool_exhaustion_notification_settings.go
+model_token_endpoint_attribute.go
+model_token_endpoint_attribute_contract.go
 model_token_exchange_generator_group.go
 model_token_exchange_generator_groups.go
 model_token_exchange_generator_mapping.go
@@ -1077,6 +1095,7 @@ test/api_certificates_ca_test.go
 test/api_certificates_groups_test.go
 test/api_certificates_revocation_test.go
 test/api_cluster_test.go
+test/api_collect_support_data_test.go
 test/api_config_archive_test.go
 test/api_config_store_test.go
 test/api_configuration_encryption_keys_test.go
@@ -1116,6 +1135,7 @@ test/api_oauth_idp_adapter_mappings_test.go
 test/api_oauth_issuers_test.go
 test/api_oauth_open_id_connect_test.go
 test/api_oauth_out_of_band_auth_plugins_test.go
+test/api_oauth_processor_policy_mappings_test.go
 test/api_oauth_resource_owner_credentials_mappings_test.go
 test/api_oauth_token_exchange_generator_test.go
 test/api_oauth_token_exchange_processor_test.go

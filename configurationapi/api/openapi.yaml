@@ -9,7 +9,7 @@ info:
     \ ability to interact with the API. You are prompted for proper administration\
     \ credentials when you try to perform an API operation."
   title: Administrative API Documentation
-  version: 12.1.0.4
+  version: 12.2.0.4
 servers:
 - url: https://localhost:9999/pf-admin-api/v1
 security:
@@ -33,6 +33,7 @@ tags:
 - name: /certificates/groups
 - name: /certificates/revocation
 - name: /cluster
+- name: /collectSupportData
 - name: /configArchive
 - name: /configStore
 - name: /configurationEncryptionKeys
@@ -60,6 +61,7 @@ tags:
 - name: /oauth/outOfBandAuthPlugins
 - name: /keyPairs/oauthOpenIdConnect
 - name: /oauth/resourceOwnerCredentialsMappings
+- name: /oauth/processorPolicyMappings
 - name: /oauth/openIdConnect
 - name: /passwordCredentialValidators
 - name: /pingOneConnections
@@ -3940,6 +3942,101 @@ paths:
       tags:
       - /cluster
       x-codegen-request-body-name: body
+  /collectSupportData/archives/collect:
+    post:
+      operationId: collectSupportData
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CsdSettings'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CsdArchives'
+          description: Success.
+        "422":
+          content: {}
+          description: Validation error(s) occurred.
+      summary: Run the collect support data utility using the provided settings.
+      tags:
+      - /collectSupportData
+      x-codegen-request-body-name: body
+  /collectSupportData/archives/export/{id}:
+    get:
+      operationId: downloadArchive
+      parameters:
+      - description: ID of the archive to download.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content: {}
+          description: Success.
+        "404":
+          content: {}
+          description: Resource not found.
+        "422":
+          content: {}
+          description: Validation error(s) occurred.
+      summary: Export a CSD archive.
+      tags:
+      - /collectSupportData
+  /collectSupportData/archives/{id}:
+    get:
+      operationId: getStatus
+      parameters:
+      - description: Archive ID
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CsdArchiveInfo'
+          description: Success.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+          description: Resource not found.
+      summary: Get the status of a current CSD archive.
+      tags:
+      - /collectSupportData
+  /collectSupportData/archives:
+    get:
+      operationId: getStatus_1
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CsdArchives'
+          description: Success.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+          description: Resource not found.
+      summary: Get the status of the current CSD archives.
+      tags:
+      - /collectSupportData
   /configArchive/import:
     post:
       description: "If there are missing components or license inconsistencies, the\
@@ -8832,6 +8929,168 @@ paths:
       tags:
       - /oauth/openIdConnect
       x-codegen-request-body-name: body
+  /oauth/processorPolicyMappings/{id}:
+    delete:
+      operationId: deleteTeppMapping
+      parameters:
+      - description: ID of the processor policy to persistent grant mapping.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          content: {}
+          description: Processor policy to persistent grant mapping deleted.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+          description: Resource not found.
+      summary: Delete a processor policy to persistent grant mapping.
+      tags:
+      - /oauth/processorPolicyMappings
+    get:
+      operationId: getProcessorPolicyMapping
+      parameters:
+      - description: ID of the processor policy to persistent grant mapping.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProcessorPolicyToPersistentGrantMapping'
+          description: Success.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+          description: Resource not found.
+      summary: Find the processor policy to persistent grant mapping by ID.
+      tags:
+      - /oauth/processorPolicyMappings
+    put:
+      operationId: updateTeppMapping
+      parameters:
+      - description: ID of the processor policy to persistent grant mapping to update.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: External validation will be bypassed when set to true. Default
+          to false.
+        explode: false
+        in: header
+        name: X-BypassExternalValidation
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProcessorPolicyToPersistentGrantMapping'
+        description: Configuration for a processor policy to persistent grant mapping.
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProcessorPolicyToPersistentGrantMapping'
+          description: Processor policy to persistent grant mapping updated.
+        "400":
+          content: {}
+          description: The request was improperly formatted or contained invalid fields.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+          description: Resource not found.
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+          description: Validation error(s) occurred.
+      summary: Update a processor policy to persistent grant mapping.
+      tags:
+      - /oauth/processorPolicyMappings
+      x-codegen-request-body-name: body
+  /oauth/processorPolicyMappings:
+    get:
+      operationId: getProcessorPolicyMappings
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProcessorPolicyToPersistentGrantMappings'
+          description: Success.
+      summary: Get the list of processor policy to persistent grant mappings.
+      tags:
+      - /oauth/processorPolicyMappings
+    post:
+      description: "Create a new processor policy to persistent grant mapping. If\
+        \ a mapping can't be created, a 422 status code is returned along with a list\
+        \ of validation errors that must be corrected."
+      operationId: createTeppMapping
+      parameters:
+      - description: External validation will be bypassed when set to true. Default
+          to false.
+        explode: false
+        in: header
+        name: X-BypassExternalValidation
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProcessorPolicyToPersistentGrantMapping'
+        description: Configuration for processor policy to persistent grant mapping.
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProcessorPolicyToPersistentGrantMapping'
+          description: Processor policy to persistent grant mapping created.
+        "400":
+          content: {}
+          description: The request was improperly formatted or contained invalid fields.
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+          description: Validation error(s) occurred.
+      summary: Create a new processor policy to persistent grant mapping.
+      tags:
+      - /oauth/processorPolicyMappings
+      x-codegen-request-body-name: body
   /oauth/openIdConnect/settings:
     get:
       operationId: getOIDCSettings
@@ -10437,6 +10696,47 @@ paths:
       summary: Retrieve details of a certificate.
       tags:
       - /serverSettings
+  /serverSettings/federationInfo:
+    get:
+      operationId: getFederationInfo
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FederationInfo'
+          description: Success.
+      summary: Gets the federation info.
+      tags:
+      - /serverSettings
+    put:
+      operationId: updateFederationInfo
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FederationInfo'
+        required: false
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FederationInfo'
+          description: Success.
+        "400":
+          content: {}
+          description: The request was improperly formatted or contained invalid fields.
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResult'
+          description: Validation error(s) occurred.
+      summary: Update the federation info.
+      tags:
+      - /serverSettings
+      x-codegen-request-body-name: body
   /serverSettings/generalSettings:
     get:
       operationId: getGeneralSettings
@@ -14560,6 +14860,12 @@ components:
       allOf:
       - $ref: '#/components/schemas/PluginDescriptor'
       - description: An OAuth access token management plugin descriptor.
+        properties:
+          tokenEndpointAttributeContract:
+            description: The token endpoint attribute contract for this plugin.
+            items:
+              type: string
+            type: array
         type: object
     AccessTokenManagerDescriptors:
       description: A collection of OAuth access token management plugin descriptors.
@@ -15081,6 +15387,8 @@ components:
               Token Manager issued the token.
             format: int32
             type: integer
+          tokenEndpointAttributeContract:
+            $ref: '#/components/schemas/TokenEndpointAttributeContract'
         type: object
     AccessTokenManagers:
       description: A collection of OAuth access token management plugin instances.
@@ -15155,6 +15463,18 @@ components:
         data store.
       discriminator:
         propertyName: type
+      example:
+        dataStoreRef:
+          id: id
+        description: description
+        attributeContractFulfillment:
+          key:
+            source:
+              id: id
+              type: TOKEN_EXCHANGE_PROCESSOR_POLICY
+            value: value
+        id: id
+        type: LDAP
       properties:
         type:
           description: The data store type of this attribute source.
@@ -15947,6 +16267,43 @@ components:
           description: The application icon URL.
           type: string
       type: object
+    TokenEndpointAttribute:
+      description: An attribute for an Access Token Manager's token endpoint attribute
+        contract.
+      properties:
+        name:
+          description: The name of this attribute.
+          type: string
+        multiValued:
+          description: Indicates whether attribute value is always returned as an
+            array.
+          type: boolean
+        mappedScopes:
+          description: List of scopes that will trigger this attribute to be included
+            in the token endpoint response.
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+      required:
+      - name
+      type: object
+    TokenEndpointAttributeContract:
+      description: A set of attributes exposed by an Access Token Manager in a token
+        endpoint response.
+      properties:
+        attributes:
+          description: A list of token endpoint response attributes that are associated
+            with this access token management plugin instance.
+          items:
+            $ref: '#/components/schemas/TokenEndpointAttribute'
+          type: array
+        inherited:
+          description: "Whether this attribute contract is inherited from its parent\
+            \ instance. If true, the rest of the properties in this model become read-only.\
+            \ The default value is false."
+          type: boolean
+      type: object
     TokenGenerator:
       allOf:
       - $ref: '#/components/schemas/PluginInstance'
@@ -16235,13 +16592,15 @@ components:
             \ local keys and certificates. <br> ADMINISTRATOR - Can configure partner\
             \ connections and most system settings (except the management of native\
             \ accounts and the handling of local keys and certificates. <br>EXPRESSION_ADMINISTRATOR\
-            \ - Can add and update OGNL expressions. <br>"
+            \ - Can add and update OGNL expressions. <br>DATA_COLLECTION_ADMINISTRATOR\
+            \ - Can run the Collect Support Data Utility. <br>"
           items:
             enum:
             - USER_ADMINISTRATOR
             - CRYPTO_ADMINISTRATOR
             - ADMINISTRATOR
             - EXPRESSION_ADMINISTRATOR
+            - DATA_COLLECTION_ADMINISTRATOR
             type: string
           type: array
           uniqueItems: true
@@ -17429,6 +17788,7 @@ components:
         pendingAuthorizationTimeout: 3
         consentLifetimeDays: 9
         bypassActivationCodeConfirmation: true
+        returnIdTokenOnOpenIdWithDeviceAuthzGrant: true
         refreshRollingIntervalTimeUnit: SECONDS
         registeredAuthorizationPath: registeredAuthorizationPath
         authorizationCodeTimeout: 0
@@ -17698,6 +18058,11 @@ components:
           description: Indicates if cookies should be used for state tracking when
             the user authorization endpoint is operating in authentication API redirectless
             mode
+          type: boolean
+        returnIdTokenOnOpenIdWithDeviceAuthzGrant:
+          description: Indicates if an ID token should be returned during the device
+            authorization grant flow when the 'openid' scope is approved. The default
+            is false.
           type: boolean
         userAuthorizationConsentPageSetting:
           description: User Authorization Consent Page setting to use PingFederate's
@@ -18857,6 +19222,169 @@ components:
           items:
             type: string
           type: array
+      type: object
+    CsdArchiveInfo:
+      description: Information about a CSD archive.
+      example:
+        address: address
+        statusLink:
+          id: id
+        nodeIndex: nodeIndex
+        exportLink:
+          id: id
+        archiveId: archiveId
+        timestamp: 2000-01-23T04:56:07.000+00:00
+        status: IN_PROGRESS
+      properties:
+        nodeIndex:
+          description: The node index of the PingFederate node that the archive is
+            being collected from.
+          type: string
+        archiveId:
+          description: The ID of the CSD archive.
+          type: string
+        address:
+          description: The address of the PingFederate node that the archive is being
+            collected from.
+          type: string
+        timestamp:
+          description: The timestamp of when the collection of the archive started.
+          format: date-time
+          type: string
+        status:
+          description: The status of the archive.
+          enum:
+          - IN_PROGRESS
+          - COMPLETED
+          - FAILED
+          type: string
+        statusLink:
+          $ref: '#/components/schemas/ResourceLink'
+        exportLink:
+          $ref: '#/components/schemas/ResourceLink'
+      type: object
+    CsdArchives:
+      description: A collection of CsdArchives.
+      example:
+        archives:
+        - address: address
+          statusLink:
+            id: id
+          nodeIndex: nodeIndex
+          exportLink:
+            id: id
+          archiveId: archiveId
+          timestamp: 2000-01-23T04:56:07.000+00:00
+          status: IN_PROGRESS
+        - address: address
+          statusLink:
+            id: id
+          nodeIndex: nodeIndex
+          exportLink:
+            id: id
+          archiveId: archiveId
+          timestamp: 2000-01-23T04:56:07.000+00:00
+          status: IN_PROGRESS
+      properties:
+        archives:
+          description: The list of CSD archives.
+          items:
+            $ref: '#/components/schemas/CsdArchiveInfo'
+          type: array
+      type: object
+    CsdSettings:
+      description: Settings related to the Collect Support Data utility.
+      example:
+        fileTailCollectionKBSize: 1
+        includeBinaryFiles: true
+        nodeTypeToCollect: STANDALONE
+        fileHeadCollectionKBSize: 6
+        rolledLogCount: 5
+        truncateLogs: true
+        intervalBetweenHeartbeatSamples: 2
+        reportInterval: 9
+        collectExpensiveData: true
+        encryptArchive: true
+        encryptionPassphrase: encryptionPassphrase
+        numHeartbeatSamples: 5
+        reportCount: 7
+        comment: comment
+        nodesToCollect:
+        - 0
+        - 0
+      properties:
+        nodesToCollect:
+          description: The list of nodes to collect support data archives from.
+          items:
+            format: int32
+            type: integer
+          type: array
+        nodeTypeToCollect:
+          description: The type of PingFederate nodes to collect support data archives
+            from.
+          enum:
+          - STANDALONE
+          - ENGINES
+          - ADMINS
+          - ALL
+          type: string
+        truncateLogs:
+          description: "If set, PingFederate logs will be truncated."
+          type: boolean
+        fileHeadCollectionKBSize:
+          description: The amount of data in kilobytes to collect at the beginning
+            of truncated files. Data will not be truncated from the beginning of files
+            if left blank.
+          format: int64
+          type: integer
+        fileTailCollectionKBSize:
+          description: The amount of data in kilobytes to collect at the end of truncated
+            files. Data will not be truncated from the end of files if left blank.
+          format: int64
+          type: integer
+        rolledLogCount:
+          description: The number of rolled server log files to collect.
+          format: int64
+          type: integer
+        encryptArchive:
+          description: Indicates that the resulting support data archive should be
+            encrypted.
+          type: boolean
+        encryptionPassphrase:
+          description: The passphrase to use to encrypt and decrypt the support data
+            archive. Required if encryptArchive is true.
+          type: string
+        includeBinaryFiles:
+          description: "If set, binary files will be included in the collected archive."
+          type: boolean
+        collectExpensiveData:
+          description: Collect data from expensive or long running processes. These
+            processes may make the PingFederate server unresponsive for a couple of
+            minutes.
+          type: boolean
+        numHeartbeatSamples:
+          description: Number of heartbeat samples to take.
+          format: int64
+          type: integer
+        intervalBetweenHeartbeatSamples:
+          description: Interval between heartbeat calls in seconds.
+          format: int64
+          type: integer
+        reportCount:
+          description: "Number of reports generated for commands that support sampling\
+            \ (for example, mpstat). A value of 0 (zero) indicates that no reports\
+            \ will be generated for these commands"
+          format: int64
+          type: integer
+        reportInterval:
+          description: "Number of seconds between reports for commands that support\
+            \ sampling (for example, mpstat)."
+          format: int64
+          type: integer
+        comment:
+          description: Specify additional information about the collected data set.  This
+            comment will be added to the generated archive as a README file.
+          type: string
       type: object
     ClusterNode:
       description: Describes a node in a clustered deployment of PingFederate.
@@ -24201,11 +24729,13 @@ components:
       example:
         forwardedIpAddressHeaderIndex: FIRST
         forwardedHostHeaderName: forwardedHostHeaderName
+        clientCertHeaderEncodingFormat: APACHE_MOD_SSL
         clientCertChainSSLHeaderName: clientCertChainSSLHeaderName
         clientCertSSLHeaderName: clientCertSSLHeaderName
         forwardedIpAddressHeaderName: forwardedIpAddressHeaderName
         forwardedHostHeaderIndex: FIRST
         proxyTerminatesHttpsConns: true
+        enableClientCertHeaderAuth: true
       properties:
         forwardedIpAddressHeaderName:
           description: "Globally specify the header name (for example, X-Forwarded-For)\
@@ -24232,6 +24762,16 @@ components:
           enum:
           - FIRST
           - LAST
+          type: string
+        enableClientCertHeaderAuth:
+          description: Enable client certificate header authentication.
+          type: boolean
+        clientCertHeaderEncodingFormat:
+          description: Specify the encoding format of the client certificate header.
+            The default value is APACHE_MOD_SSL.
+          enum:
+          - APACHE_MOD_SSL
+          - NGINX
           type: string
         clientCertSSLHeaderName:
           description: "While the proxy server is configured to pass client certificates\
@@ -24332,6 +24872,7 @@ components:
           enum:
           - DIRECT
           - LDAP_GATEWAY
+          - LOCAL_VALIDATION
           type: string
         keyDistributionCenters:
           description: The Domain Controller/Key Distribution Center Host Action Names.
@@ -24341,18 +24882,20 @@ components:
           type: array
         kerberosUsername:
           description: The Domain/Realm username. Only required when 'connectionType'
-            is "DIRECT".
+            is "DIRECT" or "LOCAL_VALIDATION".
           type: string
         kerberosPassword:
           description: "The Domain/Realm password. GETs will not return this attribute.\
             \ To update this field, specify the new value in this attribute. Only\
-            \ applicable when 'connectionType' is \"DIRECT\"."
+            \ applicable when 'connectionType' is \"DIRECT\" or \"LOCAL_VALIDATION\"\
+            ."
           type: string
         kerberosEncryptedPassword:
           description: "For GET requests, this field contains the encrypted Domain/Realm\
             \ password, if one exists. For POST and PUT requests, if you wish to reuse\
             \ the existing password, this field should be passed back unchanged. Only\
-            \ applicable when 'connectionType' is \"DIRECT\"."
+            \ applicable when 'connectionType' is \"DIRECT\" or \"LOCAL_VALIDATION\"\
+            ."
           type: string
         keySets:
           description: "A list of key sets for validating Kerberos tickets. On POST\
@@ -24360,7 +24903,7 @@ components:
             \ automatically adds the key set for the current password to this list\
             \ and removes expired key sets. If 'retainPreviousKeysOnPasswordChange'\
             \ is false, this list is cleared. Only applicable when 'connectionType'\
-            \ is \"DIRECT\"."
+            \ is \"DIRECT\" or \"LOCAL_VALIDATION\"."
           items:
             $ref: '#/components/schemas/KerberosKeySet'
           type: array
@@ -24368,7 +24911,7 @@ components:
           description: Determines whether the previous encryption keys are retained
             when the password is updated. Retaining the previous keys allows existing
             Kerberos tickets to continue to be validated. The default is false. Only
-            applicable when 'connectionType' is "DIRECT".
+            applicable when 'connectionType' is "DIRECT" or "LOCAL_VALIDATION".
           type: boolean
         suppressDomainNameConcatenation:
           description: Controls whether the KDC hostnames and the realm name are concatenated
@@ -26156,6 +26699,7 @@ components:
         restrictedResponseTypes:
         - restrictedResponseTypes
         - restrictedResponseTypes
+        lockoutMaxMaliciousActionsType: DO_NOT_LOCKOUT
         requireProofKeyForCodeExchange: true
         tokenIntrospectionSigningAlgorithm: RS256
         enableCookielessAuthenticationApi: true
@@ -26213,6 +26757,7 @@ components:
         requireSignedRequests: true
         cibaRequireSignedRequests: true
         description: description
+        lockoutMaxMaliciousActions: 3
         enabled: true
         tokenIntrospectionContentEncryptionAlgorithm: AES_128_CBC_HMAC_SHA_256
         requireOfflineAccessScopeToIssueRefreshTokens: SERVER_DEFAULT
@@ -26220,6 +26765,8 @@ components:
           sectorIdentifierUri: sectorIdentifierUri
           grantAccessSessionRevocationApi: true
           backChannelLogoutUri: backChannelLogoutUri
+          userInfoResponseContentEncryptionAlgorithm: AES_128_CBC_HMAC_SHA_256
+          userInfoResponseSigningAlgorithm: NONE
           idTokenEncryptionAlgorithm: DIR
           policyGroup:
             id: id
@@ -26231,6 +26778,7 @@ components:
           postLogoutRedirectUris:
           - postLogoutRedirectUris
           - postLogoutRedirectUris
+          userInfoResponseEncryptionAlgorithm: DIR
           grantAccessSessionSessionManagementApi: true
           pingAccessLogoutCapable: true
           idTokenSigningAlgorithm: NONE
@@ -26813,6 +27361,22 @@ components:
           - "NO"
           - "YES"
           type: string
+        lockoutMaxMaliciousActionsType:
+          description: Allows an administrator to override the Max Malicious Actions
+            configuration set globally in AccountLockingService. Defaults to SERVER_DEFAULT.
+          enum:
+          - DO_NOT_LOCKOUT
+          - SERVER_DEFAULT
+          - OVERRIDE_SERVER_DEFAULT
+          type: string
+        lockoutMaxMaliciousActions:
+          description: "The number of malicious actions allowed before an OAuth client\
+            \ is locked out. Currently, the only operation that is tracked as a malicious\
+            \ action is an attempt to revoke an invalid access token or refresh token.\
+            \ This value will override the global MaxMaliciousActions value on the\
+            \ AccountLockingService in the config-store."
+          format: int32
+          type: integer
       required:
       - clientId
       - grantTypes
@@ -26909,6 +27473,8 @@ components:
         sectorIdentifierUri: sectorIdentifierUri
         grantAccessSessionRevocationApi: true
         backChannelLogoutUri: backChannelLogoutUri
+        userInfoResponseContentEncryptionAlgorithm: AES_128_CBC_HMAC_SHA_256
+        userInfoResponseSigningAlgorithm: NONE
         idTokenEncryptionAlgorithm: DIR
         policyGroup:
           id: id
@@ -26920,6 +27486,7 @@ components:
         postLogoutRedirectUris:
         - postLogoutRedirectUris
         - postLogoutRedirectUris
+        userInfoResponseEncryptionAlgorithm: DIR
         grantAccessSessionSessionManagementApi: true
         pingAccessLogoutCapable: true
         idTokenSigningAlgorithm: NONE
@@ -27037,6 +27604,53 @@ components:
           description: The URI references a file with a single JSON array of Redirect
             URI and JWKS URL values.
           type: string
+        userInfoResponseSigningAlgorithm:
+          description: "The JSON Web Signature [JWS] algorithm required to sign the\
+            \ UserInfo response."
+          enum:
+          - NONE
+          - HS256
+          - HS384
+          - HS512
+          - RS256
+          - RS384
+          - RS512
+          - ES256
+          - ES384
+          - ES512
+          - PS256
+          - PS384
+          - PS512
+          type: string
+        userInfoResponseEncryptionAlgorithm:
+          description: "The JSON Web Encryption [JWE] encryption algorithm used to\
+            \ encrypt the content-encryption key of the UserInfo response."
+          enum:
+          - DIR
+          - A128KW
+          - A192KW
+          - A256KW
+          - A128GCMKW
+          - A192GCMKW
+          - A256GCMKW
+          - ECDH_ES
+          - ECDH_ES_A128KW
+          - ECDH_ES_A192KW
+          - ECDH_ES_A256KW
+          - RSA_OAEP
+          - RSA_OAEP_256
+          type: string
+        userInfoResponseContentEncryptionAlgorithm:
+          description: "The JSON Web Encryption [JWE] content-encryption algorithm\
+            \ for the UserInfo Response."
+          enum:
+          - AES_128_CBC_HMAC_SHA_256
+          - AES_192_CBC_HMAC_SHA_384
+          - AES_256_CBC_HMAC_SHA_512
+          - AES_128_GCM
+          - AES_192_GCM
+          - AES_256_GCM
+          type: string
       type: object
     JwksSettings:
       description: JSON Web Key Set Settings.
@@ -27076,6 +27690,7 @@ components:
           restrictedResponseTypes:
           - restrictedResponseTypes
           - restrictedResponseTypes
+          lockoutMaxMaliciousActionsType: DO_NOT_LOCKOUT
           requireProofKeyForCodeExchange: true
           tokenIntrospectionSigningAlgorithm: RS256
           enableCookielessAuthenticationApi: true
@@ -27133,6 +27748,7 @@ components:
           requireSignedRequests: true
           cibaRequireSignedRequests: true
           description: description
+          lockoutMaxMaliciousActions: 3
           enabled: true
           tokenIntrospectionContentEncryptionAlgorithm: AES_128_CBC_HMAC_SHA_256
           requireOfflineAccessScopeToIssueRefreshTokens: SERVER_DEFAULT
@@ -27140,6 +27756,8 @@ components:
             sectorIdentifierUri: sectorIdentifierUri
             grantAccessSessionRevocationApi: true
             backChannelLogoutUri: backChannelLogoutUri
+            userInfoResponseContentEncryptionAlgorithm: AES_128_CBC_HMAC_SHA_256
+            userInfoResponseSigningAlgorithm: NONE
             idTokenEncryptionAlgorithm: DIR
             policyGroup:
               id: id
@@ -27151,6 +27769,7 @@ components:
             postLogoutRedirectUris:
             - postLogoutRedirectUris
             - postLogoutRedirectUris
+            userInfoResponseEncryptionAlgorithm: DIR
             grantAccessSessionSessionManagementApi: true
             pingAccessLogoutCapable: true
             idTokenSigningAlgorithm: NONE
@@ -27200,6 +27819,7 @@ components:
           restrictedResponseTypes:
           - restrictedResponseTypes
           - restrictedResponseTypes
+          lockoutMaxMaliciousActionsType: DO_NOT_LOCKOUT
           requireProofKeyForCodeExchange: true
           tokenIntrospectionSigningAlgorithm: RS256
           enableCookielessAuthenticationApi: true
@@ -27257,6 +27877,7 @@ components:
           requireSignedRequests: true
           cibaRequireSignedRequests: true
           description: description
+          lockoutMaxMaliciousActions: 3
           enabled: true
           tokenIntrospectionContentEncryptionAlgorithm: AES_128_CBC_HMAC_SHA_256
           requireOfflineAccessScopeToIssueRefreshTokens: SERVER_DEFAULT
@@ -27264,6 +27885,8 @@ components:
             sectorIdentifierUri: sectorIdentifierUri
             grantAccessSessionRevocationApi: true
             backChannelLogoutUri: backChannelLogoutUri
+            userInfoResponseContentEncryptionAlgorithm: AES_128_CBC_HMAC_SHA_256
+            userInfoResponseSigningAlgorithm: NONE
             idTokenEncryptionAlgorithm: DIR
             policyGroup:
               id: id
@@ -27275,6 +27898,7 @@ components:
             postLogoutRedirectUris:
             - postLogoutRedirectUris
             - postLogoutRedirectUris
+            userInfoResponseEncryptionAlgorithm: DIR
             grantAccessSessionSessionManagementApi: true
             pingAccessLogoutCapable: true
             idTokenSigningAlgorithm: NONE
@@ -27437,6 +28061,7 @@ components:
           - allowedAuthorizationDetailTypes
           enforceReplayPrevention: true
           persistentGrantIdleTimeout: 6
+          lockoutMaxMaliciousActions: 3
           disableRegistrationAccessTokens: true
           requireOfflineAccessScopeToIssueRefreshTokens: SERVER_DEFAULT
           oidcPolicy:
@@ -27446,6 +28071,7 @@ components:
               id: id
             idTokenSigningAlgorithm: NONE
           persistentGrantExpirationTime: 0
+          lockoutMaxMaliciousActionsType: DO_NOT_LOCKOUT
           requireProofKeyForCodeExchange: true
           clientSecretRetentionPeriodOverride: 9
           requestPolicyRef:
@@ -27518,6 +28144,7 @@ components:
         - allowedAuthorizationDetailTypes
         enforceReplayPrevention: true
         persistentGrantIdleTimeout: 6
+        lockoutMaxMaliciousActions: 3
         disableRegistrationAccessTokens: true
         requireOfflineAccessScopeToIssueRefreshTokens: SERVER_DEFAULT
         oidcPolicy:
@@ -27527,6 +28154,7 @@ components:
             id: id
           idTokenSigningAlgorithm: NONE
         persistentGrantExpirationTime: 0
+        lockoutMaxMaliciousActionsType: DO_NOT_LOCKOUT
         requireProofKeyForCodeExchange: true
         clientSecretRetentionPeriodOverride: 9
         requestPolicyRef:
@@ -27802,6 +28430,22 @@ components:
           - "NO"
           - "YES"
           type: string
+        lockoutMaxMaliciousActionsType:
+          description: Allows an administrator to override the Max Malicious Actions
+            configuration set globally in AccountLockingService. Defaults to SERVER_DEFAULT.
+          enum:
+          - DO_NOT_LOCKOUT
+          - SERVER_DEFAULT
+          - OVERRIDE_SERVER_DEFAULT
+          type: string
+        lockoutMaxMaliciousActions:
+          description: "The number of malicious actions allowed before an OAuth client\
+            \ is locked out. Currently, the only operation that is tracked as a malicious\
+            \ action is an attempt to revoke an invalid access token or refresh token.\
+            \ This value will override the global MaxMaliciousActions value on the\
+            \ AccountLockingService in the config-store."
+          format: int32
+          type: integer
       type: object
     ClientRegistrationPolicyDescriptors:
       description: A collection of client registration policy plugin descriptors.
@@ -28639,6 +29283,206 @@ components:
             $ref: '#/components/schemas/ResourceOwnerCredentialsMapping'
           type: array
       type: object
+    ProcessorPolicyToPersistentGrantMapping:
+      description: An token exchange processor policy mapping into an OAuth persistent
+        grant.
+      example:
+        processorPolicyRef:
+          id: id
+        attributeContractFulfillment:
+          key:
+            source:
+              id: id
+              type: TOKEN_EXCHANGE_PROCESSOR_POLICY
+            value: value
+        id: id
+        attributeSources:
+        - dataStoreRef:
+            id: id
+          description: description
+          attributeContractFulfillment:
+            key:
+              source:
+                id: id
+                type: TOKEN_EXCHANGE_PROCESSOR_POLICY
+              value: value
+          id: id
+          type: LDAP
+        - dataStoreRef:
+            id: id
+          description: description
+          attributeContractFulfillment:
+            key:
+              source:
+                id: id
+                type: TOKEN_EXCHANGE_PROCESSOR_POLICY
+              value: value
+          id: id
+          type: LDAP
+        issuanceCriteria:
+          expressionCriteria:
+          - expression: expression
+            errorResult: errorResult
+          - expression: expression
+            errorResult: errorResult
+          conditionalCriteria:
+          - condition: EQUALS
+            errorResult: errorResult
+            attributeName: attributeName
+            source:
+              id: id
+              type: TOKEN_EXCHANGE_PROCESSOR_POLICY
+            value: value
+          - condition: EQUALS
+            errorResult: errorResult
+            attributeName: attributeName
+            source:
+              id: id
+              type: TOKEN_EXCHANGE_PROCESSOR_POLICY
+            value: value
+      properties:
+        id:
+          description: The ID of the processor policy to persistent grant mapping.
+            This value is generated by PingFederate.
+          type: string
+        processorPolicyRef:
+          $ref: '#/components/schemas/ResourceLink'
+        attributeSources:
+          description: A list of configured data stores to look up attributes from.
+          items:
+            $ref: '#/components/schemas/AttributeSource'
+          type: array
+        attributeContractFulfillment:
+          additionalProperties:
+            $ref: '#/components/schemas/AttributeFulfillmentValue'
+          description: A list of mappings from attribute names to their fulfillment
+            values.
+          type: object
+        issuanceCriteria:
+          $ref: '#/components/schemas/IssuanceCriteria'
+      required:
+      - attributeContractFulfillment
+      - processorPolicyRef
+      type: object
+    ProcessorPolicyToPersistentGrantMappings:
+      description: A collection of OAuth token exchange processor policy to persistent
+        grant mapping items.
+      example:
+        items:
+        - processorPolicyRef:
+            id: id
+          attributeContractFulfillment:
+            key:
+              source:
+                id: id
+                type: TOKEN_EXCHANGE_PROCESSOR_POLICY
+              value: value
+          id: id
+          attributeSources:
+          - dataStoreRef:
+              id: id
+            description: description
+            attributeContractFulfillment:
+              key:
+                source:
+                  id: id
+                  type: TOKEN_EXCHANGE_PROCESSOR_POLICY
+                value: value
+            id: id
+            type: LDAP
+          - dataStoreRef:
+              id: id
+            description: description
+            attributeContractFulfillment:
+              key:
+                source:
+                  id: id
+                  type: TOKEN_EXCHANGE_PROCESSOR_POLICY
+                value: value
+            id: id
+            type: LDAP
+          issuanceCriteria:
+            expressionCriteria:
+            - expression: expression
+              errorResult: errorResult
+            - expression: expression
+              errorResult: errorResult
+            conditionalCriteria:
+            - condition: EQUALS
+              errorResult: errorResult
+              attributeName: attributeName
+              source:
+                id: id
+                type: TOKEN_EXCHANGE_PROCESSOR_POLICY
+              value: value
+            - condition: EQUALS
+              errorResult: errorResult
+              attributeName: attributeName
+              source:
+                id: id
+                type: TOKEN_EXCHANGE_PROCESSOR_POLICY
+              value: value
+        - processorPolicyRef:
+            id: id
+          attributeContractFulfillment:
+            key:
+              source:
+                id: id
+                type: TOKEN_EXCHANGE_PROCESSOR_POLICY
+              value: value
+          id: id
+          attributeSources:
+          - dataStoreRef:
+              id: id
+            description: description
+            attributeContractFulfillment:
+              key:
+                source:
+                  id: id
+                  type: TOKEN_EXCHANGE_PROCESSOR_POLICY
+                value: value
+            id: id
+            type: LDAP
+          - dataStoreRef:
+              id: id
+            description: description
+            attributeContractFulfillment:
+              key:
+                source:
+                  id: id
+                  type: TOKEN_EXCHANGE_PROCESSOR_POLICY
+                value: value
+            id: id
+            type: LDAP
+          issuanceCriteria:
+            expressionCriteria:
+            - expression: expression
+              errorResult: errorResult
+            - expression: expression
+              errorResult: errorResult
+            conditionalCriteria:
+            - condition: EQUALS
+              errorResult: errorResult
+              attributeName: attributeName
+              source:
+                id: id
+                type: TOKEN_EXCHANGE_PROCESSOR_POLICY
+              value: value
+            - condition: EQUALS
+              errorResult: errorResult
+              attributeName: attributeName
+              source:
+                id: id
+                type: TOKEN_EXCHANGE_PROCESSOR_POLICY
+              value: value
+      properties:
+        items:
+          description: The actual list of OAuth token exchange processor policy to
+            persistent grant mappings.
+          items:
+            $ref: '#/components/schemas/ProcessorPolicyToPersistentGrantMapping'
+          type: array
+      type: object
     OIDCSessionSettings:
       description: (Deprecated) Settings relating to OpenID Connect session management.
       example:
@@ -28741,7 +29585,8 @@ components:
       description: A collection of OpenID Connect policies.
       example:
         items:
-        - idTokenTypHeaderValue: idTokenTypHeaderValue
+        - returnIdTokenOnTokenExchangeGrant: true
+          idTokenTypHeaderValue: idTokenTypHeaderValue
           scopeAttributeMappings:
             key:
               values:
@@ -28809,7 +29654,8 @@ components:
           idTokenLifetime: 0
           accessTokenManagerRef:
             id: id
-        - idTokenTypHeaderValue: idTokenTypHeaderValue
+        - returnIdTokenOnTokenExchangeGrant: true
+          idTokenTypHeaderValue: idTokenTypHeaderValue
           scopeAttributeMappings:
             key:
               values:
@@ -28887,6 +29733,7 @@ components:
     OpenIdConnectPolicy:
       description: The set of attributes used to configure an OpenID Connect policy.
       example:
+        returnIdTokenOnTokenExchangeGrant: true
         idTokenTypHeaderValue: idTokenTypHeaderValue
         scopeAttributeMappings:
           key:
@@ -28990,6 +29837,10 @@ components:
         returnIdTokenOnRefreshGrant:
           description: Determines whether an ID Token should be returned when refresh
             grant is requested or not.
+          type: boolean
+        returnIdTokenOnTokenExchangeGrant:
+          description: Determines whether an ID Token should be returned when token
+            exchange is requested or not.
           type: boolean
         reissueIdTokenInHybridFlow:
           description: Determines whether a new ID Token should be returned during
