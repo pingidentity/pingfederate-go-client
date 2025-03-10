@@ -1,5 +1,6 @@
 module github.com/pingidentity/pingfederate-go-client/v1220
 
 go 1.21
+toolchain go1.23.7
 
-require golang.org/x/oauth2 v0.20.0
+require golang.org/x/oauth2 v0.28.0
