@@ -5,6 +5,7 @@ All URIs are relative to *https://localhost:9999/pf-admin-api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DeleteCertificate**](ServerSettingsAPI.md#DeleteCertificate) | **Delete** /serverSettings/wsTrustStsSettings/issuerCertificates/{id} | Delete a certificate from WS-Trust STS Settings.
+[**GetAuditLogSettings**](ServerSettingsAPI.md#GetAuditLogSettings) | **Get** /serverSettings/auditLogSettings | Gets the audit log settings
 [**GetCaptchaSettings**](ServerSettingsAPI.md#GetCaptchaSettings) | **Get** /serverSettings/captchaSettings | (Deprecated) Gets the CAPTCHA settings.
 [**GetCert**](ServerSettingsAPI.md#GetCert) | **Get** /serverSettings/wsTrustStsSettings/issuerCertificates/{id} | Retrieve details of a certificate.
 [**GetCerts**](ServerSettingsAPI.md#GetCerts) | **Get** /serverSettings/wsTrustStsSettings/issuerCertificates | Get the list of certificates for WS-Trust STS Settings.
@@ -19,6 +20,7 @@ Method | HTTP request | Description
 [**GetWsTrustStsSettings**](ServerSettingsAPI.md#GetWsTrustStsSettings) | **Get** /serverSettings/wsTrustStsSettings | Get the current WS-Trust STS Settings.
 [**ImportCertificate**](ServerSettingsAPI.md#ImportCertificate) | **Post** /serverSettings/wsTrustStsSettings/issuerCertificates | Import a new certificate.
 [**RotateSystemKeys**](ServerSettingsAPI.md#RotateSystemKeys) | **Post** /serverSettings/systemKeys/rotate | Rotate the system keys.
+[**UpdateAuditLogSettings**](ServerSettingsAPI.md#UpdateAuditLogSettings) | **Put** /serverSettings/auditLogSettings | Update the audit logging settings.
 [**UpdateCaptchaSettings**](ServerSettingsAPI.md#UpdateCaptchaSettings) | **Put** /serverSettings/captchaSettings | (Deprecated) Update the CAPTCHA settings.
 [**UpdateEmailServerSettings**](ServerSettingsAPI.md#UpdateEmailServerSettings) | **Put** /serverSettings/emailServer | (Deprecated) Update the email server settings
 [**UpdateFederationInfo**](ServerSettingsAPI.md#UpdateFederationInfo) | **Put** /serverSettings/federationInfo | Update the federation info.
@@ -88,7 +90,66 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAuditLogSettings
+
+> AuditLoggingSettings GetAuditLogSettings(ctx).Execute()
+
+Gets the audit log settings
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ServerSettingsAPI.GetAuditLogSettings(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetAuditLogSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetAuditLogSettings`: AuditLoggingSettings
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetAuditLogSettings`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAuditLogSettingsRequest struct via the builder pattern
+
+
+### Return type
+
+[**AuditLoggingSettings**](AuditLoggingSettings.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -147,7 +208,7 @@ Other parameters are passed through a pointer to a apiGetCaptchaSettingsRequest 
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -215,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -274,7 +335,7 @@ Other parameters are passed through a pointer to a apiGetCertsRequest struct via
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -333,7 +394,7 @@ Other parameters are passed through a pointer to a apiGetEmailServerSettingsRequ
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -392,7 +453,7 @@ Other parameters are passed through a pointer to a apiGetFederationInfoRequest s
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -451,7 +512,7 @@ Other parameters are passed through a pointer to a apiGetGeneralSettingsRequest 
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -510,7 +571,7 @@ Other parameters are passed through a pointer to a apiGetLogSettingsRequest stru
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -569,7 +630,7 @@ Other parameters are passed through a pointer to a apiGetNotificationSettingsReq
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -630,7 +691,7 @@ Other parameters are passed through a pointer to a apiGetOutBoundProvisioningSet
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -689,7 +750,7 @@ Other parameters are passed through a pointer to a apiGetServerSettingsRequest s
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -750,7 +811,7 @@ Other parameters are passed through a pointer to a apiGetSystemKeysRequest struc
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -809,7 +870,7 @@ Other parameters are passed through a pointer to a apiGetWsTrustStsSettingsReque
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -873,7 +934,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -934,11 +995,75 @@ Other parameters are passed through a pointer to a apiRotateSystemKeysRequest st
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateAuditLogSettings
+
+> AuditLoggingSettings UpdateAuditLogSettings(ctx).Body(body).Execute()
+
+Update the audit logging settings.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+    body := *openapiclient.NewAuditLoggingSettings() // AuditLoggingSettings | Configuration for audit log settings.
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ServerSettingsAPI.UpdateAuditLogSettings(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateAuditLogSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateAuditLogSettings`: AuditLoggingSettings
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateAuditLogSettings`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateAuditLogSettingsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AuditLoggingSettings**](AuditLoggingSettings.md) | Configuration for audit log settings. | 
+
+### Return type
+
+[**AuditLoggingSettings**](AuditLoggingSettings.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -998,7 +1123,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1068,7 +1193,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1132,7 +1257,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1196,7 +1321,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1260,7 +1385,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1324,7 +1449,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1390,7 +1515,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1454,7 +1579,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1520,7 +1645,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1584,7 +1709,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 

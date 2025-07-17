@@ -4,11 +4,72 @@ All URIs are relative to *https://localhost:9999/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**GetAttributeRequesterMappings**](ProtocolMetadataAPI.md#GetAttributeRequesterMappings) | **Get** /protocolMetadata/attributeRequesterMappings | Get the attribute requester mappings.
 [**GetLifetimeSettings**](ProtocolMetadataAPI.md#GetLifetimeSettings) | **Get** /protocolMetadata/lifetimeSettings | Get metadata cache duration and reload delay for automated reloading.
 [**GetSigningSettings**](ProtocolMetadataAPI.md#GetSigningSettings) | **Get** /protocolMetadata/signingSettings | Get the certificate ID and algorithm used for metadata signing.
+[**UpdateAttributeRequesterMappings**](ProtocolMetadataAPI.md#UpdateAttributeRequesterMappings) | **Put** /protocolMetadata/attributeRequesterMappings | Update the attribute requester mappings.
 [**UpdateLifetimeSettings**](ProtocolMetadataAPI.md#UpdateLifetimeSettings) | **Put** /protocolMetadata/lifetimeSettings | Update metadata cache duration and reload delay for automated reloading.
 [**UpdateSigningSettings**](ProtocolMetadataAPI.md#UpdateSigningSettings) | **Put** /protocolMetadata/signingSettings | Update the certificate and algorithm for metadata signing.
 
+
+
+## GetAttributeRequesterMappings
+
+> MetadataAttributeRequesterMapping GetAttributeRequesterMappings(ctx).Execute()
+
+Get the attribute requester mappings.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProtocolMetadataAPI.GetAttributeRequesterMappings(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProtocolMetadataAPI.GetAttributeRequesterMappings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetAttributeRequesterMappings`: MetadataAttributeRequesterMapping
+    fmt.Fprintf(os.Stdout, "Response from `ProtocolMetadataAPI.GetAttributeRequesterMappings`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAttributeRequesterMappingsRequest struct via the builder pattern
+
+
+### Return type
+
+[**MetadataAttributeRequesterMapping**](MetadataAttributeRequesterMapping.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## GetLifetimeSettings
@@ -58,7 +119,7 @@ Other parameters are passed through a pointer to a apiGetLifetimeSettingsRequest
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -117,11 +178,75 @@ Other parameters are passed through a pointer to a apiGetSigningSettingsRequest 
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateAttributeRequesterMappings
+
+> MetadataAttributeRequesterMapping UpdateAttributeRequesterMappings(ctx).Body(body).Execute()
+
+Update the attribute requester mappings.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+    body := *openapiclient.NewMetadataAttributeRequesterMapping("DefaultIdpEntityId_example") // MetadataAttributeRequesterMapping |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProtocolMetadataAPI.UpdateAttributeRequesterMappings(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProtocolMetadataAPI.UpdateAttributeRequesterMappings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateAttributeRequesterMappings`: MetadataAttributeRequesterMapping
+    fmt.Fprintf(os.Stdout, "Response from `ProtocolMetadataAPI.UpdateAttributeRequesterMappings`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateAttributeRequesterMappingsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**MetadataAttributeRequesterMapping**](MetadataAttributeRequesterMapping.md) |  | 
+
+### Return type
+
+[**MetadataAttributeRequesterMapping**](MetadataAttributeRequesterMapping.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -181,7 +306,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -245,7 +370,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 

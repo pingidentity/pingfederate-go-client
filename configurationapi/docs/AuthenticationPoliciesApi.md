@@ -40,7 +40,7 @@ import (
 )
 
 func main() {
-    body := *openapiclient.NewAuthenticationPolicyFragment() // AuthenticationPolicyFragment | Configuration of the authentication policy fragment.
+    body := *openapiclient.NewAuthenticationPolicyFragment(*openapiclient.NewAuthenticationPolicyTreeNode(openapiclient.PolicyActionAggregation{ApcMappingPolicyAction: openapiclient.NewApcMappingPolicyAction(*openapiclient.NewResourceLink("Id_example"), *openapiclient.NewAttributeMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}), "Type_example")})) // AuthenticationPolicyFragment | Configuration of the authentication policy fragment.
     xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -106,7 +106,7 @@ import (
 )
 
 func main() {
-    body := *openapiclient.NewAuthenticationPolicyTree() // AuthenticationPolicyTree | Configuration of the authentication policy.
+    body := *openapiclient.NewAuthenticationPolicyTree(*openapiclient.NewAuthenticationPolicyTreeNode(openapiclient.PolicyActionAggregation{ApcMappingPolicyAction: openapiclient.NewApcMappingPolicyAction(*openapiclient.NewResourceLink("Id_example"), *openapiclient.NewAttributeMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}), "Type_example")})) // AuthenticationPolicyTree | Configuration of the authentication policy.
     xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -332,7 +332,7 @@ Other parameters are passed through a pointer to a apiGetAuthenticationPolicySet
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -391,7 +391,7 @@ Other parameters are passed through a pointer to a apiGetDefaultAuthenticationPo
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -527,7 +527,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -595,7 +595,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -663,7 +663,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -727,7 +727,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -793,7 +793,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -825,7 +825,7 @@ import (
 
 func main() {
     id := "id_example" // string | ID of the policy fragment to  update.
-    body := *openapiclient.NewAuthenticationPolicyFragment() // AuthenticationPolicyFragment | Configuration of the authentication policy fragment.
+    body := *openapiclient.NewAuthenticationPolicyFragment(*openapiclient.NewAuthenticationPolicyTreeNode(openapiclient.PolicyActionAggregation{ApcMappingPolicyAction: openapiclient.NewApcMappingPolicyAction(*openapiclient.NewResourceLink("Id_example"), *openapiclient.NewAttributeMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}), "Type_example")})) // AuthenticationPolicyFragment | Configuration of the authentication policy fragment.
     xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
@@ -865,7 +865,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -897,7 +897,7 @@ import (
 
 func main() {
     id := "id_example" // string | Authentication policy Id.
-    body := *openapiclient.NewAuthenticationPolicyTree() // AuthenticationPolicyTree | Configuration of the authentication policy.
+    body := *openapiclient.NewAuthenticationPolicyTree(*openapiclient.NewAuthenticationPolicyTreeNode(openapiclient.PolicyActionAggregation{ApcMappingPolicyAction: openapiclient.NewApcMappingPolicyAction(*openapiclient.NewResourceLink("Id_example"), *openapiclient.NewAttributeMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}), "Type_example")})) // AuthenticationPolicyTree | Configuration of the authentication policy.
     xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
@@ -937,7 +937,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 

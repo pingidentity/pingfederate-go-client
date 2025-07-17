@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ## GetCaptchaProviderPluginDescriptor
 
-> CaptchaProvider GetCaptchaProviderPluginDescriptor(ctx, id).Execute()
+> CaptchaProviderDescriptor GetCaptchaProviderPluginDescriptor(ctx, id).Execute()
 
 Get a CAPTCHA provider plugin descriptor.
 
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CaptchaProvidersAPI.GetCaptchaProviderPluginDescriptor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetCaptchaProviderPluginDescriptor`: CaptchaProvider
+    // response from `GetCaptchaProviderPluginDescriptor`: CaptchaProviderDescriptor
     fmt.Fprintf(os.Stdout, "Response from `CaptchaProvidersAPI.GetCaptchaProviderPluginDescriptor`: %v\n", resp)
 }
 ```
@@ -266,11 +266,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CaptchaProvider**](CaptchaProvider.md)
+[**CaptchaProviderDescriptor**](CaptchaProviderDescriptor.md)
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiGetCaptchaProviderPluginDe
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -388,7 +388,7 @@ Other parameters are passed through a pointer to a apiGetCaptchaProvidersRequest
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -447,7 +447,7 @@ Other parameters are passed through a pointer to a apiGetCaptchaProvidersSetting
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -517,7 +517,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -581,7 +581,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 

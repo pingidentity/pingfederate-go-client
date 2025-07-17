@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**GetSslServerSettings**](KeyPairsSslServerAPI.md#GetSslServerSettings) | **Get** /keyPairs/sslServer/settings | Get the SSL Server Certificate Settings.
 [**ImportSslServerCsrResponse**](KeyPairsSslServerAPI.md#ImportSslServerCsrResponse) | **Post** /keyPairs/sslServer/{id}/csr | Import a CSR response for this key pair.
 [**ImportSslServerKeyPair**](KeyPairsSslServerAPI.md#ImportSslServerKeyPair) | **Post** /keyPairs/sslServer/import | Import a new key pair.
+[**LinkSslServerPrivateKeyAndCert**](KeyPairsSslServerAPI.md#LinkSslServerPrivateKeyAndCert) | **Post** /keyPairs/sslServer/link | Import a certificate to be used by PingFederate and link it to a private key that exists on an HSM.
 [**UpdateSslServerSettings**](KeyPairsSslServerAPI.md#UpdateSslServerSettings) | **Put** /keyPairs/sslServer/settings | Update the SSL Server Certificate Settings.
 
 
@@ -71,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -139,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -209,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -279,7 +280,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -351,7 +352,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -423,7 +424,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -491,7 +492,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -550,7 +551,7 @@ Other parameters are passed through a pointer to a apiGetSslServerKeyPairsReques
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -609,7 +610,7 @@ Other parameters are passed through a pointer to a apiGetSslServerSettingsReques
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -679,7 +680,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -743,7 +744,69 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## LinkSslServerPrivateKeyAndCert
+
+> LinkSslServerPrivateKeyAndCert(ctx).Body(body).Execute()
+
+Import a certificate to be used by PingFederate and link it to a private key that exists on an HSM.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+    body := *openapiclient.NewKeyPairLink("PrivateKeyId_example", "CertificateData_example") // KeyPairLink | Private key and certificate link
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.KeyPairsSslServerAPI.LinkSslServerPrivateKeyAndCert(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslServerAPI.LinkSslServerPrivateKeyAndCert``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiLinkSslServerPrivateKeyAndCertRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**KeyPairLink**](KeyPairLink.md) | Private key and certificate link | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -774,7 +837,7 @@ import (
 )
 
 func main() {
-    body := *openapiclient.NewSslServerSettings(*openapiclient.NewResourceLink("Id_example"), *openapiclient.NewResourceLink("Id_example")) // SslServerSettings | Configuration for activation of SSL server certificates.
+    body := *openapiclient.NewSslServerSettings(*openapiclient.NewResourceLink("Id_example"), *openapiclient.NewResourceLink("Id_example"), []openapiclient.ResourceLink{*openapiclient.NewResourceLink("Id_example")}, []openapiclient.ResourceLink{}) // SslServerSettings | Configuration for activation of SSL server certificates.
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -807,7 +870,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 

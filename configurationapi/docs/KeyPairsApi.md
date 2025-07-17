@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiGetKeyAlgorithmsRequest st
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 

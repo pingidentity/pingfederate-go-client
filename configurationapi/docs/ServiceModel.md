@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | Id of the service. | [optional] 
+**Id** | **string** | Id of the service. | 
 **SharedSecret** | Pointer to **string** | Shared secret for the service. | [optional] 
 **EncryptedSharedSecret** | Pointer to **string** | Encrypted shared secret for the service. | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewServiceModel
 
-`func NewServiceModel() *ServiceModel`
+`func NewServiceModel(id string, ) *ServiceModel`
 
 NewServiceModel instantiates a new ServiceModel object
 This constructor will assign default values to properties that have it defined,
@@ -46,11 +46,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *ServiceModel) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetSharedSecret
 

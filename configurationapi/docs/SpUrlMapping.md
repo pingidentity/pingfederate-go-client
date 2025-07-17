@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Url** | Pointer to **string** | The URL that will be compared against the target URL. Use a wildcard (*) to match multiple URLs to the same adapter or connection instance. | [optional] 
-**Type** | Pointer to **string** | The URL mapping type | [optional] 
-**Ref** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
+**Url** | **string** | The URL that will be compared against the target URL. Use a wildcard (*) to match multiple URLs to the same adapter or connection instance. | 
+**Type** | **string** | The URL mapping type | 
+**Ref** | [**ResourceLink**](ResourceLink.md) |  | 
 
 ## Methods
 
 ### NewSpUrlMapping
 
-`func NewSpUrlMapping() *SpUrlMapping`
+`func NewSpUrlMapping(url string, type_ string, ref ResourceLink, ) *SpUrlMapping`
 
 NewSpUrlMapping instantiates a new SpUrlMapping object
 This constructor will assign default values to properties that have it defined,
@@ -46,11 +46,6 @@ and a boolean to check if the value has been set.
 
 SetUrl sets Url field to given value.
 
-### HasUrl
-
-`func (o *SpUrlMapping) HasUrl() bool`
-
-HasUrl returns a boolean if a field has been set.
 
 ### GetType
 
@@ -71,11 +66,6 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
-### HasType
-
-`func (o *SpUrlMapping) HasType() bool`
-
-HasType returns a boolean if a field has been set.
 
 ### GetRef
 
@@ -96,11 +86,6 @@ and a boolean to check if the value has been set.
 
 SetRef sets Ref field to given value.
 
-### HasRef
-
-`func (o *SpUrlMapping) HasRef() bool`
-
-HasRef returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

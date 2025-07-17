@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**GetSslClientKeyPairs**](KeyPairsSslClientAPI.md#GetSslClientKeyPairs) | **Get** /keyPairs/sslClient | Get list of key pairs.
 [**ImportSslClientCsrResponse**](KeyPairsSslClientAPI.md#ImportSslClientCsrResponse) | **Post** /keyPairs/sslClient/{id}/csr | Import a CSR response for this key pair.
 [**ImportSslClientKeyPair**](KeyPairsSslClientAPI.md#ImportSslClientKeyPair) | **Post** /keyPairs/sslClient/import | Import a new key pair.
+[**LinkSslClientPrivateKeyAndCert**](KeyPairsSslClientAPI.md#LinkSslClientPrivateKeyAndCert) | **Post** /keyPairs/sslClient/link | Import a certificate to be used by PingFederate and link it to a private key that exists on an HSM.
 
 
 
@@ -69,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -137,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -207,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -277,7 +278,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -349,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -421,7 +422,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -489,7 +490,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -548,7 +549,7 @@ Other parameters are passed through a pointer to a apiGetSslClientKeyPairsReques
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -618,7 +619,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -682,7 +683,69 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## LinkSslClientPrivateKeyAndCert
+
+> LinkSslClientPrivateKeyAndCert(ctx).Body(body).Execute()
+
+Import a certificate to be used by PingFederate and link it to a private key that exists on an HSM.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+    body := *openapiclient.NewKeyPairLink("PrivateKeyId_example", "CertificateData_example") // KeyPairLink | Private key and certificate link
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.KeyPairsSslClientAPI.LinkSslClientPrivateKeyAndCert(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairsSslClientAPI.LinkSslClientPrivateKeyAndCert``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiLinkSslClientPrivateKeyAndCertRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**KeyPairLink**](KeyPairLink.md) | Private key and certificate link | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 

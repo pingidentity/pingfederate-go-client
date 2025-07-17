@@ -2,6 +2,7 @@
 README.md
 api/openapi.yaml
 api_administrative_accounts.go
+api_administrative_api.go
 api_authentication_api.go
 api_authentication_policies.go
 api_authentication_policy_contracts.go
@@ -102,6 +103,8 @@ docs/AdminNodeRoleServiceInfo.md
 docs/AdministrativeAccount.md
 docs/AdministrativeAccounts.md
 docs/AdministrativeAccountsAPI.md
+docs/AdministrativeApiAPI.md
+docs/AdministrativeApiCorsSettings.md
 docs/AlternativeLoginHintTokenIssuer.md
 docs/ApcMappingPolicyAction.md
 docs/ApcToPersistentGrantMapping.md
@@ -123,6 +126,7 @@ docs/AttributeRule.md
 docs/AttributeRules.md
 docs/AttributeSource.md
 docs/AttributeSourceAggregation.md
+docs/AuditLoggingSettings.md
 docs/AuthenticationApiAPI.md
 docs/AuthenticationPoliciesAPI.md
 docs/AuthenticationPoliciesSettings.md
@@ -253,6 +257,7 @@ docs/DataStoresAPI.md
 docs/DateLocalIdentityField.md
 docs/DecryptionKeys.md
 docs/DecryptionPolicy.md
+docs/DistinguishedNameToIdpMap.md
 docs/DonePolicyAction.md
 docs/DropDownLocalIdentityField.md
 docs/DynamicClientRegistration.md
@@ -352,6 +357,7 @@ docs/KeyAlgorithm.md
 docs/KeyAlgorithms.md
 docs/KeyPairExportSettings.md
 docs/KeyPairFile.md
+docs/KeyPairLink.md
 docs/KeyPairRotationSettings.md
 docs/KeyPairView.md
 docs/KeyPairViews.md
@@ -382,6 +388,7 @@ docs/LocalIdentityProfile.md
 docs/LocalIdentityProfiles.md
 docs/LogCategorySettings.md
 docs/LogSettings.md
+docs/MetadataAttributeRequesterMapping.md
 docs/MetadataEventNotificationSettings.md
 docs/MetadataLifetimeSettings.md
 docs/MetadataSigningSettings.md
@@ -398,6 +405,7 @@ docs/NotificationPublishersAPI.md
 docs/NotificationPublishersSettings.md
 docs/NotificationSettings.md
 docs/OAuthOidcKeysSettings.md
+docs/OAuthOidcKeysSettingsCertificateInformation.md
 docs/OAuthRole.md
 docs/OIDCClientCredentials.md
 docs/OIDCProviderSettings.md
@@ -504,6 +512,9 @@ docs/SaasPluginFieldInfoDescriptor.md
 docs/SaasPluginFieldOption.md
 docs/Schema.md
 docs/SchemaAttribute.md
+docs/Scim2Schema.md
+docs/Scim2SchemaAttribute.md
+docs/Scim2SchemaSubAttribute.md
 docs/ScopeEntries.md
 docs/ScopeEntry.md
 docs/ScopeGroupEntries.md
@@ -522,7 +533,9 @@ docs/ServiceAssociations.md
 docs/ServiceAuthentication.md
 docs/ServiceAuthenticationAPI.md
 docs/ServiceModel.md
+docs/ServiceProviderConfig.md
 docs/SessionAPI.md
+docs/SessionQuotaSettings.md
 docs/SessionSettings.md
 docs/SessionValidationSettings.md
 docs/SigningKeys.md
@@ -641,6 +654,7 @@ model_admin_console_info.go
 model_admin_node_role_service_info.go
 model_administrative_account.go
 model_administrative_accounts.go
+model_administrative_api_cors_settings.go
 model_alternative_login_hint_token_issuer.go
 model_apc_mapping_policy_action.go
 model_apc_to_persistent_grant_mapping.go
@@ -662,6 +676,7 @@ model_attribute_rule.go
 model_attribute_rules.go
 model_attribute_source.go
 model_attribute_source_aggregation.go
+model_audit_logging_settings.go
 model_authentication_policies_settings.go
 model_authentication_policy.go
 model_authentication_policy_contract.go
@@ -776,6 +791,7 @@ model_data_stores.go
 model_date_local_identity_field.go
 model_decryption_keys.go
 model_decryption_policy.go
+model_distinguished_name_to_idp_map.go
 model_done_policy_action.go
 model_drop_down_local_identity_field.go
 model_dynamic_client_registration.go
@@ -864,6 +880,7 @@ model_key_algorithm.go
 model_key_algorithms.go
 model_key_pair_export_settings.go
 model_key_pair_file.go
+model_key_pair_link.go
 model_key_pair_rotation_settings.go
 model_key_pair_view.go
 model_key_pair_views.go
@@ -887,6 +904,7 @@ model_local_identity_profile.go
 model_local_identity_profiles.go
 model_log_category_settings.go
 model_log_settings.go
+model_metadata_attribute_requester_mapping.go
 model_metadata_event_notification_settings.go
 model_metadata_lifetime_settings.go
 model_metadata_signing_settings.go
@@ -901,6 +919,7 @@ model_notification_publishers.go
 model_notification_publishers_settings.go
 model_notification_settings.go
 model_o_auth_oidc_keys_settings.go
+model_o_auth_oidc_keys_settings_certificate_information.go
 model_o_auth_role.go
 model_ocsp_settings.go
 model_oidc_client_credentials.go
@@ -983,6 +1002,9 @@ model_saas_plugin_field_option.go
 model_saml20_profile.go
 model_schema.go
 model_schema_attribute.go
+model_scim2_schema.go
+model_scim2_schema_attribute.go
+model_scim2_schema_sub_attribute.go
 model_scope_entries.go
 model_scope_entry.go
 model_scope_group_entries.go
@@ -998,6 +1020,8 @@ model_service_association.go
 model_service_associations.go
 model_service_authentication.go
 model_service_model.go
+model_service_provider_config.go
+model_session_quota_settings.go
 model_session_settings.go
 model_session_validation_settings.go
 model_signing_keys.go
@@ -1085,6 +1109,7 @@ model_ws_trust_sts_settings.go
 model_x509_file.go
 response.go
 test/api_administrative_accounts_test.go
+test/api_administrative_api_test.go
 test/api_authentication_api_test.go
 test/api_authentication_policies_test.go
 test/api_authentication_policy_contracts_test.go

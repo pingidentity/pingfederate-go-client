@@ -8,20 +8,20 @@ Name | Type | Description | Notes
 **Name** | **string** | The request policy name. Name is unique. | 
 **AuthenticatorRef** | [**ResourceLink**](ResourceLink.md) |  | 
 **UserCodePcvRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
-**TransactionLifetime** | Pointer to **int64** | The transaction lifetime in seconds. | [optional] 
+**TransactionLifetime** | **int64** | The transaction lifetime in seconds. | 
 **AllowUnsignedLoginHintToken** | Pointer to **bool** | Allow unsigned login hint token. | [optional] 
 **RequireTokenForIdentityHint** | Pointer to **bool** | Require token for identity hint. | [optional] 
 **AlternativeLoginHintTokenIssuers** | Pointer to [**[]AlternativeLoginHintTokenIssuer**](AlternativeLoginHintTokenIssuer.md) | Alternative login hint token issuers. | [optional] 
 **IdentityHintContract** | [**IdentityHintContract**](IdentityHintContract.md) |  | 
 **IdentityHintContractFulfillment** | Pointer to [**AttributeMapping**](AttributeMapping.md) |  | [optional] 
-**IdentityHintMapping** | Pointer to [**AttributeMapping**](AttributeMapping.md) |  | [optional] 
+**IdentityHintMapping** | [**AttributeMapping**](AttributeMapping.md) |  | 
 **LastModified** | Pointer to **time.Time** | The time at which the request policy was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
 
 ## Methods
 
 ### NewRequestPolicy
 
-`func NewRequestPolicy(id string, name string, authenticatorRef ResourceLink, identityHintContract IdentityHintContract, ) *RequestPolicy`
+`func NewRequestPolicy(id string, name string, authenticatorRef ResourceLink, transactionLifetime int64, identityHintContract IdentityHintContract, identityHintMapping AttributeMapping, ) *RequestPolicy`
 
 NewRequestPolicy instantiates a new RequestPolicy object
 This constructor will assign default values to properties that have it defined,
@@ -140,11 +140,6 @@ and a boolean to check if the value has been set.
 
 SetTransactionLifetime sets TransactionLifetime field to given value.
 
-### HasTransactionLifetime
-
-`func (o *RequestPolicy) HasTransactionLifetime() bool`
-
-HasTransactionLifetime returns a boolean if a field has been set.
 
 ### GetAllowUnsignedLoginHintToken
 
@@ -285,11 +280,6 @@ and a boolean to check if the value has been set.
 
 SetIdentityHintMapping sets IdentityHintMapping field to given value.
 
-### HasIdentityHintMapping
-
-`func (o *RequestPolicy) HasIdentityHintMapping() bool`
-
-HasIdentityHintMapping returns a boolean if a field has been set.
 
 ### GetLastModified
 

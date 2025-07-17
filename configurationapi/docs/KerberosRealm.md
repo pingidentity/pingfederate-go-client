@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | The persistent, unique ID for the Kerberos Realm. It can be any combination of [a-z0-9._-]. This property is system-assigned if not specified. | [optional] 
+**Id** | Pointer to **string** | The persistent, unique ID for the Kerberos Realm. It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned if not specified. | [optional] 
 **KerberosRealmName** | **string** | The Domain/Realm name used for display in UI screens. | 
 **ConnectionType** | Pointer to **string** | Controls how PingFederate connects to the Active Directory/Kerberos Realm. The default is: \&quot;DIRECT\&quot;. | [optional] 
 **KeyDistributionCenters** | Pointer to **[]string** | The Domain Controller/Key Distribution Center Host Action Names. Only applicable when &#39;connectionType&#39; is \&quot;DIRECT\&quot;. | [optional] 

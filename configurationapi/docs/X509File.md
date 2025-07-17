@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | The persistent, unique ID for the certificate. It can be any combination of [a-z0-9._-]. This property is system-assigned if not specified. | [optional] 
+**Id** | Pointer to **string** | The persistent, unique ID for the certificate. It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned if not specified. | [optional] 
 **FileData** | **string** | The certificate data in PEM format. New line characters should be omitted or encoded in this value. | 
 **CryptoProvider** | Pointer to **string** | Cryptographic Provider. This is only applicable if Hybrid HSM mode is true. | [optional] 
 

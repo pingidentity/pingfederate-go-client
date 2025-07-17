@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Parameter** | Pointer to **string** | The metadata name. | [optional] 
+**Parameter** | **string** | The metadata name. | 
 **Description** | Pointer to **string** | The metadata description. | [optional] 
 **MultiValued** | Pointer to **bool** | If the field should allow multiple values. | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewClientMetadata
 
-`func NewClientMetadata() *ClientMetadata`
+`func NewClientMetadata(parameter string, ) *ClientMetadata`
 
 NewClientMetadata instantiates a new ClientMetadata object
 This constructor will assign default values to properties that have it defined,
@@ -46,11 +46,6 @@ and a boolean to check if the value has been set.
 
 SetParameter sets Parameter field to given value.
 
-### HasParameter
-
-`func (o *ClientMetadata) HasParameter() bool`
-
-HasParameter returns a boolean if a field has been set.
 
 ### GetDescription
 

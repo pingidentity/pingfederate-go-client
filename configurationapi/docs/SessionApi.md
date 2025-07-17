@@ -8,11 +8,13 @@ Method | HTTP request | Description
 [**DeleteSourcePolicy**](SessionAPI.md#DeleteSourcePolicy) | **Delete** /session/authenticationSessionPolicies/{id} | Delete a session policy.
 [**GetApplicationPolicy**](SessionAPI.md#GetApplicationPolicy) | **Get** /session/applicationSessionPolicy | Get the application session policy.
 [**GetGlobalPolicy**](SessionAPI.md#GetGlobalPolicy) | **Get** /session/authenticationSessionPolicies/global | Get the global authentication session policy.
+[**GetSessionQuotaSettings**](SessionAPI.md#GetSessionQuotaSettings) | **Get** /session/quotas | Get the session quota settings.
 [**GetSessionSettings**](SessionAPI.md#GetSessionSettings) | **Get** /session/settings | Get general session management settings.
 [**GetSourcePolicies**](SessionAPI.md#GetSourcePolicies) | **Get** /session/authenticationSessionPolicies | Get list of session policies.
 [**GetSourcePolicy**](SessionAPI.md#GetSourcePolicy) | **Get** /session/authenticationSessionPolicies/{id} | Find session policy by ID.
 [**UpdateApplicationPolicy**](SessionAPI.md#UpdateApplicationPolicy) | **Put** /session/applicationSessionPolicy | Update the application session policy.
 [**UpdateGlobalPolicy**](SessionAPI.md#UpdateGlobalPolicy) | **Put** /session/authenticationSessionPolicies/global | Update the global authentication session policy.
+[**UpdateSessionQuotaSettings**](SessionAPI.md#UpdateSessionQuotaSettings) | **Put** /session/quotas | Update the session quota settings.
 [**UpdateSessionSettings**](SessionAPI.md#UpdateSessionSettings) | **Put** /session/settings | Update general session management settings.
 [**UpdateSourcePolicy**](SessionAPI.md#UpdateSourcePolicy) | **Put** /session/authenticationSessionPolicies/{id} | Update a session policy.
 
@@ -72,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -140,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -199,7 +201,7 @@ Other parameters are passed through a pointer to a apiGetApplicationPolicyReques
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -258,7 +260,66 @@ Other parameters are passed through a pointer to a apiGetGlobalPolicyRequest str
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetSessionQuotaSettings
+
+> SessionQuotaSettings GetSessionQuotaSettings(ctx).Execute()
+
+Get the session quota settings.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SessionAPI.GetSessionQuotaSettings(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.GetSessionQuotaSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetSessionQuotaSettings`: SessionQuotaSettings
+    fmt.Fprintf(os.Stdout, "Response from `SessionAPI.GetSessionQuotaSettings`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetSessionQuotaSettingsRequest struct via the builder pattern
+
+
+### Return type
+
+[**SessionQuotaSettings**](SessionQuotaSettings.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -317,7 +378,7 @@ Other parameters are passed through a pointer to a apiGetSessionSettingsRequest 
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -378,7 +439,7 @@ Other parameters are passed through a pointer to a apiGetSourcePoliciesRequest s
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -448,7 +509,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -512,7 +573,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -576,7 +637,71 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateSessionQuotaSettings
+
+> SessionQuotaSettings UpdateSessionQuotaSettings(ctx).Body(body).Execute()
+
+Update the session quota settings.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+    body := *openapiclient.NewSessionQuotaSettings(false) // SessionQuotaSettings | Session quota settings.
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SessionAPI.UpdateSessionQuotaSettings(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.UpdateSessionQuotaSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateSessionQuotaSettings`: SessionQuotaSettings
+    fmt.Fprintf(os.Stdout, "Response from `SessionAPI.UpdateSessionQuotaSettings`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateSessionQuotaSettingsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SessionQuotaSettings**](SessionQuotaSettings.md) | Session quota settings. | 
+
+### Return type
+
+[**SessionQuotaSettings**](SessionQuotaSettings.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -640,7 +765,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -712,7 +837,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 

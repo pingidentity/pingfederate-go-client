@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | The ID of the authentication policy contract to persistent grant mapping. | 
+**Id** | Pointer to **string** | The ID of the authentication policy contract to persistent grant mapping. | [optional] 
 **AuthenticationPolicyContractRef** | [**ResourceLink**](ResourceLink.md) |  | 
 **AttributeSources** | Pointer to [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) | A list of configured data stores to look up attributes from. | [optional] 
 **AttributeContractFulfillment** | [**map[string]AttributeFulfillmentValue**](AttributeFulfillmentValue.md) | A list of mappings from attribute names to their fulfillment values. | 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewApcToPersistentGrantMapping
 
-`func NewApcToPersistentGrantMapping(id string, authenticationPolicyContractRef ResourceLink, attributeContractFulfillment map[string]AttributeFulfillmentValue, ) *ApcToPersistentGrantMapping`
+`func NewApcToPersistentGrantMapping(authenticationPolicyContractRef ResourceLink, attributeContractFulfillment map[string]AttributeFulfillmentValue, ) *ApcToPersistentGrantMapping`
 
 NewApcToPersistentGrantMapping instantiates a new ApcToPersistentGrantMapping object
 This constructor will assign default values to properties that have it defined,
@@ -48,6 +48,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *ApcToPersistentGrantMapping) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetAuthenticationPolicyContractRef
 

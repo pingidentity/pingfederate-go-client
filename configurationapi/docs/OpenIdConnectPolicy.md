@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **ReturnIdTokenOnRefreshGrant** | Pointer to **bool** | Determines whether an ID Token should be returned when refresh grant is requested or not. | [optional] 
 **ReturnIdTokenOnTokenExchangeGrant** | Pointer to **bool** | Determines whether an ID Token should be returned when token exchange is requested or not. | [optional] 
 **ReissueIdTokenInHybridFlow** | Pointer to **bool** | Determines whether a new ID Token should be returned during token request of the hybrid flow. | [optional] 
+**AllowIdTokenIntrospection** | Pointer to **bool** | Determines whether the introspection endpoint should validate an ID token. | [optional] 
 **AttributeContract** | [**OpenIdConnectAttributeContract**](OpenIdConnectAttributeContract.md) |  | 
 **AttributeMapping** | [**AttributeMapping**](AttributeMapping.md) |  | 
 **ScopeAttributeMappings** | Pointer to [**map[string]ParameterValues**](ParameterValues.md) | The attribute scope mappings from scopes to attribute names. | [optional] 
@@ -324,6 +325,31 @@ SetReissueIdTokenInHybridFlow sets ReissueIdTokenInHybridFlow field to given val
 `func (o *OpenIdConnectPolicy) HasReissueIdTokenInHybridFlow() bool`
 
 HasReissueIdTokenInHybridFlow returns a boolean if a field has been set.
+
+### GetAllowIdTokenIntrospection
+
+`func (o *OpenIdConnectPolicy) GetAllowIdTokenIntrospection() bool`
+
+GetAllowIdTokenIntrospection returns the AllowIdTokenIntrospection field if non-nil, zero value otherwise.
+
+### GetAllowIdTokenIntrospectionOk
+
+`func (o *OpenIdConnectPolicy) GetAllowIdTokenIntrospectionOk() (*bool, bool)`
+
+GetAllowIdTokenIntrospectionOk returns a tuple with the AllowIdTokenIntrospection field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowIdTokenIntrospection
+
+`func (o *OpenIdConnectPolicy) SetAllowIdTokenIntrospection(v bool)`
+
+SetAllowIdTokenIntrospection sets AllowIdTokenIntrospection field to given value.
+
+### HasAllowIdTokenIntrospection
+
+`func (o *OpenIdConnectPolicy) HasAllowIdTokenIntrospection() bool`
+
+HasAllowIdTokenIntrospection returns a boolean if a field has been set.
 
 ### GetAttributeContract
 

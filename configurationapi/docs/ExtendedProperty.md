@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **string** | The property name. | [optional] 
+**Name** | **string** | The property name. | 
 **Description** | Pointer to **string** | The property description. | [optional] 
 **MultiValued** | Pointer to **bool** | Indicates whether the property should allow multiple values. | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewExtendedProperty
 
-`func NewExtendedProperty() *ExtendedProperty`
+`func NewExtendedProperty(name string, ) *ExtendedProperty`
 
 NewExtendedProperty instantiates a new ExtendedProperty object
 This constructor will assign default values to properties that have it defined,
@@ -46,11 +46,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *ExtendedProperty) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetDescription
 

@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Host** | Pointer to **string** | Host name. | [optional] 
-**Port** | Pointer to **int64** | Port number. | [optional] 
+**Host** | **string** | Host name. | 
+**Port** | **int64** | Port number. | 
 
 ## Methods
 
 ### NewProxySettings
 
-`func NewProxySettings() *ProxySettings`
+`func NewProxySettings(host string, port int64, ) *ProxySettings`
 
 NewProxySettings instantiates a new ProxySettings object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetHost sets Host field to given value.
 
-### HasHost
-
-`func (o *ProxySettings) HasHost() bool`
-
-HasHost returns a boolean if a field has been set.
 
 ### GetPort
 
@@ -70,11 +65,6 @@ and a boolean to check if the value has been set.
 
 SetPort sets Port field to given value.
 
-### HasPort
-
-`func (o *ProxySettings) HasPort() bool`
-
-HasPort returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

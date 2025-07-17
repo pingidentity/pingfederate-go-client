@@ -47,6 +47,8 @@ Name | Type | Description | Notes
 **RsaDecryptionPreviousKeyId** | Pointer to **string** | Key Id for previously active RSA decryption key. | [optional] 
 **RsaAlgorithmActiveKeyIds** | Pointer to [**[]RsaAlgKeyId**](RsaAlgKeyId.md) | PingFederate uses the same RSA key for all RSA signing algorithms. To enable active RSA JWK entry to have unique single valued &#39;&#39;alg&#39;&#39; parameter, use this list to set a key identifier for each RSA algorithm (RS256, RS384, RS512, PS256, PS384 and PS512). | [optional] 
 **RsaAlgorithmPreviousKeyIds** | Pointer to [**[]RsaAlgKeyId**](RsaAlgKeyId.md) | PingFederate uses the same RSA key for all RSA signing algorithms. To enable previously active RSA JWK entry to have unique single valued &#39;&#39;alg&#39;&#39; parameter, use this list to set a key identifier for each RSA algorithm (RS256, RS384, RS512, PS256, PS384 and PS512). | [optional] 
+**PublishDynamicKeyX5cs** | Pointer to **bool** | Enable publishing of the dynamic key x5c parameters. | [optional] 
+**DynamicKeyCertificateInformation** | Pointer to [**OAuthOidcKeysSettingsCertificateInformation**](OAuthOidcKeysSettingsCertificateInformation.md) |  | [optional] 
 
 ## Methods
 
@@ -1136,6 +1138,56 @@ SetRsaAlgorithmPreviousKeyIds sets RsaAlgorithmPreviousKeyIds field to given val
 `func (o *OAuthOidcKeysSettings) HasRsaAlgorithmPreviousKeyIds() bool`
 
 HasRsaAlgorithmPreviousKeyIds returns a boolean if a field has been set.
+
+### GetPublishDynamicKeyX5cs
+
+`func (o *OAuthOidcKeysSettings) GetPublishDynamicKeyX5cs() bool`
+
+GetPublishDynamicKeyX5cs returns the PublishDynamicKeyX5cs field if non-nil, zero value otherwise.
+
+### GetPublishDynamicKeyX5csOk
+
+`func (o *OAuthOidcKeysSettings) GetPublishDynamicKeyX5csOk() (*bool, bool)`
+
+GetPublishDynamicKeyX5csOk returns a tuple with the PublishDynamicKeyX5cs field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublishDynamicKeyX5cs
+
+`func (o *OAuthOidcKeysSettings) SetPublishDynamicKeyX5cs(v bool)`
+
+SetPublishDynamicKeyX5cs sets PublishDynamicKeyX5cs field to given value.
+
+### HasPublishDynamicKeyX5cs
+
+`func (o *OAuthOidcKeysSettings) HasPublishDynamicKeyX5cs() bool`
+
+HasPublishDynamicKeyX5cs returns a boolean if a field has been set.
+
+### GetDynamicKeyCertificateInformation
+
+`func (o *OAuthOidcKeysSettings) GetDynamicKeyCertificateInformation() OAuthOidcKeysSettingsCertificateInformation`
+
+GetDynamicKeyCertificateInformation returns the DynamicKeyCertificateInformation field if non-nil, zero value otherwise.
+
+### GetDynamicKeyCertificateInformationOk
+
+`func (o *OAuthOidcKeysSettings) GetDynamicKeyCertificateInformationOk() (*OAuthOidcKeysSettingsCertificateInformation, bool)`
+
+GetDynamicKeyCertificateInformationOk returns a tuple with the DynamicKeyCertificateInformation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDynamicKeyCertificateInformation
+
+`func (o *OAuthOidcKeysSettings) SetDynamicKeyCertificateInformation(v OAuthOidcKeysSettingsCertificateInformation)`
+
+SetDynamicKeyCertificateInformation sets DynamicKeyCertificateInformation field to given value.
+
+### HasDynamicKeyCertificateInformation
+
+`func (o *OAuthOidcKeysSettings) HasDynamicKeyCertificateInformation() bool`
+
+HasDynamicKeyCertificateInformation returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

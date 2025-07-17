@@ -35,7 +35,7 @@ import (
 )
 
 func main() {
-    body := *openapiclient.NewRequestPolicy("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewIdentityHintContract([]openapiclient.IdentityHintAttribute{*openapiclient.NewIdentityHintAttribute("Name_example")})) // RequestPolicy | Configuration for new policy.
+    body := *openapiclient.NewRequestPolicy("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), int64(123), *openapiclient.NewIdentityHintContract([]openapiclient.IdentityHintAttribute{*openapiclient.NewIdentityHintAttribute("Name_example")}), *openapiclient.NewAttributeMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")})) // RequestPolicy | Configuration for new policy.
     xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -197,7 +197,7 @@ Other parameters are passed through a pointer to a apiGetCibaServerPoliciesReque
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -326,7 +326,7 @@ Other parameters are passed through a pointer to a apiGetCibaServerPolicySetting
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -360,7 +360,7 @@ import (
 
 func main() {
     id := "id_example" // string | ID of the request policy to update.
-    body := *openapiclient.NewRequestPolicy("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewIdentityHintContract([]openapiclient.IdentityHintAttribute{*openapiclient.NewIdentityHintAttribute("Name_example")})) // RequestPolicy | Configuration for updated policy.
+    body := *openapiclient.NewRequestPolicy("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), int64(123), *openapiclient.NewIdentityHintContract([]openapiclient.IdentityHintAttribute{*openapiclient.NewIdentityHintAttribute("Name_example")}), *openapiclient.NewAttributeMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")})) // RequestPolicy | Configuration for updated policy.
     xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
@@ -400,7 +400,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -466,7 +466,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 

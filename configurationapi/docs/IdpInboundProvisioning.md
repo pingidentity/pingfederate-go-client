@@ -4,9 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GroupSupport** | **bool** | Specify support for provisioning of groups. | 
+**ScimVersion** | Pointer to **string** | SCIM version to use for provisioning. The default is SCIM 1.1. | [optional] 
+**GroupSupport** | **bool** | Specify support for provisioning of groups. This only applies when using SCIM 1.1. | 
 **UserRepository** | [**InboundProvisioningUserRepositoryAggregation**](InboundProvisioningUserRepositoryAggregation.md) |  | 
-**CustomSchema** | [**Schema**](Schema.md) |  | 
+**CustomSchema** | Pointer to [**Schema**](Schema.md) |  | [optional] 
+**CustomScim2Schema** | Pointer to [**Scim2Schema**](Scim2Schema.md) |  | [optional] 
+**ServiceProviderConfig** | Pointer to [**ServiceProviderConfig**](ServiceProviderConfig.md) |  | [optional] 
 **Users** | [**Users**](Users.md) |  | 
 **Groups** | Pointer to [**Groups**](Groups.md) |  | [optional] 
 **ActionOnDelete** | Pointer to **string** | Specify behavior of how SCIM DELETE requests are handled. | [optional] 
@@ -15,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewIdpInboundProvisioning
 
-`func NewIdpInboundProvisioning(groupSupport bool, userRepository InboundProvisioningUserRepositoryAggregation, customSchema Schema, users Users, ) *IdpInboundProvisioning`
+`func NewIdpInboundProvisioning(groupSupport bool, userRepository InboundProvisioningUserRepositoryAggregation, users Users, ) *IdpInboundProvisioning`
 
 NewIdpInboundProvisioning instantiates a new IdpInboundProvisioning object
 This constructor will assign default values to properties that have it defined,
@@ -29,6 +32,31 @@ will change when the set of required properties is changed
 NewIdpInboundProvisioningWithDefaults instantiates a new IdpInboundProvisioning object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetScimVersion
+
+`func (o *IdpInboundProvisioning) GetScimVersion() string`
+
+GetScimVersion returns the ScimVersion field if non-nil, zero value otherwise.
+
+### GetScimVersionOk
+
+`func (o *IdpInboundProvisioning) GetScimVersionOk() (*string, bool)`
+
+GetScimVersionOk returns a tuple with the ScimVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetScimVersion
+
+`func (o *IdpInboundProvisioning) SetScimVersion(v string)`
+
+SetScimVersion sets ScimVersion field to given value.
+
+### HasScimVersion
+
+`func (o *IdpInboundProvisioning) HasScimVersion() bool`
+
+HasScimVersion returns a boolean if a field has been set.
 
 ### GetGroupSupport
 
@@ -89,6 +117,61 @@ and a boolean to check if the value has been set.
 
 SetCustomSchema sets CustomSchema field to given value.
 
+### HasCustomSchema
+
+`func (o *IdpInboundProvisioning) HasCustomSchema() bool`
+
+HasCustomSchema returns a boolean if a field has been set.
+
+### GetCustomScim2Schema
+
+`func (o *IdpInboundProvisioning) GetCustomScim2Schema() Scim2Schema`
+
+GetCustomScim2Schema returns the CustomScim2Schema field if non-nil, zero value otherwise.
+
+### GetCustomScim2SchemaOk
+
+`func (o *IdpInboundProvisioning) GetCustomScim2SchemaOk() (*Scim2Schema, bool)`
+
+GetCustomScim2SchemaOk returns a tuple with the CustomScim2Schema field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomScim2Schema
+
+`func (o *IdpInboundProvisioning) SetCustomScim2Schema(v Scim2Schema)`
+
+SetCustomScim2Schema sets CustomScim2Schema field to given value.
+
+### HasCustomScim2Schema
+
+`func (o *IdpInboundProvisioning) HasCustomScim2Schema() bool`
+
+HasCustomScim2Schema returns a boolean if a field has been set.
+
+### GetServiceProviderConfig
+
+`func (o *IdpInboundProvisioning) GetServiceProviderConfig() ServiceProviderConfig`
+
+GetServiceProviderConfig returns the ServiceProviderConfig field if non-nil, zero value otherwise.
+
+### GetServiceProviderConfigOk
+
+`func (o *IdpInboundProvisioning) GetServiceProviderConfigOk() (*ServiceProviderConfig, bool)`
+
+GetServiceProviderConfigOk returns a tuple with the ServiceProviderConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServiceProviderConfig
+
+`func (o *IdpInboundProvisioning) SetServiceProviderConfig(v ServiceProviderConfig)`
+
+SetServiceProviderConfig sets ServiceProviderConfig field to given value.
+
+### HasServiceProviderConfig
+
+`func (o *IdpInboundProvisioning) HasServiceProviderConfig() bool`
+
+HasServiceProviderConfig returns a boolean if a field has been set.
 
 ### GetUsers
 

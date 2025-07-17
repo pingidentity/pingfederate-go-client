@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **RuntimeServerCertRef** | [**ResourceLink**](ResourceLink.md) |  | 
 **AdminConsoleCertRef** | [**ResourceLink**](ResourceLink.md) |  | 
-**ActiveRuntimeServerCerts** | Pointer to [**[]ResourceLink**](ResourceLink.md) | The active SSL Server Certificate Key pairs for Runtime Server. | [optional] 
-**ActiveAdminConsoleCerts** | Pointer to [**[]ResourceLink**](ResourceLink.md) | The active SSL Server Certificate Key pairs for PF Administrator Console. | [optional] 
+**ActiveRuntimeServerCerts** | [**[]ResourceLink**](ResourceLink.md) | The active SSL Server Certificate Key pairs for Runtime Server. | 
+**ActiveAdminConsoleCerts** | [**[]ResourceLink**](ResourceLink.md) | The active SSL Server Certificate Key pairs for PF Administrator Console. | 
 
 ## Methods
 
 ### NewSslServerSettings
 
-`func NewSslServerSettings(runtimeServerCertRef ResourceLink, adminConsoleCertRef ResourceLink, ) *SslServerSettings`
+`func NewSslServerSettings(runtimeServerCertRef ResourceLink, adminConsoleCertRef ResourceLink, activeRuntimeServerCerts []ResourceLink, activeAdminConsoleCerts []ResourceLink, ) *SslServerSettings`
 
 NewSslServerSettings instantiates a new SslServerSettings object
 This constructor will assign default values to properties that have it defined,
@@ -87,11 +87,6 @@ and a boolean to check if the value has been set.
 
 SetActiveRuntimeServerCerts sets ActiveRuntimeServerCerts field to given value.
 
-### HasActiveRuntimeServerCerts
-
-`func (o *SslServerSettings) HasActiveRuntimeServerCerts() bool`
-
-HasActiveRuntimeServerCerts returns a boolean if a field has been set.
 
 ### GetActiveAdminConsoleCerts
 
@@ -112,11 +107,6 @@ and a boolean to check if the value has been set.
 
 SetActiveAdminConsoleCerts sets ActiveAdminConsoleCerts field to given value.
 
-### HasActiveAdminConsoleCerts
-
-`func (o *SslServerSettings) HasActiveAdminConsoleCerts() bool`
-
-HasActiveAdminConsoleCerts returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

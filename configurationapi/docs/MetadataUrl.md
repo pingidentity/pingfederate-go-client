@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | The persistent, unique ID for the Metadata Url. It can be any combination of [a-z0-9._-]. This property is system-assigned if not specified. | [optional] 
+**Id** | Pointer to **string** | The persistent, unique ID for the Metadata Url. It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned if not specified. | [optional] 
 **Name** | **string** | The name for the Metadata URL. | 
 **Url** | **string** | The Metadata URL. | 
 **CertView** | Pointer to [**CertView**](CertView.md) |  | [optional] 

@@ -9,14 +9,14 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for the authentication policy. | [optional] 
 **AuthenticationApiApplicationRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **Enabled** | Pointer to **bool** | Whether or not this authentication policy tree is enabled. Default is true. | [optional] 
-**RootNode** | Pointer to [**AuthenticationPolicyTreeNode**](AuthenticationPolicyTreeNode.md) |  | [optional] 
+**RootNode** | [**AuthenticationPolicyTreeNode**](AuthenticationPolicyTreeNode.md) |  | 
 **HandleFailuresLocally** | Pointer to **bool** | If a policy ends in failure keep the user local. | [optional] 
 
 ## Methods
 
 ### NewAuthenticationPolicyTree
 
-`func NewAuthenticationPolicyTree() *AuthenticationPolicyTree`
+`func NewAuthenticationPolicyTree(rootNode AuthenticationPolicyTreeNode, ) *AuthenticationPolicyTree`
 
 NewAuthenticationPolicyTree instantiates a new AuthenticationPolicyTree object
 This constructor will assign default values to properties that have it defined,
@@ -175,11 +175,6 @@ and a boolean to check if the value has been set.
 
 SetRootNode sets RootNode field to given value.
 
-### HasRootNode
-
-`func (o *AuthenticationPolicyTree) HasRootNode() bool`
-
-HasRootNode returns a boolean if a field has been set.
 
 ### GetHandleFailuresLocally
 

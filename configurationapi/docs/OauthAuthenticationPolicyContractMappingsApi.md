@@ -33,7 +33,7 @@ import (
 )
 
 func main() {
-    body := *openapiclient.NewApcToPersistentGrantMapping("Id_example", *openapiclient.NewResourceLink("Id_example"), map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // ApcToPersistentGrantMapping | Configuration for an authentication policy contract to persistent grant mapping.
+    body := *openapiclient.NewApcToPersistentGrantMapping(*openapiclient.NewResourceLink("Id_example"), map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // ApcToPersistentGrantMapping | Configuration for an authentication policy contract to persistent grant mapping.
     xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -261,7 +261,7 @@ Other parameters are passed through a pointer to a apiGetApcMappingsRequest stru
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -293,7 +293,7 @@ import (
 
 func main() {
     id := "id_example" // string | ID of the authentication policy contract to persistent grant mapping to update.
-    body := *openapiclient.NewApcToPersistentGrantMapping("Id_example", *openapiclient.NewResourceLink("Id_example"), map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // ApcToPersistentGrantMapping | Configuration for an authentication policy contract to persistent grant mapping.
+    body := *openapiclient.NewApcToPersistentGrantMapping(*openapiclient.NewResourceLink("Id_example"), map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // ApcToPersistentGrantMapping | Configuration for an authentication policy contract to persistent grant mapping.
     xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 

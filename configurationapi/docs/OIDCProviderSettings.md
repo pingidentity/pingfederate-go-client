@@ -10,6 +10,10 @@ Name | Type | Description | Notes
 **LoginType** | **string** | The OpenID Connect login type. These values maps to: &lt;br&gt;  CODE: Authentication using Code Flow &lt;br&gt; POST: Authentication using Form Post &lt;br&gt; POST_AT: Authentication using Form Post with Access Token | 
 **JwtSecuredAuthorizationResponseModeType** | Pointer to **string** | The OpenId Connect JWT Secured Authorization Response Mode (JARM). These values map to: &lt;br&gt;  DISABLED: Authorization responses will not be encoded using JARM. This is the default value. &lt;br&gt;  QUERY_JWT: query.jwt &lt;br&gt; FORM_POST_JWT: form_post.jwt &lt;br&gt;&lt;br&gt; Note: QUERY_JWT must not be used in conjunction with loginType POST or  POST_AT unless the response JWT is encrypted to prevent token leakage in the URL. | [optional] 
 **AuthenticationScheme** | Pointer to **string** | The OpenID Connect Authentication Scheme. This is required for Authentication using Code Flow.  | [optional] 
+**Type** | Pointer to **string** | The header &#x60;typ&#x60;, that goes into the JWT header if specified. This is only used for client secret jwt and private key jwt auth schemes. | [optional] 
+**Lifetime** | Pointer to **string** | The lifetime of the JWT in minutes. This is only used for client secret jwt and private key jwt auth schemes. | [optional] 
+**Audience** | Pointer to **string** | The claim &#x60;aud&#x60;, that goes into the JWT body if specified. This is only used for client secret jwt and private key jwt auth schemes. | [optional] 
+**IncludeNotBeforeClaim** | Pointer to **bool** | Include the claim &#x60;nbf&#x60; in the JWT body. This is only used for client secret jwt and private key jwt auth schemes. | [optional] 
 **AuthenticationSigningAlgorithm** | Pointer to **string** | The authentication signing algorithm for token endpoint PRIVATE_KEY_JWT or CLIENT_SECRET_JWT authentication. Asymmetric algorithms are allowed for PRIVATE_KEY_JWT and symmetric algorithms are allowed for CLIENT_SECRET_JWT. For RSASSA-PSS signing algorithm, PingFederate must be integrated with a hardware security module (HSM) or Java 11. | [optional] 
 **RequestSigningAlgorithm** | Pointer to **string** | The request signing algorithm. Required only if you wish to use signed requests. Only asymmetric algorithms are allowed. For RSASSA-PSS signing algorithm, PingFederate must be integrated with a hardware security module (HSM) or Java 11. | [optional] 
 **EnablePKCE** | Pointer to **bool** | Enable Proof Key for Code Exchange (PKCE). When enabled, the client sends an SHA-256 code challenge and corresponding code verifier to the OpenID Provider during the authorization code flow. | [optional] 
@@ -177,6 +181,106 @@ SetAuthenticationScheme sets AuthenticationScheme field to given value.
 `func (o *OIDCProviderSettings) HasAuthenticationScheme() bool`
 
 HasAuthenticationScheme returns a boolean if a field has been set.
+
+### GetType
+
+`func (o *OIDCProviderSettings) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *OIDCProviderSettings) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *OIDCProviderSettings) SetType(v string)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *OIDCProviderSettings) HasType() bool`
+
+HasType returns a boolean if a field has been set.
+
+### GetLifetime
+
+`func (o *OIDCProviderSettings) GetLifetime() string`
+
+GetLifetime returns the Lifetime field if non-nil, zero value otherwise.
+
+### GetLifetimeOk
+
+`func (o *OIDCProviderSettings) GetLifetimeOk() (*string, bool)`
+
+GetLifetimeOk returns a tuple with the Lifetime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLifetime
+
+`func (o *OIDCProviderSettings) SetLifetime(v string)`
+
+SetLifetime sets Lifetime field to given value.
+
+### HasLifetime
+
+`func (o *OIDCProviderSettings) HasLifetime() bool`
+
+HasLifetime returns a boolean if a field has been set.
+
+### GetAudience
+
+`func (o *OIDCProviderSettings) GetAudience() string`
+
+GetAudience returns the Audience field if non-nil, zero value otherwise.
+
+### GetAudienceOk
+
+`func (o *OIDCProviderSettings) GetAudienceOk() (*string, bool)`
+
+GetAudienceOk returns a tuple with the Audience field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAudience
+
+`func (o *OIDCProviderSettings) SetAudience(v string)`
+
+SetAudience sets Audience field to given value.
+
+### HasAudience
+
+`func (o *OIDCProviderSettings) HasAudience() bool`
+
+HasAudience returns a boolean if a field has been set.
+
+### GetIncludeNotBeforeClaim
+
+`func (o *OIDCProviderSettings) GetIncludeNotBeforeClaim() bool`
+
+GetIncludeNotBeforeClaim returns the IncludeNotBeforeClaim field if non-nil, zero value otherwise.
+
+### GetIncludeNotBeforeClaimOk
+
+`func (o *OIDCProviderSettings) GetIncludeNotBeforeClaimOk() (*bool, bool)`
+
+GetIncludeNotBeforeClaimOk returns a tuple with the IncludeNotBeforeClaim field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeNotBeforeClaim
+
+`func (o *OIDCProviderSettings) SetIncludeNotBeforeClaim(v bool)`
+
+SetIncludeNotBeforeClaim sets IncludeNotBeforeClaim field to given value.
+
+### HasIncludeNotBeforeClaim
+
+`func (o *OIDCProviderSettings) HasIncludeNotBeforeClaim() bool`
+
+HasIncludeNotBeforeClaim returns a boolean if a field has been set.
 
 ### GetAuthenticationSigningAlgorithm
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | The persistent, unique ID for the session policy. It can be any combination of [a-z0-9._-]. This property is system-assigned if not specified. | [optional] 
+**Id** | Pointer to **string** | The persistent, unique ID for the session policy. It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned if not specified. | [optional] 
 **AuthenticationSource** | [**AuthenticationSource**](AuthenticationSource.md) |  | 
 **EnableSessions** | **bool** | Determines whether sessions are enabled for the authentication source. This value overrides the enableSessions value from the global authentication session policy. | 
 **UserDeviceType** | Pointer to **string** | Determines the type of user device that the authentication session can be created on. If empty, the value will default to PRIVATE. | [optional] 

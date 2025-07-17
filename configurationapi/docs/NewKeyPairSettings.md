@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | The persistent, unique ID for the certificate. It can be any combination of [a-z0-9._-]. This property is system-assigned if not specified. | [optional] 
+**Id** | Pointer to **string** | The persistent, unique ID for the certificate. It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned if not specified. | [optional] 
 **CommonName** | **string** | Common name for key pair subject. | 
 **SubjectAlternativeNames** | Pointer to **[]string** | The subject alternative names (SAN). | [optional] 
 **Organization** | **string** | Organization. | 

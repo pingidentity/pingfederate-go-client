@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** | The authentication policy fragment ID. ID is unique. | [optional] 
 **Name** | Pointer to **string** | The authentication policy fragment name. Name is unique. | [optional] 
 **Description** | Pointer to **string** | A description for the authentication policy fragment. | [optional] 
-**RootNode** | Pointer to [**AuthenticationPolicyTreeNode**](AuthenticationPolicyTreeNode.md) |  | [optional] 
+**RootNode** | [**AuthenticationPolicyTreeNode**](AuthenticationPolicyTreeNode.md) |  | 
 **Inputs** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **Outputs** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewAuthenticationPolicyFragment
 
-`func NewAuthenticationPolicyFragment() *AuthenticationPolicyFragment`
+`func NewAuthenticationPolicyFragment(rootNode AuthenticationPolicyTreeNode, ) *AuthenticationPolicyFragment`
 
 NewAuthenticationPolicyFragment instantiates a new AuthenticationPolicyFragment object
 This constructor will assign default values to properties that have it defined,
@@ -124,11 +124,6 @@ and a boolean to check if the value has been set.
 
 SetRootNode sets RootNode field to given value.
 
-### HasRootNode
-
-`func (o *AuthenticationPolicyFragment) HasRootNode() bool`
-
-HasRootNode returns a boolean if a field has been set.
 
 ### GetInputs
 
