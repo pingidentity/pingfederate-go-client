@@ -15332,10 +15332,6 @@ components:
         id:
           type: string
           description: The ID of the resource.
-        location:
-          type: string
-          description: "A read-only URL that references the resource. If the resource\
-            \ is not currently URL-accessible, this property will be null."
       description: A reference to a resource.
     SecretManager:
       allOf:
