@@ -16595,10 +16595,6 @@ components:
         id:
           description: The ID of the resource.
           type: string
-        location:
-          description: "A read-only URL that references the resource. If the resource\
-            \ is not currently URL-accessible, this property will be null."
-          type: string
       required:
       - id
       type: object
@@ -16647,11 +16643,6 @@ components:
           items:
             $ref: "#/components/schemas/AccessTokenAttribute"
           type: array
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
         defaultSubjectAttribute:
           description: Default subject attribute to use for audit logging when validating
             the access token. Blank value means to use USER_KEY attribute value after
@@ -17038,12 +17029,6 @@ components:
         - location: location
           id: id
       properties:
-        inherited:
-          description: "If this token manager has a parent, this flag determines whether\
-            \ access control settings are inherited from the parent. When set to true,\
-            \ the other fields in this model become read-only. The default value is\
-            \ false."
-          type: boolean
         restrictClients:
           description: "Determines whether access to this token manager is restricted\
             \ to specific OAuth clients. If false, the 'allowedClients' field is ignored.\
@@ -17064,12 +17049,6 @@ components:
         - resourceUris
         inherited: true
       properties:
-        inherited:
-          description: "If this token manager has a parent, this flag determines whether\
-            \ selection settings, such as resource URI's, are inherited from the parent.\
-            \ When set to true, the other fields in this model become read-only. The\
-            \ default value is false."
-          type: boolean
         resourceUris:
           description: "The list of base resource URI's which map to this token manager.\
             \ A resource URI, specified via the 'aud' parameter, can be used to select\
@@ -17490,11 +17469,6 @@ components:
             \ If you do not want to update the stored value, this attribute should\
             \ be passed back unchanged."
           type: string
-        inherited:
-          description: "Whether this field is inherited from its parent instance.\
-            \ If true, the value/encrypted value properties become read-only. The\
-            \ default value is false."
-          type: boolean
       required:
       - name
       type: object
@@ -17558,10 +17532,6 @@ components:
           items:
             $ref: "#/components/schemas/ConfigRow"
           type: array
-        inherited:
-          description: "Whether this table is inherited from its parent instance.\
-            \ If true, the rows become read-only. The default value is false."
-          type: boolean
       required:
       - name
       type: object
@@ -17826,11 +17796,6 @@ components:
           description: Whether or not all OGNL expressions used to fulfill an outgoing
             assertion contract should be masked in the logs. Defaults to false.
           type: boolean
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
       required:
       - coreAttributes
       type: object
@@ -17904,11 +17869,6 @@ components:
           type: object
         issuanceCriteria:
           $ref: "#/components/schemas/IssuanceCriteria"
-        inherited:
-          description: "Whether this attribute mapping is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
       required:
       - attributeContractFulfillment
       type: object
@@ -18332,11 +18292,6 @@ components:
           items:
             $ref: "#/components/schemas/PasswordCredentialValidatorAttribute"
           type: array
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
       type: object
     PluginConfiguration:
       description: Configuration settings for a plugin instance.
@@ -18521,12 +18476,6 @@ components:
         includeSessionId: true
         checkSessionRevocationStatus: true
       properties:
-        inherited:
-          description: "If this token manager has a parent, this flag determines whether\
-            \ session validation settings, such as checkValidAuthnSession, are inherited\
-            \ from the parent. When set to true, the other fields in this model become\
-            \ read-only. The default value is false."
-          type: boolean
         includeSessionId:
           description: "Include the session identifier in the access token. Note that\
             \ if any of the session validation features is enabled, the session identifier\
@@ -18769,11 +18718,6 @@ components:
           items:
             $ref: "#/components/schemas/SpAdapterAttribute"
           type: array
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
       type: object
     SpAdapterTargetApplicationInfo:
       description: Target Application Information exposed by an SP adapter.
@@ -18788,11 +18732,6 @@ components:
         applicationIconUrl:
           description: The application icon URL.
           type: string
-        inherited:
-          description: "Specifies Whether target application information is inherited\
-            \ from its parent instance. If true, the rest of the properties in this\
-            \ model become read-only. The default value is false."
-          type: boolean
       type: object
     TokenEndpointAttribute:
       description: An attribute for an Access Token Manager's token endpoint attribute
@@ -18844,11 +18783,6 @@ components:
           items:
             $ref: "#/components/schemas/TokenEndpointAttribute"
           type: array
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
       type: object
     TokenGenerator:
       allOf:
@@ -18968,11 +18902,6 @@ components:
           items:
             $ref: "#/components/schemas/TokenGeneratorAttribute"
           type: array
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
       required:
       - coreAttributes
       type: object
@@ -19112,11 +19041,6 @@ components:
         maskOgnlValues:
           description: Whether or not all OGNL expressions used to fulfill an outgoing
             assertion contract should be masked in the logs. Defaults to false.
-          type: boolean
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
           type: boolean
       required:
       - coreAttributes
@@ -34316,11 +34240,6 @@ components:
           items:
             $ref: "#/components/schemas/Attribute"
           type: array
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
       required:
       - coreAttributes
       type: object
@@ -34349,11 +34268,6 @@ components:
           items:
             $ref: "#/components/schemas/GroupAttribute"
           type: array
-        inherited:
-          description: "Whether this group attribute contract is inherited from its\
-            \ parent instance. If true, the rest of the properties in this model become\
-            \ read-only. The default value is false."
-          type: boolean
       required:
       - coreAttributes
       type: object
