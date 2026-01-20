@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    includeExternalResources := true // bool | Include external resources like OAuth clients stored outside of PingFederate. (optional) (default to false)
+    includeExternalResources := true // bool | Include external resources such as OAuth clients and OAuth scopes that are stored outside of PingFederate. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiExportConfigurationRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **includeExternalResources** | **bool** | Include external resources like OAuth clients stored outside of PingFederate. | [default to false]
+ **includeExternalResources** | **bool** | Include external resources such as OAuth clients and OAuth scopes that are stored outside of PingFederate. | [default to false]
 
 ### Return type
 

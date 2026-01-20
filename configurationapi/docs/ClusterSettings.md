@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ReplicateConnectionsOnSave** | Pointer to **bool** | Whether changes to connections will automatically be replicated to the cluster. | [optional] 
 **ReplicateClientsOnSave** | Pointer to **bool** | Whether changes to OAuth clients will automatically be replicated to the cluster. This setting only applies when using XML Client storage. | [optional] 
+**ReplicateLogSettingsOnSave** | Pointer to **bool** | Whether changes to Log Settings will automatically be replicated to the cluster. | [optional] 
 
 ## Methods
 
@@ -75,6 +76,31 @@ SetReplicateClientsOnSave sets ReplicateClientsOnSave field to given value.
 `func (o *ClusterSettings) HasReplicateClientsOnSave() bool`
 
 HasReplicateClientsOnSave returns a boolean if a field has been set.
+
+### GetReplicateLogSettingsOnSave
+
+`func (o *ClusterSettings) GetReplicateLogSettingsOnSave() bool`
+
+GetReplicateLogSettingsOnSave returns the ReplicateLogSettingsOnSave field if non-nil, zero value otherwise.
+
+### GetReplicateLogSettingsOnSaveOk
+
+`func (o *ClusterSettings) GetReplicateLogSettingsOnSaveOk() (*bool, bool)`
+
+GetReplicateLogSettingsOnSaveOk returns a tuple with the ReplicateLogSettingsOnSave field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReplicateLogSettingsOnSave
+
+`func (o *ClusterSettings) SetReplicateLogSettingsOnSave(v bool)`
+
+SetReplicateLogSettingsOnSave sets ReplicateLogSettingsOnSave field to given value.
+
+### HasReplicateLogSettingsOnSave
+
+`func (o *ClusterSettings) HasReplicateLogSettingsOnSave() bool`
+
+HasReplicateLogSettingsOnSave returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

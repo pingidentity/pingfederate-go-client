@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **SsoServiceEndpoints** | Pointer to [**[]IdpSsoServiceEndpoint**](IdpSsoServiceEndpoint.md) | The IdP SSO endpoints that define where to send your authentication requests. Only required for SP initiated SSO. This is required for SAML x.x and WS-FED Connections. | [optional] 
 **DefaultTargetUrl** | Pointer to **string** | The default target URL for this connection. If defined, this overrides the default URL. | [optional] 
 **AuthnContextMappings** | Pointer to [**[]AuthnContextMapping**](AuthnContextMapping.md) | A list of authentication context mappings between local and remote values. Applicable for SAML 2.0 and OIDC protocol connections. | [optional] 
+**PassthroughErrors** | Pointer to **bool** | Specify whether errors received from the IdP should be passed through to the target application. | [optional] 
 **AssertionsSigned** | Pointer to **bool** | Specify whether the incoming SAML assertions are signed rather than the entire SAML response being signed. | [optional] 
 **SignAuthnRequests** | Pointer to **bool** | Determines whether SAML authentication requests should be signed. | [optional] 
 **DecryptionPolicy** | Pointer to [**DecryptionPolicy**](DecryptionPolicy.md) |  | [optional] 
@@ -366,6 +367,31 @@ SetAuthnContextMappings sets AuthnContextMappings field to given value.
 `func (o *IdpBrowserSso) HasAuthnContextMappings() bool`
 
 HasAuthnContextMappings returns a boolean if a field has been set.
+
+### GetPassthroughErrors
+
+`func (o *IdpBrowserSso) GetPassthroughErrors() bool`
+
+GetPassthroughErrors returns the PassthroughErrors field if non-nil, zero value otherwise.
+
+### GetPassthroughErrorsOk
+
+`func (o *IdpBrowserSso) GetPassthroughErrorsOk() (*bool, bool)`
+
+GetPassthroughErrorsOk returns a tuple with the PassthroughErrors field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPassthroughErrors
+
+`func (o *IdpBrowserSso) SetPassthroughErrors(v bool)`
+
+SetPassthroughErrors sets PassthroughErrors field to given value.
+
+### HasPassthroughErrors
+
+`func (o *IdpBrowserSso) HasPassthroughErrors() bool`
+
+HasPassthroughErrors returns a boolean if a field has been set.
 
 ### GetAssertionsSigned
 

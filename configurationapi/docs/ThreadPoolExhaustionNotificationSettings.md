@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EmailAddress** | **string** | Email address where notifications are sent. | 
+**EmailAddress** | **string** | Email addresses where notifications are sent. Separate multiple email addresses with commas. | 
 **ThreadDumpEnabled** | Pointer to **bool** | Generate a thread dump when approaching thread pool exhaustion. | [optional] 
 **NotificationPublisherRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **NotificationMode** | Pointer to **string** | The mode of notification. Set to NOTIFICATION_PUBLISHER to enable email notifications and server log messages. Set to LOGGING_ONLY to enable server log messages. Defaults to LOGGING_ONLY. | [optional] 

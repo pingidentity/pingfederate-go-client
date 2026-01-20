@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EmailAddress** | **string** | The email address where notifications are sent. | 
+**EmailAddress** | **string** | The email addresses where notifications are sent. Separate multiple email addresses with commas. | 
 **NotificationPublisherRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 
 ## Methods

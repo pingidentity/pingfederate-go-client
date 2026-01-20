@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EmailAddress** | **string** | Email address where notifications are sent. | 
+**EmailAddress** | **string** | Email addresses where notifications are sent. Separate multiple email addresses with commas. | 
 **InitialWarningPeriod** | Pointer to **int64** | Time before certificate expiration when initial warning is sent (in days). | [optional] 
 **FinalWarningPeriod** | **int64** | Time before certificate expiration when final warning is sent (in days). | 
 **NotificationPublisherRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
