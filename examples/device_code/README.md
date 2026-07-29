@@ -46,9 +46,9 @@ go run main.go
 
 ## Token Storage
 
-This example enables keychain caching via `WithStorageName("pingfederate")`. Because PingFederate
-has no environment ID, the keychain account name is derived from the runtime base URL, client ID,
-and grant type. Disable caching by setting the storage type to `config.StorageTypeNone`.
+This example enables keychain caching via `WithStorageName("pingfederate")`. The keychain account
+name is derived from the runtime base URL, client ID, and grant type. Disable caching by setting the
+storage type to `config.StorageTypeNone`.
 
 ## Troubleshooting
 

@@ -77,9 +77,9 @@ func main() {
 
 The interactive flows (authorization_code, device_code) cache tokens in the OS keychain when a
 storage name is configured via `WithStorageName(...)`, so a subsequent run reuses (and silently
-refreshes) an existing token rather than prompting for login again. Because PingFederate has no
-environment ID, the keychain account name is derived from the runtime base URL, client ID, and
-grant type. Set the storage type to `config.StorageTypeNone` to disable caching.
+refreshes) an existing token rather than prompting for login again. The keychain account name is
+derived from the runtime base URL, client ID, and grant type. Set the storage type to
+`config.StorageTypeNone` to disable caching.
 
 ### Examples
 

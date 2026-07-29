@@ -11,8 +11,7 @@ OAuth2 authentication flows against the PingFederate administrative API.
 
 ## Endpoint Model
 
-Unlike PingOne (which derives endpoints from an environment ID and root domain), PingFederate
-derives its OAuth2 endpoints from the **runtime engine base URL** (for example
+PingFederate derives its OAuth2 endpoints from the **runtime engine base URL** (for example
 `https://pingfederate.example.com:9031`). This is distinct from the **administrative API base URL**
 (for example `https://pingfederate-admin.example.com:9999/pf-admin-api/v1`) that the generated
 client calls. Both are required by the examples.
@@ -83,9 +82,8 @@ export PINGFEDERATE_CLIENT_ID="your-client-id"
 
 The interactive flows (authorization_code, device_code) cache tokens in the OS keychain by default
 via `WithStorageName(...)`, so a subsequent run reuses (and silently refreshes) an existing token
-rather than prompting for login again. Because PingFederate has no environment ID, the keychain
-account name is derived from the runtime base URL, client ID, and grant type. Set the storage type
-to `config.StorageTypeNone` to disable caching.
+rather than prompting for login again. The keychain account name is derived from the runtime base
+URL, client ID, and grant type. Set the storage type to `config.StorageTypeNone` to disable caching.
 
 ## Running the Examples
 

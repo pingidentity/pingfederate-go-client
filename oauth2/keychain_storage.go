@@ -99,8 +99,8 @@ func (k *KeychainStorage) HasToken() (bool, error) {
 }
 
 // GenerateKeychainAccountName creates a unique account name based on the PingFederate
-// runtime base URL, client ID, and grant type. PingFederate has no environment identifier,
-// so the runtime base URL disambiguates tokens across different PingFederate deployments.
+// runtime base URL, client ID, and grant type. The runtime base URL disambiguates tokens
+// across different PingFederate deployments.
 func GenerateKeychainAccountName(runtimeBaseURL, clientID, grantType string) string {
 	if runtimeBaseURL == "" && clientID == "" && grantType == "" {
 		// When no inputs are provided, return a stable default.
