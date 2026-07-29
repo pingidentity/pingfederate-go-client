@@ -14,7 +14,6 @@ import (
 	"os"
 
 	"github.com/pingidentity/pingfederate-go-client/v1300/config"
-	"github.com/pingidentity/pingfederate-go-client/v1300/configurationapi"
 	"github.com/pingidentity/pingfederate-go-client/v1300/oauth2"
 	xoauth2 "golang.org/x/oauth2"
 )
@@ -64,26 +63,13 @@ func main() {
 	}
 	ctx := context.WithValue(context.Background(), xoauth2.HTTPClient, insecureClient)
 
-	tokenSource, err := cfg.TokenSource(ctx)
+	// NewAPIClient resolves the token source and builds the generated admin API client in one
+	// call, so there is no separate configurationapi.Configuration to build and wire by hand.
+	client, authCtx, err := cfg.NewAPIClient(ctx, adminAPIURL, insecureClient)
 	if err != nil {
 		slog.Error("Client credentials flow failed", "error", err)
 		os.Exit(1)
 	}
-
-	// Build the generated client and attach the token source via context.
-	apiCfg := configurationapi.NewConfiguration()
-	apiCfg.Servers = configurationapi.ServerConfigurations{{URL: adminAPIURL}}
-	// NOTE: TLS verification is disabled here for example brevity only. Configure
-	// proper trust for real deployments.
-	apiCfg.HTTPClient = &http.Client{
-		Transport: &http.Transport{TLSClientConfig: &tls.Config{InsecureSkipVerify: true}}, // #nosec G402 -- example only
-	}
-	// The PingFederate admin API requires an X-XSRF-Header on every request for
-	// CSRF protection; without it the API responds 400 "xsrf_header_required".
-	apiCfg.AddDefaultHeader("X-XSRF-Header", "PingFederate")
-	client := configurationapi.NewAPIClient(apiCfg)
-
-	authCtx := context.WithValue(ctx, configurationapi.ContextOAuth2, tokenSource)
 
 	version, resp, err := client.VersionAPI.GetVersion(authCtx).Execute()
 	if err != nil {

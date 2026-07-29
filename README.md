@@ -16,8 +16,9 @@ For detailed documentation, see the `README` and `docs/` folder in the `configur
 ## Authentication
 
 In addition to the generated admin API client, this repository provides OAuth2 authentication
-helpers in the `config` and `oauth2` packages. These produce an `oauth2.TokenSource` that can be
-attached to the generated client, and support the following grant types:
+helpers in the `config` and `oauth2` packages. `config.Configuration.NewAPIClient(...)` resolves
+an `oauth2.TokenSource` and builds a ready-to-use generated admin API client in one call. The
+following grant types are supported:
 
 - **Authorization Code** (with PKCE): interactive, browser-based user login
 - **Device Code** (with PKCE): login on a separate device, suited to CLI/headless use
@@ -40,9 +41,8 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/pingidentity/pingfederate-go-client/v1200/config"
-	"github.com/pingidentity/pingfederate-go-client/v1200/configurationapi"
-	"github.com/pingidentity/pingfederate-go-client/v1200/oauth2"
+	"github.com/pingidentity/pingfederate-go-client/v1300/config"
+	"github.com/pingidentity/pingfederate-go-client/v1300/oauth2"
 )
 
 func main() {
@@ -52,18 +52,14 @@ func main() {
 		WithClientCredentialsClientID("YOUR_CLIENT_ID").
 		WithClientCredentialsClientSecret("YOUR_CLIENT_SECRET")
 
-	ctx := context.Background()
-	tokenSource, err := cfg.TokenSource(ctx)
+	// NewAPIClient resolves the token source and builds the generated admin API client in one
+	// call, along with a context carrying the token source for use with generated API methods.
+	client, authCtx, err := cfg.NewAPIClient(context.Background(), "https://pingfederate-admin.example.com:9999/pf-admin-api/v1", nil)
 	if err != nil {
-		slog.Error("Failed to create token source", "error", err)
+		slog.Error("Failed to build API client", "error", err)
 		os.Exit(1)
 	}
 
-	apiCfg := configurationapi.NewConfiguration()
-	apiCfg.Servers = configurationapi.ServerConfigurations{{URL: "https://pingfederate-admin.example.com:9999/pf-admin-api/v1"}}
-	client := configurationapi.NewAPIClient(apiCfg)
-
-	authCtx := context.WithValue(ctx, configurationapi.ContextOAuth2, tokenSource)
 	version, _, err := client.VersionAPI.GetVersion(authCtx).Execute()
 	if err != nil {
 		slog.Error("Failed to read PingFederate version", "error", err)
