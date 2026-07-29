@@ -12,3 +12,76 @@ require github.com/pingidentity/pingfederate-go-client/v1125 v1125.6.0
 The `.6.0` refers to the version of this client module.
 
 For detailed documentation, see the `README` and `docs/` folder in the `configurationapi/` folder.
+
+## Authentication
+
+In addition to the generated admin API client, this repository provides OAuth2 authentication
+helpers in the `config` and `oauth2` packages. These produce an `oauth2.TokenSource` that can be
+attached to the generated client, and support the following grant types:
+
+- **Authorization Code** (with PKCE): interactive, browser-based user login
+- **Device Code** (with PKCE): login on a separate device, suited to CLI/headless use
+- **Client Credentials**: server-to-server (machine-to-machine) authentication
+
+### Endpoint model
+
+PingFederate derives its OAuth2 endpoints from the **runtime engine base URL** (for example
+`https://pingfederate.example.com:9031`), which is distinct from the **administrative API base URL**
+that the generated client calls. Provide the runtime base URL to the configuration builder, or set
+an explicit endpoint with `WithExplicitEndpoint(...)`.
+
+### Quick start
+
+```go
+package main
+
+import (
+	"context"
+	"log/slog"
+	"os"
+
+	"github.com/pingidentity/pingfederate-go-client/v1200/config"
+	"github.com/pingidentity/pingfederate-go-client/v1200/configurationapi"
+	"github.com/pingidentity/pingfederate-go-client/v1200/oauth2"
+)
+
+func main() {
+	cfg := config.NewConfiguration().
+		WithRuntimeBaseURL("https://pingfederate.example.com:9031").
+		WithGrantType(oauth2.GrantTypeClientCredentials).
+		WithClientCredentialsClientID("YOUR_CLIENT_ID").
+		WithClientCredentialsClientSecret("YOUR_CLIENT_SECRET")
+
+	ctx := context.Background()
+	tokenSource, err := cfg.TokenSource(ctx)
+	if err != nil {
+		slog.Error("Failed to create token source", "error", err)
+		os.Exit(1)
+	}
+
+	apiCfg := configurationapi.NewConfiguration()
+	apiCfg.Servers = configurationapi.ServerConfigurations{{URL: "https://pingfederate-admin.example.com:9999/pf-admin-api/v1"}}
+	client := configurationapi.NewAPIClient(apiCfg)
+
+	authCtx := context.WithValue(ctx, configurationapi.ContextOAuth2, tokenSource)
+	version, _, err := client.VersionAPI.GetVersion(authCtx).Execute()
+	if err != nil {
+		slog.Error("Failed to read PingFederate version", "error", err)
+		os.Exit(1)
+	}
+	slog.Info("Authenticated to PingFederate", "version", version.GetVersion())
+}
+```
+
+### Token storage
+
+The interactive flows (authorization_code, device_code) cache tokens in the OS keychain when a
+storage name is configured via `WithStorageName(...)`, so a subsequent run reuses (and silently
+refreshes) an existing token rather than prompting for login again. Because PingFederate has no
+environment ID, the keychain account name is derived from the runtime base URL, client ID, and
+grant type. Set the storage type to `config.StorageTypeNone` to disable caching.
+
+### Examples
+
+Runnable examples for each grant type live under [`examples/`](examples/). See
+[`CONTRIBUTING.md`](CONTRIBUTING.md) for local development and validation steps.

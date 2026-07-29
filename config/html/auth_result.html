@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{.ProjectName}} - {{.Heading}}</title>
+  <link rel="favicon" href="https://cdn-docs.pingidentity.com/site-nav/ping-logo-horizontal.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --font-color: #111827;
+      --secondary-font-color: #6b7280;
+      --page-background: #f0f2f6;
+      --panel-background-color: #ffffff;
+      --panel-border-color: #d9d8db;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--page-background);
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      width: 800px;
+      height: 450px;
+      margin: 4rem auto 0;
+      padding: 32px;
+      box-sizing: border-box;
+      background: var(--panel-background-color);
+      border: 1px solid var(--panel-border-color);
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+    }
+
+    .content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .logo {
+      height: 50px;
+      margin-bottom: 50px;
+    }
+
+    h1 {
+      margin: 0 0 20px 0;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--font-color);
+    }
+
+    p.subtitle {
+      margin: 0;
+      font-size: 15px;
+      color: var(--secondary-font-color);
+    }
+
+    .error-details {
+      margin-top: 20px;
+      padding: 16px;
+      background-color: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 8px;
+      color: #991b1b;
+      font-size: 14px;
+      max-width: 600px;
+      word-wrap: break-word;
+    }
+
+    #closeMessage {
+      margin-top: 24px;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--secondary-font-color);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" role="main">
+    <div class="content">
+      <img class="logo" src="https://cdn-docs.pingidentity.com/site-nav/ping-logo-horizontal.svg"
+        alt="Ping Identity logo" />
+      <h1>{{.Heading}}</h1>
+      <p class="subtitle">{{.Message}}</p>
+      {{if .ErrorDetails}}
+      <div class="error-details">
+        <strong>Error:</strong> {{.ErrorDetails}}
+      </div>
+      {{end}}
+      <p class="subtitle" id="closeMessage">You can close this window.</p>
+    </div>
+  </div>
+  <footer>
+    &copy; Copyright <span id="year"></span> Ping Identity. All rights reserved.
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Only auto-close on success
+    var isSuccess = {{.IsSuccess}};
+    if (isSuccess) {
+      var countdown = 3;
+      var closeMessage = document.getElementById('closeMessage');
+
+      // Update message immediately
+      closeMessage.innerHTML = 'You may close this window to continue.<br><i>Attempting to close automatically in ' + countdown + ' seconds...</i>';
+
+      // Start countdown
+      var countdownInterval = setInterval(function() {
+        countdown--;
+        if (countdown > 0) {
+          closeMessage.innerHTML = 'You may close this window to continue.<br><i>Attempting to close automatically in ' + countdown + ' seconds...</i>';
+        } else {
+          closeMessage.innerHTML = 'You may close this window to continue.';
+          clearInterval(countdownInterval);
+          setTimeout(function() {
+            window.close();
+          }, 500); // Small delay after showing "final message"
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+
+</html>
