@@ -16,23 +16,21 @@ const xsrfHeaderName = "X-XSRF-Header"
 
 // NewAPIClient builds a ready-to-use configurationapi.APIClient for the PingFederate
 // administrative API, targeting adminAPIURL, and resolves the OAuth2 token source configured on
-// c. If httpClient is nil, a default client is used for both the token exchange and the admin API
-// calls. It returns the client along with a context carrying the token source
-// (configurationapi.ContextOAuth2) so callers can pass the returned context directly to generated
-// API methods, without separately constructing and wiring a configurationapi.Configuration.
-func (c *Configuration) NewAPIClient(ctx context.Context, adminAPIURL string, httpClient *http.Client) (*configurationapi.APIClient, context.Context, error) {
-	ts, err := c.TokenSource(ctx)
+// c. The returned client's HTTP client already injects the resolved token on every request (via
+// Configuration.Client), so callers can use the returned client directly with any context —
+// there is no separate auth context to construct or pass around, and no
+// configurationapi.Configuration to build and wire by hand. If httpClient is nil, a default
+// client is used as the base transport for both the token exchange and the admin API calls.
+func (c *Configuration) NewAPIClient(ctx context.Context, adminAPIURL string, httpClient *http.Client) (*configurationapi.APIClient, error) {
+	authenticatedClient, err := c.Client(ctx, httpClient)
 	if err != nil {
-		return nil, nil, fmt.Errorf("failed to create token source: %w", err)
+		return nil, fmt.Errorf("failed to create authenticated HTTP client: %w", err)
 	}
 
 	apiCfg := configurationapi.NewConfiguration()
 	apiCfg.Servers = configurationapi.ServerConfigurations{{URL: adminAPIURL}}
-	apiCfg.HTTPClient = httpClient
+	apiCfg.HTTPClient = authenticatedClient
 	apiCfg.AddDefaultHeader(xsrfHeaderName, "PingFederate")
 
-	client := configurationapi.NewAPIClient(apiCfg)
-	authCtx := context.WithValue(ctx, configurationapi.ContextOAuth2, ts)
-
-	return client, authCtx, nil
+	return configurationapi.NewAPIClient(apiCfg), nil
 }

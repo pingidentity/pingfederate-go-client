@@ -266,7 +266,9 @@ func (c *Configuration) Client(ctx context.Context, httpClient *http.Client) (*h
 		return nil, err
 	}
 
-	ctx = context.WithValue(ctx, oauth2.HTTPClient, httpClient)
+	if httpClient != nil {
+		ctx = context.WithValue(ctx, oauth2.HTTPClient, httpClient)
+	}
 	return oauth2.NewClient(ctx, ts), nil
 }
 

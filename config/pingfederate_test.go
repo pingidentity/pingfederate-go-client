@@ -53,6 +53,18 @@ func TestConfigurationBearerToken(t *testing.T) {
 	}
 }
 
+func TestConfigurationClientNilHTTPClient(t *testing.T) {
+	cfg := config.NewConfiguration().WithAccessToken("static-token")
+
+	client, err := cfg.Client(context.Background(), nil)
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if client == nil {
+		t.Fatalf("expected a non-nil HTTP client")
+	}
+}
+
 func TestConfigurationAuthEndpointsExplicit(t *testing.T) {
 	explicit := oauth2.Endpoint{
 		AuthURL:       "https://custom.example.com/authorize",

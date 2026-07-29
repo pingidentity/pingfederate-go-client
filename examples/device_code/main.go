@@ -61,16 +61,16 @@ func main() {
 
 	// NewAPIClient performs the device_code flow (displaying the verification URL and user code,
 	// then polling until login completes, unless a valid cached token is available), then builds
-	// the generated admin API client in one call, so there is no separate
-	// configurationapi.Configuration to build and wire by hand.
+	// the generated admin API client in one call. The returned client's HTTP client already
+	// injects the resolved token on every request, so it can be used directly with any context.
 	ctx := context.WithValue(context.Background(), xoauth2.HTTPClient, insecureClient)
-	client, authCtx, err := cfg.NewAPIClient(ctx, adminAPIURL, insecureClient)
+	client, err := cfg.NewAPIClient(ctx, adminAPIURL, insecureClient)
 	if err != nil {
 		slog.Error("Device code flow failed", "error", err)
 		os.Exit(1)
 	}
 
-	version, resp, err := client.VersionAPI.GetVersion(authCtx).Execute()
+	version, resp, err := client.VersionAPI.GetVersion(ctx).Execute()
 	if err != nil {
 		slog.Error("Failed to read PingFederate version", "error", err)
 		os.Exit(1)

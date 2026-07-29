@@ -53,14 +53,15 @@ func main() {
 		WithClientCredentialsClientSecret("YOUR_CLIENT_SECRET")
 
 	// NewAPIClient resolves the token source and builds the generated admin API client in one
-	// call, along with a context carrying the token source for use with generated API methods.
-	client, authCtx, err := cfg.NewAPIClient(context.Background(), "https://pingfederate-admin.example.com:9999/pf-admin-api/v1", nil)
+	// call. The returned client's HTTP client already injects the resolved token on every
+	// request, so it can be used directly with any context.
+	client, err := cfg.NewAPIClient(context.Background(), "https://pingfederate-admin.example.com:9999/pf-admin-api/v1", nil)
 	if err != nil {
 		slog.Error("Failed to build API client", "error", err)
 		os.Exit(1)
 	}
 
-	version, _, err := client.VersionAPI.GetVersion(authCtx).Execute()
+	version, _, err := client.VersionAPI.GetVersion(context.Background()).Execute()
 	if err != nil {
 		slog.Error("Failed to read PingFederate version", "error", err)
 		os.Exit(1)
