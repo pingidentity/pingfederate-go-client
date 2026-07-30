@@ -258,17 +258,20 @@ func (c *Configuration) AuthEndpoints() (oauth2.Endpoint, error) {
 }
 
 // Client creates an HTTP client that automatically manages OAuth2 authentication tokens for
-// PingFederate API calls. If httpClient is nil, a default client is used. It returns an error
-// if a token source cannot be created.
+// PingFederate API calls. httpClient, if non-nil, is used both as the transport for any HTTP
+// calls TokenSource itself makes (e.g. the browser/device-code token exchange, or minting a
+// client_credentials token) and as the base transport for the returned client. If httpClient is
+// nil, a default client is used. It returns an error if a token source cannot be created.
 func (c *Configuration) Client(ctx context.Context, httpClient *http.Client) (*http.Client, error) {
+	if httpClient != nil {
+		ctx = context.WithValue(ctx, oauth2.HTTPClient, httpClient)
+	}
+
 	ts, err := c.TokenSource(ctx)
 	if err != nil {
 		return nil, err
 	}
 
-	if httpClient != nil {
-		ctx = context.WithValue(ctx, oauth2.HTTPClient, httpClient)
-	}
 	return oauth2.NewClient(ctx, ts), nil
 }
 

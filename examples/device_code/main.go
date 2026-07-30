@@ -14,7 +14,6 @@ import (
 
 	"github.com/pingidentity/pingfederate-go-client/v1300/config"
 	"github.com/pingidentity/pingfederate-go-client/v1300/oauth2"
-	xoauth2 "golang.org/x/oauth2"
 )
 
 // main demonstrates device_code flow authentication.
@@ -52,18 +51,17 @@ func main() {
 
 	// NOTE: TLS verification is disabled here for example brevity only, so the
 	// example can reach a PingFederate deployment using a self-signed certificate.
-	// Configure proper trust for real deployments. The insecure client must be
-	// injected into the context via oauth2.HTTPClient so the token exchange (not
-	// just the admin API call below) uses it.
+	// Configure proper trust for real deployments.
 	insecureClient := &http.Client{
 		Transport: &http.Transport{TLSClientConfig: &tls.Config{InsecureSkipVerify: true}}, // #nosec G402 -- example only
 	}
+	ctx := context.Background()
 
-	// NewAPIClient performs the device_code flow (displaying the verification URL and user code,
-	// then polling until login completes, unless a valid cached token is available), then builds
-	// the generated admin API client in one call. The returned client's HTTP client already
-	// injects the resolved token on every request, so it can be used directly with any context.
-	ctx := context.WithValue(context.Background(), xoauth2.HTTPClient, insecureClient)
+	// NewAPIClient uses insecureClient for both the token exchange and the admin API calls. It
+	// performs the device_code flow (displaying the verification URL and user code, then polling
+	// until login completes, unless a valid cached token is available), then builds the
+	// generated admin API client in one call. The returned client's HTTP client already injects
+	// the resolved token on every request, so it can be used directly with any context.
 	client, err := cfg.NewAPIClient(ctx, adminAPIURL, insecureClient)
 	if err != nil {
 		slog.Error("Device code flow failed", "error", err)
