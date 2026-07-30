@@ -24,3 +24,8 @@ _testmain.go
 *.test
 *.prof
 *.DS_Store*
+
+# Artifacts produced by Makefile targets (test-coverage, security)
+coverage.out
+coverage.html
+results.sarif
