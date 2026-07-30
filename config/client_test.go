@@ -12,7 +12,7 @@ import (
 func TestNewAPIClient(t *testing.T) {
 	cfg := config.NewConfiguration().WithAccessToken("static-token")
 
-	client, err := cfg.NewAPIClient(context.Background(), "https://pf.example.com:9999/pf-admin-api/v1", nil)
+	client, err := cfg.NewAPIClientWithTokenSource(context.Background(), "https://pf.example.com:9999/pf-admin-api/v1", nil)
 	if err != nil {
 		t.Fatalf("unexpected error: %v", err)
 	}
@@ -24,7 +24,7 @@ func TestNewAPIClient(t *testing.T) {
 func TestNewAPIClientTokenSourceError(t *testing.T) {
 	cfg := config.NewConfiguration()
 
-	if _, err := cfg.NewAPIClient(context.Background(), "https://pf.example.com:9999/pf-admin-api/v1", nil); err == nil {
+	if _, err := cfg.NewAPIClientWithTokenSource(context.Background(), "https://pf.example.com:9999/pf-admin-api/v1", nil); err == nil {
 		t.Fatalf("expected an error when the grant type is not configured")
 	}
 }

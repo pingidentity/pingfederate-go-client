@@ -60,11 +60,11 @@ func main() {
 	}
 	ctx := context.Background()
 
-	// NewAPIClient uses insecureClient for both the token exchange and the admin API calls, and
+	// NewAPIClientWithTokenSource uses insecureClient for both the token exchange and the admin API calls, and
 	// resolves the token source and builds the generated admin API client in one call. The
 	// returned client's HTTP client already injects the resolved token on every request, so it
 	// can be used directly with any context.
-	client, err := cfg.NewAPIClient(ctx, adminAPIURL, insecureClient)
+	client, err := cfg.NewAPIClientWithTokenSource(ctx, adminAPIURL, insecureClient)
 	if err != nil {
 		slog.Error("Client credentials flow failed", "error", err)
 		os.Exit(1)
