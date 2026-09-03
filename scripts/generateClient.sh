@@ -12,7 +12,7 @@ set -e
 
 docker run --rm \
     -v "$PWD:/local" openapitools/openapi-generator-cli:v7.0.1 generate \
-    -i /local/api/pf-swagger.yaml \
+    -i /local/api/enriched-openapi.json \
     -g go \
     -o /local/configurationapi \
     --git-host github.com \
