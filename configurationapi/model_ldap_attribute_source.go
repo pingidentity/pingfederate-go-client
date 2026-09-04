@@ -21,6 +21,7 @@ var _ MappedNullable = &LdapAttributeSource{}
 
 // LdapAttributeSource The configured settings used to look up attributes from a LDAP data store.
 type LdapAttributeSource struct {
+	AttributeSource
 	// The base DN to search from. If not specified, the search will start at the LDAP's root.
 	BaseDn *string `json:"baseDn,omitempty" tfsdk:"base_dn"`
 	// Determines the node depth of the query.
@@ -242,6 +243,14 @@ func (o LdapAttributeSource) MarshalJSON() ([]byte, error) {
 
 func (o LdapAttributeSource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedAttributeSource, errAttributeSource := json.Marshal(o.AttributeSource)
+	if errAttributeSource != nil {
+		return map[string]interface{}{}, errAttributeSource
+	}
+	errAttributeSource = json.Unmarshal([]byte(serializedAttributeSource), &toSerialize)
+	if errAttributeSource != nil {
+		return map[string]interface{}{}, errAttributeSource
+	}
 	if !IsNil(o.BaseDn) {
 		toSerialize["baseDn"] = o.BaseDn
 	}

@@ -21,6 +21,7 @@ var _ MappedNullable = &DateLocalIdentityField{}
 
 // DateLocalIdentityField A date type field.
 type DateLocalIdentityField struct {
+	BaseDefaultValueLocalIdentityField
 }
 
 // NewDateLocalIdentityField instantiates a new DateLocalIdentityField object
@@ -53,6 +54,14 @@ func (o DateLocalIdentityField) MarshalJSON() ([]byte, error) {
 
 func (o DateLocalIdentityField) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBaseDefaultValueLocalIdentityField, errBaseDefaultValueLocalIdentityField := json.Marshal(o.BaseDefaultValueLocalIdentityField)
+	if errBaseDefaultValueLocalIdentityField != nil {
+		return map[string]interface{}{}, errBaseDefaultValueLocalIdentityField
+	}
+	errBaseDefaultValueLocalIdentityField = json.Unmarshal([]byte(serializedBaseDefaultValueLocalIdentityField), &toSerialize)
+	if errBaseDefaultValueLocalIdentityField != nil {
+		return map[string]interface{}{}, errBaseDefaultValueLocalIdentityField
+	}
 	return toSerialize, nil
 }
 

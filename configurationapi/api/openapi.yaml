@@ -15545,7 +15545,6 @@ components:
       - id
       - name
       - pluginDescriptorRef
-      type: object
     AtmAccessControlSettings:
       description: Access control settings for an access token management plugin instance.
       properties:
@@ -15665,7 +15664,6 @@ components:
       - id
       - name
       - pluginDescriptorRef
-      type: object
     AuthenticationSelectorAttribute:
       description: An attribute for the Authentication Selector attribute contract.
       properties:
@@ -15695,7 +15693,6 @@ components:
       - id
       - name
       - pluginDescriptorRef
-      type: object
     BinaryLdapAttributeSettings:
       description: Binary settings for a LDAP attribute.
       properties:
@@ -15717,7 +15714,6 @@ components:
       - id
       - name
       - pluginDescriptorRef
-      type: object
     ClientRegistrationPolicy:
       allOf:
       - $ref: '#/components/schemas/PluginInstance'
@@ -15727,7 +15723,6 @@ components:
       - id
       - name
       - pluginDescriptorRef
-      type: object
     ConditionalIssuanceCriteriaEntry:
       allOf:
       - $ref: '#/components/schemas/AbstractIssuanceCriteriaEntry'
@@ -15770,7 +15765,6 @@ components:
       - condition
       - source
       - value
-      type: object
     ConfigField:
       description: A plugin configuration field value.
       example:
@@ -15884,7 +15878,6 @@ components:
       required:
       - dataStoreRef
       - type
-      type: object
     CustomDataStore:
       allOf:
       - $ref: '#/components/schemas/DataStore'
@@ -15906,7 +15899,6 @@ components:
       - name
       - pluginDescriptorRef
       - type
-      type: object
     DataStore:
       description: The set of attributes used to configure a data store.
       discriminator:
@@ -15952,7 +15944,6 @@ components:
         OGNL expression to determine whether or not it passes.
       required:
       - expression
-      type: object
     FieldEntry:
       description: A simple name value pair to represent a field entry.
       properties:
@@ -15992,7 +15983,6 @@ components:
       - id
       - name
       - pluginDescriptorRef
-      type: object
     IdentityStoreProvisionerAttributeContract:
       description: A set of attributes exposed by an identity store provisioner.
       properties:
@@ -16060,7 +16050,6 @@ components:
       - id
       - name
       - pluginDescriptorRef
-      type: object
     IdpAdapterAttribute:
       description: An attribute for the IdP adapter attribute contract.
       properties:
@@ -16198,7 +16187,6 @@ components:
       - filter
       - table
       - type
-      type: object
     JdbcDataStore:
       allOf:
       - $ref: '#/components/schemas/DataStore'
@@ -16276,7 +16264,6 @@ components:
       required:
       - driverClass
       - type
-      type: object
     JdbcTagConfig:
       description: "A JDBC data store's connection URLs and tags configuration. For\
         \ regional deployments, provide a separate JdbcTagConfig for each region,\
@@ -16342,7 +16329,6 @@ components:
       - searchFilter
       - searchScope
       - type
-      type: object
     LdapDataStore:
       allOf:
       - $ref: '#/components/schemas/DataStore'
@@ -16505,7 +16491,6 @@ components:
       required:
       - ldapType
       - type
-      type: object
     LdapTagConfig:
       description: "An LDAP data store's hostnames and tags configuration. For regional\
         \ deployments, provide a separate LdapTagConfig for each region, containing\
@@ -16540,7 +16525,6 @@ components:
       - id
       - name
       - pluginDescriptorRef
-      type: object
     OutOfBandAuthAttribute:
       description: An attribute for the out of band authenticator plugin instance
         attribute contract.
@@ -16583,7 +16567,6 @@ components:
       - id
       - name
       - pluginDescriptorRef
-      type: object
     PasswordCredentialValidator:
       allOf:
       - $ref: '#/components/schemas/PluginInstance'
@@ -16597,7 +16580,6 @@ components:
       - id
       - name
       - pluginDescriptorRef
-      type: object
     PasswordCredentialValidatorAttribute:
       description: An attribute for the password credential validator attribute contract.
       properties:
@@ -16686,7 +16668,6 @@ components:
       - pingOneEnvironmentId
       - pingOneLdapGatewayId
       - type
-      type: object
     PluginConfiguration:
       description: Configuration settings for a plugin instance.
       example:
@@ -16813,7 +16794,6 @@ components:
       - id
       - name
       - pluginDescriptorRef
-      type: object
     SessionValidationSettings:
       description: Session validation settings for an access token management plugin
         instance.
@@ -16958,7 +16938,6 @@ components:
       - id
       - name
       - pluginDescriptorRef
-      type: object
     SpAdapterAttribute:
       description: An attribute for the SP adapter attribute contract.
       properties:
@@ -17057,7 +17036,6 @@ components:
       - id
       - name
       - pluginDescriptorRef
-      type: object
     TokenGeneratorAttribute:
       description: An attribute for the token generator attribute contract.
       properties:
@@ -17104,7 +17082,6 @@ components:
       - id
       - name
       - pluginDescriptorRef
-      type: object
     TokenProcessorAttribute:
       description: An attribute for the token processor attribute contract.
       properties:
@@ -17223,7 +17200,6 @@ components:
             type: array
         type: object
       description: An OAuth access token management plugin descriptor.
-      type: object
     ActionDescriptor:
       description: Describes an arbitrary action that is available for a plugin.
       example:
@@ -17278,7 +17254,6 @@ components:
       allOf:
       - $ref: '#/components/schemas/PluginDescriptor'
       description: An Authentication Selector descriptor.
-      type: object
     AuthorizationDetailProcessorDescriptor:
       allOf:
       - $ref: '#/components/schemas/PluginDescriptor'
@@ -17298,7 +17273,6 @@ components:
             uniqueItems: true
         type: object
       description: An authorization detail processor plugin descriptor.
-      type: object
     BaseSelectionFieldDescriptor:
       allOf:
       - $ref: '#/components/schemas/FieldDescriptor'
@@ -17310,28 +17284,23 @@ components:
             type: array
         type: object
       description: Holds fields that are shared by all selection-type field descriptors.
-      type: object
     CaptchaProviderDescriptor:
       allOf:
       - $ref: '#/components/schemas/PluginDescriptor'
       description: A CAPTCHA provider plugin descriptor.
-      type: object
     CheckBoxFieldDescriptor:
       allOf:
       - $ref: '#/components/schemas/FieldDescriptor'
       description: A boolean field typically rendered as a checkbox in a configuration
         UI.
-      type: object
     ClientRegistrationPolicyDescriptor:
       allOf:
       - $ref: '#/components/schemas/PluginDescriptor'
       description: A client registration policy plugin descriptor.
-      type: object
     CustomDataStoreDescriptor:
       allOf:
       - $ref: '#/components/schemas/PluginDescriptor'
       description: A custom data store descriptor.
-      type: object
     FieldDescriptor:
       description: Describes a plugin configuration field.
       discriminator:
@@ -17392,7 +17361,6 @@ components:
             type: integer
         type: object
       description: A text field that will contain a secure salted hash.
-      type: object
     IdentityStoreProvisionerDescriptor:
       allOf:
       - $ref: '#/components/schemas/PluginDescriptor'
@@ -17409,17 +17377,14 @@ components:
             type: boolean
         type: object
       description: An identity store provisioner descriptor
-      type: object
     IdpAdapterDescriptor:
       allOf:
       - $ref: '#/components/schemas/PluginDescriptor'
       description: An IdP adapter descriptor.
-      type: object
     NotificationPublisherDescriptor:
       allOf:
       - $ref: '#/components/schemas/PluginDescriptor'
       description: A notification publisher plugin descriptor.
-      type: object
     OptionValue:
       description: An option name and value associated with a selection field.
       properties:
@@ -17434,12 +17399,10 @@ components:
       allOf:
       - $ref: '#/components/schemas/PluginDescriptor'
       description: An out of band authenticator plugin descriptor.
-      type: object
     PasswordCredentialValidatorDescriptor:
       allOf:
       - $ref: '#/components/schemas/PluginDescriptor'
       description: A password credential validator descriptor.
-      type: object
     PluginConfigDescriptor:
       description: Defines the configuration fields available for a plugin.
       example:
@@ -17599,23 +17562,19 @@ components:
       - $ref: '#/components/schemas/BaseSelectionFieldDescriptor'
       description: A selection-type field intended to be rendered as a group of radio
         buttons in a UI.
-      type: object
     SecretManagerDescriptor:
       allOf:
       - $ref: '#/components/schemas/PluginDescriptor'
       description: A secret manager plugin descriptor.
-      type: object
     SelectFieldDescriptor:
       allOf:
       - $ref: '#/components/schemas/BaseSelectionFieldDescriptor'
       description: A selection field that is intended to be rendered as a dropdown
         list of options.
-      type: object
     SpAdapterDescriptor:
       allOf:
       - $ref: '#/components/schemas/PluginDescriptor'
       description: An SP adapter descriptor.
-      type: object
     TableDescriptor:
       description: Defines a plugin configuration table.
       example:
@@ -17673,7 +17632,6 @@ components:
             type: integer
         type: object
       description: A field intended to be rendered as a text box in a UI.
-      type: object
     TextFieldDescriptor:
       allOf:
       - $ref: '#/components/schemas/FieldDescriptor'
@@ -17688,22 +17646,18 @@ components:
             type: integer
         type: object
       description: A text field.
-      type: object
     TokenGeneratorDescriptor:
       allOf:
       - $ref: '#/components/schemas/PluginDescriptor'
       description: A token generator descriptor.
-      type: object
     TokenProcessorDescriptor:
       allOf:
       - $ref: '#/components/schemas/PluginDescriptor'
       description: A token processor descriptor.
-      type: object
     UploadFileFieldDescriptor:
       allOf:
       - $ref: '#/components/schemas/FieldDescriptor'
       description: A field which allows the user to upload a file.
-      type: object
     AccessTokenManagerDescriptors:
       description: A collection of OAuth access token management plugin descriptors.
       example:
@@ -18220,7 +18174,6 @@ components:
       - attributeMapping
       - authenticationPolicyContractRef
       - type
-      type: object
     AttributeMapping:
       description: A list of mappings from attribute sources to attribute targets.
       example:
@@ -18406,7 +18359,6 @@ components:
       required:
       - authenticationSelectorRef
       - type
-      type: object
     AuthnSourcePolicyAction:
       allOf:
       - $ref: '#/components/schemas/PolicyAction'
@@ -18426,21 +18378,18 @@ components:
       required:
       - authenticationSource
       - type
-      type: object
     ContinuePolicyAction:
       allOf:
       - $ref: '#/components/schemas/PolicyAction'
       description: The continue selection action.
       required:
       - type
-      type: object
     DonePolicyAction:
       allOf:
       - $ref: '#/components/schemas/PolicyAction'
       description: The done selection action.
       required:
       - type
-      type: object
     FragmentPolicyAction:
       allOf:
       - $ref: '#/components/schemas/PolicyAction'
@@ -18456,7 +18405,6 @@ components:
       required:
       - fragment
       - type
-      type: object
     LocalIdentityMappingPolicyAction:
       allOf:
       - $ref: '#/components/schemas/PolicyAction'
@@ -18473,7 +18421,6 @@ components:
       - localIdentityRef
       - outboundAttributeMapping
       - type
-      type: object
     PolicyAction:
       description: An authentication policy selection action.
       discriminator:
@@ -18503,7 +18450,6 @@ components:
       description: The restart selection action.
       required:
       - type
-      type: object
     AuthenticationPolicyTree:
       description: An authentication policy tree.
       example:
@@ -21642,7 +21588,6 @@ components:
       required:
       - identityStoreProvisionerRef
       - type
-      type: object
     IdpAdapterAssertionMapping:
       description: The IdP Adapter Assertion Mapping.
       properties:
@@ -21872,7 +21817,6 @@ components:
       required:
       - idpIdentityMapping
       - protocol
-      type: object
     IdpBrowserSsoAttribute:
       description: An attribute for the IdP Browser SSO attribute contract.
       properties:
@@ -21929,7 +21873,6 @@ components:
       required:
       - entityId
       - name
-      type: object
     IdpInboundProvisioning:
       description: SCIM Inbound Provisioning specifies how and when to provision user
         accounts and groups.
@@ -22179,7 +22122,6 @@ components:
         using SOAP back channel.
       required:
       - type
-      type: object
     InboundProvisioningUserRepository:
       description: SCIM Inbound Provisioning user repository.
       discriminator:
@@ -22206,7 +22148,6 @@ components:
       - dataStoreRef
       - sqlMethod
       - type
-      type: object
     JitProvisioning:
       description: The settings used to specify how and when to provision user accounts.
       properties:
@@ -22263,7 +22204,6 @@ components:
       - dataStoreRef
       - type
       - uniqueUserIdFilter
-      type: object
     LdapInboundProvisioningUserRepository:
       allOf:
       - $ref: '#/components/schemas/InboundProvisioningUserRepository'
@@ -22289,7 +22229,6 @@ components:
       - type
       - uniqueGroupIdFilter
       - uniqueUserIdFilter
-      type: object
     OIDCClientCredentials:
       description: The OpenID Connect Client Credentials settings. This is required
         for an OIDC Connection.
@@ -22499,7 +22438,6 @@ components:
         using SOAP back channel.
       required:
       - type
-      type: object
     OutboundProvision:
       description: Outbound Provisioning allows an IdP to create and maintain user
         accounts at standards-based partner sites using SCIM as well as select-proprietary
@@ -23147,7 +23085,6 @@ components:
       - attributeContract
       - protocol
       - ssoServiceEndpoints
-      type: object
     SpBrowserSsoAttribute:
       description: An attribute for the SP Browser SSO attribute contract.
       properties:
@@ -23211,7 +23148,6 @@ components:
       required:
       - entityId
       - name
-      type: object
     SpOAuthProcessorPolicyMapping:
       description: The OAuth Token Exchange Processor Policy mapping.
       properties:
@@ -25605,7 +25541,6 @@ components:
       - id
       - label
       - type
-      type: object
     BaseSelectionLocalIdentityField:
       allOf:
       - $ref: '#/components/schemas/LocalIdentityField'
@@ -25623,7 +25558,6 @@ components:
       - label
       - options
       - type
-      type: object
     CheckboxGroupLocalIdentityField:
       allOf:
       - $ref: '#/components/schemas/BaseSelectionLocalIdentityField'
@@ -25633,7 +25567,6 @@ components:
       - label
       - options
       - type
-      type: object
     CheckboxLocalIdentityField:
       allOf:
       - $ref: '#/components/schemas/BaseDefaultValueLocalIdentityField'
@@ -25642,7 +25575,6 @@ components:
       - id
       - label
       - type
-      type: object
     DataStoreAttribute:
       description: The data store attribute.
       discriminator:
@@ -25717,7 +25649,6 @@ components:
       - id
       - label
       - type
-      type: object
     DropDownLocalIdentityField:
       allOf:
       - $ref: '#/components/schemas/BaseSelectionLocalIdentityField'
@@ -25732,7 +25663,6 @@ components:
       - label
       - options
       - type
-      type: object
     EmailLocalIdentityField:
       allOf:
       - $ref: '#/components/schemas/LocalIdentityField'
@@ -25741,7 +25671,6 @@ components:
       - id
       - label
       - type
-      type: object
     EmailVerificationConfig:
       description: A local identity email verification configuration.
       example:
@@ -25882,7 +25811,6 @@ components:
       - id
       - label
       - type
-      type: object
     LdapDataStoreAttribute:
       allOf:
       - $ref: '#/components/schemas/DataStoreAttribute'
@@ -25890,7 +25818,6 @@ components:
       required:
       - name
       - type
-      type: object
     LdapDataStoreConfig:
       description: LDAP data store configuration.
       properties:
@@ -26154,7 +26081,6 @@ components:
       - id
       - label
       - type
-      type: object
     ProfileConfig:
       description: A local identity profile management configuration.
       example:
@@ -26231,7 +26157,6 @@ components:
       - id
       - label
       - type
-      type: object
     LocalIdentityProfiles:
       description: A collection of local identity profiles.
       example:
@@ -32619,7 +32544,6 @@ components:
         type: object
       description: This property has been deprecated and is no longer used. All Roles
         and protocols are always enabled.
-      type: object
     OAuthRole:
       description: This property has been deprecated and is no longer used. OAuth
         and OpenID Connect are always enabled.
@@ -32818,7 +32742,6 @@ components:
         type: object
       description: This property has been deprecated and is no longer used. All Roles
         and protocols are always enabled.
-      type: object
     SpSAML20Profile:
       allOf:
       - $ref: '#/components/schemas/SAML20Profile'
@@ -32829,7 +32752,6 @@ components:
             type: boolean
         type: object
       description: SP SAML 2.0 Profile.
-      type: object
     SystemKey:
       description: A system key.
       example:

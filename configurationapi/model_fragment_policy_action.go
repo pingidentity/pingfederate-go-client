@@ -21,6 +21,7 @@ var _ MappedNullable = &FragmentPolicyAction{}
 
 // FragmentPolicyAction A authentication policy fragment selection action.
 type FragmentPolicyAction struct {
+	PolicyAction
 	Fragment        ResourceLink      `json:"fragment" tfsdk:"fragment"`
 	AttributeRules  *AttributeRules   `json:"attributeRules,omitempty" tfsdk:"attribute_rules"`
 	FragmentMapping *AttributeMapping `json:"fragmentMapping,omitempty" tfsdk:"fragment_mapping"`
@@ -143,6 +144,14 @@ func (o FragmentPolicyAction) MarshalJSON() ([]byte, error) {
 
 func (o FragmentPolicyAction) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedPolicyAction, errPolicyAction := json.Marshal(o.PolicyAction)
+	if errPolicyAction != nil {
+		return map[string]interface{}{}, errPolicyAction
+	}
+	errPolicyAction = json.Unmarshal([]byte(serializedPolicyAction), &toSerialize)
+	if errPolicyAction != nil {
+		return map[string]interface{}{}, errPolicyAction
+	}
 	toSerialize["fragment"] = o.Fragment
 	if !IsNil(o.AttributeRules) {
 		toSerialize["attributeRules"] = o.AttributeRules

@@ -21,6 +21,7 @@ var _ MappedNullable = &LdapDataStoreRepository{}
 
 // LdapDataStoreRepository LDAP data store user repository.
 type LdapDataStoreRepository struct {
+	DataStoreRepository
 	// The base DN to search from. If not specified, the search will start at the LDAP's root.
 	BaseDn *string `json:"baseDn,omitempty" tfsdk:"base_dn"`
 	// The expression that results in a unique user identifier, when combined with the Base DN.
@@ -114,6 +115,14 @@ func (o LdapDataStoreRepository) MarshalJSON() ([]byte, error) {
 
 func (o LdapDataStoreRepository) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedDataStoreRepository, errDataStoreRepository := json.Marshal(o.DataStoreRepository)
+	if errDataStoreRepository != nil {
+		return map[string]interface{}{}, errDataStoreRepository
+	}
+	errDataStoreRepository = json.Unmarshal([]byte(serializedDataStoreRepository), &toSerialize)
+	if errDataStoreRepository != nil {
+		return map[string]interface{}{}, errDataStoreRepository
+	}
 	if !IsNil(o.BaseDn) {
 		toSerialize["baseDn"] = o.BaseDn
 	}

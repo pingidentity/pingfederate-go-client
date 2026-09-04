@@ -21,6 +21,7 @@ var _ MappedNullable = &RestartPolicyAction{}
 
 // RestartPolicyAction The restart selection action.
 type RestartPolicyAction struct {
+	PolicyAction
 }
 
 // NewRestartPolicyAction instantiates a new RestartPolicyAction object
@@ -51,6 +52,14 @@ func (o RestartPolicyAction) MarshalJSON() ([]byte, error) {
 
 func (o RestartPolicyAction) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedPolicyAction, errPolicyAction := json.Marshal(o.PolicyAction)
+	if errPolicyAction != nil {
+		return map[string]interface{}{}, errPolicyAction
+	}
+	errPolicyAction = json.Unmarshal([]byte(serializedPolicyAction), &toSerialize)
+	if errPolicyAction != nil {
+		return map[string]interface{}{}, errPolicyAction
+	}
 	return toSerialize, nil
 }
 

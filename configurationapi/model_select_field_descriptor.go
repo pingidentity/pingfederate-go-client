@@ -21,6 +21,7 @@ var _ MappedNullable = &SelectFieldDescriptor{}
 
 // SelectFieldDescriptor A selection field that is intended to be rendered as a dropdown list of options.
 type SelectFieldDescriptor struct {
+	BaseSelectionFieldDescriptor
 }
 
 // NewSelectFieldDescriptor instantiates a new SelectFieldDescriptor object
@@ -50,6 +51,14 @@ func (o SelectFieldDescriptor) MarshalJSON() ([]byte, error) {
 
 func (o SelectFieldDescriptor) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBaseSelectionFieldDescriptor, errBaseSelectionFieldDescriptor := json.Marshal(o.BaseSelectionFieldDescriptor)
+	if errBaseSelectionFieldDescriptor != nil {
+		return map[string]interface{}{}, errBaseSelectionFieldDescriptor
+	}
+	errBaseSelectionFieldDescriptor = json.Unmarshal([]byte(serializedBaseSelectionFieldDescriptor), &toSerialize)
+	if errBaseSelectionFieldDescriptor != nil {
+		return map[string]interface{}{}, errBaseSelectionFieldDescriptor
+	}
 	return toSerialize, nil
 }
 

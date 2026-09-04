@@ -21,6 +21,7 @@ var _ MappedNullable = &JdbcDataStoreRepository{}
 
 // JdbcDataStoreRepository JDBC data store user repository.
 type JdbcDataStoreRepository struct {
+	DataStoreRepository
 	SqlMethod SqlMethod `json:"sqlMethod" tfsdk:"sql_method"`
 }
 
@@ -79,6 +80,14 @@ func (o JdbcDataStoreRepository) MarshalJSON() ([]byte, error) {
 
 func (o JdbcDataStoreRepository) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedDataStoreRepository, errDataStoreRepository := json.Marshal(o.DataStoreRepository)
+	if errDataStoreRepository != nil {
+		return map[string]interface{}{}, errDataStoreRepository
+	}
+	errDataStoreRepository = json.Unmarshal([]byte(serializedDataStoreRepository), &toSerialize)
+	if errDataStoreRepository != nil {
+		return map[string]interface{}{}, errDataStoreRepository
+	}
 	toSerialize["sqlMethod"] = o.SqlMethod
 	return toSerialize, nil
 }

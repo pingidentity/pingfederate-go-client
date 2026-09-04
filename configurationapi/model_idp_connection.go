@@ -21,6 +21,7 @@ var _ MappedNullable = &IdpConnection{}
 
 // IdpConnection The set of attributes used to configure an IdP connection.
 type IdpConnection struct {
+	Connection
 	// Identifier that specifies the message displayed on a user-facing error page.
 	ErrorPageMsgId                *string                        `json:"errorPageMsgId,omitempty" tfsdk:"error_page_msg_id"`
 	IdpBrowserSso                 *IdpBrowserSso                 `json:"idpBrowserSso,omitempty" tfsdk:"idp_browser_sso"`
@@ -317,6 +318,14 @@ func (o IdpConnection) MarshalJSON() ([]byte, error) {
 
 func (o IdpConnection) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedConnection, errConnection := json.Marshal(o.Connection)
+	if errConnection != nil {
+		return map[string]interface{}{}, errConnection
+	}
+	errConnection = json.Unmarshal([]byte(serializedConnection), &toSerialize)
+	if errConnection != nil {
+		return map[string]interface{}{}, errConnection
+	}
 	if !IsNil(o.ErrorPageMsgId) {
 		toSerialize["errorPageMsgId"] = o.ErrorPageMsgId
 	}

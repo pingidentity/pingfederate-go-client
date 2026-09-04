@@ -21,6 +21,7 @@ var _ MappedNullable = &EmailLocalIdentityField{}
 
 // EmailLocalIdentityField An email type field.
 type EmailLocalIdentityField struct {
+	LocalIdentityField
 }
 
 // NewEmailLocalIdentityField instantiates a new EmailLocalIdentityField object
@@ -53,6 +54,14 @@ func (o EmailLocalIdentityField) MarshalJSON() ([]byte, error) {
 
 func (o EmailLocalIdentityField) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedLocalIdentityField, errLocalIdentityField := json.Marshal(o.LocalIdentityField)
+	if errLocalIdentityField != nil {
+		return map[string]interface{}{}, errLocalIdentityField
+	}
+	errLocalIdentityField = json.Unmarshal([]byte(serializedLocalIdentityField), &toSerialize)
+	if errLocalIdentityField != nil {
+		return map[string]interface{}{}, errLocalIdentityField
+	}
 	return toSerialize, nil
 }
 

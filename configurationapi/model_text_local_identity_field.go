@@ -21,6 +21,7 @@ var _ MappedNullable = &TextLocalIdentityField{}
 
 // TextLocalIdentityField A text type field.
 type TextLocalIdentityField struct {
+	BaseDefaultValueLocalIdentityField
 }
 
 // NewTextLocalIdentityField instantiates a new TextLocalIdentityField object
@@ -53,6 +54,14 @@ func (o TextLocalIdentityField) MarshalJSON() ([]byte, error) {
 
 func (o TextLocalIdentityField) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBaseDefaultValueLocalIdentityField, errBaseDefaultValueLocalIdentityField := json.Marshal(o.BaseDefaultValueLocalIdentityField)
+	if errBaseDefaultValueLocalIdentityField != nil {
+		return map[string]interface{}{}, errBaseDefaultValueLocalIdentityField
+	}
+	errBaseDefaultValueLocalIdentityField = json.Unmarshal([]byte(serializedBaseDefaultValueLocalIdentityField), &toSerialize)
+	if errBaseDefaultValueLocalIdentityField != nil {
+		return map[string]interface{}{}, errBaseDefaultValueLocalIdentityField
+	}
 	return toSerialize, nil
 }
 

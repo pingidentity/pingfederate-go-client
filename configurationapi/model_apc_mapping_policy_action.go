@@ -21,6 +21,7 @@ var _ MappedNullable = &ApcMappingPolicyAction{}
 
 // ApcMappingPolicyAction An authentication policy contract selection action.
 type ApcMappingPolicyAction struct {
+	PolicyAction
 	AuthenticationPolicyContractRef ResourceLink     `json:"authenticationPolicyContractRef" tfsdk:"authentication_policy_contract_ref"`
 	AttributeMapping                AttributeMapping `json:"attributeMapping" tfsdk:"attribute_mapping"`
 }
@@ -103,6 +104,14 @@ func (o ApcMappingPolicyAction) MarshalJSON() ([]byte, error) {
 
 func (o ApcMappingPolicyAction) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedPolicyAction, errPolicyAction := json.Marshal(o.PolicyAction)
+	if errPolicyAction != nil {
+		return map[string]interface{}{}, errPolicyAction
+	}
+	errPolicyAction = json.Unmarshal([]byte(serializedPolicyAction), &toSerialize)
+	if errPolicyAction != nil {
+		return map[string]interface{}{}, errPolicyAction
+	}
 	toSerialize["authenticationPolicyContractRef"] = o.AuthenticationPolicyContractRef
 	toSerialize["attributeMapping"] = o.AttributeMapping
 	return toSerialize, nil

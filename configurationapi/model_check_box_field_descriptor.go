@@ -21,6 +21,7 @@ var _ MappedNullable = &CheckBoxFieldDescriptor{}
 
 // CheckBoxFieldDescriptor A boolean field typically rendered as a checkbox in a configuration UI.
 type CheckBoxFieldDescriptor struct {
+	FieldDescriptor
 }
 
 // NewCheckBoxFieldDescriptor instantiates a new CheckBoxFieldDescriptor object
@@ -50,6 +51,14 @@ func (o CheckBoxFieldDescriptor) MarshalJSON() ([]byte, error) {
 
 func (o CheckBoxFieldDescriptor) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedFieldDescriptor, errFieldDescriptor := json.Marshal(o.FieldDescriptor)
+	if errFieldDescriptor != nil {
+		return map[string]interface{}{}, errFieldDescriptor
+	}
+	errFieldDescriptor = json.Unmarshal([]byte(serializedFieldDescriptor), &toSerialize)
+	if errFieldDescriptor != nil {
+		return map[string]interface{}{}, errFieldDescriptor
+	}
 	return toSerialize, nil
 }
 

@@ -21,6 +21,7 @@ var _ MappedNullable = &OutboundBackChannelAuth{}
 
 // OutboundBackChannelAuth The SOAP authentication method(s) to use when you send a message using SOAP back channel.
 type OutboundBackChannelAuth struct {
+	BackChannelAuth
 	// Validate the partner server certificate. Default is true.
 	ValidatePartnerCert *bool         `json:"validatePartnerCert,omitempty" tfsdk:"validate_partner_cert"`
 	SslAuthKeyPairRef   *ResourceLink `json:"sslAuthKeyPairRef,omitempty" tfsdk:"ssl_auth_key_pair_ref"`
@@ -118,6 +119,14 @@ func (o OutboundBackChannelAuth) MarshalJSON() ([]byte, error) {
 
 func (o OutboundBackChannelAuth) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBackChannelAuth, errBackChannelAuth := json.Marshal(o.BackChannelAuth)
+	if errBackChannelAuth != nil {
+		return map[string]interface{}{}, errBackChannelAuth
+	}
+	errBackChannelAuth = json.Unmarshal([]byte(serializedBackChannelAuth), &toSerialize)
+	if errBackChannelAuth != nil {
+		return map[string]interface{}{}, errBackChannelAuth
+	}
 	if !IsNil(o.ValidatePartnerCert) {
 		toSerialize["validatePartnerCert"] = o.ValidatePartnerCert
 	}

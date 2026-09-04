@@ -21,6 +21,7 @@ var _ MappedNullable = &PingOneLdapGatewayDataStore{}
 
 // PingOneLdapGatewayDataStore A LDAP gateway data store.
 type PingOneLdapGatewayDataStore struct {
+	DataStore
 	// A type that allows PingFederate to configure many provisioning settings automatically. The value is validated against the LDAP gateway configuration in PingOne unless the header 'X-BypassExternalValidation' is set to true.
 	LdapType string `json:"ldapType" tfsdk:"ldap_type"`
 	// The data store name with a unique value across all data sources. Omitting this attribute will set the value to a combination of the hostname(s) and the principal.
@@ -294,6 +295,14 @@ func (o PingOneLdapGatewayDataStore) MarshalJSON() ([]byte, error) {
 
 func (o PingOneLdapGatewayDataStore) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedDataStore, errDataStore := json.Marshal(o.DataStore)
+	if errDataStore != nil {
+		return map[string]interface{}{}, errDataStore
+	}
+	errDataStore = json.Unmarshal([]byte(serializedDataStore), &toSerialize)
+	if errDataStore != nil {
+		return map[string]interface{}{}, errDataStore
+	}
 	toSerialize["ldapType"] = o.LdapType
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

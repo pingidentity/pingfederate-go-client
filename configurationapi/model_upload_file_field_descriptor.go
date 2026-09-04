@@ -21,6 +21,7 @@ var _ MappedNullable = &UploadFileFieldDescriptor{}
 
 // UploadFileFieldDescriptor A field which allows the user to upload a file.
 type UploadFileFieldDescriptor struct {
+	FieldDescriptor
 }
 
 // NewUploadFileFieldDescriptor instantiates a new UploadFileFieldDescriptor object
@@ -50,6 +51,14 @@ func (o UploadFileFieldDescriptor) MarshalJSON() ([]byte, error) {
 
 func (o UploadFileFieldDescriptor) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedFieldDescriptor, errFieldDescriptor := json.Marshal(o.FieldDescriptor)
+	if errFieldDescriptor != nil {
+		return map[string]interface{}{}, errFieldDescriptor
+	}
+	errFieldDescriptor = json.Unmarshal([]byte(serializedFieldDescriptor), &toSerialize)
+	if errFieldDescriptor != nil {
+		return map[string]interface{}{}, errFieldDescriptor
+	}
 	return toSerialize, nil
 }
 

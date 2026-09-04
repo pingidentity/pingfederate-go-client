@@ -22198,7 +22198,6 @@
           "name",
           "pluginDescriptorRef"
         ],
-        "type": "object",
         "description": "An OAuth access token management plugin instance.",
         "allOf": [
           {
@@ -22348,7 +22347,6 @@
           "name",
           "pluginDescriptorRef"
         ],
-        "type": "object",
         "description": "An Authentication Selector instance.",
         "allOf": [
           {
@@ -22397,7 +22395,6 @@
           "name",
           "pluginDescriptorRef"
         ],
-        "type": "object",
         "description": "An authorization detail processor plugin instance.",
         "allOf": [
           {
@@ -22427,7 +22424,6 @@
           "name",
           "pluginDescriptorRef"
         ],
-        "type": "object",
         "description": "A CAPTCHA provider plugin instance.",
         "allOf": [
           {
@@ -22442,7 +22438,6 @@
           "name",
           "pluginDescriptorRef"
         ],
-        "type": "object",
         "description": "A client registration policy plugin instance.",
         "allOf": [
           {
@@ -22457,7 +22452,6 @@
           "source",
           "value"
         ],
-        "type": "object",
         "description": "An issuance criterion that checks a source attribute against a particular condition and the expected value. If the condition is true then this issuance criterion passes, otherwise the criterion fails.",
         "allOf": [
           {
@@ -22577,7 +22571,6 @@
           "dataStoreRef",
           "type"
         ],
-        "type": "object",
         "description": "The configured settings used to look up attributes from a custom data store.",
         "allOf": [
           {
@@ -22604,7 +22597,6 @@
           "pluginDescriptorRef",
           "type"
         ],
-        "type": "object",
         "description": "A custom data store.",
         "allOf": [
           {
@@ -22672,7 +22664,6 @@
         "required": [
           "expression"
         ],
-        "type": "object",
         "description": "An issuance criterion that uses a Boolean return value from an OGNL expression to determine whether or not it passes.",
         "allOf": [
           {
@@ -22733,7 +22724,6 @@
           "name",
           "pluginDescriptorRef"
         ],
-        "type": "object",
         "description": "An identity store provisioner instance.",
         "allOf": [
           {
@@ -22813,7 +22803,6 @@
           "name",
           "pluginDescriptorRef"
         ],
-        "type": "object",
         "description": "An IdP adapter instance.",
         "allOf": [
           {
@@ -22956,7 +22945,6 @@
           "table",
           "type"
         ],
-        "type": "object",
         "description": "The configured settings used to look up attributes from a JDBC data store.",
         "allOf": [
           {
@@ -22994,7 +22982,6 @@
           "driverClass",
           "type"
         ],
-        "type": "object",
         "description": "A JDBC data store.",
         "allOf": [
           {
@@ -23094,7 +23081,6 @@
           "searchScope",
           "type"
         ],
-        "type": "object",
         "description": "The configured settings used to look up attributes from a LDAP data store.",
         "allOf": [
           {
@@ -23148,7 +23134,6 @@
           "ldapType",
           "type"
         ],
-        "type": "object",
         "description": "A LDAP data store.",
         "allOf": [
           {
@@ -23331,7 +23316,6 @@
           "name",
           "pluginDescriptorRef"
         ],
-        "type": "object",
         "description": "A notification publisher plugin instance.",
         "allOf": [
           {
@@ -23382,7 +23366,6 @@
           "name",
           "pluginDescriptorRef"
         ],
-        "type": "object",
         "description": "An out of band authenticator plugin instance.",
         "allOf": [
           {
@@ -23405,7 +23388,6 @@
           "name",
           "pluginDescriptorRef"
         ],
-        "type": "object",
         "description": "The set of attributes used to configure a password credential validator",
         "allOf": [
           {
@@ -23466,7 +23448,6 @@
           "pingOneLdapGatewayId",
           "type"
         ],
-        "type": "object",
         "description": "A LDAP gateway data store.",
         "allOf": [
           {
@@ -23601,7 +23582,6 @@
           "name",
           "pluginDescriptorRef"
         ],
-        "type": "object",
         "description": "A secret manager plugin instance.",
         "allOf": [
           {
@@ -23695,7 +23675,6 @@
           "name",
           "pluginDescriptorRef"
         ],
-        "type": "object",
         "description": "An SP adapter instance.",
         "allOf": [
           {
@@ -23819,7 +23798,6 @@
           "name",
           "pluginDescriptorRef"
         ],
-        "type": "object",
         "description": "A token generator instance.",
         "allOf": [
           {
@@ -23882,7 +23860,6 @@
           "name",
           "pluginDescriptorRef"
         ],
-        "type": "object",
         "description": "A token processor instance.",
         "allOf": [
           {
@@ -24003,7 +23980,6 @@
         "description": "General access token management settings."
       },
       "AccessTokenManagerDescriptor": {
-        "type": "object",
         "description": "An OAuth access token management plugin descriptor.",
         "allOf": [
           {
@@ -24058,7 +24034,6 @@
         "description": "Describes an arbitrary action that is available for a plugin."
       },
       "AuthenticationSelectorDescriptor": {
-        "type": "object",
         "description": "An Authentication Selector descriptor.",
         "allOf": [
           {
@@ -24067,7 +24042,6 @@
         ]
       },
       "AuthorizationDetailProcessorDescriptor": {
-        "type": "object",
         "description": "An authorization detail processor plugin descriptor.",
         "allOf": [
           {
@@ -24090,7 +24064,6 @@
         ]
       },
       "BaseSelectionFieldDescriptor": {
-        "type": "object",
         "description": "Holds fields that are shared by all selection-type field descriptors.",
         "allOf": [
           {
@@ -24111,7 +24084,6 @@
         ]
       },
       "CaptchaProviderDescriptor": {
-        "type": "object",
         "description": "A CAPTCHA provider plugin descriptor.",
         "allOf": [
           {
@@ -24120,7 +24092,6 @@
         ]
       },
       "CheckBoxFieldDescriptor": {
-        "type": "object",
         "description": "A boolean field typically rendered as a checkbox in a configuration UI.",
         "allOf": [
           {
@@ -24129,7 +24100,6 @@
         ]
       },
       "ClientRegistrationPolicyDescriptor": {
-        "type": "object",
         "description": "A client registration policy plugin descriptor.",
         "allOf": [
           {
@@ -24138,7 +24108,6 @@
         ]
       },
       "CustomDataStoreDescriptor": {
-        "type": "object",
         "description": "A custom data store descriptor.",
         "allOf": [
           {
@@ -24198,7 +24167,6 @@
         }
       },
       "HashedTextFieldDescriptor": {
-        "type": "object",
         "description": "A text field that will contain a secure salted hash.",
         "allOf": [
           {
@@ -24217,7 +24185,6 @@
         ]
       },
       "IdentityStoreProvisionerDescriptor": {
-        "type": "object",
         "description": "An identity store provisioner descriptor",
         "allOf": [
           {
@@ -24243,7 +24210,6 @@
         ]
       },
       "IdpAdapterDescriptor": {
-        "type": "object",
         "description": "An IdP adapter descriptor.",
         "allOf": [
           {
@@ -24252,7 +24218,6 @@
         ]
       },
       "NotificationPublisherDescriptor": {
-        "type": "object",
         "description": "A notification publisher plugin descriptor.",
         "allOf": [
           {
@@ -24275,7 +24240,6 @@
         "description": "An option name and value associated with a selection field."
       },
       "OutOfBandAuthPluginDescriptor": {
-        "type": "object",
         "description": "An out of band authenticator plugin descriptor.",
         "allOf": [
           {
@@ -24284,7 +24248,6 @@
         ]
       },
       "PasswordCredentialValidatorDescriptor": {
-        "type": "object",
         "description": "A password credential validator descriptor.",
         "allOf": [
           {
@@ -24357,7 +24320,6 @@
         "description": "Defines a plugin type, including available configuration parameters."
       },
       "RadioGroupFieldDescriptor": {
-        "type": "object",
         "description": "A selection-type field intended to be rendered as a group of radio buttons in a UI.",
         "allOf": [
           {
@@ -24366,7 +24328,6 @@
         ]
       },
       "SecretManagerDescriptor": {
-        "type": "object",
         "description": "A secret manager plugin descriptor.",
         "allOf": [
           {
@@ -24375,7 +24336,6 @@
         ]
       },
       "SelectFieldDescriptor": {
-        "type": "object",
         "description": "A selection field that is intended to be rendered as a dropdown list of options.",
         "allOf": [
           {
@@ -24384,7 +24344,6 @@
         ]
       },
       "SpAdapterDescriptor": {
-        "type": "object",
         "description": "An SP adapter descriptor.",
         "allOf": [
           {
@@ -24422,7 +24381,6 @@
         "description": "Defines a plugin configuration table."
       },
       "TextAreaFieldDescriptor": {
-        "type": "object",
         "description": "A field intended to be rendered as a text box in a UI.",
         "allOf": [
           {
@@ -24446,7 +24404,6 @@
         ]
       },
       "TextFieldDescriptor": {
-        "type": "object",
         "description": "A text field.",
         "allOf": [
           {
@@ -24469,7 +24426,6 @@
         ]
       },
       "TokenGeneratorDescriptor": {
-        "type": "object",
         "description": "A token generator descriptor.",
         "allOf": [
           {
@@ -24478,7 +24434,6 @@
         ]
       },
       "TokenProcessorDescriptor": {
-        "type": "object",
         "description": "A token processor descriptor.",
         "allOf": [
           {
@@ -24487,7 +24442,6 @@
         ]
       },
       "UploadFileFieldDescriptor": {
-        "type": "object",
         "description": "A field which allows the user to upload a file.",
         "allOf": [
           {
@@ -24858,7 +24812,6 @@
           "authenticationPolicyContractRef",
           "type"
         ],
-        "type": "object",
         "description": "An authentication policy contract selection action.",
         "allOf": [
           {
@@ -25048,7 +25001,6 @@
           "authenticationSelectorRef",
           "type"
         ],
-        "type": "object",
         "description": "An authentication selector selection action.",
         "allOf": [
           {
@@ -25069,7 +25021,6 @@
           "authenticationSource",
           "type"
         ],
-        "type": "object",
         "description": "An authentication source selection action.",
         "allOf": [
           {
@@ -25099,7 +25050,6 @@
         "required": [
           "type"
         ],
-        "type": "object",
         "description": "The continue selection action.",
         "allOf": [
           {
@@ -25111,7 +25061,6 @@
         "required": [
           "type"
         ],
-        "type": "object",
         "description": "The done selection action.",
         "allOf": [
           {
@@ -25124,7 +25073,6 @@
           "fragment",
           "type"
         ],
-        "type": "object",
         "description": "A authentication policy fragment selection action.",
         "allOf": [
           {
@@ -25152,7 +25100,6 @@
           "outboundAttributeMapping",
           "type"
         ],
-        "type": "object",
         "description": "A local identity profile selection action.",
         "allOf": [
           {
@@ -25208,7 +25155,6 @@
         "required": [
           "type"
         ],
-        "type": "object",
         "description": "The restart selection action.",
         "allOf": [
           {
@@ -27741,7 +27687,6 @@
           "identityStoreProvisionerRef",
           "type"
         ],
-        "type": "object",
         "description": "Identity Store Provisioner data store user repository.",
         "allOf": [
           {
@@ -27870,7 +27815,6 @@
           "idpIdentityMapping",
           "protocol"
         ],
-        "type": "object",
         "description": "The settings used to enable secure browser-based SSO to resources at your site.",
         "allOf": [
           {
@@ -28069,7 +28013,6 @@
           "entityId",
           "name"
         ],
-        "type": "object",
         "description": "The set of attributes used to configure an IdP connection.",
         "allOf": [
           {
@@ -28385,7 +28328,6 @@
         "required": [
           "type"
         ],
-        "type": "object",
         "description": "The SOAP authentication method(s) to use when you receive a message using SOAP back channel.",
         "allOf": [
           {
@@ -28443,7 +28385,6 @@
           "sqlMethod",
           "type"
         ],
-        "type": "object",
         "description": "JDBC data store user repository.",
         "allOf": [
           {
@@ -28514,7 +28455,6 @@
           "type",
           "uniqueUserIdFilter"
         ],
-        "type": "object",
         "description": "LDAP data store user repository.",
         "allOf": [
           {
@@ -28542,7 +28482,6 @@
           "uniqueGroupIdFilter",
           "uniqueUserIdFilter"
         ],
-        "type": "object",
         "description": "LDAP Active Directory data store user repository",
         "allOf": [
           {
@@ -28774,7 +28713,6 @@
         "required": [
           "type"
         ],
-        "type": "object",
         "description": "The SOAP authentication method(s) to use when you send a message using SOAP back channel.",
         "allOf": [
           {
@@ -29388,7 +29326,6 @@
           "protocol",
           "ssoServiceEndpoints"
         ],
-        "type": "object",
         "description": "The SAML settings used to enable secure browser-based SSO to resources at your partner's site.",
         "allOf": [
           {
@@ -29597,7 +29534,6 @@
           "entityId",
           "name"
         ],
-        "type": "object",
         "description": "The set of attributes used to configure an SP connection.",
         "allOf": [
           {
@@ -31077,7 +31013,6 @@
           "label",
           "type"
         ],
-        "type": "object",
         "description": "Holds fields that are shared by all default value type fields.",
         "allOf": [
           {
@@ -31101,7 +31036,6 @@
           "options",
           "type"
         ],
-        "type": "object",
         "description": "Holds fields that are shared by all selection-type fields.",
         "allOf": [
           {
@@ -31129,7 +31063,6 @@
           "options",
           "type"
         ],
-        "type": "object",
         "description": "A checkbox group selection type field.",
         "allOf": [
           {
@@ -31143,7 +31076,6 @@
           "label",
           "type"
         ],
-        "type": "object",
         "description": "A checkbox selection type field.",
         "allOf": [
           {
@@ -31225,7 +31157,6 @@
           "label",
           "type"
         ],
-        "type": "object",
         "description": "A date type field.",
         "allOf": [
           {
@@ -31240,7 +31171,6 @@
           "options",
           "type"
         ],
-        "type": "object",
         "description": "A dropdown selection type field.",
         "allOf": [
           {
@@ -31263,7 +31193,6 @@
           "label",
           "type"
         ],
-        "type": "object",
         "description": "An email type field.",
         "allOf": [
           {
@@ -31379,7 +31308,6 @@
           "label",
           "type"
         ],
-        "type": "object",
         "description": "A hidden selection type field.",
         "allOf": [
           {
@@ -31392,7 +31320,6 @@
           "name",
           "type"
         ],
-        "type": "object",
         "description": "LDAP data store attribute.",
         "allOf": [
           {
@@ -31603,7 +31530,6 @@
           "label",
           "type"
         ],
-        "type": "object",
         "description": "A phone type field.",
         "allOf": [
           {
@@ -31678,7 +31604,6 @@
           "label",
           "type"
         ],
-        "type": "object",
         "description": "A text type field.",
         "allOf": [
           {
@@ -35576,7 +35501,6 @@
         "description": "Base Provider Role."
       },
       "IdpRole": {
-        "type": "object",
         "description": "This property has been deprecated and is no longer used. All Roles and protocols are always enabled.",
         "allOf": [
           {
@@ -35682,7 +35606,6 @@
         "description": "Server configuration settings."
       },
       "SpRole": {
-        "type": "object",
         "description": "This property has been deprecated and is no longer used. All Roles and protocols are always enabled.",
         "allOf": [
           {
@@ -35711,7 +35634,6 @@
         ]
       },
       "SpSAML20Profile": {
-        "type": "object",
         "description": "SP SAML 2.0 Profile.",
         "allOf": [
           {

@@ -21,6 +21,7 @@ var _ MappedNullable = &BaseSelectionFieldDescriptor{}
 
 // BaseSelectionFieldDescriptor Holds fields that are shared by all selection-type field descriptors.
 type BaseSelectionFieldDescriptor struct {
+	FieldDescriptor
 	// The list of option values for this selection field.
 	OptionValues []OptionValue `json:"optionValues,omitempty" tfsdk:"option_values"`
 }
@@ -84,6 +85,14 @@ func (o BaseSelectionFieldDescriptor) MarshalJSON() ([]byte, error) {
 
 func (o BaseSelectionFieldDescriptor) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedFieldDescriptor, errFieldDescriptor := json.Marshal(o.FieldDescriptor)
+	if errFieldDescriptor != nil {
+		return map[string]interface{}{}, errFieldDescriptor
+	}
+	errFieldDescriptor = json.Unmarshal([]byte(serializedFieldDescriptor), &toSerialize)
+	if errFieldDescriptor != nil {
+		return map[string]interface{}{}, errFieldDescriptor
+	}
 	if !IsNil(o.OptionValues) {
 		toSerialize["optionValues"] = o.OptionValues
 	}

@@ -21,6 +21,7 @@ var _ MappedNullable = &DropDownLocalIdentityField{}
 
 // DropDownLocalIdentityField A dropdown selection type field.
 type DropDownLocalIdentityField struct {
+	BaseSelectionLocalIdentityField
 	// The default value for this field.
 	DefaultValue *string `json:"defaultValue,omitempty" tfsdk:"default_value"`
 }
@@ -88,6 +89,14 @@ func (o DropDownLocalIdentityField) MarshalJSON() ([]byte, error) {
 
 func (o DropDownLocalIdentityField) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBaseSelectionLocalIdentityField, errBaseSelectionLocalIdentityField := json.Marshal(o.BaseSelectionLocalIdentityField)
+	if errBaseSelectionLocalIdentityField != nil {
+		return map[string]interface{}{}, errBaseSelectionLocalIdentityField
+	}
+	errBaseSelectionLocalIdentityField = json.Unmarshal([]byte(serializedBaseSelectionLocalIdentityField), &toSerialize)
+	if errBaseSelectionLocalIdentityField != nil {
+		return map[string]interface{}{}, errBaseSelectionLocalIdentityField
+	}
 	if !IsNil(o.DefaultValue) {
 		toSerialize["defaultValue"] = o.DefaultValue
 	}

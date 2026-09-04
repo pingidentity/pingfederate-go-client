@@ -21,6 +21,7 @@ var _ MappedNullable = &InboundBackChannelAuth{}
 
 // InboundBackChannelAuth The SOAP authentication method(s) to use when you receive a message using SOAP back channel.
 type InboundBackChannelAuth struct {
+	BackChannelAuth
 	// If this property is set, the verification trust model is Anchored. The verification certificate must be signed by a trusted CA and included in the incoming message, and the subject DN of the expected certificate is specified in this property. If this property is not set, then a primary verification certificate must be specified in the certs array.
 	VerificationSubjectDN *string `json:"verificationSubjectDN,omitempty" tfsdk:"verification_subject_dn"`
 	// If a verification Subject DN is provided, you can optionally restrict the issuer to a specific trusted CA by specifying its DN in this field.
@@ -187,6 +188,14 @@ func (o InboundBackChannelAuth) MarshalJSON() ([]byte, error) {
 
 func (o InboundBackChannelAuth) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBackChannelAuth, errBackChannelAuth := json.Marshal(o.BackChannelAuth)
+	if errBackChannelAuth != nil {
+		return map[string]interface{}{}, errBackChannelAuth
+	}
+	errBackChannelAuth = json.Unmarshal([]byte(serializedBackChannelAuth), &toSerialize)
+	if errBackChannelAuth != nil {
+		return map[string]interface{}{}, errBackChannelAuth
+	}
 	if !IsNil(o.VerificationSubjectDN) {
 		toSerialize["verificationSubjectDN"] = o.VerificationSubjectDN
 	}

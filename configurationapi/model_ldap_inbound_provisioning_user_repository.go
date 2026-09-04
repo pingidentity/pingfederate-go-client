@@ -21,6 +21,7 @@ var _ MappedNullable = &LdapInboundProvisioningUserRepository{}
 
 // LdapInboundProvisioningUserRepository LDAP Active Directory data store user repository
 type LdapInboundProvisioningUserRepository struct {
+	InboundProvisioningUserRepository
 	DataStoreRef ResourceLink `json:"dataStoreRef" tfsdk:"data_store_ref"`
 	// The base DN to search from. If not specified, the search will start at the LDAP's root.
 	BaseDn *string `json:"baseDn,omitempty" tfsdk:"base_dn"`
@@ -165,6 +166,14 @@ func (o LdapInboundProvisioningUserRepository) MarshalJSON() ([]byte, error) {
 
 func (o LdapInboundProvisioningUserRepository) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedInboundProvisioningUserRepository, errInboundProvisioningUserRepository := json.Marshal(o.InboundProvisioningUserRepository)
+	if errInboundProvisioningUserRepository != nil {
+		return map[string]interface{}{}, errInboundProvisioningUserRepository
+	}
+	errInboundProvisioningUserRepository = json.Unmarshal([]byte(serializedInboundProvisioningUserRepository), &toSerialize)
+	if errInboundProvisioningUserRepository != nil {
+		return map[string]interface{}{}, errInboundProvisioningUserRepository
+	}
 	toSerialize["dataStoreRef"] = o.DataStoreRef
 	if !IsNil(o.BaseDn) {
 		toSerialize["baseDn"] = o.BaseDn

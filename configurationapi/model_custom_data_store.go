@@ -22,6 +22,7 @@ var _ MappedNullable = &CustomDataStore{}
 
 // CustomDataStore A custom data store.
 type CustomDataStore struct {
+	DataStore
 	// The ID of the plugin instance. The ID cannot be modified once the instance is created.<br>Note: Ignored when specifying a connection's adapter override.
 	Id string `json:"id" tfsdk:"id"`
 	// The plugin instance name.
@@ -225,6 +226,14 @@ func (o CustomDataStore) MarshalJSON() ([]byte, error) {
 
 func (o CustomDataStore) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedDataStore, errDataStore := json.Marshal(o.DataStore)
+	if errDataStore != nil {
+		return map[string]interface{}{}, errDataStore
+	}
+	errDataStore = json.Unmarshal([]byte(serializedDataStore), &toSerialize)
+	if errDataStore != nil {
+		return map[string]interface{}{}, errDataStore
+	}
 	toSerialize["id"] = o.Id
 	toSerialize["name"] = o.Name
 	toSerialize["pluginDescriptorRef"] = o.PluginDescriptorRef

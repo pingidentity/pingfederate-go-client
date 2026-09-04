@@ -21,6 +21,7 @@ var _ MappedNullable = &LdapDataStoreAttribute{}
 
 // LdapDataStoreAttribute LDAP data store attribute.
 type LdapDataStoreAttribute struct {
+	DataStoreAttribute
 }
 
 // NewLdapDataStoreAttribute instantiates a new LdapDataStoreAttribute object
@@ -52,6 +53,14 @@ func (o LdapDataStoreAttribute) MarshalJSON() ([]byte, error) {
 
 func (o LdapDataStoreAttribute) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedDataStoreAttribute, errDataStoreAttribute := json.Marshal(o.DataStoreAttribute)
+	if errDataStoreAttribute != nil {
+		return map[string]interface{}{}, errDataStoreAttribute
+	}
+	errDataStoreAttribute = json.Unmarshal([]byte(serializedDataStoreAttribute), &toSerialize)
+	if errDataStoreAttribute != nil {
+		return map[string]interface{}{}, errDataStoreAttribute
+	}
 	return toSerialize, nil
 }
 

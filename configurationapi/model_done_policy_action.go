@@ -21,6 +21,7 @@ var _ MappedNullable = &DonePolicyAction{}
 
 // DonePolicyAction The done selection action.
 type DonePolicyAction struct {
+	PolicyAction
 }
 
 // NewDonePolicyAction instantiates a new DonePolicyAction object
@@ -51,6 +52,14 @@ func (o DonePolicyAction) MarshalJSON() ([]byte, error) {
 
 func (o DonePolicyAction) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedPolicyAction, errPolicyAction := json.Marshal(o.PolicyAction)
+	if errPolicyAction != nil {
+		return map[string]interface{}{}, errPolicyAction
+	}
+	errPolicyAction = json.Unmarshal([]byte(serializedPolicyAction), &toSerialize)
+	if errPolicyAction != nil {
+		return map[string]interface{}{}, errPolicyAction
+	}
 	return toSerialize, nil
 }
 

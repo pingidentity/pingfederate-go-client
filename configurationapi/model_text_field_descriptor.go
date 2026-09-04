@@ -21,6 +21,7 @@ var _ MappedNullable = &TextFieldDescriptor{}
 
 // TextFieldDescriptor A text field.
 type TextFieldDescriptor struct {
+	FieldDescriptor
 	// Determines whether the field value should be masked in the UI and encrypted on disk.
 	Encrypted *bool `json:"encrypted,omitempty" tfsdk:"encrypted"`
 	// The size of the text field.
@@ -118,6 +119,14 @@ func (o TextFieldDescriptor) MarshalJSON() ([]byte, error) {
 
 func (o TextFieldDescriptor) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedFieldDescriptor, errFieldDescriptor := json.Marshal(o.FieldDescriptor)
+	if errFieldDescriptor != nil {
+		return map[string]interface{}{}, errFieldDescriptor
+	}
+	errFieldDescriptor = json.Unmarshal([]byte(serializedFieldDescriptor), &toSerialize)
+	if errFieldDescriptor != nil {
+		return map[string]interface{}{}, errFieldDescriptor
+	}
 	if !IsNil(o.Encrypted) {
 		toSerialize["encrypted"] = o.Encrypted
 	}

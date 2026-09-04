@@ -21,6 +21,7 @@ var _ MappedNullable = &AuthnSelectorPolicyAction{}
 
 // AuthnSelectorPolicyAction An authentication selector selection action.
 type AuthnSelectorPolicyAction struct {
+	PolicyAction
 	AuthenticationSelectorRef ResourceLink `json:"authenticationSelectorRef" tfsdk:"authentication_selector_ref"`
 }
 
@@ -77,6 +78,14 @@ func (o AuthnSelectorPolicyAction) MarshalJSON() ([]byte, error) {
 
 func (o AuthnSelectorPolicyAction) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedPolicyAction, errPolicyAction := json.Marshal(o.PolicyAction)
+	if errPolicyAction != nil {
+		return map[string]interface{}{}, errPolicyAction
+	}
+	errPolicyAction = json.Unmarshal([]byte(serializedPolicyAction), &toSerialize)
+	if errPolicyAction != nil {
+		return map[string]interface{}{}, errPolicyAction
+	}
 	toSerialize["authenticationSelectorRef"] = o.AuthenticationSelectorRef
 	return toSerialize, nil
 }

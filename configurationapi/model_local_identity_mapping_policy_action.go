@@ -21,6 +21,7 @@ var _ MappedNullable = &LocalIdentityMappingPolicyAction{}
 
 // LocalIdentityMappingPolicyAction A local identity profile selection action.
 type LocalIdentityMappingPolicyAction struct {
+	PolicyAction
 	LocalIdentityRef         ResourceLink      `json:"localIdentityRef" tfsdk:"local_identity_ref"`
 	InboundMapping           *AttributeMapping `json:"inboundMapping,omitempty" tfsdk:"inbound_mapping"`
 	OutboundAttributeMapping AttributeMapping  `json:"outboundAttributeMapping" tfsdk:"outbound_attribute_mapping"`
@@ -136,6 +137,14 @@ func (o LocalIdentityMappingPolicyAction) MarshalJSON() ([]byte, error) {
 
 func (o LocalIdentityMappingPolicyAction) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedPolicyAction, errPolicyAction := json.Marshal(o.PolicyAction)
+	if errPolicyAction != nil {
+		return map[string]interface{}{}, errPolicyAction
+	}
+	errPolicyAction = json.Unmarshal([]byte(serializedPolicyAction), &toSerialize)
+	if errPolicyAction != nil {
+		return map[string]interface{}{}, errPolicyAction
+	}
 	toSerialize["localIdentityRef"] = o.LocalIdentityRef
 	if !IsNil(o.InboundMapping) {
 		toSerialize["inboundMapping"] = o.InboundMapping

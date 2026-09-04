@@ -21,6 +21,7 @@ var _ MappedNullable = &BaseDefaultValueLocalIdentityField{}
 
 // BaseDefaultValueLocalIdentityField Holds fields that are shared by all default value type fields.
 type BaseDefaultValueLocalIdentityField struct {
+	LocalIdentityField
 	// The default value for this field.
 	DefaultValue *string `json:"defaultValue,omitempty" tfsdk:"default_value"`
 }
@@ -87,6 +88,14 @@ func (o BaseDefaultValueLocalIdentityField) MarshalJSON() ([]byte, error) {
 
 func (o BaseDefaultValueLocalIdentityField) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedLocalIdentityField, errLocalIdentityField := json.Marshal(o.LocalIdentityField)
+	if errLocalIdentityField != nil {
+		return map[string]interface{}{}, errLocalIdentityField
+	}
+	errLocalIdentityField = json.Unmarshal([]byte(serializedLocalIdentityField), &toSerialize)
+	if errLocalIdentityField != nil {
+		return map[string]interface{}{}, errLocalIdentityField
+	}
 	if !IsNil(o.DefaultValue) {
 		toSerialize["defaultValue"] = o.DefaultValue
 	}

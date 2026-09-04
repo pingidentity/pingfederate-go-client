@@ -21,6 +21,7 @@ var _ MappedNullable = &ContinuePolicyAction{}
 
 // ContinuePolicyAction The continue selection action.
 type ContinuePolicyAction struct {
+	PolicyAction
 }
 
 // NewContinuePolicyAction instantiates a new ContinuePolicyAction object
@@ -51,6 +52,14 @@ func (o ContinuePolicyAction) MarshalJSON() ([]byte, error) {
 
 func (o ContinuePolicyAction) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedPolicyAction, errPolicyAction := json.Marshal(o.PolicyAction)
+	if errPolicyAction != nil {
+		return map[string]interface{}{}, errPolicyAction
+	}
+	errPolicyAction = json.Unmarshal([]byte(serializedPolicyAction), &toSerialize)
+	if errPolicyAction != nil {
+		return map[string]interface{}{}, errPolicyAction
+	}
 	return toSerialize, nil
 }
 

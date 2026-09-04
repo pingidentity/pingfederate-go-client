@@ -21,6 +21,7 @@ var _ MappedNullable = &BaseSelectionLocalIdentityField{}
 
 // BaseSelectionLocalIdentityField Holds fields that are shared by all selection-type fields.
 type BaseSelectionLocalIdentityField struct {
+	LocalIdentityField
 	// The list of options for this selection field.
 	Options []string `json:"options" tfsdk:"options"`
 }
@@ -80,6 +81,14 @@ func (o BaseSelectionLocalIdentityField) MarshalJSON() ([]byte, error) {
 
 func (o BaseSelectionLocalIdentityField) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedLocalIdentityField, errLocalIdentityField := json.Marshal(o.LocalIdentityField)
+	if errLocalIdentityField != nil {
+		return map[string]interface{}{}, errLocalIdentityField
+	}
+	errLocalIdentityField = json.Unmarshal([]byte(serializedLocalIdentityField), &toSerialize)
+	if errLocalIdentityField != nil {
+		return map[string]interface{}{}, errLocalIdentityField
+	}
 	toSerialize["options"] = o.Options
 	return toSerialize, nil
 }

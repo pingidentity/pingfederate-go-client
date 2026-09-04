@@ -21,6 +21,7 @@ var _ MappedNullable = &SpConnection{}
 
 // SpConnection The set of attributes used to configure an SP connection.
 type SpConnection struct {
+	Connection
 	SpBrowserSso   *SpBrowserSso     `json:"spBrowserSso,omitempty" tfsdk:"sp_browser_sso"`
 	AttributeQuery *SpAttributeQuery `json:"attributeQuery,omitempty" tfsdk:"attribute_query"`
 	// The application name.
@@ -319,6 +320,14 @@ func (o SpConnection) MarshalJSON() ([]byte, error) {
 
 func (o SpConnection) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedConnection, errConnection := json.Marshal(o.Connection)
+	if errConnection != nil {
+		return map[string]interface{}{}, errConnection
+	}
+	errConnection = json.Unmarshal([]byte(serializedConnection), &toSerialize)
+	if errConnection != nil {
+		return map[string]interface{}{}, errConnection
+	}
 	if !IsNil(o.SpBrowserSso) {
 		toSerialize["spBrowserSso"] = o.SpBrowserSso
 	}

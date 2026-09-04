@@ -21,6 +21,7 @@ var _ MappedNullable = &LdapDataStore{}
 
 // LdapDataStore A LDAP data store.
 type LdapDataStore struct {
+	DataStore
 	// The default LDAP host names. This field is required if no mapping for host names and tags is specified. Failover can be configured by providing multiple host names.
 	Hostnames []string `json:"hostnames,omitempty" tfsdk:"hostnames"`
 	// A type that allows PingFederate to configure many provisioning settings automatically. The 'UNBOUNDID_DS' type has been deprecated, please use the 'PING_DIRECTORY' type instead.
@@ -995,6 +996,14 @@ func (o LdapDataStore) MarshalJSON() ([]byte, error) {
 
 func (o LdapDataStore) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedDataStore, errDataStore := json.Marshal(o.DataStore)
+	if errDataStore != nil {
+		return map[string]interface{}{}, errDataStore
+	}
+	errDataStore = json.Unmarshal([]byte(serializedDataStore), &toSerialize)
+	if errDataStore != nil {
+		return map[string]interface{}{}, errDataStore
+	}
 	if !IsNil(o.Hostnames) {
 		toSerialize["hostnames"] = o.Hostnames
 	}

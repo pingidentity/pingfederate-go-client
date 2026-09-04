@@ -21,6 +21,7 @@ var _ MappedNullable = &HashedTextFieldDescriptor{}
 
 // HashedTextFieldDescriptor A text field that will contain a secure salted hash.
 type HashedTextFieldDescriptor struct {
+	FieldDescriptor
 	// The size of the text field.
 	Size *int64 `json:"size,omitempty" tfsdk:"size"`
 }
@@ -84,6 +85,14 @@ func (o HashedTextFieldDescriptor) MarshalJSON() ([]byte, error) {
 
 func (o HashedTextFieldDescriptor) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedFieldDescriptor, errFieldDescriptor := json.Marshal(o.FieldDescriptor)
+	if errFieldDescriptor != nil {
+		return map[string]interface{}{}, errFieldDescriptor
+	}
+	errFieldDescriptor = json.Unmarshal([]byte(serializedFieldDescriptor), &toSerialize)
+	if errFieldDescriptor != nil {
+		return map[string]interface{}{}, errFieldDescriptor
+	}
 	if !IsNil(o.Size) {
 		toSerialize["size"] = o.Size
 	}

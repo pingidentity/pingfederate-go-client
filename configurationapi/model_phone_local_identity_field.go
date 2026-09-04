@@ -21,6 +21,7 @@ var _ MappedNullable = &PhoneLocalIdentityField{}
 
 // PhoneLocalIdentityField A phone type field.
 type PhoneLocalIdentityField struct {
+	LocalIdentityField
 }
 
 // NewPhoneLocalIdentityField instantiates a new PhoneLocalIdentityField object
@@ -53,6 +54,14 @@ func (o PhoneLocalIdentityField) MarshalJSON() ([]byte, error) {
 
 func (o PhoneLocalIdentityField) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedLocalIdentityField, errLocalIdentityField := json.Marshal(o.LocalIdentityField)
+	if errLocalIdentityField != nil {
+		return map[string]interface{}{}, errLocalIdentityField
+	}
+	errLocalIdentityField = json.Unmarshal([]byte(serializedLocalIdentityField), &toSerialize)
+	if errLocalIdentityField != nil {
+		return map[string]interface{}{}, errLocalIdentityField
+	}
 	return toSerialize, nil
 }
 

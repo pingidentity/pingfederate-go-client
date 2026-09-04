@@ -21,6 +21,7 @@ var _ MappedNullable = &IdentityStoreInboundProvisioningUserRepository{}
 
 // IdentityStoreInboundProvisioningUserRepository Identity Store Provisioner data store user repository.
 type IdentityStoreInboundProvisioningUserRepository struct {
+	InboundProvisioningUserRepository
 	IdentityStoreProvisionerRef ResourceLink `json:"identityStoreProvisionerRef" tfsdk:"identity_store_provisioner_ref"`
 }
 
@@ -77,6 +78,14 @@ func (o IdentityStoreInboundProvisioningUserRepository) MarshalJSON() ([]byte, e
 
 func (o IdentityStoreInboundProvisioningUserRepository) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedInboundProvisioningUserRepository, errInboundProvisioningUserRepository := json.Marshal(o.InboundProvisioningUserRepository)
+	if errInboundProvisioningUserRepository != nil {
+		return map[string]interface{}{}, errInboundProvisioningUserRepository
+	}
+	errInboundProvisioningUserRepository = json.Unmarshal([]byte(serializedInboundProvisioningUserRepository), &toSerialize)
+	if errInboundProvisioningUserRepository != nil {
+		return map[string]interface{}{}, errInboundProvisioningUserRepository
+	}
 	toSerialize["identityStoreProvisionerRef"] = o.IdentityStoreProvisionerRef
 	return toSerialize, nil
 }

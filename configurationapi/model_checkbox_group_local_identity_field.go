@@ -21,6 +21,7 @@ var _ MappedNullable = &CheckboxGroupLocalIdentityField{}
 
 // CheckboxGroupLocalIdentityField A checkbox group selection type field.
 type CheckboxGroupLocalIdentityField struct {
+	BaseSelectionLocalIdentityField
 }
 
 // NewCheckboxGroupLocalIdentityField instantiates a new CheckboxGroupLocalIdentityField object
@@ -54,6 +55,14 @@ func (o CheckboxGroupLocalIdentityField) MarshalJSON() ([]byte, error) {
 
 func (o CheckboxGroupLocalIdentityField) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBaseSelectionLocalIdentityField, errBaseSelectionLocalIdentityField := json.Marshal(o.BaseSelectionLocalIdentityField)
+	if errBaseSelectionLocalIdentityField != nil {
+		return map[string]interface{}{}, errBaseSelectionLocalIdentityField
+	}
+	errBaseSelectionLocalIdentityField = json.Unmarshal([]byte(serializedBaseSelectionLocalIdentityField), &toSerialize)
+	if errBaseSelectionLocalIdentityField != nil {
+		return map[string]interface{}{}, errBaseSelectionLocalIdentityField
+	}
 	return toSerialize, nil
 }
 

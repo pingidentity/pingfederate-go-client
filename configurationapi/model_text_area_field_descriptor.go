@@ -21,6 +21,7 @@ var _ MappedNullable = &TextAreaFieldDescriptor{}
 
 // TextAreaFieldDescriptor A field intended to be rendered as a text box in a UI.
 type TextAreaFieldDescriptor struct {
+	FieldDescriptor
 	// The number of rows for the text box.
 	Rows *int64 `json:"rows,omitempty" tfsdk:"rows"`
 	// The number of columns for the text box.
@@ -118,6 +119,14 @@ func (o TextAreaFieldDescriptor) MarshalJSON() ([]byte, error) {
 
 func (o TextAreaFieldDescriptor) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedFieldDescriptor, errFieldDescriptor := json.Marshal(o.FieldDescriptor)
+	if errFieldDescriptor != nil {
+		return map[string]interface{}{}, errFieldDescriptor
+	}
+	errFieldDescriptor = json.Unmarshal([]byte(serializedFieldDescriptor), &toSerialize)
+	if errFieldDescriptor != nil {
+		return map[string]interface{}{}, errFieldDescriptor
+	}
 	if !IsNil(o.Rows) {
 		toSerialize["rows"] = o.Rows
 	}

@@ -21,6 +21,7 @@ var _ MappedNullable = &JdbcDataStore{}
 
 // JdbcDataStore A JDBC data store.
 type JdbcDataStore struct {
+	DataStore
 	// The default location of the JDBC database. This field is required if no mapping for JDBC database location and tags is specified.
 	ConnectionUrl *string `json:"connectionUrl,omitempty" tfsdk:"connection_url"`
 	// The name of the driver class used to communicate with the source database.
@@ -486,6 +487,14 @@ func (o JdbcDataStore) MarshalJSON() ([]byte, error) {
 
 func (o JdbcDataStore) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedDataStore, errDataStore := json.Marshal(o.DataStore)
+	if errDataStore != nil {
+		return map[string]interface{}{}, errDataStore
+	}
+	errDataStore = json.Unmarshal([]byte(serializedDataStore), &toSerialize)
+	if errDataStore != nil {
+		return map[string]interface{}{}, errDataStore
+	}
 	if !IsNil(o.ConnectionUrl) {
 		toSerialize["connectionUrl"] = o.ConnectionUrl
 	}

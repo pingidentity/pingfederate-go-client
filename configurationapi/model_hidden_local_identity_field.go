@@ -21,6 +21,7 @@ var _ MappedNullable = &HiddenLocalIdentityField{}
 
 // HiddenLocalIdentityField A hidden selection type field.
 type HiddenLocalIdentityField struct {
+	LocalIdentityField
 }
 
 // NewHiddenLocalIdentityField instantiates a new HiddenLocalIdentityField object
@@ -53,6 +54,14 @@ func (o HiddenLocalIdentityField) MarshalJSON() ([]byte, error) {
 
 func (o HiddenLocalIdentityField) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedLocalIdentityField, errLocalIdentityField := json.Marshal(o.LocalIdentityField)
+	if errLocalIdentityField != nil {
+		return map[string]interface{}{}, errLocalIdentityField
+	}
+	errLocalIdentityField = json.Unmarshal([]byte(serializedLocalIdentityField), &toSerialize)
+	if errLocalIdentityField != nil {
+		return map[string]interface{}{}, errLocalIdentityField
+	}
 	return toSerialize, nil
 }
 

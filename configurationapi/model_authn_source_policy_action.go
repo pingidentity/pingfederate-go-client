@@ -21,6 +21,7 @@ var _ MappedNullable = &AuthnSourcePolicyAction{}
 
 // AuthnSourcePolicyAction An authentication source selection action.
 type AuthnSourcePolicyAction struct {
+	PolicyAction
 	AuthenticationSource AuthenticationSource       `json:"authenticationSource" tfsdk:"authentication_source"`
 	InputUserIdMapping   *AttributeFulfillmentValue `json:"inputUserIdMapping,omitempty" tfsdk:"input_user_id_mapping"`
 	// Indicates whether the user ID obtained by the user ID mapping is authenticated.
@@ -177,6 +178,14 @@ func (o AuthnSourcePolicyAction) MarshalJSON() ([]byte, error) {
 
 func (o AuthnSourcePolicyAction) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedPolicyAction, errPolicyAction := json.Marshal(o.PolicyAction)
+	if errPolicyAction != nil {
+		return map[string]interface{}{}, errPolicyAction
+	}
+	errPolicyAction = json.Unmarshal([]byte(serializedPolicyAction), &toSerialize)
+	if errPolicyAction != nil {
+		return map[string]interface{}{}, errPolicyAction
+	}
 	toSerialize["authenticationSource"] = o.AuthenticationSource
 	if !IsNil(o.InputUserIdMapping) {
 		toSerialize["inputUserIdMapping"] = o.InputUserIdMapping

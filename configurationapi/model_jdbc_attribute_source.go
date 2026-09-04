@@ -21,6 +21,7 @@ var _ MappedNullable = &JdbcAttributeSource{}
 
 // JdbcAttributeSource The configured settings used to look up attributes from a JDBC data store.
 type JdbcAttributeSource struct {
+	AttributeSource
 	// Lists the table structure that stores information within a database. Some databases, such as Oracle, require a schema for a JDBC query. Other databases, such as MySQL, do not require a schema.
 	Schema *string `json:"schema,omitempty" tfsdk:"schema"`
 	// The name of the database table. The name is used to construct the SQL query to retrieve data from the data store.
@@ -174,6 +175,14 @@ func (o JdbcAttributeSource) MarshalJSON() ([]byte, error) {
 
 func (o JdbcAttributeSource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedAttributeSource, errAttributeSource := json.Marshal(o.AttributeSource)
+	if errAttributeSource != nil {
+		return map[string]interface{}{}, errAttributeSource
+	}
+	errAttributeSource = json.Unmarshal([]byte(serializedAttributeSource), &toSerialize)
+	if errAttributeSource != nil {
+		return map[string]interface{}{}, errAttributeSource
+	}
 	if !IsNil(o.Schema) {
 		toSerialize["schema"] = o.Schema
 	}

@@ -21,6 +21,7 @@ var _ MappedNullable = &RadioGroupFieldDescriptor{}
 
 // RadioGroupFieldDescriptor A selection-type field intended to be rendered as a group of radio buttons in a UI.
 type RadioGroupFieldDescriptor struct {
+	BaseSelectionFieldDescriptor
 }
 
 // NewRadioGroupFieldDescriptor instantiates a new RadioGroupFieldDescriptor object
@@ -50,6 +51,14 @@ func (o RadioGroupFieldDescriptor) MarshalJSON() ([]byte, error) {
 
 func (o RadioGroupFieldDescriptor) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBaseSelectionFieldDescriptor, errBaseSelectionFieldDescriptor := json.Marshal(o.BaseSelectionFieldDescriptor)
+	if errBaseSelectionFieldDescriptor != nil {
+		return map[string]interface{}{}, errBaseSelectionFieldDescriptor
+	}
+	errBaseSelectionFieldDescriptor = json.Unmarshal([]byte(serializedBaseSelectionFieldDescriptor), &toSerialize)
+	if errBaseSelectionFieldDescriptor != nil {
+		return map[string]interface{}{}, errBaseSelectionFieldDescriptor
+	}
 	return toSerialize, nil
 }
 
