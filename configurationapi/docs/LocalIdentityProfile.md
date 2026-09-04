@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **RegistrationConfig** | Pointer to [**RegistrationConfig**](RegistrationConfig.md) |  | [optional] 
 **FieldConfig** | Pointer to [**FieldConfig**](FieldConfig.md) |  | [optional] 
 **EmailVerificationConfig** | Pointer to [**EmailVerificationConfig**](EmailVerificationConfig.md) |  | [optional] 
-**DataStoreConfig** | Pointer to [**DataStoreConfig**](DataStoreConfig.md) |  | [optional] 
+**DataStoreConfig** | Pointer to [**LdapDataStoreConfig**](LdapDataStoreConfig.md) |  | [optional] 
 **ProfileConfig** | Pointer to [**ProfileConfig**](ProfileConfig.md) |  | [optional] 
 **RegistrationEnabled** | Pointer to **bool** | Whether the registration configuration is enabled or not. | [optional] 
 **ProfileEnabled** | Pointer to **bool** | Whether the profile configuration is enabled or not. | [optional] 
@@ -228,20 +228,20 @@ HasEmailVerificationConfig returns a boolean if a field has been set.
 
 ### GetDataStoreConfig
 
-`func (o *LocalIdentityProfile) GetDataStoreConfig() DataStoreConfig`
+`func (o *LocalIdentityProfile) GetDataStoreConfig() LdapDataStoreConfig`
 
 GetDataStoreConfig returns the DataStoreConfig field if non-nil, zero value otherwise.
 
 ### GetDataStoreConfigOk
 
-`func (o *LocalIdentityProfile) GetDataStoreConfigOk() (*DataStoreConfig, bool)`
+`func (o *LocalIdentityProfile) GetDataStoreConfigOk() (*LdapDataStoreConfig, bool)`
 
 GetDataStoreConfigOk returns a tuple with the DataStoreConfig field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataStoreConfig
 
-`func (o *LocalIdentityProfile) SetDataStoreConfig(v DataStoreConfig)`
+`func (o *LocalIdentityProfile) SetDataStoreConfig(v LdapDataStoreConfig)`
 
 SetDataStoreConfig sets DataStoreConfig field to given value.
 

@@ -15618,6 +15618,14 @@ components:
       discriminator:
         propertyName: type
       properties:
+        type:
+          description: The data store type of this attribute source.
+          enum:
+          - LDAP
+          - PING_ONE_LDAP_GATEWAY
+          - JDBC
+          - CUSTOM
+          type: string
         dataStoreRef:
           $ref: '#/components/schemas/ResourceLink'
         id:
@@ -15639,14 +15647,6 @@ components:
           description: A list of mappings from attribute names to their fulfillment
             values. This field is only valid for the SP Connection's Browser SSO mappings
           type: object
-        type:
-          description: The data store type of this attribute source.
-          enum:
-          - LDAP
-          - PING_ONE_LDAP_GATEWAY
-          - JDBC
-          - CUSTOM
-          type: string
       required:
       - dataStoreRef
       - type
@@ -15882,6 +15882,14 @@ components:
       allOf:
       - $ref: '#/components/schemas/DataStore'
       - properties:
+          type:
+            description: The data store type.
+            enum:
+            - LDAP
+            - PING_ONE_LDAP_GATEWAY
+            - JDBC
+            - CUSTOM
+            type: string
           name:
             description: The plugin instance name.
             type: string
@@ -15892,7 +15900,6 @@ components:
           configuration:
             $ref: '#/components/schemas/PluginConfiguration'
         type: object
-      - $ref: '#/components/schemas/PluginInstance'
       description: A custom data store.
       required:
       - configuration
@@ -21476,19 +21483,19 @@ components:
       discriminator:
         propertyName: type
       properties:
-        jitRepositoryAttributeMapping:
-          additionalProperties:
-            $ref: '#/components/schemas/AttributeFulfillmentValue'
-          description: The user repository attribute mapping.
-          type: object
-        dataStoreRef:
-          $ref: '#/components/schemas/ResourceLink'
         type:
           description: The data store repository type.
           enum:
           - LDAP
           - JDBC
           type: string
+        dataStoreRef:
+          $ref: '#/components/schemas/ResourceLink'
+        jitRepositoryAttributeMapping:
+          additionalProperties:
+            $ref: '#/components/schemas/AttributeFulfillmentValue'
+          description: The user repository attribute mapping.
+          type: object
       required:
       - dataStoreRef
       - jitRepositoryAttributeMapping
@@ -25621,17 +25628,6 @@ components:
       description: Local identity profile data store.
       discriminator:
         propertyName: type
-      example:
-        dataStoreRef:
-          location: location
-          id: id
-        type: LDAP
-        dataStoreMapping:
-          key:
-            metadata:
-              key: metadata
-            name: name
-            type: LDAP
       properties:
         dataStoreMapping:
           additionalProperties:
@@ -25790,6 +25786,10 @@ components:
         stripSpaceFromUniqueField: true
         fields:
         - profilePageField: true
+          defaultValue: defaultValue
+          options:
+          - options
+          - options
           attributes:
             key: true
           id: id
@@ -25797,6 +25797,10 @@ components:
           type: CHECKBOX
           registrationPageField: true
         - profilePageField: true
+          defaultValue: defaultValue
+          options:
+          - options
+          - options
           attributes:
             key: true
           id: id
@@ -25831,6 +25835,23 @@ components:
       - type
     LdapDataStoreConfig:
       description: LDAP data store configuration.
+      example:
+        createPattern: createPattern
+        objectClass: objectClass
+        dataStoreRef:
+          location: location
+          id: id
+        type: LDAP
+        baseDn: baseDn
+        auxiliaryObjectClasses:
+        - auxiliaryObjectClasses
+        - auxiliaryObjectClasses
+        dataStoreMapping:
+          key:
+            metadata:
+              key: metadata
+            name: name
+            type: LDAP
       properties:
         dataStoreMapping:
           additionalProperties:
@@ -25920,6 +25941,10 @@ components:
         propertyName: type
       example:
         profilePageField: true
+        defaultValue: defaultValue
+        options:
+        - options
+        - options
         attributes:
           key: true
         id: id
@@ -25957,6 +25982,15 @@ components:
             type: boolean
           description: Attributes of the local identity field.
           type: object
+        options:
+          description: The list of options for this selection field.
+          items:
+            description: The list of options for this selection field.
+            type: string
+          type: array
+        defaultValue:
+          description: The default value for this field.
+          type: string
       required:
       - id
       - label
@@ -25993,6 +26027,10 @@ components:
           stripSpaceFromUniqueField: true
           fields:
           - profilePageField: true
+            defaultValue: defaultValue
+            options:
+            - options
+            - options
             attributes:
               key: true
             id: id
@@ -26000,6 +26038,10 @@ components:
             type: CHECKBOX
             registrationPageField: true
           - profilePageField: true
+            defaultValue: defaultValue
+            options:
+            - options
+            - options
             attributes:
               key: true
             id: id
@@ -26036,10 +26078,16 @@ components:
           verifyEmailTemplateName: verifyEmailTemplateName
           emailVerificationSentTemplateName: emailVerificationSentTemplateName
         dataStoreConfig:
+          createPattern: createPattern
+          objectClass: objectClass
           dataStoreRef:
             location: location
             id: id
           type: LDAP
+          baseDn: baseDn
+          auxiliaryObjectClasses:
+          - auxiliaryObjectClasses
+          - auxiliaryObjectClasses
           dataStoreMapping:
             key:
               metadata:
@@ -26071,7 +26119,7 @@ components:
         emailVerificationConfig:
           $ref: '#/components/schemas/EmailVerificationConfig'
         dataStoreConfig:
-          $ref: '#/components/schemas/DataStoreConfig'
+          $ref: '#/components/schemas/LdapDataStoreConfig'
         profileConfig:
           $ref: '#/components/schemas/ProfileConfig'
         registrationEnabled:
@@ -26200,6 +26248,10 @@ components:
             stripSpaceFromUniqueField: true
             fields:
             - profilePageField: true
+              defaultValue: defaultValue
+              options:
+              - options
+              - options
               attributes:
                 key: true
               id: id
@@ -26207,6 +26259,10 @@ components:
               type: CHECKBOX
               registrationPageField: true
             - profilePageField: true
+              defaultValue: defaultValue
+              options:
+              - options
+              - options
               attributes:
                 key: true
               id: id
@@ -26243,10 +26299,16 @@ components:
             verifyEmailTemplateName: verifyEmailTemplateName
             emailVerificationSentTemplateName: emailVerificationSentTemplateName
           dataStoreConfig:
+            createPattern: createPattern
+            objectClass: objectClass
             dataStoreRef:
               location: location
               id: id
             type: LDAP
+            baseDn: baseDn
+            auxiliaryObjectClasses:
+            - auxiliaryObjectClasses
+            - auxiliaryObjectClasses
             dataStoreMapping:
               key:
                 metadata:
@@ -26281,6 +26343,10 @@ components:
             stripSpaceFromUniqueField: true
             fields:
             - profilePageField: true
+              defaultValue: defaultValue
+              options:
+              - options
+              - options
               attributes:
                 key: true
               id: id
@@ -26288,6 +26354,10 @@ components:
               type: CHECKBOX
               registrationPageField: true
             - profilePageField: true
+              defaultValue: defaultValue
+              options:
+              - options
+              - options
               attributes:
                 key: true
               id: id
@@ -26324,10 +26394,16 @@ components:
             verifyEmailTemplateName: verifyEmailTemplateName
             emailVerificationSentTemplateName: emailVerificationSentTemplateName
           dataStoreConfig:
+            createPattern: createPattern
+            objectClass: objectClass
             dataStoreRef:
               location: location
               id: id
             type: LDAP
+            baseDn: baseDn
+            auxiliaryObjectClasses:
+            - auxiliaryObjectClasses
+            - auxiliaryObjectClasses
             dataStoreMapping:
               key:
                 metadata:
@@ -34534,6 +34610,17 @@ components:
       - $ref: '#/components/schemas/JdbcAttributeSource'
       - $ref: '#/components/schemas/LdapAttributeSource'
     PolicyActionAggregation:
+      discriminator:
+        mapping:
+          APC_MAPPING: '#/components/schemas/ApcMappingPolicyAction'
+          AUTHN_SELECTOR: '#/components/schemas/AuthnSelectorPolicyAction'
+          AUTHN_SOURCE: '#/components/schemas/AuthnSourcePolicyAction'
+          CONTINUE: '#/components/schemas/ContinuePolicyAction'
+          DONE: '#/components/schemas/DonePolicyAction'
+          FRAGMENT: '#/components/schemas/FragmentPolicyAction'
+          LOCAL_IDENTITY_MAPPING: '#/components/schemas/LocalIdentityMappingPolicyAction'
+          RESTART: '#/components/schemas/RestartPolicyAction'
+        propertyName: type
       oneOf:
       - $ref: '#/components/schemas/ApcMappingPolicyAction'
       - $ref: '#/components/schemas/AuthnSelectorPolicyAction'

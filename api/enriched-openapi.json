@@ -22307,6 +22307,16 @@
         ],
         "type": "object",
         "properties": {
+          "type": {
+            "type": "string",
+            "description": "The data store type of this attribute source.",
+            "enum": [
+              "LDAP",
+              "PING_ONE_LDAP_GATEWAY",
+              "JDBC",
+              "CUSTOM"
+            ]
+          },
           "dataStoreRef": {
             "$ref": "#/components/schemas/ResourceLink"
           },
@@ -22324,16 +22334,6 @@
               "$ref": "#/components/schemas/AttributeFulfillmentValue"
             },
             "description": "A list of mappings from attribute names to their fulfillment values. This field is only valid for the SP Connection's Browser SSO mappings"
-          },
-          "type": {
-            "type": "string",
-            "description": "The data store type of this attribute source.",
-            "enum": [
-              "LDAP",
-              "PING_ONE_LDAP_GATEWAY",
-              "JDBC",
-              "CUSTOM"
-            ]
           }
         },
         "description": "The configured settings to look up attributes from an associated data store.",
@@ -22606,6 +22606,16 @@
           {
             "type": "object",
             "properties": {
+              "type": {
+                "type": "string",
+                "description": "The data store type.",
+                "enum": [
+                  "LDAP",
+                  "PING_ONE_LDAP_GATEWAY",
+                  "JDBC",
+                  "CUSTOM"
+                ]
+              },
               "name": {
                 "type": "string",
                 "description": "The plugin instance name."
@@ -22620,9 +22630,6 @@
                 "$ref": "#/components/schemas/PluginConfiguration"
               }
             }
-          },
-          {
-            "$ref": "#/components/schemas/PluginInstance"
           }
         ]
       },
@@ -27556,16 +27563,6 @@
         ],
         "type": "object",
         "properties": {
-          "jitRepositoryAttributeMapping": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/AttributeFulfillmentValue"
-            },
-            "description": "The user repository attribute mapping."
-          },
-          "dataStoreRef": {
-            "$ref": "#/components/schemas/ResourceLink"
-          },
           "type": {
             "type": "string",
             "description": "The data store repository type.",
@@ -27573,6 +27570,16 @@
               "LDAP",
               "JDBC"
             ]
+          },
+          "dataStoreRef": {
+            "$ref": "#/components/schemas/ResourceLink"
+          },
+          "jitRepositoryAttributeMapping": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/AttributeFulfillmentValue"
+            },
+            "description": "The user repository attribute mapping."
           }
         },
         "description": "Jit Provisioning user repository data store.",
@@ -31464,6 +31471,18 @@
               "description": "Attributes of the local identity field."
             },
             "description": "Attributes of the local identity field."
+          },
+          "options": {
+            "type": "array",
+            "description": "The list of options for this selection field.",
+            "items": {
+              "type": "string",
+              "description": "The list of options for this selection field."
+            }
+          },
+          "defaultValue": {
+            "type": "string",
+            "description": "The default value for this field."
           }
         },
         "description": "Local identity profile fields.",
@@ -31509,7 +31528,7 @@
             "$ref": "#/components/schemas/EmailVerificationConfig"
           },
           "dataStoreConfig": {
-            "$ref": "#/components/schemas/DataStoreConfig"
+            "$ref": "#/components/schemas/LdapDataStoreConfig"
           },
           "profileConfig": {
             "$ref": "#/components/schemas/ProfileConfig"
@@ -36894,7 +36913,20 @@
           {
             "$ref": "#/components/schemas/RestartPolicyAction"
           }
-        ]
+        ],
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "APC_MAPPING": "#/components/schemas/ApcMappingPolicyAction",
+            "AUTHN_SELECTOR": "#/components/schemas/AuthnSelectorPolicyAction",
+            "AUTHN_SOURCE": "#/components/schemas/AuthnSourcePolicyAction",
+            "CONTINUE": "#/components/schemas/ContinuePolicyAction",
+            "DONE": "#/components/schemas/DonePolicyAction",
+            "FRAGMENT": "#/components/schemas/FragmentPolicyAction",
+            "LOCAL_IDENTITY_MAPPING": "#/components/schemas/LocalIdentityMappingPolicyAction",
+            "RESTART": "#/components/schemas/RestartPolicyAction"
+          }
+        }
       },
       "DataStoreRepositoryAggregation": {
         "oneOf": [

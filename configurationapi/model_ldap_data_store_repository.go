@@ -32,11 +32,11 @@ type LdapDataStoreRepository struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLdapDataStoreRepository(uniqueUserIdFilter string, jitRepositoryAttributeMapping map[string]AttributeFulfillmentValue, dataStoreRef ResourceLink, type_ string) *LdapDataStoreRepository {
+func NewLdapDataStoreRepository(uniqueUserIdFilter string, type_ string, dataStoreRef ResourceLink, jitRepositoryAttributeMapping map[string]AttributeFulfillmentValue) *LdapDataStoreRepository {
 	this := LdapDataStoreRepository{}
-	this.JitRepositoryAttributeMapping = jitRepositoryAttributeMapping
-	this.DataStoreRef = dataStoreRef
 	this.Type = type_
+	this.DataStoreRef = dataStoreRef
+	this.JitRepositoryAttributeMapping = jitRepositoryAttributeMapping
 	this.UniqueUserIdFilter = uniqueUserIdFilter
 	return &this
 }

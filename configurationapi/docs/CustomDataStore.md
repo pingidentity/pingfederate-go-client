@@ -4,18 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | The ID of the plugin instance. The ID cannot be modified once the instance is created.&lt;br&gt;Note: Ignored when specifying a connection&#39;s adapter override. | 
+**Type** | **string** | The data store type. | 
 **Name** | **string** | The plugin instance name. | 
 **PluginDescriptorRef** | [**ResourceLink**](ResourceLink.md) |  | 
 **ParentRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **Configuration** | [**PluginConfiguration**](PluginConfiguration.md) |  | 
-**LastModified** | Pointer to **time.Time** | The time at which the plugin instance was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
 
 ## Methods
 
 ### NewCustomDataStore
 
-`func NewCustomDataStore(id string, name string, pluginDescriptorRef ResourceLink, configuration PluginConfiguration, ) *CustomDataStore`
+`func NewCustomDataStore(type_ string, name string, pluginDescriptorRef ResourceLink, configuration PluginConfiguration, ) *CustomDataStore`
 
 NewCustomDataStore instantiates a new CustomDataStore object
 This constructor will assign default values to properties that have it defined,
@@ -30,24 +29,24 @@ NewCustomDataStoreWithDefaults instantiates a new CustomDataStore object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetType
 
-`func (o *CustomDataStore) GetId() string`
+`func (o *CustomDataStore) GetType() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetType returns the Type field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetTypeOk
 
-`func (o *CustomDataStore) GetIdOk() (*string, bool)`
+`func (o *CustomDataStore) GetTypeOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetType
 
-`func (o *CustomDataStore) SetId(v string)`
+`func (o *CustomDataStore) SetType(v string)`
 
-SetId sets Id field to given value.
+SetType sets Type field to given value.
 
 
 ### GetName
@@ -134,31 +133,6 @@ and a boolean to check if the value has been set.
 
 SetConfiguration sets Configuration field to given value.
 
-
-### GetLastModified
-
-`func (o *CustomDataStore) GetLastModified() time.Time`
-
-GetLastModified returns the LastModified field if non-nil, zero value otherwise.
-
-### GetLastModifiedOk
-
-`func (o *CustomDataStore) GetLastModifiedOk() (*time.Time, bool)`
-
-GetLastModifiedOk returns a tuple with the LastModified field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastModified
-
-`func (o *CustomDataStore) SetLastModified(v time.Time)`
-
-SetLastModified sets LastModified field to given value.
-
-### HasLastModified
-
-`func (o *CustomDataStore) HasLastModified() bool`
-
-HasLastModified returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

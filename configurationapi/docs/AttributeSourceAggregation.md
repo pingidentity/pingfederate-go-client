@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Type** | **string** | The data store type of this attribute source. | 
 **DataStoreRef** | [**ResourceLink**](ResourceLink.md) |  | 
 **Id** | Pointer to **string** | The ID that defines this attribute source. Only alphanumeric characters allowed.&lt;br&gt;Note: Required for OpenID Connect policy attribute sources, OAuth IdP adapter mappings, OAuth access token mappings and APC-to-SP Adapter Mappings. IdP Connections will ignore this property since it only allows one attribute source to be defined per mapping. IdP-to-SP Adapter Mappings can contain multiple attribute sources. | [optional] 
 **Description** | Pointer to **string** | The description of this attribute source. The description needs to be unique amongst the attribute sources for the mapping.&lt;br&gt;Note: Required for APC-to-SP Adapter Mappings | [optional] 
 **AttributeContractFulfillment** | Pointer to [**map[string]AttributeFulfillmentValue**](AttributeFulfillmentValue.md) | A list of mappings from attribute names to their fulfillment values. This field is only valid for the SP Connection&#39;s Browser SSO mappings | [optional] 
-**Type** | **string** | The data store type of this attribute source. | 
 **Schema** | Pointer to **string** | Lists the table structure that stores information within a database. Some databases, such as Oracle, require a schema for a JDBC query. Other databases, such as MySQL, do not require a schema. | [optional] 
 **Table** | **string** | The name of the database table. The name is used to construct the SQL query to retrieve data from the data store. | 
 **Filter** | **string** | The JDBC WHERE clause used to query your data store to locate a user record. | 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewAttributeSourceAggregation
 
-`func NewAttributeSourceAggregation(dataStoreRef ResourceLink, type_ string, table string, filter string, searchScope string, searchFilter string, ) *AttributeSourceAggregation`
+`func NewAttributeSourceAggregation(type_ string, dataStoreRef ResourceLink, table string, filter string, searchScope string, searchFilter string, ) *AttributeSourceAggregation`
 
 NewAttributeSourceAggregation instantiates a new AttributeSourceAggregation object
 This constructor will assign default values to properties that have it defined,
@@ -38,6 +38,26 @@ will change when the set of required properties is changed
 NewAttributeSourceAggregationWithDefaults instantiates a new AttributeSourceAggregation object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetType
+
+`func (o *AttributeSourceAggregation) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *AttributeSourceAggregation) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *AttributeSourceAggregation) SetType(v string)`
+
+SetType sets Type field to given value.
+
 
 ### GetDataStoreRef
 
@@ -133,26 +153,6 @@ SetAttributeContractFulfillment sets AttributeContractFulfillment field to given
 `func (o *AttributeSourceAggregation) HasAttributeContractFulfillment() bool`
 
 HasAttributeContractFulfillment returns a boolean if a field has been set.
-
-### GetType
-
-`func (o *AttributeSourceAggregation) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *AttributeSourceAggregation) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *AttributeSourceAggregation) SetType(v string)`
-
-SetType sets Type field to given value.
-
 
 ### GetSchema
 

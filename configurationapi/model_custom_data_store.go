@@ -14,7 +14,6 @@ package configurationapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the CustomDataStore type satisfies the MappedNullable interface at compile time
@@ -23,24 +22,21 @@ var _ MappedNullable = &CustomDataStore{}
 // CustomDataStore A custom data store.
 type CustomDataStore struct {
 	DataStore
-	// The ID of the plugin instance. The ID cannot be modified once the instance is created.<br>Note: Ignored when specifying a connection's adapter override.
-	Id string `json:"id" tfsdk:"id"`
+	// The data store type.
+	Type string `json:"type" tfsdk:"type"`
 	// The plugin instance name.
 	Name                string              `json:"name" tfsdk:"name"`
 	PluginDescriptorRef ResourceLink        `json:"pluginDescriptorRef" tfsdk:"plugin_descriptor_ref"`
 	ParentRef           *ResourceLink       `json:"parentRef,omitempty" tfsdk:"parent_ref"`
 	Configuration       PluginConfiguration `json:"configuration" tfsdk:"configuration"`
-	// The time at which the plugin instance was last changed. This property is read only and is ignored on PUT and POST requests.
-	LastModified *time.Time `json:"lastModified,omitempty" tfsdk:"last_modified"`
 }
 
 // NewCustomDataStore instantiates a new CustomDataStore object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomDataStore(id string, name string, pluginDescriptorRef ResourceLink, configuration PluginConfiguration, type_ string) *CustomDataStore {
+func NewCustomDataStore(type_ string, name string, pluginDescriptorRef ResourceLink, configuration PluginConfiguration) *CustomDataStore {
 	this := CustomDataStore{}
-	this.Id = id
 	this.Type = type_
 	this.Name = name
 	this.PluginDescriptorRef = pluginDescriptorRef
@@ -56,28 +52,28 @@ func NewCustomDataStoreWithDefaults() *CustomDataStore {
 	return &this
 }
 
-// GetId returns the Id field value
-func (o *CustomDataStore) GetId() string {
+// GetType returns the Type field value
+func (o *CustomDataStore) GetType() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.Type
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *CustomDataStore) GetIdOk() (*string, bool) {
+func (o *CustomDataStore) GetTypeOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.Type, true
 }
 
-// SetId sets field value
-func (o *CustomDataStore) SetId(v string) {
-	o.Id = v
+// SetType sets field value
+func (o *CustomDataStore) SetType(v string) {
+	o.Type = v
 }
 
 // GetName returns the Name field value
@@ -184,38 +180,6 @@ func (o *CustomDataStore) SetConfiguration(v PluginConfiguration) {
 	o.Configuration = v
 }
 
-// GetLastModified returns the LastModified field value if set, zero value otherwise.
-func (o *CustomDataStore) GetLastModified() time.Time {
-	if o == nil || IsNil(o.LastModified) {
-		var ret time.Time
-		return ret
-	}
-	return *o.LastModified
-}
-
-// GetLastModifiedOk returns a tuple with the LastModified field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CustomDataStore) GetLastModifiedOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastModified) {
-		return nil, false
-	}
-	return o.LastModified, true
-}
-
-// HasLastModified returns a boolean if a field has been set.
-func (o *CustomDataStore) HasLastModified() bool {
-	if o != nil && !IsNil(o.LastModified) {
-		return true
-	}
-
-	return false
-}
-
-// SetLastModified gets a reference to the given time.Time and assigns it to the LastModified field.
-func (o *CustomDataStore) SetLastModified(v time.Time) {
-	o.LastModified = &v
-}
-
 func (o CustomDataStore) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -234,16 +198,13 @@ func (o CustomDataStore) ToMap() (map[string]interface{}, error) {
 	if errDataStore != nil {
 		return map[string]interface{}{}, errDataStore
 	}
-	toSerialize["id"] = o.Id
+	toSerialize["type"] = o.Type
 	toSerialize["name"] = o.Name
 	toSerialize["pluginDescriptorRef"] = o.PluginDescriptorRef
 	if !IsNil(o.ParentRef) {
 		toSerialize["parentRef"] = o.ParentRef
 	}
 	toSerialize["configuration"] = o.Configuration
-	if !IsNil(o.LastModified) {
-		toSerialize["lastModified"] = o.LastModified
-	}
 	return toSerialize, nil
 }
 

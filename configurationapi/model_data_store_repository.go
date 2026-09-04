@@ -21,22 +21,22 @@ var _ MappedNullable = &DataStoreRepository{}
 
 // DataStoreRepository Jit Provisioning user repository data store.
 type DataStoreRepository struct {
+	// The data store repository type.
+	Type         string       `json:"type" tfsdk:"type"`
+	DataStoreRef ResourceLink `json:"dataStoreRef" tfsdk:"data_store_ref"`
 	// The user repository attribute mapping.
 	JitRepositoryAttributeMapping map[string]AttributeFulfillmentValue `json:"jitRepositoryAttributeMapping" tfsdk:"jit_repository_attribute_mapping"`
-	DataStoreRef                  ResourceLink                         `json:"dataStoreRef" tfsdk:"data_store_ref"`
-	// The data store repository type.
-	Type string `json:"type" tfsdk:"type"`
 }
 
 // NewDataStoreRepository instantiates a new DataStoreRepository object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDataStoreRepository(jitRepositoryAttributeMapping map[string]AttributeFulfillmentValue, dataStoreRef ResourceLink, type_ string) *DataStoreRepository {
+func NewDataStoreRepository(type_ string, dataStoreRef ResourceLink, jitRepositoryAttributeMapping map[string]AttributeFulfillmentValue) *DataStoreRepository {
 	this := DataStoreRepository{}
-	this.JitRepositoryAttributeMapping = jitRepositoryAttributeMapping
-	this.DataStoreRef = dataStoreRef
 	this.Type = type_
+	this.DataStoreRef = dataStoreRef
+	this.JitRepositoryAttributeMapping = jitRepositoryAttributeMapping
 	return &this
 }
 
@@ -46,54 +46,6 @@ func NewDataStoreRepository(jitRepositoryAttributeMapping map[string]AttributeFu
 func NewDataStoreRepositoryWithDefaults() *DataStoreRepository {
 	this := DataStoreRepository{}
 	return &this
-}
-
-// GetJitRepositoryAttributeMapping returns the JitRepositoryAttributeMapping field value
-func (o *DataStoreRepository) GetJitRepositoryAttributeMapping() map[string]AttributeFulfillmentValue {
-	if o == nil {
-		var ret map[string]AttributeFulfillmentValue
-		return ret
-	}
-
-	return o.JitRepositoryAttributeMapping
-}
-
-// GetJitRepositoryAttributeMappingOk returns a tuple with the JitRepositoryAttributeMapping field value
-// and a boolean to check if the value has been set.
-func (o *DataStoreRepository) GetJitRepositoryAttributeMappingOk() (*map[string]AttributeFulfillmentValue, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.JitRepositoryAttributeMapping, true
-}
-
-// SetJitRepositoryAttributeMapping sets field value
-func (o *DataStoreRepository) SetJitRepositoryAttributeMapping(v map[string]AttributeFulfillmentValue) {
-	o.JitRepositoryAttributeMapping = v
-}
-
-// GetDataStoreRef returns the DataStoreRef field value
-func (o *DataStoreRepository) GetDataStoreRef() ResourceLink {
-	if o == nil {
-		var ret ResourceLink
-		return ret
-	}
-
-	return o.DataStoreRef
-}
-
-// GetDataStoreRefOk returns a tuple with the DataStoreRef field value
-// and a boolean to check if the value has been set.
-func (o *DataStoreRepository) GetDataStoreRefOk() (*ResourceLink, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.DataStoreRef, true
-}
-
-// SetDataStoreRef sets field value
-func (o *DataStoreRepository) SetDataStoreRef(v ResourceLink) {
-	o.DataStoreRef = v
 }
 
 // GetType returns the Type field value
@@ -120,6 +72,54 @@ func (o *DataStoreRepository) SetType(v string) {
 	o.Type = v
 }
 
+// GetDataStoreRef returns the DataStoreRef field value
+func (o *DataStoreRepository) GetDataStoreRef() ResourceLink {
+	if o == nil {
+		var ret ResourceLink
+		return ret
+	}
+
+	return o.DataStoreRef
+}
+
+// GetDataStoreRefOk returns a tuple with the DataStoreRef field value
+// and a boolean to check if the value has been set.
+func (o *DataStoreRepository) GetDataStoreRefOk() (*ResourceLink, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.DataStoreRef, true
+}
+
+// SetDataStoreRef sets field value
+func (o *DataStoreRepository) SetDataStoreRef(v ResourceLink) {
+	o.DataStoreRef = v
+}
+
+// GetJitRepositoryAttributeMapping returns the JitRepositoryAttributeMapping field value
+func (o *DataStoreRepository) GetJitRepositoryAttributeMapping() map[string]AttributeFulfillmentValue {
+	if o == nil {
+		var ret map[string]AttributeFulfillmentValue
+		return ret
+	}
+
+	return o.JitRepositoryAttributeMapping
+}
+
+// GetJitRepositoryAttributeMappingOk returns a tuple with the JitRepositoryAttributeMapping field value
+// and a boolean to check if the value has been set.
+func (o *DataStoreRepository) GetJitRepositoryAttributeMappingOk() (*map[string]AttributeFulfillmentValue, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.JitRepositoryAttributeMapping, true
+}
+
+// SetJitRepositoryAttributeMapping sets field value
+func (o *DataStoreRepository) SetJitRepositoryAttributeMapping(v map[string]AttributeFulfillmentValue) {
+	o.JitRepositoryAttributeMapping = v
+}
+
 func (o DataStoreRepository) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -130,9 +130,9 @@ func (o DataStoreRepository) MarshalJSON() ([]byte, error) {
 
 func (o DataStoreRepository) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["jitRepositoryAttributeMapping"] = o.JitRepositoryAttributeMapping
-	toSerialize["dataStoreRef"] = o.DataStoreRef
 	toSerialize["type"] = o.Type
+	toSerialize["dataStoreRef"] = o.DataStoreRef
+	toSerialize["jitRepositoryAttributeMapping"] = o.JitRepositoryAttributeMapping
 	return toSerialize, nil
 }
 

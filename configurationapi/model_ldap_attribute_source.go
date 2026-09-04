@@ -40,10 +40,10 @@ type LdapAttributeSource struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLdapAttributeSource(searchScope string, searchFilter string, dataStoreRef ResourceLink, type_ string) *LdapAttributeSource {
+func NewLdapAttributeSource(searchScope string, searchFilter string, type_ string, dataStoreRef ResourceLink) *LdapAttributeSource {
 	this := LdapAttributeSource{}
-	this.DataStoreRef = dataStoreRef
 	this.Type = type_
+	this.DataStoreRef = dataStoreRef
 	this.SearchScope = searchScope
 	this.SearchFilter = searchFilter
 	return &this

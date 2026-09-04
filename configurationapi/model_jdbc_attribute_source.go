@@ -36,10 +36,10 @@ type JdbcAttributeSource struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewJdbcAttributeSource(table string, filter string, dataStoreRef ResourceLink, type_ string) *JdbcAttributeSource {
+func NewJdbcAttributeSource(table string, filter string, type_ string, dataStoreRef ResourceLink) *JdbcAttributeSource {
 	this := JdbcAttributeSource{}
-	this.DataStoreRef = dataStoreRef
 	this.Type = type_
+	this.DataStoreRef = dataStoreRef
 	this.Table = table
 	this.Filter = filter
 	return &this

@@ -21,6 +21,8 @@ var _ MappedNullable = &AttributeSource{}
 
 // AttributeSource The configured settings to look up attributes from an associated data store.
 type AttributeSource struct {
+	// The data store type of this attribute source.
+	Type         string       `json:"type" tfsdk:"type"`
 	DataStoreRef ResourceLink `json:"dataStoreRef" tfsdk:"data_store_ref"`
 	// The ID that defines this attribute source. Only alphanumeric characters allowed.<br>Note: Required for OpenID Connect policy attribute sources, OAuth IdP adapter mappings, OAuth access token mappings and APC-to-SP Adapter Mappings. IdP Connections will ignore this property since it only allows one attribute source to be defined per mapping. IdP-to-SP Adapter Mappings can contain multiple attribute sources.
 	Id *string `json:"id,omitempty" tfsdk:"id"`
@@ -28,18 +30,16 @@ type AttributeSource struct {
 	Description *string `json:"description,omitempty" tfsdk:"description"`
 	// A list of mappings from attribute names to their fulfillment values. This field is only valid for the SP Connection's Browser SSO mappings
 	AttributeContractFulfillment *map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment,omitempty" tfsdk:"attribute_contract_fulfillment"`
-	// The data store type of this attribute source.
-	Type string `json:"type" tfsdk:"type"`
 }
 
 // NewAttributeSource instantiates a new AttributeSource object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAttributeSource(dataStoreRef ResourceLink, type_ string) *AttributeSource {
+func NewAttributeSource(type_ string, dataStoreRef ResourceLink) *AttributeSource {
 	this := AttributeSource{}
-	this.DataStoreRef = dataStoreRef
 	this.Type = type_
+	this.DataStoreRef = dataStoreRef
 	return &this
 }
 
@@ -49,6 +49,30 @@ func NewAttributeSource(dataStoreRef ResourceLink, type_ string) *AttributeSourc
 func NewAttributeSourceWithDefaults() *AttributeSource {
 	this := AttributeSource{}
 	return &this
+}
+
+// GetType returns the Type field value
+func (o *AttributeSource) GetType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value
+// and a boolean to check if the value has been set.
+func (o *AttributeSource) GetTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Type, true
+}
+
+// SetType sets field value
+func (o *AttributeSource) SetType(v string) {
+	o.Type = v
 }
 
 // GetDataStoreRef returns the DataStoreRef field value
@@ -171,30 +195,6 @@ func (o *AttributeSource) SetAttributeContractFulfillment(v map[string]Attribute
 	o.AttributeContractFulfillment = &v
 }
 
-// GetType returns the Type field value
-func (o *AttributeSource) GetType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value
-// and a boolean to check if the value has been set.
-func (o *AttributeSource) GetTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Type, true
-}
-
-// SetType sets field value
-func (o *AttributeSource) SetType(v string) {
-	o.Type = v
-}
-
 func (o AttributeSource) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -205,6 +205,7 @@ func (o AttributeSource) MarshalJSON() ([]byte, error) {
 
 func (o AttributeSource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	toSerialize["type"] = o.Type
 	toSerialize["dataStoreRef"] = o.DataStoreRef
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
@@ -215,7 +216,6 @@ func (o AttributeSource) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AttributeContractFulfillment) {
 		toSerialize["attributeContractFulfillment"] = o.AttributeContractFulfillment
 	}
-	toSerialize["type"] = o.Type
 	return toSerialize, nil
 }
 

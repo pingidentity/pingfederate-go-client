@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**JitRepositoryAttributeMapping** | [**map[string]AttributeFulfillmentValue**](AttributeFulfillmentValue.md) | The user repository attribute mapping. | 
-**DataStoreRef** | [**ResourceLink**](ResourceLink.md) |  | 
 **Type** | **string** | The data store repository type. | 
+**DataStoreRef** | [**ResourceLink**](ResourceLink.md) |  | 
+**JitRepositoryAttributeMapping** | [**map[string]AttributeFulfillmentValue**](AttributeFulfillmentValue.md) | The user repository attribute mapping. | 
 
 ## Methods
 
 ### NewDataStoreRepository
 
-`func NewDataStoreRepository(jitRepositoryAttributeMapping map[string]AttributeFulfillmentValue, dataStoreRef ResourceLink, type_ string, ) *DataStoreRepository`
+`func NewDataStoreRepository(type_ string, dataStoreRef ResourceLink, jitRepositoryAttributeMapping map[string]AttributeFulfillmentValue, ) *DataStoreRepository`
 
 NewDataStoreRepository instantiates a new DataStoreRepository object
 This constructor will assign default values to properties that have it defined,
@@ -27,24 +27,24 @@ NewDataStoreRepositoryWithDefaults instantiates a new DataStoreRepository object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetJitRepositoryAttributeMapping
+### GetType
 
-`func (o *DataStoreRepository) GetJitRepositoryAttributeMapping() map[string]AttributeFulfillmentValue`
+`func (o *DataStoreRepository) GetType() string`
 
-GetJitRepositoryAttributeMapping returns the JitRepositoryAttributeMapping field if non-nil, zero value otherwise.
+GetType returns the Type field if non-nil, zero value otherwise.
 
-### GetJitRepositoryAttributeMappingOk
+### GetTypeOk
 
-`func (o *DataStoreRepository) GetJitRepositoryAttributeMappingOk() (*map[string]AttributeFulfillmentValue, bool)`
+`func (o *DataStoreRepository) GetTypeOk() (*string, bool)`
 
-GetJitRepositoryAttributeMappingOk returns a tuple with the JitRepositoryAttributeMapping field if it's non-nil, zero value otherwise
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetJitRepositoryAttributeMapping
+### SetType
 
-`func (o *DataStoreRepository) SetJitRepositoryAttributeMapping(v map[string]AttributeFulfillmentValue)`
+`func (o *DataStoreRepository) SetType(v string)`
 
-SetJitRepositoryAttributeMapping sets JitRepositoryAttributeMapping field to given value.
+SetType sets Type field to given value.
 
 
 ### GetDataStoreRef
@@ -67,24 +67,24 @@ and a boolean to check if the value has been set.
 SetDataStoreRef sets DataStoreRef field to given value.
 
 
-### GetType
+### GetJitRepositoryAttributeMapping
 
-`func (o *DataStoreRepository) GetType() string`
+`func (o *DataStoreRepository) GetJitRepositoryAttributeMapping() map[string]AttributeFulfillmentValue`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetJitRepositoryAttributeMapping returns the JitRepositoryAttributeMapping field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetJitRepositoryAttributeMappingOk
 
-`func (o *DataStoreRepository) GetTypeOk() (*string, bool)`
+`func (o *DataStoreRepository) GetJitRepositoryAttributeMappingOk() (*map[string]AttributeFulfillmentValue, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetJitRepositoryAttributeMappingOk returns a tuple with the JitRepositoryAttributeMapping field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetJitRepositoryAttributeMapping
 
-`func (o *DataStoreRepository) SetType(v string)`
+`func (o *DataStoreRepository) SetJitRepositoryAttributeMapping(v map[string]AttributeFulfillmentValue)`
 
-SetType sets Type field to given value.
+SetJitRepositoryAttributeMapping sets JitRepositoryAttributeMapping field to given value.
 
 
 

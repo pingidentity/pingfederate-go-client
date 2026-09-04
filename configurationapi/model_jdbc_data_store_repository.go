@@ -29,11 +29,11 @@ type JdbcDataStoreRepository struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewJdbcDataStoreRepository(sqlMethod SqlMethod, jitRepositoryAttributeMapping map[string]AttributeFulfillmentValue, dataStoreRef ResourceLink, type_ string) *JdbcDataStoreRepository {
+func NewJdbcDataStoreRepository(sqlMethod SqlMethod, type_ string, dataStoreRef ResourceLink, jitRepositoryAttributeMapping map[string]AttributeFulfillmentValue) *JdbcDataStoreRepository {
 	this := JdbcDataStoreRepository{}
-	this.JitRepositoryAttributeMapping = jitRepositoryAttributeMapping
-	this.DataStoreRef = dataStoreRef
 	this.Type = type_
+	this.DataStoreRef = dataStoreRef
+	this.JitRepositoryAttributeMapping = jitRepositoryAttributeMapping
 	this.SqlMethod = sqlMethod
 	return &this
 }

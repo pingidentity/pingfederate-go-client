@@ -32,7 +32,7 @@ type LocalIdentityProfile struct {
 	RegistrationConfig      *RegistrationConfig                  `json:"registrationConfig,omitempty" tfsdk:"registration_config"`
 	FieldConfig             *FieldConfig                         `json:"fieldConfig,omitempty" tfsdk:"field_config"`
 	EmailVerificationConfig *EmailVerificationConfig             `json:"emailVerificationConfig,omitempty" tfsdk:"email_verification_config"`
-	DataStoreConfig         *DataStoreConfig                     `json:"dataStoreConfig,omitempty" tfsdk:"data_store_config"`
+	DataStoreConfig         *LdapDataStoreConfig                 `json:"dataStoreConfig,omitempty" tfsdk:"data_store_config"`
 	ProfileConfig           *ProfileConfig                       `json:"profileConfig,omitempty" tfsdk:"profile_config"`
 	// Whether the registration configuration is enabled or not.
 	RegistrationEnabled *bool `json:"registrationEnabled,omitempty" tfsdk:"registration_enabled"`
@@ -300,9 +300,9 @@ func (o *LocalIdentityProfile) SetEmailVerificationConfig(v EmailVerificationCon
 }
 
 // GetDataStoreConfig returns the DataStoreConfig field value if set, zero value otherwise.
-func (o *LocalIdentityProfile) GetDataStoreConfig() DataStoreConfig {
+func (o *LocalIdentityProfile) GetDataStoreConfig() LdapDataStoreConfig {
 	if o == nil || IsNil(o.DataStoreConfig) {
-		var ret DataStoreConfig
+		var ret LdapDataStoreConfig
 		return ret
 	}
 	return *o.DataStoreConfig
@@ -310,7 +310,7 @@ func (o *LocalIdentityProfile) GetDataStoreConfig() DataStoreConfig {
 
 // GetDataStoreConfigOk returns a tuple with the DataStoreConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LocalIdentityProfile) GetDataStoreConfigOk() (*DataStoreConfig, bool) {
+func (o *LocalIdentityProfile) GetDataStoreConfigOk() (*LdapDataStoreConfig, bool) {
 	if o == nil || IsNil(o.DataStoreConfig) {
 		return nil, false
 	}
@@ -326,8 +326,8 @@ func (o *LocalIdentityProfile) HasDataStoreConfig() bool {
 	return false
 }
 
-// SetDataStoreConfig gets a reference to the given DataStoreConfig and assigns it to the DataStoreConfig field.
-func (o *LocalIdentityProfile) SetDataStoreConfig(v DataStoreConfig) {
+// SetDataStoreConfig gets a reference to the given LdapDataStoreConfig and assigns it to the DataStoreConfig field.
+func (o *LocalIdentityProfile) SetDataStoreConfig(v LdapDataStoreConfig) {
 	o.DataStoreConfig = &v
 }
 
