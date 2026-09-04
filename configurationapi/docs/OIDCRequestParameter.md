@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | Request parameter name. | 
-**AttributeValue** | [**AttributeFulfillmentValue**](AttributeFulfillmentValue.md) |  | 
 **Value** | Pointer to **string** | A request parameter value. A parameter can have either a value or a attribute value but not both. Value set here will be converted to an attribute value of source type TEXT. An empty value will be converted to attribute value of source type NO_MAPPING. | [optional] 
+**AttributeValue** | [**AttributeFulfillmentValue**](AttributeFulfillmentValue.md) |  | 
 **ApplicationEndpointOverride** | **bool** | Indicates whether the parameter value can be overridden by an Application Endpoint parameter | 
 
 ## Methods
@@ -48,26 +48,6 @@ and a boolean to check if the value has been set.
 SetName sets Name field to given value.
 
 
-### GetAttributeValue
-
-`func (o *OIDCRequestParameter) GetAttributeValue() AttributeFulfillmentValue`
-
-GetAttributeValue returns the AttributeValue field if non-nil, zero value otherwise.
-
-### GetAttributeValueOk
-
-`func (o *OIDCRequestParameter) GetAttributeValueOk() (*AttributeFulfillmentValue, bool)`
-
-GetAttributeValueOk returns a tuple with the AttributeValue field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAttributeValue
-
-`func (o *OIDCRequestParameter) SetAttributeValue(v AttributeFulfillmentValue)`
-
-SetAttributeValue sets AttributeValue field to given value.
-
-
 ### GetValue
 
 `func (o *OIDCRequestParameter) GetValue() string`
@@ -92,6 +72,26 @@ SetValue sets Value field to given value.
 `func (o *OIDCRequestParameter) HasValue() bool`
 
 HasValue returns a boolean if a field has been set.
+
+### GetAttributeValue
+
+`func (o *OIDCRequestParameter) GetAttributeValue() AttributeFulfillmentValue`
+
+GetAttributeValue returns the AttributeValue field if non-nil, zero value otherwise.
+
+### GetAttributeValueOk
+
+`func (o *OIDCRequestParameter) GetAttributeValueOk() (*AttributeFulfillmentValue, bool)`
+
+GetAttributeValueOk returns a tuple with the AttributeValue field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributeValue
+
+`func (o *OIDCRequestParameter) SetAttributeValue(v AttributeFulfillmentValue)`
+
+SetAttributeValue sets AttributeValue field to given value.
+
 
 ### GetApplicationEndpointOverride
 

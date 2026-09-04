@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **EnableOauth** | Pointer to **bool** | Enable OAuth 2.0 Authorization Server (AS) Role. | [optional] 
 **EnableOpenIdConnect** | Pointer to **bool** | Enable Open ID Connect. | [optional] 
+**Enable** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -75,6 +76,31 @@ SetEnableOpenIdConnect sets EnableOpenIdConnect field to given value.
 `func (o *OAuthRole) HasEnableOpenIdConnect() bool`
 
 HasEnableOpenIdConnect returns a boolean if a field has been set.
+
+### GetEnable
+
+`func (o *OAuthRole) GetEnable() bool`
+
+GetEnable returns the Enable field if non-nil, zero value otherwise.
+
+### GetEnableOk
+
+`func (o *OAuthRole) GetEnableOk() (*bool, bool)`
+
+GetEnableOk returns a tuple with the Enable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnable
+
+`func (o *OAuthRole) SetEnable(v bool)`
+
+SetEnable sets Enable field to given value.
+
+### HasEnable
+
+`func (o *OAuthRole) HasEnable() bool`
+
+HasEnable returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

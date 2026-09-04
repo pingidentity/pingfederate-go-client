@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**RootNode** | [**AuthenticationPolicyTreeNode**](AuthenticationPolicyTreeNode.md) |  | 
 **Id** | Pointer to **string** | The authentication policy ID. ID is unique. | [optional] 
 **Name** | Pointer to **string** | The authentication policy name. Name is unique. | [optional] 
 **Description** | Pointer to **string** | A description for the authentication policy. | [optional] 
-**AuthenticationApiApplicationRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **Enabled** | Pointer to **bool** | Whether or not this authentication policy tree is enabled. Default is true. | [optional] 
-**RootNode** | [**AuthenticationPolicyTreeNode**](AuthenticationPolicyTreeNode.md) |  | 
+**AuthenticationApiApplicationRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **HandleFailuresLocally** | Pointer to **bool** | If a policy ends in failure keep the user local. | [optional] 
 
 ## Methods
@@ -30,6 +30,26 @@ will change when the set of required properties is changed
 NewAuthenticationPolicyTreeWithDefaults instantiates a new AuthenticationPolicyTree object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetRootNode
+
+`func (o *AuthenticationPolicyTree) GetRootNode() AuthenticationPolicyTreeNode`
+
+GetRootNode returns the RootNode field if non-nil, zero value otherwise.
+
+### GetRootNodeOk
+
+`func (o *AuthenticationPolicyTree) GetRootNodeOk() (*AuthenticationPolicyTreeNode, bool)`
+
+GetRootNodeOk returns a tuple with the RootNode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRootNode
+
+`func (o *AuthenticationPolicyTree) SetRootNode(v AuthenticationPolicyTreeNode)`
+
+SetRootNode sets RootNode field to given value.
+
 
 ### GetId
 
@@ -106,31 +126,6 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
-### GetAuthenticationApiApplicationRef
-
-`func (o *AuthenticationPolicyTree) GetAuthenticationApiApplicationRef() ResourceLink`
-
-GetAuthenticationApiApplicationRef returns the AuthenticationApiApplicationRef field if non-nil, zero value otherwise.
-
-### GetAuthenticationApiApplicationRefOk
-
-`func (o *AuthenticationPolicyTree) GetAuthenticationApiApplicationRefOk() (*ResourceLink, bool)`
-
-GetAuthenticationApiApplicationRefOk returns a tuple with the AuthenticationApiApplicationRef field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAuthenticationApiApplicationRef
-
-`func (o *AuthenticationPolicyTree) SetAuthenticationApiApplicationRef(v ResourceLink)`
-
-SetAuthenticationApiApplicationRef sets AuthenticationApiApplicationRef field to given value.
-
-### HasAuthenticationApiApplicationRef
-
-`func (o *AuthenticationPolicyTree) HasAuthenticationApiApplicationRef() bool`
-
-HasAuthenticationApiApplicationRef returns a boolean if a field has been set.
-
 ### GetEnabled
 
 `func (o *AuthenticationPolicyTree) GetEnabled() bool`
@@ -156,25 +151,30 @@ SetEnabled sets Enabled field to given value.
 
 HasEnabled returns a boolean if a field has been set.
 
-### GetRootNode
+### GetAuthenticationApiApplicationRef
 
-`func (o *AuthenticationPolicyTree) GetRootNode() AuthenticationPolicyTreeNode`
+`func (o *AuthenticationPolicyTree) GetAuthenticationApiApplicationRef() ResourceLink`
 
-GetRootNode returns the RootNode field if non-nil, zero value otherwise.
+GetAuthenticationApiApplicationRef returns the AuthenticationApiApplicationRef field if non-nil, zero value otherwise.
 
-### GetRootNodeOk
+### GetAuthenticationApiApplicationRefOk
 
-`func (o *AuthenticationPolicyTree) GetRootNodeOk() (*AuthenticationPolicyTreeNode, bool)`
+`func (o *AuthenticationPolicyTree) GetAuthenticationApiApplicationRefOk() (*ResourceLink, bool)`
 
-GetRootNodeOk returns a tuple with the RootNode field if it's non-nil, zero value otherwise
+GetAuthenticationApiApplicationRefOk returns a tuple with the AuthenticationApiApplicationRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRootNode
+### SetAuthenticationApiApplicationRef
 
-`func (o *AuthenticationPolicyTree) SetRootNode(v AuthenticationPolicyTreeNode)`
+`func (o *AuthenticationPolicyTree) SetAuthenticationApiApplicationRef(v ResourceLink)`
 
-SetRootNode sets RootNode field to given value.
+SetAuthenticationApiApplicationRef sets AuthenticationApiApplicationRef field to given value.
 
+### HasAuthenticationApiApplicationRef
+
+`func (o *AuthenticationPolicyTree) HasAuthenticationApiApplicationRef() bool`
+
+HasAuthenticationApiApplicationRef returns a boolean if a field has been set.
 
 ### GetHandleFailuresLocally
 

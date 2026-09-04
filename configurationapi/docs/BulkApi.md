@@ -97,7 +97,7 @@ import (
 
 func main() {
     body := *openapiclient.NewBulkConfig(*openapiclient.NewBulkConfigMetadata("PfVersion_example"), []openapiclient.ConfigOperation{*openapiclient.NewConfigOperation("ResourceType_example", "OperationType_example")}) // BulkConfig | Configuration to import.
-    failFast := true // bool | When set to true, stops the import as soon as any validation errors are encountered. When false, import will continue to validate configuration after the first failure to identify all validation errors. If any validation errors are present PingFederate will roll back to the state prior to the import attempt. (optional) (default to true)
+    failFast := true // bool | When set to true, stops the import as soon as any validation errors are encountered. When false, import will continue to validate configuration after the first failure to identify all validation errors. If any validation errors are present PingFederate will roll back to the state prior to the import attempt.  (optional) (default to true)
     xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
@@ -122,7 +122,7 @@ Other parameters are passed through a pointer to a apiImportConfigurationRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**BulkConfig**](BulkConfig.md) | Configuration to import. | 
- **failFast** | **bool** | When set to true, stops the import as soon as any validation errors are encountered. When false, import will continue to validate configuration after the first failure to identify all validation errors. If any validation errors are present PingFederate will roll back to the state prior to the import attempt. | [default to true]
+ **failFast** | **bool** | When set to true, stops the import as soon as any validation errors are encountered. When false, import will continue to validate configuration after the first failure to identify all validation errors. If any validation errors are present PingFederate will roll back to the state prior to the import attempt.  | [default to true]
  **xBypassExternalValidation** | **bool** | External validation will be bypassed when set to true. Default to false. | [default to false]
 
 ### Return type

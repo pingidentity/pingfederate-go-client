@@ -4,10 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IncludeSessionId** | Pointer to **bool** | Include the session identifier in the access token. Note that if any of the session validation features is enabled, the session identifier will already be included in the access tokens. | [optional] 
+**Inherited** | Pointer to **bool** | If this token manager has a parent, this flag determines whether session validation settings, such as checkValidAuthnSession, are inherited from the parent. When set to true, the other fields in this model become read-only. The default value is false. | [optional] 
 **CheckValidAuthnSession** | Pointer to **bool** | Check for a valid authentication session when validating the access token. | [optional] 
 **CheckSessionRevocationStatus** | Pointer to **bool** | Check the session revocation status when validating the access token. | [optional] 
 **UpdateAuthnSessionActivity** | Pointer to **bool** | Update authentication session activity when validating the access token. | [optional] 
+**IncludeSessionId** | Pointer to **bool** | Include the session identifier in the access token. Note that if any of the session validation features is enabled, the session identifier will already be included in the access tokens. | [optional] 
 
 ## Methods
 
@@ -28,30 +29,30 @@ NewSessionValidationSettingsWithDefaults instantiates a new SessionValidationSet
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetIncludeSessionId
+### GetInherited
 
-`func (o *SessionValidationSettings) GetIncludeSessionId() bool`
+`func (o *SessionValidationSettings) GetInherited() bool`
 
-GetIncludeSessionId returns the IncludeSessionId field if non-nil, zero value otherwise.
+GetInherited returns the Inherited field if non-nil, zero value otherwise.
 
-### GetIncludeSessionIdOk
+### GetInheritedOk
 
-`func (o *SessionValidationSettings) GetIncludeSessionIdOk() (*bool, bool)`
+`func (o *SessionValidationSettings) GetInheritedOk() (*bool, bool)`
 
-GetIncludeSessionIdOk returns a tuple with the IncludeSessionId field if it's non-nil, zero value otherwise
+GetInheritedOk returns a tuple with the Inherited field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIncludeSessionId
+### SetInherited
 
-`func (o *SessionValidationSettings) SetIncludeSessionId(v bool)`
+`func (o *SessionValidationSettings) SetInherited(v bool)`
 
-SetIncludeSessionId sets IncludeSessionId field to given value.
+SetInherited sets Inherited field to given value.
 
-### HasIncludeSessionId
+### HasInherited
 
-`func (o *SessionValidationSettings) HasIncludeSessionId() bool`
+`func (o *SessionValidationSettings) HasInherited() bool`
 
-HasIncludeSessionId returns a boolean if a field has been set.
+HasInherited returns a boolean if a field has been set.
 
 ### GetCheckValidAuthnSession
 
@@ -127,6 +128,31 @@ SetUpdateAuthnSessionActivity sets UpdateAuthnSessionActivity field to given val
 `func (o *SessionValidationSettings) HasUpdateAuthnSessionActivity() bool`
 
 HasUpdateAuthnSessionActivity returns a boolean if a field has been set.
+
+### GetIncludeSessionId
+
+`func (o *SessionValidationSettings) GetIncludeSessionId() bool`
+
+GetIncludeSessionId returns the IncludeSessionId field if non-nil, zero value otherwise.
+
+### GetIncludeSessionIdOk
+
+`func (o *SessionValidationSettings) GetIncludeSessionIdOk() (*bool, bool)`
+
+GetIncludeSessionIdOk returns a tuple with the IncludeSessionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeSessionId
+
+`func (o *SessionValidationSettings) SetIncludeSessionId(v bool)`
+
+SetIncludeSessionId sets IncludeSessionId field to given value.
+
+### HasIncludeSessionId
+
+`func (o *SessionValidationSettings) HasIncludeSessionId() bool`
+
+HasIncludeSessionId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

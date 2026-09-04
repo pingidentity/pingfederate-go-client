@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The authentication selection type. | 
 **Context** | Pointer to **string** | The result context. | [optional] 
+**Type** | **string** | The authentication selection type. | 
 **AuthenticationSelectorRef** | [**ResourceLink**](ResourceLink.md) |  | 
-**AttributeRules** | Pointer to [**AttributeRules**](AttributeRules.md) |  | [optional] 
 **AuthenticationSource** | [**AuthenticationSource**](AuthenticationSource.md) |  | 
 **InputUserIdMapping** | Pointer to [**AttributeFulfillmentValue**](AttributeFulfillmentValue.md) |  | [optional] 
 **UserIdAuthenticated** | Pointer to **bool** | Indicates whether the user ID obtained by the user ID mapping is authenticated. | [optional] 
+**AttributeRules** | Pointer to [**AttributeRules**](AttributeRules.md) |  | [optional] 
 **Fragment** | [**ResourceLink**](ResourceLink.md) |  | 
 **FragmentMapping** | Pointer to [**AttributeMapping**](AttributeMapping.md) |  | [optional] 
 **LocalIdentityRef** | [**ResourceLink**](ResourceLink.md) |  | 
@@ -35,26 +35,6 @@ will change when the set of required properties is changed
 NewPolicyActionAggregationWithDefaults instantiates a new PolicyActionAggregation object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetType
-
-`func (o *PolicyActionAggregation) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *PolicyActionAggregation) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *PolicyActionAggregation) SetType(v string)`
-
-SetType sets Type field to given value.
-
 
 ### GetContext
 
@@ -81,6 +61,26 @@ SetContext sets Context field to given value.
 
 HasContext returns a boolean if a field has been set.
 
+### GetType
+
+`func (o *PolicyActionAggregation) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *PolicyActionAggregation) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *PolicyActionAggregation) SetType(v string)`
+
+SetType sets Type field to given value.
+
+
 ### GetAuthenticationSelectorRef
 
 `func (o *PolicyActionAggregation) GetAuthenticationSelectorRef() ResourceLink`
@@ -100,31 +100,6 @@ and a boolean to check if the value has been set.
 
 SetAuthenticationSelectorRef sets AuthenticationSelectorRef field to given value.
 
-
-### GetAttributeRules
-
-`func (o *PolicyActionAggregation) GetAttributeRules() AttributeRules`
-
-GetAttributeRules returns the AttributeRules field if non-nil, zero value otherwise.
-
-### GetAttributeRulesOk
-
-`func (o *PolicyActionAggregation) GetAttributeRulesOk() (*AttributeRules, bool)`
-
-GetAttributeRulesOk returns a tuple with the AttributeRules field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAttributeRules
-
-`func (o *PolicyActionAggregation) SetAttributeRules(v AttributeRules)`
-
-SetAttributeRules sets AttributeRules field to given value.
-
-### HasAttributeRules
-
-`func (o *PolicyActionAggregation) HasAttributeRules() bool`
-
-HasAttributeRules returns a boolean if a field has been set.
 
 ### GetAuthenticationSource
 
@@ -195,6 +170,31 @@ SetUserIdAuthenticated sets UserIdAuthenticated field to given value.
 `func (o *PolicyActionAggregation) HasUserIdAuthenticated() bool`
 
 HasUserIdAuthenticated returns a boolean if a field has been set.
+
+### GetAttributeRules
+
+`func (o *PolicyActionAggregation) GetAttributeRules() AttributeRules`
+
+GetAttributeRules returns the AttributeRules field if non-nil, zero value otherwise.
+
+### GetAttributeRulesOk
+
+`func (o *PolicyActionAggregation) GetAttributeRulesOk() (*AttributeRules, bool)`
+
+GetAttributeRulesOk returns a tuple with the AttributeRules field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributeRules
+
+`func (o *PolicyActionAggregation) SetAttributeRules(v AttributeRules)`
+
+SetAttributeRules sets AttributeRules field to given value.
+
+### HasAttributeRules
+
+`func (o *PolicyActionAggregation) HasAttributeRules() bool`
+
+HasAttributeRules returns a boolean if a field has been set.
 
 ### GetFragment
 

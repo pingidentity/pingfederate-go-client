@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CertView** | Pointer to [**CertView**](CertView.md) |  | [optional] 
-**X509File** | [**X509File**](X509File.md) |  | 
-**ActiveVerificationCert** | Pointer to **bool** | Indicates whether this is an active signature verification certificate. | [optional] 
 **PrimaryVerificationCert** | Pointer to **bool** | Indicates whether this is the primary signature verification certificate. Only one certificate in the collection can have this flag set. | [optional] 
 **SecondaryVerificationCert** | Pointer to **bool** | Indicates whether this is the secondary signature verification certificate. Only one certificate in the collection can have this flag set. | [optional] 
+**CertView** | Pointer to [**CertView**](CertView.md) |  | [optional] 
+**X509File** | [**X509File**](X509File.md) |  | 
 **EncryptionCert** | Pointer to **bool** | Indicates whether to use this cert to encrypt outgoing assertions. Only one certificate in the collection can have this flag set. | [optional] 
+**ActiveVerificationCert** | Pointer to **bool** | Indicates whether this is an active signature verification certificate. | [optional] 
 
 ## Methods
 
@@ -29,76 +29,6 @@ will change when the set of required properties is changed
 NewConnectionCertWithDefaults instantiates a new ConnectionCert object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetCertView
-
-`func (o *ConnectionCert) GetCertView() CertView`
-
-GetCertView returns the CertView field if non-nil, zero value otherwise.
-
-### GetCertViewOk
-
-`func (o *ConnectionCert) GetCertViewOk() (*CertView, bool)`
-
-GetCertViewOk returns a tuple with the CertView field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCertView
-
-`func (o *ConnectionCert) SetCertView(v CertView)`
-
-SetCertView sets CertView field to given value.
-
-### HasCertView
-
-`func (o *ConnectionCert) HasCertView() bool`
-
-HasCertView returns a boolean if a field has been set.
-
-### GetX509File
-
-`func (o *ConnectionCert) GetX509File() X509File`
-
-GetX509File returns the X509File field if non-nil, zero value otherwise.
-
-### GetX509FileOk
-
-`func (o *ConnectionCert) GetX509FileOk() (*X509File, bool)`
-
-GetX509FileOk returns a tuple with the X509File field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetX509File
-
-`func (o *ConnectionCert) SetX509File(v X509File)`
-
-SetX509File sets X509File field to given value.
-
-
-### GetActiveVerificationCert
-
-`func (o *ConnectionCert) GetActiveVerificationCert() bool`
-
-GetActiveVerificationCert returns the ActiveVerificationCert field if non-nil, zero value otherwise.
-
-### GetActiveVerificationCertOk
-
-`func (o *ConnectionCert) GetActiveVerificationCertOk() (*bool, bool)`
-
-GetActiveVerificationCertOk returns a tuple with the ActiveVerificationCert field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetActiveVerificationCert
-
-`func (o *ConnectionCert) SetActiveVerificationCert(v bool)`
-
-SetActiveVerificationCert sets ActiveVerificationCert field to given value.
-
-### HasActiveVerificationCert
-
-`func (o *ConnectionCert) HasActiveVerificationCert() bool`
-
-HasActiveVerificationCert returns a boolean if a field has been set.
 
 ### GetPrimaryVerificationCert
 
@@ -150,6 +80,51 @@ SetSecondaryVerificationCert sets SecondaryVerificationCert field to given value
 
 HasSecondaryVerificationCert returns a boolean if a field has been set.
 
+### GetCertView
+
+`func (o *ConnectionCert) GetCertView() CertView`
+
+GetCertView returns the CertView field if non-nil, zero value otherwise.
+
+### GetCertViewOk
+
+`func (o *ConnectionCert) GetCertViewOk() (*CertView, bool)`
+
+GetCertViewOk returns a tuple with the CertView field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCertView
+
+`func (o *ConnectionCert) SetCertView(v CertView)`
+
+SetCertView sets CertView field to given value.
+
+### HasCertView
+
+`func (o *ConnectionCert) HasCertView() bool`
+
+HasCertView returns a boolean if a field has been set.
+
+### GetX509File
+
+`func (o *ConnectionCert) GetX509File() X509File`
+
+GetX509File returns the X509File field if non-nil, zero value otherwise.
+
+### GetX509FileOk
+
+`func (o *ConnectionCert) GetX509FileOk() (*X509File, bool)`
+
+GetX509FileOk returns a tuple with the X509File field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetX509File
+
+`func (o *ConnectionCert) SetX509File(v X509File)`
+
+SetX509File sets X509File field to given value.
+
+
 ### GetEncryptionCert
 
 `func (o *ConnectionCert) GetEncryptionCert() bool`
@@ -174,6 +149,31 @@ SetEncryptionCert sets EncryptionCert field to given value.
 `func (o *ConnectionCert) HasEncryptionCert() bool`
 
 HasEncryptionCert returns a boolean if a field has been set.
+
+### GetActiveVerificationCert
+
+`func (o *ConnectionCert) GetActiveVerificationCert() bool`
+
+GetActiveVerificationCert returns the ActiveVerificationCert field if non-nil, zero value otherwise.
+
+### GetActiveVerificationCertOk
+
+`func (o *ConnectionCert) GetActiveVerificationCertOk() (*bool, bool)`
+
+GetActiveVerificationCertOk returns a tuple with the ActiveVerificationCert field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetActiveVerificationCert
+
+`func (o *ConnectionCert) SetActiveVerificationCert(v bool)`
+
+SetActiveVerificationCert sets ActiveVerificationCert field to given value.
+
+### HasActiveVerificationCert
+
+`func (o *ConnectionCert) HasActiveVerificationCert() bool`
+
+HasActiveVerificationCert returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

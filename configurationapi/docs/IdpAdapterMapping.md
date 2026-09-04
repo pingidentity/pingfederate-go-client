@@ -4,17 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | The ID of the adapter mapping. | 
-**IdpAdapterRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **AttributeSources** | Pointer to [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) | A list of configured data stores to look up attributes from. | [optional] 
 **AttributeContractFulfillment** | [**map[string]AttributeFulfillmentValue**](AttributeFulfillmentValue.md) | A list of mappings from attribute names to their fulfillment values. | 
 **IssuanceCriteria** | Pointer to [**IssuanceCriteria**](IssuanceCriteria.md) |  | [optional] 
+**Id** | **string** | The ID of the adapter mapping. | 
+**IdpAdapterRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
+**AttributeSource** | Pointer to [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) |  | [optional] 
 
 ## Methods
 
 ### NewIdpAdapterMapping
 
-`func NewIdpAdapterMapping(id string, attributeContractFulfillment map[string]AttributeFulfillmentValue, ) *IdpAdapterMapping`
+`func NewIdpAdapterMapping(attributeContractFulfillment map[string]AttributeFulfillmentValue, id string, ) *IdpAdapterMapping`
 
 NewIdpAdapterMapping instantiates a new IdpAdapterMapping object
 This constructor will assign default values to properties that have it defined,
@@ -28,51 +29,6 @@ will change when the set of required properties is changed
 NewIdpAdapterMappingWithDefaults instantiates a new IdpAdapterMapping object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *IdpAdapterMapping) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *IdpAdapterMapping) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *IdpAdapterMapping) SetId(v string)`
-
-SetId sets Id field to given value.
-
-
-### GetIdpAdapterRef
-
-`func (o *IdpAdapterMapping) GetIdpAdapterRef() ResourceLink`
-
-GetIdpAdapterRef returns the IdpAdapterRef field if non-nil, zero value otherwise.
-
-### GetIdpAdapterRefOk
-
-`func (o *IdpAdapterMapping) GetIdpAdapterRefOk() (*ResourceLink, bool)`
-
-GetIdpAdapterRefOk returns a tuple with the IdpAdapterRef field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIdpAdapterRef
-
-`func (o *IdpAdapterMapping) SetIdpAdapterRef(v ResourceLink)`
-
-SetIdpAdapterRef sets IdpAdapterRef field to given value.
-
-### HasIdpAdapterRef
-
-`func (o *IdpAdapterMapping) HasIdpAdapterRef() bool`
-
-HasIdpAdapterRef returns a boolean if a field has been set.
 
 ### GetAttributeSources
 
@@ -143,6 +99,76 @@ SetIssuanceCriteria sets IssuanceCriteria field to given value.
 `func (o *IdpAdapterMapping) HasIssuanceCriteria() bool`
 
 HasIssuanceCriteria returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *IdpAdapterMapping) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *IdpAdapterMapping) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *IdpAdapterMapping) SetId(v string)`
+
+SetId sets Id field to given value.
+
+
+### GetIdpAdapterRef
+
+`func (o *IdpAdapterMapping) GetIdpAdapterRef() ResourceLink`
+
+GetIdpAdapterRef returns the IdpAdapterRef field if non-nil, zero value otherwise.
+
+### GetIdpAdapterRefOk
+
+`func (o *IdpAdapterMapping) GetIdpAdapterRefOk() (*ResourceLink, bool)`
+
+GetIdpAdapterRefOk returns a tuple with the IdpAdapterRef field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIdpAdapterRef
+
+`func (o *IdpAdapterMapping) SetIdpAdapterRef(v ResourceLink)`
+
+SetIdpAdapterRef sets IdpAdapterRef field to given value.
+
+### HasIdpAdapterRef
+
+`func (o *IdpAdapterMapping) HasIdpAdapterRef() bool`
+
+HasIdpAdapterRef returns a boolean if a field has been set.
+
+### GetAttributeSource
+
+`func (o *IdpAdapterMapping) GetAttributeSource() []AttributeSourceAggregation`
+
+GetAttributeSource returns the AttributeSource field if non-nil, zero value otherwise.
+
+### GetAttributeSourceOk
+
+`func (o *IdpAdapterMapping) GetAttributeSourceOk() (*[]AttributeSourceAggregation, bool)`
+
+GetAttributeSourceOk returns a tuple with the AttributeSource field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributeSource
+
+`func (o *IdpAdapterMapping) SetAttributeSource(v []AttributeSourceAggregation)`
+
+SetAttributeSource sets AttributeSource field to given value.
+
+### HasAttributeSource
+
+`func (o *IdpAdapterMapping) HasAttributeSource() bool`
+
+HasAttributeSource returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

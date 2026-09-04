@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **IdpRole** | Pointer to [**IdpRole**](IdpRole.md) |  | [optional] 
 **SpRole** | Pointer to [**SpRole**](SpRole.md) |  | [optional] 
 **EnableIdpDiscovery** | Pointer to **bool** | Enable IdP Discovery. | [optional] 
+**OAuthRole** | Pointer to [**OAuthRole**](OAuthRole.md) |  | [optional] 
 
 ## Methods
 
@@ -127,6 +128,31 @@ SetEnableIdpDiscovery sets EnableIdpDiscovery field to given value.
 `func (o *RolesAndProtocols) HasEnableIdpDiscovery() bool`
 
 HasEnableIdpDiscovery returns a boolean if a field has been set.
+
+### GetOAuthRole
+
+`func (o *RolesAndProtocols) GetOAuthRole() OAuthRole`
+
+GetOAuthRole returns the OAuthRole field if non-nil, zero value otherwise.
+
+### GetOAuthRoleOk
+
+`func (o *RolesAndProtocols) GetOAuthRoleOk() (*OAuthRole, bool)`
+
+GetOAuthRoleOk returns a tuple with the OAuthRole field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOAuthRole
+
+`func (o *RolesAndProtocols) SetOAuthRole(v OAuthRole)`
+
+SetOAuthRole sets OAuthRole field to given value.
+
+### HasOAuthRole
+
+`func (o *RolesAndProtocols) HasOAuthRole() bool`
+
+HasOAuthRole returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

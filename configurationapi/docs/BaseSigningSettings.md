@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SigningKeyPairRef** | [**ResourceLink**](ResourceLink.md) |  | 
-**Algorithm** | Pointer to **string** | The algorithm used to sign messages sent to this partner. The default is SHA1withDSA for DSA certs, SHA256withRSA for RSA certs, and SHA256withECDSA for EC certs. For RSA certs, SHA1withRSA, SHA384withRSA, SHA512withRSA, SHA256withRSAandMGF1, SHA384withRSAandMGF1 and SHA512withRSAandMGF1 are also supported. For EC certs, SHA384withECDSA and SHA512withECDSA are also supported. If the connection is WS-Federation with JWT token type, then the possible values are RSA SHA256, RSA SHA384, RSA SHA512, RSASSA-PSS SHA256, RSASSA-PSS SHA384, RSASSA-PSS SHA512, ECDSA SHA256, ECDSA SHA384, ECDSA SHA512 | [optional] 
 **IncludeCertInSignature** | Pointer to **bool** | Determines whether the signing certificate is included in the signature &lt;KeyInfo&gt; element. | [optional] 
 **IncludeRawKeyInSignature** | Pointer to **bool** | Determines whether the &lt;KeyValue&gt; element with the raw public key is included in the signature &lt;KeyInfo&gt; element. | [optional] 
+**Algorithm** | Pointer to **string** | The algorithm used to sign messages sent to this partner. The default is SHA1withDSA for DSA certs, SHA256withRSA for RSA certs, and SHA256withECDSA for EC certs. For RSA certs, SHA1withRSA, SHA384withRSA, SHA512withRSA, SHA256withRSAandMGF1, SHA384withRSAandMGF1 and SHA512withRSAandMGF1 are also supported. For EC certs, SHA384withECDSA and SHA512withECDSA are also supported. If the connection is WS-Federation with JWT token type, then the possible values are RSA SHA256, RSA SHA384, RSA SHA512, RSASSA-PSS SHA256, RSASSA-PSS SHA384, RSASSA-PSS SHA512, ECDSA SHA256, ECDSA SHA384, ECDSA SHA512 | [optional] 
 
 ## Methods
 
@@ -47,31 +47,6 @@ and a boolean to check if the value has been set.
 
 SetSigningKeyPairRef sets SigningKeyPairRef field to given value.
 
-
-### GetAlgorithm
-
-`func (o *BaseSigningSettings) GetAlgorithm() string`
-
-GetAlgorithm returns the Algorithm field if non-nil, zero value otherwise.
-
-### GetAlgorithmOk
-
-`func (o *BaseSigningSettings) GetAlgorithmOk() (*string, bool)`
-
-GetAlgorithmOk returns a tuple with the Algorithm field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAlgorithm
-
-`func (o *BaseSigningSettings) SetAlgorithm(v string)`
-
-SetAlgorithm sets Algorithm field to given value.
-
-### HasAlgorithm
-
-`func (o *BaseSigningSettings) HasAlgorithm() bool`
-
-HasAlgorithm returns a boolean if a field has been set.
 
 ### GetIncludeCertInSignature
 
@@ -122,6 +97,31 @@ SetIncludeRawKeyInSignature sets IncludeRawKeyInSignature field to given value.
 `func (o *BaseSigningSettings) HasIncludeRawKeyInSignature() bool`
 
 HasIncludeRawKeyInSignature returns a boolean if a field has been set.
+
+### GetAlgorithm
+
+`func (o *BaseSigningSettings) GetAlgorithm() string`
+
+GetAlgorithm returns the Algorithm field if non-nil, zero value otherwise.
+
+### GetAlgorithmOk
+
+`func (o *BaseSigningSettings) GetAlgorithmOk() (*string, bool)`
+
+GetAlgorithmOk returns a tuple with the Algorithm field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlgorithm
+
+`func (o *BaseSigningSettings) SetAlgorithm(v string)`
+
+SetAlgorithm sets Algorithm field to given value.
+
+### HasAlgorithm
+
+`func (o *BaseSigningSettings) HasAlgorithm() bool`
+
+HasAlgorithm returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

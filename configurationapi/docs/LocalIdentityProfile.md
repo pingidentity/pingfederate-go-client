@@ -9,12 +9,12 @@ Name | Type | Description | Notes
 **ApcId** | [**ResourceLink**](ResourceLink.md) |  | 
 **AuthSources** | Pointer to [**[]LocalIdentityAuthSource**](LocalIdentityAuthSource.md) | The local identity authentication sources. Sources are unique. | [optional] 
 **AuthSourceUpdatePolicy** | Pointer to [**LocalIdentityAuthSourceUpdatePolicy**](LocalIdentityAuthSourceUpdatePolicy.md) |  | [optional] 
-**RegistrationEnabled** | Pointer to **bool** | Whether the registration configuration is enabled or not. | [optional] 
 **RegistrationConfig** | Pointer to [**RegistrationConfig**](RegistrationConfig.md) |  | [optional] 
-**ProfileConfig** | Pointer to [**ProfileConfig**](ProfileConfig.md) |  | [optional] 
 **FieldConfig** | Pointer to [**FieldConfig**](FieldConfig.md) |  | [optional] 
 **EmailVerificationConfig** | Pointer to [**EmailVerificationConfig**](EmailVerificationConfig.md) |  | [optional] 
-**DataStoreConfig** | Pointer to [**LdapDataStoreConfig**](LdapDataStoreConfig.md) |  | [optional] 
+**DataStoreConfig** | Pointer to [**DataStoreConfig**](DataStoreConfig.md) |  | [optional] 
+**ProfileConfig** | Pointer to [**ProfileConfig**](ProfileConfig.md) |  | [optional] 
+**RegistrationEnabled** | Pointer to **bool** | Whether the registration configuration is enabled or not. | [optional] 
 **ProfileEnabled** | Pointer to **bool** | Whether the profile configuration is enabled or not. | [optional] 
 
 ## Methods
@@ -151,31 +151,6 @@ SetAuthSourceUpdatePolicy sets AuthSourceUpdatePolicy field to given value.
 
 HasAuthSourceUpdatePolicy returns a boolean if a field has been set.
 
-### GetRegistrationEnabled
-
-`func (o *LocalIdentityProfile) GetRegistrationEnabled() bool`
-
-GetRegistrationEnabled returns the RegistrationEnabled field if non-nil, zero value otherwise.
-
-### GetRegistrationEnabledOk
-
-`func (o *LocalIdentityProfile) GetRegistrationEnabledOk() (*bool, bool)`
-
-GetRegistrationEnabledOk returns a tuple with the RegistrationEnabled field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRegistrationEnabled
-
-`func (o *LocalIdentityProfile) SetRegistrationEnabled(v bool)`
-
-SetRegistrationEnabled sets RegistrationEnabled field to given value.
-
-### HasRegistrationEnabled
-
-`func (o *LocalIdentityProfile) HasRegistrationEnabled() bool`
-
-HasRegistrationEnabled returns a boolean if a field has been set.
-
 ### GetRegistrationConfig
 
 `func (o *LocalIdentityProfile) GetRegistrationConfig() RegistrationConfig`
@@ -200,31 +175,6 @@ SetRegistrationConfig sets RegistrationConfig field to given value.
 `func (o *LocalIdentityProfile) HasRegistrationConfig() bool`
 
 HasRegistrationConfig returns a boolean if a field has been set.
-
-### GetProfileConfig
-
-`func (o *LocalIdentityProfile) GetProfileConfig() ProfileConfig`
-
-GetProfileConfig returns the ProfileConfig field if non-nil, zero value otherwise.
-
-### GetProfileConfigOk
-
-`func (o *LocalIdentityProfile) GetProfileConfigOk() (*ProfileConfig, bool)`
-
-GetProfileConfigOk returns a tuple with the ProfileConfig field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProfileConfig
-
-`func (o *LocalIdentityProfile) SetProfileConfig(v ProfileConfig)`
-
-SetProfileConfig sets ProfileConfig field to given value.
-
-### HasProfileConfig
-
-`func (o *LocalIdentityProfile) HasProfileConfig() bool`
-
-HasProfileConfig returns a boolean if a field has been set.
 
 ### GetFieldConfig
 
@@ -278,20 +228,20 @@ HasEmailVerificationConfig returns a boolean if a field has been set.
 
 ### GetDataStoreConfig
 
-`func (o *LocalIdentityProfile) GetDataStoreConfig() LdapDataStoreConfig`
+`func (o *LocalIdentityProfile) GetDataStoreConfig() DataStoreConfig`
 
 GetDataStoreConfig returns the DataStoreConfig field if non-nil, zero value otherwise.
 
 ### GetDataStoreConfigOk
 
-`func (o *LocalIdentityProfile) GetDataStoreConfigOk() (*LdapDataStoreConfig, bool)`
+`func (o *LocalIdentityProfile) GetDataStoreConfigOk() (*DataStoreConfig, bool)`
 
 GetDataStoreConfigOk returns a tuple with the DataStoreConfig field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataStoreConfig
 
-`func (o *LocalIdentityProfile) SetDataStoreConfig(v LdapDataStoreConfig)`
+`func (o *LocalIdentityProfile) SetDataStoreConfig(v DataStoreConfig)`
 
 SetDataStoreConfig sets DataStoreConfig field to given value.
 
@@ -300,6 +250,56 @@ SetDataStoreConfig sets DataStoreConfig field to given value.
 `func (o *LocalIdentityProfile) HasDataStoreConfig() bool`
 
 HasDataStoreConfig returns a boolean if a field has been set.
+
+### GetProfileConfig
+
+`func (o *LocalIdentityProfile) GetProfileConfig() ProfileConfig`
+
+GetProfileConfig returns the ProfileConfig field if non-nil, zero value otherwise.
+
+### GetProfileConfigOk
+
+`func (o *LocalIdentityProfile) GetProfileConfigOk() (*ProfileConfig, bool)`
+
+GetProfileConfigOk returns a tuple with the ProfileConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProfileConfig
+
+`func (o *LocalIdentityProfile) SetProfileConfig(v ProfileConfig)`
+
+SetProfileConfig sets ProfileConfig field to given value.
+
+### HasProfileConfig
+
+`func (o *LocalIdentityProfile) HasProfileConfig() bool`
+
+HasProfileConfig returns a boolean if a field has been set.
+
+### GetRegistrationEnabled
+
+`func (o *LocalIdentityProfile) GetRegistrationEnabled() bool`
+
+GetRegistrationEnabled returns the RegistrationEnabled field if non-nil, zero value otherwise.
+
+### GetRegistrationEnabledOk
+
+`func (o *LocalIdentityProfile) GetRegistrationEnabledOk() (*bool, bool)`
+
+GetRegistrationEnabledOk returns a tuple with the RegistrationEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRegistrationEnabled
+
+`func (o *LocalIdentityProfile) SetRegistrationEnabled(v bool)`
+
+SetRegistrationEnabled sets RegistrationEnabled field to given value.
+
+### HasRegistrationEnabled
+
+`func (o *LocalIdentityProfile) HasRegistrationEnabled() bool`
+
+HasRegistrationEnabled returns a boolean if a field has been set.
 
 ### GetProfileEnabled
 

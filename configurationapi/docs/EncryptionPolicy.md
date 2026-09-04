@@ -5,9 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **EncryptAssertion** | Pointer to **bool** | Whether the outgoing SAML assertion will be encrypted. | [optional] 
-**EncryptedAttributes** | Pointer to **[]string** | The list of outgoing SAML assertion attributes that will be encrypted. The &#39;encryptAssertion&#39; property takes precedence over this. | [optional] 
 **EncryptSloSubjectNameId** | Pointer to **bool** | Encrypt the name-identifier attribute in outbound SLO messages.  This can be set if the name id is encrypted. | [optional] 
 **SloSubjectNameIDEncrypted** | Pointer to **bool** | Allow the encryption of the name-identifier attribute for inbound SLO messages. This can be set if SP initiated SLO is enabled. | [optional] 
+**EncryptedAttributes** | Pointer to **[]string** | The list of outgoing SAML assertion attributes that will be encrypted. The &#39;encryptAssertion&#39; property takes precedence over this. | [optional] 
+**EncryptAttributeList** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
@@ -52,31 +53,6 @@ SetEncryptAssertion sets EncryptAssertion field to given value.
 `func (o *EncryptionPolicy) HasEncryptAssertion() bool`
 
 HasEncryptAssertion returns a boolean if a field has been set.
-
-### GetEncryptedAttributes
-
-`func (o *EncryptionPolicy) GetEncryptedAttributes() []string`
-
-GetEncryptedAttributes returns the EncryptedAttributes field if non-nil, zero value otherwise.
-
-### GetEncryptedAttributesOk
-
-`func (o *EncryptionPolicy) GetEncryptedAttributesOk() (*[]string, bool)`
-
-GetEncryptedAttributesOk returns a tuple with the EncryptedAttributes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEncryptedAttributes
-
-`func (o *EncryptionPolicy) SetEncryptedAttributes(v []string)`
-
-SetEncryptedAttributes sets EncryptedAttributes field to given value.
-
-### HasEncryptedAttributes
-
-`func (o *EncryptionPolicy) HasEncryptedAttributes() bool`
-
-HasEncryptedAttributes returns a boolean if a field has been set.
 
 ### GetEncryptSloSubjectNameId
 
@@ -127,6 +103,56 @@ SetSloSubjectNameIDEncrypted sets SloSubjectNameIDEncrypted field to given value
 `func (o *EncryptionPolicy) HasSloSubjectNameIDEncrypted() bool`
 
 HasSloSubjectNameIDEncrypted returns a boolean if a field has been set.
+
+### GetEncryptedAttributes
+
+`func (o *EncryptionPolicy) GetEncryptedAttributes() []string`
+
+GetEncryptedAttributes returns the EncryptedAttributes field if non-nil, zero value otherwise.
+
+### GetEncryptedAttributesOk
+
+`func (o *EncryptionPolicy) GetEncryptedAttributesOk() (*[]string, bool)`
+
+GetEncryptedAttributesOk returns a tuple with the EncryptedAttributes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEncryptedAttributes
+
+`func (o *EncryptionPolicy) SetEncryptedAttributes(v []string)`
+
+SetEncryptedAttributes sets EncryptedAttributes field to given value.
+
+### HasEncryptedAttributes
+
+`func (o *EncryptionPolicy) HasEncryptedAttributes() bool`
+
+HasEncryptedAttributes returns a boolean if a field has been set.
+
+### GetEncryptAttributeList
+
+`func (o *EncryptionPolicy) GetEncryptAttributeList() []string`
+
+GetEncryptAttributeList returns the EncryptAttributeList field if non-nil, zero value otherwise.
+
+### GetEncryptAttributeListOk
+
+`func (o *EncryptionPolicy) GetEncryptAttributeListOk() (*[]string, bool)`
+
+GetEncryptAttributeListOk returns a tuple with the EncryptAttributeList field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEncryptAttributeList
+
+`func (o *EncryptionPolicy) SetEncryptAttributeList(v []string)`
+
+SetEncryptAttributeList sets EncryptAttributeList field to given value.
+
+### HasEncryptAttributeList
+
+`func (o *EncryptionPolicy) HasEncryptAttributeList() bool`
+
+HasEncryptAttributeList returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

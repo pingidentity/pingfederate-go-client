@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **SourceId** | **string** | The id of the Token Exchange Processor policy. | 
 **TargetId** | **string** | The id of the Token Generator. | 
 **LicenseConnectionGroupAssignment** | Pointer to **string** | The license connection group. | [optional] 
+**AttributeSource** | Pointer to [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) |  | [optional] 
 
 ## Methods
 
@@ -190,6 +191,31 @@ SetLicenseConnectionGroupAssignment sets LicenseConnectionGroupAssignment field 
 `func (o *ProcessorPolicyToGeneratorMapping) HasLicenseConnectionGroupAssignment() bool`
 
 HasLicenseConnectionGroupAssignment returns a boolean if a field has been set.
+
+### GetAttributeSource
+
+`func (o *ProcessorPolicyToGeneratorMapping) GetAttributeSource() []AttributeSourceAggregation`
+
+GetAttributeSource returns the AttributeSource field if non-nil, zero value otherwise.
+
+### GetAttributeSourceOk
+
+`func (o *ProcessorPolicyToGeneratorMapping) GetAttributeSourceOk() (*[]AttributeSourceAggregation, bool)`
+
+GetAttributeSourceOk returns a tuple with the AttributeSource field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributeSource
+
+`func (o *ProcessorPolicyToGeneratorMapping) SetAttributeSource(v []AttributeSourceAggregation)`
+
+SetAttributeSource sets AttributeSource field to given value.
+
+### HasAttributeSource
+
+`func (o *ProcessorPolicyToGeneratorMapping) HasAttributeSource() bool`
+
+HasAttributeSource returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

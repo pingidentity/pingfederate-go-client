@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 **Active** | Pointer to **bool** | Whether or not this connection is active. Defaults to true. | [optional] 
 **Credential** | Pointer to **string** | The credential for the PingOne connection. To update the credential, specify the plaintext value of the credential in this field. This field will not be populated for GET requests. | [optional] 
 **EncryptedCredential** | Pointer to **string** | The encrypted credential for the PingOne connection. For POST and PUT requests, if you wish to keep the existing credential, this field should be passed back unchanged. | [optional] 
+**CreationDate** | Pointer to **time.Time** | The creation date of the PingOne connection. This field is read only. | [optional] 
 **CredentialId** | Pointer to **string** | The ID of the PingOne credential. This field is read only. | [optional] 
 **PingOneConnectionId** | Pointer to **string** | The ID of the PingOne connection. This field is read only. | [optional] 
 **EnvironmentId** | Pointer to **string** | The ID of the environment of the PingOne credential. This field is read only. | [optional] 
-**CreationDate** | Pointer to **time.Time** | The creation date of the PingOne connection. This field is read only. | [optional] 
 **OrganizationName** | Pointer to **string** | The name of the organization associated with this PingOne connection. This field is read only. | [optional] 
 **Region** | Pointer to **string** | The region of the PingOne connection. This field is read only. | [optional] 
 **PingOneManagementApiEndpoint** | Pointer to **string** | The PingOne management API endpoint. This field is read only. | [optional] 
@@ -183,6 +183,31 @@ SetEncryptedCredential sets EncryptedCredential field to given value.
 
 HasEncryptedCredential returns a boolean if a field has been set.
 
+### GetCreationDate
+
+`func (o *PingOneConnection) GetCreationDate() time.Time`
+
+GetCreationDate returns the CreationDate field if non-nil, zero value otherwise.
+
+### GetCreationDateOk
+
+`func (o *PingOneConnection) GetCreationDateOk() (*time.Time, bool)`
+
+GetCreationDateOk returns a tuple with the CreationDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreationDate
+
+`func (o *PingOneConnection) SetCreationDate(v time.Time)`
+
+SetCreationDate sets CreationDate field to given value.
+
+### HasCreationDate
+
+`func (o *PingOneConnection) HasCreationDate() bool`
+
+HasCreationDate returns a boolean if a field has been set.
+
 ### GetCredentialId
 
 `func (o *PingOneConnection) GetCredentialId() string`
@@ -257,31 +282,6 @@ SetEnvironmentId sets EnvironmentId field to given value.
 `func (o *PingOneConnection) HasEnvironmentId() bool`
 
 HasEnvironmentId returns a boolean if a field has been set.
-
-### GetCreationDate
-
-`func (o *PingOneConnection) GetCreationDate() time.Time`
-
-GetCreationDate returns the CreationDate field if non-nil, zero value otherwise.
-
-### GetCreationDateOk
-
-`func (o *PingOneConnection) GetCreationDateOk() (*time.Time, bool)`
-
-GetCreationDateOk returns a tuple with the CreationDate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreationDate
-
-`func (o *PingOneConnection) SetCreationDate(v time.Time)`
-
-SetCreationDate sets CreationDate field to given value.
-
-### HasCreationDate
-
-`func (o *PingOneConnection) HasCreationDate() bool`
-
-HasCreationDate returns a boolean if a field has been set.
 
 ### GetOrganizationName
 

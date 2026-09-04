@@ -38,7 +38,7 @@ import (
 )
 
 func main() {
-    body := openapiclient.DataStoreAggregation{CustomDataStore: openapiclient.NewCustomDataStore("Type_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration())} // DataStoreAggregation | Configuration for new data store.
+    body := openapiclient.DataStoreAggregation{CustomDataStore: openapiclient.NewCustomDataStore("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration(), "Type_example")} // DataStoreAggregation | Configuration for new data store.
     xBypassExternalValidation := true // bool | Connection test will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
@@ -651,7 +651,7 @@ import (
 
 func main() {
     id := "id_example" // string | ID of data store instance.
-    body := openapiclient.DataStoreAggregation{CustomDataStore: openapiclient.NewCustomDataStore("Type_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration())} // DataStoreAggregation | Configuration for the data store.
+    body := openapiclient.DataStoreAggregation{CustomDataStore: openapiclient.NewCustomDataStore("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewPluginConfiguration(), "Type_example")} // DataStoreAggregation | Configuration for the data store.
     xBypassExternalValidation := true // bool | Connection test will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()

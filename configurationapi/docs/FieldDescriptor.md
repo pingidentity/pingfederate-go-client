@@ -6,12 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | Pointer to **string** | The type of field descriptor. | [optional] 
 **Name** | Pointer to **string** | Name of the field. | [optional] 
+**Label** | Pointer to **string** | Label of the field to be displayed in the administrative console. | [optional] 
 **Description** | Pointer to **string** | Description of the field. | [optional] 
-**DefaultValue** | Pointer to **string** | Default value of the field. This is the value pre-populated in the UI on new plugin instance configuration. This is also the value used to populate the field if it is missing in a POST or PUT request and no &#39;defaultForLegacyConfig&#39; is defined. | [optional] 
-**DefaultForLegacyConfig** | Pointer to **string** | Default value of the field when it is missing from the configuration (e.g. in upgrade scenarios). This is the value pre-populated in the UI for existing plugin configurations without values for the field. This is also the value used to populate the field if it is missing in a POST or PUT request. If &#39;defaultForLegacyConfig&#39; is not defined, PingFederate will fall back to applying the &#39;defaultValue&#39; to the field. | [optional] 
+**DefaultValue** | Pointer to **string** | Default value of the field. This is the value pre-populated in the UI on new plugin instance configuration. This is also the value used to populate the field if it is missing in a POST or PUT request and no &#39;defaultForLegacyConfig&#39; is defined.  | [optional] 
+**DefaultForLegacyConfig** | Pointer to **string** | Default value of the field when it is missing from the configuration (e.g. in upgrade scenarios). This is the value pre-populated in the UI for existing plugin configurations without values for the field. This is also the value used to populate the field if it is missing in a POST or PUT request. If &#39;defaultForLegacyConfig&#39; is not defined, PingFederate will fall back to applying the &#39;defaultValue&#39; to the field.  | [optional] 
 **Advanced** | Pointer to **bool** | Whether this is an advanced field or not. | [optional] 
 **Required** | Pointer to **bool** | Whether a value is required for this field or not. | [optional] 
-**Label** | Pointer to **string** | Label of the field to be displayed in the administrative console. | [optional] 
 
 ## Methods
 
@@ -81,6 +81,31 @@ SetName sets Name field to given value.
 `func (o *FieldDescriptor) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetLabel
+
+`func (o *FieldDescriptor) GetLabel() string`
+
+GetLabel returns the Label field if non-nil, zero value otherwise.
+
+### GetLabelOk
+
+`func (o *FieldDescriptor) GetLabelOk() (*string, bool)`
+
+GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLabel
+
+`func (o *FieldDescriptor) SetLabel(v string)`
+
+SetLabel sets Label field to given value.
+
+### HasLabel
+
+`func (o *FieldDescriptor) HasLabel() bool`
+
+HasLabel returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -206,31 +231,6 @@ SetRequired sets Required field to given value.
 `func (o *FieldDescriptor) HasRequired() bool`
 
 HasRequired returns a boolean if a field has been set.
-
-### GetLabel
-
-`func (o *FieldDescriptor) GetLabel() string`
-
-GetLabel returns the Label field if non-nil, zero value otherwise.
-
-### GetLabelOk
-
-`func (o *FieldDescriptor) GetLabelOk() (*string, bool)`
-
-GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLabel
-
-`func (o *FieldDescriptor) SetLabel(v string)`
-
-SetLabel sets Label field to given value.
-
-### HasLabel
-
-`func (o *FieldDescriptor) HasLabel() bool`
-
-HasLabel returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

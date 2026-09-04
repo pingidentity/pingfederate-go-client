@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | The persistent, unique ID for the Kerberos Realm. It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned if not specified. | [optional] 
 **KerberosRealmName** | **string** | The Domain/Realm name used for display in UI screens. | 
-**ConnectionType** | Pointer to **string** | Controls how PingFederate connects to the Active Directory/Kerberos Realm. The default is: \&quot;DIRECT\&quot;. | [optional] 
 **KeyDistributionCenters** | Pointer to **[]string** | The Domain Controller/Key Distribution Center Host Action Names. Only applicable when &#39;connectionType&#39; is \&quot;DIRECT\&quot;. | [optional] 
 **KerberosUsername** | Pointer to **string** | The Domain/Realm username. Only required when &#39;connectionType&#39; is \&quot;DIRECT\&quot; or \&quot;LOCAL_VALIDATION\&quot;. | [optional] 
 **KerberosPassword** | Pointer to **string** | The Domain/Realm password. GETs will not return this attribute. To update this field, specify the new value in this attribute. Only applicable when &#39;connectionType&#39; is \&quot;DIRECT\&quot; or \&quot;LOCAL_VALIDATION\&quot;. | [optional] 
 **KerberosEncryptedPassword** | Pointer to **string** | For GET requests, this field contains the encrypted Domain/Realm password, if one exists. For POST and PUT requests, if you wish to reuse the existing password, this field should be passed back unchanged. Secret Reference may be provided in this field with format &#39;OBF:MGR:{secretManagerId}:{secretId}&#39;. Only applicable when &#39;connectionType&#39; is \&quot;DIRECT\&quot; or \&quot;LOCAL_VALIDATION\&quot;. | [optional] 
-**KeySets** | Pointer to [**[]KerberosKeySet**](KerberosKeySet.md) | A list of key sets for validating Kerberos tickets. On POST or PUT, if &#39;retainPreviousKeysOnPasswordChange&#39; is true, PingFederate automatically adds the key set for the current password to this list and removes expired key sets. If &#39;retainPreviousKeysOnPasswordChange&#39; is false, this list is cleared. Only applicable when &#39;connectionType&#39; is \&quot;DIRECT\&quot; or \&quot;LOCAL_VALIDATION\&quot;. | [optional] 
 **RetainPreviousKeysOnPasswordChange** | Pointer to **bool** | Determines whether the previous encryption keys are retained when the password is updated. Retaining the previous keys allows existing Kerberos tickets to continue to be validated. The default is false. Only applicable when &#39;connectionType&#39; is \&quot;DIRECT\&quot; or \&quot;LOCAL_VALIDATION\&quot;. | [optional] 
 **SuppressDomainNameConcatenation** | Pointer to **bool** | Controls whether the KDC hostnames and the realm name are concatenated in the auto-generated krb5.conf file. Default is false. Only applicable when &#39;connectionType&#39; is \&quot;DIRECT\&quot;. | [optional] 
+**KeySets** | Pointer to [**[]KerberosKeySet**](KerberosKeySet.md) | A list of key sets for validating Kerberos tickets. On POST or PUT, if &#39;retainPreviousKeysOnPasswordChange&#39; is true, PingFederate automatically adds the key set for the current password to this list and removes expired key sets. If &#39;retainPreviousKeysOnPasswordChange&#39; is false, this list is cleared. Only applicable when &#39;connectionType&#39; is \&quot;DIRECT\&quot; or \&quot;LOCAL_VALIDATION\&quot;. | [optional] 
+**ConnectionType** | Pointer to **string** | Controls how PingFederate connects to the Active Directory/Kerberos Realm. The default is: \&quot;DIRECT\&quot;. | [optional] 
 **LdapGatewayDataStoreRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 
 ## Methods
@@ -79,31 +79,6 @@ and a boolean to check if the value has been set.
 
 SetKerberosRealmName sets KerberosRealmName field to given value.
 
-
-### GetConnectionType
-
-`func (o *KerberosRealm) GetConnectionType() string`
-
-GetConnectionType returns the ConnectionType field if non-nil, zero value otherwise.
-
-### GetConnectionTypeOk
-
-`func (o *KerberosRealm) GetConnectionTypeOk() (*string, bool)`
-
-GetConnectionTypeOk returns a tuple with the ConnectionType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConnectionType
-
-`func (o *KerberosRealm) SetConnectionType(v string)`
-
-SetConnectionType sets ConnectionType field to given value.
-
-### HasConnectionType
-
-`func (o *KerberosRealm) HasConnectionType() bool`
-
-HasConnectionType returns a boolean if a field has been set.
 
 ### GetKeyDistributionCenters
 
@@ -205,31 +180,6 @@ SetKerberosEncryptedPassword sets KerberosEncryptedPassword field to given value
 
 HasKerberosEncryptedPassword returns a boolean if a field has been set.
 
-### GetKeySets
-
-`func (o *KerberosRealm) GetKeySets() []KerberosKeySet`
-
-GetKeySets returns the KeySets field if non-nil, zero value otherwise.
-
-### GetKeySetsOk
-
-`func (o *KerberosRealm) GetKeySetsOk() (*[]KerberosKeySet, bool)`
-
-GetKeySetsOk returns a tuple with the KeySets field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetKeySets
-
-`func (o *KerberosRealm) SetKeySets(v []KerberosKeySet)`
-
-SetKeySets sets KeySets field to given value.
-
-### HasKeySets
-
-`func (o *KerberosRealm) HasKeySets() bool`
-
-HasKeySets returns a boolean if a field has been set.
-
 ### GetRetainPreviousKeysOnPasswordChange
 
 `func (o *KerberosRealm) GetRetainPreviousKeysOnPasswordChange() bool`
@@ -279,6 +229,56 @@ SetSuppressDomainNameConcatenation sets SuppressDomainNameConcatenation field to
 `func (o *KerberosRealm) HasSuppressDomainNameConcatenation() bool`
 
 HasSuppressDomainNameConcatenation returns a boolean if a field has been set.
+
+### GetKeySets
+
+`func (o *KerberosRealm) GetKeySets() []KerberosKeySet`
+
+GetKeySets returns the KeySets field if non-nil, zero value otherwise.
+
+### GetKeySetsOk
+
+`func (o *KerberosRealm) GetKeySetsOk() (*[]KerberosKeySet, bool)`
+
+GetKeySetsOk returns a tuple with the KeySets field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKeySets
+
+`func (o *KerberosRealm) SetKeySets(v []KerberosKeySet)`
+
+SetKeySets sets KeySets field to given value.
+
+### HasKeySets
+
+`func (o *KerberosRealm) HasKeySets() bool`
+
+HasKeySets returns a boolean if a field has been set.
+
+### GetConnectionType
+
+`func (o *KerberosRealm) GetConnectionType() string`
+
+GetConnectionType returns the ConnectionType field if non-nil, zero value otherwise.
+
+### GetConnectionTypeOk
+
+`func (o *KerberosRealm) GetConnectionTypeOk() (*string, bool)`
+
+GetConnectionTypeOk returns a tuple with the ConnectionType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectionType
+
+`func (o *KerberosRealm) SetConnectionType(v string)`
+
+SetConnectionType sets ConnectionType field to given value.
+
+### HasConnectionType
+
+`func (o *KerberosRealm) HasConnectionType() bool`
+
+HasConnectionType returns a boolean if a field has been set.
 
 ### GetLdapGatewayDataStoreRef
 

@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schema** | Pointer to **string** | Lists the table structure that stores information within a database. Some databases, such as Oracle, require a schema for a JDBC query. Other databases, such as MySQL, do not require a schema. | [optional] 
 **Table** | **string** | The name of the database table. The name is used to construct the SQL query to retrieve data from the data store. | 
-**ColumnNames** | Pointer to **[]string** | A list of column names used to construct the SQL query to retrieve data from the specified table in the datastore. | [optional] 
 **Filter** | **string** | The JDBC WHERE clause used to query your data store to locate a user record. | 
+**ColumnNames** | Pointer to **[]string** | A list of column names used to construct the SQL query to retrieve data from the specified table in the datastore. | [optional] 
 
 ## Methods
 
@@ -73,6 +73,26 @@ and a boolean to check if the value has been set.
 SetTable sets Table field to given value.
 
 
+### GetFilter
+
+`func (o *JdbcAttributeSource) GetFilter() string`
+
+GetFilter returns the Filter field if non-nil, zero value otherwise.
+
+### GetFilterOk
+
+`func (o *JdbcAttributeSource) GetFilterOk() (*string, bool)`
+
+GetFilterOk returns a tuple with the Filter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFilter
+
+`func (o *JdbcAttributeSource) SetFilter(v string)`
+
+SetFilter sets Filter field to given value.
+
+
 ### GetColumnNames
 
 `func (o *JdbcAttributeSource) GetColumnNames() []string`
@@ -97,26 +117,6 @@ SetColumnNames sets ColumnNames field to given value.
 `func (o *JdbcAttributeSource) HasColumnNames() bool`
 
 HasColumnNames returns a boolean if a field has been set.
-
-### GetFilter
-
-`func (o *JdbcAttributeSource) GetFilter() string`
-
-GetFilter returns the Filter field if non-nil, zero value otherwise.
-
-### GetFilterOk
-
-`func (o *JdbcAttributeSource) GetFilterOk() (*string, bool)`
-
-GetFilterOk returns a tuple with the Filter field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFilter
-
-`func (o *JdbcAttributeSource) SetFilter(v string)`
-
-SetFilter sets Filter field to given value.
-
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ResourceType** | **string** | The identifier for the resource type the operation applies to. | 
-**SubResource** | Pointer to **string** | The subresource for the operation. | [optional] 
-**OperationType** | **string** | The type of operation to be performed. | 
+**OperationType** | **string** | The type of operation to be performed. Currently, the DELETE operation is only supported for the /configStore resource type. | 
 **Items** | Pointer to **[]map[string]interface{}** | The configuration items for the operation. This field only applies to the SAVE operation type. | [optional] 
 **ItemIds** | Pointer to **[]string** | The item ID&#39;s for the operation. This field only applies to the DELETE operation type. | [optional] 
+**SubResource** | Pointer to **string** | The subresource for the operation. Currently, the only resource type that supports subresources is /configStore. | [optional] 
 
 ## Methods
 
@@ -48,31 +48,6 @@ and a boolean to check if the value has been set.
 
 SetResourceType sets ResourceType field to given value.
 
-
-### GetSubResource
-
-`func (o *ConfigOperation) GetSubResource() string`
-
-GetSubResource returns the SubResource field if non-nil, zero value otherwise.
-
-### GetSubResourceOk
-
-`func (o *ConfigOperation) GetSubResourceOk() (*string, bool)`
-
-GetSubResourceOk returns a tuple with the SubResource field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSubResource
-
-`func (o *ConfigOperation) SetSubResource(v string)`
-
-SetSubResource sets SubResource field to given value.
-
-### HasSubResource
-
-`func (o *ConfigOperation) HasSubResource() bool`
-
-HasSubResource returns a boolean if a field has been set.
 
 ### GetOperationType
 
@@ -143,6 +118,31 @@ SetItemIds sets ItemIds field to given value.
 `func (o *ConfigOperation) HasItemIds() bool`
 
 HasItemIds returns a boolean if a field has been set.
+
+### GetSubResource
+
+`func (o *ConfigOperation) GetSubResource() string`
+
+GetSubResource returns the SubResource field if non-nil, zero value otherwise.
+
+### GetSubResourceOk
+
+`func (o *ConfigOperation) GetSubResourceOk() (*string, bool)`
+
+GetSubResourceOk returns a tuple with the SubResource field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubResource
+
+`func (o *ConfigOperation) SetSubResource(v string)`
+
+SetSubResource sets SubResource field to given value.
+
+### HasSubResource
+
+`func (o *ConfigOperation) HasSubResource() bool`
+
+HasSubResource returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

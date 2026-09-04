@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Scopes** | **string** | Space separated scope values that the OpenID Provider supports. | 
 **AuthorizationEndpoint** | **string** | URL of the OpenID Provider&#39;s OAuth 2.0 Authorization Endpoint. | 
-**PushedAuthorizationRequestEndpoint** | Pointer to **string** | URL of the OpenID Provider&#39;s OAuth 2.0 Pushed Authorization Request Endpoint. | [optional] 
 **LoginType** | **string** | The OpenID Connect login type. These values maps to: &lt;br&gt;  CODE: Authentication using Code Flow &lt;br&gt; POST: Authentication using Form Post &lt;br&gt; POST_AT: Authentication using Form Post with Access Token | 
 **JwtSecuredAuthorizationResponseModeType** | Pointer to **string** | The OpenId Connect JWT Secured Authorization Response Mode (JARM). These values map to: &lt;br&gt;  DISABLED: Authorization responses will not be encoded using JARM. This is the default value. &lt;br&gt;  QUERY_JWT: query.jwt &lt;br&gt; FORM_POST_JWT: form_post.jwt &lt;br&gt;&lt;br&gt; Note: QUERY_JWT must not be used in conjunction with loginType POST or  POST_AT unless the response JWT is encrypted to prevent token leakage in the URL. | [optional] 
 **AuthenticationScheme** | Pointer to **string** | The OpenID Connect Authentication Scheme. This is required for Authentication using Code Flow.  | [optional] 
@@ -14,19 +13,20 @@ Name | Type | Description | Notes
 **Lifetime** | Pointer to **string** | The lifetime of the JWT in minutes. This is only used for client secret jwt and private key jwt auth schemes. | [optional] 
 **Audience** | Pointer to **string** | The claim &#x60;aud&#x60;, that goes into the JWT body if specified. This is only used for client secret jwt and private key jwt auth schemes. | [optional] 
 **IncludeNotBeforeClaim** | Pointer to **bool** | Include the claim &#x60;nbf&#x60; in the JWT body. This is only used for client secret jwt and private key jwt auth schemes. | [optional] 
-**AuthenticationSigningAlgorithm** | Pointer to **string** | The authentication signing algorithm for token endpoint PRIVATE_KEY_JWT or CLIENT_SECRET_JWT authentication. Asymmetric algorithms are allowed for PRIVATE_KEY_JWT and symmetric algorithms are allowed for CLIENT_SECRET_JWT. For RSASSA-PSS signing algorithm, PingFederate must be integrated with a hardware security module (HSM) or Java 11. | [optional] 
-**RequestSigningAlgorithm** | Pointer to **string** | The request signing algorithm. Required only if you wish to use signed requests. Only asymmetric algorithms are allowed. For RSASSA-PSS signing algorithm, PingFederate must be integrated with a hardware security module (HSM) or Java 11. | [optional] 
 **EnablePKCE** | Pointer to **bool** | Enable Proof Key for Code Exchange (PKCE). When enabled, the client sends an SHA-256 code challenge and corresponding code verifier to the OpenID Provider during the authorization code flow. | [optional] 
 **TokenEndpoint** | Pointer to **string** | URL of the OpenID Provider&#39;s OAuth 2.0 Token Endpoint. | [optional] 
 **UserInfoEndpoint** | Pointer to **string** | URL of the OpenID Provider&#39;s UserInfo Endpoint. | [optional] 
 **LogoutEndpoint** | Pointer to **string** | URL of the OpenID Provider&#39;s RP-Initiated Logout Endpoint. | [optional] 
 **JwksURL** | **string** | URL of the OpenID Provider&#39;s JSON Web Key Set [JWK] document. | 
-**TrackUserSessionsForLogout** | Pointer to **bool** | Determines whether PingFederate tracks a logout entry when a user signs in, so that the user session can later be terminated via a logout request from the OP. This setting must also be enabled in order for PingFederate to send an RP-initiated logout request to the OP during SLO. | [optional] 
+**AuthenticationSigningAlgorithm** | Pointer to **string** | The authentication signing algorithm for token endpoint PRIVATE_KEY_JWT or CLIENT_SECRET_JWT authentication. Asymmetric algorithms are allowed for PRIVATE_KEY_JWT and symmetric algorithms are allowed for CLIENT_SECRET_JWT. For RSASSA-PSS signing algorithm, PingFederate must be integrated with a hardware security module (HSM) or Java 11. | [optional] 
 **RequestParameters** | Pointer to [**[]OIDCRequestParameter**](OIDCRequestParameter.md) | A list of request parameters. Request parameters with same name but different attribute values are treated as a multi-valued request parameter. | [optional] 
+**RequestSigningAlgorithm** | Pointer to **string** | The request signing algorithm. Required only if you wish to use signed requests. Only asymmetric algorithms are allowed. For RSASSA-PSS signing algorithm, PingFederate must be integrated with a hardware security module (HSM) or Java 11. | [optional] 
+**TrackUserSessionsForLogout** | Pointer to **bool** | Determines whether PingFederate tracks a logout entry when a user signs in, so that the user session can later be terminated via a logout request from the OP. This setting must also be enabled in order for PingFederate to send an RP-initiated logout request to the OP during SLO. | [optional] 
 **RedirectUri** | Pointer to **string** | The redirect URI. This is a read-only parameter. | [optional] 
 **BackChannelLogoutUri** | Pointer to **string** | The Back-Channel Logout URI. This read-only parameter is available when user sessions are tracked for logout. | [optional] 
 **FrontChannelLogoutUri** | Pointer to **string** | The Front-Channel Logout URI. This is a read-only parameter. | [optional] 
 **PostLogoutRedirectUri** | Pointer to **string** | The Post-Logout Redirect URI, where the OpenID Provider may redirect the user when RP-Initiated Logout has completed. This is a read-only parameter. | [optional] 
+**PushedAuthorizationRequestEndpoint** | Pointer to **string** | URL of the OpenID Provider&#39;s OAuth 2.0 Pushed Authorization Request Endpoint. | [optional] 
 
 ## Methods
 
@@ -86,31 +86,6 @@ and a boolean to check if the value has been set.
 
 SetAuthorizationEndpoint sets AuthorizationEndpoint field to given value.
 
-
-### GetPushedAuthorizationRequestEndpoint
-
-`func (o *OIDCProviderSettings) GetPushedAuthorizationRequestEndpoint() string`
-
-GetPushedAuthorizationRequestEndpoint returns the PushedAuthorizationRequestEndpoint field if non-nil, zero value otherwise.
-
-### GetPushedAuthorizationRequestEndpointOk
-
-`func (o *OIDCProviderSettings) GetPushedAuthorizationRequestEndpointOk() (*string, bool)`
-
-GetPushedAuthorizationRequestEndpointOk returns a tuple with the PushedAuthorizationRequestEndpoint field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPushedAuthorizationRequestEndpoint
-
-`func (o *OIDCProviderSettings) SetPushedAuthorizationRequestEndpoint(v string)`
-
-SetPushedAuthorizationRequestEndpoint sets PushedAuthorizationRequestEndpoint field to given value.
-
-### HasPushedAuthorizationRequestEndpoint
-
-`func (o *OIDCProviderSettings) HasPushedAuthorizationRequestEndpoint() bool`
-
-HasPushedAuthorizationRequestEndpoint returns a boolean if a field has been set.
 
 ### GetLoginType
 
@@ -282,56 +257,6 @@ SetIncludeNotBeforeClaim sets IncludeNotBeforeClaim field to given value.
 
 HasIncludeNotBeforeClaim returns a boolean if a field has been set.
 
-### GetAuthenticationSigningAlgorithm
-
-`func (o *OIDCProviderSettings) GetAuthenticationSigningAlgorithm() string`
-
-GetAuthenticationSigningAlgorithm returns the AuthenticationSigningAlgorithm field if non-nil, zero value otherwise.
-
-### GetAuthenticationSigningAlgorithmOk
-
-`func (o *OIDCProviderSettings) GetAuthenticationSigningAlgorithmOk() (*string, bool)`
-
-GetAuthenticationSigningAlgorithmOk returns a tuple with the AuthenticationSigningAlgorithm field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAuthenticationSigningAlgorithm
-
-`func (o *OIDCProviderSettings) SetAuthenticationSigningAlgorithm(v string)`
-
-SetAuthenticationSigningAlgorithm sets AuthenticationSigningAlgorithm field to given value.
-
-### HasAuthenticationSigningAlgorithm
-
-`func (o *OIDCProviderSettings) HasAuthenticationSigningAlgorithm() bool`
-
-HasAuthenticationSigningAlgorithm returns a boolean if a field has been set.
-
-### GetRequestSigningAlgorithm
-
-`func (o *OIDCProviderSettings) GetRequestSigningAlgorithm() string`
-
-GetRequestSigningAlgorithm returns the RequestSigningAlgorithm field if non-nil, zero value otherwise.
-
-### GetRequestSigningAlgorithmOk
-
-`func (o *OIDCProviderSettings) GetRequestSigningAlgorithmOk() (*string, bool)`
-
-GetRequestSigningAlgorithmOk returns a tuple with the RequestSigningAlgorithm field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRequestSigningAlgorithm
-
-`func (o *OIDCProviderSettings) SetRequestSigningAlgorithm(v string)`
-
-SetRequestSigningAlgorithm sets RequestSigningAlgorithm field to given value.
-
-### HasRequestSigningAlgorithm
-
-`func (o *OIDCProviderSettings) HasRequestSigningAlgorithm() bool`
-
-HasRequestSigningAlgorithm returns a boolean if a field has been set.
-
 ### GetEnablePKCE
 
 `func (o *OIDCProviderSettings) GetEnablePKCE() bool`
@@ -452,30 +377,30 @@ and a boolean to check if the value has been set.
 SetJwksURL sets JwksURL field to given value.
 
 
-### GetTrackUserSessionsForLogout
+### GetAuthenticationSigningAlgorithm
 
-`func (o *OIDCProviderSettings) GetTrackUserSessionsForLogout() bool`
+`func (o *OIDCProviderSettings) GetAuthenticationSigningAlgorithm() string`
 
-GetTrackUserSessionsForLogout returns the TrackUserSessionsForLogout field if non-nil, zero value otherwise.
+GetAuthenticationSigningAlgorithm returns the AuthenticationSigningAlgorithm field if non-nil, zero value otherwise.
 
-### GetTrackUserSessionsForLogoutOk
+### GetAuthenticationSigningAlgorithmOk
 
-`func (o *OIDCProviderSettings) GetTrackUserSessionsForLogoutOk() (*bool, bool)`
+`func (o *OIDCProviderSettings) GetAuthenticationSigningAlgorithmOk() (*string, bool)`
 
-GetTrackUserSessionsForLogoutOk returns a tuple with the TrackUserSessionsForLogout field if it's non-nil, zero value otherwise
+GetAuthenticationSigningAlgorithmOk returns a tuple with the AuthenticationSigningAlgorithm field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTrackUserSessionsForLogout
+### SetAuthenticationSigningAlgorithm
 
-`func (o *OIDCProviderSettings) SetTrackUserSessionsForLogout(v bool)`
+`func (o *OIDCProviderSettings) SetAuthenticationSigningAlgorithm(v string)`
 
-SetTrackUserSessionsForLogout sets TrackUserSessionsForLogout field to given value.
+SetAuthenticationSigningAlgorithm sets AuthenticationSigningAlgorithm field to given value.
 
-### HasTrackUserSessionsForLogout
+### HasAuthenticationSigningAlgorithm
 
-`func (o *OIDCProviderSettings) HasTrackUserSessionsForLogout() bool`
+`func (o *OIDCProviderSettings) HasAuthenticationSigningAlgorithm() bool`
 
-HasTrackUserSessionsForLogout returns a boolean if a field has been set.
+HasAuthenticationSigningAlgorithm returns a boolean if a field has been set.
 
 ### GetRequestParameters
 
@@ -501,6 +426,56 @@ SetRequestParameters sets RequestParameters field to given value.
 `func (o *OIDCProviderSettings) HasRequestParameters() bool`
 
 HasRequestParameters returns a boolean if a field has been set.
+
+### GetRequestSigningAlgorithm
+
+`func (o *OIDCProviderSettings) GetRequestSigningAlgorithm() string`
+
+GetRequestSigningAlgorithm returns the RequestSigningAlgorithm field if non-nil, zero value otherwise.
+
+### GetRequestSigningAlgorithmOk
+
+`func (o *OIDCProviderSettings) GetRequestSigningAlgorithmOk() (*string, bool)`
+
+GetRequestSigningAlgorithmOk returns a tuple with the RequestSigningAlgorithm field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequestSigningAlgorithm
+
+`func (o *OIDCProviderSettings) SetRequestSigningAlgorithm(v string)`
+
+SetRequestSigningAlgorithm sets RequestSigningAlgorithm field to given value.
+
+### HasRequestSigningAlgorithm
+
+`func (o *OIDCProviderSettings) HasRequestSigningAlgorithm() bool`
+
+HasRequestSigningAlgorithm returns a boolean if a field has been set.
+
+### GetTrackUserSessionsForLogout
+
+`func (o *OIDCProviderSettings) GetTrackUserSessionsForLogout() bool`
+
+GetTrackUserSessionsForLogout returns the TrackUserSessionsForLogout field if non-nil, zero value otherwise.
+
+### GetTrackUserSessionsForLogoutOk
+
+`func (o *OIDCProviderSettings) GetTrackUserSessionsForLogoutOk() (*bool, bool)`
+
+GetTrackUserSessionsForLogoutOk returns a tuple with the TrackUserSessionsForLogout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrackUserSessionsForLogout
+
+`func (o *OIDCProviderSettings) SetTrackUserSessionsForLogout(v bool)`
+
+SetTrackUserSessionsForLogout sets TrackUserSessionsForLogout field to given value.
+
+### HasTrackUserSessionsForLogout
+
+`func (o *OIDCProviderSettings) HasTrackUserSessionsForLogout() bool`
+
+HasTrackUserSessionsForLogout returns a boolean if a field has been set.
 
 ### GetRedirectUri
 
@@ -601,6 +576,31 @@ SetPostLogoutRedirectUri sets PostLogoutRedirectUri field to given value.
 `func (o *OIDCProviderSettings) HasPostLogoutRedirectUri() bool`
 
 HasPostLogoutRedirectUri returns a boolean if a field has been set.
+
+### GetPushedAuthorizationRequestEndpoint
+
+`func (o *OIDCProviderSettings) GetPushedAuthorizationRequestEndpoint() string`
+
+GetPushedAuthorizationRequestEndpoint returns the PushedAuthorizationRequestEndpoint field if non-nil, zero value otherwise.
+
+### GetPushedAuthorizationRequestEndpointOk
+
+`func (o *OIDCProviderSettings) GetPushedAuthorizationRequestEndpointOk() (*string, bool)`
+
+GetPushedAuthorizationRequestEndpointOk returns a tuple with the PushedAuthorizationRequestEndpoint field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPushedAuthorizationRequestEndpoint
+
+`func (o *OIDCProviderSettings) SetPushedAuthorizationRequestEndpoint(v string)`
+
+SetPushedAuthorizationRequestEndpoint sets PushedAuthorizationRequestEndpoint field to given value.
+
+### HasPushedAuthorizationRequestEndpoint
+
+`func (o *OIDCProviderSettings) HasPushedAuthorizationRequestEndpoint() bool`
+
+HasPushedAuthorizationRequestEndpoint returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

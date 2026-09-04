@@ -4,13 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**OidcClientCredentials** | Pointer to [**OIDCClientCredentials**](OIDCClientCredentials.md) |  | [optional] 
+**ErrorPageMsgId** | Pointer to **string** | Identifier that specifies the message displayed on a user-facing error page. | [optional] 
 **IdpBrowserSso** | Pointer to [**IdpBrowserSso**](IdpBrowserSso.md) |  | [optional] 
 **AttributeQuery** | Pointer to [**IdpAttributeQuery**](IdpAttributeQuery.md) |  | [optional] 
 **IdpOAuthGrantAttributeMapping** | Pointer to [**IdpOAuthGrantAttributeMapping**](IdpOAuthGrantAttributeMapping.md) |  | [optional] 
+**JwtBearerGrantProcessor** | Pointer to [**IdpJwtBearerGrantProcessor**](IdpJwtBearerGrantProcessor.md) |  | [optional] 
+**OidcClientCredentials** | Pointer to [**OIDCClientCredentials**](OIDCClientCredentials.md) |  | [optional] 
 **WsTrust** | Pointer to [**IdpWsTrust**](IdpWsTrust.md) |  | [optional] 
 **InboundProvisioning** | Pointer to [**IdpInboundProvisioning**](IdpInboundProvisioning.md) |  | [optional] 
-**ErrorPageMsgId** | Pointer to **string** | Identifier that specifies the message displayed on a user-facing error page. | [optional] 
 
 ## Methods
 
@@ -31,30 +32,30 @@ NewIdpConnectionWithDefaults instantiates a new IdpConnection object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetOidcClientCredentials
+### GetErrorPageMsgId
 
-`func (o *IdpConnection) GetOidcClientCredentials() OIDCClientCredentials`
+`func (o *IdpConnection) GetErrorPageMsgId() string`
 
-GetOidcClientCredentials returns the OidcClientCredentials field if non-nil, zero value otherwise.
+GetErrorPageMsgId returns the ErrorPageMsgId field if non-nil, zero value otherwise.
 
-### GetOidcClientCredentialsOk
+### GetErrorPageMsgIdOk
 
-`func (o *IdpConnection) GetOidcClientCredentialsOk() (*OIDCClientCredentials, bool)`
+`func (o *IdpConnection) GetErrorPageMsgIdOk() (*string, bool)`
 
-GetOidcClientCredentialsOk returns a tuple with the OidcClientCredentials field if it's non-nil, zero value otherwise
+GetErrorPageMsgIdOk returns a tuple with the ErrorPageMsgId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetOidcClientCredentials
+### SetErrorPageMsgId
 
-`func (o *IdpConnection) SetOidcClientCredentials(v OIDCClientCredentials)`
+`func (o *IdpConnection) SetErrorPageMsgId(v string)`
 
-SetOidcClientCredentials sets OidcClientCredentials field to given value.
+SetErrorPageMsgId sets ErrorPageMsgId field to given value.
 
-### HasOidcClientCredentials
+### HasErrorPageMsgId
 
-`func (o *IdpConnection) HasOidcClientCredentials() bool`
+`func (o *IdpConnection) HasErrorPageMsgId() bool`
 
-HasOidcClientCredentials returns a boolean if a field has been set.
+HasErrorPageMsgId returns a boolean if a field has been set.
 
 ### GetIdpBrowserSso
 
@@ -131,6 +132,56 @@ SetIdpOAuthGrantAttributeMapping sets IdpOAuthGrantAttributeMapping field to giv
 
 HasIdpOAuthGrantAttributeMapping returns a boolean if a field has been set.
 
+### GetJwtBearerGrantProcessor
+
+`func (o *IdpConnection) GetJwtBearerGrantProcessor() IdpJwtBearerGrantProcessor`
+
+GetJwtBearerGrantProcessor returns the JwtBearerGrantProcessor field if non-nil, zero value otherwise.
+
+### GetJwtBearerGrantProcessorOk
+
+`func (o *IdpConnection) GetJwtBearerGrantProcessorOk() (*IdpJwtBearerGrantProcessor, bool)`
+
+GetJwtBearerGrantProcessorOk returns a tuple with the JwtBearerGrantProcessor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetJwtBearerGrantProcessor
+
+`func (o *IdpConnection) SetJwtBearerGrantProcessor(v IdpJwtBearerGrantProcessor)`
+
+SetJwtBearerGrantProcessor sets JwtBearerGrantProcessor field to given value.
+
+### HasJwtBearerGrantProcessor
+
+`func (o *IdpConnection) HasJwtBearerGrantProcessor() bool`
+
+HasJwtBearerGrantProcessor returns a boolean if a field has been set.
+
+### GetOidcClientCredentials
+
+`func (o *IdpConnection) GetOidcClientCredentials() OIDCClientCredentials`
+
+GetOidcClientCredentials returns the OidcClientCredentials field if non-nil, zero value otherwise.
+
+### GetOidcClientCredentialsOk
+
+`func (o *IdpConnection) GetOidcClientCredentialsOk() (*OIDCClientCredentials, bool)`
+
+GetOidcClientCredentialsOk returns a tuple with the OidcClientCredentials field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOidcClientCredentials
+
+`func (o *IdpConnection) SetOidcClientCredentials(v OIDCClientCredentials)`
+
+SetOidcClientCredentials sets OidcClientCredentials field to given value.
+
+### HasOidcClientCredentials
+
+`func (o *IdpConnection) HasOidcClientCredentials() bool`
+
+HasOidcClientCredentials returns a boolean if a field has been set.
+
 ### GetWsTrust
 
 `func (o *IdpConnection) GetWsTrust() IdpWsTrust`
@@ -180,31 +231,6 @@ SetInboundProvisioning sets InboundProvisioning field to given value.
 `func (o *IdpConnection) HasInboundProvisioning() bool`
 
 HasInboundProvisioning returns a boolean if a field has been set.
-
-### GetErrorPageMsgId
-
-`func (o *IdpConnection) GetErrorPageMsgId() string`
-
-GetErrorPageMsgId returns the ErrorPageMsgId field if non-nil, zero value otherwise.
-
-### GetErrorPageMsgIdOk
-
-`func (o *IdpConnection) GetErrorPageMsgIdOk() (*string, bool)`
-
-GetErrorPageMsgIdOk returns a tuple with the ErrorPageMsgId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetErrorPageMsgId
-
-`func (o *IdpConnection) SetErrorPageMsgId(v string)`
-
-SetErrorPageMsgId sets ErrorPageMsgId field to given value.
-
-### HasErrorPageMsgId
-
-`func (o *IdpConnection) HasErrorPageMsgId() bool`
-
-HasErrorPageMsgId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

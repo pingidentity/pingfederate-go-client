@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LicenseEvents** | Pointer to [**LicenseEventNotificationSettings**](LicenseEventNotificationSettings.md) |  | [optional] 
 **CertificateExpirations** | Pointer to [**CertificateExpirationNotificationSettings**](CertificateExpirationNotificationSettings.md) |  | [optional] 
+**LicenseEvents** | Pointer to [**LicenseEventNotificationSettings**](LicenseEventNotificationSettings.md) |  | [optional] 
 **NotifyAdminUserPasswordChanges** | Pointer to **bool** | Determines whether admin users are notified through email when their account is changed. | [optional] 
 **AccountChangesNotificationPublisherRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **MetadataNotificationSettings** | Pointer to [**MetadataEventNotificationSettings**](MetadataEventNotificationSettings.md) |  | [optional] 
@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **ExpiredCertificateAdministrativeConsoleWarningDays** | Pointer to **int64** | Indicates the number of days past the certificate expiry date, the administrative console warning ends. The default value is 14 days. | [optional] 
 **ThreadPoolExhaustionNotificationSettings** | Pointer to [**ThreadPoolExhaustionNotificationSettings**](ThreadPoolExhaustionNotificationSettings.md) |  | [optional] 
 **BulkheadAlertNotificationSettings** | Pointer to [**BulkheadAlertNotificationSettings**](BulkheadAlertNotificationSettings.md) |  | [optional] 
+**LicenseEventSettings** | Pointer to [**LicenseEventNotificationSettings**](LicenseEventNotificationSettings.md) |  | [optional] 
 
 ## Methods
 
@@ -32,31 +33,6 @@ will change when the set of required properties is changed
 NewNotificationSettingsWithDefaults instantiates a new NotificationSettings object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetLicenseEvents
-
-`func (o *NotificationSettings) GetLicenseEvents() LicenseEventNotificationSettings`
-
-GetLicenseEvents returns the LicenseEvents field if non-nil, zero value otherwise.
-
-### GetLicenseEventsOk
-
-`func (o *NotificationSettings) GetLicenseEventsOk() (*LicenseEventNotificationSettings, bool)`
-
-GetLicenseEventsOk returns a tuple with the LicenseEvents field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLicenseEvents
-
-`func (o *NotificationSettings) SetLicenseEvents(v LicenseEventNotificationSettings)`
-
-SetLicenseEvents sets LicenseEvents field to given value.
-
-### HasLicenseEvents
-
-`func (o *NotificationSettings) HasLicenseEvents() bool`
-
-HasLicenseEvents returns a boolean if a field has been set.
 
 ### GetCertificateExpirations
 
@@ -82,6 +58,31 @@ SetCertificateExpirations sets CertificateExpirations field to given value.
 `func (o *NotificationSettings) HasCertificateExpirations() bool`
 
 HasCertificateExpirations returns a boolean if a field has been set.
+
+### GetLicenseEvents
+
+`func (o *NotificationSettings) GetLicenseEvents() LicenseEventNotificationSettings`
+
+GetLicenseEvents returns the LicenseEvents field if non-nil, zero value otherwise.
+
+### GetLicenseEventsOk
+
+`func (o *NotificationSettings) GetLicenseEventsOk() (*LicenseEventNotificationSettings, bool)`
+
+GetLicenseEventsOk returns a tuple with the LicenseEvents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLicenseEvents
+
+`func (o *NotificationSettings) SetLicenseEvents(v LicenseEventNotificationSettings)`
+
+SetLicenseEvents sets LicenseEvents field to given value.
+
+### HasLicenseEvents
+
+`func (o *NotificationSettings) HasLicenseEvents() bool`
+
+HasLicenseEvents returns a boolean if a field has been set.
 
 ### GetNotifyAdminUserPasswordChanges
 
@@ -257,6 +258,31 @@ SetBulkheadAlertNotificationSettings sets BulkheadAlertNotificationSettings fiel
 `func (o *NotificationSettings) HasBulkheadAlertNotificationSettings() bool`
 
 HasBulkheadAlertNotificationSettings returns a boolean if a field has been set.
+
+### GetLicenseEventSettings
+
+`func (o *NotificationSettings) GetLicenseEventSettings() LicenseEventNotificationSettings`
+
+GetLicenseEventSettings returns the LicenseEventSettings field if non-nil, zero value otherwise.
+
+### GetLicenseEventSettingsOk
+
+`func (o *NotificationSettings) GetLicenseEventSettingsOk() (*LicenseEventNotificationSettings, bool)`
+
+GetLicenseEventSettingsOk returns a tuple with the LicenseEventSettings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLicenseEventSettings
+
+`func (o *NotificationSettings) SetLicenseEventSettings(v LicenseEventNotificationSettings)`
+
+SetLicenseEventSettings sets LicenseEventSettings field to given value.
+
+### HasLicenseEventSettings
+
+`func (o *NotificationSettings) HasLicenseEventSettings() bool`
+
+HasLicenseEventSettings returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

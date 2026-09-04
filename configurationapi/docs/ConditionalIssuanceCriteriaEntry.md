@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ErrorResult** | Pointer to **string** | The error result to return if this issuance criterion fails. This error result will show up in the PingFederate server logs. | [optional] 
 **Source** | [**SourceTypeIdKey**](SourceTypeIdKey.md) |  | 
 **AttributeName** | **string** | The name of the attribute to use in this issuance criterion. | 
 **Condition** | **string** | The condition that will be applied to the source attribute&#39;s value and the expected value. | 
 **Value** | **string** | The expected value of this issuance criterion. | 
-**ErrorResult** | Pointer to **string** | The error result to return if this issuance criterion fails. This error result will show up in the PingFederate server logs. | [optional] 
 
 ## Methods
 
@@ -28,6 +28,31 @@ will change when the set of required properties is changed
 NewConditionalIssuanceCriteriaEntryWithDefaults instantiates a new ConditionalIssuanceCriteriaEntry object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetErrorResult
+
+`func (o *ConditionalIssuanceCriteriaEntry) GetErrorResult() string`
+
+GetErrorResult returns the ErrorResult field if non-nil, zero value otherwise.
+
+### GetErrorResultOk
+
+`func (o *ConditionalIssuanceCriteriaEntry) GetErrorResultOk() (*string, bool)`
+
+GetErrorResultOk returns a tuple with the ErrorResult field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetErrorResult
+
+`func (o *ConditionalIssuanceCriteriaEntry) SetErrorResult(v string)`
+
+SetErrorResult sets ErrorResult field to given value.
+
+### HasErrorResult
+
+`func (o *ConditionalIssuanceCriteriaEntry) HasErrorResult() bool`
+
+HasErrorResult returns a boolean if a field has been set.
 
 ### GetSource
 
@@ -108,31 +133,6 @@ and a boolean to check if the value has been set.
 
 SetValue sets Value field to given value.
 
-
-### GetErrorResult
-
-`func (o *ConditionalIssuanceCriteriaEntry) GetErrorResult() string`
-
-GetErrorResult returns the ErrorResult field if non-nil, zero value otherwise.
-
-### GetErrorResultOk
-
-`func (o *ConditionalIssuanceCriteriaEntry) GetErrorResultOk() (*string, bool)`
-
-GetErrorResultOk returns a tuple with the ErrorResult field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetErrorResult
-
-`func (o *ConditionalIssuanceCriteriaEntry) SetErrorResult(v string)`
-
-SetErrorResult sets ErrorResult field to given value.
-
-### HasErrorResult
-
-`func (o *ConditionalIssuanceCriteriaEntry) HasErrorResult() bool`
-
-HasErrorResult returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

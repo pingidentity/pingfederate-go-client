@@ -6,11 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SpBrowserSso** | Pointer to [**SpBrowserSso**](SpBrowserSso.md) |  | [optional] 
 **AttributeQuery** | Pointer to [**SpAttributeQuery**](SpAttributeQuery.md) |  | [optional] 
-**WsTrust** | Pointer to [**SpWsTrust**](SpWsTrust.md) |  | [optional] 
 **ApplicationName** | Pointer to **string** | The application name. | [optional] 
 **ApplicationIconUrl** | Pointer to **string** | The application icon url. | [optional] 
+**WsTrust** | Pointer to [**SpWsTrust**](SpWsTrust.md) |  | [optional] 
 **OutboundProvision** | Pointer to [**OutboundProvision**](OutboundProvision.md) |  | [optional] 
 **ConnectionTargetType** | Pointer to **string** | The connection target type. This field is intended for bulk import/export usage. Changing its value may result in unexpected behavior. | [optional] 
+**OauthTokenExchangeSettings** | Pointer to [**SpOAuthTokenExchangeSettings**](SpOAuthTokenExchangeSettings.md) |  | [optional] 
 
 ## Methods
 
@@ -81,31 +82,6 @@ SetAttributeQuery sets AttributeQuery field to given value.
 
 HasAttributeQuery returns a boolean if a field has been set.
 
-### GetWsTrust
-
-`func (o *SpConnection) GetWsTrust() SpWsTrust`
-
-GetWsTrust returns the WsTrust field if non-nil, zero value otherwise.
-
-### GetWsTrustOk
-
-`func (o *SpConnection) GetWsTrustOk() (*SpWsTrust, bool)`
-
-GetWsTrustOk returns a tuple with the WsTrust field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWsTrust
-
-`func (o *SpConnection) SetWsTrust(v SpWsTrust)`
-
-SetWsTrust sets WsTrust field to given value.
-
-### HasWsTrust
-
-`func (o *SpConnection) HasWsTrust() bool`
-
-HasWsTrust returns a boolean if a field has been set.
-
 ### GetApplicationName
 
 `func (o *SpConnection) GetApplicationName() string`
@@ -156,6 +132,31 @@ SetApplicationIconUrl sets ApplicationIconUrl field to given value.
 
 HasApplicationIconUrl returns a boolean if a field has been set.
 
+### GetWsTrust
+
+`func (o *SpConnection) GetWsTrust() SpWsTrust`
+
+GetWsTrust returns the WsTrust field if non-nil, zero value otherwise.
+
+### GetWsTrustOk
+
+`func (o *SpConnection) GetWsTrustOk() (*SpWsTrust, bool)`
+
+GetWsTrustOk returns a tuple with the WsTrust field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWsTrust
+
+`func (o *SpConnection) SetWsTrust(v SpWsTrust)`
+
+SetWsTrust sets WsTrust field to given value.
+
+### HasWsTrust
+
+`func (o *SpConnection) HasWsTrust() bool`
+
+HasWsTrust returns a boolean if a field has been set.
+
 ### GetOutboundProvision
 
 `func (o *SpConnection) GetOutboundProvision() OutboundProvision`
@@ -205,6 +206,31 @@ SetConnectionTargetType sets ConnectionTargetType field to given value.
 `func (o *SpConnection) HasConnectionTargetType() bool`
 
 HasConnectionTargetType returns a boolean if a field has been set.
+
+### GetOauthTokenExchangeSettings
+
+`func (o *SpConnection) GetOauthTokenExchangeSettings() SpOAuthTokenExchangeSettings`
+
+GetOauthTokenExchangeSettings returns the OauthTokenExchangeSettings field if non-nil, zero value otherwise.
+
+### GetOauthTokenExchangeSettingsOk
+
+`func (o *SpConnection) GetOauthTokenExchangeSettingsOk() (*SpOAuthTokenExchangeSettings, bool)`
+
+GetOauthTokenExchangeSettingsOk returns a tuple with the OauthTokenExchangeSettings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOauthTokenExchangeSettings
+
+`func (o *SpConnection) SetOauthTokenExchangeSettings(v SpOAuthTokenExchangeSettings)`
+
+SetOauthTokenExchangeSettings sets OauthTokenExchangeSettings field to given value.
+
+### HasOauthTokenExchangeSettings
+
+`func (o *SpConnection) HasOauthTokenExchangeSettings() bool`
+
+HasOauthTokenExchangeSettings returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

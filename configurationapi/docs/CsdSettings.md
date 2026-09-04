@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 **RolledLogCount** | Pointer to **int64** | The number of rolled server log files to collect. | [optional] 
 **EncryptArchive** | Pointer to **bool** | Indicates that the resulting support data archive should be encrypted. | [optional] 
 **EncryptionPassphrase** | Pointer to **string** | The passphrase to use to encrypt and decrypt the support data archive. Required if encryptArchive is true. | [optional] 
-**IncludeBinaryFiles** | Pointer to **bool** | If set, binary files will be included in the collected archive. | [optional] 
 **CollectExpensiveData** | Pointer to **bool** | Collect data from expensive or long running processes. These processes may make the PingFederate server unresponsive for a couple of minutes. | [optional] 
 **NumHeartbeatSamples** | Pointer to **int64** | Number of heartbeat samples to take. | [optional] 
 **IntervalBetweenHeartbeatSamples** | Pointer to **int64** | Interval between heartbeat calls in seconds. | [optional] 
 **ReportCount** | Pointer to **int64** | Number of reports generated for commands that support sampling (for example, mpstat). A value of 0 (zero) indicates that no reports will be generated for these commands | [optional] 
 **ReportInterval** | Pointer to **int64** | Number of seconds between reports for commands that support sampling (for example, mpstat). | [optional] 
+**IncludeBinaryFiles** | Pointer to **bool** | If set, binary files will be included in the collected archive. | [optional] 
 **Comment** | Pointer to **string** | Specify additional information about the collected data set.  This comment will be added to the generated archive as a README file. | [optional] 
 
 ## Methods
@@ -239,31 +239,6 @@ SetEncryptionPassphrase sets EncryptionPassphrase field to given value.
 
 HasEncryptionPassphrase returns a boolean if a field has been set.
 
-### GetIncludeBinaryFiles
-
-`func (o *CsdSettings) GetIncludeBinaryFiles() bool`
-
-GetIncludeBinaryFiles returns the IncludeBinaryFiles field if non-nil, zero value otherwise.
-
-### GetIncludeBinaryFilesOk
-
-`func (o *CsdSettings) GetIncludeBinaryFilesOk() (*bool, bool)`
-
-GetIncludeBinaryFilesOk returns a tuple with the IncludeBinaryFiles field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIncludeBinaryFiles
-
-`func (o *CsdSettings) SetIncludeBinaryFiles(v bool)`
-
-SetIncludeBinaryFiles sets IncludeBinaryFiles field to given value.
-
-### HasIncludeBinaryFiles
-
-`func (o *CsdSettings) HasIncludeBinaryFiles() bool`
-
-HasIncludeBinaryFiles returns a boolean if a field has been set.
-
 ### GetCollectExpensiveData
 
 `func (o *CsdSettings) GetCollectExpensiveData() bool`
@@ -388,6 +363,31 @@ SetReportInterval sets ReportInterval field to given value.
 `func (o *CsdSettings) HasReportInterval() bool`
 
 HasReportInterval returns a boolean if a field has been set.
+
+### GetIncludeBinaryFiles
+
+`func (o *CsdSettings) GetIncludeBinaryFiles() bool`
+
+GetIncludeBinaryFiles returns the IncludeBinaryFiles field if non-nil, zero value otherwise.
+
+### GetIncludeBinaryFilesOk
+
+`func (o *CsdSettings) GetIncludeBinaryFilesOk() (*bool, bool)`
+
+GetIncludeBinaryFilesOk returns a tuple with the IncludeBinaryFiles field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeBinaryFiles
+
+`func (o *CsdSettings) SetIncludeBinaryFiles(v bool)`
+
+SetIncludeBinaryFiles sets IncludeBinaryFiles field to given value.
+
+### HasIncludeBinaryFiles
+
+`func (o *CsdSettings) HasIncludeBinaryFiles() bool`
+
+HasIncludeBinaryFiles returns a boolean if a field has been set.
 
 ### GetComment
 

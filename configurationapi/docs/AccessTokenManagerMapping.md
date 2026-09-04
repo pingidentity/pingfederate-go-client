@@ -4,10 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccessTokenManagerRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **AttributeSources** | Pointer to [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) | A list of configured data stores to look up attributes from. | [optional] 
 **AttributeContractFulfillment** | [**map[string]AttributeFulfillmentValue**](AttributeFulfillmentValue.md) | A list of mappings from attribute names to their fulfillment values. | 
 **IssuanceCriteria** | Pointer to [**IssuanceCriteria**](IssuanceCriteria.md) |  | [optional] 
+**AccessTokenManagerRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
+**AttributeSource** | Pointer to [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) |  | [optional] 
 
 ## Methods
 
@@ -27,31 +28,6 @@ will change when the set of required properties is changed
 NewAccessTokenManagerMappingWithDefaults instantiates a new AccessTokenManagerMapping object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAccessTokenManagerRef
-
-`func (o *AccessTokenManagerMapping) GetAccessTokenManagerRef() ResourceLink`
-
-GetAccessTokenManagerRef returns the AccessTokenManagerRef field if non-nil, zero value otherwise.
-
-### GetAccessTokenManagerRefOk
-
-`func (o *AccessTokenManagerMapping) GetAccessTokenManagerRefOk() (*ResourceLink, bool)`
-
-GetAccessTokenManagerRefOk returns a tuple with the AccessTokenManagerRef field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAccessTokenManagerRef
-
-`func (o *AccessTokenManagerMapping) SetAccessTokenManagerRef(v ResourceLink)`
-
-SetAccessTokenManagerRef sets AccessTokenManagerRef field to given value.
-
-### HasAccessTokenManagerRef
-
-`func (o *AccessTokenManagerMapping) HasAccessTokenManagerRef() bool`
-
-HasAccessTokenManagerRef returns a boolean if a field has been set.
 
 ### GetAttributeSources
 
@@ -122,6 +98,56 @@ SetIssuanceCriteria sets IssuanceCriteria field to given value.
 `func (o *AccessTokenManagerMapping) HasIssuanceCriteria() bool`
 
 HasIssuanceCriteria returns a boolean if a field has been set.
+
+### GetAccessTokenManagerRef
+
+`func (o *AccessTokenManagerMapping) GetAccessTokenManagerRef() ResourceLink`
+
+GetAccessTokenManagerRef returns the AccessTokenManagerRef field if non-nil, zero value otherwise.
+
+### GetAccessTokenManagerRefOk
+
+`func (o *AccessTokenManagerMapping) GetAccessTokenManagerRefOk() (*ResourceLink, bool)`
+
+GetAccessTokenManagerRefOk returns a tuple with the AccessTokenManagerRef field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccessTokenManagerRef
+
+`func (o *AccessTokenManagerMapping) SetAccessTokenManagerRef(v ResourceLink)`
+
+SetAccessTokenManagerRef sets AccessTokenManagerRef field to given value.
+
+### HasAccessTokenManagerRef
+
+`func (o *AccessTokenManagerMapping) HasAccessTokenManagerRef() bool`
+
+HasAccessTokenManagerRef returns a boolean if a field has been set.
+
+### GetAttributeSource
+
+`func (o *AccessTokenManagerMapping) GetAttributeSource() []AttributeSourceAggregation`
+
+GetAttributeSource returns the AttributeSource field if non-nil, zero value otherwise.
+
+### GetAttributeSourceOk
+
+`func (o *AccessTokenManagerMapping) GetAttributeSourceOk() (*[]AttributeSourceAggregation, bool)`
+
+GetAttributeSourceOk returns a tuple with the AttributeSource field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributeSource
+
+`func (o *AccessTokenManagerMapping) SetAttributeSource(v []AttributeSourceAggregation)`
+
+SetAttributeSource sets AttributeSource field to given value.
+
+### HasAttributeSource
+
+`func (o *AccessTokenManagerMapping) HasAttributeSource() bool`
+
+HasAttributeSource returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

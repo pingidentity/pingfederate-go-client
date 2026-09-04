@@ -10,13 +10,10 @@ Name | Type | Description | Notes
 **GrantTypes** | **[]string** | The grant types allowed for this client. The EXTENSION grant type applies to SAML/JWT assertion grants. | 
 **Name** | **string** | A descriptive name for the client instance. This name appears when the user is prompted for authorization. | 
 **Description** | Pointer to **string** | A description of what the client application does. This description appears when the user is prompted for authorization. | [optional] 
+**LogoUrl** | Pointer to **string** | The location of the logo used on user-facing OAuth grant authorization and revocation pages. | [optional] 
 **ModificationDate** | Pointer to **time.Time** | The time at which the client was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
 **CreationDate** | Pointer to **time.Time** | The time at which the client was created. This property is read only and is ignored on PUT and POST requests. | [optional] 
 **ReplicationStatus** | Pointer to **string** | This status indicates whether the client has been replicated to the cluster. This property only applies when using XML client storage and automatic replication of clients is enabled. It is read only and is ignored on PUT and POST requests. | [optional] 
-**LogoUrl** | Pointer to **string** | The location of the logo used on user-facing OAuth grant authorization and revocation pages. | [optional] 
-**DefaultAccessTokenManagerRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
-**RestrictToDefaultAccessTokenManager** | Pointer to **bool** | Determines whether the client is restricted to using only its default access token manager. The default is false. | [optional] 
-**ValidateUsingAllEligibleAtms** | Pointer to **bool** | Validates token using all eligible access token managers for the client. This setting is ignored if &#39;restrictToDefaultAccessTokenManager&#39; is set to true. | [optional] 
 **RefreshRolling** | Pointer to **string** | Use ROLL or DONT_ROLL to override the Roll Refresh Token Values setting on the Authorization Server Settings. SERVER_DEFAULT will default to the Roll Refresh Token Values setting on the Authorization Server Setting screen. Defaults to SERVER_DEFAULT. | [optional] 
 **RefreshTokenRollingIntervalType** | Pointer to **string** | Use OVERRIDE_SERVER_DEFAULT to override the Refresh Token Rolling Interval value on the Authorization Server Settings. SERVER_DEFAULT will default to the Refresh Token Rolling Interval value on the Authorization Server Setting. Defaults to SERVER_DEFAULT. | [optional] 
 **RefreshTokenRollingInterval** | Pointer to **int64** | The minimum interval to roll refresh tokens. This value will override the Refresh Token Rolling Interval Value on the Authorization Server Settings. | [optional] 
@@ -33,16 +30,19 @@ Name | Type | Description | Notes
 **EnableCookielessAuthenticationApi** | Pointer to **bool** | Set to true to allow the authentication API redirectless flow to function without requiring any cookies. | [optional] 
 **BypassApprovalPage** | Pointer to **bool** | Use this setting, for example, when you want to deploy a trusted application and authenticate end users via an IdP adapter or IdP connection. | [optional] 
 **RestrictScopes** | Pointer to **bool** | Restricts this client&#39;s access to specific scopes. | [optional] 
-**RestrictedScopes** | Pointer to **[]string** | The scopes available for this client. | [optional] 
-**ExclusiveScopes** | Pointer to **[]string** | The exclusive scopes available for this client. | [optional] 
-**AuthorizationDetailTypes** | Pointer to **[]string** | The authorization detail types available for this client. | [optional] 
-**RestrictedResponseTypes** | Pointer to **[]string** | The response types allowed for this client. If omitted all response types are available to the client. | [optional] 
 **RequirePushedAuthorizationRequests** | Pointer to **bool** | Determines whether pushed authorization requests are required when initiating an authorization request. The default is false. | [optional] 
 **RequireJwtSecuredAuthorizationResponseMode** | Pointer to **bool** | Determines whether JWT Secured authorization response mode is required when initiating an authorization request. The default is false. | [optional] 
-**RequireSignedRequests** | Pointer to **bool** | Determines whether signed requests are required for this client | [optional] 
 **RequestObjectSigningAlgorithm** | Pointer to **string** | The JSON Web Signature [JWS] algorithm that must be used to sign the Request Object. All signing algorithms are allowed if value is not present &lt;br&gt;RS256 - RSA using SHA-256&lt;br&gt;RS384 - RSA using SHA-384&lt;br&gt;RS512 - RSA using SHA-512&lt;br&gt;ES256 - ECDSA using P256 Curve and SHA-256&lt;br&gt;ES384 - ECDSA using P384 Curve and SHA-384&lt;br&gt;ES512 - ECDSA using P521 Curve and SHA-512&lt;br&gt;PS256 - RSASSA-PSS using SHA-256 and MGF1 padding with SHA-256&lt;br&gt;PS384 - RSASSA-PSS using SHA-384 and MGF1 padding with SHA-384&lt;br&gt;PS512 - RSASSA-PSS using SHA-512 and MGF1 padding with SHA-512&lt;br&gt;RSASSA-PSS is only supported with Thales Luna, Entrust nShield Connect or Java 11. | [optional] 
+**RestrictedScopes** | Pointer to **[]string** | The scopes available for this client. | [optional] 
+**ExclusiveScopes** | Pointer to **[]string** | The exclusive scopes available for this client. | [optional] 
+**RestrictedResponseTypes** | Pointer to **[]string** | The response types allowed for this client. If omitted all response types are available to the client. | [optional] 
+**AuthorizationDetailTypes** | Pointer to **[]string** | The authorization detail types available for this client. | [optional] 
+**DefaultAccessTokenManagerRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
+**RestrictToDefaultAccessTokenManager** | Pointer to **bool** | Determines whether the client is restricted to using only its default access token manager. The default is false. | [optional] 
+**ValidateUsingAllEligibleAtms** | Pointer to **bool** | Validates token using all eligible access token managers for the client. This setting is ignored if &#39;restrictToDefaultAccessTokenManager&#39; is set to true. | [optional] 
 **OidcPolicy** | Pointer to [**ClientOIDCPolicy**](ClientOIDCPolicy.md) |  | [optional] 
 **ClientAuth** | Pointer to [**ClientAuth**](ClientAuth.md) |  | [optional] 
+**ClientAuthentication** | Pointer to [**ClientAuthentication**](ClientAuthentication.md) |  | [optional] 
 **JwksSettings** | Pointer to [**JwksSettings**](JwksSettings.md) |  | [optional] 
 **ExtendedParameters** | Pointer to [**map[string]ParameterValues**](ParameterValues.md) | OAuth Client Metadata can be extended to use custom Client Metadata Parameters. The names of these custom parameters should be defined in /extendedProperties. | [optional] 
 **DeviceFlowSettingType** | Pointer to **string** | Allows an administrator to override the Device Authorization Settings set globally for the OAuth AS. Defaults to SERVER_DEFAULT. | [optional] 
@@ -55,10 +55,9 @@ Name | Type | Description | Notes
 **CibaNotificationEndpoint** | Pointer to **string** | The endpoint the OP will call after a successful or failed end-user authentication. | [optional] 
 **CibaPollingInterval** | Pointer to **int64** | The minimum amount of time in seconds that the Client must wait between polling requests to the token endpoint. The default is 3 seconds. | [optional] 
 **CibaRequireSignedRequests** | Pointer to **bool** | Determines whether CIBA signed requests are required for this client. | [optional] 
-**CibaRequestObjectSigningAlgorithm** | Pointer to **string** | The JSON Web Signature [JWS] algorithm that must be used to sign the CIBA Request Object. All signing algorithms are allowed if value is not present &lt;br&gt;RS256 - RSA using SHA-256&lt;br&gt;RS384 - RSA using SHA-384&lt;br&gt;RS512 - RSA using SHA-512&lt;br&gt;ES256 - ECDSA using P256 Curve and SHA-256&lt;br&gt;ES384 - ECDSA using P384 Curve and SHA-384&lt;br&gt;ES512 - ECDSA using P521 Curve and SHA-512&lt;br&gt;PS256 - RSASSA-PSS using SHA-256 and MGF1 padding with SHA-256&lt;br&gt;PS384 - RSASSA-PSS using SHA-384 and MGF1 padding with SHA-384&lt;br&gt;PS512 - RSASSA-PSS using SHA-512 and MGF1 padding with SHA-512&lt;br&gt;RSASSA-PSS is only supported with Thales Luna, Entrust nShield Connect or Java 11. | [optional] 
 **CibaUserCodeSupported** | Pointer to **bool** | Determines whether CIBA user code is supported for this client. | [optional] 
+**CibaRequestObjectSigningAlgorithm** | Pointer to **string** | The JSON Web Signature [JWS] algorithm that must be used to sign the CIBA Request Object. All signing algorithms are allowed if value is not present &lt;br&gt;RS256 - RSA using SHA-256&lt;br&gt;RS384 - RSA using SHA-384&lt;br&gt;RS512 - RSA using SHA-512&lt;br&gt;ES256 - ECDSA using P256 Curve and SHA-256&lt;br&gt;ES384 - ECDSA using P384 Curve and SHA-384&lt;br&gt;ES512 - ECDSA using P521 Curve and SHA-512&lt;br&gt;PS256 - RSASSA-PSS using SHA-256 and MGF1 padding with SHA-256&lt;br&gt;PS384 - RSASSA-PSS using SHA-384 and MGF1 padding with SHA-384&lt;br&gt;PS512 - RSASSA-PSS using SHA-512 and MGF1 padding with SHA-512&lt;br&gt;RSASSA-PSS is only supported with Thales Luna, Entrust nShield Connect or Java 11. | [optional] 
 **RequestPolicyRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
-**TokenExchangeProcessorPolicyRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **RefreshTokenRollingGracePeriodType** | Pointer to **string** | When specified, it overrides the global Refresh Token Grace Period defined in the Authorization Server Settings. The default value is SERVER_DEFAULT | [optional] 
 **RefreshTokenRollingGracePeriod** | Pointer to **int64** | The grace period that a rolled refresh token remains valid in seconds. | [optional] 
 **ClientSecretRetentionPeriodType** | Pointer to **string** | Use OVERRIDE_SERVER_DEFAULT to override the Client Secret Retention Period value on the Authorization Server Settings. SERVER_DEFAULT will default to the Client Secret Retention Period value on the Authorization Server Setting. Defaults to SERVER_DEFAULT. | [optional] 
@@ -71,10 +70,15 @@ Name | Type | Description | Notes
 **JwtSecuredAuthorizationResponseModeEncryptionAlgorithm** | Pointer to **string** | The JSON Web Encryption [JWE] encryption algorithm used to encrypt the content-encryption key of the JWT Secured Authorization Response.&lt;br&gt;DIR - Direct Encryption with symmetric key&lt;br&gt;A128KW - AES-128 Key Wrap&lt;br&gt;A192KW - AES-192 Key Wrap&lt;br&gt;A256KW - AES-256 Key Wrap&lt;br&gt;A128GCMKW - AES-GCM-128 key encryption&lt;br&gt;A192GCMKW - AES-GCM-192 key encryption&lt;br&gt;A256GCMKW - AES-GCM-256 key encryption&lt;br&gt;ECDH_ES - ECDH-ES&lt;br&gt;ECDH_ES_A128KW - ECDH-ES with AES-128 Key Wrap&lt;br&gt;ECDH_ES_A192KW - ECDH-ES with AES-192 Key Wrap&lt;br&gt;ECDH_ES_A256KW - ECDH-ES with AES-256 Key Wrap&lt;br&gt;RSA_OAEP - RSAES OAEP&lt;br&gt;RSA_OAEP_256 - RSAES OAEP using SHA-256 and MGF1 with SHA-256 | [optional] 
 **JwtSecuredAuthorizationResponseModeContentEncryptionAlgorithm** | Pointer to **string** | The JSON Web Encryption [JWE] content-encryption algorithm for the JWT Secured Authorization Response.&lt;br&gt;AES_128_CBC_HMAC_SHA_256 - Composite AES-CBC-128 HMAC-SHA-256&lt;br&gt;AES_192_CBC_HMAC_SHA_384 - Composite AES-CBC-192 HMAC-SHA-384&lt;br&gt;AES_256_CBC_HMAC_SHA_512 - Composite AES-CBC-256 HMAC-SHA-512&lt;br&gt;AES_128_GCM - AES-GCM-128&lt;br&gt;AES_192_GCM - AES-GCM-192&lt;br&gt;AES_256_GCM - AES-GCM-256 | [optional] 
 **RequireDpop** | Pointer to **bool** | Determines whether Demonstrating Proof-of-Possession (DPoP) is required for this client. | [optional] 
+**DpopProofSettings** | Pointer to [**DpopProofSettings**](DpopProofSettings.md) |  | [optional] 
 **RequireOfflineAccessScopeToIssueRefreshTokens** | Pointer to **string** | Determines whether offline_access scope is required to issue refresh tokens by this client or not. &#39;SERVER_DEFAULT&#39; is the default value.  | [optional] 
 **OfflineAccessRequireConsentPrompt** | Pointer to **string** | Determines whether offline_access requires the prompt parameter value to be set to &#39;consent&#39; by this client or not. The value will be reset to default if the &#39;requireOfflineAccessScopeToIssueRefreshTokens&#39; attribute is set to &#39;SERVER_DEFAULT&#39; or &#39;false&#39;. &#39;SERVER_DEFAULT&#39; is the default value. | [optional] 
 **LockoutMaxMaliciousActionsType** | Pointer to **string** | Allows an administrator to override the Max Malicious Actions configuration set globally in AccountLockingService. Defaults to SERVER_DEFAULT. | [optional] 
 **LockoutMaxMaliciousActions** | Pointer to **int64** | The number of malicious actions allowed before an OAuth client is locked out. Currently, the only operation that is tracked as a malicious action is an attempt to revoke an invalid access token or refresh token. This value will override the global MaxMaliciousActions value on the AccountLockingService in the config-store. | [optional] 
+**Tags** | Pointer to [**[]ResourceLink**](ResourceLink.md) | The tags assigned to this client. | [optional] 
+**RequireSignedRequests** | Pointer to **bool** | Determines whether signed requests are required for this client | [optional] 
+**AllowExclusiveScopes** | Pointer to **[]string** |  | [optional] 
+**TokenExchangeProcessorPolicyRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 
 ## Methods
 
@@ -230,6 +234,31 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### GetLogoUrl
+
+`func (o *Client) GetLogoUrl() string`
+
+GetLogoUrl returns the LogoUrl field if non-nil, zero value otherwise.
+
+### GetLogoUrlOk
+
+`func (o *Client) GetLogoUrlOk() (*string, bool)`
+
+GetLogoUrlOk returns a tuple with the LogoUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLogoUrl
+
+`func (o *Client) SetLogoUrl(v string)`
+
+SetLogoUrl sets LogoUrl field to given value.
+
+### HasLogoUrl
+
+`func (o *Client) HasLogoUrl() bool`
+
+HasLogoUrl returns a boolean if a field has been set.
+
 ### GetModificationDate
 
 `func (o *Client) GetModificationDate() time.Time`
@@ -304,106 +333,6 @@ SetReplicationStatus sets ReplicationStatus field to given value.
 `func (o *Client) HasReplicationStatus() bool`
 
 HasReplicationStatus returns a boolean if a field has been set.
-
-### GetLogoUrl
-
-`func (o *Client) GetLogoUrl() string`
-
-GetLogoUrl returns the LogoUrl field if non-nil, zero value otherwise.
-
-### GetLogoUrlOk
-
-`func (o *Client) GetLogoUrlOk() (*string, bool)`
-
-GetLogoUrlOk returns a tuple with the LogoUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLogoUrl
-
-`func (o *Client) SetLogoUrl(v string)`
-
-SetLogoUrl sets LogoUrl field to given value.
-
-### HasLogoUrl
-
-`func (o *Client) HasLogoUrl() bool`
-
-HasLogoUrl returns a boolean if a field has been set.
-
-### GetDefaultAccessTokenManagerRef
-
-`func (o *Client) GetDefaultAccessTokenManagerRef() ResourceLink`
-
-GetDefaultAccessTokenManagerRef returns the DefaultAccessTokenManagerRef field if non-nil, zero value otherwise.
-
-### GetDefaultAccessTokenManagerRefOk
-
-`func (o *Client) GetDefaultAccessTokenManagerRefOk() (*ResourceLink, bool)`
-
-GetDefaultAccessTokenManagerRefOk returns a tuple with the DefaultAccessTokenManagerRef field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDefaultAccessTokenManagerRef
-
-`func (o *Client) SetDefaultAccessTokenManagerRef(v ResourceLink)`
-
-SetDefaultAccessTokenManagerRef sets DefaultAccessTokenManagerRef field to given value.
-
-### HasDefaultAccessTokenManagerRef
-
-`func (o *Client) HasDefaultAccessTokenManagerRef() bool`
-
-HasDefaultAccessTokenManagerRef returns a boolean if a field has been set.
-
-### GetRestrictToDefaultAccessTokenManager
-
-`func (o *Client) GetRestrictToDefaultAccessTokenManager() bool`
-
-GetRestrictToDefaultAccessTokenManager returns the RestrictToDefaultAccessTokenManager field if non-nil, zero value otherwise.
-
-### GetRestrictToDefaultAccessTokenManagerOk
-
-`func (o *Client) GetRestrictToDefaultAccessTokenManagerOk() (*bool, bool)`
-
-GetRestrictToDefaultAccessTokenManagerOk returns a tuple with the RestrictToDefaultAccessTokenManager field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRestrictToDefaultAccessTokenManager
-
-`func (o *Client) SetRestrictToDefaultAccessTokenManager(v bool)`
-
-SetRestrictToDefaultAccessTokenManager sets RestrictToDefaultAccessTokenManager field to given value.
-
-### HasRestrictToDefaultAccessTokenManager
-
-`func (o *Client) HasRestrictToDefaultAccessTokenManager() bool`
-
-HasRestrictToDefaultAccessTokenManager returns a boolean if a field has been set.
-
-### GetValidateUsingAllEligibleAtms
-
-`func (o *Client) GetValidateUsingAllEligibleAtms() bool`
-
-GetValidateUsingAllEligibleAtms returns the ValidateUsingAllEligibleAtms field if non-nil, zero value otherwise.
-
-### GetValidateUsingAllEligibleAtmsOk
-
-`func (o *Client) GetValidateUsingAllEligibleAtmsOk() (*bool, bool)`
-
-GetValidateUsingAllEligibleAtmsOk returns a tuple with the ValidateUsingAllEligibleAtms field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetValidateUsingAllEligibleAtms
-
-`func (o *Client) SetValidateUsingAllEligibleAtms(v bool)`
-
-SetValidateUsingAllEligibleAtms sets ValidateUsingAllEligibleAtms field to given value.
-
-### HasValidateUsingAllEligibleAtms
-
-`func (o *Client) HasValidateUsingAllEligibleAtms() bool`
-
-HasValidateUsingAllEligibleAtms returns a boolean if a field has been set.
 
 ### GetRefreshRolling
 
@@ -805,106 +734,6 @@ SetRestrictScopes sets RestrictScopes field to given value.
 
 HasRestrictScopes returns a boolean if a field has been set.
 
-### GetRestrictedScopes
-
-`func (o *Client) GetRestrictedScopes() []string`
-
-GetRestrictedScopes returns the RestrictedScopes field if non-nil, zero value otherwise.
-
-### GetRestrictedScopesOk
-
-`func (o *Client) GetRestrictedScopesOk() (*[]string, bool)`
-
-GetRestrictedScopesOk returns a tuple with the RestrictedScopes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRestrictedScopes
-
-`func (o *Client) SetRestrictedScopes(v []string)`
-
-SetRestrictedScopes sets RestrictedScopes field to given value.
-
-### HasRestrictedScopes
-
-`func (o *Client) HasRestrictedScopes() bool`
-
-HasRestrictedScopes returns a boolean if a field has been set.
-
-### GetExclusiveScopes
-
-`func (o *Client) GetExclusiveScopes() []string`
-
-GetExclusiveScopes returns the ExclusiveScopes field if non-nil, zero value otherwise.
-
-### GetExclusiveScopesOk
-
-`func (o *Client) GetExclusiveScopesOk() (*[]string, bool)`
-
-GetExclusiveScopesOk returns a tuple with the ExclusiveScopes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExclusiveScopes
-
-`func (o *Client) SetExclusiveScopes(v []string)`
-
-SetExclusiveScopes sets ExclusiveScopes field to given value.
-
-### HasExclusiveScopes
-
-`func (o *Client) HasExclusiveScopes() bool`
-
-HasExclusiveScopes returns a boolean if a field has been set.
-
-### GetAuthorizationDetailTypes
-
-`func (o *Client) GetAuthorizationDetailTypes() []string`
-
-GetAuthorizationDetailTypes returns the AuthorizationDetailTypes field if non-nil, zero value otherwise.
-
-### GetAuthorizationDetailTypesOk
-
-`func (o *Client) GetAuthorizationDetailTypesOk() (*[]string, bool)`
-
-GetAuthorizationDetailTypesOk returns a tuple with the AuthorizationDetailTypes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAuthorizationDetailTypes
-
-`func (o *Client) SetAuthorizationDetailTypes(v []string)`
-
-SetAuthorizationDetailTypes sets AuthorizationDetailTypes field to given value.
-
-### HasAuthorizationDetailTypes
-
-`func (o *Client) HasAuthorizationDetailTypes() bool`
-
-HasAuthorizationDetailTypes returns a boolean if a field has been set.
-
-### GetRestrictedResponseTypes
-
-`func (o *Client) GetRestrictedResponseTypes() []string`
-
-GetRestrictedResponseTypes returns the RestrictedResponseTypes field if non-nil, zero value otherwise.
-
-### GetRestrictedResponseTypesOk
-
-`func (o *Client) GetRestrictedResponseTypesOk() (*[]string, bool)`
-
-GetRestrictedResponseTypesOk returns a tuple with the RestrictedResponseTypes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRestrictedResponseTypes
-
-`func (o *Client) SetRestrictedResponseTypes(v []string)`
-
-SetRestrictedResponseTypes sets RestrictedResponseTypes field to given value.
-
-### HasRestrictedResponseTypes
-
-`func (o *Client) HasRestrictedResponseTypes() bool`
-
-HasRestrictedResponseTypes returns a boolean if a field has been set.
-
 ### GetRequirePushedAuthorizationRequests
 
 `func (o *Client) GetRequirePushedAuthorizationRequests() bool`
@@ -955,31 +784,6 @@ SetRequireJwtSecuredAuthorizationResponseMode sets RequireJwtSecuredAuthorizatio
 
 HasRequireJwtSecuredAuthorizationResponseMode returns a boolean if a field has been set.
 
-### GetRequireSignedRequests
-
-`func (o *Client) GetRequireSignedRequests() bool`
-
-GetRequireSignedRequests returns the RequireSignedRequests field if non-nil, zero value otherwise.
-
-### GetRequireSignedRequestsOk
-
-`func (o *Client) GetRequireSignedRequestsOk() (*bool, bool)`
-
-GetRequireSignedRequestsOk returns a tuple with the RequireSignedRequests field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRequireSignedRequests
-
-`func (o *Client) SetRequireSignedRequests(v bool)`
-
-SetRequireSignedRequests sets RequireSignedRequests field to given value.
-
-### HasRequireSignedRequests
-
-`func (o *Client) HasRequireSignedRequests() bool`
-
-HasRequireSignedRequests returns a boolean if a field has been set.
-
 ### GetRequestObjectSigningAlgorithm
 
 `func (o *Client) GetRequestObjectSigningAlgorithm() string`
@@ -1004,6 +808,181 @@ SetRequestObjectSigningAlgorithm sets RequestObjectSigningAlgorithm field to giv
 `func (o *Client) HasRequestObjectSigningAlgorithm() bool`
 
 HasRequestObjectSigningAlgorithm returns a boolean if a field has been set.
+
+### GetRestrictedScopes
+
+`func (o *Client) GetRestrictedScopes() []string`
+
+GetRestrictedScopes returns the RestrictedScopes field if non-nil, zero value otherwise.
+
+### GetRestrictedScopesOk
+
+`func (o *Client) GetRestrictedScopesOk() (*[]string, bool)`
+
+GetRestrictedScopesOk returns a tuple with the RestrictedScopes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRestrictedScopes
+
+`func (o *Client) SetRestrictedScopes(v []string)`
+
+SetRestrictedScopes sets RestrictedScopes field to given value.
+
+### HasRestrictedScopes
+
+`func (o *Client) HasRestrictedScopes() bool`
+
+HasRestrictedScopes returns a boolean if a field has been set.
+
+### GetExclusiveScopes
+
+`func (o *Client) GetExclusiveScopes() []string`
+
+GetExclusiveScopes returns the ExclusiveScopes field if non-nil, zero value otherwise.
+
+### GetExclusiveScopesOk
+
+`func (o *Client) GetExclusiveScopesOk() (*[]string, bool)`
+
+GetExclusiveScopesOk returns a tuple with the ExclusiveScopes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExclusiveScopes
+
+`func (o *Client) SetExclusiveScopes(v []string)`
+
+SetExclusiveScopes sets ExclusiveScopes field to given value.
+
+### HasExclusiveScopes
+
+`func (o *Client) HasExclusiveScopes() bool`
+
+HasExclusiveScopes returns a boolean if a field has been set.
+
+### GetRestrictedResponseTypes
+
+`func (o *Client) GetRestrictedResponseTypes() []string`
+
+GetRestrictedResponseTypes returns the RestrictedResponseTypes field if non-nil, zero value otherwise.
+
+### GetRestrictedResponseTypesOk
+
+`func (o *Client) GetRestrictedResponseTypesOk() (*[]string, bool)`
+
+GetRestrictedResponseTypesOk returns a tuple with the RestrictedResponseTypes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRestrictedResponseTypes
+
+`func (o *Client) SetRestrictedResponseTypes(v []string)`
+
+SetRestrictedResponseTypes sets RestrictedResponseTypes field to given value.
+
+### HasRestrictedResponseTypes
+
+`func (o *Client) HasRestrictedResponseTypes() bool`
+
+HasRestrictedResponseTypes returns a boolean if a field has been set.
+
+### GetAuthorizationDetailTypes
+
+`func (o *Client) GetAuthorizationDetailTypes() []string`
+
+GetAuthorizationDetailTypes returns the AuthorizationDetailTypes field if non-nil, zero value otherwise.
+
+### GetAuthorizationDetailTypesOk
+
+`func (o *Client) GetAuthorizationDetailTypesOk() (*[]string, bool)`
+
+GetAuthorizationDetailTypesOk returns a tuple with the AuthorizationDetailTypes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthorizationDetailTypes
+
+`func (o *Client) SetAuthorizationDetailTypes(v []string)`
+
+SetAuthorizationDetailTypes sets AuthorizationDetailTypes field to given value.
+
+### HasAuthorizationDetailTypes
+
+`func (o *Client) HasAuthorizationDetailTypes() bool`
+
+HasAuthorizationDetailTypes returns a boolean if a field has been set.
+
+### GetDefaultAccessTokenManagerRef
+
+`func (o *Client) GetDefaultAccessTokenManagerRef() ResourceLink`
+
+GetDefaultAccessTokenManagerRef returns the DefaultAccessTokenManagerRef field if non-nil, zero value otherwise.
+
+### GetDefaultAccessTokenManagerRefOk
+
+`func (o *Client) GetDefaultAccessTokenManagerRefOk() (*ResourceLink, bool)`
+
+GetDefaultAccessTokenManagerRefOk returns a tuple with the DefaultAccessTokenManagerRef field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultAccessTokenManagerRef
+
+`func (o *Client) SetDefaultAccessTokenManagerRef(v ResourceLink)`
+
+SetDefaultAccessTokenManagerRef sets DefaultAccessTokenManagerRef field to given value.
+
+### HasDefaultAccessTokenManagerRef
+
+`func (o *Client) HasDefaultAccessTokenManagerRef() bool`
+
+HasDefaultAccessTokenManagerRef returns a boolean if a field has been set.
+
+### GetRestrictToDefaultAccessTokenManager
+
+`func (o *Client) GetRestrictToDefaultAccessTokenManager() bool`
+
+GetRestrictToDefaultAccessTokenManager returns the RestrictToDefaultAccessTokenManager field if non-nil, zero value otherwise.
+
+### GetRestrictToDefaultAccessTokenManagerOk
+
+`func (o *Client) GetRestrictToDefaultAccessTokenManagerOk() (*bool, bool)`
+
+GetRestrictToDefaultAccessTokenManagerOk returns a tuple with the RestrictToDefaultAccessTokenManager field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRestrictToDefaultAccessTokenManager
+
+`func (o *Client) SetRestrictToDefaultAccessTokenManager(v bool)`
+
+SetRestrictToDefaultAccessTokenManager sets RestrictToDefaultAccessTokenManager field to given value.
+
+### HasRestrictToDefaultAccessTokenManager
+
+`func (o *Client) HasRestrictToDefaultAccessTokenManager() bool`
+
+HasRestrictToDefaultAccessTokenManager returns a boolean if a field has been set.
+
+### GetValidateUsingAllEligibleAtms
+
+`func (o *Client) GetValidateUsingAllEligibleAtms() bool`
+
+GetValidateUsingAllEligibleAtms returns the ValidateUsingAllEligibleAtms field if non-nil, zero value otherwise.
+
+### GetValidateUsingAllEligibleAtmsOk
+
+`func (o *Client) GetValidateUsingAllEligibleAtmsOk() (*bool, bool)`
+
+GetValidateUsingAllEligibleAtmsOk returns a tuple with the ValidateUsingAllEligibleAtms field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValidateUsingAllEligibleAtms
+
+`func (o *Client) SetValidateUsingAllEligibleAtms(v bool)`
+
+SetValidateUsingAllEligibleAtms sets ValidateUsingAllEligibleAtms field to given value.
+
+### HasValidateUsingAllEligibleAtms
+
+`func (o *Client) HasValidateUsingAllEligibleAtms() bool`
+
+HasValidateUsingAllEligibleAtms returns a boolean if a field has been set.
 
 ### GetOidcPolicy
 
@@ -1054,6 +1033,31 @@ SetClientAuth sets ClientAuth field to given value.
 `func (o *Client) HasClientAuth() bool`
 
 HasClientAuth returns a boolean if a field has been set.
+
+### GetClientAuthentication
+
+`func (o *Client) GetClientAuthentication() ClientAuthentication`
+
+GetClientAuthentication returns the ClientAuthentication field if non-nil, zero value otherwise.
+
+### GetClientAuthenticationOk
+
+`func (o *Client) GetClientAuthenticationOk() (*ClientAuthentication, bool)`
+
+GetClientAuthenticationOk returns a tuple with the ClientAuthentication field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientAuthentication
+
+`func (o *Client) SetClientAuthentication(v ClientAuthentication)`
+
+SetClientAuthentication sets ClientAuthentication field to given value.
+
+### HasClientAuthentication
+
+`func (o *Client) HasClientAuthentication() bool`
+
+HasClientAuthentication returns a boolean if a field has been set.
 
 ### GetJwksSettings
 
@@ -1355,31 +1359,6 @@ SetCibaRequireSignedRequests sets CibaRequireSignedRequests field to given value
 
 HasCibaRequireSignedRequests returns a boolean if a field has been set.
 
-### GetCibaRequestObjectSigningAlgorithm
-
-`func (o *Client) GetCibaRequestObjectSigningAlgorithm() string`
-
-GetCibaRequestObjectSigningAlgorithm returns the CibaRequestObjectSigningAlgorithm field if non-nil, zero value otherwise.
-
-### GetCibaRequestObjectSigningAlgorithmOk
-
-`func (o *Client) GetCibaRequestObjectSigningAlgorithmOk() (*string, bool)`
-
-GetCibaRequestObjectSigningAlgorithmOk returns a tuple with the CibaRequestObjectSigningAlgorithm field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCibaRequestObjectSigningAlgorithm
-
-`func (o *Client) SetCibaRequestObjectSigningAlgorithm(v string)`
-
-SetCibaRequestObjectSigningAlgorithm sets CibaRequestObjectSigningAlgorithm field to given value.
-
-### HasCibaRequestObjectSigningAlgorithm
-
-`func (o *Client) HasCibaRequestObjectSigningAlgorithm() bool`
-
-HasCibaRequestObjectSigningAlgorithm returns a boolean if a field has been set.
-
 ### GetCibaUserCodeSupported
 
 `func (o *Client) GetCibaUserCodeSupported() bool`
@@ -1405,6 +1384,31 @@ SetCibaUserCodeSupported sets CibaUserCodeSupported field to given value.
 
 HasCibaUserCodeSupported returns a boolean if a field has been set.
 
+### GetCibaRequestObjectSigningAlgorithm
+
+`func (o *Client) GetCibaRequestObjectSigningAlgorithm() string`
+
+GetCibaRequestObjectSigningAlgorithm returns the CibaRequestObjectSigningAlgorithm field if non-nil, zero value otherwise.
+
+### GetCibaRequestObjectSigningAlgorithmOk
+
+`func (o *Client) GetCibaRequestObjectSigningAlgorithmOk() (*string, bool)`
+
+GetCibaRequestObjectSigningAlgorithmOk returns a tuple with the CibaRequestObjectSigningAlgorithm field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCibaRequestObjectSigningAlgorithm
+
+`func (o *Client) SetCibaRequestObjectSigningAlgorithm(v string)`
+
+SetCibaRequestObjectSigningAlgorithm sets CibaRequestObjectSigningAlgorithm field to given value.
+
+### HasCibaRequestObjectSigningAlgorithm
+
+`func (o *Client) HasCibaRequestObjectSigningAlgorithm() bool`
+
+HasCibaRequestObjectSigningAlgorithm returns a boolean if a field has been set.
+
 ### GetRequestPolicyRef
 
 `func (o *Client) GetRequestPolicyRef() ResourceLink`
@@ -1429,31 +1433,6 @@ SetRequestPolicyRef sets RequestPolicyRef field to given value.
 `func (o *Client) HasRequestPolicyRef() bool`
 
 HasRequestPolicyRef returns a boolean if a field has been set.
-
-### GetTokenExchangeProcessorPolicyRef
-
-`func (o *Client) GetTokenExchangeProcessorPolicyRef() ResourceLink`
-
-GetTokenExchangeProcessorPolicyRef returns the TokenExchangeProcessorPolicyRef field if non-nil, zero value otherwise.
-
-### GetTokenExchangeProcessorPolicyRefOk
-
-`func (o *Client) GetTokenExchangeProcessorPolicyRefOk() (*ResourceLink, bool)`
-
-GetTokenExchangeProcessorPolicyRefOk returns a tuple with the TokenExchangeProcessorPolicyRef field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTokenExchangeProcessorPolicyRef
-
-`func (o *Client) SetTokenExchangeProcessorPolicyRef(v ResourceLink)`
-
-SetTokenExchangeProcessorPolicyRef sets TokenExchangeProcessorPolicyRef field to given value.
-
-### HasTokenExchangeProcessorPolicyRef
-
-`func (o *Client) HasTokenExchangeProcessorPolicyRef() bool`
-
-HasTokenExchangeProcessorPolicyRef returns a boolean if a field has been set.
 
 ### GetRefreshTokenRollingGracePeriodType
 
@@ -1755,6 +1734,31 @@ SetRequireDpop sets RequireDpop field to given value.
 
 HasRequireDpop returns a boolean if a field has been set.
 
+### GetDpopProofSettings
+
+`func (o *Client) GetDpopProofSettings() DpopProofSettings`
+
+GetDpopProofSettings returns the DpopProofSettings field if non-nil, zero value otherwise.
+
+### GetDpopProofSettingsOk
+
+`func (o *Client) GetDpopProofSettingsOk() (*DpopProofSettings, bool)`
+
+GetDpopProofSettingsOk returns a tuple with the DpopProofSettings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDpopProofSettings
+
+`func (o *Client) SetDpopProofSettings(v DpopProofSettings)`
+
+SetDpopProofSettings sets DpopProofSettings field to given value.
+
+### HasDpopProofSettings
+
+`func (o *Client) HasDpopProofSettings() bool`
+
+HasDpopProofSettings returns a boolean if a field has been set.
+
 ### GetRequireOfflineAccessScopeToIssueRefreshTokens
 
 `func (o *Client) GetRequireOfflineAccessScopeToIssueRefreshTokens() string`
@@ -1854,6 +1858,106 @@ SetLockoutMaxMaliciousActions sets LockoutMaxMaliciousActions field to given val
 `func (o *Client) HasLockoutMaxMaliciousActions() bool`
 
 HasLockoutMaxMaliciousActions returns a boolean if a field has been set.
+
+### GetTags
+
+`func (o *Client) GetTags() []ResourceLink`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *Client) GetTagsOk() (*[]ResourceLink, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *Client) SetTags(v []ResourceLink)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *Client) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
+
+### GetRequireSignedRequests
+
+`func (o *Client) GetRequireSignedRequests() bool`
+
+GetRequireSignedRequests returns the RequireSignedRequests field if non-nil, zero value otherwise.
+
+### GetRequireSignedRequestsOk
+
+`func (o *Client) GetRequireSignedRequestsOk() (*bool, bool)`
+
+GetRequireSignedRequestsOk returns a tuple with the RequireSignedRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequireSignedRequests
+
+`func (o *Client) SetRequireSignedRequests(v bool)`
+
+SetRequireSignedRequests sets RequireSignedRequests field to given value.
+
+### HasRequireSignedRequests
+
+`func (o *Client) HasRequireSignedRequests() bool`
+
+HasRequireSignedRequests returns a boolean if a field has been set.
+
+### GetAllowExclusiveScopes
+
+`func (o *Client) GetAllowExclusiveScopes() []string`
+
+GetAllowExclusiveScopes returns the AllowExclusiveScopes field if non-nil, zero value otherwise.
+
+### GetAllowExclusiveScopesOk
+
+`func (o *Client) GetAllowExclusiveScopesOk() (*[]string, bool)`
+
+GetAllowExclusiveScopesOk returns a tuple with the AllowExclusiveScopes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowExclusiveScopes
+
+`func (o *Client) SetAllowExclusiveScopes(v []string)`
+
+SetAllowExclusiveScopes sets AllowExclusiveScopes field to given value.
+
+### HasAllowExclusiveScopes
+
+`func (o *Client) HasAllowExclusiveScopes() bool`
+
+HasAllowExclusiveScopes returns a boolean if a field has been set.
+
+### GetTokenExchangeProcessorPolicyRef
+
+`func (o *Client) GetTokenExchangeProcessorPolicyRef() ResourceLink`
+
+GetTokenExchangeProcessorPolicyRef returns the TokenExchangeProcessorPolicyRef field if non-nil, zero value otherwise.
+
+### GetTokenExchangeProcessorPolicyRefOk
+
+`func (o *Client) GetTokenExchangeProcessorPolicyRefOk() (*ResourceLink, bool)`
+
+GetTokenExchangeProcessorPolicyRefOk returns a tuple with the TokenExchangeProcessorPolicyRef field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTokenExchangeProcessorPolicyRef
+
+`func (o *Client) SetTokenExchangeProcessorPolicyRef(v ResourceLink)`
+
+SetTokenExchangeProcessorPolicyRef sets TokenExchangeProcessorPolicyRef field to given value.
+
+### HasTokenExchangeProcessorPolicyRef
+
+`func (o *Client) HasTokenExchangeProcessorPolicyRef() bool`
+
+HasTokenExchangeProcessorPolicyRef returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

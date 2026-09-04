@@ -5,16 +5,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ForceTcp** | Pointer to **bool** | Reference to the default security. | [optional] 
-**KdcRetries** | **string** | Reference to the default Key Distribution Center Retries. | 
-**DebugLogOutput** | Pointer to **bool** | Reference to the default logging. | [optional] 
 **KdcTimeout** | **string** | Reference to the default Key Distribution Center Timeout (in seconds). | 
+**DebugLogOutput** | Pointer to **bool** | Reference to the default logging. | [optional] 
+**KdcRetries** | **string** | Reference to the default Key Distribution Center Retries. | 
 **KeySetRetentionPeriodMins** | Pointer to **int64** | The key set retention period in minutes. When &#39;retainPreviousKeysOnPasswordChange&#39; is set to true for a realm, this setting determines how long keys will be retained after a password change occurs. If this field is omitted in a PUT request, the default of 610 minutes is applied. | [optional] 
 
 ## Methods
 
 ### NewKerberosRealmsSettings
 
-`func NewKerberosRealmsSettings(kdcRetries string, kdcTimeout string, ) *KerberosRealmsSettings`
+`func NewKerberosRealmsSettings(kdcTimeout string, kdcRetries string, ) *KerberosRealmsSettings`
 
 NewKerberosRealmsSettings instantiates a new KerberosRealmsSettings object
 This constructor will assign default values to properties that have it defined,
@@ -54,24 +54,24 @@ SetForceTcp sets ForceTcp field to given value.
 
 HasForceTcp returns a boolean if a field has been set.
 
-### GetKdcRetries
+### GetKdcTimeout
 
-`func (o *KerberosRealmsSettings) GetKdcRetries() string`
+`func (o *KerberosRealmsSettings) GetKdcTimeout() string`
 
-GetKdcRetries returns the KdcRetries field if non-nil, zero value otherwise.
+GetKdcTimeout returns the KdcTimeout field if non-nil, zero value otherwise.
 
-### GetKdcRetriesOk
+### GetKdcTimeoutOk
 
-`func (o *KerberosRealmsSettings) GetKdcRetriesOk() (*string, bool)`
+`func (o *KerberosRealmsSettings) GetKdcTimeoutOk() (*string, bool)`
 
-GetKdcRetriesOk returns a tuple with the KdcRetries field if it's non-nil, zero value otherwise
+GetKdcTimeoutOk returns a tuple with the KdcTimeout field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKdcRetries
+### SetKdcTimeout
 
-`func (o *KerberosRealmsSettings) SetKdcRetries(v string)`
+`func (o *KerberosRealmsSettings) SetKdcTimeout(v string)`
 
-SetKdcRetries sets KdcRetries field to given value.
+SetKdcTimeout sets KdcTimeout field to given value.
 
 
 ### GetDebugLogOutput
@@ -99,24 +99,24 @@ SetDebugLogOutput sets DebugLogOutput field to given value.
 
 HasDebugLogOutput returns a boolean if a field has been set.
 
-### GetKdcTimeout
+### GetKdcRetries
 
-`func (o *KerberosRealmsSettings) GetKdcTimeout() string`
+`func (o *KerberosRealmsSettings) GetKdcRetries() string`
 
-GetKdcTimeout returns the KdcTimeout field if non-nil, zero value otherwise.
+GetKdcRetries returns the KdcRetries field if non-nil, zero value otherwise.
 
-### GetKdcTimeoutOk
+### GetKdcRetriesOk
 
-`func (o *KerberosRealmsSettings) GetKdcTimeoutOk() (*string, bool)`
+`func (o *KerberosRealmsSettings) GetKdcRetriesOk() (*string, bool)`
 
-GetKdcTimeoutOk returns a tuple with the KdcTimeout field if it's non-nil, zero value otherwise
+GetKdcRetriesOk returns a tuple with the KdcRetries field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKdcTimeout
+### SetKdcRetries
 
-`func (o *KerberosRealmsSettings) SetKdcTimeout(v string)`
+`func (o *KerberosRealmsSettings) SetKdcRetries(v string)`
 
-SetKdcTimeout sets KdcTimeout field to given value.
+SetKdcRetries sets KdcRetries field to given value.
 
 
 ### GetKeySetRetentionPeriodMins

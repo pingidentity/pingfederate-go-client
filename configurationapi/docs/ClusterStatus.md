@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **Nodes** | Pointer to [**[]ClusterNode**](ClusterNode.md) | List of nodes in the cluster. | [optional] 
 **LastConfigUpdateTime** | Pointer to **time.Time** | Time when the configuration of this node was last updated. | [optional] 
 **LastReplicationTime** | Pointer to **time.Time** | Time when configuration changes were last replicated. | [optional] 
+**CurrentNodeIndex** | Pointer to **int64** | Index of the current node in the cluster. | [optional] 
 **ReplicationRequired** | Pointer to **bool** | Indicates whether a replication is required to propagate config updates. | [optional] 
 **MixedMode** | Pointer to **bool** | Indicates whether there is more than one version of PingFederate in the cluster. | [optional] 
-**CurrentNodeIndex** | Pointer to **int64** | Index of the current node in the cluster. | [optional] 
 
 ## Methods
 
@@ -105,6 +105,31 @@ SetLastReplicationTime sets LastReplicationTime field to given value.
 
 HasLastReplicationTime returns a boolean if a field has been set.
 
+### GetCurrentNodeIndex
+
+`func (o *ClusterStatus) GetCurrentNodeIndex() int64`
+
+GetCurrentNodeIndex returns the CurrentNodeIndex field if non-nil, zero value otherwise.
+
+### GetCurrentNodeIndexOk
+
+`func (o *ClusterStatus) GetCurrentNodeIndexOk() (*int64, bool)`
+
+GetCurrentNodeIndexOk returns a tuple with the CurrentNodeIndex field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrentNodeIndex
+
+`func (o *ClusterStatus) SetCurrentNodeIndex(v int64)`
+
+SetCurrentNodeIndex sets CurrentNodeIndex field to given value.
+
+### HasCurrentNodeIndex
+
+`func (o *ClusterStatus) HasCurrentNodeIndex() bool`
+
+HasCurrentNodeIndex returns a boolean if a field has been set.
+
 ### GetReplicationRequired
 
 `func (o *ClusterStatus) GetReplicationRequired() bool`
@@ -154,31 +179,6 @@ SetMixedMode sets MixedMode field to given value.
 `func (o *ClusterStatus) HasMixedMode() bool`
 
 HasMixedMode returns a boolean if a field has been set.
-
-### GetCurrentNodeIndex
-
-`func (o *ClusterStatus) GetCurrentNodeIndex() int64`
-
-GetCurrentNodeIndex returns the CurrentNodeIndex field if non-nil, zero value otherwise.
-
-### GetCurrentNodeIndexOk
-
-`func (o *ClusterStatus) GetCurrentNodeIndexOk() (*int64, bool)`
-
-GetCurrentNodeIndexOk returns a tuple with the CurrentNodeIndex field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCurrentNodeIndex
-
-`func (o *ClusterStatus) SetCurrentNodeIndex(v int64)`
-
-SetCurrentNodeIndex sets CurrentNodeIndex field to given value.
-
-### HasCurrentNodeIndex
-
-`func (o *ClusterStatus) HasCurrentNodeIndex() bool`
-
-HasCurrentNodeIndex returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

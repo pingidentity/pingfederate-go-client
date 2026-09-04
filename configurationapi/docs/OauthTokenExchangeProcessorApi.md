@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## CreateOauthTokenExchangeProcessorPolicy
 
-> TokenExchangeProcessorPolicy CreateOauthTokenExchangeProcessorPolicy(ctx).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
+> TokenExchangeProcessorPolicy CreateOauthTokenExchangeProcessorPolicy(ctx).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
 
 Create a new OAuth 2.0 Token Exchange Processor policy.
 
@@ -36,11 +36,11 @@ import (
 
 func main() {
     body := *openapiclient.NewTokenExchangeProcessorPolicy("Id_example", "Name_example", *openapiclient.NewTokenExchangeProcessorAttributeContract(), []openapiclient.TokenExchangeProcessorMapping{*openapiclient.NewTokenExchangeProcessorMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "SubjectTokenType_example", *openapiclient.NewResourceLink("Id_example"))}) // TokenExchangeProcessorPolicy | Configuration for new OAuth 2.0 Token Exchange Processor.
-    bypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional)
+    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.CreateOauthTokenExchangeProcessorPolicy(context.Background()).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.CreateOauthTokenExchangeProcessorPolicy(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.CreateOauthTokenExchangeProcessorPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -62,7 +62,7 @@ Other parameters are passed through a pointer to a apiCreateOauthTokenExchangePr
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**TokenExchangeProcessorPolicy**](TokenExchangeProcessorPolicy.md) | Configuration for new OAuth 2.0 Token Exchange Processor. | 
- **bypassExternalValidation** | **bool** | External validation will be bypassed when set to true. Default to false. | 
+ **xBypassExternalValidation** | **bool** | External validation will be bypassed when set to true. Default to false. | [default to false]
 
 ### Return type
 
@@ -340,7 +340,7 @@ Other parameters are passed through a pointer to a apiGetOauthTokenExchangeProce
 
 ## UpdateOauthTokenExchangeProcessorPolicy
 
-> TokenExchangeProcessorPolicy UpdateOauthTokenExchangeProcessorPolicy(ctx, id).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
+> TokenExchangeProcessorPolicy UpdateOauthTokenExchangeProcessorPolicy(ctx, id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
 
 Update an OAuth 2.0 Token Exchange Processor policy.
 
@@ -361,11 +361,11 @@ import (
 func main() {
     id := "id_example" // string | ID of the OAuth 2.0 Token Exchange Processor policy to update.
     body := *openapiclient.NewTokenExchangeProcessorPolicy("Id_example", "Name_example", *openapiclient.NewTokenExchangeProcessorAttributeContract(), []openapiclient.TokenExchangeProcessorMapping{*openapiclient.NewTokenExchangeProcessorMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "SubjectTokenType_example", *openapiclient.NewResourceLink("Id_example"))}) // TokenExchangeProcessorPolicy | Configuration for updated OAuth 2.0 Token Exchange Processor policy.
-    bypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional)
+    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicy(context.Background(), id).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicy(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -392,7 +392,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **body** | [**TokenExchangeProcessorPolicy**](TokenExchangeProcessorPolicy.md) | Configuration for updated OAuth 2.0 Token Exchange Processor policy. | 
- **bypassExternalValidation** | **bool** | External validation will be bypassed when set to true. Default to false. | 
+ **xBypassExternalValidation** | **bool** | External validation will be bypassed when set to true. Default to false. | [default to false]
 
 ### Return type
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 ## UpdateOauthTokenExchangeProcessorPolicySettings
 
-> TokenExchangeProcessorSettings UpdateOauthTokenExchangeProcessorPolicySettings(ctx).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
+> TokenExchangeProcessorSettings UpdateOauthTokenExchangeProcessorPolicySettings(ctx).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
 
 Update general OAuth 2.0 Token Exchange Processor settings.
 
@@ -432,11 +432,11 @@ import (
 
 func main() {
     body := *openapiclient.NewTokenExchangeProcessorSettings() // TokenExchangeProcessorSettings | OAuth 2.0 Token Exchange Processor settings.
-    bypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional)
+    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicySettings(context.Background()).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicySettings(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeProcessorAPI.UpdateOauthTokenExchangeProcessorPolicySettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -458,7 +458,7 @@ Other parameters are passed through a pointer to a apiUpdateOauthTokenExchangePr
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**TokenExchangeProcessorSettings**](TokenExchangeProcessorSettings.md) | OAuth 2.0 Token Exchange Processor settings. | 
- **bypassExternalValidation** | **bool** | External validation will be bypassed when set to true. Default to false. | 
+ **xBypassExternalValidation** | **bool** | External validation will be bypassed when set to true. Default to false. | [default to false]
 
 ### Return type
 

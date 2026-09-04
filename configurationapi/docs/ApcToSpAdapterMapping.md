@@ -7,11 +7,12 @@ Name | Type | Description | Notes
 **AttributeSources** | Pointer to [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) | A list of configured data stores to look up attributes from. | [optional] 
 **AttributeContractFulfillment** | [**map[string]AttributeFulfillmentValue**](AttributeFulfillmentValue.md) | A list of mappings from attribute names to their fulfillment values. | 
 **IssuanceCriteria** | Pointer to [**IssuanceCriteria**](IssuanceCriteria.md) |  | [optional] 
+**Id** | Pointer to **string** | The id of the APC-to-SP Adapter mapping. This field is read-only and is ignored when passed in with the payload. | [optional] 
 **SourceId** | **string** | The id of the Authentication Policy Contract. | 
 **TargetId** | **string** | The id of the SP Adapter. | 
-**Id** | Pointer to **string** | The id of the APC-to-SP Adapter mapping. This field is read-only and is ignored when passed in with the payload. | [optional] 
 **DefaultTargetResource** | Pointer to **string** | Default target URL for this APC-to-adapter mapping configuration. | [optional] 
 **LicenseConnectionGroupAssignment** | Pointer to **string** | The license connection group. | [optional] 
+**AttributeSource** | Pointer to [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) |  | [optional] 
 
 ## Methods
 
@@ -102,6 +103,31 @@ SetIssuanceCriteria sets IssuanceCriteria field to given value.
 
 HasIssuanceCriteria returns a boolean if a field has been set.
 
+### GetId
+
+`func (o *ApcToSpAdapterMapping) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *ApcToSpAdapterMapping) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *ApcToSpAdapterMapping) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *ApcToSpAdapterMapping) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
 ### GetSourceId
 
 `func (o *ApcToSpAdapterMapping) GetSourceId() string`
@@ -141,31 +167,6 @@ and a boolean to check if the value has been set.
 
 SetTargetId sets TargetId field to given value.
 
-
-### GetId
-
-`func (o *ApcToSpAdapterMapping) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ApcToSpAdapterMapping) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ApcToSpAdapterMapping) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *ApcToSpAdapterMapping) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetDefaultTargetResource
 
@@ -216,6 +217,31 @@ SetLicenseConnectionGroupAssignment sets LicenseConnectionGroupAssignment field 
 `func (o *ApcToSpAdapterMapping) HasLicenseConnectionGroupAssignment() bool`
 
 HasLicenseConnectionGroupAssignment returns a boolean if a field has been set.
+
+### GetAttributeSource
+
+`func (o *ApcToSpAdapterMapping) GetAttributeSource() []AttributeSourceAggregation`
+
+GetAttributeSource returns the AttributeSource field if non-nil, zero value otherwise.
+
+### GetAttributeSourceOk
+
+`func (o *ApcToSpAdapterMapping) GetAttributeSourceOk() (*[]AttributeSourceAggregation, bool)`
+
+GetAttributeSourceOk returns a tuple with the AttributeSource field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributeSource
+
+`func (o *ApcToSpAdapterMapping) SetAttributeSource(v []AttributeSourceAggregation)`
+
+SetAttributeSource sets AttributeSource field to given value.
+
+### HasAttributeSource
+
+`func (o *ApcToSpAdapterMapping) HasAttributeSource() bool`
+
+HasAttributeSource returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

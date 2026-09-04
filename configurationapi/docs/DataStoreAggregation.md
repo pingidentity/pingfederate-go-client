@@ -4,24 +4,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The data store type. | 
-**Id** | Pointer to **string** | The persistent, unique ID for the data store. It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned if not specified. | [optional] 
 **MaskAttributeValues** | Pointer to **bool** | Whether attribute values should be masked in the log. | [optional] 
+**Id** | Pointer to **string** | The persistent, unique ID for the data store. It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned if not specified. | [optional] 
 **LastModified** | Pointer to **time.Time** | The time at which the datastore instance was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
-**ConnectionUrlTags** | Pointer to [**[]JdbcTagConfig**](JdbcTagConfig.md) | The set of connection URLs and associated tags for this JDBC data store. This is required if &#39;connectionUrl&#39; is not provided. | [optional] 
+**Type** | **string** | The data store type. | 
 **ConnectionUrl** | Pointer to **string** | The default location of the JDBC database. This field is required if no mapping for JDBC database location and tags is specified. | [optional] 
-**Name** | Pointer to **string** | The data store name with a unique value across all data sources. Omitting this attribute will set the value to a combination of the hostname(s) and the principal. | [optional] 
 **DriverClass** | **string** | The name of the driver class used to communicate with the source database. | 
 **UserName** | Pointer to **string** | The name that identifies the user when connecting to the database. | [optional] 
 **Password** | Pointer to **string** | The password credential required to access the data store. GETs will not return this attribute. To update this field, specify the new value in this attribute. | [optional] 
 **EncryptedPassword** | Pointer to **string** | The encrypted password credential required to access the data store.  If you do not want to update the stored value, this attribute should be passed back unchanged. Secret Reference may be provided in this field with format &#39;OBF:MGR:{secretManagerId}:{secretId}&#39;. | [optional] 
 **ValidateConnectionSql** | Pointer to **string** | A simple SQL statement used by PingFederate at runtime to verify that the database connection is still active and to reconnect if needed. | [optional] 
 **AllowMultiValueAttributes** | Pointer to **bool** | Indicates that this data store can select more than one record from a column and return the results as a multi-value attribute. | [optional] 
+**Name** | Pointer to **string** | The data store name with a unique value across all data sources. Omitting this attribute will set the value to a combination of the hostname(s) and the principal. | [optional] 
+**ConnectionUrlTags** | Pointer to [**[]JdbcTagConfig**](JdbcTagConfig.md) | The set of connection URLs and associated tags for this JDBC data store. This is required if &#39;connectionUrl&#39; is not provided. | [optional] 
 **MinPoolSize** | Pointer to **int64** | The smallest number of database connections in the connection pool for the given data store. Omitting this attribute will set the value to the connection pool default. The default value is 10. | [optional] 
 **MaxPoolSize** | Pointer to **int64** | The largest number of database connections in the connection pool for the given data store. Omitting this attribute will set the value to the connection pool default. The default value is 100. | [optional] 
 **BlockingTimeout** | Pointer to **int64** | The amount of time in milliseconds a request waits to get a connection from the connection pool before it fails. Omitting this attribute will set the value to the connection pool default. The default value is 5000 milliseconds. | [optional] 
 **IdleTimeout** | Pointer to **int64** | The length of time in minutes the connection can be idle in the pool before it is closed. Omitting this attribute will set the value to the connection pool default. The default value is 5 minutes. | [optional] 
-**HostnamesTags** | Pointer to [**[]LdapTagConfig**](LdapTagConfig.md) | The set of host names and associated tags for this LDAP data store. This is required if &#39;hostnames&#39; is not provided. | [optional] 
 **Hostnames** | Pointer to **[]string** | The default LDAP host names. This field is required if no mapping for host names and tags is specified. Failover can be configured by providing multiple host names. | [optional] 
 **LdapType** | **string** | A type that allows PingFederate to configure many provisioning settings automatically. The value is validated against the LDAP gateway configuration in PingOne unless the header &#39;X-BypassExternalValidation&#39; is set to true. | 
 **BindAnonymously** | Pointer to **bool** | Whether username and password are required. If true, no other authentication fields should be provided. The default value is false. | [optional] 
@@ -30,7 +29,7 @@ Name | Type | Description | Notes
 **UseSsl** | Pointer to **bool** | Connects to the LDAP data store using secure SSL/TLS encryption (LDAPS). The default value is false. The value is validated against the LDAP gateway configuration in PingOne unless the header &#39;X-BypassExternalValidation&#39; is set to true. | [optional] 
 **UseDnsSrvRecords** | Pointer to **bool** | Use DNS SRV Records to discover LDAP server information. The default value is false. | [optional] 
 **FollowLDAPReferrals** | Pointer to **bool** | Follow LDAP Referrals in the domain tree. The default value is false. This property does not apply to PingDirectory as this functionality is configured in PingDirectory. | [optional] 
-**UseStartTLS** | Pointer to **bool** | Connects to the LDAP data store using StartTLS. The default value is false. The value is validated against the LDAP gateway configuration in PingOne unless the header &#39;X-BypassExternalValidation&#39; is set to true. | [optional] 
+**HostnamesTags** | Pointer to [**[]LdapTagConfig**](LdapTagConfig.md) | The set of host names and associated tags for this LDAP data store. This is required if &#39;hostnames&#39; is not provided. | [optional] 
 **RetryFailedOperations** | Pointer to **bool** | Indicates whether failed operations should be retried. The default is false. | [optional] 
 **TestOnBorrow** | Pointer to **bool** | Indicates whether objects are validated before being borrowed from the pool. | [optional] 
 **TestOnReturn** | Pointer to **bool** | Indicates whether objects are validated before being returned to the pool. | [optional] 
@@ -42,10 +41,11 @@ Name | Type | Description | Notes
 **TimeBetweenEvictions** | Pointer to **int64** | The frequency, in milliseconds, that the evictor cleans up the connections in the pool. A value of -1 disables the evictor. Omitting this attribute will set the value to the default value. | [optional] 
 **ReadTimeout** | Pointer to **int64** | The maximum number of milliseconds a connection waits for a response to be returned before producing an error. A value of -1 causes the connection to wait indefinitely. Omitting this attribute will set the value to the default value. | [optional] 
 **ConnectionTimeout** | Pointer to **int64** | The maximum number of milliseconds that a connection attempt should be allowed to continue before returning an error. A value of -1 causes the pool to wait indefinitely. Omitting this attribute will set the value to the default value. | [optional] 
+**BinaryAttributes** | Pointer to **[]string** | The list of LDAP attributes to be handled as binary data. | [optional] 
 **DnsTtl** | Pointer to **int64** | The maximum time in milliseconds that DNS information are cached. Omitting this attribute will set the value to the default value. | [optional] 
 **LdapDnsSrvPrefix** | Pointer to **string** | The prefix value used to discover LDAP DNS SRV record. Omitting this attribute will set the value to the default value. | [optional] 
 **LdapsDnsSrvPrefix** | Pointer to **string** | The prefix value used to discover LDAPs DNS SRV record. Omitting this attribute will set the value to the default value. | [optional] 
-**BinaryAttributes** | Pointer to **[]string** | The list of LDAP attributes to be handled as binary data. | [optional] 
+**UseStartTLS** | Pointer to **bool** | Connects to the LDAP data store using StartTLS. The default value is false. The value is validated against the LDAP gateway configuration in PingOne unless the header &#39;X-BypassExternalValidation&#39; is set to true. | [optional] 
 **PingOneConnectionRef** | [**ResourceLink**](ResourceLink.md) |  | 
 **PingOneEnvironmentId** | **string** | The environment ID that the gateway belongs to. | 
 **PingOneLdapGatewayId** | **string** | The ID of the PingOne LDAP Gateway this data store uses. | 
@@ -68,51 +68,6 @@ will change when the set of required properties is changed
 NewDataStoreAggregationWithDefaults instantiates a new DataStoreAggregation object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetType
-
-`func (o *DataStoreAggregation) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *DataStoreAggregation) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *DataStoreAggregation) SetType(v string)`
-
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *DataStoreAggregation) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *DataStoreAggregation) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *DataStoreAggregation) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *DataStoreAggregation) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetMaskAttributeValues
 
@@ -139,6 +94,31 @@ SetMaskAttributeValues sets MaskAttributeValues field to given value.
 
 HasMaskAttributeValues returns a boolean if a field has been set.
 
+### GetId
+
+`func (o *DataStoreAggregation) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *DataStoreAggregation) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *DataStoreAggregation) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *DataStoreAggregation) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
 ### GetLastModified
 
 `func (o *DataStoreAggregation) GetLastModified() time.Time`
@@ -164,30 +144,25 @@ SetLastModified sets LastModified field to given value.
 
 HasLastModified returns a boolean if a field has been set.
 
-### GetConnectionUrlTags
+### GetType
 
-`func (o *DataStoreAggregation) GetConnectionUrlTags() []JdbcTagConfig`
+`func (o *DataStoreAggregation) GetType() string`
 
-GetConnectionUrlTags returns the ConnectionUrlTags field if non-nil, zero value otherwise.
+GetType returns the Type field if non-nil, zero value otherwise.
 
-### GetConnectionUrlTagsOk
+### GetTypeOk
 
-`func (o *DataStoreAggregation) GetConnectionUrlTagsOk() (*[]JdbcTagConfig, bool)`
+`func (o *DataStoreAggregation) GetTypeOk() (*string, bool)`
 
-GetConnectionUrlTagsOk returns a tuple with the ConnectionUrlTags field if it's non-nil, zero value otherwise
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetConnectionUrlTags
+### SetType
 
-`func (o *DataStoreAggregation) SetConnectionUrlTags(v []JdbcTagConfig)`
+`func (o *DataStoreAggregation) SetType(v string)`
 
-SetConnectionUrlTags sets ConnectionUrlTags field to given value.
+SetType sets Type field to given value.
 
-### HasConnectionUrlTags
-
-`func (o *DataStoreAggregation) HasConnectionUrlTags() bool`
-
-HasConnectionUrlTags returns a boolean if a field has been set.
 
 ### GetConnectionUrl
 
@@ -213,31 +188,6 @@ SetConnectionUrl sets ConnectionUrl field to given value.
 `func (o *DataStoreAggregation) HasConnectionUrl() bool`
 
 HasConnectionUrl returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *DataStoreAggregation) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *DataStoreAggregation) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *DataStoreAggregation) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *DataStoreAggregation) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetDriverClass
 
@@ -384,6 +334,56 @@ SetAllowMultiValueAttributes sets AllowMultiValueAttributes field to given value
 
 HasAllowMultiValueAttributes returns a boolean if a field has been set.
 
+### GetName
+
+`func (o *DataStoreAggregation) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *DataStoreAggregation) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *DataStoreAggregation) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *DataStoreAggregation) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+### GetConnectionUrlTags
+
+`func (o *DataStoreAggregation) GetConnectionUrlTags() []JdbcTagConfig`
+
+GetConnectionUrlTags returns the ConnectionUrlTags field if non-nil, zero value otherwise.
+
+### GetConnectionUrlTagsOk
+
+`func (o *DataStoreAggregation) GetConnectionUrlTagsOk() (*[]JdbcTagConfig, bool)`
+
+GetConnectionUrlTagsOk returns a tuple with the ConnectionUrlTags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectionUrlTags
+
+`func (o *DataStoreAggregation) SetConnectionUrlTags(v []JdbcTagConfig)`
+
+SetConnectionUrlTags sets ConnectionUrlTags field to given value.
+
+### HasConnectionUrlTags
+
+`func (o *DataStoreAggregation) HasConnectionUrlTags() bool`
+
+HasConnectionUrlTags returns a boolean if a field has been set.
+
 ### GetMinPoolSize
 
 `func (o *DataStoreAggregation) GetMinPoolSize() int64`
@@ -483,31 +483,6 @@ SetIdleTimeout sets IdleTimeout field to given value.
 `func (o *DataStoreAggregation) HasIdleTimeout() bool`
 
 HasIdleTimeout returns a boolean if a field has been set.
-
-### GetHostnamesTags
-
-`func (o *DataStoreAggregation) GetHostnamesTags() []LdapTagConfig`
-
-GetHostnamesTags returns the HostnamesTags field if non-nil, zero value otherwise.
-
-### GetHostnamesTagsOk
-
-`func (o *DataStoreAggregation) GetHostnamesTagsOk() (*[]LdapTagConfig, bool)`
-
-GetHostnamesTagsOk returns a tuple with the HostnamesTags field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHostnamesTags
-
-`func (o *DataStoreAggregation) SetHostnamesTags(v []LdapTagConfig)`
-
-SetHostnamesTags sets HostnamesTags field to given value.
-
-### HasHostnamesTags
-
-`func (o *DataStoreAggregation) HasHostnamesTags() bool`
-
-HasHostnamesTags returns a boolean if a field has been set.
 
 ### GetHostnames
 
@@ -704,30 +679,30 @@ SetFollowLDAPReferrals sets FollowLDAPReferrals field to given value.
 
 HasFollowLDAPReferrals returns a boolean if a field has been set.
 
-### GetUseStartTLS
+### GetHostnamesTags
 
-`func (o *DataStoreAggregation) GetUseStartTLS() bool`
+`func (o *DataStoreAggregation) GetHostnamesTags() []LdapTagConfig`
 
-GetUseStartTLS returns the UseStartTLS field if non-nil, zero value otherwise.
+GetHostnamesTags returns the HostnamesTags field if non-nil, zero value otherwise.
 
-### GetUseStartTLSOk
+### GetHostnamesTagsOk
 
-`func (o *DataStoreAggregation) GetUseStartTLSOk() (*bool, bool)`
+`func (o *DataStoreAggregation) GetHostnamesTagsOk() (*[]LdapTagConfig, bool)`
 
-GetUseStartTLSOk returns a tuple with the UseStartTLS field if it's non-nil, zero value otherwise
+GetHostnamesTagsOk returns a tuple with the HostnamesTags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUseStartTLS
+### SetHostnamesTags
 
-`func (o *DataStoreAggregation) SetUseStartTLS(v bool)`
+`func (o *DataStoreAggregation) SetHostnamesTags(v []LdapTagConfig)`
 
-SetUseStartTLS sets UseStartTLS field to given value.
+SetHostnamesTags sets HostnamesTags field to given value.
 
-### HasUseStartTLS
+### HasHostnamesTags
 
-`func (o *DataStoreAggregation) HasUseStartTLS() bool`
+`func (o *DataStoreAggregation) HasHostnamesTags() bool`
 
-HasUseStartTLS returns a boolean if a field has been set.
+HasHostnamesTags returns a boolean if a field has been set.
 
 ### GetRetryFailedOperations
 
@@ -1004,6 +979,31 @@ SetConnectionTimeout sets ConnectionTimeout field to given value.
 
 HasConnectionTimeout returns a boolean if a field has been set.
 
+### GetBinaryAttributes
+
+`func (o *DataStoreAggregation) GetBinaryAttributes() []string`
+
+GetBinaryAttributes returns the BinaryAttributes field if non-nil, zero value otherwise.
+
+### GetBinaryAttributesOk
+
+`func (o *DataStoreAggregation) GetBinaryAttributesOk() (*[]string, bool)`
+
+GetBinaryAttributesOk returns a tuple with the BinaryAttributes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBinaryAttributes
+
+`func (o *DataStoreAggregation) SetBinaryAttributes(v []string)`
+
+SetBinaryAttributes sets BinaryAttributes field to given value.
+
+### HasBinaryAttributes
+
+`func (o *DataStoreAggregation) HasBinaryAttributes() bool`
+
+HasBinaryAttributes returns a boolean if a field has been set.
+
 ### GetDnsTtl
 
 `func (o *DataStoreAggregation) GetDnsTtl() int64`
@@ -1079,30 +1079,30 @@ SetLdapsDnsSrvPrefix sets LdapsDnsSrvPrefix field to given value.
 
 HasLdapsDnsSrvPrefix returns a boolean if a field has been set.
 
-### GetBinaryAttributes
+### GetUseStartTLS
 
-`func (o *DataStoreAggregation) GetBinaryAttributes() []string`
+`func (o *DataStoreAggregation) GetUseStartTLS() bool`
 
-GetBinaryAttributes returns the BinaryAttributes field if non-nil, zero value otherwise.
+GetUseStartTLS returns the UseStartTLS field if non-nil, zero value otherwise.
 
-### GetBinaryAttributesOk
+### GetUseStartTLSOk
 
-`func (o *DataStoreAggregation) GetBinaryAttributesOk() (*[]string, bool)`
+`func (o *DataStoreAggregation) GetUseStartTLSOk() (*bool, bool)`
 
-GetBinaryAttributesOk returns a tuple with the BinaryAttributes field if it's non-nil, zero value otherwise
+GetUseStartTLSOk returns a tuple with the UseStartTLS field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBinaryAttributes
+### SetUseStartTLS
 
-`func (o *DataStoreAggregation) SetBinaryAttributes(v []string)`
+`func (o *DataStoreAggregation) SetUseStartTLS(v bool)`
 
-SetBinaryAttributes sets BinaryAttributes field to given value.
+SetUseStartTLS sets UseStartTLS field to given value.
 
-### HasBinaryAttributes
+### HasUseStartTLS
 
-`func (o *DataStoreAggregation) HasBinaryAttributes() bool`
+`func (o *DataStoreAggregation) HasUseStartTLS() bool`
 
-HasBinaryAttributes returns a boolean if a field has been set.
+HasUseStartTLS returns a boolean if a field has been set.
 
 ### GetPingOneConnectionRef
 

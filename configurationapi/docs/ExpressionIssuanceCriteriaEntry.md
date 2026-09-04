@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Expression** | **string** | The OGNL expression to evaluate. | 
 **ErrorResult** | Pointer to **string** | The error result to return if this issuance criterion fails. This error result will show up in the PingFederate server logs. | [optional] 
+**Expression** | **string** | The OGNL expression to evaluate. | 
 
 ## Methods
 
@@ -25,26 +25,6 @@ will change when the set of required properties is changed
 NewExpressionIssuanceCriteriaEntryWithDefaults instantiates a new ExpressionIssuanceCriteriaEntry object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetExpression
-
-`func (o *ExpressionIssuanceCriteriaEntry) GetExpression() string`
-
-GetExpression returns the Expression field if non-nil, zero value otherwise.
-
-### GetExpressionOk
-
-`func (o *ExpressionIssuanceCriteriaEntry) GetExpressionOk() (*string, bool)`
-
-GetExpressionOk returns a tuple with the Expression field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExpression
-
-`func (o *ExpressionIssuanceCriteriaEntry) SetExpression(v string)`
-
-SetExpression sets Expression field to given value.
-
 
 ### GetErrorResult
 
@@ -70,6 +50,26 @@ SetErrorResult sets ErrorResult field to given value.
 `func (o *ExpressionIssuanceCriteriaEntry) HasErrorResult() bool`
 
 HasErrorResult returns a boolean if a field has been set.
+
+### GetExpression
+
+`func (o *ExpressionIssuanceCriteriaEntry) GetExpression() string`
+
+GetExpression returns the Expression field if non-nil, zero value otherwise.
+
+### GetExpressionOk
+
+`func (o *ExpressionIssuanceCriteriaEntry) GetExpressionOk() (*string, bool)`
+
+GetExpressionOk returns a tuple with the Expression field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpression
+
+`func (o *ExpressionIssuanceCriteriaEntry) SetExpression(v string)`
+
+SetExpression sets Expression field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

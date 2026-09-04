@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **RestrictedCommonScopes** | Pointer to **[]string** | The common scopes to restrict. | [optional] 
 **AllowedExclusiveScopes** | Pointer to **[]string** | The exclusive scopes to allow. | [optional] 
 **AllowedAuthorizationDetailTypes** | Pointer to **[]string** | The authorization detail types to allow. | [optional] 
+**Tags** | Pointer to [**[]ResourceLink**](ResourceLink.md) | The tags assigned to clients registered via DCR when no tags are supplied in the request. | [optional] 
 **EnforceReplayPrevention** | Pointer to **bool** | Enforce replay prevention. | [optional] 
 **RequireSignedRequests** | Pointer to **bool** | Require signed requests. | [optional] 
 **DefaultAccessTokenManagerRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
@@ -33,12 +34,11 @@ Name | Type | Description | Notes
 **DevicePollingIntervalOverride** | Pointer to **int64** | The amount of time client should wait between polling requests, in seconds. | [optional] 
 **BypassActivationCodeConfirmationOverride** | Pointer to **bool** | Indicates if the Activation Code Confirmation page should be bypassed if &#39;verification_url_complete&#39; is used by the end user to authorize a device. | [optional] 
 **RequireProofKeyForCodeExchange** | Pointer to **bool** | Determines whether Proof Key for Code Exchange (PKCE) is required for the dynamically created client. | [optional] 
-**CibaPollingInterval** | Pointer to **int64** | The minimum amount of time in seconds that the Client must wait between polling requests to the token endpoint. The default is 3 seconds. | [optional] 
 **CibaRequireSignedRequests** | Pointer to **bool** | Determines whether CIBA signed requests are required for this client. | [optional] 
+**CibaPollingInterval** | Pointer to **int64** | The minimum amount of time in seconds that the Client must wait between polling requests to the token endpoint. The default is 3 seconds. | [optional] 
 **RequestPolicyRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
-**TokenExchangeProcessorPolicyRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
-**RotateClientSecret** | Pointer to **bool** | Rotate registration access token on dynamic client management requests. | [optional] 
 **RotateRegistrationAccessToken** | Pointer to **bool** | Rotate client secret on dynamic client management requests. | [optional] 
+**RotateClientSecret** | Pointer to **bool** | Rotate registration access token on dynamic client management requests. | [optional] 
 **AllowClientDelete** | Pointer to **bool** | Allow client deletion from dynamic client management. | [optional] 
 **DisableRegistrationAccessTokens** | Pointer to **bool** | Disable registration access tokens. Local standards may mandate different registration access token requirements. If applicable, implement custom validation and enforcement rules using the DynamicClientRegistrationPlugin interface from the PingFederate SDK, configure the client registration policies (policyRefs), and set this property (disableRegistrationAccessTokens) to true. CAUTION: When the disableRegistrationAccessTokens property is set to true, all clients, not just the ones created using the Dynamic Client Registration protocol, are vulnerable to unrestricted retrievals, updates (including modifications to the client authentication scheme and redirect URIs), and deletes at the /as/clients.oauth2 endpoint unless one or more client registration policies are in place to protect against unauthorized attempts. | [optional] 
 **RefreshTokenRollingGracePeriodType** | Pointer to **string** | When specified, it overrides the global Refresh Token Grace Period defined in the Authorization Server Settings. The default value is SERVER_DEFAULT | [optional] 
@@ -47,10 +47,12 @@ Name | Type | Description | Notes
 **ClientSecretRetentionPeriodType** | Pointer to **string** | Use OVERRIDE_SERVER_DEFAULT to override the Client Secret Retention Period value on the Authorization Server Settings. SERVER_DEFAULT will default to the Client Secret Retention Period value on the Authorization Server Setting. Defaults to SERVER_DEFAULT. | [optional] 
 **ClientSecretRetentionPeriodOverride** | Pointer to **int64** | The length of time in minutes that client secrets will be retained as secondary secrets after secret change. The default value is 0, which will disable secondary client secret retention. This value will override the Client Secret Retention Period value on the Authorization Server Settings. | [optional] 
 **RequireJwtSecuredAuthorizationResponseMode** | Pointer to **bool** | Determines whether JWT Secured authorization response mode is required when initiating an authorization request. The default is false. | [optional] 
+**DpopProofSettings** | Pointer to [**DpopProofSettings**](DpopProofSettings.md) |  | [optional] 
 **RequireOfflineAccessScopeToIssueRefreshTokens** | Pointer to **string** | Determines whether offline_access scope is required to issue refresh tokens or not. &#39;SERVER_DEFAULT&#39; is the default value.  | [optional] 
 **OfflineAccessRequireConsentPrompt** | Pointer to **string** | Determines whether offline_access requires the prompt parameter value to be set to &#39;consent&#39; or not. The value will be reset to default if the &#39;requireOfflineAccessScopeToIssueRefreshTokens&#39; attribute is set to &#39;SERVER_DEFAULT&#39; or &#39;false&#39;. &#39;SERVER_DEFAULT&#39; is the default value. | [optional] 
 **LockoutMaxMaliciousActionsType** | Pointer to **string** | Allows an administrator to override the Max Malicious Actions configuration set globally in AccountLockingService. Defaults to SERVER_DEFAULT. | [optional] 
 **LockoutMaxMaliciousActions** | Pointer to **int64** | The number of malicious actions allowed before an OAuth client is locked out. Currently, the only operation that is tracked as a malicious action is an attempt to revoke an invalid access token or refresh token. This value will override the global MaxMaliciousActions value on the AccountLockingService in the config-store. | [optional] 
+**TokenExchangeProcessorPolicyRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 
 ## Methods
 
@@ -195,6 +197,31 @@ SetAllowedAuthorizationDetailTypes sets AllowedAuthorizationDetailTypes field to
 `func (o *DynamicClientRegistration) HasAllowedAuthorizationDetailTypes() bool`
 
 HasAllowedAuthorizationDetailTypes returns a boolean if a field has been set.
+
+### GetTags
+
+`func (o *DynamicClientRegistration) GetTags() []ResourceLink`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *DynamicClientRegistration) GetTagsOk() (*[]ResourceLink, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *DynamicClientRegistration) SetTags(v []ResourceLink)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *DynamicClientRegistration) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
 
 ### GetEnforceReplayPrevention
 
@@ -796,31 +823,6 @@ SetRequireProofKeyForCodeExchange sets RequireProofKeyForCodeExchange field to g
 
 HasRequireProofKeyForCodeExchange returns a boolean if a field has been set.
 
-### GetCibaPollingInterval
-
-`func (o *DynamicClientRegistration) GetCibaPollingInterval() int64`
-
-GetCibaPollingInterval returns the CibaPollingInterval field if non-nil, zero value otherwise.
-
-### GetCibaPollingIntervalOk
-
-`func (o *DynamicClientRegistration) GetCibaPollingIntervalOk() (*int64, bool)`
-
-GetCibaPollingIntervalOk returns a tuple with the CibaPollingInterval field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCibaPollingInterval
-
-`func (o *DynamicClientRegistration) SetCibaPollingInterval(v int64)`
-
-SetCibaPollingInterval sets CibaPollingInterval field to given value.
-
-### HasCibaPollingInterval
-
-`func (o *DynamicClientRegistration) HasCibaPollingInterval() bool`
-
-HasCibaPollingInterval returns a boolean if a field has been set.
-
 ### GetCibaRequireSignedRequests
 
 `func (o *DynamicClientRegistration) GetCibaRequireSignedRequests() bool`
@@ -845,6 +847,31 @@ SetCibaRequireSignedRequests sets CibaRequireSignedRequests field to given value
 `func (o *DynamicClientRegistration) HasCibaRequireSignedRequests() bool`
 
 HasCibaRequireSignedRequests returns a boolean if a field has been set.
+
+### GetCibaPollingInterval
+
+`func (o *DynamicClientRegistration) GetCibaPollingInterval() int64`
+
+GetCibaPollingInterval returns the CibaPollingInterval field if non-nil, zero value otherwise.
+
+### GetCibaPollingIntervalOk
+
+`func (o *DynamicClientRegistration) GetCibaPollingIntervalOk() (*int64, bool)`
+
+GetCibaPollingIntervalOk returns a tuple with the CibaPollingInterval field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCibaPollingInterval
+
+`func (o *DynamicClientRegistration) SetCibaPollingInterval(v int64)`
+
+SetCibaPollingInterval sets CibaPollingInterval field to given value.
+
+### HasCibaPollingInterval
+
+`func (o *DynamicClientRegistration) HasCibaPollingInterval() bool`
+
+HasCibaPollingInterval returns a boolean if a field has been set.
 
 ### GetRequestPolicyRef
 
@@ -871,30 +898,30 @@ SetRequestPolicyRef sets RequestPolicyRef field to given value.
 
 HasRequestPolicyRef returns a boolean if a field has been set.
 
-### GetTokenExchangeProcessorPolicyRef
+### GetRotateRegistrationAccessToken
 
-`func (o *DynamicClientRegistration) GetTokenExchangeProcessorPolicyRef() ResourceLink`
+`func (o *DynamicClientRegistration) GetRotateRegistrationAccessToken() bool`
 
-GetTokenExchangeProcessorPolicyRef returns the TokenExchangeProcessorPolicyRef field if non-nil, zero value otherwise.
+GetRotateRegistrationAccessToken returns the RotateRegistrationAccessToken field if non-nil, zero value otherwise.
 
-### GetTokenExchangeProcessorPolicyRefOk
+### GetRotateRegistrationAccessTokenOk
 
-`func (o *DynamicClientRegistration) GetTokenExchangeProcessorPolicyRefOk() (*ResourceLink, bool)`
+`func (o *DynamicClientRegistration) GetRotateRegistrationAccessTokenOk() (*bool, bool)`
 
-GetTokenExchangeProcessorPolicyRefOk returns a tuple with the TokenExchangeProcessorPolicyRef field if it's non-nil, zero value otherwise
+GetRotateRegistrationAccessTokenOk returns a tuple with the RotateRegistrationAccessToken field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTokenExchangeProcessorPolicyRef
+### SetRotateRegistrationAccessToken
 
-`func (o *DynamicClientRegistration) SetTokenExchangeProcessorPolicyRef(v ResourceLink)`
+`func (o *DynamicClientRegistration) SetRotateRegistrationAccessToken(v bool)`
 
-SetTokenExchangeProcessorPolicyRef sets TokenExchangeProcessorPolicyRef field to given value.
+SetRotateRegistrationAccessToken sets RotateRegistrationAccessToken field to given value.
 
-### HasTokenExchangeProcessorPolicyRef
+### HasRotateRegistrationAccessToken
 
-`func (o *DynamicClientRegistration) HasTokenExchangeProcessorPolicyRef() bool`
+`func (o *DynamicClientRegistration) HasRotateRegistrationAccessToken() bool`
 
-HasTokenExchangeProcessorPolicyRef returns a boolean if a field has been set.
+HasRotateRegistrationAccessToken returns a boolean if a field has been set.
 
 ### GetRotateClientSecret
 
@@ -920,31 +947,6 @@ SetRotateClientSecret sets RotateClientSecret field to given value.
 `func (o *DynamicClientRegistration) HasRotateClientSecret() bool`
 
 HasRotateClientSecret returns a boolean if a field has been set.
-
-### GetRotateRegistrationAccessToken
-
-`func (o *DynamicClientRegistration) GetRotateRegistrationAccessToken() bool`
-
-GetRotateRegistrationAccessToken returns the RotateRegistrationAccessToken field if non-nil, zero value otherwise.
-
-### GetRotateRegistrationAccessTokenOk
-
-`func (o *DynamicClientRegistration) GetRotateRegistrationAccessTokenOk() (*bool, bool)`
-
-GetRotateRegistrationAccessTokenOk returns a tuple with the RotateRegistrationAccessToken field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRotateRegistrationAccessToken
-
-`func (o *DynamicClientRegistration) SetRotateRegistrationAccessToken(v bool)`
-
-SetRotateRegistrationAccessToken sets RotateRegistrationAccessToken field to given value.
-
-### HasRotateRegistrationAccessToken
-
-`func (o *DynamicClientRegistration) HasRotateRegistrationAccessToken() bool`
-
-HasRotateRegistrationAccessToken returns a boolean if a field has been set.
 
 ### GetAllowClientDelete
 
@@ -1146,6 +1148,31 @@ SetRequireJwtSecuredAuthorizationResponseMode sets RequireJwtSecuredAuthorizatio
 
 HasRequireJwtSecuredAuthorizationResponseMode returns a boolean if a field has been set.
 
+### GetDpopProofSettings
+
+`func (o *DynamicClientRegistration) GetDpopProofSettings() DpopProofSettings`
+
+GetDpopProofSettings returns the DpopProofSettings field if non-nil, zero value otherwise.
+
+### GetDpopProofSettingsOk
+
+`func (o *DynamicClientRegistration) GetDpopProofSettingsOk() (*DpopProofSettings, bool)`
+
+GetDpopProofSettingsOk returns a tuple with the DpopProofSettings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDpopProofSettings
+
+`func (o *DynamicClientRegistration) SetDpopProofSettings(v DpopProofSettings)`
+
+SetDpopProofSettings sets DpopProofSettings field to given value.
+
+### HasDpopProofSettings
+
+`func (o *DynamicClientRegistration) HasDpopProofSettings() bool`
+
+HasDpopProofSettings returns a boolean if a field has been set.
+
 ### GetRequireOfflineAccessScopeToIssueRefreshTokens
 
 `func (o *DynamicClientRegistration) GetRequireOfflineAccessScopeToIssueRefreshTokens() string`
@@ -1245,6 +1272,31 @@ SetLockoutMaxMaliciousActions sets LockoutMaxMaliciousActions field to given val
 `func (o *DynamicClientRegistration) HasLockoutMaxMaliciousActions() bool`
 
 HasLockoutMaxMaliciousActions returns a boolean if a field has been set.
+
+### GetTokenExchangeProcessorPolicyRef
+
+`func (o *DynamicClientRegistration) GetTokenExchangeProcessorPolicyRef() ResourceLink`
+
+GetTokenExchangeProcessorPolicyRef returns the TokenExchangeProcessorPolicyRef field if non-nil, zero value otherwise.
+
+### GetTokenExchangeProcessorPolicyRefOk
+
+`func (o *DynamicClientRegistration) GetTokenExchangeProcessorPolicyRefOk() (*ResourceLink, bool)`
+
+GetTokenExchangeProcessorPolicyRefOk returns a tuple with the TokenExchangeProcessorPolicyRef field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTokenExchangeProcessorPolicyRef
+
+`func (o *DynamicClientRegistration) SetTokenExchangeProcessorPolicyRef(v ResourceLink)`
+
+SetTokenExchangeProcessorPolicyRef sets TokenExchangeProcessorPolicyRef field to given value.
+
+### HasTokenExchangeProcessorPolicyRef
+
+`func (o *DynamicClientRegistration) HasTokenExchangeProcessorPolicyRef() bool`
+
+HasTokenExchangeProcessorPolicyRef returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

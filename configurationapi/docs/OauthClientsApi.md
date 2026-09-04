@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## GetOauthClients
 
-> Clients GetOauthClients(ctx).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
+> Clients GetOauthClients(ctx).Page(page).NumberPerPage(numberPerPage).Filter(filter).SortBy(sortBy).SortOrder(sortOrder).TagName(tagName).Execute()
 
 Get the list of OAuth clients.
 
@@ -371,10 +371,13 @@ func main() {
     page := int64(56) // int64 | Page number to retrieve. (optional)
     numberPerPage := int64(56) // int64 | Number of OAuth clients per page. (uncapped if unspecified) (optional)
     filter := "filter_example" // string | Filter criteria limits the OAuth clients that are returned to only those that match it. The filter criteria is compared to the OAuth client name and ID fields. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. (optional)
+    sortBy := "sortBy_example" // string | Sort the returned clients based on the given attribute. (optional)
+    sortOrder := "sortOrder_example" // string | Order of the sort. (optional)
+    tagName := "tagName_example" // string | Filter clients by tag name. Comma-separated list; clients that have ANY of the listed tags (case-insensitive) are returned. (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthClientsAPI.GetOauthClients(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
+    resp, r, err := apiClient.OauthClientsAPI.GetOauthClients(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).SortBy(sortBy).SortOrder(sortOrder).TagName(tagName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OauthClientsAPI.GetOauthClients``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,6 +401,9 @@ Name | Type | Description  | Notes
  **page** | **int64** | Page number to retrieve. | 
  **numberPerPage** | **int64** | Number of OAuth clients per page. (uncapped if unspecified) | 
  **filter** | **string** | Filter criteria limits the OAuth clients that are returned to only those that match it. The filter criteria is compared to the OAuth client name and ID fields. The comparison is a case-insensitive partial match. No additional pattern based matching is supported. | 
+ **sortBy** | **string** | Sort the returned clients based on the given attribute. | 
+ **sortOrder** | **string** | Order of the sort. | 
+ **tagName** | **string** | Filter clients by tag name. Comma-separated list; clients that have ANY of the listed tags (case-insensitive) are returned. | 
 
 ### Return type
 

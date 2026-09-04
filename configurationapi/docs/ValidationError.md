@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ErrorId** | Pointer to **string** | Error identifier. | [optional] 
 **Message** | Pointer to **string** | User-friendly error description. | [optional] 
 **DeveloperMessage** | Pointer to **string** | Developer-oriented error message, if available. | [optional] 
-**FieldPath** | Pointer to **string** | The path to the model field to which the error relates, if one exists. | [optional] 
+**FieldPath** | Pointer to **string** | The path to the model field to which the error relates, if one exists. In a user interface, this attribute can be used to associate the error with a specific location on the page. If models are nested, dot-notation is used to specify fields in sub-models. | [optional] 
+**ErrorId** | Pointer to **string** | Error identifier. | [optional] 
 
 ## Methods
 
@@ -27,31 +27,6 @@ will change when the set of required properties is changed
 NewValidationErrorWithDefaults instantiates a new ValidationError object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetErrorId
-
-`func (o *ValidationError) GetErrorId() string`
-
-GetErrorId returns the ErrorId field if non-nil, zero value otherwise.
-
-### GetErrorIdOk
-
-`func (o *ValidationError) GetErrorIdOk() (*string, bool)`
-
-GetErrorIdOk returns a tuple with the ErrorId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetErrorId
-
-`func (o *ValidationError) SetErrorId(v string)`
-
-SetErrorId sets ErrorId field to given value.
-
-### HasErrorId
-
-`func (o *ValidationError) HasErrorId() bool`
-
-HasErrorId returns a boolean if a field has been set.
 
 ### GetMessage
 
@@ -127,6 +102,31 @@ SetFieldPath sets FieldPath field to given value.
 `func (o *ValidationError) HasFieldPath() bool`
 
 HasFieldPath returns a boolean if a field has been set.
+
+### GetErrorId
+
+`func (o *ValidationError) GetErrorId() string`
+
+GetErrorId returns the ErrorId field if non-nil, zero value otherwise.
+
+### GetErrorIdOk
+
+`func (o *ValidationError) GetErrorIdOk() (*string, bool)`
+
+GetErrorIdOk returns a tuple with the ErrorId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetErrorId
+
+`func (o *ValidationError) SetErrorId(v string)`
+
+SetErrorId sets ErrorId field to given value.
+
+### HasErrorId
+
+`func (o *ValidationError) HasErrorId() bool`
+
+HasErrorId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

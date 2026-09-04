@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ConnectedToPingOneForEnterprise** | Pointer to **bool** | A read only field indicating whether PingFederate is connected to PingOne for Enterprise. | [optional] 
-**PingOneSsoConnection** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
-**CompanyName** | Pointer to **string** | A read only field indicating the company name. | [optional] 
 **EnableAdminConsoleSso** | Pointer to **bool** | Indicates whether single sign on from PingOne for Enterprise to the PingFederate admin console is enabled. The default is false. | [optional] 
 **EnableMonitoring** | Pointer to **bool** | Indicates whether monitoring of PingFederate from PingOne for Enterprise is enabled. The default is true. | [optional] 
+**CompanyName** | Pointer to **string** | A read only field indicating the company name. | [optional] 
+**PingOneSsoConnection** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **CurrentAuthnKeyCreationTime** | Pointer to **time.Time** | A read only field indicating the creation time of the current authentication key. | [optional] 
 **PreviousAuthnKeyCreationTime** | Pointer to **time.Time** | A read only field indicating the creation time of the previous authentication key. | [optional] 
 **IdentityRepositoryUpdateRequired** | Pointer to **bool** | A read-only field indicating whether changes were made in the current PingFederate configuration that might affect your connection with PingOne for Enterprise. For example, if you modified the attribute contract of your SSO configuration. Update the identity repository to keep your PingFederate and PingOne for Enterprise settings synchronized.  | [optional] 
@@ -56,56 +56,6 @@ SetConnectedToPingOneForEnterprise sets ConnectedToPingOneForEnterprise field to
 `func (o *PingOneForEnterpriseSettings) HasConnectedToPingOneForEnterprise() bool`
 
 HasConnectedToPingOneForEnterprise returns a boolean if a field has been set.
-
-### GetPingOneSsoConnection
-
-`func (o *PingOneForEnterpriseSettings) GetPingOneSsoConnection() ResourceLink`
-
-GetPingOneSsoConnection returns the PingOneSsoConnection field if non-nil, zero value otherwise.
-
-### GetPingOneSsoConnectionOk
-
-`func (o *PingOneForEnterpriseSettings) GetPingOneSsoConnectionOk() (*ResourceLink, bool)`
-
-GetPingOneSsoConnectionOk returns a tuple with the PingOneSsoConnection field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPingOneSsoConnection
-
-`func (o *PingOneForEnterpriseSettings) SetPingOneSsoConnection(v ResourceLink)`
-
-SetPingOneSsoConnection sets PingOneSsoConnection field to given value.
-
-### HasPingOneSsoConnection
-
-`func (o *PingOneForEnterpriseSettings) HasPingOneSsoConnection() bool`
-
-HasPingOneSsoConnection returns a boolean if a field has been set.
-
-### GetCompanyName
-
-`func (o *PingOneForEnterpriseSettings) GetCompanyName() string`
-
-GetCompanyName returns the CompanyName field if non-nil, zero value otherwise.
-
-### GetCompanyNameOk
-
-`func (o *PingOneForEnterpriseSettings) GetCompanyNameOk() (*string, bool)`
-
-GetCompanyNameOk returns a tuple with the CompanyName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCompanyName
-
-`func (o *PingOneForEnterpriseSettings) SetCompanyName(v string)`
-
-SetCompanyName sets CompanyName field to given value.
-
-### HasCompanyName
-
-`func (o *PingOneForEnterpriseSettings) HasCompanyName() bool`
-
-HasCompanyName returns a boolean if a field has been set.
 
 ### GetEnableAdminConsoleSso
 
@@ -156,6 +106,56 @@ SetEnableMonitoring sets EnableMonitoring field to given value.
 `func (o *PingOneForEnterpriseSettings) HasEnableMonitoring() bool`
 
 HasEnableMonitoring returns a boolean if a field has been set.
+
+### GetCompanyName
+
+`func (o *PingOneForEnterpriseSettings) GetCompanyName() string`
+
+GetCompanyName returns the CompanyName field if non-nil, zero value otherwise.
+
+### GetCompanyNameOk
+
+`func (o *PingOneForEnterpriseSettings) GetCompanyNameOk() (*string, bool)`
+
+GetCompanyNameOk returns a tuple with the CompanyName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompanyName
+
+`func (o *PingOneForEnterpriseSettings) SetCompanyName(v string)`
+
+SetCompanyName sets CompanyName field to given value.
+
+### HasCompanyName
+
+`func (o *PingOneForEnterpriseSettings) HasCompanyName() bool`
+
+HasCompanyName returns a boolean if a field has been set.
+
+### GetPingOneSsoConnection
+
+`func (o *PingOneForEnterpriseSettings) GetPingOneSsoConnection() ResourceLink`
+
+GetPingOneSsoConnection returns the PingOneSsoConnection field if non-nil, zero value otherwise.
+
+### GetPingOneSsoConnectionOk
+
+`func (o *PingOneForEnterpriseSettings) GetPingOneSsoConnectionOk() (*ResourceLink, bool)`
+
+GetPingOneSsoConnectionOk returns a tuple with the PingOneSsoConnection field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPingOneSsoConnection
+
+`func (o *PingOneForEnterpriseSettings) SetPingOneSsoConnection(v ResourceLink)`
+
+SetPingOneSsoConnection sets PingOneSsoConnection field to given value.
+
+### HasPingOneSsoConnection
+
+`func (o *PingOneForEnterpriseSettings) HasPingOneSsoConnection() bool`
+
+HasPingOneSsoConnection returns a boolean if a field has been set.
 
 ### GetCurrentAuthnKeyCreationTime
 

@@ -6,8 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | The policy ID used internally. | 
 **Name** | **string** | The name used for display in UI screens. | 
-**AccessTokenManagerRef** | [**ResourceLink**](ResourceLink.md) |  | 
 **IdTokenLifetime** | Pointer to **int64** | The ID Token Lifetime, in minutes. The default value is 5. | [optional] 
+**AttributeContract** | [**OpenIdConnectAttributeContract**](OpenIdConnectAttributeContract.md) |  | 
+**AttributeMapping** | [**AttributeMapping**](AttributeMapping.md) |  | 
 **IncludeSriInIdToken** | Pointer to **bool** | Determines whether a Session Reference Identifier is included in the ID token. | [optional] 
 **IncludeUserInfoInIdToken** | Pointer to **bool** | Determines whether the User Info is always included in the ID token. | [optional] 
 **IncludeSHashInIdToken** | Pointer to **bool** | Determines whether the State Hash should be included in the ID token. | [optional] 
@@ -17,8 +18,7 @@ Name | Type | Description | Notes
 **ReturnIdTokenOnTokenExchangeGrant** | Pointer to **bool** | Determines whether an ID Token should be returned when token exchange is requested or not. | [optional] 
 **ReissueIdTokenInHybridFlow** | Pointer to **bool** | Determines whether a new ID Token should be returned during token request of the hybrid flow. | [optional] 
 **AllowIdTokenIntrospection** | Pointer to **bool** | Determines whether the introspection endpoint should validate an ID token. | [optional] 
-**AttributeContract** | [**OpenIdConnectAttributeContract**](OpenIdConnectAttributeContract.md) |  | 
-**AttributeMapping** | [**AttributeMapping**](AttributeMapping.md) |  | 
+**AccessTokenManagerRef** | [**ResourceLink**](ResourceLink.md) |  | 
 **ScopeAttributeMappings** | Pointer to [**map[string]ParameterValues**](ParameterValues.md) | The attribute scope mappings from scopes to attribute names. | [optional] 
 **LastModified** | Pointer to **time.Time** | The time at which the policy was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewOpenIdConnectPolicy
 
-`func NewOpenIdConnectPolicy(id string, name string, accessTokenManagerRef ResourceLink, attributeContract OpenIdConnectAttributeContract, attributeMapping AttributeMapping, ) *OpenIdConnectPolicy`
+`func NewOpenIdConnectPolicy(id string, name string, attributeContract OpenIdConnectAttributeContract, attributeMapping AttributeMapping, accessTokenManagerRef ResourceLink, ) *OpenIdConnectPolicy`
 
 NewOpenIdConnectPolicy instantiates a new OpenIdConnectPolicy object
 This constructor will assign default values to properties that have it defined,
@@ -81,26 +81,6 @@ and a boolean to check if the value has been set.
 SetName sets Name field to given value.
 
 
-### GetAccessTokenManagerRef
-
-`func (o *OpenIdConnectPolicy) GetAccessTokenManagerRef() ResourceLink`
-
-GetAccessTokenManagerRef returns the AccessTokenManagerRef field if non-nil, zero value otherwise.
-
-### GetAccessTokenManagerRefOk
-
-`func (o *OpenIdConnectPolicy) GetAccessTokenManagerRefOk() (*ResourceLink, bool)`
-
-GetAccessTokenManagerRefOk returns a tuple with the AccessTokenManagerRef field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAccessTokenManagerRef
-
-`func (o *OpenIdConnectPolicy) SetAccessTokenManagerRef(v ResourceLink)`
-
-SetAccessTokenManagerRef sets AccessTokenManagerRef field to given value.
-
-
 ### GetIdTokenLifetime
 
 `func (o *OpenIdConnectPolicy) GetIdTokenLifetime() int64`
@@ -125,6 +105,46 @@ SetIdTokenLifetime sets IdTokenLifetime field to given value.
 `func (o *OpenIdConnectPolicy) HasIdTokenLifetime() bool`
 
 HasIdTokenLifetime returns a boolean if a field has been set.
+
+### GetAttributeContract
+
+`func (o *OpenIdConnectPolicy) GetAttributeContract() OpenIdConnectAttributeContract`
+
+GetAttributeContract returns the AttributeContract field if non-nil, zero value otherwise.
+
+### GetAttributeContractOk
+
+`func (o *OpenIdConnectPolicy) GetAttributeContractOk() (*OpenIdConnectAttributeContract, bool)`
+
+GetAttributeContractOk returns a tuple with the AttributeContract field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributeContract
+
+`func (o *OpenIdConnectPolicy) SetAttributeContract(v OpenIdConnectAttributeContract)`
+
+SetAttributeContract sets AttributeContract field to given value.
+
+
+### GetAttributeMapping
+
+`func (o *OpenIdConnectPolicy) GetAttributeMapping() AttributeMapping`
+
+GetAttributeMapping returns the AttributeMapping field if non-nil, zero value otherwise.
+
+### GetAttributeMappingOk
+
+`func (o *OpenIdConnectPolicy) GetAttributeMappingOk() (*AttributeMapping, bool)`
+
+GetAttributeMappingOk returns a tuple with the AttributeMapping field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributeMapping
+
+`func (o *OpenIdConnectPolicy) SetAttributeMapping(v AttributeMapping)`
+
+SetAttributeMapping sets AttributeMapping field to given value.
+
 
 ### GetIncludeSriInIdToken
 
@@ -351,44 +371,24 @@ SetAllowIdTokenIntrospection sets AllowIdTokenIntrospection field to given value
 
 HasAllowIdTokenIntrospection returns a boolean if a field has been set.
 
-### GetAttributeContract
+### GetAccessTokenManagerRef
 
-`func (o *OpenIdConnectPolicy) GetAttributeContract() OpenIdConnectAttributeContract`
+`func (o *OpenIdConnectPolicy) GetAccessTokenManagerRef() ResourceLink`
 
-GetAttributeContract returns the AttributeContract field if non-nil, zero value otherwise.
+GetAccessTokenManagerRef returns the AccessTokenManagerRef field if non-nil, zero value otherwise.
 
-### GetAttributeContractOk
+### GetAccessTokenManagerRefOk
 
-`func (o *OpenIdConnectPolicy) GetAttributeContractOk() (*OpenIdConnectAttributeContract, bool)`
+`func (o *OpenIdConnectPolicy) GetAccessTokenManagerRefOk() (*ResourceLink, bool)`
 
-GetAttributeContractOk returns a tuple with the AttributeContract field if it's non-nil, zero value otherwise
+GetAccessTokenManagerRefOk returns a tuple with the AccessTokenManagerRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAttributeContract
+### SetAccessTokenManagerRef
 
-`func (o *OpenIdConnectPolicy) SetAttributeContract(v OpenIdConnectAttributeContract)`
+`func (o *OpenIdConnectPolicy) SetAccessTokenManagerRef(v ResourceLink)`
 
-SetAttributeContract sets AttributeContract field to given value.
-
-
-### GetAttributeMapping
-
-`func (o *OpenIdConnectPolicy) GetAttributeMapping() AttributeMapping`
-
-GetAttributeMapping returns the AttributeMapping field if non-nil, zero value otherwise.
-
-### GetAttributeMappingOk
-
-`func (o *OpenIdConnectPolicy) GetAttributeMappingOk() (*AttributeMapping, bool)`
-
-GetAttributeMappingOk returns a tuple with the AttributeMapping field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAttributeMapping
-
-`func (o *OpenIdConnectPolicy) SetAttributeMapping(v AttributeMapping)`
-
-SetAttributeMapping sets AttributeMapping field to given value.
+SetAccessTokenManagerRef sets AccessTokenManagerRef field to given value.
 
 
 ### GetScopeAttributeMappings

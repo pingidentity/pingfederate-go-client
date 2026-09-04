@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** | The name of the configuration field. | 
 **Value** | Pointer to **string** | The value for the configuration field. For encrypted or hashed fields, GETs will not return this attribute. To update an encrypted or hashed field, specify the new value in this attribute. | [optional] 
 **EncryptedValue** | Pointer to **string** | For encrypted or hashed fields, this attribute contains the encrypted representation of the field&#39;s value, if a value is defined. If you do not want to update the stored value, this attribute should be passed back unchanged. | [optional] 
+**Inherited** | Pointer to **bool** | Whether this field is inherited from its parent instance. If true, the value/encrypted value properties become read-only. The default value is false. | [optional] 
 
 ## Methods
 
@@ -96,6 +97,31 @@ SetEncryptedValue sets EncryptedValue field to given value.
 `func (o *ConfigField) HasEncryptedValue() bool`
 
 HasEncryptedValue returns a boolean if a field has been set.
+
+### GetInherited
+
+`func (o *ConfigField) GetInherited() bool`
+
+GetInherited returns the Inherited field if non-nil, zero value otherwise.
+
+### GetInheritedOk
+
+`func (o *ConfigField) GetInheritedOk() (*bool, bool)`
+
+GetInheritedOk returns a tuple with the Inherited field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInherited
+
+`func (o *ConfigField) SetInherited(v bool)`
+
+SetInherited sets Inherited field to given value.
+
+### HasInherited
+
+`func (o *ConfigField) HasInherited() bool`
+
+HasInherited returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

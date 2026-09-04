@@ -7,12 +7,12 @@ Name | Type | Description | Notes
 **Username** | **string** | Username for the Administrative Account. | 
 **Password** | Pointer to **string** | Password for the Account. This field is only applicable during a POST operation. | [optional] 
 **EncryptedPassword** | Pointer to **string** | For GET requests, this field contains the encrypted account password. For POST and PUT requests, if you wish to re-use the password from an API response to this endpoint, this field should be passed back unchanged. | [optional] 
-**Active** | Pointer to **bool** | Indicates whether the account is active or not. | [optional] 
-**Description** | Pointer to **string** | Description of the account. | [optional] 
-**Auditor** | Pointer to **bool** | Indicates whether the account belongs to an Auditor. An Auditor has View-only permissions for all administrative functions. An Auditor cannot have any administrative roles. | [optional] 
 **PhoneNumber** | Pointer to **string** | Phone number associated with the account. | [optional] 
 **EmailAddress** | Pointer to **string** | Email address associated with the account. | [optional] 
 **Department** | Pointer to **string** | The Department name of account user. | [optional] 
+**Description** | Pointer to **string** | Description of the account. | [optional] 
+**Auditor** | Pointer to **bool** | Indicates whether the account belongs to an Auditor. An Auditor has View-only permissions for all administrative functions. An Auditor cannot have any administrative roles. | [optional] 
+**Active** | Pointer to **bool** | Indicates whether the account is active or not. | [optional] 
 **Roles** | Pointer to **[]string** | Roles available for an administrator. &lt;br&gt;USER_ADMINISTRATOR - Can create, deactivate or delete accounts and reset passwords. Additionally, install replacement license keys. &lt;br&gt; CRYPTO_ADMINISTRATOR - Can manage local keys and certificates. &lt;br&gt; ADMINISTRATOR - Can configure partner connections and most system settings (except the management of native accounts and the handling of local keys and certificates. &lt;br&gt;EXPRESSION_ADMINISTRATOR - Can add and update OGNL expressions. &lt;br&gt;DATA_COLLECTION_ADMINISTRATOR - Can run the Collect Support Data Utility. &lt;br&gt; | [optional] 
 
 ## Methods
@@ -104,81 +104,6 @@ SetEncryptedPassword sets EncryptedPassword field to given value.
 
 HasEncryptedPassword returns a boolean if a field has been set.
 
-### GetActive
-
-`func (o *AdministrativeAccount) GetActive() bool`
-
-GetActive returns the Active field if non-nil, zero value otherwise.
-
-### GetActiveOk
-
-`func (o *AdministrativeAccount) GetActiveOk() (*bool, bool)`
-
-GetActiveOk returns a tuple with the Active field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetActive
-
-`func (o *AdministrativeAccount) SetActive(v bool)`
-
-SetActive sets Active field to given value.
-
-### HasActive
-
-`func (o *AdministrativeAccount) HasActive() bool`
-
-HasActive returns a boolean if a field has been set.
-
-### GetDescription
-
-`func (o *AdministrativeAccount) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *AdministrativeAccount) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *AdministrativeAccount) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *AdministrativeAccount) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
-
-### GetAuditor
-
-`func (o *AdministrativeAccount) GetAuditor() bool`
-
-GetAuditor returns the Auditor field if non-nil, zero value otherwise.
-
-### GetAuditorOk
-
-`func (o *AdministrativeAccount) GetAuditorOk() (*bool, bool)`
-
-GetAuditorOk returns a tuple with the Auditor field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAuditor
-
-`func (o *AdministrativeAccount) SetAuditor(v bool)`
-
-SetAuditor sets Auditor field to given value.
-
-### HasAuditor
-
-`func (o *AdministrativeAccount) HasAuditor() bool`
-
-HasAuditor returns a boolean if a field has been set.
-
 ### GetPhoneNumber
 
 `func (o *AdministrativeAccount) GetPhoneNumber() string`
@@ -253,6 +178,81 @@ SetDepartment sets Department field to given value.
 `func (o *AdministrativeAccount) HasDepartment() bool`
 
 HasDepartment returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *AdministrativeAccount) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *AdministrativeAccount) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *AdministrativeAccount) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *AdministrativeAccount) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### GetAuditor
+
+`func (o *AdministrativeAccount) GetAuditor() bool`
+
+GetAuditor returns the Auditor field if non-nil, zero value otherwise.
+
+### GetAuditorOk
+
+`func (o *AdministrativeAccount) GetAuditorOk() (*bool, bool)`
+
+GetAuditorOk returns a tuple with the Auditor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuditor
+
+`func (o *AdministrativeAccount) SetAuditor(v bool)`
+
+SetAuditor sets Auditor field to given value.
+
+### HasAuditor
+
+`func (o *AdministrativeAccount) HasAuditor() bool`
+
+HasAuditor returns a boolean if a field has been set.
+
+### GetActive
+
+`func (o *AdministrativeAccount) GetActive() bool`
+
+GetActive returns the Active field if non-nil, zero value otherwise.
+
+### GetActiveOk
+
+`func (o *AdministrativeAccount) GetActiveOk() (*bool, bool)`
+
+GetActiveOk returns a tuple with the Active field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetActive
+
+`func (o *AdministrativeAccount) SetActive(v bool)`
+
+SetActive sets Active field to given value.
+
+### HasActive
+
+`func (o *AdministrativeAccount) HasActive() bool`
+
+HasActive returns a boolean if a field has been set.
 
 ### GetRoles
 

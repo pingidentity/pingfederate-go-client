@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | The id of the configuration setting. | 
+**Type** | **string** | The type of configuration setting. This could be a single string, list of strings, or map of string keys and values. | 
 **StringValue** | Pointer to **string** | The value of the configuration setting. This is used when the setting has a single string value. | [optional] 
 **ListValue** | Pointer to **[]string** | The list of values for the configuration setting. This is used when the setting has a list of string values. | [optional] 
 **MapValue** | Pointer to **map[string]string** | The map of key/value pairs for the configuration setting. This is used when the setting has a map of string keys and values. | [optional] 
-**Type** | **string** | The type of configuration setting. This could be a single string, list of strings, or map of string keys and values. | 
 
 ## Methods
 
@@ -47,6 +47,26 @@ and a boolean to check if the value has been set.
 `func (o *ConfigStoreSetting) SetId(v string)`
 
 SetId sets Id field to given value.
+
+
+### GetType
+
+`func (o *ConfigStoreSetting) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *ConfigStoreSetting) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *ConfigStoreSetting) SetType(v string)`
+
+SetType sets Type field to given value.
 
 
 ### GetStringValue
@@ -123,26 +143,6 @@ SetMapValue sets MapValue field to given value.
 `func (o *ConfigStoreSetting) HasMapValue() bool`
 
 HasMapValue returns a boolean if a field has been set.
-
-### GetType
-
-`func (o *ConfigStoreSetting) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *ConfigStoreSetting) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *ConfigStoreSetting) SetType(v string)`
-
-SetType sets Type field to given value.
-
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

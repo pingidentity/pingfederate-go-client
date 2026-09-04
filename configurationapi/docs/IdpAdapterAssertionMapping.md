@@ -4,14 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IdpAdapterRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
-**RestrictVirtualEntityIds** | Pointer to **bool** | Restricts this mapping to specific virtual entity IDs. | [optional] 
-**RestrictedVirtualEntityIds** | Pointer to **[]string** | The list of virtual server IDs that this mapping is restricted to. | [optional] 
-**AdapterOverrideSettings** | Pointer to [**IdpAdapter**](IdpAdapter.md) |  | [optional] 
-**AbortSsoTransactionAsFailSafe** | Pointer to **bool** | If set to true, SSO transaction will be aborted as a fail-safe when the data-store&#39;s attribute mappings fail to complete the attribute contract. Otherwise, the attribute contract with default values is used. By default, this value is false. | [optional] 
 **AttributeSources** | Pointer to [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) | A list of configured data stores to look up attributes from. | [optional] 
 **AttributeContractFulfillment** | [**map[string]AttributeFulfillmentValue**](AttributeFulfillmentValue.md) | A list of mappings from attribute names to their fulfillment values. | 
 **IssuanceCriteria** | Pointer to [**IssuanceCriteria**](IssuanceCriteria.md) |  | [optional] 
+**RestrictVirtualEntityIds** | Pointer to **bool** | Restricts this mapping to specific virtual entity IDs. | [optional] 
+**RestrictedVirtualEntityIds** | Pointer to **[]string** | The list of virtual server IDs that this mapping is restricted to. | [optional] 
+**AdapterOverrideSettings** | Pointer to [**IdpAdapter**](IdpAdapter.md) |  | [optional] 
+**IdpAdapterRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
+**AbortSsoTransactionAsFailSafe** | Pointer to **bool** | If set to true, SSO transaction will be aborted as a fail-safe when the data-store&#39;s attribute mappings fail to complete the attribute contract. Otherwise, the attribute contract with default values is used. By default, this value is false. | [optional] 
+**AttributeSource** | Pointer to [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) |  | [optional] 
 
 ## Methods
 
@@ -32,30 +33,75 @@ NewIdpAdapterAssertionMappingWithDefaults instantiates a new IdpAdapterAssertion
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetIdpAdapterRef
+### GetAttributeSources
 
-`func (o *IdpAdapterAssertionMapping) GetIdpAdapterRef() ResourceLink`
+`func (o *IdpAdapterAssertionMapping) GetAttributeSources() []AttributeSourceAggregation`
 
-GetIdpAdapterRef returns the IdpAdapterRef field if non-nil, zero value otherwise.
+GetAttributeSources returns the AttributeSources field if non-nil, zero value otherwise.
 
-### GetIdpAdapterRefOk
+### GetAttributeSourcesOk
 
-`func (o *IdpAdapterAssertionMapping) GetIdpAdapterRefOk() (*ResourceLink, bool)`
+`func (o *IdpAdapterAssertionMapping) GetAttributeSourcesOk() (*[]AttributeSourceAggregation, bool)`
 
-GetIdpAdapterRefOk returns a tuple with the IdpAdapterRef field if it's non-nil, zero value otherwise
+GetAttributeSourcesOk returns a tuple with the AttributeSources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIdpAdapterRef
+### SetAttributeSources
 
-`func (o *IdpAdapterAssertionMapping) SetIdpAdapterRef(v ResourceLink)`
+`func (o *IdpAdapterAssertionMapping) SetAttributeSources(v []AttributeSourceAggregation)`
 
-SetIdpAdapterRef sets IdpAdapterRef field to given value.
+SetAttributeSources sets AttributeSources field to given value.
 
-### HasIdpAdapterRef
+### HasAttributeSources
 
-`func (o *IdpAdapterAssertionMapping) HasIdpAdapterRef() bool`
+`func (o *IdpAdapterAssertionMapping) HasAttributeSources() bool`
 
-HasIdpAdapterRef returns a boolean if a field has been set.
+HasAttributeSources returns a boolean if a field has been set.
+
+### GetAttributeContractFulfillment
+
+`func (o *IdpAdapterAssertionMapping) GetAttributeContractFulfillment() map[string]AttributeFulfillmentValue`
+
+GetAttributeContractFulfillment returns the AttributeContractFulfillment field if non-nil, zero value otherwise.
+
+### GetAttributeContractFulfillmentOk
+
+`func (o *IdpAdapterAssertionMapping) GetAttributeContractFulfillmentOk() (*map[string]AttributeFulfillmentValue, bool)`
+
+GetAttributeContractFulfillmentOk returns a tuple with the AttributeContractFulfillment field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributeContractFulfillment
+
+`func (o *IdpAdapterAssertionMapping) SetAttributeContractFulfillment(v map[string]AttributeFulfillmentValue)`
+
+SetAttributeContractFulfillment sets AttributeContractFulfillment field to given value.
+
+
+### GetIssuanceCriteria
+
+`func (o *IdpAdapterAssertionMapping) GetIssuanceCriteria() IssuanceCriteria`
+
+GetIssuanceCriteria returns the IssuanceCriteria field if non-nil, zero value otherwise.
+
+### GetIssuanceCriteriaOk
+
+`func (o *IdpAdapterAssertionMapping) GetIssuanceCriteriaOk() (*IssuanceCriteria, bool)`
+
+GetIssuanceCriteriaOk returns a tuple with the IssuanceCriteria field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIssuanceCriteria
+
+`func (o *IdpAdapterAssertionMapping) SetIssuanceCriteria(v IssuanceCriteria)`
+
+SetIssuanceCriteria sets IssuanceCriteria field to given value.
+
+### HasIssuanceCriteria
+
+`func (o *IdpAdapterAssertionMapping) HasIssuanceCriteria() bool`
+
+HasIssuanceCriteria returns a boolean if a field has been set.
 
 ### GetRestrictVirtualEntityIds
 
@@ -132,6 +178,31 @@ SetAdapterOverrideSettings sets AdapterOverrideSettings field to given value.
 
 HasAdapterOverrideSettings returns a boolean if a field has been set.
 
+### GetIdpAdapterRef
+
+`func (o *IdpAdapterAssertionMapping) GetIdpAdapterRef() ResourceLink`
+
+GetIdpAdapterRef returns the IdpAdapterRef field if non-nil, zero value otherwise.
+
+### GetIdpAdapterRefOk
+
+`func (o *IdpAdapterAssertionMapping) GetIdpAdapterRefOk() (*ResourceLink, bool)`
+
+GetIdpAdapterRefOk returns a tuple with the IdpAdapterRef field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIdpAdapterRef
+
+`func (o *IdpAdapterAssertionMapping) SetIdpAdapterRef(v ResourceLink)`
+
+SetIdpAdapterRef sets IdpAdapterRef field to given value.
+
+### HasIdpAdapterRef
+
+`func (o *IdpAdapterAssertionMapping) HasIdpAdapterRef() bool`
+
+HasIdpAdapterRef returns a boolean if a field has been set.
+
 ### GetAbortSsoTransactionAsFailSafe
 
 `func (o *IdpAdapterAssertionMapping) GetAbortSsoTransactionAsFailSafe() bool`
@@ -157,75 +228,30 @@ SetAbortSsoTransactionAsFailSafe sets AbortSsoTransactionAsFailSafe field to giv
 
 HasAbortSsoTransactionAsFailSafe returns a boolean if a field has been set.
 
-### GetAttributeSources
+### GetAttributeSource
 
-`func (o *IdpAdapterAssertionMapping) GetAttributeSources() []AttributeSourceAggregation`
+`func (o *IdpAdapterAssertionMapping) GetAttributeSource() []AttributeSourceAggregation`
 
-GetAttributeSources returns the AttributeSources field if non-nil, zero value otherwise.
+GetAttributeSource returns the AttributeSource field if non-nil, zero value otherwise.
 
-### GetAttributeSourcesOk
+### GetAttributeSourceOk
 
-`func (o *IdpAdapterAssertionMapping) GetAttributeSourcesOk() (*[]AttributeSourceAggregation, bool)`
+`func (o *IdpAdapterAssertionMapping) GetAttributeSourceOk() (*[]AttributeSourceAggregation, bool)`
 
-GetAttributeSourcesOk returns a tuple with the AttributeSources field if it's non-nil, zero value otherwise
+GetAttributeSourceOk returns a tuple with the AttributeSource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAttributeSources
+### SetAttributeSource
 
-`func (o *IdpAdapterAssertionMapping) SetAttributeSources(v []AttributeSourceAggregation)`
+`func (o *IdpAdapterAssertionMapping) SetAttributeSource(v []AttributeSourceAggregation)`
 
-SetAttributeSources sets AttributeSources field to given value.
+SetAttributeSource sets AttributeSource field to given value.
 
-### HasAttributeSources
+### HasAttributeSource
 
-`func (o *IdpAdapterAssertionMapping) HasAttributeSources() bool`
+`func (o *IdpAdapterAssertionMapping) HasAttributeSource() bool`
 
-HasAttributeSources returns a boolean if a field has been set.
-
-### GetAttributeContractFulfillment
-
-`func (o *IdpAdapterAssertionMapping) GetAttributeContractFulfillment() map[string]AttributeFulfillmentValue`
-
-GetAttributeContractFulfillment returns the AttributeContractFulfillment field if non-nil, zero value otherwise.
-
-### GetAttributeContractFulfillmentOk
-
-`func (o *IdpAdapterAssertionMapping) GetAttributeContractFulfillmentOk() (*map[string]AttributeFulfillmentValue, bool)`
-
-GetAttributeContractFulfillmentOk returns a tuple with the AttributeContractFulfillment field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAttributeContractFulfillment
-
-`func (o *IdpAdapterAssertionMapping) SetAttributeContractFulfillment(v map[string]AttributeFulfillmentValue)`
-
-SetAttributeContractFulfillment sets AttributeContractFulfillment field to given value.
-
-
-### GetIssuanceCriteria
-
-`func (o *IdpAdapterAssertionMapping) GetIssuanceCriteria() IssuanceCriteria`
-
-GetIssuanceCriteria returns the IssuanceCriteria field if non-nil, zero value otherwise.
-
-### GetIssuanceCriteriaOk
-
-`func (o *IdpAdapterAssertionMapping) GetIssuanceCriteriaOk() (*IssuanceCriteria, bool)`
-
-GetIssuanceCriteriaOk returns a tuple with the IssuanceCriteria field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIssuanceCriteria
-
-`func (o *IdpAdapterAssertionMapping) SetIssuanceCriteria(v IssuanceCriteria)`
-
-SetIssuanceCriteria sets IssuanceCriteria field to given value.
-
-### HasIssuanceCriteria
-
-`func (o *IdpAdapterAssertionMapping) HasIssuanceCriteria() bool`
-
-HasIssuanceCriteria returns a boolean if a field has been set.
+HasAttributeSource returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

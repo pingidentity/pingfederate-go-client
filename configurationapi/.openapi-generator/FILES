@@ -46,11 +46,14 @@ api_oauth_authentication_policy_contract_mappings.go
 api_oauth_authorization_detail_processors.go
 api_oauth_authorization_detail_types.go
 api_oauth_ciba_server_policy.go
+api_oauth_cimd_policies.go
+api_oauth_cimd_settings.go
 api_oauth_client_registration_policies.go
 api_oauth_client_settings.go
 api_oauth_clients.go
 api_oauth_idp_adapter_mappings.go
 api_oauth_issuers.go
+api_oauth_jwt_bearer_grant_processors.go
 api_oauth_open_id_connect.go
 api_oauth_out_of_band_auth_plugins.go
 api_oauth_processor_policy_mappings.go
@@ -78,6 +81,7 @@ api_version.go
 api_virtual_host_names.go
 client.go
 configuration.go
+docs/AbstractIssuanceCriteriaEntry.md
 docs/AccessTokenAttribute.md
 docs/AccessTokenAttributeContract.md
 docs/AccessTokenManagementSettings.md
@@ -165,6 +169,7 @@ docs/AuthorizationDetailType.md
 docs/AuthorizationDetailTypes.md
 docs/AuthorizationServerSettings.md
 docs/BackChannelAuth.md
+docs/BaseBrowserSso.md
 docs/BaseDefaultValueLocalIdentityField.md
 docs/BaseProviderRole.md
 docs/BaseSelectionFieldDescriptor.md
@@ -185,6 +190,7 @@ docs/CaptchaProvidersSettings.md
 docs/CaptchaSettings.md
 docs/CertView.md
 docs/CertViews.md
+docs/CertificateAuth.md
 docs/CertificateExpirationNotificationSettings.md
 docs/CertificateRevocationSettings.md
 docs/CertificatesCaAPI.md
@@ -198,8 +204,12 @@ docs/CheckBoxFieldDescriptor.md
 docs/CheckboxGroupLocalIdentityField.md
 docs/CheckboxLocalIdentityField.md
 docs/CibaServerPolicySettings.md
+docs/CimdPolicies.md
+docs/CimdPolicy.md
+docs/CimdSettings.md
 docs/Client.md
 docs/ClientAuth.md
+docs/ClientAuthentication.md
 docs/ClientMetadata.md
 docs/ClientOIDCPolicy.md
 docs/ClientRegistrationOIDCPolicy.md
@@ -208,6 +218,8 @@ docs/ClientRegistrationPolicy.md
 docs/ClientRegistrationPolicyDescriptor.md
 docs/ClientRegistrationPolicyDescriptors.md
 docs/ClientSecret.md
+docs/ClientSecretAuth.md
+docs/ClientSecretJwtAuth.md
 docs/ClientSettings.md
 docs/Clients.md
 docs/ClusterAPI.md
@@ -259,6 +271,7 @@ docs/DecryptionKeys.md
 docs/DecryptionPolicy.md
 docs/DistinguishedNameToIdpMap.md
 docs/DonePolicyAction.md
+docs/DpopProofSettings.md
 docs/DropDownLocalIdentityField.md
 docs/DynamicClientRegistration.md
 docs/EmailLocalIdentityField.md
@@ -275,6 +288,7 @@ docs/FederationInfo.md
 docs/FieldConfig.md
 docs/FieldDescriptor.md
 docs/FieldEntry.md
+docs/FormDataContentDisposition.md
 docs/FragmentPolicyAction.md
 docs/GeneralSettings.md
 docs/GlobalAuthenticationSessionPolicy.md
@@ -317,6 +331,7 @@ docs/IdpDefaultUrlsAPI.md
 docs/IdpInboundProvisioning.md
 docs/IdpInboundProvisioningAttribute.md
 docs/IdpInboundProvisioningAttributeContract.md
+docs/IdpJwtBearerGrantProcessor.md
 docs/IdpOAuthAttributeContract.md
 docs/IdpOAuthGrantAttributeMapping.md
 docs/IdpRole.md
@@ -348,6 +363,8 @@ docs/JdbcTagConfig.md
 docs/JitProvisioning.md
 docs/JitProvisioningUserAttributes.md
 docs/JwksSettings.md
+docs/JwtBearerGrantProcessor.md
+docs/JwtBearerGrantProcessorInstances.md
 docs/KerberosKeySet.md
 docs/KerberosRealm.md
 docs/KerberosRealms.md
@@ -397,6 +414,7 @@ docs/MetadataUrls.md
 docs/MetadataUrlsAPI.md
 docs/MoveItemRequest.md
 docs/NewKeyPairSettings.md
+docs/NoneAuth.md
 docs/NotificationPublisher.md
 docs/NotificationPublisherDescriptor.md
 docs/NotificationPublisherDescriptors.md
@@ -418,11 +436,14 @@ docs/OauthAuthenticationPolicyContractMappingsAPI.md
 docs/OauthAuthorizationDetailProcessorsAPI.md
 docs/OauthAuthorizationDetailTypesAPI.md
 docs/OauthCibaServerPolicyAPI.md
+docs/OauthCimdPoliciesAPI.md
+docs/OauthCimdSettingsAPI.md
 docs/OauthClientRegistrationPoliciesAPI.md
 docs/OauthClientSettingsAPI.md
 docs/OauthClientsAPI.md
 docs/OauthIdpAdapterMappingsAPI.md
 docs/OauthIssuersAPI.md
+docs/OauthJwtBearerGrantProcessorsAPI.md
 docs/OauthOpenIdConnectAPI.md
 docs/OauthOutOfBandAuthPluginsAPI.md
 docs/OauthProcessorPolicyMappingsAPI.md
@@ -474,6 +495,7 @@ docs/PluginDescriptor.md
 docs/PluginInstance.md
 docs/PolicyAction.md
 docs/PolicyActionAggregation.md
+docs/PrivateKeyJwtAuth.md
 docs/ProcessorPolicyToGeneratorMapping.md
 docs/ProcessorPolicyToGeneratorMappings.md
 docs/ProcessorPolicyToPersistentGrantMapping.md
@@ -491,6 +513,7 @@ docs/RedirectValidationPartnerSettings.md
 docs/RedirectValidationSettings.md
 docs/RedirectValidationSettingsUriAllowlistEntry.md
 docs/RedirectValidationSettingsWhitelistEntry.md
+docs/ReferenceItem.md
 docs/RegistrationConfig.md
 docs/RequestPolicies.md
 docs/RequestPolicy.md
@@ -564,6 +587,9 @@ docs/SpConnections.md
 docs/SpDefaultUrls.md
 docs/SpDefaultUrlsAPI.md
 docs/SpIdpConnectionsAPI.md
+docs/SpOAuthProcessorPolicyMapping.md
+docs/SpOAuthTokenExchangeAttributeContract.md
+docs/SpOAuthTokenExchangeSettings.md
 docs/SpRole.md
 docs/SpSAML20Profile.md
 docs/SpSsoServiceEndpoint.md
@@ -585,6 +611,9 @@ docs/SystemKey.md
 docs/SystemKeys.md
 docs/Table.md
 docs/TableDescriptor.md
+docs/Tag.md
+docs/TagUsage.md
+docs/Tags.md
 docs/TextAreaFieldDescriptor.md
 docs/TextFieldDescriptor.md
 docs/TextLocalIdentityField.md
@@ -630,6 +659,7 @@ docs/WriteGroups.md
 docs/WriteUsers.md
 docs/WsTrustStsSettings.md
 docs/X509File.md
+model_abstract_issuance_criteria_entry.go
 model_access_token_attribute.go
 model_access_token_attribute_contract.go
 model_access_token_management_settings.go
@@ -711,6 +741,7 @@ model_authorization_detail_type.go
 model_authorization_detail_types.go
 model_authorization_server_settings.go
 model_back_channel_auth.go
+model_base_browser_sso.go
 model_base_default_value_local_identity_field.go
 model_base_provider_role.go
 model_base_selection_field_descriptor.go
@@ -728,6 +759,7 @@ model_captcha_providers_settings.go
 model_captcha_settings.go
 model_cert_view.go
 model_cert_views.go
+model_certificate_auth.go
 model_certificate_expiration_notification_settings.go
 model_certificate_revocation_settings.go
 model_change_detection_settings.go
@@ -738,8 +770,12 @@ model_check_box_field_descriptor.go
 model_checkbox_group_local_identity_field.go
 model_checkbox_local_identity_field.go
 model_ciba_server_policy_settings.go
+model_cimd_policies.go
+model_cimd_policy.go
+model_cimd_settings.go
 model_client.go
 model_client_auth.go
+model_client_authentication.go
 model_client_metadata.go
 model_client_oidc_policy.go
 model_client_registration_oidc_policy.go
@@ -748,6 +784,8 @@ model_client_registration_policy.go
 model_client_registration_policy_descriptor.go
 model_client_registration_policy_descriptors.go
 model_client_secret.go
+model_client_secret_auth.go
+model_client_secret_jwt_auth.go
 model_client_settings.go
 model_clients.go
 model_cluster_node.go
@@ -793,6 +831,7 @@ model_decryption_keys.go
 model_decryption_policy.go
 model_distinguished_name_to_idp_map.go
 model_done_policy_action.go
+model_dpop_proof_settings.go
 model_drop_down_local_identity_field.go
 model_dynamic_client_registration.go
 model_email_local_identity_field.go
@@ -808,6 +847,7 @@ model_federation_info.go
 model_field_config.go
 model_field_descriptor.go
 model_field_entry.go
+model_form_data_content_disposition.go
 model_fragment_policy_action.go
 model_general_settings.go
 model_global_authentication_session_policy.go
@@ -846,6 +886,7 @@ model_idp_default_url.go
 model_idp_inbound_provisioning.go
 model_idp_inbound_provisioning_attribute.go
 model_idp_inbound_provisioning_attribute_contract.go
+model_idp_jwt_bearer_grant_processor.go
 model_idp_o_auth_attribute_contract.go
 model_idp_o_auth_grant_attribute_mapping.go
 model_idp_role.go
@@ -872,6 +913,8 @@ model_jdbc_tag_config.go
 model_jit_provisioning.go
 model_jit_provisioning_user_attributes.go
 model_jwks_settings.go
+model_jwt_bearer_grant_processor.go
+model_jwt_bearer_grant_processor_instances.go
 model_kerberos_key_set.go
 model_kerberos_realm.go
 model_kerberos_realms.go
@@ -912,6 +955,7 @@ model_metadata_url.go
 model_metadata_urls.go
 model_move_item_request.go
 model_new_key_pair_settings.go
+model_none_auth.go
 model_notification_publisher.go
 model_notification_publisher_descriptor.go
 model_notification_publisher_descriptors.go
@@ -966,6 +1010,7 @@ model_plugin_descriptor.go
 model_plugin_instance.go
 model_policy_action.go
 model_policy_action_aggregation.go
+model_private_key_jwt_auth.go
 model_processor_policy_to_generator_mapping.go
 model_processor_policy_to_generator_mappings.go
 model_processor_policy_to_persistent_grant_mapping.go
@@ -981,6 +1026,7 @@ model_redirect_validation_partner_settings.go
 model_redirect_validation_settings.go
 model_redirect_validation_settings_uri_allowlist_entry.go
 model_redirect_validation_settings_whitelist_entry.go
+model_reference_item.go
 model_registration_config.go
 model_request_policies.go
 model_request_policy.go
@@ -1046,6 +1092,9 @@ model_sp_browser_sso_attribute_contract.go
 model_sp_connection.go
 model_sp_connections.go
 model_sp_default_urls.go
+model_sp_o_auth_processor_policy_mapping.go
+model_sp_o_auth_token_exchange_attribute_contract.go
+model_sp_o_auth_token_exchange_settings.go
 model_sp_role.go
 model_sp_saml20_profile.go
 model_sp_sso_service_endpoint.go
@@ -1065,6 +1114,9 @@ model_system_key.go
 model_system_keys.go
 model_table.go
 model_table_descriptor.go
+model_tag.go
+model_tag_usage.go
+model_tags.go
 model_text_area_field_descriptor.go
 model_text_field_descriptor.go
 model_text_local_identity_field.go
@@ -1153,11 +1205,14 @@ test/api_oauth_authentication_policy_contract_mappings_test.go
 test/api_oauth_authorization_detail_processors_test.go
 test/api_oauth_authorization_detail_types_test.go
 test/api_oauth_ciba_server_policy_test.go
+test/api_oauth_cimd_policies_test.go
+test/api_oauth_cimd_settings_test.go
 test/api_oauth_client_registration_policies_test.go
 test/api_oauth_client_settings_test.go
 test/api_oauth_clients_test.go
 test/api_oauth_idp_adapter_mappings_test.go
 test/api_oauth_issuers_test.go
+test/api_oauth_jwt_bearer_grant_processors_test.go
 test/api_oauth_open_id_connect_test.go
 test/api_oauth_out_of_band_auth_plugins_test.go
 test/api_oauth_processor_policy_mappings_test.go

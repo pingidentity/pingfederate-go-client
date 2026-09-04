@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | The name of this action | [optional] 
 **Description** | Pointer to **string** | The description of this action | [optional] 
-**Download** | Pointer to **bool** | Whether this action will trigger a download or invoke an internal action that will return a string result. | [optional] 
 **DownloadContentType** | Pointer to **string** | If this is a download, this is the Content-Type of the downloaded file. Otherwise, this is null. | [optional] 
 **DownloadFileName** | Pointer to **string** | If this is a download, this is the suggested file name of the downloaded file. Otherwise, this is null. | [optional] 
 **Parameters** | Pointer to [**[]FieldDescriptor**](FieldDescriptor.md) | List of parameters for this action. | [optional] 
+**Download** | Pointer to **bool** | Whether this action will trigger a download or invoke an internal action that will return a string result. | [optional] 
 
 ## Methods
 
@@ -79,31 +79,6 @@ SetDescription sets Description field to given value.
 `func (o *ActionDescriptor) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
-
-### GetDownload
-
-`func (o *ActionDescriptor) GetDownload() bool`
-
-GetDownload returns the Download field if non-nil, zero value otherwise.
-
-### GetDownloadOk
-
-`func (o *ActionDescriptor) GetDownloadOk() (*bool, bool)`
-
-GetDownloadOk returns a tuple with the Download field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDownload
-
-`func (o *ActionDescriptor) SetDownload(v bool)`
-
-SetDownload sets Download field to given value.
-
-### HasDownload
-
-`func (o *ActionDescriptor) HasDownload() bool`
-
-HasDownload returns a boolean if a field has been set.
 
 ### GetDownloadContentType
 
@@ -179,6 +154,31 @@ SetParameters sets Parameters field to given value.
 `func (o *ActionDescriptor) HasParameters() bool`
 
 HasParameters returns a boolean if a field has been set.
+
+### GetDownload
+
+`func (o *ActionDescriptor) GetDownload() bool`
+
+GetDownload returns the Download field if non-nil, zero value otherwise.
+
+### GetDownloadOk
+
+`func (o *ActionDescriptor) GetDownloadOk() (*bool, bool)`
+
+GetDownloadOk returns a tuple with the Download field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDownload
+
+`func (o *ActionDescriptor) SetDownload(v bool)`
+
+SetDownload sets Download field to given value.
+
+### HasDownload
+
+`func (o *ActionDescriptor) HasDownload() bool`
+
+HasDownload returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AttributeContract** | [**IdpWsTrustAttributeContract**](IdpWsTrustAttributeContract.md) |  | 
-**GenerateLocalToken** | **bool** | Indicates whether a local token needs to be generated. The default value is false. | 
 **TokenGeneratorMappings** | Pointer to [**[]SpTokenGeneratorMapping**](SpTokenGeneratorMapping.md) | A list of token generators to generate local tokens. Required if a local token needs to be generated. | [optional] 
+**GenerateLocalToken** | **bool** | Indicates whether a local token needs to be generated. The default value is false. | 
 
 ## Methods
 
@@ -47,26 +47,6 @@ and a boolean to check if the value has been set.
 SetAttributeContract sets AttributeContract field to given value.
 
 
-### GetGenerateLocalToken
-
-`func (o *IdpWsTrust) GetGenerateLocalToken() bool`
-
-GetGenerateLocalToken returns the GenerateLocalToken field if non-nil, zero value otherwise.
-
-### GetGenerateLocalTokenOk
-
-`func (o *IdpWsTrust) GetGenerateLocalTokenOk() (*bool, bool)`
-
-GetGenerateLocalTokenOk returns a tuple with the GenerateLocalToken field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGenerateLocalToken
-
-`func (o *IdpWsTrust) SetGenerateLocalToken(v bool)`
-
-SetGenerateLocalToken sets GenerateLocalToken field to given value.
-
-
 ### GetTokenGeneratorMappings
 
 `func (o *IdpWsTrust) GetTokenGeneratorMappings() []SpTokenGeneratorMapping`
@@ -91,6 +71,26 @@ SetTokenGeneratorMappings sets TokenGeneratorMappings field to given value.
 `func (o *IdpWsTrust) HasTokenGeneratorMappings() bool`
 
 HasTokenGeneratorMappings returns a boolean if a field has been set.
+
+### GetGenerateLocalToken
+
+`func (o *IdpWsTrust) GetGenerateLocalToken() bool`
+
+GetGenerateLocalToken returns the GenerateLocalToken field if non-nil, zero value otherwise.
+
+### GetGenerateLocalTokenOk
+
+`func (o *IdpWsTrust) GetGenerateLocalTokenOk() (*bool, bool)`
+
+GetGenerateLocalTokenOk returns a tuple with the GenerateLocalToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGenerateLocalToken
+
+`func (o *IdpWsTrust) SetGenerateLocalToken(v bool)`
+
+SetGenerateLocalToken sets GenerateLocalToken field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

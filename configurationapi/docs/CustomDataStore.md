@@ -4,19 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The data store type. | 
-**Id** | Pointer to **string** | The persistent, unique ID for the data store. It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned if not specified. | [optional] 
-**MaskAttributeValues** | Pointer to **bool** | Whether attribute values should be masked in the log. | [optional] 
+**Id** | **string** | The ID of the plugin instance. The ID cannot be modified once the instance is created.&lt;br&gt;Note: Ignored when specifying a connection&#39;s adapter override. | 
 **Name** | **string** | The plugin instance name. | 
 **PluginDescriptorRef** | [**ResourceLink**](ResourceLink.md) |  | 
 **ParentRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **Configuration** | [**PluginConfiguration**](PluginConfiguration.md) |  | 
+**LastModified** | Pointer to **time.Time** | The time at which the plugin instance was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
 
 ## Methods
 
 ### NewCustomDataStore
 
-`func NewCustomDataStore(type_ string, name string, pluginDescriptorRef ResourceLink, configuration PluginConfiguration, ) *CustomDataStore`
+`func NewCustomDataStore(id string, name string, pluginDescriptorRef ResourceLink, configuration PluginConfiguration, ) *CustomDataStore`
 
 NewCustomDataStore instantiates a new CustomDataStore object
 This constructor will assign default values to properties that have it defined,
@@ -30,26 +29,6 @@ will change when the set of required properties is changed
 NewCustomDataStoreWithDefaults instantiates a new CustomDataStore object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetType
-
-`func (o *CustomDataStore) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *CustomDataStore) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *CustomDataStore) SetType(v string)`
-
-SetType sets Type field to given value.
-
 
 ### GetId
 
@@ -70,36 +49,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *CustomDataStore) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetMaskAttributeValues
-
-`func (o *CustomDataStore) GetMaskAttributeValues() bool`
-
-GetMaskAttributeValues returns the MaskAttributeValues field if non-nil, zero value otherwise.
-
-### GetMaskAttributeValuesOk
-
-`func (o *CustomDataStore) GetMaskAttributeValuesOk() (*bool, bool)`
-
-GetMaskAttributeValuesOk returns a tuple with the MaskAttributeValues field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaskAttributeValues
-
-`func (o *CustomDataStore) SetMaskAttributeValues(v bool)`
-
-SetMaskAttributeValues sets MaskAttributeValues field to given value.
-
-### HasMaskAttributeValues
-
-`func (o *CustomDataStore) HasMaskAttributeValues() bool`
-
-HasMaskAttributeValues returns a boolean if a field has been set.
 
 ### GetName
 
@@ -185,6 +134,31 @@ and a boolean to check if the value has been set.
 
 SetConfiguration sets Configuration field to given value.
 
+
+### GetLastModified
+
+`func (o *CustomDataStore) GetLastModified() time.Time`
+
+GetLastModified returns the LastModified field if non-nil, zero value otherwise.
+
+### GetLastModifiedOk
+
+`func (o *CustomDataStore) GetLastModifiedOk() (*time.Time, bool)`
+
+GetLastModifiedOk returns a tuple with the LastModified field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastModified
+
+`func (o *CustomDataStore) SetLastModified(v time.Time)`
+
+SetLastModified sets LastModified field to given value.
+
+### HasLastModified
+
+`func (o *CustomDataStore) HasLastModified() bool`
+
+HasLastModified returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

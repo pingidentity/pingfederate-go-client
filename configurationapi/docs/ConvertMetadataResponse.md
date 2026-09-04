@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Connection** | Pointer to [**Connection**](Connection.md) |  | [optional] 
 **SignatureStatus** | Pointer to **string** | The metadata&#39;s digital signature status. | [optional] 
 **CertTrustStatus** | Pointer to **string** | The metadata certificate&#39;s trust status, i.e. If the partner&#39;s certificate can be trusted or not. | [optional] 
 **CertSubjectDn** | Pointer to **string** | The metadata certificate&#39;s subject DN. | [optional] 
-**CertSerialNumber** | Pointer to **string** | The metadata certificate&#39;s serial number. | [optional] 
 **CertExpiration** | Pointer to **time.Time** | The metadata certificate&#39;s expiry date. | [optional] 
-**Connection** | Pointer to [**Connection**](Connection.md) |  | [optional] 
+**CertSerialNumber** | Pointer to **string** | The metadata certificate&#39;s serial number. | [optional] 
 
 ## Methods
 
@@ -29,6 +29,31 @@ will change when the set of required properties is changed
 NewConvertMetadataResponseWithDefaults instantiates a new ConvertMetadataResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetConnection
+
+`func (o *ConvertMetadataResponse) GetConnection() Connection`
+
+GetConnection returns the Connection field if non-nil, zero value otherwise.
+
+### GetConnectionOk
+
+`func (o *ConvertMetadataResponse) GetConnectionOk() (*Connection, bool)`
+
+GetConnectionOk returns a tuple with the Connection field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnection
+
+`func (o *ConvertMetadataResponse) SetConnection(v Connection)`
+
+SetConnection sets Connection field to given value.
+
+### HasConnection
+
+`func (o *ConvertMetadataResponse) HasConnection() bool`
+
+HasConnection returns a boolean if a field has been set.
 
 ### GetSignatureStatus
 
@@ -105,31 +130,6 @@ SetCertSubjectDn sets CertSubjectDn field to given value.
 
 HasCertSubjectDn returns a boolean if a field has been set.
 
-### GetCertSerialNumber
-
-`func (o *ConvertMetadataResponse) GetCertSerialNumber() string`
-
-GetCertSerialNumber returns the CertSerialNumber field if non-nil, zero value otherwise.
-
-### GetCertSerialNumberOk
-
-`func (o *ConvertMetadataResponse) GetCertSerialNumberOk() (*string, bool)`
-
-GetCertSerialNumberOk returns a tuple with the CertSerialNumber field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCertSerialNumber
-
-`func (o *ConvertMetadataResponse) SetCertSerialNumber(v string)`
-
-SetCertSerialNumber sets CertSerialNumber field to given value.
-
-### HasCertSerialNumber
-
-`func (o *ConvertMetadataResponse) HasCertSerialNumber() bool`
-
-HasCertSerialNumber returns a boolean if a field has been set.
-
 ### GetCertExpiration
 
 `func (o *ConvertMetadataResponse) GetCertExpiration() time.Time`
@@ -155,30 +155,30 @@ SetCertExpiration sets CertExpiration field to given value.
 
 HasCertExpiration returns a boolean if a field has been set.
 
-### GetConnection
+### GetCertSerialNumber
 
-`func (o *ConvertMetadataResponse) GetConnection() Connection`
+`func (o *ConvertMetadataResponse) GetCertSerialNumber() string`
 
-GetConnection returns the Connection field if non-nil, zero value otherwise.
+GetCertSerialNumber returns the CertSerialNumber field if non-nil, zero value otherwise.
 
-### GetConnectionOk
+### GetCertSerialNumberOk
 
-`func (o *ConvertMetadataResponse) GetConnectionOk() (*Connection, bool)`
+`func (o *ConvertMetadataResponse) GetCertSerialNumberOk() (*string, bool)`
 
-GetConnectionOk returns a tuple with the Connection field if it's non-nil, zero value otherwise
+GetCertSerialNumberOk returns a tuple with the CertSerialNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetConnection
+### SetCertSerialNumber
 
-`func (o *ConvertMetadataResponse) SetConnection(v Connection)`
+`func (o *ConvertMetadataResponse) SetCertSerialNumber(v string)`
 
-SetConnection sets Connection field to given value.
+SetCertSerialNumber sets CertSerialNumber field to given value.
 
-### HasConnection
+### HasCertSerialNumber
 
-`func (o *ConvertMetadataResponse) HasConnection() bool`
+`func (o *ConvertMetadataResponse) HasCertSerialNumber() bool`
 
-HasConnection returns a boolean if a field has been set.
+HasCertSerialNumber returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

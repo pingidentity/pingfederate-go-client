@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AssertionEncrypted** | Pointer to **bool** | Specify whether the incoming SAML assertion is encrypted for an IdP connection. | [optional] 
-**AttributesEncrypted** | Pointer to **bool** | Specify whether one or more incoming SAML attributes are encrypted for an IdP connection. | [optional] 
 **SubjectNameIdEncrypted** | Pointer to **bool** | Specify whether the incoming Subject Name ID is encrypted for an IdP connection. | [optional] 
+**AttributesEncrypted** | Pointer to **bool** | Specify whether one or more incoming SAML attributes are encrypted for an IdP connection. | [optional] 
 **SloEncryptSubjectNameID** | Pointer to **bool** | Encrypt the Subject Name ID in SLO messages to the IdP. | [optional] 
 **SloSubjectNameIDEncrypted** | Pointer to **bool** | Allow encrypted Subject Name ID in SLO messages from the IdP. | [optional] 
 
@@ -54,31 +54,6 @@ SetAssertionEncrypted sets AssertionEncrypted field to given value.
 
 HasAssertionEncrypted returns a boolean if a field has been set.
 
-### GetAttributesEncrypted
-
-`func (o *DecryptionPolicy) GetAttributesEncrypted() bool`
-
-GetAttributesEncrypted returns the AttributesEncrypted field if non-nil, zero value otherwise.
-
-### GetAttributesEncryptedOk
-
-`func (o *DecryptionPolicy) GetAttributesEncryptedOk() (*bool, bool)`
-
-GetAttributesEncryptedOk returns a tuple with the AttributesEncrypted field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAttributesEncrypted
-
-`func (o *DecryptionPolicy) SetAttributesEncrypted(v bool)`
-
-SetAttributesEncrypted sets AttributesEncrypted field to given value.
-
-### HasAttributesEncrypted
-
-`func (o *DecryptionPolicy) HasAttributesEncrypted() bool`
-
-HasAttributesEncrypted returns a boolean if a field has been set.
-
 ### GetSubjectNameIdEncrypted
 
 `func (o *DecryptionPolicy) GetSubjectNameIdEncrypted() bool`
@@ -103,6 +78,31 @@ SetSubjectNameIdEncrypted sets SubjectNameIdEncrypted field to given value.
 `func (o *DecryptionPolicy) HasSubjectNameIdEncrypted() bool`
 
 HasSubjectNameIdEncrypted returns a boolean if a field has been set.
+
+### GetAttributesEncrypted
+
+`func (o *DecryptionPolicy) GetAttributesEncrypted() bool`
+
+GetAttributesEncrypted returns the AttributesEncrypted field if non-nil, zero value otherwise.
+
+### GetAttributesEncryptedOk
+
+`func (o *DecryptionPolicy) GetAttributesEncryptedOk() (*bool, bool)`
+
+GetAttributesEncryptedOk returns a tuple with the AttributesEncrypted field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributesEncrypted
+
+`func (o *DecryptionPolicy) SetAttributesEncrypted(v bool)`
+
+SetAttributesEncrypted sets AttributesEncrypted field to given value.
+
+### HasAttributesEncrypted
+
+`func (o *DecryptionPolicy) HasAttributesEncrypted() bool`
+
+HasAttributesEncrypted returns a boolean if a field has been set.
 
 ### GetSloEncryptSubjectNameID
 

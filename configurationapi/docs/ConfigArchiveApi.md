@@ -90,7 +90,7 @@ func main() {
     forceImport := true // bool |  (optional)
     forceUnsupportedImport := true // bool | Force import of unsupported versions. (optional) (default to false)
     reencryptData := true // bool | Reencrypt configuration archive data with the current deployment's encryption key. (optional) (default to false)
-    file := os.NewFile(1234, "some_file") // *os.File |  (optional)
+    file := *openapiclient.NewFormDataContentDisposition() // FormDataContentDisposition |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
  **forceImport** | **bool** |  | 
  **forceUnsupportedImport** | **bool** | Force import of unsupported versions. | [default to false]
  **reencryptData** | **bool** | Reencrypt configuration archive data with the current deployment&#39;s encryption key. | [default to false]
- **file** | ***os.File** |  | 
+ **file** | [**FormDataContentDisposition**](FormDataContentDisposition.md) |  | 
 
 ### Return type
 

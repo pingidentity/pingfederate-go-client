@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Company** | Pointer to **string** | Company name. | [optional] 
-**Email** | Pointer to **string** | Contact email address. | [optional] 
 **FirstName** | Pointer to **string** | Contact first name. | [optional] 
 **LastName** | Pointer to **string** | Contact last name. | [optional] 
 **Phone** | Pointer to **string** | Contact phone number. | [optional] 
+**Email** | Pointer to **string** | Contact email address. | [optional] 
 
 ## Methods
 
@@ -53,31 +53,6 @@ SetCompany sets Company field to given value.
 `func (o *ContactInfo) HasCompany() bool`
 
 HasCompany returns a boolean if a field has been set.
-
-### GetEmail
-
-`func (o *ContactInfo) GetEmail() string`
-
-GetEmail returns the Email field if non-nil, zero value otherwise.
-
-### GetEmailOk
-
-`func (o *ContactInfo) GetEmailOk() (*string, bool)`
-
-GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEmail
-
-`func (o *ContactInfo) SetEmail(v string)`
-
-SetEmail sets Email field to given value.
-
-### HasEmail
-
-`func (o *ContactInfo) HasEmail() bool`
-
-HasEmail returns a boolean if a field has been set.
 
 ### GetFirstName
 
@@ -153,6 +128,31 @@ SetPhone sets Phone field to given value.
 `func (o *ContactInfo) HasPhone() bool`
 
 HasPhone returns a boolean if a field has been set.
+
+### GetEmail
+
+`func (o *ContactInfo) GetEmail() string`
+
+GetEmail returns the Email field if non-nil, zero value otherwise.
+
+### GetEmailOk
+
+`func (o *ContactInfo) GetEmailOk() (*string, bool)`
+
+GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmail
+
+`func (o *ContactInfo) SetEmail(v string)`
+
+SetEmail sets Email field to given value.
+
+### HasEmail
+
+`func (o *ContactInfo) HasEmail() bool`
+
+HasEmail returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

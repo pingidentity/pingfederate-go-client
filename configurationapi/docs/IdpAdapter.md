@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 **ParentRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **Configuration** | [**PluginConfiguration**](PluginConfiguration.md) |  | 
 **LastModified** | Pointer to **time.Time** | The time at which the plugin instance was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
+**AttributeContract** | Pointer to [**IdpAdapterAttributeContract**](IdpAdapterAttributeContract.md) |  | [optional] 
 **AuthnCtxClassRef** | Pointer to **string** | The fixed value that indicates how the user was authenticated. | [optional] 
 **AttributeMapping** | Pointer to [**IdpAdapterContractMapping**](IdpAdapterContractMapping.md) |  | [optional] 
-**AttributeContract** | Pointer to [**IdpAdapterAttributeContract**](IdpAdapterAttributeContract.md) |  | [optional] 
 
 ## Methods
 
@@ -163,6 +163,31 @@ SetLastModified sets LastModified field to given value.
 
 HasLastModified returns a boolean if a field has been set.
 
+### GetAttributeContract
+
+`func (o *IdpAdapter) GetAttributeContract() IdpAdapterAttributeContract`
+
+GetAttributeContract returns the AttributeContract field if non-nil, zero value otherwise.
+
+### GetAttributeContractOk
+
+`func (o *IdpAdapter) GetAttributeContractOk() (*IdpAdapterAttributeContract, bool)`
+
+GetAttributeContractOk returns a tuple with the AttributeContract field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributeContract
+
+`func (o *IdpAdapter) SetAttributeContract(v IdpAdapterAttributeContract)`
+
+SetAttributeContract sets AttributeContract field to given value.
+
+### HasAttributeContract
+
+`func (o *IdpAdapter) HasAttributeContract() bool`
+
+HasAttributeContract returns a boolean if a field has been set.
+
 ### GetAuthnCtxClassRef
 
 `func (o *IdpAdapter) GetAuthnCtxClassRef() string`
@@ -212,31 +237,6 @@ SetAttributeMapping sets AttributeMapping field to given value.
 `func (o *IdpAdapter) HasAttributeMapping() bool`
 
 HasAttributeMapping returns a boolean if a field has been set.
-
-### GetAttributeContract
-
-`func (o *IdpAdapter) GetAttributeContract() IdpAdapterAttributeContract`
-
-GetAttributeContract returns the AttributeContract field if non-nil, zero value otherwise.
-
-### GetAttributeContractOk
-
-`func (o *IdpAdapter) GetAttributeContractOk() (*IdpAdapterAttributeContract, bool)`
-
-GetAttributeContractOk returns a tuple with the AttributeContract field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAttributeContract
-
-`func (o *IdpAdapter) SetAttributeContract(v IdpAdapterAttributeContract)`
-
-SetAttributeContract sets AttributeContract field to given value.
-
-### HasAttributeContract
-
-`func (o *IdpAdapter) HasAttributeContract() bool`
-
-HasAttributeContract returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

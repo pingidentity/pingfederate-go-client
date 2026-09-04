@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BaseUrl** | Pointer to **string** | The fully qualified host name, port, and path (if applicable) on which the PingFederate server runs. | [optional] 
 **Saml2EntityId** | Pointer to **string** | This ID defines your organization as the entity operating the server for SAML 2.0 transactions. It is usually defined as an organization&#39;s URL or a DNS address; for example: pingidentity.com. The SAML SourceID used for artifact resolution is derived from this ID using SHA1. | [optional] 
-**AutoConnectEntityId** | Pointer to **string** | This property has been deprecated and no longer used | [optional] 
 **Saml1xIssuerId** | Pointer to **string** | This ID identifies your federation server for SAML 1.x transactions. As with SAML 2.0, it is usually defined as an organization&#39;s URL or a DNS address. The SourceID used for artifact resolution is derived from this ID using SHA1. | [optional] 
 **Saml1xSourceId** | Pointer to **string** | If supplied, the Source ID value entered here is used for SAML 1.x, instead of being derived from the SAML 1.x Issuer/Audience. | [optional] 
 **WsfedRealm** | Pointer to **string** | The URI of the realm associated with the PingFederate server. A realm represents a single unit of security administration or trust. | [optional] 
+**AutoConnectEntityId** | Pointer to **string** | This property has been deprecated and no longer used | [optional] 
 
 ## Methods
 
@@ -79,31 +79,6 @@ SetSaml2EntityId sets Saml2EntityId field to given value.
 `func (o *FederationInfo) HasSaml2EntityId() bool`
 
 HasSaml2EntityId returns a boolean if a field has been set.
-
-### GetAutoConnectEntityId
-
-`func (o *FederationInfo) GetAutoConnectEntityId() string`
-
-GetAutoConnectEntityId returns the AutoConnectEntityId field if non-nil, zero value otherwise.
-
-### GetAutoConnectEntityIdOk
-
-`func (o *FederationInfo) GetAutoConnectEntityIdOk() (*string, bool)`
-
-GetAutoConnectEntityIdOk returns a tuple with the AutoConnectEntityId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAutoConnectEntityId
-
-`func (o *FederationInfo) SetAutoConnectEntityId(v string)`
-
-SetAutoConnectEntityId sets AutoConnectEntityId field to given value.
-
-### HasAutoConnectEntityId
-
-`func (o *FederationInfo) HasAutoConnectEntityId() bool`
-
-HasAutoConnectEntityId returns a boolean if a field has been set.
 
 ### GetSaml1xIssuerId
 
@@ -179,6 +154,31 @@ SetWsfedRealm sets WsfedRealm field to given value.
 `func (o *FederationInfo) HasWsfedRealm() bool`
 
 HasWsfedRealm returns a boolean if a field has been set.
+
+### GetAutoConnectEntityId
+
+`func (o *FederationInfo) GetAutoConnectEntityId() string`
+
+GetAutoConnectEntityId returns the AutoConnectEntityId field if non-nil, zero value otherwise.
+
+### GetAutoConnectEntityIdOk
+
+`func (o *FederationInfo) GetAutoConnectEntityIdOk() (*string, bool)`
+
+GetAutoConnectEntityIdOk returns a tuple with the AutoConnectEntityId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoConnectEntityId
+
+`func (o *FederationInfo) SetAutoConnectEntityId(v string)`
+
+SetAutoConnectEntityId sets AutoConnectEntityId field to given value.
+
+### HasAutoConnectEntityId
+
+`func (o *FederationInfo) HasAutoConnectEntityId() bool`
+
+HasAutoConnectEntityId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

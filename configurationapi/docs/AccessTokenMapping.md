@@ -4,18 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | The id of the Access Token Mapping. | [optional] 
-**Context** | [**AccessTokenMappingContext**](AccessTokenMappingContext.md) |  | 
-**AccessTokenManagerRef** | [**ResourceLink**](ResourceLink.md) |  | 
 **AttributeSources** | Pointer to [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) | A list of configured data stores to look up attributes from. | [optional] 
 **AttributeContractFulfillment** | [**map[string]AttributeFulfillmentValue**](AttributeFulfillmentValue.md) | A list of mappings from attribute names to their fulfillment values. | 
 **IssuanceCriteria** | Pointer to [**IssuanceCriteria**](IssuanceCriteria.md) |  | [optional] 
+**Id** | Pointer to **string** | The id of the Access Token Mapping. | [optional] 
+**Context** | [**AccessTokenMappingContext**](AccessTokenMappingContext.md) |  | 
+**AccessTokenManagerRef** | [**ResourceLink**](ResourceLink.md) |  | 
+**AttributeSource** | Pointer to [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) |  | [optional] 
 
 ## Methods
 
 ### NewAccessTokenMapping
 
-`func NewAccessTokenMapping(context AccessTokenMappingContext, accessTokenManagerRef ResourceLink, attributeContractFulfillment map[string]AttributeFulfillmentValue, ) *AccessTokenMapping`
+`func NewAccessTokenMapping(attributeContractFulfillment map[string]AttributeFulfillmentValue, context AccessTokenMappingContext, accessTokenManagerRef ResourceLink, ) *AccessTokenMapping`
 
 NewAccessTokenMapping instantiates a new AccessTokenMapping object
 This constructor will assign default values to properties that have it defined,
@@ -29,71 +30,6 @@ will change when the set of required properties is changed
 NewAccessTokenMappingWithDefaults instantiates a new AccessTokenMapping object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *AccessTokenMapping) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *AccessTokenMapping) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *AccessTokenMapping) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *AccessTokenMapping) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetContext
-
-`func (o *AccessTokenMapping) GetContext() AccessTokenMappingContext`
-
-GetContext returns the Context field if non-nil, zero value otherwise.
-
-### GetContextOk
-
-`func (o *AccessTokenMapping) GetContextOk() (*AccessTokenMappingContext, bool)`
-
-GetContextOk returns a tuple with the Context field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetContext
-
-`func (o *AccessTokenMapping) SetContext(v AccessTokenMappingContext)`
-
-SetContext sets Context field to given value.
-
-
-### GetAccessTokenManagerRef
-
-`func (o *AccessTokenMapping) GetAccessTokenManagerRef() ResourceLink`
-
-GetAccessTokenManagerRef returns the AccessTokenManagerRef field if non-nil, zero value otherwise.
-
-### GetAccessTokenManagerRefOk
-
-`func (o *AccessTokenMapping) GetAccessTokenManagerRefOk() (*ResourceLink, bool)`
-
-GetAccessTokenManagerRefOk returns a tuple with the AccessTokenManagerRef field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAccessTokenManagerRef
-
-`func (o *AccessTokenMapping) SetAccessTokenManagerRef(v ResourceLink)`
-
-SetAccessTokenManagerRef sets AccessTokenManagerRef field to given value.
-
 
 ### GetAttributeSources
 
@@ -164,6 +100,96 @@ SetIssuanceCriteria sets IssuanceCriteria field to given value.
 `func (o *AccessTokenMapping) HasIssuanceCriteria() bool`
 
 HasIssuanceCriteria returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *AccessTokenMapping) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *AccessTokenMapping) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *AccessTokenMapping) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *AccessTokenMapping) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetContext
+
+`func (o *AccessTokenMapping) GetContext() AccessTokenMappingContext`
+
+GetContext returns the Context field if non-nil, zero value otherwise.
+
+### GetContextOk
+
+`func (o *AccessTokenMapping) GetContextOk() (*AccessTokenMappingContext, bool)`
+
+GetContextOk returns a tuple with the Context field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContext
+
+`func (o *AccessTokenMapping) SetContext(v AccessTokenMappingContext)`
+
+SetContext sets Context field to given value.
+
+
+### GetAccessTokenManagerRef
+
+`func (o *AccessTokenMapping) GetAccessTokenManagerRef() ResourceLink`
+
+GetAccessTokenManagerRef returns the AccessTokenManagerRef field if non-nil, zero value otherwise.
+
+### GetAccessTokenManagerRefOk
+
+`func (o *AccessTokenMapping) GetAccessTokenManagerRefOk() (*ResourceLink, bool)`
+
+GetAccessTokenManagerRefOk returns a tuple with the AccessTokenManagerRef field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccessTokenManagerRef
+
+`func (o *AccessTokenMapping) SetAccessTokenManagerRef(v ResourceLink)`
+
+SetAccessTokenManagerRef sets AccessTokenManagerRef field to given value.
+
+
+### GetAttributeSource
+
+`func (o *AccessTokenMapping) GetAttributeSource() []AttributeSourceAggregation`
+
+GetAttributeSource returns the AttributeSource field if non-nil, zero value otherwise.
+
+### GetAttributeSourceOk
+
+`func (o *AccessTokenMapping) GetAttributeSourceOk() (*[]AttributeSourceAggregation, bool)`
+
+GetAttributeSourceOk returns a tuple with the AttributeSource field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributeSource
+
+`func (o *AccessTokenMapping) SetAttributeSource(v []AttributeSourceAggregation)`
+
+SetAttributeSource sets AttributeSource field to given value.
+
+### HasAttributeSource
+
+`func (o *AccessTokenMapping) HasAttributeSource() bool`
+
+HasAttributeSource returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

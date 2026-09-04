@@ -5,34 +5,34 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Protocol** | **string** | The browser-based SSO protocol to use. | 
-**WsFedTokenType** | Pointer to **string** | The WS-Federation Token Type to use. | [optional] 
-**WsTrustVersion** | Pointer to **string** | The WS-Trust version for a WS-Federation connection. The default version is WSTRUST12. | [optional] 
 **EnabledProfiles** | Pointer to **[]string** | The profiles that are enabled for browser-based SSO. SAML 2.0 supports all profiles whereas SAML 1.x IdP connections support both IdP and SP (non-standard) initiated SSO. This is required for SAMLx.x Connections.  | [optional] 
 **IncomingBindings** | Pointer to **[]string** | The SAML bindings that are enabled for browser-based SSO. This is required for SAML 2.0 connections when the enabled profiles contain the SP-initiated SSO profile or either SLO profile. For SAML 1.x based connections, it is not used for SP Connections and it is optional for IdP Connections. | [optional] 
 **MessageCustomizations** | Pointer to [**[]ProtocolMessageCustomization**](ProtocolMessageCustomization.md) | The message customizations for browser-based SSO. Depending on server settings, connection type, and protocol this may or may not be supported. | [optional] 
-**UrlWhitelistEntries** | Pointer to [**[]UrlWhitelistEntry**](UrlWhitelistEntry.md) | For WS-Federation connections, a whitelist of additional allowed domains and paths used to validate wreply for SLO, if enabled. | [optional] 
 **Artifact** | Pointer to [**ArtifactSettings**](ArtifactSettings.md) |  | [optional] 
 **SloServiceEndpoints** | Pointer to [**[]SloServiceEndpoint**](SloServiceEndpoint.md) | A list of possible endpoints to send SLO requests and responses. | [optional] 
+**UrlWhitelistEntries** | Pointer to [**[]UrlWhitelistEntry**](UrlWhitelistEntry.md) | For WS-Federation connections, a whitelist of additional allowed domains and paths used to validate wreply for SLO, if enabled. | [optional] 
 **DefaultTargetUrl** | Pointer to **string** | Default Target URL for SAML1.x connections. For SP connections, this default URL represents the destination on the SP where the user will be directed. For IdP connections, entering a URL in the Default Target URL field overrides the SP Default URL SSO setting. | [optional] 
 **AlwaysSignArtifactResponse** | Pointer to **bool** | Specify to always sign the SAML ArtifactResponse. | [optional] 
 **SsoApplicationEndpoint** | Pointer to **string** | Application endpoint that can be used to invoke single sign-on (SSO) for the connection. This is a read-only parameter. | [optional] 
 **SsoServiceEndpoints** | [**[]SpSsoServiceEndpoint**](SpSsoServiceEndpoint.md) | A list of possible endpoints to send assertions to. | 
+**SignAssertions** | Pointer to **bool** | Always sign the SAML Assertion. | [optional] 
+**SignResponseAsRequired** | Pointer to **bool** | Sign SAML Response as required by the associated binding and encryption policy. Applicable to SAML2.0 only and is defaulted to true. It can be set to false only on SAML2.0 connections when signAssertions is set to true. | [optional] 
 **SpSamlIdentityMapping** | Pointer to **string** | Process in which users authenticated by the IdP are associated with user accounts local to the SP. | [optional] 
 **SpWsFedIdentityMapping** | Pointer to **string** | Process in which users authenticated by the IdP are associated with user accounts local to the SP for WS-Federation connection types. | [optional] 
-**SignResponseAsRequired** | Pointer to **bool** | Sign SAML Response as required by the associated binding and encryption policy. Applicable to SAML2.0 only and is defaulted to true. It can be set to false only on SAML2.0 connections when signAssertions is set to true. | [optional] 
-**SignAssertions** | Pointer to **bool** | Always sign the SAML Assertion. | [optional] 
 **RequireSignedAuthnRequests** | Pointer to **bool** | Require AuthN requests to be signed when received via the POST or Redirect bindings. | [optional] 
+**AssertionLifetime** | [**AssertionLifetime**](AssertionLifetime.md) |  | 
 **EncryptionPolicy** | Pointer to [**EncryptionPolicy**](EncryptionPolicy.md) |  | [optional] 
 **AttributeContract** | [**SpBrowserSsoAttributeContract**](SpBrowserSsoAttributeContract.md) |  | 
 **AdapterMappings** | [**[]IdpAdapterAssertionMapping**](IdpAdapterAssertionMapping.md) | A list of adapters that map to outgoing assertions. | 
 **AuthenticationPolicyContractAssertionMappings** | Pointer to [**[]AuthenticationPolicyContractAssertionMapping**](AuthenticationPolicyContractAssertionMapping.md) | A list of authentication policy contracts that map to outgoing assertions. | [optional] 
-**AssertionLifetime** | [**AssertionLifetime**](AssertionLifetime.md) |  | 
+**WsFedTokenType** | Pointer to **string** | The WS-Federation Token Type to use. | [optional] 
+**WsTrustVersion** | Pointer to **string** | The WS-Trust version for a WS-Federation connection. The default version is WSTRUST12. | [optional] 
 
 ## Methods
 
 ### NewSpBrowserSso
 
-`func NewSpBrowserSso(protocol string, ssoServiceEndpoints []SpSsoServiceEndpoint, attributeContract SpBrowserSsoAttributeContract, adapterMappings []IdpAdapterAssertionMapping, assertionLifetime AssertionLifetime, ) *SpBrowserSso`
+`func NewSpBrowserSso(protocol string, ssoServiceEndpoints []SpSsoServiceEndpoint, assertionLifetime AssertionLifetime, attributeContract SpBrowserSsoAttributeContract, adapterMappings []IdpAdapterAssertionMapping, ) *SpBrowserSso`
 
 NewSpBrowserSso instantiates a new SpBrowserSso object
 This constructor will assign default values to properties that have it defined,
@@ -66,56 +66,6 @@ and a boolean to check if the value has been set.
 
 SetProtocol sets Protocol field to given value.
 
-
-### GetWsFedTokenType
-
-`func (o *SpBrowserSso) GetWsFedTokenType() string`
-
-GetWsFedTokenType returns the WsFedTokenType field if non-nil, zero value otherwise.
-
-### GetWsFedTokenTypeOk
-
-`func (o *SpBrowserSso) GetWsFedTokenTypeOk() (*string, bool)`
-
-GetWsFedTokenTypeOk returns a tuple with the WsFedTokenType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWsFedTokenType
-
-`func (o *SpBrowserSso) SetWsFedTokenType(v string)`
-
-SetWsFedTokenType sets WsFedTokenType field to given value.
-
-### HasWsFedTokenType
-
-`func (o *SpBrowserSso) HasWsFedTokenType() bool`
-
-HasWsFedTokenType returns a boolean if a field has been set.
-
-### GetWsTrustVersion
-
-`func (o *SpBrowserSso) GetWsTrustVersion() string`
-
-GetWsTrustVersion returns the WsTrustVersion field if non-nil, zero value otherwise.
-
-### GetWsTrustVersionOk
-
-`func (o *SpBrowserSso) GetWsTrustVersionOk() (*string, bool)`
-
-GetWsTrustVersionOk returns a tuple with the WsTrustVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWsTrustVersion
-
-`func (o *SpBrowserSso) SetWsTrustVersion(v string)`
-
-SetWsTrustVersion sets WsTrustVersion field to given value.
-
-### HasWsTrustVersion
-
-`func (o *SpBrowserSso) HasWsTrustVersion() bool`
-
-HasWsTrustVersion returns a boolean if a field has been set.
 
 ### GetEnabledProfiles
 
@@ -192,31 +142,6 @@ SetMessageCustomizations sets MessageCustomizations field to given value.
 
 HasMessageCustomizations returns a boolean if a field has been set.
 
-### GetUrlWhitelistEntries
-
-`func (o *SpBrowserSso) GetUrlWhitelistEntries() []UrlWhitelistEntry`
-
-GetUrlWhitelistEntries returns the UrlWhitelistEntries field if non-nil, zero value otherwise.
-
-### GetUrlWhitelistEntriesOk
-
-`func (o *SpBrowserSso) GetUrlWhitelistEntriesOk() (*[]UrlWhitelistEntry, bool)`
-
-GetUrlWhitelistEntriesOk returns a tuple with the UrlWhitelistEntries field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUrlWhitelistEntries
-
-`func (o *SpBrowserSso) SetUrlWhitelistEntries(v []UrlWhitelistEntry)`
-
-SetUrlWhitelistEntries sets UrlWhitelistEntries field to given value.
-
-### HasUrlWhitelistEntries
-
-`func (o *SpBrowserSso) HasUrlWhitelistEntries() bool`
-
-HasUrlWhitelistEntries returns a boolean if a field has been set.
-
 ### GetArtifact
 
 `func (o *SpBrowserSso) GetArtifact() ArtifactSettings`
@@ -266,6 +191,31 @@ SetSloServiceEndpoints sets SloServiceEndpoints field to given value.
 `func (o *SpBrowserSso) HasSloServiceEndpoints() bool`
 
 HasSloServiceEndpoints returns a boolean if a field has been set.
+
+### GetUrlWhitelistEntries
+
+`func (o *SpBrowserSso) GetUrlWhitelistEntries() []UrlWhitelistEntry`
+
+GetUrlWhitelistEntries returns the UrlWhitelistEntries field if non-nil, zero value otherwise.
+
+### GetUrlWhitelistEntriesOk
+
+`func (o *SpBrowserSso) GetUrlWhitelistEntriesOk() (*[]UrlWhitelistEntry, bool)`
+
+GetUrlWhitelistEntriesOk returns a tuple with the UrlWhitelistEntries field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrlWhitelistEntries
+
+`func (o *SpBrowserSso) SetUrlWhitelistEntries(v []UrlWhitelistEntry)`
+
+SetUrlWhitelistEntries sets UrlWhitelistEntries field to given value.
+
+### HasUrlWhitelistEntries
+
+`func (o *SpBrowserSso) HasUrlWhitelistEntries() bool`
+
+HasUrlWhitelistEntries returns a boolean if a field has been set.
 
 ### GetDefaultTargetUrl
 
@@ -362,6 +312,56 @@ and a boolean to check if the value has been set.
 SetSsoServiceEndpoints sets SsoServiceEndpoints field to given value.
 
 
+### GetSignAssertions
+
+`func (o *SpBrowserSso) GetSignAssertions() bool`
+
+GetSignAssertions returns the SignAssertions field if non-nil, zero value otherwise.
+
+### GetSignAssertionsOk
+
+`func (o *SpBrowserSso) GetSignAssertionsOk() (*bool, bool)`
+
+GetSignAssertionsOk returns a tuple with the SignAssertions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSignAssertions
+
+`func (o *SpBrowserSso) SetSignAssertions(v bool)`
+
+SetSignAssertions sets SignAssertions field to given value.
+
+### HasSignAssertions
+
+`func (o *SpBrowserSso) HasSignAssertions() bool`
+
+HasSignAssertions returns a boolean if a field has been set.
+
+### GetSignResponseAsRequired
+
+`func (o *SpBrowserSso) GetSignResponseAsRequired() bool`
+
+GetSignResponseAsRequired returns the SignResponseAsRequired field if non-nil, zero value otherwise.
+
+### GetSignResponseAsRequiredOk
+
+`func (o *SpBrowserSso) GetSignResponseAsRequiredOk() (*bool, bool)`
+
+GetSignResponseAsRequiredOk returns a tuple with the SignResponseAsRequired field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSignResponseAsRequired
+
+`func (o *SpBrowserSso) SetSignResponseAsRequired(v bool)`
+
+SetSignResponseAsRequired sets SignResponseAsRequired field to given value.
+
+### HasSignResponseAsRequired
+
+`func (o *SpBrowserSso) HasSignResponseAsRequired() bool`
+
+HasSignResponseAsRequired returns a boolean if a field has been set.
+
 ### GetSpSamlIdentityMapping
 
 `func (o *SpBrowserSso) GetSpSamlIdentityMapping() string`
@@ -412,56 +412,6 @@ SetSpWsFedIdentityMapping sets SpWsFedIdentityMapping field to given value.
 
 HasSpWsFedIdentityMapping returns a boolean if a field has been set.
 
-### GetSignResponseAsRequired
-
-`func (o *SpBrowserSso) GetSignResponseAsRequired() bool`
-
-GetSignResponseAsRequired returns the SignResponseAsRequired field if non-nil, zero value otherwise.
-
-### GetSignResponseAsRequiredOk
-
-`func (o *SpBrowserSso) GetSignResponseAsRequiredOk() (*bool, bool)`
-
-GetSignResponseAsRequiredOk returns a tuple with the SignResponseAsRequired field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSignResponseAsRequired
-
-`func (o *SpBrowserSso) SetSignResponseAsRequired(v bool)`
-
-SetSignResponseAsRequired sets SignResponseAsRequired field to given value.
-
-### HasSignResponseAsRequired
-
-`func (o *SpBrowserSso) HasSignResponseAsRequired() bool`
-
-HasSignResponseAsRequired returns a boolean if a field has been set.
-
-### GetSignAssertions
-
-`func (o *SpBrowserSso) GetSignAssertions() bool`
-
-GetSignAssertions returns the SignAssertions field if non-nil, zero value otherwise.
-
-### GetSignAssertionsOk
-
-`func (o *SpBrowserSso) GetSignAssertionsOk() (*bool, bool)`
-
-GetSignAssertionsOk returns a tuple with the SignAssertions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSignAssertions
-
-`func (o *SpBrowserSso) SetSignAssertions(v bool)`
-
-SetSignAssertions sets SignAssertions field to given value.
-
-### HasSignAssertions
-
-`func (o *SpBrowserSso) HasSignAssertions() bool`
-
-HasSignAssertions returns a boolean if a field has been set.
-
 ### GetRequireSignedAuthnRequests
 
 `func (o *SpBrowserSso) GetRequireSignedAuthnRequests() bool`
@@ -486,6 +436,26 @@ SetRequireSignedAuthnRequests sets RequireSignedAuthnRequests field to given val
 `func (o *SpBrowserSso) HasRequireSignedAuthnRequests() bool`
 
 HasRequireSignedAuthnRequests returns a boolean if a field has been set.
+
+### GetAssertionLifetime
+
+`func (o *SpBrowserSso) GetAssertionLifetime() AssertionLifetime`
+
+GetAssertionLifetime returns the AssertionLifetime field if non-nil, zero value otherwise.
+
+### GetAssertionLifetimeOk
+
+`func (o *SpBrowserSso) GetAssertionLifetimeOk() (*AssertionLifetime, bool)`
+
+GetAssertionLifetimeOk returns a tuple with the AssertionLifetime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAssertionLifetime
+
+`func (o *SpBrowserSso) SetAssertionLifetime(v AssertionLifetime)`
+
+SetAssertionLifetime sets AssertionLifetime field to given value.
+
 
 ### GetEncryptionPolicy
 
@@ -577,25 +547,55 @@ SetAuthenticationPolicyContractAssertionMappings sets AuthenticationPolicyContra
 
 HasAuthenticationPolicyContractAssertionMappings returns a boolean if a field has been set.
 
-### GetAssertionLifetime
+### GetWsFedTokenType
 
-`func (o *SpBrowserSso) GetAssertionLifetime() AssertionLifetime`
+`func (o *SpBrowserSso) GetWsFedTokenType() string`
 
-GetAssertionLifetime returns the AssertionLifetime field if non-nil, zero value otherwise.
+GetWsFedTokenType returns the WsFedTokenType field if non-nil, zero value otherwise.
 
-### GetAssertionLifetimeOk
+### GetWsFedTokenTypeOk
 
-`func (o *SpBrowserSso) GetAssertionLifetimeOk() (*AssertionLifetime, bool)`
+`func (o *SpBrowserSso) GetWsFedTokenTypeOk() (*string, bool)`
 
-GetAssertionLifetimeOk returns a tuple with the AssertionLifetime field if it's non-nil, zero value otherwise
+GetWsFedTokenTypeOk returns a tuple with the WsFedTokenType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAssertionLifetime
+### SetWsFedTokenType
 
-`func (o *SpBrowserSso) SetAssertionLifetime(v AssertionLifetime)`
+`func (o *SpBrowserSso) SetWsFedTokenType(v string)`
 
-SetAssertionLifetime sets AssertionLifetime field to given value.
+SetWsFedTokenType sets WsFedTokenType field to given value.
 
+### HasWsFedTokenType
+
+`func (o *SpBrowserSso) HasWsFedTokenType() bool`
+
+HasWsFedTokenType returns a boolean if a field has been set.
+
+### GetWsTrustVersion
+
+`func (o *SpBrowserSso) GetWsTrustVersion() string`
+
+GetWsTrustVersion returns the WsTrustVersion field if non-nil, zero value otherwise.
+
+### GetWsTrustVersionOk
+
+`func (o *SpBrowserSso) GetWsTrustVersionOk() (*string, bool)`
+
+GetWsTrustVersionOk returns a tuple with the WsTrustVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWsTrustVersion
+
+`func (o *SpBrowserSso) SetWsTrustVersion(v string)`
+
+SetWsTrustVersion sets WsTrustVersion field to given value.
+
+### HasWsTrustVersion
+
+`func (o *SpBrowserSso) HasWsTrustVersion() bool`
+
+HasWsTrustVersion returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

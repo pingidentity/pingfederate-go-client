@@ -4,7 +4,9 @@ All URIs are relative to *https://localhost:9999/pf-admin-api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**CreateTag**](ServerSettingsAPI.md#CreateTag) | **Post** /serverSettings/tags | Create a new tag.
 [**DeleteCertificate**](ServerSettingsAPI.md#DeleteCertificate) | **Delete** /serverSettings/wsTrustStsSettings/issuerCertificates/{id} | Delete a certificate from WS-Trust STS Settings.
+[**DeleteTag**](ServerSettingsAPI.md#DeleteTag) | **Delete** /serverSettings/tags/{id} | Delete a tag.
 [**GetAuditLogSettings**](ServerSettingsAPI.md#GetAuditLogSettings) | **Get** /serverSettings/auditLogSettings | Gets the audit log settings
 [**GetCaptchaSettings**](ServerSettingsAPI.md#GetCaptchaSettings) | **Get** /serverSettings/captchaSettings | (Deprecated) Gets the CAPTCHA settings.
 [**GetCert**](ServerSettingsAPI.md#GetCert) | **Get** /serverSettings/wsTrustStsSettings/issuerCertificates/{id} | Retrieve details of a certificate.
@@ -17,6 +19,9 @@ Method | HTTP request | Description
 [**GetOutBoundProvisioningSettings**](ServerSettingsAPI.md#GetOutBoundProvisioningSettings) | **Get** /serverSettings/outboundProvisioning | Get database used for outbound provisioning
 [**GetServerSettings**](ServerSettingsAPI.md#GetServerSettings) | **Get** /serverSettings | Gets the server settings
 [**GetSystemKeys**](ServerSettingsAPI.md#GetSystemKeys) | **Get** /serverSettings/systemKeys | Get the system keys.
+[**GetTagById**](ServerSettingsAPI.md#GetTagById) | **Get** /serverSettings/tags/{id} | Get a tag.
+[**GetTagUsage**](ServerSettingsAPI.md#GetTagUsage) | **Get** /serverSettings/tags/{id}/usage | Get usage information for a tag.
+[**GetTags**](ServerSettingsAPI.md#GetTags) | **Get** /serverSettings/tags | Get the list of tags.
 [**GetWsTrustStsSettings**](ServerSettingsAPI.md#GetWsTrustStsSettings) | **Get** /serverSettings/wsTrustStsSettings | Get the current WS-Trust STS Settings.
 [**ImportCertificate**](ServerSettingsAPI.md#ImportCertificate) | **Post** /serverSettings/wsTrustStsSettings/issuerCertificates | Import a new certificate.
 [**RotateSystemKeys**](ServerSettingsAPI.md#RotateSystemKeys) | **Post** /serverSettings/systemKeys/rotate | Rotate the system keys.
@@ -30,8 +35,75 @@ Method | HTTP request | Description
 [**UpdateOutBoundProvisioningSettings**](ServerSettingsAPI.md#UpdateOutBoundProvisioningSettings) | **Put** /serverSettings/outboundProvisioning | Update database used for outbound provisioning
 [**UpdateServerSettings**](ServerSettingsAPI.md#UpdateServerSettings) | **Put** /serverSettings | Update the server settings.
 [**UpdateSystemKeys**](ServerSettingsAPI.md#UpdateSystemKeys) | **Put** /serverSettings/systemKeys | Update the system keys.
+[**UpdateTag**](ServerSettingsAPI.md#UpdateTag) | **Put** /serverSettings/tags/{id} | Update a tag.
 [**UpdateWsTrustStsSettings**](ServerSettingsAPI.md#UpdateWsTrustStsSettings) | **Put** /serverSettings/wsTrustStsSettings | Update WS-Trust STS Settings.
 
+
+
+## CreateTag
+
+> Tag CreateTag(ctx).Body(body).Execute()
+
+Create a new tag.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+    body := *openapiclient.NewTag("Name_example") // Tag | Configuration for a new tag.
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ServerSettingsAPI.CreateTag(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.CreateTag``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreateTag`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.CreateTag`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateTagRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Tag**](Tag.md) | Configuration for a new tag. | 
+
+### Return type
+
+[**Tag**](Tag.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## DeleteCertificate
@@ -78,6 +150,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDeleteCertificateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteTag
+
+> DeleteTag(ctx, id).Execute()
+
+Delete a tag.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+    id := "id_example" // string | ID of the tag.
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.ServerSettingsAPI.DeleteTag(context.Background(), id).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.DeleteTag``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | ID of the tag. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteTagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -823,6 +963,214 @@ Other parameters are passed through a pointer to a apiGetSystemKeysRequest struc
 [[Back to README]](../README.md)
 
 
+## GetTagById
+
+> Tag GetTagById(ctx, id).Execute()
+
+Get a tag.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+    id := "id_example" // string | ID of the tag.
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ServerSettingsAPI.GetTagById(context.Background(), id).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetTagById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetTagById`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetTagById`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | ID of the tag. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetTagByIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**Tag**](Tag.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetTagUsage
+
+> TagUsage GetTagUsage(ctx, id).Execute()
+
+Get usage information for a tag.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+    id := "id_example" // string | ID of the tag.
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ServerSettingsAPI.GetTagUsage(context.Background(), id).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetTagUsage``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetTagUsage`: TagUsage
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetTagUsage`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | ID of the tag. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetTagUsageRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**TagUsage**](TagUsage.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetTags
+
+> Tags GetTags(ctx).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
+
+Get the list of tags.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+    page := int64(56) // int64 | Page number to retrieve. (optional)
+    numberPerPage := int64(56) // int64 | Number of tags per page. (uncapped if unspecified) (optional)
+    filter := "filter_example" // string | Filter criteria limits the tags that are returned to only those that match it. The filter criteria is compared to the tag name and ID fields. The comparison is a case-insensitive prefix match. No additional pattern based matching is supported. (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ServerSettingsAPI.GetTags(context.Background()).Page(page).NumberPerPage(numberPerPage).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.GetTags``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetTags`: Tags
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.GetTags`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetTagsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int64** | Page number to retrieve. | 
+ **numberPerPage** | **int64** | Number of tags per page. (uncapped if unspecified) | 
+ **filter** | **string** | Filter criteria limits the tags that are returned to only those that match it. The filter criteria is compared to the tag name and ID fields. The comparison is a case-insensitive prefix match. No additional pattern based matching is supported. | 
+
+### Return type
+
+[**Tags**](Tags.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetWsTrustStsSettings
 
 > WsTrustStsSettings GetWsTrustStsSettings(ctx).Execute()
@@ -1325,7 +1673,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -1389,7 +1737,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -1519,7 +1867,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -1649,7 +1997,79 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateTag
+
+> Tag UpdateTag(ctx, id).Body(body).Execute()
+
+Update a tag.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingfederate-go-client"
+)
+
+func main() {
+    id := "id_example" // string | ID of the tag.
+    body := *openapiclient.NewTag("Name_example") // Tag | Configuration for the tag.
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ServerSettingsAPI.UpdateTag(context.Background(), id).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerSettingsAPI.UpdateTag``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateTag`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `ServerSettingsAPI.UpdateTag`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | ID of the tag. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateTagRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**Tag**](Tag.md) | Configuration for the tag. | 
+
+### Return type
+
+[**Tag**](Tag.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [bearer](../README.md#bearer), [oAuth2](../README.md#oAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

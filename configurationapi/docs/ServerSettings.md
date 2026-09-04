@@ -5,11 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ContactInfo** | Pointer to [**ContactInfo**](ContactInfo.md) |  | [optional] 
-**Notifications** | Pointer to [**NotificationSettings**](NotificationSettings.md) |  | [optional] 
 **RolesAndProtocols** | Pointer to [**RolesAndProtocols**](RolesAndProtocols.md) |  | [optional] 
 **FederationInfo** | Pointer to [**FederationInfo**](FederationInfo.md) |  | [optional] 
+**Notifications** | Pointer to [**NotificationSettings**](NotificationSettings.md) |  | [optional] 
 **EmailServer** | Pointer to [**EmailServerSettings**](EmailServerSettings.md) |  | [optional] 
 **CaptchaSettings** | Pointer to [**CaptchaSettings**](CaptchaSettings.md) |  | [optional] 
+**EmailServers** | Pointer to [**EmailServerSettings**](EmailServerSettings.md) |  | [optional] 
 
 ## Methods
 
@@ -54,31 +55,6 @@ SetContactInfo sets ContactInfo field to given value.
 `func (o *ServerSettings) HasContactInfo() bool`
 
 HasContactInfo returns a boolean if a field has been set.
-
-### GetNotifications
-
-`func (o *ServerSettings) GetNotifications() NotificationSettings`
-
-GetNotifications returns the Notifications field if non-nil, zero value otherwise.
-
-### GetNotificationsOk
-
-`func (o *ServerSettings) GetNotificationsOk() (*NotificationSettings, bool)`
-
-GetNotificationsOk returns a tuple with the Notifications field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNotifications
-
-`func (o *ServerSettings) SetNotifications(v NotificationSettings)`
-
-SetNotifications sets Notifications field to given value.
-
-### HasNotifications
-
-`func (o *ServerSettings) HasNotifications() bool`
-
-HasNotifications returns a boolean if a field has been set.
 
 ### GetRolesAndProtocols
 
@@ -130,6 +106,31 @@ SetFederationInfo sets FederationInfo field to given value.
 
 HasFederationInfo returns a boolean if a field has been set.
 
+### GetNotifications
+
+`func (o *ServerSettings) GetNotifications() NotificationSettings`
+
+GetNotifications returns the Notifications field if non-nil, zero value otherwise.
+
+### GetNotificationsOk
+
+`func (o *ServerSettings) GetNotificationsOk() (*NotificationSettings, bool)`
+
+GetNotificationsOk returns a tuple with the Notifications field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNotifications
+
+`func (o *ServerSettings) SetNotifications(v NotificationSettings)`
+
+SetNotifications sets Notifications field to given value.
+
+### HasNotifications
+
+`func (o *ServerSettings) HasNotifications() bool`
+
+HasNotifications returns a boolean if a field has been set.
+
 ### GetEmailServer
 
 `func (o *ServerSettings) GetEmailServer() EmailServerSettings`
@@ -179,6 +180,31 @@ SetCaptchaSettings sets CaptchaSettings field to given value.
 `func (o *ServerSettings) HasCaptchaSettings() bool`
 
 HasCaptchaSettings returns a boolean if a field has been set.
+
+### GetEmailServers
+
+`func (o *ServerSettings) GetEmailServers() EmailServerSettings`
+
+GetEmailServers returns the EmailServers field if non-nil, zero value otherwise.
+
+### GetEmailServersOk
+
+`func (o *ServerSettings) GetEmailServersOk() (*EmailServerSettings, bool)`
+
+GetEmailServersOk returns a tuple with the EmailServers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmailServers
+
+`func (o *ServerSettings) SetEmailServers(v EmailServerSettings)`
+
+SetEmailServers sets EmailServers field to given value.
+
+### HasEmailServers
+
+`func (o *ServerSettings) HasEmailServers() bool`
+
+HasEmailServers returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

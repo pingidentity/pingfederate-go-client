@@ -13,10 +13,6 @@ Name | Type | Description | Notes
 **AuthorizationCodeEntropy** | **int64** | The authorization code entropy, in bytes. | 
 **DisallowPlainPKCE** | Pointer to **bool** | Determines whether PKCE&#39;s &#39;plain&#39; code challenge method will be disallowed. The default value is false. | [optional] 
 **IncludeIssuerInAuthorizationResponse** | Pointer to **bool** | Determines whether the authorization server&#39;s issuer value is added to the authorization response or not. The default value is false. | [optional] 
-**TrackUserSessionsForLogout** | Pointer to **bool** | Determines whether user sessions are tracked for logout. If this property is not provided on a PUT, the setting is left unchanged. | [optional] 
-**TokenEndpointBaseUrl** | Pointer to **string** | The token endpoint base URL used to validate the &#39;aud&#39; claim during Private Key JWT Client Authentication. | [optional] 
-**RequireOfflineAccessScopeToIssueRefreshTokens** | Pointer to **bool** | Determines whether offline_access scope is required to issue refresh tokens or not. The default value is false. | [optional] 
-**OfflineAccessRequireConsentPrompt** | Pointer to **bool** | Determines whether offline_access requires the prompt parameter value be &#39;consent&#39; or not. The value will be reset to default if the &#39;requireOfflineAccessScopeToIssueRefreshTokens&#39; attribute is set to false. The default value is false. | [optional] 
 **PersistentGrantLifetime** | Pointer to **int64** | The persistent grant lifetime. The default value is indefinite. -1 indicates an indefinite amount of time. | [optional] 
 **PersistentGrantLifetimeUnit** | Pointer to **string** | The persistent grant lifetime unit. | [optional] 
 **PersistentGrantIdleTimeout** | Pointer to **int64** | The persistent grant idle timeout. The default value is 30 (days). -1 indicates an indefinite amount of time. | [optional] 
@@ -29,26 +25,28 @@ Name | Type | Description | Notes
 **PersistentGrantReuseGrantTypes** | Pointer to **[]string** | The grant types that the OAuth AS can reuse rather than creating a new grant for each request. Only &#39;IMPLICIT&#39; or &#39;AUTHORIZATION_CODE&#39; or &#39;RESOURCE_OWNER_CREDENTIALS&#39; are valid grant types. | [optional] 
 **PersistentGrantContract** | Pointer to [**PersistentGrantContract**](PersistentGrantContract.md) |  | [optional] 
 **BypassAuthorizationForApprovedGrants** | Pointer to **bool** | Bypass authorization for previously approved persistent grants. The default value is false. | [optional] 
-**BypassAuthorizationForApprovedConsents** | Pointer to **bool** | Bypass authorization for previously approved consents. The default value is false. | [optional] 
-**ConsentLifetimeDays** | Pointer to **int64** | The consent lifetime in days. The default value is indefinite. -1 indicates an indefinite amount of time. | [optional] 
 **AllowUnidentifiedClientROCreds** | Pointer to **bool** | Allow unidentified clients to request resource owner password credentials grants. The default value is false. | [optional] 
 **AllowUnidentifiedClientExtensionGrants** | Pointer to **bool** | Allow unidentified clients to request extension grants. The default value is false. | [optional] 
-**AdminWebServicePcvRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
-**AtmIdForOAuthGrantManagement** | Pointer to **string** | The ID of the Access Token Manager used for OAuth enabled grant management. | [optional] 
-**ScopeForOAuthGrantManagement** | Pointer to **string** | The OAuth scope to validate when accessing grant management service. | [optional] 
-**AllowedOrigins** | Pointer to **[]string** | The list of allowed origins. | [optional] 
+**TokenEndpointBaseUrl** | Pointer to **string** | The token endpoint base URL used to validate the &#39;aud&#39; claim during Private Key JWT Client Authentication. | [optional] 
+**RequireOfflineAccessScopeToIssueRefreshTokens** | Pointer to **bool** | Determines whether offline_access scope is required to issue refresh tokens or not. The default value is false. | [optional] 
+**OfflineAccessRequireConsentPrompt** | Pointer to **bool** | Determines whether offline_access requires the prompt parameter value be &#39;consent&#39; or not. The value will be reset to default if the &#39;requireOfflineAccessScopeToIssueRefreshTokens&#39; attribute is set to false. The default value is false. | [optional] 
 **UserAuthorizationUrl** | Pointer to **string** | The URL used to generate &#39;verification_url&#39; and &#39;verification_url_complete&#39; values in a Device Authorization request | [optional] 
 **RegisteredAuthorizationPath** | Pointer to **string** | The Registered Authorization Path is concatenated to PingFederate base URL to generate &#39;verification_url&#39; and &#39;verification_url_complete&#39; values in a Device Authorization request. PingFederate listens to this path if specified | [optional] 
 **PendingAuthorizationTimeout** | Pointer to **int64** | The &#39;device_code&#39; and &#39;user_code&#39; timeout, in seconds. The default is 600 seconds. | [optional] 
+**BypassActivationCodeConfirmation** | Pointer to **bool** | Indicates if the Activation Code Confirmation page should be bypassed if &#39;verification_url_complete&#39; is used by the end user to authorize a device. The default is false. | [optional] 
 **DevicePollingInterval** | Pointer to **int64** | The amount of time client should wait between polling requests, in seconds. The default is 5 seconds. | [optional] 
 **ActivationCodeCheckMode** | Pointer to **string** | Determines whether the user is prompted to enter or confirm the activation code after authenticating or before. The default is AFTER_AUTHENTICATION. | [optional] 
-**BypassActivationCodeConfirmation** | Pointer to **bool** | Indicates if the Activation Code Confirmation page should be bypassed if &#39;verification_url_complete&#39; is used by the end user to authorize a device. The default is false. | [optional] 
 **EnableCookielessUserAuthorizationAuthenticationApi** | Pointer to **bool** | Indicates if cookies should be used for state tracking when the user authorization endpoint is operating in authentication API redirectless mode | [optional] 
 **ReturnIdTokenOnOpenIdWithDeviceAuthzGrant** | Pointer to **bool** | Indicates if an ID token should be returned during the device authorization grant flow when the &#39;openid&#39; scope is approved. The default is false. | [optional] 
 **UserAuthorizationConsentPageSetting** | Pointer to **string** | User Authorization Consent Page setting to use PingFederate&#39;s internal consent page or an external system | [optional] 
 **UserAuthorizationConsentAdapter** | Pointer to **string** | Adapter ID of the external consent adapter to be used for the consent page user interface. | [optional] 
 **ApprovedScopesAttribute** | Pointer to **string** | Attribute from the external consent adapter&#39;s contract, intended for storing approved scopes returned by the external consent page. | [optional] 
 **ApprovedAuthorizationDetailAttribute** | Pointer to **string** | Attribute from the external consent adapter&#39;s contract, intended for storing approved authorization details returned by the external consent page. | [optional] 
+**AdminWebServicePcvRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
+**AtmIdForOAuthGrantManagement** | Pointer to **string** | The ID of the Access Token Manager used for OAuth enabled grant management. | [optional] 
+**ScopeForOAuthGrantManagement** | Pointer to **string** | The OAuth scope to validate when accessing grant management service. | [optional] 
+**AllowedOrigins** | Pointer to **[]string** | The list of allowed origins. | [optional] 
+**TrackUserSessionsForLogout** | Pointer to **bool** | Determines whether user sessions are tracked for logout. If this property is not provided on a PUT, the setting is left unchanged. | [optional] 
 **ParReferenceTimeout** | Pointer to **int64** | The timeout, in seconds, of the pushed authorization request reference. The default value is 60. | [optional] 
 **ParReferenceLength** | Pointer to **int64** | The entropy of pushed authorization request references, in bytes. The default value is 24. | [optional] 
 **ParStatus** | Pointer to **string** | The status of pushed authorization request support. The default value is ENABLED. | [optional] 
@@ -57,6 +55,8 @@ Name | Type | Description | Notes
 **DpopProofRequireNonce** | Pointer to **bool** | Determines whether nonce is required in the Demonstrating Proof-of-Possession (DPoP) proof JWT. The default value is false. | [optional] 
 **DpopProofLifetimeSeconds** | Pointer to **int64** | The lifetime, in seconds, of the Demonstrating Proof-of-Possession (DPoP) proof JWT. The default value is 120. | [optional] 
 **DpopProofEnforceReplayPrevention** | Pointer to **bool** | Determines whether Demonstrating Proof-of-Possession (DPoP) proof JWT replay prevention is enforced. The default value is false. | [optional] 
+**BypassAuthorizationForApprovedConsents** | Pointer to **bool** | Bypass authorization for previously approved consents. The default value is false. | [optional] 
+**ConsentLifetimeDays** | Pointer to **int64** | The consent lifetime in days. The default value is indefinite. -1 indicates an indefinite amount of time. | [optional] 
 
 ## Methods
 
@@ -291,106 +291,6 @@ SetIncludeIssuerInAuthorizationResponse sets IncludeIssuerInAuthorizationRespons
 `func (o *AuthorizationServerSettings) HasIncludeIssuerInAuthorizationResponse() bool`
 
 HasIncludeIssuerInAuthorizationResponse returns a boolean if a field has been set.
-
-### GetTrackUserSessionsForLogout
-
-`func (o *AuthorizationServerSettings) GetTrackUserSessionsForLogout() bool`
-
-GetTrackUserSessionsForLogout returns the TrackUserSessionsForLogout field if non-nil, zero value otherwise.
-
-### GetTrackUserSessionsForLogoutOk
-
-`func (o *AuthorizationServerSettings) GetTrackUserSessionsForLogoutOk() (*bool, bool)`
-
-GetTrackUserSessionsForLogoutOk returns a tuple with the TrackUserSessionsForLogout field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTrackUserSessionsForLogout
-
-`func (o *AuthorizationServerSettings) SetTrackUserSessionsForLogout(v bool)`
-
-SetTrackUserSessionsForLogout sets TrackUserSessionsForLogout field to given value.
-
-### HasTrackUserSessionsForLogout
-
-`func (o *AuthorizationServerSettings) HasTrackUserSessionsForLogout() bool`
-
-HasTrackUserSessionsForLogout returns a boolean if a field has been set.
-
-### GetTokenEndpointBaseUrl
-
-`func (o *AuthorizationServerSettings) GetTokenEndpointBaseUrl() string`
-
-GetTokenEndpointBaseUrl returns the TokenEndpointBaseUrl field if non-nil, zero value otherwise.
-
-### GetTokenEndpointBaseUrlOk
-
-`func (o *AuthorizationServerSettings) GetTokenEndpointBaseUrlOk() (*string, bool)`
-
-GetTokenEndpointBaseUrlOk returns a tuple with the TokenEndpointBaseUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTokenEndpointBaseUrl
-
-`func (o *AuthorizationServerSettings) SetTokenEndpointBaseUrl(v string)`
-
-SetTokenEndpointBaseUrl sets TokenEndpointBaseUrl field to given value.
-
-### HasTokenEndpointBaseUrl
-
-`func (o *AuthorizationServerSettings) HasTokenEndpointBaseUrl() bool`
-
-HasTokenEndpointBaseUrl returns a boolean if a field has been set.
-
-### GetRequireOfflineAccessScopeToIssueRefreshTokens
-
-`func (o *AuthorizationServerSettings) GetRequireOfflineAccessScopeToIssueRefreshTokens() bool`
-
-GetRequireOfflineAccessScopeToIssueRefreshTokens returns the RequireOfflineAccessScopeToIssueRefreshTokens field if non-nil, zero value otherwise.
-
-### GetRequireOfflineAccessScopeToIssueRefreshTokensOk
-
-`func (o *AuthorizationServerSettings) GetRequireOfflineAccessScopeToIssueRefreshTokensOk() (*bool, bool)`
-
-GetRequireOfflineAccessScopeToIssueRefreshTokensOk returns a tuple with the RequireOfflineAccessScopeToIssueRefreshTokens field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRequireOfflineAccessScopeToIssueRefreshTokens
-
-`func (o *AuthorizationServerSettings) SetRequireOfflineAccessScopeToIssueRefreshTokens(v bool)`
-
-SetRequireOfflineAccessScopeToIssueRefreshTokens sets RequireOfflineAccessScopeToIssueRefreshTokens field to given value.
-
-### HasRequireOfflineAccessScopeToIssueRefreshTokens
-
-`func (o *AuthorizationServerSettings) HasRequireOfflineAccessScopeToIssueRefreshTokens() bool`
-
-HasRequireOfflineAccessScopeToIssueRefreshTokens returns a boolean if a field has been set.
-
-### GetOfflineAccessRequireConsentPrompt
-
-`func (o *AuthorizationServerSettings) GetOfflineAccessRequireConsentPrompt() bool`
-
-GetOfflineAccessRequireConsentPrompt returns the OfflineAccessRequireConsentPrompt field if non-nil, zero value otherwise.
-
-### GetOfflineAccessRequireConsentPromptOk
-
-`func (o *AuthorizationServerSettings) GetOfflineAccessRequireConsentPromptOk() (*bool, bool)`
-
-GetOfflineAccessRequireConsentPromptOk returns a tuple with the OfflineAccessRequireConsentPrompt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOfflineAccessRequireConsentPrompt
-
-`func (o *AuthorizationServerSettings) SetOfflineAccessRequireConsentPrompt(v bool)`
-
-SetOfflineAccessRequireConsentPrompt sets OfflineAccessRequireConsentPrompt field to given value.
-
-### HasOfflineAccessRequireConsentPrompt
-
-`func (o *AuthorizationServerSettings) HasOfflineAccessRequireConsentPrompt() bool`
-
-HasOfflineAccessRequireConsentPrompt returns a boolean if a field has been set.
 
 ### GetPersistentGrantLifetime
 
@@ -682,56 +582,6 @@ SetBypassAuthorizationForApprovedGrants sets BypassAuthorizationForApprovedGrant
 
 HasBypassAuthorizationForApprovedGrants returns a boolean if a field has been set.
 
-### GetBypassAuthorizationForApprovedConsents
-
-`func (o *AuthorizationServerSettings) GetBypassAuthorizationForApprovedConsents() bool`
-
-GetBypassAuthorizationForApprovedConsents returns the BypassAuthorizationForApprovedConsents field if non-nil, zero value otherwise.
-
-### GetBypassAuthorizationForApprovedConsentsOk
-
-`func (o *AuthorizationServerSettings) GetBypassAuthorizationForApprovedConsentsOk() (*bool, bool)`
-
-GetBypassAuthorizationForApprovedConsentsOk returns a tuple with the BypassAuthorizationForApprovedConsents field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBypassAuthorizationForApprovedConsents
-
-`func (o *AuthorizationServerSettings) SetBypassAuthorizationForApprovedConsents(v bool)`
-
-SetBypassAuthorizationForApprovedConsents sets BypassAuthorizationForApprovedConsents field to given value.
-
-### HasBypassAuthorizationForApprovedConsents
-
-`func (o *AuthorizationServerSettings) HasBypassAuthorizationForApprovedConsents() bool`
-
-HasBypassAuthorizationForApprovedConsents returns a boolean if a field has been set.
-
-### GetConsentLifetimeDays
-
-`func (o *AuthorizationServerSettings) GetConsentLifetimeDays() int64`
-
-GetConsentLifetimeDays returns the ConsentLifetimeDays field if non-nil, zero value otherwise.
-
-### GetConsentLifetimeDaysOk
-
-`func (o *AuthorizationServerSettings) GetConsentLifetimeDaysOk() (*int64, bool)`
-
-GetConsentLifetimeDaysOk returns a tuple with the ConsentLifetimeDays field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConsentLifetimeDays
-
-`func (o *AuthorizationServerSettings) SetConsentLifetimeDays(v int64)`
-
-SetConsentLifetimeDays sets ConsentLifetimeDays field to given value.
-
-### HasConsentLifetimeDays
-
-`func (o *AuthorizationServerSettings) HasConsentLifetimeDays() bool`
-
-HasConsentLifetimeDays returns a boolean if a field has been set.
-
 ### GetAllowUnidentifiedClientROCreds
 
 `func (o *AuthorizationServerSettings) GetAllowUnidentifiedClientROCreds() bool`
@@ -782,105 +632,80 @@ SetAllowUnidentifiedClientExtensionGrants sets AllowUnidentifiedClientExtensionG
 
 HasAllowUnidentifiedClientExtensionGrants returns a boolean if a field has been set.
 
-### GetAdminWebServicePcvRef
+### GetTokenEndpointBaseUrl
 
-`func (o *AuthorizationServerSettings) GetAdminWebServicePcvRef() ResourceLink`
+`func (o *AuthorizationServerSettings) GetTokenEndpointBaseUrl() string`
 
-GetAdminWebServicePcvRef returns the AdminWebServicePcvRef field if non-nil, zero value otherwise.
+GetTokenEndpointBaseUrl returns the TokenEndpointBaseUrl field if non-nil, zero value otherwise.
 
-### GetAdminWebServicePcvRefOk
+### GetTokenEndpointBaseUrlOk
 
-`func (o *AuthorizationServerSettings) GetAdminWebServicePcvRefOk() (*ResourceLink, bool)`
+`func (o *AuthorizationServerSettings) GetTokenEndpointBaseUrlOk() (*string, bool)`
 
-GetAdminWebServicePcvRefOk returns a tuple with the AdminWebServicePcvRef field if it's non-nil, zero value otherwise
+GetTokenEndpointBaseUrlOk returns a tuple with the TokenEndpointBaseUrl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAdminWebServicePcvRef
+### SetTokenEndpointBaseUrl
 
-`func (o *AuthorizationServerSettings) SetAdminWebServicePcvRef(v ResourceLink)`
+`func (o *AuthorizationServerSettings) SetTokenEndpointBaseUrl(v string)`
 
-SetAdminWebServicePcvRef sets AdminWebServicePcvRef field to given value.
+SetTokenEndpointBaseUrl sets TokenEndpointBaseUrl field to given value.
 
-### HasAdminWebServicePcvRef
+### HasTokenEndpointBaseUrl
 
-`func (o *AuthorizationServerSettings) HasAdminWebServicePcvRef() bool`
+`func (o *AuthorizationServerSettings) HasTokenEndpointBaseUrl() bool`
 
-HasAdminWebServicePcvRef returns a boolean if a field has been set.
+HasTokenEndpointBaseUrl returns a boolean if a field has been set.
 
-### GetAtmIdForOAuthGrantManagement
+### GetRequireOfflineAccessScopeToIssueRefreshTokens
 
-`func (o *AuthorizationServerSettings) GetAtmIdForOAuthGrantManagement() string`
+`func (o *AuthorizationServerSettings) GetRequireOfflineAccessScopeToIssueRefreshTokens() bool`
 
-GetAtmIdForOAuthGrantManagement returns the AtmIdForOAuthGrantManagement field if non-nil, zero value otherwise.
+GetRequireOfflineAccessScopeToIssueRefreshTokens returns the RequireOfflineAccessScopeToIssueRefreshTokens field if non-nil, zero value otherwise.
 
-### GetAtmIdForOAuthGrantManagementOk
+### GetRequireOfflineAccessScopeToIssueRefreshTokensOk
 
-`func (o *AuthorizationServerSettings) GetAtmIdForOAuthGrantManagementOk() (*string, bool)`
+`func (o *AuthorizationServerSettings) GetRequireOfflineAccessScopeToIssueRefreshTokensOk() (*bool, bool)`
 
-GetAtmIdForOAuthGrantManagementOk returns a tuple with the AtmIdForOAuthGrantManagement field if it's non-nil, zero value otherwise
+GetRequireOfflineAccessScopeToIssueRefreshTokensOk returns a tuple with the RequireOfflineAccessScopeToIssueRefreshTokens field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAtmIdForOAuthGrantManagement
+### SetRequireOfflineAccessScopeToIssueRefreshTokens
 
-`func (o *AuthorizationServerSettings) SetAtmIdForOAuthGrantManagement(v string)`
+`func (o *AuthorizationServerSettings) SetRequireOfflineAccessScopeToIssueRefreshTokens(v bool)`
 
-SetAtmIdForOAuthGrantManagement sets AtmIdForOAuthGrantManagement field to given value.
+SetRequireOfflineAccessScopeToIssueRefreshTokens sets RequireOfflineAccessScopeToIssueRefreshTokens field to given value.
 
-### HasAtmIdForOAuthGrantManagement
+### HasRequireOfflineAccessScopeToIssueRefreshTokens
 
-`func (o *AuthorizationServerSettings) HasAtmIdForOAuthGrantManagement() bool`
+`func (o *AuthorizationServerSettings) HasRequireOfflineAccessScopeToIssueRefreshTokens() bool`
 
-HasAtmIdForOAuthGrantManagement returns a boolean if a field has been set.
+HasRequireOfflineAccessScopeToIssueRefreshTokens returns a boolean if a field has been set.
 
-### GetScopeForOAuthGrantManagement
+### GetOfflineAccessRequireConsentPrompt
 
-`func (o *AuthorizationServerSettings) GetScopeForOAuthGrantManagement() string`
+`func (o *AuthorizationServerSettings) GetOfflineAccessRequireConsentPrompt() bool`
 
-GetScopeForOAuthGrantManagement returns the ScopeForOAuthGrantManagement field if non-nil, zero value otherwise.
+GetOfflineAccessRequireConsentPrompt returns the OfflineAccessRequireConsentPrompt field if non-nil, zero value otherwise.
 
-### GetScopeForOAuthGrantManagementOk
+### GetOfflineAccessRequireConsentPromptOk
 
-`func (o *AuthorizationServerSettings) GetScopeForOAuthGrantManagementOk() (*string, bool)`
+`func (o *AuthorizationServerSettings) GetOfflineAccessRequireConsentPromptOk() (*bool, bool)`
 
-GetScopeForOAuthGrantManagementOk returns a tuple with the ScopeForOAuthGrantManagement field if it's non-nil, zero value otherwise
+GetOfflineAccessRequireConsentPromptOk returns a tuple with the OfflineAccessRequireConsentPrompt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetScopeForOAuthGrantManagement
+### SetOfflineAccessRequireConsentPrompt
 
-`func (o *AuthorizationServerSettings) SetScopeForOAuthGrantManagement(v string)`
+`func (o *AuthorizationServerSettings) SetOfflineAccessRequireConsentPrompt(v bool)`
 
-SetScopeForOAuthGrantManagement sets ScopeForOAuthGrantManagement field to given value.
+SetOfflineAccessRequireConsentPrompt sets OfflineAccessRequireConsentPrompt field to given value.
 
-### HasScopeForOAuthGrantManagement
+### HasOfflineAccessRequireConsentPrompt
 
-`func (o *AuthorizationServerSettings) HasScopeForOAuthGrantManagement() bool`
+`func (o *AuthorizationServerSettings) HasOfflineAccessRequireConsentPrompt() bool`
 
-HasScopeForOAuthGrantManagement returns a boolean if a field has been set.
-
-### GetAllowedOrigins
-
-`func (o *AuthorizationServerSettings) GetAllowedOrigins() []string`
-
-GetAllowedOrigins returns the AllowedOrigins field if non-nil, zero value otherwise.
-
-### GetAllowedOriginsOk
-
-`func (o *AuthorizationServerSettings) GetAllowedOriginsOk() (*[]string, bool)`
-
-GetAllowedOriginsOk returns a tuple with the AllowedOrigins field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAllowedOrigins
-
-`func (o *AuthorizationServerSettings) SetAllowedOrigins(v []string)`
-
-SetAllowedOrigins sets AllowedOrigins field to given value.
-
-### HasAllowedOrigins
-
-`func (o *AuthorizationServerSettings) HasAllowedOrigins() bool`
-
-HasAllowedOrigins returns a boolean if a field has been set.
+HasOfflineAccessRequireConsentPrompt returns a boolean if a field has been set.
 
 ### GetUserAuthorizationUrl
 
@@ -957,6 +782,31 @@ SetPendingAuthorizationTimeout sets PendingAuthorizationTimeout field to given v
 
 HasPendingAuthorizationTimeout returns a boolean if a field has been set.
 
+### GetBypassActivationCodeConfirmation
+
+`func (o *AuthorizationServerSettings) GetBypassActivationCodeConfirmation() bool`
+
+GetBypassActivationCodeConfirmation returns the BypassActivationCodeConfirmation field if non-nil, zero value otherwise.
+
+### GetBypassActivationCodeConfirmationOk
+
+`func (o *AuthorizationServerSettings) GetBypassActivationCodeConfirmationOk() (*bool, bool)`
+
+GetBypassActivationCodeConfirmationOk returns a tuple with the BypassActivationCodeConfirmation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBypassActivationCodeConfirmation
+
+`func (o *AuthorizationServerSettings) SetBypassActivationCodeConfirmation(v bool)`
+
+SetBypassActivationCodeConfirmation sets BypassActivationCodeConfirmation field to given value.
+
+### HasBypassActivationCodeConfirmation
+
+`func (o *AuthorizationServerSettings) HasBypassActivationCodeConfirmation() bool`
+
+HasBypassActivationCodeConfirmation returns a boolean if a field has been set.
+
 ### GetDevicePollingInterval
 
 `func (o *AuthorizationServerSettings) GetDevicePollingInterval() int64`
@@ -1006,31 +856,6 @@ SetActivationCodeCheckMode sets ActivationCodeCheckMode field to given value.
 `func (o *AuthorizationServerSettings) HasActivationCodeCheckMode() bool`
 
 HasActivationCodeCheckMode returns a boolean if a field has been set.
-
-### GetBypassActivationCodeConfirmation
-
-`func (o *AuthorizationServerSettings) GetBypassActivationCodeConfirmation() bool`
-
-GetBypassActivationCodeConfirmation returns the BypassActivationCodeConfirmation field if non-nil, zero value otherwise.
-
-### GetBypassActivationCodeConfirmationOk
-
-`func (o *AuthorizationServerSettings) GetBypassActivationCodeConfirmationOk() (*bool, bool)`
-
-GetBypassActivationCodeConfirmationOk returns a tuple with the BypassActivationCodeConfirmation field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBypassActivationCodeConfirmation
-
-`func (o *AuthorizationServerSettings) SetBypassActivationCodeConfirmation(v bool)`
-
-SetBypassActivationCodeConfirmation sets BypassActivationCodeConfirmation field to given value.
-
-### HasBypassActivationCodeConfirmation
-
-`func (o *AuthorizationServerSettings) HasBypassActivationCodeConfirmation() bool`
-
-HasBypassActivationCodeConfirmation returns a boolean if a field has been set.
 
 ### GetEnableCookielessUserAuthorizationAuthenticationApi
 
@@ -1181,6 +1006,131 @@ SetApprovedAuthorizationDetailAttribute sets ApprovedAuthorizationDetailAttribut
 `func (o *AuthorizationServerSettings) HasApprovedAuthorizationDetailAttribute() bool`
 
 HasApprovedAuthorizationDetailAttribute returns a boolean if a field has been set.
+
+### GetAdminWebServicePcvRef
+
+`func (o *AuthorizationServerSettings) GetAdminWebServicePcvRef() ResourceLink`
+
+GetAdminWebServicePcvRef returns the AdminWebServicePcvRef field if non-nil, zero value otherwise.
+
+### GetAdminWebServicePcvRefOk
+
+`func (o *AuthorizationServerSettings) GetAdminWebServicePcvRefOk() (*ResourceLink, bool)`
+
+GetAdminWebServicePcvRefOk returns a tuple with the AdminWebServicePcvRef field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAdminWebServicePcvRef
+
+`func (o *AuthorizationServerSettings) SetAdminWebServicePcvRef(v ResourceLink)`
+
+SetAdminWebServicePcvRef sets AdminWebServicePcvRef field to given value.
+
+### HasAdminWebServicePcvRef
+
+`func (o *AuthorizationServerSettings) HasAdminWebServicePcvRef() bool`
+
+HasAdminWebServicePcvRef returns a boolean if a field has been set.
+
+### GetAtmIdForOAuthGrantManagement
+
+`func (o *AuthorizationServerSettings) GetAtmIdForOAuthGrantManagement() string`
+
+GetAtmIdForOAuthGrantManagement returns the AtmIdForOAuthGrantManagement field if non-nil, zero value otherwise.
+
+### GetAtmIdForOAuthGrantManagementOk
+
+`func (o *AuthorizationServerSettings) GetAtmIdForOAuthGrantManagementOk() (*string, bool)`
+
+GetAtmIdForOAuthGrantManagementOk returns a tuple with the AtmIdForOAuthGrantManagement field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAtmIdForOAuthGrantManagement
+
+`func (o *AuthorizationServerSettings) SetAtmIdForOAuthGrantManagement(v string)`
+
+SetAtmIdForOAuthGrantManagement sets AtmIdForOAuthGrantManagement field to given value.
+
+### HasAtmIdForOAuthGrantManagement
+
+`func (o *AuthorizationServerSettings) HasAtmIdForOAuthGrantManagement() bool`
+
+HasAtmIdForOAuthGrantManagement returns a boolean if a field has been set.
+
+### GetScopeForOAuthGrantManagement
+
+`func (o *AuthorizationServerSettings) GetScopeForOAuthGrantManagement() string`
+
+GetScopeForOAuthGrantManagement returns the ScopeForOAuthGrantManagement field if non-nil, zero value otherwise.
+
+### GetScopeForOAuthGrantManagementOk
+
+`func (o *AuthorizationServerSettings) GetScopeForOAuthGrantManagementOk() (*string, bool)`
+
+GetScopeForOAuthGrantManagementOk returns a tuple with the ScopeForOAuthGrantManagement field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetScopeForOAuthGrantManagement
+
+`func (o *AuthorizationServerSettings) SetScopeForOAuthGrantManagement(v string)`
+
+SetScopeForOAuthGrantManagement sets ScopeForOAuthGrantManagement field to given value.
+
+### HasScopeForOAuthGrantManagement
+
+`func (o *AuthorizationServerSettings) HasScopeForOAuthGrantManagement() bool`
+
+HasScopeForOAuthGrantManagement returns a boolean if a field has been set.
+
+### GetAllowedOrigins
+
+`func (o *AuthorizationServerSettings) GetAllowedOrigins() []string`
+
+GetAllowedOrigins returns the AllowedOrigins field if non-nil, zero value otherwise.
+
+### GetAllowedOriginsOk
+
+`func (o *AuthorizationServerSettings) GetAllowedOriginsOk() (*[]string, bool)`
+
+GetAllowedOriginsOk returns a tuple with the AllowedOrigins field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowedOrigins
+
+`func (o *AuthorizationServerSettings) SetAllowedOrigins(v []string)`
+
+SetAllowedOrigins sets AllowedOrigins field to given value.
+
+### HasAllowedOrigins
+
+`func (o *AuthorizationServerSettings) HasAllowedOrigins() bool`
+
+HasAllowedOrigins returns a boolean if a field has been set.
+
+### GetTrackUserSessionsForLogout
+
+`func (o *AuthorizationServerSettings) GetTrackUserSessionsForLogout() bool`
+
+GetTrackUserSessionsForLogout returns the TrackUserSessionsForLogout field if non-nil, zero value otherwise.
+
+### GetTrackUserSessionsForLogoutOk
+
+`func (o *AuthorizationServerSettings) GetTrackUserSessionsForLogoutOk() (*bool, bool)`
+
+GetTrackUserSessionsForLogoutOk returns a tuple with the TrackUserSessionsForLogout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrackUserSessionsForLogout
+
+`func (o *AuthorizationServerSettings) SetTrackUserSessionsForLogout(v bool)`
+
+SetTrackUserSessionsForLogout sets TrackUserSessionsForLogout field to given value.
+
+### HasTrackUserSessionsForLogout
+
+`func (o *AuthorizationServerSettings) HasTrackUserSessionsForLogout() bool`
+
+HasTrackUserSessionsForLogout returns a boolean if a field has been set.
 
 ### GetParReferenceTimeout
 
@@ -1381,6 +1331,56 @@ SetDpopProofEnforceReplayPrevention sets DpopProofEnforceReplayPrevention field 
 `func (o *AuthorizationServerSettings) HasDpopProofEnforceReplayPrevention() bool`
 
 HasDpopProofEnforceReplayPrevention returns a boolean if a field has been set.
+
+### GetBypassAuthorizationForApprovedConsents
+
+`func (o *AuthorizationServerSettings) GetBypassAuthorizationForApprovedConsents() bool`
+
+GetBypassAuthorizationForApprovedConsents returns the BypassAuthorizationForApprovedConsents field if non-nil, zero value otherwise.
+
+### GetBypassAuthorizationForApprovedConsentsOk
+
+`func (o *AuthorizationServerSettings) GetBypassAuthorizationForApprovedConsentsOk() (*bool, bool)`
+
+GetBypassAuthorizationForApprovedConsentsOk returns a tuple with the BypassAuthorizationForApprovedConsents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBypassAuthorizationForApprovedConsents
+
+`func (o *AuthorizationServerSettings) SetBypassAuthorizationForApprovedConsents(v bool)`
+
+SetBypassAuthorizationForApprovedConsents sets BypassAuthorizationForApprovedConsents field to given value.
+
+### HasBypassAuthorizationForApprovedConsents
+
+`func (o *AuthorizationServerSettings) HasBypassAuthorizationForApprovedConsents() bool`
+
+HasBypassAuthorizationForApprovedConsents returns a boolean if a field has been set.
+
+### GetConsentLifetimeDays
+
+`func (o *AuthorizationServerSettings) GetConsentLifetimeDays() int64`
+
+GetConsentLifetimeDays returns the ConsentLifetimeDays field if non-nil, zero value otherwise.
+
+### GetConsentLifetimeDaysOk
+
+`func (o *AuthorizationServerSettings) GetConsentLifetimeDaysOk() (*int64, bool)`
+
+GetConsentLifetimeDaysOk returns a tuple with the ConsentLifetimeDays field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConsentLifetimeDays
+
+`func (o *AuthorizationServerSettings) SetConsentLifetimeDays(v int64)`
+
+SetConsentLifetimeDays sets ConsentLifetimeDays field to given value.
+
+### HasConsentLifetimeDays
+
+`func (o *AuthorizationServerSettings) HasConsentLifetimeDays() bool`
+
+HasConsentLifetimeDays returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

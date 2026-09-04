@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DisableAutomaticConnectionValidation** | Pointer to **bool** | Boolean that disables automatic connection validation when set to true. The default is false. | [optional] 
+**DisableAutomaticPluginValidation** | Pointer to **bool** | Boolean that disables automatic plugin validation when set to true. The default is false. | [optional] 
 **IdpConnectionTransactionLoggingOverride** | Pointer to **string** | Determines the level of transaction logging for all identity provider connections. The default is DONT_OVERRIDE, in which case the logging level will be determined by each individual IdP connection | [optional] 
 **SpConnectionTransactionLoggingOverride** | Pointer to **string** | Determines the level of transaction logging for all service provider connections. The default is DONT_OVERRIDE, in which case the logging level will be determined by each individual SP connection | [optional] 
 **DatastoreValidationIntervalSecs** | Pointer to **int64** | Determines how long (in seconds) the result of testing a datastore connection is cached. The default is 300. | [optional] 
@@ -53,6 +54,31 @@ SetDisableAutomaticConnectionValidation sets DisableAutomaticConnectionValidatio
 `func (o *GeneralSettings) HasDisableAutomaticConnectionValidation() bool`
 
 HasDisableAutomaticConnectionValidation returns a boolean if a field has been set.
+
+### GetDisableAutomaticPluginValidation
+
+`func (o *GeneralSettings) GetDisableAutomaticPluginValidation() bool`
+
+GetDisableAutomaticPluginValidation returns the DisableAutomaticPluginValidation field if non-nil, zero value otherwise.
+
+### GetDisableAutomaticPluginValidationOk
+
+`func (o *GeneralSettings) GetDisableAutomaticPluginValidationOk() (*bool, bool)`
+
+GetDisableAutomaticPluginValidationOk returns a tuple with the DisableAutomaticPluginValidation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisableAutomaticPluginValidation
+
+`func (o *GeneralSettings) SetDisableAutomaticPluginValidation(v bool)`
+
+SetDisableAutomaticPluginValidation sets DisableAutomaticPluginValidation field to given value.
+
+### HasDisableAutomaticPluginValidation
+
+`func (o *GeneralSettings) HasDisableAutomaticPluginValidation() bool`
+
+HasDisableAutomaticPluginValidation returns a boolean if a field has been set.
 
 ### GetIdpConnectionTransactionLoggingOverride
 

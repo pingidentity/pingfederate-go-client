@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **EnableWsFed** | Pointer to **bool** | Enable WS Federation. | [optional] 
 **EnableWsTrust** | Pointer to **bool** | Enable WS Trust. | [optional] 
 **Saml20Profile** | Pointer to [**SpSAML20Profile**](SpSAML20Profile.md) |  | [optional] 
-**EnableOpenIDConnect** | Pointer to **bool** | Enable OpenID Connect. | [optional] 
 **EnableInboundProvisioning** | Pointer to **bool** | Enable Inbound Provisioning. | [optional] 
+**EnableOpenIDConnect** | Pointer to **bool** | Enable OpenID Connect. | [optional] 
 
 ## Methods
 
@@ -182,31 +182,6 @@ SetSaml20Profile sets Saml20Profile field to given value.
 
 HasSaml20Profile returns a boolean if a field has been set.
 
-### GetEnableOpenIDConnect
-
-`func (o *SpRole) GetEnableOpenIDConnect() bool`
-
-GetEnableOpenIDConnect returns the EnableOpenIDConnect field if non-nil, zero value otherwise.
-
-### GetEnableOpenIDConnectOk
-
-`func (o *SpRole) GetEnableOpenIDConnectOk() (*bool, bool)`
-
-GetEnableOpenIDConnectOk returns a tuple with the EnableOpenIDConnect field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnableOpenIDConnect
-
-`func (o *SpRole) SetEnableOpenIDConnect(v bool)`
-
-SetEnableOpenIDConnect sets EnableOpenIDConnect field to given value.
-
-### HasEnableOpenIDConnect
-
-`func (o *SpRole) HasEnableOpenIDConnect() bool`
-
-HasEnableOpenIDConnect returns a boolean if a field has been set.
-
 ### GetEnableInboundProvisioning
 
 `func (o *SpRole) GetEnableInboundProvisioning() bool`
@@ -231,6 +206,31 @@ SetEnableInboundProvisioning sets EnableInboundProvisioning field to given value
 `func (o *SpRole) HasEnableInboundProvisioning() bool`
 
 HasEnableInboundProvisioning returns a boolean if a field has been set.
+
+### GetEnableOpenIDConnect
+
+`func (o *SpRole) GetEnableOpenIDConnect() bool`
+
+GetEnableOpenIDConnect returns the EnableOpenIDConnect field if non-nil, zero value otherwise.
+
+### GetEnableOpenIDConnectOk
+
+`func (o *SpRole) GetEnableOpenIDConnectOk() (*bool, bool)`
+
+GetEnableOpenIDConnectOk returns a tuple with the EnableOpenIDConnect field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableOpenIDConnect
+
+`func (o *SpRole) SetEnableOpenIDConnect(v bool)`
+
+SetEnableOpenIDConnect sets EnableOpenIDConnect field to given value.
+
+### HasEnableOpenIDConnect
+
+`func (o *SpRole) HasEnableOpenIDConnect() bool`
+
+HasEnableOpenIDConnect returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

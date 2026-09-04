@@ -9,16 +9,16 @@ Name | Type | Description | Notes
 **Port** | **int64** | The SMTP port on your email server. Allowable values: 1 - 65535. The default value is 25. | 
 **SslPort** | Pointer to **int64** | The secure SMTP port on your email server. This field is not active unless Use SSL is enabled. Allowable values: 1 - 65535. The default value is  465. | [optional] 
 **Timeout** | Pointer to **int64** | The amount of time in seconds that PingFederate will wait before it times out connecting to the SMTP server. Allowable values: 0 - 3600. The default value is 30. | [optional] 
-**RetryAttempts** | Pointer to **int64** | The number of times PingFederate tries to resend an email upon unsuccessful delivery. The default value is 2. | [optional] 
-**RetryDelay** | Pointer to **int64** | The number of minutes PingFederate waits before the next retry attempt. The default value is 2. | [optional] 
 **UseSSL** | Pointer to **bool** | Requires the use of SSL/TLS on the port specified by &#39;sslPort&#39;. If this option is enabled, it overrides the &#39;useTLS&#39; option. | [optional] 
 **UseTLS** | Pointer to **bool** | Requires the use of the STARTTLS protocol on the port specified by &#39;port&#39;. | [optional] 
 **VerifyHostname** | Pointer to **bool** | If useSSL or useTLS is enabled, this flag determines whether the email server hostname is verified against the server&#39;s SMTPS certificate. | [optional] 
-**EnableUtf8MessageHeaders** | Pointer to **bool** | Only set this flag to true if the email server supports UTF-8 characters in message headers. Otherwise, this is defaulted to false. | [optional] 
 **UseDebugging** | Pointer to **bool** | Turns on detailed error messages for the PingFederate server log to help troubleshoot any problems. | [optional] 
 **Username** | Pointer to **string** | Authorized email username. Required if the password is provided. | [optional] 
 **Password** | Pointer to **string** | User password.  To update the password, specify the plaintext value in this field.  This field will not be populated for GET requests. | [optional] 
 **EncryptedPassword** | Pointer to **string** | For GET requests, this field contains the encrypted password, if one exists.  For POST and PUT requests, if you wish to reuse the existing password, this field should be passed back unchanged. | [optional] 
+**RetryAttempts** | Pointer to **int64** | The number of times PingFederate tries to resend an email upon unsuccessful delivery. The default value is 2. | [optional] 
+**RetryDelay** | Pointer to **int64** | The number of minutes PingFederate waits before the next retry attempt. The default value is 2. | [optional] 
+**EnableUtf8MessageHeaders** | Pointer to **bool** | Only set this flag to true if the email server supports UTF-8 characters in message headers. Otherwise, this is defaulted to false. | [optional] 
 
 ## Methods
 
@@ -149,56 +149,6 @@ SetTimeout sets Timeout field to given value.
 
 HasTimeout returns a boolean if a field has been set.
 
-### GetRetryAttempts
-
-`func (o *EmailServerSettings) GetRetryAttempts() int64`
-
-GetRetryAttempts returns the RetryAttempts field if non-nil, zero value otherwise.
-
-### GetRetryAttemptsOk
-
-`func (o *EmailServerSettings) GetRetryAttemptsOk() (*int64, bool)`
-
-GetRetryAttemptsOk returns a tuple with the RetryAttempts field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryAttempts
-
-`func (o *EmailServerSettings) SetRetryAttempts(v int64)`
-
-SetRetryAttempts sets RetryAttempts field to given value.
-
-### HasRetryAttempts
-
-`func (o *EmailServerSettings) HasRetryAttempts() bool`
-
-HasRetryAttempts returns a boolean if a field has been set.
-
-### GetRetryDelay
-
-`func (o *EmailServerSettings) GetRetryDelay() int64`
-
-GetRetryDelay returns the RetryDelay field if non-nil, zero value otherwise.
-
-### GetRetryDelayOk
-
-`func (o *EmailServerSettings) GetRetryDelayOk() (*int64, bool)`
-
-GetRetryDelayOk returns a tuple with the RetryDelay field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryDelay
-
-`func (o *EmailServerSettings) SetRetryDelay(v int64)`
-
-SetRetryDelay sets RetryDelay field to given value.
-
-### HasRetryDelay
-
-`func (o *EmailServerSettings) HasRetryDelay() bool`
-
-HasRetryDelay returns a boolean if a field has been set.
-
 ### GetUseSSL
 
 `func (o *EmailServerSettings) GetUseSSL() bool`
@@ -273,31 +223,6 @@ SetVerifyHostname sets VerifyHostname field to given value.
 `func (o *EmailServerSettings) HasVerifyHostname() bool`
 
 HasVerifyHostname returns a boolean if a field has been set.
-
-### GetEnableUtf8MessageHeaders
-
-`func (o *EmailServerSettings) GetEnableUtf8MessageHeaders() bool`
-
-GetEnableUtf8MessageHeaders returns the EnableUtf8MessageHeaders field if non-nil, zero value otherwise.
-
-### GetEnableUtf8MessageHeadersOk
-
-`func (o *EmailServerSettings) GetEnableUtf8MessageHeadersOk() (*bool, bool)`
-
-GetEnableUtf8MessageHeadersOk returns a tuple with the EnableUtf8MessageHeaders field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnableUtf8MessageHeaders
-
-`func (o *EmailServerSettings) SetEnableUtf8MessageHeaders(v bool)`
-
-SetEnableUtf8MessageHeaders sets EnableUtf8MessageHeaders field to given value.
-
-### HasEnableUtf8MessageHeaders
-
-`func (o *EmailServerSettings) HasEnableUtf8MessageHeaders() bool`
-
-HasEnableUtf8MessageHeaders returns a boolean if a field has been set.
 
 ### GetUseDebugging
 
@@ -398,6 +323,81 @@ SetEncryptedPassword sets EncryptedPassword field to given value.
 `func (o *EmailServerSettings) HasEncryptedPassword() bool`
 
 HasEncryptedPassword returns a boolean if a field has been set.
+
+### GetRetryAttempts
+
+`func (o *EmailServerSettings) GetRetryAttempts() int64`
+
+GetRetryAttempts returns the RetryAttempts field if non-nil, zero value otherwise.
+
+### GetRetryAttemptsOk
+
+`func (o *EmailServerSettings) GetRetryAttemptsOk() (*int64, bool)`
+
+GetRetryAttemptsOk returns a tuple with the RetryAttempts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRetryAttempts
+
+`func (o *EmailServerSettings) SetRetryAttempts(v int64)`
+
+SetRetryAttempts sets RetryAttempts field to given value.
+
+### HasRetryAttempts
+
+`func (o *EmailServerSettings) HasRetryAttempts() bool`
+
+HasRetryAttempts returns a boolean if a field has been set.
+
+### GetRetryDelay
+
+`func (o *EmailServerSettings) GetRetryDelay() int64`
+
+GetRetryDelay returns the RetryDelay field if non-nil, zero value otherwise.
+
+### GetRetryDelayOk
+
+`func (o *EmailServerSettings) GetRetryDelayOk() (*int64, bool)`
+
+GetRetryDelayOk returns a tuple with the RetryDelay field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRetryDelay
+
+`func (o *EmailServerSettings) SetRetryDelay(v int64)`
+
+SetRetryDelay sets RetryDelay field to given value.
+
+### HasRetryDelay
+
+`func (o *EmailServerSettings) HasRetryDelay() bool`
+
+HasRetryDelay returns a boolean if a field has been set.
+
+### GetEnableUtf8MessageHeaders
+
+`func (o *EmailServerSettings) GetEnableUtf8MessageHeaders() bool`
+
+GetEnableUtf8MessageHeaders returns the EnableUtf8MessageHeaders field if non-nil, zero value otherwise.
+
+### GetEnableUtf8MessageHeadersOk
+
+`func (o *EmailServerSettings) GetEnableUtf8MessageHeadersOk() (*bool, bool)`
+
+GetEnableUtf8MessageHeadersOk returns a tuple with the EnableUtf8MessageHeaders field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableUtf8MessageHeaders
+
+`func (o *EmailServerSettings) SetEnableUtf8MessageHeaders(v bool)`
+
+SetEnableUtf8MessageHeaders sets EnableUtf8MessageHeaders field to given value.
+
+### HasEnableUtf8MessageHeaders
+
+`func (o *EmailServerSettings) HasEnableUtf8MessageHeaders() bool`
+
+HasEnableUtf8MessageHeaders returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -33,7 +33,7 @@ import (
 )
 
 func main() {
-    body := *openapiclient.NewResourceOwnerCredentialsMapping("Id_example", map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // ResourceOwnerCredentialsMapping | Configuration for Resource Owner Credentials mapping.
+    body := *openapiclient.NewResourceOwnerCredentialsMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "Id_example") // ResourceOwnerCredentialsMapping | Configuration for Resource Owner Credentials mapping.
     xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
@@ -293,7 +293,7 @@ import (
 
 func main() {
     id := "id_example" // string | ID of the Resource Owner Credentials mapping to update.
-    body := *openapiclient.NewResourceOwnerCredentialsMapping("Id_example", map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // ResourceOwnerCredentialsMapping | Configuration for Resource Owner Credentials mapping.
+    body := *openapiclient.NewResourceOwnerCredentialsMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, "Id_example") // ResourceOwnerCredentialsMapping | Configuration for Resource Owner Credentials mapping.
     xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()

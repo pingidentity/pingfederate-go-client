@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Attributes** | Pointer to [**[]TokenEndpointAttribute**](TokenEndpointAttribute.md) | A list of token endpoint response attributes that are associated with this access token management plugin instance. | [optional] 
+**Inherited** | Pointer to **bool** | Whether this attribute contract is inherited from its parent instance. If true, the rest of the properties in this model become read-only. The default value is false. | [optional] 
 
 ## Methods
 
@@ -49,6 +50,31 @@ SetAttributes sets Attributes field to given value.
 `func (o *TokenEndpointAttributeContract) HasAttributes() bool`
 
 HasAttributes returns a boolean if a field has been set.
+
+### GetInherited
+
+`func (o *TokenEndpointAttributeContract) GetInherited() bool`
+
+GetInherited returns the Inherited field if non-nil, zero value otherwise.
+
+### GetInheritedOk
+
+`func (o *TokenEndpointAttributeContract) GetInheritedOk() (*bool, bool)`
+
+GetInheritedOk returns a tuple with the Inherited field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInherited
+
+`func (o *TokenEndpointAttributeContract) SetInherited(v bool)`
+
+SetInherited sets Inherited field to given value.
+
+### HasInherited
+
+`func (o *TokenEndpointAttributeContract) HasInherited() bool`
+
+HasInherited returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

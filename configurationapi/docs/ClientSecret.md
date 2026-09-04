@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Secret** | Pointer to **string** | Client secret for Basic Authentication.  To update the client secret, specify the plaintext value in this field.  This field will not be populated for GET requests. | [optional] 
-**EncryptedSecret** | Pointer to **string** | For GET requests, this field contains the encrypted client secret, if one exists.  For POST and PUT requests, if you wish to reuse the existing secret, this field should be passed back unchanged. | [optional] 
+**EncryptedSecret** | Pointer to **string** | For GET requests, this field contains the encrypted client secret, if one exists. For POST and PUT requests, if you wish to reuse the existing secret, this field should be passed back unchanged. A Secret Reference may be provided in this field with format &#39;OBF:MGR:{secretManagerId}:{secretId}&#39;. | [optional] 
 **SecondarySecrets** | Pointer to [**[]SecondarySecret**](SecondarySecret.md) | The list of secondary client secrets that are temporarily retained. | [optional] 
 
 ## Methods

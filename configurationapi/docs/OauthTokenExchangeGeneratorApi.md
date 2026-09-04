@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## CreateGroup
 
-> TokenExchangeGeneratorGroup CreateGroup(ctx).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
+> TokenExchangeGeneratorGroup CreateGroup(ctx).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
 
 Create a new OAuth 2.0 Token Exchange Generator group.
 
@@ -36,11 +36,11 @@ import (
 
 func main() {
     body := *openapiclient.NewTokenExchangeGeneratorGroup("Id_example", "Name_example", []openapiclient.TokenExchangeGeneratorMapping{*openapiclient.NewTokenExchangeGeneratorMapping("RequestedTokenType_example", *openapiclient.NewResourceLink("Id_example"))}) // TokenExchangeGeneratorGroup | Configuration for new OAuth 2.0 Token Exchange Generator.
-    bypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional)
+    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeGeneratorAPI.CreateGroup(context.Background()).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthTokenExchangeGeneratorAPI.CreateGroup(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeGeneratorAPI.CreateGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -62,7 +62,7 @@ Other parameters are passed through a pointer to a apiCreateGroupRequest struct 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**TokenExchangeGeneratorGroup**](TokenExchangeGeneratorGroup.md) | Configuration for new OAuth 2.0 Token Exchange Generator. | 
- **bypassExternalValidation** | **bool** | External validation will be bypassed when set to true. Default to false. | 
+ **xBypassExternalValidation** | **bool** | External validation will be bypassed when set to true. Default to false. | [default to false]
 
 ### Return type
 
@@ -340,7 +340,7 @@ Other parameters are passed through a pointer to a apiGetOauthTokenExchangeSetti
 
 ## UpdateOauthTokenExchangeGroup
 
-> TokenExchangeGeneratorGroup UpdateOauthTokenExchangeGroup(ctx, id).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
+> TokenExchangeGeneratorGroup UpdateOauthTokenExchangeGroup(ctx, id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
 
 Update an OAuth 2.0 Token Exchange Generator group.
 
@@ -361,11 +361,11 @@ import (
 func main() {
     id := "id_example" // string | ID of the OAuth 2.0 Token Exchange Generator group to update.
     body := *openapiclient.NewTokenExchangeGeneratorGroup("Id_example", "Name_example", []openapiclient.TokenExchangeGeneratorMapping{*openapiclient.NewTokenExchangeGeneratorMapping("RequestedTokenType_example", *openapiclient.NewResourceLink("Id_example"))}) // TokenExchangeGeneratorGroup | Configuration for updated OAuth 2.0 Token Exchange Generator group.
-    bypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional)
+    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeGeneratorAPI.UpdateOauthTokenExchangeGroup(context.Background(), id).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthTokenExchangeGeneratorAPI.UpdateOauthTokenExchangeGroup(context.Background(), id).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeGeneratorAPI.UpdateOauthTokenExchangeGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -392,7 +392,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **body** | [**TokenExchangeGeneratorGroup**](TokenExchangeGeneratorGroup.md) | Configuration for updated OAuth 2.0 Token Exchange Generator group. | 
- **bypassExternalValidation** | **bool** | External validation will be bypassed when set to true. Default to false. | 
+ **xBypassExternalValidation** | **bool** | External validation will be bypassed when set to true. Default to false. | [default to false]
 
 ### Return type
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 ## UpdateOauthTokenExchangeSettings
 
-> TokenExchangeGeneratorSettings UpdateOauthTokenExchangeSettings(ctx).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
+> TokenExchangeGeneratorSettings UpdateOauthTokenExchangeSettings(ctx).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
 
 Update general OAuth 2.0 Token Exchange Generator settings.
 
@@ -432,11 +432,11 @@ import (
 
 func main() {
     body := *openapiclient.NewTokenExchangeGeneratorSettings() // TokenExchangeGeneratorSettings | OAuth 2.0 Token Exchange Generator settings.
-    bypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional)
+    xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenExchangeGeneratorAPI.UpdateOauthTokenExchangeSettings(context.Background()).Body(body).BypassExternalValidation(bypassExternalValidation).Execute()
+    resp, r, err := apiClient.OauthTokenExchangeGeneratorAPI.UpdateOauthTokenExchangeSettings(context.Background()).Body(body).XBypassExternalValidation(xBypassExternalValidation).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenExchangeGeneratorAPI.UpdateOauthTokenExchangeSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -458,7 +458,7 @@ Other parameters are passed through a pointer to a apiUpdateOauthTokenExchangeSe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**TokenExchangeGeneratorSettings**](TokenExchangeGeneratorSettings.md) | OAuth 2.0 Token Exchange Generator settings. | 
- **bypassExternalValidation** | **bool** | External validation will be bypassed when set to true. Default to false. | 
+ **xBypassExternalValidation** | **bool** | External validation will be bypassed when set to true. Default to false. | [default to false]
 
 ### Return type
 

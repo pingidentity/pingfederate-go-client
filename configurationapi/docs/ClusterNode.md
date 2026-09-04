@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Address** | Pointer to **string** | The IP address and port this node is running on. | [optional] 
-**Index** | Pointer to **int64** | Index of the node within the cluster, or -1 if an index is not assigned. | [optional] 
 **Mode** | Pointer to **string** | The deployment mode of this node, from a clustering standpoint. CLUSTERED_DUAL is not supported. | [optional] 
+**Index** | Pointer to **int64** | Index of the node within the cluster, or -1 if an index is not assigned. | [optional] 
 **NodeGroup** | Pointer to **string** | The node group for this node. This field is only populated if adaptive clustering is enabled. | [optional] 
 **Version** | Pointer to **string** | The PingFederate version this node is running on. | [optional] 
 **NodeTags** | Pointer to **string** | The node tags for this node. This field is only populated for engine nodes. | [optional] 
@@ -58,31 +58,6 @@ SetAddress sets Address field to given value.
 
 HasAddress returns a boolean if a field has been set.
 
-### GetIndex
-
-`func (o *ClusterNode) GetIndex() int64`
-
-GetIndex returns the Index field if non-nil, zero value otherwise.
-
-### GetIndexOk
-
-`func (o *ClusterNode) GetIndexOk() (*int64, bool)`
-
-GetIndexOk returns a tuple with the Index field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIndex
-
-`func (o *ClusterNode) SetIndex(v int64)`
-
-SetIndex sets Index field to given value.
-
-### HasIndex
-
-`func (o *ClusterNode) HasIndex() bool`
-
-HasIndex returns a boolean if a field has been set.
-
 ### GetMode
 
 `func (o *ClusterNode) GetMode() string`
@@ -107,6 +82,31 @@ SetMode sets Mode field to given value.
 `func (o *ClusterNode) HasMode() bool`
 
 HasMode returns a boolean if a field has been set.
+
+### GetIndex
+
+`func (o *ClusterNode) GetIndex() int64`
+
+GetIndex returns the Index field if non-nil, zero value otherwise.
+
+### GetIndexOk
+
+`func (o *ClusterNode) GetIndexOk() (*int64, bool)`
+
+GetIndexOk returns a tuple with the Index field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIndex
+
+`func (o *ClusterNode) SetIndex(v int64)`
+
+SetIndex sets Index field to given value.
+
+### HasIndex
+
+`func (o *ClusterNode) HasIndex() bool`
+
+HasIndex returns a boolean if a field has been set.
 
 ### GetNodeGroup
 

@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | Unique ID of the plugin. | [optional] 
 **Name** | Pointer to **string** | Friendly name for the plugin. | [optional] 
 **ClassName** | Pointer to **string** | Full class name of the class that implements this plugin. | [optional] 
 **AttributeContract** | Pointer to **[]string** | The attribute contract for this plugin. | [optional] 
 **SupportsExtendedContract** | Pointer to **bool** | Determines whether this plugin supports extending the attribute contract. | [optional] 
 **ConfigDescriptor** | Pointer to [**PluginConfigDescriptor**](PluginConfigDescriptor.md) |  | [optional] 
+**Id** | Pointer to **string** | Unique ID of the plugin. | [optional] 
 **SupportedAuthorizationDetailTypes** | Pointer to **[]string** | The supported authorization detail types supported by this authorization detail processor plugin type. The default set is populated with &#39;ALL_AUTHORIZATION_DETAIL_TYPES&#39; denoting that the plugin supports all authorization detail types. | [optional] 
 
 ## Methods
@@ -30,31 +30,6 @@ will change when the set of required properties is changed
 NewAuthorizationDetailProcessorDescriptorWithDefaults instantiates a new AuthorizationDetailProcessorDescriptor object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *AuthorizationDetailProcessorDescriptor) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *AuthorizationDetailProcessorDescriptor) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *AuthorizationDetailProcessorDescriptor) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *AuthorizationDetailProcessorDescriptor) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetName
 
@@ -180,6 +155,31 @@ SetConfigDescriptor sets ConfigDescriptor field to given value.
 `func (o *AuthorizationDetailProcessorDescriptor) HasConfigDescriptor() bool`
 
 HasConfigDescriptor returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *AuthorizationDetailProcessorDescriptor) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *AuthorizationDetailProcessorDescriptor) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *AuthorizationDetailProcessorDescriptor) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *AuthorizationDetailProcessorDescriptor) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetSupportedAuthorizationDetailTypes
 

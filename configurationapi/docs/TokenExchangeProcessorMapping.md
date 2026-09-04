@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **SubjectTokenProcessor** | [**ResourceLink**](ResourceLink.md) |  | 
 **ActorTokenType** | Pointer to **string** | The Actor token type | [optional] 
 **ActorTokenProcessor** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
+**AttributeSource** | Pointer to [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) |  | [optional] 
 
 ## Methods
 
@@ -190,6 +191,31 @@ SetActorTokenProcessor sets ActorTokenProcessor field to given value.
 `func (o *TokenExchangeProcessorMapping) HasActorTokenProcessor() bool`
 
 HasActorTokenProcessor returns a boolean if a field has been set.
+
+### GetAttributeSource
+
+`func (o *TokenExchangeProcessorMapping) GetAttributeSource() []AttributeSourceAggregation`
+
+GetAttributeSource returns the AttributeSource field if non-nil, zero value otherwise.
+
+### GetAttributeSourceOk
+
+`func (o *TokenExchangeProcessorMapping) GetAttributeSourceOk() (*[]AttributeSourceAggregation, bool)`
+
+GetAttributeSourceOk returns a tuple with the AttributeSource field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributeSource
+
+`func (o *TokenExchangeProcessorMapping) SetAttributeSource(v []AttributeSourceAggregation)`
+
+SetAttributeSource sets AttributeSource field to given value.
+
+### HasAttributeSource
+
+`func (o *TokenExchangeProcessorMapping) HasAttributeSource() bool`
+
+HasAttributeSource returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

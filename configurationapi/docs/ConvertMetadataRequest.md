@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ConnectionType** | **string** | The expected connection type to convert. | 
 **ExpectedProtocol** | **string** | The expected browser-based SSO protocol to convert. In this case the protocol is restricted to SAML. | 
-**ExpectedEntityId** | Pointer to **string** | The entity ID of the connection to be obtained from the input SAML Metadata. Required if the SAML Metadata has more than one connection defined. | [optional] 
 **SamlMetadata** | **string** | The base-64 encoded XML SAML metadata. | 
 **VerificationCertificate** | Pointer to **string** | The certificate to validate the metadata signature against. The certificate can be in PEM format or base-64 encoded DER format. | [optional] 
 **TemplateConnection** | Pointer to [**Connection**](Connection.md) |  | [optional] 
+**ExpectedEntityId** | Pointer to **string** | The entity ID of the connection to be obtained from the input SAML Metadata. Required if the SAML Metadata has more than one connection defined. | [optional] 
 
 ## Methods
 
@@ -69,31 +69,6 @@ and a boolean to check if the value has been set.
 
 SetExpectedProtocol sets ExpectedProtocol field to given value.
 
-
-### GetExpectedEntityId
-
-`func (o *ConvertMetadataRequest) GetExpectedEntityId() string`
-
-GetExpectedEntityId returns the ExpectedEntityId field if non-nil, zero value otherwise.
-
-### GetExpectedEntityIdOk
-
-`func (o *ConvertMetadataRequest) GetExpectedEntityIdOk() (*string, bool)`
-
-GetExpectedEntityIdOk returns a tuple with the ExpectedEntityId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExpectedEntityId
-
-`func (o *ConvertMetadataRequest) SetExpectedEntityId(v string)`
-
-SetExpectedEntityId sets ExpectedEntityId field to given value.
-
-### HasExpectedEntityId
-
-`func (o *ConvertMetadataRequest) HasExpectedEntityId() bool`
-
-HasExpectedEntityId returns a boolean if a field has been set.
 
 ### GetSamlMetadata
 
@@ -164,6 +139,31 @@ SetTemplateConnection sets TemplateConnection field to given value.
 `func (o *ConvertMetadataRequest) HasTemplateConnection() bool`
 
 HasTemplateConnection returns a boolean if a field has been set.
+
+### GetExpectedEntityId
+
+`func (o *ConvertMetadataRequest) GetExpectedEntityId() string`
+
+GetExpectedEntityId returns the ExpectedEntityId field if non-nil, zero value otherwise.
+
+### GetExpectedEntityIdOk
+
+`func (o *ConvertMetadataRequest) GetExpectedEntityIdOk() (*string, bool)`
+
+GetExpectedEntityIdOk returns a tuple with the ExpectedEntityId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpectedEntityId
+
+`func (o *ConvertMetadataRequest) SetExpectedEntityId(v string)`
+
+SetExpectedEntityId sets ExpectedEntityId field to given value.
+
+### HasExpectedEntityId
+
+`func (o *ConvertMetadataRequest) HasExpectedEntityId() bool`
+
+HasExpectedEntityId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

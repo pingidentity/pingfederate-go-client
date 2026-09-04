@@ -4,20 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ConnectionUrlTags** | Pointer to [**[]JdbcTagConfig**](JdbcTagConfig.md) | The set of connection URLs and associated tags for this JDBC data store. This is required if &#39;connectionUrl&#39; is not provided. | [optional] 
 **ConnectionUrl** | Pointer to **string** | The default location of the JDBC database. This field is required if no mapping for JDBC database location and tags is specified. | [optional] 
-**Name** | Pointer to **string** | The data store name with a unique value across all data sources. Omitting this attribute will set the value to a combination of the connection url and the username. | [optional] 
 **DriverClass** | **string** | The name of the driver class used to communicate with the source database. | 
 **UserName** | Pointer to **string** | The name that identifies the user when connecting to the database. | [optional] 
 **Password** | Pointer to **string** | The password needed to access the database. GETs will not return this attribute. To update this field, specify the new value in this attribute. | [optional] 
 **EncryptedPassword** | Pointer to **string** | The encrypted password needed to access the database. If you do not want to update the stored value, this attribute should be passed back unchanged. Secret Reference may be provided in this field with format &#39;OBF:MGR:{secretManagerId}:{secretId}&#39;. | [optional] 
 **ValidateConnectionSql** | Pointer to **string** | A simple SQL statement used by PingFederate at runtime to verify that the database connection is still active and to reconnect if needed. | [optional] 
 **AllowMultiValueAttributes** | Pointer to **bool** | Indicates that this data store can select more than one record from a column and return the results as a multi-value attribute. | [optional] 
+**Name** | Pointer to **string** | The data store name with a unique value across all data sources. Omitting this attribute will set the value to a combination of the connection url and the username. | [optional] 
+**ConnectionUrlTags** | Pointer to [**[]JdbcTagConfig**](JdbcTagConfig.md) | The set of connection URLs and associated tags for this JDBC data store. This is required if &#39;connectionUrl&#39; is not provided. | [optional] 
 **MinPoolSize** | Pointer to **int64** | The smallest number of database connections in the connection pool for the given data store. Omitting this attribute will set the value to the connection pool default. The default value is 10. | [optional] 
 **MaxPoolSize** | Pointer to **int64** | The largest number of database connections in the connection pool for the given data store. Omitting this attribute will set the value to the connection pool default. The default value is 100. | [optional] 
 **BlockingTimeout** | Pointer to **int64** | The amount of time in milliseconds a request waits to get a connection from the connection pool before it fails. Omitting this attribute will set the value to the connection pool default. The default value is 5000 milliseconds. | [optional] 
 **IdleTimeout** | Pointer to **int64** | The length of time in minutes the connection can be idle in the pool before it is closed. Omitting this attribute will set the value to the connection pool default. The default value is 5 minutes. | [optional] 
-**LastModified** | Pointer to **time.Time** | The time at which the datastore instance was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
 
 ## Methods
 
@@ -37,31 +36,6 @@ will change when the set of required properties is changed
 NewJdbcDataStoreWithDefaults instantiates a new JdbcDataStore object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetConnectionUrlTags
-
-`func (o *JdbcDataStore) GetConnectionUrlTags() []JdbcTagConfig`
-
-GetConnectionUrlTags returns the ConnectionUrlTags field if non-nil, zero value otherwise.
-
-### GetConnectionUrlTagsOk
-
-`func (o *JdbcDataStore) GetConnectionUrlTagsOk() (*[]JdbcTagConfig, bool)`
-
-GetConnectionUrlTagsOk returns a tuple with the ConnectionUrlTags field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConnectionUrlTags
-
-`func (o *JdbcDataStore) SetConnectionUrlTags(v []JdbcTagConfig)`
-
-SetConnectionUrlTags sets ConnectionUrlTags field to given value.
-
-### HasConnectionUrlTags
-
-`func (o *JdbcDataStore) HasConnectionUrlTags() bool`
-
-HasConnectionUrlTags returns a boolean if a field has been set.
 
 ### GetConnectionUrl
 
@@ -87,31 +61,6 @@ SetConnectionUrl sets ConnectionUrl field to given value.
 `func (o *JdbcDataStore) HasConnectionUrl() bool`
 
 HasConnectionUrl returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *JdbcDataStore) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *JdbcDataStore) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *JdbcDataStore) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *JdbcDataStore) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetDriverClass
 
@@ -258,6 +207,56 @@ SetAllowMultiValueAttributes sets AllowMultiValueAttributes field to given value
 
 HasAllowMultiValueAttributes returns a boolean if a field has been set.
 
+### GetName
+
+`func (o *JdbcDataStore) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *JdbcDataStore) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *JdbcDataStore) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *JdbcDataStore) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+### GetConnectionUrlTags
+
+`func (o *JdbcDataStore) GetConnectionUrlTags() []JdbcTagConfig`
+
+GetConnectionUrlTags returns the ConnectionUrlTags field if non-nil, zero value otherwise.
+
+### GetConnectionUrlTagsOk
+
+`func (o *JdbcDataStore) GetConnectionUrlTagsOk() (*[]JdbcTagConfig, bool)`
+
+GetConnectionUrlTagsOk returns a tuple with the ConnectionUrlTags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectionUrlTags
+
+`func (o *JdbcDataStore) SetConnectionUrlTags(v []JdbcTagConfig)`
+
+SetConnectionUrlTags sets ConnectionUrlTags field to given value.
+
+### HasConnectionUrlTags
+
+`func (o *JdbcDataStore) HasConnectionUrlTags() bool`
+
+HasConnectionUrlTags returns a boolean if a field has been set.
+
 ### GetMinPoolSize
 
 `func (o *JdbcDataStore) GetMinPoolSize() int64`
@@ -357,31 +356,6 @@ SetIdleTimeout sets IdleTimeout field to given value.
 `func (o *JdbcDataStore) HasIdleTimeout() bool`
 
 HasIdleTimeout returns a boolean if a field has been set.
-
-### GetLastModified
-
-`func (o *JdbcDataStore) GetLastModified() time.Time`
-
-GetLastModified returns the LastModified field if non-nil, zero value otherwise.
-
-### GetLastModifiedOk
-
-`func (o *JdbcDataStore) GetLastModifiedOk() (*time.Time, bool)`
-
-GetLastModifiedOk returns a tuple with the LastModified field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastModified
-
-`func (o *JdbcDataStore) SetLastModified(v time.Time)`
-
-SetLastModified sets LastModified field to given value.
-
-### HasLastModified
-
-`func (o *JdbcDataStore) HasLastModified() bool`
-
-HasLastModified returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

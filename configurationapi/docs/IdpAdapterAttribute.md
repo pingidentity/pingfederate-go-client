@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | The name of this attribute. | 
-**Pseudonym** | Pointer to **bool** | Specifies whether this attribute is used to construct a pseudonym for the SP. Defaults to false. | [optional] 
 **Masked** | Pointer to **bool** | Specifies whether this attribute is masked in PingFederate logs. Defaults to false. | [optional] 
+**Pseudonym** | Pointer to **bool** | Specifies whether this attribute is used to construct a pseudonym for the SP. Defaults to false. | [optional] 
 
 ## Methods
 
@@ -47,31 +47,6 @@ and a boolean to check if the value has been set.
 SetName sets Name field to given value.
 
 
-### GetPseudonym
-
-`func (o *IdpAdapterAttribute) GetPseudonym() bool`
-
-GetPseudonym returns the Pseudonym field if non-nil, zero value otherwise.
-
-### GetPseudonymOk
-
-`func (o *IdpAdapterAttribute) GetPseudonymOk() (*bool, bool)`
-
-GetPseudonymOk returns a tuple with the Pseudonym field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPseudonym
-
-`func (o *IdpAdapterAttribute) SetPseudonym(v bool)`
-
-SetPseudonym sets Pseudonym field to given value.
-
-### HasPseudonym
-
-`func (o *IdpAdapterAttribute) HasPseudonym() bool`
-
-HasPseudonym returns a boolean if a field has been set.
-
 ### GetMasked
 
 `func (o *IdpAdapterAttribute) GetMasked() bool`
@@ -96,6 +71,31 @@ SetMasked sets Masked field to given value.
 `func (o *IdpAdapterAttribute) HasMasked() bool`
 
 HasMasked returns a boolean if a field has been set.
+
+### GetPseudonym
+
+`func (o *IdpAdapterAttribute) GetPseudonym() bool`
+
+GetPseudonym returns the Pseudonym field if non-nil, zero value otherwise.
+
+### GetPseudonymOk
+
+`func (o *IdpAdapterAttribute) GetPseudonymOk() (*bool, bool)`
+
+GetPseudonymOk returns a tuple with the Pseudonym field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPseudonym
+
+`func (o *IdpAdapterAttribute) SetPseudonym(v bool)`
+
+SetPseudonym sets Pseudonym field to given value.
+
+### HasPseudonym
+
+`func (o *IdpAdapterAttribute) HasPseudonym() bool`
+
+HasPseudonym returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

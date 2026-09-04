@@ -33,7 +33,7 @@ import (
 )
 
 func main() {
-    body := *openapiclient.NewProcessorPolicyToPersistentGrantMapping(*openapiclient.NewResourceLink("Id_example"), map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // ProcessorPolicyToPersistentGrantMapping | Configuration for processor policy to persistent grant mapping.
+    body := *openapiclient.NewProcessorPolicyToPersistentGrantMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, *openapiclient.NewResourceLink("Id_example")) // ProcessorPolicyToPersistentGrantMapping | Configuration for processor policy to persistent grant mapping.
     xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
@@ -293,7 +293,7 @@ import (
 
 func main() {
     id := "id_example" // string | ID of the processor policy to persistent grant mapping to update.
-    body := *openapiclient.NewProcessorPolicyToPersistentGrantMapping(*openapiclient.NewResourceLink("Id_example"), map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}) // ProcessorPolicyToPersistentGrantMapping | Configuration for a processor policy to persistent grant mapping.
+    body := *openapiclient.NewProcessorPolicyToPersistentGrantMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}, *openapiclient.NewResourceLink("Id_example")) // ProcessorPolicyToPersistentGrantMapping | Configuration for a processor policy to persistent grant mapping.
     xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()

@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | The ID of the referencing resource. | [optional] 
+**Type** | Pointer to **string** | The type of the referencing resource. In the case of plugins, this is the plugin type. Otherwise, it is usually the same as the name of the category. | [optional] 
 **Name** | Pointer to **string** | The name of the referencing resource. | [optional] 
 **CategoryId** | Pointer to **string** | The category of the referencing resource. | [optional] 
-**Type** | Pointer to **string** | The type of the referencing resource. In the case of plugins, this is the plugin type. Otherwise, it is usually the same as the name of the category. | [optional] 
 **Ref** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 
 ## Methods
@@ -53,6 +53,31 @@ SetId sets Id field to given value.
 `func (o *ResourceUsage) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetType
+
+`func (o *ResourceUsage) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *ResourceUsage) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *ResourceUsage) SetType(v string)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *ResourceUsage) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 ### GetName
 
@@ -103,31 +128,6 @@ SetCategoryId sets CategoryId field to given value.
 `func (o *ResourceUsage) HasCategoryId() bool`
 
 HasCategoryId returns a boolean if a field has been set.
-
-### GetType
-
-`func (o *ResourceUsage) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *ResourceUsage) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *ResourceUsage) SetType(v string)`
-
-SetType sets Type field to given value.
-
-### HasType
-
-`func (o *ResourceUsage) HasType() bool`
-
-HasType returns a boolean if a field has been set.
 
 ### GetRef
 

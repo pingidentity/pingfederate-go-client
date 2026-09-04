@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SsoSuccessUrl** | Pointer to **string** | Provide the default URL you would like to send the user to when Single Sign On (SSO) has succeeded. | [optional] 
-**ConfirmSlo** | Pointer to **bool** | Determines whether the user is prompted to confirm Single Logout (SLO). The default is false. | [optional] 
 **SloSuccessUrl** | Pointer to **string** | Provide the default URL you would like to send the user to when Single Logout (SLO) has succeeded. | [optional] 
+**ConfirmSlo** | Pointer to **bool** | Determines whether the user is prompted to confirm Single Logout (SLO). The default is false. | [optional] 
 
 ## Methods
 
@@ -52,31 +52,6 @@ SetSsoSuccessUrl sets SsoSuccessUrl field to given value.
 
 HasSsoSuccessUrl returns a boolean if a field has been set.
 
-### GetConfirmSlo
-
-`func (o *SpDefaultUrls) GetConfirmSlo() bool`
-
-GetConfirmSlo returns the ConfirmSlo field if non-nil, zero value otherwise.
-
-### GetConfirmSloOk
-
-`func (o *SpDefaultUrls) GetConfirmSloOk() (*bool, bool)`
-
-GetConfirmSloOk returns a tuple with the ConfirmSlo field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConfirmSlo
-
-`func (o *SpDefaultUrls) SetConfirmSlo(v bool)`
-
-SetConfirmSlo sets ConfirmSlo field to given value.
-
-### HasConfirmSlo
-
-`func (o *SpDefaultUrls) HasConfirmSlo() bool`
-
-HasConfirmSlo returns a boolean if a field has been set.
-
 ### GetSloSuccessUrl
 
 `func (o *SpDefaultUrls) GetSloSuccessUrl() string`
@@ -101,6 +76,31 @@ SetSloSuccessUrl sets SloSuccessUrl field to given value.
 `func (o *SpDefaultUrls) HasSloSuccessUrl() bool`
 
 HasSloSuccessUrl returns a boolean if a field has been set.
+
+### GetConfirmSlo
+
+`func (o *SpDefaultUrls) GetConfirmSlo() bool`
+
+GetConfirmSlo returns the ConfirmSlo field if non-nil, zero value otherwise.
+
+### GetConfirmSloOk
+
+`func (o *SpDefaultUrls) GetConfirmSloOk() (*bool, bool)`
+
+GetConfirmSloOk returns a tuple with the ConfirmSlo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfirmSlo
+
+`func (o *SpDefaultUrls) SetConfirmSlo(v bool)`
+
+SetConfirmSlo sets ConfirmSlo field to given value.
+
+### HasConfirmSlo
+
+`func (o *SpDefaultUrls) HasConfirmSlo() bool`
+
+HasConfirmSlo returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

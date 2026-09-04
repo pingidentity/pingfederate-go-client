@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | The name of the table. | 
+**Inherited** | Pointer to **bool** | Whether this table is inherited from its parent instance. If true, the rows become read-only. The default value is false. | [optional] 
 **Rows** | Pointer to [**[]ConfigRow**](ConfigRow.md) | List of table rows. | [optional] 
 
 ## Methods
@@ -45,6 +46,31 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+
+### GetInherited
+
+`func (o *ConfigTable) GetInherited() bool`
+
+GetInherited returns the Inherited field if non-nil, zero value otherwise.
+
+### GetInheritedOk
+
+`func (o *ConfigTable) GetInheritedOk() (*bool, bool)`
+
+GetInheritedOk returns a tuple with the Inherited field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInherited
+
+`func (o *ConfigTable) SetInherited(v bool)`
+
+SetInherited sets Inherited field to given value.
+
+### HasInherited
+
+`func (o *ConfigTable) HasInherited() bool`
+
+HasInherited returns a boolean if a field has been set.
 
 ### GetRows
 

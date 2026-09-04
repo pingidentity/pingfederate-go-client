@@ -4,9 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HostnamesTags** | Pointer to [**[]LdapTagConfig**](LdapTagConfig.md) | The set of host names and associated tags for this LDAP data store. This is required if &#39;hostnames&#39; is not provided. | [optional] 
 **Hostnames** | Pointer to **[]string** | The default LDAP host names. This field is required if no mapping for host names and tags is specified. Failover can be configured by providing multiple host names. | [optional] 
-**Name** | Pointer to **string** | The data store name with a unique value across all data sources. Omitting this attribute will set the value to a combination of the hostname(s) and the principal. | [optional] 
 **LdapType** | **string** | A type that allows PingFederate to configure many provisioning settings automatically. The &#39;UNBOUNDID_DS&#39; type has been deprecated, please use the &#39;PING_DIRECTORY&#39; type instead. | 
 **BindAnonymously** | Pointer to **bool** | Whether username and password are required. If true, no other authentication fields should be provided. The default value is false. | [optional] 
 **UserDN** | Pointer to **string** | The username credential required to access the data store. If specified, no other authentication fields should be provided. | [optional] 
@@ -16,7 +14,8 @@ Name | Type | Description | Notes
 **UseSsl** | Pointer to **bool** | Connects to the LDAP data store using secure SSL/TLS encryption (LDAPS). The default value is false. | [optional] 
 **UseDnsSrvRecords** | Pointer to **bool** | Use DNS SRV Records to discover LDAP server information. The default value is false. | [optional] 
 **FollowLDAPReferrals** | Pointer to **bool** | Follow LDAP Referrals in the domain tree. The default value is false. This property does not apply to PingDirectory as this functionality is configured in PingDirectory. | [optional] 
-**UseStartTLS** | Pointer to **bool** | Connects to the LDAP data store using secure StartTLS encryption. The default value is false. | [optional] 
+**Name** | Pointer to **string** | The data store name with a unique value across all data sources. Omitting this attribute will set the value to a combination of the hostname(s) and the principal. | [optional] 
+**HostnamesTags** | Pointer to [**[]LdapTagConfig**](LdapTagConfig.md) | The set of host names and associated tags for this LDAP data store. This is required if &#39;hostnames&#39; is not provided. | [optional] 
 **RetryFailedOperations** | Pointer to **bool** | Indicates whether failed operations should be retried. The default is false. | [optional] 
 **TestOnBorrow** | Pointer to **bool** | Indicates whether objects are validated before being borrowed from the pool. | [optional] 
 **TestOnReturn** | Pointer to **bool** | Indicates whether objects are validated before being returned to the pool. | [optional] 
@@ -28,11 +27,11 @@ Name | Type | Description | Notes
 **TimeBetweenEvictions** | Pointer to **int64** | The frequency, in milliseconds, that the evictor cleans up the connections in the pool. A value of -1 disables the evictor. Omitting this attribute will set the value to the default value. | [optional] 
 **ReadTimeout** | Pointer to **int64** | The maximum number of milliseconds a connection waits for a response to be returned before producing an error. A value of -1 causes the connection to wait indefinitely. Omitting this attribute will set the value to the default value. | [optional] 
 **ConnectionTimeout** | Pointer to **int64** | The maximum number of milliseconds that a connection attempt should be allowed to continue before returning an error. A value of -1 causes the pool to wait indefinitely. Omitting this attribute will set the value to the default value. | [optional] 
+**BinaryAttributes** | Pointer to **[]string** | The list of LDAP attributes to be handled as binary data. | [optional] 
 **DnsTtl** | Pointer to **int64** | The maximum time in milliseconds that DNS information are cached. Omitting this attribute will set the value to the default value. | [optional] 
 **LdapDnsSrvPrefix** | Pointer to **string** | The prefix value used to discover LDAP DNS SRV record. Omitting this attribute will set the value to the default value. | [optional] 
 **LdapsDnsSrvPrefix** | Pointer to **string** | The prefix value used to discover LDAPs DNS SRV record. Omitting this attribute will set the value to the default value. | [optional] 
-**BinaryAttributes** | Pointer to **[]string** | The list of LDAP attributes to be handled as binary data. | [optional] 
-**LastModified** | Pointer to **time.Time** | The time at which the datastore instance was last changed. This property is read only and is ignored on PUT and POST requests. | [optional] 
+**UseStartTLS** | Pointer to **bool** | Connects to the LDAP data store using secure StartTLS encryption. The default value is false. | [optional] 
 
 ## Methods
 
@@ -52,31 +51,6 @@ will change when the set of required properties is changed
 NewLdapDataStoreWithDefaults instantiates a new LdapDataStore object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHostnamesTags
-
-`func (o *LdapDataStore) GetHostnamesTags() []LdapTagConfig`
-
-GetHostnamesTags returns the HostnamesTags field if non-nil, zero value otherwise.
-
-### GetHostnamesTagsOk
-
-`func (o *LdapDataStore) GetHostnamesTagsOk() (*[]LdapTagConfig, bool)`
-
-GetHostnamesTagsOk returns a tuple with the HostnamesTags field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHostnamesTags
-
-`func (o *LdapDataStore) SetHostnamesTags(v []LdapTagConfig)`
-
-SetHostnamesTags sets HostnamesTags field to given value.
-
-### HasHostnamesTags
-
-`func (o *LdapDataStore) HasHostnamesTags() bool`
-
-HasHostnamesTags returns a boolean if a field has been set.
 
 ### GetHostnames
 
@@ -102,31 +76,6 @@ SetHostnames sets Hostnames field to given value.
 `func (o *LdapDataStore) HasHostnames() bool`
 
 HasHostnames returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *LdapDataStore) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *LdapDataStore) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *LdapDataStore) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *LdapDataStore) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetLdapType
 
@@ -348,30 +297,55 @@ SetFollowLDAPReferrals sets FollowLDAPReferrals field to given value.
 
 HasFollowLDAPReferrals returns a boolean if a field has been set.
 
-### GetUseStartTLS
+### GetName
 
-`func (o *LdapDataStore) GetUseStartTLS() bool`
+`func (o *LdapDataStore) GetName() string`
 
-GetUseStartTLS returns the UseStartTLS field if non-nil, zero value otherwise.
+GetName returns the Name field if non-nil, zero value otherwise.
 
-### GetUseStartTLSOk
+### GetNameOk
 
-`func (o *LdapDataStore) GetUseStartTLSOk() (*bool, bool)`
+`func (o *LdapDataStore) GetNameOk() (*string, bool)`
 
-GetUseStartTLSOk returns a tuple with the UseStartTLS field if it's non-nil, zero value otherwise
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUseStartTLS
+### SetName
 
-`func (o *LdapDataStore) SetUseStartTLS(v bool)`
+`func (o *LdapDataStore) SetName(v string)`
 
-SetUseStartTLS sets UseStartTLS field to given value.
+SetName sets Name field to given value.
 
-### HasUseStartTLS
+### HasName
 
-`func (o *LdapDataStore) HasUseStartTLS() bool`
+`func (o *LdapDataStore) HasName() bool`
 
-HasUseStartTLS returns a boolean if a field has been set.
+HasName returns a boolean if a field has been set.
+
+### GetHostnamesTags
+
+`func (o *LdapDataStore) GetHostnamesTags() []LdapTagConfig`
+
+GetHostnamesTags returns the HostnamesTags field if non-nil, zero value otherwise.
+
+### GetHostnamesTagsOk
+
+`func (o *LdapDataStore) GetHostnamesTagsOk() (*[]LdapTagConfig, bool)`
+
+GetHostnamesTagsOk returns a tuple with the HostnamesTags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHostnamesTags
+
+`func (o *LdapDataStore) SetHostnamesTags(v []LdapTagConfig)`
+
+SetHostnamesTags sets HostnamesTags field to given value.
+
+### HasHostnamesTags
+
+`func (o *LdapDataStore) HasHostnamesTags() bool`
+
+HasHostnamesTags returns a boolean if a field has been set.
 
 ### GetRetryFailedOperations
 
@@ -648,6 +622,31 @@ SetConnectionTimeout sets ConnectionTimeout field to given value.
 
 HasConnectionTimeout returns a boolean if a field has been set.
 
+### GetBinaryAttributes
+
+`func (o *LdapDataStore) GetBinaryAttributes() []string`
+
+GetBinaryAttributes returns the BinaryAttributes field if non-nil, zero value otherwise.
+
+### GetBinaryAttributesOk
+
+`func (o *LdapDataStore) GetBinaryAttributesOk() (*[]string, bool)`
+
+GetBinaryAttributesOk returns a tuple with the BinaryAttributes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBinaryAttributes
+
+`func (o *LdapDataStore) SetBinaryAttributes(v []string)`
+
+SetBinaryAttributes sets BinaryAttributes field to given value.
+
+### HasBinaryAttributes
+
+`func (o *LdapDataStore) HasBinaryAttributes() bool`
+
+HasBinaryAttributes returns a boolean if a field has been set.
+
 ### GetDnsTtl
 
 `func (o *LdapDataStore) GetDnsTtl() int64`
@@ -723,55 +722,30 @@ SetLdapsDnsSrvPrefix sets LdapsDnsSrvPrefix field to given value.
 
 HasLdapsDnsSrvPrefix returns a boolean if a field has been set.
 
-### GetBinaryAttributes
+### GetUseStartTLS
 
-`func (o *LdapDataStore) GetBinaryAttributes() []string`
+`func (o *LdapDataStore) GetUseStartTLS() bool`
 
-GetBinaryAttributes returns the BinaryAttributes field if non-nil, zero value otherwise.
+GetUseStartTLS returns the UseStartTLS field if non-nil, zero value otherwise.
 
-### GetBinaryAttributesOk
+### GetUseStartTLSOk
 
-`func (o *LdapDataStore) GetBinaryAttributesOk() (*[]string, bool)`
+`func (o *LdapDataStore) GetUseStartTLSOk() (*bool, bool)`
 
-GetBinaryAttributesOk returns a tuple with the BinaryAttributes field if it's non-nil, zero value otherwise
+GetUseStartTLSOk returns a tuple with the UseStartTLS field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBinaryAttributes
+### SetUseStartTLS
 
-`func (o *LdapDataStore) SetBinaryAttributes(v []string)`
+`func (o *LdapDataStore) SetUseStartTLS(v bool)`
 
-SetBinaryAttributes sets BinaryAttributes field to given value.
+SetUseStartTLS sets UseStartTLS field to given value.
 
-### HasBinaryAttributes
+### HasUseStartTLS
 
-`func (o *LdapDataStore) HasBinaryAttributes() bool`
+`func (o *LdapDataStore) HasUseStartTLS() bool`
 
-HasBinaryAttributes returns a boolean if a field has been set.
-
-### GetLastModified
-
-`func (o *LdapDataStore) GetLastModified() time.Time`
-
-GetLastModified returns the LastModified field if non-nil, zero value otherwise.
-
-### GetLastModifiedOk
-
-`func (o *LdapDataStore) GetLastModifiedOk() (*time.Time, bool)`
-
-GetLastModifiedOk returns a tuple with the LastModified field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastModified
-
-`func (o *LdapDataStore) SetLastModified(v time.Time)`
-
-SetLastModified sets LastModified field to given value.
-
-### HasLastModified
-
-`func (o *LdapDataStore) HasLastModified() bool`
-
-HasLastModified returns a boolean if a field has been set.
+HasUseStartTLS returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

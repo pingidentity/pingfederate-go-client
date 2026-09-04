@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] 
-**CreationBufferDays** | **int64** | Buffer days before key pair expiration for creation of a new key pair. | 
-**ActivationBufferDays** | **int64** | Buffer days before key pair expiration for activation of the new key pair. | 
 **ValidDays** | Pointer to **int64** | Valid days for the new key pair to be created. If this property is unset, the validity days of the original key pair will be used. | [optional] 
-**KeyAlgorithm** | Pointer to **string** | Key algorithm to be used while creating a new key pair. If this property is unset, the key algorithm of the original key pair will be used. Supported algorithms are available through the /keyPairs/keyAlgorithms endpoint. | [optional] 
 **KeySize** | Pointer to **int64** | Key size, in bits. If this property is unset, the key size of the original key pair will be used. Supported key sizes are available through the /keyPairs/keyAlgorithms endpoint. | [optional] 
 **SignatureAlgorithm** | Pointer to **string** | Required if the original key pair used SHA1 algorithm. If this property is unset, the default signature algorithm of the original key pair will be used. Supported signature algorithms are available through the /keyPairs/keyAlgorithms endpoint. | [optional] 
+**CreationBufferDays** | **int64** | Buffer days before key pair expiration for creation of a new key pair. | 
+**ActivationBufferDays** | **int64** | Buffer days before key pair expiration for activation of the new key pair. | 
+**KeyAlgorithm** | Pointer to **string** | Key algorithm to be used while creating a new key pair. If this property is unset, the key algorithm of the original key pair will be used. Supported algorithms are available through the /keyPairs/keyAlgorithms endpoint. | [optional] 
 
 ## Methods
 
@@ -56,46 +56,6 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
-### GetCreationBufferDays
-
-`func (o *KeyPairRotationSettings) GetCreationBufferDays() int64`
-
-GetCreationBufferDays returns the CreationBufferDays field if non-nil, zero value otherwise.
-
-### GetCreationBufferDaysOk
-
-`func (o *KeyPairRotationSettings) GetCreationBufferDaysOk() (*int64, bool)`
-
-GetCreationBufferDaysOk returns a tuple with the CreationBufferDays field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreationBufferDays
-
-`func (o *KeyPairRotationSettings) SetCreationBufferDays(v int64)`
-
-SetCreationBufferDays sets CreationBufferDays field to given value.
-
-
-### GetActivationBufferDays
-
-`func (o *KeyPairRotationSettings) GetActivationBufferDays() int64`
-
-GetActivationBufferDays returns the ActivationBufferDays field if non-nil, zero value otherwise.
-
-### GetActivationBufferDaysOk
-
-`func (o *KeyPairRotationSettings) GetActivationBufferDaysOk() (*int64, bool)`
-
-GetActivationBufferDaysOk returns a tuple with the ActivationBufferDays field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetActivationBufferDays
-
-`func (o *KeyPairRotationSettings) SetActivationBufferDays(v int64)`
-
-SetActivationBufferDays sets ActivationBufferDays field to given value.
-
-
 ### GetValidDays
 
 `func (o *KeyPairRotationSettings) GetValidDays() int64`
@@ -120,31 +80,6 @@ SetValidDays sets ValidDays field to given value.
 `func (o *KeyPairRotationSettings) HasValidDays() bool`
 
 HasValidDays returns a boolean if a field has been set.
-
-### GetKeyAlgorithm
-
-`func (o *KeyPairRotationSettings) GetKeyAlgorithm() string`
-
-GetKeyAlgorithm returns the KeyAlgorithm field if non-nil, zero value otherwise.
-
-### GetKeyAlgorithmOk
-
-`func (o *KeyPairRotationSettings) GetKeyAlgorithmOk() (*string, bool)`
-
-GetKeyAlgorithmOk returns a tuple with the KeyAlgorithm field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetKeyAlgorithm
-
-`func (o *KeyPairRotationSettings) SetKeyAlgorithm(v string)`
-
-SetKeyAlgorithm sets KeyAlgorithm field to given value.
-
-### HasKeyAlgorithm
-
-`func (o *KeyPairRotationSettings) HasKeyAlgorithm() bool`
-
-HasKeyAlgorithm returns a boolean if a field has been set.
 
 ### GetKeySize
 
@@ -195,6 +130,71 @@ SetSignatureAlgorithm sets SignatureAlgorithm field to given value.
 `func (o *KeyPairRotationSettings) HasSignatureAlgorithm() bool`
 
 HasSignatureAlgorithm returns a boolean if a field has been set.
+
+### GetCreationBufferDays
+
+`func (o *KeyPairRotationSettings) GetCreationBufferDays() int64`
+
+GetCreationBufferDays returns the CreationBufferDays field if non-nil, zero value otherwise.
+
+### GetCreationBufferDaysOk
+
+`func (o *KeyPairRotationSettings) GetCreationBufferDaysOk() (*int64, bool)`
+
+GetCreationBufferDaysOk returns a tuple with the CreationBufferDays field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreationBufferDays
+
+`func (o *KeyPairRotationSettings) SetCreationBufferDays(v int64)`
+
+SetCreationBufferDays sets CreationBufferDays field to given value.
+
+
+### GetActivationBufferDays
+
+`func (o *KeyPairRotationSettings) GetActivationBufferDays() int64`
+
+GetActivationBufferDays returns the ActivationBufferDays field if non-nil, zero value otherwise.
+
+### GetActivationBufferDaysOk
+
+`func (o *KeyPairRotationSettings) GetActivationBufferDaysOk() (*int64, bool)`
+
+GetActivationBufferDaysOk returns a tuple with the ActivationBufferDays field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetActivationBufferDays
+
+`func (o *KeyPairRotationSettings) SetActivationBufferDays(v int64)`
+
+SetActivationBufferDays sets ActivationBufferDays field to given value.
+
+
+### GetKeyAlgorithm
+
+`func (o *KeyPairRotationSettings) GetKeyAlgorithm() string`
+
+GetKeyAlgorithm returns the KeyAlgorithm field if non-nil, zero value otherwise.
+
+### GetKeyAlgorithmOk
+
+`func (o *KeyPairRotationSettings) GetKeyAlgorithmOk() (*string, bool)`
+
+GetKeyAlgorithmOk returns a tuple with the KeyAlgorithm field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKeyAlgorithm
+
+`func (o *KeyPairRotationSettings) SetKeyAlgorithm(v string)`
+
+SetKeyAlgorithm sets KeyAlgorithm field to given value.
+
+### HasKeyAlgorithm
+
+`func (o *KeyPairRotationSettings) HasKeyAlgorithm() bool`
+
+HasKeyAlgorithm returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

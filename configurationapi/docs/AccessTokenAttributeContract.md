@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CoreAttributes** | Pointer to [**[]AccessTokenAttribute**](AccessTokenAttribute.md) | A list of core token attributes that are associated with the access token management plugin type. This field is read-only and is ignored on POST/PUT. | [optional] 
 **ExtendedAttributes** | Pointer to [**[]AccessTokenAttribute**](AccessTokenAttribute.md) | A list of additional token attributes that are associated with this access token management plugin instance. | [optional] 
+**Inherited** | Pointer to **bool** | Whether this attribute contract is inherited from its parent instance. If true, the rest of the properties in this model become read-only. The default value is false. | [optional] 
 **DefaultSubjectAttribute** | Pointer to **string** | Default subject attribute to use for audit logging when validating the access token. Blank value means to use USER_KEY attribute value after grant lookup. | [optional] 
 
 ## Methods
@@ -76,6 +77,31 @@ SetExtendedAttributes sets ExtendedAttributes field to given value.
 `func (o *AccessTokenAttributeContract) HasExtendedAttributes() bool`
 
 HasExtendedAttributes returns a boolean if a field has been set.
+
+### GetInherited
+
+`func (o *AccessTokenAttributeContract) GetInherited() bool`
+
+GetInherited returns the Inherited field if non-nil, zero value otherwise.
+
+### GetInheritedOk
+
+`func (o *AccessTokenAttributeContract) GetInheritedOk() (*bool, bool)`
+
+GetInheritedOk returns a tuple with the Inherited field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInherited
+
+`func (o *AccessTokenAttributeContract) SetInherited(v bool)`
+
+SetInherited sets Inherited field to given value.
+
+### HasInherited
+
+`func (o *AccessTokenAttributeContract) HasInherited() bool`
+
+HasInherited returns a boolean if a field has been set.
 
 ### GetDefaultSubjectAttribute
 

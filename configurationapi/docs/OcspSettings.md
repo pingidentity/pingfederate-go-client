@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **RequesterAddNonce** | Pointer to **bool** | Do not allow responder to use cached responses. This setting defaults to disabled. | [optional] 
-**ResponderUrl** | Pointer to **string** | Default responder URL. This URL is used if the certificate being checked does not specify an OCSP responder URL. | [optional] 
-**ResponderCertReference** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
+**ActionOnResponderUnavailable** | Pointer to **string** | Action on responder unavailable. This value defaults to  \&quot;CONTINUE\&quot;. | [optional] 
+**ActionOnStatusUnknown** | Pointer to **string** | Action on status unknown. This value defaults to  \&quot;FAIL\&quot;. | [optional] 
+**ActionOnUnsuccessfulResponse** | Pointer to **string** | Action on unsuccessful response. This value defaults to  \&quot;FAIL\&quot;. | [optional] 
 **CurrentUpdateGracePeriod** | Pointer to **int64** | Current update grace period in minutes. This value defaults to \&quot;5\&quot;. | [optional] 
 **NextUpdateGracePeriod** | Pointer to **int64** | Next update grace period in minutes. This value defaults to \&quot;5\&quot;. | [optional] 
 **ResponseCachePeriod** | Pointer to **int64** | Response cache period in hours. This value defaults to \&quot;48\&quot;. | [optional] 
 **ResponderTimeout** | Pointer to **int64** | Responder connection timeout in seconds. This value defaults to \&quot;5\&quot;. | [optional] 
-**ActionOnResponderUnavailable** | Pointer to **string** | Action on responder unavailable. This value defaults to  \&quot;CONTINUE\&quot;. | [optional] 
-**ActionOnStatusUnknown** | Pointer to **string** | Action on status unknown. This value defaults to  \&quot;FAIL\&quot;. | [optional] 
-**ActionOnUnsuccessfulResponse** | Pointer to **string** | Action on unsuccessful response. This value defaults to  \&quot;FAIL\&quot;. | [optional] 
+**ResponderUrl** | Pointer to **string** | Default responder URL. This URL is used if the certificate being checked does not specify an OCSP responder URL. | [optional] 
+**ResponderCertReference** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 
 ## Methods
 
@@ -59,55 +59,80 @@ SetRequesterAddNonce sets RequesterAddNonce field to given value.
 
 HasRequesterAddNonce returns a boolean if a field has been set.
 
-### GetResponderUrl
+### GetActionOnResponderUnavailable
 
-`func (o *OcspSettings) GetResponderUrl() string`
+`func (o *OcspSettings) GetActionOnResponderUnavailable() string`
 
-GetResponderUrl returns the ResponderUrl field if non-nil, zero value otherwise.
+GetActionOnResponderUnavailable returns the ActionOnResponderUnavailable field if non-nil, zero value otherwise.
 
-### GetResponderUrlOk
+### GetActionOnResponderUnavailableOk
 
-`func (o *OcspSettings) GetResponderUrlOk() (*string, bool)`
+`func (o *OcspSettings) GetActionOnResponderUnavailableOk() (*string, bool)`
 
-GetResponderUrlOk returns a tuple with the ResponderUrl field if it's non-nil, zero value otherwise
+GetActionOnResponderUnavailableOk returns a tuple with the ActionOnResponderUnavailable field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetResponderUrl
+### SetActionOnResponderUnavailable
 
-`func (o *OcspSettings) SetResponderUrl(v string)`
+`func (o *OcspSettings) SetActionOnResponderUnavailable(v string)`
 
-SetResponderUrl sets ResponderUrl field to given value.
+SetActionOnResponderUnavailable sets ActionOnResponderUnavailable field to given value.
 
-### HasResponderUrl
+### HasActionOnResponderUnavailable
 
-`func (o *OcspSettings) HasResponderUrl() bool`
+`func (o *OcspSettings) HasActionOnResponderUnavailable() bool`
 
-HasResponderUrl returns a boolean if a field has been set.
+HasActionOnResponderUnavailable returns a boolean if a field has been set.
 
-### GetResponderCertReference
+### GetActionOnStatusUnknown
 
-`func (o *OcspSettings) GetResponderCertReference() ResourceLink`
+`func (o *OcspSettings) GetActionOnStatusUnknown() string`
 
-GetResponderCertReference returns the ResponderCertReference field if non-nil, zero value otherwise.
+GetActionOnStatusUnknown returns the ActionOnStatusUnknown field if non-nil, zero value otherwise.
 
-### GetResponderCertReferenceOk
+### GetActionOnStatusUnknownOk
 
-`func (o *OcspSettings) GetResponderCertReferenceOk() (*ResourceLink, bool)`
+`func (o *OcspSettings) GetActionOnStatusUnknownOk() (*string, bool)`
 
-GetResponderCertReferenceOk returns a tuple with the ResponderCertReference field if it's non-nil, zero value otherwise
+GetActionOnStatusUnknownOk returns a tuple with the ActionOnStatusUnknown field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetResponderCertReference
+### SetActionOnStatusUnknown
 
-`func (o *OcspSettings) SetResponderCertReference(v ResourceLink)`
+`func (o *OcspSettings) SetActionOnStatusUnknown(v string)`
 
-SetResponderCertReference sets ResponderCertReference field to given value.
+SetActionOnStatusUnknown sets ActionOnStatusUnknown field to given value.
 
-### HasResponderCertReference
+### HasActionOnStatusUnknown
 
-`func (o *OcspSettings) HasResponderCertReference() bool`
+`func (o *OcspSettings) HasActionOnStatusUnknown() bool`
 
-HasResponderCertReference returns a boolean if a field has been set.
+HasActionOnStatusUnknown returns a boolean if a field has been set.
+
+### GetActionOnUnsuccessfulResponse
+
+`func (o *OcspSettings) GetActionOnUnsuccessfulResponse() string`
+
+GetActionOnUnsuccessfulResponse returns the ActionOnUnsuccessfulResponse field if non-nil, zero value otherwise.
+
+### GetActionOnUnsuccessfulResponseOk
+
+`func (o *OcspSettings) GetActionOnUnsuccessfulResponseOk() (*string, bool)`
+
+GetActionOnUnsuccessfulResponseOk returns a tuple with the ActionOnUnsuccessfulResponse field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetActionOnUnsuccessfulResponse
+
+`func (o *OcspSettings) SetActionOnUnsuccessfulResponse(v string)`
+
+SetActionOnUnsuccessfulResponse sets ActionOnUnsuccessfulResponse field to given value.
+
+### HasActionOnUnsuccessfulResponse
+
+`func (o *OcspSettings) HasActionOnUnsuccessfulResponse() bool`
+
+HasActionOnUnsuccessfulResponse returns a boolean if a field has been set.
 
 ### GetCurrentUpdateGracePeriod
 
@@ -209,80 +234,55 @@ SetResponderTimeout sets ResponderTimeout field to given value.
 
 HasResponderTimeout returns a boolean if a field has been set.
 
-### GetActionOnResponderUnavailable
+### GetResponderUrl
 
-`func (o *OcspSettings) GetActionOnResponderUnavailable() string`
+`func (o *OcspSettings) GetResponderUrl() string`
 
-GetActionOnResponderUnavailable returns the ActionOnResponderUnavailable field if non-nil, zero value otherwise.
+GetResponderUrl returns the ResponderUrl field if non-nil, zero value otherwise.
 
-### GetActionOnResponderUnavailableOk
+### GetResponderUrlOk
 
-`func (o *OcspSettings) GetActionOnResponderUnavailableOk() (*string, bool)`
+`func (o *OcspSettings) GetResponderUrlOk() (*string, bool)`
 
-GetActionOnResponderUnavailableOk returns a tuple with the ActionOnResponderUnavailable field if it's non-nil, zero value otherwise
+GetResponderUrlOk returns a tuple with the ResponderUrl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetActionOnResponderUnavailable
+### SetResponderUrl
 
-`func (o *OcspSettings) SetActionOnResponderUnavailable(v string)`
+`func (o *OcspSettings) SetResponderUrl(v string)`
 
-SetActionOnResponderUnavailable sets ActionOnResponderUnavailable field to given value.
+SetResponderUrl sets ResponderUrl field to given value.
 
-### HasActionOnResponderUnavailable
+### HasResponderUrl
 
-`func (o *OcspSettings) HasActionOnResponderUnavailable() bool`
+`func (o *OcspSettings) HasResponderUrl() bool`
 
-HasActionOnResponderUnavailable returns a boolean if a field has been set.
+HasResponderUrl returns a boolean if a field has been set.
 
-### GetActionOnStatusUnknown
+### GetResponderCertReference
 
-`func (o *OcspSettings) GetActionOnStatusUnknown() string`
+`func (o *OcspSettings) GetResponderCertReference() ResourceLink`
 
-GetActionOnStatusUnknown returns the ActionOnStatusUnknown field if non-nil, zero value otherwise.
+GetResponderCertReference returns the ResponderCertReference field if non-nil, zero value otherwise.
 
-### GetActionOnStatusUnknownOk
+### GetResponderCertReferenceOk
 
-`func (o *OcspSettings) GetActionOnStatusUnknownOk() (*string, bool)`
+`func (o *OcspSettings) GetResponderCertReferenceOk() (*ResourceLink, bool)`
 
-GetActionOnStatusUnknownOk returns a tuple with the ActionOnStatusUnknown field if it's non-nil, zero value otherwise
+GetResponderCertReferenceOk returns a tuple with the ResponderCertReference field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetActionOnStatusUnknown
+### SetResponderCertReference
 
-`func (o *OcspSettings) SetActionOnStatusUnknown(v string)`
+`func (o *OcspSettings) SetResponderCertReference(v ResourceLink)`
 
-SetActionOnStatusUnknown sets ActionOnStatusUnknown field to given value.
+SetResponderCertReference sets ResponderCertReference field to given value.
 
-### HasActionOnStatusUnknown
+### HasResponderCertReference
 
-`func (o *OcspSettings) HasActionOnStatusUnknown() bool`
+`func (o *OcspSettings) HasResponderCertReference() bool`
 
-HasActionOnStatusUnknown returns a boolean if a field has been set.
-
-### GetActionOnUnsuccessfulResponse
-
-`func (o *OcspSettings) GetActionOnUnsuccessfulResponse() string`
-
-GetActionOnUnsuccessfulResponse returns the ActionOnUnsuccessfulResponse field if non-nil, zero value otherwise.
-
-### GetActionOnUnsuccessfulResponseOk
-
-`func (o *OcspSettings) GetActionOnUnsuccessfulResponseOk() (*string, bool)`
-
-GetActionOnUnsuccessfulResponseOk returns a tuple with the ActionOnUnsuccessfulResponse field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetActionOnUnsuccessfulResponse
-
-`func (o *OcspSettings) SetActionOnUnsuccessfulResponse(v string)`
-
-SetActionOnUnsuccessfulResponse sets ActionOnUnsuccessfulResponse field to given value.
-
-### HasActionOnUnsuccessfulResponse
-
-`func (o *OcspSettings) HasActionOnUnsuccessfulResponse() bool`
-
-HasActionOnUnsuccessfulResponse returns a boolean if a field has been set.
+HasResponderCertReference returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

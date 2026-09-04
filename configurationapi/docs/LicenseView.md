@@ -18,11 +18,11 @@ Name | Type | Description | Notes
 **GracePeriod** | Pointer to **int64** | Number of days provided as grace period, past the expiration date (if applicable). | [optional] 
 **NodeLimit** | Pointer to **int64** | Maximum number of clustered nodes allowed under this license (if applicable). | [optional] 
 **LicenseGroups** | Pointer to [**[]ConnectionGroupLicenseView**](ConnectionGroupLicenseView.md) | License connection groups, if applicable. | [optional] 
-**OauthEnabled** | Pointer to **bool** | Indicates whether OAuth role is enabled for this license. | [optional] 
-**WsTrustEnabled** | Pointer to **bool** | Indicates whether WS-Trust role is enabled for this license. | [optional] 
-**ProvisioningEnabled** | Pointer to **bool** | Indicates whether Provisioning role is enabled for this license. | [optional] 
-**BridgeMode** | Pointer to **bool** | Indicates whether this license is a bridge license or not. | [optional] 
 **Features** | Pointer to [**[]LicenseFeatureView**](LicenseFeatureView.md) | Other licence features, if applicable. | [optional] 
+**BridgeMode** | Pointer to **bool** | Indicates whether this license is a bridge license or not. | [optional] 
+**WsTrustEnabled** | Pointer to **bool** | Indicates whether WS-Trust role is enabled for this license. | [optional] 
+**OauthEnabled** | Pointer to **bool** | Indicates whether OAuth role is enabled for this license. | [optional] 
+**ProvisioningEnabled** | Pointer to **bool** | Indicates whether Provisioning role is enabled for this license. | [optional] 
 
 ## Methods
 
@@ -393,80 +393,30 @@ SetLicenseGroups sets LicenseGroups field to given value.
 
 HasLicenseGroups returns a boolean if a field has been set.
 
-### GetOauthEnabled
+### GetFeatures
 
-`func (o *LicenseView) GetOauthEnabled() bool`
+`func (o *LicenseView) GetFeatures() []LicenseFeatureView`
 
-GetOauthEnabled returns the OauthEnabled field if non-nil, zero value otherwise.
+GetFeatures returns the Features field if non-nil, zero value otherwise.
 
-### GetOauthEnabledOk
+### GetFeaturesOk
 
-`func (o *LicenseView) GetOauthEnabledOk() (*bool, bool)`
+`func (o *LicenseView) GetFeaturesOk() (*[]LicenseFeatureView, bool)`
 
-GetOauthEnabledOk returns a tuple with the OauthEnabled field if it's non-nil, zero value otherwise
+GetFeaturesOk returns a tuple with the Features field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetOauthEnabled
+### SetFeatures
 
-`func (o *LicenseView) SetOauthEnabled(v bool)`
+`func (o *LicenseView) SetFeatures(v []LicenseFeatureView)`
 
-SetOauthEnabled sets OauthEnabled field to given value.
+SetFeatures sets Features field to given value.
 
-### HasOauthEnabled
+### HasFeatures
 
-`func (o *LicenseView) HasOauthEnabled() bool`
+`func (o *LicenseView) HasFeatures() bool`
 
-HasOauthEnabled returns a boolean if a field has been set.
-
-### GetWsTrustEnabled
-
-`func (o *LicenseView) GetWsTrustEnabled() bool`
-
-GetWsTrustEnabled returns the WsTrustEnabled field if non-nil, zero value otherwise.
-
-### GetWsTrustEnabledOk
-
-`func (o *LicenseView) GetWsTrustEnabledOk() (*bool, bool)`
-
-GetWsTrustEnabledOk returns a tuple with the WsTrustEnabled field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWsTrustEnabled
-
-`func (o *LicenseView) SetWsTrustEnabled(v bool)`
-
-SetWsTrustEnabled sets WsTrustEnabled field to given value.
-
-### HasWsTrustEnabled
-
-`func (o *LicenseView) HasWsTrustEnabled() bool`
-
-HasWsTrustEnabled returns a boolean if a field has been set.
-
-### GetProvisioningEnabled
-
-`func (o *LicenseView) GetProvisioningEnabled() bool`
-
-GetProvisioningEnabled returns the ProvisioningEnabled field if non-nil, zero value otherwise.
-
-### GetProvisioningEnabledOk
-
-`func (o *LicenseView) GetProvisioningEnabledOk() (*bool, bool)`
-
-GetProvisioningEnabledOk returns a tuple with the ProvisioningEnabled field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProvisioningEnabled
-
-`func (o *LicenseView) SetProvisioningEnabled(v bool)`
-
-SetProvisioningEnabled sets ProvisioningEnabled field to given value.
-
-### HasProvisioningEnabled
-
-`func (o *LicenseView) HasProvisioningEnabled() bool`
-
-HasProvisioningEnabled returns a boolean if a field has been set.
+HasFeatures returns a boolean if a field has been set.
 
 ### GetBridgeMode
 
@@ -493,30 +443,80 @@ SetBridgeMode sets BridgeMode field to given value.
 
 HasBridgeMode returns a boolean if a field has been set.
 
-### GetFeatures
+### GetWsTrustEnabled
 
-`func (o *LicenseView) GetFeatures() []LicenseFeatureView`
+`func (o *LicenseView) GetWsTrustEnabled() bool`
 
-GetFeatures returns the Features field if non-nil, zero value otherwise.
+GetWsTrustEnabled returns the WsTrustEnabled field if non-nil, zero value otherwise.
 
-### GetFeaturesOk
+### GetWsTrustEnabledOk
 
-`func (o *LicenseView) GetFeaturesOk() (*[]LicenseFeatureView, bool)`
+`func (o *LicenseView) GetWsTrustEnabledOk() (*bool, bool)`
 
-GetFeaturesOk returns a tuple with the Features field if it's non-nil, zero value otherwise
+GetWsTrustEnabledOk returns a tuple with the WsTrustEnabled field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFeatures
+### SetWsTrustEnabled
 
-`func (o *LicenseView) SetFeatures(v []LicenseFeatureView)`
+`func (o *LicenseView) SetWsTrustEnabled(v bool)`
 
-SetFeatures sets Features field to given value.
+SetWsTrustEnabled sets WsTrustEnabled field to given value.
 
-### HasFeatures
+### HasWsTrustEnabled
 
-`func (o *LicenseView) HasFeatures() bool`
+`func (o *LicenseView) HasWsTrustEnabled() bool`
 
-HasFeatures returns a boolean if a field has been set.
+HasWsTrustEnabled returns a boolean if a field has been set.
+
+### GetOauthEnabled
+
+`func (o *LicenseView) GetOauthEnabled() bool`
+
+GetOauthEnabled returns the OauthEnabled field if non-nil, zero value otherwise.
+
+### GetOauthEnabledOk
+
+`func (o *LicenseView) GetOauthEnabledOk() (*bool, bool)`
+
+GetOauthEnabledOk returns a tuple with the OauthEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOauthEnabled
+
+`func (o *LicenseView) SetOauthEnabled(v bool)`
+
+SetOauthEnabled sets OauthEnabled field to given value.
+
+### HasOauthEnabled
+
+`func (o *LicenseView) HasOauthEnabled() bool`
+
+HasOauthEnabled returns a boolean if a field has been set.
+
+### GetProvisioningEnabled
+
+`func (o *LicenseView) GetProvisioningEnabled() bool`
+
+GetProvisioningEnabled returns the ProvisioningEnabled field if non-nil, zero value otherwise.
+
+### GetProvisioningEnabledOk
+
+`func (o *LicenseView) GetProvisioningEnabledOk() (*bool, bool)`
+
+GetProvisioningEnabledOk returns a tuple with the ProvisioningEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProvisioningEnabled
+
+`func (o *LicenseView) SetProvisioningEnabled(v bool)`
+
+SetProvisioningEnabled sets ProvisioningEnabled field to given value.
+
+### HasProvisioningEnabled
+
+`func (o *LicenseView) HasProvisioningEnabled() bool`
+
+HasProvisioningEnabled returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

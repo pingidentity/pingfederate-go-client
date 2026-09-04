@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AttributeRules** | Pointer to [**AttributeRules**](AttributeRules.md) |  | [optional] 
 **Fragment** | [**ResourceLink**](ResourceLink.md) |  | 
+**AttributeRules** | Pointer to [**AttributeRules**](AttributeRules.md) |  | [optional] 
 **FragmentMapping** | Pointer to [**AttributeMapping**](AttributeMapping.md) |  | [optional] 
 
 ## Methods
@@ -26,6 +26,26 @@ will change when the set of required properties is changed
 NewFragmentPolicyActionWithDefaults instantiates a new FragmentPolicyAction object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetFragment
+
+`func (o *FragmentPolicyAction) GetFragment() ResourceLink`
+
+GetFragment returns the Fragment field if non-nil, zero value otherwise.
+
+### GetFragmentOk
+
+`func (o *FragmentPolicyAction) GetFragmentOk() (*ResourceLink, bool)`
+
+GetFragmentOk returns a tuple with the Fragment field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFragment
+
+`func (o *FragmentPolicyAction) SetFragment(v ResourceLink)`
+
+SetFragment sets Fragment field to given value.
+
 
 ### GetAttributeRules
 
@@ -51,26 +71,6 @@ SetAttributeRules sets AttributeRules field to given value.
 `func (o *FragmentPolicyAction) HasAttributeRules() bool`
 
 HasAttributeRules returns a boolean if a field has been set.
-
-### GetFragment
-
-`func (o *FragmentPolicyAction) GetFragment() ResourceLink`
-
-GetFragment returns the Fragment field if non-nil, zero value otherwise.
-
-### GetFragmentOk
-
-`func (o *FragmentPolicyAction) GetFragmentOk() (*ResourceLink, bool)`
-
-GetFragmentOk returns a tuple with the Fragment field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFragment
-
-`func (o *FragmentPolicyAction) SetFragment(v ResourceLink)`
-
-SetFragment sets Fragment field to given value.
-
 
 ### GetFragmentMapping
 
