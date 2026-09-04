@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Items** | Pointer to [**[]DataStoreAggregation**](DataStoreAggregation.md) | The actual list of data stores. | [optional] 
+**Items** | Pointer to [**[]DataStore**](DataStore.md) | The actual list of data stores. | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetItems
 
-`func (o *DataStores) GetItems() []DataStoreAggregation`
+`func (o *DataStores) GetItems() []DataStore`
 
 GetItems returns the Items field if non-nil, zero value otherwise.
 
 ### GetItemsOk
 
-`func (o *DataStores) GetItemsOk() (*[]DataStoreAggregation, bool)`
+`func (o *DataStores) GetItemsOk() (*[]DataStore, bool)`
 
 GetItemsOk returns a tuple with the Items field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetItems
 
-`func (o *DataStores) SetItems(v []DataStoreAggregation)`
+`func (o *DataStores) SetItems(v []DataStore)`
 
 SetItems sets Items field to given value.
 

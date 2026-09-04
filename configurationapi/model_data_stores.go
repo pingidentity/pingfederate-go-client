@@ -22,7 +22,7 @@ var _ MappedNullable = &DataStores{}
 // DataStores A collection of data stores.
 type DataStores struct {
 	// The actual list of data stores.
-	Items []DataStoreAggregation `json:"items,omitempty" tfsdk:"items"`
+	Items []DataStore `json:"items,omitempty" tfsdk:"items"`
 }
 
 // NewDataStores instantiates a new DataStores object
@@ -43,9 +43,9 @@ func NewDataStoresWithDefaults() *DataStores {
 }
 
 // GetItems returns the Items field value if set, zero value otherwise.
-func (o *DataStores) GetItems() []DataStoreAggregation {
+func (o *DataStores) GetItems() []DataStore {
 	if o == nil || IsNil(o.Items) {
-		var ret []DataStoreAggregation
+		var ret []DataStore
 		return ret
 	}
 	return o.Items
@@ -53,7 +53,7 @@ func (o *DataStores) GetItems() []DataStoreAggregation {
 
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DataStores) GetItemsOk() ([]DataStoreAggregation, bool) {
+func (o *DataStores) GetItemsOk() ([]DataStore, bool) {
 	if o == nil || IsNil(o.Items) {
 		return nil, false
 	}
@@ -69,8 +69,8 @@ func (o *DataStores) HasItems() bool {
 	return false
 }
 
-// SetItems gets a reference to the given []DataStoreAggregation and assigns it to the Items field.
-func (o *DataStores) SetItems(v []DataStoreAggregation) {
+// SetItems gets a reference to the given []DataStore and assigns it to the Items field.
+func (o *DataStores) SetItems(v []DataStore) {
 	o.Items = v
 }
 

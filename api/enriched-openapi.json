@@ -5798,7 +5798,8 @@
                 "type": "object",
                 "properties": {
                   "file": {
-                    "$ref": "#/components/schemas/FormDataContentDisposition"
+                    "type": "string",
+                    "format": "binary"
                   }
                 }
               }
@@ -30346,7 +30347,7 @@
             "type": "array",
             "description": "The actual list of data stores.",
             "items": {
-              "$ref": "#/components/schemas/DataStoreAggregation"
+              "$ref": "#/components/schemas/DataStore"
             }
           }
         },

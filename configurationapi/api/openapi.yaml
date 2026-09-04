@@ -15903,6 +15903,11 @@ components:
       description: The set of attributes used to configure a data store.
       discriminator:
         propertyName: type
+      example:
+        maskAttributeValues: true
+        id: id
+        lastModified: 2000-01-23T04:56:07.000+00:00
+        type: LDAP
       properties:
         maskAttributeValues:
           description: Whether attribute values should be masked in the log.
@@ -24470,13 +24475,19 @@ components:
       description: A collection of data stores.
       example:
         items:
-        - null
-        - null
+        - maskAttributeValues: true
+          id: id
+          lastModified: 2000-01-23T04:56:07.000+00:00
+          type: LDAP
+        - maskAttributeValues: true
+          id: id
+          lastModified: 2000-01-23T04:56:07.000+00:00
+          type: LDAP
       properties:
         items:
           description: The actual list of data stores.
           items:
-            $ref: '#/components/schemas/DataStoreAggregation'
+            $ref: '#/components/schemas/DataStore'
           type: array
       type: object
     ActionResult:
@@ -34566,7 +34577,8 @@ components:
     importConfigArchive_request:
       properties:
         file:
-          $ref: '#/components/schemas/FormDataContentDisposition'
+          format: binary
+          type: string
       type: object
   securitySchemes:
     BasicAuth:

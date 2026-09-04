@@ -18,6 +18,7 @@ import (
 	"io"
 	"net/http"
 	"net/url"
+	"os"
 )
 
 // ConfigArchiveAPIService ConfigArchiveAPI service
@@ -115,7 +116,7 @@ type ApiImportConfigArchiveRequest struct {
 	forceImport            *bool
 	forceUnsupportedImport *bool
 	reencryptData          *bool
-	file                   *FormDataContentDisposition
+	file                   *os.File
 }
 
 func (r ApiImportConfigArchiveRequest) ForceImport(forceImport bool) ApiImportConfigArchiveRequest {
@@ -135,8 +136,8 @@ func (r ApiImportConfigArchiveRequest) ReencryptData(reencryptData bool) ApiImpo
 	return r
 }
 
-func (r ApiImportConfigArchiveRequest) File(file FormDataContentDisposition) ApiImportConfigArchiveRequest {
-	r.file = &file
+func (r ApiImportConfigArchiveRequest) File(file *os.File) ApiImportConfigArchiveRequest {
+	r.file = file
 	return r
 }
 
@@ -229,12 +230,21 @@ func (a *ConfigArchiveAPIService) internalImportConfigArchiveExecute(r ApiImport
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.file != nil {
-		paramJson, err := parameterToJson(*r.file)
-		if err != nil {
-			return localVarReturnValue, nil, err
-		}
-		localVarFormParams.Add("file", paramJson)
+	var fileLocalVarFormFileName string
+	var fileLocalVarFileName string
+	var fileLocalVarFileBytes []byte
+
+	fileLocalVarFormFileName = "file"
+
+	fileLocalVarFile := r.file
+
+	if fileLocalVarFile != nil {
+		fbs, _ := io.ReadAll(fileLocalVarFile)
+
+		fileLocalVarFileBytes = fbs
+		fileLocalVarFileName = fileLocalVarFile.Name()
+		fileLocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: fileLocalVarFileBytes, fileName: fileLocalVarFileName, formFileName: fileLocalVarFormFileName})
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
