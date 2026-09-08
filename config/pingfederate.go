@@ -10,6 +10,7 @@ package config
 import (
 	"context"
 	"fmt"
+	"io"
 	"log/slog"
 	"net/http"
 
@@ -173,6 +174,19 @@ func (c *Configuration) WithAuthorizationCodeRedirectURI(redirectURI Authorizati
 	return c
 }
 
+// WithAuthorizationCodeOutput sets the writer used by the default authorization_code browser
+// handler to print its progress messages. It is honored only when no custom OnOpenBrowser
+// handler is set; once OnOpenBrowser is set, that handler is solely responsible for its own
+// output and this writer is ignored. Pass io.Discard to silence the default handler's output, or
+// nil to restore the default (os.Stdout).
+func (c *Configuration) WithAuthorizationCodeOutput(w io.Writer) *Configuration {
+	if c.Auth.AuthorizationCode == nil {
+		c.Auth.AuthorizationCode = &AuthorizationCode{}
+	}
+	c.Auth.AuthorizationCode.Output = w
+	return c
+}
+
 // WithDeviceCodeClientID sets the OAuth2 client ID for the device_code grant type.
 func (c *Configuration) WithDeviceCodeClientID(clientID string) *Configuration {
 	if c.Auth.DeviceCode == nil {
@@ -188,6 +202,19 @@ func (c *Configuration) WithDeviceCodeScopes(scopes []string) *Configuration {
 		c.Auth.DeviceCode = &DeviceCode{}
 	}
 	c.Auth.DeviceCode.DeviceCodeScopes = &scopes
+	return c
+}
+
+// WithDeviceCodeOutput sets the writer used by the default device_code prompt handler to print
+// its progress messages. It is honored only when no custom OnDisplayPrompt handler is set; once
+// OnDisplayPrompt is set, that handler is solely responsible for its own output and this writer
+// is ignored. Pass io.Discard to silence the default handler's output, or nil to restore the
+// default (os.Stdout).
+func (c *Configuration) WithDeviceCodeOutput(w io.Writer) *Configuration {
+	if c.Auth.DeviceCode == nil {
+		c.Auth.DeviceCode = &DeviceCode{}
+	}
+	c.Auth.DeviceCode.Output = w
 	return c
 }
 

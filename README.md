@@ -78,6 +78,18 @@ refreshes) an existing token rather than prompting for login again. The keychain
 derived from the runtime base URL, client ID, and grant type. Set the storage type to
 `config.StorageTypeNone` to disable caching.
 
+### Output control
+
+The default handlers for the authorization_code and device_code flows
+(`DefaultAuthorizationCodeBrowserHandler`, `DefaultDeviceCodePromptHandler`) print progress
+messages such as the authorization URL and device code to standard output. To redirect or
+silence this output without reimplementing the handlers, set `WithAuthorizationCodeOutput(w)` or
+`WithDeviceCodeOutput(w)` on the configuration builder (for example, `io.Discard` to silence it
+entirely), or call `DefaultAuthorizationCodeBrowserHandlerTo(w)` / `DefaultDeviceCodePromptHandlerTo(w)`
+directly when building a custom `OnOpenBrowser` or `OnDisplayPrompt` handler. Output configured
+this way only applies when no custom handler is set; once `OnOpenBrowser` or `OnDisplayPrompt` is
+provided, that handler is fully responsible for its own output.
+
 ### Examples
 
 Runnable examples for each grant type live under [`examples/`](examples/). See

@@ -4,6 +4,7 @@ package config_test
 
 import (
 	"context"
+	"io"
 	"strings"
 	"testing"
 
@@ -29,6 +30,19 @@ func TestConfigurationBuilder(t *testing.T) {
 	}
 	if cfg.Endpoint.RuntimeBaseURL == nil || *cfg.Endpoint.RuntimeBaseURL != "https://pf.example.com:9031" {
 		t.Fatalf("runtime base URL not set correctly")
+	}
+}
+
+func TestConfigurationBuilder_Output(t *testing.T) {
+	cfg := config.NewConfiguration().
+		WithAuthorizationCodeOutput(io.Discard).
+		WithDeviceCodeOutput(io.Discard)
+
+	if cfg.Auth.AuthorizationCode == nil || cfg.Auth.AuthorizationCode.Output != io.Discard {
+		t.Fatalf("authorization code Output not set correctly")
+	}
+	if cfg.Auth.DeviceCode == nil || cfg.Auth.DeviceCode.Output != io.Discard {
+		t.Fatalf("device code Output not set correctly")
 	}
 }
 

@@ -4,6 +4,8 @@ package config
 
 import (
 	"fmt"
+	"io"
+	"os"
 
 	"github.com/pingidentity/pingfederate-go-client/v1300/utils/browser"
 )
@@ -41,6 +43,13 @@ type AuthorizationCode struct {
 	// If set, this handler is called instead of automatically opening the system browser,
 	// allowing consumers to implement custom flows such as headless operation or alternative UX.
 	OnOpenBrowser AuthURLHandler
+	// Output configures where the default browser-opening handler writes its progress messages.
+	// It is honored only when OnOpenBrowser is nil; once a custom handler is set, that handler is
+	// solely responsible for its own output, and Output is ignored. A nil Output causes the
+	// default handler to write to os.Stdout, preserving the SDK's historical behavior. Set Output
+	// to io.Discard to silence the default handler, or to any other io.Writer to capture or
+	// redirect its messages.
+	Output io.Writer
 	// CustomPageDataSuccess contains the data to display on successful authentication.
 	// If nil, default values are used. The SDK template is rendered with these values.
 	CustomPageDataSuccess *AuthResultPageData
@@ -67,50 +76,106 @@ type DeviceCode struct {
 	// If set, this handler is called instead of the default console output, allowing
 	// consumers to implement custom UX such as QR codes, notifications, or headless flows.
 	OnDisplayPrompt DeviceCodePromptHandler
+	// Output configures where the default device code prompt handler writes its progress
+	// messages. It is honored only when OnDisplayPrompt is nil; once a custom handler is set,
+	// that handler is solely responsible for its own output, and Output is ignored. A nil Output
+	// causes the default handler to write to os.Stdout, preserving the SDK's historical behavior.
+	// Set Output to io.Discard to silence the default handler, or to any other io.Writer to
+	// capture or redirect its messages.
+	Output io.Writer
+}
+
+// fprint, fprintf, and fprintln write best-effort progress messages to w, mirroring fmt.Fprint,
+// fmt.Fprintf, and fmt.Fprintln respectively. Write failures are intentionally ignored: these are
+// user-facing progress messages for an interactive login flow, and a failed write to a
+// caller-supplied Output writer should not abort authentication.
+func fprint(w io.Writer, a ...any) {
+	_, _ = fmt.Fprint(w, a...)
+}
+
+func fprintf(w io.Writer, format string, a ...any) {
+	_, _ = fmt.Fprintf(w, format, a...)
+}
+
+func fprintln(w io.Writer, a ...any) {
+	_, _ = fmt.Fprintln(w, a...)
 }
 
 // DefaultAuthorizationCodeBrowserHandler is the default handler for opening the authorization URL.
 // It attempts to open the system browser automatically and provides fallback instructions if that fails.
 // This function implements the AuthURLHandler interface and provides a consistent UX pattern.
 // Consumer projects can use this handler as a reference or directly in their own implementations.
+// Its progress messages are written to os.Stdout; use DefaultAuthorizationCodeBrowserHandlerTo, or
+// set AuthorizationCode.Output (via Configuration.WithAuthorizationCodeOutput), to redirect or
+// silence this output.
 func DefaultAuthorizationCodeBrowserHandler(authURL string) error {
-	fmt.Printf("Opening browser for authorization: %s\n", authURL)
-	if err := browser.Open(authURL); err != nil {
-		fmt.Printf("Warning: Failed to open browser automatically: %v\n", err)
-		fmt.Printf("Please open this URL in your browser manually: %s\n", authURL)
+	return DefaultAuthorizationCodeBrowserHandlerTo(nil)(authURL)
+}
+
+// DefaultAuthorizationCodeBrowserHandlerTo returns a browser-opening handler equivalent to
+// DefaultAuthorizationCodeBrowserHandler, but that writes its progress messages to w instead of
+// os.Stdout. If w is nil, the returned handler writes to os.Stdout, matching the behavior of
+// DefaultAuthorizationCodeBrowserHandler. This allows consumers to redirect or silence (using
+// io.Discard) the default handler's output without reimplementing its browser-opening logic.
+func DefaultAuthorizationCodeBrowserHandlerTo(w io.Writer) AuthURLHandler {
+	if w == nil {
+		w = os.Stdout
 	}
-	fmt.Println("Waiting for authorization callback...")
-	return nil
+	return func(authURL string) error {
+		fprintf(w, "Opening browser for authorization: %s\n", authURL)
+		if err := browser.Open(authURL); err != nil {
+			fprintf(w, "Warning: Failed to open browser automatically: %v\n", err)
+			fprintf(w, "Please open this URL in your browser manually: %s\n", authURL)
+		}
+		fprintln(w, "Waiting for authorization callback...")
+		return nil
+	}
 }
 
 // DefaultDeviceCodePromptHandler is a simple handler that displays device code prompts.
 // This function can be used by consumer projects as a reference implementation or directly.
 // It implements the DeviceCodePromptHandler interface pattern.
+// Its progress messages are written to os.Stdout; use DefaultDeviceCodePromptHandlerTo, or set
+// DeviceCode.Output (via Configuration.WithDeviceCodeOutput), to redirect or silence this output.
 func DefaultDeviceCodePromptHandler(verificationURI, userCode string) error {
-	fmt.Print(deviceAuthPromptHeader)
+	return DefaultDeviceCodePromptHandlerTo(nil)(verificationURI, userCode)
+}
 
-	// Determine which URL to use and whether to auto-open browser
-	browserAvailable := browser.CanOpen()
-	verificationURIComplete := fmt.Sprintf("%s?user_code=%s", verificationURI, userCode)
-
-	// Auto-open browser if available
-	if browserAvailable {
-		fmt.Print(deviceAuthBrowserOpeningMessage)
-		fmt.Printf(deviceAuthURLLabel, verificationURIComplete)
-		if err := browser.Open(verificationURIComplete); err != nil {
-			fmt.Printf(deviceAuthBrowserFailWarning, err)
-		}
-		fmt.Print(deviceAuthManualInstructionsHeader)
-		fmt.Printf(deviceAuthManualVisitPrompt, verificationURI)
-		fmt.Printf(deviceAuthManualCodePrompt, userCode)
-	} else {
-		// No browser available - show manual instructions
-		fmt.Printf(deviceAuthCompleteURLPrompt, verificationURIComplete)
-		fmt.Print(deviceAuthAlternativeInstructionsHeader)
-		fmt.Printf(deviceAuthManualVisitPrompt, verificationURI)
-		fmt.Printf(deviceAuthManualCodePrompt, userCode)
+// DefaultDeviceCodePromptHandlerTo returns a device code prompt handler equivalent to
+// DefaultDeviceCodePromptHandler, but that writes its progress messages to w instead of
+// os.Stdout. If w is nil, the returned handler writes to os.Stdout, matching the behavior of
+// DefaultDeviceCodePromptHandler. This allows consumers to redirect or silence (using io.Discard)
+// the default handler's output without reimplementing its prompt-display logic.
+func DefaultDeviceCodePromptHandlerTo(w io.Writer) DeviceCodePromptHandler {
+	if w == nil {
+		w = os.Stdout
 	}
+	return func(verificationURI, userCode string) error {
+		fprint(w, deviceAuthPromptHeader)
 
-	fmt.Print(deviceAuthWaitingMessage)
-	return nil
+		// Determine which URL to use and whether to auto-open browser
+		browserAvailable := browser.CanOpen()
+		verificationURIComplete := fmt.Sprintf("%s?user_code=%s", verificationURI, userCode)
+
+		// Auto-open browser if available
+		if browserAvailable {
+			fprint(w, deviceAuthBrowserOpeningMessage)
+			fprintf(w, deviceAuthURLLabel, verificationURIComplete)
+			if err := browser.Open(verificationURIComplete); err != nil {
+				fprintf(w, deviceAuthBrowserFailWarning, err)
+			}
+			fprint(w, deviceAuthManualInstructionsHeader)
+			fprintf(w, deviceAuthManualVisitPrompt, verificationURI)
+			fprintf(w, deviceAuthManualCodePrompt, userCode)
+		} else {
+			// No browser available - show manual instructions
+			fprintf(w, deviceAuthCompleteURLPrompt, verificationURIComplete)
+			fprint(w, deviceAuthAlternativeInstructionsHeader)
+			fprintf(w, deviceAuthManualVisitPrompt, verificationURI)
+			fprintf(w, deviceAuthManualCodePrompt, userCode)
+		}
+
+		fprint(w, deviceAuthWaitingMessage)
+		return nil
+	}
 }

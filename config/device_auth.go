@@ -83,10 +83,11 @@ func (d *DeviceCode) DeviceAuthTokenSource(ctx context.Context, endpoint oauth2.
 		return nil, fmt.Errorf("device auth request failed: %w", err)
 	}
 
-	// Use custom handler if provided, otherwise use default
+	// Use custom handler if provided, otherwise use the default handler. Output is honored only
+	// in the default path; once a custom handler is set, it is solely responsible for its output.
 	handler := d.OnDisplayPrompt
 	if handler == nil {
-		handler = DefaultDeviceCodePromptHandler
+		handler = DefaultDeviceCodePromptHandlerTo(d.Output)
 	}
 
 	if err := handler(response.VerificationURI, response.UserCode); err != nil {
