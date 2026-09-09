@@ -21,25 +21,25 @@ var _ MappedNullable = &IdpTokenProcessorMapping{}
 
 // IdpTokenProcessorMapping The IdP Token Processor Mapping.
 type IdpTokenProcessorMapping struct {
+	IdpTokenProcessorRef ResourceLink `json:"idpTokenProcessorRef" tfsdk:"idp_token_processor_ref"`
+	// The list of virtual server IDs that this mapping is restricted to.
+	RestrictedVirtualEntityIds []string `json:"restrictedVirtualEntityIds,omitempty" tfsdk:"restricted_virtual_entity_ids"`
 	// A list of configured data stores to look up attributes from.
 	AttributeSources []AttributeSourceAggregation `json:"attributeSources,omitempty" tfsdk:"attribute_sources"`
 	// A list of mappings from attribute names to their fulfillment values.
 	AttributeContractFulfillment map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment" tfsdk:"attribute_contract_fulfillment"`
 	IssuanceCriteria             *IssuanceCriteria                    `json:"issuanceCriteria,omitempty" tfsdk:"issuance_criteria"`
-	IdpTokenProcessorRef         ResourceLink                         `json:"idpTokenProcessorRef" tfsdk:"idp_token_processor_ref"`
-	// The list of virtual server IDs that this mapping is restricted to.
-	RestrictedVirtualEntityIds []string                     `json:"restrictedVirtualEntityIds,omitempty" tfsdk:"restricted_virtual_entity_ids"`
-	AttributeSource            []AttributeSourceAggregation `json:"attributeSource,omitempty" tfsdk:"attribute_source"`
+	AttributeSource              []AttributeSourceAggregation         `json:"attributeSource,omitempty" tfsdk:"attribute_source"`
 }
 
 // NewIdpTokenProcessorMapping instantiates a new IdpTokenProcessorMapping object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIdpTokenProcessorMapping(attributeContractFulfillment map[string]AttributeFulfillmentValue, idpTokenProcessorRef ResourceLink) *IdpTokenProcessorMapping {
+func NewIdpTokenProcessorMapping(idpTokenProcessorRef ResourceLink, attributeContractFulfillment map[string]AttributeFulfillmentValue) *IdpTokenProcessorMapping {
 	this := IdpTokenProcessorMapping{}
-	this.AttributeContractFulfillment = attributeContractFulfillment
 	this.IdpTokenProcessorRef = idpTokenProcessorRef
+	this.AttributeContractFulfillment = attributeContractFulfillment
 	return &this
 }
 
@@ -49,6 +49,62 @@ func NewIdpTokenProcessorMapping(attributeContractFulfillment map[string]Attribu
 func NewIdpTokenProcessorMappingWithDefaults() *IdpTokenProcessorMapping {
 	this := IdpTokenProcessorMapping{}
 	return &this
+}
+
+// GetIdpTokenProcessorRef returns the IdpTokenProcessorRef field value
+func (o *IdpTokenProcessorMapping) GetIdpTokenProcessorRef() ResourceLink {
+	if o == nil {
+		var ret ResourceLink
+		return ret
+	}
+
+	return o.IdpTokenProcessorRef
+}
+
+// GetIdpTokenProcessorRefOk returns a tuple with the IdpTokenProcessorRef field value
+// and a boolean to check if the value has been set.
+func (o *IdpTokenProcessorMapping) GetIdpTokenProcessorRefOk() (*ResourceLink, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.IdpTokenProcessorRef, true
+}
+
+// SetIdpTokenProcessorRef sets field value
+func (o *IdpTokenProcessorMapping) SetIdpTokenProcessorRef(v ResourceLink) {
+	o.IdpTokenProcessorRef = v
+}
+
+// GetRestrictedVirtualEntityIds returns the RestrictedVirtualEntityIds field value if set, zero value otherwise.
+func (o *IdpTokenProcessorMapping) GetRestrictedVirtualEntityIds() []string {
+	if o == nil || IsNil(o.RestrictedVirtualEntityIds) {
+		var ret []string
+		return ret
+	}
+	return o.RestrictedVirtualEntityIds
+}
+
+// GetRestrictedVirtualEntityIdsOk returns a tuple with the RestrictedVirtualEntityIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IdpTokenProcessorMapping) GetRestrictedVirtualEntityIdsOk() ([]string, bool) {
+	if o == nil || IsNil(o.RestrictedVirtualEntityIds) {
+		return nil, false
+	}
+	return o.RestrictedVirtualEntityIds, true
+}
+
+// HasRestrictedVirtualEntityIds returns a boolean if a field has been set.
+func (o *IdpTokenProcessorMapping) HasRestrictedVirtualEntityIds() bool {
+	if o != nil && !IsNil(o.RestrictedVirtualEntityIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetRestrictedVirtualEntityIds gets a reference to the given []string and assigns it to the RestrictedVirtualEntityIds field.
+func (o *IdpTokenProcessorMapping) SetRestrictedVirtualEntityIds(v []string) {
+	o.RestrictedVirtualEntityIds = v
 }
 
 // GetAttributeSources returns the AttributeSources field value if set, zero value otherwise.
@@ -139,62 +195,6 @@ func (o *IdpTokenProcessorMapping) SetIssuanceCriteria(v IssuanceCriteria) {
 	o.IssuanceCriteria = &v
 }
 
-// GetIdpTokenProcessorRef returns the IdpTokenProcessorRef field value
-func (o *IdpTokenProcessorMapping) GetIdpTokenProcessorRef() ResourceLink {
-	if o == nil {
-		var ret ResourceLink
-		return ret
-	}
-
-	return o.IdpTokenProcessorRef
-}
-
-// GetIdpTokenProcessorRefOk returns a tuple with the IdpTokenProcessorRef field value
-// and a boolean to check if the value has been set.
-func (o *IdpTokenProcessorMapping) GetIdpTokenProcessorRefOk() (*ResourceLink, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.IdpTokenProcessorRef, true
-}
-
-// SetIdpTokenProcessorRef sets field value
-func (o *IdpTokenProcessorMapping) SetIdpTokenProcessorRef(v ResourceLink) {
-	o.IdpTokenProcessorRef = v
-}
-
-// GetRestrictedVirtualEntityIds returns the RestrictedVirtualEntityIds field value if set, zero value otherwise.
-func (o *IdpTokenProcessorMapping) GetRestrictedVirtualEntityIds() []string {
-	if o == nil || IsNil(o.RestrictedVirtualEntityIds) {
-		var ret []string
-		return ret
-	}
-	return o.RestrictedVirtualEntityIds
-}
-
-// GetRestrictedVirtualEntityIdsOk returns a tuple with the RestrictedVirtualEntityIds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *IdpTokenProcessorMapping) GetRestrictedVirtualEntityIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.RestrictedVirtualEntityIds) {
-		return nil, false
-	}
-	return o.RestrictedVirtualEntityIds, true
-}
-
-// HasRestrictedVirtualEntityIds returns a boolean if a field has been set.
-func (o *IdpTokenProcessorMapping) HasRestrictedVirtualEntityIds() bool {
-	if o != nil && !IsNil(o.RestrictedVirtualEntityIds) {
-		return true
-	}
-
-	return false
-}
-
-// SetRestrictedVirtualEntityIds gets a reference to the given []string and assigns it to the RestrictedVirtualEntityIds field.
-func (o *IdpTokenProcessorMapping) SetRestrictedVirtualEntityIds(v []string) {
-	o.RestrictedVirtualEntityIds = v
-}
-
 // GetAttributeSource returns the AttributeSource field value if set, zero value otherwise.
 func (o *IdpTokenProcessorMapping) GetAttributeSource() []AttributeSourceAggregation {
 	if o == nil || IsNil(o.AttributeSource) {
@@ -237,16 +237,16 @@ func (o IdpTokenProcessorMapping) MarshalJSON() ([]byte, error) {
 
 func (o IdpTokenProcessorMapping) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	toSerialize["idpTokenProcessorRef"] = o.IdpTokenProcessorRef
+	if !IsNil(o.RestrictedVirtualEntityIds) {
+		toSerialize["restrictedVirtualEntityIds"] = o.RestrictedVirtualEntityIds
+	}
 	if !IsNil(o.AttributeSources) {
 		toSerialize["attributeSources"] = o.AttributeSources
 	}
 	toSerialize["attributeContractFulfillment"] = o.AttributeContractFulfillment
 	if !IsNil(o.IssuanceCriteria) {
 		toSerialize["issuanceCriteria"] = o.IssuanceCriteria
-	}
-	toSerialize["idpTokenProcessorRef"] = o.IdpTokenProcessorRef
-	if !IsNil(o.RestrictedVirtualEntityIds) {
-		toSerialize["restrictedVirtualEntityIds"] = o.RestrictedVirtualEntityIds
 	}
 	if !IsNil(o.AttributeSource) {
 		toSerialize["attributeSource"] = o.AttributeSource

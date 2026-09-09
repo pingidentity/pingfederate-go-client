@@ -24423,6 +24423,16 @@
         ],
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string",
+            "description": "The id of the Access Token Mapping."
+          },
+          "context": {
+            "$ref": "#/components/schemas/AccessTokenMappingContext"
+          },
+          "accessTokenManagerRef": {
+            "$ref": "#/components/schemas/ResourceLink"
+          },
           "attributeSources": {
             "type": "array",
             "description": "A list of configured data stores to look up attributes from.",
@@ -24439,16 +24449,6 @@
           },
           "issuanceCriteria": {
             "$ref": "#/components/schemas/IssuanceCriteria"
-          },
-          "id": {
-            "type": "string",
-            "description": "The id of the Access Token Mapping."
-          },
-          "context": {
-            "$ref": "#/components/schemas/AccessTokenMappingContext"
-          },
-          "accessTokenManagerRef": {
-            "$ref": "#/components/schemas/ResourceLink"
           },
           "attributeSource": {
             "type": "array",
@@ -26864,23 +26864,6 @@
         ],
         "type": "object",
         "properties": {
-          "attributeSources": {
-            "type": "array",
-            "description": "A list of configured data stores to look up attributes from.",
-            "items": {
-              "$ref": "#/components/schemas/AttributeSourceAggregation"
-            }
-          },
-          "attributeContractFulfillment": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/AttributeFulfillmentValue"
-            },
-            "description": "A list of mappings from attribute names to their fulfillment values."
-          },
-          "issuanceCriteria": {
-            "$ref": "#/components/schemas/IssuanceCriteria"
-          },
           "authenticationPolicyContractRef": {
             "$ref": "#/components/schemas/ResourceLink"
           },
@@ -26900,23 +26883,6 @@
             "type": "boolean",
             "description": "If set to true, SSO transaction will be aborted as a fail-safe when the data-store's attribute mappings fail to complete the attribute contract. Otherwise, the attribute contract with default values is used. By default, this value is false."
           },
-          "attributeSource": {
-            "type": "array",
-            "writeOnly": true,
-            "items": {
-              "$ref": "#/components/schemas/AttributeSourceAggregation"
-            }
-          }
-        },
-        "description": "The Authentication Policy Contract Assertion Mapping."
-      },
-      "AuthenticationPolicyContractMapping": {
-        "required": [
-          "attributeContractFulfillment",
-          "authenticationPolicyContractRef"
-        ],
-        "type": "object",
-        "properties": {
           "attributeSources": {
             "type": "array",
             "description": "A list of configured data stores to look up attributes from.",
@@ -26934,6 +26900,23 @@
           "issuanceCriteria": {
             "$ref": "#/components/schemas/IssuanceCriteria"
           },
+          "attributeSource": {
+            "type": "array",
+            "writeOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/AttributeSourceAggregation"
+            }
+          }
+        },
+        "description": "The Authentication Policy Contract Assertion Mapping."
+      },
+      "AuthenticationPolicyContractMapping": {
+        "required": [
+          "attributeContractFulfillment",
+          "authenticationPolicyContractRef"
+        ],
+        "type": "object",
+        "properties": {
           "authenticationPolicyContractRef": {
             "$ref": "#/components/schemas/ResourceLink"
           },
@@ -26948,6 +26931,23 @@
               "type": "string",
               "description": "The list of virtual server IDs that this mapping is restricted to."
             }
+          },
+          "attributeSources": {
+            "type": "array",
+            "description": "A list of configured data stores to look up attributes from.",
+            "items": {
+              "$ref": "#/components/schemas/AttributeSourceAggregation"
+            }
+          },
+          "attributeContractFulfillment": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/AttributeFulfillmentValue"
+            },
+            "description": "A list of mappings from attribute names to their fulfillment values."
+          },
+          "issuanceCriteria": {
+            "$ref": "#/components/schemas/IssuanceCriteria"
           },
           "attributeSource": {
             "type": "array",
@@ -27184,6 +27184,10 @@
             "type": "string",
             "description": "the GUID attribute name."
           },
+          "guidBinary": {
+            "type": "boolean",
+            "description": "Indicates whether the GUID is stored in binary format."
+          },
           "changeDetectionSettings": {
             "$ref": "#/components/schemas/ChangeDetectionSettings"
           },
@@ -27202,10 +27206,6 @@
           },
           "groupSourceLocation": {
             "$ref": "#/components/schemas/ChannelSourceLocation"
-          },
-          "guidBinary": {
-            "type": "boolean",
-            "description": "Indicates whether the GUID is stored in binary format."
           }
         },
         "description": "The source data source and LDAP settings."
@@ -27235,6 +27235,14 @@
         ],
         "type": "object",
         "properties": {
+          "type": {
+            "type": "string",
+            "description": "The type of this connection. Default is 'IDP'.",
+            "enum": [
+              "IDP",
+              "SP"
+            ]
+          },
           "id": {
             "type": "string",
             "description": "The persistent, unique ID for the connection. It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned if not specified."
@@ -27247,26 +27255,23 @@
             "type": "string",
             "description": "The connection name."
           },
+          "modificationDate": {
+            "type": "string",
+            "description": "The time at which the connection was last changed. This property is read only and is ignored on PUT and POST requests.",
+            "format": "date-time"
+          },
+          "creationDate": {
+            "type": "string",
+            "description": "The time at which the connection was created. This property is read only and is ignored on PUT and POST requests.",
+            "format": "date-time"
+          },
           "active": {
             "type": "boolean",
             "description": "Specifies whether the connection is active and ready to process incoming requests. The default value is false."
           },
-          "contactInfo": {
-            "$ref": "#/components/schemas/ContactInfo"
-          },
           "baseUrl": {
             "type": "string",
             "description": "The fully-qualified hostname and port on which your partner's federation deployment runs."
-          },
-          "loggingMode": {
-            "type": "string",
-            "description": "The level of transaction logging applicable for this connection. Default is STANDARD.",
-            "enum": [
-              "NONE",
-              "STANDARD",
-              "ENHANCED",
-              "FULL"
-            ]
           },
           "defaultVirtualEntityId": {
             "type": "string",
@@ -27283,12 +27288,25 @@
           "metadataReloadSettings": {
             "$ref": "#/components/schemas/ConnectionMetadataUrl"
           },
+          "credentials": {
+            "$ref": "#/components/schemas/ConnectionCredentials"
+          },
+          "contactInfo": {
+            "$ref": "#/components/schemas/ContactInfo"
+          },
           "licenseConnectionGroup": {
             "type": "string",
             "description": "The license connection group. If your PingFederate license is based on connection groups, each connection must be assigned to a group before it can be used."
           },
-          "credentials": {
-            "$ref": "#/components/schemas/ConnectionCredentials"
+          "loggingMode": {
+            "type": "string",
+            "description": "The level of transaction logging applicable for this connection. Default is STANDARD.",
+            "enum": [
+              "NONE",
+              "STANDARD",
+              "ENHANCED",
+              "FULL"
+            ]
           },
           "additionalAllowedEntitiesConfiguration": {
             "$ref": "#/components/schemas/AdditionalAllowedEntitiesConfiguration"
@@ -27300,30 +27318,12 @@
             },
             "description": "Extended Properties allows to store additional information for IdP/SP Connections. The names of these extended properties should be defined in /extendedProperties."
           },
-          "modificationDate": {
-            "type": "string",
-            "description": "The time at which the connection was last changed. This property is read only and is ignored on PUT and POST requests.",
-            "format": "date-time"
-          },
-          "creationDate": {
-            "type": "string",
-            "description": "The time at which the connection was created. This property is read only and is ignored on PUT and POST requests.",
-            "format": "date-time"
-          },
           "replicationStatus": {
             "type": "string",
             "description": "This status indicates whether the connection has been replicated to the cluster. This property only applies when automatic replication of connections is enabled. It is read only and is ignored on PUT and POST requests.",
             "enum": [
               "REPLICATED",
               "NOT_REPLICATED"
-            ]
-          },
-          "type": {
-            "type": "string",
-            "description": "The type of this connection. Default is 'IDP'.",
-            "enum": [
-              "IDP",
-              "SP"
             ]
           }
         },
@@ -28165,6 +28165,17 @@
         ],
         "type": "object",
         "properties": {
+          "idpTokenProcessorRef": {
+            "$ref": "#/components/schemas/ResourceLink"
+          },
+          "restrictedVirtualEntityIds": {
+            "type": "array",
+            "description": "The list of virtual server IDs that this mapping is restricted to.",
+            "items": {
+              "type": "string",
+              "description": "The list of virtual server IDs that this mapping is restricted to."
+            }
+          },
           "attributeSources": {
             "type": "array",
             "description": "A list of configured data stores to look up attributes from.",
@@ -28181,17 +28192,6 @@
           },
           "issuanceCriteria": {
             "$ref": "#/components/schemas/IssuanceCriteria"
-          },
-          "idpTokenProcessorRef": {
-            "$ref": "#/components/schemas/ResourceLink"
-          },
-          "restrictedVirtualEntityIds": {
-            "type": "array",
-            "description": "The list of virtual server IDs that this mapping is restricted to.",
-            "items": {
-              "type": "string",
-              "description": "The list of virtual server IDs that this mapping is restricted to."
-            }
           },
           "attributeSource": {
             "type": "array",
@@ -29140,22 +29140,8 @@
         ],
         "type": "object",
         "properties": {
-          "attributeSources": {
-            "type": "array",
-            "description": "A list of configured data stores to look up attributes from.",
-            "items": {
-              "$ref": "#/components/schemas/AttributeSourceAggregation"
-            }
-          },
-          "attributeContractFulfillment": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/AttributeFulfillmentValue"
-            },
-            "description": "A list of mappings from attribute names to their fulfillment values."
-          },
-          "issuanceCriteria": {
-            "$ref": "#/components/schemas/IssuanceCriteria"
+          "spAdapterRef": {
+            "$ref": "#/components/schemas/ResourceLink"
           },
           "restrictVirtualEntityIds": {
             "type": "boolean",
@@ -29172,8 +29158,22 @@
           "adapterOverrideSettings": {
             "$ref": "#/components/schemas/SpAdapter"
           },
-          "spAdapterRef": {
-            "$ref": "#/components/schemas/ResourceLink"
+          "attributeSources": {
+            "type": "array",
+            "description": "A list of configured data stores to look up attributes from.",
+            "items": {
+              "$ref": "#/components/schemas/AttributeSourceAggregation"
+            }
+          },
+          "attributeContractFulfillment": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/AttributeFulfillmentValue"
+            },
+            "description": "A list of mappings from attribute names to their fulfillment values."
+          },
+          "issuanceCriteria": {
+            "$ref": "#/components/schemas/IssuanceCriteria"
           },
           "attributeSource": {
             "type": "array",
@@ -29193,11 +29193,13 @@
         ],
         "type": "object",
         "properties": {
-          "attributeSources": {
+          "attributes": {
+            "uniqueItems": true,
             "type": "array",
-            "description": "A list of configured data stores to look up attributes from.",
+            "description": "The list of attributes that may be returned to the SP in the response to an attribute request.",
             "items": {
-              "$ref": "#/components/schemas/AttributeSourceAggregation"
+              "type": "string",
+              "description": "The list of attributes that may be returned to the SP in the response to an attribute request."
             }
           },
           "attributeContractFulfillment": {
@@ -29210,17 +29212,15 @@
           "issuanceCriteria": {
             "$ref": "#/components/schemas/IssuanceCriteria"
           },
-          "attributes": {
-            "uniqueItems": true,
-            "type": "array",
-            "description": "The list of attributes that may be returned to the SP in the response to an attribute request.",
-            "items": {
-              "type": "string",
-              "description": "The list of attributes that may be returned to the SP in the response to an attribute request."
-            }
-          },
           "policy": {
             "$ref": "#/components/schemas/SpAttributeQueryPolicy"
+          },
+          "attributeSources": {
+            "type": "array",
+            "description": "A list of configured data stores to look up attributes from.",
+            "items": {
+              "$ref": "#/components/schemas/AttributeSourceAggregation"
+            }
           },
           "attributeSource": {
             "type": "array",
@@ -29285,6 +29285,23 @@
                   "OIDC"
                 ]
               },
+              "wsFedTokenType": {
+                "type": "string",
+                "description": "The WS-Federation Token Type to use.",
+                "enum": [
+                  "SAML11",
+                  "SAML20",
+                  "JWT"
+                ]
+              },
+              "wsTrustVersion": {
+                "type": "string",
+                "description": "The WS-Trust version for a WS-Federation connection. The default version is WSTRUST12.",
+                "enum": [
+                  "WSTRUST12",
+                  "WSTRUST13"
+                ]
+              },
               "enabledProfiles": {
                 "uniqueItems": true,
                 "type": "array",
@@ -29322,6 +29339,13 @@
                   "$ref": "#/components/schemas/ProtocolMessageCustomization"
                 }
               },
+              "urlWhitelistEntries": {
+                "type": "array",
+                "description": "For WS-Federation connections, a whitelist of additional allowed domains and paths used to validate wreply for SLO, if enabled.",
+                "items": {
+                  "$ref": "#/components/schemas/UrlWhitelistEntry"
+                }
+              },
               "artifact": {
                 "$ref": "#/components/schemas/ArtifactSettings"
               },
@@ -29330,13 +29354,6 @@
                 "description": "A list of possible endpoints to send SLO requests and responses.",
                 "items": {
                   "$ref": "#/components/schemas/SloServiceEndpoint"
-                }
-              },
-              "urlWhitelistEntries": {
-                "type": "array",
-                "description": "For WS-Federation connections, a whitelist of additional allowed domains and paths used to validate wreply for SLO, if enabled.",
-                "items": {
-                  "$ref": "#/components/schemas/UrlWhitelistEntry"
                 }
               },
               "defaultTargetUrl": {
@@ -29358,14 +29375,6 @@
                   "$ref": "#/components/schemas/SpSsoServiceEndpoint"
                 }
               },
-              "signAssertions": {
-                "type": "boolean",
-                "description": "Always sign the SAML Assertion."
-              },
-              "signResponseAsRequired": {
-                "type": "boolean",
-                "description": "Sign SAML Response as required by the associated binding and encryption policy. Applicable to SAML2.0 only and is defaulted to true. It can be set to false only on SAML2.0 connections when signAssertions is set to true."
-              },
               "spSamlIdentityMapping": {
                 "type": "string",
                 "description": "Process in which users authenticated by the IdP are associated with user accounts local to the SP.",
@@ -29384,12 +29393,17 @@
                   "COMMON_NAME"
                 ]
               },
+              "signResponseAsRequired": {
+                "type": "boolean",
+                "description": "Sign SAML Response as required by the associated binding and encryption policy. Applicable to SAML2.0 only and is defaulted to true. It can be set to false only on SAML2.0 connections when signAssertions is set to true."
+              },
+              "signAssertions": {
+                "type": "boolean",
+                "description": "Always sign the SAML Assertion."
+              },
               "requireSignedAuthnRequests": {
                 "type": "boolean",
                 "description": "Require AuthN requests to be signed when received via the POST or Redirect bindings."
-              },
-              "assertionLifetime": {
-                "$ref": "#/components/schemas/AssertionLifetime"
               },
               "encryptionPolicy": {
                 "$ref": "#/components/schemas/EncryptionPolicy"
@@ -29411,22 +29425,8 @@
                   "$ref": "#/components/schemas/AuthenticationPolicyContractAssertionMapping"
                 }
               },
-              "wsFedTokenType": {
-                "type": "string",
-                "description": "The WS-Federation Token Type to use.",
-                "enum": [
-                  "SAML11",
-                  "SAML20",
-                  "JWT"
-                ]
-              },
-              "wsTrustVersion": {
-                "type": "string",
-                "description": "The WS-Trust version for a WS-Federation connection. The default version is WSTRUST12.",
-                "enum": [
-                  "WSTRUST12",
-                  "WSTRUST13"
-                ]
+              "assertionLifetime": {
+                "$ref": "#/components/schemas/AssertionLifetime"
               }
             }
           }
@@ -29659,6 +29659,21 @@
         ],
         "type": "object",
         "properties": {
+          "spTokenGeneratorRef": {
+            "$ref": "#/components/schemas/ResourceLink"
+          },
+          "restrictedVirtualEntityIds": {
+            "type": "array",
+            "description": "The list of virtual server IDs that this mapping is restricted to.",
+            "items": {
+              "type": "string",
+              "description": "The list of virtual server IDs that this mapping is restricted to."
+            }
+          },
+          "defaultMapping": {
+            "type": "boolean",
+            "description": "Indicates whether the token generator mapping is the default mapping. The default value is false."
+          },
           "attributeSources": {
             "type": "array",
             "description": "A list of configured data stores to look up attributes from.",
@@ -29675,21 +29690,6 @@
           },
           "issuanceCriteria": {
             "$ref": "#/components/schemas/IssuanceCriteria"
-          },
-          "spTokenGeneratorRef": {
-            "$ref": "#/components/schemas/ResourceLink"
-          },
-          "restrictedVirtualEntityIds": {
-            "type": "array",
-            "description": "The list of virtual server IDs that this mapping is restricted to.",
-            "items": {
-              "type": "string",
-              "description": "The list of virtual server IDs that this mapping is restricted to."
-            }
-          },
-          "defaultMapping": {
-            "type": "boolean",
-            "description": "Indicates whether the token generator mapping is the default mapping. The default value is false."
           },
           "attributeSource": {
             "type": "array",
@@ -30754,17 +30754,17 @@
             "type": "boolean",
             "description": "Reference to the default security."
           },
-          "kdcTimeout": {
+          "kdcRetries": {
             "type": "string",
-            "description": "Reference to the default Key Distribution Center Timeout (in seconds)."
+            "description": "Reference to the default Key Distribution Center Retries."
           },
           "debugLogOutput": {
             "type": "boolean",
             "description": "Reference to the default logging."
           },
-          "kdcRetries": {
+          "kdcTimeout": {
             "type": "string",
-            "description": "Reference to the default Key Distribution Center Retries."
+            "description": "Reference to the default Key Distribution Center Timeout (in seconds)."
           },
           "keySetRetentionPeriodMins": {
             "type": "integer",
@@ -30970,12 +30970,7 @@
         ]
       },
       "BaseSelectionLocalIdentityField": {
-        "required": [
-          "id",
-          "label",
-          "options",
-          "type"
-        ],
+        "required": [],
         "description": "Holds fields that are shared by all selection-type fields.",
         "allOf": [
           {
@@ -30998,15 +30993,29 @@
       },
       "CheckboxGroupLocalIdentityField": {
         "required": [
-          "id",
-          "label",
-          "options",
-          "type"
+          "options"
         ],
         "description": "A checkbox group selection type field.",
         "allOf": [
           {
             "$ref": "#/components/schemas/BaseSelectionLocalIdentityField"
+          },
+          {
+            "description": "A checkbox group selection type field.",
+            "properties": {
+              "options": {
+                "type": "array",
+                "description": "The list of options for this selection field.",
+                "items": {
+                  "type": "string",
+                  "description": "The list of options for this selection field."
+                }
+              }
+            },
+            "required": [
+              "options"
+            ],
+            "type": "object"
           }
         ]
       },
@@ -31030,18 +31039,6 @@
         ],
         "type": "object",
         "properties": {
-          "metadata": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string",
-              "description": "The data store attribute metadata."
-            },
-            "description": "The data store attribute metadata."
-          },
-          "name": {
-            "type": "string",
-            "description": "The data store attribute name."
-          },
           "type": {
             "type": "string",
             "description": "The data store attribute type.",
@@ -31051,6 +31048,18 @@
               "JDBC",
               "CUSTOM"
             ]
+          },
+          "name": {
+            "type": "string",
+            "description": "The data store attribute name."
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "description": "The data store attribute metadata."
+            },
+            "description": "The data store attribute metadata."
           }
         },
         "description": "The data store attribute.",
@@ -31065,16 +31074,6 @@
         ],
         "type": "object",
         "properties": {
-          "dataStoreMapping": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/DataStoreAttribute"
-            },
-            "description": "The data store mapping."
-          },
-          "dataStoreRef": {
-            "$ref": "#/components/schemas/ResourceLink"
-          },
           "type": {
             "type": "string",
             "description": "The data store config type.",
@@ -31084,6 +31083,16 @@
               "JDBC",
               "CUSTOM"
             ]
+          },
+          "dataStoreRef": {
+            "$ref": "#/components/schemas/ResourceLink"
+          },
+          "dataStoreMapping": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/DataStoreAttribute"
+            },
+            "description": "The data store mapping."
           }
         },
         "description": "Local identity profile data store.",
@@ -31105,12 +31114,6 @@
         ]
       },
       "DropDownLocalIdentityField": {
-        "required": [
-          "id",
-          "label",
-          "options",
-          "type"
-        ],
         "description": "A dropdown selection type field.",
         "allOf": [
           {
@@ -31119,11 +31122,22 @@
           {
             "type": "object",
             "properties": {
+              "options": {
+                "type": "array",
+                "description": "The list of options for this selection field.",
+                "items": {
+                  "type": "string",
+                  "description": "The list of options for this selection field."
+                }
+              },
               "defaultValue": {
                 "type": "string",
                 "description": "The default value for this field."
               }
-            }
+            },
+            "required": [
+              "options"
+            ]
           }
         ]
       },
@@ -31270,26 +31284,6 @@
       "LdapDataStoreConfig": {
         "description": "LDAP data store configuration.",
         "properties": {
-          "dataStoreMapping": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/DataStoreAttribute"
-            },
-            "description": "The data store mapping."
-          },
-          "dataStoreRef": {
-            "$ref": "#/components/schemas/ResourceLink"
-          },
-          "type": {
-            "type": "string",
-            "description": "The data store config type.",
-            "enum": [
-              "LDAP",
-              "PING_ONE_LDAP_GATEWAY",
-              "JDBC",
-              "CUSTOM"
-            ]
-          },
           "baseDn": {
             "type": "string",
             "description": "The base DN to search from. If not specified, the search will start at the LDAP's root."
@@ -31301,6 +31295,26 @@
           "objectClass": {
             "type": "string",
             "description": "The Object Class used by the new objects stored in the LDAP data store."
+          },
+          "dataStoreMapping": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/DataStoreAttribute"
+            },
+            "description": "The data store mapping."
+          },
+          "type": {
+            "type": "string",
+            "description": "The data store config type.",
+            "enum": [
+              "LDAP",
+              "PING_ONE_LDAP_GATEWAY",
+              "JDBC",
+              "CUSTOM"
+            ]
+          },
+          "dataStoreRef": {
+            "$ref": "#/components/schemas/ResourceLink"
           },
           "auxiliaryObjectClasses": {
             "type": "array",
@@ -31662,6 +31676,13 @@
         ],
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the authentication policy contract to persistent grant mapping."
+          },
+          "authenticationPolicyContractRef": {
+            "$ref": "#/components/schemas/ResourceLink"
+          },
           "attributeSources": {
             "type": "array",
             "description": "A list of configured data stores to look up attributes from.",
@@ -31678,13 +31699,6 @@
           },
           "issuanceCriteria": {
             "$ref": "#/components/schemas/IssuanceCriteria"
-          },
-          "id": {
-            "type": "string",
-            "description": "The ID of the authentication policy contract to persistent grant mapping."
-          },
-          "authenticationPolicyContractRef": {
-            "$ref": "#/components/schemas/ResourceLink"
           },
           "attributeSource": {
             "type": "array",
@@ -33566,6 +33580,13 @@
         ],
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the adapter mapping."
+          },
+          "idpAdapterRef": {
+            "$ref": "#/components/schemas/ResourceLink"
+          },
           "attributeSources": {
             "type": "array",
             "description": "A list of configured data stores to look up attributes from.",
@@ -33582,13 +33603,6 @@
           },
           "issuanceCriteria": {
             "$ref": "#/components/schemas/IssuanceCriteria"
-          },
-          "id": {
-            "type": "string",
-            "description": "The ID of the adapter mapping."
-          },
-          "idpAdapterRef": {
-            "$ref": "#/components/schemas/ResourceLink"
           },
           "attributeSource": {
             "type": "array",
@@ -34005,6 +34019,13 @@
         ],
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the Resource Owner Credentials Mapping."
+          },
+          "passwordValidatorRef": {
+            "$ref": "#/components/schemas/ResourceLink"
+          },
           "attributeSources": {
             "type": "array",
             "description": "A list of configured data stores to look up attributes from.",
@@ -34021,13 +34042,6 @@
           },
           "issuanceCriteria": {
             "$ref": "#/components/schemas/IssuanceCriteria"
-          },
-          "id": {
-            "type": "string",
-            "description": "The ID of the Resource Owner Credentials Mapping."
-          },
-          "passwordValidatorRef": {
-            "$ref": "#/components/schemas/ResourceLink"
           },
           "attributeSource": {
             "type": "array",
@@ -34059,6 +34073,13 @@
         ],
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the processor policy to persistent grant mapping. This value is generated by PingFederate."
+          },
+          "processorPolicyRef": {
+            "$ref": "#/components/schemas/ResourceLink"
+          },
           "attributeSources": {
             "type": "array",
             "description": "A list of configured data stores to look up attributes from.",
@@ -34075,13 +34096,6 @@
           },
           "issuanceCriteria": {
             "$ref": "#/components/schemas/IssuanceCriteria"
-          },
-          "id": {
-            "type": "string",
-            "description": "The ID of the processor policy to persistent grant mapping. This value is generated by PingFederate."
-          },
-          "processorPolicyRef": {
-            "$ref": "#/components/schemas/ResourceLink"
           },
           "attributeSource": {
             "type": "array",
@@ -34169,16 +34183,13 @@
             "type": "string",
             "description": "The name used for display in UI screens."
           },
+          "accessTokenManagerRef": {
+            "$ref": "#/components/schemas/ResourceLink"
+          },
           "idTokenLifetime": {
             "type": "integer",
             "description": "The ID Token Lifetime, in minutes. The default value is 5.",
             "format": "int32"
-          },
-          "attributeContract": {
-            "$ref": "#/components/schemas/OpenIdConnectAttributeContract"
-          },
-          "attributeMapping": {
-            "$ref": "#/components/schemas/AttributeMapping"
           },
           "includeSriInIdToken": {
             "type": "boolean",
@@ -34216,8 +34227,11 @@
             "type": "boolean",
             "description": "Determines whether the introspection endpoint should validate an ID token."
           },
-          "accessTokenManagerRef": {
-            "$ref": "#/components/schemas/ResourceLink"
+          "attributeContract": {
+            "$ref": "#/components/schemas/OpenIdConnectAttributeContract"
+          },
+          "attributeMapping": {
+            "$ref": "#/components/schemas/AttributeMapping"
           },
           "scopeAttributeMappings": {
             "type": "object",

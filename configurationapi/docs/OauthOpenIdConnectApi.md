@@ -35,7 +35,7 @@ import (
 )
 
 func main() {
-    body := *openapiclient.NewOpenIdConnectPolicy("Id_example", "Name_example", *openapiclient.NewOpenIdConnectAttributeContract(), *openapiclient.NewAttributeMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}), *openapiclient.NewResourceLink("Id_example")) // OpenIdConnectPolicy | Configuration for new policy.
+    body := *openapiclient.NewOpenIdConnectPolicy("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewOpenIdConnectAttributeContract(), *openapiclient.NewAttributeMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")})) // OpenIdConnectPolicy | Configuration for new policy.
     xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
@@ -360,7 +360,7 @@ import (
 
 func main() {
     id := "id_example" // string | ID of the OpenID Connect Policy to update.
-    body := *openapiclient.NewOpenIdConnectPolicy("Id_example", "Name_example", *openapiclient.NewOpenIdConnectAttributeContract(), *openapiclient.NewAttributeMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")}), *openapiclient.NewResourceLink("Id_example")) // OpenIdConnectPolicy | Configuration for updated policy.
+    body := *openapiclient.NewOpenIdConnectPolicy("Id_example", "Name_example", *openapiclient.NewResourceLink("Id_example"), *openapiclient.NewOpenIdConnectAttributeContract(), *openapiclient.NewAttributeMapping(map[string]AttributeFulfillmentValue{"key": *openapiclient.NewAttributeFulfillmentValue(*openapiclient.NewSourceTypeIdKey("Type_example"), "Value_example")})) // OpenIdConnectPolicy | Configuration for updated policy.
     xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()

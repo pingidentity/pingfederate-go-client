@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AttributeSources** | Pointer to [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) | A list of configured data stores to look up attributes from. | [optional] 
-**AttributeContractFulfillment** | [**map[string]AttributeFulfillmentValue**](AttributeFulfillmentValue.md) | A list of mappings from attribute names to their fulfillment values. | 
-**IssuanceCriteria** | Pointer to [**IssuanceCriteria**](IssuanceCriteria.md) |  | [optional] 
+**SpAdapterRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
 **RestrictVirtualEntityIds** | Pointer to **bool** | Restricts this mapping to specific virtual entity IDs. | [optional] 
 **RestrictedVirtualEntityIds** | Pointer to **[]string** | The list of virtual server IDs that this mapping is restricted to. | [optional] 
 **AdapterOverrideSettings** | Pointer to [**SpAdapter**](SpAdapter.md) |  | [optional] 
-**SpAdapterRef** | Pointer to [**ResourceLink**](ResourceLink.md) |  | [optional] 
+**AttributeSources** | Pointer to [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) | A list of configured data stores to look up attributes from. | [optional] 
+**AttributeContractFulfillment** | [**map[string]AttributeFulfillmentValue**](AttributeFulfillmentValue.md) | A list of mappings from attribute names to their fulfillment values. | 
+**IssuanceCriteria** | Pointer to [**IssuanceCriteria**](IssuanceCriteria.md) |  | [optional] 
 **AttributeSource** | Pointer to [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) |  | [optional] 
 
 ## Methods
@@ -32,75 +32,30 @@ NewSpAdapterMappingWithDefaults instantiates a new SpAdapterMapping object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetAttributeSources
+### GetSpAdapterRef
 
-`func (o *SpAdapterMapping) GetAttributeSources() []AttributeSourceAggregation`
+`func (o *SpAdapterMapping) GetSpAdapterRef() ResourceLink`
 
-GetAttributeSources returns the AttributeSources field if non-nil, zero value otherwise.
+GetSpAdapterRef returns the SpAdapterRef field if non-nil, zero value otherwise.
 
-### GetAttributeSourcesOk
+### GetSpAdapterRefOk
 
-`func (o *SpAdapterMapping) GetAttributeSourcesOk() (*[]AttributeSourceAggregation, bool)`
+`func (o *SpAdapterMapping) GetSpAdapterRefOk() (*ResourceLink, bool)`
 
-GetAttributeSourcesOk returns a tuple with the AttributeSources field if it's non-nil, zero value otherwise
+GetSpAdapterRefOk returns a tuple with the SpAdapterRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAttributeSources
+### SetSpAdapterRef
 
-`func (o *SpAdapterMapping) SetAttributeSources(v []AttributeSourceAggregation)`
+`func (o *SpAdapterMapping) SetSpAdapterRef(v ResourceLink)`
 
-SetAttributeSources sets AttributeSources field to given value.
+SetSpAdapterRef sets SpAdapterRef field to given value.
 
-### HasAttributeSources
+### HasSpAdapterRef
 
-`func (o *SpAdapterMapping) HasAttributeSources() bool`
+`func (o *SpAdapterMapping) HasSpAdapterRef() bool`
 
-HasAttributeSources returns a boolean if a field has been set.
-
-### GetAttributeContractFulfillment
-
-`func (o *SpAdapterMapping) GetAttributeContractFulfillment() map[string]AttributeFulfillmentValue`
-
-GetAttributeContractFulfillment returns the AttributeContractFulfillment field if non-nil, zero value otherwise.
-
-### GetAttributeContractFulfillmentOk
-
-`func (o *SpAdapterMapping) GetAttributeContractFulfillmentOk() (*map[string]AttributeFulfillmentValue, bool)`
-
-GetAttributeContractFulfillmentOk returns a tuple with the AttributeContractFulfillment field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAttributeContractFulfillment
-
-`func (o *SpAdapterMapping) SetAttributeContractFulfillment(v map[string]AttributeFulfillmentValue)`
-
-SetAttributeContractFulfillment sets AttributeContractFulfillment field to given value.
-
-
-### GetIssuanceCriteria
-
-`func (o *SpAdapterMapping) GetIssuanceCriteria() IssuanceCriteria`
-
-GetIssuanceCriteria returns the IssuanceCriteria field if non-nil, zero value otherwise.
-
-### GetIssuanceCriteriaOk
-
-`func (o *SpAdapterMapping) GetIssuanceCriteriaOk() (*IssuanceCriteria, bool)`
-
-GetIssuanceCriteriaOk returns a tuple with the IssuanceCriteria field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIssuanceCriteria
-
-`func (o *SpAdapterMapping) SetIssuanceCriteria(v IssuanceCriteria)`
-
-SetIssuanceCriteria sets IssuanceCriteria field to given value.
-
-### HasIssuanceCriteria
-
-`func (o *SpAdapterMapping) HasIssuanceCriteria() bool`
-
-HasIssuanceCriteria returns a boolean if a field has been set.
+HasSpAdapterRef returns a boolean if a field has been set.
 
 ### GetRestrictVirtualEntityIds
 
@@ -177,30 +132,75 @@ SetAdapterOverrideSettings sets AdapterOverrideSettings field to given value.
 
 HasAdapterOverrideSettings returns a boolean if a field has been set.
 
-### GetSpAdapterRef
+### GetAttributeSources
 
-`func (o *SpAdapterMapping) GetSpAdapterRef() ResourceLink`
+`func (o *SpAdapterMapping) GetAttributeSources() []AttributeSourceAggregation`
 
-GetSpAdapterRef returns the SpAdapterRef field if non-nil, zero value otherwise.
+GetAttributeSources returns the AttributeSources field if non-nil, zero value otherwise.
 
-### GetSpAdapterRefOk
+### GetAttributeSourcesOk
 
-`func (o *SpAdapterMapping) GetSpAdapterRefOk() (*ResourceLink, bool)`
+`func (o *SpAdapterMapping) GetAttributeSourcesOk() (*[]AttributeSourceAggregation, bool)`
 
-GetSpAdapterRefOk returns a tuple with the SpAdapterRef field if it's non-nil, zero value otherwise
+GetAttributeSourcesOk returns a tuple with the AttributeSources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSpAdapterRef
+### SetAttributeSources
 
-`func (o *SpAdapterMapping) SetSpAdapterRef(v ResourceLink)`
+`func (o *SpAdapterMapping) SetAttributeSources(v []AttributeSourceAggregation)`
 
-SetSpAdapterRef sets SpAdapterRef field to given value.
+SetAttributeSources sets AttributeSources field to given value.
 
-### HasSpAdapterRef
+### HasAttributeSources
 
-`func (o *SpAdapterMapping) HasSpAdapterRef() bool`
+`func (o *SpAdapterMapping) HasAttributeSources() bool`
 
-HasSpAdapterRef returns a boolean if a field has been set.
+HasAttributeSources returns a boolean if a field has been set.
+
+### GetAttributeContractFulfillment
+
+`func (o *SpAdapterMapping) GetAttributeContractFulfillment() map[string]AttributeFulfillmentValue`
+
+GetAttributeContractFulfillment returns the AttributeContractFulfillment field if non-nil, zero value otherwise.
+
+### GetAttributeContractFulfillmentOk
+
+`func (o *SpAdapterMapping) GetAttributeContractFulfillmentOk() (*map[string]AttributeFulfillmentValue, bool)`
+
+GetAttributeContractFulfillmentOk returns a tuple with the AttributeContractFulfillment field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributeContractFulfillment
+
+`func (o *SpAdapterMapping) SetAttributeContractFulfillment(v map[string]AttributeFulfillmentValue)`
+
+SetAttributeContractFulfillment sets AttributeContractFulfillment field to given value.
+
+
+### GetIssuanceCriteria
+
+`func (o *SpAdapterMapping) GetIssuanceCriteria() IssuanceCriteria`
+
+GetIssuanceCriteria returns the IssuanceCriteria field if non-nil, zero value otherwise.
+
+### GetIssuanceCriteriaOk
+
+`func (o *SpAdapterMapping) GetIssuanceCriteriaOk() (*IssuanceCriteria, bool)`
+
+GetIssuanceCriteriaOk returns a tuple with the IssuanceCriteria field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIssuanceCriteria
+
+`func (o *SpAdapterMapping) SetIssuanceCriteria(v IssuanceCriteria)`
+
+SetIssuanceCriteria sets IssuanceCriteria field to given value.
+
+### HasIssuanceCriteria
+
+`func (o *SpAdapterMapping) HasIssuanceCriteria() bool`
+
+HasIssuanceCriteria returns a boolean if a field has been set.
 
 ### GetAttributeSource
 

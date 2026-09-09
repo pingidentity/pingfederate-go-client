@@ -21,17 +21,17 @@ var _ MappedNullable = &LdapDataStoreConfig{}
 
 // LdapDataStoreConfig LDAP data store configuration.
 type LdapDataStoreConfig struct {
-	// The data store mapping.
-	DataStoreMapping map[string]DataStoreAttribute `json:"dataStoreMapping" tfsdk:"data_store_mapping"`
-	DataStoreRef     ResourceLink                  `json:"dataStoreRef" tfsdk:"data_store_ref"`
-	// The data store config type.
-	Type string `json:"type" tfsdk:"type"`
 	// The base DN to search from. If not specified, the search will start at the LDAP's root.
 	BaseDn string `json:"baseDn" tfsdk:"base_dn"`
 	// The Relative DN Pattern that will be used to create objects in the directory.
 	CreatePattern string `json:"createPattern" tfsdk:"create_pattern"`
 	// The Object Class used by the new objects stored in the LDAP data store.
 	ObjectClass string `json:"objectClass" tfsdk:"object_class"`
+	// The data store mapping.
+	DataStoreMapping map[string]DataStoreAttribute `json:"dataStoreMapping" tfsdk:"data_store_mapping"`
+	// The data store config type.
+	Type         string       `json:"type" tfsdk:"type"`
+	DataStoreRef ResourceLink `json:"dataStoreRef" tfsdk:"data_store_ref"`
 	// The Auxiliary Object Classes used by the new objects stored in the LDAP data store.
 	AuxiliaryObjectClasses []string `json:"auxiliaryObjectClasses,omitempty" tfsdk:"auxiliary_object_classes"`
 }
@@ -40,14 +40,14 @@ type LdapDataStoreConfig struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLdapDataStoreConfig(dataStoreMapping map[string]DataStoreAttribute, dataStoreRef ResourceLink, type_ string, baseDn string, createPattern string, objectClass string) *LdapDataStoreConfig {
+func NewLdapDataStoreConfig(baseDn string, createPattern string, objectClass string, dataStoreMapping map[string]DataStoreAttribute, type_ string, dataStoreRef ResourceLink) *LdapDataStoreConfig {
 	this := LdapDataStoreConfig{}
-	this.DataStoreMapping = dataStoreMapping
-	this.DataStoreRef = dataStoreRef
-	this.Type = type_
 	this.BaseDn = baseDn
 	this.CreatePattern = createPattern
 	this.ObjectClass = objectClass
+	this.DataStoreMapping = dataStoreMapping
+	this.Type = type_
+	this.DataStoreRef = dataStoreRef
 	return &this
 }
 
@@ -57,78 +57,6 @@ func NewLdapDataStoreConfig(dataStoreMapping map[string]DataStoreAttribute, data
 func NewLdapDataStoreConfigWithDefaults() *LdapDataStoreConfig {
 	this := LdapDataStoreConfig{}
 	return &this
-}
-
-// GetDataStoreMapping returns the DataStoreMapping field value
-func (o *LdapDataStoreConfig) GetDataStoreMapping() map[string]DataStoreAttribute {
-	if o == nil {
-		var ret map[string]DataStoreAttribute
-		return ret
-	}
-
-	return o.DataStoreMapping
-}
-
-// GetDataStoreMappingOk returns a tuple with the DataStoreMapping field value
-// and a boolean to check if the value has been set.
-func (o *LdapDataStoreConfig) GetDataStoreMappingOk() (*map[string]DataStoreAttribute, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.DataStoreMapping, true
-}
-
-// SetDataStoreMapping sets field value
-func (o *LdapDataStoreConfig) SetDataStoreMapping(v map[string]DataStoreAttribute) {
-	o.DataStoreMapping = v
-}
-
-// GetDataStoreRef returns the DataStoreRef field value
-func (o *LdapDataStoreConfig) GetDataStoreRef() ResourceLink {
-	if o == nil {
-		var ret ResourceLink
-		return ret
-	}
-
-	return o.DataStoreRef
-}
-
-// GetDataStoreRefOk returns a tuple with the DataStoreRef field value
-// and a boolean to check if the value has been set.
-func (o *LdapDataStoreConfig) GetDataStoreRefOk() (*ResourceLink, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.DataStoreRef, true
-}
-
-// SetDataStoreRef sets field value
-func (o *LdapDataStoreConfig) SetDataStoreRef(v ResourceLink) {
-	o.DataStoreRef = v
-}
-
-// GetType returns the Type field value
-func (o *LdapDataStoreConfig) GetType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value
-// and a boolean to check if the value has been set.
-func (o *LdapDataStoreConfig) GetTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Type, true
-}
-
-// SetType sets field value
-func (o *LdapDataStoreConfig) SetType(v string) {
-	o.Type = v
 }
 
 // GetBaseDn returns the BaseDn field value
@@ -203,6 +131,78 @@ func (o *LdapDataStoreConfig) SetObjectClass(v string) {
 	o.ObjectClass = v
 }
 
+// GetDataStoreMapping returns the DataStoreMapping field value
+func (o *LdapDataStoreConfig) GetDataStoreMapping() map[string]DataStoreAttribute {
+	if o == nil {
+		var ret map[string]DataStoreAttribute
+		return ret
+	}
+
+	return o.DataStoreMapping
+}
+
+// GetDataStoreMappingOk returns a tuple with the DataStoreMapping field value
+// and a boolean to check if the value has been set.
+func (o *LdapDataStoreConfig) GetDataStoreMappingOk() (*map[string]DataStoreAttribute, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.DataStoreMapping, true
+}
+
+// SetDataStoreMapping sets field value
+func (o *LdapDataStoreConfig) SetDataStoreMapping(v map[string]DataStoreAttribute) {
+	o.DataStoreMapping = v
+}
+
+// GetType returns the Type field value
+func (o *LdapDataStoreConfig) GetType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value
+// and a boolean to check if the value has been set.
+func (o *LdapDataStoreConfig) GetTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Type, true
+}
+
+// SetType sets field value
+func (o *LdapDataStoreConfig) SetType(v string) {
+	o.Type = v
+}
+
+// GetDataStoreRef returns the DataStoreRef field value
+func (o *LdapDataStoreConfig) GetDataStoreRef() ResourceLink {
+	if o == nil {
+		var ret ResourceLink
+		return ret
+	}
+
+	return o.DataStoreRef
+}
+
+// GetDataStoreRefOk returns a tuple with the DataStoreRef field value
+// and a boolean to check if the value has been set.
+func (o *LdapDataStoreConfig) GetDataStoreRefOk() (*ResourceLink, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.DataStoreRef, true
+}
+
+// SetDataStoreRef sets field value
+func (o *LdapDataStoreConfig) SetDataStoreRef(v ResourceLink) {
+	o.DataStoreRef = v
+}
+
 // GetAuxiliaryObjectClasses returns the AuxiliaryObjectClasses field value if set, zero value otherwise.
 func (o *LdapDataStoreConfig) GetAuxiliaryObjectClasses() []string {
 	if o == nil || IsNil(o.AuxiliaryObjectClasses) {
@@ -245,12 +245,12 @@ func (o LdapDataStoreConfig) MarshalJSON() ([]byte, error) {
 
 func (o LdapDataStoreConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["dataStoreMapping"] = o.DataStoreMapping
-	toSerialize["dataStoreRef"] = o.DataStoreRef
-	toSerialize["type"] = o.Type
 	toSerialize["baseDn"] = o.BaseDn
 	toSerialize["createPattern"] = o.CreatePattern
 	toSerialize["objectClass"] = o.ObjectClass
+	toSerialize["dataStoreMapping"] = o.DataStoreMapping
+	toSerialize["type"] = o.Type
+	toSerialize["dataStoreRef"] = o.DataStoreRef
 	if !IsNil(o.AuxiliaryObjectClasses) {
 		toSerialize["auxiliaryObjectClasses"] = o.AuxiliaryObjectClasses
 	}

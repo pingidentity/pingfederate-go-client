@@ -21,18 +21,18 @@ var _ MappedNullable = &SpAdapterMapping{}
 
 // SpAdapterMapping A mapping to a SP adapter.
 type SpAdapterMapping struct {
+	SpAdapterRef *ResourceLink `json:"spAdapterRef,omitempty" tfsdk:"sp_adapter_ref"`
+	// Restricts this mapping to specific virtual entity IDs.
+	RestrictVirtualEntityIds *bool `json:"restrictVirtualEntityIds,omitempty" tfsdk:"restrict_virtual_entity_ids"`
+	// The list of virtual server IDs that this mapping is restricted to.
+	RestrictedVirtualEntityIds []string   `json:"restrictedVirtualEntityIds,omitempty" tfsdk:"restricted_virtual_entity_ids"`
+	AdapterOverrideSettings    *SpAdapter `json:"adapterOverrideSettings,omitempty" tfsdk:"adapter_override_settings"`
 	// A list of configured data stores to look up attributes from.
 	AttributeSources []AttributeSourceAggregation `json:"attributeSources,omitempty" tfsdk:"attribute_sources"`
 	// A list of mappings from attribute names to their fulfillment values.
 	AttributeContractFulfillment map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment" tfsdk:"attribute_contract_fulfillment"`
 	IssuanceCriteria             *IssuanceCriteria                    `json:"issuanceCriteria,omitempty" tfsdk:"issuance_criteria"`
-	// Restricts this mapping to specific virtual entity IDs.
-	RestrictVirtualEntityIds *bool `json:"restrictVirtualEntityIds,omitempty" tfsdk:"restrict_virtual_entity_ids"`
-	// The list of virtual server IDs that this mapping is restricted to.
-	RestrictedVirtualEntityIds []string                     `json:"restrictedVirtualEntityIds,omitempty" tfsdk:"restricted_virtual_entity_ids"`
-	AdapterOverrideSettings    *SpAdapter                   `json:"adapterOverrideSettings,omitempty" tfsdk:"adapter_override_settings"`
-	SpAdapterRef               *ResourceLink                `json:"spAdapterRef,omitempty" tfsdk:"sp_adapter_ref"`
-	AttributeSource            []AttributeSourceAggregation `json:"attributeSource,omitempty" tfsdk:"attribute_source"`
+	AttributeSource              []AttributeSourceAggregation         `json:"attributeSource,omitempty" tfsdk:"attribute_source"`
 }
 
 // NewSpAdapterMapping instantiates a new SpAdapterMapping object
@@ -53,92 +53,36 @@ func NewSpAdapterMappingWithDefaults() *SpAdapterMapping {
 	return &this
 }
 
-// GetAttributeSources returns the AttributeSources field value if set, zero value otherwise.
-func (o *SpAdapterMapping) GetAttributeSources() []AttributeSourceAggregation {
-	if o == nil || IsNil(o.AttributeSources) {
-		var ret []AttributeSourceAggregation
+// GetSpAdapterRef returns the SpAdapterRef field value if set, zero value otherwise.
+func (o *SpAdapterMapping) GetSpAdapterRef() ResourceLink {
+	if o == nil || IsNil(o.SpAdapterRef) {
+		var ret ResourceLink
 		return ret
 	}
-	return o.AttributeSources
+	return *o.SpAdapterRef
 }
 
-// GetAttributeSourcesOk returns a tuple with the AttributeSources field value if set, nil otherwise
+// GetSpAdapterRefOk returns a tuple with the SpAdapterRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SpAdapterMapping) GetAttributeSourcesOk() ([]AttributeSourceAggregation, bool) {
-	if o == nil || IsNil(o.AttributeSources) {
+func (o *SpAdapterMapping) GetSpAdapterRefOk() (*ResourceLink, bool) {
+	if o == nil || IsNil(o.SpAdapterRef) {
 		return nil, false
 	}
-	return o.AttributeSources, true
+	return o.SpAdapterRef, true
 }
 
-// HasAttributeSources returns a boolean if a field has been set.
-func (o *SpAdapterMapping) HasAttributeSources() bool {
-	if o != nil && !IsNil(o.AttributeSources) {
+// HasSpAdapterRef returns a boolean if a field has been set.
+func (o *SpAdapterMapping) HasSpAdapterRef() bool {
+	if o != nil && !IsNil(o.SpAdapterRef) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributeSources gets a reference to the given []AttributeSourceAggregation and assigns it to the AttributeSources field.
-func (o *SpAdapterMapping) SetAttributeSources(v []AttributeSourceAggregation) {
-	o.AttributeSources = v
-}
-
-// GetAttributeContractFulfillment returns the AttributeContractFulfillment field value
-func (o *SpAdapterMapping) GetAttributeContractFulfillment() map[string]AttributeFulfillmentValue {
-	if o == nil {
-		var ret map[string]AttributeFulfillmentValue
-		return ret
-	}
-
-	return o.AttributeContractFulfillment
-}
-
-// GetAttributeContractFulfillmentOk returns a tuple with the AttributeContractFulfillment field value
-// and a boolean to check if the value has been set.
-func (o *SpAdapterMapping) GetAttributeContractFulfillmentOk() (*map[string]AttributeFulfillmentValue, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AttributeContractFulfillment, true
-}
-
-// SetAttributeContractFulfillment sets field value
-func (o *SpAdapterMapping) SetAttributeContractFulfillment(v map[string]AttributeFulfillmentValue) {
-	o.AttributeContractFulfillment = v
-}
-
-// GetIssuanceCriteria returns the IssuanceCriteria field value if set, zero value otherwise.
-func (o *SpAdapterMapping) GetIssuanceCriteria() IssuanceCriteria {
-	if o == nil || IsNil(o.IssuanceCriteria) {
-		var ret IssuanceCriteria
-		return ret
-	}
-	return *o.IssuanceCriteria
-}
-
-// GetIssuanceCriteriaOk returns a tuple with the IssuanceCriteria field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SpAdapterMapping) GetIssuanceCriteriaOk() (*IssuanceCriteria, bool) {
-	if o == nil || IsNil(o.IssuanceCriteria) {
-		return nil, false
-	}
-	return o.IssuanceCriteria, true
-}
-
-// HasIssuanceCriteria returns a boolean if a field has been set.
-func (o *SpAdapterMapping) HasIssuanceCriteria() bool {
-	if o != nil && !IsNil(o.IssuanceCriteria) {
-		return true
-	}
-
-	return false
-}
-
-// SetIssuanceCriteria gets a reference to the given IssuanceCriteria and assigns it to the IssuanceCriteria field.
-func (o *SpAdapterMapping) SetIssuanceCriteria(v IssuanceCriteria) {
-	o.IssuanceCriteria = &v
+// SetSpAdapterRef gets a reference to the given ResourceLink and assigns it to the SpAdapterRef field.
+func (o *SpAdapterMapping) SetSpAdapterRef(v ResourceLink) {
+	o.SpAdapterRef = &v
 }
 
 // GetRestrictVirtualEntityIds returns the RestrictVirtualEntityIds field value if set, zero value otherwise.
@@ -237,36 +181,92 @@ func (o *SpAdapterMapping) SetAdapterOverrideSettings(v SpAdapter) {
 	o.AdapterOverrideSettings = &v
 }
 
-// GetSpAdapterRef returns the SpAdapterRef field value if set, zero value otherwise.
-func (o *SpAdapterMapping) GetSpAdapterRef() ResourceLink {
-	if o == nil || IsNil(o.SpAdapterRef) {
-		var ret ResourceLink
+// GetAttributeSources returns the AttributeSources field value if set, zero value otherwise.
+func (o *SpAdapterMapping) GetAttributeSources() []AttributeSourceAggregation {
+	if o == nil || IsNil(o.AttributeSources) {
+		var ret []AttributeSourceAggregation
 		return ret
 	}
-	return *o.SpAdapterRef
+	return o.AttributeSources
 }
 
-// GetSpAdapterRefOk returns a tuple with the SpAdapterRef field value if set, nil otherwise
+// GetAttributeSourcesOk returns a tuple with the AttributeSources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SpAdapterMapping) GetSpAdapterRefOk() (*ResourceLink, bool) {
-	if o == nil || IsNil(o.SpAdapterRef) {
+func (o *SpAdapterMapping) GetAttributeSourcesOk() ([]AttributeSourceAggregation, bool) {
+	if o == nil || IsNil(o.AttributeSources) {
 		return nil, false
 	}
-	return o.SpAdapterRef, true
+	return o.AttributeSources, true
 }
 
-// HasSpAdapterRef returns a boolean if a field has been set.
-func (o *SpAdapterMapping) HasSpAdapterRef() bool {
-	if o != nil && !IsNil(o.SpAdapterRef) {
+// HasAttributeSources returns a boolean if a field has been set.
+func (o *SpAdapterMapping) HasAttributeSources() bool {
+	if o != nil && !IsNil(o.AttributeSources) {
 		return true
 	}
 
 	return false
 }
 
-// SetSpAdapterRef gets a reference to the given ResourceLink and assigns it to the SpAdapterRef field.
-func (o *SpAdapterMapping) SetSpAdapterRef(v ResourceLink) {
-	o.SpAdapterRef = &v
+// SetAttributeSources gets a reference to the given []AttributeSourceAggregation and assigns it to the AttributeSources field.
+func (o *SpAdapterMapping) SetAttributeSources(v []AttributeSourceAggregation) {
+	o.AttributeSources = v
+}
+
+// GetAttributeContractFulfillment returns the AttributeContractFulfillment field value
+func (o *SpAdapterMapping) GetAttributeContractFulfillment() map[string]AttributeFulfillmentValue {
+	if o == nil {
+		var ret map[string]AttributeFulfillmentValue
+		return ret
+	}
+
+	return o.AttributeContractFulfillment
+}
+
+// GetAttributeContractFulfillmentOk returns a tuple with the AttributeContractFulfillment field value
+// and a boolean to check if the value has been set.
+func (o *SpAdapterMapping) GetAttributeContractFulfillmentOk() (*map[string]AttributeFulfillmentValue, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.AttributeContractFulfillment, true
+}
+
+// SetAttributeContractFulfillment sets field value
+func (o *SpAdapterMapping) SetAttributeContractFulfillment(v map[string]AttributeFulfillmentValue) {
+	o.AttributeContractFulfillment = v
+}
+
+// GetIssuanceCriteria returns the IssuanceCriteria field value if set, zero value otherwise.
+func (o *SpAdapterMapping) GetIssuanceCriteria() IssuanceCriteria {
+	if o == nil || IsNil(o.IssuanceCriteria) {
+		var ret IssuanceCriteria
+		return ret
+	}
+	return *o.IssuanceCriteria
+}
+
+// GetIssuanceCriteriaOk returns a tuple with the IssuanceCriteria field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpAdapterMapping) GetIssuanceCriteriaOk() (*IssuanceCriteria, bool) {
+	if o == nil || IsNil(o.IssuanceCriteria) {
+		return nil, false
+	}
+	return o.IssuanceCriteria, true
+}
+
+// HasIssuanceCriteria returns a boolean if a field has been set.
+func (o *SpAdapterMapping) HasIssuanceCriteria() bool {
+	if o != nil && !IsNil(o.IssuanceCriteria) {
+		return true
+	}
+
+	return false
+}
+
+// SetIssuanceCriteria gets a reference to the given IssuanceCriteria and assigns it to the IssuanceCriteria field.
+func (o *SpAdapterMapping) SetIssuanceCriteria(v IssuanceCriteria) {
+	o.IssuanceCriteria = &v
 }
 
 // GetAttributeSource returns the AttributeSource field value if set, zero value otherwise.
@@ -311,12 +311,8 @@ func (o SpAdapterMapping) MarshalJSON() ([]byte, error) {
 
 func (o SpAdapterMapping) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AttributeSources) {
-		toSerialize["attributeSources"] = o.AttributeSources
-	}
-	toSerialize["attributeContractFulfillment"] = o.AttributeContractFulfillment
-	if !IsNil(o.IssuanceCriteria) {
-		toSerialize["issuanceCriteria"] = o.IssuanceCriteria
+	if !IsNil(o.SpAdapterRef) {
+		toSerialize["spAdapterRef"] = o.SpAdapterRef
 	}
 	if !IsNil(o.RestrictVirtualEntityIds) {
 		toSerialize["restrictVirtualEntityIds"] = o.RestrictVirtualEntityIds
@@ -327,8 +323,12 @@ func (o SpAdapterMapping) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AdapterOverrideSettings) {
 		toSerialize["adapterOverrideSettings"] = o.AdapterOverrideSettings
 	}
-	if !IsNil(o.SpAdapterRef) {
-		toSerialize["spAdapterRef"] = o.SpAdapterRef
+	if !IsNil(o.AttributeSources) {
+		toSerialize["attributeSources"] = o.AttributeSources
+	}
+	toSerialize["attributeContractFulfillment"] = o.AttributeContractFulfillment
+	if !IsNil(o.IssuanceCriteria) {
+		toSerialize["issuanceCriteria"] = o.IssuanceCriteria
 	}
 	if !IsNil(o.AttributeSource) {
 		toSerialize["attributeSource"] = o.AttributeSource

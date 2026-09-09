@@ -4,13 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Options** | **[]string** | The list of options for this selection field. | 
 **DefaultValue** | Pointer to **string** | The default value for this field. | [optional] 
 
 ## Methods
 
 ### NewDropDownLocalIdentityField
 
-`func NewDropDownLocalIdentityField() *DropDownLocalIdentityField`
+`func NewDropDownLocalIdentityField(options []string, ) *DropDownLocalIdentityField`
 
 NewDropDownLocalIdentityField instantiates a new DropDownLocalIdentityField object
 This constructor will assign default values to properties that have it defined,
@@ -24,6 +25,26 @@ will change when the set of required properties is changed
 NewDropDownLocalIdentityFieldWithDefaults instantiates a new DropDownLocalIdentityField object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetOptions
+
+`func (o *DropDownLocalIdentityField) GetOptions() []string`
+
+GetOptions returns the Options field if non-nil, zero value otherwise.
+
+### GetOptionsOk
+
+`func (o *DropDownLocalIdentityField) GetOptionsOk() (*[]string, bool)`
+
+GetOptionsOk returns a tuple with the Options field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOptions
+
+`func (o *DropDownLocalIdentityField) SetOptions(v []string)`
+
+SetOptions sets Options field to given value.
+
 
 ### GetDefaultValue
 

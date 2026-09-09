@@ -23,19 +23,18 @@ var _ MappedNullable = &BaseSelectionLocalIdentityField{}
 type BaseSelectionLocalIdentityField struct {
 	LocalIdentityField
 	// The list of options for this selection field.
-	Options []string `json:"options" tfsdk:"options"`
+	Options []string `json:"options,omitempty" tfsdk:"options"`
 }
 
 // NewBaseSelectionLocalIdentityField instantiates a new BaseSelectionLocalIdentityField object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBaseSelectionLocalIdentityField(options []string, type_ string, id string, label string) *BaseSelectionLocalIdentityField {
+func NewBaseSelectionLocalIdentityField(type_ string, id string, label string) *BaseSelectionLocalIdentityField {
 	this := BaseSelectionLocalIdentityField{}
 	this.Type = type_
 	this.Id = id
 	this.Label = label
-	this.Options = options
 	return &this
 }
 
@@ -47,26 +46,34 @@ func NewBaseSelectionLocalIdentityFieldWithDefaults() *BaseSelectionLocalIdentit
 	return &this
 }
 
-// GetOptions returns the Options field value
+// GetOptions returns the Options field value if set, zero value otherwise.
 func (o *BaseSelectionLocalIdentityField) GetOptions() []string {
-	if o == nil {
+	if o == nil || IsNil(o.Options) {
 		var ret []string
 		return ret
 	}
-
 	return o.Options
 }
 
-// GetOptionsOk returns a tuple with the Options field value
+// GetOptionsOk returns a tuple with the Options field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaseSelectionLocalIdentityField) GetOptionsOk() ([]string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Options) {
 		return nil, false
 	}
 	return o.Options, true
 }
 
-// SetOptions sets field value
+// HasOptions returns a boolean if a field has been set.
+func (o *BaseSelectionLocalIdentityField) HasOptions() bool {
+	if o != nil && !IsNil(o.Options) {
+		return true
+	}
+
+	return false
+}
+
+// SetOptions gets a reference to the given []string and assigns it to the Options field.
 func (o *BaseSelectionLocalIdentityField) SetOptions(v []string) {
 	o.Options = v
 }
@@ -89,7 +96,9 @@ func (o BaseSelectionLocalIdentityField) ToMap() (map[string]interface{}, error)
 	if errLocalIdentityField != nil {
 		return map[string]interface{}{}, errLocalIdentityField
 	}
-	toSerialize["options"] = o.Options
+	if !IsNil(o.Options) {
+		toSerialize["options"] = o.Options
+	}
 	return toSerialize, nil
 }
 

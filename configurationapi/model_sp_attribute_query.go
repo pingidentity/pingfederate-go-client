@@ -21,26 +21,26 @@ var _ MappedNullable = &SpAttributeQuery{}
 
 // SpAttributeQuery The attribute query profile supports SPs in requesting user attributes.
 type SpAttributeQuery struct {
-	// A list of configured data stores to look up attributes from.
-	AttributeSources []AttributeSourceAggregation `json:"attributeSources" tfsdk:"attribute_sources"`
+	// The list of attributes that may be returned to the SP in the response to an attribute request.
+	Attributes []string `json:"attributes" tfsdk:"attributes"`
 	// A list of mappings from attribute names to their fulfillment values.
 	AttributeContractFulfillment map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment" tfsdk:"attribute_contract_fulfillment"`
 	IssuanceCriteria             *IssuanceCriteria                    `json:"issuanceCriteria,omitempty" tfsdk:"issuance_criteria"`
-	// The list of attributes that may be returned to the SP in the response to an attribute request.
-	Attributes      []string                     `json:"attributes" tfsdk:"attributes"`
-	Policy          *SpAttributeQueryPolicy      `json:"policy,omitempty" tfsdk:"policy"`
-	AttributeSource []AttributeSourceAggregation `json:"attributeSource,omitempty" tfsdk:"attribute_source"`
+	Policy                       *SpAttributeQueryPolicy              `json:"policy,omitempty" tfsdk:"policy"`
+	// A list of configured data stores to look up attributes from.
+	AttributeSources []AttributeSourceAggregation `json:"attributeSources" tfsdk:"attribute_sources"`
+	AttributeSource  []AttributeSourceAggregation `json:"attributeSource,omitempty" tfsdk:"attribute_source"`
 }
 
 // NewSpAttributeQuery instantiates a new SpAttributeQuery object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSpAttributeQuery(attributeSources []AttributeSourceAggregation, attributeContractFulfillment map[string]AttributeFulfillmentValue, attributes []string) *SpAttributeQuery {
+func NewSpAttributeQuery(attributes []string, attributeContractFulfillment map[string]AttributeFulfillmentValue, attributeSources []AttributeSourceAggregation) *SpAttributeQuery {
 	this := SpAttributeQuery{}
-	this.AttributeSources = attributeSources
-	this.AttributeContractFulfillment = attributeContractFulfillment
 	this.Attributes = attributes
+	this.AttributeContractFulfillment = attributeContractFulfillment
+	this.AttributeSources = attributeSources
 	return &this
 }
 
@@ -52,28 +52,28 @@ func NewSpAttributeQueryWithDefaults() *SpAttributeQuery {
 	return &this
 }
 
-// GetAttributeSources returns the AttributeSources field value
-func (o *SpAttributeQuery) GetAttributeSources() []AttributeSourceAggregation {
+// GetAttributes returns the Attributes field value
+func (o *SpAttributeQuery) GetAttributes() []string {
 	if o == nil {
-		var ret []AttributeSourceAggregation
+		var ret []string
 		return ret
 	}
 
-	return o.AttributeSources
+	return o.Attributes
 }
 
-// GetAttributeSourcesOk returns a tuple with the AttributeSources field value
+// GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *SpAttributeQuery) GetAttributeSourcesOk() ([]AttributeSourceAggregation, bool) {
+func (o *SpAttributeQuery) GetAttributesOk() ([]string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.AttributeSources, true
+	return o.Attributes, true
 }
 
-// SetAttributeSources sets field value
-func (o *SpAttributeQuery) SetAttributeSources(v []AttributeSourceAggregation) {
-	o.AttributeSources = v
+// SetAttributes sets field value
+func (o *SpAttributeQuery) SetAttributes(v []string) {
+	o.Attributes = v
 }
 
 // GetAttributeContractFulfillment returns the AttributeContractFulfillment field value
@@ -132,30 +132,6 @@ func (o *SpAttributeQuery) SetIssuanceCriteria(v IssuanceCriteria) {
 	o.IssuanceCriteria = &v
 }
 
-// GetAttributes returns the Attributes field value
-func (o *SpAttributeQuery) GetAttributes() []string {
-	if o == nil {
-		var ret []string
-		return ret
-	}
-
-	return o.Attributes
-}
-
-// GetAttributesOk returns a tuple with the Attributes field value
-// and a boolean to check if the value has been set.
-func (o *SpAttributeQuery) GetAttributesOk() ([]string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Attributes, true
-}
-
-// SetAttributes sets field value
-func (o *SpAttributeQuery) SetAttributes(v []string) {
-	o.Attributes = v
-}
-
 // GetPolicy returns the Policy field value if set, zero value otherwise.
 func (o *SpAttributeQuery) GetPolicy() SpAttributeQueryPolicy {
 	if o == nil || IsNil(o.Policy) {
@@ -186,6 +162,30 @@ func (o *SpAttributeQuery) HasPolicy() bool {
 // SetPolicy gets a reference to the given SpAttributeQueryPolicy and assigns it to the Policy field.
 func (o *SpAttributeQuery) SetPolicy(v SpAttributeQueryPolicy) {
 	o.Policy = &v
+}
+
+// GetAttributeSources returns the AttributeSources field value
+func (o *SpAttributeQuery) GetAttributeSources() []AttributeSourceAggregation {
+	if o == nil {
+		var ret []AttributeSourceAggregation
+		return ret
+	}
+
+	return o.AttributeSources
+}
+
+// GetAttributeSourcesOk returns a tuple with the AttributeSources field value
+// and a boolean to check if the value has been set.
+func (o *SpAttributeQuery) GetAttributeSourcesOk() ([]AttributeSourceAggregation, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.AttributeSources, true
+}
+
+// SetAttributeSources sets field value
+func (o *SpAttributeQuery) SetAttributeSources(v []AttributeSourceAggregation) {
+	o.AttributeSources = v
 }
 
 // GetAttributeSource returns the AttributeSource field value if set, zero value otherwise.
@@ -230,15 +230,15 @@ func (o SpAttributeQuery) MarshalJSON() ([]byte, error) {
 
 func (o SpAttributeQuery) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["attributeSources"] = o.AttributeSources
+	toSerialize["attributes"] = o.Attributes
 	toSerialize["attributeContractFulfillment"] = o.AttributeContractFulfillment
 	if !IsNil(o.IssuanceCriteria) {
 		toSerialize["issuanceCriteria"] = o.IssuanceCriteria
 	}
-	toSerialize["attributes"] = o.Attributes
 	if !IsNil(o.Policy) {
 		toSerialize["policy"] = o.Policy
 	}
+	toSerialize["attributeSources"] = o.AttributeSources
 	if !IsNil(o.AttributeSource) {
 		toSerialize["attributeSource"] = o.AttributeSource
 	}

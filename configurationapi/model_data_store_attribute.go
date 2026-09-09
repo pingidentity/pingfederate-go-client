@@ -21,22 +21,22 @@ var _ MappedNullable = &DataStoreAttribute{}
 
 // DataStoreAttribute The data store attribute.
 type DataStoreAttribute struct {
-	// The data store attribute metadata.
-	Metadata *map[string]string `json:"metadata,omitempty" tfsdk:"metadata"`
-	// The data store attribute name.
-	Name string `json:"name" tfsdk:"name"`
 	// The data store attribute type.
 	Type string `json:"type" tfsdk:"type"`
+	// The data store attribute name.
+	Name string `json:"name" tfsdk:"name"`
+	// The data store attribute metadata.
+	Metadata *map[string]string `json:"metadata,omitempty" tfsdk:"metadata"`
 }
 
 // NewDataStoreAttribute instantiates a new DataStoreAttribute object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDataStoreAttribute(name string, type_ string) *DataStoreAttribute {
+func NewDataStoreAttribute(type_ string, name string) *DataStoreAttribute {
 	this := DataStoreAttribute{}
-	this.Name = name
 	this.Type = type_
+	this.Name = name
 	return &this
 }
 
@@ -46,6 +46,54 @@ func NewDataStoreAttribute(name string, type_ string) *DataStoreAttribute {
 func NewDataStoreAttributeWithDefaults() *DataStoreAttribute {
 	this := DataStoreAttribute{}
 	return &this
+}
+
+// GetType returns the Type field value
+func (o *DataStoreAttribute) GetType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value
+// and a boolean to check if the value has been set.
+func (o *DataStoreAttribute) GetTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Type, true
+}
+
+// SetType sets field value
+func (o *DataStoreAttribute) SetType(v string) {
+	o.Type = v
+}
+
+// GetName returns the Name field value
+func (o *DataStoreAttribute) GetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value
+// and a boolean to check if the value has been set.
+func (o *DataStoreAttribute) GetNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Name, true
+}
+
+// SetName sets field value
+func (o *DataStoreAttribute) SetName(v string) {
+	o.Name = v
 }
 
 // GetMetadata returns the Metadata field value if set, zero value otherwise.
@@ -80,54 +128,6 @@ func (o *DataStoreAttribute) SetMetadata(v map[string]string) {
 	o.Metadata = &v
 }
 
-// GetName returns the Name field value
-func (o *DataStoreAttribute) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *DataStoreAttribute) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *DataStoreAttribute) SetName(v string) {
-	o.Name = v
-}
-
-// GetType returns the Type field value
-func (o *DataStoreAttribute) GetType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value
-// and a boolean to check if the value has been set.
-func (o *DataStoreAttribute) GetTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Type, true
-}
-
-// SetType sets field value
-func (o *DataStoreAttribute) SetType(v string) {
-	o.Type = v
-}
-
 func (o DataStoreAttribute) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -138,11 +138,11 @@ func (o DataStoreAttribute) MarshalJSON() ([]byte, error) {
 
 func (o DataStoreAttribute) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	toSerialize["type"] = o.Type
+	toSerialize["name"] = o.Name
 	if !IsNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
 	}
-	toSerialize["name"] = o.Name
-	toSerialize["type"] = o.Type
 	return toSerialize, nil
 }
 

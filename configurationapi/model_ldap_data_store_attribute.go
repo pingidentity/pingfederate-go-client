@@ -28,10 +28,10 @@ type LdapDataStoreAttribute struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLdapDataStoreAttribute(name string, type_ string) *LdapDataStoreAttribute {
+func NewLdapDataStoreAttribute(type_ string, name string) *LdapDataStoreAttribute {
 	this := LdapDataStoreAttribute{}
-	this.Name = name
 	this.Type = type_
+	this.Name = name
 	return &this
 }
 

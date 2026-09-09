@@ -23,7 +23,9 @@ var _ MappedNullable = &ChannelSource{}
 type ChannelSource struct {
 	DataSource ResourceLink `json:"dataSource" tfsdk:"data_source"`
 	// the GUID attribute name.
-	GuidAttributeName         string                    `json:"guidAttributeName" tfsdk:"guid_attribute_name"`
+	GuidAttributeName string `json:"guidAttributeName" tfsdk:"guid_attribute_name"`
+	// Indicates whether the GUID is stored in binary format.
+	GuidBinary                bool                      `json:"guidBinary" tfsdk:"guid_binary"`
 	ChangeDetectionSettings   ChangeDetectionSettings   `json:"changeDetectionSettings" tfsdk:"change_detection_settings"`
 	GroupMembershipDetection  GroupMembershipDetection  `json:"groupMembershipDetection" tfsdk:"group_membership_detection"`
 	AccountManagementSettings AccountManagementSettings `json:"accountManagementSettings" tfsdk:"account_management_settings"`
@@ -31,24 +33,22 @@ type ChannelSource struct {
 	BaseDn              string                 `json:"baseDn" tfsdk:"base_dn"`
 	UserSourceLocation  ChannelSourceLocation  `json:"userSourceLocation" tfsdk:"user_source_location"`
 	GroupSourceLocation *ChannelSourceLocation `json:"groupSourceLocation,omitempty" tfsdk:"group_source_location"`
-	// Indicates whether the GUID is stored in binary format.
-	GuidBinary bool `json:"guidBinary" tfsdk:"guid_binary"`
 }
 
 // NewChannelSource instantiates a new ChannelSource object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewChannelSource(dataSource ResourceLink, guidAttributeName string, changeDetectionSettings ChangeDetectionSettings, groupMembershipDetection GroupMembershipDetection, accountManagementSettings AccountManagementSettings, baseDn string, userSourceLocation ChannelSourceLocation, guidBinary bool) *ChannelSource {
+func NewChannelSource(dataSource ResourceLink, guidAttributeName string, guidBinary bool, changeDetectionSettings ChangeDetectionSettings, groupMembershipDetection GroupMembershipDetection, accountManagementSettings AccountManagementSettings, baseDn string, userSourceLocation ChannelSourceLocation) *ChannelSource {
 	this := ChannelSource{}
 	this.DataSource = dataSource
 	this.GuidAttributeName = guidAttributeName
+	this.GuidBinary = guidBinary
 	this.ChangeDetectionSettings = changeDetectionSettings
 	this.GroupMembershipDetection = groupMembershipDetection
 	this.AccountManagementSettings = accountManagementSettings
 	this.BaseDn = baseDn
 	this.UserSourceLocation = userSourceLocation
-	this.GuidBinary = guidBinary
 	return &this
 }
 
@@ -106,6 +106,30 @@ func (o *ChannelSource) GetGuidAttributeNameOk() (*string, bool) {
 // SetGuidAttributeName sets field value
 func (o *ChannelSource) SetGuidAttributeName(v string) {
 	o.GuidAttributeName = v
+}
+
+// GetGuidBinary returns the GuidBinary field value
+func (o *ChannelSource) GetGuidBinary() bool {
+	if o == nil {
+		var ret bool
+		return ret
+	}
+
+	return o.GuidBinary
+}
+
+// GetGuidBinaryOk returns a tuple with the GuidBinary field value
+// and a boolean to check if the value has been set.
+func (o *ChannelSource) GetGuidBinaryOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.GuidBinary, true
+}
+
+// SetGuidBinary sets field value
+func (o *ChannelSource) SetGuidBinary(v bool) {
+	o.GuidBinary = v
 }
 
 // GetChangeDetectionSettings returns the ChangeDetectionSettings field value
@@ -260,30 +284,6 @@ func (o *ChannelSource) SetGroupSourceLocation(v ChannelSourceLocation) {
 	o.GroupSourceLocation = &v
 }
 
-// GetGuidBinary returns the GuidBinary field value
-func (o *ChannelSource) GetGuidBinary() bool {
-	if o == nil {
-		var ret bool
-		return ret
-	}
-
-	return o.GuidBinary
-}
-
-// GetGuidBinaryOk returns a tuple with the GuidBinary field value
-// and a boolean to check if the value has been set.
-func (o *ChannelSource) GetGuidBinaryOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.GuidBinary, true
-}
-
-// SetGuidBinary sets field value
-func (o *ChannelSource) SetGuidBinary(v bool) {
-	o.GuidBinary = v
-}
-
 func (o ChannelSource) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -296,6 +296,7 @@ func (o ChannelSource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dataSource"] = o.DataSource
 	toSerialize["guidAttributeName"] = o.GuidAttributeName
+	toSerialize["guidBinary"] = o.GuidBinary
 	toSerialize["changeDetectionSettings"] = o.ChangeDetectionSettings
 	toSerialize["groupMembershipDetection"] = o.GroupMembershipDetection
 	toSerialize["accountManagementSettings"] = o.AccountManagementSettings
@@ -304,7 +305,6 @@ func (o ChannelSource) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.GroupSourceLocation) {
 		toSerialize["groupSourceLocation"] = o.GroupSourceLocation
 	}
-	toSerialize["guidBinary"] = o.GuidBinary
 	return toSerialize, nil
 }
 

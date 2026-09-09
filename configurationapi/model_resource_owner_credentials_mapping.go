@@ -21,25 +21,25 @@ var _ MappedNullable = &ResourceOwnerCredentialsMapping{}
 
 // ResourceOwnerCredentialsMapping The OAuth Resource Owner Credentials Mapping.
 type ResourceOwnerCredentialsMapping struct {
+	// The ID of the Resource Owner Credentials Mapping.
+	Id                   string        `json:"id" tfsdk:"id"`
+	PasswordValidatorRef *ResourceLink `json:"passwordValidatorRef,omitempty" tfsdk:"password_validator_ref"`
 	// A list of configured data stores to look up attributes from.
 	AttributeSources []AttributeSourceAggregation `json:"attributeSources,omitempty" tfsdk:"attribute_sources"`
 	// A list of mappings from attribute names to their fulfillment values.
 	AttributeContractFulfillment map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment" tfsdk:"attribute_contract_fulfillment"`
 	IssuanceCriteria             *IssuanceCriteria                    `json:"issuanceCriteria,omitempty" tfsdk:"issuance_criteria"`
-	// The ID of the Resource Owner Credentials Mapping.
-	Id                   string                       `json:"id" tfsdk:"id"`
-	PasswordValidatorRef *ResourceLink                `json:"passwordValidatorRef,omitempty" tfsdk:"password_validator_ref"`
-	AttributeSource      []AttributeSourceAggregation `json:"attributeSource,omitempty" tfsdk:"attribute_source"`
+	AttributeSource              []AttributeSourceAggregation         `json:"attributeSource,omitempty" tfsdk:"attribute_source"`
 }
 
 // NewResourceOwnerCredentialsMapping instantiates a new ResourceOwnerCredentialsMapping object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewResourceOwnerCredentialsMapping(attributeContractFulfillment map[string]AttributeFulfillmentValue, id string) *ResourceOwnerCredentialsMapping {
+func NewResourceOwnerCredentialsMapping(id string, attributeContractFulfillment map[string]AttributeFulfillmentValue) *ResourceOwnerCredentialsMapping {
 	this := ResourceOwnerCredentialsMapping{}
-	this.AttributeContractFulfillment = attributeContractFulfillment
 	this.Id = id
+	this.AttributeContractFulfillment = attributeContractFulfillment
 	return &this
 }
 
@@ -49,6 +49,62 @@ func NewResourceOwnerCredentialsMapping(attributeContractFulfillment map[string]
 func NewResourceOwnerCredentialsMappingWithDefaults() *ResourceOwnerCredentialsMapping {
 	this := ResourceOwnerCredentialsMapping{}
 	return &this
+}
+
+// GetId returns the Id field value
+func (o *ResourceOwnerCredentialsMapping) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ResourceOwnerCredentialsMapping) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ResourceOwnerCredentialsMapping) SetId(v string) {
+	o.Id = v
+}
+
+// GetPasswordValidatorRef returns the PasswordValidatorRef field value if set, zero value otherwise.
+func (o *ResourceOwnerCredentialsMapping) GetPasswordValidatorRef() ResourceLink {
+	if o == nil || IsNil(o.PasswordValidatorRef) {
+		var ret ResourceLink
+		return ret
+	}
+	return *o.PasswordValidatorRef
+}
+
+// GetPasswordValidatorRefOk returns a tuple with the PasswordValidatorRef field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ResourceOwnerCredentialsMapping) GetPasswordValidatorRefOk() (*ResourceLink, bool) {
+	if o == nil || IsNil(o.PasswordValidatorRef) {
+		return nil, false
+	}
+	return o.PasswordValidatorRef, true
+}
+
+// HasPasswordValidatorRef returns a boolean if a field has been set.
+func (o *ResourceOwnerCredentialsMapping) HasPasswordValidatorRef() bool {
+	if o != nil && !IsNil(o.PasswordValidatorRef) {
+		return true
+	}
+
+	return false
+}
+
+// SetPasswordValidatorRef gets a reference to the given ResourceLink and assigns it to the PasswordValidatorRef field.
+func (o *ResourceOwnerCredentialsMapping) SetPasswordValidatorRef(v ResourceLink) {
+	o.PasswordValidatorRef = &v
 }
 
 // GetAttributeSources returns the AttributeSources field value if set, zero value otherwise.
@@ -139,62 +195,6 @@ func (o *ResourceOwnerCredentialsMapping) SetIssuanceCriteria(v IssuanceCriteria
 	o.IssuanceCriteria = &v
 }
 
-// GetId returns the Id field value
-func (o *ResourceOwnerCredentialsMapping) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ResourceOwnerCredentialsMapping) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ResourceOwnerCredentialsMapping) SetId(v string) {
-	o.Id = v
-}
-
-// GetPasswordValidatorRef returns the PasswordValidatorRef field value if set, zero value otherwise.
-func (o *ResourceOwnerCredentialsMapping) GetPasswordValidatorRef() ResourceLink {
-	if o == nil || IsNil(o.PasswordValidatorRef) {
-		var ret ResourceLink
-		return ret
-	}
-	return *o.PasswordValidatorRef
-}
-
-// GetPasswordValidatorRefOk returns a tuple with the PasswordValidatorRef field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResourceOwnerCredentialsMapping) GetPasswordValidatorRefOk() (*ResourceLink, bool) {
-	if o == nil || IsNil(o.PasswordValidatorRef) {
-		return nil, false
-	}
-	return o.PasswordValidatorRef, true
-}
-
-// HasPasswordValidatorRef returns a boolean if a field has been set.
-func (o *ResourceOwnerCredentialsMapping) HasPasswordValidatorRef() bool {
-	if o != nil && !IsNil(o.PasswordValidatorRef) {
-		return true
-	}
-
-	return false
-}
-
-// SetPasswordValidatorRef gets a reference to the given ResourceLink and assigns it to the PasswordValidatorRef field.
-func (o *ResourceOwnerCredentialsMapping) SetPasswordValidatorRef(v ResourceLink) {
-	o.PasswordValidatorRef = &v
-}
-
 // GetAttributeSource returns the AttributeSource field value if set, zero value otherwise.
 func (o *ResourceOwnerCredentialsMapping) GetAttributeSource() []AttributeSourceAggregation {
 	if o == nil || IsNil(o.AttributeSource) {
@@ -237,16 +237,16 @@ func (o ResourceOwnerCredentialsMapping) MarshalJSON() ([]byte, error) {
 
 func (o ResourceOwnerCredentialsMapping) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.PasswordValidatorRef) {
+		toSerialize["passwordValidatorRef"] = o.PasswordValidatorRef
+	}
 	if !IsNil(o.AttributeSources) {
 		toSerialize["attributeSources"] = o.AttributeSources
 	}
 	toSerialize["attributeContractFulfillment"] = o.AttributeContractFulfillment
 	if !IsNil(o.IssuanceCriteria) {
 		toSerialize["issuanceCriteria"] = o.IssuanceCriteria
-	}
-	toSerialize["id"] = o.Id
-	if !IsNil(o.PasswordValidatorRef) {
-		toSerialize["passwordValidatorRef"] = o.PasswordValidatorRef
 	}
 	if !IsNil(o.AttributeSource) {
 		toSerialize["attributeSource"] = o.AttributeSource

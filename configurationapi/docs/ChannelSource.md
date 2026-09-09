@@ -6,19 +6,19 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DataSource** | [**ResourceLink**](ResourceLink.md) |  | 
 **GuidAttributeName** | **string** | the GUID attribute name. | 
+**GuidBinary** | **bool** | Indicates whether the GUID is stored in binary format. | 
 **ChangeDetectionSettings** | [**ChangeDetectionSettings**](ChangeDetectionSettings.md) |  | 
 **GroupMembershipDetection** | [**GroupMembershipDetection**](GroupMembershipDetection.md) |  | 
 **AccountManagementSettings** | [**AccountManagementSettings**](AccountManagementSettings.md) |  | 
 **BaseDn** | **string** | The base DN where the user records are located. | 
 **UserSourceLocation** | [**ChannelSourceLocation**](ChannelSourceLocation.md) |  | 
 **GroupSourceLocation** | Pointer to [**ChannelSourceLocation**](ChannelSourceLocation.md) |  | [optional] 
-**GuidBinary** | **bool** | Indicates whether the GUID is stored in binary format. | 
 
 ## Methods
 
 ### NewChannelSource
 
-`func NewChannelSource(dataSource ResourceLink, guidAttributeName string, changeDetectionSettings ChangeDetectionSettings, groupMembershipDetection GroupMembershipDetection, accountManagementSettings AccountManagementSettings, baseDn string, userSourceLocation ChannelSourceLocation, guidBinary bool, ) *ChannelSource`
+`func NewChannelSource(dataSource ResourceLink, guidAttributeName string, guidBinary bool, changeDetectionSettings ChangeDetectionSettings, groupMembershipDetection GroupMembershipDetection, accountManagementSettings AccountManagementSettings, baseDn string, userSourceLocation ChannelSourceLocation, ) *ChannelSource`
 
 NewChannelSource instantiates a new ChannelSource object
 This constructor will assign default values to properties that have it defined,
@@ -71,6 +71,26 @@ and a boolean to check if the value has been set.
 `func (o *ChannelSource) SetGuidAttributeName(v string)`
 
 SetGuidAttributeName sets GuidAttributeName field to given value.
+
+
+### GetGuidBinary
+
+`func (o *ChannelSource) GetGuidBinary() bool`
+
+GetGuidBinary returns the GuidBinary field if non-nil, zero value otherwise.
+
+### GetGuidBinaryOk
+
+`func (o *ChannelSource) GetGuidBinaryOk() (*bool, bool)`
+
+GetGuidBinaryOk returns a tuple with the GuidBinary field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGuidBinary
+
+`func (o *ChannelSource) SetGuidBinary(v bool)`
+
+SetGuidBinary sets GuidBinary field to given value.
 
 
 ### GetChangeDetectionSettings
@@ -197,26 +217,6 @@ SetGroupSourceLocation sets GroupSourceLocation field to given value.
 `func (o *ChannelSource) HasGroupSourceLocation() bool`
 
 HasGroupSourceLocation returns a boolean if a field has been set.
-
-### GetGuidBinary
-
-`func (o *ChannelSource) GetGuidBinary() bool`
-
-GetGuidBinary returns the GuidBinary field if non-nil, zero value otherwise.
-
-### GetGuidBinaryOk
-
-`func (o *ChannelSource) GetGuidBinaryOk() (*bool, bool)`
-
-GetGuidBinaryOk returns a tuple with the GuidBinary field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGuidBinary
-
-`func (o *ChannelSource) SetGuidBinary(v bool)`
-
-SetGuidBinary sets GuidBinary field to given value.
-
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

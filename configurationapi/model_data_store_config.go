@@ -21,21 +21,21 @@ var _ MappedNullable = &DataStoreConfig{}
 
 // DataStoreConfig Local identity profile data store.
 type DataStoreConfig struct {
+	// The data store config type.
+	Type         string       `json:"type" tfsdk:"type"`
+	DataStoreRef ResourceLink `json:"dataStoreRef" tfsdk:"data_store_ref"`
 	// The data store mapping.
 	DataStoreMapping *map[string]DataStoreAttribute `json:"dataStoreMapping,omitempty" tfsdk:"data_store_mapping"`
-	DataStoreRef     ResourceLink                   `json:"dataStoreRef" tfsdk:"data_store_ref"`
-	// The data store config type.
-	Type string `json:"type" tfsdk:"type"`
 }
 
 // NewDataStoreConfig instantiates a new DataStoreConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDataStoreConfig(dataStoreRef ResourceLink, type_ string) *DataStoreConfig {
+func NewDataStoreConfig(type_ string, dataStoreRef ResourceLink) *DataStoreConfig {
 	this := DataStoreConfig{}
-	this.DataStoreRef = dataStoreRef
 	this.Type = type_
+	this.DataStoreRef = dataStoreRef
 	return &this
 }
 
@@ -45,6 +45,54 @@ func NewDataStoreConfig(dataStoreRef ResourceLink, type_ string) *DataStoreConfi
 func NewDataStoreConfigWithDefaults() *DataStoreConfig {
 	this := DataStoreConfig{}
 	return &this
+}
+
+// GetType returns the Type field value
+func (o *DataStoreConfig) GetType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value
+// and a boolean to check if the value has been set.
+func (o *DataStoreConfig) GetTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Type, true
+}
+
+// SetType sets field value
+func (o *DataStoreConfig) SetType(v string) {
+	o.Type = v
+}
+
+// GetDataStoreRef returns the DataStoreRef field value
+func (o *DataStoreConfig) GetDataStoreRef() ResourceLink {
+	if o == nil {
+		var ret ResourceLink
+		return ret
+	}
+
+	return o.DataStoreRef
+}
+
+// GetDataStoreRefOk returns a tuple with the DataStoreRef field value
+// and a boolean to check if the value has been set.
+func (o *DataStoreConfig) GetDataStoreRefOk() (*ResourceLink, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.DataStoreRef, true
+}
+
+// SetDataStoreRef sets field value
+func (o *DataStoreConfig) SetDataStoreRef(v ResourceLink) {
+	o.DataStoreRef = v
 }
 
 // GetDataStoreMapping returns the DataStoreMapping field value if set, zero value otherwise.
@@ -79,54 +127,6 @@ func (o *DataStoreConfig) SetDataStoreMapping(v map[string]DataStoreAttribute) {
 	o.DataStoreMapping = &v
 }
 
-// GetDataStoreRef returns the DataStoreRef field value
-func (o *DataStoreConfig) GetDataStoreRef() ResourceLink {
-	if o == nil {
-		var ret ResourceLink
-		return ret
-	}
-
-	return o.DataStoreRef
-}
-
-// GetDataStoreRefOk returns a tuple with the DataStoreRef field value
-// and a boolean to check if the value has been set.
-func (o *DataStoreConfig) GetDataStoreRefOk() (*ResourceLink, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.DataStoreRef, true
-}
-
-// SetDataStoreRef sets field value
-func (o *DataStoreConfig) SetDataStoreRef(v ResourceLink) {
-	o.DataStoreRef = v
-}
-
-// GetType returns the Type field value
-func (o *DataStoreConfig) GetType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value
-// and a boolean to check if the value has been set.
-func (o *DataStoreConfig) GetTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Type, true
-}
-
-// SetType sets field value
-func (o *DataStoreConfig) SetType(v string) {
-	o.Type = v
-}
-
 func (o DataStoreConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -137,11 +137,11 @@ func (o DataStoreConfig) MarshalJSON() ([]byte, error) {
 
 func (o DataStoreConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	toSerialize["type"] = o.Type
+	toSerialize["dataStoreRef"] = o.DataStoreRef
 	if !IsNil(o.DataStoreMapping) {
 		toSerialize["dataStoreMapping"] = o.DataStoreMapping
 	}
-	toSerialize["dataStoreRef"] = o.DataStoreRef
-	toSerialize["type"] = o.Type
 	return toSerialize, nil
 }
 

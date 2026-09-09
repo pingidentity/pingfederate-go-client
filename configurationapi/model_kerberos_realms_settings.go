@@ -23,12 +23,12 @@ var _ MappedNullable = &KerberosRealmsSettings{}
 type KerberosRealmsSettings struct {
 	// Reference to the default security.
 	ForceTcp *bool `json:"forceTcp,omitempty" tfsdk:"force_tcp"`
-	// Reference to the default Key Distribution Center Timeout (in seconds).
-	KdcTimeout string `json:"kdcTimeout" tfsdk:"kdc_timeout"`
-	// Reference to the default logging.
-	DebugLogOutput *bool `json:"debugLogOutput,omitempty" tfsdk:"debug_log_output"`
 	// Reference to the default Key Distribution Center Retries.
 	KdcRetries string `json:"kdcRetries" tfsdk:"kdc_retries"`
+	// Reference to the default logging.
+	DebugLogOutput *bool `json:"debugLogOutput,omitempty" tfsdk:"debug_log_output"`
+	// Reference to the default Key Distribution Center Timeout (in seconds).
+	KdcTimeout string `json:"kdcTimeout" tfsdk:"kdc_timeout"`
 	// The key set retention period in minutes. When 'retainPreviousKeysOnPasswordChange' is set to true for a realm, this setting determines how long keys will be retained after a password change occurs. If this field is omitted in a PUT request, the default of 610 minutes is applied.
 	KeySetRetentionPeriodMins *int64 `json:"keySetRetentionPeriodMins,omitempty" tfsdk:"key_set_retention_period_mins"`
 }
@@ -37,10 +37,10 @@ type KerberosRealmsSettings struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKerberosRealmsSettings(kdcTimeout string, kdcRetries string) *KerberosRealmsSettings {
+func NewKerberosRealmsSettings(kdcRetries string, kdcTimeout string) *KerberosRealmsSettings {
 	this := KerberosRealmsSettings{}
-	this.KdcTimeout = kdcTimeout
 	this.KdcRetries = kdcRetries
+	this.KdcTimeout = kdcTimeout
 	return &this
 }
 
@@ -84,28 +84,28 @@ func (o *KerberosRealmsSettings) SetForceTcp(v bool) {
 	o.ForceTcp = &v
 }
 
-// GetKdcTimeout returns the KdcTimeout field value
-func (o *KerberosRealmsSettings) GetKdcTimeout() string {
+// GetKdcRetries returns the KdcRetries field value
+func (o *KerberosRealmsSettings) GetKdcRetries() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.KdcTimeout
+	return o.KdcRetries
 }
 
-// GetKdcTimeoutOk returns a tuple with the KdcTimeout field value
+// GetKdcRetriesOk returns a tuple with the KdcRetries field value
 // and a boolean to check if the value has been set.
-func (o *KerberosRealmsSettings) GetKdcTimeoutOk() (*string, bool) {
+func (o *KerberosRealmsSettings) GetKdcRetriesOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.KdcTimeout, true
+	return &o.KdcRetries, true
 }
 
-// SetKdcTimeout sets field value
-func (o *KerberosRealmsSettings) SetKdcTimeout(v string) {
-	o.KdcTimeout = v
+// SetKdcRetries sets field value
+func (o *KerberosRealmsSettings) SetKdcRetries(v string) {
+	o.KdcRetries = v
 }
 
 // GetDebugLogOutput returns the DebugLogOutput field value if set, zero value otherwise.
@@ -140,28 +140,28 @@ func (o *KerberosRealmsSettings) SetDebugLogOutput(v bool) {
 	o.DebugLogOutput = &v
 }
 
-// GetKdcRetries returns the KdcRetries field value
-func (o *KerberosRealmsSettings) GetKdcRetries() string {
+// GetKdcTimeout returns the KdcTimeout field value
+func (o *KerberosRealmsSettings) GetKdcTimeout() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.KdcRetries
+	return o.KdcTimeout
 }
 
-// GetKdcRetriesOk returns a tuple with the KdcRetries field value
+// GetKdcTimeoutOk returns a tuple with the KdcTimeout field value
 // and a boolean to check if the value has been set.
-func (o *KerberosRealmsSettings) GetKdcRetriesOk() (*string, bool) {
+func (o *KerberosRealmsSettings) GetKdcTimeoutOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.KdcRetries, true
+	return &o.KdcTimeout, true
 }
 
-// SetKdcRetries sets field value
-func (o *KerberosRealmsSettings) SetKdcRetries(v string) {
-	o.KdcRetries = v
+// SetKdcTimeout sets field value
+func (o *KerberosRealmsSettings) SetKdcTimeout(v string) {
+	o.KdcTimeout = v
 }
 
 // GetKeySetRetentionPeriodMins returns the KeySetRetentionPeriodMins field value if set, zero value otherwise.
@@ -209,11 +209,11 @@ func (o KerberosRealmsSettings) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ForceTcp) {
 		toSerialize["forceTcp"] = o.ForceTcp
 	}
-	toSerialize["kdcTimeout"] = o.KdcTimeout
+	toSerialize["kdcRetries"] = o.KdcRetries
 	if !IsNil(o.DebugLogOutput) {
 		toSerialize["debugLogOutput"] = o.DebugLogOutput
 	}
-	toSerialize["kdcRetries"] = o.KdcRetries
+	toSerialize["kdcTimeout"] = o.KdcTimeout
 	if !IsNil(o.KeySetRetentionPeriodMins) {
 		toSerialize["keySetRetentionPeriodMins"] = o.KeySetRetentionPeriodMins
 	}

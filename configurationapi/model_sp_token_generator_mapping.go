@@ -21,27 +21,27 @@ var _ MappedNullable = &SpTokenGeneratorMapping{}
 
 // SpTokenGeneratorMapping The SP Token Generator Mapping.
 type SpTokenGeneratorMapping struct {
+	SpTokenGeneratorRef ResourceLink `json:"spTokenGeneratorRef" tfsdk:"sp_token_generator_ref"`
+	// The list of virtual server IDs that this mapping is restricted to.
+	RestrictedVirtualEntityIds []string `json:"restrictedVirtualEntityIds,omitempty" tfsdk:"restricted_virtual_entity_ids"`
+	// Indicates whether the token generator mapping is the default mapping. The default value is false.
+	DefaultMapping *bool `json:"defaultMapping,omitempty" tfsdk:"default_mapping"`
 	// A list of configured data stores to look up attributes from.
 	AttributeSources []AttributeSourceAggregation `json:"attributeSources,omitempty" tfsdk:"attribute_sources"`
 	// A list of mappings from attribute names to their fulfillment values.
 	AttributeContractFulfillment map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment" tfsdk:"attribute_contract_fulfillment"`
 	IssuanceCriteria             *IssuanceCriteria                    `json:"issuanceCriteria,omitempty" tfsdk:"issuance_criteria"`
-	SpTokenGeneratorRef          ResourceLink                         `json:"spTokenGeneratorRef" tfsdk:"sp_token_generator_ref"`
-	// The list of virtual server IDs that this mapping is restricted to.
-	RestrictedVirtualEntityIds []string `json:"restrictedVirtualEntityIds,omitempty" tfsdk:"restricted_virtual_entity_ids"`
-	// Indicates whether the token generator mapping is the default mapping. The default value is false.
-	DefaultMapping  *bool                        `json:"defaultMapping,omitempty" tfsdk:"default_mapping"`
-	AttributeSource []AttributeSourceAggregation `json:"attributeSource,omitempty" tfsdk:"attribute_source"`
+	AttributeSource              []AttributeSourceAggregation         `json:"attributeSource,omitempty" tfsdk:"attribute_source"`
 }
 
 // NewSpTokenGeneratorMapping instantiates a new SpTokenGeneratorMapping object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSpTokenGeneratorMapping(attributeContractFulfillment map[string]AttributeFulfillmentValue, spTokenGeneratorRef ResourceLink) *SpTokenGeneratorMapping {
+func NewSpTokenGeneratorMapping(spTokenGeneratorRef ResourceLink, attributeContractFulfillment map[string]AttributeFulfillmentValue) *SpTokenGeneratorMapping {
 	this := SpTokenGeneratorMapping{}
-	this.AttributeContractFulfillment = attributeContractFulfillment
 	this.SpTokenGeneratorRef = spTokenGeneratorRef
+	this.AttributeContractFulfillment = attributeContractFulfillment
 	return &this
 }
 
@@ -51,94 +51,6 @@ func NewSpTokenGeneratorMapping(attributeContractFulfillment map[string]Attribut
 func NewSpTokenGeneratorMappingWithDefaults() *SpTokenGeneratorMapping {
 	this := SpTokenGeneratorMapping{}
 	return &this
-}
-
-// GetAttributeSources returns the AttributeSources field value if set, zero value otherwise.
-func (o *SpTokenGeneratorMapping) GetAttributeSources() []AttributeSourceAggregation {
-	if o == nil || IsNil(o.AttributeSources) {
-		var ret []AttributeSourceAggregation
-		return ret
-	}
-	return o.AttributeSources
-}
-
-// GetAttributeSourcesOk returns a tuple with the AttributeSources field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SpTokenGeneratorMapping) GetAttributeSourcesOk() ([]AttributeSourceAggregation, bool) {
-	if o == nil || IsNil(o.AttributeSources) {
-		return nil, false
-	}
-	return o.AttributeSources, true
-}
-
-// HasAttributeSources returns a boolean if a field has been set.
-func (o *SpTokenGeneratorMapping) HasAttributeSources() bool {
-	if o != nil && !IsNil(o.AttributeSources) {
-		return true
-	}
-
-	return false
-}
-
-// SetAttributeSources gets a reference to the given []AttributeSourceAggregation and assigns it to the AttributeSources field.
-func (o *SpTokenGeneratorMapping) SetAttributeSources(v []AttributeSourceAggregation) {
-	o.AttributeSources = v
-}
-
-// GetAttributeContractFulfillment returns the AttributeContractFulfillment field value
-func (o *SpTokenGeneratorMapping) GetAttributeContractFulfillment() map[string]AttributeFulfillmentValue {
-	if o == nil {
-		var ret map[string]AttributeFulfillmentValue
-		return ret
-	}
-
-	return o.AttributeContractFulfillment
-}
-
-// GetAttributeContractFulfillmentOk returns a tuple with the AttributeContractFulfillment field value
-// and a boolean to check if the value has been set.
-func (o *SpTokenGeneratorMapping) GetAttributeContractFulfillmentOk() (*map[string]AttributeFulfillmentValue, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AttributeContractFulfillment, true
-}
-
-// SetAttributeContractFulfillment sets field value
-func (o *SpTokenGeneratorMapping) SetAttributeContractFulfillment(v map[string]AttributeFulfillmentValue) {
-	o.AttributeContractFulfillment = v
-}
-
-// GetIssuanceCriteria returns the IssuanceCriteria field value if set, zero value otherwise.
-func (o *SpTokenGeneratorMapping) GetIssuanceCriteria() IssuanceCriteria {
-	if o == nil || IsNil(o.IssuanceCriteria) {
-		var ret IssuanceCriteria
-		return ret
-	}
-	return *o.IssuanceCriteria
-}
-
-// GetIssuanceCriteriaOk returns a tuple with the IssuanceCriteria field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SpTokenGeneratorMapping) GetIssuanceCriteriaOk() (*IssuanceCriteria, bool) {
-	if o == nil || IsNil(o.IssuanceCriteria) {
-		return nil, false
-	}
-	return o.IssuanceCriteria, true
-}
-
-// HasIssuanceCriteria returns a boolean if a field has been set.
-func (o *SpTokenGeneratorMapping) HasIssuanceCriteria() bool {
-	if o != nil && !IsNil(o.IssuanceCriteria) {
-		return true
-	}
-
-	return false
-}
-
-// SetIssuanceCriteria gets a reference to the given IssuanceCriteria and assigns it to the IssuanceCriteria field.
-func (o *SpTokenGeneratorMapping) SetIssuanceCriteria(v IssuanceCriteria) {
-	o.IssuanceCriteria = &v
 }
 
 // GetSpTokenGeneratorRef returns the SpTokenGeneratorRef field value
@@ -229,6 +141,94 @@ func (o *SpTokenGeneratorMapping) SetDefaultMapping(v bool) {
 	o.DefaultMapping = &v
 }
 
+// GetAttributeSources returns the AttributeSources field value if set, zero value otherwise.
+func (o *SpTokenGeneratorMapping) GetAttributeSources() []AttributeSourceAggregation {
+	if o == nil || IsNil(o.AttributeSources) {
+		var ret []AttributeSourceAggregation
+		return ret
+	}
+	return o.AttributeSources
+}
+
+// GetAttributeSourcesOk returns a tuple with the AttributeSources field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpTokenGeneratorMapping) GetAttributeSourcesOk() ([]AttributeSourceAggregation, bool) {
+	if o == nil || IsNil(o.AttributeSources) {
+		return nil, false
+	}
+	return o.AttributeSources, true
+}
+
+// HasAttributeSources returns a boolean if a field has been set.
+func (o *SpTokenGeneratorMapping) HasAttributeSources() bool {
+	if o != nil && !IsNil(o.AttributeSources) {
+		return true
+	}
+
+	return false
+}
+
+// SetAttributeSources gets a reference to the given []AttributeSourceAggregation and assigns it to the AttributeSources field.
+func (o *SpTokenGeneratorMapping) SetAttributeSources(v []AttributeSourceAggregation) {
+	o.AttributeSources = v
+}
+
+// GetAttributeContractFulfillment returns the AttributeContractFulfillment field value
+func (o *SpTokenGeneratorMapping) GetAttributeContractFulfillment() map[string]AttributeFulfillmentValue {
+	if o == nil {
+		var ret map[string]AttributeFulfillmentValue
+		return ret
+	}
+
+	return o.AttributeContractFulfillment
+}
+
+// GetAttributeContractFulfillmentOk returns a tuple with the AttributeContractFulfillment field value
+// and a boolean to check if the value has been set.
+func (o *SpTokenGeneratorMapping) GetAttributeContractFulfillmentOk() (*map[string]AttributeFulfillmentValue, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.AttributeContractFulfillment, true
+}
+
+// SetAttributeContractFulfillment sets field value
+func (o *SpTokenGeneratorMapping) SetAttributeContractFulfillment(v map[string]AttributeFulfillmentValue) {
+	o.AttributeContractFulfillment = v
+}
+
+// GetIssuanceCriteria returns the IssuanceCriteria field value if set, zero value otherwise.
+func (o *SpTokenGeneratorMapping) GetIssuanceCriteria() IssuanceCriteria {
+	if o == nil || IsNil(o.IssuanceCriteria) {
+		var ret IssuanceCriteria
+		return ret
+	}
+	return *o.IssuanceCriteria
+}
+
+// GetIssuanceCriteriaOk returns a tuple with the IssuanceCriteria field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpTokenGeneratorMapping) GetIssuanceCriteriaOk() (*IssuanceCriteria, bool) {
+	if o == nil || IsNil(o.IssuanceCriteria) {
+		return nil, false
+	}
+	return o.IssuanceCriteria, true
+}
+
+// HasIssuanceCriteria returns a boolean if a field has been set.
+func (o *SpTokenGeneratorMapping) HasIssuanceCriteria() bool {
+	if o != nil && !IsNil(o.IssuanceCriteria) {
+		return true
+	}
+
+	return false
+}
+
+// SetIssuanceCriteria gets a reference to the given IssuanceCriteria and assigns it to the IssuanceCriteria field.
+func (o *SpTokenGeneratorMapping) SetIssuanceCriteria(v IssuanceCriteria) {
+	o.IssuanceCriteria = &v
+}
+
 // GetAttributeSource returns the AttributeSource field value if set, zero value otherwise.
 func (o *SpTokenGeneratorMapping) GetAttributeSource() []AttributeSourceAggregation {
 	if o == nil || IsNil(o.AttributeSource) {
@@ -271,19 +271,19 @@ func (o SpTokenGeneratorMapping) MarshalJSON() ([]byte, error) {
 
 func (o SpTokenGeneratorMapping) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AttributeSources) {
-		toSerialize["attributeSources"] = o.AttributeSources
-	}
-	toSerialize["attributeContractFulfillment"] = o.AttributeContractFulfillment
-	if !IsNil(o.IssuanceCriteria) {
-		toSerialize["issuanceCriteria"] = o.IssuanceCriteria
-	}
 	toSerialize["spTokenGeneratorRef"] = o.SpTokenGeneratorRef
 	if !IsNil(o.RestrictedVirtualEntityIds) {
 		toSerialize["restrictedVirtualEntityIds"] = o.RestrictedVirtualEntityIds
 	}
 	if !IsNil(o.DefaultMapping) {
 		toSerialize["defaultMapping"] = o.DefaultMapping
+	}
+	if !IsNil(o.AttributeSources) {
+		toSerialize["attributeSources"] = o.AttributeSources
+	}
+	toSerialize["attributeContractFulfillment"] = o.AttributeContractFulfillment
+	if !IsNil(o.IssuanceCriteria) {
+		toSerialize["issuanceCriteria"] = o.IssuanceCriteria
 	}
 	if !IsNil(o.AttributeSource) {
 		toSerialize["attributeSource"] = o.AttributeSource

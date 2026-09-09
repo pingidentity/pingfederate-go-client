@@ -25,11 +25,10 @@ type OpenIdConnectPolicy struct {
 	// The policy ID used internally.
 	Id string `json:"id" tfsdk:"id"`
 	// The name used for display in UI screens.
-	Name string `json:"name" tfsdk:"name"`
+	Name                  string       `json:"name" tfsdk:"name"`
+	AccessTokenManagerRef ResourceLink `json:"accessTokenManagerRef" tfsdk:"access_token_manager_ref"`
 	// The ID Token Lifetime, in minutes. The default value is 5.
-	IdTokenLifetime   *int64                         `json:"idTokenLifetime,omitempty" tfsdk:"id_token_lifetime"`
-	AttributeContract OpenIdConnectAttributeContract `json:"attributeContract" tfsdk:"attribute_contract"`
-	AttributeMapping  AttributeMapping               `json:"attributeMapping" tfsdk:"attribute_mapping"`
+	IdTokenLifetime *int64 `json:"idTokenLifetime,omitempty" tfsdk:"id_token_lifetime"`
 	// Determines whether a Session Reference Identifier is included in the ID token.
 	IncludeSriInIdToken *bool `json:"includeSriInIdToken,omitempty" tfsdk:"include_sri_in_id_token"`
 	// Determines whether the User Info is always included in the ID token.
@@ -47,8 +46,9 @@ type OpenIdConnectPolicy struct {
 	// Determines whether a new ID Token should be returned during token request of the hybrid flow.
 	ReissueIdTokenInHybridFlow *bool `json:"reissueIdTokenInHybridFlow,omitempty" tfsdk:"reissue_id_token_in_hybrid_flow"`
 	// Determines whether the introspection endpoint should validate an ID token.
-	AllowIdTokenIntrospection *bool        `json:"allowIdTokenIntrospection,omitempty" tfsdk:"allow_id_token_introspection"`
-	AccessTokenManagerRef     ResourceLink `json:"accessTokenManagerRef" tfsdk:"access_token_manager_ref"`
+	AllowIdTokenIntrospection *bool                          `json:"allowIdTokenIntrospection,omitempty" tfsdk:"allow_id_token_introspection"`
+	AttributeContract         OpenIdConnectAttributeContract `json:"attributeContract" tfsdk:"attribute_contract"`
+	AttributeMapping          AttributeMapping               `json:"attributeMapping" tfsdk:"attribute_mapping"`
 	// The attribute scope mappings from scopes to attribute names.
 	ScopeAttributeMappings *map[string]ParameterValues `json:"scopeAttributeMappings,omitempty" tfsdk:"scope_attribute_mappings"`
 	// The time at which the policy was last changed. This property is read only and is ignored on PUT and POST requests.
@@ -59,13 +59,13 @@ type OpenIdConnectPolicy struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOpenIdConnectPolicy(id string, name string, attributeContract OpenIdConnectAttributeContract, attributeMapping AttributeMapping, accessTokenManagerRef ResourceLink) *OpenIdConnectPolicy {
+func NewOpenIdConnectPolicy(id string, name string, accessTokenManagerRef ResourceLink, attributeContract OpenIdConnectAttributeContract, attributeMapping AttributeMapping) *OpenIdConnectPolicy {
 	this := OpenIdConnectPolicy{}
 	this.Id = id
 	this.Name = name
+	this.AccessTokenManagerRef = accessTokenManagerRef
 	this.AttributeContract = attributeContract
 	this.AttributeMapping = attributeMapping
-	this.AccessTokenManagerRef = accessTokenManagerRef
 	return &this
 }
 
@@ -125,6 +125,30 @@ func (o *OpenIdConnectPolicy) SetName(v string) {
 	o.Name = v
 }
 
+// GetAccessTokenManagerRef returns the AccessTokenManagerRef field value
+func (o *OpenIdConnectPolicy) GetAccessTokenManagerRef() ResourceLink {
+	if o == nil {
+		var ret ResourceLink
+		return ret
+	}
+
+	return o.AccessTokenManagerRef
+}
+
+// GetAccessTokenManagerRefOk returns a tuple with the AccessTokenManagerRef field value
+// and a boolean to check if the value has been set.
+func (o *OpenIdConnectPolicy) GetAccessTokenManagerRefOk() (*ResourceLink, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.AccessTokenManagerRef, true
+}
+
+// SetAccessTokenManagerRef sets field value
+func (o *OpenIdConnectPolicy) SetAccessTokenManagerRef(v ResourceLink) {
+	o.AccessTokenManagerRef = v
+}
+
 // GetIdTokenLifetime returns the IdTokenLifetime field value if set, zero value otherwise.
 func (o *OpenIdConnectPolicy) GetIdTokenLifetime() int64 {
 	if o == nil || IsNil(o.IdTokenLifetime) {
@@ -155,54 +179,6 @@ func (o *OpenIdConnectPolicy) HasIdTokenLifetime() bool {
 // SetIdTokenLifetime gets a reference to the given int64 and assigns it to the IdTokenLifetime field.
 func (o *OpenIdConnectPolicy) SetIdTokenLifetime(v int64) {
 	o.IdTokenLifetime = &v
-}
-
-// GetAttributeContract returns the AttributeContract field value
-func (o *OpenIdConnectPolicy) GetAttributeContract() OpenIdConnectAttributeContract {
-	if o == nil {
-		var ret OpenIdConnectAttributeContract
-		return ret
-	}
-
-	return o.AttributeContract
-}
-
-// GetAttributeContractOk returns a tuple with the AttributeContract field value
-// and a boolean to check if the value has been set.
-func (o *OpenIdConnectPolicy) GetAttributeContractOk() (*OpenIdConnectAttributeContract, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AttributeContract, true
-}
-
-// SetAttributeContract sets field value
-func (o *OpenIdConnectPolicy) SetAttributeContract(v OpenIdConnectAttributeContract) {
-	o.AttributeContract = v
-}
-
-// GetAttributeMapping returns the AttributeMapping field value
-func (o *OpenIdConnectPolicy) GetAttributeMapping() AttributeMapping {
-	if o == nil {
-		var ret AttributeMapping
-		return ret
-	}
-
-	return o.AttributeMapping
-}
-
-// GetAttributeMappingOk returns a tuple with the AttributeMapping field value
-// and a boolean to check if the value has been set.
-func (o *OpenIdConnectPolicy) GetAttributeMappingOk() (*AttributeMapping, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AttributeMapping, true
-}
-
-// SetAttributeMapping sets field value
-func (o *OpenIdConnectPolicy) SetAttributeMapping(v AttributeMapping) {
-	o.AttributeMapping = v
 }
 
 // GetIncludeSriInIdToken returns the IncludeSriInIdToken field value if set, zero value otherwise.
@@ -493,28 +469,52 @@ func (o *OpenIdConnectPolicy) SetAllowIdTokenIntrospection(v bool) {
 	o.AllowIdTokenIntrospection = &v
 }
 
-// GetAccessTokenManagerRef returns the AccessTokenManagerRef field value
-func (o *OpenIdConnectPolicy) GetAccessTokenManagerRef() ResourceLink {
+// GetAttributeContract returns the AttributeContract field value
+func (o *OpenIdConnectPolicy) GetAttributeContract() OpenIdConnectAttributeContract {
 	if o == nil {
-		var ret ResourceLink
+		var ret OpenIdConnectAttributeContract
 		return ret
 	}
 
-	return o.AccessTokenManagerRef
+	return o.AttributeContract
 }
 
-// GetAccessTokenManagerRefOk returns a tuple with the AccessTokenManagerRef field value
+// GetAttributeContractOk returns a tuple with the AttributeContract field value
 // and a boolean to check if the value has been set.
-func (o *OpenIdConnectPolicy) GetAccessTokenManagerRefOk() (*ResourceLink, bool) {
+func (o *OpenIdConnectPolicy) GetAttributeContractOk() (*OpenIdConnectAttributeContract, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.AccessTokenManagerRef, true
+	return &o.AttributeContract, true
 }
 
-// SetAccessTokenManagerRef sets field value
-func (o *OpenIdConnectPolicy) SetAccessTokenManagerRef(v ResourceLink) {
-	o.AccessTokenManagerRef = v
+// SetAttributeContract sets field value
+func (o *OpenIdConnectPolicy) SetAttributeContract(v OpenIdConnectAttributeContract) {
+	o.AttributeContract = v
+}
+
+// GetAttributeMapping returns the AttributeMapping field value
+func (o *OpenIdConnectPolicy) GetAttributeMapping() AttributeMapping {
+	if o == nil {
+		var ret AttributeMapping
+		return ret
+	}
+
+	return o.AttributeMapping
+}
+
+// GetAttributeMappingOk returns a tuple with the AttributeMapping field value
+// and a boolean to check if the value has been set.
+func (o *OpenIdConnectPolicy) GetAttributeMappingOk() (*AttributeMapping, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.AttributeMapping, true
+}
+
+// SetAttributeMapping sets field value
+func (o *OpenIdConnectPolicy) SetAttributeMapping(v AttributeMapping) {
+	o.AttributeMapping = v
 }
 
 // GetScopeAttributeMappings returns the ScopeAttributeMappings field value if set, zero value otherwise.
@@ -593,11 +593,10 @@ func (o OpenIdConnectPolicy) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["name"] = o.Name
+	toSerialize["accessTokenManagerRef"] = o.AccessTokenManagerRef
 	if !IsNil(o.IdTokenLifetime) {
 		toSerialize["idTokenLifetime"] = o.IdTokenLifetime
 	}
-	toSerialize["attributeContract"] = o.AttributeContract
-	toSerialize["attributeMapping"] = o.AttributeMapping
 	if !IsNil(o.IncludeSriInIdToken) {
 		toSerialize["includeSriInIdToken"] = o.IncludeSriInIdToken
 	}
@@ -625,7 +624,8 @@ func (o OpenIdConnectPolicy) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AllowIdTokenIntrospection) {
 		toSerialize["allowIdTokenIntrospection"] = o.AllowIdTokenIntrospection
 	}
-	toSerialize["accessTokenManagerRef"] = o.AccessTokenManagerRef
+	toSerialize["attributeContract"] = o.AttributeContract
+	toSerialize["attributeMapping"] = o.AttributeMapping
 	if !IsNil(o.ScopeAttributeMappings) {
 		toSerialize["scopeAttributeMappings"] = o.ScopeAttributeMappings
 	}

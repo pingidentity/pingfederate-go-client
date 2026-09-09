@@ -21,27 +21,27 @@ var _ MappedNullable = &AccessTokenMapping{}
 
 // AccessTokenMapping The Access Token Attribute Mapping.
 type AccessTokenMapping struct {
+	// The id of the Access Token Mapping.
+	Id                    *string                   `json:"id,omitempty" tfsdk:"id"`
+	Context               AccessTokenMappingContext `json:"context" tfsdk:"context"`
+	AccessTokenManagerRef ResourceLink              `json:"accessTokenManagerRef" tfsdk:"access_token_manager_ref"`
 	// A list of configured data stores to look up attributes from.
 	AttributeSources []AttributeSourceAggregation `json:"attributeSources,omitempty" tfsdk:"attribute_sources"`
 	// A list of mappings from attribute names to their fulfillment values.
 	AttributeContractFulfillment map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment" tfsdk:"attribute_contract_fulfillment"`
 	IssuanceCriteria             *IssuanceCriteria                    `json:"issuanceCriteria,omitempty" tfsdk:"issuance_criteria"`
-	// The id of the Access Token Mapping.
-	Id                    *string                      `json:"id,omitempty" tfsdk:"id"`
-	Context               AccessTokenMappingContext    `json:"context" tfsdk:"context"`
-	AccessTokenManagerRef ResourceLink                 `json:"accessTokenManagerRef" tfsdk:"access_token_manager_ref"`
-	AttributeSource       []AttributeSourceAggregation `json:"attributeSource,omitempty" tfsdk:"attribute_source"`
+	AttributeSource              []AttributeSourceAggregation         `json:"attributeSource,omitempty" tfsdk:"attribute_source"`
 }
 
 // NewAccessTokenMapping instantiates a new AccessTokenMapping object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAccessTokenMapping(attributeContractFulfillment map[string]AttributeFulfillmentValue, context AccessTokenMappingContext, accessTokenManagerRef ResourceLink) *AccessTokenMapping {
+func NewAccessTokenMapping(context AccessTokenMappingContext, accessTokenManagerRef ResourceLink, attributeContractFulfillment map[string]AttributeFulfillmentValue) *AccessTokenMapping {
 	this := AccessTokenMapping{}
-	this.AttributeContractFulfillment = attributeContractFulfillment
 	this.Context = context
 	this.AccessTokenManagerRef = accessTokenManagerRef
+	this.AttributeContractFulfillment = attributeContractFulfillment
 	return &this
 }
 
@@ -51,6 +51,86 @@ func NewAccessTokenMapping(attributeContractFulfillment map[string]AttributeFulf
 func NewAccessTokenMappingWithDefaults() *AccessTokenMapping {
 	this := AccessTokenMapping{}
 	return &this
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *AccessTokenMapping) GetId() string {
+	if o == nil || IsNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AccessTokenMapping) GetIdOk() (*string, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *AccessTokenMapping) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *AccessTokenMapping) SetId(v string) {
+	o.Id = &v
+}
+
+// GetContext returns the Context field value
+func (o *AccessTokenMapping) GetContext() AccessTokenMappingContext {
+	if o == nil {
+		var ret AccessTokenMappingContext
+		return ret
+	}
+
+	return o.Context
+}
+
+// GetContextOk returns a tuple with the Context field value
+// and a boolean to check if the value has been set.
+func (o *AccessTokenMapping) GetContextOk() (*AccessTokenMappingContext, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Context, true
+}
+
+// SetContext sets field value
+func (o *AccessTokenMapping) SetContext(v AccessTokenMappingContext) {
+	o.Context = v
+}
+
+// GetAccessTokenManagerRef returns the AccessTokenManagerRef field value
+func (o *AccessTokenMapping) GetAccessTokenManagerRef() ResourceLink {
+	if o == nil {
+		var ret ResourceLink
+		return ret
+	}
+
+	return o.AccessTokenManagerRef
+}
+
+// GetAccessTokenManagerRefOk returns a tuple with the AccessTokenManagerRef field value
+// and a boolean to check if the value has been set.
+func (o *AccessTokenMapping) GetAccessTokenManagerRefOk() (*ResourceLink, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.AccessTokenManagerRef, true
+}
+
+// SetAccessTokenManagerRef sets field value
+func (o *AccessTokenMapping) SetAccessTokenManagerRef(v ResourceLink) {
+	o.AccessTokenManagerRef = v
 }
 
 // GetAttributeSources returns the AttributeSources field value if set, zero value otherwise.
@@ -141,86 +221,6 @@ func (o *AccessTokenMapping) SetIssuanceCriteria(v IssuanceCriteria) {
 	o.IssuanceCriteria = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AccessTokenMapping) GetId() string {
-	if o == nil || IsNil(o.Id) {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AccessTokenMapping) GetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *AccessTokenMapping) HasId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *AccessTokenMapping) SetId(v string) {
-	o.Id = &v
-}
-
-// GetContext returns the Context field value
-func (o *AccessTokenMapping) GetContext() AccessTokenMappingContext {
-	if o == nil {
-		var ret AccessTokenMappingContext
-		return ret
-	}
-
-	return o.Context
-}
-
-// GetContextOk returns a tuple with the Context field value
-// and a boolean to check if the value has been set.
-func (o *AccessTokenMapping) GetContextOk() (*AccessTokenMappingContext, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Context, true
-}
-
-// SetContext sets field value
-func (o *AccessTokenMapping) SetContext(v AccessTokenMappingContext) {
-	o.Context = v
-}
-
-// GetAccessTokenManagerRef returns the AccessTokenManagerRef field value
-func (o *AccessTokenMapping) GetAccessTokenManagerRef() ResourceLink {
-	if o == nil {
-		var ret ResourceLink
-		return ret
-	}
-
-	return o.AccessTokenManagerRef
-}
-
-// GetAccessTokenManagerRefOk returns a tuple with the AccessTokenManagerRef field value
-// and a boolean to check if the value has been set.
-func (o *AccessTokenMapping) GetAccessTokenManagerRefOk() (*ResourceLink, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AccessTokenManagerRef, true
-}
-
-// SetAccessTokenManagerRef sets field value
-func (o *AccessTokenMapping) SetAccessTokenManagerRef(v ResourceLink) {
-	o.AccessTokenManagerRef = v
-}
-
 // GetAttributeSource returns the AttributeSource field value if set, zero value otherwise.
 func (o *AccessTokenMapping) GetAttributeSource() []AttributeSourceAggregation {
 	if o == nil || IsNil(o.AttributeSource) {
@@ -263,6 +263,11 @@ func (o AccessTokenMapping) MarshalJSON() ([]byte, error) {
 
 func (o AccessTokenMapping) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
+	toSerialize["context"] = o.Context
+	toSerialize["accessTokenManagerRef"] = o.AccessTokenManagerRef
 	if !IsNil(o.AttributeSources) {
 		toSerialize["attributeSources"] = o.AttributeSources
 	}
@@ -270,11 +275,6 @@ func (o AccessTokenMapping) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.IssuanceCriteria) {
 		toSerialize["issuanceCriteria"] = o.IssuanceCriteria
 	}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
-	}
-	toSerialize["context"] = o.Context
-	toSerialize["accessTokenManagerRef"] = o.AccessTokenManagerRef
 	if !IsNil(o.AttributeSource) {
 		toSerialize["attributeSource"] = o.AttributeSource
 	}

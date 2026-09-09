@@ -431,7 +431,7 @@ import (
 )
 
 func main() {
-    body := *openapiclient.NewKerberosRealmsSettings("KdcTimeout_example", "KdcRetries_example") // KerberosRealmsSettings | Kerberos Realms Settings.
+    body := *openapiclient.NewKerberosRealmsSettings("KdcRetries_example", "KdcTimeout_example") // KerberosRealmsSettings | Kerberos Realms Settings.
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

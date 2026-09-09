@@ -21,29 +21,29 @@ var _ MappedNullable = &AuthenticationPolicyContractAssertionMapping{}
 
 // AuthenticationPolicyContractAssertionMapping The Authentication Policy Contract Assertion Mapping.
 type AuthenticationPolicyContractAssertionMapping struct {
-	// A list of configured data stores to look up attributes from.
-	AttributeSources []AttributeSourceAggregation `json:"attributeSources,omitempty" tfsdk:"attribute_sources"`
-	// A list of mappings from attribute names to their fulfillment values.
-	AttributeContractFulfillment    map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment" tfsdk:"attribute_contract_fulfillment"`
-	IssuanceCriteria                *IssuanceCriteria                    `json:"issuanceCriteria,omitempty" tfsdk:"issuance_criteria"`
-	AuthenticationPolicyContractRef ResourceLink                         `json:"authenticationPolicyContractRef" tfsdk:"authentication_policy_contract_ref"`
+	AuthenticationPolicyContractRef ResourceLink `json:"authenticationPolicyContractRef" tfsdk:"authentication_policy_contract_ref"`
 	// Restricts this mapping to specific virtual entity IDs.
 	RestrictVirtualEntityIds *bool `json:"restrictVirtualEntityIds,omitempty" tfsdk:"restrict_virtual_entity_ids"`
 	// The list of virtual server IDs that this mapping is restricted to.
 	RestrictedVirtualEntityIds []string `json:"restrictedVirtualEntityIds,omitempty" tfsdk:"restricted_virtual_entity_ids"`
 	// If set to true, SSO transaction will be aborted as a fail-safe when the data-store's attribute mappings fail to complete the attribute contract. Otherwise, the attribute contract with default values is used. By default, this value is false.
-	AbortSsoTransactionAsFailSafe *bool                        `json:"abortSsoTransactionAsFailSafe,omitempty" tfsdk:"abort_sso_transaction_as_fail_safe"`
-	AttributeSource               []AttributeSourceAggregation `json:"attributeSource,omitempty" tfsdk:"attribute_source"`
+	AbortSsoTransactionAsFailSafe *bool `json:"abortSsoTransactionAsFailSafe,omitempty" tfsdk:"abort_sso_transaction_as_fail_safe"`
+	// A list of configured data stores to look up attributes from.
+	AttributeSources []AttributeSourceAggregation `json:"attributeSources,omitempty" tfsdk:"attribute_sources"`
+	// A list of mappings from attribute names to their fulfillment values.
+	AttributeContractFulfillment map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment" tfsdk:"attribute_contract_fulfillment"`
+	IssuanceCriteria             *IssuanceCriteria                    `json:"issuanceCriteria,omitempty" tfsdk:"issuance_criteria"`
+	AttributeSource              []AttributeSourceAggregation         `json:"attributeSource,omitempty" tfsdk:"attribute_source"`
 }
 
 // NewAuthenticationPolicyContractAssertionMapping instantiates a new AuthenticationPolicyContractAssertionMapping object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAuthenticationPolicyContractAssertionMapping(attributeContractFulfillment map[string]AttributeFulfillmentValue, authenticationPolicyContractRef ResourceLink) *AuthenticationPolicyContractAssertionMapping {
+func NewAuthenticationPolicyContractAssertionMapping(authenticationPolicyContractRef ResourceLink, attributeContractFulfillment map[string]AttributeFulfillmentValue) *AuthenticationPolicyContractAssertionMapping {
 	this := AuthenticationPolicyContractAssertionMapping{}
-	this.AttributeContractFulfillment = attributeContractFulfillment
 	this.AuthenticationPolicyContractRef = authenticationPolicyContractRef
+	this.AttributeContractFulfillment = attributeContractFulfillment
 	return &this
 }
 
@@ -53,94 +53,6 @@ func NewAuthenticationPolicyContractAssertionMapping(attributeContractFulfillmen
 func NewAuthenticationPolicyContractAssertionMappingWithDefaults() *AuthenticationPolicyContractAssertionMapping {
 	this := AuthenticationPolicyContractAssertionMapping{}
 	return &this
-}
-
-// GetAttributeSources returns the AttributeSources field value if set, zero value otherwise.
-func (o *AuthenticationPolicyContractAssertionMapping) GetAttributeSources() []AttributeSourceAggregation {
-	if o == nil || IsNil(o.AttributeSources) {
-		var ret []AttributeSourceAggregation
-		return ret
-	}
-	return o.AttributeSources
-}
-
-// GetAttributeSourcesOk returns a tuple with the AttributeSources field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AuthenticationPolicyContractAssertionMapping) GetAttributeSourcesOk() ([]AttributeSourceAggregation, bool) {
-	if o == nil || IsNil(o.AttributeSources) {
-		return nil, false
-	}
-	return o.AttributeSources, true
-}
-
-// HasAttributeSources returns a boolean if a field has been set.
-func (o *AuthenticationPolicyContractAssertionMapping) HasAttributeSources() bool {
-	if o != nil && !IsNil(o.AttributeSources) {
-		return true
-	}
-
-	return false
-}
-
-// SetAttributeSources gets a reference to the given []AttributeSourceAggregation and assigns it to the AttributeSources field.
-func (o *AuthenticationPolicyContractAssertionMapping) SetAttributeSources(v []AttributeSourceAggregation) {
-	o.AttributeSources = v
-}
-
-// GetAttributeContractFulfillment returns the AttributeContractFulfillment field value
-func (o *AuthenticationPolicyContractAssertionMapping) GetAttributeContractFulfillment() map[string]AttributeFulfillmentValue {
-	if o == nil {
-		var ret map[string]AttributeFulfillmentValue
-		return ret
-	}
-
-	return o.AttributeContractFulfillment
-}
-
-// GetAttributeContractFulfillmentOk returns a tuple with the AttributeContractFulfillment field value
-// and a boolean to check if the value has been set.
-func (o *AuthenticationPolicyContractAssertionMapping) GetAttributeContractFulfillmentOk() (*map[string]AttributeFulfillmentValue, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AttributeContractFulfillment, true
-}
-
-// SetAttributeContractFulfillment sets field value
-func (o *AuthenticationPolicyContractAssertionMapping) SetAttributeContractFulfillment(v map[string]AttributeFulfillmentValue) {
-	o.AttributeContractFulfillment = v
-}
-
-// GetIssuanceCriteria returns the IssuanceCriteria field value if set, zero value otherwise.
-func (o *AuthenticationPolicyContractAssertionMapping) GetIssuanceCriteria() IssuanceCriteria {
-	if o == nil || IsNil(o.IssuanceCriteria) {
-		var ret IssuanceCriteria
-		return ret
-	}
-	return *o.IssuanceCriteria
-}
-
-// GetIssuanceCriteriaOk returns a tuple with the IssuanceCriteria field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AuthenticationPolicyContractAssertionMapping) GetIssuanceCriteriaOk() (*IssuanceCriteria, bool) {
-	if o == nil || IsNil(o.IssuanceCriteria) {
-		return nil, false
-	}
-	return o.IssuanceCriteria, true
-}
-
-// HasIssuanceCriteria returns a boolean if a field has been set.
-func (o *AuthenticationPolicyContractAssertionMapping) HasIssuanceCriteria() bool {
-	if o != nil && !IsNil(o.IssuanceCriteria) {
-		return true
-	}
-
-	return false
-}
-
-// SetIssuanceCriteria gets a reference to the given IssuanceCriteria and assigns it to the IssuanceCriteria field.
-func (o *AuthenticationPolicyContractAssertionMapping) SetIssuanceCriteria(v IssuanceCriteria) {
-	o.IssuanceCriteria = &v
 }
 
 // GetAuthenticationPolicyContractRef returns the AuthenticationPolicyContractRef field value
@@ -263,6 +175,94 @@ func (o *AuthenticationPolicyContractAssertionMapping) SetAbortSsoTransactionAsF
 	o.AbortSsoTransactionAsFailSafe = &v
 }
 
+// GetAttributeSources returns the AttributeSources field value if set, zero value otherwise.
+func (o *AuthenticationPolicyContractAssertionMapping) GetAttributeSources() []AttributeSourceAggregation {
+	if o == nil || IsNil(o.AttributeSources) {
+		var ret []AttributeSourceAggregation
+		return ret
+	}
+	return o.AttributeSources
+}
+
+// GetAttributeSourcesOk returns a tuple with the AttributeSources field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AuthenticationPolicyContractAssertionMapping) GetAttributeSourcesOk() ([]AttributeSourceAggregation, bool) {
+	if o == nil || IsNil(o.AttributeSources) {
+		return nil, false
+	}
+	return o.AttributeSources, true
+}
+
+// HasAttributeSources returns a boolean if a field has been set.
+func (o *AuthenticationPolicyContractAssertionMapping) HasAttributeSources() bool {
+	if o != nil && !IsNil(o.AttributeSources) {
+		return true
+	}
+
+	return false
+}
+
+// SetAttributeSources gets a reference to the given []AttributeSourceAggregation and assigns it to the AttributeSources field.
+func (o *AuthenticationPolicyContractAssertionMapping) SetAttributeSources(v []AttributeSourceAggregation) {
+	o.AttributeSources = v
+}
+
+// GetAttributeContractFulfillment returns the AttributeContractFulfillment field value
+func (o *AuthenticationPolicyContractAssertionMapping) GetAttributeContractFulfillment() map[string]AttributeFulfillmentValue {
+	if o == nil {
+		var ret map[string]AttributeFulfillmentValue
+		return ret
+	}
+
+	return o.AttributeContractFulfillment
+}
+
+// GetAttributeContractFulfillmentOk returns a tuple with the AttributeContractFulfillment field value
+// and a boolean to check if the value has been set.
+func (o *AuthenticationPolicyContractAssertionMapping) GetAttributeContractFulfillmentOk() (*map[string]AttributeFulfillmentValue, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.AttributeContractFulfillment, true
+}
+
+// SetAttributeContractFulfillment sets field value
+func (o *AuthenticationPolicyContractAssertionMapping) SetAttributeContractFulfillment(v map[string]AttributeFulfillmentValue) {
+	o.AttributeContractFulfillment = v
+}
+
+// GetIssuanceCriteria returns the IssuanceCriteria field value if set, zero value otherwise.
+func (o *AuthenticationPolicyContractAssertionMapping) GetIssuanceCriteria() IssuanceCriteria {
+	if o == nil || IsNil(o.IssuanceCriteria) {
+		var ret IssuanceCriteria
+		return ret
+	}
+	return *o.IssuanceCriteria
+}
+
+// GetIssuanceCriteriaOk returns a tuple with the IssuanceCriteria field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AuthenticationPolicyContractAssertionMapping) GetIssuanceCriteriaOk() (*IssuanceCriteria, bool) {
+	if o == nil || IsNil(o.IssuanceCriteria) {
+		return nil, false
+	}
+	return o.IssuanceCriteria, true
+}
+
+// HasIssuanceCriteria returns a boolean if a field has been set.
+func (o *AuthenticationPolicyContractAssertionMapping) HasIssuanceCriteria() bool {
+	if o != nil && !IsNil(o.IssuanceCriteria) {
+		return true
+	}
+
+	return false
+}
+
+// SetIssuanceCriteria gets a reference to the given IssuanceCriteria and assigns it to the IssuanceCriteria field.
+func (o *AuthenticationPolicyContractAssertionMapping) SetIssuanceCriteria(v IssuanceCriteria) {
+	o.IssuanceCriteria = &v
+}
+
 // GetAttributeSource returns the AttributeSource field value if set, zero value otherwise.
 func (o *AuthenticationPolicyContractAssertionMapping) GetAttributeSource() []AttributeSourceAggregation {
 	if o == nil || IsNil(o.AttributeSource) {
@@ -305,13 +305,6 @@ func (o AuthenticationPolicyContractAssertionMapping) MarshalJSON() ([]byte, err
 
 func (o AuthenticationPolicyContractAssertionMapping) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AttributeSources) {
-		toSerialize["attributeSources"] = o.AttributeSources
-	}
-	toSerialize["attributeContractFulfillment"] = o.AttributeContractFulfillment
-	if !IsNil(o.IssuanceCriteria) {
-		toSerialize["issuanceCriteria"] = o.IssuanceCriteria
-	}
 	toSerialize["authenticationPolicyContractRef"] = o.AuthenticationPolicyContractRef
 	if !IsNil(o.RestrictVirtualEntityIds) {
 		toSerialize["restrictVirtualEntityIds"] = o.RestrictVirtualEntityIds
@@ -321,6 +314,13 @@ func (o AuthenticationPolicyContractAssertionMapping) ToMap() (map[string]interf
 	}
 	if !IsNil(o.AbortSsoTransactionAsFailSafe) {
 		toSerialize["abortSsoTransactionAsFailSafe"] = o.AbortSsoTransactionAsFailSafe
+	}
+	if !IsNil(o.AttributeSources) {
+		toSerialize["attributeSources"] = o.AttributeSources
+	}
+	toSerialize["attributeContractFulfillment"] = o.AttributeContractFulfillment
+	if !IsNil(o.IssuanceCriteria) {
+		toSerialize["issuanceCriteria"] = o.IssuanceCriteria
 	}
 	if !IsNil(o.AttributeSource) {
 		toSerialize["attributeSource"] = o.AttributeSource

@@ -21,25 +21,25 @@ var _ MappedNullable = &IdpAdapterMapping{}
 
 // IdpAdapterMapping The OAuth IdP Adapter Mapping.
 type IdpAdapterMapping struct {
+	// The ID of the adapter mapping.
+	Id            string        `json:"id" tfsdk:"id"`
+	IdpAdapterRef *ResourceLink `json:"idpAdapterRef,omitempty" tfsdk:"idp_adapter_ref"`
 	// A list of configured data stores to look up attributes from.
 	AttributeSources []AttributeSourceAggregation `json:"attributeSources,omitempty" tfsdk:"attribute_sources"`
 	// A list of mappings from attribute names to their fulfillment values.
 	AttributeContractFulfillment map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment" tfsdk:"attribute_contract_fulfillment"`
 	IssuanceCriteria             *IssuanceCriteria                    `json:"issuanceCriteria,omitempty" tfsdk:"issuance_criteria"`
-	// The ID of the adapter mapping.
-	Id              string                       `json:"id" tfsdk:"id"`
-	IdpAdapterRef   *ResourceLink                `json:"idpAdapterRef,omitempty" tfsdk:"idp_adapter_ref"`
-	AttributeSource []AttributeSourceAggregation `json:"attributeSource,omitempty" tfsdk:"attribute_source"`
+	AttributeSource              []AttributeSourceAggregation         `json:"attributeSource,omitempty" tfsdk:"attribute_source"`
 }
 
 // NewIdpAdapterMapping instantiates a new IdpAdapterMapping object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIdpAdapterMapping(attributeContractFulfillment map[string]AttributeFulfillmentValue, id string) *IdpAdapterMapping {
+func NewIdpAdapterMapping(id string, attributeContractFulfillment map[string]AttributeFulfillmentValue) *IdpAdapterMapping {
 	this := IdpAdapterMapping{}
-	this.AttributeContractFulfillment = attributeContractFulfillment
 	this.Id = id
+	this.AttributeContractFulfillment = attributeContractFulfillment
 	return &this
 }
 
@@ -49,6 +49,62 @@ func NewIdpAdapterMapping(attributeContractFulfillment map[string]AttributeFulfi
 func NewIdpAdapterMappingWithDefaults() *IdpAdapterMapping {
 	this := IdpAdapterMapping{}
 	return &this
+}
+
+// GetId returns the Id field value
+func (o *IdpAdapterMapping) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *IdpAdapterMapping) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *IdpAdapterMapping) SetId(v string) {
+	o.Id = v
+}
+
+// GetIdpAdapterRef returns the IdpAdapterRef field value if set, zero value otherwise.
+func (o *IdpAdapterMapping) GetIdpAdapterRef() ResourceLink {
+	if o == nil || IsNil(o.IdpAdapterRef) {
+		var ret ResourceLink
+		return ret
+	}
+	return *o.IdpAdapterRef
+}
+
+// GetIdpAdapterRefOk returns a tuple with the IdpAdapterRef field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IdpAdapterMapping) GetIdpAdapterRefOk() (*ResourceLink, bool) {
+	if o == nil || IsNil(o.IdpAdapterRef) {
+		return nil, false
+	}
+	return o.IdpAdapterRef, true
+}
+
+// HasIdpAdapterRef returns a boolean if a field has been set.
+func (o *IdpAdapterMapping) HasIdpAdapterRef() bool {
+	if o != nil && !IsNil(o.IdpAdapterRef) {
+		return true
+	}
+
+	return false
+}
+
+// SetIdpAdapterRef gets a reference to the given ResourceLink and assigns it to the IdpAdapterRef field.
+func (o *IdpAdapterMapping) SetIdpAdapterRef(v ResourceLink) {
+	o.IdpAdapterRef = &v
 }
 
 // GetAttributeSources returns the AttributeSources field value if set, zero value otherwise.
@@ -139,62 +195,6 @@ func (o *IdpAdapterMapping) SetIssuanceCriteria(v IssuanceCriteria) {
 	o.IssuanceCriteria = &v
 }
 
-// GetId returns the Id field value
-func (o *IdpAdapterMapping) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *IdpAdapterMapping) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *IdpAdapterMapping) SetId(v string) {
-	o.Id = v
-}
-
-// GetIdpAdapterRef returns the IdpAdapterRef field value if set, zero value otherwise.
-func (o *IdpAdapterMapping) GetIdpAdapterRef() ResourceLink {
-	if o == nil || IsNil(o.IdpAdapterRef) {
-		var ret ResourceLink
-		return ret
-	}
-	return *o.IdpAdapterRef
-}
-
-// GetIdpAdapterRefOk returns a tuple with the IdpAdapterRef field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *IdpAdapterMapping) GetIdpAdapterRefOk() (*ResourceLink, bool) {
-	if o == nil || IsNil(o.IdpAdapterRef) {
-		return nil, false
-	}
-	return o.IdpAdapterRef, true
-}
-
-// HasIdpAdapterRef returns a boolean if a field has been set.
-func (o *IdpAdapterMapping) HasIdpAdapterRef() bool {
-	if o != nil && !IsNil(o.IdpAdapterRef) {
-		return true
-	}
-
-	return false
-}
-
-// SetIdpAdapterRef gets a reference to the given ResourceLink and assigns it to the IdpAdapterRef field.
-func (o *IdpAdapterMapping) SetIdpAdapterRef(v ResourceLink) {
-	o.IdpAdapterRef = &v
-}
-
 // GetAttributeSource returns the AttributeSource field value if set, zero value otherwise.
 func (o *IdpAdapterMapping) GetAttributeSource() []AttributeSourceAggregation {
 	if o == nil || IsNil(o.AttributeSource) {
@@ -237,16 +237,16 @@ func (o IdpAdapterMapping) MarshalJSON() ([]byte, error) {
 
 func (o IdpAdapterMapping) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.IdpAdapterRef) {
+		toSerialize["idpAdapterRef"] = o.IdpAdapterRef
+	}
 	if !IsNil(o.AttributeSources) {
 		toSerialize["attributeSources"] = o.AttributeSources
 	}
 	toSerialize["attributeContractFulfillment"] = o.AttributeContractFulfillment
 	if !IsNil(o.IssuanceCriteria) {
 		toSerialize["issuanceCriteria"] = o.IssuanceCriteria
-	}
-	toSerialize["id"] = o.Id
-	if !IsNil(o.IdpAdapterRef) {
-		toSerialize["idpAdapterRef"] = o.IdpAdapterRef
 	}
 	if !IsNil(o.AttributeSource) {
 		toSerialize["attributeSource"] = o.AttributeSource

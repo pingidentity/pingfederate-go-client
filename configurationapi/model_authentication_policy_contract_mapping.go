@@ -21,27 +21,27 @@ var _ MappedNullable = &AuthenticationPolicyContractMapping{}
 
 // AuthenticationPolicyContractMapping An Authentication Policy Contract mapping into IdP Connection.
 type AuthenticationPolicyContractMapping struct {
-	// A list of configured data stores to look up attributes from.
-	AttributeSources []AttributeSourceAggregation `json:"attributeSources,omitempty" tfsdk:"attribute_sources"`
-	// A list of mappings from attribute names to their fulfillment values.
-	AttributeContractFulfillment    map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment" tfsdk:"attribute_contract_fulfillment"`
-	IssuanceCriteria                *IssuanceCriteria                    `json:"issuanceCriteria,omitempty" tfsdk:"issuance_criteria"`
-	AuthenticationPolicyContractRef ResourceLink                         `json:"authenticationPolicyContractRef" tfsdk:"authentication_policy_contract_ref"`
+	AuthenticationPolicyContractRef ResourceLink `json:"authenticationPolicyContractRef" tfsdk:"authentication_policy_contract_ref"`
 	// Restricts this mapping to specific virtual entity IDs.
 	RestrictVirtualServerIds *bool `json:"restrictVirtualServerIds,omitempty" tfsdk:"restrict_virtual_server_ids"`
 	// The list of virtual server IDs that this mapping is restricted to.
-	RestrictedVirtualServerIds []string                     `json:"restrictedVirtualServerIds,omitempty" tfsdk:"restricted_virtual_server_ids"`
-	AttributeSource            []AttributeSourceAggregation `json:"attributeSource,omitempty" tfsdk:"attribute_source"`
+	RestrictedVirtualServerIds []string `json:"restrictedVirtualServerIds,omitempty" tfsdk:"restricted_virtual_server_ids"`
+	// A list of configured data stores to look up attributes from.
+	AttributeSources []AttributeSourceAggregation `json:"attributeSources,omitempty" tfsdk:"attribute_sources"`
+	// A list of mappings from attribute names to their fulfillment values.
+	AttributeContractFulfillment map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment" tfsdk:"attribute_contract_fulfillment"`
+	IssuanceCriteria             *IssuanceCriteria                    `json:"issuanceCriteria,omitempty" tfsdk:"issuance_criteria"`
+	AttributeSource              []AttributeSourceAggregation         `json:"attributeSource,omitempty" tfsdk:"attribute_source"`
 }
 
 // NewAuthenticationPolicyContractMapping instantiates a new AuthenticationPolicyContractMapping object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAuthenticationPolicyContractMapping(attributeContractFulfillment map[string]AttributeFulfillmentValue, authenticationPolicyContractRef ResourceLink) *AuthenticationPolicyContractMapping {
+func NewAuthenticationPolicyContractMapping(authenticationPolicyContractRef ResourceLink, attributeContractFulfillment map[string]AttributeFulfillmentValue) *AuthenticationPolicyContractMapping {
 	this := AuthenticationPolicyContractMapping{}
-	this.AttributeContractFulfillment = attributeContractFulfillment
 	this.AuthenticationPolicyContractRef = authenticationPolicyContractRef
+	this.AttributeContractFulfillment = attributeContractFulfillment
 	return &this
 }
 
@@ -51,94 +51,6 @@ func NewAuthenticationPolicyContractMapping(attributeContractFulfillment map[str
 func NewAuthenticationPolicyContractMappingWithDefaults() *AuthenticationPolicyContractMapping {
 	this := AuthenticationPolicyContractMapping{}
 	return &this
-}
-
-// GetAttributeSources returns the AttributeSources field value if set, zero value otherwise.
-func (o *AuthenticationPolicyContractMapping) GetAttributeSources() []AttributeSourceAggregation {
-	if o == nil || IsNil(o.AttributeSources) {
-		var ret []AttributeSourceAggregation
-		return ret
-	}
-	return o.AttributeSources
-}
-
-// GetAttributeSourcesOk returns a tuple with the AttributeSources field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AuthenticationPolicyContractMapping) GetAttributeSourcesOk() ([]AttributeSourceAggregation, bool) {
-	if o == nil || IsNil(o.AttributeSources) {
-		return nil, false
-	}
-	return o.AttributeSources, true
-}
-
-// HasAttributeSources returns a boolean if a field has been set.
-func (o *AuthenticationPolicyContractMapping) HasAttributeSources() bool {
-	if o != nil && !IsNil(o.AttributeSources) {
-		return true
-	}
-
-	return false
-}
-
-// SetAttributeSources gets a reference to the given []AttributeSourceAggregation and assigns it to the AttributeSources field.
-func (o *AuthenticationPolicyContractMapping) SetAttributeSources(v []AttributeSourceAggregation) {
-	o.AttributeSources = v
-}
-
-// GetAttributeContractFulfillment returns the AttributeContractFulfillment field value
-func (o *AuthenticationPolicyContractMapping) GetAttributeContractFulfillment() map[string]AttributeFulfillmentValue {
-	if o == nil {
-		var ret map[string]AttributeFulfillmentValue
-		return ret
-	}
-
-	return o.AttributeContractFulfillment
-}
-
-// GetAttributeContractFulfillmentOk returns a tuple with the AttributeContractFulfillment field value
-// and a boolean to check if the value has been set.
-func (o *AuthenticationPolicyContractMapping) GetAttributeContractFulfillmentOk() (*map[string]AttributeFulfillmentValue, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AttributeContractFulfillment, true
-}
-
-// SetAttributeContractFulfillment sets field value
-func (o *AuthenticationPolicyContractMapping) SetAttributeContractFulfillment(v map[string]AttributeFulfillmentValue) {
-	o.AttributeContractFulfillment = v
-}
-
-// GetIssuanceCriteria returns the IssuanceCriteria field value if set, zero value otherwise.
-func (o *AuthenticationPolicyContractMapping) GetIssuanceCriteria() IssuanceCriteria {
-	if o == nil || IsNil(o.IssuanceCriteria) {
-		var ret IssuanceCriteria
-		return ret
-	}
-	return *o.IssuanceCriteria
-}
-
-// GetIssuanceCriteriaOk returns a tuple with the IssuanceCriteria field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AuthenticationPolicyContractMapping) GetIssuanceCriteriaOk() (*IssuanceCriteria, bool) {
-	if o == nil || IsNil(o.IssuanceCriteria) {
-		return nil, false
-	}
-	return o.IssuanceCriteria, true
-}
-
-// HasIssuanceCriteria returns a boolean if a field has been set.
-func (o *AuthenticationPolicyContractMapping) HasIssuanceCriteria() bool {
-	if o != nil && !IsNil(o.IssuanceCriteria) {
-		return true
-	}
-
-	return false
-}
-
-// SetIssuanceCriteria gets a reference to the given IssuanceCriteria and assigns it to the IssuanceCriteria field.
-func (o *AuthenticationPolicyContractMapping) SetIssuanceCriteria(v IssuanceCriteria) {
-	o.IssuanceCriteria = &v
 }
 
 // GetAuthenticationPolicyContractRef returns the AuthenticationPolicyContractRef field value
@@ -229,6 +141,94 @@ func (o *AuthenticationPolicyContractMapping) SetRestrictedVirtualServerIds(v []
 	o.RestrictedVirtualServerIds = v
 }
 
+// GetAttributeSources returns the AttributeSources field value if set, zero value otherwise.
+func (o *AuthenticationPolicyContractMapping) GetAttributeSources() []AttributeSourceAggregation {
+	if o == nil || IsNil(o.AttributeSources) {
+		var ret []AttributeSourceAggregation
+		return ret
+	}
+	return o.AttributeSources
+}
+
+// GetAttributeSourcesOk returns a tuple with the AttributeSources field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AuthenticationPolicyContractMapping) GetAttributeSourcesOk() ([]AttributeSourceAggregation, bool) {
+	if o == nil || IsNil(o.AttributeSources) {
+		return nil, false
+	}
+	return o.AttributeSources, true
+}
+
+// HasAttributeSources returns a boolean if a field has been set.
+func (o *AuthenticationPolicyContractMapping) HasAttributeSources() bool {
+	if o != nil && !IsNil(o.AttributeSources) {
+		return true
+	}
+
+	return false
+}
+
+// SetAttributeSources gets a reference to the given []AttributeSourceAggregation and assigns it to the AttributeSources field.
+func (o *AuthenticationPolicyContractMapping) SetAttributeSources(v []AttributeSourceAggregation) {
+	o.AttributeSources = v
+}
+
+// GetAttributeContractFulfillment returns the AttributeContractFulfillment field value
+func (o *AuthenticationPolicyContractMapping) GetAttributeContractFulfillment() map[string]AttributeFulfillmentValue {
+	if o == nil {
+		var ret map[string]AttributeFulfillmentValue
+		return ret
+	}
+
+	return o.AttributeContractFulfillment
+}
+
+// GetAttributeContractFulfillmentOk returns a tuple with the AttributeContractFulfillment field value
+// and a boolean to check if the value has been set.
+func (o *AuthenticationPolicyContractMapping) GetAttributeContractFulfillmentOk() (*map[string]AttributeFulfillmentValue, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.AttributeContractFulfillment, true
+}
+
+// SetAttributeContractFulfillment sets field value
+func (o *AuthenticationPolicyContractMapping) SetAttributeContractFulfillment(v map[string]AttributeFulfillmentValue) {
+	o.AttributeContractFulfillment = v
+}
+
+// GetIssuanceCriteria returns the IssuanceCriteria field value if set, zero value otherwise.
+func (o *AuthenticationPolicyContractMapping) GetIssuanceCriteria() IssuanceCriteria {
+	if o == nil || IsNil(o.IssuanceCriteria) {
+		var ret IssuanceCriteria
+		return ret
+	}
+	return *o.IssuanceCriteria
+}
+
+// GetIssuanceCriteriaOk returns a tuple with the IssuanceCriteria field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AuthenticationPolicyContractMapping) GetIssuanceCriteriaOk() (*IssuanceCriteria, bool) {
+	if o == nil || IsNil(o.IssuanceCriteria) {
+		return nil, false
+	}
+	return o.IssuanceCriteria, true
+}
+
+// HasIssuanceCriteria returns a boolean if a field has been set.
+func (o *AuthenticationPolicyContractMapping) HasIssuanceCriteria() bool {
+	if o != nil && !IsNil(o.IssuanceCriteria) {
+		return true
+	}
+
+	return false
+}
+
+// SetIssuanceCriteria gets a reference to the given IssuanceCriteria and assigns it to the IssuanceCriteria field.
+func (o *AuthenticationPolicyContractMapping) SetIssuanceCriteria(v IssuanceCriteria) {
+	o.IssuanceCriteria = &v
+}
+
 // GetAttributeSource returns the AttributeSource field value if set, zero value otherwise.
 func (o *AuthenticationPolicyContractMapping) GetAttributeSource() []AttributeSourceAggregation {
 	if o == nil || IsNil(o.AttributeSource) {
@@ -271,19 +271,19 @@ func (o AuthenticationPolicyContractMapping) MarshalJSON() ([]byte, error) {
 
 func (o AuthenticationPolicyContractMapping) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AttributeSources) {
-		toSerialize["attributeSources"] = o.AttributeSources
-	}
-	toSerialize["attributeContractFulfillment"] = o.AttributeContractFulfillment
-	if !IsNil(o.IssuanceCriteria) {
-		toSerialize["issuanceCriteria"] = o.IssuanceCriteria
-	}
 	toSerialize["authenticationPolicyContractRef"] = o.AuthenticationPolicyContractRef
 	if !IsNil(o.RestrictVirtualServerIds) {
 		toSerialize["restrictVirtualServerIds"] = o.RestrictVirtualServerIds
 	}
 	if !IsNil(o.RestrictedVirtualServerIds) {
 		toSerialize["restrictedVirtualServerIds"] = o.RestrictedVirtualServerIds
+	}
+	if !IsNil(o.AttributeSources) {
+		toSerialize["attributeSources"] = o.AttributeSources
+	}
+	toSerialize["attributeContractFulfillment"] = o.AttributeContractFulfillment
+	if !IsNil(o.IssuanceCriteria) {
+		toSerialize["issuanceCriteria"] = o.IssuanceCriteria
 	}
 	if !IsNil(o.AttributeSource) {
 		toSerialize["attributeSource"] = o.AttributeSource

@@ -22,13 +22,15 @@ var _ MappedNullable = &CheckboxGroupLocalIdentityField{}
 // CheckboxGroupLocalIdentityField A checkbox group selection type field.
 type CheckboxGroupLocalIdentityField struct {
 	BaseSelectionLocalIdentityField
+	// The list of options for this selection field.
+	Options []string `json:"options" tfsdk:"options"`
 }
 
 // NewCheckboxGroupLocalIdentityField instantiates a new CheckboxGroupLocalIdentityField object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCheckboxGroupLocalIdentityField(type_ string, id string, label string, options []string) *CheckboxGroupLocalIdentityField {
+func NewCheckboxGroupLocalIdentityField(options []string, type_ string, id string, label string) *CheckboxGroupLocalIdentityField {
 	this := CheckboxGroupLocalIdentityField{}
 	this.Type = type_
 	this.Id = id
@@ -43,6 +45,30 @@ func NewCheckboxGroupLocalIdentityField(type_ string, id string, label string, o
 func NewCheckboxGroupLocalIdentityFieldWithDefaults() *CheckboxGroupLocalIdentityField {
 	this := CheckboxGroupLocalIdentityField{}
 	return &this
+}
+
+// GetOptions returns the Options field value
+func (o *CheckboxGroupLocalIdentityField) GetOptions() []string {
+	if o == nil {
+		var ret []string
+		return ret
+	}
+
+	return o.Options
+}
+
+// GetOptionsOk returns a tuple with the Options field value
+// and a boolean to check if the value has been set.
+func (o *CheckboxGroupLocalIdentityField) GetOptionsOk() ([]string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Options, true
+}
+
+// SetOptions sets field value
+func (o *CheckboxGroupLocalIdentityField) SetOptions(v []string) {
+	o.Options = v
 }
 
 func (o CheckboxGroupLocalIdentityField) MarshalJSON() ([]byte, error) {
@@ -63,6 +89,7 @@ func (o CheckboxGroupLocalIdentityField) ToMap() (map[string]interface{}, error)
 	if errBaseSelectionLocalIdentityField != nil {
 		return map[string]interface{}{}, errBaseSelectionLocalIdentityField
 	}
+	toSerialize["options"] = o.Options
 	return toSerialize, nil
 }
 

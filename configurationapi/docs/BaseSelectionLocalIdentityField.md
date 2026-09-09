@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Options** | **[]string** | The list of options for this selection field. | 
+**Options** | Pointer to **[]string** | The list of options for this selection field. | [optional] 
 
 ## Methods
 
 ### NewBaseSelectionLocalIdentityField
 
-`func NewBaseSelectionLocalIdentityField(options []string, ) *BaseSelectionLocalIdentityField`
+`func NewBaseSelectionLocalIdentityField() *BaseSelectionLocalIdentityField`
 
 NewBaseSelectionLocalIdentityField instantiates a new BaseSelectionLocalIdentityField object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetOptions sets Options field to given value.
 
+### HasOptions
+
+`func (o *BaseSelectionLocalIdentityField) HasOptions() bool`
+
+HasOptions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

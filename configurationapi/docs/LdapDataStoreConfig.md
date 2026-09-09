@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DataStoreMapping** | [**map[string]DataStoreAttribute**](DataStoreAttribute.md) | The data store mapping. | 
-**DataStoreRef** | [**ResourceLink**](ResourceLink.md) |  | 
-**Type** | **string** | The data store config type. | 
 **BaseDn** | **string** | The base DN to search from. If not specified, the search will start at the LDAP&#39;s root. | 
 **CreatePattern** | **string** | The Relative DN Pattern that will be used to create objects in the directory. | 
 **ObjectClass** | **string** | The Object Class used by the new objects stored in the LDAP data store. | 
+**DataStoreMapping** | [**map[string]DataStoreAttribute**](DataStoreAttribute.md) | The data store mapping. | 
+**Type** | **string** | The data store config type. | 
+**DataStoreRef** | [**ResourceLink**](ResourceLink.md) |  | 
 **AuxiliaryObjectClasses** | Pointer to **[]string** | The Auxiliary Object Classes used by the new objects stored in the LDAP data store. | [optional] 
 
 ## Methods
 
 ### NewLdapDataStoreConfig
 
-`func NewLdapDataStoreConfig(dataStoreMapping map[string]DataStoreAttribute, dataStoreRef ResourceLink, type_ string, baseDn string, createPattern string, objectClass string, ) *LdapDataStoreConfig`
+`func NewLdapDataStoreConfig(baseDn string, createPattern string, objectClass string, dataStoreMapping map[string]DataStoreAttribute, type_ string, dataStoreRef ResourceLink, ) *LdapDataStoreConfig`
 
 NewLdapDataStoreConfig instantiates a new LdapDataStoreConfig object
 This constructor will assign default values to properties that have it defined,
@@ -30,66 +30,6 @@ will change when the set of required properties is changed
 NewLdapDataStoreConfigWithDefaults instantiates a new LdapDataStoreConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetDataStoreMapping
-
-`func (o *LdapDataStoreConfig) GetDataStoreMapping() map[string]DataStoreAttribute`
-
-GetDataStoreMapping returns the DataStoreMapping field if non-nil, zero value otherwise.
-
-### GetDataStoreMappingOk
-
-`func (o *LdapDataStoreConfig) GetDataStoreMappingOk() (*map[string]DataStoreAttribute, bool)`
-
-GetDataStoreMappingOk returns a tuple with the DataStoreMapping field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDataStoreMapping
-
-`func (o *LdapDataStoreConfig) SetDataStoreMapping(v map[string]DataStoreAttribute)`
-
-SetDataStoreMapping sets DataStoreMapping field to given value.
-
-
-### GetDataStoreRef
-
-`func (o *LdapDataStoreConfig) GetDataStoreRef() ResourceLink`
-
-GetDataStoreRef returns the DataStoreRef field if non-nil, zero value otherwise.
-
-### GetDataStoreRefOk
-
-`func (o *LdapDataStoreConfig) GetDataStoreRefOk() (*ResourceLink, bool)`
-
-GetDataStoreRefOk returns a tuple with the DataStoreRef field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDataStoreRef
-
-`func (o *LdapDataStoreConfig) SetDataStoreRef(v ResourceLink)`
-
-SetDataStoreRef sets DataStoreRef field to given value.
-
-
-### GetType
-
-`func (o *LdapDataStoreConfig) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *LdapDataStoreConfig) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *LdapDataStoreConfig) SetType(v string)`
-
-SetType sets Type field to given value.
-
 
 ### GetBaseDn
 
@@ -149,6 +89,66 @@ and a boolean to check if the value has been set.
 `func (o *LdapDataStoreConfig) SetObjectClass(v string)`
 
 SetObjectClass sets ObjectClass field to given value.
+
+
+### GetDataStoreMapping
+
+`func (o *LdapDataStoreConfig) GetDataStoreMapping() map[string]DataStoreAttribute`
+
+GetDataStoreMapping returns the DataStoreMapping field if non-nil, zero value otherwise.
+
+### GetDataStoreMappingOk
+
+`func (o *LdapDataStoreConfig) GetDataStoreMappingOk() (*map[string]DataStoreAttribute, bool)`
+
+GetDataStoreMappingOk returns a tuple with the DataStoreMapping field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDataStoreMapping
+
+`func (o *LdapDataStoreConfig) SetDataStoreMapping(v map[string]DataStoreAttribute)`
+
+SetDataStoreMapping sets DataStoreMapping field to given value.
+
+
+### GetType
+
+`func (o *LdapDataStoreConfig) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *LdapDataStoreConfig) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *LdapDataStoreConfig) SetType(v string)`
+
+SetType sets Type field to given value.
+
+
+### GetDataStoreRef
+
+`func (o *LdapDataStoreConfig) GetDataStoreRef() ResourceLink`
+
+GetDataStoreRef returns the DataStoreRef field if non-nil, zero value otherwise.
+
+### GetDataStoreRefOk
+
+`func (o *LdapDataStoreConfig) GetDataStoreRefOk() (*ResourceLink, bool)`
+
+GetDataStoreRefOk returns a tuple with the DataStoreRef field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDataStoreRef
+
+`func (o *LdapDataStoreConfig) SetDataStoreRef(v ResourceLink)`
+
+SetDataStoreRef sets DataStoreRef field to given value.
 
 
 ### GetAuxiliaryObjectClasses

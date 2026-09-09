@@ -22,6 +22,8 @@ var _ MappedNullable = &DropDownLocalIdentityField{}
 // DropDownLocalIdentityField A dropdown selection type field.
 type DropDownLocalIdentityField struct {
 	BaseSelectionLocalIdentityField
+	// The list of options for this selection field.
+	Options []string `json:"options" tfsdk:"options"`
 	// The default value for this field.
 	DefaultValue *string `json:"defaultValue,omitempty" tfsdk:"default_value"`
 }
@@ -30,7 +32,7 @@ type DropDownLocalIdentityField struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDropDownLocalIdentityField(type_ string, id string, label string, options []string) *DropDownLocalIdentityField {
+func NewDropDownLocalIdentityField(options []string, type_ string, id string, label string) *DropDownLocalIdentityField {
 	this := DropDownLocalIdentityField{}
 	this.Type = type_
 	this.Id = id
@@ -45,6 +47,30 @@ func NewDropDownLocalIdentityField(type_ string, id string, label string, option
 func NewDropDownLocalIdentityFieldWithDefaults() *DropDownLocalIdentityField {
 	this := DropDownLocalIdentityField{}
 	return &this
+}
+
+// GetOptions returns the Options field value
+func (o *DropDownLocalIdentityField) GetOptions() []string {
+	if o == nil {
+		var ret []string
+		return ret
+	}
+
+	return o.Options
+}
+
+// GetOptionsOk returns a tuple with the Options field value
+// and a boolean to check if the value has been set.
+func (o *DropDownLocalIdentityField) GetOptionsOk() ([]string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Options, true
+}
+
+// SetOptions sets field value
+func (o *DropDownLocalIdentityField) SetOptions(v []string) {
+	o.Options = v
 }
 
 // GetDefaultValue returns the DefaultValue field value if set, zero value otherwise.
@@ -97,6 +123,7 @@ func (o DropDownLocalIdentityField) ToMap() (map[string]interface{}, error) {
 	if errBaseSelectionLocalIdentityField != nil {
 		return map[string]interface{}{}, errBaseSelectionLocalIdentityField
 	}
+	toSerialize["options"] = o.Options
 	if !IsNil(o.DefaultValue) {
 		toSerialize["defaultValue"] = o.DefaultValue
 	}

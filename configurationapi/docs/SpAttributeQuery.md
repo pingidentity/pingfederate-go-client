@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AttributeSources** | [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) | A list of configured data stores to look up attributes from. | 
+**Attributes** | **[]string** | The list of attributes that may be returned to the SP in the response to an attribute request. | 
 **AttributeContractFulfillment** | [**map[string]AttributeFulfillmentValue**](AttributeFulfillmentValue.md) | A list of mappings from attribute names to their fulfillment values. | 
 **IssuanceCriteria** | Pointer to [**IssuanceCriteria**](IssuanceCriteria.md) |  | [optional] 
-**Attributes** | **[]string** | The list of attributes that may be returned to the SP in the response to an attribute request. | 
 **Policy** | Pointer to [**SpAttributeQueryPolicy**](SpAttributeQueryPolicy.md) |  | [optional] 
+**AttributeSources** | [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) | A list of configured data stores to look up attributes from. | 
 **AttributeSource** | Pointer to [**[]AttributeSourceAggregation**](AttributeSourceAggregation.md) |  | [optional] 
 
 ## Methods
 
 ### NewSpAttributeQuery
 
-`func NewSpAttributeQuery(attributeSources []AttributeSourceAggregation, attributeContractFulfillment map[string]AttributeFulfillmentValue, attributes []string, ) *SpAttributeQuery`
+`func NewSpAttributeQuery(attributes []string, attributeContractFulfillment map[string]AttributeFulfillmentValue, attributeSources []AttributeSourceAggregation, ) *SpAttributeQuery`
 
 NewSpAttributeQuery instantiates a new SpAttributeQuery object
 This constructor will assign default values to properties that have it defined,
@@ -30,24 +30,24 @@ NewSpAttributeQueryWithDefaults instantiates a new SpAttributeQuery object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetAttributeSources
+### GetAttributes
 
-`func (o *SpAttributeQuery) GetAttributeSources() []AttributeSourceAggregation`
+`func (o *SpAttributeQuery) GetAttributes() []string`
 
-GetAttributeSources returns the AttributeSources field if non-nil, zero value otherwise.
+GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
-### GetAttributeSourcesOk
+### GetAttributesOk
 
-`func (o *SpAttributeQuery) GetAttributeSourcesOk() (*[]AttributeSourceAggregation, bool)`
+`func (o *SpAttributeQuery) GetAttributesOk() (*[]string, bool)`
 
-GetAttributeSourcesOk returns a tuple with the AttributeSources field if it's non-nil, zero value otherwise
+GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAttributeSources
+### SetAttributes
 
-`func (o *SpAttributeQuery) SetAttributeSources(v []AttributeSourceAggregation)`
+`func (o *SpAttributeQuery) SetAttributes(v []string)`
 
-SetAttributeSources sets AttributeSources field to given value.
+SetAttributes sets Attributes field to given value.
 
 
 ### GetAttributeContractFulfillment
@@ -95,26 +95,6 @@ SetIssuanceCriteria sets IssuanceCriteria field to given value.
 
 HasIssuanceCriteria returns a boolean if a field has been set.
 
-### GetAttributes
-
-`func (o *SpAttributeQuery) GetAttributes() []string`
-
-GetAttributes returns the Attributes field if non-nil, zero value otherwise.
-
-### GetAttributesOk
-
-`func (o *SpAttributeQuery) GetAttributesOk() (*[]string, bool)`
-
-GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAttributes
-
-`func (o *SpAttributeQuery) SetAttributes(v []string)`
-
-SetAttributes sets Attributes field to given value.
-
-
 ### GetPolicy
 
 `func (o *SpAttributeQuery) GetPolicy() SpAttributeQueryPolicy`
@@ -139,6 +119,26 @@ SetPolicy sets Policy field to given value.
 `func (o *SpAttributeQuery) HasPolicy() bool`
 
 HasPolicy returns a boolean if a field has been set.
+
+### GetAttributeSources
+
+`func (o *SpAttributeQuery) GetAttributeSources() []AttributeSourceAggregation`
+
+GetAttributeSources returns the AttributeSources field if non-nil, zero value otherwise.
+
+### GetAttributeSourcesOk
+
+`func (o *SpAttributeQuery) GetAttributeSourcesOk() (*[]AttributeSourceAggregation, bool)`
+
+GetAttributeSourcesOk returns a tuple with the AttributeSources field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributeSources
+
+`func (o *SpAttributeQuery) SetAttributeSources(v []AttributeSourceAggregation)`
+
+SetAttributeSources sets AttributeSources field to given value.
+
 
 ### GetAttributeSource
 

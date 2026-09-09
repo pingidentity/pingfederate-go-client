@@ -21,25 +21,25 @@ var _ MappedNullable = &ApcToPersistentGrantMapping{}
 
 // ApcToPersistentGrantMapping An authentication policy contract mapping into an OAuth persistent grant.
 type ApcToPersistentGrantMapping struct {
+	// The ID of the authentication policy contract to persistent grant mapping.
+	Id                              *string      `json:"id,omitempty" tfsdk:"id"`
+	AuthenticationPolicyContractRef ResourceLink `json:"authenticationPolicyContractRef" tfsdk:"authentication_policy_contract_ref"`
 	// A list of configured data stores to look up attributes from.
 	AttributeSources []AttributeSourceAggregation `json:"attributeSources,omitempty" tfsdk:"attribute_sources"`
 	// A list of mappings from attribute names to their fulfillment values.
 	AttributeContractFulfillment map[string]AttributeFulfillmentValue `json:"attributeContractFulfillment" tfsdk:"attribute_contract_fulfillment"`
 	IssuanceCriteria             *IssuanceCriteria                    `json:"issuanceCriteria,omitempty" tfsdk:"issuance_criteria"`
-	// The ID of the authentication policy contract to persistent grant mapping.
-	Id                              *string                      `json:"id,omitempty" tfsdk:"id"`
-	AuthenticationPolicyContractRef ResourceLink                 `json:"authenticationPolicyContractRef" tfsdk:"authentication_policy_contract_ref"`
-	AttributeSource                 []AttributeSourceAggregation `json:"attributeSource,omitempty" tfsdk:"attribute_source"`
+	AttributeSource              []AttributeSourceAggregation         `json:"attributeSource,omitempty" tfsdk:"attribute_source"`
 }
 
 // NewApcToPersistentGrantMapping instantiates a new ApcToPersistentGrantMapping object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewApcToPersistentGrantMapping(attributeContractFulfillment map[string]AttributeFulfillmentValue, authenticationPolicyContractRef ResourceLink) *ApcToPersistentGrantMapping {
+func NewApcToPersistentGrantMapping(authenticationPolicyContractRef ResourceLink, attributeContractFulfillment map[string]AttributeFulfillmentValue) *ApcToPersistentGrantMapping {
 	this := ApcToPersistentGrantMapping{}
-	this.AttributeContractFulfillment = attributeContractFulfillment
 	this.AuthenticationPolicyContractRef = authenticationPolicyContractRef
+	this.AttributeContractFulfillment = attributeContractFulfillment
 	return &this
 }
 
@@ -49,6 +49,62 @@ func NewApcToPersistentGrantMapping(attributeContractFulfillment map[string]Attr
 func NewApcToPersistentGrantMappingWithDefaults() *ApcToPersistentGrantMapping {
 	this := ApcToPersistentGrantMapping{}
 	return &this
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *ApcToPersistentGrantMapping) GetId() string {
+	if o == nil || IsNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApcToPersistentGrantMapping) GetIdOk() (*string, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *ApcToPersistentGrantMapping) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *ApcToPersistentGrantMapping) SetId(v string) {
+	o.Id = &v
+}
+
+// GetAuthenticationPolicyContractRef returns the AuthenticationPolicyContractRef field value
+func (o *ApcToPersistentGrantMapping) GetAuthenticationPolicyContractRef() ResourceLink {
+	if o == nil {
+		var ret ResourceLink
+		return ret
+	}
+
+	return o.AuthenticationPolicyContractRef
+}
+
+// GetAuthenticationPolicyContractRefOk returns a tuple with the AuthenticationPolicyContractRef field value
+// and a boolean to check if the value has been set.
+func (o *ApcToPersistentGrantMapping) GetAuthenticationPolicyContractRefOk() (*ResourceLink, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.AuthenticationPolicyContractRef, true
+}
+
+// SetAuthenticationPolicyContractRef sets field value
+func (o *ApcToPersistentGrantMapping) SetAuthenticationPolicyContractRef(v ResourceLink) {
+	o.AuthenticationPolicyContractRef = v
 }
 
 // GetAttributeSources returns the AttributeSources field value if set, zero value otherwise.
@@ -139,62 +195,6 @@ func (o *ApcToPersistentGrantMapping) SetIssuanceCriteria(v IssuanceCriteria) {
 	o.IssuanceCriteria = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ApcToPersistentGrantMapping) GetId() string {
-	if o == nil || IsNil(o.Id) {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ApcToPersistentGrantMapping) GetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *ApcToPersistentGrantMapping) HasId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *ApcToPersistentGrantMapping) SetId(v string) {
-	o.Id = &v
-}
-
-// GetAuthenticationPolicyContractRef returns the AuthenticationPolicyContractRef field value
-func (o *ApcToPersistentGrantMapping) GetAuthenticationPolicyContractRef() ResourceLink {
-	if o == nil {
-		var ret ResourceLink
-		return ret
-	}
-
-	return o.AuthenticationPolicyContractRef
-}
-
-// GetAuthenticationPolicyContractRefOk returns a tuple with the AuthenticationPolicyContractRef field value
-// and a boolean to check if the value has been set.
-func (o *ApcToPersistentGrantMapping) GetAuthenticationPolicyContractRefOk() (*ResourceLink, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AuthenticationPolicyContractRef, true
-}
-
-// SetAuthenticationPolicyContractRef sets field value
-func (o *ApcToPersistentGrantMapping) SetAuthenticationPolicyContractRef(v ResourceLink) {
-	o.AuthenticationPolicyContractRef = v
-}
-
 // GetAttributeSource returns the AttributeSource field value if set, zero value otherwise.
 func (o *ApcToPersistentGrantMapping) GetAttributeSource() []AttributeSourceAggregation {
 	if o == nil || IsNil(o.AttributeSource) {
@@ -237,6 +237,10 @@ func (o ApcToPersistentGrantMapping) MarshalJSON() ([]byte, error) {
 
 func (o ApcToPersistentGrantMapping) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
+	toSerialize["authenticationPolicyContractRef"] = o.AuthenticationPolicyContractRef
 	if !IsNil(o.AttributeSources) {
 		toSerialize["attributeSources"] = o.AttributeSources
 	}
@@ -244,10 +248,6 @@ func (o ApcToPersistentGrantMapping) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.IssuanceCriteria) {
 		toSerialize["issuanceCriteria"] = o.IssuanceCriteria
 	}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
-	}
-	toSerialize["authenticationPolicyContractRef"] = o.AuthenticationPolicyContractRef
 	if !IsNil(o.AttributeSource) {
 		toSerialize["attributeSource"] = o.AttributeSource
 	}
