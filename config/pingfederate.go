@@ -13,8 +13,8 @@ import (
 	"log/slog"
 	"net/http"
 
-	svcOAuth2 "github.com/pingidentity/pingfederate-go-client/v1300/oauth2"
-	"github.com/pingidentity/pingfederate-go-client/v1300/oauth2/endpoints"
+	svcOAuth2 "github.com/pingidentity/pingfederate-go-client/v1310/oauth2"
+	"github.com/pingidentity/pingfederate-go-client/v1310/oauth2/endpoints"
 	"golang.org/x/oauth2"
 )
 

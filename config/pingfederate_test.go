@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/pingidentity/pingfederate-go-client/v1300/config"
-	svcOAuth2 "github.com/pingidentity/pingfederate-go-client/v1300/oauth2"
+	"github.com/pingidentity/pingfederate-go-client/v1310/config"
+	svcOAuth2 "github.com/pingidentity/pingfederate-go-client/v1310/oauth2"
 	"golang.org/x/oauth2"
 )
 

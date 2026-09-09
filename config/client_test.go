@@ -6,7 +6,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/pingidentity/pingfederate-go-client/v1300/config"
+	"github.com/pingidentity/pingfederate-go-client/v1310/config"
 )
 
 func TestNewAPIClient(t *testing.T) {

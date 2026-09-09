@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/pingidentity/pingfederate-go-client/v1300/configurationapi"
+	"github.com/pingidentity/pingfederate-go-client/v1310/configurationapi"
 )
 
 // xsrfHeaderName is the header the PingFederate administrative API requires on every request

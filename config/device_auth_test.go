@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/pingidentity/pingfederate-go-client/v1300/config"
-	"github.com/pingidentity/pingfederate-go-client/v1300/oauth2/endpoints"
+	"github.com/pingidentity/pingfederate-go-client/v1310/config"
+	"github.com/pingidentity/pingfederate-go-client/v1310/oauth2/endpoints"
 )
 
 func TestDeviceAuthTokenSource(t *testing.T) {

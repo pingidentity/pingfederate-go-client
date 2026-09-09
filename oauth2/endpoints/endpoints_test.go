@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/pingidentity/pingfederate-go-client/v1300/oauth2/endpoints"
+	"github.com/pingidentity/pingfederate-go-client/v1310/oauth2/endpoints"
 )
 
 func TestPingFederateEndpoint(t *testing.T) {

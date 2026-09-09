@@ -5,7 +5,7 @@ package config
 import (
 	"fmt"
 
-	"github.com/pingidentity/pingfederate-go-client/v1300/utils/browser"
+	"github.com/pingidentity/pingfederate-go-client/v1310/utils/browser"
 )
 
 // AuthURLHandler is a function type that handles opening authorization URLs.

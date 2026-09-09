@@ -13,8 +13,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/pingidentity/pingfederate-go-client/v1300/config"
-	"github.com/pingidentity/pingfederate-go-client/v1300/oauth2"
+	"github.com/pingidentity/pingfederate-go-client/v1310/config"
+	"github.com/pingidentity/pingfederate-go-client/v1310/oauth2"
 )
 
 // main demonstrates client_credentials flow authentication.
