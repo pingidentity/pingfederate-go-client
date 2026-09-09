@@ -22686,21 +22686,6 @@ components:
     SpAdapterMapping:
       description: A mapping to a SP adapter.
       properties:
-        spAdapterRef:
-          $ref: '#/components/schemas/ResourceLink'
-        restrictVirtualEntityIds:
-          description: Restricts this mapping to specific virtual entity IDs.
-          type: boolean
-        restrictedVirtualEntityIds:
-          description: The list of virtual server IDs that this mapping is restricted
-            to.
-          items:
-            description: The list of virtual server IDs that this mapping is restricted
-              to.
-            type: string
-          type: array
-        adapterOverrideSettings:
-          $ref: '#/components/schemas/SpAdapter'
         attributeSources:
           description: A list of configured data stores to look up attributes from.
           items:
@@ -22714,6 +22699,21 @@ components:
           type: object
         issuanceCriteria:
           $ref: '#/components/schemas/IssuanceCriteria'
+        restrictVirtualEntityIds:
+          description: Restricts this mapping to specific virtual entity IDs.
+          type: boolean
+        restrictedVirtualEntityIds:
+          description: The list of virtual server IDs that this mapping is restricted
+            to.
+          items:
+            description: The list of virtual server IDs that this mapping is restricted
+              to.
+            type: string
+          type: array
+        adapterOverrideSettings:
+          $ref: '#/components/schemas/SpAdapter'
+        spAdapterRef:
+          $ref: '#/components/schemas/ResourceLink'
         attributeSource:
           items:
             $ref: '#/components/schemas/AttributeSourceAggregation'

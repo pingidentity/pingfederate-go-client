@@ -29140,24 +29140,6 @@
         ],
         "type": "object",
         "properties": {
-          "spAdapterRef": {
-            "$ref": "#/components/schemas/ResourceLink"
-          },
-          "restrictVirtualEntityIds": {
-            "type": "boolean",
-            "description": "Restricts this mapping to specific virtual entity IDs."
-          },
-          "restrictedVirtualEntityIds": {
-            "type": "array",
-            "description": "The list of virtual server IDs that this mapping is restricted to.",
-            "items": {
-              "type": "string",
-              "description": "The list of virtual server IDs that this mapping is restricted to."
-            }
-          },
-          "adapterOverrideSettings": {
-            "$ref": "#/components/schemas/SpAdapter"
-          },
           "attributeSources": {
             "type": "array",
             "description": "A list of configured data stores to look up attributes from.",
@@ -29174,6 +29156,24 @@
           },
           "issuanceCriteria": {
             "$ref": "#/components/schemas/IssuanceCriteria"
+          },
+          "restrictVirtualEntityIds": {
+            "type": "boolean",
+            "description": "Restricts this mapping to specific virtual entity IDs."
+          },
+          "restrictedVirtualEntityIds": {
+            "type": "array",
+            "description": "The list of virtual server IDs that this mapping is restricted to.",
+            "items": {
+              "type": "string",
+              "description": "The list of virtual server IDs that this mapping is restricted to."
+            }
+          },
+          "adapterOverrideSettings": {
+            "$ref": "#/components/schemas/SpAdapter"
+          },
+          "spAdapterRef": {
+            "$ref": "#/components/schemas/ResourceLink"
           },
           "attributeSource": {
             "type": "array",
