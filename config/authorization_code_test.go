@@ -118,9 +118,9 @@ func TestAuthorizationCodeTokenSource_DefaultHandlerHonorsOutput(t *testing.T) {
 	var buf bytes.Buffer
 
 	// No custom handler: the default handler must be selected and write to Output. The AuthURL
-	// deliberately uses a non-http(s) scheme so that browser.Open rejects it during validation
-	// without opening a real browser, and the canceled context deterministically aborts the
-	// callback wait once the handler has run.
+	// deliberately pairs a non-http(s) scheme with a loopback host so that browser.Open rejects
+	// it during validation without opening a real browser, and the canceled context
+	// deterministically aborts the callback wait once the handler has run.
 	authCode := &config.AuthorizationCode{
 		AuthorizationCodeClientID: &clientID,
 		AuthorizationCodeScopes:   &scopes,
@@ -131,8 +131,8 @@ func TestAuthorizationCodeTokenSource_DefaultHandlerHonorsOutput(t *testing.T) {
 	authCode.AuthorizationCodeRedirectURI = config.AuthorizationCodeRedirectURI{}
 
 	testEndpoint := oauth2.Endpoint{
-		AuthURL:  "ftp://example.com/authorize",
-		TokenURL: "https://token.example.com/as/token.oauth2",
+		AuthURL:  "ftp://127.0.0.1/authorize",
+		TokenURL: "https://127.0.0.1/as/token.oauth2",
 	}
 
 	ctx, cancel := context.WithCancel(context.Background())
@@ -150,7 +150,7 @@ func TestAuthorizationCodeTokenSource_DefaultHandlerHonorsOutput(t *testing.T) {
 	if !strings.Contains(out, "Opening browser for authorization") {
 		t.Errorf("expected default handler progress output, got %q", out)
 	}
-	if !strings.Contains(out, "ftp://example.com/authorize") {
+	if !strings.Contains(out, "ftp://127.0.0.1/authorize") {
 		t.Errorf("expected auth URL in default handler output, got %q", out)
 	}
 }

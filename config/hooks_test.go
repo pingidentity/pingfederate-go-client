@@ -13,11 +13,13 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-// A non-http(s) scheme is used for every URL below so that browser.Open rejects it during URL
-// validation, before it would otherwise shell out to open a real browser window.
+// The URLs below deliberately pair a non-http(s) scheme with a loopback host: browser.Open
+// rejects the scheme during validation, before it could otherwise shell out to open a real
+// browser window, so these tests do NOT open browsers (mirroring the pingcli test approach).
+// Loopback is used rather than a domain so nothing outside the machine is referenced.
 const (
-	testAuthURL         = "ftp://example.com/authorize"
-	testVerificationURI = "ftp://example.com/device"
+	testAuthURL         = "ftp://127.0.0.1/authorize"
+	testVerificationURI = "ftp://127.0.0.1/device"
 	testDeviceUserCode  = "ABCD-1234"
 )
 
@@ -33,20 +35,24 @@ func TestDefaultAuthorizationCodeBrowserHandlerTo_WritesToProvidedWriter(t *test
 	assert.Contains(t, out, "Waiting for authorization callback")
 }
 
-func TestDefaultAuthorizationCodeBrowserHandlerTo_DiscardSilencesOutput(t *testing.T) {
-	err := config.DefaultAuthorizationCodeBrowserHandlerTo(io.Discard)(testAuthURL)
-	require.NoError(t, err)
-}
-
-func TestDefaultAuthorizationCodeBrowserHandler_NilOutputWritesToStdout(t *testing.T) {
+func TestDefaultAuthorizationCodeBrowserHandlerTo_StdoutReproducesInteractiveUX(t *testing.T) {
 	out := captureStdout(t, func() {
-		err := config.DefaultAuthorizationCodeBrowserHandler(testAuthURL)
+		err := config.DefaultAuthorizationCodeBrowserHandlerTo(os.Stdout)(testAuthURL)
 		require.NoError(t, err)
 	})
 
 	assert.Contains(t, out, "Opening browser for authorization")
 	assert.Contains(t, out, testAuthURL)
 	assert.Contains(t, out, "Waiting for authorization callback")
+}
+
+func TestDefaultAuthorizationCodeBrowserHandler_NilOutputIsSilent(t *testing.T) {
+	out := captureStdout(t, func() {
+		err := config.DefaultAuthorizationCodeBrowserHandler(testAuthURL)
+		require.NoError(t, err)
+	})
+
+	assert.Empty(t, out, "the SDK must not print to stdout by default")
 }
 
 func TestDefaultDeviceCodePromptHandlerTo_WritesToProvidedWriter(t *testing.T) {
@@ -64,21 +70,27 @@ func TestDefaultDeviceCodePromptHandlerTo_WritesToProvidedWriter(t *testing.T) {
 	assert.Contains(t, out, "Waiting for authorization")
 }
 
-func TestDefaultDeviceCodePromptHandlerTo_DiscardSilencesOutput(t *testing.T) {
-	err := config.DefaultDeviceCodePromptHandlerTo(io.Discard)(testVerificationURI, testDeviceUserCode)
-	require.NoError(t, err)
+func TestDefaultDeviceCodePromptHandlerTo_StdoutReproducesInteractiveUX(t *testing.T) {
+	out := captureStdout(t, func() {
+		err := config.DefaultDeviceCodePromptHandlerTo(os.Stdout)(testVerificationURI, testDeviceUserCode)
+		require.NoError(t, err)
+	})
+
+	// Assert only on content common to both the browser-available and no-browser branches, since
+	// browser.CanOpen() is environment-dependent.
+	assert.Contains(t, out, "Device Authorization Required")
+	assert.Contains(t, out, testVerificationURI)
+	assert.Contains(t, out, testDeviceUserCode)
+	assert.Contains(t, out, "Waiting for authorization")
 }
 
-func TestDefaultDeviceCodePromptHandler_NilOutputWritesToStdout(t *testing.T) {
+func TestDefaultDeviceCodePromptHandler_NilOutputIsSilent(t *testing.T) {
 	out := captureStdout(t, func() {
 		err := config.DefaultDeviceCodePromptHandler(testVerificationURI, testDeviceUserCode)
 		require.NoError(t, err)
 	})
 
-	assert.Contains(t, out, "Device Authorization Required")
-	assert.Contains(t, out, testVerificationURI)
-	assert.Contains(t, out, testDeviceUserCode)
-	assert.Contains(t, out, "Waiting for authorization")
+	assert.Empty(t, out, "the SDK must not print to stdout by default")
 }
 
 // captureStdout redirects os.Stdout for the duration of fn and returns everything written to it.

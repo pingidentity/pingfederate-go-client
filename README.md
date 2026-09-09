@@ -80,15 +80,17 @@ derived from the runtime base URL, client ID, and grant type. Set the storage ty
 
 ### Output control
 
-The default handlers for the authorization_code and device_code flows
-(`DefaultAuthorizationCodeBrowserHandler`, `DefaultDeviceCodePromptHandler`) print progress
-messages such as the authorization URL and device code to standard output. To redirect or
-silence this output without reimplementing the handlers, set `WithAuthorizationCodeOutput(w)` or
-`WithDeviceCodeOutput(w)` on the configuration builder (for example, `io.Discard` to silence it
-entirely), or call `DefaultAuthorizationCodeBrowserHandlerTo(w)` / `DefaultDeviceCodePromptHandlerTo(w)`
-directly when building a custom `OnOpenBrowser` or `OnDisplayPrompt` handler. Output configured
-this way only applies when no custom handler is set; once `OnOpenBrowser` or `OnDisplayPrompt` is
-provided, that handler is fully responsible for its own output.
+The SDK stays quiet by default: the default handlers for the authorization_code and device_code
+flows (`DefaultAuthorizationCodeBrowserHandler`, `DefaultDeviceCodePromptHandler`) open the
+system browser without printing anything. To show progress messages (the authorization URL,
+device code, and similar), route them into your own logger, or send them somewhere other than
+standard output without reimplementing the handlers, set `WithAuthorizationCodeOutput(w)` or
+`WithDeviceCodeOutput(w)` on the configuration builder (for example, `os.Stdout` to reproduce
+the interactive v1300.1.0 behavior), or call `DefaultAuthorizationCodeBrowserHandlerTo(w)` /
+`DefaultDeviceCodePromptHandlerTo(w)` directly when building a custom `OnOpenBrowser` or
+`OnDisplayPrompt` handler. Output configured this way only applies when no custom handler is
+set; once `OnOpenBrowser` or `OnDisplayPrompt` is provided, that handler is fully responsible
+for its own output.
 
 ### Examples
 

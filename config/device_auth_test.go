@@ -19,9 +19,9 @@ import (
 // newDeviceAuthServer returns an httptest server that answers both legs of the RFC 8628 flow —
 // the device-authorization request and the token request — with fixed responses, so
 // DeviceAuthTokenSource can run to completion without a live PingFederate server.
-// verificationURI deliberately uses a non-http(s) scheme so that a default handler exercising it
-// does not attempt to open a real browser. interval is the polling interval (in seconds) the
-// token leg advertises, letting callers trade poll delay against test runtime.
+// verificationURI deliberately pairs a non-http(s) scheme with a loopback host so that a default
+// handler exercising it does not attempt to open a real browser. interval is the polling interval
+// (in seconds) the token leg advertises, letting callers trade poll delay against test runtime.
 func newDeviceAuthServer(t *testing.T, deviceCode, userCode, verificationURI string, interval int64) *httptest.Server {
 	t.Helper()
 
@@ -112,7 +112,7 @@ func TestDeviceAuthTokenSource(t *testing.T) {
 }
 
 func TestDeviceAuthTokenSource_CustomHandlerPrecedenceOverOutput(t *testing.T) {
-	srv := newDeviceAuthServer(t, "test-device-code", "test-user-code", "ftp://example.com/device", 5)
+	srv := newDeviceAuthServer(t, "test-device-code", "test-user-code", "ftp://127.0.0.1/device", 5)
 
 	clientID := "test-client-id"
 	var buf bytes.Buffer
@@ -148,7 +148,7 @@ func TestDeviceAuthTokenSource_CustomHandlerPrecedenceOverOutput(t *testing.T) {
 }
 
 func TestDeviceAuthTokenSource_DefaultHandlerHonorsOutput(t *testing.T) {
-	srv := newDeviceAuthServer(t, "test-device-code", "test-user-code", "ftp://example.com/device", 1)
+	srv := newDeviceAuthServer(t, "test-device-code", "test-user-code", "ftp://127.0.0.1/device", 1)
 
 	clientID := "test-client-id"
 	var buf bytes.Buffer
@@ -180,7 +180,7 @@ func TestDeviceAuthTokenSource_DefaultHandlerHonorsOutput(t *testing.T) {
 	if !strings.Contains(out, "Device Authorization Required") {
 		t.Errorf("expected default handler progress output, got %q", out)
 	}
-	if !strings.Contains(out, "ftp://example.com/device") {
+	if !strings.Contains(out, "ftp://127.0.0.1/device") {
 		t.Errorf("expected verification URI in default handler output, got %q", out)
 	}
 	if !strings.Contains(out, "test-user-code") {

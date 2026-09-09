@@ -5,7 +5,6 @@ package config
 import (
 	"fmt"
 	"io"
-	"os"
 
 	"github.com/pingidentity/pingfederate-go-client/v1300/utils/browser"
 )
@@ -45,10 +44,10 @@ type AuthorizationCode struct {
 	OnOpenBrowser AuthURLHandler
 	// Output configures where the default browser-opening handler writes its progress messages.
 	// It is honored only when OnOpenBrowser is nil; once a custom handler is set, that handler is
-	// solely responsible for its own output, and Output is ignored. A nil Output causes the
-	// default handler to write to os.Stdout, preserving the SDK's historical behavior. Set Output
-	// to io.Discard to silence the default handler, or to any other io.Writer to capture or
-	// redirect its messages.
+	// solely responsible for its own output, and Output is ignored. The SDK stays quiet by
+	// default: a nil Output disables progress output entirely. Set Output to os.Stdout (via
+	// Configuration.WithAuthorizationCodeOutput) to reproduce interactive v1300.1.0 behavior, or
+	// to any other io.Writer to capture or redirect the messages.
 	Output io.Writer
 	// CustomPageDataSuccess contains the data to display on successful authentication.
 	// If nil, default values are used. The SDK template is rendered with these values.
@@ -78,10 +77,10 @@ type DeviceCode struct {
 	OnDisplayPrompt DeviceCodePromptHandler
 	// Output configures where the default device code prompt handler writes its progress
 	// messages. It is honored only when OnDisplayPrompt is nil; once a custom handler is set,
-	// that handler is solely responsible for its own output, and Output is ignored. A nil Output
-	// causes the default handler to write to os.Stdout, preserving the SDK's historical behavior.
-	// Set Output to io.Discard to silence the default handler, or to any other io.Writer to
-	// capture or redirect its messages.
+	// that handler is solely responsible for its own output, and Output is ignored. The SDK
+	// stays quiet by default: a nil Output disables progress output entirely. Set Output to
+	// os.Stdout (via Configuration.WithDeviceCodeOutput) to reproduce interactive v1300.1.0
+	// behavior, or to any other io.Writer to capture or redirect the messages.
 	Output io.Writer
 }
 
@@ -105,21 +104,21 @@ func fprintln(w io.Writer, a ...any) {
 // It attempts to open the system browser automatically and provides fallback instructions if that fails.
 // This function implements the AuthURLHandler interface and provides a consistent UX pattern.
 // Consumer projects can use this handler as a reference or directly in their own implementations.
-// Its progress messages are written to os.Stdout; use DefaultAuthorizationCodeBrowserHandlerTo, or
-// set AuthorizationCode.Output (via Configuration.WithAuthorizationCodeOutput), to redirect or
-// silence this output.
+// It writes nothing; pass a writer to DefaultAuthorizationCodeBrowserHandlerTo, or set
+// AuthorizationCode.Output (via Configuration.WithAuthorizationCodeOutput), to receive its progress messages.
 func DefaultAuthorizationCodeBrowserHandler(authURL string) error {
 	return DefaultAuthorizationCodeBrowserHandlerTo(nil)(authURL)
 }
 
 // DefaultAuthorizationCodeBrowserHandlerTo returns a browser-opening handler equivalent to
 // DefaultAuthorizationCodeBrowserHandler, but that writes its progress messages to w instead of
-// os.Stdout. If w is nil, the returned handler writes to os.Stdout, matching the behavior of
-// DefaultAuthorizationCodeBrowserHandler. This allows consumers to redirect or silence (using
-// io.Discard) the default handler's output without reimplementing its browser-opening logic.
+// staying silent. If w is nil, the returned handler is silent. Passing os.Stdout reproduces the
+// interactive v1300.1.0 behavior, and any other io.Writer captures or redirects the output. This
+// lets consumers opt in to (or relocate) the default handler's output without reimplementing its
+// browser-opening logic.
 func DefaultAuthorizationCodeBrowserHandlerTo(w io.Writer) AuthURLHandler {
 	if w == nil {
-		w = os.Stdout
+		w = io.Discard
 	}
 	return func(authURL string) error {
 		fprintf(w, "Opening browser for authorization: %s\n", authURL)
@@ -135,20 +134,21 @@ func DefaultAuthorizationCodeBrowserHandlerTo(w io.Writer) AuthURLHandler {
 // DefaultDeviceCodePromptHandler is a simple handler that displays device code prompts.
 // This function can be used by consumer projects as a reference implementation or directly.
 // It implements the DeviceCodePromptHandler interface pattern.
-// Its progress messages are written to os.Stdout; use DefaultDeviceCodePromptHandlerTo, or set
-// DeviceCode.Output (via Configuration.WithDeviceCodeOutput), to redirect or silence this output.
+// It writes nothing; pass a writer to DefaultDeviceCodePromptHandlerTo, or set
+// DeviceCode.Output (via Configuration.WithDeviceCodeOutput), to receive its progress messages.
 func DefaultDeviceCodePromptHandler(verificationURI, userCode string) error {
 	return DefaultDeviceCodePromptHandlerTo(nil)(verificationURI, userCode)
 }
 
 // DefaultDeviceCodePromptHandlerTo returns a device code prompt handler equivalent to
 // DefaultDeviceCodePromptHandler, but that writes its progress messages to w instead of
-// os.Stdout. If w is nil, the returned handler writes to os.Stdout, matching the behavior of
-// DefaultDeviceCodePromptHandler. This allows consumers to redirect or silence (using io.Discard)
-// the default handler's output without reimplementing its prompt-display logic.
+// staying silent. If w is nil, the returned handler is silent. Passing os.Stdout reproduces the
+// interactive v1300.1.0 behavior, and any other io.Writer captures or redirects the output. This
+// lets consumers opt in to (or relocate) the default handler's output without reimplementing its
+// prompt-display logic.
 func DefaultDeviceCodePromptHandlerTo(w io.Writer) DeviceCodePromptHandler {
 	if w == nil {
-		w = os.Stdout
+		w = io.Discard
 	}
 	return func(verificationURI, userCode string) error {
 		fprint(w, deviceAuthPromptHeader)
