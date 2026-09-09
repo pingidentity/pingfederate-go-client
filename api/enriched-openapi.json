@@ -22181,10 +22181,6 @@
               "$ref": "#/components/schemas/AccessTokenAttribute"
             }
           },
-          "inherited": {
-            "type": "boolean",
-            "description": "Whether this attribute contract is inherited from its parent instance. If true, the rest of the properties in this model become read-only. The default value is false."
-          },
           "defaultSubjectAttribute": {
             "type": "string",
             "description": "Default subject attribute to use for audit logging when validating the access token. Blank value means to use USER_KEY attribute value after grant lookup."
@@ -22234,10 +22230,6 @@
       "AtmAccessControlSettings": {
         "type": "object",
         "properties": {
-          "inherited": {
-            "type": "boolean",
-            "description": "If this token manager has a parent, this flag determines whether access control settings are inherited from the parent. When set to true, the other fields in this model become read-only. The default value is false."
-          },
           "restrictClients": {
             "type": "boolean",
             "description": "Determines whether access to this token manager is restricted to specific OAuth clients. If false, the 'allowedClients' field is ignored. The default value is false."
@@ -22255,10 +22247,6 @@
       "AtmSelectionSettings": {
         "type": "object",
         "properties": {
-          "inherited": {
-            "type": "boolean",
-            "description": "If this token manager has a parent, this flag determines whether selection settings, such as resource URI's, are inherited from the parent. When set to true, the other fields in this model become read-only. The default value is false."
-          },
           "resourceUris": {
             "type": "array",
             "description": "The list of base resource URI's which map to this token manager. A resource URI, specified via the 'aud' parameter, can be used to select a specific token manager for an OAuth request.",
@@ -22515,10 +22503,6 @@
           "encryptedValue": {
             "type": "string",
             "description": "For encrypted or hashed fields, this attribute contains the encrypted representation of the field's value, if a value is defined. If you do not want to update the stored value, this attribute should be passed back unchanged."
-          },
-          "inherited": {
-            "type": "boolean",
-            "description": "Whether this field is inherited from its parent instance. If true, the value/encrypted value properties become read-only. The default value is false."
           }
         },
         "description": "A plugin configuration field value."
@@ -22552,10 +22536,6 @@
           "name": {
             "type": "string",
             "description": "The name of the table."
-          },
-          "inherited": {
-            "type": "boolean",
-            "description": "Whether this table is inherited from its parent instance. If true, the rows become read-only. The default value is false."
           },
           "rows": {
             "type": "array",
@@ -22769,10 +22749,6 @@
             "items": {
               "$ref": "#/components/schemas/Attribute"
             }
-          },
-          "inherited": {
-            "type": "boolean",
-            "description": "Whether this attribute contract is inherited from its parent instance. If true, the rest of the properties in this model become read-only. The default value is false."
           }
         },
         "description": "A set of attributes exposed by an identity store provisioner."
@@ -22796,10 +22772,6 @@
             "items": {
               "$ref": "#/components/schemas/GroupAttribute"
             }
-          },
-          "inherited": {
-            "type": "boolean",
-            "description": "Whether this group attribute contract is inherited from its parent instance. If true, the rest of the properties in this model become read-only. The default value is false."
           }
         },
         "description": "A set of group attributes exposed by an identity store provisioner."
@@ -22881,10 +22853,6 @@
           "maskOgnlValues": {
             "type": "boolean",
             "description": "Whether or not all OGNL expressions used to fulfill an outgoing assertion contract should be masked in the logs. Defaults to false."
-          },
-          "inherited": {
-            "type": "boolean",
-            "description": "Whether this attribute contract is inherited from its parent instance. If true, the rest of the properties in this model become read-only. The default value is false."
           }
         },
         "description": "A set of attributes exposed by an IdP adapter."
@@ -22911,10 +22879,6 @@
           },
           "issuanceCriteria": {
             "$ref": "#/components/schemas/IssuanceCriteria"
-          },
-          "inherited": {
-            "type": "boolean",
-            "description": "Whether this attribute mapping is inherited from its parent instance. If true, the rest of the properties in this model become read-only. The default value is false."
           },
           "attributeSource": {
             "type": "array",
@@ -23440,10 +23404,6 @@
             "items": {
               "$ref": "#/components/schemas/PasswordCredentialValidatorAttribute"
             }
-          },
-          "inherited": {
-            "type": "boolean",
-            "description": "Whether this attribute contract is inherited from its parent instance. If true, the rest of the properties in this model become read-only. The default value is false."
           }
         },
         "description": "The list of attributes that the password credential validator provides."
@@ -23575,10 +23535,6 @@
           "id": {
             "type": "string",
             "description": "The ID of the resource."
-          },
-          "location": {
-            "type": "string",
-            "description": "A read-only URL that references the resource. If the resource is not currently URL-accessible, this property will be null."
           }
         },
         "description": "A reference to a resource."
@@ -23600,10 +23556,6 @@
       "SessionValidationSettings": {
         "type": "object",
         "properties": {
-          "inherited": {
-            "type": "boolean",
-            "description": "If this token manager has a parent, this flag determines whether session validation settings, such as checkValidAuthnSession, are inherited from the parent. When set to true, the other fields in this model become read-only. The default value is false."
-          },
           "checkValidAuthnSession": {
             "type": "boolean",
             "description": "Check for a valid authentication session when validating the access token."
@@ -23730,10 +23682,6 @@
             "items": {
               "$ref": "#/components/schemas/SpAdapterAttribute"
             }
-          },
-          "inherited": {
-            "type": "boolean",
-            "description": "Whether this attribute contract is inherited from its parent instance. If true, the rest of the properties in this model become read-only. The default value is false."
           }
         },
         "description": "A set of attributes exposed by an SP adapter."
@@ -23748,10 +23696,6 @@
           "applicationIconUrl": {
             "type": "string",
             "description": "The application icon URL."
-          },
-          "inherited": {
-            "type": "boolean",
-            "description": "Specifies Whether target application information is inherited from its parent instance. If true, the rest of the properties in this model become read-only. The default value is false."
           }
         },
         "description": "Target Application Information exposed by an SP adapter."
@@ -23791,10 +23735,6 @@
             "items": {
               "$ref": "#/components/schemas/TokenEndpointAttribute"
             }
-          },
-          "inherited": {
-            "type": "boolean",
-            "description": "Whether this attribute contract is inherited from its parent instance. If true, the rest of the properties in this model become read-only. The default value is false."
           }
         },
         "description": "A set of attributes exposed by an Access Token Manager in a token endpoint response."
@@ -23853,10 +23793,6 @@
             "items": {
               "$ref": "#/components/schemas/TokenGeneratorAttribute"
             }
-          },
-          "inherited": {
-            "type": "boolean",
-            "description": "Whether this attribute contract is inherited from its parent instance. If true, the rest of the properties in this model become read-only. The default value is false."
           }
         },
         "description": "A set of attributes exposed by a token generator."
@@ -23923,10 +23859,6 @@
           "maskOgnlValues": {
             "type": "boolean",
             "description": "Whether or not all OGNL expressions used to fulfill an outgoing assertion contract should be masked in the logs. Defaults to false."
-          },
-          "inherited": {
-            "type": "boolean",
-            "description": "Whether this attribute contract is inherited from its parent instance. If true, the rest of the properties in this model become read-only. The default value is false."
           }
         },
         "description": "A set of attributes exposed by a token processor."

@@ -15508,11 +15508,6 @@ components:
           items:
             $ref: '#/components/schemas/AccessTokenAttribute'
           type: array
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
         defaultSubjectAttribute:
           description: Default subject attribute to use for audit logging when validating
             the access token. Blank value means to use USER_KEY attribute value after
@@ -15548,12 +15543,6 @@ components:
     AtmAccessControlSettings:
       description: Access control settings for an access token management plugin instance.
       properties:
-        inherited:
-          description: "If this token manager has a parent, this flag determines whether\
-            \ access control settings are inherited from the parent. When set to true,\
-            \ the other fields in this model become read-only. The default value is\
-            \ false."
-          type: boolean
         restrictClients:
           description: "Determines whether access to this token manager is restricted\
             \ to specific OAuth clients. If false, the 'allowedClients' field is ignored.\
@@ -15569,12 +15558,6 @@ components:
     AtmSelectionSettings:
       description: Selection settings for an access token management plugin instance.
       properties:
-        inherited:
-          description: "If this token manager has a parent, this flag determines whether\
-            \ selection settings, such as resource URI's, are inherited from the parent.\
-            \ When set to true, the other fields in this model become read-only. The\
-            \ default value is false."
-          type: boolean
         resourceUris:
           description: "The list of base resource URI's which map to this token manager.\
             \ A resource URI, specified via the 'aud' parameter, can be used to select\
@@ -15768,7 +15751,6 @@ components:
     ConfigField:
       description: A plugin configuration field value.
       example:
-        inherited: true
         encryptedValue: encryptedValue
         name: name
         value: value
@@ -15787,11 +15769,6 @@ components:
             \ If you do not want to update the stored value, this attribute should\
             \ be passed back unchanged."
           type: string
-        inherited:
-          description: "Whether this field is inherited from its parent instance.\
-            \ If true, the value/encrypted value properties become read-only. The\
-            \ default value is false."
-          type: boolean
       required:
       - name
       type: object
@@ -15800,12 +15777,10 @@ components:
       example:
         defaultRow: true
         fields:
-        - inherited: true
-          encryptedValue: encryptedValue
+        - encryptedValue: encryptedValue
           name: name
           value: value
-        - inherited: true
-          encryptedValue: encryptedValue
+        - encryptedValue: encryptedValue
           name: name
           value: value
       properties:
@@ -15823,37 +15798,28 @@ components:
     ConfigTable:
       description: A plugin configuration table populated with values.
       example:
-        inherited: true
         name: name
         rows:
         - defaultRow: true
           fields:
-          - inherited: true
-            encryptedValue: encryptedValue
+          - encryptedValue: encryptedValue
             name: name
             value: value
-          - inherited: true
-            encryptedValue: encryptedValue
+          - encryptedValue: encryptedValue
             name: name
             value: value
         - defaultRow: true
           fields:
-          - inherited: true
-            encryptedValue: encryptedValue
+          - encryptedValue: encryptedValue
             name: name
             value: value
-          - inherited: true
-            encryptedValue: encryptedValue
+          - encryptedValue: encryptedValue
             name: name
             value: value
       properties:
         name:
           description: The name of the table.
           type: string
-        inherited:
-          description: "Whether this table is inherited from its parent instance.\
-            \ If true, the rows become read-only. The default value is false."
-          type: boolean
         rows:
           description: List of table rows.
           items:
@@ -16011,11 +15977,6 @@ components:
           items:
             $ref: '#/components/schemas/Attribute'
           type: array
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
       required:
       - coreAttributes
       type: object
@@ -16036,11 +15997,6 @@ components:
           items:
             $ref: '#/components/schemas/GroupAttribute'
           type: array
-        inherited:
-          description: "Whether this group attribute contract is inherited from its\
-            \ parent instance. If true, the rest of the properties in this model become\
-            \ read-only. The default value is false."
-          type: boolean
       required:
       - coreAttributes
       type: object
@@ -16103,11 +16059,6 @@ components:
           description: Whether or not all OGNL expressions used to fulfill an outgoing
             assertion contract should be masked in the logs. Defaults to false.
           type: boolean
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
       required:
       - coreAttributes
       type: object
@@ -16127,11 +16078,6 @@ components:
           type: object
         issuanceCriteria:
           $ref: '#/components/schemas/IssuanceCriteria'
-        inherited:
-          description: "Whether this attribute mapping is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
         attributeSource:
           items:
             $ref: '#/components/schemas/AttributeSourceAggregation'
@@ -16617,11 +16563,6 @@ components:
           items:
             $ref: '#/components/schemas/PasswordCredentialValidatorAttribute'
           type: array
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
       type: object
     PingOneLdapGatewayDataStore:
       allOf:
@@ -16684,59 +16625,47 @@ components:
       description: Configuration settings for a plugin instance.
       example:
         tables:
-        - inherited: true
-          name: name
+        - name: name
           rows:
           - defaultRow: true
             fields:
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
           - defaultRow: true
             fields:
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
-        - inherited: true
-          name: name
+        - name: name
           rows:
           - defaultRow: true
             fields:
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
           - defaultRow: true
             fields:
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
         fields:
-        - inherited: true
-          encryptedValue: encryptedValue
+        - encryptedValue: encryptedValue
           name: name
           value: value
-        - inherited: true
-          encryptedValue: encryptedValue
+        - encryptedValue: encryptedValue
           name: name
           value: value
       properties:
@@ -16784,15 +16713,10 @@ components:
     ResourceLink:
       description: A reference to a resource.
       example:
-        location: location
         id: id
       properties:
         id:
           description: The ID of the resource.
-          type: string
-        location:
-          description: "A read-only URL that references the resource. If the resource\
-            \ is not currently URL-accessible, this property will be null."
           type: string
       required:
       - id
@@ -16810,12 +16734,6 @@ components:
       description: Session validation settings for an access token management plugin
         instance.
       properties:
-        inherited:
-          description: "If this token manager has a parent, this flag determines whether\
-            \ session validation settings, such as checkValidAuthnSession, are inherited\
-            \ from the parent. When set to true, the other fields in this model become\
-            \ read-only. The default value is false."
-          type: boolean
         checkValidAuthnSession:
           description: Check for a valid authentication session when validating the
             access token.
@@ -16975,11 +16893,6 @@ components:
           items:
             $ref: '#/components/schemas/SpAdapterAttribute'
           type: array
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
       type: object
     SpAdapterTargetApplicationInfo:
       description: Target Application Information exposed by an SP adapter.
@@ -16990,11 +16903,6 @@ components:
         applicationIconUrl:
           description: The application icon URL.
           type: string
-        inherited:
-          description: "Specifies Whether target application information is inherited\
-            \ from its parent instance. If true, the rest of the properties in this\
-            \ model become read-only. The default value is false."
-          type: boolean
       type: object
     TokenEndpointAttribute:
       description: An attribute for an Access Token Manager's token endpoint attribute
@@ -17029,11 +16937,6 @@ components:
           items:
             $ref: '#/components/schemas/TokenEndpointAttribute'
           type: array
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
       type: object
     TokenGenerator:
       allOf:
@@ -17073,11 +16976,6 @@ components:
           items:
             $ref: '#/components/schemas/TokenGeneratorAttribute'
           type: array
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
-          type: boolean
       required:
       - coreAttributes
       type: object
@@ -17126,11 +17024,6 @@ components:
         maskOgnlValues:
           description: Whether or not all OGNL expressions used to fulfill an outgoing
             assertion contract should be masked in the logs. Defaults to false.
-          type: boolean
-        inherited:
-          description: "Whether this attribute contract is inherited from its parent\
-            \ instance. If true, the rest of the properties in this model become read-only.\
-            \ The default value is false."
           type: boolean
       required:
       - coreAttributes
@@ -17194,7 +17087,6 @@ components:
       description: General access token management settings.
       example:
         defaultAccessTokenManagerRef:
-          location: location
           id: id
       properties:
         defaultAccessTokenManagerRef:
@@ -17704,7 +17596,6 @@ components:
         - null
         context:
           contextRef:
-            location: location
             id: id
           type: DEFAULT
         attributeContractFulfillment:
@@ -17725,7 +17616,6 @@ components:
           - null
           - null
         accessTokenManagerRef:
-          location: location
           id: id
       properties:
         attributeSources:
@@ -17762,7 +17652,6 @@ components:
       description: The Access Token Attribute Mapping.
       example:
         contextRef:
-          location: location
           id: id
         type: DEFAULT
       properties:
@@ -18071,7 +17960,6 @@ components:
       description: Authentication API Application.
       example:
         clientForRedirectlessModeRef:
-          location: location
           id: id
         additionalAllowedOrigins:
         - additionalAllowedOrigins
@@ -18117,7 +18005,6 @@ components:
       example:
         items:
         - clientForRedirectlessModeRef:
-            location: location
             id: id
           additionalAllowedOrigins:
           - additionalAllowedOrigins
@@ -18127,7 +18014,6 @@ components:
           id: id
           url: url
         - clientForRedirectlessModeRef:
-            location: location
             id: id
           additionalAllowedOrigins:
           - additionalAllowedOrigins
@@ -18151,7 +18037,6 @@ components:
         includeRequestContext: true
         enableApiDescriptions: true
         defaultApplicationRef:
-          location: location
           id: id
       properties:
         apiEnabled:
@@ -18289,10 +18174,8 @@ components:
       description: An authentication policy fragment.
       example:
         outputs:
-          location: location
           id: id
         inputs:
-          location: location
           id: id
         name: name
         description: description
@@ -18345,7 +18228,6 @@ components:
       example:
         type: IDP_ADAPTER
         sourceRef:
-          location: location
           id: id
       properties:
         type:
@@ -18469,7 +18351,6 @@ components:
         description: description
         id: id
         authenticationApiApplicationRef:
-          location: location
           id: id
         handleFailuresLocally: true
         enabled: true
@@ -18508,11 +18389,9 @@ components:
         defaultAuthenticationSources:
         - type: IDP_ADAPTER
           sourceRef:
-            location: location
             id: id
         - type: IDP_ADAPTER
           sourceRef:
-            location: location
             id: id
         failIfNoSelection: true
         authnSelectionTrees:
@@ -18520,7 +18399,6 @@ components:
           description: description
           id: id
           authenticationApiApplicationRef:
-            location: location
             id: id
           handleFailuresLocally: true
           enabled: true
@@ -18533,7 +18411,6 @@ components:
           description: description
           id: id
           authenticationApiApplicationRef:
-            location: location
             id: id
           handleFailuresLocally: true
           enabled: true
@@ -18575,10 +18452,8 @@ components:
       example:
         items:
         - outputs:
-            location: location
             id: id
           inputs:
-            location: location
             id: id
           name: name
           description: description
@@ -18589,10 +18464,8 @@ components:
             - null
             action: null
         - outputs:
-            location: location
             id: id
           inputs:
-            location: location
             id: id
           name: name
           description: description
@@ -18758,7 +18631,6 @@ components:
         authenticationSource:
           type: IDP_ADAPTER
           sourceRef:
-            location: location
             id: id
         idleTimeoutMins: 0
         id: id
@@ -18957,7 +18829,6 @@ components:
           authenticationSource:
             type: IDP_ADAPTER
             sourceRef:
-              location: location
               id: id
           idleTimeoutMins: 0
           id: id
@@ -18970,7 +18841,6 @@ components:
           authenticationSource:
             type: IDP_ADAPTER
             sourceRef:
-              location: location
               id: id
           idleTimeoutMins: 0
           id: id
@@ -19097,7 +18967,6 @@ components:
           - name: name
           - name: name
         adminWebServicePcvRef:
-          location: location
           id: id
         atmIdForOAuthGrantManagement: atmIdForOAuthGrantManagement
         defaultScopeDescription: defaultScopeDescription
@@ -19644,7 +19513,6 @@ components:
       description: General CAPTCHA provider settings.
       example:
         defaultCaptchaProviderRef:
-          location: location
           id: id
       properties:
         defaultCaptchaProviderRef:
@@ -19823,7 +19691,6 @@ components:
           actionOnResponderUnavailable: actionOnResponderUnavailable
           nextUpdateGracePeriod: 6
           responderCertReference:
-            location: location
             id: id
           responderTimeout: 5
           responseCachePeriod: 1
@@ -19875,7 +19742,6 @@ components:
         actionOnResponderUnavailable: actionOnResponderUnavailable
         nextUpdateGracePeriod: 6
         responderCertReference:
-          location: location
           id: id
         responderTimeout: 5
         responseCachePeriod: 1
@@ -20135,11 +20001,9 @@ components:
       example:
         address: address
         statusLink:
-          location: location
           id: id
         nodeIndex: nodeIndex
         exportLink:
-          location: location
           id: id
         archiveId: archiveId
         timestamp: 2000-01-23T04:56:07.000+00:00
@@ -20178,22 +20042,18 @@ components:
         archives:
         - address: address
           statusLink:
-            location: location
             id: id
           nodeIndex: nodeIndex
           exportLink:
-            location: location
             id: id
           archiveId: archiveId
           timestamp: 2000-01-23T04:56:07.000+00:00
           status: IN_PROGRESS
         - address: address
           statusLink:
-            location: location
             id: id
           nodeIndex: nodeIndex
           exportLink:
-            location: location
             id: id
           archiveId: archiveId
           timestamp: 2000-01-23T04:56:07.000+00:00
@@ -20917,7 +20777,6 @@ components:
           verificationIssuerDN: verificationIssuerDN
           keyTransportAlgorithm: keyTransportAlgorithm
           decryptionKeyPairRef:
-            location: location
             id: id
           certs:
           - primaryVerificationCert: true
@@ -20976,18 +20835,14 @@ components:
           verificationSubjectDN: verificationSubjectDN
           signingSettings:
             alternativeSigningKeyPairRefs:
-            - location: location
-              id: id
-            - location: location
-              id: id
+            - id: id
+            - id: id
             signingKeyPairRef:
-              location: location
               id: id
             includeRawKeyInSignature: true
             algorithm: algorithm
             includeCertInSignature: true
           secondaryDecryptionKeyPairRef:
-            location: location
             id: id
         active: true
         entityId: entityId
@@ -20997,7 +20852,6 @@ components:
         type: IDP
         metadataReloadSettings:
           metadataUrlRef:
-            location: location
             id: id
           enableAutoMetadataUpdate: true
         baseUrl: baseUrl
@@ -21170,7 +21024,6 @@ components:
         verificationIssuerDN: verificationIssuerDN
         keyTransportAlgorithm: keyTransportAlgorithm
         decryptionKeyPairRef:
-          location: location
           id: id
         certs:
         - primaryVerificationCert: true
@@ -21229,18 +21082,14 @@ components:
         verificationSubjectDN: verificationSubjectDN
         signingSettings:
           alternativeSigningKeyPairRefs:
-          - location: location
-            id: id
-          - location: location
-            id: id
+          - id: id
+          - id: id
           signingKeyPairRef:
-            location: location
             id: id
           includeRawKeyInSignature: true
           algorithm: algorithm
           includeCertInSignature: true
         secondaryDecryptionKeyPairRef:
-          location: location
           id: id
       properties:
         verificationSubjectDN:
@@ -21285,7 +21134,6 @@ components:
         metadata.
       example:
         metadataUrlRef:
-          location: location
           id: id
         enableAutoMetadataUpdate: true
       properties:
@@ -21353,7 +21201,6 @@ components:
             verificationIssuerDN: verificationIssuerDN
             keyTransportAlgorithm: keyTransportAlgorithm
             decryptionKeyPairRef:
-              location: location
               id: id
             certs:
             - primaryVerificationCert: true
@@ -21412,18 +21259,14 @@ components:
             verificationSubjectDN: verificationSubjectDN
             signingSettings:
               alternativeSigningKeyPairRefs:
-              - location: location
-                id: id
-              - location: location
-                id: id
+              - id: id
+              - id: id
               signingKeyPairRef:
-                location: location
                 id: id
               includeRawKeyInSignature: true
               algorithm: algorithm
               includeCertInSignature: true
             secondaryDecryptionKeyPairRef:
-              location: location
               id: id
           active: true
           entityId: entityId
@@ -21433,7 +21276,6 @@ components:
           type: IDP
           metadataReloadSettings:
             metadataUrlRef:
-              location: location
               id: id
             enableAutoMetadataUpdate: true
           baseUrl: baseUrl
@@ -22777,12 +22619,9 @@ components:
       description: Settings related to signing messages sent to this partner.
       example:
         alternativeSigningKeyPairRefs:
-        - location: location
-          id: id
-        - location: location
-          id: id
+        - id: id
+        - id: id
         signingKeyPairRef:
-          location: location
           id: id
         includeRawKeyInSignature: true
         algorithm: algorithm
@@ -23569,7 +23408,6 @@ components:
             verificationIssuerDN: verificationIssuerDN
             keyTransportAlgorithm: keyTransportAlgorithm
             decryptionKeyPairRef:
-              location: location
               id: id
             certs:
             - primaryVerificationCert: true
@@ -23628,18 +23466,14 @@ components:
             verificationSubjectDN: verificationSubjectDN
             signingSettings:
               alternativeSigningKeyPairRefs:
-              - location: location
-                id: id
-              - location: location
-                id: id
+              - id: id
+              - id: id
               signingKeyPairRef:
-                location: location
                 id: id
               includeRawKeyInSignature: true
               algorithm: algorithm
               includeCertInSignature: true
             secondaryDecryptionKeyPairRef:
-              location: location
               id: id
           active: true
           entityId: entityId
@@ -23649,7 +23483,6 @@ components:
           type: IDP
           metadataReloadSettings:
             metadataUrlRef:
-              location: location
               id: id
             enableAutoMetadataUpdate: true
           baseUrl: baseUrl
@@ -23707,7 +23540,6 @@ components:
       description: Settings related to signing messages.
       example:
         signingKeyPairRef:
-          location: location
           id: id
         includeRawKeyInSignature: true
         includeCertInSignature: true
@@ -23748,7 +23580,6 @@ components:
         connectionType: IDP
         signingSettings:
           signingKeyPairRef:
-            location: location
             id: id
           includeRawKeyInSignature: true
           includeCertInSignature: true
@@ -24382,7 +24213,6 @@ components:
           defaultForLegacyConfig: defaultForLegacyConfig
           required: true
         invocationRef:
-          location: location
           id: id
       properties:
         id:
@@ -24432,7 +24262,6 @@ components:
             defaultForLegacyConfig: defaultForLegacyConfig
             required: true
           invocationRef:
-            location: location
             id: id
         - download: true
           name: name
@@ -24456,7 +24285,6 @@ components:
             defaultForLegacyConfig: defaultForLegacyConfig
             required: true
           invocationRef:
-            location: location
             id: id
       properties:
         items:
@@ -24708,10 +24536,8 @@ components:
         partner.
       example:
         primaryKeyRef:
-          location: location
           id: id
         secondaryKeyPairRef:
-          location: location
           id: id
       properties:
         primaryKeyRef:
@@ -24946,69 +24772,55 @@ components:
       example:
         configuration:
           tables:
-          - inherited: true
-            name: name
+          - name: name
             rows:
             - defaultRow: true
               fields:
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
             - defaultRow: true
               fields:
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
-          - inherited: true
-            name: name
+          - name: name
             rows:
             - defaultRow: true
               fields:
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
             - defaultRow: true
               fields:
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
-              - inherited: true
-                encryptedValue: encryptedValue
+              - encryptedValue: encryptedValue
                 name: name
                 value: value
           fields:
-          - inherited: true
-            encryptedValue: encryptedValue
+          - encryptedValue: encryptedValue
             name: name
             value: value
-          - inherited: true
-            encryptedValue: encryptedValue
+          - encryptedValue: encryptedValue
             name: name
             value: value
         name: name
         id: id
         lastModified: 2000-01-23T04:56:07.000+00:00
         pluginDescriptorRef:
-          location: location
           id: id
         parentRef:
-          location: location
           id: id
       oneOf:
       - $ref: '#/components/schemas/PluginInstance'
@@ -25046,135 +24858,107 @@ components:
         items:
         - configuration:
             tables:
-            - inherited: true
-              name: name
+            - name: name
               rows:
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-            - inherited: true
-              name: name
+            - name: name
               rows:
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
             fields:
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
           name: name
           id: id
           lastModified: 2000-01-23T04:56:07.000+00:00
           pluginDescriptorRef:
-            location: location
             id: id
           parentRef:
-            location: location
             id: id
         - configuration:
             tables:
-            - inherited: true
-              name: name
+            - name: name
               rows:
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-            - inherited: true
-              name: name
+            - name: name
               rows:
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
               - defaultRow: true
                 fields:
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
-                - inherited: true
-                  encryptedValue: encryptedValue
+                - encryptedValue: encryptedValue
                   name: name
                   value: value
             fields:
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
-            - inherited: true
-              encryptedValue: encryptedValue
+            - encryptedValue: encryptedValue
               name: name
               value: value
           name: name
           id: id
           lastModified: 2000-01-23T04:56:07.000+00:00
           pluginDescriptorRef:
-            location: location
             id: id
           parentRef:
-            location: location
             id: id
       properties:
         items:
@@ -25214,7 +24998,6 @@ components:
         retainPreviousKeysOnPasswordChange: true
         kerberosEncryptedPassword: kerberosEncryptedPassword
         ldapGatewayDataStoreRef:
-          location: location
           id: id
         kerberosPassword: kerberosPassword
         id: id
@@ -25339,7 +25122,6 @@ components:
           retainPreviousKeysOnPasswordChange: true
           kerberosEncryptedPassword: kerberosEncryptedPassword
           ldapGatewayDataStoreRef:
-            location: location
             id: id
           kerberosPassword: kerberosPassword
           id: id
@@ -25358,7 +25140,6 @@ components:
           retainPreviousKeysOnPasswordChange: true
           kerberosEncryptedPassword: kerberosEncryptedPassword
           ldapGatewayDataStoreRef:
-            location: location
             id: id
           kerberosPassword: kerberosPassword
           id: id
@@ -25696,7 +25477,6 @@ components:
         otlTimeToLive: 5
         fieldStoringVerificationStatus: fieldStoringVerificationStatus
         notificationPublisherRef:
-          location: location
           id: id
         verifyEmailTemplateName: verifyEmailTemplateName
         emailVerificationSentTemplateName: emailVerificationSentTemplateName
@@ -25839,7 +25619,6 @@ components:
         createPattern: createPattern
         objectClass: objectClass
         dataStoreRef:
-          location: location
           id: id
         type: LDAP
         baseDn: baseDn
@@ -26005,16 +25784,13 @@ components:
           templateName: templateName
           captchaEnabled: true
           captchaProviderRef:
-            location: location
             id: id
           createAuthnSessionAfterRegistration: true
           executeWorkflow: BEFORE_ACCOUNT_CREATION
           registrationWorkflow:
-            location: location
             id: id
         registrationEnabled: true
         apcId:
-          location: location
           id: id
         name: name
         authSources:
@@ -26073,7 +25849,6 @@ components:
           otlTimeToLive: 5
           fieldStoringVerificationStatus: fieldStoringVerificationStatus
           notificationPublisherRef:
-            location: location
             id: id
           verifyEmailTemplateName: verifyEmailTemplateName
           emailVerificationSentTemplateName: emailVerificationSentTemplateName
@@ -26081,7 +25856,6 @@ components:
           createPattern: createPattern
           objectClass: objectClass
           dataStoreRef:
-            location: location
             id: id
           type: LDAP
           baseDn: baseDn
@@ -26163,12 +25937,10 @@ components:
         templateName: templateName
         captchaEnabled: true
         captchaProviderRef:
-          location: location
           id: id
         createAuthnSessionAfterRegistration: true
         executeWorkflow: BEFORE_ACCOUNT_CREATION
         registrationWorkflow:
-          location: location
           id: id
       properties:
         captchaEnabled:
@@ -26226,16 +25998,13 @@ components:
             templateName: templateName
             captchaEnabled: true
             captchaProviderRef:
-              location: location
               id: id
             createAuthnSessionAfterRegistration: true
             executeWorkflow: BEFORE_ACCOUNT_CREATION
             registrationWorkflow:
-              location: location
               id: id
           registrationEnabled: true
           apcId:
-            location: location
             id: id
           name: name
           authSources:
@@ -26294,7 +26063,6 @@ components:
             otlTimeToLive: 5
             fieldStoringVerificationStatus: fieldStoringVerificationStatus
             notificationPublisherRef:
-              location: location
               id: id
             verifyEmailTemplateName: verifyEmailTemplateName
             emailVerificationSentTemplateName: emailVerificationSentTemplateName
@@ -26302,7 +26070,6 @@ components:
             createPattern: createPattern
             objectClass: objectClass
             dataStoreRef:
-              location: location
               id: id
             type: LDAP
             baseDn: baseDn
@@ -26321,16 +26088,13 @@ components:
             templateName: templateName
             captchaEnabled: true
             captchaProviderRef:
-              location: location
               id: id
             createAuthnSessionAfterRegistration: true
             executeWorkflow: BEFORE_ACCOUNT_CREATION
             registrationWorkflow:
-              location: location
               id: id
           registrationEnabled: true
           apcId:
-            location: location
             id: id
           name: name
           authSources:
@@ -26389,7 +26153,6 @@ components:
             otlTimeToLive: 5
             fieldStoringVerificationStatus: fieldStoringVerificationStatus
             notificationPublisherRef:
-              location: location
               id: id
             verifyEmailTemplateName: verifyEmailTemplateName
             emailVerificationSentTemplateName: emailVerificationSentTemplateName
@@ -26397,7 +26160,6 @@ components:
             createPattern: createPattern
             objectClass: objectClass
             dataStoreRef:
-              location: location
               id: id
             type: LDAP
             baseDn: baseDn
@@ -26562,7 +26324,6 @@ components:
       description: General notification publisher settings.
       example:
         defaultNotificationPublisherRef:
-          location: location
           id: id
       properties:
         defaultNotificationPublisherRef:
@@ -26573,7 +26334,6 @@ components:
         grant.
       example:
         authenticationPolicyContractRef:
-          location: location
           id: id
         attributeSource:
         - null
@@ -26630,7 +26390,6 @@ components:
       example:
         items:
         - authenticationPolicyContractRef:
-            location: location
             id: id
           attributeSource:
           - null
@@ -26653,7 +26412,6 @@ components:
             - null
             - null
         - authenticationPolicyContractRef:
-            location: location
             id: id
           attributeSource:
           - null
@@ -26801,10 +26559,8 @@ components:
         id: id
         lastModified: 2000-01-23T04:56:07.000+00:00
         userCodePcvRef:
-          location: location
           id: id
         authenticatorRef:
-          location: location
           id: id
       properties:
         id:
@@ -26916,10 +26672,8 @@ components:
           id: id
           lastModified: 2000-01-23T04:56:07.000+00:00
           userCodePcvRef:
-            location: location
             id: id
           authenticatorRef:
-            location: location
             id: id
         - alternativeLoginHintTokenIssuers:
           - jwksURL: jwksURL
@@ -26982,10 +26736,8 @@ components:
           id: id
           lastModified: 2000-01-23T04:56:07.000+00:00
           userCodePcvRef:
-            location: location
             id: id
           authenticatorRef:
-            location: location
             id: id
       properties:
         items:
@@ -26998,7 +26750,6 @@ components:
       description: Settings for the CIBA request policy configuration.
       example:
         defaultRequestPolicyRef:
-          location: location
           id: id
       properties:
         defaultRequestPolicyRef:
@@ -27024,7 +26775,6 @@ components:
         oidcPolicy:
           idTokenContentEncryptionAlgorithm: AES_128_CBC_HMAC_SHA_256
           policyGroup:
-            location: location
             id: id
           idTokenEncryptionAlgorithm: DIR
           idTokenSigningAlgorithm: NONE
@@ -27042,7 +26792,6 @@ components:
           enforceReplayPrevention: SERVER_DEFAULT
         updatedAt: 2000-01-23T04:56:07.000+00:00
         cibaRequestPolicyRef:
-          location: location
           id: id
         pendingAuthorizationTimeoutOverride: 5
         requireJwtSecuredAuthorizationResponseMode: true
@@ -27053,22 +26802,17 @@ components:
         refreshTokenRollingIntervalTimeUnit: SECONDS
         deviceFlowSettingType: SERVER_DEFAULT
         tags:
-        - location: location
-          id: id
-        - location: location
-          id: id
+        - id: id
+        - id: id
         defaultAccessTokenManagerRef:
-          location: location
           id: id
         refreshTokenRollingInterval: 1
         tokenExchangeProcessorPolicyRef:
-          location: location
           id: id
         name: name
         refreshTokenRollingIntervalType: SERVER_DEFAULT
         devicePollingIntervalOverride: 2
         clientCertIssuerRef:
-          location: location
           id: id
         cibaPollingInterval: 9
         persistentGrantExpirationType: INDEFINITE_EXPIRY
@@ -27310,7 +27054,6 @@ components:
       example:
         idTokenContentEncryptionAlgorithm: AES_128_CBC_HMAC_SHA_256
         policyGroup:
-          location: location
           id: id
         idTokenEncryptionAlgorithm: DIR
         idTokenSigningAlgorithm: NONE
@@ -27435,7 +27178,6 @@ components:
           oidcPolicy:
             idTokenContentEncryptionAlgorithm: AES_128_CBC_HMAC_SHA_256
             policyGroup:
-              location: location
               id: id
             idTokenEncryptionAlgorithm: DIR
             idTokenSigningAlgorithm: NONE
@@ -27453,7 +27195,6 @@ components:
             enforceReplayPrevention: SERVER_DEFAULT
           updatedAt: 2000-01-23T04:56:07.000+00:00
           cibaRequestPolicyRef:
-            location: location
             id: id
           pendingAuthorizationTimeoutOverride: 5
           requireJwtSecuredAuthorizationResponseMode: true
@@ -27464,22 +27205,17 @@ components:
           refreshTokenRollingIntervalTimeUnit: SECONDS
           deviceFlowSettingType: SERVER_DEFAULT
           tags:
-          - location: location
-            id: id
-          - location: location
-            id: id
+          - id: id
+          - id: id
           defaultAccessTokenManagerRef:
-            location: location
             id: id
           refreshTokenRollingInterval: 1
           tokenExchangeProcessorPolicyRef:
-            location: location
             id: id
           name: name
           refreshTokenRollingIntervalType: SERVER_DEFAULT
           devicePollingIntervalOverride: 2
           clientCertIssuerRef:
-            location: location
             id: id
           cibaPollingInterval: 9
           persistentGrantExpirationType: INDEFINITE_EXPIRY
@@ -27502,7 +27238,6 @@ components:
           oidcPolicy:
             idTokenContentEncryptionAlgorithm: AES_128_CBC_HMAC_SHA_256
             policyGroup:
-              location: location
               id: id
             idTokenEncryptionAlgorithm: DIR
             idTokenSigningAlgorithm: NONE
@@ -27520,7 +27255,6 @@ components:
             enforceReplayPrevention: SERVER_DEFAULT
           updatedAt: 2000-01-23T04:56:07.000+00:00
           cibaRequestPolicyRef:
-            location: location
             id: id
           pendingAuthorizationTimeoutOverride: 5
           requireJwtSecuredAuthorizationResponseMode: true
@@ -27531,22 +27265,17 @@ components:
           refreshTokenRollingIntervalTimeUnit: SECONDS
           deviceFlowSettingType: SERVER_DEFAULT
           tags:
-          - location: location
-            id: id
-          - location: location
-            id: id
+          - id: id
+          - id: id
           defaultAccessTokenManagerRef:
-            location: location
             id: id
           refreshTokenRollingInterval: 1
           tokenExchangeProcessorPolicyRef:
-            location: location
             id: id
           name: name
           refreshTokenRollingIntervalType: SERVER_DEFAULT
           devicePollingIntervalOverride: 2
           clientCertIssuerRef:
-            location: location
             id: id
           cibaPollingInterval: 9
           persistentGrantExpirationType: INDEFINITE_EXPIRY
@@ -27684,10 +27413,8 @@ components:
         - authorizationDetailTypes
         - authorizationDetailTypes
         tags:
-        - location: location
-          id: id
-        - location: location
-          id: id
+        - id: id
+        - id: id
         grantTypes:
         - IMPLICIT
         - IMPLICIT
@@ -27737,7 +27464,6 @@ components:
           userInfoResponseContentEncryptionAlgorithm: AES_128_CBC_HMAC_SHA_256
           userInfoResponseSigningAlgorithm: NONE
           policyGroup:
-            location: location
             id: id
           idTokenEncryptionAlgorithm: DIR
           logoutMode: NONE
@@ -27755,7 +27481,6 @@ components:
           pairwiseIdentifierUserType: true
         persistentGrantExpirationTime: 6
         requestPolicyRef:
-          location: location
           id: id
         clientSecretRetentionPeriod: 9
         validateUsingAllEligibleAtms: true
@@ -27778,12 +27503,10 @@ components:
         jwtSecuredAuthorizationResponseModeSigningAlgorithm: RS256
         modificationDate: 2000-01-23T04:56:07.000+00:00
         defaultAccessTokenManagerRef:
-          location: location
           id: id
         jwtSecuredAuthorizationResponseModeContentEncryptionAlgorithm: AES_128_CBC_HMAC_SHA_256
         refreshTokenRollingInterval: 0
         tokenExchangeProcessorPolicyRef:
-          location: location
           id: id
         clientAuthentication:
           encryptedSecret: encryptedSecret
@@ -28568,7 +28291,6 @@ components:
         userInfoResponseContentEncryptionAlgorithm: AES_128_CBC_HMAC_SHA_256
         userInfoResponseSigningAlgorithm: NONE
         policyGroup:
-          location: location
           id: id
         idTokenEncryptionAlgorithm: DIR
         logoutMode: NONE
@@ -28932,10 +28654,8 @@ components:
           - authorizationDetailTypes
           - authorizationDetailTypes
           tags:
-          - location: location
-            id: id
-          - location: location
-            id: id
+          - id: id
+          - id: id
           grantTypes:
           - IMPLICIT
           - IMPLICIT
@@ -28985,7 +28705,6 @@ components:
             userInfoResponseContentEncryptionAlgorithm: AES_128_CBC_HMAC_SHA_256
             userInfoResponseSigningAlgorithm: NONE
             policyGroup:
-              location: location
               id: id
             idTokenEncryptionAlgorithm: DIR
             logoutMode: NONE
@@ -29003,7 +28722,6 @@ components:
             pairwiseIdentifierUserType: true
           persistentGrantExpirationTime: 6
           requestPolicyRef:
-            location: location
             id: id
           clientSecretRetentionPeriod: 9
           validateUsingAllEligibleAtms: true
@@ -29026,12 +28744,10 @@ components:
           jwtSecuredAuthorizationResponseModeSigningAlgorithm: RS256
           modificationDate: 2000-01-23T04:56:07.000+00:00
           defaultAccessTokenManagerRef:
-            location: location
             id: id
           jwtSecuredAuthorizationResponseModeContentEncryptionAlgorithm: AES_128_CBC_HMAC_SHA_256
           refreshTokenRollingInterval: 0
           tokenExchangeProcessorPolicyRef:
-            location: location
             id: id
           clientAuthentication:
             encryptedSecret: encryptedSecret
@@ -29103,10 +28819,8 @@ components:
           - authorizationDetailTypes
           - authorizationDetailTypes
           tags:
-          - location: location
-            id: id
-          - location: location
-            id: id
+          - id: id
+          - id: id
           grantTypes:
           - IMPLICIT
           - IMPLICIT
@@ -29156,7 +28870,6 @@ components:
             userInfoResponseContentEncryptionAlgorithm: AES_128_CBC_HMAC_SHA_256
             userInfoResponseSigningAlgorithm: NONE
             policyGroup:
-              location: location
               id: id
             idTokenEncryptionAlgorithm: DIR
             logoutMode: NONE
@@ -29174,7 +28887,6 @@ components:
             pairwiseIdentifierUserType: true
           persistentGrantExpirationTime: 6
           requestPolicyRef:
-            location: location
             id: id
           clientSecretRetentionPeriod: 9
           validateUsingAllEligibleAtms: true
@@ -29197,12 +28909,10 @@ components:
           jwtSecuredAuthorizationResponseModeSigningAlgorithm: RS256
           modificationDate: 2000-01-23T04:56:07.000+00:00
           defaultAccessTokenManagerRef:
-            location: location
             id: id
           jwtSecuredAuthorizationResponseModeContentEncryptionAlgorithm: AES_128_CBC_HMAC_SHA_256
           refreshTokenRollingInterval: 0
           tokenExchangeProcessorPolicyRef:
-            location: location
             id: id
           clientAuthentication:
             encryptedSecret: encryptedSecret
@@ -29291,10 +29001,8 @@ components:
           refreshTokenRollingGracePeriodType: SERVER_DEFAULT
           deviceFlowSettingType: SERVER_DEFAULT
           tags:
-          - location: location
-            id: id
-          - location: location
-            id: id
+          - id: id
+          - id: id
           clientSecretRetentionPeriodType: clientSecretRetentionPeriodType
           restrictedCommonScopes:
           - restrictedCommonScopes
@@ -29302,7 +29010,6 @@ components:
           refreshTokenRollingIntervalType: SERVER_DEFAULT
           devicePollingIntervalOverride: 5
           clientCertIssuerRef:
-            location: location
             id: id
           persistentGrantExpirationType: INDEFINITE_EXPIRY
           allowClientDelete: true
@@ -29319,29 +29026,23 @@ components:
           oidcPolicy:
             idTokenContentEncryptionAlgorithm: AES_128_CBC_HMAC_SHA_256
             policyGroup:
-              location: location
               id: id
             idTokenEncryptionAlgorithm: DIR
             idTokenSigningAlgorithm: NONE
           persistentGrantExpirationTime: 0
           requestPolicyRef:
-            location: location
             id: id
           pendingAuthorizationTimeoutOverride: 5
           requireJwtSecuredAuthorizationResponseMode: true
           persistentGrantExpirationTimeUnit: MINUTES
           policyRefs:
-          - location: location
-            id: id
-          - location: location
-            id: id
+          - id: id
+          - id: id
           refreshTokenRollingIntervalTimeUnit: SECONDS
           defaultAccessTokenManagerRef:
-            location: location
             id: id
           refreshTokenRollingInterval: 1
           tokenExchangeProcessorPolicyRef:
-            location: location
             id: id
           cibaPollingInterval: 2
           refreshRolling: SERVER_DEFAULT
@@ -29390,10 +29091,8 @@ components:
         refreshTokenRollingGracePeriodType: SERVER_DEFAULT
         deviceFlowSettingType: SERVER_DEFAULT
         tags:
-        - location: location
-          id: id
-        - location: location
-          id: id
+        - id: id
+        - id: id
         clientSecretRetentionPeriodType: clientSecretRetentionPeriodType
         restrictedCommonScopes:
         - restrictedCommonScopes
@@ -29401,7 +29100,6 @@ components:
         refreshTokenRollingIntervalType: SERVER_DEFAULT
         devicePollingIntervalOverride: 5
         clientCertIssuerRef:
-          location: location
           id: id
         persistentGrantExpirationType: INDEFINITE_EXPIRY
         allowClientDelete: true
@@ -29418,29 +29116,23 @@ components:
         oidcPolicy:
           idTokenContentEncryptionAlgorithm: AES_128_CBC_HMAC_SHA_256
           policyGroup:
-            location: location
             id: id
           idTokenEncryptionAlgorithm: DIR
           idTokenSigningAlgorithm: NONE
         persistentGrantExpirationTime: 0
         requestPolicyRef:
-          location: location
           id: id
         pendingAuthorizationTimeoutOverride: 5
         requireJwtSecuredAuthorizationResponseMode: true
         persistentGrantExpirationTimeUnit: MINUTES
         policyRefs:
-        - location: location
-          id: id
-        - location: location
-          id: id
+        - id: id
+        - id: id
         refreshTokenRollingIntervalTimeUnit: SECONDS
         defaultAccessTokenManagerRef:
-          location: location
           id: id
         refreshTokenRollingInterval: 1
         tokenExchangeProcessorPolicyRef:
-          location: location
           id: id
         cibaPollingInterval: 2
         refreshRolling: SERVER_DEFAULT
@@ -29750,7 +29442,6 @@ components:
               type: TOKEN_EXCHANGE_PROCESSOR_POLICY
             value: value
         idpAdapterRef:
-          location: location
           id: id
         id: id
         attributeSources:
@@ -29805,7 +29496,6 @@ components:
                 type: TOKEN_EXCHANGE_PROCESSOR_POLICY
               value: value
           idpAdapterRef:
-            location: location
             id: id
           id: id
           attributeSources:
@@ -29828,7 +29518,6 @@ components:
                 type: TOKEN_EXCHANGE_PROCESSOR_POLICY
               value: value
           idpAdapterRef:
-            location: location
             id: id
           id: id
           attributeSources:
@@ -29880,13 +29569,10 @@ components:
         signingKeys:
           p256PreviousKeyId: p256PreviousKeyId
           rsaPreviousCertRef:
-            location: location
             id: id
           p521ActiveCertRef:
-            location: location
             id: id
           rsaActiveCertRef:
-            location: location
             id: id
           rsaAlgorithmPreviousKeyIds:
           - keyId: keyId
@@ -29895,7 +29581,6 @@ components:
             rsaAlgType: rsaAlgType
           p384PreviousKeyId: p384PreviousKeyId
           p384PreviousCertRef:
-            location: location
             id: id
           rsaAlgorithmActiveKeyIds:
           - keyId: keyId
@@ -29906,32 +29591,26 @@ components:
           p521ActiveKeyId: p521ActiveKeyId
           p521PreviousKeyId: p521PreviousKeyId
           p256ActiveCertRef:
-            location: location
             id: id
           p384ActiveCertRef:
-            location: location
             id: id
           p384PublishX5cParameter: true
           p256PublishX5cParameter: true
           p256PreviousCertRef:
-            location: location
             id: id
           p256ActiveKeyId: p256ActiveKeyId
           p521PublishX5cParameter: true
           rsaActiveKeyId: rsaActiveKeyId
           p384ActiveKeyId: p384ActiveKeyId
           p521PreviousCertRef:
-            location: location
             id: id
           rsaPublishX5cParameter: true
         name: name
         description: description
         id: id
         issuers:
-        - location: location
-          id: id
-        - location: location
-          id: id
+        - id: id
+        - id: id
       properties:
         id:
           description: "The unique ID for the key set. It can be any combination of\
@@ -29980,13 +29659,10 @@ components:
       example:
         p256PreviousKeyId: p256PreviousKeyId
         rsaPreviousCertRef:
-          location: location
           id: id
         p521ActiveCertRef:
-          location: location
           id: id
         rsaActiveCertRef:
-          location: location
           id: id
         rsaAlgorithmPreviousKeyIds:
         - keyId: keyId
@@ -29995,7 +29671,6 @@ components:
           rsaAlgType: rsaAlgType
         p384PreviousKeyId: p384PreviousKeyId
         p384PreviousCertRef:
-          location: location
           id: id
         rsaAlgorithmActiveKeyIds:
         - keyId: keyId
@@ -30006,22 +29681,18 @@ components:
         p521ActiveKeyId: p521ActiveKeyId
         p521PreviousKeyId: p521PreviousKeyId
         p256ActiveCertRef:
-          location: location
           id: id
         p384ActiveCertRef:
-          location: location
           id: id
         p384PublishX5cParameter: true
         p256PublishX5cParameter: true
         p256PreviousCertRef:
-          location: location
           id: id
         p256ActiveKeyId: p256ActiveKeyId
         p521PublishX5cParameter: true
         rsaActiveKeyId: rsaActiveKeyId
         p384ActiveKeyId: p384ActiveKeyId
         p521PreviousCertRef:
-          location: location
           id: id
         rsaPublishX5cParameter: true
       properties:
@@ -30105,13 +29776,10 @@ components:
         - signingKeys:
             p256PreviousKeyId: p256PreviousKeyId
             rsaPreviousCertRef:
-              location: location
               id: id
             p521ActiveCertRef:
-              location: location
               id: id
             rsaActiveCertRef:
-              location: location
               id: id
             rsaAlgorithmPreviousKeyIds:
             - keyId: keyId
@@ -30120,7 +29788,6 @@ components:
               rsaAlgType: rsaAlgType
             p384PreviousKeyId: p384PreviousKeyId
             p384PreviousCertRef:
-              location: location
               id: id
             rsaAlgorithmActiveKeyIds:
             - keyId: keyId
@@ -30131,42 +29798,33 @@ components:
             p521ActiveKeyId: p521ActiveKeyId
             p521PreviousKeyId: p521PreviousKeyId
             p256ActiveCertRef:
-              location: location
               id: id
             p384ActiveCertRef:
-              location: location
               id: id
             p384PublishX5cParameter: true
             p256PublishX5cParameter: true
             p256PreviousCertRef:
-              location: location
               id: id
             p256ActiveKeyId: p256ActiveKeyId
             p521PublishX5cParameter: true
             rsaActiveKeyId: rsaActiveKeyId
             p384ActiveKeyId: p384ActiveKeyId
             p521PreviousCertRef:
-              location: location
               id: id
             rsaPublishX5cParameter: true
           name: name
           description: description
           id: id
           issuers:
-          - location: location
-            id: id
-          - location: location
-            id: id
+          - id: id
+          - id: id
         - signingKeys:
             p256PreviousKeyId: p256PreviousKeyId
             rsaPreviousCertRef:
-              location: location
               id: id
             p521ActiveCertRef:
-              location: location
               id: id
             rsaActiveCertRef:
-              location: location
               id: id
             rsaAlgorithmPreviousKeyIds:
             - keyId: keyId
@@ -30175,7 +29833,6 @@ components:
               rsaAlgType: rsaAlgType
             p384PreviousKeyId: p384PreviousKeyId
             p384PreviousCertRef:
-              location: location
               id: id
             rsaAlgorithmActiveKeyIds:
             - keyId: keyId
@@ -30186,32 +29843,26 @@ components:
             p521ActiveKeyId: p521ActiveKeyId
             p521PreviousKeyId: p521PreviousKeyId
             p256ActiveCertRef:
-              location: location
               id: id
             p384ActiveCertRef:
-              location: location
               id: id
             p384PublishX5cParameter: true
             p256PublishX5cParameter: true
             p256PreviousCertRef:
-              location: location
               id: id
             p256ActiveKeyId: p256ActiveKeyId
             p521PublishX5cParameter: true
             rsaActiveKeyId: rsaActiveKeyId
             p384ActiveKeyId: p384ActiveKeyId
             p521PreviousCertRef:
-              location: location
               id: id
             rsaPublishX5cParameter: true
           name: name
           description: description
           id: id
           issuers:
-          - location: location
-            id: id
-          - location: location
-            id: id
+          - id: id
+          - id: id
       properties:
         items:
           description: The actual list of signing key sets.
@@ -30225,25 +29876,19 @@ components:
         p384DecryptionPublishX5cParameter: true
         rsaDecryptionActiveKeyId: rsaDecryptionActiveKeyId
         p256DecryptionActiveCertRef:
-          location: location
           id: id
         rsaDecryptionPreviousKeyId: rsaDecryptionPreviousKeyId
         p521ActiveCertRef:
-          location: location
           id: id
         publishDynamicKeyX5cs: true
         p384DecryptionPreviousKeyId: p384DecryptionPreviousKeyId
         rsaActiveCertRef:
-          location: location
           id: id
         p521DecryptionActiveCertRef:
-          location: location
           id: id
         p384DecryptionPreviousCertRef:
-          location: location
           id: id
         rsaDecryptionPreviousCertRef:
-          location: location
           id: id
         p521DecryptionPublishX5cParameter: true
         rsaAlgorithmActiveKeyIds:
@@ -30257,16 +29902,13 @@ components:
         p521PublishX5cParameter: true
         rsaActiveKeyId: rsaActiveKeyId
         p384DecryptionActiveCertRef:
-          location: location
           id: id
         p521PreviousCertRef:
-          location: location
           id: id
         p521DecryptionActiveKeyId: p521DecryptionActiveKeyId
         p256PreviousKeyId: p256PreviousKeyId
         rsaDecryptionPublishX5cParameter: true
         rsaPreviousCertRef:
-          location: location
           id: id
         p521DecryptionPreviousKeyId: p521DecryptionPreviousKeyId
         rsaAlgorithmPreviousKeyIds:
@@ -30276,15 +29918,12 @@ components:
           rsaAlgType: rsaAlgType
         p384PreviousKeyId: p384PreviousKeyId
         p384PreviousCertRef:
-          location: location
           id: id
         rsaPreviousKeyId: rsaPreviousKeyId
         rsaDecryptionActiveCertRef:
-          location: location
           id: id
         p521ActiveKeyId: p521ActiveKeyId
         p256ActiveCertRef:
-          location: location
           id: id
         p256DecryptionPublishX5cParameter: true
         dynamicKeyCertificateInformation:
@@ -30294,19 +29933,15 @@ components:
           organizationUnit: organizationUnit
           state: state
         p384ActiveCertRef:
-          location: location
           id: id
         p384PublishX5cParameter: true
         p256DecryptionActiveKeyId: p256DecryptionActiveKeyId
         p256PublishX5cParameter: true
         p521DecryptionPreviousCertRef:
-          location: location
           id: id
         p256PreviousCertRef:
-          location: location
           id: id
         p256DecryptionPreviousCertRef:
-          location: location
           id: id
         staticJwksEnabled: true
         p384ActiveKeyId: p384ActiveKeyId
@@ -30482,7 +30117,6 @@ components:
       description: The OAuth Resource Owner Credentials Mapping.
       example:
         passwordValidatorRef:
-          location: location
           id: id
         attributeSource:
         - null
@@ -30537,7 +30171,6 @@ components:
       example:
         items:
         - passwordValidatorRef:
-            location: location
             id: id
           attributeSource:
           - null
@@ -30560,7 +30193,6 @@ components:
             - null
             - null
         - passwordValidatorRef:
-            location: location
             id: id
           attributeSource:
           - null
@@ -30597,7 +30229,6 @@ components:
         - null
         - null
         processorPolicyRef:
-          location: location
           id: id
         attributeContractFulfillment:
           key:
@@ -30654,7 +30285,6 @@ components:
           - null
           - null
           processorPolicyRef:
-            location: location
             id: id
           attributeContractFulfillment:
             key:
@@ -30677,7 +30307,6 @@ components:
           - null
           - null
           processorPolicyRef:
-            location: location
             id: id
           attributeContractFulfillment:
             key:
@@ -30824,7 +30453,6 @@ components:
         lastModified: 2000-01-23T04:56:07.000+00:00
         idTokenLifetime: 0
         accessTokenManagerRef:
-          location: location
           id: id
       properties:
         id:
@@ -30957,7 +30585,6 @@ components:
           lastModified: 2000-01-23T04:56:07.000+00:00
           idTokenLifetime: 0
           accessTokenManagerRef:
-            location: location
             id: id
         - returnIdTokenOnTokenExchangeGrant: true
           idTokenTypHeaderValue: idTokenTypHeaderValue
@@ -31017,7 +30644,6 @@ components:
           lastModified: 2000-01-23T04:56:07.000+00:00
           idTokenLifetime: 0
           accessTokenManagerRef:
-            location: location
             id: id
       properties:
         items:
@@ -31054,7 +30680,6 @@ components:
       description: Settings for the OpenID Connect configuration.
       example:
         defaultPolicyRef:
-          location: location
           id: id
         sessionSettings:
           sessionRevocationLifetime: 0
@@ -31293,7 +30918,6 @@ components:
       description: An API model representing a reference to an API resource.
       example:
         ref:
-          location: location
           id: id
         name: name
         id: id
@@ -31343,14 +30967,12 @@ components:
           id: IDP_CONNECTION
         items:
         - ref:
-            location: location
             id: id
           name: name
           id: id
           type: type
           categoryId: IDP_CONNECTION
         - ref:
-            location: location
             id: id
           name: name
           id: id
@@ -31411,7 +31033,6 @@ components:
       description: PingOne for Enterprise Settings
       example:
         pingOneSsoConnection:
-          location: location
           id: id
         enableMonitoring: true
         enableAdminConsoleSso: true
@@ -31619,7 +31240,6 @@ components:
         \ will be empty."
       example:
         signingKeyRef:
-          location: location
           id: id
         signatureAlgorithm: signatureAlgorithm
       properties:
@@ -31945,7 +31565,6 @@ components:
       description: Settings for audit logging.
       example:
         notificationPublisher:
-          location: location
           id: id
         failureMode: BLOCK
         emailsToNotify:
@@ -32374,7 +31993,6 @@ components:
         notificationMode: NOTIFICATION_PUBLISHER
         threadDumpEnabled: true
         notificationPublisherRef:
-          location: location
           id: id
       properties:
         emailAddress:
@@ -32405,7 +32023,6 @@ components:
         emailAddress: emailAddress
         notificationMode: NOTIFICATION_PUBLISHER
         notificationPublisherRef:
-          location: location
           id: id
         initialWarningPeriod: 0
       properties:
@@ -32442,7 +32059,6 @@ components:
       example:
         emailAddress: emailAddress
         notificationPublisherRef:
-          location: location
           id: id
       properties:
         emailAddress:
@@ -32459,7 +32075,6 @@ components:
       example:
         emailAddress: emailAddress
         notificationPublisherRef:
-          location: location
           id: id
       properties:
         emailAddress:
@@ -32479,10 +32094,8 @@ components:
         metadataNotificationSettings:
           emailAddress: emailAddress
           notificationPublisherRef:
-            location: location
             id: id
         accountChangesNotificationPublisherRef:
-          location: location
           id: id
         expiringCertificateAdministrativeConsoleWarningDays: 1
         bulkheadAlertNotificationSettings:
@@ -32490,19 +32103,16 @@ components:
           notificationMode: NOTIFICATION_PUBLISHER
           threadDumpEnabled: true
           notificationPublisherRef:
-            location: location
             id: id
         licenseEvents:
           emailAddress: emailAddress
           notificationPublisherRef:
-            location: location
             id: id
         certificateExpirations:
           finalWarningPeriod: 6
           emailAddress: emailAddress
           notificationMode: NOTIFICATION_PUBLISHER
           notificationPublisherRef:
-            location: location
             id: id
           initialWarningPeriod: 0
         threadPoolExhaustionNotificationSettings:
@@ -32510,13 +32120,11 @@ components:
           notificationMode: NOTIFICATION_PUBLISHER
           threadDumpEnabled: true
           notificationPublisherRef:
-            location: location
             id: id
         expiredCertificateAdministrativeConsoleWarningDays: 5
         licenseEventSettings:
           emailAddress: emailAddress
           notificationPublisherRef:
-            location: location
             id: id
       properties:
         certificateExpirations:
@@ -32555,7 +32163,6 @@ components:
         notificationMode: NOTIFICATION_PUBLISHER
         threadDumpEnabled: true
         notificationPublisherRef:
-          location: location
           id: id
       properties:
         emailAddress:
@@ -32584,7 +32191,6 @@ components:
         data store and the target data store.
       example:
         dataStoreRef:
-          location: location
           id: id
         synchronizationFrequency: 0
       properties:
@@ -32740,10 +32346,8 @@ components:
           metadataNotificationSettings:
             emailAddress: emailAddress
             notificationPublisherRef:
-              location: location
               id: id
           accountChangesNotificationPublisherRef:
-            location: location
             id: id
           expiringCertificateAdministrativeConsoleWarningDays: 1
           bulkheadAlertNotificationSettings:
@@ -32751,19 +32355,16 @@ components:
             notificationMode: NOTIFICATION_PUBLISHER
             threadDumpEnabled: true
             notificationPublisherRef:
-              location: location
               id: id
           licenseEvents:
             emailAddress: emailAddress
             notificationPublisherRef:
-              location: location
               id: id
           certificateExpirations:
             finalWarningPeriod: 6
             emailAddress: emailAddress
             notificationMode: NOTIFICATION_PUBLISHER
             notificationPublisherRef:
-              location: location
               id: id
             initialWarningPeriod: 0
           threadPoolExhaustionNotificationSettings:
@@ -32771,13 +32372,11 @@ components:
             notificationMode: NOTIFICATION_PUBLISHER
             threadDumpEnabled: true
             notificationPublisherRef:
-              location: location
               id: id
           expiredCertificateAdministrativeConsoleWarningDays: 5
           licenseEventSettings:
             emailAddress: emailAddress
             notificationPublisherRef:
-              location: location
               id: id
         emailServer:
           verifyHostname: true
@@ -32980,10 +32579,8 @@ components:
         clientCertAuthnEnabled: true
         restrictByIssuerCert: true
         issuerCerts:
-        - location: location
-          id: id
-        - location: location
-          id: id
+        - id: id
+        - id: id
         basicAuthnEnabled: true
         restrictBySubjectDn: true
         users:
@@ -33492,7 +33089,6 @@ components:
       description: SP Adapter URL Mapping
       example:
         adapterRef:
-          location: location
           id: id
         url: url
       properties:
@@ -33507,11 +33103,9 @@ components:
       example:
         items:
         - adapterRef:
-            location: location
             id: id
           url: url
         - adapterRef:
-            location: location
             id: id
           url: url
       properties:
@@ -33558,7 +33152,6 @@ components:
       description: SP URL mapping
       example:
         ref:
-          location: location
           id: id
         type: SP_ADAPTER
         url: url
@@ -33585,12 +33178,10 @@ components:
       example:
         items:
         - ref:
-            location: location
             id: id
           type: SP_ADAPTER
           url: url
         - ref:
-            location: location
             id: id
           type: SP_ADAPTER
           url: url
@@ -33605,20 +33196,14 @@ components:
       description: Settings for the SSL Server certificate configuration.
       example:
         activeRuntimeServerCerts:
-        - location: location
-          id: id
-        - location: location
-          id: id
+        - id: id
+        - id: id
         activeAdminConsoleCerts:
-        - location: location
-          id: id
-        - location: location
-          id: id
+        - id: id
+        - id: id
         adminConsoleCertRef:
-          location: location
           id: id
         runtimeServerCertRef:
-          location: location
           id: id
       properties:
         runtimeServerCertRef:
@@ -33911,7 +33496,6 @@ components:
         id: id
         type: type
         authorizationDetailProcessorRef:
-          location: location
           id: id
       properties:
         id:
@@ -33943,14 +33527,12 @@ components:
           id: id
           type: type
           authorizationDetailProcessorRef:
-            location: location
             id: id
         - description: description
           active: true
           id: id
           type: type
           authorizationDetailProcessorRef:
-            location: location
             id: id
       properties:
         items:
@@ -34139,12 +33721,10 @@ components:
         - requestedTokenType: requestedTokenType
           defaultMapping: true
           tokenGenerator:
-            location: location
             id: id
         - requestedTokenType: requestedTokenType
           defaultMapping: true
           tokenGenerator:
-            location: location
             id: id
         resourceUris:
         - resourceUris
@@ -34184,7 +33764,6 @@ components:
         requestedTokenType: requestedTokenType
         defaultMapping: true
         tokenGenerator:
-          location: location
           id: id
       properties:
         requestedTokenType:
@@ -34208,12 +33787,10 @@ components:
           - requestedTokenType: requestedTokenType
             defaultMapping: true
             tokenGenerator:
-              location: location
               id: id
           - requestedTokenType: requestedTokenType
             defaultMapping: true
             tokenGenerator:
-              location: location
               id: id
           resourceUris:
           - resourceUris
@@ -34224,12 +33801,10 @@ components:
           - requestedTokenType: requestedTokenType
             defaultMapping: true
             tokenGenerator:
-              location: location
               id: id
           - requestedTokenType: requestedTokenType
             defaultMapping: true
             tokenGenerator:
-              location: location
               id: id
           resourceUris:
           - resourceUris
@@ -34247,7 +33822,6 @@ components:
       description: Settings for the OAuth Token Exchange Generator Groups.
       example:
         defaultGeneratorGroupRef:
-          location: location
           id: id
       properties:
         defaultGeneratorGroupRef:
@@ -34303,7 +33877,6 @@ components:
               type: TOKEN_EXCHANGE_PROCESSOR_POLICY
             value: value
         actorTokenProcessor:
-          location: location
           id: id
         actorTokenType: actorTokenType
         attributeSources:
@@ -34317,7 +33890,6 @@ components:
           - null
           - null
         subjectTokenProcessor:
-          location: location
           id: id
       properties:
         attributeSources:
@@ -34371,7 +33943,6 @@ components:
                 type: TOKEN_EXCHANGE_PROCESSOR_POLICY
               value: value
           actorTokenProcessor:
-            location: location
             id: id
           actorTokenType: actorTokenType
           attributeSources:
@@ -34385,7 +33956,6 @@ components:
             - null
             - null
           subjectTokenProcessor:
-            location: location
             id: id
         - subjectTokenType: subjectTokenType
           attributeSource:
@@ -34398,7 +33968,6 @@ components:
                 type: TOKEN_EXCHANGE_PROCESSOR_POLICY
               value: value
           actorTokenProcessor:
-            location: location
             id: id
           actorTokenType: actorTokenType
           attributeSources:
@@ -34412,7 +33981,6 @@ components:
             - null
             - null
           subjectTokenProcessor:
-            location: location
             id: id
         actorTokenRequired: true
         attributeContract:
@@ -34464,7 +34032,6 @@ components:
                   type: TOKEN_EXCHANGE_PROCESSOR_POLICY
                 value: value
             actorTokenProcessor:
-              location: location
               id: id
             actorTokenType: actorTokenType
             attributeSources:
@@ -34478,7 +34045,6 @@ components:
               - null
               - null
             subjectTokenProcessor:
-              location: location
               id: id
           - subjectTokenType: subjectTokenType
             attributeSource:
@@ -34491,7 +34057,6 @@ components:
                   type: TOKEN_EXCHANGE_PROCESSOR_POLICY
                 value: value
             actorTokenProcessor:
-              location: location
               id: id
             actorTokenType: actorTokenType
             attributeSources:
@@ -34505,7 +34070,6 @@ components:
               - null
               - null
             subjectTokenProcessor:
-              location: location
               id: id
           actorTokenRequired: true
           attributeContract:
@@ -34529,7 +34093,6 @@ components:
                   type: TOKEN_EXCHANGE_PROCESSOR_POLICY
                 value: value
             actorTokenProcessor:
-              location: location
               id: id
             actorTokenType: actorTokenType
             attributeSources:
@@ -34543,7 +34106,6 @@ components:
               - null
               - null
             subjectTokenProcessor:
-              location: location
               id: id
           - subjectTokenType: subjectTokenType
             attributeSource:
@@ -34556,7 +34118,6 @@ components:
                   type: TOKEN_EXCHANGE_PROCESSOR_POLICY
                 value: value
             actorTokenProcessor:
-              location: location
               id: id
             actorTokenType: actorTokenType
             attributeSources:
@@ -34570,7 +34131,6 @@ components:
               - null
               - null
             subjectTokenProcessor:
-              location: location
               id: id
           actorTokenRequired: true
           attributeContract:
@@ -34591,7 +34151,6 @@ components:
       description: Settings for the OAuth Token Exchange Processor Policy configuration.
       example:
         defaultProcessorPolicyRef:
-          location: location
           id: id
       properties:
         defaultProcessorPolicyRef:

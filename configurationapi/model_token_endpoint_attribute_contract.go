@@ -23,8 +23,6 @@ var _ MappedNullable = &TokenEndpointAttributeContract{}
 type TokenEndpointAttributeContract struct {
 	// A list of token endpoint response attributes that are associated with this access token management plugin instance.
 	Attributes []TokenEndpointAttribute `json:"attributes,omitempty" tfsdk:"attributes"`
-	// Whether this attribute contract is inherited from its parent instance. If true, the rest of the properties in this model become read-only. The default value is false.
-	Inherited *bool `json:"inherited,omitempty" tfsdk:"inherited"`
 }
 
 // NewTokenEndpointAttributeContract instantiates a new TokenEndpointAttributeContract object
@@ -76,38 +74,6 @@ func (o *TokenEndpointAttributeContract) SetAttributes(v []TokenEndpointAttribut
 	o.Attributes = v
 }
 
-// GetInherited returns the Inherited field value if set, zero value otherwise.
-func (o *TokenEndpointAttributeContract) GetInherited() bool {
-	if o == nil || IsNil(o.Inherited) {
-		var ret bool
-		return ret
-	}
-	return *o.Inherited
-}
-
-// GetInheritedOk returns a tuple with the Inherited field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TokenEndpointAttributeContract) GetInheritedOk() (*bool, bool) {
-	if o == nil || IsNil(o.Inherited) {
-		return nil, false
-	}
-	return o.Inherited, true
-}
-
-// HasInherited returns a boolean if a field has been set.
-func (o *TokenEndpointAttributeContract) HasInherited() bool {
-	if o != nil && !IsNil(o.Inherited) {
-		return true
-	}
-
-	return false
-}
-
-// SetInherited gets a reference to the given bool and assigns it to the Inherited field.
-func (o *TokenEndpointAttributeContract) SetInherited(v bool) {
-	o.Inherited = &v
-}
-
 func (o TokenEndpointAttributeContract) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -120,9 +86,6 @@ func (o TokenEndpointAttributeContract) ToMap() (map[string]interface{}, error) 
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
-	}
-	if !IsNil(o.Inherited) {
-		toSerialize["inherited"] = o.Inherited
 	}
 	return toSerialize, nil
 }

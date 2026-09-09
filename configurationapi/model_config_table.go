@@ -23,8 +23,6 @@ var _ MappedNullable = &ConfigTable{}
 type ConfigTable struct {
 	// The name of the table.
 	Name string `json:"name" tfsdk:"name"`
-	// Whether this table is inherited from its parent instance. If true, the rows become read-only. The default value is false.
-	Inherited *bool `json:"inherited,omitempty" tfsdk:"inherited"`
 	// List of table rows.
 	Rows []ConfigRow `json:"rows,omitempty" tfsdk:"rows"`
 }
@@ -71,38 +69,6 @@ func (o *ConfigTable) SetName(v string) {
 	o.Name = v
 }
 
-// GetInherited returns the Inherited field value if set, zero value otherwise.
-func (o *ConfigTable) GetInherited() bool {
-	if o == nil || IsNil(o.Inherited) {
-		var ret bool
-		return ret
-	}
-	return *o.Inherited
-}
-
-// GetInheritedOk returns a tuple with the Inherited field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ConfigTable) GetInheritedOk() (*bool, bool) {
-	if o == nil || IsNil(o.Inherited) {
-		return nil, false
-	}
-	return o.Inherited, true
-}
-
-// HasInherited returns a boolean if a field has been set.
-func (o *ConfigTable) HasInherited() bool {
-	if o != nil && !IsNil(o.Inherited) {
-		return true
-	}
-
-	return false
-}
-
-// SetInherited gets a reference to the given bool and assigns it to the Inherited field.
-func (o *ConfigTable) SetInherited(v bool) {
-	o.Inherited = &v
-}
-
 // GetRows returns the Rows field value if set, zero value otherwise.
 func (o *ConfigTable) GetRows() []ConfigRow {
 	if o == nil || IsNil(o.Rows) {
@@ -146,9 +112,6 @@ func (o ConfigTable) MarshalJSON() ([]byte, error) {
 func (o ConfigTable) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
-	if !IsNil(o.Inherited) {
-		toSerialize["inherited"] = o.Inherited
-	}
 	if !IsNil(o.Rows) {
 		toSerialize["rows"] = o.Rows
 	}
