@@ -112,7 +112,7 @@ import (
 )
 
 func main() {
-    body := *openapiclient.NewSpConnection("Name_example", "EntityId_example") // SpConnection | Configuration for new connection.
+    body := *openapiclient.NewSpConnection("EntityId_example", "Name_example") // SpConnection | Configuration for new connection.
     xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
@@ -665,7 +665,7 @@ import (
 
 func main() {
     id := "id_example" // string | ID of SP Connection to update.
-    body := *openapiclient.NewSpConnection("Name_example", "EntityId_example") // SpConnection | Configuration for updated connection.
+    body := *openapiclient.NewSpConnection("EntityId_example", "Name_example") // SpConnection | Configuration for updated connection.
     xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()

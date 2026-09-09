@@ -23,14 +23,14 @@ var _ MappedNullable = &AuthnApiApplication{}
 type AuthnApiApplication struct {
 	// The persistent, unique ID for the Authentication API application. It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned if not specified.
 	Id string `json:"id" tfsdk:"id"`
+	// The Authentication API Application Name. Name must be unique.
+	Name string `json:"name" tfsdk:"name"`
 	// The Authentication API Application redirect URL.
 	Url string `json:"url" tfsdk:"url"`
 	// The Authentication API Application description.
 	Description *string `json:"description,omitempty" tfsdk:"description"`
 	// The domain in the redirect URL is always whitelisted. This field contains a list of additional allowed origin URL's for cross-origin resource sharing.
-	AdditionalAllowedOrigins []string `json:"additionalAllowedOrigins,omitempty" tfsdk:"additional_allowed_origins"`
-	// The Authentication API Application Name. Name must be unique.
-	Name                         string        `json:"name" tfsdk:"name"`
+	AdditionalAllowedOrigins     []string      `json:"additionalAllowedOrigins,omitempty" tfsdk:"additional_allowed_origins"`
 	ClientForRedirectlessModeRef *ResourceLink `json:"clientForRedirectlessModeRef,omitempty" tfsdk:"client_for_redirectless_mode_ref"`
 }
 
@@ -38,11 +38,11 @@ type AuthnApiApplication struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAuthnApiApplication(id string, url string, name string) *AuthnApiApplication {
+func NewAuthnApiApplication(id string, name string, url string) *AuthnApiApplication {
 	this := AuthnApiApplication{}
 	this.Id = id
-	this.Url = url
 	this.Name = name
+	this.Url = url
 	return &this
 }
 
@@ -76,6 +76,30 @@ func (o *AuthnApiApplication) GetIdOk() (*string, bool) {
 // SetId sets field value
 func (o *AuthnApiApplication) SetId(v string) {
 	o.Id = v
+}
+
+// GetName returns the Name field value
+func (o *AuthnApiApplication) GetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value
+// and a boolean to check if the value has been set.
+func (o *AuthnApiApplication) GetNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Name, true
+}
+
+// SetName sets field value
+func (o *AuthnApiApplication) SetName(v string) {
+	o.Name = v
 }
 
 // GetUrl returns the Url field value
@@ -166,30 +190,6 @@ func (o *AuthnApiApplication) SetAdditionalAllowedOrigins(v []string) {
 	o.AdditionalAllowedOrigins = v
 }
 
-// GetName returns the Name field value
-func (o *AuthnApiApplication) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *AuthnApiApplication) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *AuthnApiApplication) SetName(v string) {
-	o.Name = v
-}
-
 // GetClientForRedirectlessModeRef returns the ClientForRedirectlessModeRef field value if set, zero value otherwise.
 func (o *AuthnApiApplication) GetClientForRedirectlessModeRef() ResourceLink {
 	if o == nil || IsNil(o.ClientForRedirectlessModeRef) {
@@ -233,6 +233,7 @@ func (o AuthnApiApplication) MarshalJSON() ([]byte, error) {
 func (o AuthnApiApplication) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
+	toSerialize["name"] = o.Name
 	toSerialize["url"] = o.Url
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -240,7 +241,6 @@ func (o AuthnApiApplication) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AdditionalAllowedOrigins) {
 		toSerialize["additionalAllowedOrigins"] = o.AdditionalAllowedOrigins
 	}
-	toSerialize["name"] = o.Name
 	if !IsNil(o.ClientForRedirectlessModeRef) {
 		toSerialize["clientForRedirectlessModeRef"] = o.ClientForRedirectlessModeRef
 	}

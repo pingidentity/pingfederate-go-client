@@ -33,7 +33,7 @@ import (
 )
 
 func main() {
-    body := *openapiclient.NewAuthnApiApplication("Id_example", "Url_example", "Name_example") // AuthnApiApplication | Configuration for new Authentication API Application.
+    body := *openapiclient.NewAuthnApiApplication("Id_example", "Name_example", "Url_example") // AuthnApiApplication | Configuration for new Authentication API Application.
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -356,7 +356,7 @@ import (
 
 func main() {
     id := "id_example" // string | ID of the Authentication API Application to update.
-    body := *openapiclient.NewAuthnApiApplication("Id_example", "Url_example", "Name_example") // AuthnApiApplication | Configuration for updated application.
+    body := *openapiclient.NewAuthnApiApplication("Id_example", "Name_example", "Url_example") // AuthnApiApplication | Configuration for updated application.
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

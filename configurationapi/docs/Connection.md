@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | The persistent, unique ID for the connection. It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned if not specified. | [optional] 
-**Name** | **string** | The connection name. | 
 **EntityId** | **string** | The partner&#39;s entity ID (connection ID) or issuer value (for OIDC Connections). | 
+**Name** | **string** | The connection name. | 
 **Active** | Pointer to **bool** | Specifies whether the connection is active and ready to process incoming requests. The default value is false. | [optional] 
 **ContactInfo** | Pointer to [**ContactInfo**](ContactInfo.md) |  | [optional] 
 **BaseUrl** | Pointer to **string** | The fully-qualified hostname and port on which your partner&#39;s federation deployment runs. | [optional] 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 
 ### NewConnection
 
-`func NewConnection(name string, entityId string, ) *Connection`
+`func NewConnection(entityId string, name string, ) *Connection`
 
 NewConnection instantiates a new Connection object
 This constructor will assign default values to properties that have it defined,
@@ -67,26 +67,6 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
-### GetName
-
-`func (o *Connection) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *Connection) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *Connection) SetName(v string)`
-
-SetName sets Name field to given value.
-
-
 ### GetEntityId
 
 `func (o *Connection) GetEntityId() string`
@@ -105,6 +85,26 @@ and a boolean to check if the value has been set.
 `func (o *Connection) SetEntityId(v string)`
 
 SetEntityId sets EntityId field to given value.
+
+
+### GetName
+
+`func (o *Connection) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *Connection) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *Connection) SetName(v string)`
+
+SetName sets Name field to given value.
 
 
 ### GetActive

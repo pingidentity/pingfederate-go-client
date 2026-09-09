@@ -39,10 +39,10 @@ type SpConnection struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSpConnection(name string, entityId string) *SpConnection {
+func NewSpConnection(entityId string, name string) *SpConnection {
 	this := SpConnection{}
-	this.Name = name
 	this.EntityId = entityId
+	this.Name = name
 	return &this
 }
 

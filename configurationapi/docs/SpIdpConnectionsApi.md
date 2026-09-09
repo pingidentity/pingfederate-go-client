@@ -112,7 +112,7 @@ import (
 )
 
 func main() {
-    body := *openapiclient.NewIdpConnection("Name_example", "EntityId_example") // IdpConnection | Configuration for new connection.
+    body := *openapiclient.NewIdpConnection("EntityId_example", "Name_example") // IdpConnection | Configuration for new connection.
     xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
@@ -595,7 +595,7 @@ import (
 
 func main() {
     id := "id_example" // string | ID of IdP Connection to update.
-    body := *openapiclient.NewIdpConnection("Name_example", "EntityId_example") // IdpConnection | Configuration for updated connection.
+    body := *openapiclient.NewIdpConnection("EntityId_example", "Name_example") // IdpConnection | Configuration for updated connection.
     xBypassExternalValidation := true // bool | External validation will be bypassed when set to true. Default to false. (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()

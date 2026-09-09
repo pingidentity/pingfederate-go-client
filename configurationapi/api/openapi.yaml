@@ -17961,10 +17961,10 @@ components:
       example:
         clientForRedirectlessModeRef:
           id: id
+        name: name
         additionalAllowedOrigins:
         - additionalAllowedOrigins
         - additionalAllowedOrigins
-        name: name
         description: description
         id: id
         url: url
@@ -17973,6 +17973,9 @@ components:
           description: "The persistent, unique ID for the Authentication API application.\
             \ It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned\
             \ if not specified."
+          type: string
+        name:
+          description: The Authentication API Application Name. Name must be unique.
           type: string
         url:
           description: The Authentication API Application redirect URL.
@@ -17990,9 +17993,6 @@ components:
               resource sharing.
             type: string
           type: array
-        name:
-          description: The Authentication API Application Name. Name must be unique.
-          type: string
         clientForRedirectlessModeRef:
           $ref: '#/components/schemas/ResourceLink'
       required:
@@ -18006,19 +18006,19 @@ components:
         items:
         - clientForRedirectlessModeRef:
             id: id
+          name: name
           additionalAllowedOrigins:
           - additionalAllowedOrigins
           - additionalAllowedOrigins
-          name: name
           description: description
           id: id
           url: url
         - clientForRedirectlessModeRef:
             id: id
+          name: name
           additionalAllowedOrigins:
           - additionalAllowedOrigins
           - additionalAllowedOrigins
-          name: name
           description: description
           id: id
           url: url
@@ -20874,12 +20874,12 @@ components:
             \ combination of [a-zA-Z0-9._-]. This property is system-assigned if not\
             \ specified."
           type: string
-        name:
-          description: The connection name.
-          type: string
         entityId:
           description: The partner's entity ID (connection ID) or issuer value (for
             OIDC Connections).
+          type: string
+        name:
+          description: The connection name.
           type: string
         active:
           description: Specifies whether the connection is active and ready to process

@@ -24,10 +24,10 @@ var _ MappedNullable = &Connection{}
 type Connection struct {
 	// The persistent, unique ID for the connection. It can be any combination of [a-zA-Z0-9._-]. This property is system-assigned if not specified.
 	Id *string `json:"id,omitempty" tfsdk:"id"`
-	// The connection name.
-	Name string `json:"name" tfsdk:"name"`
 	// The partner's entity ID (connection ID) or issuer value (for OIDC Connections).
 	EntityId string `json:"entityId" tfsdk:"entity_id"`
+	// The connection name.
+	Name string `json:"name" tfsdk:"name"`
 	// Specifies whether the connection is active and ready to process incoming requests. The default value is false.
 	Active      *bool        `json:"active,omitempty" tfsdk:"active"`
 	ContactInfo *ContactInfo `json:"contactInfo,omitempty" tfsdk:"contact_info"`
@@ -60,10 +60,10 @@ type Connection struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewConnection(name string, entityId string) *Connection {
+func NewConnection(entityId string, name string) *Connection {
 	this := Connection{}
-	this.Name = name
 	this.EntityId = entityId
+	this.Name = name
 	return &this
 }
 
@@ -107,30 +107,6 @@ func (o *Connection) SetId(v string) {
 	o.Id = &v
 }
 
-// GetName returns the Name field value
-func (o *Connection) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *Connection) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *Connection) SetName(v string) {
-	o.Name = v
-}
-
 // GetEntityId returns the EntityId field value
 func (o *Connection) GetEntityId() string {
 	if o == nil {
@@ -153,6 +129,30 @@ func (o *Connection) GetEntityIdOk() (*string, bool) {
 // SetEntityId sets field value
 func (o *Connection) SetEntityId(v string) {
 	o.EntityId = v
+}
+
+// GetName returns the Name field value
+func (o *Connection) GetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value
+// and a boolean to check if the value has been set.
+func (o *Connection) GetNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Name, true
+}
+
+// SetName sets field value
+func (o *Connection) SetName(v string) {
+	o.Name = v
 }
 
 // GetActive returns the Active field value if set, zero value otherwise.
@@ -648,8 +648,8 @@ func (o Connection) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	toSerialize["name"] = o.Name
 	toSerialize["entityId"] = o.EntityId
+	toSerialize["name"] = o.Name
 	if !IsNil(o.Active) {
 		toSerialize["active"] = o.Active
 	}
