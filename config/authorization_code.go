@@ -199,11 +199,8 @@ func (a *AuthorizationCode) AuthorizationCodeTokenSource(ctx context.Context, en
 	// Generate authorization URL with secure state parameter and handle browser opening
 	authURL := config.AuthCodeURL(state, oauth2.AccessTypeOffline, oauth2.S256ChallengeOption(codeVerifier))
 
-	// Use custom handler if provided, otherwise use default
-	handler := a.OnOpenBrowser
-	if handler == nil {
-		handler = DefaultAuthorizationCodeBrowserHandler
-	}
+	// Use the default handler, which honors the configured output (silent when unset).
+	handler := DefaultAuthorizationCodeBrowserHandlerTo(a.Output)
 
 	if err := handler(authURL); err != nil {
 		return nil, fmt.Errorf("prompt handler failed: %w", err)
