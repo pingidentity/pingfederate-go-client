@@ -87,10 +87,8 @@ device code, and similar), route them into your own logger, or send them somewhe
 standard output without reimplementing the handlers, set `WithAuthorizationCodeOutput(w)` or
 `WithDeviceCodeOutput(w)` on the configuration builder (for example, `os.Stdout` to reproduce
 the interactive v1300.1.0 behavior), or call `DefaultAuthorizationCodeBrowserHandlerTo(w)` /
-`DefaultDeviceCodePromptHandlerTo(w)` directly when building a custom `OnOpenBrowser` or
-`OnDisplayPrompt` handler. Output configured this way only applies when no custom handler is
-set; once `OnOpenBrowser` or `OnDisplayPrompt` is provided, that handler is fully responsible
-for its own output.
+`DefaultDeviceCodePromptHandlerTo(w)` directly to obtain a handler with the same browser-opening
+behavior that writes to `w`.
 
 ### Examples
 

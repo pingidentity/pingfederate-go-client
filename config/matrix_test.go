@@ -5,6 +5,7 @@ package config_test
 import (
 	"context"
 	"encoding/json"
+	"net"
 	"net/http"
 	"net/http/httptest"
 	"strings"
@@ -204,21 +205,24 @@ func TestMatrix_AuthorizationCode_None_BypassesCache(t *testing.T) {
 	keyring.MockInit()
 	seedKeychainToken(t, testRuntimeURL, testClientID, "authorization_code", "should-be-ignored")
 
+	// Occupy the default redirect port so the callback server cannot start. Reaching that
+	// failure proves the cache was bypassed and the interactive flow was attempted, and it
+	// happens before the browser step, so no browser is launched.
+	listener, err := net.Listen("tcp", ":"+config.GetDefaultAuthorizationCodeRedirectURIPort())
+	require.NoError(t, err)
+	defer func() { _ = listener.Close() }()
+
 	cfg := config.NewConfiguration().
 		WithRuntimeBaseURL(testRuntimeURL).
 		WithGrantType(svcOAuth2.GrantTypeAuthorizationCode).
 		WithAuthorizationCodeClientID(testClientID).
 		WithStorageType(config.StorageTypeNone).
 		WithStorageName(testStorage).
-		// Fail the browser step immediately so the test does not block; reaching this handler
-		// proves the cache was bypassed and the interactive flow was attempted.
 		WithAuthorizationCodeRedirectURI(config.AuthorizationCodeRedirectURI{})
 
-	cfg.Auth.AuthorizationCode.OnOpenBrowser = func(string) error { return errTestHandler }
-
-	_, err := cfg.TokenSource(context.Background())
+	_, err = cfg.TokenSource(context.Background())
 	require.Error(t, err)
 	assert.True(t,
-		strings.Contains(err.Error(), "prompt handler failed"),
+		strings.Contains(err.Error(), "failed to start callback server"),
 		"storage=None must bypass the cache and attempt the authorization_code flow, got: %v", err)
 }

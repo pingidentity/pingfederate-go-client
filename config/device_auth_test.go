@@ -111,42 +111,6 @@ func TestDeviceAuthTokenSource(t *testing.T) {
 	}
 }
 
-func TestDeviceAuthTokenSource_CustomHandlerPrecedenceOverOutput(t *testing.T) {
-	srv := newDeviceAuthServer(t, "test-device-code", "test-user-code", "ftp://127.0.0.1/device", 5)
-
-	clientID := "test-client-id"
-	var buf bytes.Buffer
-	var called bool
-
-	deviceCode := &config.DeviceCode{
-		DeviceCodeClientID: &clientID,
-		Output:             &buf,
-		// A custom handler must take priority over Output, and alone control the flow's output.
-		OnDisplayPrompt: func(string, string) error {
-			called = true
-			return errTestHandler
-		},
-	}
-
-	// DeviceAccessToken is never reached because the handler fails first, so only DeviceAuthURL
-	// needs to be stubbed.
-	testEndpoint := oauth2.Endpoint{DeviceAuthURL: srv.URL}
-
-	_, err := deviceCode.DeviceAuthTokenSource(context.Background(), testEndpoint)
-	if err == nil {
-		t.Fatalf("expected error but got none")
-	}
-	if !strings.Contains(err.Error(), "prompt handler failed") {
-		t.Errorf("expected prompt handler error, got %q", err.Error())
-	}
-	if !called {
-		t.Errorf("expected custom OnDisplayPrompt handler to be called")
-	}
-	if buf.Len() != 0 {
-		t.Errorf("expected Output to be unused when a custom handler is set, got %q", buf.String())
-	}
-}
-
 func TestDeviceAuthTokenSource_DefaultHandlerHonorsOutput(t *testing.T) {
 	srv := newDeviceAuthServer(t, "test-device-code", "test-user-code", "ftp://127.0.0.1/device", 1)
 

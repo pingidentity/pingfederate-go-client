@@ -5,6 +5,7 @@ package config_test
 import (
 	"bytes"
 	"context"
+	"net"
 	"strings"
 	"testing"
 
@@ -53,62 +54,28 @@ func TestAuthorizationCodeTokenSource_ValidatesClientID(t *testing.T) {
 }
 
 func TestAuthorizationCodeTokenSource_HandlerError(t *testing.T) {
+	// Occupy the default redirect port so the callback server cannot start. This exercises
+	// input validation, callback-server startup, and the startup-failure path without
+	// requiring a live authorization server or launching a browser.
+	listener, err := net.Listen("tcp", ":"+config.GetDefaultAuthorizationCodeRedirectURIPort())
+	if err != nil {
+		t.Fatalf("failed to occupy redirect port: %v", err)
+	}
+	defer func() { _ = listener.Close() }()
+
 	clientID := "test-client-id"
 	scopes := []string{"openid"}
 	authCode := &config.AuthorizationCode{
 		AuthorizationCodeClientID: &clientID,
 		AuthorizationCodeScopes:   &scopes,
-		// A handler that fails immediately, so the flow does not block waiting for a
-		// browser callback. This exercises input validation and callback-server startup
-		// without requiring a live authorization server.
-		OnOpenBrowser: func(string) error {
-			return errTestHandler
-		},
 	}
 
-	testEndpoint, err := endpoints.PingFederateEndpoint("https://auth.example.com:9031")
-	if err != nil {
-		t.Fatalf("failed to build test endpoint: %v", err)
-	}
-
-	_, err = authCode.AuthorizationCodeTokenSource(context.Background(), testEndpoint)
+	_, err = authCode.AuthorizationCodeTokenSource(context.Background(), oauth2.Endpoint{})
 	if err == nil {
 		t.Fatalf("expected error but got none")
 	}
-	if !strings.Contains(err.Error(), "prompt handler failed") {
-		t.Errorf("expected prompt handler error, got %q", err.Error())
-	}
-}
-
-func TestAuthorizationCodeTokenSource_CustomHandlerPrecedenceOverOutput(t *testing.T) {
-	clientID := "test-client-id"
-	var buf bytes.Buffer
-	var called bool
-
-	authCode := &config.AuthorizationCode{
-		AuthorizationCodeClientID: &clientID,
-		Output:                    &buf,
-		// A custom handler must take priority over Output, and alone control the flow's output.
-		OnOpenBrowser: func(string) error {
-			called = true
-			return errTestHandler
-		},
-	}
-
-	testEndpoint, err := endpoints.PingFederateEndpoint("https://auth.example.com:9031")
-	if err != nil {
-		t.Fatalf("failed to build test endpoint: %v", err)
-	}
-
-	_, err = authCode.AuthorizationCodeTokenSource(context.Background(), testEndpoint)
-	if err == nil {
-		t.Fatalf("expected error but got none")
-	}
-	if !called {
-		t.Errorf("expected custom OnOpenBrowser handler to be called")
-	}
-	if buf.Len() != 0 {
-		t.Errorf("expected Output to be unused when a custom handler is set, got %q", buf.String())
+	if !strings.Contains(err.Error(), "failed to start callback server") {
+		t.Errorf("expected callback-server startup error, got %q", err.Error())
 	}
 }
 

@@ -175,11 +175,9 @@ func (c *Configuration) WithAuthorizationCodeRedirectURI(redirectURI Authorizati
 }
 
 // WithAuthorizationCodeOutput sets the writer used by the default authorization_code browser
-// handler to print its progress messages. It is honored only when no custom OnOpenBrowser
-// handler is set; once OnOpenBrowser is set, that handler is solely responsible for its own
-// output and this writer is ignored. The SDK stays quiet by default: pass nil (or leave it
-// unset) to keep progress output disabled, os.Stdout to reproduce the interactive v1300.1.0
-// behavior, or any other io.Writer to capture or redirect it.
+// handler to print its progress messages. The SDK stays quiet by default: pass nil (or leave
+// it unset) to keep progress output disabled, os.Stdout to reproduce the interactive
+// v1300.1.0 behavior, or any other io.Writer to capture or redirect it.
 func (c *Configuration) WithAuthorizationCodeOutput(w io.Writer) *Configuration {
 	if c.Auth.AuthorizationCode == nil {
 		c.Auth.AuthorizationCode = &AuthorizationCode{}
@@ -207,11 +205,9 @@ func (c *Configuration) WithDeviceCodeScopes(scopes []string) *Configuration {
 }
 
 // WithDeviceCodeOutput sets the writer used by the default device_code prompt handler to print
-// its progress messages. It is honored only when no custom OnDisplayPrompt handler is set; once
-// OnDisplayPrompt is set, that handler is solely responsible for its own output and this writer
-// is ignored. The SDK stays quiet by default: pass nil (or leave it unset) to keep progress
-// output disabled, os.Stdout to reproduce the interactive v1300.1.0 behavior, or any other
-// io.Writer to capture or redirect it.
+// its progress messages. The SDK stays quiet by default: pass nil (or leave it unset) to keep
+// progress output disabled, os.Stdout to reproduce the interactive v1300.1.0 behavior, or any
+// other io.Writer to capture or redirect it.
 func (c *Configuration) WithDeviceCodeOutput(w io.Writer) *Configuration {
 	if c.Auth.DeviceCode == nil {
 		c.Auth.DeviceCode = &DeviceCode{}

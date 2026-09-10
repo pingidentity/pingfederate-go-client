@@ -38,16 +38,10 @@ type AuthorizationCode struct {
 	AuthorizationCodeRedirectURI AuthorizationCodeRedirectURI
 	// AuthorizationCodeScopes are the OAuth2 scopes requested during the flow.
 	AuthorizationCodeScopes *[]string
-	// OnOpenBrowser is an optional handler for custom browser opening logic.
-	// If set, this handler is called instead of automatically opening the system browser,
-	// allowing consumers to implement custom flows such as headless operation or alternative UX.
-	OnOpenBrowser AuthURLHandler
 	// Output configures where the default browser-opening handler writes its progress messages.
-	// It is honored only when OnOpenBrowser is nil; once a custom handler is set, that handler is
-	// solely responsible for its own output, and Output is ignored. The SDK stays quiet by
-	// default: a nil Output disables progress output entirely. Set Output to os.Stdout (via
-	// Configuration.WithAuthorizationCodeOutput) to reproduce interactive v1300.1.0 behavior, or
-	// to any other io.Writer to capture or redirect the messages.
+	// The SDK stays quiet by default: a nil Output disables progress output entirely. Set Output
+	// to os.Stdout (via Configuration.WithAuthorizationCodeOutput) to reproduce interactive
+	// v1300.1.0 behavior, or to any other io.Writer to capture or redirect the messages.
 	Output io.Writer
 	// CustomPageDataSuccess contains the data to display on successful authentication.
 	// If nil, default values are used. The SDK template is rendered with these values.
@@ -71,16 +65,10 @@ type DeviceCode struct {
 	DeviceCodeClientID *string
 	// DeviceCodeScopes are the OAuth2 scopes requested during the flow.
 	DeviceCodeScopes *[]string
-	// OnDisplayPrompt is an optional handler for custom device code prompt display.
-	// If set, this handler is called instead of the default console output, allowing
-	// consumers to implement custom UX such as QR codes, notifications, or headless flows.
-	OnDisplayPrompt DeviceCodePromptHandler
 	// Output configures where the default device code prompt handler writes its progress
-	// messages. It is honored only when OnDisplayPrompt is nil; once a custom handler is set,
-	// that handler is solely responsible for its own output, and Output is ignored. The SDK
-	// stays quiet by default: a nil Output disables progress output entirely. Set Output to
-	// os.Stdout (via Configuration.WithDeviceCodeOutput) to reproduce interactive v1300.1.0
-	// behavior, or to any other io.Writer to capture or redirect the messages.
+	// messages. The SDK stays quiet by default: a nil Output disables progress output entirely.
+	// Set Output to os.Stdout (via Configuration.WithDeviceCodeOutput) to reproduce interactive
+	// v1300.1.0 behavior, or to any other io.Writer to capture or redirect the messages.
 	Output io.Writer
 }
 
