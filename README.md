@@ -78,6 +78,18 @@ refreshes) an existing token rather than prompting for login again. The keychain
 derived from the runtime base URL, client ID, and grant type. Set the storage type to
 `config.StorageTypeNone` to disable caching.
 
+### Output control
+
+The SDK stays quiet by default: the default handlers for the authorization_code and device_code
+flows (`DefaultAuthorizationCodeBrowserHandler`, `DefaultDeviceCodePromptHandler`) open the
+system browser without printing anything. To show progress messages (the authorization URL,
+device code, and similar), route them into your own logger, or send them somewhere other than
+standard output without reimplementing the handlers, set `WithAuthorizationCodeOutput(w)` or
+`WithDeviceCodeOutput(w)` on the configuration builder (for example, `os.Stdout` to reproduce
+the interactive v1300.1.0 behavior), or call `DefaultAuthorizationCodeBrowserHandlerTo(w)` /
+`DefaultDeviceCodePromptHandlerTo(w)` directly to obtain a handler with the same browser-opening
+behavior that writes to `w`.
+
 ### Examples
 
 Runnable examples for each grant type live under [`examples/`](examples/). See
