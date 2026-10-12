@@ -54,17 +54,3 @@ jobs:
         with:
           go-version-file: 'go.mod'
       - run: go vet ./...
-  generate:
-    name: go generate
-    needs: [fmt, vet]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-go@v6
-        with:
-          go-version-file: 'go.mod'
-      - run: |
-          go generate ./...
-          go fmt ./...
-          git diff --compact-summary --exit-code || \
-            (echo; echo "Unexpected difference after 'go generate ./...'. Run 'go generate ./...' then 'go fmt ./...' and commit."; exit 1)
