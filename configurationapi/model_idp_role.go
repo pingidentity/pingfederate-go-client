@@ -19,7 +19,7 @@ import (
 // checks if the IdpRole type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &IdpRole{}
 
-// IdpRole This property has been deprecated and is no longer used. All Roles and protocols are always enabled.
+// IdpRole This property has been deprecated and is no longer used. All Roles and protocols are always enabled. Don't even think about trying to use this property.
 type IdpRole struct {
 	// Enable Identity Provider Role.
 	Enable *bool `json:"enable,omitempty" tfsdk:"enable"`

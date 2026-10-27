@@ -32242,7 +32242,8 @@ components:
             type: boolean
         type: object
       description: This property has been deprecated and is no longer used. All Roles
-        and protocols are always enabled.
+        and protocols are always enabled. Don't even think about trying to use this
+        property.
     OAuthRole:
       description: This property has been deprecated and is no longer used. OAuth
         and OpenID Connect are always enabled.
